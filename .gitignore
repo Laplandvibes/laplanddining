@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Maps API raw cache (key may leak via API responses; keep local)
+data/maps-cache.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MapPin, ExternalLink, Flame, Snowflake, UtensilsCrossed, TreePine } from 'lucide-react';
+import { MapPin, ExternalLink, Flame, Snowflake, UtensilsCrossed, TreePine, Star, Award, Clock } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
-import { restaurants, cities, type Restaurant } from '../data/restaurants';
+import { restaurants, cities, partnershipBadge, type Restaurant } from '../data/restaurants';
 import { DINING } from '../data/images';
 
 const cityImages: Record<string, string> = {
@@ -14,27 +14,39 @@ const cityImages: Record<string, string> = {
   Kemi: DINING.iceRestaurant,
   'Ylläs': DINING.ingredientsAlt,
   Tornio: DINING.ingredients,
-  'Haparanda (Sweden)': DINING.fineDining,
+  Haparanda: DINING.fineDining,
+  // New cities — fall back to atmospheric default; Vesa can swap in city-specific imagery later
+  Kittilä: DINING.kotaInside,
+  'Sodankylä': DINING.foodMoody,
+  Pyhätunturi: DINING.snowVillage,
+  Luosto: DINING.snowVillage,
+  Muonio: DINING.ingredientsAlt,
+  Hetta: DINING.foodMoody,
+  Kuusamo: DINING.exterior,
+  Kemijärvi: DINING.exteriorAlt,
+  Salla: DINING.snowVillage,
+  Posio: DINING.foodMoody,
 };
 
 const cityVibes: Record<string, string> = {
   Rovaniemi: 'Capital of Lapland — where Arctic culture meets culinary ambition',
   Levi: 'Fireside dining after a day on the fells',
+  Kittilä: 'Fell village beyond the Levi resort sprawl',
   Inari: 'Sámi heritage and the purest Arctic ingredients',
   'Saariselkä': 'Wilderness dining under the Northern Lights',
   Kemi: 'Where ice meets fire — unique seasonal experiences',
   'Ylläs': 'Fell village charm with authentic Lappish flavors',
   Tornio: 'Border town character and Finnish soul food',
-  'Haparanda (Sweden)': 'Cross the border for Swedish-Nordic fusion',
-};
-
-const featuredImages: Record<string, string> = {
-  'Nili': DINING.featNili,
-  'Ravintola Gustav': DINING.featGustav,
-  'Kammi at Hullu Poro': DINING.featKammi,
-  'Aanaar': DINING.featAanaar,
-  'Star Arctic Hotel Restaurant': DINING.featStarArctic,
-  'SnowRestaurant': DINING.featSnowRestaurant,
+  Haparanda: 'Cross the border for Swedish-Nordic fusion',
+  'Sodankylä': 'River town traditions and the Midnight Sun Film Festival crowd',
+  Pyhätunturi: 'Fell-top dining at the southern gateway to wilderness',
+  Luosto: 'Amethyst-mountain village with kelo log restaurants',
+  Muonio: 'Aurora-belt highlands above the tree line',
+  Hetta: 'Enontekiö hub at the edge of three borders',
+  Kuusamo: 'Karelian-Lapland crossroads + Ruka resort',
+  Kemijärvi: 'Northernmost rail town with riverside tables',
+  Salla: 'Wilderness pass + Finland\'s easternmost ski village',
+  Posio: 'Lake-and-craft heart of Riisitunturi country',
 };
 
 /** Cities where GYG has good food-tour inventory (verified 2026-05-03). */
@@ -43,24 +55,27 @@ const cityGygCatalog: Record<string, { citySlug: string; sid: string }> = {
   Levi: { citySlug: 'levi-l52242', sid: 'restaurants_levi_food_tours' },
 };
 
-/** Per-city Hotels.com SID convention. */
 function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
 }
 
-/* Featured: wide horizontal card with image left, text right */
+function description(r: Restaurant) {
+  return r.curatedDescription || r.editorialSummary || '';
+}
+
 function FeaturedCard({ r }: { r: Restaurant }) {
-  const img = featuredImages[r.name];
+  const desc = description(r);
+  const badge = partnershipBadge(r.partnership);
 
   return (
     <div className="group relative rounded-2xl overflow-hidden border border-amber/20 hover:border-amber/40 transition-all duration-500 hover:shadow-[0_0_60px_-15px_rgba(245,158,11,0.2)]">
       <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-amber/0 via-amber/5 to-amber/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
       <div className="relative flex flex-col sm:flex-row min-h-[280px]">
-        {img && (
+        {r.photo && (
           <div className="relative sm:w-2/5 min-h-[220px] sm:min-h-0 shrink-0 overflow-hidden">
             <img
-              src={img}
+              src={r.photo}
               alt={r.name}
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
@@ -69,10 +84,15 @@ function FeaturedCard({ r }: { r: Restaurant }) {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-night/20 to-night/90 hidden sm:block" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-night/20 to-night/90 sm:hidden" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_70%,rgba(245,158,11,0.08)_0%,transparent_60%)]" />
-            <div className="absolute top-4 left-4">
+            <div className="absolute top-4 left-4 flex flex-wrap gap-2">
               <span className="bg-amber text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-amber/30 flex items-center gap-1.5">
-                <Flame size={10} /> Featured
+                <Flame size={10} /> City Top Pick
               </span>
+              {badge && (
+                <span className="bg-amber/95 text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <Award size={10} /> {badge}
+                </span>
+              )}
             </div>
           </div>
         )}
@@ -82,40 +102,65 @@ function FeaturedCard({ r }: { r: Restaurant }) {
             <h3 className="font-heading text-2xl sm:text-3xl tracking-wide text-white leading-tight group-hover:text-amber transition-colors duration-300">
               {r.name}
             </h3>
-            <p className="text-sm text-white/40 mt-1">{r.type}</p>
+            <div className="flex items-center gap-3 mt-1 text-sm text-white/40">
+              {r.type && <span>{r.type}</span>}
+              {r.rating && (
+                <span className="inline-flex items-center gap-1 text-amber/80">
+                  <Star size={12} className="fill-amber" />
+                  {r.rating.toFixed(1)}
+                  {r.reviewCount && <span className="text-white/35 ml-1">({r.reviewCount.toLocaleString('en')})</span>}
+                </span>
+              )}
+            </div>
           </div>
 
-          <p className="text-xs text-amber/70 font-medium uppercase tracking-wider mb-3">{r.cuisine}</p>
-          <p className="text-sm text-white/50 leading-relaxed mb-4 flex-1">{r.description}</p>
+          {r.cuisine && (
+            <p className="text-xs text-amber/70 font-medium uppercase tracking-wider mb-3">{r.cuisine}</p>
+          )}
+          {desc && (
+            <p className="text-sm text-white/55 leading-relaxed mb-4 flex-1">{desc}</p>
+          )}
 
-          {r.price && (
+          {r.priceRange && (
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1 h-1 rounded-full bg-amber/40" />
-              <p className="text-xs text-amber/60 font-medium">{r.price}</p>
+              <p className="text-xs text-amber/60 font-medium">{r.priceRange}</p>
             </div>
           )}
 
-          <div className="flex flex-wrap gap-2 mb-4">
-            {r.highlights.slice(0, 3).map((h) => (
-              <span
-                key={h}
-                className="text-xs bg-amber/10 text-amber/80 border border-amber/15 px-2.5 py-1 rounded-full"
-              >
-                {h}
-              </span>
-            ))}
-          </div>
-
-          {r.website && (
-            <a
-              href={r.website}
-              target="_blank"
-              rel="sponsored nofollow noopener"
-              className="inline-flex items-center gap-1.5 text-amber hover:text-white text-sm font-medium transition-colors duration-200 no-underline mt-auto group-hover:gap-2.5"
-            >
-              Visit {r.name} website <ExternalLink size={14} />
-            </a>
+          {r.highlights && r.highlights.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {r.highlights.slice(0, 3).map((h) => (
+                <span
+                  key={h}
+                  className="text-xs bg-amber/10 text-amber/80 border border-amber/15 px-2.5 py-1 rounded-full"
+                >
+                  {h}
+                </span>
+              ))}
+            </div>
           )}
+
+          <div className="flex flex-wrap items-center gap-3 mt-auto">
+            {r.website && (
+              <a
+                href={r.website}
+                target="_blank"
+                rel="sponsored nofollow noopener"
+                className="inline-flex items-center gap-1.5 text-amber hover:text-white text-sm font-medium transition-colors duration-200 no-underline"
+              >
+                Website <ExternalLink size={14} />
+              </a>
+            )}
+            <a
+              href={r.googleMapsUrl}
+              target="_blank"
+              rel="nofollow noopener"
+              className="inline-flex items-center gap-1.5 text-arctic-cyan hover:text-white text-sm font-medium transition-colors duration-200 no-underline"
+            >
+              Google Maps <ExternalLink size={14} />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -123,8 +168,10 @@ function FeaturedCard({ r }: { r: Restaurant }) {
 }
 
 function RestaurantCard({ r }: { r: Restaurant }) {
+  const desc = description(r);
+
   return (
-    <div className="group relative rounded-2xl p-6 transition-all duration-300 flex flex-col cursor-pointer bg-white/[0.03] border border-white/8 hover:bg-gradient-to-br hover:from-amber/6 hover:via-white/[0.04] hover:to-transparent hover:border-amber/25 hover:shadow-[0_0_30px_-10px_rgba(245,158,11,0.1)]">
+    <div className="group relative rounded-2xl p-5 transition-all duration-300 flex flex-col bg-white/[0.03] border border-white/8 hover:bg-gradient-to-br hover:from-amber/6 hover:via-white/[0.04] hover:to-transparent hover:border-amber/25 hover:shadow-[0_0_30px_-10px_rgba(245,158,11,0.1)]">
       <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-amber/0 to-transparent group-hover:via-amber/30 transition-all duration-500" />
 
       <div className="mb-3">
@@ -134,39 +181,64 @@ function RestaurantCard({ r }: { r: Restaurant }) {
           </h3>
           <UtensilsCrossed size={14} className="text-white/10 group-hover:text-amber/30 transition-colors duration-300 shrink-0 mt-1.5" />
         </div>
-        <p className="text-sm text-white/35 mt-1">{r.type}</p>
+        <div className="flex items-center gap-3 mt-1 text-sm text-white/35">
+          {r.type && <span className="truncate">{r.type}</span>}
+          {r.rating && (
+            <span className="inline-flex items-center gap-1 text-amber/70 shrink-0">
+              <Star size={11} className="fill-amber/70" />
+              {r.rating.toFixed(1)}
+            </span>
+          )}
+          {r.priceRange && <span className="text-amber/60 shrink-0">{r.priceRange}</span>}
+        </div>
       </div>
 
-      <p className="text-xs text-amber/60 font-medium uppercase tracking-wider mb-2">{r.cuisine}</p>
-      <p className="text-sm text-white/45 leading-relaxed mb-3 flex-1">{r.description}</p>
-      {r.price && (
-        <div className="flex items-center gap-2 mb-3">
-          <span className="w-1 h-1 rounded-full bg-amber/30" />
-          <p className="text-xs text-amber/50 font-medium">{r.price}</p>
+      {r.cuisine && (
+        <p className="text-xs text-amber/60 font-medium uppercase tracking-wider mb-2">{r.cuisine}</p>
+      )}
+      {desc && (
+        <p className="text-sm text-white/45 leading-relaxed mb-3 flex-1 line-clamp-4">{desc}</p>
+      )}
+
+      {r.highlights && r.highlights.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-3">
+          {r.highlights.slice(0, 3).map((h) => (
+            <span
+              key={h}
+              className="text-xs bg-amber/8 text-amber/70 border border-amber/10 px-2.5 py-1 rounded-full group-hover:border-amber/20 transition-colors duration-300"
+            >
+              {h}
+            </span>
+          ))}
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2 mb-4">
-        {r.highlights.slice(0, 3).map((h) => (
-          <span
-            key={h}
-            className="text-xs bg-amber/8 text-amber/70 border border-amber/10 px-2.5 py-1 rounded-full group-hover:border-amber/20 transition-colors duration-300"
+      <div className="flex flex-wrap items-center gap-3 mt-auto pt-2">
+        {r.website && (
+          <a
+            href={r.website}
+            target="_blank"
+            rel="sponsored nofollow noopener"
+            className="inline-flex items-center gap-1 text-amber/85 hover:text-amber text-xs font-medium transition-all no-underline"
           >
-            {h}
-          </span>
-        ))}
-      </div>
-
-      {r.website && (
+            Website →
+          </a>
+        )}
         <a
-          href={r.website}
+          href={r.googleMapsUrl}
           target="_blank"
-          rel="sponsored nofollow noopener"
-          className="inline-flex items-center gap-1.5 text-amber/80 hover:text-amber text-sm font-medium transition-all duration-200 no-underline mt-auto group-hover:gap-2"
+          rel="nofollow noopener"
+          className="inline-flex items-center gap-1 text-arctic-cyan/80 hover:text-arctic-cyan text-xs font-medium transition-all no-underline"
         >
-          Visit website <ExternalLink size={14} />
+          Maps →
         </a>
-      )}
+        {r.openingHours && r.openingHours.length > 0 && (
+          <span className="ml-auto inline-flex items-center gap-1 text-white/30 text-[11px]">
+            <Clock size={11} />
+            {r.openingHours.length} day schedule
+          </span>
+        )}
+      </div>
     </div>
   );
 }
@@ -179,7 +251,7 @@ export default function Restaurants() {
     if (location.hash) {
       const hash = location.hash.slice(1).toLowerCase();
       const match = cities.find(
-        (c) => c.toLowerCase().replace(/[^a-z]/g, '') === hash
+        (c) => c.toLowerCase().replace(/[^a-z]/g, '') === hash,
       );
       if (match) {
         setActiveCity(match);
@@ -197,7 +269,7 @@ export default function Restaurants() {
       <title>All Restaurants in Lapland — by City | LaplandDining</title>
       <meta
         name="description"
-        content={`${restaurants.length} verified restaurants across ${cities.length} Arctic destinations — Rovaniemi, Levi, Inari, Saariselkä, Kemi, Ylläs, Tornio and Haparanda. Filter by city, see prices, book a stay nearby.`}
+        content={`${restaurants.length} verified restaurants across ${cities.length} Lapland destinations — Rovaniemi, Levi, Inari, Saariselkä, Kemi, Ylläs, Sodankylä, Kuusamo, Hetta and more. Top picks per city, ratings, opening hours, hotel CTAs.`}
       />
       <link rel="canonical" href="https://laplanddining.com/restaurants" />
       <meta name="robots" content="index, follow" />
@@ -223,10 +295,28 @@ export default function Restaurants() {
             item: {
               '@type': 'Restaurant',
               name: r.name,
-              servesCuisine: r.cuisine,
-              priceRange: r.price,
+              servesCuisine: r.cuisine ?? r.type ?? 'Lappish',
+              priceRange: r.priceRange,
               ...(r.website ? { url: r.website } : {}),
-              address: { '@type': 'PostalAddress', addressLocality: r.city, addressCountry: 'FI' },
+              ...(r.rating ? {
+                aggregateRating: {
+                  '@type': 'AggregateRating',
+                  ratingValue: r.rating,
+                  reviewCount: r.reviewCount,
+                },
+              } : {}),
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: r.address,
+                addressLocality: r.city,
+                addressCountry: r.country === 'Finland' ? 'FI' : 'SE',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: r.location.latitude,
+                longitude: r.location.longitude,
+              },
+              ...(r.googleMapsUrl ? { hasMap: r.googleMapsUrl } : {}),
             },
           })),
         })}
@@ -245,7 +335,6 @@ export default function Restaurants() {
         <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/40 to-night" />
         <div className="absolute inset-0 bg-gradient-to-t from-amber/8 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(245,158,11,0.06)_0%,transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_70%,rgba(245,158,11,0.04)_0%,transparent_50%)]" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -261,9 +350,9 @@ export default function Restaurants() {
           </h1>
 
           <p className="text-white/55 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-            {restaurants.length} verified restaurants across {cities.length} Arctic destinations.
+            {restaurants.length} verified restaurants across {cities.length} Lapland destinations.
             <br className="hidden sm:block" />
-            Fire-cooked Sámi feasts, candlelit fine dining, and Northern Lights on the side.
+            Top picks per city — Sámi feasts, fell-top fine dining, kelo log kotas, and ice restaurants.
           </p>
 
           <div className="flex items-center justify-center gap-6 text-white/30 text-xs uppercase tracking-wider">
@@ -318,6 +407,8 @@ export default function Restaurants() {
             if (cityRestaurants.length === 0) return null;
             const slug = city.toLowerCase().replace(/[^a-z]/g, '');
             const gyg = cityGygCatalog[city];
+            const topPick = cityRestaurants.find((r) => r.topPick);
+            const others = cityRestaurants.filter((r) => !r.topPick);
 
             return (
               <div key={city} id={slug} className="mb-20 last:mb-0 scroll-mt-36">
@@ -340,13 +431,9 @@ export default function Restaurants() {
                       <div>
                         <div className="flex items-center gap-3 mb-2">
                           <MapPin size={20} className="text-amber" />
-                          <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide">
-                            {city}
-                          </h2>
+                          <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide">{city}</h2>
                         </div>
-                        <p className="text-white/50 text-sm max-w-lg">
-                          {cityVibes[city]}
-                        </p>
+                        <p className="text-white/50 text-sm max-w-lg">{cityVibes[city]}</p>
                       </div>
                       <span className="bg-white/10 backdrop-blur-sm border border-white/10 text-white/70 text-sm font-medium px-4 py-2 rounded-full shrink-0">
                         {cityRestaurants.length} restaurant{cityRestaurants.length > 1 ? 's' : ''}
@@ -355,20 +442,16 @@ export default function Restaurants() {
                   </div>
                 </div>
 
-                {/* Featured restaurants — wide cards */}
-                {cityRestaurants.filter((r) => r.featured).length > 0 && (
-                  <div className="space-y-5 mb-6">
-                    {cityRestaurants.filter((r) => r.featured).map((r) => (
-                      <FeaturedCard key={r.name} r={r} />
-                    ))}
+                {topPick && (
+                  <div className="mb-6">
+                    <FeaturedCard r={topPick} />
                   </div>
                 )}
 
-                {/* Regular restaurants — grid */}
-                {cityRestaurants.filter((r) => !r.featured).length > 0 && (
+                {others.length > 0 && (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
-                    {cityRestaurants.filter((r) => !r.featured).map((r) => (
-                      <RestaurantCard key={r.name} r={r} />
+                    {others.map((r) => (
+                      <RestaurantCard key={r.googlePlaceId} r={r} />
                     ))}
                   </div>
                 )}
@@ -425,16 +508,19 @@ export default function Restaurants() {
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6">
           <Flame size={32} className="text-amber/60 mx-auto mb-4" />
           <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide mb-4">
-            Every Restaurant is Real & Verified
+            Curated from {restaurants.length} verified restaurants
           </h2>
           <p className="text-white/50 leading-relaxed mb-4">
-            No fictional listings. Every restaurant on LaplandDining is a real establishment,
-            verified through official sources and local knowledge. We only feature places
-            worth your journey to the Arctic.
+            Catalogue sourced from Google Places (rating × review count, fast-food chains
+            excluded), then editorially picked top-1 per city by the LaplandVibes team.
+            Updated {restaurants[0]?.lastVerified || '—'}.
           </p>
           <p className="text-white/30 text-sm">
-            Prices shown are indicative and may change. Always check the latest menus
-            and prices on each restaurant's own website.
+            Are you a restaurant owner? Verified Partner listings get hand-curated copy,
+            menu highlights, and an upgraded card.{' '}
+            <a href="mailto:info@laplandvibes.com" className="text-amber/70 hover:text-amber underline">
+              info@laplandvibes.com
+            </a>
           </p>
         </div>
       </section>

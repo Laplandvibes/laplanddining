@@ -1,7 +1,7 @@
 import { Leaf, Droplets, Mountain, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
-import { gygCategoryLink } from '../lib/gyg';
+import { gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
 
 const localIngredients = [
@@ -283,7 +283,7 @@ export default function LocalFood() {
               Book a Lapland stay
             </AffiliateCTA>
             <a
-              href={gygCategoryLink('lapland-l662', 'cooking-classes', 'local_food_cooking_classes')}
+              href={gygSearchLink('lapland cooking class food tour', 'local_food_cooking_classes')}
               target="_blank"
               rel="sponsored nofollow noopener"
               className="inline-flex items-center gap-2 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline"

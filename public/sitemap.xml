@@ -10,8 +10,26 @@
     <loc>https://laplanddining.com/restaurants</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://laplanddining.com/restaurants#rovaniemi</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#levi</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#kittilä</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#inari</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#saariselkä</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#kemi</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#ylläs</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#tornio</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#haparanda</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#sodankylä</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#pyhätunturi</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#luosto</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#muonio</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#hetta</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#kuusamo</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#kemijärvi</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#salla</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://laplanddining.com/restaurants#posio</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url>
     <loc>https://laplanddining.com/fine-dining</loc>
     <lastmod>2026-05-03</lastmod>

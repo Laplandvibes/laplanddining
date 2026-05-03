@@ -1,0 +1,3032 @@
+[
+  {
+    "name": "Nili Restaurant",
+    "city": "Rovaniemi",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.5,
+    "reviewCount": 3027,
+    "priceRange": "€€€",
+    "priceLevelRaw": "PRICE_LEVEL_EXPENSIVE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "editorialSummary": "Warm, family-owned eatery with traditional local decor serving specialties from Lapland & Finland.",
+    "website": "http://www.nili.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=7978924453178894179&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJvySHpvNLK0QRY-dnGYTVum4",
+    "address": "Valtakatu 20, 96200 Rovaniemi, Finland",
+    "location": {
+      "latitude": 66.5019116,
+      "longitude": 25.734393999999998
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 5:00 – 10:00 PM",
+      "Wednesday: 5:00 – 10:00 PM",
+      "Thursday: 5:00 – 10:00 PM",
+      "Friday: 5:00 – 10:00 PM",
+      "Saturday: 5:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "photo": "/images/restaurants/rovaniemi-nili-restaurant.jpg",
+    "photosAvailable": 10,
+    "slug": "rovaniemi-nili-restaurant",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Cafe & Bar 21",
+    "city": "Rovaniemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 2394,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "coffee_shop",
+      "wine_bar",
+      "ice_cream_shop",
+      "dessert_shop",
+      "confectionery",
+      "breakfast_restaurant",
+      "cocktail_bar",
+      "bar",
+      "bakery",
+      "cafe",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "coffee_shop",
+    "website": "http://www.cafebar21.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12732279704012589575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJn15XxfJLK0QRBwqWqu4ksrA",
+    "address": "Rovakatu 21, 96200 Rovaniemi, Finland",
+    "location": {
+      "latitude": 66.50124699999999,
+      "longitude": 25.727103
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 8:00 PM",
+      "Tuesday: 11:00 AM – 8:00 PM",
+      "Wednesday: 11:00 AM – 8:00 PM",
+      "Thursday: 11:00 AM – 8:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 11:00 AM – 9:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "rovaniemi-cafe-bar-21",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Roka Street Bistro",
+    "city": "Rovaniemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 2367,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "bistro",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "bistro",
+    "website": "https://ravintolaroka.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12240872561890560923&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ2eJzLo1LK0QRmwtQeL1Q4Kk",
+    "address": "Ainonkatu 3, 96200 Rovaniemi, Finland",
+    "location": {
+      "latitude": 66.5017208,
+      "longitude": 25.7253352
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "rovaniemi-restaurant-roka-street-bistro",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Hanki",
+    "city": "Rovaniemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.9,
+    "reviewCount": 1091,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "korean_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "korean_restaurant",
+    "googleMapsUrl": "https://maps.google.com/?cid=13959877116308893090&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJd7lPxc9LK0QRoi2yUUZyu8E",
+    "address": "Korkalonkatu 2 C, 96100 Rovaniemi, Finland",
+    "location": {
+      "latitude": 66.4978107,
+      "longitude": 25.7295505
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 9:00 PM",
+      "Tuesday: 11:00 AM – 9:00 PM",
+      "Wednesday: 11:00 AM – 9:00 PM",
+      "Thursday: 11:00 AM – 9:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "rovaniemi-hanki",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Arctic Restaurant",
+    "city": "Rovaniemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 1003,
+    "priceRange": "€€€",
+    "priceLevelRaw": "PRICE_LEVEL_EXPENSIVE",
+    "types": [
+      "scandinavian_restaurant",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "scandinavian_restaurant",
+    "website": "http://www.arcticrestaurant.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=4765407510169823777&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJGSeUpvNLK0QRIaqm3eEgIkI",
+    "address": "Valtakatu 18, 96200 Rovaniemi, Finland",
+    "location": {
+      "latitude": 66.5014885,
+      "longitude": 25.7346288
+    },
+    "openingHours": [
+      "Monday: 5:00 – 10:00 PM",
+      "Tuesday: 5:00 – 10:00 PM",
+      "Wednesday: 5:00 – 10:00 PM",
+      "Thursday: 5:00 – 10:00 PM",
+      "Friday: 5:00 – 10:00 PM",
+      "Saturday: 5:00 – 10:00 PM",
+      "Sunday: 5:00 – 10:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "rovaniemi-arctic-restaurant",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Panoramic Restaurant TUIKKU",
+    "city": "Levi",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 2283,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "scenic_spot",
+      "buffet_restaurant",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://tuikku.fi/fi/tuikku",
+    "googleMapsUrl": "https://maps.google.com/?cid=10192758948865494032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ7zWSIUxN0kUREMxPrEL0c40",
+    "address": "Tuikuntie 11/ Tunturitie 421 Levi, 99130 Sirkka, Finland",
+    "location": {
+      "latitude": 67.7910686,
+      "longitude": 24.846556999999997
+    },
+    "openingHours": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ],
+    "photo": "/images/restaurants/levi-panoramic-restaurant-tuikku.jpg",
+    "photosAvailable": 10,
+    "slug": "levi-panoramic-restaurant-tuikku",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Ämmilä",
+    "city": "Levi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 994,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.hulluporo.fi/ravintolat/ravintola-ammila/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13795065705906285423&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJkzP4nFpN0kURb6u3jSvrcb8",
+    "address": "Rakkavaarantie 3, 99130 Sirkka, Finland",
+    "location": {
+      "latitude": 67.8079475,
+      "longitude": 24.8105202
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 11:00 PM",
+      "Thursday: 11:00 AM – 11:00 PM",
+      "Friday: 11:00 AM – 11:00 PM",
+      "Saturday: 11:00 AM – 11:00 PM",
+      "Sunday: 11:00 AM – 11:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "levi-ravintola-ammila",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ristorante Renna",
+    "city": "Levi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 968,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "italian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "italian_restaurant",
+    "website": "http://www.hulluporo.fi/ravintolat/ristorante-renna/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13442625462586375842&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ26X0QFBN0kURov4U2qLMjbo",
+    "address": "Hiihtäjänkuja 7, 99130 Sirkka, Finland",
+    "location": {
+      "latitude": 67.8059103,
+      "longitude": 24.8069906
+    },
+    "openingHours": [
+      "Monday: 12:00 – 10:00 PM",
+      "Tuesday: 12:00 – 10:00 PM",
+      "Wednesday: 12:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "levi-ristorante-renna",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Wanha Hullu Poro",
+    "city": "Levi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.1,
+    "reviewCount": 1117,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "bar",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "editorialSummary": "A resort with a range of accommodations (hotel, hostel & villas), plus multiple restaurants & a spa.",
+    "website": "http://www.hulluporo.fi/ravintolat/wanha-hullu-poro/",
+    "googleMapsUrl": "https://maps.google.com/?cid=4226184423833077309&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJsXhynlpN0kURPQbcmVdspjo",
+    "address": "Rakkavaarantie 5, 99130 Sirkka, Finland",
+    "location": {
+      "latitude": 67.8080787,
+      "longitude": 24.812266700000002
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 5:00 – 11:00 PM",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 5:00 – 11:00 PM",
+      "Friday: 5:00 PM – 4:00 AM",
+      "Saturday: 5:00 PM – 4:00 AM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "levi-ravintola-wanha-hullu-poro",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Grill it! Levi",
+    "city": "Levi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 406,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://raflaamo.fi/fi/ravintola/kittila/grill-it-levi",
+    "googleMapsUrl": "https://maps.google.com/?cid=2405347291273454802&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJgUFPYgJN0kUR0mTNCZ6CYSE",
+    "address": "Tähtitie 5, 99130 Kittilä, Finland",
+    "location": {
+      "latitude": 67.8054386,
+      "longitude": 24.8068211
+    },
+    "openingHours": [
+      "Monday: 5:00 – 10:00 PM",
+      "Tuesday: 5:00 – 10:00 PM",
+      "Wednesday: 5:00 – 10:00 PM",
+      "Thursday: 5:00 – 10:00 PM",
+      "Friday: 5:00 – 10:00 PM",
+      "Saturday: 5:00 – 10:00 PM",
+      "Sunday: 5:00 – 10:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "levi-grill-it-levi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Saamen Kammi",
+    "city": "Kittilä",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.5,
+    "reviewCount": 248,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.kammi.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12694436891613815373&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJd2up905N0kURTWJBTBizK7A",
+    "address": "Kätkänrannantie 2, 99130 Kittilä, Finland",
+    "location": {
+      "latitude": 67.8055098,
+      "longitude": 24.796186
+    },
+    "photo": "/images/restaurants/kittila-saamen-kammi.jpg",
+    "photosAvailable": 10,
+    "slug": "kittila-saamen-kammi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Riihi Restaurant",
+    "city": "Kittilä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.5,
+    "reviewCount": 184,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://immelkartano.fi/ravintola-riihi",
+    "googleMapsUrl": "https://maps.google.com/?cid=4206428914487846500&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJqRNr4LGy00URZOb6pM88YDo",
+    "address": "Tuomikuruntie 136, 99130 Kittilä, Finland",
+    "location": {
+      "latitude": 67.7909524,
+      "longitude": 24.7838356
+    },
+    "photosAvailable": 10,
+    "slug": "kittila-riihi-restaurant",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Boneless Levi Center",
+    "city": "Kittilä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 141,
+    "types": [
+      "restaurant",
+      "chicken_restaurant",
+      "hamburger_restaurant",
+      "american_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.boneless.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=7542008568809668932&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJI6moDwBN0kURREHahNWYqmg",
+    "address": "Hissitie 3, 99130 Kittilä, Finland",
+    "location": {
+      "latitude": 67.8045686,
+      "longitude": 24.803669199999998
+    },
+    "openingHours": [
+      "Monday: 12:00 PM – 12:00 AM",
+      "Tuesday: 12:00 PM – 12:00 AM",
+      "Wednesday: 12:00 PM – 12:00 AM",
+      "Thursday: 12:00 PM – 12:00 AM",
+      "Friday: 12:00 PM – 12:00 AM",
+      "Saturday: 12:00 PM – 12:00 AM",
+      "Sunday: 12:00 PM – 12:00 AM"
+    ],
+    "photosAvailable": 10,
+    "slug": "kittila-boneless-levi-center",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Kekäle",
+    "city": "Kittilä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 75,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://kekale.levihotelspa.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=11668461413563684304&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ15wJlt1N0kUR0NXQXtWz7qE",
+    "address": "99130 Kittilä, Finland",
+    "location": {
+      "latitude": 67.8044623,
+      "longitude": 24.8024062
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 6:00 – 10:00 PM",
+      "Wednesday: 6:00 – 10:00 PM",
+      "Thursday: 6:00 – 10:00 PM",
+      "Friday: 5:00 – 10:00 PM",
+      "Saturday: 5:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "kittila-kekale",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Muotkan Ruoktu Tunturikylä",
+    "city": "Inari",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.7,
+    "reviewCount": 627,
+    "types": [
+      "restaurant",
+      "campground",
+      "lodging",
+      "travel_agency",
+      "food",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.muotkanruoktu.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13304100007974171595&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJTV_WZOkVzUURy3OSF3ioobg",
+    "address": "Karigasniementie 2281, 99910 Inari, Finland",
+    "location": {
+      "latitude": 69.2515106,
+      "longitude": 26.8173694
+    },
+    "openingHours": [
+      "Monday: 8:00 AM – 10:00 PM",
+      "Tuesday: 8:00 AM – 10:00 PM",
+      "Wednesday: 8:00 AM – 10:00 PM",
+      "Thursday: 8:00 AM – 10:00 PM",
+      "Friday: 8:00 AM – 10:00 PM",
+      "Saturday: 8:00 AM – 10:00 PM",
+      "Sunday: 8:00 AM – 10:00 PM"
+    ],
+    "photo": "/images/restaurants/inari-muotkan-ruoktu-tunturikyla.jpg",
+    "photosAvailable": 10,
+    "slug": "inari-muotkan-ruoktu-tunturikyla",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Aanaar",
+    "city": "Inari",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.8,
+    "reviewCount": 464,
+    "priceRange": "€€€",
+    "priceLevelRaw": "PRICE_LEVEL_EXPENSIVE",
+    "types": [
+      "fine_dining_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "fine_dining_restaurant",
+    "website": "https://www.restaurantaanaar.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=5118771422955467089&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJIVtH72oHzUURUXGuH32HCUc",
+    "address": "Saarikoskentie 2, 99870 Inari, Finland",
+    "location": {
+      "latitude": 68.90625659999999,
+      "longitude": 27.0066959
+    },
+    "openingHours": [
+      "Monday: 5:00 – 9:00 PM",
+      "Tuesday: 5:00 – 9:00 PM",
+      "Wednesday: 5:00 – 9:00 PM",
+      "Thursday: 5:00 – 9:00 PM",
+      "Friday: 5:00 – 9:00 PM",
+      "Saturday: 5:00 – 9:00 PM",
+      "Sunday: 5:00 – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "inari-restaurant-aanaar",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Arctic River Resort",
+    "city": "Inari",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 321,
+    "types": [
+      "resort_hotel",
+      "camping_cabin",
+      "campground",
+      "hotel",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "resort_hotel",
+    "website": "http://www.arcticriverresort.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13718223548673722446&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJVbzueiMVzUURTogYoKLrYL4",
+    "address": "Näverniementie 17, 99800 Inari, Finland",
+    "location": {
+      "latitude": 68.6432573,
+      "longitude": 27.525700399999998
+    },
+    "photosAvailable": 10,
+    "slug": "inari-arctic-river-resort",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Gastropub Giitu",
+    "city": "Inari",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.7,
+    "reviewCount": 265,
+    "types": [
+      "restaurant",
+      "gastropub",
+      "bar",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.gastropubgiitu.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=4240269766891345913&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ28sX2mBDzUUR-RdjF-N22Do",
+    "address": "Revontulentie 1, 99830 Saariselkä, Finland",
+    "location": {
+      "latitude": 68.4201795,
+      "longitude": 27.424861099999998
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 12:00 PM – 12:00 AM",
+      "Saturday: 12:00 PM – 12:00 AM",
+      "Sunday: 12:00 PM – 12:00 AM"
+    ],
+    "photosAvailable": 10,
+    "slug": "inari-gastropub-giitu",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant and Night Club Kultahippu",
+    "city": "Inari",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 337,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://hotellikultahippu.fi/en/restaurant-nightclub/",
+    "googleMapsUrl": "https://maps.google.com/?cid=841212124752992678&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJE05DRegVzUURplmndPiVrAs",
+    "address": "Petsamontie 28, 99800 Inari, Finland",
+    "location": {
+      "latitude": 68.6600813,
+      "longitude": 27.541095499999997
+    },
+    "openingHours": [
+      "Monday: 6:30 AM – 11:00 PM",
+      "Tuesday: 6:30 AM – 11:00 PM",
+      "Wednesday: 6:30 AM – 11:00 PM",
+      "Thursday: 6:30 AM – 11:00 PM",
+      "Friday: 6:30 AM – 11:00 PM",
+      "Saturday: 7:00 AM – 11:00 PM",
+      "Sunday: 7:00 AM – 11:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "inari-restaurant-and-night-club-kultahippu",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Fieno",
+    "city": "Saariselkä",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.8,
+    "reviewCount": 529,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://fieno.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=14957783461476630960&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJf1rbx69DzUURsAGH-M64lM8",
+    "address": "Kiveliöntie 1, 99830 Saariselkä, Finland",
+    "location": {
+      "latitude": 68.4195817,
+      "longitude": 27.4070003
+    },
+    "openingHours": [
+      "Monday: 2:00 – 9:00 PM",
+      "Tuesday: 2:00 – 9:00 PM",
+      "Wednesday: 2:00 – 9:00 PM",
+      "Thursday: 2:00 – 9:00 PM",
+      "Friday: 2:00 – 9:00 PM",
+      "Saturday: 2:00 – 9:00 PM",
+      "Sunday: Closed"
+    ],
+    "photo": "/images/restaurants/saariselka-fieno.jpg",
+    "photosAvailable": 10,
+    "slug": "saariselka-fieno",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "ScanBurger Saariselkä",
+    "city": "Saariselkä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 599,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "hamburger_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "hamburger_restaurant",
+    "website": "https://www.nestesaariselka.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=18233033708466625210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJU5HWWxBDzUURulrgGo6_CP0",
+    "address": "Kiveliöntie 8, 99830 Saariselkä, Finland",
+    "location": {
+      "latitude": 68.42239789999999,
+      "longitude": 27.4091088
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 7:30 PM",
+      "Tuesday: 11:00 AM – 7:30 PM",
+      "Wednesday: 11:00 AM – 7:30 PM",
+      "Thursday: 11:00 AM – 7:30 PM",
+      "Friday: 11:00 AM – 7:30 PM",
+      "Saturday: 11:00 AM – 7:30 PM",
+      "Sunday: 11:00 AM – 7:30 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "saariselka-scanburger-saariselka",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Lieggâ Láávu",
+    "city": "Saariselkä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.1,
+    "reviewCount": 198,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "coffee_shop",
+      "ski_resort",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "sports_activity_location",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://skisaariselka.com/fi/ravintola/",
+    "googleMapsUrl": "https://maps.google.com/?cid=8201073931717334924&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJWdqpaHRDzUURjFe6LEoR0HE",
+    "address": "Kullanhuuhtojantie, 99830 Saariselkä, Finland",
+    "location": {
+      "latitude": 68.425326,
+      "longitude": 27.4515989
+    },
+    "openingHours": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "saariselka-liegga-laavu",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Bistro & Cafe Kuukkeli",
+    "city": "Saariselkä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.1,
+    "reviewCount": 89,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.facebook.com/bistrocafekuukkeli",
+    "googleMapsUrl": "https://maps.google.com/?cid=3873261189961906327&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJvziMW5JDzUURl3j85YeWwDU",
+    "address": "Saariseläntie 1, 99830 Saariselkä, Finland",
+    "location": {
+      "latitude": 68.41984769999999,
+      "longitude": 27.409216299999997
+    },
+    "openingHours": [
+      "Monday: 9:00 AM – 6:00 PM",
+      "Tuesday: 9:00 AM – 6:00 PM",
+      "Wednesday: 9:00 AM – 6:00 PM",
+      "Thursday: 9:00 AM – 6:00 PM",
+      "Friday: 9:00 AM – 6:00 PM",
+      "Saturday: 9:00 AM – 6:00 PM",
+      "Sunday: 9:00 AM – 6:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "saariselka-bistro-cafe-kuukkeli",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Gáldu Restaurant",
+    "city": "Saariselkä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 5,
+    "reviewCount": 30,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://galdu.fi/food/",
+    "googleMapsUrl": "https://maps.google.com/?cid=5759599810939603265&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJJaoz_Z1DzUURQUl2K4M17k8",
+    "address": "Viskitie 1, 99830 Saariselkä, Finland",
+    "location": {
+      "latitude": 68.3930144,
+      "longitude": 27.3984223
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 6:00 – 10:00 PM",
+      "Wednesday: 6:00 – 10:00 PM",
+      "Thursday: 6:00 – 10:00 PM",
+      "Friday: 6:00 – 10:00 PM",
+      "Saturday: 6:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "saariselka-galdu-restaurant",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Kemin Puistopaviljonki Ky",
+    "city": "Kemi",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 1605,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.puistopaviljonki.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=15529816735259325549&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJfwLqSC5L1UURbXQMTAr-hNc",
+    "address": "Meripuistonpolku 11, 94100 Kemi, Finland",
+    "location": {
+      "latitude": 65.73167459999999,
+      "longitude": 24.5555082
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 8:00 PM",
+      "Tuesday: 10:30 AM – 8:00 PM",
+      "Wednesday: 10:30 AM – 8:00 PM",
+      "Thursday: 10:30 AM – 7:00 PM",
+      "Friday: 10:30 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 1:00 – 8:00 PM"
+    ],
+    "photo": "/images/restaurants/kemi-kemin-puistopaviljonki-ky.jpg",
+    "photosAvailable": 10,
+    "slug": "kemi-kemin-puistopaviljonki-ky",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Pieni Lohikäärme Ravintola (chinese restaurant)",
+    "city": "Kemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.1,
+    "reviewCount": 505,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "chinese_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "chinese_restaurant",
+    "website": "https://www.facebook.com/jos.nguyen.5",
+    "googleMapsUrl": "https://maps.google.com/?cid=1043541154707926389&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJDSPgailL1UURde3duiZnew4",
+    "address": "Valtakatu 11 - 13, 94100 Kemi, Finland",
+    "location": {
+      "latitude": 65.73752400000001,
+      "longitude": 24.5643334
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 6:00 PM",
+      "Tuesday: 10:30 AM – 6:00 PM",
+      "Wednesday: 10:30 AM – 6:00 PM",
+      "Thursday: 10:30 AM – 6:00 PM",
+      "Friday: 10:30 AM – 6:00 PM",
+      "Saturday: 10:30 AM – 6:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "kemi-pieni-lohikaarme-ravintola-chinese-restaurant",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Sataman Krouwi ja Perämeren Jähti",
+    "city": "Kemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 310,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.satamankrouwi.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=1787379577317676243&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ8QV9vzJL1UUR09TOcEEMzhg",
+    "address": "Rantabulevardi 10, 94100 Kemi, Finland",
+    "location": {
+      "latitude": 65.73095049999999,
+      "longitude": 24.5527172
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 10:30 AM – 3:00 PM",
+      "Wednesday: 10:30 AM – 3:00 PM",
+      "Thursday: 10:30 AM – 3:00 PM",
+      "Friday: 10:30 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "kemi-sataman-krouwi-ja-perameren-jahti",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Mori Kemi",
+    "city": "Kemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 265,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.ravintolamori.fi/kemi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=15515460400073973604&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJkW8x2LRL1UURZJ8MiQf9Udc",
+    "address": "Valtakatu 12, 94100 Kemi, Finland",
+    "location": {
+      "latitude": 65.7374937,
+      "longitude": 24.566016299999998
+    },
+    "openingHours": [
+      "Monday: 10:00 AM – 10:00 PM",
+      "Tuesday: 10:00 AM – 10:00 PM",
+      "Wednesday: 10:00 AM – 10:00 PM",
+      "Thursday: 10:00 AM – 10:00 PM",
+      "Friday: 10:00 AM – 10:00 PM",
+      "Saturday: 11:00 AM – 10:00 PM",
+      "Sunday: 11:00 AM – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "kemi-ravintola-mori-kemi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Rantamakasiini",
+    "city": "Kemi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 225,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://merihovi.fi/ravintolat/ravintola-rantamakasiini/",
+    "googleMapsUrl": "https://maps.google.com/?cid=11474794178828085597&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJI5g-0zFL1UURXanEc4KoPp8",
+    "address": "Rantabulevardi 8, 94100 Kemi, Finland",
+    "location": {
+      "latitude": 65.7310754,
+      "longitude": 24.5525543
+    },
+    "photosAvailable": 10,
+    "slug": "kemi-rantamakasiini",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Rouhe",
+    "city": "Ylläs",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 1457,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.ravintolarouhe.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=14817504906929652037&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJi-G83CoShEQRRUEm0zRaos0",
+    "address": "Lompolontie 3, 95970 Äkäslompolo, Finland",
+    "location": {
+      "latitude": 67.6054467,
+      "longitude": 24.1392438
+    },
+    "openingHours": [
+      "Monday: 1:00 – 9:00 PM",
+      "Tuesday: 1:00 – 9:00 PM",
+      "Wednesday: 1:00 – 9:00 PM",
+      "Thursday: 1:00 – 9:00 PM",
+      "Friday: 1:00 – 9:00 PM",
+      "Saturday: 1:00 – 9:00 PM",
+      "Sunday: 1:00 – 9:00 PM"
+    ],
+    "photo": "/images/restaurants/yllas-ravintola-rouhe.jpg",
+    "photosAvailable": 10,
+    "slug": "yllas-ravintola-rouhe",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ylläskammi",
+    "city": "Ylläs",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 850,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.yllasravintolat.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=14701552029177937626&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJzcWWarm-00UR2v4Sqq1nBsw",
+    "address": "Yllästunturin huippu, 95980 Ylläs, Finland",
+    "location": {
+      "latitude": 67.5642581,
+      "longitude": 24.2258109
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 4:30 PM",
+      "Tuesday: 10:30 AM – 4:30 PM",
+      "Wednesday: 10:30 AM – 4:30 PM",
+      "Thursday: 10:30 AM – 4:30 PM",
+      "Friday: 10:30 AM – 4:30 PM",
+      "Saturday: 10:30 AM – 4:30 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "yllas-yllaskammi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ylläksen Eväskori & Joiku Pub",
+    "city": "Ylläs",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 830,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.evaskori.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=2694036416760989037&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJz4GUV8i400URbUUB8dgjYyU",
+    "address": "Jakolantie 2, 95970 Äkäslompolo, Finland",
+    "location": {
+      "latitude": 67.6040115,
+      "longitude": 24.150419199999998
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 12:00 PM – 2:00 AM",
+      "Saturday: 9:00 PM – 2:00 AM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "yllas-yllaksen-evaskori-joiku-pub",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Otso Ylläsjärvi",
+    "city": "Ylläs",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 650,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.ravintolaotso.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=4499323020672883127&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJBb3YM0m800URt9nx6HLOcD4",
+    "address": "Iso-Ylläksentie 1, 95980 Ylläsjärvi, Finland",
+    "location": {
+      "latitude": 67.5272818,
+      "longitude": 24.3034589
+    },
+    "openingHours": [
+      "Monday: 12:00 – 10:00 PM",
+      "Tuesday: 12:00 – 10:00 PM",
+      "Wednesday: 12:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "yllas-ravintola-otso-yllasjarvi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Ylläskota",
+    "city": "Ylläs",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 304,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "scandinavian_restaurant",
+      "fine_dining_restaurant",
+      "wine_bar",
+      "bistro",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "scandinavian_restaurant",
+    "website": "http://yllaskota.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=6186048737018454316&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ1ffWx06800URLCE9HY1C2VU",
+    "address": "Vaeltajantie 2, 95980 Ylläsjärvi, Finland",
+    "location": {
+      "latitude": 67.550898,
+      "longitude": 24.256076
+    },
+    "openingHours": [
+      "Monday: 3:00 – 10:00 PM",
+      "Tuesday: 3:00 – 10:00 PM",
+      "Wednesday: 3:00 – 10:00 PM",
+      "Thursday: 3:00 – 10:00 PM",
+      "Friday: 3:00 – 10:00 PM",
+      "Saturday: 3:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "yllas-restaurant-yllaskota",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Golden Flower Tornio",
+    "city": "Tornio",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 1048,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "chinese_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "chinese_restaurant",
+    "website": "http://www.goldenflower.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=3453094928320472218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJNazYkp1H1UURmqQ-worb6y8",
+    "address": "Eliaksenkatu 8, 95400 Tornio, Finland",
+    "location": {
+      "latitude": 65.8461894,
+      "longitude": 24.1474703
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 4:00 PM",
+      "Tuesday: 11:00 AM – 8:00 PM",
+      "Wednesday: 11:00 AM – 8:00 PM",
+      "Thursday: 11:00 AM – 8:00 PM",
+      "Friday: 11:00 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 7:00 PM"
+    ],
+    "photo": "/images/restaurants/tornio-ravintola-golden-flower-tornio.jpg",
+    "photosAvailable": 10,
+    "slug": "tornio-ravintola-golden-flower-tornio",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Umpitunneli",
+    "city": "Tornio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4,
+    "reviewCount": 725,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://umpitunneli.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=11287546779703100586&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ9ynDBZ1H1UURqsTO_f1rpZw",
+    "address": "Hallituskatu 15, 95400 Tornio, Finland",
+    "location": {
+      "latitude": 65.8469444,
+      "longitude": 24.1525
+    },
+    "openingHours": [
+      "Monday: 1:00 – 10:00 PM",
+      "Tuesday: 1:00 – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 1:00 PM – 4:00 AM",
+      "Sunday: 1:00 – 8:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "tornio-ravintola-umpitunneli",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Mustaparran Päämaja",
+    "city": "Tornio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 522,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.mustapartahotels.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13134158956659335901&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJaxo1dZ5H1UUR3eIxu_vnRbY",
+    "address": "Hallituskatu 6, 95400 Tornio, Finland",
+    "location": {
+      "latitude": 65.84454579999999,
+      "longitude": 24.146579199999998
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 1:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "tornio-mustaparran-paamaja",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Tmi Hevi Pizza",
+    "city": "Tornio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.7,
+    "reviewCount": 256,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "pizza_restaurant",
+    "website": "https://www.facebook.com/Hevis-Pizza-Bar--175725145851/",
+    "googleMapsUrl": "https://maps.google.com/?cid=1561292075662797133&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJwRhUwp1H1UURTWmD6N7SqhU",
+    "address": "Hallituskatu 10, 95400 Tornio, Finland",
+    "location": {
+      "latitude": 65.8452135,
+      "longitude": 24.147805599999998
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 11:00 AM – 5:00 PM",
+      "Wednesday: 11:00 AM – 5:00 PM",
+      "Thursday: 11:00 AM – 5:00 PM",
+      "Friday: 11:00 AM – 7:00 PM",
+      "Saturday: 1:00 – 5:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "tornio-tmi-hevi-pizza",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Amico Pizza & Kebab restaurant",
+    "city": "Tornio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 160,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.facebook.com/amicotornio",
+    "googleMapsUrl": "https://maps.google.com/?cid=4617335964203694936&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJxe8jeWJH1UURWDv_gpgSFEA",
+    "address": "Torikatu 15d, 95400 Tornio, Finland",
+    "location": {
+      "latitude": 65.84698010000001,
+      "longitude": 24.1448142
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 9:00 PM",
+      "Tuesday: 10:30 AM – 9:00 PM",
+      "Wednesday: 10:30 AM – 9:00 PM",
+      "Thursday: 10:30 AM – 9:00 PM",
+      "Friday: 10:30 AM – 9:00 PM",
+      "Saturday: 11:30 AM – 9:00 PM",
+      "Sunday: 11:30 AM – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "tornio-amico-pizza-kebab-restaurant",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Kukkolaforsen Turist & Konferens",
+    "city": "Haparanda",
+    "country": "Sweden",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 1609,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "hotel",
+      "cottage",
+      "lodging",
+      "food",
+      "event_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.kukkolaforsen.se/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12542923074238622886&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJia3ekmY-1UURpiwLrRRqEa4",
+    "address": "Kukkolaforsen 184, 953 91 Haparanda, Sweden",
+    "location": {
+      "latitude": 65.9626019,
+      "longitude": 24.038911799999997
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 8:00 PM",
+      "Sunday: Closed"
+    ],
+    "photo": "/images/restaurants/haparanda-kukkolaforsen-turist-konferens.jpg",
+    "photosAvailable": 10,
+    "slug": "haparanda-kukkolaforsen-turist-konferens",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Haparanda Stadshotell",
+    "city": "Haparanda",
+    "country": "Sweden",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 782,
+    "types": [
+      "hotel",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "hotel",
+    "editorialSummary": "Low-key rooms in a refined hotel with free breakfast, plus a pub & an elegant dining hall.",
+    "website": "http://www.haparandastadshotell.se/",
+    "googleMapsUrl": "https://maps.google.com/?cid=14680601238342138448&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJTUKnl6BH1UURUPqKjAv5u8s",
+    "address": "Torget 7, 953 31 Haparanda, Sweden",
+    "location": {
+      "latitude": 65.8356021,
+      "longitude": 24.1352117
+    },
+    "photosAvailable": 10,
+    "slug": "haparanda-haparanda-stadshotell",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Leilani Restaurant",
+    "city": "Haparanda",
+    "country": "Sweden",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4,
+    "reviewCount": 851,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.restaurangleilani.com/",
+    "googleMapsUrl": "https://maps.google.com/?cid=1950639597240154706&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ-x6DqKBH1UURUnpP9mAQEhs",
+    "address": "Köpmansgatan 15, 953 32 Haparanda, Sweden",
+    "location": {
+      "latitude": 65.8351151,
+      "longitude": 24.1326828
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 6:00 PM",
+      "Tuesday: 10:30 AM – 9:00 PM",
+      "Wednesday: 10:30 AM – 9:00 PM",
+      "Thursday: 10:30 AM – 9:00 PM",
+      "Friday: 10:30 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "haparanda-leilani-restaurant",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Cape East",
+    "city": "Haparanda",
+    "country": "Sweden",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.1,
+    "reviewCount": 662,
+    "types": [
+      "hotel",
+      "rv_park",
+      "massage_spa",
+      "massage",
+      "lodging",
+      "restaurant",
+      "food",
+      "health",
+      "point_of_interest",
+      "service",
+      "spa",
+      "establishment"
+    ],
+    "primaryType": "hotel",
+    "editorialSummary": "Upmarket riverfront spa hotel featuring a contemporary restaurant, plus indoor & outdoor pools.",
+    "website": "https://capeeast.se/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13881619713380206581&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJG1PVEd5H1UUR9UcW05RrpcA",
+    "address": "Sundholmen 1, 953 33 Haparanda, Sweden",
+    "location": {
+      "latitude": 65.820042,
+      "longitude": 24.1443071
+    },
+    "openingHours": [
+      "Monday: 7:00 AM – 10:00 PM",
+      "Tuesday: 7:00 AM – 10:00 PM",
+      "Wednesday: 7:00 AM – 10:00 PM",
+      "Thursday: 7:00 AM – 10:00 PM",
+      "Friday: 7:00 AM – 2:00 AM",
+      "Saturday: 7:00 AM – 2:00 AM",
+      "Sunday: 7:00 AM – 10:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "haparanda-cape-east",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Haparanda Sushi & Indiskt",
+    "city": "Haparanda",
+    "country": "Sweden",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 236,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.sushiochindiskt.se/",
+    "googleMapsUrl": "https://maps.google.com/?cid=17524998931182642607&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJfylnztZH1UURr-U9Lq1NNfM",
+    "address": "Krannigatan 5, 953 31 Haparanda, Sweden",
+    "location": {
+      "latitude": 65.8434138,
+      "longitude": 24.1384628
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 8:00 PM",
+      "Tuesday: 10:30 AM – 8:00 PM",
+      "Wednesday: 10:30 AM – 8:00 PM",
+      "Thursday: 10:30 AM – 8:00 PM",
+      "Friday: 10:30 AM – 9:00 PM",
+      "Saturday: 10:30 AM – 9:00 PM",
+      "Sunday: 12:30 – 7:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "haparanda-haparanda-sushi-indiskt",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Sodankylän turkinpippuri",
+    "city": "Sodankylä",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 1076,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "pizza_restaurant",
+    "website": "https://sodankylanturkinpippuri.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=17577975173276865499&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJNaWuo8Mr00UR25PNuUmD8fM",
+    "address": "Jäämerentie 25, 99600 Sodankylä, Finland",
+    "location": {
+      "latitude": 67.42026,
+      "longitude": 26.590760699999997
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 9:00 PM",
+      "Tuesday: 10:30 AM – 9:00 PM",
+      "Wednesday: 10:30 AM – 9:00 PM",
+      "Thursday: 10:30 AM – 9:00 PM",
+      "Friday: 10:30 AM – 10:00 PM",
+      "Saturday: 10:30 AM – 10:00 PM",
+      "Sunday: 11:00 AM – 9:00 PM"
+    ],
+    "photo": "/images/restaurants/sodankyla-sodankylan-turkinpippuri.jpg",
+    "photosAvailable": 10,
+    "slug": "sodankyla-sodankylan-turkinpippuri",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Punakettu",
+    "city": "Sodankylä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 962,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.punakettu.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=8018294702711495881&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJma4ZRPLFLEQRydyDo4y0Rm8",
+    "address": "Luostontie 4, 99555 Luosto, Finland",
+    "location": {
+      "latitude": 67.15633389999999,
+      "longitude": 26.916042299999997
+    },
+    "openingHours": [
+      "Monday: 12:00 – 8:00 PM",
+      "Tuesday: 12:00 – 8:00 PM",
+      "Wednesday: 12:00 – 8:00 PM",
+      "Thursday: 12:00 – 8:00 PM",
+      "Friday: 12:00 – 8:00 PM",
+      "Saturday: 12:00 – 8:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "sodankyla-restaurant-punakettu",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Tori-Kioski Mikkola Ky",
+    "city": "Sodankylä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 625,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "fast_food_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "fast_food_restaurant",
+    "website": "http://www.torikioski.fi/hinnasto/eng",
+    "googleMapsUrl": "https://maps.google.com/?cid=10674378074180604054&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ4bE7F8Ir00URltDAnU0CI5Q",
+    "address": "Ojennustie 10, 99600 Sodankylä, Finland",
+    "location": {
+      "latitude": 67.4181783,
+      "longitude": 26.5895393
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 9:00 PM",
+      "Tuesday: 10:30 AM – 9:00 PM",
+      "Wednesday: 10:30 AM – 9:00 PM",
+      "Thursday: 10:30 AM – 9:00 PM",
+      "Friday: 10:30 AM – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "sodankyla-tori-kioski-mikkola-ky",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Piitsi Pubi",
+    "city": "Sodankylä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 191,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://piitsipubi.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=1427544247602964914&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJw9X8Azcr00URsumGA-6nzxM",
+    "address": "Jutotie, 99600 Sodankylä, Finland",
+    "location": {
+      "latitude": 67.41731419999999,
+      "longitude": 26.605556999999997
+    },
+    "openingHours": [
+      "Monday: 5:00 PM – 12:00 AM",
+      "Tuesday: 5:00 PM – 12:00 AM",
+      "Wednesday: 5:00 PM – 12:00 AM",
+      "Thursday: 5:00 PM – 12:00 AM",
+      "Friday: 5:00 PM – 1:30 AM",
+      "Saturday: 5:00 PM – 1:30 AM",
+      "Sunday: 5:00 PM – 12:00 AM"
+    ],
+    "photosAvailable": 10,
+    "slug": "sodankyla-piitsi-pubi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Sodankylän Olohuone Tähti",
+    "city": "Sodankylä",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.8,
+    "reviewCount": 97,
+    "types": [
+      "restaurant",
+      "pub",
+      "bar",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.olohuonetahti.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13299479660783797030&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ_aeh9Ygr00URJgONrkk-kbg",
+    "address": "Jäämerentie 11 B, 99600 Sodankylä, Finland",
+    "location": {
+      "latitude": 67.4170925,
+      "longitude": 26.593829
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 2:00 – 9:00 PM",
+      "Wednesday: 2:00 – 9:00 PM",
+      "Thursday: 2:00 – 9:00 PM",
+      "Friday: 2:00 PM – 2:00 AM",
+      "Saturday: 2:00 PM – 2:00 AM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "sodankyla-sodankylan-olohuone-tahti",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Café Loimu",
+    "city": "Pyhätunturi",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 159,
+    "types": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "coffee_shop",
+    "website": "http://www.cafeloimu.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=11375587636830161781&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJdUzUC3vqLEQRdUuWbK803p0",
+    "address": "Luontotie 1, 98530 Pyhätunturi, Finland",
+    "location": {
+      "latitude": 67.0194569,
+      "longitude": 27.251522599999998
+    },
+    "openingHours": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "photo": "/images/restaurants/pyhatunturi-cafe-loimu.jpg",
+    "photosAvailable": 10,
+    "slug": "pyhatunturi-cafe-loimu",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Popolo",
+    "city": "Pyhätunturi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 131,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.ravintolapopolo.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=2454491647511353489&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJCYByGKbrLEQRkdgTIiYbECI",
+    "address": "Kultakeronkatu 21, 98530 Pelkosenniemi, Finland",
+    "location": {
+      "latitude": 67.02240189999999,
+      "longitude": 27.2419357
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 11:00 PM",
+      "Thursday: 11:00 AM – 11:00 PM",
+      "Friday: 11:00 AM – 11:00 PM",
+      "Saturday: 11:00 AM – 11:00 PM",
+      "Sunday: 11:00 AM – 11:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "pyhatunturi-ravintola-popolo",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Sunday Morning Resort",
+    "city": "Pyhätunturi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.8,
+    "reviewCount": 77,
+    "types": [
+      "hotel",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "lodging",
+    "website": "https://sundaymorning.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=7146217609365504612&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ3yT-pBHBLEQRZELfrQ13LGM",
+    "address": "Huhanniemi 1, 98530 Pelkosenniemi, Finland",
+    "location": {
+      "latitude": 67.0569229,
+      "longitude": 27.2098083
+    },
+    "openingHours": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "photosAvailable": 10,
+    "slug": "pyhatunturi-sunday-morning-resort",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Bistro Vanha Pappila",
+    "city": "Pyhätunturi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 5,
+    "reviewCount": 54,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.facebook.com/p/Bistro-Vanha-Pappila-61560568358521/",
+    "googleMapsUrl": "https://maps.google.com/?cid=9035269434291785980&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJwRKrKrPpLEQR_BDo-K25Y30",
+    "address": "Kirkkotie 12, 98500 Pelkosenniemi, Finland",
+    "location": {
+      "latitude": 67.1093257,
+      "longitude": 27.506957399999997
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "pyhatunturi-bistro-vanha-pappila",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant CAMP Kitchen & Bar - Pyhätunturi",
+    "city": "Pyhätunturi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 105,
+    "types": [
+      "family_restaurant",
+      "wine_bar",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "family_restaurant",
+    "website": "https://campkitchen.fi/pyha/",
+    "googleMapsUrl": "https://maps.google.com/?cid=17531577354325731648&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJudCrtkbrLEQRQCnerLesTPM",
+    "address": "Kultakeronkatu 21 Hotelli, 98530 Pyhätunturi, Finland",
+    "location": {
+      "latitude": 67.0215417,
+      "longitude": 27.242389199999998
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 7:30 – 10:00 AM",
+      "Saturday: 7:30 – 10:00 AM",
+      "Sunday: 7:30 – 10:00 AM"
+    ],
+    "photosAvailable": 10,
+    "slug": "pyhatunturi-restaurant-camp-kitchen-bar-pyhatunturi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Keloravintola Lapland Hotels Luostotunturi",
+    "city": "Luosto",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 156,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "editorialSummary": "Unfussy rooms & cozy cottages in a casual hotel offering a spa, 3 restaurants & live music.",
+    "website": "https://www.laplandhotels.com/FI/lapin-hotellit/luosto/lapland-hotels-luostotunturi/ravintolat.html",
+    "googleMapsUrl": "https://maps.google.com/?cid=15893576474237469067&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJPx28EWHPLEQRiwFudZhTkdw",
+    "address": "Luppokeino 2, 99555 Luosto, Finland",
+    "location": {
+      "latitude": 67.15354119999999,
+      "longitude": 26.9152706
+    },
+    "photo": "/images/restaurants/luosto-keloravintola-lapland-hotels-luostotunturi.jpg",
+    "photosAvailable": 10,
+    "slug": "luosto-keloravintola-lapland-hotels-luostotunturi",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola RuusuSuola",
+    "city": "Luosto",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 115,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.ravintolaruususuola.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=6742562620702808091&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJyXxrB9wr00URG1jR2vpkkl0",
+    "address": "Jäämerentie 28, 99600 Sodankylä, Finland",
+    "location": {
+      "latitude": 67.4195846,
+      "longitude": 26.589976399999998
+    },
+    "openingHours": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "luosto-ravintola-ruususuola",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Luoston Hovi Ravintola",
+    "city": "Luosto",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 125,
+    "types": [
+      "restaurant",
+      "bar",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://luosto.fi/yritys/ravintola-luostonhovi",
+    "googleMapsUrl": "https://maps.google.com/?cid=6709554329840953512&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJlwbjdmHPLEQRqKhaPx0gHV0",
+    "address": "Ellitsantie 6, 99555 Luosto, Finland",
+    "location": {
+      "latitude": 67.1554209,
+      "longitude": 26.916705699999998
+    },
+    "openingHours": [
+      "Monday: 12:00 – 10:00 PM",
+      "Tuesday: 12:00 – 10:00 PM",
+      "Wednesday: 12:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "luosto-luoston-hovi-ravintola",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Skiknööli",
+    "city": "Luosto",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 31,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.luosto.fi/fi/page/ski-knooli",
+    "googleMapsUrl": "https://maps.google.com/?cid=1723255777046082955&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJcTDrKGfPLEQRi7X4v_876hc",
+    "address": "Offpiste 4, 99555 Sodankylä, Finland",
+    "location": {
+      "latitude": 67.1549224,
+      "longitude": 26.906288699999998
+    },
+    "photosAvailable": 9,
+    "slug": "luosto-skiknooli",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Arctic Sauna World",
+    "city": "Muonio",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.5,
+    "reviewCount": 324,
+    "types": [
+      "sauna",
+      "coffee_shop",
+      "wellness_center",
+      "spa",
+      "cafe",
+      "food_store",
+      "public_bath",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "health",
+      "establishment"
+    ],
+    "primaryType": "sauna",
+    "website": "https://harriniva.fi/en/arctic-sauna-world/",
+    "googleMapsUrl": "https://maps.google.com/?cid=15472841849360251421&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJjTzqBzcz0kURHXrq8K6TutY",
+    "address": "Jerisjärventie 91, 99300 Muonio, Finland",
+    "location": {
+      "latitude": 67.9445648,
+      "longitude": 24.0398693
+    },
+    "openingHours": [
+      "Monday: 3:00 – 10:00 PM",
+      "Tuesday: 3:00 – 10:00 PM",
+      "Wednesday: 3:00 – 10:00 PM",
+      "Thursday: 3:00 – 10:00 PM",
+      "Friday: 3:00 – 10:00 PM",
+      "Saturday: 3:00 – 10:00 PM",
+      "Sunday: 3:00 – 10:00 PM"
+    ],
+    "photo": "/images/restaurants/muonio-arctic-sauna-world.jpg",
+    "photosAvailable": 10,
+    "slug": "muonio-arctic-sauna-world",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Los Lompolo's",
+    "city": "Muonio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.7,
+    "reviewCount": 188,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.facebook.com/LosLompolos/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13378147163605262423&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJpandWPy500URV2CX__a5qLk",
+    "address": "Sivulantie 5 E, 95970 Äkäslompolo, Finland",
+    "location": {
+      "latitude": 67.60140799999999,
+      "longitude": 24.153730799999998
+    },
+    "openingHours": [
+      "Monday: 3:00 PM – 12:00 AM",
+      "Tuesday: 3:00 PM – 12:00 AM",
+      "Wednesday: 3:00 PM – 12:00 AM",
+      "Thursday: 3:00 PM – 12:00 AM",
+      "Friday: 3:00 PM – 12:00 AM",
+      "Saturday: 3:00 PM – 12:00 AM",
+      "Sunday: 3:00 PM – 12:00 AM"
+    ],
+    "photosAvailable": 10,
+    "slug": "muonio-los-lompolo-s",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Tunturikettu",
+    "city": "Muonio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 5,
+    "reviewCount": 55,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.tunturikettu.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12000560368978210919&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJST3thVW900URZ7CT6hKOiqY",
+    "address": "Iso-Ylläksentie 1 a 3, 95980 Kolari, Finland",
+    "location": {
+      "latitude": 67.5274483,
+      "longitude": 24.3030376
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "muonio-ravintola-tunturikettu",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Mirvan lounas ja kahvila",
+    "city": "Muonio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 55,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.facebook.com/p/Mirvan-Lounas-Kahvila-61554418971040/",
+    "googleMapsUrl": "https://maps.google.com/?cid=4153596806969585798&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJk3HLJwDV00URhnCeC0qKpDk",
+    "address": "Torniontie 110, 99300 Muonio, Finland",
+    "location": {
+      "latitude": 67.94609799999999,
+      "longitude": 23.6756489
+    },
+    "openingHours": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "muonio-mirvan-lounas-ja-kahvila",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Kahvila Kellokas (Ylläksen Kalakauppa)",
+    "city": "Muonio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.9,
+    "reviewCount": 31,
+    "types": [
+      "restaurant",
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.facebook.com/Kalakauppa/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12037516818392334799&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJjWFFKTe500URz8EQ0sTZDac",
+    "address": "Tunturintie 54, 95970 Äkäslompolo, Finland",
+    "location": {
+      "latitude": 67.5894004,
+      "longitude": 24.204061
+    },
+    "openingHours": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "muonio-kahvila-kellokas-yllaksen-kalakauppa",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Hotelli Hetan Majatalo",
+    "city": "Hetta",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.5,
+    "reviewCount": 307,
+    "types": [
+      "hotel",
+      "convention_center",
+      "inn",
+      "gym",
+      "sports_activity_location",
+      "lodging",
+      "event_venue",
+      "restaurant",
+      "food",
+      "health",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "primaryType": "hotel",
+    "editorialSummary": "Simple accommodations in a relaxed hotel offering complimentary breakfast, a bar & a sauna.",
+    "website": "http://www.hetan-majatalo.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=5424919257703480460&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJxRQqF7Py0UURjHyXilIvSUs",
+    "address": "Riekontie 8, 99400 Enontekiö, Finland",
+    "location": {
+      "latitude": 68.386984,
+      "longitude": 23.6407424
+    },
+    "photo": "/images/restaurants/hetta-hotelli-hetan-majatalo.jpg",
+    "photosAvailable": 10,
+    "slug": "hetta-hotelli-hetan-majatalo",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Roima Rantasavu",
+    "city": "Hetta",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.9,
+    "reviewCount": 81,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.roimarantasavu.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=16046206943302532843&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJoQbGym3z0UUR6z70zzKUr94",
+    "address": "Ounastie 401, 99400 Enontekiö, Finland",
+    "location": {
+      "latitude": 68.3949742,
+      "longitude": 23.6892909
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 11:00 AM – 6:00 PM",
+      "Wednesday: 11:00 AM – 6:00 PM",
+      "Thursday: 11:00 AM – 6:00 PM",
+      "Friday: 11:00 AM – 8:00 PM",
+      "Saturday: 11:00 AM – 6:00 PM",
+      "Sunday: 12:00 – 6:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "hetta-roima-rantasavu",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Niestapaikka",
+    "city": "Hetta",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 90,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "primaryType": "store",
+    "website": "http://niestapaikka.onverkossa.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=5814512484198278147&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJBfuXzkyN0UURA2S2OkxMsVA",
+    "address": "Ounastie 150, 99400 Enontekiö, Finland",
+    "location": {
+      "latitude": 68.3853425,
+      "longitude": 23.6397695
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 5:00 PM",
+      "Tuesday: 11:00 AM – 5:00 PM",
+      "Wednesday: 11:00 AM – 5:00 PM",
+      "Thursday: 11:00 AM – 5:00 PM",
+      "Friday: 11:00 AM – 5:00 PM",
+      "Saturday: 12:00 – 5:00 PM",
+      "Sunday: 12:00 – 5:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "hetta-niestapaikka",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ravintola Talonpöytä Kuusamo",
+    "city": "Kuusamo",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 649,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "catering_service",
+      "coffee_shop",
+      "cafe",
+      "food_delivery",
+      "pastry_shop",
+      "dessert_shop",
+      "confectionery",
+      "bakery",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "service",
+      "store",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "http://www.talonpoyta.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=17376130864603409325&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJqRi5sfpPKUQRrStja_VqJPE",
+    "address": "Kirkkotie 23, 93600 Kuusamo, Finland",
+    "location": {
+      "latitude": 65.9617784,
+      "longitude": 29.1821544
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 3:00 PM",
+      "Tuesday: 10:30 AM – 3:00 PM",
+      "Wednesday: 10:30 AM – 3:00 PM",
+      "Thursday: 10:30 AM – 3:00 PM",
+      "Friday: 10:30 AM – 3:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "photo": "/images/restaurants/kuusamo-ravintola-talonpoyta-kuusamo.jpg",
+    "photosAvailable": 10,
+    "slug": "kuusamo-ravintola-talonpoyta-kuusamo",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Ruka Trek | Gasthaus & Hard Trek Café",
+    "city": "Kuusamo",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.8,
+    "reviewCount": 235,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "bed_and_breakfast",
+      "lodging",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.rukatrek.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=9323382742884379249&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJi34WdzpVKUQRcWqhDjVPY4E",
+    "address": "Vuosselintie 8, 93830 Kuusamo, Finland",
+    "location": {
+      "latitude": 66.1561584,
+      "longitude": 29.1771621
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 5:00 PM",
+      "Tuesday: 11:00 AM – 5:00 PM",
+      "Wednesday: 11:00 AM – 5:00 PM",
+      "Thursday: 11:00 AM – 5:00 PM",
+      "Friday: 11:00 AM – 5:00 PM",
+      "Saturday: 11:00 AM – 5:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "kuusamo-ruka-trek-gasthaus-hard-trek-cafe",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Wanha Mestari",
+    "city": "Kuusamo",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 337,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "gastropub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "gastropub",
+    "website": "https://www.wanhamestari.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=10605798479392699492&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJB6ZMv1pPKUQRZHSUa4ZdL5M",
+    "address": "Ouluntaival 3, 93600 Kuusamo, Finland",
+    "location": {
+      "latitude": 65.9638065,
+      "longitude": 29.1870343
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 12:00 PM – 2:00 AM",
+      "Thursday: 12:00 PM – 2:00 AM",
+      "Friday: 12:00 PM – 2:00 AM",
+      "Saturday: 12:00 PM – 2:00 AM",
+      "Sunday: 12:00 PM – 12:00 AM"
+    ],
+    "photosAvailable": 10,
+    "slug": "kuusamo-restaurant-wanha-mestari",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Vegan Restaurant Karpalo",
+    "city": "Kuusamo",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 191,
+    "priceRange": "€",
+    "priceLevelRaw": "PRICE_LEVEL_INEXPENSIVE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://kasvisravintolakarpalo.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=13364031511248834306&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJO1DGBeVPKUQRAg8dk9qTdrk",
+    "address": "Kitkantie 37, 93600 Kuusamo, Finland",
+    "location": {
+      "latitude": 65.96958,
+      "longitude": 29.1790921
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 3:00 PM",
+      "Tuesday: 10:30 AM – 3:00 PM",
+      "Wednesday: 10:30 AM – 3:00 PM",
+      "Thursday: 10:30 AM – 3:00 PM",
+      "Friday: 10:30 AM – 3:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "kuusamo-vegan-restaurant-karpalo",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Vespino",
+    "city": "Kuusamo",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.4,
+    "reviewCount": 145,
+    "types": [
+      "italian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "italian_restaurant",
+    "website": "http://www.vespino.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12847750300157357398&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ1ZKEIz9VKUQRVi3M49NgTLI",
+    "address": "Rukatunturintie 12, 93830 Kuusamo, Finland",
+    "location": {
+      "latitude": 66.1665139,
+      "longitude": 29.139542499999997
+    },
+    "openingHours": [
+      "Monday: 2:00 – 11:00 PM",
+      "Tuesday: 2:00 – 11:00 PM",
+      "Wednesday: 2:00 – 11:00 PM",
+      "Thursday: 2:00 – 11:00 PM",
+      "Friday: 2:00 – 11:00 PM",
+      "Saturday: 2:00 – 11:00 PM",
+      "Sunday: 2:00 – 11:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "kuusamo-restaurant-vespino",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Mestarin Kievari",
+    "city": "Kemijärvi",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 558,
+    "types": [
+      "hotel",
+      "night_club",
+      "pub",
+      "bar",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "hotel",
+    "editorialSummary": "Warm rooms in a low-key hotel offering dining & a sauna, plus free Wi-Fi & breakfast.",
+    "website": "http://www.mestarinkievari.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=4134528724061286291&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJe2RURoeFLEQRk29SB_jLYDk",
+    "address": "Kirkkokatu 9, 98100 Kemijärvi, Finland",
+    "location": {
+      "latitude": 66.71604669999999,
+      "longitude": 27.431729999999998
+    },
+    "photo": "/images/restaurants/kemijarvi-mestarin-kievari.jpg",
+    "photosAvailable": 10,
+    "slug": "kemijarvi-mestarin-kievari",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Autogrilli Majakka",
+    "city": "Kemijärvi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.2,
+    "reviewCount": 309,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "hamburger_restaurant",
+      "fast_food_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "hamburger_restaurant",
+    "website": "http://www.autogrillimajakka.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=5735191746401381925&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJPdP_CpCFLEQRJa4By4F-l08",
+    "address": "Kuumaniemenkatu 2, 98100 Kemijärvi, Finland",
+    "location": {
+      "latitude": 66.7130444,
+      "longitude": 27.4318529
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 8:00 PM",
+      "Tuesday: 11:00 AM – 8:00 PM",
+      "Wednesday: 11:00 AM – 8:00 PM",
+      "Thursday: 11:00 AM – 8:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 2:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "kemijarvi-autogrilli-majakka",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Rosa Pizza Kebab",
+    "city": "Kemijärvi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.3,
+    "reviewCount": 255,
+    "priceRange": "€€",
+    "priceLevelRaw": "PRICE_LEVEL_MODERATE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.facebook.com/p/Rosa-pizza-kebab-100070527833626/",
+    "googleMapsUrl": "https://maps.google.com/?cid=810659727419410221&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJpxh72T6FLEQRLYeMHroKQAs",
+    "address": "Vapaudenkatu 4, 98100 Kemijärvi, Finland",
+    "location": {
+      "latitude": 66.7138269,
+      "longitude": 27.430896299999997
+    },
+    "openingHours": [
+      "Monday: 10:30 AM – 9:00 PM",
+      "Tuesday: 10:30 AM – 9:00 PM",
+      "Wednesday: 10:30 AM – 9:00 PM",
+      "Thursday: 10:30 AM – 9:00 PM",
+      "Friday: 10:30 AM – 9:00 PM",
+      "Saturday: 11:00 AM – 9:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "kemijarvi-rosa-pizza-kebab",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Susa's Bistro",
+    "city": "Kemijärvi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.7,
+    "reviewCount": 158,
+    "types": [
+      "bistro",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "bistro",
+    "website": "https://www.susasbistro.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=6287889304016977431&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ3YmgAoeFLEQRF_7o4AESQ1c",
+    "address": "Vapaudenkatu 6, 98100 Kemijärvi, Finland",
+    "location": {
+      "latitude": 66.7140651,
+      "longitude": 27.4325803
+    },
+    "openingHours": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "kemijarvi-restaurant-susa-s-bistro",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Jauri Resort",
+    "city": "Kemijärvi",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.8,
+    "reviewCount": 73,
+    "types": [
+      "travel_agency",
+      "lodging",
+      "restaurant",
+      "food",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "lodging",
+    "website": "https://www.jauriresort.com/",
+    "googleMapsUrl": "https://maps.google.com/?cid=15017651985620746639&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJr37ANa6FLEQRj0Fd--lqadA",
+    "address": "Hietaniemenkatu 9, 98100 Kemijärvi, Finland",
+    "location": {
+      "latitude": 66.7168378,
+      "longitude": 27.4161112
+    },
+    "photosAvailable": 10,
+    "slug": "kemijarvi-jauri-resort",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Sallatunturin Tuvat",
+    "city": "Salla",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.5,
+    "reviewCount": 547,
+    "types": [
+      "travel_agency",
+      "real_estate_agency",
+      "service",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "travel_agency",
+    "editorialSummary": "Rustic cabins & cottages (some with saunas) in a woodsy hotel offering a casual restaurant & a pub.",
+    "website": "http://www.sallatunturi.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=10750169341467312463&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ-Yu9cMZALEQRT0F0KQ9GMJU",
+    "address": "Hangasjärventie 1, 98900 Salla, Finland",
+    "location": {
+      "latitude": 66.7563921,
+      "longitude": 28.767909200000002
+    },
+    "openingHours": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "photo": "/images/restaurants/salla-sallatunturin-tuvat.jpg",
+    "photosAvailable": 10,
+    "slug": "salla-sallatunturin-tuvat",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Sallan Maja",
+    "city": "Salla",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.6,
+    "reviewCount": 58,
+    "types": [
+      "restaurant",
+      "service",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.ravintolasallanmaja.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=9206076413938647066&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJBdT0kMhGLEQRGkDq-7iNwn8",
+    "address": "Hautajärventie 32, 98900 Salla, Finland",
+    "location": {
+      "latitude": 66.79197529999999,
+      "longitude": 28.723096100000003
+    },
+    "openingHours": [
+      "Monday: 11:00 AM – 6:00 PM",
+      "Tuesday: 11:00 AM – 6:00 PM",
+      "Wednesday: 11:00 AM – 6:00 PM",
+      "Thursday: 11:00 AM – 6:00 PM, 9:00 PM – 4:00 AM",
+      "Friday: 9:00 PM – 4:00 AM",
+      "Saturday: 9:00 PM – 4:00 AM",
+      "Sunday: Closed"
+    ],
+    "photosAvailable": 10,
+    "slug": "salla-sallan-maja",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Restaurant Sky Kitchen & View",
+    "city": "Posio",
+    "country": "Finland",
+    "topPick": true,
+    "partnership": "editorial",
+    "rating": 4.5,
+    "reviewCount": 198,
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "restaurant",
+    "website": "https://www.kitchensky.fi/",
+    "googleMapsUrl": "https://maps.google.com/?cid=967180819831887812&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ1dMGxKlOK0QRxJemz9QdbA0",
+    "address": "Juhannuskalliontie, 96400 Rovaniemi, Finland",
+    "location": {
+      "latitude": 66.5018597,
+      "longitude": 25.7878431
+    },
+    "openingHours": [
+      "Monday: 5:00 – 10:00 PM",
+      "Tuesday: 5:00 – 10:00 PM",
+      "Wednesday: 5:00 – 10:00 PM",
+      "Thursday: 5:00 – 10:00 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: Closed"
+    ],
+    "photo": "/images/restaurants/posio-restaurant-sky-kitchen-view.jpg",
+    "photosAvailable": 10,
+    "slug": "posio-restaurant-sky-kitchen-view",
+    "lastVerified": "2026-05-03"
+  },
+  {
+    "name": "Pizzeria Posio",
+    "city": "Posio",
+    "country": "Finland",
+    "topPick": false,
+    "partnership": "editorial",
+    "rating": 4.8,
+    "reviewCount": 51,
+    "types": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "primaryType": "pizza_restaurant",
+    "website": "https://www.facebook.com/share/1bqZrHSGsv/?mibextid=wwXIfr",
+    "googleMapsUrl": "https://maps.google.com/?cid=11344922618161550242&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "googlePlaceId": "ChIJ9VGQQwDvK0QRolPQYwNDcZ0",
+    "address": "Posiontie 39, 97900 Posio, Finland",
+    "location": {
+      "latitude": 66.1105937,
+      "longitude": 28.166461299999998
+    },
+    "openingHours": [
+      "Monday: Closed",
+      "Tuesday: 10:30 AM – 8:00 PM",
+      "Wednesday: 10:30 AM – 8:00 PM",
+      "Thursday: 10:30 AM – 8:00 PM",
+      "Friday: 10:30 AM – 9:00 PM",
+      "Saturday: 10:30 AM – 9:00 PM",
+      "Sunday: 10:30 AM – 9:00 PM"
+    ],
+    "photosAvailable": 10,
+    "slug": "posio-pizzeria-posio",
+    "lastVerified": "2026-05-03"
+  }
+]

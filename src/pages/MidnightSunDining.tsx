@@ -1,7 +1,7 @@
 import { Sun, Sunset, MapPin, Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
-import { gygCategoryLink } from '../lib/gyg';
+import { gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
 
 /**
@@ -71,12 +71,14 @@ export default function MidnightSunDining() {
         })}
       </script>
 
-      {/* Hero — warm overlay, image-forward, neon yellow accent (per lv_summer_marketing_gap rule) */}
+      {/* Hero — warm overlay, image-forward, neon yellow accent (per lv_summer_marketing_gap rule).
+          AI-generated 2026-05-03 via Pollinations Flux for this exact placement — wooden lake
+          terrace, midnight sun gold, candles + reindeer fur, no people, editorial 16:9. */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <img
-          src={DINING.kotaFire}
-          alt="Open fire kota dinner during midnight sun in Finnish Lapland"
-          className="absolute inset-0 w-full h-full object-cover scale-105"
+          src="/images/midnight-sun-hero.jpg"
+          alt="Wooden lakeside terrace dinner during the Lapland midnight sun, candles lit and reindeer fur on the chairs"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           loading="eager"
           decoding="async"
           fetchPriority="high"
@@ -194,7 +196,7 @@ export default function MidnightSunDining() {
                     Stay in {c.name}
                   </AffiliateCTA>
                   <a
-                    href={gygCategoryLink('lapland-l662', 'food-tours', `midnight_sun_${c.name.toLowerCase()}`)}
+                    href={gygSearchLink(`${c.name} food tour summer`, `midnight_sun_${c.name.toLowerCase().replace(/[^a-z]/g, '')}`)}
                     target="_blank"
                     rel="sponsored nofollow noopener"
                     className="inline-flex items-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/15 text-white text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 no-underline"

@@ -1,18 +1,10 @@
-import { ChevronDown, MapPin, ExternalLink, Star, UtensilsCrossed, Flame, Sun } from 'lucide-react';
+import { ChevronDown, MapPin, Star, UtensilsCrossed, Flame, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
-import { gygCategoryLink } from '../lib/gyg';
+import CityTopPicksGrid from '../components/CityTopPicksGrid';
+import { gygCategoryLink, gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
 import { getFeaturedRestaurants, restaurants, cities } from '../data/restaurants';
-
-const featuredImages: Record<string, string> = {
-  'Nili': DINING.featNili,
-  'Ravintola Gustav': DINING.featGustav,
-  'Kammi at Hullu Poro': DINING.featKammi,
-  'Aanaar': DINING.featAanaar,
-  'Star Arctic Hotel Restaurant': DINING.featStarArctic,
-  'SnowRestaurant': DINING.featSnowRestaurant,
-};
 
 const cuisineCards = [
   {
@@ -37,6 +29,7 @@ const cuisineCards = [
 
 export default function Home() {
   const featured = getFeaturedRestaurants();
+  void featured; // legacy helper still exported, currently unused on the home grid (CityTopPicksGrid replaces it)
 
   return (
     <>
@@ -192,73 +185,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Featured Restaurants ──────────────────────────────────── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
-              Featured Restaurants
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Handpicked dining experiences that define Lapland's culinary identity.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featured.map((r) => (
-              <div
-                key={r.name}
-                className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-amber/30 transition-all duration-300 flex flex-col"
-              >
-                <div className="relative h-52 overflow-hidden shrink-0">
-                  <img
-                    src={featuredImages[r.name] || DINING.foodCloseup}
-                    alt={r.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute top-3 left-3 bg-amber/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs font-bold text-night">{r.price}</span>
-                  </div>
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="font-heading text-xl tracking-wide text-white mb-1">
-                    {r.name}
-                  </h3>
-                  <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
-                    <MapPin size={14} className="text-amber shrink-0" />
-                    {r.city}
-                    <span className="text-white/20">|</span>
-                    <span className="text-gray-500 truncate">{r.type}</span>
-                  </div>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-4 flex-1">{r.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {r.highlights.slice(0, 3).map((h) => (
-                      <span
-                        key={h}
-                        className="text-xs bg-amber/10 text-amber px-2 py-1 rounded-full"
-                      >
-                        {h}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              to="/restaurants"
-              className="inline-flex items-center gap-2 text-amber hover:text-amber-warm font-semibold transition-colors no-underline"
-            >
-              View All Restaurants
-              <ExternalLink size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* ── City Top Picks (18 cities, B2B-ready) ─────────────────── */}
+      <CityTopPicksGrid />
 
       {/* ── Cuisine Highlights ───────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night/95 aurora-glow">
@@ -404,14 +332,14 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { label: 'Lapland food tours', city: 'lapland-l662', cat: 'food-tours', sid: 'home_food_tours_lapland' },
-              { label: 'Cooking classes', city: 'lapland-l662', cat: 'cooking-classes', sid: 'home_cooking_lapland' },
-              { label: 'Rovaniemi food', city: 'rovaniemi-l2653', cat: 'food-and-drink', sid: 'home_food_rovaniemi' },
-              { label: 'Levi food & drink', city: 'levi-l52242', cat: 'food-and-drink', sid: 'home_food_levi' },
+              { label: 'Lapland food tours', href: gygSearchLink('lapland food tour', 'home_food_tours_lapland') },
+              { label: 'Cooking classes', href: gygSearchLink('lapland cooking class', 'home_cooking_lapland') },
+              { label: 'Rovaniemi food & drink', href: gygCategoryLink('rovaniemi-l2653', 'food-and-drink', 'home_food_rovaniemi') },
+              { label: 'Levi food & drink', href: gygCategoryLink('levi-l52242', 'food-and-drink', 'home_food_levi') },
             ].map((t) => (
               <a
                 key={t.label}
-                href={gygCategoryLink(t.city, t.cat, t.sid)}
+                href={t.href}
                 target="_blank"
                 rel="sponsored nofollow noopener"
                 className="inline-flex items-center gap-2 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white px-5 py-3 rounded-full font-semibold text-sm transition-all duration-200 no-underline min-h-[44px]"

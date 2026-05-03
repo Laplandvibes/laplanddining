@@ -15,7 +15,9 @@ export const DINING = {
   foodCloseup: driveImg('14UtGzLhuG_G209L7GwrlkF_-4TXN6bCh', 800),
   foodMoody: driveImg('1a5Niot9yqwdfV8TkQS5T6B49a1mI7Ppu', 800),
   kotaInside: driveImg('1gSVqhh-1kHs_CqPDMiGw9duHbSiBrr9l'),
-  kotaFire: driveImg('1HU36180AmZukxByMRoDJsyaXM7VOp4rg', 800),
+  // kotaFire is used as hero on /midnight-sun-dining + as full-bleed atmospheric
+  // section on /restaurants — needs full-width res, not the 800px thumbnail.
+  kotaFire: driveImg('1HU36180AmZukxByMRoDJsyaXM7VOp4rg', 1600),
   ingredients: driveImg('1GrxCvJywO8CGLuy9SMh-exaxBn90UiaX', 800),
   ingredientsAlt: driveImg('1fcernJ22p498YS_hsL5Esn3PnodE_pSy', 800),
   exterior: driveImg('16vrw8ikETu3OV4ip3h9VJiZPSNLSROyC'),

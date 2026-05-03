@@ -12,6 +12,11 @@
  *
  * For Hotels.com / EconomyBookings the worker is still the right route
  * because CJ attribution flows through `Referer`, not query string.
+ *
+ * 2026-05-03 (Vesa flag): GYG does NOT have category landing pages for
+ * `cooking-classes` or `food-tours` slugs on Lapland-l662 — both 404.
+ * Stable categories: `food-and-drink`. Anything more specific must use
+ * search URLs (search query fallback) which always render results.
  */
 
 const GYG_PARTNER_ID = 'VRMKD7N';
@@ -35,16 +40,38 @@ export function gygDeepLink(productPath: string, sid: string): string {
 }
 
 /**
- * Build a deep link to a category-level GYG search page (e.g. all food tours
- * in a city). Useful when we don't want to lock to a single product.
+ * Build a deep link to a category-level GYG page. Only `food-and-drink` is a
+ * verified-working slug for Lapland and Finnish cities (2026-05-03). Other
+ * food-related categories (`cooking-classes`, `food-tours`) 404 on Lapland —
+ * use {@link gygSearchLink} for those instead.
  *
- * @param citySlug   GYG city slug + ID, e.g. `lapland-l662`, `rovaniemi-l2653`.
- * @param category   Category path segment, e.g. `food-tours`, `cooking-classes`,
- *                   `wine-tastings`, `food-and-drink`.
+ * @param citySlug   GYG city slug + ID, e.g. `lapland-l662`, `rovaniemi-l2653`,
+ *                   `levi-l52242`.
+ * @param category   Category path segment. Use `food-and-drink` only.
  * @param sid        Per-placement campaign tag.
  */
-export function gygCategoryLink(citySlug: string, category: string, sid: string): string {
+export function gygCategoryLink(
+  citySlug: string,
+  category: 'food-and-drink',
+  sid: string,
+): string {
   const url = new URL(`https://www.getyourguide.com/${citySlug}/${category}/`);
+  url.searchParams.set('partner_id', GYG_PARTNER_ID);
+  url.searchParams.set('cmp', `lv_${SITE_TAG}_${sid}`);
+  return url.toString();
+}
+
+/**
+ * Build a GetYourGuide search URL. Always returns a results page even when
+ * no city/category combination matches — safer than gambling on category
+ * slugs that may 404 (e.g. `cooking-classes` for Lapland).
+ *
+ * @param query  Free-text search, e.g. `lapland cooking class`, `rovaniemi food tour`.
+ * @param sid    Per-placement campaign tag.
+ */
+export function gygSearchLink(query: string, sid: string): string {
+  const url = new URL(`https://www.getyourguide.com/s/`);
+  url.searchParams.set('q', query);
   url.searchParams.set('partner_id', GYG_PARTNER_ID);
   url.searchParams.set('cmp', `lv_${SITE_TAG}_${sid}`);
   return url.toString();
