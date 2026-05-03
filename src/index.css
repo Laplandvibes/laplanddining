@@ -14,9 +14,20 @@
   /* LaplandDining warm-amber variant tokens (this site's identity) */
   --color-amber: #F59E0B;
   --color-amber-warm: #D97706;
+  --color-amber-deep: #B45309;
   --color-night: #0F172A;
   --color-night-light: #1E293B;
   --color-gray-dark: #1F2937;
+
+  /* Editorial "fresh" card palette — cream cards float on the dark page,
+     giving food photography max contrast and an editorial-magazine feel. */
+  --color-cream: #FAF7F2;
+  --color-cream-warm: #F5EFE6;
+  --color-warm-ink: #1C1410;       /* dark text on cream — crisp, food-mag */
+  --color-warm-text: #44362A;      /* body text on cream */
+  --color-warm-muted: #87705C;     /* meta text on cream */
+  --color-spice: #C2410C;          /* warm red accent (paprika, autumn berry) */
+  --color-leaf: #4D7C0F;           /* fresh green accent (forest herb) */
 
   /* Canonical LV ecosystem tokens — required so shared/ components
      (Footer, CookieBanner, NewsletterPopup, Legal/*) render correctly.

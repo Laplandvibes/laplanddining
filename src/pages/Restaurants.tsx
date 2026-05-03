@@ -60,7 +60,7 @@ function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
 }
 
-/** Format the city's first restaurant photo or fall back to atmospheric. */
+/** Cream-on-dark hero card for the city top pick. */
 function FeaturedCard({ r }: { r: Restaurant }) {
   const body = composeCardBody(r);
   const cuisine = cuisineLabel(r);
@@ -68,12 +68,10 @@ function FeaturedCard({ r }: { r: Restaurant }) {
   const badge = partnershipBadge(r.partnership);
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden border border-amber/25 bg-gradient-to-br from-amber/[0.04] via-white/[0.02] to-night/0 hover:border-amber/50 transition-all duration-500">
-      <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-amber/0 via-amber/8 to-amber/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
+    <div className="group relative rounded-2xl overflow-hidden bg-cream shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)] hover:shadow-[0_40px_80px_-25px_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-all duration-500">
       <div className="relative grid grid-cols-1 md:grid-cols-12">
-        {/* Photo column — 5/12 on desktop, full on mobile */}
-        <div className="md:col-span-5 relative h-64 sm:h-72 md:h-auto md:min-h-[340px] overflow-hidden">
+        {/* Photo column */}
+        <div className="md:col-span-5 relative h-64 sm:h-72 md:h-auto md:min-h-[360px] overflow-hidden">
           {r.photo ? (
             <img
               src={r.photo}
@@ -83,30 +81,26 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               decoding="async"
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-amber/20 via-night to-night" />
+            <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-night/50 hidden md:block" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-night/85 md:hidden" />
 
-          {/* Top-pick + partnership badges */}
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-            <span className="bg-amber text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-amber/30 inline-flex items-center gap-1.5">
+            <span className="bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md inline-flex items-center gap-1.5">
               <Flame size={10} /> City Top Pick
             </span>
             {badge && (
-              <span className="bg-amber/95 text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-flex items-center gap-1.5">
-                <Award size={10} /> {badge}
+              <span className="bg-warm-ink text-cream text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
+                <Award size={10} className="text-amber" /> {badge}
               </span>
             )}
           </div>
 
-          {/* Rating pill bottom-right */}
           {r.rating && (
-            <div className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-night/85 backdrop-blur-sm border border-amber/40">
+            <div className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink shadow-md">
               <Star size={12} className="text-amber fill-amber" />
-              <span className="text-white text-sm font-bold">{r.rating.toFixed(1)}</span>
+              <span className="text-sm font-bold">{r.rating.toFixed(1)}</span>
               {r.reviewCount && (
-                <span className="text-white/55 text-xs ml-0.5">
+                <span className="text-warm-muted text-xs ml-0.5">
                   ({r.reviewCount.toLocaleString('en')})
                 </span>
               )}
@@ -114,44 +108,44 @@ function FeaturedCard({ r }: { r: Restaurant }) {
           )}
         </div>
 
-        {/* Body column — 7/12 on desktop */}
+        {/* Body column */}
         <div className="md:col-span-7 p-6 sm:p-8 flex flex-col">
-          <h3 className="font-heading text-2xl sm:text-3xl text-white tracking-wide leading-tight group-hover:text-amber transition-colors duration-300 mb-1">
+          <h3 className="font-heading text-3xl sm:text-4xl text-warm-ink tracking-wide leading-[1.05] mb-2">
             {r.name}
           </h3>
           {(cuisine || r.priceRange) && (
-            <p className="text-xs text-amber/75 font-semibold uppercase tracking-[0.18em] mb-3">
+            <p className="text-xs text-amber-deep font-semibold uppercase tracking-[0.18em] mb-4">
               {cuisine}
-              {cuisine && r.priceRange && <span className="text-amber/40 mx-2">·</span>}
-              {r.priceRange}
+              {cuisine && r.priceRange && <span className="text-warm-muted mx-2">·</span>}
+              {r.priceRange && <span className="font-heading tracking-widest text-amber-deep">{r.priceRange}</span>}
             </p>
           )}
 
           {body && (
             body.isQuote ? (
-              <blockquote className="relative pl-7 mb-5 text-white/75 leading-relaxed text-base italic">
-                <Quote size={16} className="absolute left-0 top-1 text-amber/40 -scale-x-100" />
+              <blockquote className="relative pl-7 mb-5 text-warm-text leading-relaxed text-base italic">
+                <Quote size={16} className="absolute left-0 top-1 text-amber-deep -scale-x-100" />
                 {body.text}
-                <footer className="not-italic text-[11px] text-white/35 mt-2 tracking-wider">
+                <footer className="not-italic text-[11px] text-warm-muted mt-2 tracking-[0.15em] uppercase">
                   — From a recent Google review
                 </footer>
               </blockquote>
             ) : (
-              <p className="text-white/65 leading-relaxed mb-5">{body.text}</p>
+              <p className="text-warm-text leading-relaxed mb-5">{body.text}</p>
             )
           )}
 
-          {/* Meta strip — address + today hours */}
-          <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-white/50 mb-5">
+          {/* Meta strip */}
+          <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-warm-muted mb-5">
             {(r.shortAddress || r.address) && (
               <span className="inline-flex items-center gap-1.5">
-                <MapPin size={12} className="text-amber/70" />
+                <MapPin size={12} className="text-amber-deep" />
                 {r.shortAddress || r.address}
               </span>
             )}
             {hours && (
               <span className="inline-flex items-center gap-1.5">
-                <Clock size={12} className="text-amber/70" />
+                <Clock size={12} className="text-amber-deep" />
                 Today: {hours}
               </span>
             )}
@@ -162,7 +156,7 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               {r.highlights.slice(0, 4).map((h) => (
                 <span
                   key={h}
-                  className="text-[11px] bg-amber/10 text-amber/85 border border-amber/20 px-2 py-0.5 rounded-full"
+                  className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
                 >
                   {h}
                 </span>
@@ -170,14 +164,13 @@ function FeaturedCard({ r }: { r: Restaurant }) {
             </div>
           )}
 
-          {/* CTA row */}
           <div className="flex flex-wrap items-center gap-3 mt-auto pt-1">
             {r.website && (
               <a
                 href={r.website}
                 target="_blank"
                 rel="sponsored nofollow noopener"
-                className="inline-flex items-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-sm font-bold px-4 py-2 rounded-full transition-all no-underline shadow-md shadow-amber/20 min-h-[40px]"
+                className="inline-flex items-center gap-1.5 bg-warm-ink hover:bg-spice text-cream text-sm font-bold px-4 py-2.5 rounded-full transition-all no-underline shadow-md min-h-[40px]"
               >
                 Visit website <ExternalLink size={14} />
               </a>
@@ -186,7 +179,7 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               href={r.googleMapsUrl}
               target="_blank"
               rel="nofollow noopener"
-              className="inline-flex items-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full transition-all no-underline min-h-[40px]"
+              className="inline-flex items-center gap-1.5 bg-cream-warm hover:bg-amber/15 border border-warm-ink/15 text-warm-ink text-sm font-semibold px-4 py-2.5 rounded-full transition-all no-underline min-h-[40px]"
             >
               Open in Maps <ExternalLink size={14} />
             </a>
@@ -194,7 +187,7 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               partner="hotels"
               sid={`featured_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
               destination={`${r.city}, ${r.country}`}
-              className="ml-auto inline-flex items-center gap-1.5 bg-vibe-pink/15 hover:bg-vibe-pink/25 border border-vibe-pink/40 text-vibe-pink hover:text-white text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded-full transition-all no-underline"
+              className="ml-auto inline-flex items-center gap-1.5 bg-vibe-pink hover:bg-pink-600 text-white text-xs font-bold uppercase tracking-wider px-3.5 py-2.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
             >
               Stay nearby
             </AffiliateCTA>
@@ -210,9 +203,8 @@ function RestaurantCard({ r }: { r: Restaurant }) {
   const cuisine = cuisineLabel(r);
 
   return (
-    <article className="group relative rounded-2xl overflow-hidden bg-white/[0.03] border border-white/8 hover:border-amber/35 hover:bg-white/[0.05] transition-all duration-300 flex flex-col h-full">
-      {/* Photo header */}
-      <div className="relative h-40 sm:h-44 overflow-hidden shrink-0">
+    <article className="group relative rounded-2xl overflow-hidden bg-cream shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:shadow-[0_22px_45px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full">
+      <div className="relative h-44 sm:h-48 overflow-hidden shrink-0">
         {r.photo ? (
           <img
             src={r.photo}
@@ -222,58 +214,55 @@ function RestaurantCard({ r }: { r: Restaurant }) {
             decoding="async"
           />
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-amber/15 via-night to-night" />
+          <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-night/85 via-night/10 to-transparent" />
         {r.rating && (
-          <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-night/85 backdrop-blur-sm border border-amber/35">
+          <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md">
             <Star size={10} className="text-amber fill-amber" />
-            <span className="text-white text-xs font-bold">{r.rating.toFixed(1)}</span>
+            {r.rating.toFixed(1)}
           </div>
         )}
         {r.priceRange && (
-          <div className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full bg-amber/95 text-night text-[11px] font-bold tracking-wide">
+          <div className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-[11px] font-bold tracking-wide shadow-md">
             {r.priceRange}
           </div>
         )}
       </div>
 
-      {/* Body */}
-      <div className="p-4 sm:p-5 flex flex-col flex-1">
-        <h3 className="font-heading text-lg tracking-wide text-white leading-tight mb-1 group-hover:text-amber transition-colors">
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="font-heading text-xl tracking-wide text-warm-ink leading-tight mb-1">
           {r.name}
         </h3>
         {cuisine && (
-          <p className="text-[11px] text-amber/70 font-semibold uppercase tracking-[0.18em] mb-2">
+          <p className="text-[11px] text-amber-deep font-semibold uppercase tracking-[0.18em] mb-2.5">
             {cuisine}
           </p>
         )}
 
         {body && (
           body.isQuote ? (
-            <blockquote className="relative pl-5 mb-3 text-[13px] text-white/55 leading-relaxed italic line-clamp-3 flex-1">
-              <Quote size={11} className="absolute left-0 top-1 text-amber/40 -scale-x-100" />
+            <blockquote className="relative pl-5 mb-3 text-[14px] text-warm-text leading-relaxed italic line-clamp-3 flex-1">
+              <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
               {body.text}
             </blockquote>
           ) : (
-            <p className="text-[13px] text-white/55 leading-relaxed mb-3 line-clamp-3 flex-1">{body.text}</p>
+            <p className="text-[14px] text-warm-text leading-relaxed mb-3 line-clamp-3 flex-1">{body.text}</p>
           )
         )}
 
         {r.reviewCount && r.reviewCount > 0 && (
-          <p className="text-[10px] text-white/30 mb-3 tracking-wide uppercase">
+          <p className="text-[10px] text-warm-muted mb-3 tracking-[0.15em] uppercase">
             {r.reviewCount.toLocaleString('en')} Google reviews
           </p>
         )}
 
-        {/* CTA row */}
-        <div className="flex items-center gap-3 mt-auto pt-1 border-t border-white/5">
+        <div className="flex items-center gap-4 mt-auto pt-3 border-t border-warm-ink/10">
           {r.website && (
             <a
               href={r.website}
               target="_blank"
               rel="sponsored nofollow noopener"
-              className="inline-flex items-center gap-1 text-amber hover:text-amber-warm text-xs font-semibold transition-colors no-underline pt-3"
+              className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
               Website →
             </a>
@@ -282,7 +271,7 @@ function RestaurantCard({ r }: { r: Restaurant }) {
             href={r.googleMapsUrl}
             target="_blank"
             rel="nofollow noopener"
-            className="inline-flex items-center gap-1 text-arctic-cyan/80 hover:text-arctic-cyan text-xs font-semibold transition-colors no-underline pt-3"
+            className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
           >
             Maps →
           </a>
@@ -446,8 +435,10 @@ export default function Restaurants() {
         </div>
       </section>
 
-      <section className="py-16 bg-night min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 bg-night min-h-screen overflow-hidden">
+        {/* Soft warm wash behind the cream cards */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.06)_0%,transparent_50%)] pointer-events-none" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredCities.map((city) => {
             const cityRestaurants = restaurants.filter((r) => r.city === city);
             if (cityRestaurants.length === 0) return null;

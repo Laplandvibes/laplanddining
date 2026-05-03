@@ -77,11 +77,11 @@ export default function FineDining() {
               const cuisine = cuisineLabel(r);
               const badge = partnershipBadge(r.partnership);
               return (
-                <div
+                <article
                   key={r.googlePlaceId}
-                  className="group bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-amber/30 transition-all duration-300"
+                  className="group bg-cream rounded-2xl overflow-hidden shadow-[0_25px_55px_-20px_rgba(0,0,0,0.65)] hover:shadow-[0_35px_70px_-20px_rgba(0,0,0,0.8)] hover:-translate-y-0.5 transition-all duration-500"
                 >
-                  <div className="relative h-56 overflow-hidden">
+                  <div className="relative h-60 overflow-hidden">
                     {r.photo ? (
                       <img
                         src={r.photo}
@@ -91,95 +91,89 @@ export default function FineDining() {
                         decoding="async"
                       />
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-amber/20 via-night to-night/80" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-night/80 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <h3 className="font-heading text-2xl text-white tracking-wide">{r.name}</h3>
-                      <div className="flex items-center gap-3 text-sm text-gray-300 mt-1">
-                        <span className="inline-flex items-center gap-1">
-                          <MapPin size={14} className="text-amber" />
-                          {r.city}
-                        </span>
-                        {r.rating && (
-                          <span className="inline-flex items-center gap-1 text-amber/85">
-                            <Star size={12} className="fill-amber" />
-                            {r.rating.toFixed(1)}
-                          </span>
-                        )}
-                      </div>
+                    <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm">
+                      <MapPin size={11} className="text-amber" />
+                      <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
                     </div>
+                    {r.rating && (
+                      <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md">
+                        <Star size={11} className="text-amber fill-amber" />
+                        {r.rating.toFixed(1)}
+                      </div>
+                    )}
                     {badge && (
-                      <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber/95 text-night text-[10px] font-bold uppercase tracking-wider">
+                      <div className="absolute bottom-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider shadow-md">
                         <Award size={10} /> {badge}
                       </div>
                     )}
                   </div>
 
                   <div className="p-6">
-                    {cuisine && (
-                      <p className="text-xs text-amber/60 font-medium uppercase tracking-wider mb-2">
+                    <h3 className="font-heading text-2xl tracking-wide text-warm-ink leading-tight mb-1">{r.name}</h3>
+                    {(cuisine || r.priceRange) && (
+                      <p className="text-xs text-amber-deep font-semibold uppercase tracking-[0.18em] mb-3">
                         {cuisine}
+                        {cuisine && r.priceRange && <span className="text-warm-muted mx-2">·</span>}
+                        {r.priceRange && <span className="font-heading tracking-widest">{r.priceRange}</span>}
                       </p>
                     )}
                     {body && (
                       body.isQuote ? (
-                        <blockquote className="relative pl-6 text-sm text-white/60 leading-relaxed italic mb-3">
-                          <Quote size={14} className="absolute left-0 top-1 text-amber/40 -scale-x-100" />
+                        <blockquote className="relative pl-6 text-sm text-warm-text leading-relaxed italic mb-4">
+                          <Quote size={14} className="absolute left-0 top-1 text-amber-deep -scale-x-100" />
                           {body.text}
-                          <footer className="not-italic text-[10px] text-white/30 mt-2 tracking-wider">
+                          <footer className="not-italic text-[10px] text-warm-muted mt-2 tracking-[0.15em] uppercase">
                             — Recent Google review
                           </footer>
                         </blockquote>
                       ) : (
-                        <p className="text-sm text-white/50 leading-relaxed mb-3">{body.text}</p>
+                        <p className="text-sm text-warm-text leading-relaxed mb-4">{body.text}</p>
                       )
                     )}
-                    {r.priceRange && (
-                      <p className="text-xs text-white/35 italic mb-4">{r.priceRange}</p>
-                    )}
                     {r.highlights && r.highlights.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-1.5 mb-5">
                         {r.highlights.map((h) => (
                           <span
                             key={h}
-                            className="text-xs bg-amber/8 text-amber/80 border border-amber/10 px-2.5 py-1 rounded-full"
+                            className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
                           >
                             {h}
                           </span>
                         ))}
                       </div>
                     )}
-                    <div className="flex flex-wrap items-center gap-3 mt-3">
+                    <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-warm-ink/10">
                       {r.website && (
                         <a
                           href={r.website}
                           target="_blank"
                           rel="sponsored nofollow noopener"
-                          className="inline-flex items-center gap-1.5 text-amber hover:text-white text-sm font-medium transition-colors duration-200 no-underline"
+                          className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
                         >
-                          Website <ExternalLink size={14} />
+                          Website <ExternalLink size={12} />
                         </a>
                       )}
                       <a
                         href={r.googleMapsUrl}
                         target="_blank"
                         rel="nofollow noopener"
-                        className="inline-flex items-center gap-1.5 text-arctic-cyan/80 hover:text-arctic-cyan text-sm font-medium transition-colors duration-200 no-underline"
+                        className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
                       >
-                        Maps <ExternalLink size={14} />
+                        Maps <ExternalLink size={12} />
                       </a>
                       <AffiliateCTA
                         partner="hotels"
                         sid={`fine_dining_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
                         destination={`${r.city}, ${r.country}`}
-                        className="inline-flex items-center gap-1.5 bg-vibe-pink/15 hover:bg-vibe-pink/25 border border-vibe-pink/40 text-vibe-pink hover:text-white text-xs font-semibold px-3 py-2 rounded-full transition-all duration-200 no-underline ml-auto"
+                        className="ml-auto inline-flex items-center gap-1 bg-vibe-pink hover:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
                       >
                         Stay in {r.city}
                       </AffiliateCTA>
                     </div>
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
