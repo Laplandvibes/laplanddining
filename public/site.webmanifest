@@ -1,0 +1,12 @@
+{
+  "name": "LaplandDining",
+  "short_name": "LaplandDining",
+  "description": "Best restaurants in Finnish Lapland — verified Sami fine dining, kota fire cooking and ice restaurants.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

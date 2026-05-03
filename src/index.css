@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* CRITICAL: Tailwind v4 must scan ../../shared/ for class names used by
+   the shared Footer/CookieBanner/NewsletterPopup/Legal components.
+   Without this, shared classes like bg-deep-night/text-vibe-pink/text-snow
+   are NOT emitted into the production CSS and shared components render
+   unstyled. See lv_critical_react_dedupe.md. */
+@source "../../shared/**/*.{ts,tsx}";
+
+@theme {
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* LaplandDining warm-amber variant tokens (this site's identity) */
+  --color-amber: #F59E0B;
+  --color-amber-warm: #D97706;
+  --color-night: #0F172A;
+  --color-night-light: #1E293B;
+  --color-gray-dark: #1F2937;
+
+  /* Canonical LV ecosystem tokens — required so shared/ components
+     (Footer, CookieBanner, NewsletterPopup, Legal/*) render correctly.
+     Keep using amber/night for this site's own surfaces; these are for
+     shared components and selective LV-network accents. */
+  --color-deep-night: #0F172A;
+  --color-snow: #F9FAFB;
+  --color-vibe-pink: #EC4899;
+  --color-arctic-cyan: #06B6D4;
+  --color-finland-blue: #002F6C;
+  --color-aurora-green: #10B981;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #ffffff;
+  background-color: var(--color-night);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-amber);
+  color: var(--color-night);
+}
+
+@keyframes aurora-drift {
+  0%, 100% { opacity: 0.3; transform: translateY(0) scale(1); }
+  50% { opacity: 0.6; transform: translateY(-20px) scale(1.1); }
+}
+
+.aurora-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 50%);
+  animation: aurora-drift 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-glow::before {
+    animation: none;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
