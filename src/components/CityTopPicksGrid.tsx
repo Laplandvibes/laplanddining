@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Star, MapPin, Award } from 'lucide-react';
+import { Star, MapPin, Award, Quote } from 'lucide-react';
 import AffiliateCTA from './AffiliateCTA';
-import { getTopPicksByCity, partnershipBadge, type Restaurant } from '../data/restaurants';
+import { getTopPicksByCity, partnershipBadge, composeCardBody, cuisineLabel, type Restaurant } from '../data/restaurants';
 
 /**
  * 18 Lapland cities × 1 top-pick restaurant each. Sourced from Google Places
@@ -33,7 +33,8 @@ function priceDots(p: Restaurant['priceRange']) {
 }
 
 function CityCard({ r }: { r: Restaurant }) {
-  const desc = r.curatedDescription || r.editorialSummary;
+  const body = composeCardBody(r);
+  const cuisine = cuisineLabel(r);
   const badge = partnershipBadge(r.partnership);
   const cityHash = r.city.toLowerCase().replace(/[^a-z]/g, '');
 
@@ -41,7 +42,6 @@ function CityCard({ r }: { r: Restaurant }) {
     <article
       className={`group relative bg-white/[0.03] rounded-2xl overflow-hidden border ${tierClass(r.partnership)} transition-all duration-300 flex flex-col`}
     >
-      {/* Photo */}
       <Link to={`/restaurants#${cityHash}`} className="relative h-44 sm:h-48 overflow-hidden shrink-0 no-underline">
         {r.photo ? (
           <img
@@ -56,13 +56,11 @@ function CityCard({ r }: { r: Restaurant }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-transparent" />
 
-        {/* City pill */}
         <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-night/70 backdrop-blur-sm border border-white/15">
           <MapPin size={11} className="text-amber" />
           <span className="text-white text-[10px] font-bold uppercase tracking-wider">{r.city}</span>
         </div>
 
-        {/* Rating */}
         {r.rating && (
           <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-1 rounded-full bg-amber/95 text-night text-[11px] font-bold">
             <Star size={10} className="fill-night" />
@@ -70,7 +68,6 @@ function CityCard({ r }: { r: Restaurant }) {
           </div>
         )}
 
-        {/* Badge for paid tier */}
         {badge && (
           <div className="absolute bottom-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber/95 text-night text-[10px] font-bold uppercase tracking-wider">
             <Award size={10} />
@@ -79,7 +76,6 @@ function CityCard({ r }: { r: Restaurant }) {
         )}
       </Link>
 
-      {/* Body */}
       <div className="p-4 sm:p-5 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-1.5">
           <h3 className="font-heading text-lg sm:text-xl tracking-wide text-white leading-tight">
@@ -88,21 +84,26 @@ function CityCard({ r }: { r: Restaurant }) {
           {priceDots(r.priceRange)}
         </div>
 
-        {(r.cuisine || r.type) && (
+        {cuisine && (
           <p className="text-[11px] text-amber/70 font-medium uppercase tracking-wider mb-2">
-            {r.cuisine || r.type}
+            {cuisine}
           </p>
         )}
 
-        {desc && (
-          <p className="text-[13px] text-white/55 leading-relaxed mb-3 line-clamp-3 flex-1">
-            {desc}
-          </p>
+        {body && (
+          body.isQuote ? (
+            <blockquote className="relative pl-5 mb-3 text-[13px] text-white/60 leading-relaxed italic line-clamp-3 flex-1">
+              <Quote size={11} className="absolute left-0 top-1 text-amber/40 -scale-x-100" />
+              {body.text}
+            </blockquote>
+          ) : (
+            <p className="text-[13px] text-white/55 leading-relaxed mb-3 line-clamp-3 flex-1">{body.text}</p>
+          )
         )}
 
         {r.reviewCount && (
-          <p className="text-[11px] text-white/35 mb-3">
-            {r.reviewCount.toLocaleString('en')} Google reviews
+          <p className="text-[10px] text-white/30 mb-3 tracking-wider uppercase">
+            {r.reviewCount.toLocaleString('en')} reviews{body?.isQuote ? ' · quote from Google' : ''}
           </p>
         )}
 

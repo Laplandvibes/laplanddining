@@ -32,11 +32,14 @@ export interface Restaurant {
   rating?: number;
   reviewCount?: number;
   priceRange?: '€' | '€€' | '€€€' | '€€€€';
-  editorialSummary?: string;       // Google's editorial blurb
+  editorialSummary?: string;       // Google's editorial blurb (only ~10% have it)
+  reviewSummary?: string | null;    // Aggregated review summary (Pro tier, often null)
+  reviewQuote?: string | null;      // Real customer quote, ~40-180 chars
   website?: string;
   googleMapsUrl: string;
   googlePlaceId: string;
   address: string;
+  shortAddress?: string;            // e.g. "Valtakatu 20, Rovaniemi"
   location: { latitude: number; longitude: number };
   openingHours?: string[];          // weekday descriptions
   photo?: string;                   // /images/restaurants/{slug}.jpg
@@ -69,10 +72,13 @@ interface MapsRestaurant {
   priceRange?: '€' | '€€' | '€€€' | '€€€€';
   priceLevelRaw?: string;
   editorialSummary?: string;
+  reviewSummary?: string | null;
+  reviewQuote?: string | null;
   website?: string;
   googleMapsUrl: string;
   googlePlaceId: string;
   address: string;
+  shortAddress?: string;
   location: { latitude: number; longitude: number };
   openingHours?: string[];
   photo?: string;
@@ -142,4 +148,84 @@ export function partnershipBadge(tier: PartnershipTier): string | null {
     case 'verified': return 'Verified Listing';
     default: return null;
   }
+}
+
+/**
+ * Human-friendly cuisine / category label, derived from Maps `types[]` when
+ * the editorial layer hasn't supplied one. Filters out generic types like
+ * `restaurant`, `food`, `point_of_interest`.
+ */
+const TYPE_LABELS: Record<string, string> = {
+  pizza_restaurant: 'Pizza',
+  italian_restaurant: 'Italian',
+  finnish_restaurant: 'Finnish',
+  scandinavian_restaurant: 'Scandinavian',
+  fine_dining_restaurant: 'Fine dining',
+  steak_house: 'Steakhouse',
+  seafood_restaurant: 'Seafood',
+  asian_restaurant: 'Asian',
+  chinese_restaurant: 'Chinese',
+  japanese_restaurant: 'Japanese',
+  thai_restaurant: 'Thai',
+  vegetarian_restaurant: 'Vegetarian',
+  vegan_restaurant: 'Vegan',
+  hamburger_restaurant: 'Burger',
+  cafe: 'Café',
+  coffee_shop: 'Café',
+  bar: 'Bar & restaurant',
+  pub: 'Pub & restaurant',
+  fast_food_restaurant: 'Casual',
+  meal_takeaway: 'Takeaway',
+  meal_delivery: 'Delivery',
+  bakery: 'Bakery',
+};
+
+export function cuisineLabel(r: Restaurant): string | null {
+  if (r.cuisine) return r.cuisine;
+  if (r.type) return r.type;
+  if (!r.types) return null;
+  for (const t of r.types) {
+    if (TYPE_LABELS[t]) return TYPE_LABELS[t];
+  }
+  return null;
+}
+
+/**
+ * Today's opening hours, parsed from regularOpeningHours.weekdayDescriptions
+ * (which are localized strings like "Monday: 5:00 – 10:00 PM" or
+ * "Wednesday: Closed"). Returns just the time portion, or null if unknown.
+ */
+const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export function todayHours(r: Restaurant): string | null {
+  if (!r.openingHours || r.openingHours.length === 0) return null;
+  const today = WEEKDAYS[new Date().getDay()];
+  const entry = r.openingHours.find((d) => d.startsWith(`${today}:`));
+  if (!entry) return null;
+  const after = entry.slice(today.length + 1).trim();
+  return after === 'Closed' ? 'Closed today' : after;
+}
+
+/**
+ * Compose a 1-2 sentence card body. Priority order:
+ *   1. curatedDescription (editorial override)
+ *   2. editorialSummary (Google's blurb, only ~10% have it)
+ *   3. reviewQuote (real customer voice, in italics, 80%+ have it)
+ *   4. synthesized factual line (rating + reviews + priceRange + cuisine)
+ */
+export interface CardBody {
+  text: string;
+  isQuote: boolean;
+}
+export function composeCardBody(r: Restaurant): CardBody | null {
+  if (r.curatedDescription) return { text: r.curatedDescription, isQuote: false };
+  if (r.editorialSummary) return { text: r.editorialSummary, isQuote: false };
+  if (r.reviewQuote) return { text: r.reviewQuote, isQuote: true };
+  if (r.rating && r.reviewCount) {
+    const cuisine = cuisineLabel(r);
+    return {
+      text: `${r.rating.toFixed(1)} stars from ${r.reviewCount.toLocaleString('en')} reviews${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}.`,
+      isQuote: false,
+    };
+  }
+  return null;
 }

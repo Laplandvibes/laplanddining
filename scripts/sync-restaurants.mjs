@@ -85,6 +85,8 @@ async function textSearch(apiKey, city) {
     'places.photos',
     'places.editorialSummary',
     'places.location',
+    'places.shortFormattedAddress',
+    'places.businessStatus',
   ].join(',');
 
   const res = await fetch(`${PLACES_BASE}/places:searchText`, {
@@ -108,6 +110,62 @@ async function textSearch(apiKey, city) {
   }
   const data = await res.json();
   return data.places || [];
+}
+
+/**
+ * Fetch up to 5 most-helpful reviews for a place. We extract 1-2 short, vivid
+ * quotes per restaurant so the card has a real human voice even when Google's
+ * editorialSummary is empty.
+ */
+async function placeDetailsReviews(apiKey, placeId) {
+  const fieldMask = 'reviews,reviewSummary';
+  const res = await fetch(`${PLACES_BASE}/places/${placeId}?languageCode=en`, {
+    headers: {
+      'X-Goog-Api-Key': apiKey,
+      'X-Goog-FieldMask': fieldMask,
+    },
+  });
+  if (!res.ok) return { reviews: [], reviewSummary: null };
+  const data = await res.json();
+  return {
+    reviews: data.reviews || [],
+    reviewSummary: data.reviewSummary?.text?.text || null,
+  };
+}
+
+/**
+ * Pull a punchy short quote (40–140 chars) from the reviews. Skip ALL-CAPS,
+ * skip ones full of emoji, skip generic ("Great food!"), prefer ones that
+ * mention a specific dish, ingredient, or atmosphere word.
+ */
+function pickReviewQuote(reviews) {
+  const SPECIFIC_WORDS = [
+    'reindeer', 'salmon', 'cloudberry', 'kota', 'fire', 'arctic', 'sami', 'sámi',
+    'fish', 'soup', 'menu', 'pizza', 'burger', 'dessert', 'view', 'fell',
+    'aurora', 'snow', 'log', 'wooden', 'fireplace', 'tasting', 'wine', 'beer',
+    'service', 'staff', 'cosy', 'cozy', 'atmosphere', 'cabin', 'wilderness',
+    'lake', 'river', 'igloo', 'sauna', 'lappish', 'finnish', 'nordic',
+  ];
+
+  const candidates = (reviews || [])
+    .map((r) => (r.text?.text || r.originalText?.text || '').trim())
+    .filter((t) => t)
+    // Split into individual sentences — quotes are punchier than full reviews
+    .flatMap((t) => t.split(/(?<=[.!?])\s+/))
+    .map((s) => s.trim().replace(/^["'""'']|["'""'']$/g, '').trim())
+    .filter((s) => s.length >= 40 && s.length <= 180)
+    .filter((s) => !/^[A-Z\s!.]+$/.test(s)) // no ALL CAPS
+    .filter((s) => (s.match(/[\p{Emoji}]/gu) || []).length < 3) // not emoji-heavy
+    .filter((s) => !/^(great|good|amazing|nice|excellent|love\s|loved\s|the best|highly recommend)\.?$/i.test(s))
+    .filter((s) => s.split(/\s+/).length >= 7); // at least 7 words
+
+  // Score by specific-word matches
+  candidates.sort((a, b) => {
+    const sa = SPECIFIC_WORDS.reduce((n, w) => n + (a.toLowerCase().includes(w) ? 1 : 0), 0);
+    const sb = SPECIFIC_WORDS.reduce((n, w) => n + (b.toLowerCase().includes(w) ? 1 : 0), 0);
+    return sb - sa;
+  });
+  return candidates[0] || null;
 }
 
 async function downloadPhoto(apiKey, photoName, outPath, maxW = 1600) {
@@ -205,16 +263,31 @@ async function main() {
       const restaurantSlug = `${slugify(city.name)}-${slugify(p.displayName.text)}`;
       let photoLocalPath;
 
-      if (isTop && p.photos?.length) {
+      // Top picks get the largest hero crop (1600px), supporting cards get a
+      // smaller thumbnail (800px) since they render at smaller sizes.
+      if (p.photos?.length) {
         try {
           const out = path.join(photoDir, `${restaurantSlug}.jpg`);
-          const sz = await downloadPhoto(apiKey, p.photos[0].name, out, 1600);
+          const targetW = isTop ? 1600 : 800;
+          const sz = await downloadPhoto(apiKey, p.photos[0].name, out, targetW);
           photoLocalPath = `/images/restaurants/${restaurantSlug}.jpg`;
           photosFetched++;
-          process.stdout.write(`     📸 ${(sz/1024).toFixed(0)} KB  ${p.displayName.text}\n`);
+          process.stdout.write(`     📸 ${(sz/1024).toFixed(0).padStart(4)} KB  ${isTop ? '★ ' : '  '}${p.displayName.text}\n`);
         } catch (e) {
           process.stdout.write(`     ⚠️  photo fetch failed for ${p.displayName.text}: ${e.message}\n`);
         }
+      }
+
+      // Fetch reviews for ALL synced restaurants (top + supporting) — quotes
+      // give every card a real human voice when Google has no editorialSummary.
+      let reviewQuote = null;
+      let reviewSummary = null;
+      try {
+        const details = await placeDetailsReviews(apiKey, p.id);
+        reviewQuote = pickReviewQuote(details.reviews);
+        reviewSummary = details.reviewSummary;
+      } catch {
+        // ignore — quote fallback is optional
       }
 
       shaped.push({
@@ -230,10 +303,13 @@ async function main() {
         types: p.types,
         primaryType: p.primaryType,
         editorialSummary: p.editorialSummary?.text,
+        reviewSummary,
+        reviewQuote,
         website: p.websiteUri,
         googleMapsUrl: p.googleMapsUri,
         googlePlaceId: p.id,
         address: p.formattedAddress,
+        shortAddress: p.shortFormattedAddress,
         location: p.location,
         openingHours: p.regularOpeningHours?.weekdayDescriptions,
         photo: photoLocalPath,

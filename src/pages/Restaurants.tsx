@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MapPin, ExternalLink, Flame, Snowflake, UtensilsCrossed, TreePine, Star, Award, Clock } from 'lucide-react';
+import { MapPin, ExternalLink, Flame, Snowflake, UtensilsCrossed, TreePine, Star, Award, Clock, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
-import { restaurants, cities, partnershipBadge, type Restaurant } from '../data/restaurants';
+import {
+  restaurants, cities, partnershipBadge, composeCardBody, cuisineLabel, todayHours,
+  type Restaurant,
+} from '../data/restaurants';
 import { DINING } from '../data/images';
 
 const cityImages: Record<string, string> = {
@@ -15,7 +18,6 @@ const cityImages: Record<string, string> = {
   'Ylläs': DINING.ingredientsAlt,
   Tornio: DINING.ingredients,
   Haparanda: DINING.fineDining,
-  // New cities — fall back to atmospheric default; Vesa can swap in city-specific imagery later
   Kittilä: DINING.kotaInside,
   'Sodankylä': DINING.foodMoody,
   Pyhätunturi: DINING.snowVillage,
@@ -49,7 +51,6 @@ const cityVibes: Record<string, string> = {
   Posio: 'Lake-and-craft heart of Riisitunturi country',
 };
 
-/** Cities where GYG has good food-tour inventory (verified 2026-05-03). */
 const cityGygCatalog: Record<string, { citySlug: string; sid: string }> = {
   Rovaniemi: { citySlug: 'rovaniemi-l2653', sid: 'restaurants_rovaniemi_food_tours' },
   Levi: { citySlug: 'levi-l52242', sid: 'restaurants_levi_food_tours' },
@@ -59,81 +60,109 @@ function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
 }
 
-function description(r: Restaurant) {
-  return r.curatedDescription || r.editorialSummary || '';
-}
-
+/** Format the city's first restaurant photo or fall back to atmospheric. */
 function FeaturedCard({ r }: { r: Restaurant }) {
-  const desc = description(r);
+  const body = composeCardBody(r);
+  const cuisine = cuisineLabel(r);
+  const hours = todayHours(r);
   const badge = partnershipBadge(r.partnership);
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden border border-amber/20 hover:border-amber/40 transition-all duration-500 hover:shadow-[0_0_60px_-15px_rgba(245,158,11,0.2)]">
-      <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-amber/0 via-amber/5 to-amber/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+    <div className="group relative rounded-2xl overflow-hidden border border-amber/25 bg-gradient-to-br from-amber/[0.04] via-white/[0.02] to-night/0 hover:border-amber/50 transition-all duration-500">
+      <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-amber/0 via-amber/8 to-amber/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-      <div className="relative flex flex-col sm:flex-row min-h-[280px]">
-        {r.photo && (
-          <div className="relative sm:w-2/5 min-h-[220px] sm:min-h-0 shrink-0 overflow-hidden">
+      <div className="relative grid grid-cols-1 md:grid-cols-12">
+        {/* Photo column — 5/12 on desktop, full on mobile */}
+        <div className="md:col-span-5 relative h-64 sm:h-72 md:h-auto md:min-h-[340px] overflow-hidden">
+          {r.photo ? (
             <img
               src={r.photo}
-              alt={r.name}
+              alt={`${r.name} in ${r.city}`}
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
               decoding="async"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-night/20 to-night/90 hidden sm:block" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-night/20 to-night/90 sm:hidden" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_70%,rgba(245,158,11,0.08)_0%,transparent_60%)]" />
-            <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-              <span className="bg-amber text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-amber/30 flex items-center gap-1.5">
-                <Flame size={10} /> City Top Pick
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-amber/20 via-night to-night" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-night/50 hidden md:block" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-night/85 md:hidden" />
+
+          {/* Top-pick + partnership badges */}
+          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+            <span className="bg-amber text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-amber/30 inline-flex items-center gap-1.5">
+              <Flame size={10} /> City Top Pick
+            </span>
+            {badge && (
+              <span className="bg-amber/95 text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-flex items-center gap-1.5">
+                <Award size={10} /> {badge}
               </span>
-              {badge && (
-                <span className="bg-amber/95 text-night text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full flex items-center gap-1.5">
-                  <Award size={10} /> {badge}
+            )}
+          </div>
+
+          {/* Rating pill bottom-right */}
+          {r.rating && (
+            <div className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-night/85 backdrop-blur-sm border border-amber/40">
+              <Star size={12} className="text-amber fill-amber" />
+              <span className="text-white text-sm font-bold">{r.rating.toFixed(1)}</span>
+              {r.reviewCount && (
+                <span className="text-white/55 text-xs ml-0.5">
+                  ({r.reviewCount.toLocaleString('en')})
                 </span>
               )}
             </div>
+          )}
+        </div>
+
+        {/* Body column — 7/12 on desktop */}
+        <div className="md:col-span-7 p-6 sm:p-8 flex flex-col">
+          <h3 className="font-heading text-2xl sm:text-3xl text-white tracking-wide leading-tight group-hover:text-amber transition-colors duration-300 mb-1">
+            {r.name}
+          </h3>
+          {(cuisine || r.priceRange) && (
+            <p className="text-xs text-amber/75 font-semibold uppercase tracking-[0.18em] mb-3">
+              {cuisine}
+              {cuisine && r.priceRange && <span className="text-amber/40 mx-2">·</span>}
+              {r.priceRange}
+            </p>
+          )}
+
+          {body && (
+            body.isQuote ? (
+              <blockquote className="relative pl-7 mb-5 text-white/75 leading-relaxed text-base italic">
+                <Quote size={16} className="absolute left-0 top-1 text-amber/40 -scale-x-100" />
+                {body.text}
+                <footer className="not-italic text-[11px] text-white/35 mt-2 tracking-wider">
+                  — From a recent Google review
+                </footer>
+              </blockquote>
+            ) : (
+              <p className="text-white/65 leading-relaxed mb-5">{body.text}</p>
+            )
+          )}
+
+          {/* Meta strip — address + today hours */}
+          <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-white/50 mb-5">
+            {(r.shortAddress || r.address) && (
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin size={12} className="text-amber/70" />
+                {r.shortAddress || r.address}
+              </span>
+            )}
+            {hours && (
+              <span className="inline-flex items-center gap-1.5">
+                <Clock size={12} className="text-amber/70" />
+                Today: {hours}
+              </span>
+            )}
           </div>
-        )}
-
-        <div className="relative flex-1 p-6 sm:p-8 flex flex-col bg-gradient-to-br from-amber/8 via-night to-night">
-          <div className="mb-3">
-            <h3 className="font-heading text-2xl sm:text-3xl tracking-wide text-white leading-tight group-hover:text-amber transition-colors duration-300">
-              {r.name}
-            </h3>
-            <div className="flex items-center gap-3 mt-1 text-sm text-white/40">
-              {r.type && <span>{r.type}</span>}
-              {r.rating && (
-                <span className="inline-flex items-center gap-1 text-amber/80">
-                  <Star size={12} className="fill-amber" />
-                  {r.rating.toFixed(1)}
-                  {r.reviewCount && <span className="text-white/35 ml-1">({r.reviewCount.toLocaleString('en')})</span>}
-                </span>
-              )}
-            </div>
-          </div>
-
-          {r.cuisine && (
-            <p className="text-xs text-amber/70 font-medium uppercase tracking-wider mb-3">{r.cuisine}</p>
-          )}
-          {desc && (
-            <p className="text-sm text-white/55 leading-relaxed mb-4 flex-1">{desc}</p>
-          )}
-
-          {r.priceRange && (
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-1 h-1 rounded-full bg-amber/40" />
-              <p className="text-xs text-amber/60 font-medium">{r.priceRange}</p>
-            </div>
-          )}
 
           {r.highlights && r.highlights.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {r.highlights.slice(0, 3).map((h) => (
+            <div className="flex flex-wrap gap-1.5 mb-5">
+              {r.highlights.slice(0, 4).map((h) => (
                 <span
                   key={h}
-                  className="text-xs bg-amber/10 text-amber/80 border border-amber/15 px-2.5 py-1 rounded-full"
+                  className="text-[11px] bg-amber/10 text-amber/85 border border-amber/20 px-2 py-0.5 rounded-full"
                 >
                   {h}
                 </span>
@@ -141,25 +170,34 @@ function FeaturedCard({ r }: { r: Restaurant }) {
             </div>
           )}
 
-          <div className="flex flex-wrap items-center gap-3 mt-auto">
+          {/* CTA row */}
+          <div className="flex flex-wrap items-center gap-3 mt-auto pt-1">
             {r.website && (
               <a
                 href={r.website}
                 target="_blank"
                 rel="sponsored nofollow noopener"
-                className="inline-flex items-center gap-1.5 text-amber hover:text-white text-sm font-medium transition-colors duration-200 no-underline"
+                className="inline-flex items-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-sm font-bold px-4 py-2 rounded-full transition-all no-underline shadow-md shadow-amber/20 min-h-[40px]"
               >
-                Website <ExternalLink size={14} />
+                Visit website <ExternalLink size={14} />
               </a>
             )}
             <a
               href={r.googleMapsUrl}
               target="_blank"
               rel="nofollow noopener"
-              className="inline-flex items-center gap-1.5 text-arctic-cyan hover:text-white text-sm font-medium transition-colors duration-200 no-underline"
+              className="inline-flex items-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full transition-all no-underline min-h-[40px]"
             >
-              Google Maps <ExternalLink size={14} />
+              Open in Maps <ExternalLink size={14} />
             </a>
+            <AffiliateCTA
+              partner="hotels"
+              sid={`featured_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
+              destination={`${r.city}, ${r.country}`}
+              className="ml-auto inline-flex items-center gap-1.5 bg-vibe-pink/15 hover:bg-vibe-pink/25 border border-vibe-pink/40 text-vibe-pink hover:text-white text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded-full transition-all no-underline"
+            >
+              Stay nearby
+            </AffiliateCTA>
           </div>
         </div>
       </div>
@@ -168,78 +206,89 @@ function FeaturedCard({ r }: { r: Restaurant }) {
 }
 
 function RestaurantCard({ r }: { r: Restaurant }) {
-  const desc = description(r);
+  const body = composeCardBody(r);
+  const cuisine = cuisineLabel(r);
 
   return (
-    <div className="group relative rounded-2xl p-5 transition-all duration-300 flex flex-col bg-white/[0.03] border border-white/8 hover:bg-gradient-to-br hover:from-amber/6 hover:via-white/[0.04] hover:to-transparent hover:border-amber/25 hover:shadow-[0_0_30px_-10px_rgba(245,158,11,0.1)]">
-      <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-amber/0 to-transparent group-hover:via-amber/30 transition-all duration-500" />
-
-      <div className="mb-3">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-heading text-xl tracking-wide text-white leading-tight group-hover:text-amber transition-colors duration-300">
-            {r.name}
-          </h3>
-          <UtensilsCrossed size={14} className="text-white/10 group-hover:text-amber/30 transition-colors duration-300 shrink-0 mt-1.5" />
-        </div>
-        <div className="flex items-center gap-3 mt-1 text-sm text-white/35">
-          {r.type && <span className="truncate">{r.type}</span>}
-          {r.rating && (
-            <span className="inline-flex items-center gap-1 text-amber/70 shrink-0">
-              <Star size={11} className="fill-amber/70" />
-              {r.rating.toFixed(1)}
-            </span>
-          )}
-          {r.priceRange && <span className="text-amber/60 shrink-0">{r.priceRange}</span>}
-        </div>
+    <article className="group relative rounded-2xl overflow-hidden bg-white/[0.03] border border-white/8 hover:border-amber/35 hover:bg-white/[0.05] transition-all duration-300 flex flex-col h-full">
+      {/* Photo header */}
+      <div className="relative h-40 sm:h-44 overflow-hidden shrink-0">
+        {r.photo ? (
+          <img
+            src={r.photo}
+            alt={r.name}
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-amber/15 via-night to-night" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-night/85 via-night/10 to-transparent" />
+        {r.rating && (
+          <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-night/85 backdrop-blur-sm border border-amber/35">
+            <Star size={10} className="text-amber fill-amber" />
+            <span className="text-white text-xs font-bold">{r.rating.toFixed(1)}</span>
+          </div>
+        )}
+        {r.priceRange && (
+          <div className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full bg-amber/95 text-night text-[11px] font-bold tracking-wide">
+            {r.priceRange}
+          </div>
+        )}
       </div>
 
-      {r.cuisine && (
-        <p className="text-xs text-amber/60 font-medium uppercase tracking-wider mb-2">{r.cuisine}</p>
-      )}
-      {desc && (
-        <p className="text-sm text-white/45 leading-relaxed mb-3 flex-1 line-clamp-4">{desc}</p>
-      )}
+      {/* Body */}
+      <div className="p-4 sm:p-5 flex flex-col flex-1">
+        <h3 className="font-heading text-lg tracking-wide text-white leading-tight mb-1 group-hover:text-amber transition-colors">
+          {r.name}
+        </h3>
+        {cuisine && (
+          <p className="text-[11px] text-amber/70 font-semibold uppercase tracking-[0.18em] mb-2">
+            {cuisine}
+          </p>
+        )}
 
-      {r.highlights && r.highlights.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-3">
-          {r.highlights.slice(0, 3).map((h) => (
-            <span
-              key={h}
-              className="text-xs bg-amber/8 text-amber/70 border border-amber/10 px-2.5 py-1 rounded-full group-hover:border-amber/20 transition-colors duration-300"
+        {body && (
+          body.isQuote ? (
+            <blockquote className="relative pl-5 mb-3 text-[13px] text-white/55 leading-relaxed italic line-clamp-3 flex-1">
+              <Quote size={11} className="absolute left-0 top-1 text-amber/40 -scale-x-100" />
+              {body.text}
+            </blockquote>
+          ) : (
+            <p className="text-[13px] text-white/55 leading-relaxed mb-3 line-clamp-3 flex-1">{body.text}</p>
+          )
+        )}
+
+        {r.reviewCount && r.reviewCount > 0 && (
+          <p className="text-[10px] text-white/30 mb-3 tracking-wide uppercase">
+            {r.reviewCount.toLocaleString('en')} Google reviews
+          </p>
+        )}
+
+        {/* CTA row */}
+        <div className="flex items-center gap-3 mt-auto pt-1 border-t border-white/5">
+          {r.website && (
+            <a
+              href={r.website}
+              target="_blank"
+              rel="sponsored nofollow noopener"
+              className="inline-flex items-center gap-1 text-amber hover:text-amber-warm text-xs font-semibold transition-colors no-underline pt-3"
             >
-              {h}
-            </span>
-          ))}
-        </div>
-      )}
-
-      <div className="flex flex-wrap items-center gap-3 mt-auto pt-2">
-        {r.website && (
+              Website →
+            </a>
+          )}
           <a
-            href={r.website}
+            href={r.googleMapsUrl}
             target="_blank"
-            rel="sponsored nofollow noopener"
-            className="inline-flex items-center gap-1 text-amber/85 hover:text-amber text-xs font-medium transition-all no-underline"
+            rel="nofollow noopener"
+            className="inline-flex items-center gap-1 text-arctic-cyan/80 hover:text-arctic-cyan text-xs font-semibold transition-colors no-underline pt-3"
           >
-            Website →
+            Maps →
           </a>
-        )}
-        <a
-          href={r.googleMapsUrl}
-          target="_blank"
-          rel="nofollow noopener"
-          className="inline-flex items-center gap-1 text-arctic-cyan/80 hover:text-arctic-cyan text-xs font-medium transition-all no-underline"
-        >
-          Maps →
-        </a>
-        {r.openingHours && r.openingHours.length > 0 && (
-          <span className="ml-auto inline-flex items-center gap-1 text-white/30 text-[11px]">
-            <Clock size={11} />
-            {r.openingHours.length} day schedule
-          </span>
-        )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -295,7 +344,7 @@ export default function Restaurants() {
             item: {
               '@type': 'Restaurant',
               name: r.name,
-              servesCuisine: r.cuisine ?? r.type ?? 'Lappish',
+              servesCuisine: cuisineLabel(r) ?? 'Lappish',
               priceRange: r.priceRange,
               ...(r.website ? { url: r.website } : {}),
               ...(r.rating ? {
@@ -322,8 +371,7 @@ export default function Restaurants() {
         })}
       </script>
 
-      {/* Hero — Apple Safari safe (svh + items-start escape on tall md viewports) */}
-      <section className="relative min-h-[65svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+      <section className="relative min-h-[55svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
           src={DINING.snowVillage}
           alt="Snow village dining in Lapland"
@@ -334,7 +382,6 @@ export default function Restaurants() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/40 to-night" />
         <div className="absolute inset-0 bg-gradient-to-t from-amber/8 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(245,158,11,0.06)_0%,transparent_60%)]" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -345,14 +392,14 @@ export default function Restaurants() {
             <Snowflake size={16} className="text-amber/40" />
           </div>
 
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide mb-5 drop-shadow-[0_2px_20px_rgba(245,158,11,0.1)]">
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_20px_rgba(245,158,11,0.1)]">
             All Restaurants
           </h1>
 
           <p className="text-white/55 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
             {restaurants.length} verified restaurants across {cities.length} Lapland destinations.
             <br className="hidden sm:block" />
-            Top picks per city — Sámi feasts, fell-top fine dining, kelo log kotas, and ice restaurants.
+            Real customer reviews, photos, and opening hours — paired with a hotel walking distance away.
           </p>
 
           <div className="flex items-center justify-center gap-6 text-white/30 text-xs uppercase tracking-wider">
@@ -399,7 +446,6 @@ export default function Restaurants() {
         </div>
       </section>
 
-      {/* Restaurant listings */}
       <section className="py-16 bg-night min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredCities.map((city) => {
@@ -412,7 +458,6 @@ export default function Restaurants() {
 
             return (
               <div key={city} id={slug} className="mb-20 last:mb-0 scroll-mt-36">
-                {/* City header with atmospheric image */}
                 <div className="relative mb-8 rounded-2xl overflow-hidden group">
                   <div className="relative h-48 sm:h-56">
                     <img
@@ -456,7 +501,6 @@ export default function Restaurants() {
                   </div>
                 )}
 
-                {/* Per-city Stay & Eat band — Hotels.com + (where catalogued) GYG food tours */}
                 <div className="mt-8 rounded-2xl border border-white/8 bg-gradient-to-br from-vibe-pink/8 via-night to-night p-6 sm:p-7">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
                     <div>
@@ -495,7 +539,6 @@ export default function Restaurants() {
         </div>
       </section>
 
-      {/* Bottom atmospheric section */}
       <section className="relative py-20 overflow-hidden">
         <img
           src={DINING.kotaFire}
@@ -513,6 +556,7 @@ export default function Restaurants() {
           <p className="text-white/50 leading-relaxed mb-4">
             Catalogue sourced from Google Places (rating × review count, fast-food chains
             excluded), then editorially picked top-1 per city by the LaplandVibes team.
+            Every quote on this page comes from a real Google review.
             Updated {restaurants[0]?.lastVerified || '—'}.
           </p>
           <p className="text-white/30 text-sm">

@@ -1,7 +1,7 @@
-import { Star, MapPin, ExternalLink, Award } from 'lucide-react';
+import { Star, MapPin, ExternalLink, Award, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { DINING } from '../data/images';
-import { restaurants, partnershipBadge } from '../data/restaurants';
+import { restaurants, partnershipBadge, composeCardBody, cuisineLabel } from '../data/restaurants';
 
 /**
  * Fine Dining = the top-pick restaurant for each city, sorted by Google rating.
@@ -73,7 +73,8 @@ export default function FineDining() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {fineDining.map((r) => {
-              const desc = r.curatedDescription || r.editorialSummary;
+              const body = composeCardBody(r);
+              const cuisine = cuisineLabel(r);
               const badge = partnershipBadge(r.partnership);
               return (
                 <div
@@ -116,13 +117,23 @@ export default function FineDining() {
                   </div>
 
                   <div className="p-6">
-                    {(r.cuisine || r.type) && (
+                    {cuisine && (
                       <p className="text-xs text-amber/60 font-medium uppercase tracking-wider mb-2">
-                        {r.cuisine || r.type}
+                        {cuisine}
                       </p>
                     )}
-                    {desc && (
-                      <p className="text-sm text-white/50 leading-relaxed mb-3">{desc}</p>
+                    {body && (
+                      body.isQuote ? (
+                        <blockquote className="relative pl-6 text-sm text-white/60 leading-relaxed italic mb-3">
+                          <Quote size={14} className="absolute left-0 top-1 text-amber/40 -scale-x-100" />
+                          {body.text}
+                          <footer className="not-italic text-[10px] text-white/30 mt-2 tracking-wider">
+                            — Recent Google review
+                          </footer>
+                        </blockquote>
+                      ) : (
+                        <p className="text-sm text-white/50 leading-relaxed mb-3">{body.text}</p>
+                      )
                     )}
                     {r.priceRange && (
                       <p className="text-xs text-white/35 italic mb-4">{r.priceRange}</p>
