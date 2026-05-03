@@ -5,7 +5,7 @@ import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
 import {
   restaurants, cities, partnershipBadge, composeCardBody, cuisineLabel, todayHours,
-  type Restaurant,
+  googleReviewsUrl, type Restaurant,
 } from '../data/restaurants';
 import { DINING } from '../data/images';
 
@@ -96,15 +96,21 @@ function FeaturedCard({ r }: { r: Restaurant }) {
           </div>
 
           {r.rating && (
-            <div className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink shadow-md">
-              <Star size={12} className="text-amber fill-amber" />
+            <a
+              href={googleReviewsUrl(r.googlePlaceId)}
+              target="_blank"
+              rel="nofollow noopener"
+              className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-cream text-warm-ink shadow-md hover:bg-amber transition-colors no-underline group/rating"
+              aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
+            >
+              <Star size={13} className="text-amber fill-amber group-hover/rating:fill-warm-ink" />
               <span className="text-sm font-bold">{r.rating.toFixed(1)}</span>
               {r.reviewCount && (
-                <span className="text-warm-muted text-xs ml-0.5">
-                  ({r.reviewCount.toLocaleString('en')})
+                <span className="text-warm-muted text-xs font-semibold ml-0.5 group-hover/rating:text-warm-ink">
+                  · {r.reviewCount.toLocaleString('en')} reviews
                 </span>
               )}
-            </div>
+            </a>
           )}
         </div>
 
@@ -123,13 +129,20 @@ function FeaturedCard({ r }: { r: Restaurant }) {
 
           {body && (
             body.isQuote ? (
-              <blockquote className="relative pl-7 mb-5 text-warm-text leading-relaxed text-base italic">
-                <Quote size={16} className="absolute left-0 top-1 text-amber-deep -scale-x-100" />
-                {body.text}
-                <footer className="not-italic text-[11px] text-warm-muted mt-2 tracking-[0.15em] uppercase">
-                  — From a recent Google review
-                </footer>
-              </blockquote>
+              <div className="mb-5">
+                <blockquote className="relative pl-7 text-warm-text leading-relaxed text-base italic">
+                  <Quote size={16} className="absolute left-0 top-1 text-amber-deep -scale-x-100" />
+                  {body.text}
+                </blockquote>
+                <a
+                  href={googleReviewsUrl(r.googlePlaceId)}
+                  target="_blank"
+                  rel="nofollow noopener"
+                  className="inline-block mt-2 ml-7 text-[11px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
+                >
+                  — Read all {r.reviewCount?.toLocaleString('en')} reviews on Google →
+                </a>
+              </div>
             ) : (
               <p className="text-warm-text leading-relaxed mb-5">{body.text}</p>
             )
@@ -217,10 +230,19 @@ function RestaurantCard({ r }: { r: Restaurant }) {
           <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
         )}
         {r.rating && (
-          <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md">
+          <a
+            href={googleReviewsUrl(r.googlePlaceId)}
+            target="_blank"
+            rel="nofollow noopener"
+            className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
+            aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
+          >
             <Star size={10} className="text-amber fill-amber" />
-            {r.rating.toFixed(1)}
-          </div>
+            <span>{r.rating.toFixed(1)}</span>
+            {r.reviewCount && (
+              <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
+            )}
+          </a>
         )}
         {r.priceRange && (
           <div className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-[11px] font-bold tracking-wide shadow-md">
@@ -241,19 +263,23 @@ function RestaurantCard({ r }: { r: Restaurant }) {
 
         {body && (
           body.isQuote ? (
-            <blockquote className="relative pl-5 mb-3 text-[14px] text-warm-text leading-relaxed italic line-clamp-3 flex-1">
-              <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
-              {body.text}
-            </blockquote>
+            <div className="mb-3 flex-1">
+              <blockquote className="relative pl-5 text-[14px] text-warm-text leading-relaxed italic line-clamp-3">
+                <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
+                {body.text}
+              </blockquote>
+              <a
+                href={googleReviewsUrl(r.googlePlaceId)}
+                target="_blank"
+                rel="nofollow noopener"
+                className="inline-block mt-1.5 ml-5 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
+              >
+                — Google review →
+              </a>
+            </div>
           ) : (
             <p className="text-[14px] text-warm-text leading-relaxed mb-3 line-clamp-3 flex-1">{body.text}</p>
           )
-        )}
-
-        {r.reviewCount && r.reviewCount > 0 && (
-          <p className="text-[10px] text-warm-muted mb-3 tracking-[0.15em] uppercase">
-            {r.reviewCount.toLocaleString('en')} Google reviews
-          </p>
         )}
 
         <div className="flex items-center gap-4 mt-auto pt-3 border-t border-warm-ink/10">

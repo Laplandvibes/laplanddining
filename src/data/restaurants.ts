@@ -140,6 +140,15 @@ export function getFeaturedRestaurants(): Restaurant[] {
     .filter((r): r is Restaurant => Boolean(r));
 }
 
+/**
+ * Direct link to the Google reviews viewer for a Place. Always opens the
+ * full reviews list (not just the place's main panel) so a "627 reviews"
+ * pill click goes straight to the customer feedback the user wants to see.
+ */
+export function googleReviewsUrl(placeId: string): string {
+  return `https://search.google.com/local/reviews?placeid=${encodeURIComponent(placeId)}`;
+}
+
 /** Partnership tier helpers for B2B logic + UI badges. */
 export function partnershipBadge(tier: PartnershipTier): string | null {
   switch (tier) {

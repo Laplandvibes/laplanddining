@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Star, MapPin, Award, Quote } from 'lucide-react';
 import AffiliateCTA from './AffiliateCTA';
-import { getTopPicksByCity, partnershipBadge, composeCardBody, cuisineLabel, type Restaurant } from '../data/restaurants';
+import { getTopPicksByCity, partnershipBadge, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant } from '../data/restaurants';
 
 /**
  * 18 cities × top-pick restaurant. Cream "Apple-card on dark" design — cards
@@ -34,37 +34,52 @@ function CityCard({ r }: { r: Restaurant }) {
     <article
       className={`group relative bg-cream rounded-2xl overflow-hidden transition-all duration-300 flex flex-col shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_55px_-15px_rgba(0,0,0,0.75)] hover:-translate-y-0.5 ${tierClass(r.partnership)}`}
     >
-      <Link to={`/restaurants#${cityHash}`} className="relative h-48 sm:h-52 overflow-hidden shrink-0 no-underline">
-        {r.photo ? (
-          <img
-            src={r.photo}
-            alt={`${r.name} in ${r.city}`}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-            decoding="async"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
-        )}
+      <div className="relative h-48 sm:h-52 overflow-hidden shrink-0">
+        {/* Photo + Link wrap inset; pills are siblings (z-10) so we never nest <a> in <a>. */}
+        <Link
+          to={`/restaurants#${cityHash}`}
+          className="absolute inset-0 no-underline"
+          aria-label={`See more ${r.city} restaurants`}
+        >
+          {r.photo ? (
+            <img
+              src={r.photo}
+              alt={`${r.name} in ${r.city}`}
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
+          )}
+        </Link>
 
-        {/* City pill + rating, top corners */}
-        <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm">
+        <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm pointer-events-none">
           <MapPin size={11} className="text-amber" />
           <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
         </div>
         {r.rating && (
-          <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-xs font-bold shadow-md">
+          <a
+            href={googleReviewsUrl(r.googlePlaceId)}
+            target="_blank"
+            rel="nofollow noopener"
+            className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-xs font-bold shadow-md hover:bg-amber-warm transition-colors no-underline"
+            aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
+          >
             <Star size={10} className="fill-warm-ink" />
-            {r.rating.toFixed(1)}
-          </div>
+            <span>{r.rating.toFixed(1)}</span>
+            {r.reviewCount && (
+              <span className="font-semibold opacity-75">·&nbsp;{r.reviewCount.toLocaleString('en')}</span>
+            )}
+          </a>
         )}
         {badge && (
-          <div className="absolute bottom-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider shadow-md">
+          <div className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider shadow-md pointer-events-none">
             <Award size={10} />
             {badge}
           </div>
         )}
-      </Link>
+      </div>
 
       <div className="p-5 sm:p-6 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-3 mb-1">
@@ -84,19 +99,23 @@ function CityCard({ r }: { r: Restaurant }) {
 
         {body && (
           body.isQuote ? (
-            <blockquote className="relative pl-5 mb-3 text-[14px] text-warm-text leading-relaxed italic line-clamp-3 flex-1">
-              <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
-              {body.text}
-            </blockquote>
+            <div className="mb-4 flex-1">
+              <blockquote className="relative pl-5 text-[14px] text-warm-text leading-relaxed italic line-clamp-3">
+                <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
+                {body.text}
+              </blockquote>
+              <a
+                href={googleReviewsUrl(r.googlePlaceId)}
+                target="_blank"
+                rel="nofollow noopener"
+                className="inline-block mt-2 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
+              >
+                — Read all {r.reviewCount?.toLocaleString('en')} reviews on Google →
+              </a>
+            </div>
           ) : (
-            <p className="text-[14px] text-warm-text leading-relaxed mb-3 line-clamp-3 flex-1">{body.text}</p>
+            <p className="text-[14px] text-warm-text leading-relaxed mb-4 line-clamp-3 flex-1">{body.text}</p>
           )
-        )}
-
-        {r.reviewCount && (
-          <p className="text-[10px] text-warm-muted mb-4 tracking-[0.15em] uppercase">
-            {r.reviewCount.toLocaleString('en')} Google reviews{body?.isQuote ? ' · quote above' : ''}
-          </p>
         )}
 
         <div className="flex flex-wrap items-center gap-3 mt-auto pt-3 border-t border-warm-ink/10">

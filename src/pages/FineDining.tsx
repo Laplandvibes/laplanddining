@@ -1,7 +1,7 @@
 import { Star, MapPin, ExternalLink, Award, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { DINING } from '../data/images';
-import { restaurants, partnershipBadge, composeCardBody, cuisineLabel } from '../data/restaurants';
+import { restaurants, partnershipBadge, composeCardBody, cuisineLabel, googleReviewsUrl } from '../data/restaurants';
 
 /**
  * Fine Dining = the top-pick restaurant for each city, sorted by Google rating.
@@ -98,10 +98,19 @@ export default function FineDining() {
                       <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
                     </div>
                     {r.rating && (
-                      <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md">
+                      <a
+                        href={googleReviewsUrl(r.googlePlaceId)}
+                        target="_blank"
+                        rel="nofollow noopener"
+                        className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
+                        aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
+                      >
                         <Star size={11} className="text-amber fill-amber" />
-                        {r.rating.toFixed(1)}
-                      </div>
+                        <span>{r.rating.toFixed(1)}</span>
+                        {r.reviewCount && (
+                          <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
+                        )}
+                      </a>
                     )}
                     {badge && (
                       <div className="absolute bottom-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider shadow-md">
@@ -121,13 +130,20 @@ export default function FineDining() {
                     )}
                     {body && (
                       body.isQuote ? (
-                        <blockquote className="relative pl-6 text-sm text-warm-text leading-relaxed italic mb-4">
-                          <Quote size={14} className="absolute left-0 top-1 text-amber-deep -scale-x-100" />
-                          {body.text}
-                          <footer className="not-italic text-[10px] text-warm-muted mt-2 tracking-[0.15em] uppercase">
-                            — Recent Google review
-                          </footer>
-                        </blockquote>
+                        <div className="mb-4">
+                          <blockquote className="relative pl-6 text-sm text-warm-text leading-relaxed italic">
+                            <Quote size={14} className="absolute left-0 top-1 text-amber-deep -scale-x-100" />
+                            {body.text}
+                          </blockquote>
+                          <a
+                            href={googleReviewsUrl(r.googlePlaceId)}
+                            target="_blank"
+                            rel="nofollow noopener"
+                            className="inline-block mt-2 ml-6 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
+                          >
+                            — Read all {r.reviewCount?.toLocaleString('en')} reviews on Google →
+                          </a>
+                        </div>
                       ) : (
                         <p className="text-sm text-warm-text leading-relaxed mb-4">{body.text}</p>
                       )
