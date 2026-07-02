@@ -1,14 +1,20 @@
-import { Star, MapPin, ExternalLink, Award, Quote } from 'lucide-react';
+
+import { useTranslation } from 'react-i18next';
+import Hreflang from '../i18n/Hreflang';
+import { useLocale } from '../i18n/useLocale';
+import { Star, MapPin, ExternalLink, Award, Quote, UtensilsCrossed } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { DINING } from '../data/images';
-import { restaurants, partnershipBadge, composeCardBody, cuisineLabel, googleReviewsUrl } from '../data/restaurants';
+import { restaurants, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, localizedStr } from '../data/restaurants';
+import PageBreadcrumb from '../components/PageBreadcrumb';
+import WhereToNext from '../components/WhereToNext';
 
 /**
  * Fine Dining = the top-pick restaurant for each city, sorted by Google rating.
- * (Editorial team can override which restaurant counts as topPick for any city
- *  via src/data/restaurant-overrides.ts — see partnership tier upgrades.)
  */
 export default function FineDining() {
+  const { t } = useTranslation('pages');
+  const { locale } = useLocale();
   const fineDining = restaurants
     .filter((r) => r.topPick)
     .filter((r) => (r.priceRange === '€€€' || r.priceRange === '€€€€') || (r.rating ?? 0) >= 4.5)
@@ -16,12 +22,12 @@ export default function FineDining() {
 
   return (
     <>
-      <title>Fine Dining in Lapland — Top-Rated Tasting Menus | LaplandDining</title>
+      <title>{t('fineDining.title')}</title>
       <meta
         name="description"
-        content={`Lapland's top-rated restaurants for tasting menus and fine dining — sorted by Google rating, verified by the LaplandVibes editorial team. ${fineDining.length} city top picks across Finnish Lapland.`}
+        content={t('fineDining.metaDescriptionTemplate', { count: fineDining.length })}
       />
-      <link rel="canonical" href="https://laplanddining.com/fine-dining" />
+      <Hreflang path="/fine-dining" />
       <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
@@ -31,7 +37,6 @@ export default function FineDining() {
           headline: 'Fine Dining in Finnish Lapland',
           description:
             'Top-rated tasting menus across Finnish Lapland — Sámi heritage meets modern Nordic gastronomy.',
-          author: { '@type': 'Organization', name: 'LaplandVibes editorial team' },
           publisher: {
             '@type': 'Organization',
             name: 'LaplandDining',
@@ -39,6 +44,10 @@ export default function FineDining() {
           },
           datePublished: '2026-05-03',
           inLanguage: 'en',
+        
+          author: { "@type": "Organization", name: "LaplandDining", url: "https://laplanddining.com" },
+          dateModified: "2026-05-16T00:00:00+02:00",
+          image: "https://laplanddining.com/og/fine-dining-1200x630.jpg",
         })}
       </script>
 
@@ -57,25 +66,25 @@ export default function FineDining() {
           <div className="w-16 h-16 bg-amber/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Star size={32} className="text-amber" />
           </div>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-4">
-            Fine Dining in Lapland
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-4 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+            {t('fineDining.heroH1')}
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            Top-rated tasting menus where Sámi heritage meets modern gastronomy.
-            Curated from {restaurants.length} verified Lapland restaurants —
-            sorted by Google rating, paired with a hotel within walking distance.
+          <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            {t('fineDining.heroLeadTemplate', { count: restaurants.length })}
           </p>
         </div>
       </section>
+
+      <PageBreadcrumb />
 
       {/* Fine dining grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-night">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {fineDining.map((r) => {
-              const body = composeCardBody(r);
-              const cuisine = cuisineLabel(r);
-              const badge = partnershipBadge(r.partnership);
+              const body = composeCardBody(r, locale);
+              const cuisine = cuisineLabel(r, locale);
+              const badge = partnershipBadgeLocalized(r.partnership, locale);
               return (
                 <article
                   key={r.googlePlaceId}
@@ -91,7 +100,12 @@ export default function FineDining() {
                         decoding="async"
                       />
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2.5">
+                        <UtensilsCrossed className="w-10 h-10 text-amber/55" strokeWidth={1.5} />
+                        {cuisine && (
+                          <span className="text-amber/60 text-[11px] font-bold uppercase tracking-[0.22em] px-6 text-center leading-snug">{cuisine}</span>
+                        )}
+                      </div>
                     )}
                     <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm">
                       <MapPin size={11} className="text-amber" />
@@ -103,7 +117,7 @@ export default function FineDining() {
                         target="_blank"
                         rel="nofollow noopener"
                         className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
-                        aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
+                        aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews — ${r.name}`}
                       >
                         <Star size={11} className="text-amber fill-amber" />
                         <span>{r.rating.toFixed(1)}</span>
@@ -141,7 +155,7 @@ export default function FineDining() {
                             rel="nofollow noopener"
                             className="inline-block mt-2 ml-6 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
                           >
-                            — Read all {r.reviewCount?.toLocaleString('en')} reviews on Google →
+                            — {t('fineDining.readAllReviews', { count: r.reviewCount?.toLocaleString('en') ?? '' })}
                           </a>
                         </div>
                       ) : (
@@ -150,14 +164,17 @@ export default function FineDining() {
                     )}
                     {r.highlights && r.highlights.length > 0 && (
                       <div className="flex flex-wrap gap-1.5 mb-5">
-                        {r.highlights.map((h) => (
-                          <span
-                            key={h}
-                            className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
-                          >
-                            {h}
-                          </span>
-                        ))}
+                        {r.highlights.map((h, i) => {
+                          const label = localizedStr(h, locale);
+                          return label ? (
+                            <span
+                              key={i}
+                              className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
+                            >
+                              {label}
+                            </span>
+                          ) : null;
+                        })}
                       </div>
                     )}
                     <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-warm-ink/10">
@@ -168,7 +185,7 @@ export default function FineDining() {
                           rel="sponsored nofollow noopener"
                           className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
                         >
-                          Website <ExternalLink size={12} />
+                          {t('fineDining.websiteLabel')} <ExternalLink size={12} />
                         </a>
                       )}
                       <a
@@ -177,7 +194,7 @@ export default function FineDining() {
                         rel="nofollow noopener"
                         className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
                       >
-                        Maps <ExternalLink size={12} />
+                        {t('fineDining.mapsLabel')} <ExternalLink size={12} />
                       </a>
                       <AffiliateCTA
                         partner="hotels"
@@ -185,7 +202,7 @@ export default function FineDining() {
                         destination={`${r.city}, ${r.country}`}
                         className="ml-auto inline-flex items-center gap-1 bg-vibe-pink hover:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
                       >
-                        Stay in {r.city}
+                        {t('fineDining.stayInTemplate', { city: r.city })}
                       </AffiliateCTA>
                     </div>
                   </div>
@@ -195,6 +212,8 @@ export default function FineDining() {
           </div>
         </div>
       </section>
+
+      <WhereToNext />
     </>
   );
 }

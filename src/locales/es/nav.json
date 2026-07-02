@@ -1,0 +1,11 @@
+{
+  "links": {
+    "restaurants": "Restaurantes",
+    "fineDining": "Alta cocina",
+    "midnightSun": "Sol de medianoche",
+    "foodHistory": "Historia gastronómica",
+    "localFood": "Cocina local",
+    "about": "Sobre nosotros"
+  },
+  "menu": "Abrir/cerrar menú"
+}

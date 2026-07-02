@@ -1,15 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Star, MapPin, Award, Quote } from 'lucide-react';
+import { Star, MapPin, Award, Quote, UtensilsCrossed } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLocale } from '../i18n/useLocale';
 import AffiliateCTA from './AffiliateCTA';
-import { getTopPicksByCity, partnershipBadge, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant } from '../data/restaurants';
-
-/**
- * 18 cities × top-pick restaurant. Cream "Apple-card on dark" design — cards
- * float on the dark page, food photos pop, dark editorial text on cream gives
- * max contrast and a fresh food-magazine feel. Partnership tier drives the
- * card border treatment (gold = warm amber ring, premium = subtle warm border,
- * verified = thin warm border, editorial = clean).
- */
+import { getTopPicksByCity, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant, type Locale } from '../data/restaurants';
 
 function tierClass(tier: Restaurant['partnership']) {
   switch (tier) {
@@ -24,10 +18,18 @@ function tierClass(tier: Restaurant['partnership']) {
   }
 }
 
-function CityCard({ r }: { r: Restaurant }) {
-  const body = composeCardBody(r);
-  const cuisine = cuisineLabel(r);
-  const badge = partnershipBadge(r.partnership);
+interface CardLabels {
+  websiteLabel: string;
+  mapsLabel: string;
+  stayNearby: string;
+  seeMore: (city: string) => string;
+  reviewsCta: (count: string) => string;
+}
+
+function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: CardLabels; to: (path: string) => string; locale: Locale }) {
+  const body = composeCardBody(r, locale);
+  const cuisine = cuisineLabel(r, locale);
+  const badge = partnershipBadgeLocalized(r.partnership, locale);
   const cityHash = r.city.toLowerCase().replace(/[^a-z]/g, '');
 
   return (
@@ -35,11 +37,10 @@ function CityCard({ r }: { r: Restaurant }) {
       className={`group relative bg-cream rounded-2xl overflow-hidden transition-all duration-300 flex flex-col shadow-[0_15px_40px_-15px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_55px_-15px_rgba(0,0,0,0.75)] hover:-translate-y-0.5 ${tierClass(r.partnership)}`}
     >
       <div className="relative h-48 sm:h-52 overflow-hidden shrink-0">
-        {/* Photo + Link wrap inset; pills are siblings (z-10) so we never nest <a> in <a>. */}
         <Link
-          to={`/restaurants#${cityHash}`}
+          to={to(`/restaurants#${cityHash}`)}
           className="absolute inset-0 no-underline"
-          aria-label={`See more ${r.city} restaurants`}
+          aria-label={labels.seeMore(r.city)}
         >
           {r.photo ? (
             <img
@@ -50,7 +51,12 @@ function CityCard({ r }: { r: Restaurant }) {
               decoding="async"
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2">
+              <UtensilsCrossed className="w-10 h-10 text-amber/55" strokeWidth={1.5} />
+              {cuisine && (
+                <span className="text-amber/60 text-[10px] font-bold uppercase tracking-[0.2em] px-5 text-center leading-snug">{cuisine}</span>
+              )}
+            </div>
           )}
         </Link>
 
@@ -64,7 +70,6 @@ function CityCard({ r }: { r: Restaurant }) {
             target="_blank"
             rel="nofollow noopener"
             className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-xs font-bold shadow-md hover:bg-amber-warm transition-colors no-underline"
-            aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
           >
             <Star size={10} className="fill-warm-ink" />
             <span>{r.rating.toFixed(1)}</span>
@@ -100,7 +105,7 @@ function CityCard({ r }: { r: Restaurant }) {
         {body && (
           body.isQuote ? (
             <div className="mb-4 flex-1">
-              <blockquote className="relative pl-5 text-[14px] text-warm-text leading-relaxed italic line-clamp-3">
+              <blockquote className="relative pl-5 text-[14px] text-warm-text leading-relaxed italic line-clamp-4">
                 <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
                 {body.text}
               </blockquote>
@@ -110,11 +115,11 @@ function CityCard({ r }: { r: Restaurant }) {
                 rel="nofollow noopener"
                 className="inline-block mt-2 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
               >
-                — Read all {r.reviewCount?.toLocaleString('en')} reviews on Google →
+                — {labels.reviewsCta(r.reviewCount?.toLocaleString('en') ?? '')}
               </a>
             </div>
           ) : (
-            <p className="text-[14px] text-warm-text leading-relaxed mb-4 line-clamp-3 flex-1">{body.text}</p>
+            <p className="text-[14px] text-warm-text leading-relaxed mb-4 line-clamp-5 flex-1">{body.text}</p>
           )
         )}
 
@@ -126,7 +131,7 @@ function CityCard({ r }: { r: Restaurant }) {
               rel="sponsored nofollow noopener"
               className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
-              Website →
+              {labels.websiteLabel} →
             </a>
           )}
           <a
@@ -135,7 +140,7 @@ function CityCard({ r }: { r: Restaurant }) {
             rel="nofollow noopener"
             className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
           >
-            Maps →
+            {labels.mapsLabel} →
           </a>
           <AffiliateCTA
             partner="hotels"
@@ -143,7 +148,7 @@ function CityCard({ r }: { r: Restaurant }) {
             destination={`${r.city}, ${r.country}`}
             className="ml-auto inline-flex items-center gap-1 bg-vibe-pink hover:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
           >
-            Stay nearby
+            {labels.stayNearby}
           </AffiliateCTA>
         </div>
       </div>
@@ -152,38 +157,45 @@ function CityCard({ r }: { r: Restaurant }) {
 }
 
 export default function CityTopPicksGrid() {
+  const { t } = useTranslation('pages');
+  const { to, locale } = useLocale();
   const picks = getTopPicksByCity();
+
+  const labels: CardLabels = {
+    websiteLabel: t('restaurants.websiteLabel'),
+    mapsLabel: t('restaurants.mapsLabel'),
+    stayNearby: t('common.stayNearby'),
+    seeMore: (city: string) => t('common.seeMoreInCity', { city }),
+    reviewsCta: (count: string) => t('restaurants.readReviews', { count }),
+  };
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
-      {/* Soft warm radial wash to lift the dark page behind the cream cards */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.08)_0%,transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(245,158,11,0.05)_0%,transparent_60%)]" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-amber text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-            One pick per city · {picks.length} destinations
+            {t('common.cityTopPicksKicker', { count: picks.length })}
           </p>
           <h2 className="font-heading text-4xl sm:text-5xl text-snow tracking-wide mb-4">
-            Lapland's best table — by city
+            {t('common.cityTopPicksHeadline')}
           </h2>
           <p className="text-snow/65 text-base max-w-2xl mx-auto leading-relaxed">
-            For every Lapland destination we travel to, we pick the one restaurant
-            that locals send first-time visitors to. Real customer quotes from Google,
-            paired with a walking-distance hotel.
+            {t('common.cityTopPicksLead')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
           {picks.map((r) => (
-            <CityCard key={r.googlePlaceId} r={r} />
+            <CityCard key={r.googlePlaceId} r={r} labels={labels} to={to} locale={locale} />
           ))}
         </div>
 
-        <p className="text-center text-snow/40 text-xs mt-12 tracking-wider">
-          Data refreshed {picks[0]?.lastVerified || '—'} from Google Places.{' '}
-          <Link to="/about" className="underline hover:text-snow/70">How we choose</Link>.
+        <p className="text-center text-snow/75 text-xs mt-12 tracking-wider">
+          {t('common.dataRefreshed', { date: picks[0]?.lastVerified || '—' })}{' '}
+          <Link to={to('/about')} className="underline hover:text-snow/70">{t('common.howWeChoose')}</Link>.
         </p>
       </div>
     </section>

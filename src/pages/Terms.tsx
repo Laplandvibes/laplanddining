@@ -1,13 +1,18 @@
-import TermsContent from '../../../shared/Legal/TermsContent';
+
+import { useTranslation } from 'react-i18next';
+import Hreflang from '../i18n/Hreflang';import TermsContent from '../../../shared/Legal/TermsContent';
+import { useLocale } from '../i18n/useLocale';
 
 export default function Terms() {
+  const { t } = useTranslation('pages');
+  const { locale } = useLocale();
   return (
     <>
-      <title>Terms of Use | LaplandDining</title>
-      <meta name="description" content="Terms of Use for LaplandDining.com — editorial guide to Lapland dining, operated by Lapeso Oy." />
-      <link rel="canonical" href="https://laplanddining.com/terms" />
+      <title>{t('terms.title')}</title>
+      <meta name="description" content={t('terms.description')} />
+      <Hreflang path="/terms" />
       <meta name="robots" content="index, follow" />
-      <TermsContent siteName="LaplandDining" siteUrl="laplanddining.com" />
+      <TermsContent siteName="LaplandDining" siteUrl="laplanddining.com" lang={locale} />
     </>
   );
 }

@@ -1,0 +1,353 @@
+{
+  "home": {
+    "title": "LaplandDining, Onde se come de verdade na Lapônia",
+    "description": "O guia independente de restaurantes da Lapônia finlandesa, restaurantes escolhidos a dedo, cardápios, horários, links diretos de reserva. De pubs locais à alta gastronomia.",
+    "heroH1": "Descubra os melhores restaurantes da Lapônia",
+    "heroLead": "Restaurantes reais, escolhidos a dedo por toda a Lapônia finlandesa, da alta gastronomia sami tradicional ao fogo do kota e a ingredientes árticos que você não encontra em nenhum outro lugar.",
+    "heroCtaExplore": "Ver todos os restaurantes",
+    "heroCtaStay": "Hospede-se perto da mesa",
+    "midnightKicker": "O verão da Lapônia",
+    "midnightHeadline1": "Jantar à 1 da manhã.",
+    "midnightHeadline2": "E o sol ainda no céu.",
+    "midnightBadge": "6 jun → 7 jul",
+    "midnightBody": "Por trinta e dois dias, o sol não desce abaixo do horizonte acima do Círculo Polar Ártico. Terraços à beira-rio em Rovaniemi, fogos de kota em Saariselkä, o menu degustação com vista para o lago em Aanaar, tudo comido sob uma luz dourada ininterrupta. A metade mais silenciosa e melhor do ano gastronômico da Lapônia.",
+    "midnightCtaGuide": "Leia o guia do sol da meia-noite",
+    "midnightCtaStays": "Encontrar hospedagem de verão",
+    "cuisineHeadline": "Destaques da cozinha",
+    "cuisineLead": "Três pilares da cena culinária única da Lapônia.",
+    "cuisineCards": [
+      {
+        "title": "Alta gastronomia",
+        "desc": "Menus degustação premiados que transformam ingredientes árticos em arte culinária. Das tradições sami à inovação nórdica."
+      },
+      {
+        "title": "Experiência kota",
+        "desc": "Jante dentro de uma tenda sami tradicional em torno do fogo aberto. Salmão, rena e caça grelhados na chama em uma atmosfera inesquecível."
+      },
+      {
+        "title": "Ingredientes árticos",
+        "desc": "Ervas silvestres, rena, peixe de lago, cloudberry e cogumelos colhidos na natureza ártica intocada. Hiperlocal, sazonal e puro."
+      }
+    ],
+    "destinationsHeadline": "Navegar por destino",
+    "destinationsLead": "Escolha uma cidade e descubra o que está na mesa.",
+    "statsVerified": "Restaurantes selecionados",
+    "statsDestinations": "Destinos",
+    "statsYear": "Atualizados neste ano",
+    "stayKicker": "Hospede-se onde você come",
+    "stayHeadline": "Reserve um hotel perto da mesa de hoje à noite",
+    "stayLead": "Os jantares na Lapônia frequentemente se estendem e terminam longe da cidade. O plano mais inteligente é uma hospedagem a poucos minutos a pé do restaurante e o Hotels.com mostra de forma mais clara o que está realmente disponível ao lado de cada kota, hotel de montanha e restaurante de gelo.",
+    "stayAffiliateNote": "Links de afiliados, podemos receber comissão sem custo adicional para você.",
+    "stayAffiliateLink": "Por que recomendamos assim",
+    "toursKicker": "Coma com guia",
+    "toursHeadline": "Tours gastronômicos, aulas de cozinha e visitas a cervejarias",
+    "toursLead": "Para viajantes que querem contexto junto com a refeição, caminhadas de degustação sami, aulas de cozinha lapônica, jantares em cervejarias e experiências de preparo de salmão. Reservas pela GetYourGuide com cancelamento gratuito até 24 horas antes.",
+    "tourLinks": [
+      "Tours gastronômicos na Lapônia",
+      "Aulas de cozinha",
+      "Comida e bebida em Rovaniemi",
+      "Comida e bebida em Levi"
+    ]
+  },
+  "restaurants": {
+    "title": "Restaurantes na Lapônia finlandesa | LaplandDining",
+    "description": "Mais de 60 restaurantes escolhidos a dedo por toda a Lapônia finlandesa, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Cardápios, horários e links diretos de reserva.",
+    "heroKicker": "Guia gastronômico do Ártico",
+    "heroH1": "Todos os restaurantes",
+    "heroLeadTemplate": "{{restaurantCount}} restaurantes escolhidos a dedo em {{cityCount}} destinos da Lapônia. Avaliações reais de clientes, fotos e horários de funcionamento, combinados com um hotel a poucos minutos a pé.",
+    "heroChipKota": "Gastronomia no kota",
+    "heroChipWilderness": "Natureza selvagem",
+    "heroChipArctic": "Ártico",
+    "filterAll": "Todas as cidades",
+    "cityTopPickLabel": "Escolha da cidade",
+    "cityRestaurantsSingular": "restaurante",
+    "cityRestaurantsPlural": "restaurantes",
+    "todayLabel": "Hoje",
+    "websiteLabel": "Visitar o site",
+    "mapsLabel": "Abrir no Maps",
+    "readReviews": "Ler todas as {{count}} avaliações no Google →",
+    "googleReview": "Avaliação no Google →",
+    "stayKicker": "Hospede-se perto destas mesas",
+    "stayHeadlineTemplate": "Reserve hotéis em {{city}}, vá a pé para jantar",
+    "stayBtnTemplate": "Ver hospedagens em {{city}}",
+    "foodToursBtnTemplate": "Tours gastronômicos em {{city}}",
+    "stayNearby": "Hospede-se por perto",
+    "stayInTemplate": "Hospede-se em {{city}}",
+    "bottomHeadlineTemplate": "Selecionados entre {{count}} restaurantes reais",
+    "bottomLead": "Catálogo extraído do Google Places (nota × número de avaliações, redes de fast-food excluídas) e, em seguida, escolhido editorialmente o melhor de cada cidade. Cada citação desta página vem de uma avaliação real do Google. Atualizado em {{date}}.",
+    "bottomPartner": "Você é dono de um restaurante? Os anúncios de Parceiro em Destaque recebem textos escritos à mão, destaques do cardápio e um card aprimorado.",
+    "cityVibes": {
+      "Rovaniemi": "Capital da Lapônia, onde a cultura ártica encontra a ambição culinária",
+      "Levi": "Jantar à beira do fogo depois de um dia nos fjells",
+      "Kittilä": "Vilarejo de montanha além da agitação da estação de Levi",
+      "Inari": "Herança sami e os ingredientes árticos mais puros",
+      "Saariselkä": "Jantar em plena natureza sob a aurora boreal",
+      "Kemi": "Onde o gelo encontra o fogo, experiências sazonais únicas",
+      "Ylläs": "O charme de um vilarejo de montanha com sabores lapônicos autênticos",
+      "Tornio": "Caráter de cidade de fronteira e comida caseira finlandesa",
+      "Haparanda": "Cruze a fronteira para uma fusão sueco-nórdica",
+      "Sodankylä": "Tradições de cidade ribeirinha e o público do Festival de Cinema do Sol da Meia-Noite",
+      "Pyhätunturi": "Jantar no topo do fjell, na porta sul para a natureza selvagem",
+      "Luosto": "Vilarejo da montanha de ametista com restaurantes de troncos de kelo",
+      "Muonio": "Planaltos do cinturão das auroras, acima do limite das árvores",
+      "Hetta": "Polo de Enontekiö no encontro de três fronteiras",
+      "Kuusamo": "Encruzilhada entre Carélia e Lapônia + estação de Ruka",
+      "Kemijärvi": "A cidade ferroviária mais ao norte, com mesas à beira-rio",
+      "Salla": "Passagem natural e o vilarejo de esqui mais oriental da Finlândia",
+      "Posio": "Coração de lagos e artesanato na região de Riisitunturi"
+    }
+  },
+  "fineDining": {
+    "title": "Alta gastronomia na Lapônia | LaplandDining",
+    "description": "As salas de alta gastronomia da Lapônia, Restaurant Aanaar, Nili, Rakas. Menus degustação, pratos-assinatura, o que reservar e quando.",
+    "heroH1": "Alta gastronomia na Lapônia",
+    "heroLeadTemplate": "Os menus degustação mais bem avaliados, onde a herança sami encontra a gastronomia moderna. Selecionados entre {{count}} restaurantes da Lapônia, ordenados pela nota do Google e combinados com um hotel a poucos minutos a pé.",
+    "metaDescriptionTemplate": "Os restaurantes mais bem avaliados da Lapônia para menus degustação e alta gastronomia, ordenados pela nota do Google e escolhidos pela redação. {{count}} melhores escolhas de cidade por toda a Lapônia finlandesa.",
+    "websiteLabel": "Site",
+    "mapsLabel": "Maps",
+    "stayInTemplate": "Hospede-se em {{city}}",
+    "readAllReviews": "Ler todas as {{count}} avaliações no Google →"
+  },
+  "midnightSunDining": {
+    "title": "Jantar sob o sol da meia-noite na Lapônia | LaplandDining",
+    "description": "Onde comer sob o sol da meia-noite, jantares tardios, mesas no terraço e cardápios só de verão por toda a cena de restaurantes da Lapônia.",
+    "heroBadge": "6 jun → 7 jul · 32 dias",
+    "heroH1Line1": "Um prato ao ar livre,",
+    "heroH1Line2": "o sol no céu.",
+    "heroLead": "Por um mês, o sol nunca se põe abaixo do horizonte ao norte do Círculo Polar Ártico. Os terraços ficam abertos. Os fogos de kota seguem acesos. Os restaurantes migram, discretamente, para uma paleta de verão de lago e rio e a Lapônia se torna o destino gastronômico de verão mais subestimado da Europa.",
+    "heroCtaWhere": "Onde comer sob o sol da meia-noite",
+    "heroCtaStays": "Encontrar hospedagem com sol da meia-noite",
+    "whyKicker": "O que muda",
+    "whyHeadline": "Quando o sol nunca se põe",
+    "whyParagraphs": [
+      "Quase tudo o que se escreve sobre a Lapônia gira em torno da aurora, da neve e das renas no escuro. São nove meses do ano. Os outros três são algo completamente diferente e a cultura gastronômica está à altura.",
+      "Do início de junho ao início de julho, o sol acima do Círculo Polar Ártico não se põe. Mesmo ao sul da linha, em Rovaniemi, o crepúsculo substitui a escuridão, à 1 da manhã você lê um cardápio ao ar livre sem lanterna. Terraços que no inverno fecham às 21h continuam abertos até a meia-noite. As tendas kota servem jantares de verão em horários que parecem impossíveis.",
+      "Os ingredientes também mudam. As ervas silvestres fazem fotossíntese o tempo todo. Os peixes de lago se alimentam em águas rasas e mornas. Os cogumelos da floresta ainda não começaram, mas as cloudberries amadurecem nos pântanos no fim da janela. Os restaurantes que construíram sua reputação com a caça de inverno migram, sem alarde, para uma paleta mais leve de lago e rio."
+    ],
+    "citiesHeadline": "Quatro cidades, quatro maneiras de comer o sol",
+    "citiesLead": "Cada uma oferece um ângulo diferente sobre o jantar sob o sol da meia-noite. Combine a refeição com uma hospedagem a poucos minutos a pé, são as semanas em que o hotel certo importa tanto quanto a mesa certa.",
+    "summerCities": [
+      {
+        "name": "Rovaniemi",
+        "angle": "Terraços à beira-rio",
+        "body": "O Kemijoki e o Ounasjoki se encontram no centro, as mesas no terraço do Nili e do Roka seguem abertas enquanto o sol desenha seu arco sobre o rio à 1 da manhã. Peça salmão pescado na mesma manhã."
+      },
+      {
+        "name": "Levi",
+        "angle": "Jantares no topo do fjell",
+        "body": "O terraço do Hullu Poro e o serviço de verão do teleférico de Levi entregam vistas de 360° sobre os fjells com pequenos pratos lapônicos. Leve uma camada extra, mesmo às 2 da manhã pode cair para 8 °C."
+      },
+      {
+        "name": "Inari",
+        "angle": "Grelhados de meia-noite no lago Inari",
+        "body": "O Aanaar serve um menu degustação de verão montado em torno do peixe de lago pescado na mesma manhã. Coma ao ar livre de frente para o lago enquanto o sol roça o horizonte sem nunca mergulhar abaixo dele."
+      },
+      {
+        "name": "Saariselkä",
+        "angle": "Kotas em plena natureza com o sol ainda no alto",
+        "body": "Pirkon Pirtti e Star Arctic fazem jantares de rena no fogo aberto em horários que parecem impossíveis, começam às 23h e terminam em plena luz do dia. A fumaça do kota contra o céu dourado é a foto."
+      }
+    ],
+    "stayInTemplate": "Hospede-se em {{city}}",
+    "summerFoodTours": "Tours gastronômicos de verão",
+    "bottomHeadline": "Monte sua viagem sob o sol da meia-noite",
+    "bottomLead": "Combine estas mesas com o resto do verão lapônico, caminhadas pelos fjells, mergulhos no lago às 23h e a rara quietude de um pleno verão ártico. Comece pelos restaurantes que você quer e reserve o resto em torno deles.",
+    "bottomCtaBrowse": "Ver todos os restaurantes",
+    "bottomCtaArctic": "Leia sobre os ingredientes árticos"
+  },
+  "foodHistory": {
+    "title": "História gastronômica da Lapônia, cozinha sami | LaplandDining",
+    "description": "A história da cozinha da Lapônia, a tradição alimentar sami, a cozinha da rena, as oito estações do ano e como chegaram até hoje os cardápios que você vê.",
+    "heroH1": "Uma história contada pela comida",
+    "heroLead": "Como milhares de anos de sobrevivência ártica moldaram uma das culturas gastronômicas mais singulares do mundo.",
+    "intro": "A fumaça sobe do fogo de um kota antes de o sol nascer por completo. Tiras de rena curam sob o beiral de uma cabana de madeira. Um salmão desliza pela névoa do rio. Na Lapônia, a comida nunca começou na cozinha, começou na terra. Esta é a história de por quê.",
+    "sections": [
+      {
+        "title": "Uma cozinha nascida da necessidade",
+        "paragraphs": [
+          "O inverno dura oito meses. As temperaturas caem a trinta, às vezes quarenta graus negativos. O campo de cultivo mais próximo que produz alguma coisa fica a centenas de quilômetros ao sul, e mesmo assim só às vezes. Essa foi a vida cotidiana por milhares de anos.",
+          "A comida vinha do que estava perto, rios cheios de salmão e truta-ártica, florestas com caça e frutas silvestres, tundra por onde as renas se moviam com as estações. Para os sami, o povo indígena do norte da Escandinávia, a comida nunca esteve separada da terra. Ela <em>era</em> a terra.",
+          "A cozinha finlandesa de outras regiões surgiu de uma agricultura que remonta à pré-história. Mas no norte o cultivo nunca foi confiável. Caça, pesca e coleta não eram um detalhe à parte. Eram o plano inteiro."
+        ]
+      },
+      {
+        "title": "A rena, tudo o que uma pessoa precisa",
+        "paragraphs": [
+          "A relação entre o povo sami e a rena remonta a muito antes do pastoreio. Mas o modelo de pastoreio como o conhecemos tomou forma no século XIX, quando substituiu a caça e a pesca como principal meio de vida no leste de Sápmi. A relação nunca foi só carne, pele, galhada, tendões e ossos todos tinham uso.",
+          "Hoje, a Finlândia tem cerca de 5.600 pastores de renas que cuidam de aproximadamente 200.000 animais em 56 cooperativas de pastoreio. A área de criação de renas cobre cerca de um terço da Finlândia. A produção anual de carne fica em torno de 2 milhões de quilogramas, e o setor vale cerca de 60 milhões de euros por ano.",
+          "Ao contrário da Noruega e da Suécia, o pastoreio de renas na Finlândia não é reservado aos sami, qualquer cidadão da UE pode participar com as devidas licenças. Mas o conhecimento, a ligação com a terra e as tradições que fazem a carne de rena ter o sabor que tem vêm de séculos de cuidado sami.",
+          "O prato-assinatura é o <strong>poronkäristys</strong>: lascas finas de rena salteadas na manteiga, servidas com purê de batata e geleia de oxicoco. Simples, honesto, profundamente reconfortante. Você o encontra em todos os restaurantes da Lapônia, de cafés de estrada a salas de alta gastronomia."
+        ]
+      },
+      {
+        "title": "Rios, lagos, fumaça e fogo",
+        "paragraphs": [
+          "As águas da Lapônia sempre foram a outra despensa. Salmão, peixe-branco, perca, truta-ártica e lúcio sustentaram as famílias pelos invernos mais escuros e pelos verões mais luminosos do sol da meia-noite. Os direitos de pesca pertenciam às famílias ribeirinhas havia séculos, definidos por linhagem e costume, não por dinheiro.",
+          "As técnicas tradicionais seguem vivas nos restaurantes. Salmão grelhado na chama sobre uma tábua de madeira ao lado do fogo aberto. Peixe-branco defumado em casca de bétula. Sopa de peixe encorpada com creme e endro fresco. Não são \"recriações\" de receitas antigas, são tradições vivas, passadas de geração em geração.",
+          "O lago Inari, o terceiro maior da Finlândia, produz alguns dos melhores peixes de água doce da Europa. O Restaurant Aanaar, em Inari, monta menus degustação inteiros em torno do que os pescadores locais tiram de suas águas naquela manhã."
+        ]
+      },
+      {
+        "title": "O chão da floresta",
+        "paragraphs": [
+          "Caminhe por uma floresta lapônica no fim do verão e estará caminhando por um supermercado. Mirtilos, oxicocos, cloudberries e espinheiro-marítimo crescem silvestres. Cantarelos, boletos e o cobiçado matsutake brotam entre o musgo. Ervas silvestres, angélica, ulmária, tomilho-ártico, perfumam o ar.",
+          "A cloudberry ocupa um lugar especial. Chamada de <strong>lakka</strong> em finlandês, cresce apenas em pântanos árticos e subárticos, amadurece por umas duas semanas em julho e não pode ser cultivada comercialmente. Sua cor âmbar, doçura de mel e raridade fazem dela o \"ouro do Ártico\". Você a encontra em sobremesas, licores e como guarnição em quase todo restaurante de alta gastronomia da Lapônia.",
+          "O que torna esses ingredientes extraordinários não é só o sabor, é o ambiente. As condições árticas, as 24 horas de luz no verão, o ar puro e algumas das águas mais limpas da Terra produzem frutas com concentrações mais altas de vitaminas, antioxidantes e flavonoides do que suas equivalentes do sul."
+        ]
+      },
+      {
+        "title": "Da sobrevivência à arte",
+        "paragraphs": [
+          "Durante quase toda a sua história, a cozinha lapônica foi sobre conservação e sobre alimentar pessoas. Defumar, secar, salgar, técnicas nascidas da necessidade, não da criatividade. Temperos além do sal eram quase desconhecidos. A comida era honesta e nutritiva, mas ninguém a empratava em cerâmica artesanal.",
+          "Isso mudou com o movimento da Nova Cozinha Nórdica. Quando o Noma, em Copenhague, passou a celebrar ingredientes hiperlocais e colhidos na natureza nos anos 2000, chefs de todos os países nórdicos começaram a olhar para o próprio quintal de outra forma. Na Lapônia, encontraram ingredientes que a maior parte do mundo nunca havia provado e tradições já com séculos de idade.",
+          "Hoje, restaurantes como Aanaar em Inari, Nili em Rovaniemi e Gustav em Rovaniemi fazem algo notável: honram as tradições sami ao mesmo tempo em que expandem o que a cozinha ártica pode ser. Um prato de rena no Aanaar não é só comida, é uma história de herança indígena, cuidado ambiental e reinvenção culinária em um único prato."
+        ]
+      },
+      {
+        "title": "O kota, onde se compartilham as histórias",
+        "paragraphs": [
+          "Talvez a experiência gastronômica mais singular da Lapônia não seja um restaurante. É o <strong>kota</strong>, uma tenda sami tradicional, de formato cônico, com uma fogueira ao centro. Por séculos, o kota foi lar, cozinha e ponto de encontro. A comida cozida na chama aberta, as histórias contadas, a fumaça levando preces ao céu.",
+          "Hoje, restaurantes kota como o Kammi, no Hullu Poro (Levi), mantêm a tradição viva. Você se senta sobre peles de rena em torno do fogo crepitante enquanto salmão defumado, linguiças de rena e caça grelhada são preparados à sua frente. A refeição fica em torno de 64 € por pessoa, mas o momento é difícil de precificar.",
+          "É isso que torna o jantar na Lapônia diferente. Não é só o que está no prato, é o fogo, a fumaça, a neve lá fora, a aurora boreal no alto e os milhares de anos de engenho humano que tornaram a refeição possível."
+        ]
+      }
+    ],
+    "ctaExplore": "Explore os restaurantes"
+  },
+  "localFood": {
+    "title": "Comida local da Lapônia, rena, frutas, peixe | LaplandDining",
+    "description": "O que \"local\" significa num cardápio da Lapônia, rena, truta-ártica, cloudberries, oxicocos e ervas colhidas na natureza.",
+    "heroH1": "Comida e ingredientes locais",
+    "heroLead": "Por que a Lapônia produz alguns dos alimentos mais limpos e nutritivos da Terra e como a produção de alimentos na Finlândia define o padrão de pureza.",
+    "intro": "Um pescador tira uma truta-ártica do lago Inari antes do amanhecer. O chef do vilarejo vizinho fica sabendo em menos de vinte minutos. A cadeia alimentar na Lapônia é curta assim e é por isso que a comida tem o sabor que tem.",
+    "sections": [
+      {
+        "title": "A floresta",
+        "paragraphs": [
+          "O fim do verão numa floresta lapônica é, na prática, fazer compras de mercado. Mirtilos, oxicocos, framboesas silvestres, cogumelos e ervas crescem em tal volume que todo finlandês aprende a colher antes de aprender a dirigir. O Direito de Todos, <strong>jokamiehenoikeus</strong>, torna isso possível: qualquer pessoa, residente ou visitante, pode caminhar, colher e recolher por toda a natureza, seja de quem for a terra.",
+          "Não é um gesto simbólico. Molda toda a cultura gastronômica. As florestas da Finlândia produzem cerca de 500 milhões de quilogramas de mirtilos silvestres por ano, mas só 5 a 10% são colhidos. O resto alimenta a fauna e repõe o ecossistema.",
+          "Muitos dos melhores restaurantes da Lapônia mantêm coletores profissionais na folha de pagamento, passando o verão nos fjells e nas bordas da floresta antiga. \"Da fazenda à mesa\" não dá conta. Isto é da floresta à mesa e a floresta começa atrás da porta da cozinha."
+        ]
+      },
+      {
+        "title": "Rio e lago",
+        "paragraphs": [
+          "O rio Tornio é um dos poucos rios de salmão da Europa onde o salmão selvagem ainda é pescado de populações genuinamente selvagens. O lago Inari produz truta-ártica, peixe-branco e truta-marrom. O extremo norte da Finlândia é cheio de lagos com água mais limpa do que a maioria dos países consegue imaginar.",
+          "Aqui, a tradição pesqueira finlandesa é quase de escala doméstica, as redes são lançadas pela manhã e a sopa está na mesa ao anoitecer. Salmão defumado em casca de bétula. Peixe-branco grelhado à loimu sobre uma tábua de madeira ao lado do fogo aberto. Creme e endro boiam na sopa.",
+          "No vale do Tornio, na fronteira entre Finlândia e Suécia, a antiga tradição do lippokalastus segue viva: uma rede de cabo longo mergulhada contra a correnteza a partir de uma plataforma de madeira. Em Kukkolaforsen, na margem sueca, você pode comprar o peixe defumado no local para levar para casa depois do jantar."
+        ]
+      },
+      {
+        "title": "A criação de renas",
+        "paragraphs": [
+          "Toda rena da Lapônia finlandesa vive livre. Não há fazendas de renas convencionais, os animais percorrem cerca de 123.000 km² de natureza selvagem, pastando líquen, musgo, gramíneas silvestres e folhas de bétula. São semidomesticados: os pastores os rastreiam e manejam, mas o movimento é do próprio animal.",
+          "Isso aparece na carne. Uma rena de vida livre, que passou a vida caminhando pelos fjells e comendo plantas silvestres, dá uma carne magra, rica em ácidos graxos ômega-3 e de sabor profundo. Nenhum animal de fazenda alimentado com grão chega perto.",
+          "O setor finlandês da rena é gerido por 56 cooperativas de pastoreio, com tamanhos máximos de rebanho limitados por lei. As reuniões de outono decidem quantas podem ser abatidas para manter os rebanhos saudáveis e a paisagem em equilíbrio. A produção anual fica em torno de 2 milhões de quilogramas de carne."
+        ]
+      },
+      {
+        "title": "Lagos serenos e um ambiente ártico",
+        "paragraphs": [
+          "A agricultura finlandesa usa menos pesticida por hectare do que quase qualquer outro país da UE. O uso de antibióticos no gado é dos mais baixos da Europa. Os invernos frios funcionam como controle natural de pragas, os insetos que assolam os climas mais quentes simplesmente não sobrevivem ao congelamento ártico. O resultado é menos intervenção química e produtos mais limpos.",
+          "A água da torneira é potável em todo o país. Na Lapônia, ela vem direto de algumas das fontes de água subterrânea mais puras do continente, muitas vezes a mesma água que caiu como neve sobre um pasto de renas dois dias antes.",
+          "Plantas que crescem em condições severas desenvolvem mais compostos protetores. Um mirtilo silvestre finlandês contém de 3 a 4 vezes mais antocianinas do que um mirtilo cultivado. As cloudberries são ricas em vitamina C, vitamina E e ácidos graxos ômega. O espinheiro-marítimo carrega mais vitamina C por grama do que a laranja. Isto não é marketing, é botânica."
+        ]
+      }
+    ],
+    "ingredientsHeadline": "Os ingredientes da Lapônia",
+    "ingredientsLead": "O que acaba no seu prato e de onde vem.",
+    "seasonLabel": "Temporada",
+    "ingredients": [
+      {
+        "name": "Rena",
+        "fact": "200.000 renas percorrem a Lapônia finlandesa em 56 distritos de pastoreio. Produção anual: 2,1 milhões de kg de carne. Os animais pastam livremente líquen, musgo e plantas silvestres, sem confinamentos, sem hormônios de crescimento.",
+        "season": "O ano todo (abate no outono)"
+      },
+      {
+        "name": "Truta-ártica e salmão",
+        "fact": "Tirados de alguns dos rios e lagos mais limpos da Europa. Só o lago Inari fornece truta-ártica, peixe-branco e truta-marrom. De captura selvagem, nunca de cativeiro nas águas da Lapônia.",
+        "season": "Verão e outono"
+      },
+      {
+        "name": "Cloudberry (Lakka)",
+        "fact": "O \"ouro do Ártico\", cresce apenas em pântanos subárticos, amadurece por 2-3 semanas em julho e não pode ser cultivada comercialmente. A Finlândia produz cerca de 500.000 kg por ano, em sua maioria de colheita silvestre.",
+        "season": "Julho–agosto"
+      },
+      {
+        "name": "Mirtilo silvestre",
+        "fact": "Os mirtilos silvestres finlandeses contêm de 3 a 4 vezes mais antocianinas do que os cultivados. As florestas da Finlândia produzem cerca de 500 milhões de kg por ano, só 5 a 10% são colhidos.",
+        "season": "Julho–setembro"
+      },
+      {
+        "name": "Oxicoco",
+        "fact": "A fruta silvestre mais colhida na Finlândia. Usado em geleias, molhos e sobremesas. O acompanhamento tradicional da rena o equilíbrio agridoce é inseparável da cozinha lapônica.",
+        "season": "Agosto–outubro"
+      },
+      {
+        "name": "Cogumelos silvestres",
+        "fact": "Cantarelos, boletos (porcini) e cantarelos-trombeta crescem em abundância nas florestas lapônicas. Todo finlandês tem o direito legal de colher cogumelos e frutas em qualquer lugar o antigo \"Direito de Todos\".",
+        "season": "Agosto–outubro"
+      },
+      {
+        "name": "Aves de caça",
+        "fact": "A perdiz-branca (riekko) é a ave de caça mais cobiçada da Lapônia. Outrora alimento camponês, hoje uma iguaria de alta gastronomia. De captura selvagem durante a temporada de caça, sob cotas rígidas.",
+        "season": "Setembro–março"
+      },
+      {
+        "name": "Ervas silvestres",
+        "fact": "Angélica-ártica, ulmária, epilóbio e tomilho-ártico. Colhidas à mão em campinas de fjell e bordas de floresta. O sol da meia-noite lhes dá sabor intenso e alta densidade nutricional.",
+        "season": "Junho–agosto"
+      }
+    ],
+    "ctaHeadline": "Prove onde ela cresce",
+    "ctaLead": "Você não entende a cultura gastronômica da Lapônia até prová-la. Encontre os restaurantes que se abastecem direto de pastores, pescadores e coletores locais e então reserve uma hospedagem a poucos minutos a pé.",
+    "ctaBrowse": "Ver todos os restaurantes",
+    "ctaStay": "Reserve uma hospedagem na Lapônia",
+    "ctaTours": "Aulas de cozinha e tours gastronômicos"
+  },
+  "about": {
+    "title": "Sobre o LaplandDining",
+    "description": "Sobre o LaplandDining, guia editorial e independente de restaurantes da Lapônia finlandesa.",
+    "heroH1": "Sobre o LaplandDining",
+    "heroLead": "Seu guia de restaurantes reais, escolhidos a dedo por toda a Lapônia finlandesa.",
+    "networkTitle": "Rede LaplandVibes",
+    "networkBodyA": "O LaplandDining faz parte do ecossistema <strong>LaplandVibes</strong>, uma família de sites especializados dedicados a ajudar viajantes a descobrir o melhor da Lapônia finlandesa. Cada site se concentra em um aspecto específico da experiência lapônica: hospedagem, gastronomia, atividades, natureza, compras, vida noturna e muito mais.",
+    "networkBodyB": "Todo restaurante listado no LaplandDining é um estabelecimento real. Não listamos restaurantes fictícios ou de preenchimento. Os anúncios são elaborados a partir de registros públicos, dados do Google Places e dos sites dos próprios restaurantes.",
+    "affiliateTitle": "Aviso de afiliação",
+    "affiliateBodyA": "Alguns links do LaplandDining são links de afiliados, principalmente reservas de hotel pela Hotels.com e experiências gastronômicas pela GetYourGuide. Podemos receber uma pequena comissão se você reservar por eles, sem custo adicional para você. Essas comissões nos ajudam a manter e aprimorar este recurso gratuito.",
+    "affiliateBodyB": "As escolhas editoriais são independentes. As parcerias de afiliação não influenciam quais restaurantes são destacados nem como são descritos, só entram os restaurantes que parecem um lugar genuinamente bom para comer.",
+    "operatorTitle": "Operador",
+    "operatorBodyA": "O LaplandDining.com é operado pela <strong>Lapeso Oy</strong>, uma empresa finlandesa com sede na Lapônia.",
+    "operatorBodyB": "Dúvidas editoriais, correções, propostas de parceria, solicitações de imprensa:",
+    "exploreTitle": "Explore o ecossistema"
+  },
+  "privacy": {
+    "title": "Política de Privacidade | LaplandDining",
+    "description": "Como o LaplandDining trata os seus dados."
+  },
+  "terms": {
+    "title": "Termos de Uso | LaplandDining",
+    "description": "Termos de uso do LaplandDining."
+  },
+  "cookie": {
+    "title": "Política de Cookies | LaplandDining",
+    "description": "Como o LaplandDining usa cookies."
+  },
+  "common": {
+    "cityTopPicksKicker": "Uma escolha por cidade · {{count}} destinos",
+    "cityTopPicksHeadline": "A melhor mesa da Lapônia, por cidade",
+    "cityTopPicksLead": "Para cada destino da Lapônia neste guia, escolhemos um restaurante como o primeiro a experimentar. Citações reais de clientes do Google, combinadas com um hotel a poucos minutos a pé.",
+    "dataRefreshed": "Dados atualizados em {{date}} a partir do Google Places.",
+    "howWeChoose": "Como escolhemos",
+    "seeMoreInCity": "Ver mais restaurantes em {{city}}",
+    "partnershipGold": "★ Parceiro em destaque",
+    "partnershipPremium": "Parceiro em destaque",
+    "partnershipVerified": "Em destaque",
+    "stayNearby": "Hospede-se por perto"
+  },
+  "relatedLinks": {
+    "kicker": "Continue explorando",
+    "headline": "Para onde ir agora",
+    "lead": "Complete a viagem: pare nos <bars>bares de coquetéis e de gelo da Lapônia</bars>, descubra <nightlife>aonde ir depois do jantar</nightlife> e resolva <stays>onde se hospedar perto desses restaurantes</stays>."
+  }
+}

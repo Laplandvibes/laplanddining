@@ -1,0 +1,353 @@
+{
+  "home": {
+    "title": "LaplandDining, Where to Actually Eat in Lapland",
+    "description": "The independent restaurant guide to Finnish Lapland, hand-picked restaurants, menus, hours, direct booking links. From local pubs to fine dining.",
+    "heroH1": "Discover Lapland's Best Restaurants",
+    "heroLead": "Real, hand-picked restaurants across Finnish Lapland, from traditional Sami fine dining to kota fire cooking and Arctic ingredients you won't find anywhere else.",
+    "heroCtaExplore": "Explore All Restaurants",
+    "heroCtaStay": "Stay near the food",
+    "midnightKicker": "Lapland's summer",
+    "midnightHeadline1": "Dinner at 1 a.m.",
+    "midnightHeadline2": "The sun is still up.",
+    "midnightBadge": "Jun 6 → Jul 7",
+    "midnightBody": "For thirty-two days, the sun never drops below the horizon above the Arctic Circle. Riverside terraces in Rovaniemi, kota fires in Saariselkä, Aanaar's lake-facing tasting menu, all eaten in continuous gold light. The quietest, best half of Lapland's food year.",
+    "midnightCtaGuide": "Read the midnight-sun guide",
+    "midnightCtaStays": "Find summer stays",
+    "cuisineHeadline": "Cuisine Highlights",
+    "cuisineLead": "Three pillars of Lapland's unique culinary scene.",
+    "cuisineCards": [
+      {
+        "title": "Fine Dining",
+        "desc": "Award-winning tasting menus transforming Arctic ingredients into culinary art. From Sami traditions to Nordic innovation."
+      },
+      {
+        "title": "Kota Experience",
+        "desc": "Dine inside a traditional Sami tent around an open fire. Flame-grilled salmon, reindeer, and game in an unforgettable atmosphere."
+      },
+      {
+        "title": "Arctic Ingredients",
+        "desc": "Wild herbs, reindeer, lake fish, cloudberries, and mushrooms foraged from pristine Arctic wilderness. Hyper-local, seasonal, and pure."
+      }
+    ],
+    "destinationsHeadline": "Browse by Destination",
+    "destinationsLead": "Choose a city and discover what's on the table.",
+    "statsVerified": "Featured restaurants",
+    "statsDestinations": "Destinations",
+    "statsYear": "Updated this year",
+    "stayKicker": "Stay where you eat",
+    "stayHeadline": "Book a hotel near tonight's table",
+    "stayLead": "Lapland dinners often run late and end far from town. The smartest plan is a stay within walking distance of the restaurant and Hotels.com gives you the cleanest view of what's actually available next to each kota, fell hotel and ice restaurant.",
+    "stayAffiliateNote": "Affiliate links, we may earn a commission at no extra cost to you.",
+    "stayAffiliateLink": "Why we link this way",
+    "toursKicker": "Eat with a guide",
+    "toursHeadline": "Food tours, cooking classes & brewery visits",
+    "toursLead": "For travellers who want context with the meal, Sámi tasting walks, Lappish cooking classes, brewery dinners and salmon-cooking experiences. Booked through GetYourGuide with free cancellation up to 24 hours before.",
+    "tourLinks": [
+      "Lapland food tours",
+      "Cooking classes",
+      "Rovaniemi food & drink",
+      "Levi food & drink"
+    ]
+  },
+  "restaurants": {
+    "title": "Restaurants in Finnish Lapland | LaplandDining",
+    "description": "60+ hand-picked restaurants across Finnish Lapland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menus, hours, and direct booking links.",
+    "heroKicker": "Arctic Dining Guide",
+    "heroH1": "All Restaurants",
+    "heroLeadTemplate": "{{restaurantCount}} hand-picked restaurants across {{cityCount}} Lapland destinations. Real customer reviews, photos, and opening hours, paired with a hotel walking distance away.",
+    "heroChipKota": "Kota Dining",
+    "heroChipWilderness": "Wilderness",
+    "heroChipArctic": "Arctic",
+    "filterAll": "All Cities",
+    "cityTopPickLabel": "City Top Pick",
+    "cityRestaurantsSingular": "restaurant",
+    "cityRestaurantsPlural": "restaurants",
+    "todayLabel": "Today",
+    "websiteLabel": "Visit website",
+    "mapsLabel": "Open in Maps",
+    "readReviews": "Read all {{count}} reviews on Google →",
+    "googleReview": "Google review →",
+    "stayKicker": "Stay near these tables",
+    "stayHeadlineTemplate": "Book {{city}} hotels, walk to dinner",
+    "stayBtnTemplate": "Browse {{city}} stays",
+    "foodToursBtnTemplate": "{{city}} food tours",
+    "stayNearby": "Stay nearby",
+    "stayInTemplate": "Stay in {{city}}",
+    "bottomHeadlineTemplate": "Curated from {{count}} real restaurants",
+    "bottomLead": "Catalogue sourced from Google Places (rating × review count, fast-food chains excluded), then editorially picked top-1 per city. Every quote on this page comes from a real Google review. Updated {{date}}.",
+    "bottomPartner": "Are you a restaurant owner? Featured Partner listings get hand-curated copy, menu highlights, and an upgraded card.",
+    "cityVibes": {
+      "Rovaniemi": "Capital of Lapland, where Arctic culture meets culinary ambition",
+      "Levi": "Fireside dining after a day on the fells",
+      "Kittilä": "Fell village beyond the Levi resort sprawl",
+      "Inari": "Sámi heritage and the purest Arctic ingredients",
+      "Saariselkä": "Wilderness dining under the Northern Lights",
+      "Kemi": "Where ice meets fire, unique seasonal experiences",
+      "Ylläs": "Fell village charm with authentic Lappish flavors",
+      "Tornio": "Border town character and Finnish soul food",
+      "Haparanda": "Cross the border for Swedish-Nordic fusion",
+      "Sodankylä": "River town traditions and the Midnight Sun Film Festival crowd",
+      "Pyhätunturi": "Fell-top dining at the southern gateway to wilderness",
+      "Luosto": "Amethyst-mountain village with kelo log restaurants",
+      "Muonio": "Aurora-belt highlands above the tree line",
+      "Hetta": "Enontekiö hub at the edge of three borders",
+      "Kuusamo": "Karelian-Lapland crossroads + Ruka resort",
+      "Kemijärvi": "Northernmost rail town with riverside tables",
+      "Salla": "Wilderness pass + Finland's easternmost ski village",
+      "Posio": "Lake-and-craft heart of Riisitunturi country"
+    }
+  },
+  "fineDining": {
+    "title": "Fine Dining in Lapland | LaplandDining",
+    "description": "Lapland's fine-dining rooms, Restaurant Aanaar, Nili, Rakas. Tasting menus, signature dishes, what to book and when.",
+    "heroH1": "Fine Dining in Lapland",
+    "heroLeadTemplate": "Top-rated tasting menus where Sámi heritage meets modern gastronomy. Curated from {{count}} Lapland restaurants, sorted by Google rating, paired with a hotel within walking distance.",
+    "metaDescriptionTemplate": "Lapland's top-rated restaurants for tasting menus and fine dining, sorted by Google rating, picked editorially. {{count}} city top picks across Finnish Lapland.",
+    "websiteLabel": "Website",
+    "mapsLabel": "Maps",
+    "stayInTemplate": "Stay in {{city}}",
+    "readAllReviews": "Read all {{count}} reviews on Google →"
+  },
+  "midnightSunDining": {
+    "title": "Midnight Sun Dining in Lapland | LaplandDining",
+    "description": "Where to eat under the midnight sun, late dinners, terrace seats, summer-only menus across Lapland's restaurant scene.",
+    "heroBadge": "June 6 → July 7 · 32 days",
+    "heroH1Line1": "A plate outside,",
+    "heroH1Line2": "the sun overhead.",
+    "heroLead": "For one month, the sun never sinks below the horizon north of the Arctic Circle. Terraces stay open. Kota fires stay lit. Restaurants quietly shift to a lake-and-river summer palette and Lapland becomes the most underrated summer dining destination in Europe.",
+    "heroCtaWhere": "Where to eat under the midnight sun",
+    "heroCtaStays": "Find midnight-sun stays",
+    "whyKicker": "What changes",
+    "whyHeadline": "When the sun never sets",
+    "whyParagraphs": [
+      "Most travel writing about Lapland is built around aurora, snow, and reindeer in the dark. That's nine months of the year. The other three months are something else entirely and the food culture rises to meet it.",
+      "From early June to early July, the sun above the Arctic Circle never sets. Even south of the line, in Rovaniemi, twilight replaces darkness, at 1 a.m. you can read a menu outside without a torch. Terraces that close at 9 p.m. in winter stay open until midnight. Kota tents do summer dinner sittings at hours that feel impossible.",
+      "The ingredients change too. Wild herbs photosynthesise around the clock. Lake fish feed in shallow warm water. Forest mushrooms haven't started yet, but cloudberries are ripening on the bogs by the end of the window. Restaurants that built their reputation on winter game shift, quietly, to a lighter, lake-and-river palette."
+    ],
+    "citiesHeadline": "Four cities, four ways to eat the sun",
+    "citiesLead": "Each gives you a different angle on midnight-sun dining. Pair the meal with a stay within walking distance, these are the windows when the right hotel matters as much as the right table.",
+    "summerCities": [
+      {
+        "name": "Rovaniemi",
+        "angle": "Riverside terraces",
+        "body": "Kemijoki and Ounasjoki meet in the centre, terrace tables at Nili and Roka stay open while the sun loops over the river at 1 a.m. Order salmon caught the same morning."
+      },
+      {
+        "name": "Levi",
+        "angle": "Fell-top dinners",
+        "body": "Hullu Poro's terrace + the Levi gondola summer service give you 360° fell views with Lappish small plates. Pack a layer, even at 2 a.m. it can drop to 8 °C."
+      },
+      {
+        "name": "Inari",
+        "angle": "Lake Inari midnight grills",
+        "body": "Aanaar serves a summer tasting menu built around lake fish hauled the morning of. Eat outside facing the lake while the sun grazes the horizon and never dips below."
+      },
+      {
+        "name": "Saariselkä",
+        "angle": "Wilderness kotas with the sun still up",
+        "body": "Pirkon Pirtti and Star Arctic do open-fire reindeer dinners at hours that feel impossible, 11 p.m. starts that finish in full daylight. The kota smoke against the gold sky is the photo."
+      }
+    ],
+    "stayInTemplate": "Stay in {{city}}",
+    "summerFoodTours": "Summer food tours",
+    "bottomHeadline": "Build your midnight-sun trip",
+    "bottomLead": "Pair these tables with the wider Lappish summer, fell hikes, lake swims at 11 p.m., and the rare quiet of an Arctic midsummer. Start with the restaurants you want, then book the rest around them.",
+    "bottomCtaBrowse": "Browse all restaurants",
+    "bottomCtaArctic": "Read about Arctic ingredients"
+  },
+  "foodHistory": {
+    "title": "Lapland Food History, Sami Cuisine | LaplandDining",
+    "description": "The story of Lapland food, Sami foodways, reindeer cuisine, eight-season eating, and how the menus you see today got here.",
+    "heroH1": "A Story Told Through Food",
+    "heroLead": "How thousands of years of Arctic survival shaped one of the world's most distinctive food cultures.",
+    "intro": "Smoke rises off a kota fire before the sun is fully up. Strips of reindeer cure under the eaves of a wooden cabin. A salmon slides through river fog. In Lapland, food never began in the kitchen, it began on the land. This is the story of why.",
+    "sections": [
+      {
+        "title": "A Cuisine Built by Necessity",
+        "paragraphs": [
+          "Winter lasts eight months. Temperatures drop to thirty, sometimes forty below. The nearest field that produces anything is hundreds of kilometres south, and even then only sometimes. This was daily life for thousands of years.",
+          "Food came from what was close, rivers thick with salmon and Arctic char, forests holding game and wild berries, tundra where reindeer moved with the seasons. For the Sámi, the indigenous people of northern Scandinavia, food was never separate from the land. It <em>was</em> the land.",
+          "Finnish cuisine elsewhere grew out of agriculture going back to prehistory. But in the north, farming was never reliable. Hunting, fishing and gathering weren't a side note. They were the entire plan."
+        ]
+      },
+      {
+        "title": "Reindeer, Everything a Person Needs",
+        "paragraphs": [
+          "The relationship between Sámi people and reindeer goes back much further than herding does. But the herding model as we know it took shape in the 19th century, when it replaced hunting and fishing as the main livelihood in eastern Sápmi. The relationship has never been just about meat, fur, antlers, sinew and bone all found a use.",
+          "Today, Finland has around 5,600 reindeer herders managing roughly 200,000 animals across 56 herding cooperatives. The reindeer-husbandry area covers about one-third of Finland. Annual meat production runs around 2 million kilograms, and the industry is worth roughly €60 million a year.",
+          "Unlike Norway and Sweden, reindeer herding in Finland isn't reserved for the Sámi, any EU citizen can participate with the proper permits. But the knowledge, the connection to the land and the traditions that make reindeer meat taste the way it does come from centuries of Sámi stewardship.",
+          "The signature dish is <strong>poronkäristys</strong>: thin-shaved reindeer sautéed in butter, served with mashed potato and lingonberry jam. Simple, honest, deeply satisfying. You'll find it in every restaurant in Lapland, from roadside cafés to fine dining rooms."
+        ]
+      },
+      {
+        "title": "Rivers, Lakes, Smoke and Fire",
+        "paragraphs": [
+          "Lapland's waters have always been the other pantry. Salmon, whitefish, perch, Arctic char and pike carried families through the darkest winters and the brightest midnight-sun summers. Fishing rights belonged to riverside families for centuries, settled by lineage and custom, not by money.",
+          "The traditional techniques are still alive in the restaurants. Salmon flame-grilled on a wooden board next to an open fire. Whitefish smoked in birch bark. Fish soup made thick with cream and fresh dill. These aren't \"recreations\" of old recipes, they're living traditions, passed from generation to generation.",
+          "Lake Inari, Finland's third-largest lake, produces some of the finest freshwater fish in Europe. Restaurant Aanaar in Inari builds entire tasting menus around what local fishers pull from its waters that morning."
+        ]
+      },
+      {
+        "title": "The Forest Floor",
+        "paragraphs": [
+          "Walk through a Lappish forest in late summer and you're walking through a supermarket. Bilberries, lingonberries, cloudberries and sea buckthorn grow wild. Chanterelles, ceps and the prized matsutake push through the moss. Wild herbs, angelica, meadowsweet, Arctic thyme, scent the air.",
+          "The cloudberry holds a special place. Called <strong>lakka</strong> in Finnish, it grows only in Arctic and subarctic bogs, ripens for a couple of weeks in July, and cannot be commercially farmed. Its amber colour, honey sweetness and rarity make it the \"gold of the Arctic.\" You'll find it in desserts, liqueurs and as a garnish in almost every fine dining restaurant in Lapland.",
+          "What makes these ingredients extraordinary isn't just their taste, it's their environment. Arctic conditions, 24-hour summer light, pristine air and some of the cleanest water on Earth produce berries with higher concentrations of vitamins, antioxidants and flavonoids than their southern counterparts."
+        ]
+      },
+      {
+        "title": "From Survival to Art",
+        "paragraphs": [
+          "For most of its history, Lappish cooking was about preservation and feeding people. Smoking, drying, salting, techniques born from necessity, not creativity. Spices beyond salt were almost unknown. The food was honest and nourishing, but nobody was plating it on handmade ceramics.",
+          "That changed with the New Nordic movement. When Noma in Copenhagen started celebrating hyper-local, foraged ingredients in the 2000s, chefs across the Nordic countries began looking at their own backyards differently. In Lapland, they found ingredients most of the world had never tasted and traditions already centuries old.",
+          "Today restaurants like Aanaar in Inari, Nili in Rovaniemi and Gustav in Rovaniemi do something remarkable: they honour Sámi traditions while pushing what Arctic cuisine can be. A reindeer course at Aanaar isn't just food, it's a story of indigenous heritage, environmental stewardship and culinary reinvention on a single plate."
+        ]
+      },
+      {
+        "title": "The Kota, Where Stories Are Shared",
+        "paragraphs": [
+          "Perhaps the most distinctive dining experience in Lapland isn't a restaurant at all. It's the <strong>kota</strong>, a traditional Sámi tent, cone-shaped, with a fire pit at the centre. For centuries, the kota was home, kitchen and gathering place. Food cooked over open flame, stories were told, smoke carried prayers to the sky.",
+          "Today, kota restaurants like Kammi at Hullu Poro in Levi keep the tradition alive. You sit on reindeer furs around a crackling fire while smoked salmon, reindeer sausages and grilled game are prepared in front of you. The meal runs around €64 a head, but the moment is hard to price.",
+          "This is what makes Lapland dining different. It isn't only what's on the plate, it's the fire, the smoke, the snow outside, the Northern Lights overhead and the thousands of years of human ingenuity that made the meal possible."
+        ]
+      }
+    ],
+    "ctaExplore": "Explore the Restaurants"
+  },
+  "localFood": {
+    "title": "Local Lapland Food, Reindeer, Berries, Fish | LaplandDining",
+    "description": "What 'local' means on a Lapland menu, reindeer, Arctic char, cloudberries, lingonberries, foraged herbs.",
+    "heroH1": "Local Food & Ingredients",
+    "heroLead": "Why Lapland produces some of the cleanest, most nutrient-dense food on Earth and how Finnish food production sets the standard for purity.",
+    "intro": "A fisher hauls an Arctic char out of Lake Inari before sunrise. The chef in the next village knows about it within twenty minutes. The food chain in Lapland is that short and that's why the food tastes the way it does.",
+    "sections": [
+      {
+        "title": "The Forest",
+        "paragraphs": [
+          "Late summer in a Lappish forest is, practically, grocery shopping. Bilberries, lingonberries, wild raspberries, mushrooms and wild herbs grow in such volume that every Finn learns to pick before they learn to drive. Everyman's Right, <strong>jokamiehenoikeus</strong>, makes it possible: anyone, local or visiting, can walk, forage and pick anywhere in nature regardless of who owns the land.",
+          "It isn't a token gesture. It shapes the whole food culture. Finland's forests produce an estimated 500 million kilograms of wild bilberries a year, but only 5–10% are picked. The rest feeds the wildlife and replenishes the ecosystem.",
+          "Many of Lapland's best restaurants keep professional foragers on payroll, spending the summer on the fells and at the edges of old-growth forest. \"Farm-to-table\" doesn't describe it. This is forest-to-table and the forest starts behind the kitchen door."
+        ]
+      },
+      {
+        "title": "River and Lake",
+        "paragraphs": [
+          "The Tornio River is one of Europe's few salmon rivers where wild salmon are still caught from genuinely wild stocks. Lake Inari produces Arctic char, whitefish and brown trout. Northernmost Finland is full of lakes carrying water cleaner than most countries can imagine.",
+          "Finnish fishing tradition up here is almost household-scale, nets dropped in the morning, soup on the table by evening. Salmon smoked in birch bark. Whitefish loimu-grilled on a wooden board next to an open fire. Cream and dill float in the soup.",
+          "In the Tornio valley, on the Finnish-Swedish border, the old lippokalastus tradition still runs: a long-handled net dipped against the current from a wooden platform. At Kukkolaforsen on the Swedish bank you can buy the on-site smoked fish to take home from dinner."
+        ]
+      },
+      {
+        "title": "Reindeer Husbandry",
+        "paragraphs": [
+          "Every reindeer in Finnish Lapland lives free. There are no conventional reindeer farms, the animals roam across roughly 123,000 km² of wilderness, grazing on lichen, moss, wild grasses and birch leaves. They're semi-domesticated: herders track and manage them, but movement is the animal's own.",
+          "It shows in the meat. A free-ranging reindeer that has spent its life walking the fells and eating wild plants produces meat that is lean, rich in omega-3 fatty acids and deeply flavoured. No grain-fed farm animal comes close.",
+          "Finland's reindeer industry is run through 56 herding cooperatives with legally capped maximum herd sizes. Autumn round-ups decide how many can be slaughtered to keep herds healthy and the landscape in balance. Annual production runs around 2 million kilograms of meat."
+        ]
+      },
+      {
+        "title": "Quiet Lakes and an Arctic Environment",
+        "paragraphs": [
+          "Finnish farming uses less pesticide per hectare than almost any other EU country. Antibiotic use in livestock is among the lowest in Europe. Cold winters act as natural pest control, insects that plague warmer climates simply don't survive the Arctic freeze. The result is less chemical intervention and cleaner produce.",
+          "Tap water is drinkable everywhere in the country. In Lapland it comes straight from some of the purest groundwater sources on the continent, often the same water that fell as snow on a herding pasture two days earlier.",
+          "Plants that grow under harsh conditions develop more protective compounds. A wild Finnish bilberry contains 3–4 times more anthocyanins than a cultivated blueberry. Cloudberries are rich in vitamin C, vitamin E and omega fatty acids. Sea buckthorn carries more vitamin C per gram than oranges. This isn't marketing, it's botany."
+        ]
+      }
+    ],
+    "ingredientsHeadline": "The Ingredients of Lapland",
+    "ingredientsLead": "What ends up on your plate and where it comes from.",
+    "seasonLabel": "Season",
+    "ingredients": [
+      {
+        "name": "Reindeer",
+        "fact": "200,000 reindeer roam Finnish Lapland across 56 herding districts. Annual production: 2.1 million kg of meat. The animals graze freely on lichen, moss, and wild plants, no feedlots, no growth hormones.",
+        "season": "Year-round (autumn slaughter)"
+      },
+      {
+        "name": "Arctic Char & Salmon",
+        "fact": "Pulled from some of Europe's cleanest rivers and lakes. Lake Inari alone provides Arctic char, whitefish, and brown trout. Wild-caught, never farmed in Lapland's waterways.",
+        "season": "Summer & autumn"
+      },
+      {
+        "name": "Cloudberry (Lakka)",
+        "fact": "The 'gold of the Arctic', grows only in subarctic bogs, ripens for 2-3 weeks in July, and cannot be commercially farmed. Finland produces about 500,000 kg annually, mostly wild-picked.",
+        "season": "July–August"
+      },
+      {
+        "name": "Wild Bilberry",
+        "fact": "Finnish wild bilberries contain 3-4x more anthocyanins than cultivated blueberries. Finland's forests produce an estimated 500 million kg annually, only 5-10% is picked.",
+        "season": "July–September"
+      },
+      {
+        "name": "Lingonberry",
+        "fact": "The most commonly picked wild berry in Finland. Used in jams, sauces, and desserts. The traditional accompaniment to reindeer, the sweet-tart balance is inseparable from Lappish cuisine.",
+        "season": "August–October"
+      },
+      {
+        "name": "Wild Mushrooms",
+        "fact": "Chanterelles, ceps (porcini), and funnel chanterelles grow abundantly in Lappish forests. Every Finn has the legal right to pick mushrooms and berries anywhere, the ancient \"Everyman's Right.\"",
+        "season": "August–October"
+      },
+      {
+        "name": "Game Birds",
+        "fact": "Willow ptarmigan (riekko) is the most prized game bird of Lapland. Once a peasant staple, now a fine dining delicacy. Wild-caught during the hunting season under strict quotas.",
+        "season": "September–March"
+      },
+      {
+        "name": "Wild Herbs",
+        "fact": "Arctic angelica, meadowsweet, fireweed, and Arctic thyme. Foraged by hand from fell meadows and forest edges. The midnight sun gives them intense flavor and nutritional density.",
+        "season": "June–August"
+      }
+    ],
+    "ctaHeadline": "Taste it where it grows",
+    "ctaLead": "You don't understand Lapland's food culture until you eat it. Find the restaurants that source straight from local herders, fishers and foragers, then book a stay within walking distance.",
+    "ctaBrowse": "Explore All Restaurants",
+    "ctaStay": "Book a Lapland stay",
+    "ctaTours": "Cooking classes & food tours"
+  },
+  "about": {
+    "title": "About LaplandDining",
+    "description": "About LaplandDining, independent editorial restaurant guide to Finnish Lapland.",
+    "heroH1": "About LaplandDining",
+    "heroLead": "Your guide to real, hand-picked restaurants across Finnish Lapland.",
+    "networkTitle": "LaplandVibes Network",
+    "networkBodyA": "LaplandDining is part of the <strong>LaplandVibes</strong> ecosystem, a family of specialised websites dedicated to helping travellers discover the best of Finnish Lapland. Each site focuses on a specific aspect of the Lapland experience: accommodation, dining, activities, nature, shopping, nightlife, and more.",
+    "networkBodyB": "Every restaurant listed on LaplandDining is a real establishment. We do not list fictional or placeholder restaurants. Listings are compiled from public records, Google Places data and the restaurants' own websites.",
+    "affiliateTitle": "Affiliate Disclosure",
+    "affiliateBodyA": "Some links on LaplandDining are affiliate links, primarily hotel bookings via Hotels.com and food experiences via GetYourGuide. We may earn a small commission if you book through them, at no extra cost to you. These commissions help us maintain and improve this free resource.",
+    "affiliateBodyB": "Editorial picks are independent. Affiliate partnerships do not influence which restaurants are featured or how they are described, only restaurants that look like a genuinely good place to eat make the cut.",
+    "operatorTitle": "Operator",
+    "operatorBodyA": "LaplandDining.com is operated by <strong>Lapeso Oy</strong>, a Finnish company headquartered in Lapland.",
+    "operatorBodyB": "Editorial questions, corrections, partnership enquiries, press requests:",
+    "exploreTitle": "Explore the Ecosystem"
+  },
+  "privacy": {
+    "title": "Privacy Policy | LaplandDining",
+    "description": "How LaplandDining handles your data."
+  },
+  "terms": {
+    "title": "Terms of Use | LaplandDining",
+    "description": "Terms of use for LaplandDining."
+  },
+  "cookie": {
+    "title": "Cookie Policy | LaplandDining",
+    "description": "How LaplandDining uses cookies."
+  },
+  "common": {
+    "cityTopPicksKicker": "One pick per city · {{count}} destinations",
+    "cityTopPicksHeadline": "Lapland's best table, by city",
+    "cityTopPicksLead": "For every Lapland destination in this guide, one restaurant is picked as the first place to try. Real customer quotes from Google, paired with a walking-distance hotel.",
+    "dataRefreshed": "Data refreshed {{date}} from Google Places.",
+    "howWeChoose": "How we choose",
+    "seeMoreInCity": "See more {{city}} restaurants",
+    "partnershipGold": "★ Featured Partner",
+    "partnershipPremium": "Featured Partner",
+    "partnershipVerified": "Featured",
+    "stayNearby": "Stay nearby"
+  },
+  "relatedLinks": {
+    "kicker": "Keep exploring",
+    "headline": "Where to next",
+    "lead": "Round out the trip: pull up a stool at <bars>Lapland cocktail & ice bars</bars>, find <nightlife>where to go after dinner</nightlife>, and sort out <stays>where to stay near these restaurants</stays>."
+  }
+}

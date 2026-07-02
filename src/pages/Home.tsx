@@ -1,3 +1,7 @@
+
+import { useTranslation } from 'react-i18next';
+import Hreflang from '../i18n/Hreflang';
+import { useLocale } from '../i18n/useLocale';
 import { ChevronDown, MapPin, Star, UtensilsCrossed, Flame, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
@@ -5,40 +9,37 @@ import CityTopPicksGrid from '../components/CityTopPicksGrid';
 import { gygCategoryLink, gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
 import { getFeaturedRestaurants, restaurants, cities } from '../data/restaurants';
+import PartnerSlot from '../../../shared/PartnerSlot';
+import { PARTNERS } from '../data/partners';
 
-const cuisineCards = [
-  {
-    title: 'Fine Dining',
-    desc: 'Award-winning tasting menus transforming Arctic ingredients into culinary art. From Sami traditions to Nordic innovation.',
-    image: DINING.fineDining,
-    icon: Star,
-  },
-  {
-    title: 'Kota Experience',
-    desc: 'Dine inside a traditional Sami tent around an open fire. Flame-grilled salmon, reindeer, and game in an unforgettable atmosphere.',
-    image: DINING.kotaFire,
-    icon: Flame,
-  },
-  {
-    title: 'Arctic Ingredients',
-    desc: 'Wild herbs, reindeer, lake fish, cloudberries, and mushrooms foraged from pristine Arctic wilderness. Hyper-local, seasonal, and pure.',
-    image: DINING.ingredients,
-    icon: UtensilsCrossed,
-  },
+interface CuisineCardI18n { title: string; desc: string }
+
+const cuisineCardsMeta = [
+  { image: DINING.fineDining, icon: Star },
+  { image: DINING.kotaFire, icon: Flame },
+  { image: DINING.ingredients, icon: UtensilsCrossed },
 ];
 
 export default function Home() {
+  const { t } = useTranslation('pages');
+  const { to, locale } = useLocale();
   const featured = getFeaturedRestaurants();
   void featured; // legacy helper still exported, currently unused on the home grid (CityTopPicksGrid replaces it)
 
+  const cuisineCardsCopy = (t('home.cuisineCards', { returnObjects: true }) as CuisineCardI18n[]) || [];
+  const tourLabels = (t('home.tourLinks', { returnObjects: true }) as string[]) || [];
+  const tourLinks = [
+    { label: tourLabels[0], href: gygSearchLink('lapland food tour', 'home_food_tours_lapland') },
+    { label: tourLabels[1], href: gygSearchLink('lapland cooking class', 'home_cooking_lapland') },
+    { label: tourLabels[2], href: gygCategoryLink('rovaniemi-l2653', 'food-and-drink', 'home_food_rovaniemi') },
+    { label: tourLabels[3], href: gygCategoryLink('levi-l52242', 'food-and-drink', 'home_food_levi') },
+  ];
+
   return (
     <>
-      <title>LaplandDining — Best Restaurants in Finnish Lapland</title>
-      <meta
-        name="description"
-        content="Verified restaurants across Finnish Lapland — Sami fine dining, kota fire cooking, ice restaurants and Arctic ingredients in Rovaniemi, Levi, Inari, Saariselkä, Kemi and Ylläs."
-      />
-      <link rel="canonical" href="https://laplanddining.com/" />
+      <title>{t('home.title')}</title>
+      <meta name="description" content={t('home.description')} />
+      <Hreflang path="/" />
       <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
@@ -91,22 +92,27 @@ export default function Home() {
           decoding="async"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/50 to-night/90" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(15,23,42,0.80) 0%, rgba(15,23,42,0.42) 50%, rgba(15,23,42,0.30) 100%)',
+          }}
+        />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-tight mb-6">
-            Discover Lapland's Best Restaurants
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-tight mb-6 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+            {t('home.heroH1')}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-body leading-relaxed">
-            Real, verified restaurants across Finnish Lapland — from traditional Sami fine dining
-            to kota fire cooking and Arctic ingredients you won't find anywhere else.
+          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-body leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            {t('home.heroLead')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              to="/restaurants"
+              to={to('/restaurants')}
               className="inline-flex items-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
             >
-              Explore All Restaurants
+              {t('home.heroCtaExplore')}
               <ChevronDown size={20} />
             </Link>
             <AffiliateCTA
@@ -115,13 +121,13 @@ export default function Home() {
               destination="Lapland, Finland"
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:border-vibe-pink/60 hover:bg-white/15 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 no-underline"
             >
-              Stay near the food
+              {t('home.heroCtaStay')}
             </AffiliateCTA>
           </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ChevronDown size={28} className="text-white/60" />
+          <ChevronDown size={28} className="text-white/80" />
         </div>
       </section>
 
@@ -145,29 +151,27 @@ export default function Home() {
               <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-300/20 backdrop-blur-md border border-yellow-300/40">
                 <Sun size={12} className="text-yellow-200" />
                 <span className="text-yellow-100 text-[10px] font-bold tracking-[0.2em] uppercase">
-                  Jun 6 → Jul 7
+                  {t('home.midnightBadge')}
                 </span>
               </div>
             </div>
             <div className="lg:col-span-3">
               <p className="text-yellow-300/90 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-                Lapland's other half
+                {t('home.midnightKicker')}
               </p>
               <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-5 leading-tight">
-                Dinner at 1 a.m.<br />
-                <span className="text-yellow-200">The sun is still up.</span>
+                {t('home.midnightHeadline1')}<br />
+                <span className="text-yellow-200">{t('home.midnightHeadline2')}</span>
               </h2>
               <p className="text-white/65 text-base sm:text-lg leading-relaxed mb-7 max-w-xl">
-                Thirty-two days a year, the sun never sets above the Arctic Circle. Terraces in
-                Rovaniemi, kota fires in Saariselkä, Aanaar's lake-side tasting menu — all eaten
-                in continuous gold light. The under-marketed half of Lapland's food year.
+                {t('home.midnightBody')}
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  to="/midnight-sun-dining"
+                  to={to('/midnight-sun-dining')}
                   className="inline-flex items-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-night px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 no-underline shadow-lg shadow-yellow-400/30"
                 >
-                  Read the midnight-sun guide
+                  {t('home.midnightCtaGuide')}
                   <Sun size={16} />
                 </Link>
                 <AffiliateCTA
@@ -177,7 +181,7 @@ export default function Home() {
                   query={{ checkin: '2026-06-15', checkout: '2026-06-18' }}
                   className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 no-underline"
                 >
-                  Find summer stays
+                  {t('home.midnightCtaStays')}
                 </AffiliateCTA>
               </div>
             </div>
@@ -193,24 +197,27 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
-              Cuisine Highlights
+              {t('home.cuisineHeadline')}
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Three pillars of Lapland's unique culinary scene.
+              {t('home.cuisineLead')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cuisineCards.map((card) => {
+            {cuisineCardsMeta.map((card, i) => {
               const Icon = card.icon;
+              const copy = cuisineCardsCopy[i];
+              const title = copy?.title ?? '';
+              const desc = copy?.desc ?? '';
               return (
                 <div
-                  key={card.title}
+                  key={title || i}
                   className="group relative rounded-2xl overflow-hidden h-96"
                 >
                   <img
                     src={card.image}
-                    alt={card.title}
+                    alt={title}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                     decoding="async"
@@ -221,9 +228,9 @@ export default function Home() {
                       <Icon size={24} className="text-amber" />
                     </div>
                     <h3 className="font-heading text-2xl text-white tracking-wide mb-2">
-                      {card.title}
+                      {title}
                     </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">{card.desc}</p>
+                    <p className="text-gray-300 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
               );
@@ -232,6 +239,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Partner slot — featured card (tyhjä = ei renderöidy) ── */}
+      {PARTNERS.front.some((p) => p !== null) && (
+        <section className="py-10 px-4 sm:px-6 lg:px-8 bg-night">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PARTNERS.front.map((partner, i) => (
+                <PartnerSlot key={i} variant="card" partner={partner} locale={locale} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── By Destination ───────────────────────────────────────── */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber/5 rounded-full blur-[120px] animate-[aurora-drift_10s_ease-in-out_infinite]" />
@@ -239,16 +259,16 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
-            Browse by Destination
+            {t('home.destinationsHeadline')}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
-            Choose a city and discover what's on the table.
+            {t('home.destinationsLead')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {cities.map((city, i) => (
               <Link
                 key={city}
-                to={`/restaurants#${city.toLowerCase().replace(/[^a-z]/g, '')}`}
+                to={to(`/restaurants#${city.toLowerCase().replace(/[^a-z]/g, '')}`)}
                 className="group px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white hover:bg-amber/10 hover:border-amber/40 hover:text-amber hover:shadow-[0_0_20px_-5px_rgba(245,158,11,0.2)] hover:scale-105 transition-all duration-300 font-medium no-underline"
                 style={{ animationDelay: `${i * 50}ms` }}
               >
@@ -262,15 +282,15 @@ export default function Home() {
           <div className="mt-16 flex flex-wrap justify-center gap-12 text-center">
             <div>
               <p className="font-heading text-4xl text-amber tracking-wide">{restaurants.length}</p>
-              <p className="text-white/40 text-sm mt-1">Verified restaurants</p>
+              <p className="text-white/75 text-sm mt-1">{t('home.statsVerified')}</p>
             </div>
             <div>
               <p className="font-heading text-4xl text-amber tracking-wide">{cities.length}</p>
-              <p className="text-white/40 text-sm mt-1">Destinations</p>
+              <p className="text-white/75 text-sm mt-1">{t('home.statsDestinations')}</p>
             </div>
             <div>
               <p className="font-heading text-4xl text-amber tracking-wide">2026</p>
-              <p className="text-white/40 text-sm mt-1">Reviewed this year</p>
+              <p className="text-white/75 text-sm mt-1">{t('home.statsYear')}</p>
             </div>
           </div>
         </div>
@@ -281,15 +301,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(236,72,153,0.06)_0%,transparent_60%)]" />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <p className="text-vibe-pink text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-            Stay where you eat
+            {t('home.stayKicker')}
           </p>
           <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-5">
-            Book a hotel near tonight's table
+            {t('home.stayHeadline')}
           </h2>
-          <p className="text-white/55 text-base max-w-2xl mx-auto mb-9 leading-relaxed">
-            Lapland dinners often run late and end far from town. The smartest plan is a stay
-            within walking distance of the restaurant — and Hotels.com gives you the cleanest view
-            of what's actually available next to each kota, fell hotel and ice restaurant.
+          <p className="text-white/80 text-base max-w-2xl mx-auto mb-9 leading-relaxed">
+            {t('home.stayLead')}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">
             {[
@@ -309,9 +327,9 @@ export default function Home() {
               </AffiliateCTA>
             ))}
           </div>
-          <p className="text-white/35 text-xs mt-6">
-            Affiliate links — we may earn a commission at no extra cost to you.
-            <a href="/about" className="underline hover:text-white/60 ml-1">Why we link this way</a>.
+          <p className="text-white/55 text-xs mt-6">
+            {t('home.stayAffiliateNote')}
+            <Link to={to('/about')} className="underline hover:text-white/80 ml-1">{t('home.stayAffiliateLink')}</Link>.
           </p>
         </div>
       </section>
@@ -320,31 +338,24 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-arctic-cyan text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-            Eat with a guide
+            {t('home.toursKicker')}
           </p>
           <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-5">
-            Food tours, cooking classes & brewery visits
+            {t('home.toursHeadline')}
           </h2>
-          <p className="text-white/55 text-base max-w-2xl mx-auto mb-9 leading-relaxed">
-            For travellers who want context with the meal — Sámi tasting walks, Lappish cooking
-            classes, brewery dinners and salmon-cooking experiences. Booked through GetYourGuide
-            with free cancellation up to 24 hours before.
+          <p className="text-white/80 text-base max-w-2xl mx-auto mb-9 leading-relaxed">
+            {t('home.toursLead')}
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { label: 'Lapland food tours', href: gygSearchLink('lapland food tour', 'home_food_tours_lapland') },
-              { label: 'Cooking classes', href: gygSearchLink('lapland cooking class', 'home_cooking_lapland') },
-              { label: 'Rovaniemi food & drink', href: gygCategoryLink('rovaniemi-l2653', 'food-and-drink', 'home_food_rovaniemi') },
-              { label: 'Levi food & drink', href: gygCategoryLink('levi-l52242', 'food-and-drink', 'home_food_levi') },
-            ].map((t) => (
+            {tourLinks.map((link) => (
               <a
-                key={t.label}
-                href={t.href}
+                key={link.label}
+                href={link.href}
                 target="_blank"
                 rel="sponsored nofollow noopener"
                 className="inline-flex items-center gap-2 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white px-5 py-3 rounded-full font-semibold text-sm transition-all duration-200 no-underline min-h-[44px]"
               >
-                {t.label}
+                {link.label}
               </a>
             ))}
           </div>

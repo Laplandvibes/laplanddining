@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "라플란드에서 실제로 식사하는 곳"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "언어 변경"
+  },
+  "footer": {
+    "networkBadge": "라플란드 네트워크",
+    "tagline": "라플란드 여행을 위한 결정판 디지털 가이드.",
+    "groups": {
+      "stay": "숙박",
+      "eatDrink": "식사 & 음료",
+      "do": "체험",
+      "explore": "둘러보기",
+      "essentials": "필수 정보"
+    },
+    "travelGuideKicker": "라플란드 여행 가이드",
+    "pillars": {
+      "restaurants": "레스토랑",
+      "fineDining": "파인 다이닝",
+      "midnightSun": "백야 다이닝",
+      "foodHistory": "음식 이야기",
+      "localFood": "로컬 식재료"
+    },
+    "about": {
+      "eyebrow": "LaplandVibes 소개",
+      "body": "라플란드를 위한 결정판 가이드, 오로라부터 백야까지. 엄선된 체험, 현지인 팁, 그리고 북극 여행 계획에 필요한 모든 것.",
+      "badge": "독립 운영 · 출처 공개"
+    },
+    "spottedError": {
+      "title": "오류를 발견하셨나요?",
+      "body": "수정이 필요한 부분을 발견하셨다면 알려주세요, 즉시 수정하겠습니다.",
+      "cta": "오류 신고 →"
+    },
+    "partner": {
+      "title": "파트너십",
+      "body": "21개 이상의 라플란드 사이트에서 광고 또는 협업 가능.",
+      "cta": "문의하기 →"
+    },
+    "press": {
+      "title": "언론 & 미디어",
+      "body": "편집 파트너십과 프레스 키트.",
+      "cta": "언론 문의 →"
+    },
+    "affiliate": "본 사이트에는 제휴 링크가 포함되어 있습니다. 이 링크를 통해 예약하시면 LaplandVibes가 추가 비용 없이 수수료를 받을 수 있습니다.",
+    "copyright": "{{year}} #LaplandVibes, #LaplandVibes 네트워크의 일부",
+    "websiteBy": "웹사이트 제작: Yrityspaketit.fi",
+    "legal": {
+      "privacy": "개인정보처리방침",
+      "cookie": "쿠키 정책",
+      "terms": "이용 약관",
+      "contact": "문의"
+    },
+    "siteLabels": {
+      "hotelDeals": "호텔 특가",
+      "staysCabins": "숙소와 캐빈",
+      "whereToStay": "숙소 찾기",
+      "familyFriendly": "가족 여행",
+      "localFood": "현지 음식",
+      "fineDining": "파인 다이닝",
+      "barsPubs": "바와 펍",
+      "activities": "액티비티",
+      "huskySafaris": "허스키 사파리",
+      "skiResorts": "스키 리조트",
+      "snowmobileTours": "스노모빌 투어",
+      "spaWellness": "스파와 웰니스",
+      "nightlife": "나이트라이프",
+      "natureParks": "자연과 국립공원",
+      "travelGuide": "여행 가이드",
+      "christmas": "라플란드의 크리스마스",
+      "giftsSouvenirs": "선물과 기념품",
+      "travelBlog": "여행 블로그",
+      "dealsOffers": "특가와 프로모션",
+      "transport": "교통",
+      "carRental": "렌터카",
+      "workInLapland": "라플란드에서 일하기"
+    }
+  }
+}

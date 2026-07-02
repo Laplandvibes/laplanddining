@@ -1,0 +1,11 @@
+{
+  "links": {
+    "restaurants": "Ravintolat",
+    "fineDining": "Fine dining",
+    "midnightSun": "Keskiyön aurinko",
+    "foodHistory": "Ruokahistoria",
+    "localFood": "Paikallinen ruoka",
+    "about": "Tietoa"
+  },
+  "menu": "Avaa valikko"
+}

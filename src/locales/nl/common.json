@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "Waar je echt eet in Lapland"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "Taal wisselen"
+  },
+  "footer": {
+    "networkBadge": "Fins Lapland Netwerk",
+    "tagline": "De gezaghebbende digitale gids voor reizen door Fins Lapland.",
+    "groups": {
+      "stay": "Overnachten",
+      "eatDrink": "Eten en drinken",
+      "do": "Doen",
+      "explore": "Ontdekken",
+      "essentials": "Praktisch"
+    },
+    "travelGuideKicker": "Reisgids Lapland",
+    "pillars": {
+      "restaurants": "Restaurants",
+      "fineDining": "Fine dining",
+      "midnightSun": "Middernachtzon",
+      "foodHistory": "Eetgeschiedenis",
+      "localFood": "Lokale producten"
+    },
+    "about": {
+      "eyebrow": "Over LaplandVibes",
+      "body": "De toonaangevende gids voor Fins Lapland, van het noorderlicht tot de middernachtzon. Zorgvuldig gekozen ervaringen, insidertips en alles wat u nodig heeft om uw poolreis te plannen.",
+      "badge": "Onafhankelijk beheerd · bronnen vermeld"
+    },
+    "spottedError": {
+      "title": "Fout gezien?",
+      "body": "Ziet u iets wat fout staat? Laat het ons weten, we passen het direct aan.",
+      "cta": "Meld een fout →"
+    },
+    "partner": {
+      "title": "Word partner",
+      "body": "Adverteer of werk samen op 27 Lapland-sites.",
+      "cta": "Neem contact op →"
+    },
+    "press": {
+      "title": "Pers en media",
+      "body": "Redactionele samenwerkingen en perskits.",
+      "cta": "Persaanvragen →"
+    },
+    "affiliate": "Deze site bevat affiliate-links. Als u via deze links boekt, kan LaplandVibes een commissie ontvangen zonder dat u extra betaalt.",
+    "copyright": "{{year}} #LaplandVibes, Onderdeel van het #LaplandVibes-netwerk",
+    "websiteBy": "Website door Yrityspaketit.fi",
+    "legal": {
+      "privacy": "Privacybeleid",
+      "cookie": "Cookiebeleid",
+      "terms": "Gebruiksvoorwaarden",
+      "contact": "Contact"
+    },
+    "siteLabels": {
+      "hotelDeals": "Hoteldeals",
+      "staysCabins": "Verblijven en hutten",
+      "whereToStay": "Waar te verblijven",
+      "familyFriendly": "Gezinsvriendelijk",
+      "localFood": "Lokale keuken",
+      "fineDining": "Fine dining",
+      "barsPubs": "Bars en pubs",
+      "activities": "Activiteiten",
+      "huskySafaris": "Husky-safari's",
+      "skiResorts": "Skigebieden",
+      "snowmobileTours": "Sneeuwscootertochten",
+      "spaWellness": "Spa en wellness",
+      "nightlife": "Nachtleven",
+      "natureParks": "Natuur en parken",
+      "travelGuide": "Reisgids",
+      "christmas": "Kerstmis in Lapland",
+      "giftsSouvenirs": "Cadeaus en souvenirs",
+      "travelBlog": "Reisblog",
+      "dealsOffers": "Deals en aanbiedingen",
+      "transport": "Vervoer",
+      "carRental": "Autoverhuur",
+      "workInLapland": "Werken in Lapland"
+    }
+  }
+}

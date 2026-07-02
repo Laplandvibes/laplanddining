@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "Missä Lapissa oikeasti syödään"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "Vaihda kieli"
+  },
+  "footer": {
+    "networkBadge": "Suomen Lapin verkosto",
+    "tagline": "Suomen Lapin matkailun kattavin opas verkossa.",
+    "groups": {
+      "stay": "Majoitus",
+      "eatDrink": "Syö ja juo",
+      "do": "Tekemistä",
+      "explore": "Tutustu",
+      "essentials": "Käytännön asiat"
+    },
+    "travelGuideKicker": "Lapin matkaopas",
+    "pillars": {
+      "restaurants": "Ravintolat",
+      "fineDining": "Fine dining",
+      "midnightSun": "Keskiyön auringon ruokailu",
+      "foodHistory": "Ruokakulttuurin tarina",
+      "localFood": "Paikallinen ruoka"
+    },
+    "about": {
+      "eyebrow": "Tietoa LaplandVibesistä",
+      "body": "Suomen Lapin matkaopas, revontulista keskiyön aurinkoon. Käsin valittuja kohteita, käytännön vinkkejä ja avoimet lähteet.",
+      "badge": "Riippumattomasti ylläpidetty · lähteet näkyvillä"
+    },
+    "spottedError": {
+      "title": "Huomasitko virheen?",
+      "body": "Jos jokin kaipaa korjausta, kerro meille, fixaamme sen.",
+      "cta": "Ilmoita virheestä →"
+    },
+    "partner": {
+      "title": "Yhteistyö",
+      "body": "Mainostaminen tai yhteistyö 27 Lappi-sivuston verkostossa.",
+      "cta": "Ota yhteyttä →"
+    },
+    "press": {
+      "title": "Lehdistö ja media",
+      "body": "Toimitukselliset yhteistyöt ja mediapaketit.",
+      "cta": "Lehdistö­tiedustelut →"
+    },
+    "affiliate": "Tämä sivusto sisältää kumppanuus­linkkejä. Jos varaat niiden kautta, LaplandVibes voi saada komission ilman lisäkustannuksia sinulle.",
+    "copyright": "{{year}} #LaplandVibes, Osa #LaplandVibes-verkostoa",
+    "websiteBy": "Sivuston toteutus: Yrityspaketit.fi",
+    "legal": {
+      "privacy": "Tietosuojaseloste",
+      "cookie": "Evästekäytäntö",
+      "terms": "Käyttöehdot",
+      "contact": "Yhteystiedot"
+    },
+    "siteLabels": {
+      "hotelDeals": "Hotellitarjoukset",
+      "staysCabins": "Majoitukset ja mökit",
+      "whereToStay": "Missä yöpyä",
+      "familyFriendly": "Perheille",
+      "localFood": "Paikallinen ruoka",
+      "fineDining": "Hienot ravintolat",
+      "barsPubs": "Baarit ja pubit",
+      "activities": "Aktiviteetit",
+      "huskySafaris": "Huskysafarit",
+      "skiResorts": "Hiihtokeskukset",
+      "snowmobileTours": "Moottorikelkkasafarit",
+      "spaWellness": "Spa ja hyvinvointi",
+      "nightlife": "Yöelämä",
+      "natureParks": "Luonto ja kansallispuistot",
+      "travelGuide": "Matkaopas",
+      "christmas": "Joulu Lapissa",
+      "giftsSouvenirs": "Lahjat ja matkamuistot",
+      "travelBlog": "Matkablogi",
+      "dealsOffers": "Tarjoukset",
+      "transport": "Liikenne",
+      "carRental": "Autovuokraus",
+      "workInLapland": "Töihin Lappiin"
+    }
+  }
+}

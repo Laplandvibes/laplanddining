@@ -1,0 +1,11 @@
+{
+  "links": {
+    "restaurants": "Restaurants",
+    "fineDining": "Fine Dining",
+    "midnightSun": "Midnight Sun",
+    "foodHistory": "Food Story",
+    "localFood": "Local Food",
+    "about": "About"
+  },
+  "menu": "Toggle menu"
+}

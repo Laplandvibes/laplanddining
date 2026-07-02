@@ -1,21 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
+import LanguageSwitcher from '../i18n/LanguageSwitcher';
+import { useLocale } from '../i18n/useLocale';
 
-const navLinks = [
-  { label: 'Restaurants', to: '/restaurants' },
-  { label: 'Fine Dining', to: '/fine-dining' },
-  { label: 'Midnight Sun', to: '/midnight-sun-dining' },
-  { label: 'Food Story', to: '/food-history' },
-  { label: 'Local Food', to: '/local-food' },
-  { label: 'About', to: '/about' },
-];
+const NAV_KEYS = [
+  { key: 'restaurants', basePath: '/restaurants' },
+  { key: 'fineDining', basePath: '/fine-dining' },
+  { key: 'midnightSun', basePath: '/midnight-sun-dining' },
+  { key: 'foodHistory', basePath: '/food-history' },
+  { key: 'localFood', basePath: '/local-food' },
+  { key: 'about', basePath: '/about' },
+] as const;
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation('nav');
+  const { to, pathWithoutLocale } = useLocale();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -37,32 +42,31 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="no-underline" aria-label="LaplandDining home">
-            <Logo className="text-xl sm:text-2xl" />
+          <Link to={to('/')} className="no-underline" aria-label="LaplandDining home">
+            <Logo className="text-2xl sm:text-3xl" />
           </Link>
 
-          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-7">
-            {navLinks.map((link) => (
+            {NAV_KEYS.map((link) => (
               <Link
-                key={link.to}
-                to={link.to}
+                key={link.basePath}
+                to={to(link.basePath)}
                 className={`font-medium transition-colors duration-200 text-sm tracking-wide no-underline ${
-                  location.pathname === link.to
+                  pathWithoutLocale === link.basePath
                     ? 'text-amber'
                     : 'text-white/70 hover:text-amber'
                 }`}
               >
-                {link.label}
+                {t(`links.${link.key}`)}
               </Link>
             ))}
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile menu button — 44×44 px tap target (iOS HIG) */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden p-2.5 -mr-1 text-white hover:text-amber transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
-            aria-label="Toggle menu"
+            aria-label={t('menu')}
             aria-expanded={open}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
@@ -70,23 +74,23 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-night/95 backdrop-blur-md border-t border-white/10">
           <div className="px-4 py-4 space-y-1">
-            {navLinks.map((link) => (
+            {NAV_KEYS.map((link) => (
               <Link
-                key={link.to}
-                to={link.to}
+                key={link.basePath}
+                to={to(link.basePath)}
                 className={`block font-medium transition-colors duration-200 text-base no-underline px-3 py-3 rounded-lg min-h-[44px] flex items-center ${
-                  location.pathname === link.to
+                  pathWithoutLocale === link.basePath
                     ? 'text-amber bg-amber/10'
                     : 'text-white/70 hover:text-amber hover:bg-white/5'
                 }`}
               >
-                {link.label}
+                {t(`links.${link.key}`)}
               </Link>
             ))}
+            <div className="pt-3"><LanguageSwitcher /></div>
           </div>
         </div>
       )}

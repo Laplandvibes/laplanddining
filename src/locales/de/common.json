@@ -1,0 +1,84 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "Wo man in Lappland wirklich isst"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "currentDE": "DE",
+    "switchTo": "Sprache wechseln"
+  },
+  "footer": {
+    "networkBadge": "Finnisch-Lappland-Netzwerk",
+    "tagline": "Der umfassendste Reiseführer für Finnisch-Lappland im Netz.",
+    "groups": {
+      "stay": "Übernachten",
+      "eatDrink": "Essen & Trinken",
+      "do": "Erleben",
+      "explore": "Entdecken",
+      "essentials": "Wissenswertes"
+    },
+    "travelGuideKicker": "Lappland-Reiseführer",
+    "pillars": {
+      "restaurants": "Restaurants",
+      "fineDining": "Fine Dining",
+      "midnightSun": "Dinieren unter der Mitternachtssonne",
+      "foodHistory": "Geschichte der Küche",
+      "localFood": "Regionale Küche"
+    },
+    "about": {
+      "eyebrow": "Über LaplandVibes",
+      "body": "Der umfassende Reiseführer für Finnisch-Lappland, vom Nordlicht bis zur Mitternachtssonne. Sorgfältig ausgewählte Erlebnisse, praktische Tipps und alles, was Sie für die Planung Ihrer arktischen Reise brauchen.",
+      "badge": "Unabhängig gepflegt · Quellen offengelegt"
+    },
+    "spottedError": {
+      "title": "Einen Fehler entdeckt?",
+      "body": "Etwas, das nicht stimmt? Schreiben Sie uns, wir korrigieren es umgehend.",
+      "cta": "Fehler melden →"
+    },
+    "partner": {
+      "title": "Werden Sie Partner",
+      "body": "Werben oder kooperieren Sie über 27 Lappland-Seiten hinweg.",
+      "cta": "Kontakt aufnehmen →"
+    },
+    "press": {
+      "title": "Presse & Medien",
+      "body": "Redaktionelle Kooperationen und Pressemappen.",
+      "cta": "Presseanfragen →"
+    },
+    "affiliate": "Diese Seite enthält Affiliate-Links. Wenn Sie über diese Links buchen, kann LaplandVibes eine Provision erhalten, ohne Mehrkosten für Sie.",
+    "copyright": "{{year}} #LaplandVibes, Teil des #LaplandVibes-Netzwerks",
+    "websiteBy": "Website von Yrityspaketit.fi",
+    "legal": {
+      "privacy": "Datenschutz",
+      "cookie": "Cookie-Richtlinie",
+      "terms": "Nutzungsbedingungen",
+      "contact": "Kontakt"
+    },
+    "siteLabels": {
+      "hotelDeals": "Hotelangebote",
+      "staysCabins": "Unterkünfte & Hütten",
+      "whereToStay": "Wo übernachten",
+      "familyFriendly": "Familienfreundlich",
+      "localFood": "Lokale Küche",
+      "fineDining": "Gehobene Küche",
+      "barsPubs": "Bars & Pubs",
+      "activities": "Aktivitäten",
+      "huskySafaris": "Husky-Safaris",
+      "skiResorts": "Skigebiete",
+      "snowmobileTours": "Schneemobil-Touren",
+      "spaWellness": "Spa & Wellness",
+      "nightlife": "Nachtleben",
+      "natureParks": "Natur & Parks",
+      "travelGuide": "Reiseführer",
+      "christmas": "Weihnachten in Lappland",
+      "giftsSouvenirs": "Geschenke & Souvenirs",
+      "travelBlog": "Reiseblog",
+      "dealsOffers": "Angebote",
+      "transport": "Transport",
+      "carRental": "Mietwagen",
+      "workInLapland": "Arbeiten in Lappland"
+    }
+  }
+}

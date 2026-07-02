@@ -1,0 +1,7 @@
+# >>> LV-LINK-PRELOAD (managed by apply_link_preload_headers.py)
+/
+  Link: </images/hero.webp>; rel=preload; as=image; fetchpriority=high
+
+/index.html
+  Link: </images/hero.webp>; rel=preload; as=image; fetchpriority=high
+# <<< LV-LINK-PRELOAD

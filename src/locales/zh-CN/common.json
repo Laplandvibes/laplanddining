@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "拉普兰真正值得就餐的地方"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "切换语言"
+  },
+  "footer": {
+    "networkBadge": "芬兰拉普兰网络",
+    "tagline": "芬兰拉普兰旅行的权威数字向导。",
+    "groups": {
+      "stay": "住宿",
+      "eatDrink": "餐饮",
+      "do": "玩乐",
+      "explore": "探索",
+      "essentials": "实用信息"
+    },
+    "travelGuideKicker": "拉普兰旅行指南",
+    "pillars": {
+      "restaurants": "餐厅",
+      "fineDining": "高级餐饮",
+      "midnightSun": "午夜阳光下的餐桌",
+      "foodHistory": "饮食故事",
+      "localFood": "本地美食"
+    },
+    "about": {
+      "eyebrow": "关于 LaplandVibes",
+      "body": "芬兰拉普兰的权威指南，从 revontulet(北极光)到午夜阳光。精选体验、本地人的内行建议,以及规划您北极之旅所需要的一切。",
+      "badge": "独立运营 · 注明出处"
+    },
+    "spottedError": {
+      "title": "发现错误了吗?",
+      "body": "看到需要修正的地方?请告诉我们，我们会立即更正。",
+      "cta": "报告错误 →"
+    },
+    "partner": {
+      "title": "与我们合作",
+      "body": "在 27个拉普兰主题站点上投放广告或开展合作。",
+      "cta": "联系我们 →"
+    },
+    "press": {
+      "title": "媒体与公关",
+      "body": "编辑合作与媒体资料包。",
+      "cta": "媒体咨询 →"
+    },
+    "affiliate": "本网站包含联盟营销链接。通过这些链接预订时,LaplandVibes 可能会获得佣金,您无需支付任何额外费用。",
+    "copyright": "{{year}} #LaplandVibes，#LaplandVibes 网络的一部分",
+    "websiteBy": "网站由 Yrityspaketit.fi 制作",
+    "legal": {
+      "privacy": "隐私政策",
+      "cookie": "Cookie 政策",
+      "terms": "使用条款",
+      "contact": "联系方式"
+    },
+    "siteLabels": {
+      "hotelDeals": "酒店优惠",
+      "staysCabins": "住宿与小屋",
+      "whereToStay": "住宿选择",
+      "familyFriendly": "亲子游",
+      "localFood": "当地美食",
+      "fineDining": "精致餐饮",
+      "barsPubs": "酒吧",
+      "activities": "活动",
+      "huskySafaris": "哈士奇雪橇之旅",
+      "skiResorts": "滑雪胜地",
+      "snowmobileTours": "雪地摩托之旅",
+      "spaWellness": "水疗与养生",
+      "nightlife": "夜生活",
+      "natureParks": "自然与国家公园",
+      "travelGuide": "旅行指南",
+      "christmas": "拉普兰圣诞",
+      "giftsSouvenirs": "礼物与纪念品",
+      "travelBlog": "旅行博客",
+      "dealsOffers": "优惠",
+      "transport": "交通",
+      "carRental": "汽车租赁",
+      "workInLapland": "在拉普兰工作"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "links": {
+    "restaurants": "Restaurants",
+    "fineDining": "Fine Dining",
+    "midnightSun": "Mitternachtssonne",
+    "foodHistory": "Speisekultur",
+    "localFood": "Regionale Küche",
+    "about": "Über uns"
+  },
+  "menu": "Menü umschalten"
+}

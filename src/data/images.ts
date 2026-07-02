@@ -1,41 +1,47 @@
 /**
  * LaplandDining image registry.
  *
- * All images are hosted on Google Drive (lh3.googleusercontent.com). The `-rw`
- * suffix asks Drive's CDN to transcode PNG/JPG → WebP on the fly: ~22% smaller
- * at w=1600, ~55% smaller at w=1200. Verified ecosystem-wide 2026-04-30.
- * See lv_drive_webp_rw_trick.md.
+ * Images are self-hosted under /public/images/drive/ (optimized WebP). Previously
+ * hotlinked from Google Drive (lh3.googleusercontent.com) which throttled real
+ * traffic and rendered blank/dark blocks on mobile. Localized 2026-06-09.
  */
-const driveImg = (id: string, w = 1600) =>
-  `https://lh3.googleusercontent.com/d/${id}=w${w}-rw`;
-
 export const DINING = {
-  heroInterior: driveImg('1p7HW7MOdgCXMtGRBu4rCHAUw8yrsqJHa'),
-  fineDining: driveImg('1GbpqKdolAHM5X9uZjb01wYahIuerNEn1'),
-  foodCloseup: driveImg('14UtGzLhuG_G209L7GwrlkF_-4TXN6bCh', 800),
-  foodMoody: driveImg('1a5Niot9yqwdfV8TkQS5T6B49a1mI7Ppu', 800),
-  kotaInside: driveImg('1gSVqhh-1kHs_CqPDMiGw9duHbSiBrr9l'),
-  // kotaFire is used as hero on /midnight-sun-dining + as full-bleed atmospheric
-  // section on /restaurants — needs full-width res, not the 800px thumbnail.
-  kotaFire: driveImg('1HU36180AmZukxByMRoDJsyaXM7VOp4rg', 1600),
-  ingredients: driveImg('1GrxCvJywO8CGLuy9SMh-exaxBn90UiaX', 800),
-  ingredientsAlt: driveImg('1fcernJ22p498YS_hsL5Esn3PnodE_pSy', 800),
-  exterior: driveImg('16vrw8ikETu3OV4ip3h9VJiZPSNLSROyC'),
-  exteriorAlt: driveImg('1OGNik9xgwza369dt4vj1wXJLO7RJydC2', 800),
+  heroInterior: '/images/drive/heroInterior.webp',
+  fineDining: '/images/drive/fineDining.webp',
+  foodCloseup: '/images/drive/foodCloseup.webp',
+  foodMoody: '/images/drive/foodMoody.webp',
+  kotaInside: '/images/drive/kotaInside.webp',
+  kotaFire: '/images/drive/kotaFire.webp',
+  ingredients: '/images/drive/ingredients.webp',
+  ingredientsAlt: '/images/drive/ingredientsAlt.webp',
+  exterior: '/images/drive/exterior.webp',
+  exteriorAlt: '/images/drive/exteriorAlt.webp',
   // City banner images
-  auroraRestaurant: driveImg('1TTHcB3fLeWd8I9KjE9taSDowlx9I4wa0'),
-  snowVillage: driveImg('1fSRRrPhEQNNyIf1J9OU0zWI7fyo043ha'),
-  rovaniemiCenter: driveImg('1OjgcY72TVOViQrD-jHyglEWzqXZKTVPo'),
-  iceRestaurant: driveImg('1NhJ-hWbzMmRBjbcZwtu_6IRmFVGaodRk'),
+  auroraRestaurant: '/images/drive/auroraRestaurant.webp',
+  snowVillage: '/images/drive/snowVillage.webp',
+  rovaniemiCenter: '/images/drive/rovaniemiCenter.webp',
+  iceRestaurant: '/images/drive/iceRestaurant.webp',
+  // Summer city-card images (Gamma GPT Image 2, #83) — replace winter ice/snow banners in June
+  kemiSummer: '/images/drive/kemiSummer.webp',
+  pyhaSummer: '/images/drive/pyhaSummer.webp',
+  luostoSummer: '/images/drive/luostoSummer.webp',
+  sallaSummer: '/images/drive/sallaSummer.webp',
+  heroSummer: '/images/drive/heroSummer.webp',           // summer dining terrace — Restaurants page hero
+  saariselkaSummer: '/images/drive/saariselkaSummer.webp', // Saariselkä summer lodge terrace
   // Restaurant-specific featured images (16:9)
-  featKingCrab: driveImg('1m1QSTYfLT1gMr97ez3ZplUHhcAt71ZJ_'),
-  featNili: driveImg('1mc_01jQCQ7hJbStxkUtsoZcb1pdz_Sl3'),
-  featKammi: driveImg('1xr4R0otuvZeanmkeM4khjg8BGpbEWkie'),
-  featAanaar: driveImg('1NdW7-plcsGKiq1wV_fN2-wXMsf_eBCjK'),
-  featGustav: driveImg('1wLZPpjp6P6Qej20VE3PpDDnOgCh-qKh6'),
-  featStarArctic: driveImg('1PWojTdyDH6I9_XomAj0wWDRmwRYdRGIn'),
-  featSnowRestaurant: driveImg('1G4qbCyJhcSj5Y5QE6Ear-Y0PFsqCjeU9'),
+  featKingCrab: '/images/drive/featKingCrab.webp',
+  featNili: '/images/drive/featNili.webp',
+  featKammi: '/images/drive/featKammi.webp',
+  featAanaar: '/images/drive/featAanaar.webp',
+  featGustav: '/images/drive/featGustav.webp',
+  featStarArctic: '/images/drive/featStarArctic.webp',
+  featSnowRestaurant: '/images/drive/featSnowRestaurant.webp',
   // Page heroes
-  heroFoodStory: driveImg('12JaYlv_GRvbFwyN95-n0lJdQMK7mCMWS'),
-  heroLocalFood: driveImg('1fS_a6LtyfWGoUkr4UB6u74mAzIGK9-lb'),
+  heroFoodStory: '/images/drive/heroFoodStory.webp',
+  heroLocalFood: '/images/drive/heroLocalFood.webp',
 };
+
+// Automatic seasonal image switch — summer 1 May–30 Sep, winter 1 Oct–30 Apr.
+// Mirrors the hub (laplandvibes) seasonal() so city cards flip winter↔summer by date, every year.
+export const isSummerSeason = (): boolean => { const m = new Date().getMonth() + 1; return m >= 5 && m <= 9; };
+export const seasonal = (winter: string, summer: string): string => (isSummerSeason() ? summer : winter);

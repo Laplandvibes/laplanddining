@@ -1,0 +1,11 @@
+{
+  "links": {
+    "restaurants": "レストラン",
+    "fineDining": "ファインダイニング",
+    "midnightSun": "真夏の太陽",
+    "foodHistory": "食の物語",
+    "localFood": "地元の食材",
+    "about": "概要"
+  },
+  "menu": "メニューを開閉する"
+}

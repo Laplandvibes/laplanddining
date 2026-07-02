@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "Where to actually eat in Lapland"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "Switch language"
+  },
+  "footer": {
+    "networkBadge": "Finnish Lapland Network",
+    "tagline": "The definitive digital home for Finnish Lapland travel.",
+    "groups": {
+      "stay": "Stay",
+      "eatDrink": "Eat & Drink",
+      "do": "Do",
+      "explore": "Explore",
+      "essentials": "Essentials"
+    },
+    "travelGuideKicker": "Lapland Travel Guide",
+    "pillars": {
+      "restaurants": "Restaurants",
+      "fineDining": "Fine Dining",
+      "midnightSun": "Midnight Sun Dining",
+      "foodHistory": "Food Story",
+      "localFood": "Local Food"
+    },
+    "about": {
+      "eyebrow": "About LaplandVibes",
+      "body": "The definitive guide to Finnish Lapland, from the revontulet to the midnight sun. Curated experiences, insider tips, and the practical basics for your Arctic trip.",
+      "badge": "Independently maintained · sources cited"
+    },
+    "spottedError": {
+      "title": "Spotted an Error?",
+      "body": "See something that needs fixing? Tell us, we'll correct it immediately.",
+      "cta": "Report an Error →"
+    },
+    "partner": {
+      "title": "Partner With Us",
+      "body": "Advertise or collaborate across 27 Lapland sites.",
+      "cta": "Get in Touch →"
+    },
+    "press": {
+      "title": "Press & Media",
+      "body": "Editorial partnerships and press kits.",
+      "cta": "Press Enquiries →"
+    },
+    "affiliate": "This site contains affiliate links. If you book through these links, LaplandVibes may receive a commission at no extra cost to you.",
+    "copyright": "{{year}} #LaplandVibes, Part of the #LaplandVibes Network",
+    "websiteBy": "Website by Yrityspaketit.fi",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "cookie": "Cookie Policy",
+      "terms": "Terms of Use",
+      "contact": "Contact"
+    },
+    "siteLabels": {
+      "hotelDeals": "Hotel Deals",
+      "staysCabins": "Stays & Cabins",
+      "whereToStay": "Where to Stay",
+      "familyFriendly": "Family Friendly",
+      "localFood": "Local Food",
+      "fineDining": "Fine Dining",
+      "barsPubs": "Bars & Pubs",
+      "activities": "Activities",
+      "huskySafaris": "Husky Safaris",
+      "skiResorts": "Ski Resorts",
+      "snowmobileTours": "Snowmobile Tours",
+      "spaWellness": "Spa & Wellness",
+      "nightlife": "Nightlife",
+      "natureParks": "Nature & Parks",
+      "travelGuide": "Travel Guide",
+      "christmas": "Christmas in Lapland",
+      "giftsSouvenirs": "Gifts & Souvenirs",
+      "travelBlog": "Travel Blog",
+      "dealsOffers": "Deals & Offers",
+      "transport": "Transport",
+      "carRental": "Car Rental",
+      "workInLapland": "Work in Lapland"
+    }
+  }
+}

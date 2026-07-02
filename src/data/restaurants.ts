@@ -1,5 +1,6 @@
 import mapsData from './generated/restaurants-from-maps.json';
 import { restaurantOverrides } from './restaurant-overrides';
+import { restaurantGems } from './restaurant-gems';
 
 /**
  * LaplandDining restaurant catalog.
@@ -23,6 +24,26 @@ import { restaurantOverrides } from './restaurant-overrides';
  */
 
 export type PartnershipTier = 'editorial' | 'verified' | 'premium' | 'gold';
+
+export type Locale = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl';
+
+/**
+ * Localized string — either a single string (legacy = English only)
+ * or an object with translations for each supported locale.
+ */
+export type LocalizedStr =
+  | string
+  | { en: string; fi: string; de: string; ja?: string; es?: string; 'pt-BR'?: string; 'zh-CN'?: string; ko?: string; fr?: string; it?: string; nl?: string };
+
+/** Pick the right variant out of a LocalizedStr for the given locale. */
+export function localizedStr(
+  value: LocalizedStr | undefined,
+  locale: Locale,
+): string | undefined {
+  if (value == null) return undefined;
+  if (typeof value === 'string') return value;
+  return value[locale] ?? value.en;
+}
 
 export interface Restaurant {
   // Maps-sourced (auto)
@@ -51,10 +72,10 @@ export interface Restaurant {
   // Editorial layer (manual overrides, optional)
   topPick: boolean;                 // shown in CityTopPicks home grid
   partnership: PartnershipTier;     // future B2B billing tier
-  curatedDescription?: string;      // overrides editorialSummary
-  highlights?: string[];            // hand-picked signature items
-  cuisine?: string;                 // human-readable cuisine label
-  type?: string;                    // human-readable category
+  curatedDescription?: LocalizedStr; // overrides editorialSummary
+  highlights?: LocalizedStr[];      // hand-picked signature items (localized; legacy string = EN-only)
+  cuisine?: LocalizedStr;           // human-readable cuisine label
+  type?: LocalizedStr;              // human-readable category
   menuHighlights?: { dish: string; price: string; note?: string }[];
   dietary?: ('vegan' | 'vegetarian' | 'gluten-free' | 'lactose-free')[];
   reservationPolicy?: string;
@@ -111,8 +132,8 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[]).map((m) => {
   };
 });
 
-/** All restaurants, merged (Maps + editorial overrides). */
-export const restaurants: Restaurant[] = merged;
+/** All restaurants, merged (Maps + editorial overrides) plus hand-curated gems. */
+export const restaurants: Restaurant[] = [...merged, ...restaurantGems];
 
 /** All cities with at least one restaurant, in display order. */
 export const cities: string[] = [
@@ -152,9 +173,9 @@ export function googleReviewsUrl(placeId: string): string {
 /** Partnership tier helpers for B2B logic + UI badges. */
 export function partnershipBadge(tier: PartnershipTier): string | null {
   switch (tier) {
-    case 'gold': return '★ Verified Partner';
-    case 'premium': return 'Verified Partner';
-    case 'verified': return 'Verified Listing';
+    case 'gold': return '★ Featured Partner';
+    case 'premium': return 'Featured Partner';
+    case 'verified': return 'Featured Listing';
     default: return null;
   }
 }
@@ -164,37 +185,43 @@ export function partnershipBadge(tier: PartnershipTier): string | null {
  * the editorial layer hasn't supplied one. Filters out generic types like
  * `restaurant`, `food`, `point_of_interest`.
  */
-const TYPE_LABELS: Record<string, string> = {
-  pizza_restaurant: 'Pizza',
-  italian_restaurant: 'Italian',
-  finnish_restaurant: 'Finnish',
-  scandinavian_restaurant: 'Scandinavian',
-  fine_dining_restaurant: 'Fine dining',
-  steak_house: 'Steakhouse',
-  seafood_restaurant: 'Seafood',
-  asian_restaurant: 'Asian',
-  chinese_restaurant: 'Chinese',
-  japanese_restaurant: 'Japanese',
-  thai_restaurant: 'Thai',
-  vegetarian_restaurant: 'Vegetarian',
-  vegan_restaurant: 'Vegan',
-  hamburger_restaurant: 'Burger',
-  cafe: 'Café',
-  coffee_shop: 'Café',
-  bar: 'Bar & restaurant',
-  pub: 'Pub & restaurant',
-  fast_food_restaurant: 'Casual',
-  meal_takeaway: 'Takeaway',
-  meal_delivery: 'Delivery',
-  bakery: 'Bakery',
+const TYPE_LABELS: Record<string, { en: string; fi: string; de: string; ja: string }> = {
+  pizza_restaurant: { en: 'Pizza', fi: 'Pizza', de: 'Pizza', ja: 'ピザ' },
+  italian_restaurant: { en: 'Italian', fi: 'Italialainen', de: 'Italienisch', ja: 'イタリアン' },
+  finnish_restaurant: { en: 'Finnish', fi: 'Suomalainen', de: 'Finnisch', ja: 'フィンランド料理' },
+  scandinavian_restaurant: { en: 'Scandinavian', fi: 'Skandinaavinen', de: 'Skandinavisch', ja: '北欧料理' },
+  fine_dining_restaurant: { en: 'Fine dining', fi: 'Fine dining', de: 'Fine Dining', ja: 'ファインダイニング' },
+  steak_house: { en: 'Steakhouse', fi: 'Pihviravintola', de: 'Steakhouse', ja: 'ステーキハウス' },
+  seafood_restaurant: { en: 'Seafood', fi: 'Merenherkut', de: 'Meeresfrüchte', ja: 'シーフード' },
+  asian_restaurant: { en: 'Asian', fi: 'Aasialainen', de: 'Asiatisch', ja: 'アジア料理' },
+  chinese_restaurant: { en: 'Chinese', fi: 'Kiinalainen', de: 'Chinesisch', ja: '中華料理' },
+  japanese_restaurant: { en: 'Japanese', fi: 'Japanilainen', de: 'Japanisch', ja: '日本料理' },
+  thai_restaurant: { en: 'Thai', fi: 'Thai', de: 'Thai', ja: 'タイ料理' },
+  vegetarian_restaurant: { en: 'Vegetarian', fi: 'Kasvisravintola', de: 'Vegetarisch', ja: 'ベジタリアン' },
+  vegan_restaurant: { en: 'Vegan', fi: 'Vegaani', de: 'Vegan', ja: 'ヴィーガン' },
+  hamburger_restaurant: { en: 'Burger', fi: 'Burger', de: 'Burger', ja: 'バーガー' },
+  cafe: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ' },
+  coffee_shop: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ' },
+  bar: { en: 'Bar & restaurant', fi: 'Baari & ravintola', de: 'Bar & Restaurant', ja: 'バー & レストラン' },
+  pub: { en: 'Pub & restaurant', fi: 'Pubi & ravintola', de: 'Pub & Restaurant', ja: 'パブ & レストラン' },
+  fast_food_restaurant: { en: 'Casual', fi: 'Casual', de: 'Casual', ja: 'カジュアル' },
+  meal_takeaway: { en: 'Takeaway', fi: 'Take away', de: 'Zum Mitnehmen', ja: 'テイクアウト' },
+  meal_delivery: { en: 'Delivery', fi: 'Kotiinkuljetus', de: 'Lieferung', ja: 'デリバリー' },
+  bakery: { en: 'Bakery', fi: 'Leipomo', de: 'Bäckerei', ja: 'ベーカリー' },
 };
 
-export function cuisineLabel(r: Restaurant): string | null {
-  if (r.cuisine) return r.cuisine;
-  if (r.type) return r.type;
+export function cuisineLabel(r: Restaurant, locale: Locale = 'en'): string | null {
+  const cuisine = localizedStr(r.cuisine, locale);
+  if (cuisine) return cuisine;
+  const type = localizedStr(r.type, locale);
+  if (type) return type;
   if (!r.types) return null;
+  // Fallback to EN for locales not yet present in TYPE_LABELS (es, pt-BR, zh-CN).
+  const labelLocale = (['en', 'fi', 'de', 'ja'] as const).includes(locale as 'en' | 'fi' | 'de' | 'ja')
+    ? (locale as 'en' | 'fi' | 'de' | 'ja')
+    : 'en';
   for (const t of r.types) {
-    if (TYPE_LABELS[t]) return TYPE_LABELS[t];
+    if (TYPE_LABELS[t]) return TYPE_LABELS[t][labelLocale];
   }
   return null;
 }
@@ -205,13 +232,26 @@ export function cuisineLabel(r: Restaurant): string | null {
  * "Wednesday: Closed"). Returns just the time portion, or null if unknown.
  */
 const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-export function todayHours(r: Restaurant): string | null {
+const CLOSED_TODAY: Record<Locale, string> = {
+  en: 'Closed today',
+  fi: 'Suljettu tänään',
+  de: 'Heute geschlossen',
+  ja: '本日休業',
+  es: 'Cerrado hoy',
+  'pt-BR': 'Fechado hoje',
+  'zh-CN': '今日休息',
+  ko: '오늘 휴무',
+  fr: 'Fermé aujourd\'hui',
+  it: 'Chiuso oggi',
+  nl: 'Vandaag gesloten',
+};
+export function todayHours(r: Restaurant, locale: Locale = 'en'): string | null {
   if (!r.openingHours || r.openingHours.length === 0) return null;
   const today = WEEKDAYS[new Date().getDay()];
   const entry = r.openingHours.find((d) => d.startsWith(`${today}:`));
   if (!entry) return null;
   const after = entry.slice(today.length + 1).trim();
-  return after === 'Closed' ? 'Closed today' : after;
+  return after === 'Closed' ? CLOSED_TODAY[locale] : after;
 }
 
 /**
@@ -225,16 +265,135 @@ export interface CardBody {
   text: string;
   isQuote: boolean;
 }
-export function composeCardBody(r: Restaurant): CardBody | null {
-  if (r.curatedDescription) return { text: r.curatedDescription, isQuote: false };
-  if (r.editorialSummary) return { text: r.editorialSummary, isQuote: false };
-  if (r.reviewQuote) return { text: r.reviewQuote, isQuote: true };
-  if (r.rating && r.reviewCount) {
-    const cuisine = cuisineLabel(r);
-    return {
-      text: `${r.rating.toFixed(1)} stars from ${r.reviewCount.toLocaleString('en')} reviews${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}.`,
-      isQuote: false,
-    };
+
+const NUMBER_LOCALES: Record<Locale, string> = {
+  en: 'en',
+  fi: 'fi-FI',
+  de: 'de-DE',
+  ja: 'ja-JP',
+  es: 'es-ES',
+  'pt-BR': 'pt-BR',
+  'zh-CN': 'zh-CN',
+  ko: 'ko-KR',
+  fr: 'fr-FR',
+  it: 'it-IT',
+  nl: 'nl-NL',
+};
+
+/**
+ * Synthesised factual line, per locale:
+ *   EN: "4.6 stars from 627 reviews · finnish · €€€."
+ *   FI: "4.6 tähden arvio • 627 arvostelua • suomalainen • €€€"
+ *   DE: "4.6 Sterne • 627 Bewertungen • finnisch • €€€"
+ */
+function factualLine(r: Restaurant, locale: Locale): string | null {
+  if (!r.rating || !r.reviewCount) return null;
+  const cuisine = cuisineLabel(r, locale);
+  const numLocale = NUMBER_LOCALES[locale];
+  const rating = r.rating.toFixed(1);
+  const count = r.reviewCount.toLocaleString(numLocale);
+
+  if (locale === 'en') {
+    return `${rating} stars from ${count} reviews${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}.`;
   }
+  if (locale === 'fi') {
+    return `${rating} tähden arvio • ${count} arvostelua${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
+  }
+  if (locale === 'ja') {
+    return `評価 ${rating} • レビュー ${count} 件${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
+  }
+  if (locale === 'es') {
+    return `${rating} estrellas · ${count} reseñas${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+  }
+  if (locale === 'pt-BR') {
+    return `${rating} estrelas · ${count} avaliações${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+  }
+  if (locale === 'zh-CN') {
+    return `${rating} 星 · ${count} 条评论${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+  }
+  // de
+  return `${rating} Sterne • ${count} Bewertungen${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
+}
+
+export function composeCardBody(r: Restaurant, locale: Locale = 'en'): CardBody | null {
+  // Always prefer a localized curated description if present
+  const curated = localizedStr(r.curatedDescription, locale);
+  if (curated) return { text: curated, isQuote: false };
+
+  if (locale === 'en') {
+    if (r.editorialSummary) return { text: r.editorialSummary, isQuote: false };
+    if (r.reviewQuote) return { text: r.reviewQuote, isQuote: true };
+  }
+  // FI / DE: editorialSummary + reviewQuote are English-only Google data —
+  // skip them and fall through to the synthesised factual line so the card
+  // body stays in the user's language.
+
+  const line = factualLine(r, locale);
+  if (line) return { text: line, isQuote: false };
   return null;
+}
+
+/**
+ * Partnership badges. Localized so the FI/DE cards don't show English chrome.
+ */
+const PARTNERSHIP_LABELS: Record<Locale, Record<Exclude<PartnershipTier, 'editorial'>, string>> = {
+  en: {
+    gold: '★ Featured Partner',
+    premium: 'Featured Partner',
+    verified: 'Featured Listing',
+  },
+  fi: {
+    gold: '★ Yhteistyökumppani',
+    premium: 'Yhteistyökumppani',
+    verified: 'Esittelyssä',
+  },
+  de: {
+    gold: '★ Empfohlener Partner',
+    premium: 'Empfohlener Partner',
+    verified: 'Empfohlener Eintrag',
+  },
+  ja: {
+    gold: '★ おすすめパートナー',
+    premium: 'おすすめパートナー',
+    verified: 'おすすめ掲載',
+  },
+  es: {
+    gold: '★ Socio destacado',
+    premium: 'Socio destacado',
+    verified: 'Ficha destacada',
+  },
+  'pt-BR': {
+    gold: '★ Parceiro em destaque',
+    premium: 'Parceiro em destaque',
+    verified: 'Listagem em destaque',
+  },
+  'zh-CN': {
+    gold: '★ 推荐合作伙伴',
+    premium: '推荐合作伙伴',
+    verified: '推荐条目',
+  },
+  ko: {
+    gold: '★ 추천 파트너',
+    premium: '추천 파트너',
+    verified: '추천 등재',
+  },
+  fr: {
+    gold: '★ Partenaire en vedette',
+    premium: 'Partenaire en vedette',
+    verified: 'Fiche en vedette',
+  },
+  it: {
+    gold: '★ Partner in evidenza',
+    premium: 'Partner in evidenza',
+    verified: 'Scheda in evidenza',
+  },
+  nl: {
+    gold: '★ Uitgelichte partner',
+    premium: 'Uitgelichte partner',
+    verified: 'Uitgelichte vermelding',
+  },
+};
+export function partnershipBadgeLocalized(tier: PartnershipTier, locale: Locale): string | null {
+  if (tier === 'editorial') return null;
+  return PARTNERSHIP_LABELS[locale][tier];
 }

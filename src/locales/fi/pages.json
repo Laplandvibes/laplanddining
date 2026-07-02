@@ -1,0 +1,353 @@
+{
+  "home": {
+    "title": "LaplandDining, Mistä Lapista löytyy oikeasti ruokaa",
+    "description": "Riippumaton ravintolaopas Suomen Lappiin, valitut paikat, menut, aukioloajat ja suorat varauslinkit. Kyläpubista fine diningiin.",
+    "heroH1": "Lapin parhaat ravintolat",
+    "heroLead": "Aitoja ravintoloita ympäri Suomen Lappia, saamelaista fine diningia, kodassa avotulella paistettua lohta ja arktisia raaka-aineita, joita ei muualta saa.",
+    "heroCtaExplore": "Selaa ravintoloita",
+    "heroCtaStay": "Yöpaikka illan ravintolan viereen",
+    "midnightKicker": "Kesän Lappi",
+    "midnightHeadline1": "Illallinen kello yhdeltä yöllä.",
+    "midnightHeadline2": "Aurinko ei laske.",
+    "midnightBadge": "6.6. → 7.7.",
+    "midnightBody": "Reilun kuukauden ajan aurinko ei käy napapiirin pohjoispuolella horisontin alapuolella. Rovaniemen jokirannan terassit, Saariselän kotanuotiot, Aanaarin järvelle avautuva tasting-menu, kaikki syödään yhtäjaksoisessa kultaisessa valossa. Lapin ruokavuoden hiljaisin ja paras puoli.",
+    "midnightCtaGuide": "Lue keskiyön auringon opas",
+    "midnightCtaStays": "Etsi kesän yöpaikat",
+    "cuisineHeadline": "Keittiön kohokohdat",
+    "cuisineLead": "Kolme asiaa, joiden ympärille Lapin ruokakulttuuri rakentuu.",
+    "cuisineCards": [
+      {
+        "title": "Fine dining",
+        "desc": "Palkittuja tasting-menuja, joissa arktiset raaka-aineet kohtaavat hiotun tekniikan. Saamelainen perinne ja pohjoismainen uudistus samalla lautasella."
+      },
+      {
+        "title": "Kota-illallinen",
+        "desc": "Syöt saamelaisessa kodassa avotulen ympärillä. Liekitetty lohi, poro ja riista valmistuvat silmiesi edessä ja maku jää mieleen."
+      },
+      {
+        "title": "Arktiset raaka-aineet",
+        "desc": "Villiyrtit, poro, järvikalat, lakat ja sienet kerätään suoraan tunturien ja vanhojen metsien sylistä. Lähellä, sesongissa ja puhdasta."
+      }
+    ],
+    "destinationsHeadline": "Valitse kaupunki",
+    "destinationsLead": "Klikkaa kaupunkia ja katso, mitä lautasella odottaa.",
+    "statsVerified": "Valittua ravintolaa",
+    "statsDestinations": "Kohdetta",
+    "statsYear": "Päivitetty tänä vuonna",
+    "stayKicker": "Yövy siellä missä syöt",
+    "stayHeadline": "Hotelli illan pöydän viereen",
+    "stayLead": "Lapin illalliset venyvät usein ja päättyvät kaukana keskustasta. Fiksuinta on yöpyä kävelymatkan päässä ravintolasta ja Hotels.com näyttää selkeimmin, mitä kunkin kodan, tunturihotellin ja jääravintolan kupeessa on oikeasti tarjolla.",
+    "stayAffiliateNote": "Linkit ovat kumppanuuslinkkejä, sivusto saa pienen komission, sinulle hinta on sama.",
+    "stayAffiliateLink": "Miksi linkitämme näin",
+    "toursKicker": "Syö oppaan kanssa",
+    "toursHeadline": "Ruokakierrokset, kokkauskurssit ja panimokäynnit",
+    "toursLead": "Kun haluat aterian lisäksi tarinan: saamelaisia makukävelyjä, lappilaisia kokkauskursseja, panimoilta lähteviä illallisia ja lohenpaistoelämyksiä. Varaukset GetYourGuiden kautta, peruutus ilmaiseksi 24 tuntiin asti.",
+    "tourLinks": [
+      "Lapin ruokakierrokset",
+      "Kokkauskurssit",
+      "Rovaniemen ruoka & juoma",
+      "Levin ruoka & juoma"
+    ]
+  },
+  "restaurants": {
+    "title": "Ravintolat Suomen Lapissa | LaplandDining",
+    "description": "60+ huolella valittua ravintolaa Suomen Lapissa, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menut, aukioloajat ja suorat varauslinkit.",
+    "heroKicker": "Arktinen ruokaopas",
+    "heroH1": "Kaikki ravintolat",
+    "heroLeadTemplate": "{{restaurantCount}} huolella valittua ravintolaa {{cityCount}} Lapin kohteessa. Aitoja asiakasarvioita, kuvia ja aukioloaikoja, pari kävelymatkan päässä olevaan hotelliin.",
+    "heroChipKota": "Kotaruokailu",
+    "heroChipWilderness": "Erämaa",
+    "heroChipArctic": "Arktinen",
+    "filterAll": "Kaikki kaupungit",
+    "cityTopPickLabel": "Kaupungin ykkönen",
+    "cityRestaurantsSingular": "ravintola",
+    "cityRestaurantsPlural": "ravintolaa",
+    "todayLabel": "Tänään",
+    "websiteLabel": "Nettisivut",
+    "mapsLabel": "Avaa kartalla",
+    "readReviews": "Lue kaikki {{count}} arvostelua Googlessa →",
+    "googleReview": "Google-arvostelu →",
+    "stayKicker": "Yövy pöytien lähellä",
+    "stayHeadlineTemplate": "Hotelli {{city}}ssä, kävellen illalliselle",
+    "stayBtnTemplate": "Selaa {{city}}n yöpaikkoja",
+    "foodToursBtnTemplate": "{{city}}n ruokakierrokset",
+    "stayNearby": "Yövy lähellä",
+    "stayInTemplate": "Yövy {{city}}ssä",
+    "bottomHeadlineTemplate": "Käsin valittu {{count}} ravintolan joukosta",
+    "bottomLead": "Lista pohjautuu Google Places -dataan (arvio × arvostelujen määrä, pikaruokaketjut suodatettu pois) ja toimitukselliseen valintaan: yksi ykkönen per kaupunki. Jokainen sitaatti on aito Google-arvostelu. Päivitetty {{date}}.",
+    "bottomPartner": "Olet ravintolan omistaja? Kumppanilistaukseen kuuluu käsin kirjoitettu esittely, menun kohokohdat ja päivitetty kortti.",
+    "cityVibes": {
+      "Rovaniemi": "Lapin pääkaupunki, täällä arktinen kulttuuri ja kunnianhimoinen keittiö kohtaavat",
+      "Levi": "Takan ääressä, kun rinteet ovat takana",
+      "Kittilä": "Tunturikylä Levin keskuksen tuolla puolen",
+      "Inari": "Saamelaisperintö ja Lapin puhtaimmat raaka-aineet",
+      "Saariselkä": "Erämaaruokailua revontulten alla",
+      "Kemi": "Jää ja tuli kohtaavat, talven sesonkielämyksiä",
+      "Ylläs": "Tunturikylän tunnelmaa ja vahvoja lappilaisia makuja",
+      "Tornio": "Rajakaupungin luonnetta ja suomalaista sielunruokaa",
+      "Haparanda": "Käy rajan toisella puolella, ruotsalais-pohjoismaista fuusiota",
+      "Sodankylä": "Jokikaupungin perinteitä ja Sodankylän elokuvajuhlien yleisöä",
+      "Pyhätunturi": "Tunturihuipun ruokailua erämaan eteläportilla",
+      "Luosto": "Ametistitunturin kylä ja kelohirsiravintoloita",
+      "Muonio": "Revontulivyöhykkeen ylätasankoja puurajan yläpuolella",
+      "Hetta": "Enontekiön kunta kolmen rajan tuntumassa",
+      "Kuusamo": "Karjalan ja Lapin risteyskohta + Rukan tunturikeskus",
+      "Kemijärvi": "Pohjoisin rautatiekaupunki ja jokirannan pöydät",
+      "Salla": "Erämaasolaa ja Suomen itäisin hiihtokylä",
+      "Posio": "Järvien ja käsityön sydän Riisitunturin maisemissa"
+    }
+  },
+  "fineDining": {
+    "title": "Fine dining Lapissa | LaplandDining",
+    "description": "Lapin fine dining -ravintolat, Restaurant Aanaar, Nili, Rakas. Tasting-menut, signature-annokset, milloin kannattaa varata.",
+    "heroH1": "Fine dining Lapissa",
+    "heroLeadTemplate": "Korkealle arvioidut tasting-menut, joissa saamelaisperintö kohtaa modernin keittiön. Käsin valittu {{count}} Lapin ravintolan joukosta, järjestetty Google-arvion mukaan, parina kävelymatkan päässä oleva hotelli.",
+    "metaDescriptionTemplate": "Lapin korkeimmin arvioidut tasting-menun ja fine diningin ravintolat, järjestetty Google-arvion mukaan, toimituksen käsin poimimat. {{count}} kaupungin ykkönen Suomen Lapissa.",
+    "websiteLabel": "Nettisivut",
+    "mapsLabel": "Kartta",
+    "stayInTemplate": "Yövy {{city}}ssä",
+    "readAllReviews": "Lue kaikki {{count}} arvostelua Googlessa →"
+  },
+  "midnightSunDining": {
+    "title": "Keskiyön auringon ruokailu Lapissa | LaplandDining",
+    "description": "Missä syöt keskiyön auringon alla, myöhäiset illalliset, terassipaikat ja vain kesän menut Lapin ravintoloissa.",
+    "heroBadge": "6.6. → 7.7. · 32 päivää",
+    "heroH1Line1": "Lautanen ulkona,",
+    "heroH1Line2": "aurinko korkealla.",
+    "heroLead": "Kuukauden ajan aurinko ei käy horisontin alapuolella napapiirin pohjoispuolella. Terassit pysyvät auki. Kotanuotiot palavat. Ravintolat siirtyvät hiljaisesti kesän järvi- ja jokipalettiin ja Lapista tulee kesän hiljaisin Euroopan ruokakohde.",
+    "heroCtaWhere": "Missä syöt keskiyön auringon alla",
+    "heroCtaStays": "Etsi kesäkuun yöpaikat",
+    "whyKicker": "Mikä muuttuu",
+    "whyHeadline": "Kun aurinko ei laske",
+    "whyParagraphs": [
+      "Lapista kirjoitetaan yleensä revontulista, lumesta ja pimeässä liikkuvista poroista. Se on yhdeksän kuukautta vuodesta. Jäljelle jää kolme kuukautta, jolloin maa muuttuu täysin ja ruokakulttuuri muuttuu sen mukana.",
+      "Kesäkuun alusta heinäkuun alkuun aurinko ei käy napapiirin pohjoispuolella koskaan horisontin alla. Rajan eteläpuolellakin, Rovaniemellä, hämärä korvaa pimeyden, kello yhdeltä yöllä menun lukee ulkona ilman taskulamppua. Terassit, jotka talvella sulkevat yhdeksältä, ovat nyt auki keskiyöhön. Kodissa syödään aikoina, jotka tuntuvat järjettömiltä.",
+      "Raaka-aineet vaihtuvat samalla. Villiyrtit yhteyttävät vuorokauden ympäri. Järvikalat ruokailevat matalassa lämpimässä vedessä. Metsäsienet eivät vielä lähteneet, mutta hillat kypsyvät soilla jakson lopussa. Talven riistamenuihin tottuneet ravintolat siirtyvät vähitellen keveämpään, järvi- ja jokipainotteiseen palettiin."
+    ],
+    "citiesHeadline": "Neljä kaupunkia, neljä tapaa syödä auringon alla",
+    "citiesLead": "Jokaisesta saa eri kulman keskiyön auringon ruokailuun. Yhdistä ateria kävelymatkan päässä olevaan yöpaikkaan, näinä viikkoina oikea hotelli on yhtä tärkeä kuin oikea pöytä.",
+    "summerCities": [
+      {
+        "name": "Rovaniemi",
+        "angle": "Jokirannan terassit",
+        "body": "Kemijoki ja Ounasjoki yhtyvät keskustassa. Nilin ja Rokan terassipöydät ovat auki, kun aurinko kiertää joen yllä kello yhdeltä yöllä. Tilaa lohi, joka on nostettu samana aamuna."
+      },
+      {
+        "name": "Levi",
+        "angle": "Tunturihuipun illalliset",
+        "body": "Hullun Poron terassi ja Levin gondolihissin kesäliikenne antavat 360 asteen tunturinäkymät lappilaisten pikku­annosten kera. Ota lisäkerros mukaan, kello kahdelta yöllä lämpötila saattaa pudota kahdeksaan asteeseen."
+      },
+      {
+        "name": "Inari",
+        "angle": "Inarijärven keskiyön grillit",
+        "body": "Aanaar tarjoaa kesän tasting-menun, jonka pohjana on aamulla järvestä nostettu kala. Syöt ulkona järvelle päin, aurinko hipoo horisonttia mutta ei käy sen alla."
+      },
+      {
+        "name": "Saariselkä",
+        "angle": "Erämaakotia auringon ollessa vielä korkealla",
+        "body": "Pirkon Pirtti ja Star Arctic tekevät avotulen poroillallisia aikoina, jotka tuntuvat järjettömiltä, alkavat yhdeltätoista, päättyvät täydessä päivänvalossa. Kotasavu kultaista taivasta vasten on illan kuva."
+      }
+    ],
+    "stayInTemplate": "Yövy {{city}}ssä",
+    "summerFoodTours": "Kesän ruokakierrokset",
+    "bottomHeadline": "Rakenna keskiyön auringon matkasi",
+    "bottomLead": "Yhdistä nämä pöydät laajempaan lappilaiseen kesään, tunturivaelluksiin, järviuintiin kello yhdeltätoista illalla ja arktisen keskikesän harvinaiseen hiljaisuuteen. Aloita siitä ravintolasta, jonne haluat, ja rakenna muu sen ympärille.",
+    "bottomCtaBrowse": "Selaa kaikkia ravintoloita",
+    "bottomCtaArctic": "Lue arktisista raaka-aineista"
+  },
+  "foodHistory": {
+    "title": "Lapin ruokahistoria, saamelainen keittiö | LaplandDining",
+    "description": "Lapin ruoan tarina, saamelaiset ruokatavat, poro, kahdeksan vuodenajan rytmi ja se, mistä nykypäivän menut syntyivät.",
+    "heroH1": "Tarina, joka kerrotaan ruoan kautta",
+    "heroLead": "Miten tuhansien vuosien arktinen elämä muovasi yhden maailman tunnistettavimmista ruokakulttuureista.",
+    "intro": "Savu nousee kotalaitumelta varhain aamulla. Poronlihaa kuivuu räystään alla. Joessa lipuu sumun seasta lohi. Lapissa ruoka ei alkanut keittiöstä, se alkoi maasta. Tämä on tarina siitä, miksi.",
+    "sections": [
+      {
+        "title": "Pakon synnyttämä keittiö",
+        "paragraphs": [
+          "Talvi kestää kahdeksan kuukautta. Lämpötila putoaa kolmeenkymmeneen, joskus neljäänkymmeneen pakkasasteeseen. Lähin pelto on satojen kilometrien päässä etelässä, eikä silloinkaan tuota mitään. Tämä oli arki tuhansia vuosia.",
+          "Ruoka tuli siitä, mikä oli lähellä: lohi- ja nieriätäytteisistä joista, riistaa ja marjoja kasvattavista metsistä, tundralta, jolla porot vaelsivat vuodenaikojen mukaan. Saamelaisille, Pohjois-Skandinavian alkuperäiskansalle, ruoka ei ollut maasta erillinen asia. Se <em>oli</em> maa.",
+          "Suomalainen keittiö kasvoi muualla maatalousperinteistä, mutta pohjoisessa pelto ei koskaan ollut luotettava. Metsästys, kalastus ja keräily eivät olleet sivuosaa. Ne olivat selviytyminen."
+        ]
+      },
+      {
+        "title": "Poro, kaikki, mitä ihminen tarvitsee",
+        "paragraphs": [
+          "Saamelaisten ja poron suhde ulottuu hyvin kauas, mutta poronhoito nykyisessä muodossaan nousi pääelinkeinoksi 1800-luvulla, kun se syrjäytti metsästyksen ja kalastuksen itäisellä Sápmilla. Suhteessa ei ole koskaan ollut kysymys vain lihasta, turkis, sarvet, jänteet ja jopa luut päätyivät kaikki johonkin käyttöön.",
+          "Tänään Suomessa on noin 5 600 poronhoitajaa, jotka huolehtivat noin 200 000 eläimestä 56 paliskunnassa. Poronhoitoalueen pinta-ala on noin kolmannes Suomesta. Vuotuinen lihantuotto on noin 2 miljoonaa kiloa, ja elinkeinon arvo arvioidaan 60 miljoonaksi euroksi vuodessa.",
+          "Toisin kuin Norjassa ja Ruotsissa, poronhoito Suomessa ei ole pelkästään saamelaisten oikeus, kuka tahansa EU-kansalainen voi olla mukana, kun luvat ovat kunnossa. Mutta tieto, side maahan ja perinteet, jotka tekevät poronlihasta sen makuista kuin se on, tulevat saamelaisten vuosisataisesta hoidosta.",
+          "Tunnetuin annos on <strong>poronkäristys</strong>: ohuiksi viipaloitua poroa, käristettyä voissa, perunamuusilla ja puolukkahillolla. Yksinkertainen, rehellinen ja syvästi tyydyttävä. Sen löytää joka ravintolasta Lapissa, tienvarren kahvilasta fine dining -taloon."
+        ]
+      },
+      {
+        "title": "Joet, järvet, savu ja tuli",
+        "paragraphs": [
+          "Lapin vedet ovat olleet aina toinen ruokavarasto. Lohi, siika, ahven, nieriä, hauki, ne pitivät perheet pystyssä pimeimpinä talvina ja kirkkaimpina keskiyön auringon kesinä. Kalastusoikeudet kuuluivat vuosisatojen ajan jokien rantapiireihin, ja ne määräytyivät syntyperän ja paikallisen tavan mukaan, eivät rahalla.",
+          "Perinteiset valmistustavat elävät yhä ravintoloissa. Liekitettyä lohta puulaudalla avotulen vieressä. Savustettua siikaa tuohessa. Lohikeittoa, jossa on kermaa ja tuoretta tilliä. Nämä eivät ole vanhojen reseptien \"rekonstruktioita\", ne ovat eläviä perinteitä, jotka siirtyvät sukupolvelta toiselle.",
+          "Inarijärvi, Suomen kolmanneksi suurin järvi, tarjoaa joitain Euroopan hienoimmista makeanveden kaloista. Restaurant Aanaar Inarissa rakentaa kokonaisia tasting-menuja sen ympärille, mitä paikalliset kalastajat nostavat vesistä aamulla."
+        ]
+      },
+      {
+        "title": "Metsäpohjan apteekki",
+        "paragraphs": [
+          "Käy lappilaisessa metsässä loppukesästä, niin kävelet ruokakaupassa. Mustikkaa, puolukkaa, hillaa ja tyrniä kasvaa villinä. Sieniä, kantarelleja, herkkutatteja, suppilo­vahveroita ja matsutakea, nousee maasta. Villiyrtit kuten väinönputki, mesiangervo ja arktinen ajuruoho tuoksuvat ilmassa.",
+          "Hillalla on oma erityinen paikkansa lappilaisessa ruokakulttuurissa. <strong>Lakka</strong> kasvaa vain arktisilla ja subarktisilla soilla, kypsyy parin viikon ajan heinäkuussa, eikä sitä voi viljellä kaupallisesti. Sen meripihkanvärinen sävy, hunajainen makeus ja harvinaisuus tekevät siitä \"arktisen kullan\". Sitä löytyy jälkiruoista, likööreistä ja koristeena lähes joka fine dining -ravintolasta.",
+          "Villi raaka-aine on poikkeuksellinen myös ympäristönsä takia. Arktinen ilmasto, 24 tunnin kesävalo, puhdas ilma ja maailman puhtaimpiin kuuluva vesi tuottavat marjoja, joissa on enemmän vitamiineja, antioksidantteja ja flavonoideja kuin etelämpänä."
+        ]
+      },
+      {
+        "title": "Selviytymisestä taiteeksi",
+        "paragraphs": [
+          "Suurimman osan historiastaan lappilainen ruoanlaitto oli säilömistä ja ravitsemista. Savustus, kuivaus, suolaus, tekniikat syntyivät pakosta, eivät luovuudesta. Mausteita suolan lisäksi tuskin tunnettiin. Ruoka oli rehellistä ja täyttävää, mutta kukaan ei asetellut sitä käsintehdylle keramiikalle.",
+          "Tämä muuttui New Nordic -liikkeen myötä. Kun Noma Kööpenhaminassa alkoi 2000-luvulla nostaa hyperpaikallisia, kerättyjä raaka-aineita arvoonsa, kokit kautta Pohjoismaiden alkoivat katsoa omaa takapihaansa toisin silmin. Lapista löytyi raaka-aineita, joita suurin osa maailmaa ei ollut maistanut ja perinteitä, jotka olivat jo vuosisatojen ikäisiä.",
+          "Tänään ravintolat kuten Aanaar Inarissa, Nili Rovaniemellä ja Gustav Rovaniemellä tekevät jotain merkittävää: ne kunnioittavat saamelaista perinnettä ja samalla työntävät arktisen keittiön rajoja eteenpäin. Aanaarissa poro ei ole vain ruokaa, se on tarina alkuperäiskansa­perinnöstä, ympäristöstä huolehtimisesta ja kulinaarisesta uudistumisesta yhdellä lautasella."
+        ]
+      },
+      {
+        "title": "Kota, paikka, jossa tarinat jaetaan",
+        "paragraphs": [
+          "Ehkä erottuvin ruokailupaikka Lapissa ei ole ravintola lainkaan. Se on <strong>kota</strong>, perinteinen saamelainen teltta, kartio-muotoinen, keskellään tulisija. Vuosisatojen ajan kota oli koti, keittiö ja kokoontumispaikka. Ruoka kypsyi avotulella, tarinoita kerrottiin, ja savu kantoi rukoukset taivaalle.",
+          "Tänään kotaravintolat kuten Kammi Levillä Hullussa Porossa pitävät perinnettä elossa. Istut poronaljoilla rätisevän tulen ympärillä, kun savustettu lohi, poromakkarat ja grillattu riista valmistuvat silmiesi edessä. Hintaa kertyy noin 64 euroa hengeltä, mutta hetki on hinnaton.",
+          "Tässä on se, mikä tekee Lapin ruokailusta toisenlaista kuin missään muualla. Kyse ei ole pelkästään lautasen sisällöstä, kyse on tulesta, savusta, ulkona kimmeltävästä lumesta, taivaalla välkkyvistä revontulista ja niistä tuhansista vuosista, jotka tekivät tästä ateriasta mahdollisen."
+        ]
+      }
+    ],
+    "ctaExplore": "Tutustu ravintoloihin"
+  },
+  "localFood": {
+    "title": "Paikallinen lappilainen ruoka, poro, marjat, kala | LaplandDining",
+    "description": "Mitä \"paikallinen\" tarkoittaa Lapin ruokalistalla, poro, nieriä, hilla, puolukka, kerätyt villiyrtit.",
+    "heroH1": "Paikallinen ruoka ja raaka-aineet",
+    "heroLead": "Miksi Lapista nousee maailman puhtainta ja ravinneintensiivisintä ruokaa ja miten suomalainen ruoantuotanto asettaa puhtauden mitan.",
+    "intro": "Kalastaja nostaa nieriän Inarijärvestä aamulla. Naapurikylän ravintolan kokki tietää siitä parinkymmenen minuutin sisällä. Lapissa ruokaketju on lyhyt ja siksi ruoka maistuu siltä kuin maistuu.",
+    "sections": [
+      {
+        "title": "Metsä",
+        "paragraphs": [
+          "Loppukesästä lappilainen metsä on käytännössä ruokakauppa. Mustikkaa, puolukkaa, vatukkaa, sieniä ja villiyrttejä on niin paljon, että jokainen suomalainen oppii poimimaan ennen kuin oppii ajamaan. Jokamiehenoikeus tekee tämän mahdolliseksi: kuka tahansa, paikallinen tai vieras, saa kävellä, sienestää ja marjastaa metsässä riippumatta siitä, kuka maan omistaa.",
+          "Tämä ei ole pelkkä mukava lakipykälä, se muovaa koko ruokakulttuurin. Suomen metsät tuottavat arviolta 500 miljoonaa kiloa villimustikkaa vuosittain, mutta vain 5–10 prosenttia poimitaan. Loput ruokkivat eläimet ja täydentävät ekosysteemin.",
+          "Monet Lapin parhaista ravintoloista pitävät palkkalistallaan ammatti­keräilijöitä, jotka viettävät kesän tunturiniityillä ja vanhojen metsien laidoilla. \"Pellolta pöytään\" ei kuvaa tätä. Täällä on metsästä pöytään ja metsä alkaa keittiön takana."
+        ]
+      },
+      {
+        "title": "Joki ja järvi",
+        "paragraphs": [
+          "Tornionjoki on yksi Euroopan harvoja lohijokia, joista pyydetään yhä villisikiöistä lohta. Inarijärvi tuottaa nieriää, siikaa ja taimenta. Pohjoisin Suomi on täynnä järviä, jotka kantavat puhtaammasta vedestä kuin moni maa pystyy unelmoimaan.",
+          "Suomalainen kalastusperinne on pohjoisessa lähes kotitarvelaista, verkko viedään aamulla, lohikeitto valmistuu illaksi. Lohi savustetaan tuohessa. Siika paistetaan loimulla puulaudalla avotulen vieressä. Kalakeitossa kelluu kermaa ja tilliä.",
+          "Tornionjokilaaksossa, Suomen ja Ruotsin rajalla, vanha lippokalastusperinne elää yhä: pitkä haavi nostetaan kymmenmetrisellä varrella koskeen virtaa vasten. Kukkolaforsenissa Haaparannan puolella saa ostaa paikan päällä savustettua kalaa mukaan illalliselta lähtiessä."
+        ]
+      },
+      {
+        "title": "Poronhoito",
+        "paragraphs": [
+          "Jokainen poro Suomen Lapissa elää vapaana. Tavanomaisia porotiloja ei ole, eläimet vaeltavat noin 123 000 neliökilometrin alueella ja syövät jäkälää, sammalta, villiheinää ja koivun lehtiä. Ne ovat puolikesyjä: poronhoitajat seuraavat ja hallinnoivat, mutta liikkuminen on poron oma asia.",
+          "Tämä näkyy lihassa. Vapaasti laiduntava poro, joka on viettänyt elämänsä tunturimaisemissa kävellen ja villikasveja syöden, tuottaa lihaa, joka on vähärasvaista, omega-3-rasvahapoilta rikasta ja syvän makuista. Mikään viljaruokittu tila-eläin ei pärjää tälle.",
+          "Suomen porotalous on järjestetty 56 paliskuntaan, joiden suurimmat tokkakoot on lailla rajattu. Syksyiset erotukset määrittävät, kuinka monta poroa teurastetaan, jotta tokat pysyvät terveinä ja maisema tasapainossa. Vuosituotto on noin 2 miljoonaa kiloa lihaa."
+        ]
+      },
+      {
+        "title": "Hiljaiset järvet ja arktinen ympäristö",
+        "paragraphs": [
+          "Suomalainen maatalous käyttää torjunta-aineita hehtaarille vähemmän kuin lähes mikään muu EU-maa. Antibioottien käyttö kotieläintaloudessa on Euroopan alhaisimpia. Kylmät talvet toimivat luonnollisena tuholaistorjuntana, lämpimämmän ilmaston tuhohyönteiset eivät selviä arktisesta pakkasesta. Tämä tarkoittaa vähemmän kemiallista puuttumista ja puhtaampaa satoa.",
+          "Hanavesi on juotavaa kaikkialla maassa. Lapissa se tulee suoraan Euroopan puhtaimpiin kuuluvista pohjavesilähteistä, usein samasta vedestä, joka pari vuorokautta aiemmin satoi lumena kotalaitumelle.",
+          "Ankarissa olosuhteissa kasvavat kasvit kehittävät enemmän suojayhdisteitä. Suomalaisessa villimustikassa on 3–4 kertaa enemmän antosyaaneja kuin lauhkean ilmaston viljellyssä pensasmustikassa. Hilla on rikas C- ja E-vitamiinista sekä omegarasvahapoista. Tyrnissä on grammaa kohden enemmän C-vitamiinia kuin appelsiineissa. Tämä ei ole markkinointia, vaan kasvitiedettä."
+        ]
+      }
+    ],
+    "ingredientsHeadline": "Lapin raaka-aineet",
+    "ingredientsLead": "Mitä päätyy lautasellesi ja mistä se tulee.",
+    "seasonLabel": "Sesonki",
+    "ingredients": [
+      {
+        "name": "Poro",
+        "fact": "Noin 200 000 poroa kulkee Suomen Lapissa 56 paliskunnassa. Vuosituotto: noin 2 miljoonaa kiloa lihaa. Eläimet laiduntavat vapaasti jäkälää, sammalta ja villikasveja, ei tilatarjouksia, ei kasvuhormoneja.",
+        "season": "Ympäri vuoden (syksyn teurastus)"
+      },
+      {
+        "name": "Nieriä ja lohi",
+        "fact": "Pyydetty joistakin Euroopan puhtaimmista joista ja järvistä. Pelkästään Inarijärvestä saadaan nieriää, siikaa ja taimenta. Villipyydettyä, ei kasvatettua Lapin vesissä.",
+        "season": "Kesä ja syksy"
+      },
+      {
+        "name": "Hilla (lakka)",
+        "fact": "\"Arktinen kulta\", kasvaa vain subarktisilla soilla, kypsyy 2–3 viikkoa heinäkuussa, eikä viljely onnistu kaupallisesti. Suomen vuosituotto noin 500 000 kg, valtaosa villipoimittua.",
+        "season": "Heinä–elokuu"
+      },
+      {
+        "name": "Villimustikka",
+        "fact": "Suomalaisessa villimustikassa on 3–4 kertaa enemmän antosyaaneja kuin viljellyssä pensasmustikassa. Suomen metsät tuottavat noin 500 miljoonaa kiloa vuodessa, vain 5–10 % poimitaan.",
+        "season": "Heinä–syyskuu"
+      },
+      {
+        "name": "Puolukka",
+        "fact": "Suomen poimituin villimarja. Pohja hilloihin, kastikkeisiin ja jälkiruokiin. Perinteinen poron seuralainen, makean ja happaman tasapaino on erottamaton lappilaisesta keittiöstä.",
+        "season": "Elo–lokakuu"
+      },
+      {
+        "name": "Villisienet",
+        "fact": "Kantarellia, herkkutattia ja suppilovahveroita kasvaa runsaasti lappilaisissa metsissä. Jokamiehenoikeus antaa jokaiselle suomalaiselle laillisen mahdollisuuden poimia sieniä ja marjoja.",
+        "season": "Elo–lokakuu"
+      },
+      {
+        "name": "Riistalinnut",
+        "fact": "Riekko on Lapin arvostetuin riistalintu. Ennen talonpoikaisruokaa, nyt fine dining -herkku. Villipyydetty metsästyskaudella tiukoin kiintiöin.",
+        "season": "Syys–maaliskuu"
+      },
+      {
+        "name": "Villiyrtit",
+        "fact": "Arktinen väinönputki, mesiangervo, maitohorsma ja arktinen ajuruoho. Käsin kerätty tunturiniityiltä ja metsänlaidoilta. Keskiyön aurinko antaa intensiivisen maun ja ravinnetiheyden.",
+        "season": "Kesä–elokuu"
+      }
+    ],
+    "ctaHeadline": "Koe Lapin ruoka itse",
+    "ctaLead": "Lapin ruokakulttuurin ymmärtää vasta, kun sen syö. Etsi ravintolat, jotka hankkivat raaka-aineensa suoraan poronhoitajilta, kalastajilta ja kerääjiltä ja varaa yöpaikka kävelymatkan päästä.",
+    "ctaBrowse": "Selaa kaikkia ravintoloita",
+    "ctaStay": "Varaa yöpaikka Lapista",
+    "ctaTours": "Kokkauskurssit ja ruokakierrokset"
+  },
+  "about": {
+    "title": "Tietoa LaplandDiningista",
+    "description": "Tietoa LaplandDiningista, riippumaton toimituksellinen ravintolaopas Suomen Lappiin.",
+    "heroH1": "Tietoa LaplandDiningista",
+    "heroLead": "Opas Suomen Lapin aitoihin, huolella valittuihin ravintoloihin.",
+    "networkTitle": "LaplandVibes-verkosto",
+    "networkBodyA": "LaplandDining on osa <strong>LaplandVibes</strong>-ekosysteemiä, erikoistuneiden sivustojen perhettä, joka auttaa matkailijoita löytämään Suomen Lapin parhaat puolet. Jokainen sivusto keskittyy yhteen aiheeseen: majoitus, ruokailu, aktiviteetit, luonto, ostokset, yöelämä, ja niin edelleen.",
+    "networkBodyB": "Jokainen LaplandDiningissa listattu ravintola on todellinen paikka. Listalla ei ole keksittyjä eikä paikanpidikkeenä toimivia ravintoloita. Tiedot on koottu julkisista lähteistä, Google Places -datasta ja ravintoloiden omilta sivuilta.",
+    "affiliateTitle": "Kumppanuusilmoitus",
+    "affiliateBodyA": "Osa LaplandDiningin linkeistä on kumppanuuslinkkejä, pääosin hotellivarauksia Hotels.comin kautta ja ruokaelämyksiä GetYourGuiden kautta. Sivusto saattaa saada pienen komission, jos varaat niiden kautta, ilman lisäkuluja sinulle. Komissiot pitävät tämän ilmaisen sivuston pystyssä ja kehittyvänä.",
+    "affiliateBodyB": "Toimitukselliset poiminnat ovat riippumattomia. Kumppanuudet eivät vaikuta siihen, mitä ravintoloita nostetaan esiin tai miten ne kuvataan, listalle pääsevät vain paikat, jotka näyttävät oikeasti hyvältä syömäpaikalta.",
+    "operatorTitle": "Ylläpitäjä",
+    "operatorBodyA": "LaplandDining.com on <strong>Lapeso Oy</strong>:n ylläpitämä, suomalainen yritys, jonka kotipaikka on Lapissa.",
+    "operatorBodyB": "Toimitukselliset kysymykset, korjaukset, kumppanuustiedustelut ja mediayhteydet:",
+    "exploreTitle": "Tutustu ekosysteemiin"
+  },
+  "privacy": {
+    "title": "Tietosuojaseloste | LaplandDining",
+    "description": "Miten LaplandDining käsittelee tietojasi."
+  },
+  "terms": {
+    "title": "Käyttöehdot | LaplandDining",
+    "description": "LaplandDiningin käyttöehdot."
+  },
+  "cookie": {
+    "title": "Evästekäytäntö | LaplandDining",
+    "description": "Miten LaplandDining käyttää evästeitä."
+  },
+  "common": {
+    "cityTopPicksKicker": "Yksi valinta per kaupunki · {{count}} kohdetta",
+    "cityTopPicksHeadline": "Lapin paras pöytä, kaupungeittain",
+    "cityTopPicksLead": "Jokaiseen oppaan Lapin kohteeseen on valittu yksi ravintola, johon ensikertalainen kannattaa ohjata. Aitoja asiakassitaatteja Googlesta, pari kävelymatkan päässä oleva hotelli.",
+    "dataRefreshed": "Tiedot päivitetty {{date}} Google Placesista.",
+    "howWeChoose": "Miten valinnat tehdään",
+    "seeMoreInCity": "Katso lisää {{city}}n ravintoloita",
+    "partnershipGold": "★ Yhteistyökumppani",
+    "partnershipPremium": "Yhteistyökumppani",
+    "partnershipVerified": "Esittelyssä",
+    "stayNearby": "Yövy lähellä"
+  },
+  "relatedLinks": {
+    "kicker": "Jatka tutkimista",
+    "headline": "Minne seuraavaksi",
+    "lead": "Täydennä reissu: istahda <bars>Lapin cocktail- ja jääbaareihin</bars>, katso <nightlife>minne mennä illallisen jälkeen</nightlife> ja selvitä <stays>missä yöpyä näiden ravintoloiden lähellä</stays>."
+  }
+}

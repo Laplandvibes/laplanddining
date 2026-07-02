@@ -1,0 +1,98 @@
+{
+  "site": "laplanddining-new",
+  "scanned_webp": 14,
+  "converted": 14,
+  "skipped_exists": 0,
+  "skipped_avif_larger": 0,
+  "errors": 0,
+  "total_webp_bytes": 4719172,
+  "total_avif_bytes": 3497422,
+  "saved_mb": "1.17",
+  "saved_pct": "25.9",
+  "report": [
+    {
+      "file": "public\\images\\restaurants\\haparanda-kukkolaforsen-turist-konferens.webp",
+      "webp_bytes": 351444,
+      "avif_bytes": 224079,
+      "saved_pct": "36.2"
+    },
+    {
+      "file": "public\\images\\restaurants\\kemi-kemin-puistopaviljonki-ky.webp",
+      "webp_bytes": 914906,
+      "avif_bytes": 725549,
+      "saved_pct": "20.7"
+    },
+    {
+      "file": "public\\images\\restaurants\\kemijarvi-mestarin-kievari.webp",
+      "webp_bytes": 278436,
+      "avif_bytes": 191412,
+      "saved_pct": "31.3"
+    },
+    {
+      "file": "public\\images\\restaurants\\kittila-saamen-kammi.webp",
+      "webp_bytes": 156532,
+      "avif_bytes": 123429,
+      "saved_pct": "21.1"
+    },
+    {
+      "file": "public\\images\\restaurants\\kuusamo-pizzeria-ruka.webp",
+      "webp_bytes": 316240,
+      "avif_bytes": 225201,
+      "saved_pct": "28.8"
+    },
+    {
+      "file": "public\\images\\restaurants\\levi-panoramic-restaurant-tuikku.webp",
+      "webp_bytes": 318620,
+      "avif_bytes": 220695,
+      "saved_pct": "30.7"
+    },
+    {
+      "file": "public\\images\\restaurants\\luosto-keloravintola-lapland-hotels-luostotunturi.webp",
+      "webp_bytes": 236722,
+      "avif_bytes": 170731,
+      "saved_pct": "27.9"
+    },
+    {
+      "file": "public\\images\\restaurants\\muonio-jeris-lakeside-resort.webp",
+      "webp_bytes": 414174,
+      "avif_bytes": 306446,
+      "saved_pct": "26.0"
+    },
+    {
+      "file": "public\\images\\restaurants\\posio-lapland-restaurant-kotahovi.webp",
+      "webp_bytes": 501318,
+      "avif_bytes": 393611,
+      "saved_pct": "21.5"
+    },
+    {
+      "file": "public\\images\\restaurants\\rovaniemi-nili-restaurant.webp",
+      "webp_bytes": 392778,
+      "avif_bytes": 297683,
+      "saved_pct": "24.2"
+    },
+    {
+      "file": "public\\images\\restaurants\\saariselka-bistro-cafe-kuukkeli.webp",
+      "webp_bytes": 123058,
+      "avif_bytes": 83143,
+      "saved_pct": "32.4"
+    },
+    {
+      "file": "public\\images\\restaurants\\salla-sallatunturin-tuvat.webp",
+      "webp_bytes": 266662,
+      "avif_bytes": 216172,
+      "saved_pct": "18.9"
+    },
+    {
+      "file": "public\\images\\restaurants\\tornio-ravintola-golden-flower-tornio.webp",
+      "webp_bytes": 291650,
+      "avif_bytes": 205464,
+      "saved_pct": "29.6"
+    },
+    {
+      "file": "public\\images\\restaurants\\yllas-ravintola-rouhe.webp",
+      "webp_bytes": 156632,
+      "avif_bytes": 113807,
+      "saved_pct": "27.3"
+    }
+  ]
+}

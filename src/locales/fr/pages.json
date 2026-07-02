@@ -1,0 +1,353 @@
+{
+  "home": {
+    "title": "LaplandDining, Où se restaurer vraiment en Laponie",
+    "description": "Le guide indépendant des restaurants de la Laponie finlandaise, adresses choisies avec soin, menus, horaires, liens de réservation directs. Du pub local à la haute gastronomie.",
+    "heroH1": "Découvrez les meilleurs restaurants de Laponie",
+    "heroLead": "Des restaurants réels, choisis avec soin à travers la Laponie finlandaise, de la haute gastronomie sâme traditionnelle à la cuisine au feu de kota et aux ingrédients arctiques introuvables ailleurs.",
+    "heroCtaExplore": "Voir tous les restaurants",
+    "heroCtaStay": "Dormir près de la table",
+    "midnightKicker": "L'été lapon",
+    "midnightHeadline1": "Dîner à 1 h du matin.",
+    "midnightHeadline2": "Le soleil est toujours là.",
+    "midnightBadge": "6 juin → 7 juillet",
+    "midnightBody": "Pendant trente-deux jours, le soleil ne passe jamais sous l'horizon au nord du cercle polaire. Terrasses au bord du fleuve à Rovaniemi, feux de kota à Saariselkä, menu dégustation face au lac à Aanaar, tout cela se savoure dans une lumière dorée continue. La moitié la plus calme et la plus belle de l'année gastronomique lapone.",
+    "midnightCtaGuide": "Lire le guide du soleil de minuit",
+    "midnightCtaStays": "Trouver un hébergement d'été",
+    "cuisineHeadline": "Les piliers de la cuisine lapone",
+    "cuisineLead": "Trois fondements de la scène culinaire unique de la Laponie.",
+    "cuisineCards": [
+      {
+        "title": "Haute gastronomie",
+        "desc": "Des menus dégustation primés qui transforment les ingrédients arctiques en art culinaire. Des traditions sâmes à l'innovation nordique."
+      },
+      {
+        "title": "L'expérience kota",
+        "desc": "Dînez dans une tente sâme traditionnelle autour d'un feu ouvert. Saumon, renne et gibier grillés à la flamme dans une atmosphère inoubliable."
+      },
+      {
+        "title": "Ingrédients arctiques",
+        "desc": "Herbes sauvages, renne, poissons de lac, mûres arctiques et champignons cueillis dans une nature préservée. Hyper-locaux, de saison et purs."
+      }
+    ],
+    "destinationsHeadline": "Choisir par destination",
+    "destinationsLead": "Sélectionnez une ville et découvrez ce qui se trouve à table.",
+    "statsVerified": "Restaurants sélectionnés",
+    "statsDestinations": "Destinations",
+    "statsYear": "Mis à jour cette année",
+    "stayKicker": "Dormez là où vous mangez",
+    "stayHeadline": "Réservez un hôtel près de la table du soir",
+    "stayLead": "Les dîners lapons s'étirent souvent tard et se terminent loin du centre. Le plus malin est de loger à distance de marche du restaurant et Hotels.com vous offre la vue la plus nette de ce qui est réellement disponible à côté de chaque kota, hôtel de fjell et restaurant de glace.",
+    "stayAffiliateNote": "Liens affiliés, nous pouvons percevoir une commission sans coût supplémentaire pour vous.",
+    "stayAffiliateLink": "Pourquoi nous procédons ainsi",
+    "toursKicker": "Manger avec un guide",
+    "toursHeadline": "Tours gastronomiques, cours de cuisine et visites de brasseries",
+    "toursLead": "Pour les voyageurs qui veulent du contexte avec leur repas, promenades de dégustation sâme, cours de cuisine lapone, dîners brasserie et expériences de cuisson du saumon. Réservés via GetYourGuide avec annulation gratuite jusqu'à 24 h avant.",
+    "tourLinks": [
+      "Tours gastronomiques en Laponie",
+      "Cours de cuisine",
+      "Cuisine et boissons à Rovaniemi",
+      "Cuisine et boissons à Levi"
+    ]
+  },
+  "restaurants": {
+    "title": "Restaurants en Laponie finlandaise | LaplandDining",
+    "description": "Plus de 60 restaurants choisis avec soin à travers la Laponie finlandaise, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menus, horaires et liens de réservation directs.",
+    "heroKicker": "Guide gastronomique arctique",
+    "heroH1": "Tous les restaurants",
+    "heroLeadTemplate": "{{restaurantCount}} restaurants choisis avec soin à travers {{cityCount}} destinations lapones. Avis clients réels, photos et horaires d'ouverture, associés à un hôtel à distance de marche.",
+    "heroChipKota": "Cuisine en kota",
+    "heroChipWilderness": "Nature sauvage",
+    "heroChipArctic": "Arctique",
+    "filterAll": "Toutes les villes",
+    "cityTopPickLabel": "Choix n°1 de la ville",
+    "cityRestaurantsSingular": "restaurant",
+    "cityRestaurantsPlural": "restaurants",
+    "todayLabel": "Aujourd'hui",
+    "websiteLabel": "Visiter le site web",
+    "mapsLabel": "Ouvrir dans Maps",
+    "readReviews": "Lire les {{count}} avis sur Google →",
+    "googleReview": "Avis Google →",
+    "stayKicker": "Loger près de ces tables",
+    "stayHeadlineTemplate": "Réservez des hôtels à {{city}}, à pied jusqu'au dîner",
+    "stayBtnTemplate": "Voir les hébergements à {{city}}",
+    "foodToursBtnTemplate": "Tours gastronomiques à {{city}}",
+    "stayNearby": "Loger à proximité",
+    "stayInTemplate": "Dormir à {{city}}",
+    "bottomHeadlineTemplate": "Sélection parmi {{count}} restaurants réels",
+    "bottomLead": "Catalogue issu de Google Places (note × nombre d'avis, chaînes de fast-food exclues), puis choix éditorial du n°1 par ville. Chaque citation de cette page provient d'un avis Google réel. Mise à jour {{date}}.",
+    "bottomPartner": "Vous êtes propriétaire d'un restaurant ? Les fiches partenaires bénéficient d'un texte éditorial, de plats mis en avant et d'une carte enrichie.",
+    "cityVibes": {
+      "Rovaniemi": "Capitale de la Laponie, où la culture arctique rencontre l'ambition culinaire",
+      "Levi": "Repas au coin du feu après une journée sur les fjells",
+      "Kittilä": "Village de fjell au-delà du domaine de Levi",
+      "Inari": "Patrimoine sâme et ingrédients arctiques les plus purs",
+      "Saariselkä": "Restauration sauvage sous les aurores boréales",
+      "Kemi": "Là où la glace rencontre le feu, expériences saisonnières uniques",
+      "Ylläs": "Charme de village de fjell et saveurs lapones authentiques",
+      "Tornio": "Caractère de ville-frontière et cuisine réconfortante finlandaise",
+      "Haparanda": "Traversez la frontière pour une fusion suédo-nordique",
+      "Sodankylä": "Traditions de ville fluviale et public du Festival du Soleil de Minuit",
+      "Pyhätunturi": "Repas au sommet du fjell, porte d'entrée sud de la nature sauvage",
+      "Luosto": "Village au pied de la montagne d'améthyste avec restaurants en rondins de kelo",
+      "Muonio": "Hautes terres de la ceinture aurorale au-dessus de la limite des arbres",
+      "Hetta": "Carrefour d'Enontekiö à la jonction de trois frontières",
+      "Kuusamo": "Croisée Carélie-Laponie + station de Ruka",
+      "Kemijärvi": "Ville ferroviaire la plus au nord avec tables au bord du fleuve",
+      "Salla": "Col sauvage + village de ski le plus à l'est de la Finlande",
+      "Posio": "Cœur lacustre et artisanal du pays de Riisitunturi"
+    }
+  },
+  "fineDining": {
+    "title": "Haute gastronomie en Laponie | LaplandDining",
+    "description": "Les tables gastronomiques de Laponie, Restaurant Aanaar, Nili, Rakas. Menus dégustation, plats signatures, quoi réserver et quand.",
+    "heroH1": "Haute gastronomie en Laponie",
+    "heroLeadTemplate": "Menus dégustation les mieux notés où l'héritage sâme rencontre la gastronomie moderne. Sélectionnés parmi {{count}} restaurants lapons, classés par note Google, associés à un hôtel à distance de marche.",
+    "metaDescriptionTemplate": "Les restaurants les mieux notés de Laponie pour menus dégustation et haute gastronomie, classés par note Google, choisis par la rédaction. {{count}} choix n°1 par ville à travers la Laponie finlandaise.",
+    "websiteLabel": "Site web",
+    "mapsLabel": "Carte",
+    "stayInTemplate": "Dormir à {{city}}",
+    "readAllReviews": "Lire les {{count}} avis sur Google →"
+  },
+  "midnightSunDining": {
+    "title": "Dîner sous le soleil de minuit en Laponie | LaplandDining",
+    "description": "Où manger sous le soleil de minuit, dîners tardifs, terrasses, menus d'été dans toute la scène gastronomique lapone.",
+    "heroBadge": "6 juin → 7 juillet · 32 jours",
+    "heroH1Line1": "Une assiette dehors,",
+    "heroH1Line2": "le soleil au-dessus.",
+    "heroLead": "Pendant un mois, le soleil ne descend jamais sous l'horizon au nord du cercle polaire. Les terrasses restent ouvertes. Les feux de kota brûlent. Les restaurants glissent discrètement vers une palette d'été lac-et-fleuve et la Laponie devient la destination gastronomique d'été la plus sous-estimée d'Europe.",
+    "heroCtaWhere": "Où manger sous le soleil de minuit",
+    "heroCtaStays": "Trouver un hébergement soleil de minuit",
+    "whyKicker": "Ce qui change",
+    "whyHeadline": "Quand le soleil ne se couche pas",
+    "whyParagraphs": [
+      "La plupart des récits de voyage sur la Laponie tournent autour des aurores, de la neige et des rennes dans l'obscurité. C'est neuf mois de l'année. Les trois autres mois sont tout autre chose et la culture culinaire se met à leur hauteur.",
+      "De début juin à début juillet, le soleil au-dessus du cercle polaire ne se couche pas. Même au sud de la ligne, à Rovaniemi, le crépuscule remplace l'obscurité, à 1 h du matin vous pouvez lire un menu dehors sans torche. Des terrasses qui ferment à 21 h en hiver restent ouvertes jusqu'à minuit. Les tentes-kota organisent des services du soir à des heures qui semblent impossibles.",
+      "Les ingrédients changent aussi. Les herbes sauvages photosynthétisent vingt-quatre heures sur vingt-quatre. Les poissons de lac se nourrissent dans des eaux peu profondes et tièdes. Les champignons forestiers ne sont pas encore là, mais les mûres arctiques mûrissent dans les tourbières en fin de fenêtre. Les restaurants qui ont bâti leur réputation sur le gibier d'hiver basculent, discrètement, vers une palette plus légère de lac et de fleuve."
+    ],
+    "citiesHeadline": "Quatre villes, quatre façons de manger le soleil",
+    "citiesLead": "Chacune offre un angle différent sur le dîner sous soleil de minuit. Associez le repas à un séjour à distance de marche, ce sont les fenêtres où le bon hôtel compte autant que la bonne table.",
+    "summerCities": [
+      {
+        "name": "Rovaniemi",
+        "angle": "Terrasses au bord du fleuve",
+        "body": "Le Kemijoki et l'Ounasjoki se rejoignent au centre, les tables en terrasse de Nili et Roka restent ouvertes pendant que le soleil tourne au-dessus du fleuve à 1 h du matin. Commandez un saumon pêché le matin même."
+      },
+      {
+        "name": "Levi",
+        "angle": "Dîners au sommet du fjell",
+        "body": "La terrasse de Hullu Poro et le service d'été du téléphérique de Levi offrent une vue à 360° sur les fjells avec de petites assiettes lapones. Emportez une couche supplémentaire, même à 2 h du matin il peut faire 8 °C."
+      },
+      {
+        "name": "Inari",
+        "angle": "Grillades de minuit au lac Inari",
+        "body": "Aanaar propose un menu dégustation d'été bâti autour des poissons du lac remontés le matin même. Mangez dehors face au lac pendant que le soleil effleure l'horizon sans jamais plonger en dessous."
+      },
+      {
+        "name": "Saariselkä",
+        "angle": "Kotas sauvages avec le soleil encore haut",
+        "body": "Pirkon Pirtti et Star Arctic servent des dîners de renne au feu ouvert à des heures qui semblent impossibles, débuts à 23 h qui se terminent en plein jour. La fumée du kota contre le ciel doré, c'est la photo."
+      }
+    ],
+    "stayInTemplate": "Dormir à {{city}}",
+    "summerFoodTours": "Tours gastronomiques d'été",
+    "bottomHeadline": "Construisez votre voyage soleil de minuit",
+    "bottomLead": "Associez ces tables à l'été lapon dans son ensemble, randonnées sur les fjells, baignades en lac à 23 h, et le rare silence d'un plein été arctique. Commencez par les restaurants que vous voulez, puis réservez le reste autour.",
+    "bottomCtaBrowse": "Voir tous les restaurants",
+    "bottomCtaArctic": "Lire sur les ingrédients arctiques"
+  },
+  "foodHistory": {
+    "title": "Histoire culinaire de la Laponie, Cuisine sâme | LaplandDining",
+    "description": "L'histoire de la cuisine lapone, alimentation sâme, plats au renne, huit saisons, et comment les menus d'aujourd'hui sont arrivés là.",
+    "heroH1": "Une histoire racontée par la cuisine",
+    "heroLead": "Comment des millénaires de survie arctique ont façonné l'une des cultures culinaires les plus distinctives au monde.",
+    "intro": "La fumée s'élève d'un feu de kota avant que le soleil ne soit complètement levé. Des lanières de renne sèchent sous l'avant-toit d'une cabane en bois. Un saumon glisse dans la brume du fleuve. En Laponie, la cuisine n'a jamais commencé dans la cuisine, elle a commencé sur la terre. Voici l'histoire de pourquoi.",
+    "sections": [
+      {
+        "title": "Une cuisine bâtie par la nécessité",
+        "paragraphs": [
+          "L'hiver dure huit mois. Les températures descendent à moins trente, parfois moins quarante. Le champ le plus proche qui produit quelque chose se trouve à des centaines de kilomètres au sud, et encore, seulement parfois. C'était le quotidien pendant des milliers d'années.",
+          "La nourriture venait de ce qui était proche, des rivières pleines de saumons et d'ombles arctiques, des forêts abritant gibier et baies sauvages, de la toundra où les rennes se déplaçaient au gré des saisons. Pour les Sâmes, peuple autochtone du nord de la Scandinavie, la nourriture n'a jamais été séparée de la terre. Elle <em>était</em> la terre.",
+          "Ailleurs en Finlande, la cuisine a grandi à partir d'une agriculture remontant à la préhistoire. Mais dans le nord, l'agriculture n'a jamais été fiable. La chasse, la pêche et la cueillette n'étaient pas une note de bas de page. Elles étaient le plan tout entier."
+        ]
+      },
+      {
+        "title": "Le renne, tout ce dont une personne a besoin",
+        "paragraphs": [
+          "La relation entre les Sâmes et le renne remonte bien plus loin que l'élevage lui-même. Mais le modèle de l'élevage tel que nous le connaissons a pris forme au XIXe siècle, lorsqu'il a remplacé la chasse et la pêche comme principale activité dans l'est de Sápmi. Cette relation n'a jamais été uniquement une affaire de viande, fourrure, bois, tendons et os trouvaient tous un usage.",
+          "Aujourd'hui, la Finlande compte environ 5 600 éleveurs de rennes gérant quelque 200 000 animaux à travers 56 coopératives d'élevage. La zone d'élevage couvre environ un tiers de la Finlande. La production annuelle de viande atteint environ 2 millions de kilogrammes, et l'industrie pèse environ 60 millions d'euros par an.",
+          "Contrairement à la Norvège et à la Suède, l'élevage de rennes en Finlande n'est pas réservé aux Sâmes, tout citoyen de l'UE peut y participer avec les autorisations adéquates. Mais le savoir, le lien à la terre et les traditions qui donnent à la viande de renne son goût viennent de siècles d'intendance sâme.",
+          "Le plat signature est le <strong>poronkäristys</strong> : du renne finement émincé, sauté au beurre, servi avec une purée de pommes de terre et de la confiture d'airelles. Simple, honnête, profondément satisfaisant. On le trouve dans chaque restaurant de Laponie, du café de bord de route à la salle gastronomique."
+        ]
+      },
+      {
+        "title": "Fleuves, lacs, fumée et feu",
+        "paragraphs": [
+          "Les eaux de Laponie ont toujours été l'autre garde-manger. Saumon, corégone, perche, omble arctique et brochet ont fait passer les familles à travers les hivers les plus sombres et les étés les plus lumineux du soleil de minuit. Les droits de pêche appartenaient à des familles riveraines depuis des siècles, réglés par la lignée et la coutume, pas par l'argent.",
+          "Les techniques traditionnelles sont toujours vivantes dans les restaurants. Saumon grillé à la flamme sur une planche en bois à côté d'un feu ouvert. Corégone fumé dans de l'écorce de bouleau. Soupe de poisson épaissie à la crème et à l'aneth frais. Ce ne sont pas des « recréations » d'anciennes recettes, ce sont des traditions vivantes, transmises de génération en génération.",
+          "Le lac Inari, troisième plus grand lac de Finlande, produit certains des meilleurs poissons d'eau douce d'Europe. Le restaurant Aanaar à Inari bâtit des menus dégustation entiers autour de ce que les pêcheurs locaux tirent de ses eaux le matin même."
+        ]
+      },
+      {
+        "title": "Le sol de la forêt",
+        "paragraphs": [
+          "Marcher dans une forêt lapone en fin d'été, c'est marcher dans un supermarché. Myrtilles, airelles, mûres arctiques et argousiers poussent à l'état sauvage. Girolles, cèpes et le précieux matsutake percent à travers la mousse. Les herbes sauvages, angélique, reine-des-prés, thym arctique, parfument l'air.",
+          "La mûre arctique occupe une place particulière. Appelée <strong>lakka</strong> en finnois, elle pousse uniquement dans les tourbières arctiques et subarctiques, mûrit pendant quelques semaines en juillet et ne peut pas être cultivée commercialement. Sa couleur ambrée, sa douceur miellée et sa rareté en font l'« or de l'Arctique ». On la trouve en dessert, en liqueur et en garniture dans presque tous les restaurants gastronomiques de Laponie.",
+          "Ce qui rend ces ingrédients extraordinaires, ce n'est pas seulement leur goût, c'est leur environnement. Les conditions arctiques, la lumière estivale de 24 heures, l'air pur et certaines des eaux les plus propres au monde produisent des baies aux concentrations en vitamines, antioxydants et flavonoïdes supérieures à celles de leurs cousines du sud."
+        ]
+      },
+      {
+        "title": "De la survie à l'art",
+        "paragraphs": [
+          "Pendant la majeure partie de son histoire, la cuisine lapone visait la conservation et le ravitaillement des gens. Fumage, séchage, salage, techniques nées de la nécessité, pas de la créativité. Les épices au-delà du sel étaient quasi inconnues. La nourriture était honnête et nourrissante, mais personne ne la dressait sur de la céramique artisanale.",
+          "Le mouvement New Nordic a changé cela. Quand Noma à Copenhague a commencé à célébrer les ingrédients hyper-locaux et cueillis dans les années 2000, les chefs des pays nordiques ont commencé à regarder leur arrière-cour différemment. En Laponie, ils ont trouvé des ingrédients que le reste du monde n'avait jamais goûtés et des traditions déjà vieilles de plusieurs siècles.",
+          "Aujourd'hui, des restaurants comme Aanaar à Inari, Nili et Gustav à Rovaniemi font quelque chose de remarquable : ils honorent les traditions sâmes tout en repoussant les limites de ce que la cuisine arctique peut devenir. Un service de renne chez Aanaar n'est pas simplement un plat, c'est une histoire d'héritage autochtone, d'intendance environnementale et de réinvention culinaire sur une seule assiette."
+        ]
+      },
+      {
+        "title": "Le kota, où se partagent les histoires",
+        "paragraphs": [
+          "L'expérience gastronomique la plus distinctive de Laponie n'est peut-être pas un restaurant. C'est le <strong>kota</strong>, une tente sâme traditionnelle, conique, avec un foyer en son centre. Pendant des siècles, le kota a été maison, cuisine et lieu de rassemblement. La nourriture cuisait sur la flamme, les histoires se racontaient, la fumée portait les prières vers le ciel.",
+          "Aujourd'hui, des restaurants-kota comme Kammi chez Hullu Poro à Levi maintiennent la tradition vivante. Vous vous asseyez sur des peaux de renne autour d'un feu crépitant tandis que saumon fumé, saucisses de renne et gibier grillé sont préparés devant vous. Le repas tourne autour de 64 € par tête, mais le moment est difficile à chiffrer.",
+          "Voilà ce qui rend la table lapone différente. Ce n'est pas seulement ce qu'il y a dans l'assiette, c'est le feu, la fumée, la neige dehors, les aurores au-dessus et les milliers d'années d'ingéniosité humaine qui ont rendu ce repas possible."
+        ]
+      }
+    ],
+    "ctaExplore": "Explorer les restaurants"
+  },
+  "localFood": {
+    "title": "Cuisine locale lapone, Renne, baies, poisson | LaplandDining",
+    "description": "Ce que « local » signifie sur un menu lapon, renne, omble arctique, mûres arctiques, airelles, herbes cueillies.",
+    "heroH1": "Cuisine locale et ingrédients",
+    "heroLead": "Pourquoi la Laponie produit certaines des nourritures les plus propres et les plus denses en nutriments au monde et comment la production alimentaire finlandaise fixe la norme de pureté.",
+    "intro": "Un pêcheur sort un omble arctique du lac Inari avant le lever du soleil. Le chef du village voisin est au courant en vingt minutes. La chaîne alimentaire en Laponie est aussi courte que cela et c'est pour ça que la nourriture a ce goût-là.",
+    "sections": [
+      {
+        "title": "La forêt",
+        "paragraphs": [
+          "La fin d'été dans une forêt lapone, c'est pratiquement faire ses courses. Myrtilles, airelles, framboises sauvages, champignons et herbes sauvages poussent en telle quantité que chaque Finlandais apprend à cueillir avant d'apprendre à conduire. Le droit d'accès, <strong>jokamiehenoikeus</strong>, le permet : n'importe qui, local ou de passage, peut marcher, cueillir et ramasser dans la nature, quel que soit le propriétaire de la terre.",
+          "Ce n'est pas un geste symbolique. Cela façonne toute la culture culinaire. Les forêts de Finlande produisent quelque 500 millions de kilogrammes de myrtilles sauvages par an, mais seulement 5 à 10 % sont cueillis. Le reste nourrit la faune et réalimente l'écosystème.",
+          "De nombreux meilleurs restaurants de Laponie emploient des cueilleurs professionnels à plein temps, qui passent l'été sur les fjells et en lisière des forêts primaires. « De la ferme à la table » ne le décrit pas. C'est de la forêt à la table et la forêt commence derrière la porte de la cuisine."
+        ]
+      },
+      {
+        "title": "Fleuve et lac",
+        "paragraphs": [
+          "Le fleuve Tornio est l'une des rares rivières à saumon d'Europe où l'on capture encore du saumon issu de souches véritablement sauvages. Le lac Inari produit omble arctique, corégone et truite fario. L'extrême nord de la Finlande regorge de lacs portant une eau plus propre que la plupart des pays ne peuvent l'imaginer.",
+          "La tradition de pêche finlandaise ici est presque à échelle domestique, filets posés le matin, soupe sur la table le soir. Saumon fumé dans l'écorce de bouleau. Corégone loimu-grillé sur une planche en bois à côté du feu ouvert. La crème et l'aneth flottent dans la soupe.",
+          "Dans la vallée de Tornio, à la frontière finno-suédoise, l'ancienne tradition du lippokalastus se pratique toujours : un long filet à manche plongé contre le courant depuis une plateforme en bois. À Kukkolaforsen, côté suédois, vous pouvez acheter sur place le poisson fumé et l'emporter pour le dîner."
+        ]
+      },
+      {
+        "title": "Élevage du renne",
+        "paragraphs": [
+          "Tout renne en Laponie finlandaise vit libre. Il n'existe pas de fermes à rennes conventionnelles, les animaux parcourent environ 123 000 km² de nature sauvage, broutant lichens, mousses, herbes et feuilles de bouleau. Ils sont semi-domestiqués : les éleveurs les suivent et les gèrent, mais le mouvement appartient à l'animal.",
+          "Cela se sent dans la viande. Un renne qui a passé sa vie à marcher les fjells et à manger des plantes sauvages donne une viande maigre, riche en oméga-3 et profondément parfumée. Aucun animal d'élevage nourri au grain n'en approche.",
+          "L'industrie finlandaise du renne fonctionne via 56 coopératives d'élevage avec des effectifs maximaux fixés par la loi. Les rassemblements d'automne décident combien peuvent être abattus pour maintenir la santé des troupeaux et l'équilibre du paysage. La production annuelle tourne autour de 2 millions de kilogrammes de viande."
+        ]
+      },
+      {
+        "title": "Lacs tranquilles et environnement arctique",
+        "paragraphs": [
+          "L'agriculture finlandaise utilise moins de pesticides par hectare que presque tout autre pays de l'UE. L'usage d'antibiotiques chez le bétail est parmi les plus faibles d'Europe. Les hivers froids servent de lutte naturelle contre les nuisibles, les insectes qui ravagent les climats chauds ne survivent pas au gel arctique. Le résultat : moins d'intervention chimique et des produits plus propres.",
+          "L'eau du robinet est potable partout dans le pays. En Laponie, elle vient directement de certaines des sources souterraines les plus pures du continent, souvent la même eau tombée en neige sur un pâturage d'éleveur deux jours plus tôt.",
+          "Les plantes qui poussent dans des conditions rudes développent davantage de composés protecteurs. Une myrtille sauvage finlandaise contient 3 à 4 fois plus d'anthocyanes qu'une myrtille cultivée. La mûre arctique est riche en vitamine C, vitamine E et acides gras oméga. L'argousier porte plus de vitamine C par gramme que l'orange. Ce n'est pas du marketing, c'est de la botanique."
+        ]
+      }
+    ],
+    "ingredientsHeadline": "Les ingrédients de la Laponie",
+    "ingredientsLead": "Ce qui finit dans votre assiette et d'où ça vient.",
+    "seasonLabel": "Saison",
+    "ingredients": [
+      {
+        "name": "Renne",
+        "fact": "200 000 rennes parcourent la Laponie finlandaise à travers 56 districts d'élevage. Production annuelle : 2,1 millions de kg de viande. Les animaux broutent librement lichen, mousse et plantes sauvages, pas de parcs d'engraissement, pas d'hormones de croissance.",
+        "season": "Toute l'année (abattage à l'automne)"
+      },
+      {
+        "name": "Omble arctique & saumon",
+        "fact": "Pêchés dans certaines des rivières et lacs les plus propres d'Europe. Le seul lac Inari fournit omble arctique, corégone et truite fario. Pêche sauvage, jamais d'élevage dans les eaux lapones.",
+        "season": "Été & automne"
+      },
+      {
+        "name": "Mûre arctique (lakka)",
+        "fact": "L'« or de l'Arctique », ne pousse que dans les tourbières subarctiques, mûrit pendant 2-3 semaines en juillet et ne peut être cultivée commercialement. La Finlande en produit environ 500 000 kg par an, principalement cueillis à l'état sauvage.",
+        "season": "Juillet–août"
+      },
+      {
+        "name": "Myrtille sauvage",
+        "fact": "Les myrtilles sauvages finlandaises contiennent 3-4 fois plus d'anthocyanes que les myrtilles cultivées. Les forêts de Finlande en produisent environ 500 millions de kg par an, seuls 5-10 % sont cueillis.",
+        "season": "Juillet–septembre"
+      },
+      {
+        "name": "Airelle",
+        "fact": "La baie sauvage la plus cueillie en Finlande. Utilisée en confitures, sauces et desserts. Accompagnement traditionnel du renne, l'équilibre aigre-doux est indissociable de la cuisine lapone.",
+        "season": "Août–octobre"
+      },
+      {
+        "name": "Champignons sauvages",
+        "fact": "Girolles, cèpes et chanterelles en tube abondent dans les forêts lapones. Chaque Finlandais a le droit légal de cueillir champignons et baies n'importe où, l'ancien « droit d'accès ».",
+        "season": "Août–octobre"
+      },
+      {
+        "name": "Gibier à plumes",
+        "fact": "Le lagopède des saules (riekko) est le gibier à plumes le plus prisé de Laponie. Jadis aliment paysan, désormais mets de la haute gastronomie. Capturé en saison de chasse sous quotas stricts.",
+        "season": "Septembre–mars"
+      },
+      {
+        "name": "Herbes sauvages",
+        "fact": "Angélique arctique, reine-des-prés, épilobe et thym arctique. Cueillis à la main sur les prairies des fjells et en lisière de forêt. Le soleil de minuit leur donne une saveur intense et une grande densité nutritionnelle.",
+        "season": "Juin–août"
+      }
+    ],
+    "ctaHeadline": "Le goûter là où ça pousse",
+    "ctaLead": "Vous ne comprenez pas la culture culinaire lapone tant que vous ne l'avez pas mangée. Trouvez les restaurants qui s'approvisionnent directement chez éleveurs, pêcheurs et cueilleurs locaux, puis réservez un séjour à distance de marche.",
+    "ctaBrowse": "Voir tous les restaurants",
+    "ctaStay": "Réserver un séjour en Laponie",
+    "ctaTours": "Cours de cuisine & tours gastronomiques"
+  },
+  "about": {
+    "title": "À propos de LaplandDining",
+    "description": "À propos de LaplandDining, guide éditorial indépendant des restaurants de Laponie finlandaise.",
+    "heroH1": "À propos de LaplandDining",
+    "heroLead": "Votre guide des restaurants réels, choisis avec soin à travers la Laponie finlandaise.",
+    "networkTitle": "Réseau LaplandVibes",
+    "networkBodyA": "LaplandDining fait partie de l'écosystème <strong>LaplandVibes</strong>, une famille de sites spécialisés qui aident les voyageurs à découvrir le meilleur de la Laponie finlandaise. Chaque site se concentre sur un aspect précis de l'expérience lapone : hébergement, restauration, activités, nature, shopping, vie nocturne et plus encore.",
+    "networkBodyB": "Chaque restaurant listé sur LaplandDining est un établissement réel. Nous ne listons pas de restaurants fictifs ou de remplissage. Les fiches sont établies à partir d'archives publiques, de données Google Places et des sites des restaurants eux-mêmes.",
+    "affiliateTitle": "Mentions d'affiliation",
+    "affiliateBodyA": "Certains liens sur LaplandDining sont des liens affiliés, principalement les réservations d'hôtels via Hotels.com et les expériences gastronomiques via GetYourGuide. Nous pouvons percevoir une petite commission si vous réservez via ces liens, sans coût supplémentaire pour vous. Ces commissions nous aident à maintenir et améliorer cette ressource gratuite.",
+    "affiliateBodyB": "Les choix éditoriaux sont indépendants. Les partenariats d'affiliation n'influencent ni quels restaurants sont mis en avant ni comment ils sont décrits, seuls les restaurants qui paraissent réellement bons sont retenus.",
+    "operatorTitle": "Éditeur",
+    "operatorBodyA": "LaplandDining.com est édité par <strong>Lapeso Oy</strong>, une société finlandaise dont le siège est en Laponie.",
+    "operatorBodyB": "Questions éditoriales, corrections, demandes de partenariat, presse :",
+    "exploreTitle": "Explorer l'écosystème"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité | LaplandDining",
+    "description": "Comment LaplandDining traite vos données."
+  },
+  "terms": {
+    "title": "Conditions d'utilisation | LaplandDining",
+    "description": "Conditions d'utilisation de LaplandDining."
+  },
+  "cookie": {
+    "title": "Politique de cookies | LaplandDining",
+    "description": "Comment LaplandDining utilise les cookies."
+  },
+  "common": {
+    "cityTopPicksKicker": "Un choix par ville · {{count}} destinations",
+    "cityTopPicksHeadline": "La meilleure table de Laponie, par ville",
+    "cityTopPicksLead": "Pour chaque destination lapone de ce guide, un restaurant est désigné comme le premier endroit à essayer. Citations clients réelles tirées de Google, associées à un hôtel à distance de marche.",
+    "dataRefreshed": "Données actualisées le {{date}} depuis Google Places.",
+    "howWeChoose": "Comment nous choisissons",
+    "seeMoreInCity": "Voir plus de restaurants à {{city}}",
+    "partnershipGold": "★ Partenaire en vedette",
+    "partnershipPremium": "Partenaire en vedette",
+    "partnershipVerified": "En vedette",
+    "stayNearby": "Loger à proximité"
+  },
+  "relatedLinks": {
+    "kicker": "Continuez à explorer",
+    "headline": "Où aller ensuite",
+    "lead": "Complétez le séjour : installez-vous dans les <bars>bars à cocktails et bars de glace de Laponie</bars>, trouvez <nightlife>où aller après le dîner</nightlife> et réglez la question de <stays>où loger près de ces restaurants</stays>."
+  }
+}

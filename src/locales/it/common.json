@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "Dove si mangia davvero in Lapponia"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "Cambia lingua"
+  },
+  "footer": {
+    "networkBadge": "Rete Lapponia finlandese",
+    "tagline": "La guida digitale di riferimento per viaggiare nella Lapponia finlandese.",
+    "groups": {
+      "stay": "Dormire",
+      "eatDrink": "Mangiare e bere",
+      "do": "Esperienze",
+      "explore": "Scoprire",
+      "essentials": "Essenziali"
+    },
+    "travelGuideKicker": "Guida di viaggio alla Lapponia",
+    "pillars": {
+      "restaurants": "Ristoranti",
+      "fineDining": "Alta cucina",
+      "midnightSun": "Sole di mezzanotte",
+      "foodHistory": "Storia gastronomica",
+      "localFood": "Prodotti locali"
+    },
+    "about": {
+      "eyebrow": "Su LaplandVibes",
+      "body": "La guida di riferimento alla Lapponia finlandese, dall'aurora boreale al sole di mezzanotte. Esperienze selezionate, consigli da locali e tutto ciò che serve per pianificare la tua avventura artica.",
+      "badge": "Indipendente · fonti citate"
+    },
+    "spottedError": {
+      "title": "Hai trovato un errore?",
+      "body": "Vedi qualcosa da correggere? Diccelo, lo sistemiamo subito.",
+      "cta": "Segnala un errore →"
+    },
+    "partner": {
+      "title": "Partner",
+      "body": "Pubblicità o collaborazioni su 27 siti dedicati alla Lapponia.",
+      "cta": "Contattaci →"
+    },
+    "press": {
+      "title": "Stampa e media",
+      "body": "Partnership editoriali e press kit.",
+      "cta": "Richieste stampa →"
+    },
+    "affiliate": "Questo sito contiene link di affiliazione. Se prenoti tramite questi link, LaplandVibes potrebbe ricevere una commissione senza costi aggiuntivi per te.",
+    "copyright": "{{year}} #LaplandVibes, Parte della rete #LaplandVibes",
+    "websiteBy": "Sito realizzato da Yrityspaketit.fi",
+    "legal": {
+      "privacy": "Informativa sulla privacy",
+      "cookie": "Informativa sui cookie",
+      "terms": "Termini di utilizzo",
+      "contact": "Contatti"
+    },
+    "siteLabels": {
+      "hotelDeals": "Offerte hotel",
+      "staysCabins": "Alloggi e chalet",
+      "whereToStay": "Dove dormire",
+      "familyFriendly": "In famiglia",
+      "localFood": "Cucina locale",
+      "fineDining": "Alta cucina",
+      "barsPubs": "Bar e pub",
+      "activities": "Attività",
+      "huskySafaris": "Safari con i husky",
+      "skiResorts": "Stazioni sciistiche",
+      "snowmobileTours": "Tour in motoslitta",
+      "spaWellness": "Spa e benessere",
+      "nightlife": "Vita notturna",
+      "natureParks": "Natura e parchi",
+      "travelGuide": "Guida di viaggio",
+      "christmas": "Natale in Lapponia",
+      "giftsSouvenirs": "Regali e souvenir",
+      "travelBlog": "Blog di viaggio",
+      "dealsOffers": "Offerte e promozioni",
+      "transport": "Trasporti",
+      "carRental": "Autonoleggio",
+      "workInLapland": "Lavorare in Lapponia"
+    }
+  }
+}

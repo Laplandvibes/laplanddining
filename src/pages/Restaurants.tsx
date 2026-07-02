@@ -1,54 +1,40 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import Hreflang from '../i18n/Hreflang';
 import { useLocation } from 'react-router-dom';
-import { MapPin, ExternalLink, Flame, Snowflake, UtensilsCrossed, TreePine, Star, Award, Clock, Quote } from 'lucide-react';
+import { useLocale } from '../i18n/useLocale';
+import { MapPin, ExternalLink, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, Clock, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
+import PartnerSlot from '../../../shared/PartnerSlot';
+import { PARTNERS } from '../data/partners';
 import {
-  restaurants, cities, partnershipBadge, composeCardBody, cuisineLabel, todayHours,
-  googleReviewsUrl, type Restaurant,
+  restaurants, cities, partnershipBadgeLocalized, composeCardBody, cuisineLabel, todayHours,
+  googleReviewsUrl, localizedStr, type Restaurant, type Locale,
 } from '../data/restaurants';
-import { DINING } from '../data/images';
+import { DINING, seasonal, isSummerSeason } from '../data/images';
+import PageBreadcrumb from '../components/PageBreadcrumb';
+import WhereToNext from '../components/WhereToNext';
 
 const cityImages: Record<string, string> = {
   Rovaniemi: DINING.rovaniemiCenter,
   Levi: DINING.kotaInside,
   Inari: DINING.foodMoody,
-  'Saariselkä': DINING.auroraRestaurant,
-  Kemi: DINING.iceRestaurant,
+  'Saariselkä': seasonal(DINING.auroraRestaurant, DINING.saariselkaSummer),
+  Kemi: seasonal(DINING.iceRestaurant, DINING.kemiSummer),
   'Ylläs': DINING.ingredientsAlt,
   Tornio: DINING.ingredients,
   Haparanda: DINING.fineDining,
   Kittilä: DINING.kotaInside,
   'Sodankylä': DINING.foodMoody,
-  Pyhätunturi: DINING.snowVillage,
-  Luosto: DINING.snowVillage,
+  Pyhätunturi: seasonal(DINING.snowVillage, DINING.pyhaSummer),
+  Luosto: seasonal(DINING.snowVillage, DINING.luostoSummer),
   Muonio: DINING.ingredientsAlt,
   Hetta: DINING.foodMoody,
   Kuusamo: DINING.exterior,
   Kemijärvi: DINING.exteriorAlt,
-  Salla: DINING.snowVillage,
+  Salla: seasonal(DINING.snowVillage, DINING.sallaSummer),
   Posio: DINING.foodMoody,
-};
-
-const cityVibes: Record<string, string> = {
-  Rovaniemi: 'Capital of Lapland — where Arctic culture meets culinary ambition',
-  Levi: 'Fireside dining after a day on the fells',
-  Kittilä: 'Fell village beyond the Levi resort sprawl',
-  Inari: 'Sámi heritage and the purest Arctic ingredients',
-  'Saariselkä': 'Wilderness dining under the Northern Lights',
-  Kemi: 'Where ice meets fire — unique seasonal experiences',
-  'Ylläs': 'Fell village charm with authentic Lappish flavors',
-  Tornio: 'Border town character and Finnish soul food',
-  Haparanda: 'Cross the border for Swedish-Nordic fusion',
-  'Sodankylä': 'River town traditions and the Midnight Sun Film Festival crowd',
-  Pyhätunturi: 'Fell-top dining at the southern gateway to wilderness',
-  Luosto: 'Amethyst-mountain village with kelo log restaurants',
-  Muonio: 'Aurora-belt highlands above the tree line',
-  Hetta: 'Enontekiö hub at the edge of three borders',
-  Kuusamo: 'Karelian-Lapland crossroads + Ruka resort',
-  Kemijärvi: 'Northernmost rail town with riverside tables',
-  Salla: 'Wilderness pass + Finland\'s easternmost ski village',
-  Posio: 'Lake-and-craft heart of Riisitunturi country',
 };
 
 const cityGygCatalog: Record<string, { citySlug: string; sid: string }> = {
@@ -60,18 +46,27 @@ function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
 }
 
+interface CardI18n {
+  websiteLabel: string;
+  mapsLabel: string;
+  todayLabel: string;
+  cityTopPickLabel: string;
+  stayNearby: string;
+  readReviews: (count: string) => string;
+  googleReview: string;
+}
+
 /** Cream-on-dark hero card for the city top pick. */
-function FeaturedCard({ r }: { r: Restaurant }) {
-  const body = composeCardBody(r);
-  const cuisine = cuisineLabel(r);
-  const hours = todayHours(r);
-  const badge = partnershipBadge(r.partnership);
+function FeaturedCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; locale: Locale }) {
+  const body = composeCardBody(r, locale);
+  const cuisine = cuisineLabel(r, locale);
+  const hours = todayHours(r, locale);
+  const badge = partnershipBadgeLocalized(r.partnership, locale);
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden bg-cream shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)] hover:shadow-[0_40px_80px_-25px_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-all duration-500">
-      <div className="relative grid grid-cols-1 md:grid-cols-12">
-        {/* Photo column */}
-        <div className="md:col-span-5 relative h-64 sm:h-72 md:h-auto md:min-h-[360px] overflow-hidden">
+    <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-cream shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)] hover:shadow-[0_40px_80px_-25px_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-all duration-500">
+      <div className="relative flex flex-col">
+        <div className="relative aspect-[16/10] overflow-hidden">
           {r.photo ? (
             <img
               src={r.photo}
@@ -81,12 +76,17 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               decoding="async"
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2.5">
+              <UtensilsCrossed className="w-12 h-12 text-amber/55" strokeWidth={1.5} />
+              {cuisine && (
+                <span className="text-amber/60 text-xs font-bold uppercase tracking-[0.22em] px-8 text-center leading-snug">{cuisine}</span>
+              )}
+            </div>
           )}
 
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">
             <span className="bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md inline-flex items-center gap-1.5">
-              <Flame size={10} /> City Top Pick
+              <Flame size={10} /> {i18n.cityTopPickLabel}
             </span>
             {badge && (
               <span className="bg-warm-ink text-cream text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
@@ -101,21 +101,19 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               target="_blank"
               rel="nofollow noopener"
               className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-cream text-warm-ink shadow-md hover:bg-amber transition-colors no-underline group/rating"
-              aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
             >
               <Star size={13} className="text-amber fill-amber group-hover/rating:fill-warm-ink" />
               <span className="text-sm font-bold">{r.rating.toFixed(1)}</span>
               {r.reviewCount && (
                 <span className="text-warm-muted text-xs font-semibold ml-0.5 group-hover/rating:text-warm-ink">
-                  · {r.reviewCount.toLocaleString('en')} reviews
+                  · {r.reviewCount.toLocaleString('en')}
                 </span>
               )}
             </a>
           )}
         </div>
 
-        {/* Body column */}
-        <div className="md:col-span-7 p-6 sm:p-8 flex flex-col">
+        <div className="p-6 sm:p-8 flex flex-col">
           <h3 className="font-heading text-3xl sm:text-4xl text-warm-ink tracking-wide leading-[1.05] mb-2">
             {r.name}
           </h3>
@@ -140,7 +138,7 @@ function FeaturedCard({ r }: { r: Restaurant }) {
                   rel="nofollow noopener"
                   className="inline-block mt-2 ml-7 text-[11px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
                 >
-                  — Read all {r.reviewCount?.toLocaleString('en')} reviews on Google →
+                  — {i18n.readReviews(r.reviewCount?.toLocaleString('en') ?? '')}
                 </a>
               </div>
             ) : (
@@ -148,7 +146,6 @@ function FeaturedCard({ r }: { r: Restaurant }) {
             )
           )}
 
-          {/* Meta strip */}
           <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-warm-muted mb-5">
             {(r.shortAddress || r.address) && (
               <span className="inline-flex items-center gap-1.5">
@@ -159,21 +156,24 @@ function FeaturedCard({ r }: { r: Restaurant }) {
             {hours && (
               <span className="inline-flex items-center gap-1.5">
                 <Clock size={12} className="text-amber-deep" />
-                Today: {hours}
+                {i18n.todayLabel}: {hours}
               </span>
             )}
           </div>
 
           {r.highlights && r.highlights.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mb-5">
-              {r.highlights.slice(0, 4).map((h) => (
-                <span
-                  key={h}
-                  className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
-                >
-                  {h}
-                </span>
-              ))}
+              {r.highlights.slice(0, 4).map((h, i) => {
+                const label = localizedStr(h, locale);
+                return label ? (
+                  <span
+                    key={i}
+                    className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
+                  >
+                    {label}
+                  </span>
+                ) : null;
+              })}
             </div>
           )}
 
@@ -185,7 +185,7 @@ function FeaturedCard({ r }: { r: Restaurant }) {
                 rel="sponsored nofollow noopener"
                 className="inline-flex items-center gap-1.5 bg-warm-ink hover:bg-spice text-cream text-sm font-bold px-4 py-2.5 rounded-full transition-all no-underline shadow-md min-h-[40px]"
               >
-                Visit website <ExternalLink size={14} />
+                {i18n.websiteLabel} <ExternalLink size={14} />
               </a>
             )}
             <a
@@ -194,7 +194,7 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               rel="nofollow noopener"
               className="inline-flex items-center gap-1.5 bg-cream-warm hover:bg-amber/15 border border-warm-ink/15 text-warm-ink text-sm font-semibold px-4 py-2.5 rounded-full transition-all no-underline min-h-[40px]"
             >
-              Open in Maps <ExternalLink size={14} />
+              {i18n.mapsLabel} <ExternalLink size={14} />
             </a>
             <AffiliateCTA
               partner="hotels"
@@ -202,7 +202,7 @@ function FeaturedCard({ r }: { r: Restaurant }) {
               destination={`${r.city}, ${r.country}`}
               className="ml-auto inline-flex items-center gap-1.5 bg-vibe-pink hover:bg-pink-600 text-white text-xs font-bold uppercase tracking-wider px-3.5 py-2.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
             >
-              Stay nearby
+              {i18n.stayNearby}
             </AffiliateCTA>
           </div>
         </div>
@@ -211,9 +211,9 @@ function FeaturedCard({ r }: { r: Restaurant }) {
   );
 }
 
-function RestaurantCard({ r }: { r: Restaurant }) {
-  const body = composeCardBody(r);
-  const cuisine = cuisineLabel(r);
+function RestaurantCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; locale: Locale }) {
+  const body = composeCardBody(r, locale);
+  const cuisine = cuisineLabel(r, locale);
 
   return (
     <article className="group relative rounded-2xl overflow-hidden bg-cream shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:shadow-[0_22px_45px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full">
@@ -227,7 +227,12 @@ function RestaurantCard({ r }: { r: Restaurant }) {
             decoding="async"
           />
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-amber/30 via-cream-warm to-cream" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2">
+            <UtensilsCrossed className="w-9 h-9 text-amber/55" strokeWidth={1.5} />
+            {cuisine && (
+              <span className="text-amber/60 text-[10px] font-bold uppercase tracking-[0.2em] px-5 text-center leading-snug">{cuisine}</span>
+            )}
+          </div>
         )}
         {r.rating && (
           <a
@@ -235,7 +240,6 @@ function RestaurantCard({ r }: { r: Restaurant }) {
             target="_blank"
             rel="nofollow noopener"
             className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
-            aria-label={`Read ${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews of ${r.name}`}
           >
             <Star size={10} className="text-amber fill-amber" />
             <span>{r.rating.toFixed(1)}</span>
@@ -264,7 +268,7 @@ function RestaurantCard({ r }: { r: Restaurant }) {
         {body && (
           body.isQuote ? (
             <div className="mb-3 flex-1">
-              <blockquote className="relative pl-5 text-[14px] text-warm-text leading-relaxed italic line-clamp-3">
+              <blockquote className="relative pl-5 text-[14px] text-warm-text leading-relaxed italic line-clamp-4">
                 <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
                 {body.text}
               </blockquote>
@@ -274,11 +278,11 @@ function RestaurantCard({ r }: { r: Restaurant }) {
                 rel="nofollow noopener"
                 className="inline-block mt-1.5 ml-5 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
               >
-                — Google review →
+                — {i18n.googleReview}
               </a>
             </div>
           ) : (
-            <p className="text-[14px] text-warm-text leading-relaxed mb-3 line-clamp-3 flex-1">{body.text}</p>
+            <p className="text-[14px] text-warm-text leading-relaxed mb-3 line-clamp-5 flex-1">{body.text}</p>
           )
         )}
 
@@ -290,7 +294,7 @@ function RestaurantCard({ r }: { r: Restaurant }) {
               rel="sponsored nofollow noopener"
               className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
-              Website →
+              {i18n.websiteLabel} →
             </a>
           )}
           <a
@@ -299,7 +303,7 @@ function RestaurantCard({ r }: { r: Restaurant }) {
             rel="nofollow noopener"
             className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
           >
-            Maps →
+            {i18n.mapsLabel} →
           </a>
         </div>
       </div>
@@ -308,7 +312,9 @@ function RestaurantCard({ r }: { r: Restaurant }) {
 }
 
 export default function Restaurants() {
+  const { t } = useTranslation('pages');
   const location = useLocation();
+  const { locale } = useLocale();
   const [activeCity, setActiveCity] = useState<string | null>(null);
 
   useEffect(() => {
@@ -327,15 +333,28 @@ export default function Restaurants() {
   }, [location.hash]);
 
   const filteredCities = activeCity ? [activeCity] : cities;
+  const cityVibes = (t('restaurants.cityVibes', { returnObjects: true }) as Record<string, string>) || {};
+  // Decorative season icon must match the hero image, which flips winter↔summer
+  // on the same predicate (Snowflake over the snow-village shot Oct–Apr, Sun over
+  // the summer-terrace shot May–Sep).
+  const summer = isSummerSeason();
+  const SeasonIcon = summer ? Sun : Snowflake;
+
+  const cardI18n: CardI18n = {
+    websiteLabel: t('restaurants.websiteLabel'),
+    mapsLabel: t('restaurants.mapsLabel'),
+    todayLabel: t('restaurants.todayLabel'),
+    cityTopPickLabel: t('restaurants.cityTopPickLabel'),
+    stayNearby: t('restaurants.stayNearby'),
+    readReviews: (count: string) => t('restaurants.readReviews', { count }),
+    googleReview: t('restaurants.googleReview'),
+  };
 
   return (
     <>
-      <title>All Restaurants in Lapland — by City | LaplandDining</title>
-      <meta
-        name="description"
-        content={`${restaurants.length} verified restaurants across ${cities.length} Lapland destinations — Rovaniemi, Levi, Inari, Saariselkä, Kemi, Ylläs, Sodankylä, Kuusamo, Hetta and more. Top picks per city, ratings, opening hours, hotel CTAs.`}
-      />
-      <link rel="canonical" href="https://laplanddining.com/restaurants" />
+      <title>{t('restaurants.title')}</title>
+      <meta name="description" content={t('restaurants.description')} />
+      <Hreflang path="/restaurants" />
       <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
@@ -351,7 +370,7 @@ export default function Restaurants() {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'ItemList',
-          name: 'Verified restaurants in Finnish Lapland',
+          name: 'Hand-picked restaurants in Finnish Lapland',
           numberOfItems: restaurants.length,
           itemListElement: restaurants.map((r, i) => ({
             '@type': 'ListItem',
@@ -388,46 +407,52 @@ export default function Restaurants() {
 
       <section className="relative min-h-[55svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={DINING.snowVillage}
-          alt="Snow village dining in Lapland"
+          src={seasonal(DINING.snowVillage, DINING.heroSummer)}
+          alt="Dining in Finnish Lapland"
           className="absolute inset-0 w-full h-full object-cover scale-105"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/40 to-night" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(15,23,42,0.80) 0%, rgba(15,23,42,0.42) 50%, rgba(15,23,42,0.30) 100%)',
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-amber/8 via-transparent to-transparent" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Snowflake size={16} className="text-amber/40" />
-            <span className="text-amber/60 text-xs font-semibold uppercase tracking-[0.25em]">
-              Arctic Dining Guide
+            <SeasonIcon size={16} className="text-amber/60" />
+            <span className="text-amber/80 text-xs font-semibold uppercase tracking-[0.25em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              {t('restaurants.heroKicker')}
             </span>
-            <Snowflake size={16} className="text-amber/40" />
+            <SeasonIcon size={16} className="text-amber/60" />
           </div>
 
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_20px_rgba(245,158,11,0.1)]">
-            All Restaurants
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+            {t('restaurants.heroH1')}
           </h1>
 
-          <p className="text-white/55 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-            {restaurants.length} verified restaurants across {cities.length} Lapland destinations.
-            <br className="hidden sm:block" />
-            Real customer reviews, photos, and opening hours — paired with a hotel walking distance away.
+          <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            {t('restaurants.heroLeadTemplate', { restaurantCount: restaurants.length, cityCount: cities.length })}
           </p>
 
-          <div className="flex items-center justify-center gap-6 text-white/30 text-xs uppercase tracking-wider">
-            <span className="flex items-center gap-1.5"><Flame size={12} className="text-amber/50" /> Kota Dining</span>
-            <span className="text-white/10">|</span>
-            <span className="flex items-center gap-1.5"><TreePine size={12} className="text-amber/50" /> Wilderness</span>
-            <span className="text-white/10">|</span>
-            <span className="flex items-center gap-1.5"><Snowflake size={12} className="text-amber/50" /> Arctic</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-6 text-white/75 text-xs uppercase tracking-wider drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+            <span className="flex items-center gap-1.5"><Flame size={12} className="text-amber/70" /> {t('restaurants.heroChipKota')}</span>
+            <span className="text-white/55">|</span>
+            <span className="flex items-center gap-1.5"><TreePine size={12} className="text-amber/70" /> {t('restaurants.heroChipWilderness')}</span>
+            <span className="text-white/55">|</span>
+            <span className="flex items-center gap-1.5"><SeasonIcon size={12} className="text-amber/70" /> {t('restaurants.heroChipArctic')}</span>
           </div>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-night to-transparent" />
       </section>
+
+      <PageBreadcrumb />
 
       {/* Filter bar */}
       <section className="sticky top-16 z-30 bg-night/95 backdrop-blur-md border-b border-white/[0.06]">
@@ -439,10 +464,10 @@ export default function Restaurants() {
               className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[36px] ${
                 !activeCity
                   ? 'bg-amber text-night shadow-lg shadow-amber/20'
-                  : 'bg-white/5 text-white/50 hover:text-white hover:bg-white/10 border border-white/[0.06]'
+                  : 'bg-white/5 text-white/75 hover:text-white hover:bg-white/10 border border-white/[0.06]'
               }`}
             >
-              All Cities
+              {t('restaurants.filterAll')}
             </button>
             {cities.map((city) => (
               <button
@@ -451,7 +476,7 @@ export default function Restaurants() {
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[36px] ${
                   activeCity === city
                     ? 'bg-amber text-night shadow-lg shadow-amber/20'
-                    : 'bg-white/5 text-white/50 hover:text-white hover:bg-white/10 border border-white/[0.06]'
+                    : 'bg-white/5 text-white/75 hover:text-white hover:bg-white/10 border border-white/[0.06]'
                 }`}
               >
                 {city}
@@ -462,9 +487,14 @@ export default function Restaurants() {
       </section>
 
       <section className="relative py-16 bg-night min-h-screen overflow-hidden">
-        {/* Soft warm wash behind the cream cards */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.06)_0%,transparent_50%)] pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Listing kärkipaikka-partneri — korostettu ensimmäinen rivi (tyhjä = ei renderöidy) */}
+          {PARTNERS.listingTop !== null && (
+            <div className="mb-8">
+              <PartnerSlot variant="listing" partner={PARTNERS.listingTop} locale={locale} />
+            </div>
+          )}
           {filteredCities.map((city) => {
             const cityRestaurants = restaurants.filter((r) => r.city === city);
             if (cityRestaurants.length === 0) return null;
@@ -472,6 +502,10 @@ export default function Restaurants() {
             const gyg = cityGygCatalog[city];
             const topPick = cityRestaurants.find((r) => r.topPick);
             const others = cityRestaurants.filter((r) => !r.topPick);
+            const count = cityRestaurants.length;
+            const countLabel = count > 1
+              ? t('restaurants.cityRestaurantsPlural')
+              : t('restaurants.cityRestaurantsSingular');
 
             return (
               <div key={city} id={slug} className="mb-20 last:mb-0 scroll-mt-36">
@@ -495,10 +529,10 @@ export default function Restaurants() {
                           <MapPin size={20} className="text-amber" />
                           <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide">{city}</h2>
                         </div>
-                        <p className="text-white/50 text-sm max-w-lg">{cityVibes[city]}</p>
+                        <p className="text-white/75 text-sm max-w-lg">{cityVibes[city]}</p>
                       </div>
                       <span className="bg-white/10 backdrop-blur-sm border border-white/10 text-white/70 text-sm font-medium px-4 py-2 rounded-full shrink-0">
-                        {cityRestaurants.length} restaurant{cityRestaurants.length > 1 ? 's' : ''}
+                        {count} {countLabel}
                       </span>
                     </div>
                   </div>
@@ -506,14 +540,14 @@ export default function Restaurants() {
 
                 {topPick && (
                   <div className="mb-6">
-                    <FeaturedCard r={topPick} />
+                    <FeaturedCard r={topPick} i18n={cardI18n} locale={locale} />
                   </div>
                 )}
 
                 {others.length > 0 && (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
                     {others.map((r) => (
-                      <RestaurantCard key={r.googlePlaceId} r={r} />
+                      <RestaurantCard key={r.googlePlaceId} r={r} i18n={cardI18n} locale={locale} />
                     ))}
                   </div>
                 )}
@@ -522,10 +556,10 @@ export default function Restaurants() {
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
                     <div>
                       <p className="text-vibe-pink text-[10px] font-semibold tracking-[0.25em] uppercase mb-1.5">
-                        Stay near these tables
+                        {t('restaurants.stayKicker')}
                       </p>
                       <p className="font-heading text-xl sm:text-2xl text-white tracking-wide">
-                        Book {city} hotels — walk to dinner
+                        {t('restaurants.stayHeadlineTemplate', { city })}
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -535,7 +569,7 @@ export default function Restaurants() {
                         destination={`${city}, Finland`}
                         className="inline-flex items-center gap-1.5 bg-vibe-pink hover:bg-pink-600 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
                       >
-                        Browse {city} stays
+                        {t('restaurants.stayBtnTemplate', { city })}
                       </AffiliateCTA>
                       {gyg && (
                         <a
@@ -544,7 +578,7 @@ export default function Restaurants() {
                           rel="sponsored nofollow noopener"
                           className="inline-flex items-center gap-1.5 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 no-underline min-h-[44px]"
                         >
-                          {city} food tours
+                          {t('restaurants.foodToursBtnTemplate', { city })}
                         </a>
                       )}
                     </div>
@@ -568,23 +602,21 @@ export default function Restaurants() {
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6">
           <Flame size={32} className="text-amber/60 mx-auto mb-4" />
           <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide mb-4">
-            Curated from {restaurants.length} verified restaurants
+            {t('restaurants.bottomHeadlineTemplate', { count: restaurants.length })}
           </h2>
-          <p className="text-white/50 leading-relaxed mb-4">
-            Catalogue sourced from Google Places (rating × review count, fast-food chains
-            excluded), then editorially picked top-1 per city by the LaplandVibes team.
-            Every quote on this page comes from a real Google review.
-            Updated {restaurants[0]?.lastVerified || '—'}.
+          <p className="text-white/75 leading-relaxed mb-4">
+            {t('restaurants.bottomLead', { date: restaurants[0]?.lastVerified || '—' })}
           </p>
-          <p className="text-white/30 text-sm">
-            Are you a restaurant owner? Verified Partner listings get hand-curated copy,
-            menu highlights, and an upgraded card.{' '}
+          <p className="text-white/55 text-sm">
+            {t('restaurants.bottomPartner')}{' '}
             <a href="mailto:info@laplandvibes.com" className="text-amber/70 hover:text-amber underline">
               info@laplandvibes.com
             </a>
           </p>
         </div>
       </section>
+
+      <WhereToNext />
     </>
   );
 }

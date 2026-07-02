@@ -1,0 +1,11 @@
+{
+  "links": {
+    "restaurants": "레스토랑",
+    "fineDining": "파인 다이닝",
+    "midnightSun": "백야",
+    "foodHistory": "음식 이야기",
+    "localFood": "로컬 식재료",
+    "about": "소개"
+  },
+  "menu": "메뉴 열기"
+}

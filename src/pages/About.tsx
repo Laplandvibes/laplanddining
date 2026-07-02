@@ -1,15 +1,17 @@
+
+import { useTranslation, Trans } from 'react-i18next';
+import Hreflang from '../i18n/Hreflang';
 import { Info, Globe, ExternalLink } from 'lucide-react';
 import { DINING } from '../data/images';
+import PageBreadcrumb from '../components/PageBreadcrumb';
 
 export default function About() {
+  const { t } = useTranslation('pages');
   return (
     <>
-      <title>About LaplandDining — Verified Restaurants in Finnish Lapland</title>
-      <meta
-        name="description"
-        content="LaplandDining is part of the LaplandVibes ecosystem — the editorial guide to verified restaurants across Finnish Lapland. Operated by Lapeso Oy."
-      />
-      <link rel="canonical" href="https://laplanddining.com/about" />
+      <title>{t('about.title')}</title>
+      <meta name="description" content={t('about.description')} />
+      <Hreflang path="/about" />
       <meta name="robots" content="index, follow" />
 
       {/* Hero */}
@@ -22,16 +24,18 @@ export default function About() {
           decoding="async"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-night/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/45 to-night" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="font-heading text-5xl sm:text-6xl text-white tracking-wide mb-4">
-            About LaplandDining
+          <h1 className="font-heading text-5xl sm:text-6xl text-white tracking-wide mb-4 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+            {t('about.heroH1')}
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Your guide to real, verified restaurants across Finnish Lapland.
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            {t('about.heroLead')}
           </p>
         </div>
       </section>
+
+      <PageBreadcrumb />
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-night">
         <div className="max-w-4xl mx-auto space-y-12">
@@ -40,19 +44,18 @@ export default function About() {
             <div className="flex items-center gap-3 mb-4">
               <Globe size={24} className="text-amber" />
               <h2 className="font-heading text-2xl text-white tracking-wide">
-                LaplandVibes Network
+                {t('about.networkTitle')}
               </h2>
             </div>
             <p className="text-gray-400 leading-relaxed mb-4">
-              LaplandDining is part of the <strong className="text-white/85">LaplandVibes</strong> ecosystem —
-              a family of specialised websites dedicated to helping travellers discover the best of Finnish
-              Lapland. Each site focuses on a specific aspect of the Lapland experience: accommodation,
-              dining, activities, nature, shopping, nightlife, and more.
+              <Trans
+                i18nKey="about.networkBodyA"
+                ns="pages"
+                components={{ strong: <strong className="text-white/85" /> }}
+              />
             </p>
             <p className="text-gray-400 leading-relaxed">
-              Every restaurant listed on LaplandDining is a real, verified establishment. We do not
-              list fictional or placeholder restaurants. Our data is researched and verified through
-              official sources, local knowledge, and on-the-ground experience.
+              {t('about.networkBodyB')}
             </p>
           </div>
 
@@ -61,33 +64,31 @@ export default function About() {
             <div className="flex items-center gap-3 mb-4">
               <Info size={24} className="text-amber" />
               <h2 className="font-heading text-2xl text-white tracking-wide">
-                Affiliate Disclosure
+                {t('about.affiliateTitle')}
               </h2>
             </div>
             <p className="text-gray-400 leading-relaxed mb-4">
-              Some links on LaplandDining are affiliate links — primarily hotel bookings via
-              Hotels.com and food experiences via GetYourGuide. We may earn a small commission if you
-              book through them, at no extra cost to you. These commissions help us maintain and
-              improve this free resource.
+              {t('about.affiliateBodyA')}
             </p>
             <p className="text-gray-400 leading-relaxed">
-              Our editorial recommendations are always independent. Affiliate partnerships do not
-              influence which restaurants we feature or how we describe them. We only recommend places
-              we genuinely believe provide a great dining experience.
+              {t('about.affiliateBodyB')}
             </p>
           </div>
 
           {/* Operator */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
             <h2 className="font-heading text-2xl text-white tracking-wide mb-4">
-              Operator
+              {t('about.operatorTitle')}
             </h2>
             <p className="text-gray-400 leading-relaxed mb-2">
-              LaplandDining.com is operated by <strong className="text-white/85">Lapeso Oy</strong>,
-              a Finnish company headquartered in Lapland.
+              <Trans
+                i18nKey="about.operatorBodyA"
+                ns="pages"
+                components={{ strong: <strong className="text-white/85" /> }}
+              />
             </p>
             <p className="text-gray-400 leading-relaxed">
-              Editorial questions, corrections, partnership enquiries, press requests:&nbsp;
+              {t('about.operatorBodyB')}&nbsp;
               <a
                 href="mailto:info@laplandvibes.com"
                 className="text-amber hover:text-white transition-colors no-underline"
@@ -100,7 +101,7 @@ export default function About() {
           {/* Explore more */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
             <h2 className="font-heading text-2xl text-white tracking-wide mb-4">
-              Explore the Ecosystem
+              {t('about.exploreTitle')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[

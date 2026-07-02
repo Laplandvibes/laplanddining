@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "ラップランドで実際に食べる場所"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "言語を切り替える"
+  },
+  "footer": {
+    "networkBadge": "フィンランド・ラップランド・ネットワーク",
+    "tagline": "フィンランド・ラップランド旅行の決定版デジタルガイド。",
+    "groups": {
+      "stay": "宿泊",
+      "eatDrink": "食事 & ドリンク",
+      "do": "遊ぶ",
+      "explore": "見る",
+      "essentials": "基本情報"
+    },
+    "travelGuideKicker": "ラップランド旅行ガイド",
+    "pillars": {
+      "restaurants": "レストラン",
+      "fineDining": "ファインダイニング",
+      "midnightSun": "真夏の太陽のダイニング",
+      "foodHistory": "食の物語",
+      "localFood": "地元の食材"
+    },
+    "about": {
+      "eyebrow": "LaplandVibesについて",
+      "body": "フィンランド・ラップランドの決定版ガイド、オーロラから真夏の太陽まで。厳選された体験、インサイダーのヒント、そして北極圏の冒険を計画するために必要なすべて。",
+      "badge": "独立運営 · 出典明記"
+    },
+    "spottedError": {
+      "title": "誤りを見つけたら",
+      "body": "修正すべき箇所を見つけられましたか？お知らせください、すぐに修正いたします。",
+      "cta": "誤りを報告する →"
+    },
+    "partner": {
+      "title": "パートナー募集",
+      "body": "21以上のラップランド関連サイトでの広告・コラボレーションのご相談を承ります。",
+      "cta": "お問い合わせ →"
+    },
+    "press": {
+      "title": "プレス & メディア",
+      "body": "編集パートナーシップとプレスキットをご用意しております。",
+      "cta": "プレスのお問い合わせ →"
+    },
+    "affiliate": "当サイトにはアフィリエイトリンクが含まれます。これらのリンク経由でご予約いただいた場合、追加費用なしでLaplandVibesが手数料を受け取ることがあります。",
+    "copyright": "{{year}} #LaplandVibes、#LaplandVibesネットワークの一部",
+    "websiteBy": "ウェブサイト制作：Yrityspaketit.fi",
+    "legal": {
+      "privacy": "プライバシーポリシー",
+      "cookie": "クッキーポリシー",
+      "terms": "利用規約",
+      "contact": "お問い合わせ"
+    },
+    "siteLabels": {
+      "hotelDeals": "ホテルのお得な情報",
+      "staysCabins": "宿泊施設とコテージ",
+      "whereToStay": "宿泊場所",
+      "familyFriendly": "家族向け",
+      "localFood": "地元の料理",
+      "fineDining": "ファインダイニング",
+      "barsPubs": "バーとパブ",
+      "activities": "アクティビティ",
+      "huskySafaris": "ハスキーサファリ",
+      "skiResorts": "スキーリゾート",
+      "snowmobileTours": "スノーモービルツアー",
+      "spaWellness": "スパとウェルネス",
+      "nightlife": "ナイトライフ",
+      "natureParks": "自然と国立公園",
+      "travelGuide": "旅行ガイド",
+      "christmas": "ラップランドのクリスマス",
+      "giftsSouvenirs": "ギフトとお土産",
+      "travelBlog": "旅行ブログ",
+      "dealsOffers": "お得な情報",
+      "transport": "交通",
+      "carRental": "レンタカー",
+      "workInLapland": "ラップランドで働く"
+    }
+  }
+}

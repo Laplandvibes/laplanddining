@@ -1,0 +1,80 @@
+{
+  "site": "laplanddining-new",
+  "converted": 14,
+  "swapped": 0,
+  "totalBefore": 8146046,
+  "totalAfter": 4719172,
+  "savedMB": "3.27",
+  "report": [
+    {
+      "file": "public\\images\\restaurants\\haparanda-kukkolaforsen-turist-konferens.jpg",
+      "before": 452664,
+      "after": 351444
+    },
+    {
+      "file": "public\\images\\restaurants\\kemi-kemin-puistopaviljonki-ky.jpg",
+      "before": 1200123,
+      "after": 914906
+    },
+    {
+      "file": "public\\images\\restaurants\\kemijarvi-mestarin-kievari.jpg",
+      "before": 417761,
+      "after": 278436
+    },
+    {
+      "file": "public\\images\\restaurants\\kittila-saamen-kammi.jpg",
+      "before": 373099,
+      "after": 156532
+    },
+    {
+      "file": "public\\images\\restaurants\\kuusamo-pizzeria-ruka.jpg",
+      "before": 436567,
+      "after": 316240
+    },
+    {
+      "file": "public\\images\\restaurants\\levi-panoramic-restaurant-tuikku.jpg",
+      "before": 362227,
+      "after": 318620
+    },
+    {
+      "file": "public\\images\\restaurants\\luosto-keloravintola-lapland-hotels-luostotunturi.jpg",
+      "before": 328676,
+      "after": 236722
+    },
+    {
+      "file": "public\\images\\restaurants\\muonio-jeris-lakeside-resort.jpg",
+      "before": 582440,
+      "after": 414174
+    },
+    {
+      "file": "public\\images\\restaurants\\posio-lapland-restaurant-kotahovi.jpg",
+      "before": 615364,
+      "after": 501318
+    },
+    {
+      "file": "public\\images\\restaurants\\rovaniemi-nili-restaurant.jpg",
+      "before": 526192,
+      "after": 392778
+    },
+    {
+      "file": "public\\images\\restaurants\\saariselka-bistro-cafe-kuukkeli.jpg",
+      "before": 1334287,
+      "after": 123058
+    },
+    {
+      "file": "public\\images\\restaurants\\salla-sallatunturin-tuvat.jpg",
+      "before": 351699,
+      "after": 266662
+    },
+    {
+      "file": "public\\images\\restaurants\\tornio-ravintola-golden-flower-tornio.jpg",
+      "before": 423650,
+      "after": 291650
+    },
+    {
+      "file": "public\\images\\restaurants\\yllas-ravintola-rouhe.jpg",
+      "before": 741297,
+      "after": 156632
+    }
+  ]
+}
