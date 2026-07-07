@@ -6,6 +6,7 @@ import { ChevronDown, MapPin, Star, UtensilsCrossed, Flame, Sun } from 'lucide-r
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import CityTopPicksGrid from '../components/CityTopPicksGrid';
+import FAQ from '../components/FAQ';
 import { gygCategoryLink, gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
 import { getFeaturedRestaurants, restaurants, cities } from '../data/restaurants';
@@ -13,6 +14,7 @@ import PartnerSlot from '../../../shared/PartnerSlot';
 import { PARTNERS } from '../data/partners';
 
 interface CuisineCardI18n { title: string; desc: string }
+interface FAQItemI18n { question: string; answer: string }
 
 const cuisineCardsMeta = [
   { image: DINING.fineDining, icon: Star },
@@ -27,6 +29,10 @@ export default function Home() {
   void featured; // legacy helper still exported, currently unused on the home grid (CityTopPicksGrid replaces it)
 
   const cuisineCardsCopy = (t('home.cuisineCards', { returnObjects: true }) as CuisineCardI18n[]) || [];
+  // FAQPage JSON-LD is generated from the same localized items the visible
+  // <FAQ /> accordion renders, so schema and on-page content stay in lockstep
+  // (Google structured-data guideline: FAQ markup must match visible content).
+  const faqItems = (t('home.faq.items', { returnObjects: true }) as FAQItemI18n[]) || [];
   const tourLabels = (t('home.tourLinks', { returnObjects: true }) as string[]) || [];
   const tourLinks = [
     { label: tourLabels[0], href: gygSearchLink('lapland food tour', 'home_food_tours_lapland') },
@@ -41,46 +47,19 @@ export default function Home() {
       <meta name="description" content={t('home.description')} />
       <Hreflang path="/" />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: [
-            {
+      {faqItems.length > 0 && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map((f) => ({
               '@type': 'Question',
-              name: 'What is the most famous restaurant in Lapland?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Aanaar in Inari is widely considered the best restaurant in Finnish Lapland. It celebrates Sámi food heritage with hyper-local tasting menus built around lake fish from Inari, hand-picked wild herbs and reindeer from local herders.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'What is poronkäristys?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Poronkäristys is the most iconic Lappish dish — sautéed reindeer, thinly sliced and cooked with butter, served with mashed potatoes and lingonberry jam. You\'ll find it in every restaurant in Lapland.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'Can you eat at an ice restaurant in Lapland?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Yes — SnowRestaurant inside Kemi\'s SnowCastle serves food on frozen plates at -5 °C, open January through April. Tables, chairs and plates are all carved from ice.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'When is the best time to dine outdoors in Lapland?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'The 32-day midnight-sun window from June 6 to July 7. The sun never sets above the Arctic Circle — terraces stay open until midnight, kota fires stay lit, and lake-side tables in Inari and Saariselkä eat under continuous gold light.',
-              },
-            },
-          ],
-        })}
-      </script>
+              name: f.question,
+              acceptedAnswer: { '@type': 'Answer', text: f.answer },
+            })),
+          })}
+        </script>
+      )}
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
@@ -361,6 +340,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ (visible accordion backing the FAQPage JSON-LD) ──── */}
+      <FAQ />
     </>
   );
 }

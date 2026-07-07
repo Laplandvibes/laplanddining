@@ -47,7 +47,37 @@
       "Corsi di cucina",
       "Cibo e bevande a Rovaniemi",
       "Cibo e bevande a Levi"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Domande frequenti",
+      "headline": "FAQ della tavola lappone",
+      "lead": "Le domande che i viaggiatori fanno più spesso prima di prenotare un tavolo in Lapponia, le sale famose, il piatto simbolo, i fuochi di kota e le cene sotto il sole di mezzanotte.",
+      "stillWonderingKicker": "Ancora dubbi?",
+      "stillWonderingBodyPrefix": "Scrivi a ",
+      "stillWonderingBodySuffix": ", di solito rispondiamo in giornata.",
+      "items": [
+        {
+          "question": "Qual è il ristorante più famoso della Lapponia?",
+          "answer": "Il Restaurant Aanaar di Inari è una delle sale di alta cucina meglio valutate della Lapponia, 4,8 su Google con oltre 460 recensioni. Celebra l'eredità gastronomica sami con menù degustazione costruiti attorno al pesce tirato su dal lago Inari la mattina stessa, erbe selvatiche raccolte a mano e renna dei pastori locali."
+        },
+        {
+          "question": "Che cos'è il poronkäristys?",
+          "answer": "Il poronkäristys è il piatto più iconico della Lapponia, renna affettata sottile e saltata nel burro, servita con purè di patate e marmellata di mirtilli rossi. Semplice, onesto e profondamente appagante, lo si trova ovunque, dai caffè di strada alle sale di alta cucina."
+        },
+        {
+          "question": "Che cos'è la cena nella kota?",
+          "answer": "La kota è la tenda tradizionale sami con un fuoco aperto al centro. Ristoranti kota come il Kammi dell'Hullu Poro a Levi ti fanno sedere su pelli di renna attorno alle fiamme mentre salmone affumicato, salsicce di renna e selvaggina alla griglia vengono preparati davanti a te, il menù costa circa 64 € a persona."
+        },
+        {
+          "question": "Qual è il periodo migliore per mangiare all'aperto in Lapponia?",
+          "answer": "La finestra di 32 giorni del sole di mezzanotte, dal 6 giugno al 7 luglio, quando il sole non tramonta mai a nord del Circolo Polare. Le terrazze restano aperte fino a mezzanotte, i fuochi di kota continuano ad ardere e i tavoli in riva al lago a Inari e Saariselkä restano immersi in una luce dorata continua."
+        },
+        {
+          "question": "Su quali ingredienti locali si fonda la cucina lappone?",
+          "answer": "Renne allo stato brado, salmerino artico e coregone da laghi come l'Inari, mirtilli e mirtilli rossi selvatici, funghi ed erbe raccolti a mano, e il lampone artico, l'\"oro dell'Artico\", che matura sulle torbiere subartiche solo poche settimane a luglio."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Ristoranti nella Lapponia finlandese | LaplandDining",

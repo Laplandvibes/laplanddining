@@ -47,7 +47,37 @@
       "Aulas de cozinha",
       "Comida e bebida em Rovaniemi",
       "Comida e bebida em Levi"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Perguntas frequentes",
+      "headline": "FAQ gastronômico da Lapônia",
+      "lead": "As perguntas que os viajantes mais fazem antes de reservar uma mesa na Lapônia, as casas famosas, o prato símbolo, os fogos de kota e o jantar sob o sol da meia-noite.",
+      "stillWonderingKicker": "Ainda em dúvida?",
+      "stillWonderingBodyPrefix": "Escreva para ",
+      "stillWonderingBodySuffix": ", costumamos responder no mesmo dia.",
+      "items": [
+        {
+          "question": "Qual é o restaurante mais famoso da Lapônia?",
+          "answer": "O Restaurant Aanaar, em Inari, é uma das casas de alta gastronomia mais bem avaliadas da Lapônia, 4,8 no Google com mais de 460 avaliações. Ele celebra a herança gastronômica sami com menus degustação montados em torno do peixe tirado do lago Inari naquela mesma manhã, ervas silvestres colhidas à mão e rena de criadores locais."
+        },
+        {
+          "question": "O que é poronkäristys?",
+          "answer": "Poronkäristys é o prato mais icônico da Lapônia, lascas finas de rena salteadas na manteiga, servidas com purê de batata e geleia de oxicoco. Simples, honesto e profundamente reconfortante, você o encontra em todo lugar, de cafés de estrada a salas de alta gastronomia."
+        },
+        {
+          "question": "O que é jantar em uma kota?",
+          "answer": "A kota é a tenda tradicional sami com uma fogueira aberta no centro. Restaurantes kota como o Kammi, no Hullu Poro, em Levi, sentam você sobre peles de rena ao redor das chamas enquanto salmão defumado, linguiças de rena e caça grelhada são preparados na sua frente, o menu custa cerca de 64 € por pessoa."
+        },
+        {
+          "question": "Qual é a melhor época para comer ao ar livre na Lapônia?",
+          "answer": "A janela de 32 dias do sol da meia-noite, de 6 de junho a 7 de julho, quando o sol nunca se põe ao norte do Círculo Polar Ártico. Os terraços ficam abertos até a meia-noite, os fogos de kota continuam acesos e as mesas à beira do lago em Inari e Saariselkä banham-se em uma luz dourada contínua."
+        },
+        {
+          "question": "Em quais ingredientes locais a cozinha da Lapônia se apoia?",
+          "answer": "Renas criadas soltas, salvelino-ártico e coregono de lagos como o Inari, mirtilos silvestres e oxicocos, cogumelos e ervas colhidos à mão, e a cloudberry, o \"ouro do Ártico\", que amadurece nos pântanos subárticos por apenas algumas semanas em julho."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Restaurantes na Lapônia finlandesa | LaplandDining",

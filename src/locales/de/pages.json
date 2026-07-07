@@ -47,7 +47,37 @@
       "Kochkurse",
       "Essen & Trinken in Rovaniemi",
       "Essen & Trinken in Levi"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Häufige Fragen",
+      "headline": "Lappland-Dining-FAQ",
+      "lead": "Die Fragen, die Reisende vor einer Tischreservierung in Lappland am häufigsten stellen, die berühmten Adressen, das Signature-Gericht, Kota-Feuer und Essen unter der Mitternachtssonne.",
+      "stillWonderingKicker": "Noch Fragen?",
+      "stillWonderingBodyPrefix": "Schreiben Sie an ",
+      "stillWonderingBodySuffix": ", wir antworten meist noch am selben Tag.",
+      "items": [
+        {
+          "question": "Was ist das berühmteste Restaurant in Lappland?",
+          "answer": "Das Restaurant Aanaar in Inari gehört zu den bestbewerteten Fine-Dining-Adressen Lapplands, 4,8 bei Google aus über 460 Bewertungen. Es ehrt das samische Esserbe mit Degustationsmenüs rund um Fisch, der am selben Morgen aus dem Inarisee gezogen wurde, handgepflückte Wildkräuter und Rentier von örtlichen Rentierhaltern."
+        },
+        {
+          "question": "Was ist Poronkäristys?",
+          "answer": "Poronkäristys ist das ikonischste Gericht Lapplands, hauchdünn gehobeltes Rentier, in Butter sautiert und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und zutiefst befriedigend, Sie finden es überall, vom Straßencafé bis zum Fine-Dining-Haus."
+        },
+        {
+          "question": "Was ist ein Kota-Dinner?",
+          "answer": "Eine Kota ist ein traditionelles samisches Zelt mit offener Feuerstelle in der Mitte. Kota-Restaurants wie das Kammi im Hullu Poro in Levi setzen Sie auf Rentierfelle rund ums Feuer, während geräucherter Lachs, Rentierwürste und gegrilltes Wild vor Ihren Augen zubereitet werden, das Menü kostet etwa 64 € pro Person."
+        },
+        {
+          "question": "Wann isst man in Lappland am besten draußen?",
+          "answer": "Im 32-tägigen Mitternachtssonnen-Fenster vom 6. Juni bis 7. Juli, wenn die Sonne nördlich des Polarkreises nie untergeht. Terrassen bleiben bis Mitternacht geöffnet, Kota-Feuer brennen weiter, und die Tische am See in Inari und Saariselkä liegen in ununterbrochenem goldenem Licht."
+        },
+        {
+          "question": "Auf welchen Zutaten baut Lapplands Küche auf?",
+          "answer": "Frei weidende Rentiere, Saibling und Felchen aus Seen wie dem Inarisee, wilde Heidel- und Preiselbeeren, von Hand gesammelte Pilze und Wildkräuter, und die Moltebeere, das „Gold der Arktis\", die nur wenige Wochen im Juli auf subarktischen Mooren reift."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Restaurants in Finnisch-Lappland | LaplandDining",

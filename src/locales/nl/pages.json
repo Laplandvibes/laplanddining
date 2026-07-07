@@ -47,7 +47,37 @@
       "Kookcursussen",
       "Eten & drinken in Rovaniemi",
       "Eten & drinken in Levi"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Veelgestelde vragen",
+      "headline": "Lapland dining-FAQ",
+      "lead": "De vragen die reizigers het vaakst stellen voordat ze in Lapland een tafel boeken, de beroemde zaken, het signatuurgerecht, kota-vuren en eten onder de middernachtzon.",
+      "stillWonderingKicker": "Nog vragen?",
+      "stillWonderingBodyPrefix": "Mail ",
+      "stillWonderingBodySuffix": ", we antwoorden meestal dezelfde dag.",
+      "items": [
+        {
+          "question": "Wat is het beroemdste restaurant van Lapland?",
+          "answer": "Restaurant Aanaar in Inari is een van de best beoordeelde fine-diningzalen van Lapland, 4,8 op Google met ruim 460 reviews. Het eert het Samische culinaire erfgoed met proefmenu's rond vis die diezelfde ochtend uit het Inarimeer is gehaald, handgeplukte wilde kruiden en rendier van lokale herders."
+        },
+        {
+          "question": "Wat is poronkäristys?",
+          "answer": "Poronkäristys is het meest iconische gerecht van Lapland, flinterdun geschaafd rendier gebakken in boter, geserveerd met aardappelpuree en vossenbessenjam. Eenvoudig, eerlijk en diep bevredigend, u vindt het overal, van wegcafé tot fine-diningzaal."
+        },
+        {
+          "question": "Wat is dineren in een kota?",
+          "answer": "Een kota is de traditionele Samische tent met een open vuur in het midden. Kota-restaurants zoals Kammi bij Hullu Poro in Levi zetten u op rendiervellen rond de vlammen terwijl gerookte zalm, rendierworstjes en gegrild wild voor uw neus worden bereid, een menu kost zo'n 64 € per persoon."
+        },
+        {
+          "question": "Wanneer eet je in Lapland het best buiten?",
+          "answer": "In het 32-daagse middernachtzonvenster van 6 juni tot 7 juli, wanneer de zon boven de Poolcirkel nooit ondergaat. Terrassen blijven tot middernacht open, kota-vuren blijven branden en de tafels aan het meer in Inari en Saariselkä baden in onafgebroken gouden licht."
+        },
+        {
+          "question": "Op welke lokale ingrediënten is de Laplandse keuken gebouwd?",
+          "answer": "Vrij grazende rendieren, Arctische zalmforel en houting uit meren als het Inarimeer, wilde blauwe bosbessen en vossenbessen, met de hand geplukte paddenstoelen en kruiden, en de kruipbraam, het \"goud van het Arctische gebied\", die maar een paar weken in juli rijpt op subarctische venen."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Restaurants in Fins Lapland | LaplandDining",

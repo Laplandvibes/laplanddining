@@ -47,7 +47,37 @@
       "Cours de cuisine",
       "Cuisine et boissons à Rovaniemi",
       "Cuisine et boissons à Levi"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "headline": "FAQ gastronomique de Laponie",
+      "lead": "Les questions que les voyageurs posent le plus avant de réserver une table en Laponie, les adresses célèbres, le plat emblématique, les feux de kota et les dîners sous le soleil de minuit.",
+      "stillWonderingKicker": "Encore une question ?",
+      "stillWonderingBodyPrefix": "Écrivez à ",
+      "stillWonderingBodySuffix": ", nous répondons en général le jour même.",
+      "items": [
+        {
+          "question": "Quel est le restaurant le plus célèbre de Laponie ?",
+          "answer": "Le Restaurant Aanaar, à Inari, est l'une des tables gastronomiques les mieux notées de Laponie, 4,8 sur Google pour plus de 460 avis. Il célèbre l'héritage culinaire sâme avec des menus dégustation bâtis autour du poisson remonté le matin même du lac Inari, d'herbes sauvages cueillies à la main et de renne venu des éleveurs locaux."
+        },
+        {
+          "question": "Qu'est-ce que le poronkäristys ?",
+          "answer": "Le poronkäristys est le plat le plus emblématique de Laponie, du renne finement émincé et sauté au beurre, servi avec une purée de pommes de terre et de la confiture d'airelles. Simple, honnête et profondément réconfortant, on le trouve partout, du café de bord de route à la salle gastronomique."
+        },
+        {
+          "question": "Qu'est-ce qu'un dîner en kota ?",
+          "answer": "La kota est la tente traditionnelle sâme, avec un feu ouvert en son centre. Les restaurants-kota comme le Kammi du Hullu Poro, à Levi, vous installent sur des peaux de renne autour des flammes pendant que saumon fumé, saucisses de renne et gibier grillé sont préparés devant vous, le menu revient à environ 64 € par personne."
+        },
+        {
+          "question": "Quelle est la meilleure période pour dîner dehors en Laponie ?",
+          "answer": "La fenêtre de soleil de minuit de 32 jours, du 6 juin au 7 juillet, quand le soleil ne se couche jamais au nord du cercle polaire. Les terrasses restent ouvertes jusqu'à minuit, les feux de kota brûlent toujours et les tables au bord du lac, à Inari et Saariselkä, baignent dans une lumière dorée continue."
+        },
+        {
+          "question": "Sur quels ingrédients locaux repose la cuisine lapone ?",
+          "answer": "Rennes en liberté, omble arctique et corégone des lacs comme l'Inari, myrtilles et airelles sauvages, champignons et herbes cueillis à la main, et la mûre arctique, l'« or de l'Arctique », qui ne mûrit sur les tourbières subarctiques que quelques semaines en juillet."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Restaurants en Laponie finlandaise | LaplandDining",

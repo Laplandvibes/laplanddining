@@ -47,7 +47,37 @@
       "Cooking classes",
       "Rovaniemi food & drink",
       "Levi food & drink"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Common Questions",
+      "headline": "Lapland Dining FAQ",
+      "lead": "The questions travellers ask most before booking a table in Lapland, the famous rooms, the signature dish, kota fires and eating under the midnight sun.",
+      "stillWonderingKicker": "Still wondering?",
+      "stillWonderingBodyPrefix": "Email ",
+      "stillWonderingBodySuffix": ", we usually answer same day.",
+      "items": [
+        {
+          "question": "What is the most famous restaurant in Lapland?",
+          "answer": "Restaurant Aanaar in Inari is one of Lapland's highest-rated fine-dining rooms, 4.8 on Google across 460+ reviews. It celebrates Sami food heritage with tasting menus built around fish pulled from Lake Inari that morning, hand-picked wild herbs and reindeer from local herders."
+        },
+        {
+          "question": "What is poronkäristys?",
+          "answer": "Poronkäristys is the most iconic Lappish dish, thin-shaved reindeer sautéed in butter, served with mashed potatoes and lingonberry jam. Simple, honest and deeply satisfying, you'll find it everywhere from roadside cafés to fine-dining rooms."
+        },
+        {
+          "question": "What is kota dining?",
+          "answer": "A kota is a traditional Sami tent with an open fire at its centre. Kota restaurants like Kammi at Hullu Poro in Levi seat you on reindeer furs around the flames while smoked salmon, reindeer sausages and grilled game are cooked in front of you, a set menu runs around €64 a head."
+        },
+        {
+          "question": "When is the best time to dine outdoors in Lapland?",
+          "answer": "The 32-day midnight-sun window from June 6 to July 7, when the sun never sets above the Arctic Circle. Terraces stay open until midnight, kota fires stay lit, and lake-side tables in Inari and Saariselkä sit in continuous gold light."
+        },
+        {
+          "question": "What local ingredients is Lapland food built on?",
+          "answer": "Free-ranging reindeer, Arctic char and whitefish from lakes like Inari, wild bilberries and lingonberries, hand-foraged mushrooms and herbs, and the cloudberry, the 'gold of the Arctic', which ripens on subarctic bogs for only a few weeks in July."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Restaurants in Finnish Lapland | LaplandDining",

@@ -47,7 +47,37 @@
       "Kokkauskurssit",
       "Rovaniemen ruoka & juoma",
       "Levin ruoka & juoma"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Usein kysytyt",
+      "headline": "Lapin ravintola-FAQ",
+      "lead": "Kysymykset, jotka matkailijat kysyvät useimmin ennen pöytävarausta Lapissa, kuuluisat salit, ikoninen annos, kotanuotiot ja syöminen keskiyön auringon alla.",
+      "stillWonderingKicker": "Jäikö jokin mietityttämään?",
+      "stillWonderingBodyPrefix": "Laita viestiä ",
+      "stillWonderingBodySuffix": ", vastaamme yleensä samana päivänä.",
+      "items": [
+        {
+          "question": "Mikä on Lapin kuuluisin ravintola?",
+          "answer": "Restaurant Aanaar Inarissa on yksi Lapin korkeimmin arvostelluista fine dining -saleista, Googlessa 4,8 yli 460 arviosta. Se kunnioittaa saamelaista ruokaperinnettä tasting-menuilla, jotka rakentuvat samana aamuna Inarijärvestä nostetun kalan, käsin poimittujen villiyrttien ja paikallisten poronhoitajien poron ympärille."
+        },
+        {
+          "question": "Mitä on poronkäristys?",
+          "answer": "Poronkäristys on Lapin ikonisin annos, ohuiksi viipaloitua poroa voissa käristettynä, perunamuusin ja puolukkahillon kanssa. Yksinkertaista, rehellistä ja syvästi tyydyttävää, sen löytää kaikkialta tienvarsikahviloista fine dining -saleihin."
+        },
+        {
+          "question": "Mitä on kotaruokailu?",
+          "answer": "Kota on perinteinen saamelainen asumus, jonka keskellä palaa avotuli. Kotaravintolat kuten Kammi Hullussa Porossa Levillä istuttavat sinut porontaljoille liekkien ääreen, kun savulohi, poromakkarat ja riista valmistuvat silmiesi edessä, menu maksaa noin 64 € hengeltä."
+        },
+        {
+          "question": "Milloin Lapissa kannattaa syödä ulkona?",
+          "answer": "32 päivän yöttömän yön ikkunassa 6.6.–7.7., jolloin aurinko ei laske napapiirin pohjoispuolella. Terassit ovat auki keskiyöhön, kotanuotiot palavat ja Inarin ja Saariselän järvenrantapöydät kylpevät yhtäjaksoisessa kultaisessa valossa."
+        },
+        {
+          "question": "Mistä raaka-aineista Lapin ruoka rakentuu?",
+          "answer": "Vapaana laiduntava poro, nieriä ja siika Inarin kaltaisista järvistä, metsän mustikat ja puolukat, käsin kerätyt sienet ja villiyrtit, ja hilla, \"arktinen kulta\", joka kypsyy soilla vain muutaman viikon heinäkuussa."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Ravintolat Suomen Lapissa | LaplandDining",

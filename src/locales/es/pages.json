@@ -47,7 +47,37 @@
       "Clases de cocina",
       "Comida y bebida en Rovaniemi",
       "Comida y bebida en Levi"
-    ]
+    ],
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "headline": "FAQ gastronómico de Laponia",
+      "lead": "Las preguntas que más hacen los viajeros antes de reservar mesa en Laponia, las salas famosas, el plato insignia, los fuegos de kota y comer bajo el sol de medianoche.",
+      "stillWonderingKicker": "¿Aún con dudas?",
+      "stillWonderingBodyPrefix": "Escríbanos a ",
+      "stillWonderingBodySuffix": ", solemos responder el mismo día.",
+      "items": [
+        {
+          "question": "¿Cuál es el restaurante más famoso de Laponia?",
+          "answer": "El Restaurant Aanaar, en Inari, es una de las salas de alta cocina mejor valoradas de Laponia, 4,8 en Google con más de 460 reseñas. Celebra la herencia gastronómica sami con menús degustación construidos en torno al pescado sacado esa misma mañana del lago Inari, hierbas silvestres recogidas a mano y reno de pastores locales."
+        },
+        {
+          "question": "¿Qué es el poronkäristys?",
+          "answer": "El poronkäristys es el plato más icónico de Laponia, virutas finas de reno salteadas en mantequilla, servidas con puré de patata y mermelada de arándano rojo. Sencillo, honesto y profundamente reconfortante, lo encontrará en todas partes, desde cafeterías de carretera hasta salas de alta cocina."
+        },
+        {
+          "question": "¿Qué es cenar en una kota?",
+          "answer": "La kota es la tienda tradicional sami con un fuego abierto en el centro. Restaurantes kota como Kammi, en Hullu Poro (Levi), le sientan sobre pieles de reno alrededor de las llamas mientras preparan ante usted salmón ahumado, salchichas de reno y caza a la parrilla, el menú cuesta unos 64 € por persona."
+        },
+        {
+          "question": "¿Cuándo es la mejor época para comer al aire libre en Laponia?",
+          "answer": "La ventana de sol de medianoche de 32 días, del 6 de junio al 7 de julio, cuando el sol nunca se pone al norte del Círculo Polar Ártico. Las terrazas abren hasta medianoche, los fuegos de kota siguen encendidos y las mesas junto al lago en Inari y Saariselkä se bañan en una luz dorada continua."
+        },
+        {
+          "question": "¿Sobre qué ingredientes locales se construye la cocina de Laponia?",
+          "answer": "Renos en libertad, salvelino ártico y corégono de lagos como el Inari, arándanos azules y arándanos rojos silvestres, setas y hierbas recogidas a mano, y la mora de los pantanos, el \"oro del Ártico\", que madura en las turberas subárticas solo unas semanas en julio."
+        }
+      ]
+    }
   },
   "restaurants": {
     "title": "Restaurantes en la Laponia finlandesa | LaplandDining",
