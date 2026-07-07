@@ -39,7 +39,7 @@ const cityImages: Record<string, string> = {
 
 const cityGygCatalog: Record<string, { citySlug: string; sid: string }> = {
   Rovaniemi: { citySlug: 'rovaniemi-l2653', sid: 'restaurants_rovaniemi_food_tours' },
-  Levi: { citySlug: 'levi-l52242', sid: 'restaurants_levi_food_tours' },
+  Levi: { citySlug: 'levi-sirkka-l150197', sid: 'restaurants_levi_food_tours' },
 };
 
 function hotelsSid(city: string) {

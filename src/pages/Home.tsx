@@ -32,7 +32,7 @@ export default function Home() {
     { label: tourLabels[0], href: gygSearchLink('lapland food tour', 'home_food_tours_lapland') },
     { label: tourLabels[1], href: gygSearchLink('lapland cooking class', 'home_cooking_lapland') },
     { label: tourLabels[2], href: gygCategoryLink('rovaniemi-l2653', 'food-and-drink', 'home_food_rovaniemi') },
-    { label: tourLabels[3], href: gygCategoryLink('levi-l52242', 'food-and-drink', 'home_food_levi') },
+    { label: tourLabels[3], href: gygCategoryLink('levi-sirkka-l150197', 'food-and-drink', 'home_food_levi') },
   ];
 
   return (

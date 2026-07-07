@@ -11,7 +11,7 @@ interface Props {
 }
 
 /**
- * Language switcher. Compact dropdown on `lg+` viewports (Globe + code + menu)
+ * Language switcher. Compact dropdown on `xl+` viewports (Globe + code + menu)
  * and a native <select> on mobile so the hamburger icon never gets pushed
  * off-screen.
  */
@@ -52,7 +52,7 @@ export default function LanguageSwitcher({ className = '', variant = 'pill' }: P
 
   return (
     <>
-      <div className={`hidden lg:inline-block relative ${className}`} ref={wrapRef}>
+      <div className={`hidden xl:inline-block relative ${className}`} ref={wrapRef}>
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
@@ -112,7 +112,7 @@ export default function LanguageSwitcher({ className = '', variant = 'pill' }: P
           if (target) navigate(target.href);
         }}
         aria-label={t('lang.switchTo')}
-        className={`lg:hidden bg-transparent border border-current/30 rounded px-2 py-1 text-xs font-heading tracking-[0.18em] uppercase ${
+        className={`xl:hidden bg-transparent border border-current/30 rounded px-2 py-1 text-xs font-heading tracking-[0.18em] uppercase ${
           variant === 'pill' ? 'text-snow' : 'text-snow/85'
         } ${className}`}
       >
