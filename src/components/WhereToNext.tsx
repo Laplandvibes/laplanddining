@@ -36,7 +36,7 @@ export default function WhereToNext() {
               components={{
                 bars: (
                   <a
-                    href="https://laplandbars.com"
+                    href="https://laplandbars.com/bars/"
                     target="_blank"
                     rel="noopener"
                     className={linkClass}
@@ -44,7 +44,7 @@ export default function WhereToNext() {
                 ),
                 nightlife: (
                   <a
-                    href="https://laplandnightlife.com"
+                    href="https://laplandnightlife.com/nightclubs/"
                     target="_blank"
                     rel="noopener"
                     className={linkClass}
@@ -52,7 +52,7 @@ export default function WhereToNext() {
                 ),
                 stays: (
                   <a
-                    href="https://laplandstays.com"
+                    href="https://laplandstays.com/property-types/"
                     target="_blank"
                     rel="noopener"
                     className={linkClass}
