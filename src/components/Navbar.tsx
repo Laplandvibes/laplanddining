@@ -67,14 +67,17 @@ export default function Navbar() {
             <LanguageSwitcher />
           </div>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="xl:hidden p-2.5 -mr-1 text-white hover:text-amber transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
-            aria-label={t('menu')}
-            aria-expanded={open}
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="xl:hidden flex items-center gap-1.5 shrink-0">
+            <LanguageSwitcher />
+            <button
+              onClick={() => setOpen(!open)}
+              className="p-2.5 -mr-1 text-white hover:text-amber transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label={t('menu')}
+              aria-expanded={open}
+            >
+              {open ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -94,7 +97,6 @@ export default function Navbar() {
                 {t(`links.${link.key}`)}
               </Link>
             ))}
-            <div className="pt-3"><LanguageSwitcher /></div>
           </div>
         </div>
       )}

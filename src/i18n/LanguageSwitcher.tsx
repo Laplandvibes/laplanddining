@@ -118,7 +118,7 @@ export default function LanguageSwitcher({ className = '', variant = 'pill' }: P
       >
         {items.map((item) => (
           <option key={item.code} value={item.code} className="bg-deep-night text-snow">
-            {item.label} — {item.native}
+            {item.label}
           </option>
         ))}
       </select>
