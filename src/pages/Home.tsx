@@ -10,7 +10,7 @@ import FAQ from '../components/FAQ';
 import { gygCategoryLink, gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
 import { getFeaturedRestaurants, restaurants, cities } from '../data/restaurants';
-import HomeAdSlots from '../../../shared/HomeAdSlots';
+import HomeAdSlots, { MainPartnerBanner } from '../../../shared/HomeAdSlots';
 import { AD_SLOTS } from '../data/partners';
 
 interface CuisineCardI18n { title: string; desc: string }
@@ -110,6 +110,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PÄÄKUMPPANI-banneri heti heron alla (LV Media) ────────── */}
+      <MainPartnerBanner config={AD_SLOTS} locale={locale} className="bg-night" />
+
       {/* ── Midnight Sun Dining (kesä-sääntö, top-3-fold) ─────────── */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-900/30 via-night to-night" />
@@ -167,6 +170,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Kumppaniosio ylhäällä: kakkospääkumppani + 6 premium-
+          kohdepaikkaa (LV Media) ──────────────────────────────────── */}
+      <HomeAdSlots config={AD_SLOTS} locale={locale} className="bg-night" />
 
       {/* ── City Top Picks (18 cities, B2B-ready) ─────────────────── */}
       <CityTopPicksGrid />
@@ -261,11 +268,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── Mainospaikkaosio — renderöityy AINA: 2 pääsponsoria + 6
-          kohdekohtaista premium-paikkaa, tyhjät paikat näyttävät
-          house-adin → LV Media -portaali ─────────────────────────── */}
-      <HomeAdSlots config={AD_SLOTS} locale={locale} className="bg-night" />
 
       {/* ── Stay & Eat — Hotels.com booking band ─────────────────── */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-night via-night-light to-night">
