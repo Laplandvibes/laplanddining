@@ -101,27 +101,35 @@ export default function LanguageSwitcher({ className = '', variant = 'pill' }: P
         )}
       </div>
 
-      <select
-        value={locale}
-        onChange={(e) => {
-          const next = e.target.value as Locale;
-          if (typeof window !== 'undefined' && window.localStorage) {
-            window.localStorage.setItem('lv_locale_choice', next);
-          }
-          const target = items.find((i) => i.code === next);
-          if (target) navigate(target.href);
-        }}
-        aria-label={t('lang.switchTo')}
-        className={`xl:hidden bg-transparent border border-current/30 rounded px-2 py-1 text-xs font-heading tracking-[0.18em] uppercase ${
-          variant === 'pill' ? 'text-snow' : 'text-snow/85'
-        } ${className}`}
-      >
-        {items.map((item) => (
-          <option key={item.code} value={item.code} className="bg-deep-night text-snow">
-            {item.label}
-          </option>
-        ))}
-      </select>
+      <span className={`xl:hidden relative inline-flex items-center ${className}`}>
+        <select
+          value={locale}
+          onChange={(e) => {
+            const next = e.target.value as Locale;
+            if (typeof window !== 'undefined' && window.localStorage) {
+              window.localStorage.setItem('lv_locale_choice', next);
+            }
+            const target = items.find((i) => i.code === next);
+            if (target) navigate(target.href);
+          }}
+          aria-label={t('lang.switchTo')}
+          className={`appearance-none bg-transparent border border-current/30 rounded pl-2 pr-6 py-1 text-xs font-heading tracking-[0.18em] uppercase ${
+            variant === 'pill' ? 'text-snow' : 'text-snow/85'
+          }`}
+        >
+          {items.map((item) => (
+            <option key={item.code} value={item.code} className="bg-deep-night text-snow">
+              {item.label}
+            </option>
+          ))}
+        </select>
+        <ChevronDown
+          aria-hidden="true"
+          className={`w-3 h-3 absolute right-2 pointer-events-none ${
+            variant === 'pill' ? 'text-snow' : 'text-snow/85'
+          }`}
+        />
+      </span>
     </>
   );
 }
