@@ -10,8 +10,8 @@ import FAQ from '../components/FAQ';
 import { gygCategoryLink, gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
 import { getFeaturedRestaurants, restaurants, cities } from '../data/restaurants';
-import PartnerSlot from '../../../shared/PartnerSlot';
-import { PARTNERS } from '../data/partners';
+import HomeAdSlots from '../../../shared/HomeAdSlots';
+import { AD_SLOTS } from '../data/partners';
 
 interface CuisineCardI18n { title: string; desc: string }
 interface FAQItemI18n { question: string; answer: string }
@@ -218,19 +218,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Partner slot — featured card (tyhjä = ei renderöidy) ── */}
-      {PARTNERS.front.some((p) => p !== null) && (
-        <section className="py-10 px-4 sm:px-6 lg:px-8 bg-night">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PARTNERS.front.map((partner, i) => (
-                <PartnerSlot key={i} variant="card" partner={partner} locale={locale} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* ── By Destination ───────────────────────────────────────── */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber/5 rounded-full blur-[120px] animate-[aurora-drift_10s_ease-in-out_infinite]" />
@@ -274,6 +261,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Mainospaikkaosio — renderöityy AINA: 2 pääsponsoria + 6
+          kohdekohtaista premium-paikkaa, tyhjät paikat näyttävät
+          house-adin → LV Media -portaali ─────────────────────────── */}
+      <HomeAdSlots config={AD_SLOTS} locale={locale} className="bg-night" />
 
       {/* ── Stay & Eat — Hotels.com booking band ─────────────────── */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-night via-night-light to-night">
