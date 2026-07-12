@@ -6,19 +6,13 @@ import Logo from './Logo';
 import LanguageSwitcher from '../i18n/LanguageSwitcher';
 import { useLocale } from '../i18n/useLocale';
 import EcosystemMenu from '../../../shared/EcosystemMenu';
-import { adSlotsCopy } from '../../../shared/adSlotsCopy';
-import { PARTNER_ARTICLES } from '../data/partners';
 
-// "Kumppanit"-linkki näkyy VAIN kun kumppaneita on — matkailija ei törmää
-// tyhjään B2B-sivuun (Vesa 2026-07-12). Sivu on silti tavoitettavissa
-// portaalin house-adien kautta.
 const NAV_KEYS = [
   { key: 'restaurants', basePath: '/restaurants' },
   { key: 'fineDining', basePath: '/fine-dining' },
   { key: 'midnightSun', basePath: '/midnight-sun-dining' },
   { key: 'foodHistory', basePath: '/food-history' },
   { key: 'localFood', basePath: '/local-food' },
-  ...(PARTNER_ARTICLES.length > 0 ? [{ key: 'partners', basePath: '/kumppanit' }] : []),
   { key: 'about', basePath: '/about' },
 ] as const;
 
@@ -28,8 +22,6 @@ export default function Navbar() {
   const location = useLocation();
   const { t } = useTranslation('nav');
   const { to, pathWithoutLocale, locale } = useLocale();
-  const navLabel = (key: string) =>
-    key === 'partners' ? adSlotsCopy(locale).partners : t(`links.${key}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -69,7 +61,7 @@ export default function Navbar() {
                     : 'text-white/70 hover:text-amber'
                 }`}
               >
-                {navLabel(link.key)}
+                {t(`links.${link.key}`)}
               </Link>
             ))}
             <LanguageSwitcher />
@@ -102,7 +94,7 @@ export default function Navbar() {
                     : 'text-white/70 hover:text-amber hover:bg-white/5'
                 }`}
               >
-                {navLabel(link.key)}
+                {t(`links.${link.key}`)}
               </Link>
             ))}
           </div>

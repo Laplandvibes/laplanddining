@@ -11,7 +11,6 @@ import NewsletterPopup from './components/NewsletterPopup';
 import SponsorStrip from '../../shared/SponsorStrip';
 import { AD_SLOTS } from './data/partners';
 const Home = lazy(() => import('./pages/Home'))
-const Partners = lazy(() => import('./pages/Partners'))
 const Restaurants = lazy(() => import('./pages/Restaurants'))
 const FineDining = lazy(() => import('./pages/FineDining'))
 const About = lazy(() => import('./pages/About'))
@@ -145,8 +144,6 @@ function AppLayout() {
             <Route key={`${prefix}/midnight-sun-dining`} path={`${prefix}/midnight-sun-dining`} element={<MidnightSunDining />} />,
             <Route key={`${prefix}/food-history`} path={`${prefix}/food-history`} element={<FoodHistory />} />,
             <Route key={`${prefix}/local-food`} path={`${prefix}/local-food`} element={<LocalFood />} />,
-            <Route key={`${prefix}/kumppanit`} path={`${prefix}/kumppanit`} element={<Partners />} />,
-            <Route key={`${prefix}/partners`} path={`${prefix}/partners`} element={<Partners />} />,
             <Route key={`${prefix}/about`} path={`${prefix}/about`} element={<About />} />,
             <Route key={`${prefix}/privacy`} path={`${prefix}/privacy`} element={<PrivacyPolicy />} />,
             <Route key={`${prefix}/terms`} path={`${prefix}/terms`} element={<Terms />} />,
