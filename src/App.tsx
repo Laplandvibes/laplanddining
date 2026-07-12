@@ -8,7 +8,10 @@ import SharedFooter from '../../shared/Footer';
 import type { FooterDict } from '../../shared/Footer';
 import SharedCookieBanner from '../../shared/CookieBanner';
 import NewsletterPopup from './components/NewsletterPopup';
+import SponsorStrip from '../../shared/SponsorStrip';
+import { AD_SLOTS } from './data/partners';
 const Home = lazy(() => import('./pages/Home'))
+const Partners = lazy(() => import('./pages/Partners'))
 const Restaurants = lazy(() => import('./pages/Restaurants'))
 const FineDining = lazy(() => import('./pages/FineDining'))
 const About = lazy(() => import('./pages/About'))
@@ -115,6 +118,7 @@ function LocaleSync() { useLocale(); return null; }
 
 function AppLayout() {
   const { i18n } = useTranslation('common');
+  const { locale } = useLocale();
   const pillarLinks = useFooterPillarLinks();
   const dict = useFooterDict();
   return (
@@ -124,6 +128,14 @@ function AppLayout() {
       <LocaleSync />
       <Navbar />
       <main className="pt-16">
+        {/* Pääkumppaninauha — sivuston näkyvin mainospaikka, joka sivulla
+            heti navin alla. Tyhjänä myyntinauha → LV Media -portaali. */}
+        <SponsorStrip
+          partner={AD_SLOTS.mainPartner ?? null}
+          siteSlug={AD_SLOTS.siteSlug}
+          locale={locale}
+          showHouseAd
+        />
         <Suspense fallback={<div className="min-h-screen" />}>
           <Routes>
           {(['', '/fi', '/de', '/ja', '/es', '/br', '/cn', '/kr', '/fr', '/it', '/nl'] as const).flatMap((prefix) => [
@@ -133,6 +145,8 @@ function AppLayout() {
             <Route key={`${prefix}/midnight-sun-dining`} path={`${prefix}/midnight-sun-dining`} element={<MidnightSunDining />} />,
             <Route key={`${prefix}/food-history`} path={`${prefix}/food-history`} element={<FoodHistory />} />,
             <Route key={`${prefix}/local-food`} path={`${prefix}/local-food`} element={<LocalFood />} />,
+            <Route key={`${prefix}/kumppanit`} path={`${prefix}/kumppanit`} element={<Partners />} />,
+            <Route key={`${prefix}/partners`} path={`${prefix}/partners`} element={<Partners />} />,
             <Route key={`${prefix}/about`} path={`${prefix}/about`} element={<About />} />,
             <Route key={`${prefix}/privacy`} path={`${prefix}/privacy`} element={<PrivacyPolicy />} />,
             <Route key={`${prefix}/terms`} path={`${prefix}/terms`} element={<Terms />} />,

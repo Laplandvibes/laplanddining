@@ -6,6 +6,7 @@ import Logo from './Logo';
 import LanguageSwitcher from '../i18n/LanguageSwitcher';
 import { useLocale } from '../i18n/useLocale';
 import EcosystemMenu from '../../../shared/EcosystemMenu';
+import { adSlotsCopy } from '../../../shared/adSlotsCopy';
 
 const NAV_KEYS = [
   { key: 'restaurants', basePath: '/restaurants' },
@@ -13,6 +14,7 @@ const NAV_KEYS = [
   { key: 'midnightSun', basePath: '/midnight-sun-dining' },
   { key: 'foodHistory', basePath: '/food-history' },
   { key: 'localFood', basePath: '/local-food' },
+  { key: 'partners', basePath: '/kumppanit' },
   { key: 'about', basePath: '/about' },
 ] as const;
 
@@ -22,6 +24,8 @@ export default function Navbar() {
   const location = useLocation();
   const { t } = useTranslation('nav');
   const { to, pathWithoutLocale, locale } = useLocale();
+  const navLabel = (key: string) =>
+    key === 'partners' ? adSlotsCopy(locale).partners : t(`links.${key}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -61,7 +65,7 @@ export default function Navbar() {
                     : 'text-white/70 hover:text-amber'
                 }`}
               >
-                {t(`links.${link.key}`)}
+                {navLabel(link.key)}
               </Link>
             ))}
             <LanguageSwitcher />
@@ -94,7 +98,7 @@ export default function Navbar() {
                     : 'text-white/70 hover:text-amber hover:bg-white/5'
                 }`}
               >
-                {t(`links.${link.key}`)}
+                {navLabel(link.key)}
               </Link>
             ))}
           </div>

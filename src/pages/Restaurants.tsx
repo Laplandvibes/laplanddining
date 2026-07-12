@@ -7,7 +7,9 @@ import { MapPin, ExternalLink, Flame, Snowflake, Sun, UtensilsCrossed, TreePine,
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
 import PartnerSlot from '../../../shared/PartnerSlot';
-import { PARTNERS } from '../data/partners';
+import SubpageAd from '../../../shared/SubpageAd';
+import PremiumSpotGrid from '../../../shared/PremiumSpotGrid';
+import { PARTNERS, AD_SLOTS } from '../data/partners';
 import {
   restaurants, cities, partnershipBadgeLocalized, composeCardBody, cuisineLabel, todayHours,
   googleReviewsUrl, localizedStr, type Restaurant, type Locale,
@@ -452,6 +454,17 @@ export default function Restaurants() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-night to-transparent" />
       </section>
 
+      {/* Alasivun oma mainospaikka heti heron alla — pysyy koko sesongin,
+          myydään erikseen. Tyhjänä house-ad (top-liikenteen sivu). */}
+      <SubpageAd
+        partner={PARTNERS.pages['/restaurants']?.[0] ?? null}
+        siteSlug={AD_SLOTS.siteSlug}
+        slotId="restaurants"
+        locale={locale}
+        showHouseAd
+        className="bg-night"
+      />
+
       <PageBreadcrumb />
 
       {/* Filter bar */}
@@ -489,6 +502,20 @@ export default function Restaurants() {
       <section className="relative py-16 bg-night min-h-screen overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.06)_0%,transparent_50%)] pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Premium-listanosto: maksaneet ravintolat nousevat listan kärkeen
+              kohteittain (Rovaniemi, Levi, Ylläs…). Tyhjänä house-ad. */}
+          <div className="mb-12">
+            <p className="text-white/75 text-xs uppercase tracking-[0.2em] font-semibold mb-4">
+              {t('restaurants.premiumHeading', 'Kärkipaikat')}
+            </p>
+            <PremiumSpotGrid
+              spots={AD_SLOTS.spots}
+              siteSlug={AD_SLOTS.siteSlug}
+              locale={locale}
+              surface="dark"
+            />
+          </div>
+
           {/* Listing kärkipaikka-partneri — korostettu ensimmäinen rivi (tyhjä = ei renderöidy) */}
           {PARTNERS.listingTop !== null && (
             <div className="mb-8">
