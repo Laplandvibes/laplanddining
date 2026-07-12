@@ -153,10 +153,10 @@ export default function LocalFood() {
           <p className="text-white/75 mb-8 leading-relaxed max-w-2xl mx-auto">
             {t('localFood.ctaLead')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center mb-6">
             <Link
               to={to('/restaurants')}
-              className="inline-flex items-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
             >
               {t('localFood.ctaBrowse')}
             </Link>
@@ -164,7 +164,7 @@ export default function LocalFood() {
               partner="hotels"
               sid="local_food_stay_lapland"
               destination="Lapland, Finland"
-              className="inline-flex items-center gap-2 bg-vibe-pink hover:bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline shadow-lg shadow-vibe-pink/25"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-vibe-pink hover:bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline shadow-lg shadow-vibe-pink/25"
             >
               {t('localFood.ctaStay')}
             </AffiliateCTA>
@@ -172,7 +172,7 @@ export default function LocalFood() {
               href={gygSearchLink('lapland cooking class food tour', 'local_food_cooking_classes')}
               target="_blank"
               rel="sponsored nofollow noopener"
-              className="inline-flex items-center gap-2 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline"
             >
               {t('localFood.ctaTours')}
             </a>

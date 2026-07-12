@@ -100,7 +100,7 @@ function FeaturedCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; loca
               href={googleReviewsUrl(r.googlePlaceId)}
               target="_blank"
               rel="nofollow noopener"
-              className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-cream text-warm-ink shadow-md hover:bg-amber transition-colors no-underline group/rating"
+              className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 rounded-full bg-cream text-warm-ink shadow-md hover:bg-amber transition-colors no-underline group/rating"
             >
               <Star size={13} className="text-amber fill-amber group-hover/rating:fill-warm-ink" />
               <span className="text-sm font-bold">{r.rating.toFixed(1)}</span>
