@@ -25,7 +25,7 @@ import { restaurantGems } from './restaurant-gems';
 
 export type PartnershipTier = 'editorial' | 'verified' | 'premium' | 'gold';
 
-export type Locale = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl';
+export type Locale = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl' | 'sv';
 
 /**
  * Localized string — either a single string (legacy = English only)
@@ -33,7 +33,7 @@ export type Locale = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko'
  */
 export type LocalizedStr =
   | string
-  | { en: string; fi: string; de: string; ja?: string; es?: string; 'pt-BR'?: string; 'zh-CN'?: string; ko?: string; fr?: string; it?: string; nl?: string };
+  | { en: string; fi: string; de: string; ja?: string; es?: string; 'pt-BR'?: string; 'zh-CN'?: string; ko?: string; fr?: string; it?: string; nl?: string; sv?: string };
 
 /** Pick the right variant out of a LocalizedStr for the given locale. */
 export function localizedStr(
@@ -244,6 +244,7 @@ const CLOSED_TODAY: Record<Locale, string> = {
   fr: 'Fermé aujourd\'hui',
   it: 'Chiuso oggi',
   nl: 'Vandaag gesloten',
+  sv: 'Stängt idag',
 };
 export function todayHours(r: Restaurant, locale: Locale = 'en'): string | null {
   if (!r.openingHours || r.openingHours.length === 0) return null;
@@ -278,6 +279,7 @@ const NUMBER_LOCALES: Record<Locale, string> = {
   fr: 'fr-FR',
   it: 'it-IT',
   nl: 'nl-NL',
+  sv: 'sv-SE',
 };
 
 /**
@@ -310,6 +312,9 @@ function factualLine(r: Restaurant, locale: Locale): string | null {
   }
   if (locale === 'zh-CN') {
     return `${rating} 星 · ${count} 条评论${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+  }
+  if (locale === 'sv') {
+    return `${rating} stjärnor · ${count} recensioner${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
   }
   // de
   return `${rating} Sterne • ${count} Bewertungen${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
@@ -391,6 +396,11 @@ const PARTNERSHIP_LABELS: Record<Locale, Record<Exclude<PartnershipTier, 'editor
     gold: '★ Uitgelichte partner',
     premium: 'Uitgelichte partner',
     verified: 'Uitgelichte vermelding',
+  },
+  sv: {
+    gold: '★ Utvald partner',
+    premium: 'Utvald partner',
+    verified: 'Utvald listning',
   },
 };
 export function partnershipBadgeLocalized(tier: PartnershipTier, locale: Locale): string | null {

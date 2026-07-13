@@ -1,0 +1,83 @@
+{
+  "site": {
+    "name": "LaplandDining",
+    "tagline": "Var du faktiskt äter i Lappland"
+  },
+  "lang": {
+    "currentEN": "EN",
+    "currentFI": "FI",
+    "switchTo": "Byt språk"
+  },
+  "footer": {
+    "networkBadge": "Finska Lapplands nätverk",
+    "tagline": "Det självklara digitala hemmet för resor i finska Lappland.",
+    "groups": {
+      "stay": "Bo",
+      "eatDrink": "Äta & dricka",
+      "do": "Göra",
+      "explore": "Upptäck",
+      "essentials": "Praktiskt"
+    },
+    "travelGuideKicker": "Reseguide för Lappland",
+    "pillars": {
+      "restaurants": "Restauranger",
+      "fineDining": "Fine dining",
+      "midnightSun": "Middag i midnattssol",
+      "foodHistory": "Matens historia",
+      "localFood": "Lokal mat"
+    },
+    "about": {
+      "eyebrow": "Om LaplandVibes",
+      "body": "Den självklara guiden till finska Lappland, från norrskenet till midnattssolen. Utvalda upplevelser, insidertips och det praktiska du behöver inför din resa i Arktis.",
+      "badge": "Oberoende drivet · källor angivna"
+    },
+    "spottedError": {
+      "title": "Hittade du ett fel?",
+      "body": "Ser du något som behöver rättas? Hör av dig, så fixar vi det direkt.",
+      "cta": "Rapportera ett fel →"
+    },
+    "partner": {
+      "title": "Bli partner",
+      "body": "Annonsera eller samarbeta på 27 Lappland-sajter.",
+      "cta": "Kontakta oss →"
+    },
+    "press": {
+      "title": "Press & media",
+      "body": "Redaktionella samarbeten och presskit.",
+      "cta": "Pressförfrågningar →"
+    },
+    "affiliate": "Den här sajten innehåller affiliatelänkar. Om du bokar via dem kan LaplandVibes få provision utan att det kostar dig något extra.",
+    "copyright": "{{year}} #LaplandVibes, en del av #LaplandVibes-nätverket",
+    "websiteBy": "Webbplats av Yrityspaketit.fi",
+    "legal": {
+      "privacy": "Integritetspolicy",
+      "cookie": "Cookiepolicy",
+      "terms": "Användarvillkor",
+      "contact": "Kontakt"
+    },
+    "siteLabels": {
+      "hotelDeals": "Hotellerbjudanden",
+      "staysCabins": "Boende & stugor",
+      "whereToStay": "Var du ska bo",
+      "familyFriendly": "Familjevänligt",
+      "localFood": "Lokal mat",
+      "fineDining": "Fine dining",
+      "barsPubs": "Barer & pubar",
+      "activities": "Aktiviteter",
+      "huskySafaris": "Hundspannssafarier",
+      "skiResorts": "Skidorter",
+      "snowmobileTours": "Snöskoterturer",
+      "spaWellness": "Spa & wellness",
+      "nightlife": "Nattliv",
+      "natureParks": "Natur & parker",
+      "travelGuide": "Reseguide",
+      "christmas": "Jul i Lappland",
+      "giftsSouvenirs": "Presenter & souvenirer",
+      "travelBlog": "Reseblogg",
+      "dealsOffers": "Erbjudanden",
+      "transport": "Transport",
+      "carRental": "Biluthyrning",
+      "workInLapland": "Jobba i Lappland"
+    }
+  }
+}

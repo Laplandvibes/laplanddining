@@ -38,7 +38,7 @@ export interface AffiliateCTAProps
 
 const REDIRECT_HOST = 'https://go.laplandvibes.com';
 
-type _Lang = "en" | "fi" | "de" | "ja" | "es" | "pt-BR" | "zh-CN" | "ko" | "fr" | "it" | "nl";
+type _Lang = "en" | "fi" | "de" | "ja" | "es" | "pt-BR" | "zh-CN" | "ko" | "fr" | "it" | "nl" | "sv";
 const HOTELS_LOCALE: Record<_Lang, string> = {
   en: "en_US",
   fi: "fi_FI",
@@ -51,6 +51,7 @@ const HOTELS_LOCALE: Record<_Lang, string> = {
   fr: "fr_FR",
   it: "it_IT",
   nl: "nl_NL",
+  sv: "sv_SE",
 };
 const CARS_LANG: Record<_Lang, string> = {
   en: "en",
@@ -64,6 +65,7 @@ const CARS_LANG: Record<_Lang, string> = {
   fr: "fr",
   it: "it",
   nl: "nl",
+  sv: "sv",
 };
 const GYG_DOMAIN: Record<_Lang, string> = {
   en: "https://www.getyourguide.com",
@@ -77,6 +79,7 @@ const GYG_DOMAIN: Record<_Lang, string> = {
   fr: "https://www.getyourguide.fr",
   it: "https://www.getyourguide.it",
   nl: "https://www.getyourguide.nl",
+  sv: "https://www.getyourguide.com",
 };
 
 const GYG_PARTNER_ID = 'VRMKD7N';

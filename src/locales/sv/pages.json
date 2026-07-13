@@ -1,0 +1,383 @@
+{
+  "home": {
+    "title": "LaplandDining – var du faktiskt äter i Lappland",
+    "description": "Den oberoende restaurangguiden till finska Lappland – handplockade restauranger, menyer, öppettider och direkta bokningslänkar. Från lokala pubar till fine dining.",
+    "heroH1": "Upptäck Lapplands bästa restauranger",
+    "heroLead": "Riktiga, handplockade restauranger i hela finska Lappland – från traditionell samisk fine dining till matlagning över kotaeld och arktiska råvaror du inte hittar någon annanstans.",
+    "heroCtaExplore": "Utforska alla restauranger",
+    "heroCtaStay": "Bo nära maten",
+    "midnightKicker": "Lapplands sommar",
+    "midnightHeadline1": "Middag klockan ett på natten",
+    "midnightHeadline2": "Solen är fortfarande uppe.",
+    "midnightBadge": "6 juni → 7 juli",
+    "midnightBody": "I trettiotvå dagar sjunker solen aldrig under horisonten norr om polcirkeln. Terrasser vid älven i Rovaniemi, kotaeldar i Saariselkä, Aanaars avsmakningsmeny mot sjön – allt äts i oavbrutet gyllene ljus. Den lugnaste och bästa halvan av Lapplands matår.",
+    "midnightCtaGuide": "Läs guiden till midnattssolen",
+    "midnightCtaStays": "Hitta sommarboenden",
+    "cuisineHeadline": "Höjdpunkter i köket",
+    "cuisineLead": "Tre pelare i Lapplands unika matscen.",
+    "cuisineCards": [
+      {
+        "title": "Fine dining",
+        "desc": "Prisbelönta avsmakningsmenyer som förvandlar arktiska råvaror till kulinarisk konst. Från samiska traditioner till nordisk innovation."
+      },
+      {
+        "title": "Kotaupplevelse",
+        "desc": "Ät inne i ett traditionellt samiskt kotatält runt öppen eld. Flamgrillad lax, ren och vilt i en oförglömlig stämning."
+      },
+      {
+        "title": "Arktiska råvaror",
+        "desc": "Vilda örter, ren, insjöfisk, hjortron och svamp plockade från orörd arktisk vildmark. Extremt lokalt, säsongsbetonat och rent."
+      }
+    ],
+    "destinationsHeadline": "Bläddra efter destination",
+    "destinationsLead": "Välj en stad och se vad som står på bordet.",
+    "statsVerified": "Utvalda restauranger",
+    "statsDestinations": "Destinationer",
+    "statsYear": "Uppdaterad i år",
+    "stayKicker": "Bo där du äter",
+    "stayHeadline": "Boka ett hotell nära kvällens bord",
+    "stayLead": "Middagar i Lappland drar ofta ut på tiden och slutar långt från stan. Det smartaste är ett boende inom gångavstånd från restaurangen, och Hotels.com ger dig den tydligaste överblicken över vad som faktiskt finns ledigt intill varje kota, fjällhotell och isrestaurang.",
+    "stayAffiliateNote": "Affiliatelänkar – vi kan få provision utan att det kostar dig något extra.",
+    "stayAffiliateLink": "Varför vi länkar så här",
+    "toursKicker": "Ät med en guide",
+    "toursHeadline": "Matturer, matlagningskurser & bryggeribesök",
+    "toursLead": "För dig som vill ha sammanhang till måltiden – samiska smakvandringar, lapska matlagningskurser, bryggerimiddagar och laxlagningsupplevelser. Bokas via GetYourGuide med fri avbokning fram till 24 timmar innan.",
+    "tourLinks": [
+      "Matturer i Lappland",
+      "Matlagningskurser",
+      "Mat & dryck i Rovaniemi",
+      "Mat & dryck i Levi"
+    ],
+    "faq": {
+      "eyebrow": "Vanliga frågor",
+      "headline": "Vanliga frågor om att äta i Lappland",
+      "lead": "De frågor resenärer oftast ställer innan de bokar bord i Lappland – de kända ställena, signaturrätten, kotaeldarna och att äta under midnattssolen.",
+      "stillWonderingKicker": "Undrar du fortfarande?",
+      "stillWonderingBodyPrefix": "Mejla ",
+      "stillWonderingBodySuffix": ", vi svarar oftast samma dag.",
+      "items": [
+        {
+          "question": "Vilken är den mest kända restaurangen i Lappland?",
+          "answer": "Restaurant Aanaar i Inari är en av Lapplands högst rankade fine dining-salar – 4,8 på Google över 460+ recensioner. Den hyllar det samiska matarvet med avsmakningsmenyer byggda kring fisk som dragits upp ur Enare träsk samma morgon, handplockade vilda örter och ren från lokala renskötare."
+        },
+        {
+          "question": "Vad är poronkäristys?",
+          "answer": "Poronkäristys är Lapplands mest ikoniska rätt – tunt skavd ren som fräses i smör och serveras med potatismos och lingonsylt. Enkelt, ärligt och djupt mättande. Du hittar den överallt, från vägkrogar till fine dining-salar."
+        },
+        {
+          "question": "Vad är en kotamiddag?",
+          "answer": "En kota är ett traditionellt samiskt tält med öppen eld i mitten. Kota-restauranger som Kammi på Hullu Poro i Levi sätter dig på renfällar runt lågorna medan rökt lax, renkorv och grillat vilt tillagas framför dig – en fast meny kostar runt 64 € per person."
+        },
+        {
+          "question": "När är bästa tiden att äta utomhus i Lappland?",
+          "answer": "Under det 32 dagar långa midnattssolsfönstret från 6 juni till 7 juli, när solen aldrig går ner norr om polcirkeln. Terrasserna håller öppet till midnatt, kotaeldarna hålls tända och borden vid sjön i Inari och Saariselkä ligger i oavbrutet gyllene ljus."
+        },
+        {
+          "question": "Vilka lokala råvaror bygger Lapplands mat på?",
+          "answer": "Frigående ren, röding och sik från sjöar som Enare träsk, vilda blåbär och lingon, handplockad svamp och örter, och hjortronet – 'Arktis guld' – som mognar på subarktiska myrar bara några veckor i juli."
+        }
+      ]
+    }
+  },
+  "restaurants": {
+    "title": "Restauranger i finska Lappland | LaplandDining",
+    "description": "60+ handplockade restauranger i hela finska Lappland – Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menyer, öppettider och direkta bokningslänkar.",
+    "heroKicker": "Arktisk matguide",
+    "heroH1": "Alla restauranger",
+    "heroLeadTemplate": "{{restaurantCount}} handplockade restauranger på {{cityCount}} Lappland-destinationer. Riktiga kundrecensioner, foton och öppettider – i par med ett hotell inom gångavstånd.",
+    "heroChipKota": "Kotamiddag",
+    "heroChipWilderness": "Vildmark",
+    "heroChipArctic": "Arktis",
+    "filterAll": "Alla städer",
+    "cityTopPickLabel": "Stadens topptips",
+    "cityRestaurantsSingular": "restaurang",
+    "cityRestaurantsPlural": "restauranger",
+    "todayLabel": "Idag",
+    "websiteLabel": "Besök webbplatsen",
+    "mapsLabel": "Öppna i Maps",
+    "readReviews": "Läs alla {{count}} recensioner på Google →",
+    "googleReview": "Google-recension →",
+    "stayKicker": "Bo nära de här borden",
+    "stayHeadlineTemplate": "Boka hotell i {{city}}, promenera till middagen",
+    "stayBtnTemplate": "Bläddra bland boenden i {{city}}",
+    "foodToursBtnTemplate": "Matturer i {{city}}",
+    "stayNearby": "Bo i närheten",
+    "stayInTemplate": "Bo i {{city}}",
+    "bottomHeadlineTemplate": "Kurerat från {{count}} riktiga restauranger",
+    "bottomLead": "Katalogen är hämtad från Google Places (betyg × antal recensioner, snabbmatskedjor borträknade) och sedan redaktionellt topp-1-utvald per stad. Varje citat på den här sidan kommer från en riktig Google-recension. Uppdaterad {{date}}.",
+    "bottomPartner": "Är du restaurangägare? Listningar som Utvald partner får handkurerad text, menyhöjdpunkter och ett uppgraderat kort.",
+    "cityVibes": {
+      "Rovaniemi": "Lapplands huvudstad, där arktisk kultur möter kulinarisk ambition",
+      "Levi": "Middag vid elden efter en dag på fjället",
+      "Kittilä": "Fjällby bortom Levis vidsträckta anläggning",
+      "Inari": "Samiskt arv och de renaste arktiska råvarorna",
+      "Saariselkä": "Vildmarksmiddag under norrskenet",
+      "Kemi": "Där is möter eld – unika säsongsupplevelser",
+      "Ylläs": "Fjällbycharm med äkta lapska smaker",
+      "Tornio": "Gränsstadskaraktär och finsk husmanskost",
+      "Haparanda": "Gå över gränsen för svensk-nordisk fusion",
+      "Sodankylä": "Älvstadstraditioner och publiken från Midnight Sun Film Festival",
+      "Pyhätunturi": "Middag på fjälltopp vid den södra porten till vildmarken",
+      "Luosto": "Ametistbergsby med restauranger i kelotimmer",
+      "Muonio": "Norrskensbältets höglänta trakter ovanför trädgränsen",
+      "Hetta": "Enontekiös nav vid mötet mellan tre gränser",
+      "Kuusamo": "Vägskäl mellan Karelen och Lappland + Rukaanläggningen",
+      "Kemijärvi": "Nordligaste järnvägsstaden med bord vid älven",
+      "Salla": "Vildmarkspass + Finlands östligaste skidby",
+      "Posio": "Sjö- och hantverkshjärtat i Riisitunturitrakten"
+    }
+  },
+  "fineDining": {
+    "title": "Fine dining i Lappland | LaplandDining",
+    "description": "Lapplands fine dining-salar – Restaurant Aanaar, Nili, Rakas. Avsmakningsmenyer, signaturrätter, vad du ska boka och när.",
+    "heroH1": "Fine dining i Lappland",
+    "heroLeadTemplate": "Högt rankade avsmakningsmenyer där samiskt arv möter modern gastronomi. Kurerat från {{count}} restauranger i Lappland, sorterat efter Google-betyg och i par med ett hotell inom gångavstånd.",
+    "metaDescriptionTemplate": "Lapplands högst rankade restauranger för avsmakningsmenyer och fine dining, sorterade efter Google-betyg och redaktionellt utvalda. {{count}} topptips per stad i hela finska Lappland.",
+    "websiteLabel": "Webbplats",
+    "mapsLabel": "Maps",
+    "stayInTemplate": "Bo i {{city}}",
+    "readAllReviews": "Läs alla {{count}} recensioner på Google →"
+  },
+  "midnightSunDining": {
+    "title": "Middag i midnattssol i Lappland | LaplandDining",
+    "description": "Var du äter under midnattssolen – sena middagar, terrassplatser och menyer bara på sommaren i Lapplands restaurangvärld.",
+    "heroBadge": "6 juni → 7 juli · 32 dagar",
+    "heroH1Line1": "En tallrik ute,",
+    "heroH1Line2": "solen ovanför.",
+    "heroLead": "Under en månad sjunker solen aldrig under horisonten norr om polcirkeln. Terrasserna håller öppet. Kotaeldarna hålls tända. Restaurangerna växlar stillsamt till en sommarpalett av sjö och älv, och Lappland blir Europas mest underskattade sommarmatdestination.",
+    "heroCtaWhere": "Var du äter under midnattssolen",
+    "heroCtaStays": "Hitta boenden i midnattssol",
+    "whyKicker": "Vad som förändras",
+    "whyHeadline": "När solen aldrig går ner",
+    "whyParagraphs": [
+      "Det mesta som skrivs om Lappland kretsar kring norrsken, snö och ren i mörkret. Det är nio månader om året. De andra tre månaderna är något helt annat – och matkulturen reser sig för att möta dem.",
+      "Från början av juni till början av juli går solen aldrig ner norr om polcirkeln. Även söder om linjen, i Rovaniemi, ersätts mörkret av skymning – klockan ett på natten kan du läsa en meny utomhus utan ficklampa. Terrasser som stänger klockan 21 på vintern håller öppet till midnatt. Kotatält kör sommarmiddagar vid tider som känns omöjliga.",
+      "Råvarorna förändras också. Vilda örter fotosyntetiserar dygnet runt. Insjöfisken äter i grunt, varmt vatten. Skogssvampen har inte börjat än, men hjortronen mognar på myrarna mot slutet av fönstret. Restauranger som byggt sitt rykte på vinterns vilt växlar, stillsamt, till en lättare palett av sjö och älv."
+    ],
+    "citiesHeadline": "Fyra städer, fyra sätt att äta solen",
+    "citiesLead": "Var och en ger dig en egen vinkel på middag i midnattssol. Kombinera måltiden med ett boende inom gångavstånd – det här är fönstren då rätt hotell betyder lika mycket som rätt bord.",
+    "summerCities": [
+      {
+        "name": "Rovaniemi",
+        "angle": "Terrasser vid älven",
+        "body": "Kemijoki och Ounasjoki möts i centrum – terrassborden på Nili och Roka håller öppet medan solen slingrar över älven klockan ett på natten. Beställ lax som fångats samma morgon."
+      },
+      {
+        "name": "Levi",
+        "angle": "Middagar på fjälltopp",
+        "body": "Hullu Poros terrass + Levis gondol i sommartrafik ger dig 360° fjällvyer med lapska smårätter. Ta med ett lager extra – även klockan två på natten kan det sjunka till 8 °C."
+      },
+      {
+        "name": "Inari",
+        "angle": "Midnattsgrillar vid Enare träsk",
+        "body": "Aanaar serverar en sommaravsmakningsmeny byggd kring insjöfisk som dragits upp samma morgon. Ät ute mot sjön medan solen snuddar vid horisonten utan att någonsin dyka under."
+      },
+      {
+        "name": "Saariselkä",
+        "angle": "Vildmarkskotor med solen fortfarande uppe",
+        "body": "Pirkon Pirtti och Star Arctic gör renmiddagar över öppen eld vid tider som känns omöjliga – start klockan elva på kvällen som slutar i fullt dagsljus. Kotaröken mot den gyllene himlen är fotot."
+      }
+    ],
+    "stayInTemplate": "Bo i {{city}}",
+    "summerFoodTours": "Matturer på sommaren",
+    "bottomHeadline": "Bygg din midnattssolsresa",
+    "bottomLead": "Kombinera de här borden med den bredare lapska sommaren – fjällvandringar, sjöbad klockan elva på kvällen och den sällsynta stillheten i en arktisk midsommar. Börja med restaurangerna du vill ha och boka resten runt dem.",
+    "bottomCtaBrowse": "Bläddra bland alla restauranger",
+    "bottomCtaArctic": "Läs om arktiska råvaror"
+  },
+  "foodHistory": {
+    "title": "Lapplands mathistoria, samisk mat | LaplandDining",
+    "description": "Berättelsen om Lapplands mat – samiska mattraditioner, renkött, mat efter åtta årstider och hur menyerna du ser i dag kom till.",
+    "heroH1": "En historia berättad genom mat",
+    "heroLead": "Hur tusentals år av arktisk överlevnad formade en av världens mest särpräglade matkulturer.",
+    "intro": "Röken stiger från en kotaeld innan solen är helt uppe. Renköttsremsor torkar under takfoten på en trästuga. En lax glider genom älvdimman. I Lappland började maten aldrig i köket – den började på marken. Det här är berättelsen om varför.",
+    "sections": [
+      {
+        "title": "Ett kök format av nödvändighet",
+        "paragraphs": [
+          "Vintern varar i åtta månader. Temperaturen sjunker till trettio, ibland fyrtio minusgrader. Närmaste åker som ger något ligger hundratals kilometer söderut, och även då bara ibland. Så såg vardagen ut i tusentals år.",
+          "Maten kom från det som fanns nära – älvar täta av lax och röding, skogar med vilt och vilda bär, tundra där renen rörde sig med årstiderna. För samerna, urfolket i norra Skandinavien, var maten aldrig skild från marken. Den <em>var</em> marken.",
+          "Det finska köket längre söderut växte fram ur jordbruk som går tillbaka till förhistorien. Men i norr var odling aldrig pålitlig. Jakt, fiske och insamling var ingen bisak. De var hela planen."
+        ]
+      },
+      {
+        "title": "Renen – allt en människa behöver",
+        "paragraphs": [
+          "Förhållandet mellan samer och ren går mycket längre tillbaka än renskötseln gör. Men skötselmodellen som vi känner den tog form på 1800-talet, när den ersatte jakt och fiske som huvudnäring i östra Sápmi. Relationen har aldrig bara handlat om kött – päls, horn, senor och ben kom alla till användning.",
+          "I dag har Finland omkring 5 600 renskötare som sköter ungefär 200 000 djur i 56 renbeteslag. Renskötselområdet täcker ungefär en tredjedel av Finland. Den årliga köttproduktionen ligger runt 2 miljoner kilo, och näringen är värd omkring 60 miljoner € per år.",
+          "Till skillnad från Norge och Sverige är renskötseln i Finland inte förbehållen samerna – vilken EU-medborgare som helst kan delta med rätt tillstånd. Men kunskapen, bandet till marken och traditionerna som får renköttet att smaka som det gör kommer från århundraden av samisk förvaltning.",
+          "Signaturrätten är <strong>poronkäristys</strong>: tunt skavd ren som fräses i smör och serveras med potatismos och lingonsylt. Enkelt, ärligt, djupt mättande. Du hittar den på varenda restaurang i Lappland, från vägkrogar till fine dining-salar."
+        ]
+      },
+      {
+        "title": "Älvar, sjöar, rök och eld",
+        "paragraphs": [
+          "Lapplands vatten har alltid varit det andra skafferiet. Lax, sik, abborre, röding och gädda bar familjerna genom de mörkaste vintrarna och de ljusaste midnattssolssomrarna. Fiskerätter tillhörde familjer vid älven i århundraden, avgjorda av släktled och sedvänja, inte av pengar.",
+          "De traditionella teknikerna lever kvar i restaurangerna. Lax flamgrillad på en träspjäla bredvid öppen eld. Sik rökt i näver. Fisksoppa gjord fyllig med grädde och färsk dill. Det här är inga \"rekonstruktioner\" av gamla recept – de är levande traditioner, förda vidare från generation till generation.",
+          "Enare träsk, Finlands tredje största sjö, ger en del av den finaste sötvattenfisken i Europa. Restaurant Aanaar i Inari bygger hela avsmakningsmenyer kring det som lokala fiskare drar upp ur dess vatten samma morgon."
+        ]
+      },
+      {
+        "title": "Skogsbottnen",
+        "paragraphs": [
+          "Gå genom en lapsk skog i sensommaren och du går genom en mataffär. Blåbär, lingon, hjortron och havtorn växer vilt. Kantareller, karljohan och den eftertraktade matsutaken tränger upp genom mossan. Vilda örter – kvanne, älggräs, arktisk timjan – parfymerar luften.",
+          "Hjortronet har en särskild plats. Kallat <strong>lakka</strong> på finska växer det bara på arktiska och subarktiska myrar, mognar under ett par veckor i juli och går inte att odla kommersiellt. Dess bärnstensfärg, honungssötma och sällsynthet gör det till \"Arktis guld\". Du hittar det i desserter, likörer och som garnering på nästan varje fine dining-restaurang i Lappland.",
+          "Det som gör de här råvarorna exceptionella är inte bara smaken – det är miljön. Arktiska förhållanden, sommarljus dygnet runt, ren luft och något av det renaste vattnet på jorden ger bär med högre halter av vitaminer, antioxidanter och flavonoider än sina sydligare motsvarigheter."
+        ]
+      },
+      {
+        "title": "Från överlevnad till konst",
+        "paragraphs": [
+          "Under större delen av sin historia handlade det lapska köket om konservering och om att mätta människor. Rökning, torkning, saltning – tekniker födda ur nödvändighet, inte kreativitet. Kryddor utöver salt var nästan okända. Maten var ärlig och närande, men ingen lade upp den på handgjord keramik.",
+          "Det ändrades med den nynordiska rörelsen. När Noma i Köpenhamn började hylla extremt lokala, plockade råvaror på 2000-talet började kockar i hela Norden se på sina egna bakgårdar med nya ögon. I Lappland fann de råvaror som större delen av världen aldrig smakat och traditioner redan århundraden gamla.",
+          "I dag gör restauranger som Aanaar i Inari, Nili i Rovaniemi och Gustav i Rovaniemi något anmärkningsvärt: de hedrar samiska traditioner samtidigt som de tänjer på vad arktisk mat kan vara. En renrätt på Aanaar är inte bara mat – det är en berättelse om urfolksarv, miljöförvaltning och kulinarisk nytolkning på en och samma tallrik."
+        ]
+      },
+      {
+        "title": "Kotan – där historier delas",
+        "paragraphs": [
+          "Kanske är den mest särpräglade matupplevelsen i Lappland inte en restaurang alls. Det är <strong>kotan</strong> – ett traditionellt samiskt tält, konformat, med en eldstad i mitten. I århundraden var kotan hem, kök och samlingsplats. Mat lagades över öppen låga, historier berättades, röken bar böner mot himlen.",
+          "I dag håller kota-restauranger som Kammi på Hullu Poro i Levi traditionen vid liv. Du sitter på renfällar runt en sprakande eld medan rökt lax, renkorv och grillat vilt tillagas framför dig. Måltiden kostar runt 64 € per person, men stunden är svår att prissätta.",
+          "Det är det här som gör att äta i Lappland annorlunda. Det handlar inte bara om vad som ligger på tallriken – det är elden, röken, snön utanför, norrskenet ovanför och de tusentals år av mänsklig uppfinningsrikedom som gjorde måltiden möjlig."
+        ]
+      }
+    ],
+    "ctaExplore": "Utforska restaurangerna"
+  },
+  "localFood": {
+    "title": "Lokal mat i Lappland – ren, bär, fisk | LaplandDining",
+    "description": "Vad 'lokalt' betyder på en meny i Lappland – ren, röding, hjortron, lingon, plockade örter.",
+    "heroH1": "Lokal mat & råvaror",
+    "heroLead": "Varför Lappland ger några av de renaste, mest näringstäta råvarorna på jorden – och hur finsk livsmedelsproduktion sätter standarden för renhet.",
+    "intro": "En fiskare drar upp en röding ur Enare träsk före soluppgången. Kocken i grannbyn vet om det inom tjugo minuter. Livsmedelskedjan i Lappland är så kort – och det är därför maten smakar som den gör.",
+    "sections": [
+      {
+        "title": "Skogen",
+        "paragraphs": [
+          "Sensommaren i en lapsk skog är, i praktiken, matinköp. Blåbär, lingon, vilda hallon, svamp och vilda örter växer i sådan mängd att varje finländare lär sig plocka innan hen lär sig köra bil. Allemansrätten, <strong>jokamiehenoikeus</strong>, gör det möjligt: vem som helst, lokalbo eller besökare, får gå, plocka och samla var som helst i naturen oavsett vem som äger marken.",
+          "Det är ingen symbolisk gest. Den formar hela matkulturen. Finlands skogar ger uppskattningsvis 500 miljoner kilo vilda blåbär om året, men bara 5–10 % plockas. Resten föder viltet och fyller på ekosystemet.",
+          "Många av Lapplands bästa restauranger har professionella plockare på lönelistan, som tillbringar sommaren på fjället och i kanten av gammelskogen. \"Farm-to-table\" beskriver det inte. Det här är skog-till-bord – och skogen börjar bakom köksdörren."
+        ]
+      },
+      {
+        "title": "Älv och sjö",
+        "paragraphs": [
+          "Torneälven är en av Europas få laxälvar där vild lax fortfarande fångas ur genuint vilda bestånd. Enare träsk ger röding, sik och öring. Nordligaste Finland är fullt av sjöar med vatten renare än de flesta länder kan föreställa sig.",
+          "Den finska fisketraditionen här uppe är nästan i hushållsskala – nät läggs på morgonen, soppa på bordet till kvällen. Lax rökt i näver. Sik loimu-grillad på en träspjäla bredvid öppen eld. Grädde och dill flyter i soppan.",
+          "I Torneälvdalen, på gränsen mellan Finland och Sverige, lever den gamla lippokalastus-traditionen kvar: ett långskaftat nät som doppas mot strömmen från en träplattform. Vid Kukkolaforsen på den svenska sidan kan du köpa den rökta fisken på plats att ta med hem från middagen."
+        ]
+      },
+      {
+        "title": "Renskötsel",
+        "paragraphs": [
+          "Varenda ren i finska Lappland lever fritt. Det finns inga vanliga rengårdar – djuren strövar över ungefär 123 000 km² vildmark och betar lav, mossa, vilda gräs och björklöv. De är halvtama: skötare spårar och sköter dem, men rörelsen är djurets egen.",
+          "Det syns i köttet. En frigående ren som tillbringat livet med att vandra på fjället och äta vilda växter ger kött som är magert, rikt på omega-3-fettsyror och djupt smakrikt. Inget spannmålsuppfött gårdsdjur kommer i närheten.",
+          "Finlands rennäring drivs genom 56 renbeteslag med lagstadgade maxantal för hjordarna. Höstens skiljningar avgör hur många som kan slaktas för att hålla hjordarna friska och landskapet i balans. Den årliga produktionen ligger runt 2 miljoner kilo kött."
+        ]
+      },
+      {
+        "title": "Stilla sjöar och en arktisk miljö",
+        "paragraphs": [
+          "Finskt jordbruk använder mindre bekämpningsmedel per hektar än nästan något annat EU-land. Antibiotikaanvändningen i djurhållningen är bland de lägsta i Europa. Kalla vintrar fungerar som naturlig skadedjursbekämpning – insekter som plågar varmare klimat överlever helt enkelt inte den arktiska kylan. Resultatet är mindre kemiska ingrepp och renare råvaror.",
+          "Kranvattnet går att dricka överallt i landet. I Lappland kommer det direkt från några av de renaste grundvattenkällorna på kontinenten – ofta samma vatten som föll som snö på en renbetesmark två dagar tidigare.",
+          "Växter som växer under hårda förhållanden utvecklar fler skyddande ämnen. Ett vilt finskt blåbär innehåller 3–4 gånger mer antocyaniner än ett odlat blåbär. Hjortron är rika på C-vitamin, E-vitamin och omegafettsyror. Havtorn bär mer C-vitamin per gram än apelsiner. Det här är ingen marknadsföring – det är botanik."
+        ]
+      }
+    ],
+    "ingredientsHeadline": "Lapplands råvaror",
+    "ingredientsLead": "Vad som hamnar på din tallrik – och var det kommer ifrån.",
+    "seasonLabel": "Säsong",
+    "ingredients": [
+      {
+        "name": "Ren",
+        "fact": "200 000 renar strövar över finska Lappland i 56 renbeteslag. Årlig produktion: 2,1 miljoner kg kött. Djuren betar fritt på lav, mossa och vilda växter – inga inhägnader, inga tillväxthormoner.",
+        "season": "Året runt (höstslakt)"
+      },
+      {
+        "name": "Röding & lax",
+        "fact": "Fångade i några av Europas renaste älvar och sjöar. Enbart Enare träsk ger röding, sik och öring. Vildfångade, aldrig odlade i Lapplands vattendrag.",
+        "season": "Sommar & höst"
+      },
+      {
+        "name": "Hjortron (lakka)",
+        "fact": "'Arktis guld' – växer bara på subarktiska myrar, mognar under 2–3 veckor i juli och går inte att odla kommersiellt. Finland producerar omkring 500 000 kg per år, mestadels vildplockat.",
+        "season": "juli–augusti"
+      },
+      {
+        "name": "Vilt blåbär",
+        "fact": "Finska vilda blåbär innehåller 3–4 gånger mer antocyaniner än odlade blåbär. Finlands skogar ger uppskattningsvis 500 miljoner kg per år, bara 5–10 % plockas.",
+        "season": "juli–september"
+      },
+      {
+        "name": "Lingon",
+        "fact": "Det mest plockade vilda bäret i Finland. Används i sylt, såser och desserter. Det traditionella tillbehöret till ren – den sötsyrliga balansen är oskiljaktig från det lapska köket.",
+        "season": "augusti–oktober"
+      },
+      {
+        "name": "Vild svamp",
+        "fact": "Kantareller, karljohan (stensopp) och trattkantareller växer rikligt i lapska skogar. Varje finländare har laglig rätt att plocka svamp och bär var som helst – den uråldriga allemansrätten.",
+        "season": "augusti–oktober"
+      },
+      {
+        "name": "Skogsfågel",
+        "fact": "Dalripan (riekko) är Lapplands mest eftertraktade skogsfågel. En gång bondemat, nu en fine dining-delikatess. Vildfångad under jaktsäsongen med strikta kvoter.",
+        "season": "september–mars"
+      },
+      {
+        "name": "Vilda örter",
+        "fact": "Fjällkvanne, älggräs, mjölkört och arktisk timjan. Handplockade från fjällängar och skogsbryn. Midnattssolen ger dem intensiv smak och näringstäthet.",
+        "season": "juni–augusti"
+      }
+    ],
+    "ctaHeadline": "Smaka den där den växer",
+    "ctaLead": "Du förstår inte Lapplands matkultur förrän du äter den. Hitta restaurangerna som köper direkt från lokala renskötare, fiskare och plockare – och boka sedan ett boende inom gångavstånd.",
+    "ctaBrowse": "Utforska restauranger",
+    "ctaStay": "Boka ett boende i Lappland",
+    "ctaTours": "Matlagnings- & matturer"
+  },
+  "about": {
+    "title": "Om LaplandDining",
+    "description": "Om LaplandDining – oberoende redaktionell restaurangguide till finska Lappland.",
+    "heroH1": "Om LaplandDining",
+    "heroLead": "Din guide till riktiga, handplockade restauranger i hela finska Lappland.",
+    "networkTitle": "LaplandVibes-nätverket",
+    "networkBodyA": "LaplandDining är en del av ekosystemet <strong>LaplandVibes</strong> – en familj av specialiserade webbplatser som hjälper resenärer att upptäcka det bästa av finska Lappland. Varje sajt fokuserar på en särskild del av Lapplandsupplevelsen: boende, mat, aktiviteter, natur, shopping, nattliv och mer.",
+    "networkBodyB": "Varje restaurang på LaplandDining är ett verkligt ställe. Vi listar inga fiktiva eller platshållar-restauranger. Listningarna sammanställs från offentliga register, data från Google Places och restaurangernas egna webbplatser.",
+    "affiliateTitle": "Affiliateinformation",
+    "affiliateBodyA": "Vissa länkar på LaplandDining är affiliatelänkar, främst hotellbokningar via Hotels.com och matupplevelser via GetYourGuide. Vi kan få en liten provision om du bokar via dem, utan att det kostar dig något extra. Provisionerna hjälper oss att underhålla och förbättra den här kostnadsfria resursen.",
+    "affiliateBodyB": "De redaktionella valen är oberoende. Affiliatesamarbeten påverkar inte vilka restauranger som lyfts fram eller hur de beskrivs – bara restauranger som ser ut att vara genuint bra ställen att äta på tar sig med.",
+    "operatorTitle": "Operatör",
+    "operatorBodyA": "LaplandDining.com drivs av <strong>Lapeso Oy</strong>, ett finskt bolag med säte i Lappland.",
+    "operatorBodyB": "Redaktionella frågor, rättelser, partnerförfrågningar, pressförfrågningar:",
+    "exploreTitle": "Utforska ekosystemet"
+  },
+  "privacy": {
+    "title": "Integritetspolicy | LaplandDining",
+    "description": "Hur LaplandDining hanterar dina uppgifter."
+  },
+  "terms": {
+    "title": "Användarvillkor | LaplandDining",
+    "description": "Användarvillkor för LaplandDining."
+  },
+  "cookie": {
+    "title": "Cookiepolicy | LaplandDining",
+    "description": "Hur LaplandDining använder cookies."
+  },
+  "common": {
+    "cityTopPicksKicker": "Ett val per stad · {{count}} destinationer",
+    "cityTopPicksHeadline": "Lapplands bästa bord, stad för stad",
+    "cityTopPicksLead": "För varje Lappland-destination i den här guiden väljs en restaurang ut som första stället att prova. Riktiga kundcitat från Google, i par med ett hotell inom gångavstånd.",
+    "dataRefreshed": "Data uppdaterad {{date}} från Google Places.",
+    "howWeChoose": "Så väljer vi",
+    "seeMoreInCity": "Se fler restauranger i {{city}}",
+    "partnershipGold": "★ Utvald partner",
+    "partnershipPremium": "Utvald partner",
+    "partnershipVerified": "Utvald",
+    "stayNearby": "Bo i närheten"
+  },
+  "relatedLinks": {
+    "kicker": "Fortsätt utforska",
+    "headline": "Vart härnäst",
+    "lead": "Runda av resan: slå dig ner vid baren på <bars>Lapplands cocktail- och isbarer</bars>, hitta <nightlife>vart du ska gå efter middagen</nightlife> och ordna <stays>var du ska bo nära de här restaurangerna</stays>."
+  }
+}

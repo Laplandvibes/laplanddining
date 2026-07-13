@@ -1,0 +1,11 @@
+{
+  "links": {
+    "restaurants": "Restauranger",
+    "fineDining": "Fine dining",
+    "midnightSun": "Midnattssol",
+    "foodHistory": "Matens historia",
+    "localFood": "Lokal mat",
+    "about": "Om oss"
+  },
+  "menu": "Växla meny"
+}

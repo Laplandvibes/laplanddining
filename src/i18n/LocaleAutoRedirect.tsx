@@ -33,6 +33,7 @@ export default function LocaleAutoRedirect() {
       else if (lang.startsWith('fr')) target = 'fr';
       else if (lang.startsWith('it')) target = 'it';
       else if (lang.startsWith('nl')) target = 'nl';
+      else if (lang.startsWith('sv')) target = 'sv';
     }
 
     if (target === 'en') return;

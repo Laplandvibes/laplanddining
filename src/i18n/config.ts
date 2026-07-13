@@ -10,7 +10,7 @@ import enCommon from '../locales/en/common.json';
 import enNav from '../locales/en/nav.json';
 import enPages from '../locales/en/pages.json';
 
-export const SUPPORTED_LOCALES = ['en', 'fi', 'de', 'ja', 'es', 'pt-BR', 'zh-CN', 'ko', 'fr', 'it', 'nl'] as const;
+export const SUPPORTED_LOCALES = ['en', 'fi', 'de', 'ja', 'es', 'pt-BR', 'zh-CN', 'ko', 'fr', 'it', 'nl', 'sv'] as const;
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = 'en';
 
@@ -26,6 +26,7 @@ export const LOCALE_PATH_PREFIX: Record<Locale, string> = {
   fr: 'fr',
   it: 'it',
   nl: 'nl',
+  sv: 'sv',
 };
 
 export function localePrefix(locale: Locale): string {
@@ -44,6 +45,7 @@ const PREFIX_TO_LOCALE: Record<string, Locale> = {
   fr: 'fr',
   it: 'it',
   nl: 'nl',
+  sv: 'sv',
 };
 
 export function localeFromSegment(seg: string | undefined): Locale {
@@ -63,6 +65,7 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   fr: 'FR',
   it: 'IT',
   nl: 'NL',
+  sv: 'SV',
 };
 
 export const LOCALE_NATIVE: Record<Locale, string> = {
@@ -77,6 +80,7 @@ export const LOCALE_NATIVE: Record<Locale, string> = {
   fr: 'Français',
   it: 'Italiano',
   nl: 'Nederlands',
+  sv: 'Svenska',
 };
 
 export const LOCALE_BCP47: Record<Locale, string> = {
@@ -91,6 +95,7 @@ export const LOCALE_BCP47: Record<Locale, string> = {
   fr: 'fr-FR',
   it: 'it-IT',
   nl: 'nl-NL',
+  sv: 'sv-SE',
 };
 
 export const NS = ['common', 'nav', 'pages'] as const;
@@ -178,7 +183,7 @@ i18n.changeLanguage = (async (lng?: string, ...rest: unknown[]) => {
 }) as typeof i18n.changeLanguage;
 
 export function stripLocale(pathname: string): string {
-  return pathname.replace(/^\/(fi|de|ja|es|br|cn|kr|fr|it|nl)(?=\/|$)/, '') || '/';
+  return pathname.replace(/^\/(fi|de|ja|es|br|cn|kr|fr|it|nl|sv)(?=\/|$)/, '') || '/';
 }
 
 export function localisedPath(pathname: string, locale: Locale): string {

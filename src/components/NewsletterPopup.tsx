@@ -17,6 +17,7 @@ const POPUP_COPY: Record<string, { headline: string; description: string }> = {
   fr: { headline: 'Là où la Laponie sort vraiment manger.', description: 'Une adresse par mois : la nouvelle table qui mérite une réservation, le menu dégustation qui a percé sans bruit et le bistrot de village toujours à la hauteur.' },
   it: { headline: 'Dove la Lapponia va davvero a mangiare.', description: 'Un consiglio al mese: la nuova apertura che vale la prenotazione, il menu degustazione che è decollato in sordina e la trattoria di paese che tiene ancora il suo livello.' },
   nl: { headline: 'Waar Lapland echt uit eten gaat.', description: 'Eén restauranttip per maand: de nieuwe zaak die een reservering waard is, het tasting-menu dat stilletjes doorbrak en het dorpscafé dat zijn niveau nog steeds waarmaakt.' },
+  sv: { headline: 'Där Lappland faktiskt går ut och äter.', description: 'Ett restaurangtips i månaden — den nya öppningen värd att boka, avsmakningsmenyn som tog fart i tysthet och byns familjepub som fortfarande håller måttet.' },
 };
 
 export default function NewsletterPopup() {
@@ -24,7 +25,7 @@ export default function NewsletterPopup() {
   const copy = POPUP_COPY[locale as string] ?? POPUP_COPY.en;
   return (
     <SharedNewsletterPopup
-      lang={locale as 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl'}
+      lang={locale as 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl' | 'sv'}
       siteId="laplanddining"
       brandWord="DINING"
       headline={copy.headline}

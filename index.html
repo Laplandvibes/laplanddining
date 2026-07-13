@@ -5,9 +5,9 @@
     <script>
       (function () {
         try {
-          var T = {"en":"LaplandDining — Best Restaurants in Finnish Lapland","fi":"LaplandDining — Lapin parhaat ravintolat","de":"LaplandDining — Beste Restaurants im finnischen Lappland","ja":"LaplandDining — フィンランド・ラップランドの最高のレストラン","es":"LaplandDining — los mejores restaurantes de la Laponia finlandesa","pt-br":"LaplandDining — os melhores restaurantes da Lapônia finlandesa","zh-cn":"LaplandDining — 芬兰拉普兰最佳餐厅","kr":"LaplandDining — 핀란드 라플란드 최고의 레스토랑","fr":"LaplandDining — les meilleurs restaurants de la Laponie finlandaise","it":"LaplandDining — i migliori ristoranti della Lapponia finlandese","nl":"LaplandDining — beste restaurants in Fins Lapland"};
+          var T = {"en":"LaplandDining — Best Restaurants in Finnish Lapland","fi":"LaplandDining — Lapin parhaat ravintolat","de":"LaplandDining — Beste Restaurants im finnischen Lappland","ja":"LaplandDining — フィンランド・ラップランドの最高のレストラン","es":"LaplandDining — los mejores restaurantes de la Laponia finlandesa","pt-br":"LaplandDining — os melhores restaurantes da Lapônia finlandesa","zh-cn":"LaplandDining — 芬兰拉普兰最佳餐厅","kr":"LaplandDining — 핀란드 라플란드 최고의 레스토랑","fr":"LaplandDining — les meilleurs restaurants de la Laponie finlandaise","it":"LaplandDining — i migliori ristoranti della Lapponia finlandese","nl":"LaplandDining — beste restaurants in Fins Lapland","sv":"LaplandDining — bästa restaurangerna i finska Lappland"};
           var path = location.pathname || '/';
-          var map = { fi: 'fi', de: 'de', ja: 'ja', es: 'es', br: 'pt-br', cn: 'zh-cn', kr: 'kr', fr: 'fr', it: 'it', nl: 'nl' };
+          var map = { fi: 'fi', de: 'de', ja: 'ja', es: 'es', br: 'pt-br', cn: 'zh-cn', kr: 'kr', fr: 'fr', it: 'it', nl: 'nl', sv: 'sv' };
           var loc = 'en';
           for (var p in map) {
             if (path === '/' + p || path.indexOf('/' + p + '/') === 0) { loc = map[p]; break; }
@@ -23,12 +23,12 @@
         try {
           var path = location.pathname || '/';
           // Already on a locale prefix? — never override
-          var prefixes = ['/fi','/de','/ja','/es','/br','/cn','/kr','/fr','/it','/nl'];
+          var prefixes = ['/fi','/de','/ja','/es','/br','/cn','/kr','/fr','/it','/nl','/sv'];
           for (var i = 0; i < prefixes.length; i++) {
             if (path === prefixes[i] || path.indexOf(prefixes[i] + '/') === 0) return;
           }
           // Only redirect from bare root or sub-pages without a locale prefix
-          var map = { fi: 'fi', de: 'de', ja: 'ja', es: 'es', 'pt-br': 'br', 'zh-cn': 'cn', ko: 'kr', fr: 'fr', it: 'it', nl: 'nl' };
+          var map = { fi: 'fi', de: 'de', ja: 'ja', es: 'es', 'pt-br': 'br', 'zh-cn': 'cn', ko: 'kr', fr: 'fr', it: 'it', nl: 'nl', sv: 'sv' };
           var stored = null;
           try { stored = localStorage.getItem('lv_locale_choice'); } catch (e) {}
           var target = null;
@@ -52,6 +52,7 @@
               if (l.indexOf('fr') === 0) { target = '/fr'; break; }
               if (l.indexOf('it') === 0) { target = '/it'; break; }
               if (l.indexOf('nl') === 0) { target = '/nl'; break; }
+              if (l.indexOf('sv') === 0) { target = '/sv'; break; }
             }
           }
           if (!target) return;

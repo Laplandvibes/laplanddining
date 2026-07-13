@@ -138,7 +138,7 @@ function AppLayout() {
         />
         <Suspense fallback={<div className="min-h-screen" />}>
           <Routes>
-          {(['', '/fi', '/de', '/ja', '/es', '/br', '/cn', '/kr', '/fr', '/it', '/nl'] as const).flatMap((prefix) => [
+          {(['', '/fi', '/de', '/ja', '/es', '/br', '/cn', '/kr', '/fr', '/it', '/nl', '/sv'] as const).flatMap((prefix) => [
             <Route key={`${prefix}/`} path={prefix === '' ? '/' : prefix} element={<Home />} />,
             <Route key={`${prefix}/restaurants`} path={`${prefix}/restaurants`} element={<Restaurants />} />,
             <Route key={`${prefix}/fine-dining`} path={`${prefix}/fine-dining`} element={<FineDining />} />,
