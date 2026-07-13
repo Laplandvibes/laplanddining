@@ -15,6 +15,15 @@ interface IngredientI18n { name: string; fact: string; season: string }
 
 const sectionIcons = [Award, Droplets, Leaf, Mountain];
 
+// Cinematic Arctic-nature band per section — forest floor, a clear stream,
+// a reindeer in the birch forest, a silent fell lake. One image, one theme.
+const sectionImages: { src: string; alt: string }[] = [
+  { src: DINING.localFoodForest,   alt: 'Lingonberries, bilberries and chanterelles on a Lapland forest floor at first light' },
+  { src: DINING.localFoodRiver,    alt: 'A clear Arctic stream running over frosted stones through a Lapland forest' },
+  { src: DINING.localFoodReindeer, alt: 'A reindeer standing in a misty birch forest in autumn ruska colours' },
+  { src: DINING.localFoodLakes,    alt: 'A mirror-still Lapland lake at dawn reflecting distant fells and low mist' },
+];
+
 export default function LocalFood() {
   const { t } = useTranslation('pages');
   const { to } = useLocale();
@@ -82,8 +91,21 @@ export default function LocalFood() {
 
             {sections.map((section, i) => {
               const Icon = sectionIcons[i] ?? Award;
+              const img = sectionImages[i];
               return (
                 <div key={i}>
+                  {img && (
+                    <div className="group relative aspect-[16/9] rounded-2xl overflow-hidden mb-7 border border-white/10 shadow-xl shadow-black/40">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-transparent" />
+                    </div>
+                  )}
                   <div className="flex items-center gap-3 mb-6">
                     <Icon size={24} className="text-amber" />
                     <h2 className="font-heading text-3xl text-white tracking-wide">

@@ -39,6 +39,11 @@ export const DINING = {
   // Page heroes
   heroFoodStory: '/images/drive/heroFoodStory.webp',
   heroLocalFood: '/images/drive/heroLocalFood.webp',
+  // Local Food page — Arctic-nature section bands (AI-generated, unique to this site)
+  localFoodForest: '/images/drive/localFoodForest.webp',     // Metsä — ruska forest floor, lingonberries, chanterelles
+  localFoodRiver: '/images/drive/localFoodRiver.webp',       // Joki & järvi — clear Arctic stream over frosted stones
+  localFoodReindeer: '/images/drive/localFoodReindeer.webp', // Poronhoito — reindeer in misty birch forest
+  localFoodLakes: '/images/drive/localFoodLakes.webp',       // Hiljaiset järvet — mirror-still fell lake at dawn
 };
 
 // Automatic seasonal image switch — summer 1 May–30 Sep, winter 1 Oct–30 Apr.
