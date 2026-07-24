@@ -136,7 +136,8 @@
     "websiteLabel": "Webbplats",
     "mapsLabel": "Maps",
     "stayInTemplate": "Bo i {{city}}",
-    "readAllReviews": "Läs alla {{count}} recensioner på Google →"
+    "readAllReviews": "Läs alla {{count}} recensioner på Google →",
+    "statsAvgRating": "Genomsnittligt Google-betyg"
   },
   "midnightSunDining": {
     "title": "Middag i midnattssol i Lappland | LaplandDining",

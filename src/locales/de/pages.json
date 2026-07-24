@@ -136,7 +136,8 @@
     "websiteLabel": "Webseite",
     "mapsLabel": "Maps",
     "stayInTemplate": "In {{city}} übernachten",
-    "readAllReviews": "Alle {{count}} Bewertungen auf Google lesen →"
+    "readAllReviews": "Alle {{count}} Bewertungen auf Google lesen →",
+    "statsAvgRating": "Durchschnittliche Google-Bewertung"
   },
   "midnightSunDining": {
     "title": "Dinieren unter der Mitternachtssonne in Lappland | LaplandDining",

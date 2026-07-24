@@ -136,7 +136,8 @@
     "websiteLabel": "网站",
     "mapsLabel": "地图",
     "stayInTemplate": "入住 {{city}}",
-    "readAllReviews": "在 Google 上阅读全部 {{count}} 条评价 →"
+    "readAllReviews": "在 Google 上阅读全部 {{count}} 条评价 →",
+    "statsAvgRating": "Google 平均评分"
   },
   "midnightSunDining": {
     "title": "拉普兰午夜阳光下的用餐 | LaplandDining",

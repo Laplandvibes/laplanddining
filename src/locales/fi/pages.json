@@ -136,7 +136,8 @@
     "websiteLabel": "Nettisivut",
     "mapsLabel": "Kartta",
     "stayInTemplate": "Yövy {{city}}ssä",
-    "readAllReviews": "Lue kaikki {{count}} arvostelua Googlessa →"
+    "readAllReviews": "Lue kaikki {{count}} arvostelua Googlessa →",
+    "statsAvgRating": "Google-arvioiden keskiarvo"
   },
   "midnightSunDining": {
     "title": "Keskiyön auringon ruokailu Lapissa | LaplandDining",

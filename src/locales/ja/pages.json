@@ -136,7 +136,8 @@
     "websiteLabel": "ウェブサイト",
     "mapsLabel": "地図",
     "stayInTemplate": "宿泊： {{city}}",
-    "readAllReviews": "Googleで{{count}}件のレビューをすべて読む →"
+    "readAllReviews": "Googleで{{count}}件のレビューをすべて読む →",
+    "statsAvgRating": "Google評価の平均"
   },
   "midnightSunDining": {
     "title": "ラップランドの真夏の太陽ダイニング | LaplandDining",

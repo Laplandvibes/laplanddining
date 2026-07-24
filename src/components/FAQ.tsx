@@ -39,8 +39,8 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-20 sm:py-28 px-4 sm:px-6 bg-night border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          <div className="lg:col-span-5 lg:sticky lg:top-24 lg:self-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-12">
+          <div className="md:col-span-5 md:sticky md:top-24 md:self-start">
             <p className="text-amber text-sm font-semibold tracking-[0.2em] uppercase mb-3">
               {t('home.faq.eyebrow')}
             </p>
@@ -74,7 +74,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="md:col-span-7">
             <div className="space-y-3">
               {items.map((faq, index) => {
                 const isOpen = openIndex === index;

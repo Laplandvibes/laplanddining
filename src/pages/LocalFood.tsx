@@ -107,7 +107,9 @@ export default function LocalFood() {
                     </div>
                   )}
                   <div className="flex items-center gap-3 mb-6">
-                    <Icon size={24} className="text-amber" />
+                    <span className="w-9 h-9 shrink-0 rounded-xl flex items-center justify-center bg-amber/10 border border-amber/30">
+                      <Icon size={18} className="text-amber" />
+                    </span>
                     <h2 className="font-heading text-3xl text-white tracking-wide">
                       {section.title}
                     </h2>

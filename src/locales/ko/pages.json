@@ -136,7 +136,8 @@
     "websiteLabel": "웹사이트",
     "mapsLabel": "지도",
     "stayInTemplate": "{{city}} 숙박",
-    "readAllReviews": "구글에서 {{count}}개 리뷰 모두 보기 →"
+    "readAllReviews": "구글에서 {{count}}개 리뷰 모두 보기 →",
+    "statsAvgRating": "Google 평균 평점"
   },
   "midnightSunDining": {
     "title": "라플란드 백야 다이닝 | LaplandDining",

@@ -442,12 +442,10 @@ export default function Restaurants() {
             {t('restaurants.heroLeadTemplate', { restaurantCount: restaurants.length, cityCount: cities.length })}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-6 text-white/75 text-xs uppercase tracking-wider drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-            <span className="flex items-center gap-1.5"><Flame size={12} className="text-amber/70" /> {t('restaurants.heroChipKota')}</span>
-            <span className="text-white/55">|</span>
-            <span className="flex items-center gap-1.5"><TreePine size={12} className="text-amber/70" /> {t('restaurants.heroChipWilderness')}</span>
-            <span className="text-white/55">|</span>
-            <span className="flex items-center gap-1.5"><SeasonIcon size={12} className="text-amber/70" /> {t('restaurants.heroChipArctic')}</span>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-white/85 text-xs uppercase tracking-wider">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-night/50 backdrop-blur-sm px-4 py-2"><Flame size={13} className="text-amber" /> {t('restaurants.heroChipKota')}</span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-night/50 backdrop-blur-sm px-4 py-2"><TreePine size={13} className="text-amber" /> {t('restaurants.heroChipWilderness')}</span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-night/50 backdrop-blur-sm px-4 py-2"><SeasonIcon size={13} className="text-amber" /> {t('restaurants.heroChipArctic')}</span>
           </div>
         </div>
 
@@ -632,7 +630,7 @@ export default function Restaurants() {
             {t('restaurants.bottomHeadlineTemplate', { count: restaurants.length })}
           </h2>
           <p className="text-white/75 leading-relaxed mb-4">
-            {t('restaurants.bottomLead', { date: restaurants[0]?.lastVerified || '—' })}
+            {t('restaurants.bottomLead', { date: restaurants[0]?.lastVerified || '' })}
           </p>
           <p className="text-white/55 text-sm">
             {t('restaurants.bottomPartner')}{' '}

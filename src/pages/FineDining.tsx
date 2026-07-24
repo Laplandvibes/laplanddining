@@ -20,6 +20,14 @@ export default function FineDining() {
     .filter((r) => (r.priceRange === '€€€' || r.priceRange === '€€€€') || (r.rating ?? 0) >= 4.5)
     .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
 
+  // Real numbers only: list length, distinct cities, mean Google rating of the
+  // rated venues on this page (no manufactured stats).
+  const fineDiningCities = new Set(fineDining.map((r) => r.city)).size;
+  const ratedVenues = fineDining.filter((r) => typeof r.rating === 'number');
+  const avgRating = ratedVenues.length
+    ? (ratedVenues.reduce((sum, r) => sum + (r.rating ?? 0), 0) / ratedVenues.length).toFixed(1)
+    : null;
+
   return (
     <>
       <title>{t('fineDining.title')}</title>
@@ -52,7 +60,7 @@ export default function FineDining() {
       </script>
 
       {/* Hero */}
-      <section className="relative min-h-[60svh] flex items-center justify-center px-4 sm:px-6 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+      <section className="relative min-h-[60svh] flex items-center justify-center px-4 sm:px-6 pb-24 md:pb-28 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
           src={DINING.fineDining}
           alt="Fine dining in Lapland"
@@ -75,7 +83,32 @@ export default function FineDining() {
         </div>
       </section>
 
-      <PageBreadcrumb />
+      {/* Stat tiles — overlap the hero bottom (skiresorts recipe), real data only */}
+      <div className="relative z-10 -mt-14 md:-mt-16 px-4 sm:px-6">
+        <div className={`max-w-3xl mx-auto grid grid-cols-2 ${avgRating ? 'md:grid-cols-3' : ''} gap-3 md:gap-4`}>
+          <div className="rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+            <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide">{fineDining.length}</p>
+            <p className="text-white/75 text-xs md:text-sm mt-1 leading-snug">{t('home.statsVerified')}</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+            <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide">{fineDiningCities}</p>
+            <p className="text-white/75 text-xs md:text-sm mt-1 leading-snug">{t('home.statsDestinations')}</p>
+          </div>
+          {avgRating && (
+            <div className="col-span-2 md:col-span-1 rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+              <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide inline-flex items-center gap-2">
+                <Star size={22} className="text-amber fill-amber" aria-hidden="true" />
+                {avgRating}
+              </p>
+              <p className="text-white/75 text-xs md:text-sm mt-1 leading-snug">{t('fineDining.statsAvgRating')}</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="pt-10">
+        <PageBreadcrumb />
+      </div>
 
       {/* Fine dining grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-night">

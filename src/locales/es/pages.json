@@ -136,7 +136,8 @@
     "websiteLabel": "Sitio web",
     "mapsLabel": "Maps",
     "stayInTemplate": "Alójese en {{city}}",
-    "readAllReviews": "Leer las {{count}} opiniones en Google →"
+    "readAllReviews": "Leer las {{count}} opiniones en Google →",
+    "statsAvgRating": "Nota media en Google"
   },
   "midnightSunDining": {
     "title": "Cenas bajo el sol de medianoche en Laponia | LaplandDining",

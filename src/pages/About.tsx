@@ -42,7 +42,9 @@ export default function About() {
           {/* About */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
             <div className="flex items-center gap-3 mb-4">
-              <Globe size={24} className="text-amber" />
+              <span className="w-9 h-9 shrink-0 rounded-xl flex items-center justify-center bg-amber/10 border border-amber/30">
+                <Globe size={18} className="text-amber" />
+              </span>
               <h2 className="font-heading text-2xl text-white tracking-wide">
                 {t('about.networkTitle')}
               </h2>
@@ -62,7 +64,9 @@ export default function About() {
           {/* Affiliate Disclosure */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
             <div className="flex items-center gap-3 mb-4">
-              <Info size={24} className="text-amber" />
+              <span className="w-9 h-9 shrink-0 rounded-xl flex items-center justify-center bg-amber/10 border border-amber/30">
+                <Info size={18} className="text-amber" />
+              </span>
               <h2 className="font-heading text-2xl text-white tracking-wide">
                 {t('about.affiliateTitle')}
               </h2>

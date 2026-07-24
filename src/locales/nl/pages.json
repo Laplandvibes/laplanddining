@@ -136,7 +136,8 @@
     "websiteLabel": "Website",
     "mapsLabel": "Kaart",
     "stayInTemplate": "Verblijf in {{city}}",
-    "readAllReviews": "Lees alle {{count}} reviews op Google →"
+    "readAllReviews": "Lees alle {{count}} reviews op Google →",
+    "statsAvgRating": "Gemiddelde Google-score"
   },
   "midnightSunDining": {
     "title": "Dineren onder de middernachtzon in Lapland | LaplandDining",

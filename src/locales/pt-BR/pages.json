@@ -136,7 +136,8 @@
     "websiteLabel": "Site",
     "mapsLabel": "Maps",
     "stayInTemplate": "Hospede-se em {{city}}",
-    "readAllReviews": "Ler todas as {{count}} avaliações no Google →"
+    "readAllReviews": "Ler todas as {{count}} avaliações no Google →",
+    "statsAvgRating": "Nota média no Google"
   },
   "midnightSunDining": {
     "title": "Jantar sob o sol da meia-noite na Lapônia | LaplandDining",

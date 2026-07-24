@@ -19,11 +19,12 @@ import WhereToNext from '../components/WhereToNext';
 
 interface SummerCityI18n { name: string; angle: string; body: string }
 
+// Image tops reuse EXISTING site images (no new generations) — one per city card.
 const summerCitiesMeta = [
-  { hotelsQuery: 'Rovaniemi, Finland', hotelsSid: 'midnight_sun_rovaniemi' },
-  { hotelsQuery: 'Levi, Finland', hotelsSid: 'midnight_sun_levi' },
-  { hotelsQuery: 'Inari, Finland', hotelsSid: 'midnight_sun_inari' },
-  { hotelsQuery: 'Saariselkä, Finland', hotelsSid: 'midnight_sun_saariselka' },
+  { hotelsQuery: 'Rovaniemi, Finland', hotelsSid: 'midnight_sun_rovaniemi', image: DINING.rovaniemiCenter, alt: 'Restaurant terraces in central Rovaniemi' },
+  { hotelsQuery: 'Levi, Finland', hotelsSid: 'midnight_sun_levi', image: DINING.kotaInside, alt: 'Kota dining around an open fire in Levi' },
+  { hotelsQuery: 'Inari, Finland', hotelsSid: 'midnight_sun_inari', image: DINING.foodMoody, alt: 'Local dishes plated in Inari' },
+  { hotelsQuery: 'Saariselkä, Finland', hotelsSid: 'midnight_sun_saariselka', image: DINING.saariselkaSummer, alt: 'Summer lodge terrace in Saariselkä' },
 ];
 
 export default function MidnightSunDining() {
@@ -142,8 +143,22 @@ export default function MidnightSunDining() {
               return (
                 <article
                   key={c.name}
-                  className="group relative bg-gradient-to-br from-amber/8 via-white/[0.03] to-transparent border border-amber/15 hover:border-yellow-300/40 rounded-2xl p-7 transition-all duration-300"
+                  className="group relative overflow-hidden bg-gradient-to-br from-amber/8 via-white/[0.03] to-transparent border border-amber/15 hover:border-yellow-300/40 rounded-2xl transition-all duration-300"
                 >
+                  <div className="relative h-36 sm:h-40 overflow-hidden">
+                    <img
+                      src={meta.image}
+                      alt={meta.alt}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: 'linear-gradient(to top, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.12) 60%)' }}
+                    />
+                  </div>
+                  <div className="p-6 sm:p-7">
                   <div className="flex items-start gap-3 mb-3">
                     <MapPin size={20} className="text-yellow-300 mt-1 shrink-0" />
                     <div>
@@ -174,6 +189,7 @@ export default function MidnightSunDining() {
                     >
                       {t('midnightSunDining.summerFoodTours')}
                     </a>
+                  </div>
                   </div>
                 </article>
               );

@@ -136,7 +136,8 @@
     "websiteLabel": "Site web",
     "mapsLabel": "Carte",
     "stayInTemplate": "Dormir à {{city}}",
-    "readAllReviews": "Lire les {{count}} avis sur Google →"
+    "readAllReviews": "Lire les {{count}} avis sur Google →",
+    "statsAvgRating": "Note moyenne sur Google"
   },
   "midnightSunDining": {
     "title": "Dîner sous le soleil de minuit en Laponie | LaplandDining",

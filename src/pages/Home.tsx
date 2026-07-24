@@ -120,8 +120,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_70%,rgba(245,158,11,0.08)_0%,transparent_50%)]" />
 
         <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-2 relative aspect-[4/5] lg:aspect-auto lg:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-amber/15">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 lg:gap-12 items-center">
+            <div className="md:col-span-2 relative aspect-[4/5] md:aspect-auto md:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-amber/15">
               <img
                 src={DINING.kotaFire}
                 alt="Midnight sun terrace dinner in Lapland"
@@ -137,7 +137,7 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div className="lg:col-span-3">
+            <div className="md:col-span-3">
               <p className="text-yellow-300/90 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
                 {t('home.midnightKicker')}
               </p>
@@ -252,24 +252,25 @@ export default function Home() {
           </div>
 
           {/* Stats — verified counts only, no manufactured "100%" */}
-          <div className="mt-16 flex flex-wrap justify-center gap-12 text-center">
-            <div>
-              <p className="font-heading text-4xl text-amber tracking-wide">{restaurants.length}</p>
-              <p className="text-white/75 text-sm mt-1">{t('home.statsVerified')}</p>
-            </div>
-            <div>
-              <p className="font-heading text-4xl text-amber tracking-wide">{cities.length}</p>
-              <p className="text-white/75 text-sm mt-1">{t('home.statsDestinations')}</p>
-            </div>
-            <div>
-              <p className="font-heading text-4xl text-amber tracking-wide">2026</p>
-              <p className="text-white/75 text-sm mt-1">{t('home.statsYear')}</p>
-            </div>
+          <div className="mt-16 grid grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto">
+            {[
+              { value: String(restaurants.length), label: t('home.statsVerified') },
+              { value: String(cities.length), label: t('home.statsDestinations') },
+              { value: '2026', label: t('home.statsYear') },
+            ].map((s) => (
+              <div
+                key={s.label}
+                className="rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+              >
+                <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide">{s.value}</p>
+                <p className="text-white/75 text-xs md:text-sm mt-1 leading-snug">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Stay & Eat — Hotels.com booking band ─────────────────── */}
+      {/* ── Stay & Eat — hotel booking band (worker-routed partners) ── */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-night via-night-light to-night">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(236,72,153,0.06)_0%,transparent_60%)]" />
         <div className="relative z-10 max-w-5xl mx-auto text-center">

@@ -136,7 +136,8 @@
     "websiteLabel": "Sito web",
     "mapsLabel": "Mappa",
     "stayInTemplate": "Dormire a {{city}}",
-    "readAllReviews": "Leggi tutte le {{count}} recensioni su Google →"
+    "readAllReviews": "Leggi tutte le {{count}} recensioni su Google →",
+    "statsAvgRating": "Valutazione media su Google"
   },
   "midnightSunDining": {
     "title": "Cena sotto il sole di mezzanotte in Lapponia | LaplandDining",

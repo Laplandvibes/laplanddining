@@ -194,7 +194,7 @@ export default function CityTopPicksGrid() {
         </div>
 
         <p className="text-center text-snow/75 text-xs mt-12 tracking-wider">
-          {t('common.dataRefreshed', { date: picks[0]?.lastVerified || '—' })}{' '}
+          {t('common.dataRefreshed', { date: picks[0]?.lastVerified || '' })}{' '}
           <Link to={to('/about')} className="underline hover:text-snow/70">{t('common.howWeChoose')}</Link>.
         </p>
       </div>

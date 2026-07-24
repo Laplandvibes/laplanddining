@@ -12,6 +12,16 @@ interface SectionI18n { title: string; paragraphs: string[] }
 
 const sectionIcons = [Snowflake, Flame, Fish, TreePine, Flame, Snowflake];
 
+// Text-wall breakers: cinematic bands from EXISTING site images (no new
+// generations), matched to the section themes. Indexes with no entry render
+// text-only, so the page alternates image band / prose.
+const sectionImages: Record<number, { src: string; alt: string }> = {
+  0: { src: DINING.snowVillage, alt: 'Snow-covered village restaurant in the Lapland winter' },
+  2: { src: DINING.kotaFire, alt: 'Salmon smoking over an open kota fire' },
+  3: { src: DINING.ingredients, alt: 'Wild berries, mushrooms and herbs foraged from the Lapland forest floor' },
+  5: { src: DINING.kotaInside, alt: 'Guests sharing a meal around the fire inside a traditional kota' },
+};
+
 export default function FoodHistory() {
   const { t } = useTranslation('pages');
   const { to } = useLocale();
@@ -78,10 +88,25 @@ export default function FoodHistory() {
 
             {sections.map((section, i) => {
               const Icon = sectionIcons[i] ?? Snowflake;
+              const img = sectionImages[i];
               return (
                 <div key={i}>
+                  {img && (
+                    <div className="group relative aspect-[16/9] rounded-2xl overflow-hidden mb-7 border border-white/10 shadow-xl shadow-black/40">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-transparent" />
+                    </div>
+                  )}
                   <div className="flex items-center gap-3 mb-6">
-                    <Icon size={24} className="text-amber" />
+                    <span className="w-9 h-9 shrink-0 rounded-xl flex items-center justify-center bg-amber/10 border border-amber/30">
+                      <Icon size={18} className="text-amber" />
+                    </span>
                     <h2 className="font-heading text-3xl text-white tracking-wide">
                       {section.title}
                     </h2>
