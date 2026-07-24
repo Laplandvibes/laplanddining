@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Ristoranti nella Lapponia finlandese | LaplandDining",
-    "description": "Oltre 60 ristoranti selezionati con cura in tutta la Lapponia finlandese, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menù, orari e link di prenotazione diretta.",
+    "title": "Ristoranti in Lapponia e dintorni | LaplandDining",
+    "description": "Oltre 60 ristoranti selezionati con cura nella Lapponia finlandese e dintorni, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menù, orari e link di prenotazione diretta.",
     "heroKicker": "Guida gastronomica artica",
     "heroH1": "Tutti i ristoranti",
-    "heroLeadTemplate": "{{restaurantCount}} ristoranti selezionati con cura in {{cityCount}} destinazioni della Lapponia. Recensioni reali dei clienti, foto e orari, abbinati a un hotel a distanza di passeggiata.",
+    "heroLeadTemplate": "{{restaurantCount}} ristoranti selezionati con cura in {{cityCount}} destinazioni della Lapponia e dintorni. Recensioni reali dei clienti, foto e orari, abbinati a un hotel a distanza di passeggiata.",
     "heroChipKota": "Cucina in kota",
     "heroChipWilderness": "Natura selvaggia",
     "heroChipArctic": "Artico",
@@ -121,18 +121,18 @@
       "Luosto": "Villaggio della montagna d'ametista con ristoranti in tronchi di kelo",
       "Muonio": "Altopiani della fascia aurorale sopra il limite degli alberi",
       "Hetta": "Snodo di Enontekiö al confine di tre Stati",
-      "Kuusamo": "Crocevia Carelia-Lapponia + resort di Ruka",
+      "Kuusamo": "Resort di Ruka, appena a sud della Lapponia",
       "Kemijärvi": "Città ferroviaria più a nord con tavoli sul fiume",
       "Salla": "Passo selvaggio + villaggio sciistico più a est della Finlandia",
       "Posio": "Cuore di laghi e artigianato della regione di Riisitunturi"
     }
   },
   "fineDining": {
-    "title": "Alta cucina in Lapponia | LaplandDining",
+    "title": "Alta cucina in Lapponia e dintorni | LaplandDining",
     "description": "Le sale dell'alta cucina lappone, Restaurant Aanaar, Nili, Rakas. Menù degustazione, piatti signature, cosa prenotare e quando.",
-    "heroH1": "Alta cucina in Lapponia",
-    "heroLeadTemplate": "Menù degustazione tra i più valutati dove l'eredità sami incontra la gastronomia moderna. Selezionati tra {{count}} ristoranti lapponi, ordinati per valutazione Google, abbinati a un hotel a distanza di passeggiata.",
-    "metaDescriptionTemplate": "I ristoranti più valutati della Lapponia per menù degustazione e alta cucina, ordinati per valutazione Google, scelti dalla redazione. {{count}} top picks per città in tutta la Lapponia finlandese.",
+    "heroH1": "Alta cucina in Lapponia e dintorni",
+    "heroLeadTemplate": "Menù degustazione tra i più valutati dove l'eredità sami incontra la gastronomia moderna. Selezionati tra {{count}} ristoranti della Lapponia e dintorni, ordinati per valutazione Google, abbinati a un hotel a distanza di passeggiata.",
+    "metaDescriptionTemplate": "I ristoranti più valutati della Lapponia per menù degustazione e alta cucina, ordinati per valutazione Google, scelti dalla redazione. {{count}} top picks per città nella Lapponia finlandese e dintorni.",
     "websiteLabel": "Sito web",
     "mapsLabel": "Mappa",
     "stayInTemplate": "Dormire a {{city}}",

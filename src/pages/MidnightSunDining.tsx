@@ -45,7 +45,7 @@ export default function MidnightSunDining() {
           mainEntityOfPage: 'https://laplanddining.com/midnight-sun-dining',
           headline: 'Midnight Sun Dining in Finnish Lapland',
           description:
-            'Where to eat outdoors during the 32-day midnight sun window in Finnish Lapland — terraces, kota fires and lake-side tables that stay open while the sun loops above the horizon.',
+            'Where to eat outdoors during the 32-day midnight sun window in Finnish Lapland: terraces, kota fires and lake-side tables that stay open while the sun loops above the horizon.',
           publisher: {
             '@type': 'Organization',
             name: 'LaplandDining',

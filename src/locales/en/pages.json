@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Restaurants in Finnish Lapland | LaplandDining",
-    "description": "60+ hand-picked restaurants across Finnish Lapland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menus, hours, and direct booking links.",
+    "title": "Restaurants in and around Finnish Lapland | LaplandDining",
+    "description": "60+ hand-picked restaurants in and around Finnish Lapland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menus, hours, and direct booking links.",
     "heroKicker": "Arctic Dining Guide",
     "heroH1": "All Restaurants",
-    "heroLeadTemplate": "{{restaurantCount}} hand-picked restaurants across {{cityCount}} Lapland destinations. Real customer reviews, photos, and opening hours, paired with a hotel walking distance away.",
+    "heroLeadTemplate": "{{restaurantCount}} hand-picked restaurants across {{cityCount}} destinations in and around Lapland. Real customer reviews, photos, and opening hours, paired with a hotel walking distance away.",
     "heroChipKota": "Kota Dining",
     "heroChipWilderness": "Wilderness",
     "heroChipArctic": "Arctic",
@@ -121,18 +121,18 @@
       "Luosto": "Amethyst-mountain village with kelo log restaurants",
       "Muonio": "Aurora-belt highlands above the tree line",
       "Hetta": "Enontekiö hub at the edge of three borders",
-      "Kuusamo": "Karelian-Lapland crossroads + Ruka resort",
+      "Kuusamo": "Ruka resort hub, just south of the Lapland border",
       "Kemijärvi": "Northernmost rail town with riverside tables",
       "Salla": "Wilderness pass + Finland's easternmost ski village",
       "Posio": "Lake-and-craft heart of Riisitunturi country"
     }
   },
   "fineDining": {
-    "title": "Fine Dining in Lapland | LaplandDining",
+    "title": "Fine Dining in and around Lapland | LaplandDining",
     "description": "Lapland's fine-dining rooms, Restaurant Aanaar, Nili, Rakas. Tasting menus, signature dishes, what to book and when.",
-    "heroH1": "Fine Dining in Lapland",
-    "heroLeadTemplate": "Top-rated tasting menus where Sámi heritage meets modern gastronomy. Curated from {{count}} Lapland restaurants, sorted by Google rating, paired with a hotel within walking distance.",
-    "metaDescriptionTemplate": "Lapland's top-rated restaurants for tasting menus and fine dining, sorted by Google rating, picked editorially. {{count}} city top picks across Finnish Lapland.",
+    "heroH1": "Fine Dining in and around Lapland",
+    "heroLeadTemplate": "Top-rated tasting menus where Sámi heritage meets modern gastronomy. Curated from {{count}} restaurants in and around Lapland, sorted by Google rating, paired with a hotel within walking distance.",
+    "metaDescriptionTemplate": "Lapland's top-rated restaurants for tasting menus and fine dining, sorted by Google rating, picked editorially. {{count}} city top picks across Finnish Lapland and nearby.",
     "websiteLabel": "Website",
     "mapsLabel": "Maps",
     "stayInTemplate": "Stay in {{city}}",

@@ -115,7 +115,7 @@ function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: CardLabels
                 rel="nofollow noopener"
                 className="inline-block mt-2 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
               >
-                — {labels.reviewsCta(r.reviewCount?.toLocaleString('en') ?? '')}
+                {labels.reviewsCta(r.reviewCount?.toLocaleString('en') ?? '')}
               </a>
             </div>
           ) : (

@@ -28,7 +28,7 @@ export default function FoodHistory() {
           '@context': 'https://schema.org',
           '@type': 'Article',
           mainEntityOfPage: 'https://laplanddining.com/food-history',
-          headline: "A Story Told Through Food — Lapland's Culinary Heritage",
+          headline: "A Story Told Through Food: Lapland's Culinary Heritage",
           description:
             "How thousands of years of Arctic survival shaped one of the world's most distinctive food cultures.",
           image: 'https://laplanddining.com/images/drive/heroFoodStory.webp',

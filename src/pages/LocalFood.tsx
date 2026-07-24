@@ -43,7 +43,7 @@ export default function LocalFood() {
           mainEntityOfPage: 'https://laplanddining.com/local-food',
           headline: 'Local Food & Arctic Ingredients in Finnish Lapland',
           description:
-            "Why Lapland produces some of the cleanest, most nutrient-dense food on Earth — and how Finnish food production sets the standard for purity.",
+            "Why Lapland produces some of the cleanest, most nutrient-dense food on Earth, and how Finnish food production sets the standard for purity.",
           publisher: {
             '@type': 'Organization',
             name: 'LaplandDining',

@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Restauranger i finska Lappland | LaplandDining",
-    "description": "60+ handplockade restauranger i hela finska Lappland – Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menyer, öppettider och direkta bokningslänkar.",
+    "title": "Restauranger i och kring finska Lappland | LaplandDining",
+    "description": "60+ handplockade restauranger i och kring finska Lappland – Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menyer, öppettider och direkta bokningslänkar.",
     "heroKicker": "Arktisk matguide",
     "heroH1": "Alla restauranger",
-    "heroLeadTemplate": "{{restaurantCount}} handplockade restauranger på {{cityCount}} Lappland-destinationer. Riktiga kundrecensioner, foton och öppettider – i par med ett hotell inom gångavstånd.",
+    "heroLeadTemplate": "{{restaurantCount}} handplockade restauranger på {{cityCount}} destinationer i och kring Lappland. Riktiga kundrecensioner, foton och öppettider – i par med ett hotell inom gångavstånd.",
     "heroChipKota": "Kotamiddag",
     "heroChipWilderness": "Vildmark",
     "heroChipArctic": "Arktis",
@@ -121,18 +121,18 @@
       "Luosto": "Ametistbergsby med restauranger i kelotimmer",
       "Muonio": "Norrskensbältets höglänta trakter ovanför trädgränsen",
       "Hetta": "Enontekiös nav vid mötet mellan tre gränser",
-      "Kuusamo": "Vägskäl mellan Karelen och Lappland + Rukaanläggningen",
+      "Kuusamo": "Rukaanläggningen, strax söder om Lapplands gräns",
       "Kemijärvi": "Nordligaste järnvägsstaden med bord vid älven",
       "Salla": "Vildmarkspass + Finlands östligaste skidby",
       "Posio": "Sjö- och hantverkshjärtat i Riisitunturitrakten"
     }
   },
   "fineDining": {
-    "title": "Fine dining i Lappland | LaplandDining",
+    "title": "Fine dining i och kring Lappland | LaplandDining",
     "description": "Lapplands fine dining-salar – Restaurant Aanaar, Nili, Rakas. Avsmakningsmenyer, signaturrätter, vad du ska boka och när.",
-    "heroH1": "Fine dining i Lappland",
-    "heroLeadTemplate": "Högt rankade avsmakningsmenyer där samiskt arv möter modern gastronomi. Kurerat från {{count}} restauranger i Lappland, sorterat efter Google-betyg och i par med ett hotell inom gångavstånd.",
-    "metaDescriptionTemplate": "Lapplands högst rankade restauranger för avsmakningsmenyer och fine dining, sorterade efter Google-betyg och redaktionellt utvalda. {{count}} topptips per stad i hela finska Lappland.",
+    "heroH1": "Fine dining i och kring Lappland",
+    "heroLeadTemplate": "Högt rankade avsmakningsmenyer där samiskt arv möter modern gastronomi. Kurerat från {{count}} restauranger i och kring Lappland, sorterat efter Google-betyg och i par med ett hotell inom gångavstånd.",
+    "metaDescriptionTemplate": "Lapplands högst rankade restauranger för avsmakningsmenyer och fine dining, sorterade efter Google-betyg och redaktionellt utvalda. {{count}} topptips per stad i och kring finska Lappland.",
     "websiteLabel": "Webbplats",
     "mapsLabel": "Maps",
     "stayInTemplate": "Bo i {{city}}",

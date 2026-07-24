@@ -140,7 +140,7 @@ function FeaturedCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; loca
                   rel="nofollow noopener"
                   className="inline-block mt-2 ml-7 text-[11px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
                 >
-                  — {i18n.readReviews(r.reviewCount?.toLocaleString('en') ?? '')}
+                  {i18n.readReviews(r.reviewCount?.toLocaleString('en') ?? '')}
                 </a>
               </div>
             ) : (
@@ -280,7 +280,7 @@ function RestaurantCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; lo
                 rel="nofollow noopener"
                 className="inline-block mt-1.5 ml-5 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
               >
-                — {i18n.googleReview}
+                {i18n.googleReview}
               </a>
             </div>
           ) : (
@@ -372,7 +372,7 @@ export default function Restaurants() {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'ItemList',
-          name: 'Hand-picked restaurants in Finnish Lapland',
+          name: 'Hand-picked restaurants in and around Finnish Lapland',
           numberOfItems: restaurants.length,
           itemListElement: restaurants.map((r, i) => ({
             '@type': 'ListItem',

@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "라플란드의 레스토랑 | LaplandDining",
-    "description": "라플란드 전역에서 엄선한 60여 개 레스토랑, 로바니에미, 레비, 사리셀캐, 이나리, 월래스. 메뉴, 영업시간, 직접 예약 링크.",
+    "title": "라플란드와 인근 지역의 레스토랑 | LaplandDining",
+    "description": "라플란드와 인근 지역에서 엄선한 60여 개 레스토랑, 로바니에미, 레비, 사리셀캐, 이나리, 월래스. 메뉴, 영업시간, 직접 예약 링크.",
     "heroKicker": "북극 다이닝 가이드",
     "heroH1": "모든 레스토랑",
-    "heroLeadTemplate": "{{cityCount}}개 라플란드 도시에서 엄선한 {{restaurantCount}}개 레스토랑. 실제 고객 리뷰, 사진, 영업시간, 도보 거리의 호텔과 함께 안내합니다.",
+    "heroLeadTemplate": "{{cityCount}}개 라플란드와 인근 지역 도시에서 엄선한 {{restaurantCount}}개 레스토랑. 실제 고객 리뷰, 사진, 영업시간, 도보 거리의 호텔과 함께 안내합니다.",
     "heroChipKota": "코타 다이닝",
     "heroChipWilderness": "황야",
     "heroChipArctic": "북극권",
@@ -121,18 +121,18 @@
       "Luosto": "켈로 통나무 레스토랑이 있는 자수정 산자락 마을",
       "Muonio": "수목한계선 위 오로라 벨트 고지대",
       "Hetta": "세 국경이 만나는 에논테키외의 거점",
-      "Kuusamo": "카렐리아-라플란드 교차로 + 루카 리조트",
+      "Kuusamo": "루카 리조트, 라플란드 바로 남쪽",
       "Kemijärvi": "최북단 철도 도시의 강변 테이블",
       "Salla": "야생의 고개 + 핀란드 최동단 스키 마을",
       "Posio": "리시툰투리 일대의 호수와 공예의 중심"
     }
   },
   "fineDining": {
-    "title": "라플란드 파인 다이닝 | LaplandDining",
+    "title": "라플란드와 인근 지역 파인 다이닝 | LaplandDining",
     "description": "라플란드의 파인 다이닝, 레스토랑 Aanaar, Nili, Rakas. 테이스팅 메뉴, 시그니처 코스, 언제 무엇을 예약해야 하는지.",
-    "heroH1": "라플란드의 파인 다이닝",
-    "heroLeadTemplate": "사미의 유산과 모던 가스트로노미가 만나는 최고 평점의 테이스팅 메뉴. {{count}}개 라플란드 레스토랑에서 엄선, 구글 평점 순, 도보 거리의 호텔과 함께.",
-    "metaDescriptionTemplate": "테이스팅 메뉴와 파인 다이닝을 위한 라플란드 최고 평점 레스토랑, 구글 평점 순, 편집부 엄선. 라플란드의 {{count}}개 도시 톱픽.",
+    "heroH1": "라플란드와 인근 지역의 파인 다이닝",
+    "heroLeadTemplate": "사미의 유산과 모던 가스트로노미가 만나는 최고 평점의 테이스팅 메뉴. {{count}}개 라플란드와 인근 지역 레스토랑에서 엄선, 구글 평점 순, 도보 거리의 호텔과 함께.",
+    "metaDescriptionTemplate": "테이스팅 메뉴와 파인 다이닝을 위한 라플란드 최고 평점 레스토랑, 구글 평점 순, 편집부 엄선. 라플란드와 인근 지역의 {{count}}개 도시 톱픽.",
     "websiteLabel": "웹사이트",
     "mapsLabel": "지도",
     "stayInTemplate": "{{city}} 숙박",

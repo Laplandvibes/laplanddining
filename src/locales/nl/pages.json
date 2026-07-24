@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Restaurants in Fins Lapland | LaplandDining",
-    "description": "Meer dan 60 zorgvuldig geselecteerde restaurants in heel Fins Lapland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menu's, openingstijden en directe boekingslinks.",
+    "title": "Restaurants in en rond Fins Lapland | LaplandDining",
+    "description": "Meer dan 60 zorgvuldig geselecteerde restaurants in en rond Fins Lapland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menu's, openingstijden en directe boekingslinks.",
     "heroKicker": "Arctische dining-gids",
     "heroH1": "Alle restaurants",
-    "heroLeadTemplate": "{{restaurantCount}} zorgvuldig geselecteerde restaurants in {{cityCount}} Laplandse bestemmingen. Echte klantbeoordelingen, foto's en openingstijden, gekoppeld aan een hotel op loopafstand.",
+    "heroLeadTemplate": "{{restaurantCount}} zorgvuldig geselecteerde restaurants in {{cityCount}} bestemmingen in en rond Lapland. Echte klantbeoordelingen, foto's en openingstijden, gekoppeld aan een hotel op loopafstand.",
     "heroChipKota": "Kota-dining",
     "heroChipWilderness": "Wildernis",
     "heroChipArctic": "Arctisch",
@@ -121,18 +121,18 @@
       "Luosto": "Amethist-bergdorp met kelo-houtblok-restaurants",
       "Muonio": "noorderlicht-zone-hooglanden boven de boomgrens",
       "Hetta": "Enontekiö-knooppunt aan de rand van drie grenzen",
-      "Kuusamo": "Kruispunt van Karelië en Lapland + resort Ruka",
+      "Kuusamo": "Resort Ruka, net ten zuiden van Lapland",
       "Kemijärvi": "Noordelijkste spoorstad met tafels aan de rivier",
       "Salla": "Wilde bergpas + Finlands oostelijkste skidorp",
       "Posio": "Hart van meren en ambacht in Riisitunturi"
     }
   },
   "fineDining": {
-    "title": "Fine dining in Lapland | LaplandDining",
+    "title": "Fine dining in en rond Lapland | LaplandDining",
     "description": "Laplands fine-diningzalen, Restaurant Aanaar, Nili, Rakas. Proefmenu's, signatuurgerechten, wat en wanneer te boeken.",
-    "heroH1": "Fine dining in Lapland",
-    "heroLeadTemplate": "Hoogst beoordeelde proefmenu's waar Samisch erfgoed moderne gastronomie ontmoet. Geselecteerd uit {{count}} Laplandse restaurants, gesorteerd op Google-rating, gekoppeld aan een hotel op loopafstand.",
-    "metaDescriptionTemplate": "Laplands hoogst beoordeelde restaurants voor proefmenu's en fine dining, gesorteerd op Google-rating, redactioneel gekozen. {{count}} stadstoppers in heel Fins Lapland.",
+    "heroH1": "Fine dining in en rond Lapland",
+    "heroLeadTemplate": "Hoogst beoordeelde proefmenu's waar Samisch erfgoed moderne gastronomie ontmoet. Geselecteerd uit {{count}} restaurants in en rond Lapland, gesorteerd op Google-rating, gekoppeld aan een hotel op loopafstand.",
+    "metaDescriptionTemplate": "Laplands hoogst beoordeelde restaurants voor proefmenu's en fine dining, gesorteerd op Google-rating, redactioneel gekozen. {{count}} stadstoppers in en rond Fins Lapland.",
     "websiteLabel": "Website",
     "mapsLabel": "Kaart",
     "stayInTemplate": "Verblijf in {{city}}",

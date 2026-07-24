@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Restaurants en Laponie finlandaise | LaplandDining",
-    "description": "Plus de 60 restaurants choisis avec soin à travers la Laponie finlandaise, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menus, horaires et liens de réservation directs.",
+    "title": "Restaurants en Laponie et alentours | LaplandDining",
+    "description": "Plus de 60 restaurants choisis avec soin à travers la Laponie finlandaise et ses alentours, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menus, horaires et liens de réservation directs.",
     "heroKicker": "Guide gastronomique arctique",
     "heroH1": "Tous les restaurants",
-    "heroLeadTemplate": "{{restaurantCount}} restaurants choisis avec soin à travers {{cityCount}} destinations lapones. Avis clients réels, photos et horaires d'ouverture, associés à un hôtel à distance de marche.",
+    "heroLeadTemplate": "{{restaurantCount}} restaurants choisis avec soin à travers {{cityCount}} destinations en Laponie et alentours. Avis clients réels, photos et horaires d'ouverture, associés à un hôtel à distance de marche.",
     "heroChipKota": "Cuisine en kota",
     "heroChipWilderness": "Nature sauvage",
     "heroChipArctic": "Arctique",
@@ -121,18 +121,18 @@
       "Luosto": "Village au pied de la montagne d'améthyste avec restaurants en rondins de kelo",
       "Muonio": "Hautes terres de la ceinture aurorale au-dessus de la limite des arbres",
       "Hetta": "Carrefour d'Enontekiö à la jonction de trois frontières",
-      "Kuusamo": "Croisée Carélie-Laponie + station de Ruka",
+      "Kuusamo": "Station de Ruka, juste au sud de la Laponie",
       "Kemijärvi": "Ville ferroviaire la plus au nord avec tables au bord du fleuve",
       "Salla": "Col sauvage + village de ski le plus à l'est de la Finlande",
       "Posio": "Cœur lacustre et artisanal du pays de Riisitunturi"
     }
   },
   "fineDining": {
-    "title": "Haute gastronomie en Laponie | LaplandDining",
+    "title": "Haute gastronomie en Laponie et alentours | LaplandDining",
     "description": "Les tables gastronomiques de Laponie, Restaurant Aanaar, Nili, Rakas. Menus dégustation, plats signatures, quoi réserver et quand.",
-    "heroH1": "Haute gastronomie en Laponie",
-    "heroLeadTemplate": "Menus dégustation les mieux notés où l'héritage sâme rencontre la gastronomie moderne. Sélectionnés parmi {{count}} restaurants lapons, classés par note Google, associés à un hôtel à distance de marche.",
-    "metaDescriptionTemplate": "Les restaurants les mieux notés de Laponie pour menus dégustation et haute gastronomie, classés par note Google, choisis par la rédaction. {{count}} choix n°1 par ville à travers la Laponie finlandaise.",
+    "heroH1": "Haute gastronomie en Laponie et alentours",
+    "heroLeadTemplate": "Menus dégustation les mieux notés où l'héritage sâme rencontre la gastronomie moderne. Sélectionnés parmi {{count}} restaurants de Laponie et alentours, classés par note Google, associés à un hôtel à distance de marche.",
+    "metaDescriptionTemplate": "Les restaurants les mieux notés de Laponie pour menus dégustation et haute gastronomie, classés par note Google, choisis par la rédaction. {{count}} choix n°1 par ville en Laponie finlandaise et alentours.",
     "websiteLabel": "Site web",
     "mapsLabel": "Carte",
     "stayInTemplate": "Dormir à {{city}}",

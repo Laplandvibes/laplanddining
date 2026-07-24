@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Restaurants in Finnisch-Lappland | LaplandDining",
-    "description": "60+ handverlesene Restaurants in ganz Finnisch-Lappland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Speisekarten, Öffnungszeiten und direkte Buchungslinks.",
+    "title": "Restaurants in und um Finnisch-Lappland | LaplandDining",
+    "description": "60+ handverlesene Restaurants in und um Finnisch-Lappland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Speisekarten, Öffnungszeiten und direkte Buchungslinks.",
     "heroKicker": "Arktischer Restaurantführer",
     "heroH1": "Alle Restaurants",
-    "heroLeadTemplate": "{{restaurantCount}} handverlesene Restaurants in {{cityCount}} Reisezielen Lapplands. Echte Gästebewertungen, Fotos und Öffnungszeiten, kombiniert mit einem Hotel in Gehweite.",
+    "heroLeadTemplate": "{{restaurantCount}} handverlesene Restaurants in {{cityCount}} Reisezielen in und um Lappland. Echte Gästebewertungen, Fotos und Öffnungszeiten, kombiniert mit einem Hotel in Gehweite.",
     "heroChipKota": "Kota-Dining",
     "heroChipWilderness": "Wildnis",
     "heroChipArctic": "Arktisch",
@@ -121,18 +121,18 @@
       "Luosto": "Amethyst-Bergdorf mit Kelo-Block-Restaurants",
       "Muonio": "Polarlicht-Hochland oberhalb der Baumgrenze",
       "Hetta": "Enontekiö-Drehscheibe am Rand dreier Grenzen",
-      "Kuusamo": "Karelisch-lappländische Kreuzung + Resort Ruka",
+      "Kuusamo": "Resort Ruka, knapp südlich der Grenze Lapplands",
       "Kemijärvi": "Nördlichste Bahnstadt mit Tischen am Fluss",
       "Salla": "Wildnis-Pass + Finnlands östlichstes Skidorf",
       "Posio": "See- und Handwerks-Herz des Riisitunturi-Gebiets"
     }
   },
   "fineDining": {
-    "title": "Fine Dining in Lappland | LaplandDining",
+    "title": "Fine Dining in und um Lappland | LaplandDining",
     "description": "Lapplands Fine-Dining-Stuben, Restaurant Aanaar, Nili, Rakas. Degustationsmenüs, Signature-Gerichte, was Sie wann reservieren sollten.",
-    "heroH1": "Fine Dining in Lappland",
-    "heroLeadTemplate": "Top-bewertete Degustationsmenüs, in denen samisches Erbe auf moderne Gastronomie trifft. Kuratiert aus {{count}} Restaurants Lapplands, nach Google-Bewertung sortiert, kombiniert mit einem Hotel in Gehweite.",
-    "metaDescriptionTemplate": "Lapplands bestbewertete Restaurants für Degustationsmenüs und Fine Dining, nach Google-Bewertung sortiert, redaktionell ausgewählt. {{count}} Stadt-Top-Picks in ganz Finnisch-Lappland.",
+    "heroH1": "Fine Dining in und um Lappland",
+    "heroLeadTemplate": "Top-bewertete Degustationsmenüs, in denen samisches Erbe auf moderne Gastronomie trifft. Kuratiert aus {{count}} Restaurants in und um Lappland, nach Google-Bewertung sortiert, kombiniert mit einem Hotel in Gehweite.",
+    "metaDescriptionTemplate": "Lapplands bestbewertete Restaurants für Degustationsmenüs und Fine Dining, nach Google-Bewertung sortiert, redaktionell ausgewählt. {{count}} Stadt-Top-Picks in und um Finnisch-Lappland.",
     "websiteLabel": "Webseite",
     "mapsLabel": "Maps",
     "stayInTemplate": "In {{city}} übernachten",

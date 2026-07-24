@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Restaurantes en la Laponia finlandesa | LaplandDining",
-    "description": "Más de 60 restaurantes seleccionados a mano por toda la Laponia finlandesa, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menús, horarios y enlaces directos de reserva.",
+    "title": "Restaurantes en Laponia y alrededores | LaplandDining",
+    "description": "Más de 60 restaurantes seleccionados a mano en Laponia finlandesa y alrededores, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menús, horarios y enlaces directos de reserva.",
     "heroKicker": "Guía gastronómica del Ártico",
     "heroH1": "Todos los restaurantes",
-    "heroLeadTemplate": "{{restaurantCount}} restaurantes seleccionados a mano en {{cityCount}} destinos de Laponia. Opiniones reales de clientes, fotos y horarios de apertura, combinados con un hotel a pocos pasos.",
+    "heroLeadTemplate": "{{restaurantCount}} restaurantes seleccionados a mano en {{cityCount}} destinos de Laponia y alrededores. Opiniones reales de clientes, fotos y horarios de apertura, combinados con un hotel a pocos pasos.",
     "heroChipKota": "Cocina en kota",
     "heroChipWilderness": "Naturaleza salvaje",
     "heroChipArctic": "Ártico",
@@ -121,18 +121,18 @@
       "Luosto": "Pueblo de la montaña de amatista con restaurantes de troncos de kelo",
       "Muonio": "Tierras altas del cinturón de auroras, por encima del límite del bosque",
       "Hetta": "Centro de Enontekiö en el cruce de tres fronteras",
-      "Kuusamo": "Encrucijada entre Carelia y Laponia + estación de Ruka",
+      "Kuusamo": "Estación de Ruka, justo al sur de Laponia",
       "Kemijärvi": "La ciudad ferroviaria más septentrional, con mesas a orillas del río",
       "Salla": "Paso natural y el pueblo de esquí más oriental de Finlandia",
       "Posio": "Corazón de lagos y artesanía en la región de Riisitunturi"
     }
   },
   "fineDining": {
-    "title": "Alta cocina en Laponia | LaplandDining",
+    "title": "Alta cocina en Laponia y alrededores | LaplandDining",
     "description": "Las salas de alta cocina de Laponia, Restaurant Aanaar, Nili, Rakas. Menús degustación, platos estrella, qué reservar y cuándo.",
-    "heroH1": "Alta cocina en Laponia",
-    "heroLeadTemplate": "Los menús degustación mejor valorados, donde la herencia sami se encuentra con la gastronomía moderna. Seleccionados entre {{count}} restaurantes de Laponia, ordenados por valoración de Google y combinados con un hotel a pocos pasos.",
-    "metaDescriptionTemplate": "Los restaurantes mejor valorados de Laponia para menús degustación y alta cocina, ordenados por valoración de Google y escogidos editorialmente. {{count}} mejores selecciones de ciudad por toda la Laponia finlandesa.",
+    "heroH1": "Alta cocina en Laponia y alrededores",
+    "heroLeadTemplate": "Los menús degustación mejor valorados, donde la herencia sami se encuentra con la gastronomía moderna. Seleccionados entre {{count}} restaurantes de Laponia y alrededores, ordenados por valoración de Google y combinados con un hotel a pocos pasos.",
+    "metaDescriptionTemplate": "Los restaurantes mejor valorados de Laponia para menús degustación y alta cocina, ordenados por valoración de Google y escogidos editorialmente. {{count}} mejores selecciones de ciudad en Laponia finlandesa y alrededores.",
     "websiteLabel": "Sitio web",
     "mapsLabel": "Maps",
     "stayInTemplate": "Alójese en {{city}}",

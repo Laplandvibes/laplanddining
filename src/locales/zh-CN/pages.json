@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "芬兰拉普兰的餐厅 | LaplandDining",
-    "description": "遍布芬兰拉普兰、精心挑选的 60 多家餐厅，罗瓦涅米、莱维、萨利色尔卡、伊纳里、于拉斯。菜单、营业时间与直接预订链接。",
+    "title": "芬兰拉普兰及周边的餐厅 | LaplandDining",
+    "description": "遍布芬兰拉普兰及周边、精心挑选的 60 多家餐厅，罗瓦涅米、莱维、萨利色尔卡、伊纳里、于拉斯。菜单、营业时间与直接预订链接。",
     "heroKicker": "北极餐饮指南",
     "heroH1": "全部餐厅",
-    "heroLeadTemplate": "{{cityCount}} 个拉普兰目的地、{{restaurantCount}} 家精选餐厅。真实的顾客评价、照片与营业时间，并搭配一家步行可达的酒店。",
+    "heroLeadTemplate": "{{cityCount}} 个拉普兰及周边目的地、{{restaurantCount}} 家精选餐厅。真实的顾客评价、照片与营业时间，并搭配一家步行可达的酒店。",
     "heroChipKota": "Kota 用餐",
     "heroChipWilderness": "荒野",
     "heroChipArctic": "北极",
@@ -121,18 +121,18 @@
       "Luosto": "紫水晶之山的小镇,有 kelo 原木餐厅",
       "Muonio": "树线之上、极光带中的高地",
       "Hetta": "位于三国边境交界的埃农泰基厄枢纽",
-      "Kuusamo": "卡累利阿与拉普兰的交汇 + 鲁卡度假区",
+      "Kuusamo": "鲁卡度假区，拉普兰以南不远",
       "Kemijärvi": "最北端的铁路小镇,餐桌临河而设",
       "Salla": "荒野隘口 + 芬兰最东端的滑雪村",
       "Posio": "里西山地的湖泊与手工艺之心"
     }
   },
   "fineDining": {
-    "title": "拉普兰的高级餐饮 | LaplandDining",
+    "title": "拉普兰及周边的高级餐饮 | LaplandDining",
     "description": "拉普兰的高级餐厅，Restaurant Aanaar、Nili、Rakas。品尝菜单、招牌菜品,以及该订什么、何时订。",
-    "heroH1": "拉普兰的高级餐饮",
-    "heroLeadTemplate": "评分最高的品尝菜单,萨米传承在此邂逅现代美食学。从 {{count}} 家拉普兰餐厅中精选，按 Google 评分排序,并搭配一家步行可达的酒店。",
-    "metaDescriptionTemplate": "拉普兰评分最高、主打品尝菜单与高级餐饮的餐厅，按 Google 评分排序,由编辑精选。遍布芬兰拉普兰的 {{count}} 个城市首选。",
+    "heroH1": "拉普兰及周边的高级餐饮",
+    "heroLeadTemplate": "评分最高的品尝菜单,萨米传承在此邂逅现代美食学。从 {{count}} 家拉普兰及周边餐厅中精选，按 Google 评分排序,并搭配一家步行可达的酒店。",
+    "metaDescriptionTemplate": "拉普兰评分最高、主打品尝菜单与高级餐饮的餐厅，按 Google 评分排序,由编辑精选。遍布芬兰拉普兰及周边的 {{count}} 个城市首选。",
     "websiteLabel": "网站",
     "mapsLabel": "地图",
     "stayInTemplate": "入住 {{city}}",

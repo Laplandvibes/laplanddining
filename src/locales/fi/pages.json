@@ -80,11 +80,11 @@
     }
   },
   "restaurants": {
-    "title": "Ravintolat Suomen Lapissa | LaplandDining",
-    "description": "60+ huolella valittua ravintolaa Suomen Lapissa, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menut, aukioloajat ja suorat varauslinkit.",
+    "title": "Ravintolat Lapissa ja lähialueilla | LaplandDining",
+    "description": "60+ huolella valittua ravintolaa Lapissa ja lähialueilla, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menut, aukioloajat ja suorat varauslinkit.",
     "heroKicker": "Arktinen ruokaopas",
     "heroH1": "Kaikki ravintolat",
-    "heroLeadTemplate": "{{restaurantCount}} huolella valittua ravintolaa {{cityCount}} Lapin kohteessa. Aitoja asiakasarvioita, kuvia ja aukioloaikoja, pari kävelymatkan päässä olevaan hotelliin.",
+    "heroLeadTemplate": "{{restaurantCount}} huolella valittua ravintolaa {{cityCount}} kohteessa Lapissa ja lähialueilla. Aitoja asiakasarvioita, kuvia ja aukioloaikoja, pari kävelymatkan päässä olevaan hotelliin.",
     "heroChipKota": "Kotaruokailu",
     "heroChipWilderness": "Erämaa",
     "heroChipArctic": "Arktinen",
@@ -121,18 +121,18 @@
       "Luosto": "Ametistitunturin kylä ja kelohirsiravintoloita",
       "Muonio": "Revontulivyöhykkeen ylätasankoja puurajan yläpuolella",
       "Hetta": "Enontekiön kunta kolmen rajan tuntumassa",
-      "Kuusamo": "Karjalan ja Lapin risteyskohta + Rukan tunturikeskus",
+      "Kuusamo": "Rukan tunturikeskus, aivan Lapin rajan eteläpuolella",
       "Kemijärvi": "Pohjoisin rautatiekaupunki ja jokirannan pöydät",
       "Salla": "Erämaasolaa ja Suomen itäisin hiihtokylä",
       "Posio": "Järvien ja käsityön sydän Riisitunturin maisemissa"
     }
   },
   "fineDining": {
-    "title": "Fine dining Lapissa | LaplandDining",
+    "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",
     "description": "Lapin fine dining -ravintolat, Restaurant Aanaar, Nili, Rakas. Tasting-menut, signature-annokset, milloin kannattaa varata.",
-    "heroH1": "Fine dining Lapissa",
-    "heroLeadTemplate": "Korkealle arvioidut tasting-menut, joissa saamelaisperintö kohtaa modernin keittiön. Käsin valittu {{count}} Lapin ravintolan joukosta, järjestetty Google-arvion mukaan, parina kävelymatkan päässä oleva hotelli.",
-    "metaDescriptionTemplate": "Lapin korkeimmin arvioidut tasting-menun ja fine diningin ravintolat, järjestetty Google-arvion mukaan, toimituksen käsin poimimat. {{count}} kaupungin ykkönen Suomen Lapissa.",
+    "heroH1": "Fine dining Lapissa ja lähialueilla",
+    "heroLeadTemplate": "Korkealle arvioidut tasting-menut, joissa saamelaisperintö kohtaa modernin keittiön. Käsin valittu {{count}} ravintolan joukosta Lapista ja lähialueilta, järjestetty Google-arvion mukaan, parina kävelymatkan päässä oleva hotelli.",
+    "metaDescriptionTemplate": "Lapin korkeimmin arvioidut tasting-menun ja fine diningin ravintolat, järjestetty Google-arvion mukaan, toimituksen käsin poimimat. {{count}} kaupungin ykkönen Lapissa ja lähialueilla.",
     "websiteLabel": "Nettisivut",
     "mapsLabel": "Kartta",
     "stayInTemplate": "Yövy {{city}}ssä",

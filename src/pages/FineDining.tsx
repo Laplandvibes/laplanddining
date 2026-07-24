@@ -36,7 +36,7 @@ export default function FineDining() {
           mainEntityOfPage: 'https://laplanddining.com/fine-dining',
           headline: 'Fine Dining in Finnish Lapland',
           description:
-            'Top-rated tasting menus across Finnish Lapland — Sámi heritage meets modern Nordic gastronomy.',
+            'Top-rated tasting menus across Finnish Lapland: Sámi heritage meets modern Nordic gastronomy.',
           publisher: {
             '@type': 'Organization',
             name: 'LaplandDining',
@@ -117,7 +117,7 @@ export default function FineDining() {
                         target="_blank"
                         rel="nofollow noopener"
                         className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
-                        aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews — ${r.name}`}
+                        aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews: ${r.name}`}
                       >
                         <Star size={11} className="text-amber fill-amber" />
                         <span>{r.rating.toFixed(1)}</span>
@@ -155,7 +155,7 @@ export default function FineDining() {
                             rel="nofollow noopener"
                             className="inline-block mt-2 ml-6 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
                           >
-                            — {t('fineDining.readAllReviews', { count: r.reviewCount?.toLocaleString('en') ?? '' })}
+                            {t('fineDining.readAllReviews', { count: r.reviewCount?.toLocaleString('en') ?? '' })}
                           </a>
                         </div>
                       ) : (
