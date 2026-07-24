@@ -6,6 +6,7 @@ import { useLocale } from '../i18n/useLocale';
 import { MapPin, ExternalLink, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, Clock, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
+import { withReferral } from '../lib/outbound';
 import PartnerSlot from '../../../shared/PartnerSlot';
 import SubpageAd from '../../../shared/SubpageAd';
 import PremiumSpotGrid from '../../../shared/PremiumSpotGrid';
@@ -182,9 +183,9 @@ function FeaturedCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; loca
           <div className="flex flex-wrap items-center gap-3 mt-auto pt-1">
             {r.website && (
               <a
-                href={r.website}
+                href={withReferral(r.website, 'dining_restaurants')}
                 target="_blank"
-                rel="sponsored nofollow noopener"
+                rel="nofollow noopener"
                 className="inline-flex items-center gap-1.5 bg-warm-ink hover:bg-spice text-cream text-sm font-bold px-4 py-2.5 rounded-full transition-all no-underline shadow-md min-h-[40px]"
               >
                 {i18n.websiteLabel} <ExternalLink size={14} />
@@ -291,9 +292,9 @@ function RestaurantCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; lo
         <div className="flex items-center gap-4 mt-auto pt-3 border-t border-warm-ink/10">
           {r.website && (
             <a
-              href={r.website}
+              href={withReferral(r.website, 'dining_restaurants')}
               target="_blank"
-              rel="sponsored nofollow noopener"
+              rel="nofollow noopener"
               className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
               {i18n.websiteLabel} →

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocale } from '../i18n/useLocale';
 import AffiliateCTA from './AffiliateCTA';
 import { getTopPicksByCity, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant, type Locale } from '../data/restaurants';
+import { withReferral } from '../lib/outbound';
 
 function tierClass(tier: Restaurant['partnership']) {
   switch (tier) {
@@ -126,9 +127,9 @@ function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: CardLabels
         <div className="flex flex-wrap items-center gap-3 mt-auto pt-3 border-t border-warm-ink/10">
           {r.website && (
             <a
-              href={r.website}
+              href={withReferral(r.website, 'dining_toppicks')}
               target="_blank"
-              rel="sponsored nofollow noopener"
+              rel="nofollow noopener"
               className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
               {labels.websiteLabel} →

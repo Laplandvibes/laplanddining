@@ -6,6 +6,7 @@ import { Star, MapPin, ExternalLink, Award, Quote, UtensilsCrossed } from 'lucid
 import AffiliateCTA from '../components/AffiliateCTA';
 import { DINING } from '../data/images';
 import { restaurants, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, localizedStr } from '../data/restaurants';
+import { withReferral } from '../lib/outbound';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
@@ -213,9 +214,9 @@ export default function FineDining() {
                     <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-warm-ink/10">
                       {r.website && (
                         <a
-                          href={r.website}
+                          href={withReferral(r.website, 'dining_finedining')}
                           target="_blank"
-                          rel="sponsored nofollow noopener"
+                          rel="nofollow noopener"
                           className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
                         >
                           {t('fineDining.websiteLabel')} <ExternalLink size={12} />
