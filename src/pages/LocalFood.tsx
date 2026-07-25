@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
-import { Leaf, Droplets, Mountain, Award, Fish, Cherry, Bird, Sprout } from 'lucide-react';
+import { Leaf, Droplets, Mountain, Award, Fish, Bird } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygSearchLink } from '../lib/gyg';
@@ -17,22 +17,23 @@ interface IngredientI18n { name: string; fact: string; season: string }
 const sectionIcons = [Award, Droplets, Leaf, Mountain];
 
 // ── Ingredient card image tops ────────────────────────────────────────────────
-// Real photos exist for 4 of the 8 ingredients (reindeer, cloudberry, bilberry,
-// wild mushrooms), self-hosted responsive webp+avif under /images/local-food/.
-// The other 4 use a warm amber/cream gradient placeholder with an icon until
-// real photos are shot (NOT a fake photo, NOT a mismatched stock image).
+// Real photos exist for 7 of the 8 ingredients (reindeer, char & salmon,
+// cloudberry, bilberry, lingonberry, wild mushrooms, wild herbs), self-hosted
+// responsive webp+avif under /images/local-food/. The last one (game birds)
+// uses a warm amber/cream gradient placeholder with an icon until a real photo
+// is shot (NOT a fake photo, NOT a mismatched stock image).
 const LOCAL_FOOD_IMG = '/images/local-food';
 const CARD_IMG_SIZES = '(min-width:1024px) 23vw, (min-width:640px) 46vw, 92vw';
 type IngredientMedia = { photo: string } | { icon: typeof Fish };
 const ingredientMedia: (IngredientMedia | null)[] = [
   { photo: 'poro' },          // 0 Reindeer
-  { icon: Fish },             // 1 Arctic Char & Salmon — placeholder (no photo yet)
+  { photo: 'nieria-lohi' },   // 1 Arctic Char & Salmon
   { photo: 'hilla' },         // 2 Cloudberry
   { photo: 'villimustikka' }, // 3 Wild Bilberry
-  { icon: Cherry },           // 4 Lingonberry — placeholder (no photo yet)
+  { photo: 'puolukka' },      // 4 Lingonberry
   { photo: 'villisienet' },   // 5 Wild Mushrooms
   { icon: Bird },             // 6 Game Birds — placeholder (no photo yet)
-  { icon: Sprout },           // 7 Wild Herbs — placeholder (no photo yet)
+  { photo: 'villiyrtit' },    // 7 Wild Herbs
 ];
 
 // ── "Missä maistat" / "Where to taste" cross-links ────────────────────────────
