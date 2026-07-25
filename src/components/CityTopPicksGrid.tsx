@@ -146,7 +146,7 @@ function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: CardLabels
           <AffiliateCTA
             partner="hotels"
             sid={`top_picks_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
-            destination={`${r.city}, ${r.country}`}
+            destination={`${r.city === 'Ylläs' ? 'Äkäslompolo' : r.city}, ${r.country}`}
             className="ml-auto inline-flex items-center gap-1 bg-vibe-pink hover:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
           >
             {labels.stayNearby}
