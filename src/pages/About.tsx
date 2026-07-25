@@ -15,7 +15,7 @@ export default function About() {
       <meta name="robots" content="index, follow" />
 
       {/* Hero */}
-      <section className="relative min-h-[50svh] flex items-center justify-center px-4 sm:px-6 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+      <section className="relative min-h-[56svh] flex items-center justify-center px-4 sm:px-6 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
           src={DINING.ingredientsAlt}
           alt="Arctic ingredients"

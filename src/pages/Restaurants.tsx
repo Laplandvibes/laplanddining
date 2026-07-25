@@ -300,7 +300,7 @@ export default function Restaurants() {
         })}
       </script>
 
-      <section className="relative min-h-[55svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+      <section className="relative min-h-[56svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
           src={seasonal(DINING.snowVillage, DINING.heroSummer)}
           alt="Dining in Finnish Lapland"

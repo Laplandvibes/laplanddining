@@ -109,7 +109,7 @@ export default function LocalFood() {
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/50 to-night" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
+        <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('localFood.heroH1')}
           </h1>
