@@ -18,6 +18,7 @@ export const PARTNERS: {
   front: (Partner | null)[];
   listingTop: Partner | null;
   pages: Record<string, (Partner | null)[]>;
+  cityFeatured: Record<string, Partner | null>;
 } = {
   // Pääkumppani: nauha joka sivulla (SponsorStrip) + vasen sivurraili
   mainPartner: null,
@@ -30,6 +31,13 @@ export const PARTNERS: {
 
   // Alasivukohtaiset mainospaikat, avain = reitti (esim. '/restaurants')
   pages: {},
+
+  // Kaupunkikohtainen "Esittelykumppani" -paikka /restaurants-sivulla, avain = kaupunki
+  // (esim. 'Rovaniemi'). Iso, myytävä mainospinta kaupungin ravintolaosion kärjessä
+  // (KKV: merkitty mainokseksi). Tyhjä/null = kanoninen vaalea house-ad
+  // ("Varaa mainospaikka →"). Toimituksellinen kärkivalinta EI koskaan mene tähän
+  // maksuttomana — pysyy house-adina kunnes kaupunki myydään. Ei automaattinostoa.
+  cityFeatured: {},
 };
 
 /**

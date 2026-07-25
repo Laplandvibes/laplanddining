@@ -125,7 +125,8 @@
       "Kemijärvi": "Nördlichste Bahnstadt mit Tischen am Fluss",
       "Salla": "Wildnis-Pass + Finnlands östlichstes Skidorf",
       "Posio": "See- und Handwerks-Herz des Riisitunturi-Gebiets"
-    }
+    },
+    "editorsPick": "Redaktionstipp"
   },
   "fineDining": {
     "title": "Fine Dining in und um Lappland | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Rentier",
-        "fact": "200.000 Rentiere durchziehen Finnisch-Lappland in 56 Hegegebieten. Jahresertrag: 2,1 Millionen kg Fleisch. Die Tiere weiden frei auf Flechten, Moos und Wildpflanzen, keine Mastställe, keine Wachstumshormone.",
+        "fact": "Rund 200.000 Rentiere ziehen durch Finnisch-Lappland, verteilt auf 56 Weidegebiete, und grasen frei an Flechten, Moos und Wildpflanzen, ohne Mastbetriebe und ohne Wachstumshormone. Das Fleisch ist mager und eisenreich, und der Klassiker ist poronkäristys: dünn gehobeltes Rentier, angebraten und mit Kartoffelpüree und Preiselbeeren serviert.",
         "season": "Ganzjährig (Herbstschlachtung)"
       },
       {
         "name": "Arktischer Saibling & Lachs",
-        "fact": "Aus einigen der saubersten Flüsse und Seen Europas. Allein der Inarisee liefert arktischen Saibling, Felchen und Bachforelle. Wildgefangen, in Lapplands Gewässern niemals aus Aquakultur.",
+        "fact": "Aus einigen der saubersten Flüsse und Seen Europas. Allein der Inarisee liefert Saibling, Felchen und Bachforelle, alle wild gefangen, nie in Lapplands Gewässern gezüchtet. Die alte Art, Lachs zu garen, ist loimulohi: ein Filet auf ein Birkenbrett geheftet und langsam neben offener Flamme geröstet.",
         "season": "Sommer & Herbst"
       },
       {
         "name": "Moltebeere (Lakka)",
-        "fact": "Das „Gold der Arktis\", wächst nur in subarktischen Mooren, reift zwei bis drei Wochen im Juli und lässt sich nicht großflächig kultivieren. Finnland produziert jährlich etwa 500.000 kg, überwiegend wild gepflückt.",
+        "fact": "Das bernsteinfarbene Gold der Arktis wächst nur in subarktischen Mooren, reift im Juli zwei bis drei Wochen lang und lässt sich nicht kommerziell anbauen, sodass fast jede Beere von Hand gepflückt wird. Klassisch serviert man warme Moltebeeren über leipäjuusto, dem finnischen Brotkäse.",
         "season": "Juli–August"
       },
       {
         "name": "Wilde Heidelbeere",
-        "fact": "Finnische Wildheidelbeeren enthalten drei- bis viermal mehr Anthocyane als kultivierte Heidelbeeren. Finnlands Wälder bringen jährlich rund 500 Millionen kg hervor, nur 5–10 % werden gepflückt.",
+        "fact": "Finnische wilde Blaubeeren enthalten drei- bis viermal mehr Anthocyane als Kulturheidelbeeren und färben die Finger beim Pflücken sofort tiefviolett. Die Wälder bringen schätzungsweise 500 Millionen kg im Jahr hervor, von denen nur 5 bis 10 Prozent gesammelt werden.",
         "season": "Juli–September"
       },
       {
         "name": "Preiselbeere",
-        "fact": "Die am häufigsten gepflückte Wildbeere Finnlands. Verwendet in Marmeladen, Saucen und Desserts. Die traditionelle Beilage zu Rentier, die süß-saure Balance ist von der lappländischen Küche nicht zu trennen.",
+        "fact": "Die am häufigsten gepflückte Wildbeere Finnlands, herb und süß zugleich. Ihre natürliche Benzoesäure hält roh gerührte Preiselbeeren den Winter über frisch, ganz ohne Kochen, weshalb der süßsaure Löffel neben fast jedem Rentiergericht steht.",
         "season": "August–Oktober"
       },
       {
         "name": "Waldpilze",
-        "fact": "Pfifferlinge, Steinpilze und Trompetenpfifferlinge wachsen reichlich in lappländischen Wäldern. Jede Finnin und jeder Finne hat das gesetzliche Recht, überall Pilze und Beeren zu sammeln, das uralte „Jedermannsrecht\".",
+        "fact": "Goldene Pfifferlinge, Steinpilze und Trompetenpfifferlinge kommen ab dem Spätsommer reichlich in Lapplands Wäldern hervor. Sammeln darf sie jeder: das alte Jedermannsrecht erlaubt das Pflücken von Pilzen und Beeren in fast jedem Wald, gleich wem er gehört.",
         "season": "August–Oktober"
       },
       {
         "name": "Federwild",
-        "fact": "Das Moorschneehuhn (riekko) ist Lapplands begehrtester Wildvogel. Einst Speise der einfachen Leute, heute Fine-Dining-Delikatesse. Wildgefangen während der Jagdsaison unter strengen Quoten.",
+        "fact": "Das Moorschneehuhn, auf Finnisch riekko, ist der begehrteste Wildvogel Lapplands: einst alltägliche Winterkost, im Schnee gefangen, heute eine Delikatesse auf Degustationsmenüs. Es wird wild in der Jagdsaison unter strengen Quoten erlegt und kommt daher nur saisonal auf den Teller.",
         "season": "September–März"
       },
       {
         "name": "Wildkräuter",
-        "fact": "Arktische Engelwurz, Mädesüß, Schmalblättriges Weidenröschen und arktischer Thymian. Von Hand auf Fjell-Wiesen und Waldrändern gesammelt. Die Mitternachtssonne gibt ihnen intensives Aroma und Nährstoffdichte.",
+        "fact": "Arktische Engelwurz, Mädesüß, Weidenröschen und Arktischer Thymian, von Hand von Fjellwiesen und Waldrändern gesammelt. Unter Wochen nie untergehender Mitternachtssonne bilden sie konzentrierte Aromaöle, sodass schon eine kleine Prise weit reicht.",
         "season": "Juni–August"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "Lapplands Esskultur versteht man erst, wenn man sie isst. Finden Sie die Restaurants, die direkt bei Hirten, Fischern und Sammlern einkaufen und buchen Sie eine Unterkunft in Gehweite.",
     "ctaBrowse": "Restaurants entdecken",
     "ctaStay": "Unterkunft buchen",
-    "ctaTours": "Kochkurse & Foodtouren"
+    "ctaTours": "Kochkurse & Foodtouren",
+    "whereToTaste": "Wo man es probiert",
+    "imageAlt": "{{name}} in Finnisch-Lappland"
   },
   "about": {
     "title": "Über LaplandDining",

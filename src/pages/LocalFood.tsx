@@ -1,12 +1,13 @@
-
+import { Fragment } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
-import { Leaf, Droplets, Mountain, Award } from 'lucide-react';
+import { Leaf, Droplets, Mountain, Award, Fish, Cherry, Bird, Sprout } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
+import { restaurants } from '../data/restaurants';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
@@ -14,6 +15,44 @@ interface SectionI18n { title: string; paragraphs: string[] }
 interface IngredientI18n { name: string; fact: string; season: string }
 
 const sectionIcons = [Award, Droplets, Leaf, Mountain];
+
+// ── Ingredient card image tops ────────────────────────────────────────────────
+// Real photos exist for 4 of the 8 ingredients (reindeer, cloudberry, bilberry,
+// wild mushrooms), self-hosted responsive webp+avif under /images/local-food/.
+// The other 4 use a warm amber/cream gradient placeholder with an icon until
+// real photos are shot (NOT a fake photo, NOT a mismatched stock image).
+const LOCAL_FOOD_IMG = '/images/local-food';
+const CARD_IMG_SIZES = '(min-width:1024px) 23vw, (min-width:640px) 46vw, 92vw';
+type IngredientMedia = { photo: string } | { icon: typeof Fish };
+const ingredientMedia: (IngredientMedia | null)[] = [
+  { photo: 'poro' },          // 0 Reindeer
+  { icon: Fish },             // 1 Arctic Char & Salmon — placeholder (no photo yet)
+  { photo: 'hilla' },         // 2 Cloudberry
+  { photo: 'villimustikka' }, // 3 Wild Bilberry
+  { icon: Cherry },           // 4 Lingonberry — placeholder (no photo yet)
+  { photo: 'villisienet' },   // 5 Wild Mushrooms
+  { icon: Bird },             // 6 Game Birds — placeholder (no photo yet)
+  { icon: Sprout },           // 7 Wild Herbs — placeholder (no photo yet)
+];
+
+// ── "Missä maistat" / "Where to taste" cross-links ────────────────────────────
+// Each ingredient links to restaurants ALREADY in the dining catalog whose real,
+// verified tags (cuisine / dish highlights / editorial copy) match that
+// ingredient. Links go to the matching restaurant's city section on /restaurants.
+// Wild Mushrooms (index 5) has no restaurant tagged for mushrooms → no link.
+const CROSS_LINK_IDS: string[][] = [
+  ['ChIJvySHpvNLK0QRY-dnGYTVum4', 'manual-pyhatunturi-huttuhippu', 'ChIJi-G83CoShEQRRUEm0zRaos0'], // Reindeer: Nili, Huttuhippu, Rouhe
+  ['manual-rovaniemi-all-about-salmon', 'ChIJd2up905N0kURTWJBTBizK7A', 'ChIJia3ekmY-1UURpiwLrRRqEa4'], // Char & Salmon: All About Salmon, Saamen Kammi, Kukkolaforsen
+  ['manual-posio-korpihilla', 'ChIJvySHpvNLK0QRY-dnGYTVum4'], // Cloudberry: Korpihilla, Nili
+  ['manual-posio-korpihilla', 'manual-rovaniemi-all-about-salmon'], // Bilberry: Korpihilla, All About Salmon
+  ['manual-posio-korpihilla', 'manual-rovaniemi-all-about-salmon'], // Lingonberry: Korpihilla, All About Salmon
+  [], // Wild Mushrooms: no tagged match
+  ['manual-saariselka-laanilan-kievari', 'ChIJvySHpvNLK0QRY-dnGYTVum4'], // Game Birds: Laanilan Kievari, Nili
+  ['manual-rovaniemi-all-about-salmon', 'manual-posio-korpihilla', 'manual-saariselka-laanilan-kievari'], // Wild Herbs: All About Salmon, Korpihilla, Laanilan Kievari
+];
+
+const restaurantById = new Map(restaurants.map((r) => [r.googlePlaceId, r]));
+const citySlug = (city: string) => city.toLowerCase().replace(/[^a-z]/g, '');
 
 // Cinematic Arctic-nature band per section — forest floor, a clear stream,
 // a reindeer in the birch forest, a silent fell lake. One image, one theme.
@@ -149,21 +188,81 @@ export default function LocalFood() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ingredients.map((item) => (
-              <div
-                key={item.name}
-                className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-amber/20 transition-all duration-300"
-              >
-                <h3 className="font-heading text-lg text-amber tracking-wide mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-xs text-white/60 uppercase tracking-wider mb-3">
-                  {t('localFood.seasonLabel')}: {item.season}
-                </p>
-                <p className="text-sm text-white/75 leading-relaxed">{item.fact}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+            {ingredients.map((item, idx) => {
+              const media = ingredientMedia[idx];
+              const photo = media && 'photo' in media ? media.photo : null;
+              const PlaceholderIcon = media && 'icon' in media ? media.icon : null;
+              const matches = (CROSS_LINK_IDS[idx] ?? [])
+                .map((id) => restaurantById.get(id))
+                .filter((r): r is NonNullable<typeof r> => Boolean(r))
+                .slice(0, 3);
+              return (
+                <div
+                  key={item.name}
+                  className="group flex flex-col overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber/25 transition-all duration-300"
+                >
+                  {photo ? (
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <picture>
+                        <source
+                          type="image/avif"
+                          srcSet={`${LOCAL_FOOD_IMG}/${photo}-800.avif 800w, ${LOCAL_FOOD_IMG}/${photo}-1200.avif 1200w`}
+                          sizes={CARD_IMG_SIZES}
+                        />
+                        <source
+                          type="image/webp"
+                          srcSet={`${LOCAL_FOOD_IMG}/${photo}-800.webp 800w, ${LOCAL_FOOD_IMG}/${photo}-1200.webp 1200w`}
+                          sizes={CARD_IMG_SIZES}
+                        />
+                        <img
+                          src={`${LOCAL_FOOD_IMG}/${photo}-800.webp`}
+                          alt={t('localFood.imageAlt', { name: item.name })}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        />
+                      </picture>
+                      <div className="absolute inset-0 bg-gradient-to-t from-night/45 via-transparent to-transparent" />
+                    </div>
+                  ) : (
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-amber/25 via-amber-deep/20 to-warm-ink flex items-center justify-center">
+                      {PlaceholderIcon && (
+                        <PlaceholderIcon size={34} strokeWidth={1.5} className="relative z-10 text-amber/45" />
+                      )}
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(245,158,11,0.20),transparent_62%)]" />
+                    </div>
+                  )}
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="font-heading text-lg text-amber tracking-wide mb-2">
+                      {item.name}
+                    </h3>
+                    <p className="text-xs text-white/60 uppercase tracking-wider mb-3">
+                      {t('localFood.seasonLabel')}: {item.season}
+                    </p>
+                    <p className="text-sm text-white/75 leading-relaxed flex-1">{item.fact}</p>
+                    {matches.length > 0 && (
+                      <p className="mt-4 pt-4 border-t border-white/10 text-xs text-white/55 leading-relaxed">
+                        <span className="text-amber/80 font-semibold uppercase tracking-wider">
+                          {t('localFood.whereToTaste')}:{' '}
+                        </span>
+                        {matches.map((r, k) => (
+                          <Fragment key={r.googlePlaceId}>
+                            <Link
+                              to={`${to('/restaurants')}#${citySlug(r.city)}`}
+                              className="text-white/80 hover:text-amber underline decoration-white/20 hover:decoration-amber underline-offset-2 transition-colors"
+                            >
+                              {r.name}
+                            </Link>
+                            {k < matches.length - 1 ? <span className="text-white/35">, </span> : null}
+                          </Fragment>
+                        ))}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -125,7 +125,8 @@
       "Kemijärvi": "La ciudad ferroviaria más septentrional, con mesas a orillas del río",
       "Salla": "Paso natural y el pueblo de esquí más oriental de Finlandia",
       "Posio": "Corazón de lagos y artesanía en la región de Riisitunturi"
-    }
+    },
+    "editorsPick": "Elección de la redacción"
   },
   "fineDining": {
     "title": "Alta cocina en Laponia y alrededores | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Reno",
-        "fact": "200.000 renos recorren la Laponia finlandesa en 56 distritos de pastoreo. Producción anual: 2,1 millones de kg de carne. Los animales pastan en libertad líquenes, musgo y plantas silvestres, sin cebaderos, sin hormonas de crecimiento.",
+        "fact": "Cerca de 200.000 renos recorren la Laponia finlandesa repartidos en 56 distritos de pastoreo, alimentándose en libertad de líquenes, musgo y plantas silvestres, sin corrales de engorde ni hormonas de crecimiento. La carne es magra y rica en hierro, y el plato clásico es el poronkäristys: reno cortado muy fino, salteado y servido con puré de patata y arándano rojo.",
         "season": "Todo el año (sacrificio en otoño)"
       },
       {
         "name": "Trucha alpina y salmón",
-        "fact": "Sacados de algunos de los ríos y lagos más limpios de Europa. Solo el lago Inari da trucha alpina, coregono y trucha común. De captura salvaje, nunca de piscifactoría en las aguas de Laponia.",
+        "fact": "Sacados de algunos de los ríos y lagos más limpios de Europa. Solo el lago Inari da salvelino ártico, corégono y trucha común, todos de captura salvaje, nunca criados en las aguas de Laponia. La forma antigua de cocinar el salmón es el loimulohi: un filete fijado a una tabla de abedul y asado despacio junto a una llama abierta.",
         "season": "Verano y otoño"
       },
       {
         "name": "Mora de los pantanos (Lakka)",
-        "fact": "El \"oro del Ártico\", crece solo en turberas subárticas, madura durante 2-3 semanas en julio y no puede cultivarse comercialmente. Finlandia produce unos 500.000 kg al año, en su mayoría de recolección silvestre.",
+        "fact": "El ámbar 'oro del Ártico' crece solo en turberas subárticas, madura dos o tres semanas en julio y se resiste al cultivo comercial, así que casi cada baya se recoge a mano. Se sirve, como manda la tradición, tibio sobre leipäjuusto, el queso de pan finlandés.",
         "season": "Julio–agosto"
       },
       {
         "name": "Arándano azul silvestre",
-        "fact": "Los arándanos azules silvestres finlandeses contienen de 3 a 4 veces más antocianinas que los cultivados. Los bosques de Finlandia producen unos 500 millones de kg al año, solo se recoge entre el 5 y el 10 %.",
+        "fact": "Los arándanos silvestres finlandeses contienen de tres a cuatro veces más antocianinas que los cultivados, y tiñen los dedos de morado intenso nada más recogerlos. Los bosques producen unos 500 millones de kg al año, de los que solo se recolecta entre el 5 y el 10 por ciento.",
         "season": "Julio–septiembre"
       },
       {
         "name": "Arándano rojo",
-        "fact": "La baya silvestre más recolectada de Finlandia. Se usa en mermeladas, salsas y postres. El acompañamiento tradicional del reno, su equilibrio agridulce es inseparable de la cocina lapona.",
+        "fact": "La baya silvestre que más se recoge en Finlandia, ácida y dulce a la vez. Su ácido benzoico natural permite que un tarro de arándanos rojos triturados en crudo aguante todo el invierno sin cocción, y por eso la cucharada agridulce acompaña a casi todos los platos de reno.",
         "season": "Agosto–octubre"
       },
       {
         "name": "Setas silvestres",
-        "fact": "Rebozuelos, boletus (porcini) y rebozuelos atrompetados crecen en abundancia en los bosques laponos. Todo finlandés tiene el derecho legal de recoger setas y bayas en cualquier sitio, el antiguo \"derecho de todos\".",
+        "fact": "Rebozuelos dorados, boletos y rebozuelos atrompetados brotan en abundancia por los bosques lapones desde finales de verano. Recogerlos está al alcance de cualquiera: el antiguo derecho de acceso a la naturaleza permite coger setas y bayas en casi cualquier bosque, sea de quien sea.",
         "season": "Agosto–octubre"
       },
       {
         "name": "Aves de caza",
-        "fact": "El lagópodo común (riekko) es el ave de caza más apreciada de Laponia. En su día alimento campesino, hoy un manjar de alta cocina. De captura salvaje durante la temporada de caza, bajo cupos estrictos.",
+        "fact": "La perdiz nival, riekko en finlandés, es el ave de caza más apreciada de Laponia: antes comida corriente de invierno, atrapada con lazos en la nieve, hoy un manjar en los menús de degustación. Se caza en libertad durante la temporada bajo cupos estrictos, así que llega al plato solo en su época.",
         "season": "Septiembre–marzo"
       },
       {
         "name": "Hierbas silvestres",
-        "fact": "Angélica ártica, reina de los prados, epilobio y tomillo ártico. Recolectadas a mano en praderas de fjell y lindes del bosque. El sol de medianoche les da un sabor intenso y una gran densidad nutricional.",
+        "fact": "Angélica ártica, reina de los prados, epilobio y tomillo ártico, recogidos a mano en los prados de los fjells y las lindes del bosque. Al crecer bajo semanas de sol de medianoche que no se pone, concentran aceites aromáticos, y por eso una pizca pequeña rinde mucho.",
         "season": "Junio–agosto"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "No se entiende la cultura gastronómica de Laponia hasta que se prueba. Encuentre los restaurantes que se abastecen directamente de pastores, pescadores y recolectores locales y después reserve un alojamiento a pocos pasos.",
     "ctaBrowse": "Ver restaurantes",
     "ctaStay": "Reserve alojamiento",
-    "ctaTours": "Clases de cocina y tours"
+    "ctaTours": "Clases de cocina y tours",
+    "whereToTaste": "Dónde probarlo",
+    "imageAlt": "{{name}} en la Laponia finlandesa"
   },
   "about": {
     "title": "Sobre LaplandDining",

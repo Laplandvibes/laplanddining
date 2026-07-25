@@ -125,7 +125,8 @@
       "Kemijärvi": "Ville ferroviaire la plus au nord avec tables au bord du fleuve",
       "Salla": "Col sauvage + village de ski le plus à l'est de la Finlande",
       "Posio": "Cœur lacustre et artisanal du pays de Riisitunturi"
-    }
+    },
+    "editorsPick": "Choix de la rédaction"
   },
   "fineDining": {
     "title": "Haute gastronomie en Laponie et alentours | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Renne",
-        "fact": "200 000 rennes parcourent la Laponie finlandaise à travers 56 districts d'élevage. Production annuelle : 2,1 millions de kg de viande. Les animaux broutent librement lichen, mousse et plantes sauvages, pas de parcs d'engraissement, pas d'hormones de croissance.",
+        "fact": "Près de 200 000 rennes parcourent la Laponie finlandaise, répartis sur 56 districts de pâturage, broutant en liberté lichens, mousses et plantes sauvages, sans parcs d'engraissement ni hormones de croissance. La viande est maigre et riche en fer, et le plat classique est le poronkäristys : du renne coupé très fin, sauté et servi avec purée de pommes de terre et airelle rouge.",
         "season": "Toute l'année (abattage à l'automne)"
       },
       {
         "name": "Omble arctique & saumon",
-        "fact": "Pêchés dans certaines des rivières et lacs les plus propres d'Europe. Le seul lac Inari fournit omble arctique, corégone et truite fario. Pêche sauvage, jamais d'élevage dans les eaux lapones.",
+        "fact": "Tirés de quelques-unes des rivières et des lacs les plus propres d'Europe. Le seul lac Inari donne omble arctique, corégone et truite fario, tous pêchés à l'état sauvage, jamais élevés dans les eaux de Laponie. La vieille façon de cuire le saumon est le loimulohi : un filet fixé sur une planche de bouleau et rôti lentement près d'une flamme ouverte.",
         "season": "Été & automne"
       },
       {
         "name": "Mûre arctique (lakka)",
-        "fact": "L'« or de l'Arctique », ne pousse que dans les tourbières subarctiques, mûrit pendant 2-3 semaines en juillet et ne peut être cultivée commercialement. La Finlande en produit environ 500 000 kg par an, principalement cueillis à l'état sauvage.",
+        "fact": "L'ambré 'or de l'Arctique' ne pousse que dans les tourbières subarctiques, mûrit deux à trois semaines en juillet et résiste à la culture commerciale : presque chaque baie est donc cueillie à la main. On la sert traditionnellement tiède sur le leipäjuusto, le fromage de pain finlandais.",
         "season": "Juillet–août"
       },
       {
         "name": "Myrtille sauvage",
-        "fact": "Les myrtilles sauvages finlandaises contiennent 3-4 fois plus d'anthocyanes que les myrtilles cultivées. Les forêts de Finlande en produisent environ 500 millions de kg par an, seuls 5-10 % sont cueillis.",
+        "fact": "Les myrtilles sauvages finlandaises renferment trois à quatre fois plus d'anthocyanes que les myrtilles cultivées, et teignent les doigts d'un violet profond dès la cueillette. Les forêts en produisent environ 500 millions de kg par an, dont 5 à 10 pour cent seulement sont ramassés.",
         "season": "Juillet–septembre"
       },
       {
         "name": "Airelle",
-        "fact": "La baie sauvage la plus cueillie en Finlande. Utilisée en confitures, sauces et desserts. Accompagnement traditionnel du renne, l'équilibre aigre-doux est indissociable de la cuisine lapone.",
+        "fact": "La baie sauvage la plus cueillie de Finlande, à la fois acidulée et sucrée. Son acide benzoïque naturel permet à un pot d'airelles écrasées crues de tenir tout l'hiver sans cuisson, et c'est pourquoi la cuillerée aigre-douce accompagne presque chaque assiette de renne.",
         "season": "Août–octobre"
       },
       {
         "name": "Champignons sauvages",
-        "fact": "Girolles, cèpes et chanterelles en tube abondent dans les forêts lapones. Chaque Finlandais a le droit légal de cueillir champignons et baies n'importe où, l'ancien « droit d'accès ».",
+        "fact": "Girolles dorées, cèpes et chanterelles en tube sortent en abondance dans les forêts de Laponie dès la fin de l'été. Chacun peut les ramasser : l'ancien droit d'accès à la nature autorise à cueillir champignons et baies dans presque toute forêt, quel qu'en soit le propriétaire.",
         "season": "Août–octobre"
       },
       {
         "name": "Gibier à plumes",
-        "fact": "Le lagopède des saules (riekko) est le gibier à plumes le plus prisé de Laponie. Jadis aliment paysan, désormais mets de la haute gastronomie. Capturé en saison de chasse sous quotas stricts.",
+        "fact": "Le lagopède des saules, riekko en finnois, est le gibier à plumes le plus prisé de Laponie : jadis nourriture ordinaire d'hiver, pris au collet dans la neige, aujourd'hui mets de choix des menus dégustation. Il est chassé à l'état sauvage en saison sous des quotas stricts, et n'arrive donc dans l'assiette qu'à la bonne période.",
         "season": "Septembre–mars"
       },
       {
         "name": "Herbes sauvages",
-        "fact": "Angélique arctique, reine-des-prés, épilobe et thym arctique. Cueillis à la main sur les prairies des fjells et en lisière de forêt. Le soleil de minuit leur donne une saveur intense et une grande densité nutritionnelle.",
+        "fact": "Angélique arctique, reine-des-prés, épilobe et thym arctique, cueillis à la main dans les prairies des fjells et à la lisière des forêts. Poussant sous des semaines de soleil de minuit qui ne se couche jamais, ils concentrent des huiles aromatiques : une petite pincée porte donc loin.",
         "season": "Juin–août"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "Vous ne comprenez pas la culture culinaire lapone tant que vous ne l'avez pas mangée. Trouvez les restaurants qui s'approvisionnent directement chez éleveurs, pêcheurs et cueilleurs locaux, puis réservez un séjour à distance de marche.",
     "ctaBrowse": "Voir les restaurants",
     "ctaStay": "Réserver un séjour",
-    "ctaTours": "Cours de cuisine & tours"
+    "ctaTours": "Cours de cuisine & tours",
+    "whereToTaste": "Où le goûter",
+    "imageAlt": "{{name}} en Laponie finlandaise"
   },
   "about": {
     "title": "À propos de LaplandDining",

@@ -125,7 +125,8 @@
       "Kemijärvi": "Northernmost rail town with riverside tables",
       "Salla": "Wilderness pass + Finland's easternmost ski village",
       "Posio": "Lake-and-craft heart of Riisitunturi country"
-    }
+    },
+    "editorsPick": "Editor's pick"
   },
   "fineDining": {
     "title": "Fine Dining in and around Lapland | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Reindeer",
-        "fact": "200,000 reindeer roam Finnish Lapland across 56 herding districts. Annual production: 2.1 million kg of meat. The animals graze freely on lichen, moss, and wild plants, no feedlots, no growth hormones.",
+        "fact": "Around 200,000 reindeer roam Finnish Lapland across 56 herding districts, grazing freely on lichen, moss and wild plants, with no feedlots and no growth hormones. The meat is lean and iron-rich, and the classic plate is poronkäristys: thin-shaved reindeer sautéed and served with mashed potato and lingonberry.",
         "season": "Year-round (autumn slaughter)"
       },
       {
         "name": "Arctic Char & Salmon",
-        "fact": "Pulled from some of Europe's cleanest rivers and lakes. Lake Inari alone provides Arctic char, whitefish, and brown trout. Wild-caught, never farmed in Lapland's waterways.",
+        "fact": "Pulled from some of Europe's cleanest rivers and lakes. Lake Inari alone yields Arctic char, whitefish and brown trout, all wild-caught, never farmed in Lapland's waters. The old way to cook salmon is loimulohi: a fillet pinned to a birch board and roasted slowly beside an open flame.",
         "season": "Summer & autumn"
       },
       {
         "name": "Cloudberry (Lakka)",
-        "fact": "The 'gold of the Arctic', grows only in subarctic bogs, ripens for 2-3 weeks in July, and cannot be commercially farmed. Finland produces about 500,000 kg annually, mostly wild-picked.",
+        "fact": "The amber 'gold of the Arctic' grows only in subarctic bogs, ripens for two or three weeks in July and resists commercial farming, so nearly every berry is picked by hand. The classic serving is warm cloudberry spooned over leipäjuusto, the Finnish bread cheese.",
         "season": "July–August"
       },
       {
         "name": "Wild Bilberry",
-        "fact": "Finnish wild bilberries contain 3-4x more anthocyanins than cultivated blueberries. Finland's forests produce an estimated 500 million kg annually, only 5-10% is picked.",
+        "fact": "Finnish wild bilberries hold three to four times more anthocyanins than cultivated blueberries, and stain the fingers deep purple the moment you pick them. The forests grow an estimated 500 million kg a year, of which only 5 to 10 percent is ever gathered.",
         "season": "July–September"
       },
       {
         "name": "Lingonberry",
-        "fact": "The most commonly picked wild berry in Finland. Used in jams, sauces, and desserts. The traditional accompaniment to reindeer, the sweet-tart balance is inseparable from Lappish cuisine.",
+        "fact": "The most commonly picked wild berry in Finland, sharp and sweet at once. Its natural benzoic acid lets a jar of raw-stirred lingonberries keep through winter without cooking, which is why the sweet-tart spoonful sits beside almost every reindeer plate.",
         "season": "August–October"
       },
       {
         "name": "Wild Mushrooms",
-        "fact": "Chanterelles, ceps (porcini), and funnel chanterelles grow abundantly in Lappish forests. Every Finn has the legal right to pick mushrooms and berries anywhere, the ancient \"Everyman's Right.\"",
+        "fact": "Golden chanterelles, ceps and funnel chanterelles come up in quantity across Lappish forests from late summer. Anyone can gather them: the ancient Everyman's Right lets you pick mushrooms and berries in almost any forest, whoever owns the land.",
         "season": "August–October"
       },
       {
         "name": "Game Birds",
-        "fact": "Willow ptarmigan (riekko) is the most prized game bird of Lapland. Once a peasant staple, now a fine dining delicacy. Wild-caught during the hunting season under strict quotas.",
+        "fact": "Willow ptarmigan, riekko in Finnish, is the most prized game bird of Lapland: once everyday winter food snared in the snow, now a delicacy on tasting menus. It is wild-caught during the hunting season under strict quotas, so it reaches the plate only in season.",
         "season": "September–March"
       },
       {
         "name": "Wild Herbs",
-        "fact": "Arctic angelica, meadowsweet, fireweed, and Arctic thyme. Foraged by hand from fell meadows and forest edges. The midnight sun gives them intense flavor and nutritional density.",
+        "fact": "Arctic angelica, meadowsweet, fireweed and Arctic thyme, gathered by hand from fell meadows and forest edges. Growing under weeks of midnight sun that never sets, they build up concentrated aromatic oils, so a small pinch carries a long way.",
         "season": "June–August"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "You don't understand Lapland's food culture until you eat it. Find the restaurants that source straight from local herders, fishers and foragers, then book a stay within walking distance.",
     "ctaBrowse": "Explore restaurants",
     "ctaStay": "Book a Lapland stay",
-    "ctaTours": "Cooking & food tours"
+    "ctaTours": "Cooking & food tours",
+    "whereToTaste": "Where to taste",
+    "imageAlt": "{{name}} in Finnish Lapland"
   },
   "about": {
     "title": "About LaplandDining",

@@ -3,17 +3,18 @@ import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocation } from 'react-router-dom';
 import { useLocale } from '../i18n/useLocale';
-import { MapPin, ExternalLink, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, Clock, Quote } from 'lucide-react';
+import { MapPin, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
 import { withReferral } from '../lib/outbound';
-import PartnerSlot from '../../../shared/PartnerSlot';
+import PartnerSlot, { type Partner } from '../../../shared/PartnerSlot';
 import SubpageAd from '../../../shared/SubpageAd';
 import PremiumSpotGrid from '../../../shared/PremiumSpotGrid';
+import { adLocaleEnabled } from '../../../shared/adSlotsCopy';
 import { PARTNERS, AD_SLOTS } from '../data/partners';
 import {
-  restaurants, cities, partnershipBadgeLocalized, composeCardBody, cuisineLabel, todayHours,
-  googleReviewsUrl, localizedStr, type Restaurant, type Locale,
+  restaurants, cities, composeCardBody, cuisineLabel,
+  googleReviewsUrl, type Restaurant, type Locale,
 } from '../data/restaurants';
 import { DINING, seasonal, isSummerSeason } from '../data/images';
 import PageBreadcrumb from '../components/PageBreadcrumb';
@@ -52,174 +53,59 @@ function hotelsSid(city: string) {
 interface CardI18n {
   websiteLabel: string;
   mapsLabel: string;
-  todayLabel: string;
-  cityTopPickLabel: string;
-  stayNearby: string;
-  readReviews: (count: string) => string;
   googleReview: string;
+  editorsPickLabel: string;
 }
 
-/** Cream-on-dark hero card for the city top pick. */
-function FeaturedCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; locale: Locale }) {
-  const body = composeCardBody(r, locale);
-  const cuisine = cuisineLabel(r, locale);
-  const hours = todayHours(r, locale);
-  const badge = partnershipBadgeLocalized(r.partnership, locale);
+/** fi/en/sv copy for the sellable per-city featured partner slot (KKV: ad-marked). */
+function featuredCopy(locale: string) {
+  const l = (locale || 'en').toLowerCase();
+  if (l.startsWith('fi')) return { ad: 'Mainos', featured: 'Esittelykumppani' };
+  if (l.startsWith('sv')) return { ad: 'Annons', featured: 'Utvald partner' };
+  return { ad: 'Advertisement', featured: 'Featured partner' };
+}
 
-  return (
-    <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-cream shadow-[0_30px_70px_-25px_rgba(0,0,0,0.7)] hover:shadow-[0_40px_80px_-25px_rgba(0,0,0,0.85)] hover:-translate-y-0.5 transition-all duration-500">
-      <div className="relative flex flex-col">
-        <div className="relative aspect-[16/10] overflow-hidden">
-          {r.photo ? (
-            <img
-              src={r.photo}
-              alt={`${r.name} in ${r.city}`}
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              loading="lazy"
-              decoding="async"
-            />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2.5">
-              <UtensilsCrossed className="w-12 h-12 text-amber/55" strokeWidth={1.5} />
-              {cuisine && (
-                <span className="text-amber/60 text-xs font-bold uppercase tracking-[0.22em] px-8 text-center leading-snug">{cuisine}</span>
-              )}
-            </div>
-          )}
-
-          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-            <span className="bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md inline-flex items-center gap-1.5">
-              <Flame size={10} /> {i18n.cityTopPickLabel}
-            </span>
-            {badge && (
-              <span className="bg-warm-ink text-cream text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
-                <Award size={10} className="text-amber" /> {badge}
-              </span>
-            )}
-          </div>
-
-          {r.rating && (
-            <a
-              href={googleReviewsUrl(r.googlePlaceId)}
-              target="_blank"
-              rel="nofollow noopener"
-              className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 rounded-full bg-cream text-warm-ink shadow-md hover:bg-amber transition-colors no-underline group/rating"
-            >
-              <Star size={13} className="text-amber fill-amber group-hover/rating:fill-warm-ink" />
-              <span className="text-sm font-bold">{r.rating.toFixed(1)}</span>
-              {r.reviewCount && (
-                <span className="text-warm-muted text-xs font-semibold ml-0.5 group-hover/rating:text-warm-ink">
-                  · {r.reviewCount.toLocaleString('en')}
-                </span>
-              )}
-            </a>
-          )}
-        </div>
-
-        <div className="p-6 sm:p-8 flex flex-col">
-          <h3 className="font-heading text-3xl sm:text-4xl text-warm-ink tracking-wide leading-[1.05] mb-2">
-            {r.name}
-          </h3>
-          {(cuisine || r.priceRange) && (
-            <p className="text-xs text-amber-deep font-semibold uppercase tracking-[0.18em] mb-4">
-              {cuisine}
-              {cuisine && r.priceRange && <span className="text-warm-muted mx-2">·</span>}
-              {r.priceRange && <span className="font-heading tracking-widest text-amber-deep">{r.priceRange}</span>}
-            </p>
-          )}
-
-          {body && (
-            body.isQuote ? (
-              <div className="mb-5">
-                <blockquote className="relative pl-7 text-warm-text leading-relaxed text-base italic">
-                  <Quote size={16} className="absolute left-0 top-1 text-amber-deep -scale-x-100" />
-                  {body.text}
-                </blockquote>
-                <a
-                  href={googleReviewsUrl(r.googlePlaceId)}
-                  target="_blank"
-                  rel="nofollow noopener"
-                  className="inline-block mt-2 ml-7 text-[11px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
-                >
-                  {i18n.readReviews(r.reviewCount?.toLocaleString('en') ?? '')}
-                </a>
-              </div>
-            ) : (
-              <p className="text-warm-text leading-relaxed mb-5">{body.text}</p>
-            )
-          )}
-
-          <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-warm-muted mb-5">
-            {(r.shortAddress || r.address) && (
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin size={12} className="text-amber-deep" />
-                {r.shortAddress || r.address}
-              </span>
-            )}
-            {hours && (
-              <span className="inline-flex items-center gap-1.5">
-                <Clock size={12} className="text-amber-deep" />
-                {i18n.todayLabel}: {hours}
-              </span>
-            )}
-          </div>
-
-          {r.highlights && r.highlights.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mb-5">
-              {r.highlights.slice(0, 4).map((h, i) => {
-                const label = localizedStr(h, locale);
-                return label ? (
-                  <span
-                    key={i}
-                    className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
-                  >
-                    {label}
-                  </span>
-                ) : null;
-              })}
-            </div>
-          )}
-
-          <div className="flex flex-wrap items-center gap-3 mt-auto pt-1">
-            {r.website && (
-              <a
-                href={withReferral(r.website, 'dining_restaurants')}
-                target="_blank"
-                rel="nofollow noopener"
-                className="inline-flex items-center gap-1.5 bg-warm-ink hover:bg-spice text-cream text-sm font-bold px-4 py-2.5 rounded-full transition-all no-underline shadow-md min-h-[40px]"
-              >
-                {i18n.websiteLabel} <ExternalLink size={14} />
-              </a>
-            )}
-            <a
-              href={r.googleMapsUrl}
-              target="_blank"
-              rel="nofollow noopener"
-              className="inline-flex items-center gap-1.5 bg-cream-warm hover:bg-amber/15 border border-warm-ink/15 text-warm-ink text-sm font-semibold px-4 py-2.5 rounded-full transition-all no-underline min-h-[40px]"
-            >
-              {i18n.mapsLabel} <ExternalLink size={14} />
-            </a>
-            <AffiliateCTA
-              partner="hotels"
-              sid={`featured_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
-              destination={`${r.city}, ${r.country}`}
-              className="ml-auto inline-flex items-center gap-1.5 bg-vibe-pink hover:bg-pink-600 text-white text-xs font-bold uppercase tracking-wider px-3.5 py-2.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
-            >
-              {i18n.stayNearby}
-            </AffiliateCTA>
-          </div>
-        </div>
+/**
+ * Sellable per-city "featured partner" surface at the top of each city's
+ * restaurant section (replaces the old free hero-size top-pick card). Same model
+ * as the hub resort partner slots: one AdSpec + one optional data row
+ * (PARTNERS.cityFeatured[city]). When empty it renders the canonical LIGHT
+ * house-ad from shared/PartnerSlot ("Varaa mainospaikka →"). fi/en/sv-gated like
+ * every other LV Media ad unit. Never auto-promotes a real restaurant.
+ */
+function CityFeaturedSlot({ city, slug, partner, locale }: { city: string; slug: string; partner: Partner | null; locale: string }) {
+  if (!adLocaleEnabled(locale)) return null;
+  const fc = featuredCopy(locale);
+  if (partner) {
+    return (
+      <div className="mb-8" data-city-featured={slug}>
+        <p className="flex flex-wrap items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/45 mb-2">
+          <span className="inline-flex items-center rounded-full bg-vibe-pink/90 px-2 py-0.5 text-white">{fc.ad}</span>
+          <span>{fc.featured} · {city}</span>
+        </p>
+        <PartnerSlot variant="banner" partner={partner} locale={locale} surface="dark" />
       </div>
+    );
+  }
+  return (
+    <div className="mb-8" data-city-featured={slug}>
+      <PartnerSlot
+        variant="banner"
+        partner={null}
+        locale={locale}
+        surface="dark"
+        placeholder={{ siteSlug: AD_SLOTS.siteSlug, slotId: `restaurants_featured_${slug}`, level: 'premium', label: `${fc.featured} · ${city}` }}
+      />
     </div>
   );
 }
 
-function RestaurantCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; locale: Locale }) {
+function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Restaurant; i18n: CardI18n; locale: Locale; editorsPick?: boolean }) {
   const body = composeCardBody(r, locale);
   const cuisine = cuisineLabel(r, locale);
 
   return (
-    <article className="group relative rounded-2xl overflow-hidden bg-cream shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:shadow-[0_22px_45px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full">
+    <article className={`group relative rounded-2xl overflow-hidden bg-cream shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:shadow-[0_22px_45px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full${editorsPick ? ' ring-1 ring-amber/40' : ''}`}>
       <div className="relative h-44 sm:h-48 overflow-hidden shrink-0">
         {r.photo ? (
           <img
@@ -251,9 +137,18 @@ function RestaurantCard({ r, i18n, locale }: { r: Restaurant; i18n: CardI18n; lo
             )}
           </a>
         )}
-        {r.priceRange && (
-          <div className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-[11px] font-bold tracking-wide shadow-md">
-            {r.priceRange}
+        {(editorsPick || r.priceRange) && (
+          <div className="absolute top-3 left-3 flex flex-col items-start gap-1.5">
+            {editorsPick && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-warm-ink text-cream text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-md">
+                <Award size={10} className="text-amber" /> {i18n.editorsPickLabel}
+              </span>
+            )}
+            {r.priceRange && (
+              <span className="inline-flex items-center px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-[11px] font-bold tracking-wide shadow-md">
+                {r.priceRange}
+              </span>
+            )}
           </div>
         )}
       </div>
@@ -346,11 +241,8 @@ export default function Restaurants() {
   const cardI18n: CardI18n = {
     websiteLabel: t('restaurants.websiteLabel'),
     mapsLabel: t('restaurants.mapsLabel'),
-    todayLabel: t('restaurants.todayLabel'),
-    cityTopPickLabel: t('restaurants.cityTopPickLabel'),
-    stayNearby: t('restaurants.stayNearby'),
-    readReviews: (count: string) => t('restaurants.readReviews', { count }),
     googleReview: t('restaurants.googleReview'),
+    editorsPickLabel: t('restaurants.editorsPick'),
   };
 
   return (
@@ -528,6 +420,10 @@ export default function Restaurants() {
             const gyg = cityGygCatalog[city];
             const topPick = cityRestaurants.find((r) => r.topPick);
             const others = cityRestaurants.filter((r) => !r.topPick);
+            // Editorial top pick shrinks to a normal card (with an earned "Editor's
+            // pick" chip) at the front of the grid; the big surface above it is now
+            // the sellable per-city featured-partner slot.
+            const ordered = topPick ? [topPick, ...others] : others;
             const count = cityRestaurants.length;
             const countLabel = count > 1
               ? t('restaurants.cityRestaurantsPlural')
@@ -564,16 +460,25 @@ export default function Restaurants() {
                   </div>
                 </div>
 
-                {topPick && (
-                  <div className="mb-6">
-                    <FeaturedCard r={topPick} i18n={cardI18n} locale={locale} />
-                  </div>
-                )}
+                {/* Sellable "Esittelykumppani" surface (KKV: merkitty mainokseksi).
+                    Empty = canonical light house-ad. Never auto-filled by a real venue. */}
+                <CityFeaturedSlot
+                  city={city}
+                  slug={slug}
+                  partner={PARTNERS.cityFeatured[city] ?? null}
+                  locale={locale}
+                />
 
-                {others.length > 0 && (
+                {ordered.length > 0 && (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
-                    {others.map((r) => (
-                      <RestaurantCard key={r.googlePlaceId} r={r} i18n={cardI18n} locale={locale} />
+                    {ordered.map((r) => (
+                      <RestaurantCard
+                        key={r.googlePlaceId}
+                        r={r}
+                        i18n={cardI18n}
+                        locale={locale}
+                        editorsPick={r === topPick}
+                      />
                     ))}
                   </div>
                 )}

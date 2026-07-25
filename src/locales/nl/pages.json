@@ -125,7 +125,8 @@
       "Kemijärvi": "Noordelijkste spoorstad met tafels aan de rivier",
       "Salla": "Wilde bergpas + Finlands oostelijkste skidorp",
       "Posio": "Hart van meren en ambacht in Riisitunturi"
-    }
+    },
+    "editorsPick": "Keuze van de redactie"
   },
   "fineDining": {
     "title": "Fine dining in en rond Lapland | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Rendier",
-        "fact": "200.000 rendieren zwerven door Fins Lapland in 56 herdersdistricten. Jaarproductie: 2,1 miljoen kg vlees. De dieren grazen vrij op korstmos, mos en wilde planten, geen vetweide, geen groeihormonen.",
+        "fact": "Zo'n 200.000 rendieren trekken door Fins Lapland, verdeeld over 56 begrazingsdistricten, en grazen vrij op korstmos, mos en wilde planten, zonder mestbedrijven en zonder groeihormonen. Het vlees is mager en ijzerrijk, en het klassieke gerecht is poronkäristys: flinterdun gesneden rendier, aangebakken en geserveerd met aardappelpuree en rode bosbes.",
         "season": "Het hele jaar (najaarsslacht)"
       },
       {
         "name": "Arctische zalmforel & zalm",
-        "fact": "Gevangen in enkele van Europa's schoonste rivieren en meren. Alleen al het Inarimeer levert Arctische zalmforel, marene en bruine forel. Wild gevangen, in Laplandse wateren nooit gekweekt.",
+        "fact": "Gevangen in enkele van de schoonste rivieren en meren van Europa. Alleen al het Inarimeer levert riddervis, marene en beekforel, allemaal wild gevangen, nooit gekweekt in de wateren van Lapland. De oude manier om zalm te bereiden is loimulohi: een filet vastgezet op een berkenplank en langzaam naast een open vlam geroosterd.",
         "season": "Zomer & najaar"
       },
       {
         "name": "Kruipbraam (lakka)",
-        "fact": "Het 'goud van het Arctische gebied', groeit alleen op subarctische venen, rijpt 2-3 weken in juli en is commercieel niet te telen. Finland produceert er jaarlijks zo'n 500.000 kg van, vooral wild geplukt.",
+        "fact": "Het amberkleurige 'goud van het Noordpoolgebied' groeit alleen in subarctische venen, rijpt in juli twee tot drie weken en laat zich niet commercieel telen, zodat vrijwel elke bes met de hand wordt geplukt. Klassiek wordt de warme kruipbraam over leipäjuusto geserveerd, de Finse broodkaas.",
         "season": "Juli–augustus"
       },
       {
         "name": "Wilde bosbes",
-        "fact": "Finse wilde bosbessen bevatten 3-4 keer meer anthocyanen dan gekweekte bosbessen. Finlands bossen leveren jaarlijks zo'n 500 miljoen kg, slechts 5-10 % wordt geplukt.",
+        "fact": "Finse wilde bosbessen bevatten drie tot vier keer meer anthocyanen dan gekweekte bosbessen, en kleuren de vingers bij het plukken meteen dieppaars. De bossen brengen naar schatting 500 miljoen kg per jaar voort, waarvan slechts 5 tot 10 procent ooit wordt geplukt.",
         "season": "Juli–september"
       },
       {
         "name": "Vossenbes",
-        "fact": "De meest geplukte wilde bes van Finland. Gebruikt in jam, sauzen en desserts. Het traditionele begeleidster van rendier, de zoetzure balans is onlosmakelijk van de Laplandse keuken.",
+        "fact": "De meest geplukte wilde bes van Finland, tegelijk zuur en zoet. Door het natuurlijke benzoëzuur blijft een pot rauw geroerde rode bosbessen de hele winter goed zonder koken, en daarom staat de zoetzure lepel naast bijna elk rendiergerecht.",
         "season": "Augustus–oktober"
       },
       {
         "name": "Wilde paddenstoelen",
-        "fact": "Cantharellen, eekhoorntjesbroden en trechtercantharellen groeien overvloedig in Laplandse bossen. Elke Fin heeft het wettelijke recht overal paddenstoelen en bessen te plukken, het oude \"toegangsrecht\".",
+        "fact": "Gouden cantharellen, eekhoorntjesbrood en trechtercantharellen komen vanaf het einde van de zomer volop op in de bossen van Lapland. Iedereen mag ze plukken: het oude natuurrecht laat je in vrijwel elk bos paddenstoelen en bessen plukken, wie de grond ook bezit.",
         "season": "Augustus–oktober"
       },
       {
         "name": "Wildvogels",
-        "fact": "De moerassneeuwhoen (riekko) is de meest geprezen wildvogel van Lapland. Ooit boerenkost, nu een fine-diningdelicatesse. Wild gevangen in het jachtseizoen onder strikte quota.",
+        "fact": "Het moerassneeuwhoen, riekko in het Fins, is het meest gewaardeerde wildgevogelte van Lapland: ooit alledaagse winterkost, met strikken in de sneeuw gevangen, nu een delicatesse op degustatiemenu's. Het wordt in het jachtseizoen wild gevangen onder strenge quota, en komt dus alleen in het seizoen op het bord.",
         "season": "September–maart"
       },
       {
         "name": "Wilde kruiden",
-        "fact": "Arctische engelwortel, moerasspirea, wilgenroosje en Arctische tijm. Met de hand geplukt van fjell-weiden en bosranden. De middernachtzon geeft ze intense smaak en hoge voedingsdichtheid.",
+        "fact": "Arctische engelwortel, moerasspirea, wilgenroosje en arctische tijm, met de hand geplukt van fjellweiden en bosranden. Doordat ze weken onder de nooit ondergaande middernachtszon groeien, bouwen ze geconcentreerde aromatische oliën op, zodat een klein snufje ver reikt.",
         "season": "Juni–augustus"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "U begrijpt de eetcultuur van Lapland pas als u het hebt geproefd. Vind de restaurants die rechtstreeks bij lokale herders, vissers en plukkers inkopen, boek dan een verblijf op loopafstand.",
     "ctaBrowse": "Bekijk restaurants",
     "ctaStay": "Boek een verblijf",
-    "ctaTours": "Kookcursus & foodtours"
+    "ctaTours": "Kookcursus & foodtours",
+    "whereToTaste": "Waar te proeven",
+    "imageAlt": "{{name}} in Fins Lapland"
   },
   "about": {
     "title": "Over LaplandDining",

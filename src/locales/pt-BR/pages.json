@@ -125,7 +125,8 @@
       "Kemijärvi": "A cidade ferroviária mais ao norte, com mesas à beira-rio",
       "Salla": "Passagem natural e o vilarejo de esqui mais oriental da Finlândia",
       "Posio": "Coração de lagos e artesanato na região de Riisitunturi"
-    }
+    },
+    "editorsPick": "Escolha da redação"
   },
   "fineDining": {
     "title": "Alta gastronomia na Lapônia e arredores | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Rena",
-        "fact": "200.000 renas percorrem a Lapônia finlandesa em 56 distritos de pastoreio. Produção anual: 2,1 milhões de kg de carne. Os animais pastam livremente líquen, musgo e plantas silvestres, sem confinamentos, sem hormônios de crescimento.",
+        "fact": "Cerca de 200.000 renas percorrem a Lapônia finlandesa distribuídas por 56 distritos de pastoreio, alimentando-se livremente de líquens, musgo e plantas silvestres, sem confinamento nem hormônios de crescimento. A carne é magra e rica em ferro, e o prato clássico é o poronkäristys: rena fatiada bem fina, salteada e servida com purê de batata e airela.",
         "season": "O ano todo (abate no outono)"
       },
       {
         "name": "Truta-ártica e salmão",
-        "fact": "Tirados de alguns dos rios e lagos mais limpos da Europa. Só o lago Inari fornece truta-ártica, peixe-branco e truta-marrom. De captura selvagem, nunca de cativeiro nas águas da Lapônia.",
+        "fact": "Tiradas de alguns dos rios e lagos mais limpos da Europa. Só o lago Inari fornece salvelino-ártico, coregono e truta-marrom, todos de captura selvagem, nunca criados nas águas da Lapônia. O jeito antigo de preparar o salmão é o loimulohi: um filé preso a uma tábua de bétula e assado devagar ao lado de uma chama aberta.",
         "season": "Verão e outono"
       },
       {
         "name": "Cloudberry (Lakka)",
-        "fact": "O \"ouro do Ártico\", cresce apenas em pântanos subárticos, amadurece por 2-3 semanas em julho e não pode ser cultivada comercialmente. A Finlândia produz cerca de 500.000 kg por ano, em sua maioria de colheita silvestre.",
+        "fact": "O âmbar 'ouro do Ártico' cresce apenas em turfeiras subárticas, amadurece por duas ou três semanas em julho e resiste ao cultivo comercial, então quase toda fruta é colhida à mão. O clássico é servi-la morna sobre o leipäjuusto, o queijo de pão finlandês.",
         "season": "Julho–agosto"
       },
       {
         "name": "Mirtilo silvestre",
-        "fact": "Os mirtilos silvestres finlandeses contêm de 3 a 4 vezes mais antocianinas do que os cultivados. As florestas da Finlândia produzem cerca de 500 milhões de kg por ano, só 5 a 10% são colhidos.",
+        "fact": "As frutas do mirtilo silvestre finlandês têm de três a quatro vezes mais antocianinas que os mirtilos cultivados, e tingem os dedos de roxo intenso no instante em que você as colhe. As florestas produzem cerca de 500 milhões de kg por ano, dos quais só 5 a 10 por cento chegam a ser colhidos.",
         "season": "Julho–setembro"
       },
       {
         "name": "Oxicoco",
-        "fact": "A fruta silvestre mais colhida na Finlândia. Usado em geleias, molhos e sobremesas. O acompanhamento tradicional da rena o equilíbrio agridoce é inseparável da cozinha lapônica.",
+        "fact": "A fruta silvestre mais colhida na Finlândia, ácida e doce ao mesmo tempo. Seu ácido benzoico natural faz um pote de airelas amassadas cruas durar o inverno inteiro sem cozimento, e por isso a colherada agridoce acompanha quase todo prato de rena.",
         "season": "Agosto–outubro"
       },
       {
         "name": "Cogumelos silvestres",
-        "fact": "Cantarelos, boletos (porcini) e cantarelos-trombeta crescem em abundância nas florestas lapônicas. Todo finlandês tem o direito legal de colher cogumelos e frutas em qualquer lugar o antigo \"Direito de Todos\".",
+        "fact": "Cantarelos dourados, boletos e cantarelos-em-funil surgem em quantidade pelas florestas da Lapônia a partir do fim do verão. Colhê-los está ao alcance de qualquer um: o antigo direito de acesso à natureza permite apanhar cogumelos e frutas em quase toda floresta, seja de quem for.",
         "season": "Agosto–outubro"
       },
       {
         "name": "Aves de caça",
-        "fact": "A perdiz-branca (riekko) é a ave de caça mais cobiçada da Lapônia. Outrora alimento camponês, hoje uma iguaria de alta gastronomia. De captura selvagem durante a temporada de caça, sob cotas rígidas.",
+        "fact": "A perdiz-branca, riekko em finlandês, é a ave de caça mais valorizada da Lapônia: antes comida comum de inverno, apanhada com laços na neve, hoje uma iguaria nos menus de degustação. É caçada em liberdade na temporada sob cotas rígidas, então chega ao prato só na época certa.",
         "season": "Setembro–março"
       },
       {
         "name": "Ervas silvestres",
-        "fact": "Angélica-ártica, ulmária, epilóbio e tomilho-ártico. Colhidas à mão em campinas de fjell e bordas de floresta. O sol da meia-noite lhes dá sabor intenso e alta densidade nutricional.",
+        "fact": "Angélica-ártica, ulmária, epilóbio e tomilho-ártico, colhidos à mão nos prados dos fjells e nas bordas da floresta. Crescendo sob semanas de sol da meia-noite que não se põe, concentram óleos aromáticos, e por isso uma pitada pequena rende muito.",
         "season": "Junho–agosto"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "Você não entende a cultura gastronômica da Lapônia até prová-la. Encontre os restaurantes que se abastecem direto de pastores, pescadores e coletores locais e então reserve uma hospedagem a poucos minutos a pé.",
     "ctaBrowse": "Ver restaurantes",
     "ctaStay": "Reserve hospedagem",
-    "ctaTours": "Aulas de cozinha e tours"
+    "ctaTours": "Aulas de cozinha e tours",
+    "whereToTaste": "Onde provar",
+    "imageAlt": "{{name}} na Lapônia finlandesa"
   },
   "about": {
     "title": "Sobre o LaplandDining",

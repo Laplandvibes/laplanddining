@@ -125,7 +125,8 @@
       "Kemijärvi": "Città ferroviaria più a nord con tavoli sul fiume",
       "Salla": "Passo selvaggio + villaggio sciistico più a est della Finlandia",
       "Posio": "Cuore di laghi e artigianato della regione di Riisitunturi"
-    }
+    },
+    "editorsPick": "Scelta della redazione"
   },
   "fineDining": {
     "title": "Alta cucina in Lapponia e dintorni | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Renna",
-        "fact": "200.000 renne percorrono la Lapponia finlandese attraverso 56 distretti di allevamento. Produzione annua: 2,1 milioni di kg di carne. Gli animali brucano liberamente lichene, muschio e piante selvatiche, niente recinti d'ingrasso, niente ormoni della crescita.",
+        "fact": "Circa 200.000 renne percorrono la Lapponia finlandese, distribuite su 56 distretti di pascolo, brucando libere licheni, muschio e piante selvatiche, senza recinti d'ingrasso né ormoni della crescita. La carne è magra e ricca di ferro, e il piatto classico è il poronkäristys: renna tagliata sottilissima, saltata e servita con purè di patate e mirtillo rosso.",
         "season": "Tutto l'anno (macellazione autunnale)"
       },
       {
         "name": "Salmerino artico & salmone",
-        "fact": "Pescati in alcuni dei fiumi e laghi più puliti d'Europa. Il solo Lago Inari fornisce salmerino artico, coregone e trota fario. Pescati selvatici, mai allevati nelle acque lapponi.",
+        "fact": "Pescati in alcuni tra i fiumi e i laghi più puliti d'Europa. Il solo lago Inari dà salmerino artico, coregone e trota fario, tutti pescati allo stato brado, mai allevati nelle acque della Lapponia. Il modo antico di cuocere il salmone è il loimulohi: un filetto fissato a un'asse di betulla e arrostito lentamente accanto a una fiamma viva.",
         "season": "Estate & autunno"
       },
       {
         "name": "Lampone artico (lakka)",
-        "fact": "L'\"oro dell'Artico\", cresce solo nelle torbiere subartiche, matura per 2-3 settimane a luglio e non si può coltivare commercialmente. La Finlandia ne produce circa 500.000 kg l'anno, perlopiù raccolti spontaneamente.",
+        "fact": "L'ambrato 'oro dell'Artico' cresce solo nelle torbiere subartiche, matura per due o tre settimane a luglio e resiste alla coltivazione commerciale, così quasi ogni bacca si raccoglie a mano. Il servizio classico è il lampone artico tiepido adagiato sul leipäjuusto, il formaggio di pane finlandese.",
         "season": "Luglio–agosto"
       },
       {
         "name": "Mirtillo selvatico",
-        "fact": "I mirtilli selvatici finlandesi contengono 3-4 volte più antociani di quelli coltivati. Le foreste della Finlandia ne producono circa 500 milioni di kg l'anno, viene raccolto solo il 5-10 %.",
+        "fact": "I mirtilli selvatici finlandesi contengono da tre a quattro volte più antociani di quelli coltivati, e tingono le dita di viola intenso appena li raccogli. I boschi ne producono circa 500 milioni di kg l'anno, di cui solo il 5-10 per cento viene effettivamente raccolto.",
         "season": "Luglio–settembre"
       },
       {
         "name": "Mirtillo rosso",
-        "fact": "La bacca selvatica più raccolta in Finlandia. Usata in marmellate, salse e dessert. Accompagnamento tradizionale della renna, l'equilibrio agrodolce è inseparabile dalla cucina lappone.",
+        "fact": "La bacca selvatica più raccolta in Finlandia, acidula e dolce insieme. Il suo acido benzoico naturale fa durare un vasetto di mirtilli rossi pestati a crudo per tutto l'inverno senza cottura, ed è per questo che la cucchiaiata agrodolce accompagna quasi ogni piatto di renna.",
         "season": "Agosto–ottobre"
       },
       {
         "name": "Funghi selvatici",
-        "fact": "Galletti, porcini e finferli neri abbondano nelle foreste lapponi. Ogni finlandese ha il diritto legale di raccogliere funghi e bacche ovunque, l'antico \"diritto di accesso\".",
+        "fact": "Gallinacci dorati, porcini e finferle spuntano in abbondanza nei boschi della Lapponia dalla fine dell'estate. Raccoglierli è alla portata di tutti: l'antico diritto di accesso alla natura consente di cogliere funghi e bacche in quasi ogni bosco, chiunque ne sia il proprietario.",
         "season": "Agosto–ottobre"
       },
       {
         "name": "Selvaggina da penna",
-        "fact": "La pernice bianca dei salici (riekko) è la più pregiata selvaggina da penna della Lapponia. Un tempo cibo contadino, oggi prelibatezza dell'alta cucina. Catturata in stagione di caccia sotto severe quote.",
+        "fact": "La pernice bianca, riekko in finlandese, è il selvatico di piuma più pregiato della Lapponia: un tempo cibo invernale di tutti i giorni, catturato con i lacci nella neve, oggi una prelibatezza dei menù degustazione. Si caccia allo stato brado in stagione con quote severe, e arriva quindi nel piatto solo nel periodo giusto.",
         "season": "Settembre–marzo"
       },
       {
         "name": "Erbe selvatiche",
-        "fact": "Angelica artica, olmaria, epilobio e timo artico. Raccolte a mano dai prati dei fjell e dai margini del bosco. Il sole di mezzanotte dona loro sapore intenso e densità nutrizionale.",
+        "fact": "Angelica artica, olmaria, epilobio e timo artico, raccolti a mano dai prati dei fjell e dai margini del bosco. Crescendo sotto settimane di sole di mezzanotte che non tramonta, accumulano oli aromatici concentrati, così un piccolo pizzico rende molto.",
         "season": "Giugno–agosto"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "Non si capisce la cultura gastronomica lappone finché non la si mangia. Trovi i ristoranti che si riforniscono direttamente da pastori, pescatori e raccoglitori locali, poi prenoti un soggiorno a distanza di passeggiata.",
     "ctaBrowse": "Esplora i ristoranti",
     "ctaStay": "Prenota un soggiorno",
-    "ctaTours": "Corsi di cucina & tour"
+    "ctaTours": "Corsi di cucina & tour",
+    "whereToTaste": "Dove assaggiarlo",
+    "imageAlt": "{{name}} nella Lapponia finlandese"
   },
   "about": {
     "title": "Chi siamo, LaplandDining",

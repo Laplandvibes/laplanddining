@@ -125,7 +125,8 @@
       "Kemijärvi": "Pohjoisin rautatiekaupunki ja jokirannan pöydät",
       "Salla": "Erämaasolaa ja Suomen itäisin hiihtokylä",
       "Posio": "Järvien ja käsityön sydän Riisitunturin maisemissa"
-    }
+    },
+    "editorsPick": "Toimituksen valinta"
   },
   "fineDining": {
     "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",
@@ -291,42 +292,42 @@
     "ingredients": [
       {
         "name": "Poro",
-        "fact": "Noin 200 000 poroa kulkee Suomen Lapissa 56 paliskunnassa. Vuosituotto: noin 2 miljoonaa kiloa lihaa. Eläimet laiduntavat vapaasti jäkälää, sammalta ja villikasveja, ei tilatarjouksia, ei kasvuhormoneja.",
+        "fact": "Noin 200 000 poroa kulkee Suomen Lapissa 56 paliskunnassa, vapaana laiduntaen jäkälää, sammalta ja villikasveja, ilman tehotuotantoa ja kasvuhormoneja. Liha on vähärasvaista ja rautapitoista, ja klassikkoannos on poronkäristys: ohueksi höylättyä poroa paistettuna, lisänä perunamuusi ja puolukka.",
         "season": "Ympäri vuoden (syksyn teurastus)"
       },
       {
         "name": "Nieriä ja lohi",
-        "fact": "Pyydetty joistakin Euroopan puhtaimmista joista ja järvistä. Pelkästään Inarijärvestä saadaan nieriää, siikaa ja taimenta. Villipyydettyä, ei kasvatettua Lapin vesissä.",
+        "fact": "Nostettu Euroopan puhtaimpiin kuuluvista joista ja järvistä. Pelkkä Inarijärvi antaa nieriää, siikaa ja taimenta, kaikki villinä pyydettyä, ei koskaan kasvatettua Lapin vesissä. Vanha tapa kypsentää lohta on loimulohi: file kiinnitetään koivulautaan ja paistetaan hitaasti avotulen vieressä.",
         "season": "Kesä ja syksy"
       },
       {
         "name": "Hilla (lakka)",
-        "fact": "\"Arktinen kulta\", kasvaa vain subarktisilla soilla, kypsyy 2–3 viikkoa heinäkuussa, eikä viljely onnistu kaupallisesti. Suomen vuosituotto noin 500 000 kg, valtaosa villipoimittua.",
+        "fact": "Arktinen kulta kasvaa vain subarktisilla soilla, kypsyy heinäkuussa parin kolmen viikon ajan eikä taivu viljelyyn, joten lähes jokainen marja poimitaan käsin. Klassinen tarjoilu on lämmin lakka leipäjuuston päällä.",
         "season": "Heinä–elokuu"
       },
       {
         "name": "Villimustikka",
-        "fact": "Suomalaisessa villimustikassa on 3–4 kertaa enemmän antosyaaneja kuin viljellyssä pensasmustikassa. Suomen metsät tuottavat noin 500 miljoonaa kiloa vuodessa, vain 5–10 % poimitaan.",
+        "fact": "Suomalaisissa villimustikoissa on kolmesta neljään kertaa enemmän antosyaaneja kuin viljellyissä pensasmustikoissa, ja ne värjäävät sormet tummanvioleteiksi heti poiminnassa. Metsät tuottavat arviolta 500 miljoonaa kiloa vuodessa, josta vain 5-10 prosenttia kerätään talteen.",
         "season": "Heinä–syyskuu"
       },
       {
         "name": "Puolukka",
-        "fact": "Suomen poimituin villimarja. Pohja hilloihin, kastikkeisiin ja jälkiruokiin. Perinteinen poron seuralainen, makean ja happaman tasapaino on erottamaton lappilaisesta keittiöstä.",
+        "fact": "Suomen poimituin villimarja, yhtä aikaa kirpeä ja makea. Luontainen bentsoehappo säilyttää raakana survotun puolukkasurvoksen läpi talven ilman keittämistä, ja siksi makeankirpeä lusikallinen kuuluu lähes jokaisen poroannoksen viereen.",
         "season": "Elo–lokakuu"
       },
       {
         "name": "Villisienet",
-        "fact": "Kantarellia, herkkutattia ja suppilovahveroita kasvaa runsaasti lappilaisissa metsissä. Jokamiehenoikeus antaa jokaiselle suomalaiselle laillisen mahdollisuuden poimia sieniä ja marjoja.",
+        "fact": "Keltaisia kantarelleja, herkkutatteja ja suppilovahveroita nousee Lapin metsissä runsaasti loppukesästä alkaen. Kuka tahansa saa kerätä niitä: ikivanha jokamiehenoikeus sallii sienten ja marjojen poiminnan lähes kaikissa metsissä, omistajasta riippumatta.",
         "season": "Elo–lokakuu"
       },
       {
         "name": "Riistalinnut",
-        "fact": "Riekko on Lapin arvostetuin riistalintu. Ennen talonpoikaisruokaa, nyt fine dining -herkku. Villipyydetty metsästyskaudella tiukoin kiintiöin.",
+        "fact": "Riekko on Lapin arvostetuin riistalintu: ennen jokapäiväistä talviruokaa, joka pyydettiin ansoilla hangesta, nyt herkku maistelumenuilla. Se pyydetään villinä metsästyskaudella tarkkojen kiintiöiden mukaan, joten se päätyy lautaselle vain sesonkina.",
         "season": "Syys–maaliskuu"
       },
       {
         "name": "Villiyrtit",
-        "fact": "Arktinen väinönputki, mesiangervo, maitohorsma ja arktinen ajuruoho. Käsin kerätty tunturiniityiltä ja metsänlaidoilta. Keskiyön aurinko antaa intensiivisen maun ja ravinnetiheyden.",
+        "fact": "Väinönputkea, mesiangervoa, maitohorsmaa ja kangasajuruohoa, kerättynä käsin tunturiniityiltä ja metsänreunoilta. Viikkojen keskiyön auringon alla ne kehittävät väkeviä aromiöljyjä, joten pienikin ripaus riittää pitkälle.",
         "season": "Kesä–elokuu"
       }
     ],
@@ -334,7 +335,9 @@
     "ctaLead": "Lapin ruokakulttuurin ymmärtää vasta, kun sen syö. Etsi ravintolat, jotka hankkivat raaka-aineensa suoraan poronhoitajilta, kalastajilta ja kerääjiltä ja varaa yöpaikka kävelymatkan päästä.",
     "ctaBrowse": "Selaa ravintoloita",
     "ctaStay": "Varaa yöpaikka",
-    "ctaTours": "Kokkauskurssit & retket"
+    "ctaTours": "Kokkauskurssit & retket",
+    "whereToTaste": "Missä maistat",
+    "imageAlt": "{{name}} Suomen Lapissa"
   },
   "about": {
     "title": "Tietoa LaplandDiningista",
