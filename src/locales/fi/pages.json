@@ -74,7 +74,7 @@
         },
         {
           "question": "Mistä raaka-aineista Lapin ruoka rakentuu?",
-          "answer": "Vapaana laiduntava poro, nieriä ja siika Inarin kaltaisista järvistä, metsän mustikat ja puolukat, käsin kerätyt sienet ja villiyrtit, ja hilla, \"arktinen kulta\", joka kypsyy soilla vain muutaman viikon heinäkuussa."
+          "answer": "Vapaana laiduntava poro, nieriä ja siika Inarin kaltaisista järvistä, metsän mustikat ja puolukat, käsin kerätyt sienet ja villiyrtit sekä hilla, \"arktinen kulta\", joka kypsyy soilla vain muutaman viikon heinäkuussa."
         }
       ]
     }
@@ -130,7 +130,7 @@
   },
   "fineDining": {
     "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",
-    "description": "Lapin fine dining -ravintolat, Restaurant Aanaar, Nili, Rakas. Tasting-menut, signature-annokset, milloin kannattaa varata.",
+    "description": "Lapin fine dining -ravintolat: Restaurant Aanaar, Nili, Rakas. Tasting-menut, signature-annokset, milloin kannattaa varata.",
     "heroH1": "Fine dining Lapissa ja lähialueilla",
     "heroLeadTemplate": "Korkealle arvioidut tasting-menut, joissa saamelaisperintö kohtaa modernin keittiön. Käsin valittu {{count}} ravintolan joukosta Lapista ja lähialueilta, järjestetty Google-arvion mukaan, parina kävelymatkan päässä oleva hotelli.",
     "metaDescriptionTemplate": "Lapin korkeimmin arvioidut tasting-menun ja fine diningin ravintolat, järjestetty Google-arvion mukaan, toimituksen käsin poimimat. {{count}} kaupungin ykkönen Lapissa ja lähialueilla.",
@@ -183,7 +183,7 @@
     "stayInTemplate": "Yövy {{city}}ssä",
     "summerFoodTours": "Kesän ruokakierrokset",
     "bottomHeadline": "Rakenna keskiyön auringon matkasi",
-    "bottomLead": "Yhdistä nämä pöydät laajempaan lappilaiseen kesään, tunturivaelluksiin, järviuintiin kello yhdeltätoista illalla ja arktisen keskikesän harvinaiseen hiljaisuuteen. Aloita siitä ravintolasta, jonne haluat, ja rakenna muu sen ympärille.",
+    "bottomLead": "Yhdistä nämä pöydät laajempaan lappilaiseen kesään: tunturivaelluksiin, järviuintiin kello yhdeltätoista illalla ja arktisen keskikesän harvinaiseen hiljaisuuteen. Aloita siitä ravintolasta, jonne haluat, ja rakenna muu sen ympärille.",
     "bottomCtaBrowse": "Selaa kaikkia ravintoloita",
     "bottomCtaArctic": "Lue arktisista raaka-aineista"
   },
@@ -192,7 +192,7 @@
     "description": "Lapin ruoan tarina, saamelaiset ruokatavat, poro, kahdeksan vuodenajan rytmi ja se, mistä nykypäivän menut syntyivät.",
     "heroH1": "Tarina, joka kerrotaan ruoan kautta",
     "heroLead": "Miten tuhansien vuosien arktinen elämä muovasi yhden maailman tunnistettavimmista ruokakulttuureista.",
-    "intro": "Savu nousee kotalaitumelta varhain aamulla. Poronlihaa kuivuu räystään alla. Joessa lipuu sumun seasta lohi. Lapissa ruoka ei alkanut keittiöstä, se alkoi maasta. Tämä on tarina siitä, miksi.",
+    "intro": "Savu nousee kotalaitumelta varhain aamulla. Poronlihaa kuivuu räystään alla. Joessa lipuu sumun seasta lohi. Lapissa ruoka ei alkanut keittiöstä: se alkoi maasta. Tämä on tarina siitä, miksi.",
     "sections": [
       {
         "title": "Pakon synnyttämä keittiö",
@@ -207,7 +207,7 @@
         "paragraphs": [
           "Saamelaisten ja poron suhde ulottuu hyvin kauas, mutta poronhoito nykyisessä muodossaan nousi pääelinkeinoksi 1800-luvulla, kun se syrjäytti metsästyksen ja kalastuksen itäisellä Sápmilla. Suhteessa ei ole koskaan ollut kysymys vain lihasta, turkis, sarvet, jänteet ja jopa luut päätyivät kaikki johonkin käyttöön.",
           "Tänään Suomessa on noin 5 600 poronhoitajaa, jotka huolehtivat noin 200 000 eläimestä 56 paliskunnassa. Poronhoitoalueen pinta-ala on noin kolmannes Suomesta. Vuotuinen lihantuotto on noin 2 miljoonaa kiloa, ja elinkeinon arvo arvioidaan 60 miljoonaksi euroksi vuodessa.",
-          "Toisin kuin Norjassa ja Ruotsissa, poronhoito Suomessa ei ole pelkästään saamelaisten oikeus, kuka tahansa EU-kansalainen voi olla mukana, kun luvat ovat kunnossa. Mutta tieto, side maahan ja perinteet, jotka tekevät poronlihasta sen makuista kuin se on, tulevat saamelaisten vuosisataisesta hoidosta.",
+          "Toisin kuin Norjassa ja Ruotsissa, poronhoito Suomessa ei ole pelkästään saamelaisten oikeus: kuka tahansa EU-kansalainen voi olla mukana, kun luvat ovat kunnossa. Mutta tieto, side maahan ja perinteet, jotka tekevät poronlihasta sen makuista kuin se on, tulevat saamelaisten vuosisataisesta hoidosta.",
           "Tunnetuin annos on <strong>poronkäristys</strong>: ohuiksi viipaloitua poroa, käristettyä voissa, perunamuusilla ja puolukkahillolla. Yksinkertainen, rehellinen ja syvästi tyydyttävä. Sen löytää joka ravintolasta Lapissa, tienvarren kahvilasta fine dining -taloon."
         ]
       },
@@ -238,7 +238,7 @@
       {
         "title": "Kota, paikka, jossa tarinat jaetaan",
         "paragraphs": [
-          "Ehkä erottuvin ruokailupaikka Lapissa ei ole ravintola lainkaan. Se on <strong>kota</strong>, perinteinen saamelainen teltta, kartio-muotoinen, keskellään tulisija. Vuosisatojen ajan kota oli koti, keittiö ja kokoontumispaikka. Ruoka kypsyi avotulella, tarinoita kerrottiin, ja savu kantoi rukoukset taivaalle.",
+          "Ehkä erottuvin ruokailupaikka Lapissa ei ole ravintola lainkaan. Se on <strong>kota</strong>: perinteinen saamelainen teltta, kartionmuotoinen, keskellään tulisija. Vuosisatojen ajan kota oli koti, keittiö ja kokoontumispaikka. Ruoka kypsyi avotulella, tarinoita kerrottiin, ja savu kantoi rukoukset taivaalle.",
           "Tänään kotaravintolat kuten Kammi Levillä Hullussa Porossa pitävät perinnettä elossa. Istut poronaljoilla rätisevän tulen ympärillä, kun savustettu lohi, poromakkarat ja grillattu riista valmistuvat silmiesi edessä. Hintaa kertyy noin 64 euroa hengeltä, mutta hetki on hinnaton.",
           "Tässä on se, mikä tekee Lapin ruokailusta toisenlaista kuin missään muualla. Kyse ei ole pelkästään lautasen sisällöstä, kyse on tulesta, savusta, ulkona kimmeltävästä lumesta, taivaalla välkkyvistä revontulista ja niistä tuhansista vuosista, jotka tekivät tästä ateriasta mahdollisen."
         ]
@@ -345,7 +345,7 @@
     "heroH1": "Tietoa LaplandDiningista",
     "heroLead": "Opas Suomen Lapin aitoihin, huolella valittuihin ravintoloihin.",
     "networkTitle": "LaplandVibes-verkosto",
-    "networkBodyA": "LaplandDining on osa <strong>LaplandVibes</strong>-ekosysteemiä, erikoistuneiden sivustojen perhettä, joka auttaa matkailijoita löytämään Suomen Lapin parhaat puolet. Jokainen sivusto keskittyy yhteen aiheeseen: majoitus, ruokailu, aktiviteetit, luonto, ostokset, yöelämä, ja niin edelleen.",
+    "networkBodyA": "LaplandDining on osa <strong>LaplandVibes</strong>-ekosysteemiä, erikoistuneiden sivustojen perhettä, joka auttaa matkailijoita löytämään Suomen Lapin parhaat puolet. Jokainen sivusto keskittyy yhteen aiheeseen: majoitus, ruokailu, aktiviteetit, luonto, ostokset, yöelämä ja niin edelleen.",
     "networkBodyB": "Jokainen LaplandDiningissa listattu ravintola on todellinen paikka. Listalla ei ole keksittyjä eikä paikanpidikkeenä toimivia ravintoloita. Tiedot on koottu julkisista lähteistä, Google Places -datasta ja ravintoloiden omilta sivuilta.",
     "affiliateTitle": "Kumppanuusilmoitus",
     "affiliateBodyA": "Osa LaplandDiningin linkeistä on kumppanuuslinkkejä, pääosin hotellivarauksia kumppaneidemme Sembon ja Trip.comin kautta ja ruokaelämyksiä GetYourGuiden kautta. Sivusto saattaa saada pienen komission, jos varaat niiden kautta, ilman lisäkuluja sinulle. Komissiot pitävät tämän ilmaisen sivuston pystyssä ja kehittyvänä.",
