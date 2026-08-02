@@ -112,7 +112,7 @@ export default function About() {
                 { label: 'LaplandVibes Hub', url: 'https://laplandvibes.com' },
                 { label: 'LaplandStays', url: 'https://laplandstays.com' },
                 { label: 'LaplandHotelDeals', url: 'https://laplandhoteldeals.com' },
-                { label: 'LaplandActivities', url: 'https://laplandactivities.online' },
+                { label: 'LaplandActivities', url: 'https://laplandactivities.fi' },
                 { label: 'LaplandHuskySafaris', url: 'https://laplandhuskysafaris.com' },
                 { label: 'LaplandSkiResorts', url: 'https://laplandskiresorts.com' },
                 { label: 'LaplandFood', url: 'https://laplandfood.com' },

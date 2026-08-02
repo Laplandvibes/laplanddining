@@ -12,6 +12,8 @@ import { DINING } from '../data/images';
 import { getFeaturedRestaurants, restaurants, cities } from '../data/restaurants';
 import HomeAdSlots from '../../../shared/HomeAdSlots';
 import { AD_SLOTS } from '../data/partners';
+import GygPicks from '../components/GygPicks';
+import { AppPromoHero } from '../components/AppPromo';
 
 interface CuisineCardI18n { title: string; desc: string }
 interface FAQItemI18n { question: string; answer: string }
@@ -110,6 +112,9 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
       {/* Pääkumppaninauha on nyt App-tasolla navin alla (SponsorStrip) —
           ei enää erillistä banneria tähän. */}
 
@@ -175,6 +180,10 @@ export default function Home() {
           kohdepaikkaa (LV Media) ──────────────────────────────────── */}
       <HomeAdSlots config={AD_SLOTS} locale={locale} className="bg-night" />
 
+      {/* Varattavat GYG-tuotteet — korkealla sivulla mutta myytyjen mainospaikkojen ALAPUOLELLA */}
+      <GygPicks />
+
+
       {/* ── City Top Picks (18 cities, B2B-ready) ─────────────────── */}
       <CityTopPicksGrid />
 
@@ -218,6 +227,9 @@ export default function Home() {
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed">{desc}</p>
                   </div>
+                {/* App launch block. Bottom of the page on purpose: the site's own hero is
+                    what the search result promised, and this does not get to interrupt it. */}
+                <AppPromoHero />
                 </div>
               );
             })}
@@ -337,7 +349,6 @@ export default function Home() {
       </section>
 
       {/* ── FAQ (visible accordion backing the FAQPage JSON-LD) ──── */}
-      <FAQ />
-    </>
-  );
+      <FAQ />
+    </>  );
 }

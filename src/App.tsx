@@ -10,6 +10,7 @@ import SharedCookieBanner from '../../shared/CookieBanner';
 import NewsletterPopup from './components/NewsletterPopup';
 import SponsorStrip from '../../shared/SponsorStrip';
 import { AD_SLOTS } from './data/partners';
+import { AppPromoNudge } from './components/AppPromo';
 const Home = lazy(() => import('./pages/Home'))
 const Restaurants = lazy(() => import('./pages/Restaurants'))
 const FineDining = lazy(() => import('./pages/FineDining'))
@@ -166,6 +167,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppLayout />
-    </BrowserRouter>
+    {/* App promo: engagement-triggered, never on arrival. */}
+      <AppPromoNudge />
+      </BrowserRouter>
   );
 }
