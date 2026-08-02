@@ -364,7 +364,15 @@ export function AppPromoHero() {
       <div className="relative overflow-hidden rounded-3xl border border-vibe-pink/40 bg-gradient-to-br from-[#4a1236] via-[#241a3f] to-[#123152] px-5 py-5 sm:px-7 sm:py-6">
         <div aria-hidden className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-vibe-pink/25 blur-3xl" />
 
-        <div className="relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-9">
+        {/* 🔴 THE SPLIT IS md, NOT lg (Vesa 2026-08-02: "miten tämä appi mainos
+            on tabletissa tämän näköinen, ihan hirveä"). It used to jump straight
+            from the phone layout to the desktop one at 1024, so every tablet
+            width got the narrow treatment. Measured at 768×1024 before this:
+            the heading and stats were squeezed into a 559 px column to make
+            room for a 120 px thumbnail parked at x=604, while the bullet list
+            underneath ignored that column and ran the full 695 px. Content
+            width changed halfway down the card. */}
+        <div className="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-7 lg:gap-9">
           <div className="flex-1 min-w-0">
             <div className="flex items-start gap-4">
               <div className="flex-1 min-w-0">
@@ -390,8 +398,15 @@ export function AppPromoHero() {
                 </div>
               </div>
 
-              {/* The product itself, beside the whole opening block. */}
-              <div className="relative shrink-0 lg:hidden">
+              {/* The product itself, beside the whole opening block.
+                  🔴 sm:hidden, not lg:hidden. This thumbnail only sits INSIDE
+                  the heading row, so anything it narrows (eyebrow, h2, stats)
+                  stops lining up with the bullets and CTA below it. On a real
+                  phone that costs little and the image earns its place; from
+                  640 up the card is wide enough that a 120 px thumbnail buys
+                  nothing and misaligns everything. Above 768 the proper
+                  side-by-side block takes over. */}
+              <div className="relative shrink-0 sm:hidden">
                 <div aria-hidden className="absolute -inset-2 rounded-[24px] bg-vibe-pink/20 blur-2xl" />
                 <img
                   src={SHOT_SRC}
@@ -436,7 +451,7 @@ export function AppPromoHero() {
           {/* The product itself. A screenshot argues better than the eight lines
               beside it, so it gets the second half of the block on wide screens
               and leads on a phone. */}
-          <div className="hidden lg:flex flex-row items-center justify-center gap-5 shrink-0">
+          <div className="hidden md:flex flex-row items-center justify-center gap-5 shrink-0">
             <div className="relative shrink-0">
               <div
                 aria-hidden
@@ -452,8 +467,12 @@ export function AppPromoHero() {
               />
             </div>
 
-            {/* Decorative on a phone: you cannot scan the screen in your hand. */}
-            <div className="flex flex-col items-center gap-2">
+            {/* Decorative on a phone: you cannot scan the screen in your hand.
+                🔴 Also hidden on tablets: phone 168 + QR 144 + gap is ~330 px,
+                which at 768 would leave the text column ~330 px and wrap the
+                heading to three lines. The screenshot is the argument; the QR
+                is the flourish, so the flourish is what gives way first. */}
+            <div className="hidden lg:flex flex-col items-center gap-2">
               <img
                 src={QR_SRC}
                 alt=""
