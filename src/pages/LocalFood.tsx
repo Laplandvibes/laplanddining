@@ -66,7 +66,7 @@ const sectionImages: { src: string; alt: string }[] = [
 
 export default function LocalFood() {
   const { t } = useTranslation('pages');
-  const { to } = useLocale();
+  const { to, locale } = useLocale();
   const sections = (t('localFood.sections', { returnObjects: true }) as SectionI18n[]) || [];
   const ingredients = (t('localFood.ingredients', { returnObjects: true }) as IngredientI18n[]) || [];
 
@@ -293,7 +293,7 @@ export default function LocalFood() {
               {t('localFood.ctaStay')}
             </AffiliateCTA>
             <a
-              href={gygSearchLink('lapland cooking class food tour', 'local_food_cooking_classes')}
+              href={gygSearchLink('lapland cooking class food tour', 'local_food_cooking_classes', locale)}
               target="_blank"
               rel="sponsored nofollow noopener"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline"

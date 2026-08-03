@@ -29,7 +29,7 @@ const summerCitiesMeta = [
 
 export default function MidnightSunDining() {
   const { t } = useTranslation('pages');
-  const { to } = useLocale();
+  const { to, locale } = useLocale();
   const summerCities = (t('midnightSunDining.summerCities', { returnObjects: true }) as SummerCityI18n[]) || [];
   const whyParagraphs = (t('midnightSunDining.whyParagraphs', { returnObjects: true }) as string[]) || [];
 
@@ -182,7 +182,7 @@ export default function MidnightSunDining() {
                       {t('midnightSunDining.stayInTemplate', { city: c.name })}
                     </AffiliateCTA>
                     <a
-                      href={gygSearchLink(`${c.name} food tour summer`, `midnight_sun_${c.name.toLowerCase().replace(/[^a-z]/g, '')}`)}
+                      href={gygSearchLink(`${c.name} food tour summer`, `midnight_sun_${c.name.toLowerCase().replace(/[^a-z]/g, '')}`, locale)}
                       target="_blank"
                       rel="sponsored nofollow noopener"
                       className="inline-flex items-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/15 text-white text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 no-underline"

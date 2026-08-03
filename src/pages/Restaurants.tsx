@@ -504,7 +504,7 @@ export default function Restaurants() {
                       </AffiliateCTA>
                       {gyg && (
                         <a
-                          href={gygCategoryLink(gyg.citySlug, 'food-and-drink', gyg.sid)}
+                          href={gygCategoryLink(gyg.citySlug, 'food-and-drink', gyg.sid, locale)}
                           target="_blank"
                           rel="sponsored nofollow noopener"
                           className="inline-flex items-center gap-1.5 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 no-underline min-h-[44px]"
