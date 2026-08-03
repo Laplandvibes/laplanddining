@@ -19,7 +19,7 @@ function tierClass(tier: Restaurant['partnership']) {
   }
 }
 
-interface CardLabels {
+export interface CardLabels {
   websiteLabel: string;
   mapsLabel: string;
   stayNearby: string;
@@ -27,7 +27,7 @@ interface CardLabels {
   reviewsCta: (count: string) => string;
 }
 
-function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: CardLabels; to: (path: string) => string; locale: Locale }) {
+export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: CardLabels; to: (path: string) => string; locale: Locale }) {
   const body = composeCardBody(r, locale);
   const cuisine = cuisineLabel(r, locale);
   const badge = partnershipBadgeLocalized(r.partnership, locale);

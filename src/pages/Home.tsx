@@ -5,11 +5,10 @@ import { useLocale } from '../i18n/useLocale';
 import { ChevronDown, MapPin, Star, UtensilsCrossed, Flame, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
-import CityTopPicksGrid from '../components/CityTopPicksGrid';
+import EditorsPicks from '../components/EditorsPicks';
 import FAQ from '../components/FAQ';
-import { gygCategoryLink, gygSearchLink } from '../lib/gyg';
 import { DINING } from '../data/images';
-import { getFeaturedRestaurants, restaurants, cities } from '../data/restaurants';
+import { restaurants, cities } from '../data/restaurants';
 import HomeAdSlots from '../../../shared/HomeAdSlots';
 import { AD_SLOTS } from '../data/partners';
 import GygPicks from '../components/GygPicks';
@@ -18,30 +17,22 @@ import { AppPromoHero } from '../components/AppPromo';
 interface CuisineCardI18n { title: string; desc: string }
 interface FAQItemI18n { question: string; answer: string }
 
+// Each experience card routes to the pillar page that goes deep on it.
 const cuisineCardsMeta = [
-  { image: DINING.fineDining, icon: Star },
-  { image: DINING.kotaFire, icon: Flame },
-  { image: DINING.ingredients, icon: UtensilsCrossed },
+  { image: DINING.fineDining, icon: Star, href: '/fine-dining' },
+  { image: DINING.kotaFire, icon: Flame, href: '/food-history' },
+  { image: DINING.ingredients, icon: UtensilsCrossed, href: '/local-food' },
 ];
 
 export default function Home() {
   const { t } = useTranslation('pages');
   const { to, locale } = useLocale();
-  const featured = getFeaturedRestaurants();
-  void featured; // legacy helper still exported, currently unused on the home grid (CityTopPicksGrid replaces it)
 
   const cuisineCardsCopy = (t('home.cuisineCards', { returnObjects: true }) as CuisineCardI18n[]) || [];
   // FAQPage JSON-LD is generated from the same localized items the visible
   // <FAQ /> accordion renders, so schema and on-page content stay in lockstep
   // (Google structured-data guideline: FAQ markup must match visible content).
   const faqItems = (t('home.faq.items', { returnObjects: true }) as FAQItemI18n[]) || [];
-  const tourLabels = (t('home.tourLinks', { returnObjects: true }) as string[]) || [];
-  const tourLinks = [
-    { label: tourLabels[0], href: gygSearchLink('lapland food tour', 'home_food_tours_lapland', locale) },
-    { label: tourLabels[1], href: gygSearchLink('lapland cooking class', 'home_cooking_lapland', locale) },
-    { label: tourLabels[2], href: gygCategoryLink('rovaniemi-l2653', 'food-and-drink', 'home_food_rovaniemi', locale) },
-    { label: tourLabels[3], href: gygCategoryLink('levi-sirkka-l150197', 'food-and-drink', 'home_food_levi', locale) },
-  ];
 
   return (
     <>
@@ -96,14 +87,12 @@ export default function Home() {
               {t('home.heroCtaExplore')}
               <ChevronDown size={20} />
             </Link>
-            <AffiliateCTA
-              partner="hotels"
-              sid="hero_hotels_lapland"
-              destination="Lapland, Finland"
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:border-vibe-pink/60 hover:bg-white/15 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 no-underline"
+            <Link
+              to={to('/fine-dining')}
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:border-amber/60 hover:bg-white/15 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 no-underline"
             >
-              {t('home.heroCtaStay')}
-            </AffiliateCTA>
+              {t('home.heroCtaFine')}
+            </Link>
           </div>
         </div>
 
@@ -118,7 +107,63 @@ export default function Home() {
       {/* Pääkumppaninauha on nyt App-tasolla navin alla (SponsorStrip) —
           ei enää erillistä banneria tähän. */}
 
-      {/* ── Midnight Sun Dining (kesä-sääntö, top-3-fold) ─────────── */}
+      {/* ── Toimituksen valinnat — ruokaa heti heron alle (v2.0, Vesa 3.8.:
+          "koko etusivu on kaikkea muuta kuin ruokaa"). Ennen tätä ensimmäinen
+          oikea ravintola tuli vastaan vasta ~2 700 px kohdalla, mainospaikkojen
+          ja GYG-kategorianappien jälkeen. Nyt näytöllä 2 on kuusi käsin
+          valittua ravintolaa. */}
+      <EditorsPicks />
+
+      {/* ── Cuisine Highlights — kolme pilarikorttia, jokainen linkittää
+          omalle syventävälle sivulleen ─────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night/95 aurora-glow">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
+              {t('home.cuisineHeadline')}
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              {t('home.cuisineLead')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {cuisineCardsMeta.map((card, i) => {
+              const Icon = card.icon;
+              const copy = cuisineCardsCopy[i];
+              const title = copy?.title ?? '';
+              const desc = copy?.desc ?? '';
+              return (
+                <Link
+                  key={title || i}
+                  to={to(card.href)}
+                  className="group relative rounded-2xl overflow-hidden h-96 block no-underline"
+                >
+                  <img
+                    src={card.image}
+                    alt={title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-transparent" />
+                  <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                    <div className="w-12 h-12 bg-amber/20 rounded-xl flex items-center justify-center mb-3">
+                      <Icon size={24} className="text-amber" />
+                    </div>
+                    <h3 className="font-heading text-2xl text-white tracking-wide mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">{desc}</p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Midnight Sun Dining (kesä-sääntö) ─────────────────────── */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-900/30 via-night to-night" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,rgba(253,224,71,0.10)_0%,transparent_50%)]" />
@@ -176,69 +221,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Kumppaniosio ylhäällä: kakkospääkumppani + 6 premium-
-          kohdepaikkaa (LV Media) ──────────────────────────────────── */}
+      {/* ── Kumppaniosio: kakkospääkumppani + premium-kohdepaikat (LV Media).
+          v2.0: siirretty ruokasisällön (valinnat + pilarit + kesä) alle —
+          myyty kortti näkyy yhä etusivulla, mutta tyhjä house-ad ei enää
+          omista näyttöä 2–3 ennen ensimmäistäkään ravintolaa. */}
       <HomeAdSlots config={AD_SLOTS} locale={locale} className="bg-night" />
 
-      {/* Varattavat GYG-tuotteet — korkealla sivulla mutta myytyjen mainospaikkojen ALAPUOLELLA */}
-      <GygPicks />
-
-
-      {/* ── City Top Picks (18 cities, B2B-ready) ─────────────────── */}
-      <CityTopPicksGrid />
-
-      {/* ── Cuisine Highlights ───────────────────────────────────── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night/95 aurora-glow">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
-              {t('home.cuisineHeadline')}
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              {t('home.cuisineLead')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cuisineCardsMeta.map((card, i) => {
-              const Icon = card.icon;
-              const copy = cuisineCardsCopy[i];
-              const title = copy?.title ?? '';
-              const desc = copy?.desc ?? '';
-              return (
-                <div
-                  key={title || i}
-                  className="group relative rounded-2xl overflow-hidden h-96"
-                >
-                  <img
-                    src={card.image}
-                    alt={title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-transparent" />
-                  <div className="relative z-10 h-full flex flex-col justify-end p-6">
-                    <div className="w-12 h-12 bg-amber/20 rounded-xl flex items-center justify-center mb-3">
-                      <Icon size={24} className="text-amber" />
-                    </div>
-                    <h3 className="font-heading text-2xl text-white tracking-wide mb-2">
-                      {title}
-                    </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">{desc}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-      {/* App launch block, directly under the site's own opening. At the foot
-          of the page it measured 81 % down a 33 000 px front page, and an
-          announcement nobody scrolls to is not an announcement. */}
-      <AppPromoHero />
-
-      {/* ── By Destination ───────────────────────────────────────── */}
+      {/* ── By Destination — kaupunki-indeksi (18 kohdetta) ────────── */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber/5 rounded-full blur-[120px] animate-[aurora-drift_10s_ease-in-out_infinite]" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-[100px] animate-[aurora-drift_14s_ease-in-out_infinite_reverse]" />
@@ -283,6 +272,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Varattavat GYG-tuotteet — myytyjen mainospaikkojen ALAPUOLELLA
+          (mainosmalli-invariantti säilyy v2.0:ssa). Korvaa myös vanhan
+          erillisen "Food tours" -bandin: kaksi GYG-osiota samalla sivulla
+          oli tuplausta. */}
+      <GygPicks />
+
       {/* ── Stay & Eat — hotel booking band (worker-routed partners) ── */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-night via-night-light to-night">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(236,72,153,0.06)_0%,transparent_60%)]" />
@@ -321,33 +316,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Food tours band (GYG) ────────────────────────────────── */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night">
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="text-arctic-cyan text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-            {t('home.toursKicker')}
-          </p>
-          <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-5">
-            {t('home.toursHeadline')}
-          </h2>
-          <p className="text-white/80 text-base max-w-2xl mx-auto mb-9 leading-relaxed">
-            {t('home.toursLead')}
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {tourLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="sponsored nofollow noopener"
-                className="inline-flex items-center gap-2 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white px-5 py-3 rounded-full font-semibold text-sm transition-all duration-200 no-underline min-h-[44px]"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* App-nosto: pysyy etusivulla (verkoston 26/26-rollout), mutta v2.0:ssa
+          ruokatarinan jälkeen ennen FAQ:ta — ei enää keskellä ravintolasisältöä.
+          Sivu lyheni ~13,4 → ~8 näytölliseen, joten tämäkin syvyys skrollataan. */}
+      <AppPromoHero />
 
       {/* ── FAQ (visible accordion backing the FAQPage JSON-LD) ──── */}
       <FAQ />

@@ -6,6 +6,11 @@
     "heroLead": "Riktiga, handplockade restauranger i hela finska Lappland – från traditionell samisk fine dining till matlagning över kotaeld och arktiska råvaror du inte hittar någon annanstans.",
     "heroCtaExplore": "Utforska alla restauranger",
     "heroCtaStay": "Bo nära maten",
+    "heroCtaFine": "Fine dining i Lappland",
+    "picksKicker": "Redaktionens val",
+    "picksHeadline": "Börja med dessa sex",
+    "picksLead": "Samisk fine dining, kåtaeldar och kök uppe på fjället. Sex ställen vi själva skulle boka först.",
+    "picksCtaAll": "Se alla {{count}} restauranger",
     "midnightKicker": "Lapplands sommar",
     "midnightHeadline1": "Middag klockan ett på natten",
     "midnightHeadline2": "Solen är fortfarande uppe.",
@@ -125,7 +130,8 @@
       "Kemijärvi": "Nordligaste järnvägsstaden med bord vid älven",
       "Salla": "Vildmarkspass + Finlands östligaste skidby",
       "Posio": "Sjö- och hantverkshjärtat i Riisitunturitrakten"
-    }
+    },
+    "editorsPick": "Redaktionens val"
   },
   "fineDining": {
     "title": "Fine dining i och kring Lappland | LaplandDining",
@@ -291,42 +297,42 @@
     "ingredients": [
       {
         "name": "Ren",
-        "fact": "200 000 renar strövar över finska Lappland i 56 renbeteslag. Årlig produktion: 2,1 miljoner kg kött. Djuren betar fritt på lav, mossa och vilda växter – inga inhägnader, inga tillväxthormoner.",
+        "fact": "Omkring 200 000 renar strövar över finska Lappland fördelade på 56 renbeteslag, och betar fritt på lav, mossa och vilda växter, utan gödningsanläggningar och utan tillväxthormoner. Köttet är magert och järnrikt, och klassikern är poronkäristys: tunt skavd ren, stekt och serverad med potatismos och lingon.",
         "season": "Året runt (höstslakt)"
       },
       {
         "name": "Röding & lax",
-        "fact": "Fångade i några av Europas renaste älvar och sjöar. Enbart Enare träsk ger röding, sik och öring. Vildfångade, aldrig odlade i Lapplands vattendrag.",
+        "fact": "Tagna ur några av Europas renaste älvar och sjöar. Enbart Enaresjön ger röding, sik och bäcköring, alla vildfångade, aldrig odlade i Lapplands vatten. Det gamla sättet att tillaga lax är loimulohi: en filé fäst på en björkplanka och långsamt rostad intill en öppen låga.",
         "season": "Sommar & höst"
       },
       {
         "name": "Hjortron (lakka)",
-        "fact": "'Arktis guld' – växer bara på subarktiska myrar, mognar under 2–3 veckor i juli och går inte att odla kommersiellt. Finland producerar omkring 500 000 kg per år, mestadels vildplockat.",
+        "fact": "Det bärnstensfärgade 'Arktis guld' växer bara på subarktiska myrar, mognar två till tre veckor i juli och låter sig inte odlas kommersiellt, så nästan varje bär plockas för hand. Klassiskt serveras det som varma hjortron över leipäjuusto, den finska brödosten.",
         "season": "juli–augusti"
       },
       {
         "name": "Vilt blåbär",
-        "fact": "Finska vilda blåbär innehåller 3–4 gånger mer antocyaniner än odlade blåbär. Finlands skogar ger uppskattningsvis 500 miljoner kg per år, bara 5–10 % plockas.",
+        "fact": "Finska vilda blåbär innehåller tre till fyra gånger mer antocyaniner än odlade blåbär, och färgar fingrarna djupt lila i samma stund du plockar dem. Skogarna ger uppskattningsvis 500 miljoner kg om året, varav bara 5 till 10 procent någonsin plockas.",
         "season": "juli–september"
       },
       {
         "name": "Lingon",
-        "fact": "Det mest plockade vilda bäret i Finland. Används i sylt, såser och desserter. Det traditionella tillbehöret till ren – den sötsyrliga balansen är oskiljaktig från det lapska köket.",
+        "fact": "Det mest plockade vilda bäret i Finland, syrligt och sött på en gång. Den naturliga bensoesyran gör att en burk rårörda lingon håller vintern ut utan kokning, och därför står den sötsyrliga skeden bredvid nästan varje renrätt.",
         "season": "augusti–oktober"
       },
       {
         "name": "Vild svamp",
-        "fact": "Kantareller, karljohan (stensopp) och trattkantareller växer rikligt i lapska skogar. Varje finländare har laglig rätt att plocka svamp och bär var som helst – den uråldriga allemansrätten.",
+        "fact": "Gyllene kantareller, stensopp och trattkantareller kommer upp rikligt i Lapplands skogar från sensommaren. Vem som helst får plocka dem: den gamla allemansrätten låter dig plocka svamp och bär i nästan varje skog, oavsett vem som äger marken.",
         "season": "augusti–oktober"
       },
       {
         "name": "Skogsfågel",
-        "fact": "Dalripan (riekko) är Lapplands mest eftertraktade skogsfågel. En gång bondemat, nu en fine dining-delikatess. Vildfångad under jaktsäsongen med strikta kvoter.",
+        "fact": "Dalripan, riekko på finska, är Lapplands mest uppskattade matfågel: förr vardaglig vinterkost, snarad i snön, i dag en delikatess på avsmakningsmenyer. Den fångas vild under jaktsäsongen med strikta kvoter, och når därför tallriken bara i säsong.",
         "season": "september–mars"
       },
       {
         "name": "Vilda örter",
-        "fact": "Fjällkvanne, älggräs, mjölkört och arktisk timjan. Handplockade från fjällängar och skogsbryn. Midnattssolen ger dem intensiv smak och näringstäthet.",
+        "fact": "Kvanne, älgört, mjölkört och backtimjan, plockade för hand från fjällängar och skogsbryn. När de växer under veckor av midnattssol som aldrig går ner samlar de på sig koncentrerade aromoljor, så en liten nypa räcker långt.",
         "season": "juni–augusti"
       }
     ],
@@ -334,7 +340,9 @@
     "ctaLead": "Du förstår inte Lapplands matkultur förrän du äter den. Hitta restaurangerna som köper direkt från lokala renskötare, fiskare och plockare – och boka sedan ett boende inom gångavstånd.",
     "ctaBrowse": "Utforska restauranger",
     "ctaStay": "Boka ett boende i Lappland",
-    "ctaTours": "Matlagnings- & matturer"
+    "ctaTours": "Matlagnings- & matturer",
+    "whereToTaste": "Var du smakar det",
+    "imageAlt": "{{name}} i finska Lappland"
   },
   "about": {
     "title": "Om LaplandDining",
