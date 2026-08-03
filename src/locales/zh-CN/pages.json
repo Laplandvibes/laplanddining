@@ -94,6 +94,7 @@
     "heroChipWilderness": "荒野",
     "heroChipArctic": "北极",
     "filterAll": "所有城市",
+    "showAllInCity": "查看{{city}}的全部 {{count}} 家餐厅",
     "cityTopPickLabel": "本城首选",
     "cityRestaurantsSingular": "家餐厅",
     "cityRestaurantsPlural": "家餐厅",

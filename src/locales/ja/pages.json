@@ -94,6 +94,7 @@
     "heroChipWilderness": "ウィルダネス",
     "heroChipArctic": "北極圏",
     "filterAll": "すべての都市",
+    "showAllInCity": "{{city}}のレストラン{{count}}軒をすべて見る",
     "cityTopPickLabel": "都市のおすすめ",
     "cityRestaurantsSingular": "レストラン",
     "cityRestaurantsPlural": "レストラン",

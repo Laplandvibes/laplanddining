@@ -94,6 +94,7 @@
     "heroChipWilderness": "Vildmark",
     "heroChipArctic": "Arktis",
     "filterAll": "Alla städer",
+    "showAllInCity": "Visa alla {{count}} restauranger i {{city}}",
     "cityTopPickLabel": "Stadens topptips",
     "cityRestaurantsSingular": "restaurang",
     "cityRestaurantsPlural": "restauranger",

@@ -94,6 +94,7 @@
     "heroChipWilderness": "Natureza selvagem",
     "heroChipArctic": "Ártico",
     "filterAll": "Todas as cidades",
+    "showAllInCity": "Ver todos os {{count}} restaurantes de {{city}}",
     "cityTopPickLabel": "Escolha da cidade",
     "cityRestaurantsSingular": "restaurante",
     "cityRestaurantsPlural": "restaurantes",

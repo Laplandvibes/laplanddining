@@ -94,6 +94,7 @@
     "heroChipWilderness": "Wildernis",
     "heroChipArctic": "Arctisch",
     "filterAll": "Alle steden",
+    "showAllInCity": "Bekijk alle {{count}} restaurants in {{city}}",
     "cityTopPickLabel": "Stadstopper",
     "cityRestaurantsSingular": "restaurant",
     "cityRestaurantsPlural": "restaurants",

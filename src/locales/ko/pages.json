@@ -94,6 +94,7 @@
     "heroChipWilderness": "황야",
     "heroChipArctic": "북극권",
     "filterAll": "모든 도시",
+    "showAllInCity": "{{city}}의 레스토랑 {{count}}곳 모두 보기",
     "cityTopPickLabel": "도시 톱픽",
     "cityRestaurantsSingular": "레스토랑",
     "cityRestaurantsPlural": "레스토랑",

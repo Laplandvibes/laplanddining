@@ -46,6 +46,17 @@ const cityGygCatalog: Record<string, { citySlug: string; sid: string }> = {
   Levi: { citySlug: 'levi-sirkka-l150197', sid: 'restaurants_levi_food_tours' },
 };
 
+/**
+ * v2.0 (Vesa 3.8.2026): sivu oli 33 000 px / 32 näyttöä tabletilla — 18
+ * kaupunkia kaikilla korteillaan + tyhjä house-ad joka kaupungille.
+ * Oletusnäkymä näyttää 3 korttia per kaupunki + "Näytä kaikki" -laajennin;
+ * kaupunkisuodatin auki = kaikki kortit. Tyhjä "Esittelykumppani"-house-ad
+ * renderöityy vain top-6-kohteissa — MYYTY kumppani näkyy aina, kaupungista
+ * riippumatta.
+ */
+const COLLAPSED_CARD_COUNT = 3;
+const FEATURED_SLOT_CITIES = new Set(['Rovaniemi', 'Levi', 'Ylläs', 'Saariselkä', 'Kittilä', 'Inari']);
+
 function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
 }
@@ -214,6 +225,7 @@ export default function Restaurants() {
   const location = useLocation();
   const { locale } = useLocale();
   const [activeCity, setActiveCity] = useState<string | null>(null);
+  const [expandedCities, setExpandedCities] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     if (location.hash) {
@@ -461,27 +473,48 @@ export default function Restaurants() {
                 </div>
 
                 {/* Sellable "Esittelykumppani" surface (KKV: merkitty mainokseksi).
-                    Empty = canonical light house-ad. Never auto-filled by a real venue. */}
-                <CityFeaturedSlot
-                  city={city}
-                  slug={slug}
-                  partner={PARTNERS.cityFeatured[city] ?? null}
-                  locale={locale}
-                />
-
-                {ordered.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
-                    {ordered.map((r) => (
-                      <RestaurantCard
-                        key={r.googlePlaceId}
-                        r={r}
-                        i18n={cardI18n}
-                        locale={locale}
-                        editorsPick={r === topPick}
-                      />
-                    ))}
-                  </div>
+                    Empty = canonical light house-ad, mutta VAIN top-6-kohteissa
+                    (v2.0: 18 tyhjää mainosbanneria samalla sivulla söi ruokasisällön).
+                    Myyty kumppani renderöityy aina. */}
+                {(PARTNERS.cityFeatured[city] != null || FEATURED_SLOT_CITIES.has(city)) && (
+                  <CityFeaturedSlot
+                    city={city}
+                    slug={slug}
+                    partner={PARTNERS.cityFeatured[city] ?? null}
+                    locale={locale}
+                  />
                 )}
+
+                {ordered.length > 0 && (() => {
+                  const isExpanded = Boolean(activeCity) || expandedCities.has(city);
+                  const visible = isExpanded ? ordered : ordered.slice(0, COLLAPSED_CARD_COUNT);
+                  const hiddenCount = ordered.length - visible.length;
+                  return (
+                    <>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+                        {visible.map((r) => (
+                          <RestaurantCard
+                            key={r.googlePlaceId}
+                            r={r}
+                            i18n={cardI18n}
+                            locale={locale}
+                            editorsPick={r === topPick}
+                          />
+                        ))}
+                      </div>
+                      {hiddenCount > 0 && (
+                        <div className="mt-6 text-center">
+                          <button
+                            onClick={() => setExpandedCities((prev) => new Set(prev).add(city))}
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-amber/40 bg-amber/10 hover:bg-amber/20 text-amber font-semibold text-sm transition-all duration-200 cursor-pointer min-h-[44px]"
+                          >
+                            {t('restaurants.showAllInCity', { count: ordered.length, city })}
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
 
                 <div className="mt-8 rounded-2xl border border-white/8 bg-gradient-to-br from-vibe-pink/8 via-night to-night p-6 sm:p-7">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">

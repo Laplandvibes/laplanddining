@@ -223,8 +223,10 @@ export const restaurantOverrides: Record<string, Override> = {
     },
   },
 
-  // Café Loimu — Pyhätunturi (top pick)
+  // Café Loimu — Pyhätunturi. EI enää top pick (kahvila → tilalle Bistro
+  // Vanha Pappila, Vesa 3.8.2026) — kortti säilyy katalogissa.
   'ChIJdUzUC3vqLEQRdUuWbK803p0': {
+    topPick: false,
     curatedDescription: {
       en: 'Good food and an easy, friendly mood, kept going by staff who clearly work hard. A warm stop at the foot of the fell.',
       fi: 'Hyvää ruokaa ja rento, ystävällinen tunnelma, jota pitää yllä selvästi ahkera henkilökunta. Lämmin pysähdys tunturin juurella.',
@@ -257,8 +259,10 @@ export const restaurantOverrides: Record<string, Override> = {
     },
   },
 
-  // Pizzeria Ruka — Kuusamo (top pick)
+  // Pizzeria Ruka — Kuusamo. EI enää top pick (Vesa 3.8.2026: pizzeria ei voi
+  // olla "Kuusamon paras pöytä" ruokasivustolla) — kortti säilyy katalogissa.
   'ChIJP39o0c5UKUQR-WqaWDdvYM0': {
+    topPick: false,
     curatedDescription: {
       en: 'The kind of pizzeria you stumble into and walk out of saying wow. A simple, reliable favourite at the foot of Ruka.',
       fi: 'Sellainen pizzeria, johon eksyt sattumalta ja josta lähtiessä sanot vain vau. Mutkaton ja luotettava suosikki Rukan juurella.',
@@ -305,6 +309,74 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Une heureuse surprise pour qui le découvre: l\'ambiance, la carte et la soirée tout entière laissent souvent les clients sincèrement étonnés.',
       it: 'Una bella sorpresa per chi lo scopre: l\'atmosfera, il menù e l\'intera serata lasciano spesso gli ospiti davvero sorpresi.',
       nl: 'Een gelukkig toeval voor wie het vindt: de sfeer, de kaart en de hele avond laten mensen vaak oprecht verrast achter.',
+    },
+  },
+
+  // ── Top-pick-swapit 3.8.2026 (Vesa hyväksyi: "Lapin paras pöytä" ei voi
+  // olla pizzeria, kahvila tai kiinalainen take away) ─────────────────────
+
+  // Ravintola Golden Flower — Tornio. EI enää top pick — tilalle Mustaparran
+  // Päämaja; kortti säilyy katalogissa.
+  'ChIJNazYkp1H1UURmqQ-worb6y8': {
+    topPick: false,
+  },
+
+  // Ruka Trek | Gasthaus & Hard Trek Café — Kuusamo (top pick 3.8.2026 alkaen).
+  // 4,8 / 235 on koko oppaan Kuusamon-alueen korkein keskiarvo, ja gasthaus-
+  // malli (keittiö + vierashuoneet) istuu sivuston "yövy siellä missä syöt"
+  // -teemaan. Kuvaus omista faktoista, ei keksittyjä ruokalajeja.
+  'ChIJi34WdzpVKUQRcWqhDjVPY4E': {
+    topPick: true,
+    curatedDescription: {
+      en: 'A gasthaus in Ruka village that pairs its kitchen with guest rooms, so dinner and a bed can be under the same roof. Its 4.8-star average is the highest in our Kuusamo catalogue.',
+      fi: 'Gasthaus Rukan kylässä: keittiö ja vierashuoneet saman katon alla, joten illallinen ja yöpaikka löytyvät samasta talosta. 4,8 tähden keskiarvo on koko oppaamme Kuusamon-alueen korkein.',
+      de: 'Ein Gasthaus im Dorf Ruka, das Küche und Gästezimmer unter einem Dach vereint: Abendessen und Bett im selben Haus. Der 4,8-Sterne-Schnitt ist der höchste in unserem Kuusamo-Katalog.',
+      ja: 'ルカの村にあるガストハウス。キッチンと客室がひとつ屋根の下にあり、夕食とベッドが同じ家で完結します。平均4.8の評価は、当ガイドのクーサモ地区でいちばん高い数字です。',
+      es: 'Una casa de huéspedes en el pueblo de Ruka que une cocina y habitaciones bajo el mismo techo: cena y cama en la misma casa. Su media de 4,8 estrellas es la más alta de nuestro catálogo de Kuusamo.',
+      'pt-BR': 'Uma gasthaus na vila de Ruka que reúne cozinha e quartos sob o mesmo teto: jantar e cama na mesma casa. Sua média de 4,8 estrelas é a mais alta do nosso catálogo de Kuusamo.',
+      'zh-CN': '鲁卡村里的一家家庭旅馆餐厅，厨房与客房同在一个屋檐下，晚餐和床铺都在同一栋房子里。4.8 星的平均分是本指南库萨莫地区的最高分。',
+      ko: '루카 마을의 가스트하우스. 주방과 객실이 한 지붕 아래 있어 저녁 식사와 잠자리를 같은 집에서 해결할 수 있습니다. 평점 4.8은 저희 쿠사모 카탈로그에서 가장 높은 수치입니다.',
+      fr: 'Une maison d\'hôtes du village de Ruka qui réunit cuisine et chambres sous le même toit: dîner et lit dans la même maison. Sa moyenne de 4,8 étoiles est la plus haute de notre catalogue de Kuusamo.',
+      it: 'Una gasthaus nel villaggio di Ruka che unisce cucina e camere sotto lo stesso tetto: cena e letto nella stessa casa. La media di 4,8 stelle è la più alta del nostro catalogo di Kuusamo.',
+      nl: 'Een gasthaus in het dorp Ruka met keuken en gastenkamers onder één dak: diner en bed in hetzelfde huis. Het gemiddelde van 4,8 sterren is het hoogste in onze Kuusamo-catalogus.',
+    },
+  },
+
+  // Bistro Vanha Pappila — Pyhätunturi (top pick 3.8.2026 alkaen).
+  // Kuvaus pohjaa aitoon arvioon (reviewQuote) käännettynä, kuten muutkin.
+  'ChIJwRKrKrPpLEQR_BDo-K25Y30': {
+    topPick: true,
+    curatedDescription: {
+      en: 'The atmosphere feels cosy and welcoming, like being at home, and the friendliness of the owners makes the evening even more special. A bistro in an old parsonage at the foot of Pyhä.',
+      fi: 'Tunnelma on kodikas ja lämmin, kuin kylässä hyvien ystävien luona, ja isäntäväen ystävällisyys tekee illasta vielä erityisemmän. Bistro vanhassa pappilassa Pyhän juurella.',
+      de: 'Die Stimmung ist gemütlich und herzlich, wie zu Hause, und die Freundlichkeit der Gastgeber macht den Abend noch besonderer. Ein Bistro im alten Pfarrhaus am Fuße des Pyhä.',
+      ja: '雰囲気は家にいるように居心地よく温かで、オーナー夫妻の親しみやすさが夜をさらに特別にしてくれます。ピュハの麓、古い牧師館のビストロです。',
+      es: 'El ambiente es acogedor y cálido, como estar en casa, y la amabilidad de los dueños hace la velada aún más especial. Un bistró en una antigua casa parroquial al pie de Pyhä.',
+      'pt-BR': 'O ambiente é aconchegante e acolhedor, como estar em casa, e a simpatia dos donos torna a noite ainda mais especial. Um bistrô numa antiga casa paroquial ao pé de Pyhä.',
+      'zh-CN': '气氛温馨亲切，宾至如归，店主的热情让这一晚更加特别。这是皮哈山脚下一座老牧师宅邸里的小馆。',
+      ko: '집에 있는 듯 아늑하고 따뜻한 분위기에, 주인 내외의 다정함이 저녁을 더욱 특별하게 만듭니다. 퓌하 기슭의 옛 목사관에 자리한 비스트로입니다.',
+      fr: 'L\'ambiance est chaleureuse et accueillante, comme à la maison, et la gentillesse des propriétaires rend la soirée encore plus particulière. Un bistrot dans un ancien presbytère au pied du Pyhä.',
+      it: 'L\'atmosfera è accogliente e calda, come a casa, e la gentilezza dei proprietari rende la serata ancora più speciale. Un bistrot in una vecchia canonica ai piedi del Pyhä.',
+      nl: 'De sfeer is knus en gastvrij, alsof je thuis bent, en de vriendelijkheid van de eigenaren maakt de avond nog specialer. Een bistro in een oude pastorie aan de voet van Pyhä.',
+    },
+  },
+
+  // Mustaparran Päämaja — Tornio (top pick 3.8.2026 alkaen).
+  // Kuvaus pohjaa aitoon arvioon (lista + oluet), ei keksittyjä väitteitä.
+  'ChIJaxo1dZ5H1UUR3eIxu_vnRbY': {
+    topPick: true,
+    curatedDescription: {
+      en: 'Plenty of choices on the menu and good beers, as one review puts it. A relaxed local headquarters for dinner in Tornio.',
+      fi: 'Monipuolinen ruokalista ja hyvät oluet, kuten eräs arvio asian tiivistää. Rento paikallinen päämaja illalliselle Torniossa.',
+      de: 'Eine vielseitige Karte und gute Biere, wie es eine Bewertung zusammenfasst. Ein entspanntes lokales Hauptquartier für das Abendessen in Tornio.',
+      ja: '「メニューが豊富でビールもうまい」と、あるレビューは言い切ります。トルニオでの夕食の、気取らない地元の司令部です。',
+      es: 'Una carta variada y buenas cervezas, como resume una reseña. Un cuartel general local y relajado para cenar en Tornio.',
+      'pt-BR': 'Um cardápio variado e boas cervejas, como resume uma avaliação. Um quartel-general local e descontraído para jantar em Tornio.',
+      'zh-CN': '正如一则点评所说：菜单选择多，啤酒也不错。这是在托尔尼奥吃晚餐时轻松自在的本地大本营。',
+      ko: '한 리뷰의 말처럼, 메뉴 선택이 다양하고 맥주도 좋습니다. 토르니오에서 저녁을 즐기기 좋은 편안한 동네 본부입니다.',
+      fr: 'Une carte variée et de bonnes bières, comme le résume un avis. Un quartier général local et décontracté pour dîner à Tornio.',
+      it: 'Un menù ricco di scelte e buone birre, come riassume una recensione. Un quartier generale locale e rilassato per la cena a Tornio.',
+      nl: 'Een gevarieerde kaart en goede bieren, zoals een recensie het samenvat. Een ontspannen lokaal hoofdkwartier voor het diner in Tornio.',
     },
   },
 };

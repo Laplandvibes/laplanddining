@@ -94,6 +94,7 @@
     "heroChipWilderness": "Erämaa",
     "heroChipArctic": "Arktinen",
     "filterAll": "Kaikki kaupungit",
+    "showAllInCity": "Näytä kaikki {{city}}-alueen {{count}} ravintolaa",
     "cityTopPickLabel": "Kaupungin ykkönen",
     "cityRestaurantsSingular": "ravintola",
     "cityRestaurantsPlural": "ravintolaa",
