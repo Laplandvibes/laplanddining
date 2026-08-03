@@ -352,6 +352,21 @@ const copyFor = (locale: string): Copy => COPY[locale] ?? COPY.en;
  */
 const DISPLAY_FONT = { fontFamily: "'Bebas Neue', 'Arial Narrow', sans-serif" } as const;
 
+/** Body copy inside the promo is pinned the same way: variant sites set their
+ *  own body face (carrental: Inter, blog: Manrope) and the card would inherit
+ *  it. Sites that lack a DM Sans @font-face load it alongside their own fonts
+ *  precisely for this card. */
+const BODY_FONT = { fontFamily: "'DM Sans', system-ui, sans-serif" } as const;
+
+/**
+ * 🔴 Colours below are LITERAL (text-[#EC4899], not text-[#EC4899]) for the
+ * same reason the fonts are: this card renders on 28 sites and their tokens
+ * drift. Measured 2026-08-03: kids and gifts never defined --color-vibe-pink,
+ * so Tailwind emitted no bg-[#EC4899] at all and the CTA shipped colourless;
+ * the blog remaps aurora-green to PINK, weddings to gold. A token the card
+ * does not read is a token that cannot break it.
+ */
+
 function track(placement: string) {
   try {
     (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'app_promo_click', {
@@ -372,8 +387,8 @@ export function AppPromoHero() {
   const FIGURES = ['31', '211', '105', '475'] as const;
   return (
     <section className="my-8 not-prose">
-      <div className="relative overflow-hidden rounded-3xl border border-vibe-pink/40 bg-gradient-to-br from-[#4a1236] via-[#241a3f] to-[#123152] px-5 py-5 sm:px-7 sm:py-6">
-        <div aria-hidden className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-vibe-pink/25 blur-3xl" />
+      <div style={BODY_FONT} className="relative overflow-hidden rounded-3xl border border-[#EC4899]/40 bg-gradient-to-br from-[#4a1236] via-[#241a3f] to-[#123152] px-5 py-5 sm:px-7 sm:py-6">
+        <div aria-hidden className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-[#EC4899]/25 blur-3xl" />
 
         {/* 🔴 THE SPLIT IS sm, NOT md (Vesa 2026-08-03: sites viewed at
             640–767 px showed this card with no screenshot and no QR at all —
@@ -388,12 +403,12 @@ export function AppPromoHero() {
           <div className="flex-1 min-w-0">
             <div className="flex items-start gap-4">
               <div className="flex-1 min-w-0">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-vibe-pink px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EC4899] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
                   <Smartphone className="h-3 w-3" />
                   {c.eyebrow}
                 </span>
 
-                <h2 style={DISPLAY_FONT} className="tracking-wide text-snow text-[1.9rem] sm:text-[2.75rem] mt-3 leading-[0.98]">
+                <h2 style={DISPLAY_FONT} className="tracking-wide text-[#F9FAFB] text-[1.9rem] sm:text-[2.75rem] mt-3 leading-[0.98]">
                   {c.title}
                 </h2>
 
@@ -401,10 +416,10 @@ export function AppPromoHero() {
                 <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2.5">
                   {FIGURES.map((n, i) => (
                     <div key={n} className="flex items-baseline gap-1.5">
-                      <span style={DISPLAY_FONT} className="tracking-wide text-vibe-pink text-2xl sm:text-3xl leading-none">
+                      <span style={DISPLAY_FONT} className="tracking-wide text-[#EC4899] text-2xl sm:text-3xl leading-none">
                         {n}
                       </span>
-                      <span className="text-snow/65 text-[11px] sm:text-xs">{c.stats[i]}</span>
+                      <span className="text-[#F9FAFB]/65 text-[11px] sm:text-xs">{c.stats[i]}</span>
                     </div>
                   ))}
                 </div>
@@ -417,7 +432,7 @@ export function AppPromoHero() {
                   phone that costs little and the image earns its place; from
                   640 up the side media block takes over. */}
               <div className="relative shrink-0 sm:hidden">
-                <div aria-hidden className="absolute -inset-2 rounded-[24px] bg-vibe-pink/20 blur-2xl" />
+                <div aria-hidden className="absolute -inset-2 rounded-[24px] bg-[#EC4899]/20 blur-2xl" />
                 <img
                   src={SHOT_SRC}
                   alt={c.title}
@@ -434,14 +449,17 @@ export function AppPromoHero() {
                 per cell, same rhythm on every row. */}
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
                 {[...c.features].sort((a, b) => a.length - b.length).map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-[13px] leading-[1.45] text-snow/85">
-                  <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-vibe-pink" />
+                <li key={f} className="flex items-start gap-2.5 text-[13px] leading-[1.45] text-[#F9FAFB]/85">
+                  <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#EC4899]" />
                   <span>{f}</span>
                 </li>
               ))}
             </ul>
 
-            <p style={DISPLAY_FONT} className="mt-5 tracking-wide text-aurora-green text-lg sm:text-xl leading-none">
+            {/* 🔴 Literal green, not text-aurora-green: the blog remaps that
+                token to pink (#DB2777), and this card must not inherit any
+                site's palette decisions. */}
+            <p style={DISPLAY_FONT} className="mt-5 tracking-wide text-[#10B981] text-lg sm:text-xl leading-none">
               {c.hype}
             </p>
 
@@ -449,13 +467,13 @@ export function AppPromoHero() {
               <a
                 href={APP_URL}
                 onClick={() => track('hero')}
-                className="inline-flex items-center gap-2 rounded-full bg-vibe-pink px-7 py-3.5 text-base sm:text-lg font-bold text-white shadow-[0_10px_30px_-8px_rgba(236,72,153,0.7)] transition-transform active:scale-[0.98] hover:bg-pink-500"
+                className="inline-flex items-center gap-2 rounded-full bg-[#EC4899] px-7 py-3.5 text-base sm:text-lg font-bold text-white shadow-[0_10px_30px_-8px_rgba(236,72,153,0.7)] transition-transform active:scale-[0.98] hover:bg-pink-500"
               >
                 <Download className="h-5 w-5" />
                 {c.cta}
               </a>
             </div>
-            <p className="mt-2.5 text-snow/55 text-[11px]">{c.free}</p>
+            <p className="mt-2.5 text-[#F9FAFB]/55 text-[11px]">{c.free}</p>
           </div>
 
           {/* The product itself. A screenshot argues better than the eight lines
@@ -470,7 +488,7 @@ export function AppPromoHero() {
             <div className="relative shrink-0">
               <div
                 aria-hidden
-                className="absolute -inset-3 rounded-[32px] bg-vibe-pink/20 blur-2xl"
+                className="absolute -inset-3 rounded-[32px] bg-[#EC4899]/20 blur-2xl"
               />
               <img
                 src={SHOT_SRC}
@@ -494,7 +512,7 @@ export function AppPromoHero() {
                 loading="lazy"
                 className="h-24 w-24 lg:h-36 lg:w-36 rounded-2xl bg-white p-2 shadow-xl"
               />
-              <span className="text-snow/60 text-[11px] text-center max-w-[132px] lg:max-w-[144px] leading-snug">
+              <span className="text-[#F9FAFB]/60 text-[11px] text-center max-w-[132px] lg:max-w-[144px] leading-snug">
                 {c.scan}
               </span>
             </div>
@@ -600,7 +618,7 @@ export function AppPromoNudge() {
       className="fixed inset-x-0 bottom-0 z-40 p-3 sm:p-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] animate-[lvSlideUp_0.35s_cubic-bezier(.22,1,.36,1)]"
     >
       <style>{`@keyframes lvSlideUp{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}`}</style>
-      <div className="mx-auto max-w-2xl rounded-2xl border-2 border-white/25 bg-gradient-to-r from-vibe-pink to-pink-600 px-4 py-3.5 sm:py-4 shadow-[0_-10px_50px_-10px_rgba(236,72,153,0.85)]">
+      <div style={BODY_FONT} className="mx-auto max-w-2xl rounded-2xl border-2 border-white/25 bg-gradient-to-r from-[#EC4899] to-pink-600 px-4 py-3.5 sm:py-4 shadow-[0_-10px_50px_-10px_rgba(236,72,153,0.85)]">
         {/* 🔴 The button cannot share a row with the words on a phone. It is
             shrink-0 and ~190 px wide; with the 44 px icon, the close button and
             three gaps that comes to 305 px of the 303 px a 375 px screen leaves,
@@ -619,7 +637,7 @@ export function AppPromoNudge() {
           <a
             href={APP_URL}
             onClick={openApp}
-            className="hidden sm:inline-flex shrink-0 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-vibe-pink shadow-md active:scale-[0.98] transition-transform"
+            className="hidden sm:inline-flex shrink-0 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-[#EC4899] shadow-md active:scale-[0.98] transition-transform"
           >
             {c.cta}
           </a>
@@ -635,7 +653,7 @@ export function AppPromoNudge() {
         <a
           href={APP_URL}
           onClick={openApp}
-          className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-vibe-pink no-underline shadow-md transition-transform active:scale-[0.98] sm:hidden"
+          className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-[#EC4899] no-underline shadow-md transition-transform active:scale-[0.98] sm:hidden"
         >
           <Download className="h-4 w-4" />
           {c.cta}
