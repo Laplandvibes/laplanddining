@@ -341,6 +341,17 @@ const COPY: Record<string, Copy> = {
 
 const copyFor = (locale: string): Copy => COPY[locale] ?? COPY.en;
 
+/**
+ * 🔴 The promo must look identical on every site in the network (Vesa
+ * 2026-08-03: "kaikkialle samanlainen kuin laplandvibes.com etusivulla on").
+ * Font-variant sites (carrental: Playfair/Inter) map `font-heading` to their
+ * own face, which put this card's title and figures in a serif there — so the
+ * display type names the network face directly instead of going through the
+ * site's token, the same reasoning as the wordmark's `--font-logo` rule.
+ * Every site already loads Bebas Neue for its wordmark, so this adds no fetch.
+ */
+const DISPLAY_FONT = { fontFamily: "'Bebas Neue', 'Arial Narrow', sans-serif" } as const;
+
 function track(placement: string) {
   try {
     (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'app_promo_click', {
@@ -364,15 +375,16 @@ export function AppPromoHero() {
       <div className="relative overflow-hidden rounded-3xl border border-vibe-pink/40 bg-gradient-to-br from-[#4a1236] via-[#241a3f] to-[#123152] px-5 py-5 sm:px-7 sm:py-6">
         <div aria-hidden className="pointer-events-none absolute -top-24 -right-16 h-56 w-56 rounded-full bg-vibe-pink/25 blur-3xl" />
 
-        {/* 🔴 THE SPLIT IS md, NOT lg (Vesa 2026-08-02: "miten tämä appi mainos
-            on tabletissa tämän näköinen, ihan hirveä"). It used to jump straight
-            from the phone layout to the desktop one at 1024, so every tablet
-            width got the narrow treatment. Measured at 768×1024 before this:
-            the heading and stats were squeezed into a 559 px column to make
-            room for a 120 px thumbnail parked at x=604, while the bullet list
-            underneath ignored that column and ran the full 695 px. Content
-            width changed halfway down the card. */}
-        <div className="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-7 lg:gap-9">
+        {/* 🔴 THE SPLIT IS sm, NOT md (Vesa 2026-08-03: sites viewed at
+            640–767 px showed this card with no screenshot and no QR at all —
+            "miksi edelleen joillain sivuilla nämä mainokset näkyy ilman kuvaa
+            ja qr koodia?"). The old md split left a band, 640–767, where the
+            in-heading thumbnail had already bowed out but the side block had
+            not yet arrived; narrow desktop panes and small tablets live
+            exactly there. From 640 up the side block is always present —
+            stacked vertically (shot over QR, ~132 px of width) until lg,
+            side by side from 1024 exactly as before. */}
+        <div className="relative flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-7 lg:gap-9">
           <div className="flex-1 min-w-0">
             <div className="flex items-start gap-4">
               <div className="flex-1 min-w-0">
@@ -381,7 +393,7 @@ export function AppPromoHero() {
                   {c.eyebrow}
                 </span>
 
-                <h2 className="font-heading tracking-wide text-snow text-[1.9rem] sm:text-[2.75rem] mt-3 leading-[0.98]">
+                <h2 style={DISPLAY_FONT} className="tracking-wide text-snow text-[1.9rem] sm:text-[2.75rem] mt-3 leading-[0.98]">
                   {c.title}
                 </h2>
 
@@ -389,7 +401,7 @@ export function AppPromoHero() {
                 <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2.5">
                   {FIGURES.map((n, i) => (
                     <div key={n} className="flex items-baseline gap-1.5">
-                      <span className="font-heading tracking-wide text-vibe-pink text-2xl sm:text-3xl leading-none">
+                      <span style={DISPLAY_FONT} className="tracking-wide text-vibe-pink text-2xl sm:text-3xl leading-none">
                         {n}
                       </span>
                       <span className="text-snow/65 text-[11px] sm:text-xs">{c.stats[i]}</span>
@@ -403,9 +415,7 @@ export function AppPromoHero() {
                   the heading row, so anything it narrows (eyebrow, h2, stats)
                   stops lining up with the bullets and CTA below it. On a real
                   phone that costs little and the image earns its place; from
-                  640 up the card is wide enough that a 120 px thumbnail buys
-                  nothing and misaligns everything. Above 768 the proper
-                  side-by-side block takes over. */}
+                  640 up the side media block takes over. */}
               <div className="relative shrink-0 sm:hidden">
                 <div aria-hidden className="absolute -inset-2 rounded-[24px] bg-vibe-pink/20 blur-2xl" />
                 <img
@@ -414,7 +424,7 @@ export function AppPromoHero() {
                   width={234}
                   height={507}
                   loading="lazy"
-                  className="relative w-[86px] sm:w-[120px] h-auto rounded-[14px] border-2 border-white/15 shadow-2xl"
+                  className="relative w-[86px] h-auto rounded-[14px] border-2 border-white/15 shadow-2xl"
                 />
               </div>
             </div>
@@ -431,7 +441,7 @@ export function AppPromoHero() {
               ))}
             </ul>
 
-            <p className="mt-5 font-heading tracking-wide text-aurora-green text-lg sm:text-xl leading-none">
+            <p style={DISPLAY_FONT} className="mt-5 tracking-wide text-aurora-green text-lg sm:text-xl leading-none">
               {c.hype}
             </p>
 
@@ -450,8 +460,13 @@ export function AppPromoHero() {
 
           {/* The product itself. A screenshot argues better than the eight lines
               beside it, so it gets the second half of the block on wide screens
-              and leads on a phone. */}
-          <div className="hidden md:flex flex-row items-center justify-center gap-5 shrink-0">
+              and leads on a phone.
+              🔴 Both the screenshot AND the QR are visible from 640 up (Vesa
+              2026-08-03). Stacking them vertically is what makes that possible:
+              the column costs ~132 px whatever it holds, where the old
+              side-by-side row (168 + 144 + gap ≈ 330 px) was the reason the QR
+              had to hide below 1024. From lg the row returns at full size. */}
+          <div className="hidden sm:flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-5 shrink-0">
             <div className="relative shrink-0">
               <div
                 aria-hidden
@@ -463,25 +478,23 @@ export function AppPromoHero() {
                 width={234}
                 height={507}
                 loading="lazy"
-                className="relative w-[168px] h-auto rounded-[18px] border-2 border-white/15 shadow-2xl"
+                className="relative w-[132px] lg:w-[168px] h-auto rounded-[18px] border-2 border-white/15 shadow-2xl"
               />
             </div>
 
-            {/* Decorative on a phone: you cannot scan the screen in your hand.
-                🔴 Also hidden on tablets: phone 168 + QR 144 + gap is ~330 px,
-                which at 768 would leave the text column ~330 px and wrap the
-                heading to three lines. The screenshot is the argument; the QR
-                is the flourish, so the flourish is what gives way first. */}
-            <div className="hidden lg:flex flex-col items-center gap-2">
+            {/* QR is pointless below sm only: you cannot scan the screen in
+                your hand, so the phone layout keeps its in-heading thumbnail
+                and no QR. Everywhere else the QR ships with the screenshot. */}
+            <div className="flex flex-col items-center gap-2">
               <img
                 src={QR_SRC}
                 alt=""
                 width={144}
                 height={144}
                 loading="lazy"
-                className="h-36 w-36 rounded-2xl bg-white p-2 shadow-xl"
+                className="h-24 w-24 lg:h-36 lg:w-36 rounded-2xl bg-white p-2 shadow-xl"
               />
-              <span className="text-snow/60 text-[11px] text-center max-w-[144px] leading-snug">
+              <span className="text-snow/60 text-[11px] text-center max-w-[132px] lg:max-w-[144px] leading-snug">
                 {c.scan}
               </span>
             </div>
