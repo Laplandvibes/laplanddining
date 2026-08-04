@@ -318,8 +318,12 @@ export default function Home() {
 
       {/* App-nosto: pysyy etusivulla (verkoston 26/26-rollout), mutta v2.0:ssa
           ruokatarinan jälkeen ennen FAQ:ta — ei enää keskellä ravintolasisältöä.
-          Sivu lyheni ~13,4 → ~8 näytölliseen, joten tämäkin syvyys skrollataan. */}
-      <AppPromoHero />
+          🔴 Leveyskehys pakollinen: AppPromoHero on täysleveä komponentti, ja
+          ilman konttia kortti venyi 2 000 px näytöllä laidasta laitaan
+          (Vesa 3.8.: "miksi appi mainos venyy koko näytön??"). */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AppPromoHero />
+      </div>
 
       {/* ── FAQ (visible accordion backing the FAQPage JSON-LD) ──── */}
       <FAQ />

@@ -187,32 +187,38 @@ const catName = (path: string, lang: string): string => {
 
   return (
     <section className="py-16 sm:py-20 px-4 sm:px-6 bg-[#0F172A]">
+      {/* Paikallinen taittopoikkeama generaattorista (Vesa 3.8.2026, desktop-
+          screenshotit: "aivan kamalan näköiset"): kaksi 620 px leveää laatikkoa
+          täysleveillä napeilla max-w-7xl:ssä. Kortit keskitetty max-w-3xl-kehykseen,
+          CTA self-center (ei stretch), otsikkolohko keskitetty kuten sivun muut
+          osiot. Sama grid+stretch-korjaus viety scripts/gyg-rollout.mjs:ään,
+          joten regen ei palauta ongelmaa — vain keskitys on dining-kohtainen. */}
       <div className="max-w-7xl mx-auto">
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-10 sm:mb-12 text-center">
           <p className="font-bold tracking-[0.18em] uppercase text-sm mb-3 text-[#22D3EE]">{t(L.kicker)}</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-[#F9FAFB]">
             {t(L.headingCategory)}
           </h2>
-          <p className="max-w-2xl text-white/70">{t(L.ledeCategory)}</p>
+          <p className="max-w-2xl mx-auto text-white/70">{t(L.ledeCategory)}</p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
         {rows.map((c) => (
           <a
             key={c.path}
             href={gygCategoryHref(c, lang)}
             target="_blank"
             rel="sponsored nofollow noopener"
-            className="group flex flex-col rounded-2xl border bg-white/5 border-white/10 p-6 no-underline transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#22D3EE]/50"
+            className="group flex flex-col items-center rounded-2xl border bg-white/5 border-white/10 px-6 py-8 text-center no-underline transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#22D3EE]/50"
           >
-            <h3 className="flex-1 text-lg font-bold leading-snug text-[#F9FAFB]">{catName(c.path, lang)}</h3>
+            <h3 className="text-xl font-bold leading-snug text-[#F9FAFB]">{catName(c.path, lang)}</h3>
 
-            <span className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#DB2777] px-5 py-2.5 text-sm font-bold text-white transition-opacity group-hover:opacity-90">
+            <span className="mt-5 inline-flex items-center gap-2 self-center rounded-full bg-[#DB2777] px-6 py-2.5 text-sm font-bold text-white transition-opacity group-hover:opacity-90">
               {t(L.ctaCategory)}
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
             </span>
 
-            <span className="mt-2 text-center text-[11px] uppercase tracking-[0.12em] text-white/60">{t(L.via)}</span>
+            <span className="mt-3 text-center text-[11px] uppercase tracking-[0.12em] text-white/60">{t(L.via)}</span>
           </a>
         ))}
         </div>
