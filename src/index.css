@@ -60,6 +60,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    /* Pitkä yhdyssana katkeaa ennemmin kuin leikkautuu reunaan (auditti 4.8.:
+       "Tietosuojaseloste" 411 px 311 px:n laatikossa @375). hyphens tuottaa
+       tavurajan siellä missä selaimella on sanakirja, break-word on verkko. */
+    overflow-wrap: break-word;
+    hyphens: auto;
   font-family: var(--font-heading);
 }
 
