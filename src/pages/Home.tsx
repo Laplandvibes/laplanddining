@@ -6,6 +6,7 @@ import { ChevronDown, MapPin, Star, UtensilsCrossed, Flame, Sun } from 'lucide-r
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import EditorsPicks from '../components/EditorsPicks';
+import NewsletterInline from '../../../shared/NewsletterInline';
 import FAQ from '../components/FAQ';
 import { DINING } from '../data/images';
 import { restaurants, cities } from '../data/restaurants';
@@ -327,6 +328,12 @@ export default function Home() {
 
       {/* ── FAQ (visible accordion backing the FAQPage JSON-LD) ──── */}
       <FAQ />
+
+      <NewsletterInline
+        siteId="laplanddining"
+        supabaseUrl={import.meta.env.VITE_SUPABASE_URL}
+        supabaseAnonKey={import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}
+      />
 
     </>  );
 }
