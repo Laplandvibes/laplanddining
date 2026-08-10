@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  scoreCandidate, countPriceTokens, classifyKind, sameHost, titleLooksLikeMenu, EVIDENCE_MIN,
+  scoreCandidate, countPriceTokens, classifyKind, sameHost, titleLooksLikeMenu, isFrontPage, EVIDENCE_MIN,
 } from './menu-detect.mjs';
 
 test('kotimainen termi voittaa yleisen sanan menu', () => {
@@ -57,6 +57,20 @@ test('otsikko paljastaa ruokalistan kun hintoja ei saada luettua', () => {
   assert.ok(!titleLooksLikeMenu('Yhteystiedot'));
   assert.ok(!titleLooksLikeMenu(''));
   assert.ok(!titleLooksLikeMenu(undefined));
+});
+
+// Koko hankkeen syy on se, etta kortti linkkasi ravintolan ETUSIVULLE.
+// arcticrestaurant.fi:n etusivulla on 7 hintaa ja se lapaisi todisteportin,
+// mutta "Ruokalista"-nappi joka vie etusivulle toistaisi alkuperaisen vian.
+test('etusivu ei kelpaa ruokalistalinkiksi', () => {
+  assert.ok(isFrontPage('https://www.arcticrestaurant.fi/'));
+  assert.ok(isFrontPage('https://www.arcticrestaurant.fi'));
+  assert.ok(isFrontPage('https://x.fi/?lang=fi'));
+  assert.ok(!isFrontPage('https://x.fi/ruokalista'));
+  assert.ok(!isFrontPage('https://x.fi/fi/menu'));
+  // Ankkuri osioon on kelvollinen: se hyppaa ruokalistaan, ei sivun alkuun.
+  assert.ok(!isFrontPage('https://www.arcticrestaurant.fi/#menu'));
+  assert.ok(isFrontPage('https://x.fi/#'));
 });
 
 test('EVIDENCE_MIN on kolme', () => {

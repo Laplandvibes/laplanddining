@@ -1,0 +1,34 @@
+[
+ {
+  "slug": "levi-ravintola-ammila",
+  "name": "Ravintola Ämmilä",
+  "was": "rejected",
+  "url": "https://www.hulluporo.fi/lounas-poron-bensis/",
+  "title": "Lounas Poron Bensis - Levi Center Hullu Poro",
+  "evidence": 10
+ },
+ {
+  "slug": "levi-ristorante-renna",
+  "name": "Ristorante Renna",
+  "was": "rejected",
+  "url": "https://www.hulluporo.fi/lounas-poron-bensis/",
+  "title": "Lounas Poron Bensis - Levi Center Hullu Poro",
+  "evidence": 10
+ },
+ {
+  "slug": "saariselka-liegga-laavu",
+  "name": "Lieggâ Láávu",
+  "was": "weak",
+  "url": "https://skisaariselka.com/ruokalistat/",
+  "title": "Videonäyttö Pilkku | Saariselka Ski &amp; Sport Resort",
+  "evidence": 0
+ },
+ {
+  "slug": "posio-korpihilla",
+  "name": "Korpihilla",
+  "was": "weak",
+  "url": "https://www.korpihilla.fi/ruokalista",
+  "title": "Client Challenge",
+  "evidence": 0
+ }
+]

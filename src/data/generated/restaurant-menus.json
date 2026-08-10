@@ -1,0 +1,527 @@
+{
+  "haparanda-cape-east": {
+    "url": "https://capeeast.se/dining/meny/",
+    "kind": "page",
+    "title": "Meny - Cape East",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "haparanda-haparanda-stadshotell": {
+    "url": "https://www.haparandastadshotell.se/restaurang/meny/",
+    "kind": "page",
+    "title": "Meny - Haparanda Stadshotell",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "haparanda-haparanda-sushi-indiskt": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "haparanda-kukkolaforsen-turist-konferens": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "haparanda-leilani-restaurant": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "hetta-hotelli-hetan-majatalo": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "hetta-niestapaikka": {
+    "status": "none",
+    "reason": "verkkosivu ei vastaa, korjataan erikseen",
+    "checkedAt": "2026-08-10"
+  },
+  "hetta-roima-rantasavu": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "inari-arctic-river-resort": {
+    "url": "https://www.arcticriverresort.fi/wp-content/uploads/2026/05/Menu-FI.pdf",
+    "kind": "pdf",
+    "title": "Arctic River Resort (PDF)",
+    "evidence": 0,
+    "checkedAt": "2026-08-10",
+    "note": "paivatty PDF-polku, vaihtuu kaudessa — kuukausivahti seuraa"
+  },
+  "inari-gastropub-giitu": {
+    "url": "https://gastropubgiitu.fi/ruokalista",
+    "kind": "page",
+    "title": "Ruokalista",
+    "evidence": 36,
+    "checkedAt": "2026-08-10"
+  },
+  "inari-muotkan-ruoktu-tunturikyla": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "inari-restaurant-aanaar": {
+    "url": "https://www.restaurantaanaar.fi/a-la-carte/",
+    "kind": "page",
+    "title": "À la carte | Restaurant Aanaar, Inari, Lapland",
+    "evidence": 13,
+    "checkedAt": "2026-08-10"
+  },
+  "inari-restaurant-and-night-club-kultahippu": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "kemi-kemin-puistopaviljonki-ky": {
+    "url": "https://www.puistopaviljonki.fi/a-la-carte",
+    "kind": "page",
+    "title": "� la carte | Puistopaviljonki",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "kemi-pieni-lohikaarme-ravintola-chinese-restaurant": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "kemi-pizzeria-san-milano": {
+    "status": "none",
+    "reason": "Pizzerian oma sivu ohjaa talon yhteiseen a la carteen; omaa listaa ei ole julkaistu.",
+    "checkedAt": "2026-08-10"
+  },
+  "kemi-ravintola-mori-kemi": {
+    "url": "https://www.ravintolamori.fi/kemi/menu-2",
+    "kind": "page",
+    "title": "Pizzat &#8211; Ravintola Mori &#8211; Kemi",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "kemi-sataman-krouwi-ja-perameren-jahti": {
+    "url": "https://satamankrouwi.fi/lounaslista/",
+    "kind": "page",
+    "title": "Lounaslista | Sataman Krouwi",
+    "evidence": 1,
+    "checkedAt": "2026-08-10"
+  },
+  "kemijarvi-jauri-resort": {
+    "url": "https://www.jauriresort.com/fi/ravintola/ravintola-menu/",
+    "kind": "page",
+    "title": "Ravintola menu | Jauri Resort",
+    "evidence": 19,
+    "checkedAt": "2026-08-10"
+  },
+  "kemijarvi-mestarin-kievari": {
+    "url": "https://www.mestarinkievari.fi/ravintola",
+    "kind": "page",
+    "title": "Ravintola | Mestarinkievari",
+    "evidence": 3,
+    "checkedAt": "2026-08-10"
+  },
+  "kemijarvi-pizza-mestarit": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "kemijarvi-restaurant-susa-s-bistro": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "kemijarvi-rosa-pizza-kebab": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "kittila-boneless-levi-center": {
+    "status": "none",
+    "reason": "ehdokas ei kelvannut ruokalistaksi",
+    "checkedAt": "2026-08-10"
+  },
+  "kittila-kekale": {
+    "url": "https://kekale.levihotelspa.fi/menu/",
+    "kind": "page",
+    "title": "Menu",
+    "evidence": 8,
+    "checkedAt": "2026-08-10"
+  },
+  "kittila-riihi-restaurant": {
+    "url": "https://immelkartano.fi/ravintola-riihi/",
+    "kind": "page",
+    "title": "Ravintola Riihi - Immelkartano Levi Lapland Finland",
+    "evidence": 6,
+    "checkedAt": "2026-08-10"
+  },
+  "kittila-saamen-kammi": {
+    "url": "https://www.kammi.fi/menu2",
+    "kind": "page",
+    "title": "Menu | kammi",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "kuusamo-pizzeria-ruka": {
+    "url": "https://www.pizzeriaruka.fi/menu",
+    "kind": "page",
+    "title": "Menu 1 &mdash; PIZZERIA RUKA",
+    "evidence": 182,
+    "checkedAt": "2026-08-10"
+  },
+  "kuusamo-ravintola-talonpoyta-kuusamo": {
+    "url": "https://talonpoyta.fi/cafe-prisma/cafe-prisma-ala-carte/",
+    "kind": "page",
+    "title": "Cafe-ravintola Prisma ruokalista - Ravintola Talonpöytä, Kuusamo",
+    "evidence": 10,
+    "checkedAt": "2026-08-10"
+  },
+  "kuusamo-restaurant-burger-cafe-bar-ruka": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "kuusamo-restaurant-wanha-mestari": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "kuusamo-ruka-trek-gasthaus-hard-trek-cafe": {
+    "url": "https://rukatrek.fi/en/food-drink/",
+    "kind": "page",
+    "title": "Syö &amp; juo | Rukatrek",
+    "evidence": 25,
+    "checkedAt": "2026-08-10"
+  },
+  "kuusamo-the-french-cafe": {
+    "status": "none",
+    "reason": "verkkosivu ei vastaa, korjataan erikseen",
+    "checkedAt": "2026-08-10"
+  },
+  "levi-grill-it-levi": {
+    "url": "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi/menu/13419/ruokalista",
+    "kind": "page",
+    "title": "Ruokalista | Grill it! Levi | Raflaamo.fi",
+    "evidence": 70,
+    "checkedAt": "2026-08-10"
+  },
+  "levi-panoramic-restaurant-tuikku": {
+    "status": "none",
+    "reason": "ehdokas ei kelvannut ruokalistaksi",
+    "checkedAt": "2026-08-10"
+  },
+  "levi-ravintola-ammila": {
+    "status": "none",
+    "reason": "ehdokas ei kelvannut ruokalistaksi",
+    "checkedAt": "2026-08-10"
+  },
+  "levi-ravintola-wanha-hullu-poro": {
+    "url": "https://www.hulluporo.fi/ravintolat/wanha-hullu-poro/",
+    "kind": "page",
+    "title": "Wanha Hullu Poro - Levi Center Hullu Poro",
+    "evidence": 17,
+    "note": "Ravintolan oma sivu talon sivustolla; automaatti tarjosi sisarravintola Ammilan lounasbuffetia.",
+    "checkedAt": "2026-08-10"
+  },
+  "levi-ristorante-renna": {
+    "status": "none",
+    "reason": "ehdokas ei kelvannut ruokalistaksi",
+    "checkedAt": "2026-08-10"
+  },
+  "luosto-keloravintola-lapland-hotels-luostotunturi": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "luosto-luoston-hovi-ravintola": {
+    "status": "none",
+    "reason": "verkkosivu ei vastaa, korjataan erikseen",
+    "checkedAt": "2026-08-10"
+  },
+  "luosto-ravintola-ruususuola": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "luosto-skiknooli": {
+    "status": "none",
+    "reason": "ehdokas ei kelvannut ruokalistaksi",
+    "checkedAt": "2026-08-10"
+  },
+  "muonio-arctic-sauna-world": {
+    "status": "none",
+    "reason": "Harrinivan sivustolla ei ole talle omaa ruokalistaa, vain Jeris Lakeside Resortin ravintolasivu.",
+    "checkedAt": "2026-08-10"
+  },
+  "muonio-jeris-lakeside-resort": {
+    "url": "https://harriniva.fi/en/3-wilderness-resorts/jeris-lakeside-resort/restaurant/",
+    "kind": "page",
+    "title": "Restaurant at Jeris Lakeside Resort - Harriniva Hotels &amp; Safaris",
+    "evidence": 9,
+    "checkedAt": "2026-08-10"
+  },
+  "muonio-los-lompolo-s": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "muonio-mirvan-lounas-ja-kahvila": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "muonio-ravintola-tunturikettu": {
+    "url": "https://www.tunturikettu.fi/menu/",
+    "kind": "page",
+    "title": "Ruokalista | MENU :: Ravintola Tunturikettu",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "posio-korpihilla": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "posio-lapland-restaurant-kotahovi": {
+    "url": "https://laplandrestaurant.fi/wp-content/uploads/lapland-restaurant-kotahovi-summer-2026-menu.pdf",
+    "kind": "pdf",
+    "title": "Lapland Restaurant Kotahovi (PDF)",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "posio-pizzeria-posio": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "posio-restaurant-sky-kitchen-view": {
+    "url": "https://www.kitchensky.fi/menut/a-la-carte.html",
+    "kind": "page",
+    "title": "SKYN herkullinen À la carte - www.kitchensky.fi",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "pyhatunturi-bistro-vanha-pappila": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "pyhatunturi-cafe-loimu": {
+    "url": "https://cafeloimu.fi/wp-content/uploads/2026/08/viikko-33-1.pdf",
+    "kind": "pdf",
+    "title": "Café Loimu (PDF)",
+    "evidence": 0,
+    "checkedAt": "2026-08-10",
+    "note": "paivatty PDF-polku, vaihtuu kaudessa — kuukausivahti seuraa"
+  },
+  "pyhatunturi-huttuhippu": {
+    "url": "https://eatlappi.fi/huttuhippu-menu",
+    "kind": "page",
+    "title": "Eatlappi.fi • • Huttuhippu Menu",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "pyhatunturi-ravintola-popolo": {
+    "url": "https://www.ravintolapopolo.fi/menu",
+    "kind": "page",
+    "title": "Menu 1 &mdash; POPOLO",
+    "evidence": 124,
+    "checkedAt": "2026-08-10"
+  },
+  "pyhatunturi-restaurant-camp-kitchen-bar-pyhatunturi": {
+    "status": "none",
+    "reason": "verkkosivu ei vastaa, korjataan erikseen",
+    "checkedAt": "2026-08-10"
+  },
+  "pyhatunturi-sunday-morning-resort": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "rovaniemi-all-about-salmon": {
+    "url": "https://www.allaboutsalmon.fi/menus",
+    "kind": "page",
+    "title": "Winter Menu | All About Salmon",
+    "evidence": 12,
+    "checkedAt": "2026-08-10"
+  },
+  "rovaniemi-arctic-restaurant": {
+    "url": "https://www.arcticrestaurant.fi/#menu",
+    "kind": "page",
+    "title": "Arctic Restaurant - Rovaniemi",
+    "evidence": 7,
+    "note": "Ruokalista on osio etusivulla; linkki vie ankkuriin.",
+    "checkedAt": "2026-08-10"
+  },
+  "rovaniemi-cafe-bar-21": {
+    "url": "https://www.cafebar21.fi/fi/menu",
+    "kind": "page",
+    "title": "Menu &mdash; Cafe &amp; Bar 21",
+    "evidence": 63,
+    "checkedAt": "2026-08-10"
+  },
+  "rovaniemi-hanki": {
+    "status": "none",
+    "reason": "ei verkkosivua lainkaan",
+    "checkedAt": "2026-08-10"
+  },
+  "rovaniemi-nili-restaurant": {
+    "url": "https://nili.fi/menu/",
+    "kind": "page",
+    "title": "Menu - Ravintola Nili",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "rovaniemi-restaurant-roka-street-bistro": {
+    "url": "https://ravintolaroka.fi/menu/",
+    "kind": "page",
+    "title": "Menu &#8211; Ravintola Roka Street Bistro Rovaniemi",
+    "evidence": 30,
+    "checkedAt": "2026-08-10"
+  },
+  "saariselka-bistro-cafe-kuukkeli": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "saariselka-fieno": {
+    "url": "https://fieno.fi/ruokalistat/",
+    "kind": "page",
+    "title": "Ruokalistat - Fieno Saariselkä",
+    "evidence": 40,
+    "checkedAt": "2026-08-10"
+  },
+  "saariselka-galdu-restaurant": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "saariselka-laanilan-kievari": {
+    "url": "https://www.laanilankievari.fi/en/menu",
+    "kind": "page",
+    "title": "À la carte | Laanilan Kievari",
+    "evidence": 15,
+    "checkedAt": "2026-08-10"
+  },
+  "saariselka-liegga-laavu": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "saariselka-scanburger-saariselka": {
+    "url": "https://www.nestesaariselka.fi/lounas",
+    "kind": "page",
+    "title": "Lounas &amp; lounasbuffet | Neste Saariselkä | Inari",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "salla-sallan-maja": {
+    "url": "https://www.ravintolasallanmaja.fi/menu/",
+    "kind": "page",
+    "title": "Menu :: Ravintola Sallan Maja",
+    "evidence": 4,
+    "checkedAt": "2026-08-10"
+  },
+  "salla-sallatunturin-tuvat": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "sodankyla-piitsi-pubi": {
+    "status": "none",
+    "reason": "ehdokas ei kelvannut ruokalistaksi",
+    "checkedAt": "2026-08-10"
+  },
+  "sodankyla-restaurant-punakettu": {
+    "url": "https://punakettu.fi/menu/",
+    "kind": "page",
+    "title": "Menu | Ravintola Punakettu",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "sodankyla-sodankylan-olohuone-tahti": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "sodankyla-sodankylan-turkinpippuri": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "sodankyla-tori-kioski-mikkola-ky": {
+    "status": "none",
+    "reason": "verkkosivu ei vastaa, korjataan erikseen",
+    "checkedAt": "2026-08-10"
+  },
+  "tornio-amico-pizza-kebab-restaurant": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "tornio-mustaparran-paamaja": {
+    "url": "http://www.mustapartahotels.fi/wp-content/uploads/2026/06/Kesa-26-Mustaparran-Lapinlisa-menu-A4-2.pdf",
+    "kind": "pdf",
+    "title": "Mustaparran Päämaja (PDF)",
+    "evidence": 0,
+    "checkedAt": "2026-08-10",
+    "note": "paivatty PDF-polku, vaihtuu kaudessa — kuukausivahti seuraa"
+  },
+  "tornio-ravintola-golden-flower-tornio": {
+    "url": "https://goldenflower.fi/menu/",
+    "kind": "page",
+    "title": "Menu - Golden Flower",
+    "evidence": 8,
+    "checkedAt": "2026-08-10"
+  },
+  "tornio-ravintola-umpitunneli": {
+    "url": "http://umpitunneli.fi/wp-content/uploads/2026/06/Umpitunneli-Menu-2026.pdf",
+    "kind": "pdf",
+    "title": "Ravintola Umpitunneli (PDF)",
+    "evidence": 0,
+    "checkedAt": "2026-08-10",
+    "note": "paivatty PDF-polku, vaihtuu kaudessa — kuukausivahti seuraa"
+  },
+  "tornio-tmi-hevi-pizza": {
+    "status": "none",
+    "reason": "vain Facebook- tai Instagram-sivu",
+    "checkedAt": "2026-08-10"
+  },
+  "yllas-ravintola-otso-yllasjarvi": {
+    "url": "https://www.ravintolaotso.fi/menu-otso/",
+    "kind": "page",
+    "title": "Otson menu &#8211; Ravintola Otso",
+    "evidence": 110,
+    "checkedAt": "2026-08-10"
+  },
+  "yllas-ravintola-rouhe": {
+    "url": "https://www.ravintolarouhe.fi/a-la-carte/",
+    "kind": "page",
+    "title": "Ravintola Rouhe | À la carte -menu",
+    "evidence": 32,
+    "checkedAt": "2026-08-10"
+  },
+  "yllas-restaurant-yllaskota": {
+    "url": "https://www.yllaskota.fi/menu/",
+    "kind": "page",
+    "title": "Ylläskota menu - Yll&auml;skota",
+    "evidence": 26,
+    "checkedAt": "2026-08-10"
+  },
+  "yllas-velhon-kota": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  },
+  "yllas-yllaksen-evaskori-joiku-pub": {
+    "url": "https://www.evaskori.fi/ruokalista.html",
+    "kind": "page",
+    "title": "Ruokalista - YLL&Auml;KSEN EV&Auml;SKORI & JOIKU PUB",
+    "evidence": 0,
+    "checkedAt": "2026-08-10"
+  },
+  "yllas-yllaskammi": {
+    "status": "none",
+    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
+    "checkedAt": "2026-08-10"
+  }
+}

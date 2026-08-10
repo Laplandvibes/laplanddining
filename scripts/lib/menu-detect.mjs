@@ -90,3 +90,23 @@ export function sameHost(a, b) {
   const x = bare(a);
   return x !== '' && x === bare(b);
 }
+
+/**
+ * Onko osoite sivuston etusivu.
+ *
+ * Etusivu ei kelpaa ruokalistalinkiksi, vaikka siina olisi hintoja: koko
+ * hankkeen syy on se, etta kortti linkkasi ravintolan etusivulle ja ihminen
+ * joutui kaivamaan listan itse. arcticrestaurant.fi:n etusivulla on 7 hintaa
+ * ja se lapaisi todisteportin.
+ */
+export function isFrontPage(url) {
+  try {
+    const u = new URL(url);
+    // Ankkuri vie tiettyyn osioon, ei sivun alkuun. Kun ruokalista on osio
+    // etusivulla (arcticrestaurant.fi/#menu), linkki on kelvollinen.
+    if (u.hash.length > 1) return false;
+    return u.pathname.replace(/\/+$/, '') === '';
+  } catch {
+    return false;
+  }
+}
