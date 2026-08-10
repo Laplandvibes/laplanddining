@@ -1,0 +1,756 @@
+{
+ "rovaniemi-arctic-restaurant": {
+  "src": "/images/restaurants/rovaniemi-arctic-restaurant.webp",
+  "kind": "partner",
+  "credit": "arcticrestaurant.fi",
+  "sourceUrl": "https://www.arcticrestaurant.fi/",
+  "imageUrl": "http://static1.squarespace.com/static/691ee9ead6b5dc6da904f59c/t/692d4561c07046028e81de33/1764574561696/0017+20250506+Arctic+Restaurant+Dishes+Spring+2025+XH2+_DSF2631+Web+Res.jpg?format=1500w",
+  "width": 800,
+  "height": 600,
+  "fetchedAt": "2026-08-10"
+ },
+ "levi-ravintola-ammila": {
+  "src": "/images/restaurants/levi-ravintola-ammila.webp",
+  "kind": "partner",
+  "credit": "hulluporo.fi",
+  "sourceUrl": "https://www.hulluporo.fi/ravintolat/ravintola-ammila/",
+  "imageUrl": "https://www.hulluporo.fi/wp-content/uploads/2014/10/poronlapa.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "levi-ristorante-renna": {
+  "src": "/images/restaurants/levi-ristorante-renna.webp",
+  "kind": "partner",
+  "credit": "hulluporo.fi",
+  "sourceUrl": "https://www.hulluporo.fi/ravintolat/ristorante-renna/",
+  "imageUrl": "https://www.hulluporo.fi/wp-content/uploads/2014/10/Renna-sisatila1500x1000.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "rovaniemi-cafe-bar-21": {
+  "src": "/images/restaurants/rovaniemi-cafe-bar-21.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "levi-ravintola-wanha-hullu-poro": {
+  "src": "/images/restaurants/levi-ravintola-wanha-hullu-poro.webp",
+  "kind": "partner",
+  "credit": "hulluporo.fi",
+  "sourceUrl": "https://www.hulluporo.fi/ravintolat/wanha-hullu-poro/",
+  "imageUrl": "https://www.hulluporo.fi/wp-content/uploads/2014/10/wanhaporo-ulkokuva.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "levi-grill-it-levi": {
+  "src": "/images/restaurants/levi-grill-it-levi.webp",
+  "kind": "partner",
+  "credit": "raflaamo.fi",
+  "sourceUrl": "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi",
+  "imageUrl": "https://cdn.s-cloud.fi/v1/assets/dam-id/9H-lmO1jKLv8AK0sIRlNYQ",
+  "width": 636,
+  "height": 352,
+  "fetchedAt": "2026-08-10"
+ },
+ "kittila-boneless-levi-center": {
+  "src": "/images/restaurants/kittila-boneless-levi-center.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "inari-arctic-river-resort": {
+  "src": "/images/restaurants/inari-arctic-river-resort.webp",
+  "kind": "partner",
+  "credit": "arcticriverresort.fi",
+  "sourceUrl": "https://www.arcticriverresort.fi/",
+  "imageUrl": "https://www.arcticriverresort.fi/wp-content/uploads/2024/10/Caravan-place-3.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "saariselka-galdu-restaurant": {
+  "src": "/images/restaurants/saariselka-galdu-restaurant.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "inari-restaurant-and-night-club-kultahippu": {
+  "src": "/images/restaurants/inari-restaurant-and-night-club-kultahippu.webp",
+  "kind": "partner",
+  "credit": "hotellikultahippu.fi",
+  "sourceUrl": "https://hotellikultahippu.fi/en/restaurant-nightclub/",
+  "imageUrl": "https://hotellikultahippu.fi/wp-content/uploads/2020/10/ravintola.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "yllas-yllaksen-evaskori-joiku-pub": {
+  "src": "/images/restaurants/yllas-yllaksen-evaskori-joiku-pub.webp",
+  "kind": "partner",
+  "credit": "evaskori.fi",
+  "sourceUrl": "https://www.evaskori.fi/",
+  "imageUrl": "https://www.evaskori.fi/uploads/2/5/4/6/254649/1.png",
+  "width": 800,
+  "height": 671,
+  "fetchedAt": "2026-08-10"
+ },
+ "yllas-ravintola-rouhe": {
+  "src": "/images/restaurants/yllas-ravintola-rouhe.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "yllas-restaurant-yllaskota": {
+  "src": "/images/restaurants/yllas-restaurant-yllaskota.webp",
+  "kind": "partner",
+  "credit": "yllaskota.fi",
+  "sourceUrl": "https://www.yllaskota.fi/",
+  "imageUrl": "https://www.yllaskota.fi/wp-content/uploads/2022/12/Yllaskota_ravintola.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "yllas-yllaskammi": {
+  "src": "/images/restaurants/yllas-yllaskammi.webp",
+  "kind": "partner",
+  "credit": "yllasravintolat.fi",
+  "sourceUrl": "https://yllasravintolat.fi/",
+  "imageUrl": "http://yllasravintolat.fi/cdn/shop/files/IMG20250207161721_4.jpg?v=1771025709",
+  "width": 800,
+  "height": 600,
+  "fetchedAt": "2026-08-10"
+ },
+ "haparanda-kukkolaforsen-turist-konferens": {
+  "src": "/images/restaurants/haparanda-kukkolaforsen-turist-konferens.webp",
+  "kind": "partner",
+  "credit": "kukkolaforsen.se",
+  "sourceUrl": "https://www.kukkolaforsen.se/",
+  "imageUrl": "https://www.kukkolaforsen.se/wp-content/uploads/2021/02/kukkola_og.jpg",
+  "width": 800,
+  "height": 420,
+  "fetchedAt": "2026-08-10"
+ },
+ "haparanda-haparanda-stadshotell": {
+  "src": "/images/restaurants/haparanda-haparanda-stadshotell.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "haparanda-cape-east": {
+  "src": "/images/restaurants/haparanda-cape-east.webp",
+  "kind": "partner",
+  "credit": "capeeast.se",
+  "sourceUrl": "https://capeeast.se/",
+  "imageUrl": "https://capeeast.se/wp-content/uploads/2023/06/IMG_9352-Edit.jpg",
+  "width": 800,
+  "height": 456,
+  "fetchedAt": "2026-08-10"
+ },
+ "sodankyla-restaurant-punakettu": {
+  "src": "/images/restaurants/sodankyla-restaurant-punakettu.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "sodankyla-piitsi-pubi": {
+  "src": "/images/restaurants/sodankyla-piitsi-pubi.webp",
+  "kind": "partner",
+  "credit": "piitsipubi.fi",
+  "sourceUrl": "https://piitsipubi.fi/",
+  "imageUrl": "https://piitsipubi.fi/wp-content/uploads/2025/09/Pubi-sisakuva-4.jpg",
+  "width": 800,
+  "height": 450,
+  "fetchedAt": "2026-08-10"
+ },
+ "pyhatunturi-ravintola-popolo": {
+  "src": "/images/restaurants/pyhatunturi-ravintola-popolo.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "muonio-jeris-lakeside-resort": {
+  "src": "/images/restaurants/muonio-jeris-lakeside-resort.webp",
+  "kind": "partner",
+  "credit": "harriniva.fi",
+  "sourceUrl": "https://harriniva.fi/en/3-wilderness-resorts/jeris-lakeside-resort/",
+  "imageUrl": "https://harriniva.fi/wp-content/uploads/2026/04/Jeris_Lakeside_resort_drone.jpg",
+  "width": 800,
+  "height": 450,
+  "fetchedAt": "2026-08-10"
+ },
+ "muonio-arctic-sauna-world": {
+  "src": "/images/restaurants/muonio-arctic-sauna-world.webp",
+  "kind": "partner",
+  "credit": "harriniva.fi",
+  "sourceUrl": "https://harriniva.fi/en/arctic-sauna-world/",
+  "imageUrl": "https://harriniva.fi/wp-content/uploads/2026/01/Arctic_Sauna_World_Outside-7.jpg",
+  "width": 800,
+  "height": 450,
+  "fetchedAt": "2026-08-10"
+ },
+ "muonio-ravintola-tunturikettu": {
+  "src": "/images/restaurants/muonio-ravintola-tunturikettu.webp",
+  "kind": "partner",
+  "credit": "tunturikettu.fi",
+  "sourceUrl": "https://www.tunturikettu.fi/",
+  "imageUrl": "https://a622c79044.clvaw-cdnwnd.com/f89075a9664c1dea665fea9ce446dfb4/200000040-b213cb213e/700/rautu.jpeg?ph=a622c79044",
+  "width": 525,
+  "height": 700,
+  "fetchedAt": "2026-08-10"
+ },
+ "luosto-skiknooli": {
+  "src": "/images/restaurants/luosto-skiknooli.webp",
+  "kind": "partner",
+  "credit": "luosto.fi",
+  "sourceUrl": "https://www.luosto.fi/fi/page/knooli",
+  "imageUrl": "https://www.luosto.fi/sites/luosto/files/styles/large/public/media/image/2023-01/Knooli_sali.jpg?itok=8xvsqtyn",
+  "width": 480,
+  "height": 360,
+  "fetchedAt": "2026-08-10"
+ },
+ "kuusamo-pizzeria-ruka": {
+  "src": "/images/restaurants/kuusamo-pizzeria-ruka.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kuusamo-ruka-trek-gasthaus-hard-trek-cafe": {
+  "src": "/images/restaurants/kuusamo-ruka-trek-gasthaus-hard-trek-cafe.webp",
+  "kind": "partner",
+  "credit": "rukatrek.fi",
+  "sourceUrl": "https://rukatrek.fi/",
+  "imageUrl": "https://rukatrek.fi/wp-content/uploads/RukaTrek_Gasthaus_Superior_Room-5-scaled.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "kuusamo-ravintola-talonpoyta-kuusamo": {
+  "src": "/images/restaurants/kuusamo-ravintola-talonpoyta-kuusamo.webp",
+  "kind": "partner",
+  "credit": "talonpoyta.fi",
+  "sourceUrl": "https://talonpoyta.fi/",
+  "imageUrl": "https://talonpoyta.fi/wp-content/uploads/2020/08/talonpoyta-herlevin.jpg",
+  "width": 800,
+  "height": 489,
+  "fetchedAt": "2026-08-10"
+ },
+ "tornio-ravintola-golden-flower-tornio": {
+  "src": "/images/restaurants/tornio-ravintola-golden-flower-tornio.webp",
+  "kind": "partner",
+  "credit": "goldenflower.fi",
+  "sourceUrl": "https://goldenflower.fi/",
+  "imageUrl": "https://goldenflower.fi/wp-content/uploads/2019/09/ravintola_4.jpg",
+  "width": 800,
+  "height": 437,
+  "fetchedAt": "2026-08-10"
+ },
+ "kemijarvi-mestarin-kievari": {
+  "src": "/images/restaurants/kemijarvi-mestarin-kievari.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemijarvi-restaurant-susa-s-bistro": {
+  "src": "/images/restaurants/kemijarvi-restaurant-susa-s-bistro.webp",
+  "kind": "partner",
+  "credit": "susasbistro.fi",
+  "sourceUrl": "https://www.susasbistro.fi/",
+  "imageUrl": "https://0dc965b78a.clvaw-cdnwnd.com/61b5560d90b6ae1c627069537c072cf9/200000006-1d0ff1d100/700/susas-bistro-interior-2.jpeg?ph=0dc965b78a",
+  "width": 700,
+  "height": 525,
+  "fetchedAt": "2026-08-10"
+ },
+ "kuusamo-restaurant-burger-cafe-bar-ruka": {
+  "src": "/images/restaurants/kuusamo-restaurant-burger-cafe-bar-ruka.webp",
+  "kind": "partner",
+  "credit": "rukaburger.fi",
+  "sourceUrl": "https://rukaburger.fi/",
+  "imageUrl": "https://rukaburger.fi/wp-content/uploads/2025/04/burgeri.jpg",
+  "width": 800,
+  "height": 533,
+  "fetchedAt": "2026-08-10"
+ },
+ "salla-sallan-maja": {
+  "src": "/images/restaurants/salla-sallan-maja.webp",
+  "kind": "partner",
+  "credit": "ravintolasallanmaja.fi",
+  "sourceUrl": "https://www.ravintolasallanmaja.fi/",
+  "imageUrl": "https://d9a70eee2f.clvaw-cdnwnd.com/71681e19b49e0c4e5073a5977597680f/200000016-1f3f61f3f7/700/IMG_2850.jpeg?ph=d9a70eee2f",
+  "width": 700,
+  "height": 467,
+  "fetchedAt": "2026-08-10"
+ },
+ "kemijarvi-jauri-resort": {
+  "src": "/images/restaurants/kemijarvi-jauri-resort.webp",
+  "kind": "partner",
+  "credit": "jauriresort.com",
+  "sourceUrl": "https://www.jauriresort.com/",
+  "imageUrl": "https://www.jauriresort.com/wp-content/uploads/2026/06/Jauri-Drodekuvat-DJI_0237-rajattu2-1600x960.jpg",
+  "width": 800,
+  "height": 480,
+  "fetchedAt": "2026-08-10"
+ },
+ "salla-sallatunturin-tuvat": {
+  "src": "/images/restaurants/salla-sallatunturin-tuvat.webp",
+  "kind": "partner",
+  "credit": "sallatunturi.fi",
+  "sourceUrl": "https://www.sallatunturi.fi/",
+  "imageUrl": "https://www.sallatunturi.fi/wp-content/uploads/2025/10/cropped-Pomotupa_summer.webp",
+  "width": 800,
+  "height": 420,
+  "fetchedAt": "2026-08-10"
+ },
+ "posio-lapland-restaurant-kotahovi": {
+  "src": "/images/restaurants/posio-lapland-restaurant-kotahovi.webp",
+  "kind": "partner",
+  "credit": "laplandrestaurant.fi",
+  "sourceUrl": "https://laplandrestaurant.fi/",
+  "imageUrl": "https://laplandrestaurant.fi/wp-content/uploads/The-entrance-of-Lapland-Restaurant-Kotahovi-1024x769.png",
+  "width": 800,
+  "height": 601,
+  "fetchedAt": "2026-08-10"
+ },
+ "hetta-hotelli-hetan-majatalo": {
+  "src": "/images/restaurants/hetta-hotelli-hetan-majatalo.webp",
+  "kind": "partner",
+  "credit": "hetan-majatalo.fi",
+  "sourceUrl": "https://hetan-majatalo.fi/",
+  "imageUrl": "https://hetan-majatalo.fi/wp-content/uploads/2017/08/hetan-majatalo-i-family-hotel-in-hetta-enontekio-lapland-finland_.jpg",
+  "width": 800,
+  "height": 485,
+  "fetchedAt": "2026-08-10"
+ },
+ "rovaniemi-nili-restaurant": {
+  "src": "/images/restaurants/rovaniemi-nili-restaurant.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "rovaniemi-hanki": {
+  "src": "/images/restaurants/rovaniemi-hanki.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "rovaniemi-restaurant-roka-street-bistro": {
+  "src": "/images/restaurants/rovaniemi-restaurant-roka-street-bistro.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "levi-panoramic-restaurant-tuikku": {
+  "src": "/images/restaurants/levi-panoramic-restaurant-tuikku.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kittila-saamen-kammi": {
+  "src": "/images/restaurants/kittila-saamen-kammi.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kittila-riihi-restaurant": {
+  "src": "/images/restaurants/kittila-riihi-restaurant.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "inari-restaurant-aanaar": {
+  "src": "/images/restaurants/inari-restaurant-aanaar.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "inari-muotkan-ruoktu-tunturikyla": {
+  "src": "/images/restaurants/inari-muotkan-ruoktu-tunturikyla.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kittila-kekale": {
+  "src": "/images/restaurants/kittila-kekale.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "inari-gastropub-giitu": {
+  "src": "/images/restaurants/inari-gastropub-giitu.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "saariselka-scanburger-saariselka": {
+  "src": "/images/restaurants/saariselka-scanburger-saariselka.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "saariselka-fieno": {
+  "src": "/images/restaurants/saariselka-fieno.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "saariselka-liegga-laavu": {
+  "src": "/images/restaurants/saariselka-liegga-laavu.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "saariselka-bistro-cafe-kuukkeli": {
+  "src": "/images/restaurants/saariselka-bistro-cafe-kuukkeli.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemi-kemin-puistopaviljonki-ky": {
+  "src": "/images/restaurants/kemi-kemin-puistopaviljonki-ky.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemi-pieni-lohikaarme-ravintola-chinese-restaurant": {
+  "src": "/images/restaurants/kemi-pieni-lohikaarme-ravintola-chinese-restaurant.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemi-sataman-krouwi-ja-perameren-jahti": {
+  "src": "/images/restaurants/kemi-sataman-krouwi-ja-perameren-jahti.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemi-pizzeria-san-milano": {
+  "src": "/images/restaurants/kemi-pizzeria-san-milano.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemi-ravintola-mori-kemi": {
+  "src": "/images/restaurants/kemi-ravintola-mori-kemi.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "yllas-ravintola-otso-yllasjarvi": {
+  "src": "/images/restaurants/yllas-ravintola-otso-yllasjarvi.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "tornio-ravintola-umpitunneli": {
+  "src": "/images/restaurants/tornio-ravintola-umpitunneli.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "tornio-mustaparran-paamaja": {
+  "src": "/images/restaurants/tornio-mustaparran-paamaja.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "tornio-tmi-hevi-pizza": {
+  "src": "/images/restaurants/tornio-tmi-hevi-pizza.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "tornio-amico-pizza-kebab-restaurant": {
+  "src": "/images/restaurants/tornio-amico-pizza-kebab-restaurant.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "haparanda-haparanda-sushi-indiskt": {
+  "src": "/images/restaurants/haparanda-haparanda-sushi-indiskt.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "haparanda-leilani-restaurant": {
+  "src": "/images/restaurants/haparanda-leilani-restaurant.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "sodankyla-sodankylan-turkinpippuri": {
+  "src": "/images/restaurants/sodankyla-sodankylan-turkinpippuri.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "sodankyla-tori-kioski-mikkola-ky": {
+  "src": "/images/restaurants/sodankyla-tori-kioski-mikkola-ky.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "sodankyla-sodankylan-olohuone-tahti": {
+  "src": "/images/restaurants/sodankyla-sodankylan-olohuone-tahti.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "pyhatunturi-cafe-loimu": {
+  "src": "/images/restaurants/pyhatunturi-cafe-loimu.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "pyhatunturi-sunday-morning-resort": {
+  "src": "/images/restaurants/pyhatunturi-sunday-morning-resort.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "pyhatunturi-bistro-vanha-pappila": {
+  "src": "/images/restaurants/pyhatunturi-bistro-vanha-pappila.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "pyhatunturi-restaurant-camp-kitchen-bar-pyhatunturi": {
+  "src": "/images/restaurants/pyhatunturi-restaurant-camp-kitchen-bar-pyhatunturi.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "luosto-keloravintola-lapland-hotels-luostotunturi": {
+  "src": "/images/restaurants/luosto-keloravintola-lapland-hotels-luostotunturi.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "luosto-ravintola-ruususuola": {
+  "src": "/images/restaurants/luosto-ravintola-ruususuola.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "luosto-luoston-hovi-ravintola": {
+  "src": "/images/restaurants/luosto-luoston-hovi-ravintola.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "muonio-los-lompolo-s": {
+  "src": "/images/restaurants/muonio-los-lompolo-s.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "muonio-mirvan-lounas-ja-kahvila": {
+  "src": "/images/restaurants/muonio-mirvan-lounas-ja-kahvila.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "hetta-roima-rantasavu": {
+  "src": "/images/restaurants/hetta-roima-rantasavu.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "hetta-niestapaikka": {
+  "src": "/images/restaurants/hetta-niestapaikka.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kuusamo-restaurant-wanha-mestari": {
+  "src": "/images/restaurants/kuusamo-restaurant-wanha-mestari.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemijarvi-rosa-pizza-kebab": {
+  "src": "/images/restaurants/kemijarvi-rosa-pizza-kebab.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kemijarvi-pizza-mestarit": {
+  "src": "/images/restaurants/kemijarvi-pizza-mestarit.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "posio-restaurant-sky-kitchen-view": {
+  "src": "/images/restaurants/posio-restaurant-sky-kitchen-view.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "posio-pizzeria-posio": {
+  "src": "/images/restaurants/posio-pizzeria-posio.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "saariselka-laanilan-kievari": {
+  "src": "/images/restaurants/saariselka-laanilan-kievari.webp",
+  "kind": "partner",
+  "credit": "laanilankievari.fi",
+  "sourceUrl": "https://www.laanilankievari.fi/en",
+  "imageUrl": "https://static.wixstatic.com/media/3b6469_e10eb040920b44a1812d3fc231bffeb0~mv2.png",
+  "width": 500,
+  "height": 500,
+  "fetchedAt": "2026-08-10"
+ },
+ "rovaniemi-all-about-salmon": {
+  "src": "/images/restaurants/rovaniemi-all-about-salmon.webp",
+  "kind": "partner",
+  "credit": "allaboutsalmon.fi",
+  "sourceUrl": "https://www.allaboutsalmon.fi/",
+  "imageUrl": "https://static.wixstatic.com/media/d705dd_5d60e01ab003432792ee1835bce905f5~mv2.jpg/v1/fill/w_2500,h_1395,al_c/d705dd_5d60e01ab003432792ee1835bce905f5~mv2.jpg",
+  "width": 800,
+  "height": 446,
+  "fetchedAt": "2026-08-10"
+ },
+ "posio-korpihilla": {
+  "src": "/images/restaurants/posio-korpihilla.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "yllas-velhon-kota": {
+  "src": "/images/restaurants/yllas-velhon-kota.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "pyhatunturi-huttuhippu": {
+  "src": "/images/restaurants/pyhatunturi-huttuhippu.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ },
+ "kuusamo-the-french-cafe": {
+  "src": "/images/restaurants/kuusamo-the-french-cafe.webp",
+  "kind": "illustration",
+  "model": "gpt-image-2",
+  "width": 800,
+  "height": 449,
+  "generatedAt": "2026-08-10"
+ }
+}

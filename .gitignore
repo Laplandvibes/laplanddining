@@ -25,3 +25,6 @@ data/maps-cache.json
 *.njsproj
 *.sln
 *.sw?
+
+# gen-ai CLI lataa generoidut kuvat tanne; julkaistavat menevat public/images/
+output/

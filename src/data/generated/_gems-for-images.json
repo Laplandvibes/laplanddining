@@ -1,0 +1,44 @@
+[
+ {
+  "slug": "saariselka-laanilan-kievari",
+  "name": "Laanilan Kievari",
+  "city": "Saariselkä",
+  "website": "https://www.laanilankievari.fi/en",
+  "primaryType": "restaurant"
+ },
+ {
+  "slug": "rovaniemi-all-about-salmon",
+  "name": "All About Salmon",
+  "city": "Rovaniemi",
+  "website": "https://www.allaboutsalmon.fi/",
+  "primaryType": "restaurant"
+ },
+ {
+  "slug": "yllas-velhon-kota",
+  "name": "Velhon Kota",
+  "city": "Ylläs",
+  "website": "https://velhonkota.fi/en/",
+  "primaryType": "restaurant"
+ },
+ {
+  "slug": "posio-korpihilla",
+  "name": "Korpihilla",
+  "city": "Posio",
+  "website": "https://www.korpihilla.fi/",
+  "primaryType": "restaurant"
+ },
+ {
+  "slug": "kuusamo-the-french-cafe",
+  "name": "The French Café",
+  "city": "Kuusamo",
+  "website": "https://www.kahvilathefrench.cafe/",
+  "primaryType": "restaurant"
+ },
+ {
+  "slug": "pyhatunturi-huttuhippu",
+  "name": "Huttuhippu",
+  "city": "Pyhätunturi",
+  "website": "https://eatlappi.fi/en/restaurant-huttuhippu",
+  "primaryType": "restaurant"
+ }
+]

@@ -261,22 +261,21 @@ async function main() {
       seenPlaceIds.add(p.id);
       const isTop = i === 0;
       const restaurantSlug = `${slugify(city.name)}-${slugify(p.displayName.text)}`;
-      let photoLocalPath;
-
-      // Top picks get the largest hero crop (1600px), supporting cards get a
-      // smaller thumbnail (800px) since they render at smaller sizes.
-      if (p.photos?.length) {
-        try {
-          const out = path.join(photoDir, `${restaurantSlug}.jpg`);
-          const targetW = isTop ? 1600 : 800;
-          const sz = await downloadPhoto(apiKey, p.photos[0].name, out, targetW);
-          photoLocalPath = `/images/restaurants/${restaurantSlug}.jpg`;
-          photosFetched++;
-          process.stdout.write(`     📸 ${(sz/1024).toFixed(0).padStart(4)} KB  ${isTop ? '★ ' : '  '}${p.displayName.text}\n`);
-        } catch (e) {
-          process.stdout.write(`     ⚠️  photo fetch failed for ${p.displayName.text}: ${e.message}\n`);
-        }
-      }
+      // 🔴 PLACE PHOTOS -LATAUS POISTETTU 2026-08-09.
+      //
+      // Tämä silmukka latasi Google Place Photos -kuvat repoon ja tarjoili ne
+      // omilta palvelimiltamme. Places API:n käytännöt kieltävät sen:
+      // "You must not pre-fetch, cache, or store Places API content" — ainoa
+      // poikkeus on place_id. Lisäksi kuvien näyttö vaatii kuvaajan
+      // tekijämerkinnän ja linkin alkuperäiseen kuvaan Google Mapsissa,
+      // eikä meillä ollut kumpaakaan.
+      //
+      // Kuvat tulevat nyt src/data/generated/restaurant-images.json -rekisteristä:
+      //   partner      → ravintolan oma og:image (scripts/_fetch-partner-images.mjs)
+      //   illustration → AI-kuvituskuva, merkitty kortissa kuvituskuvaksi
+      // ÄLÄ palauta tätä lataussilmukkaa. `downloadPhoto` on jätetty tiedostoon
+      // vain historiaa varten eikä sitä kutsuta mistään.
+      const photoLocalPath = undefined;
 
       // Fetch reviews for ALL synced restaurants (top + supporting) — quotes
       // give every card a real human voice when Google has no editorialSummary.

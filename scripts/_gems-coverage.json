@@ -1,0 +1,69 @@
+{
+ "measuredAt": "2026-08-10T08:21:01.046Z",
+ "total": 6,
+ "ok": 2,
+ "rows": [
+  {
+   "slug": "posio-korpihilla",
+   "name": "Korpihilla",
+   "city": "Posio",
+   "website": "https://www.korpihilla.fi/",
+   "finalUrl": "https://www.korpihilla.fi/",
+   "status": "ei og:image-kuvaa"
+  },
+  {
+   "slug": "saariselka-laanilan-kievari",
+   "name": "Laanilan Kievari",
+   "city": "Saariselkä",
+   "website": "https://www.laanilankievari.fi/en",
+   "finalUrl": "https://www.laanilankievari.fi/en",
+   "imageUrl": "https://static.wixstatic.com/media/3b6469_e10eb040920b44a1812d3fc231bffeb0~mv2.png",
+   "imageSource": "json-ld",
+   "width": 500,
+   "height": 500,
+   "bytes": 95450,
+   "status": "OK"
+  },
+  {
+   "slug": "rovaniemi-all-about-salmon",
+   "name": "All About Salmon",
+   "city": "Rovaniemi",
+   "website": "https://www.allaboutsalmon.fi/",
+   "finalUrl": "https://www.allaboutsalmon.fi/",
+   "imageUrl": "https://static.wixstatic.com/media/d705dd_5d60e01ab003432792ee1835bce905f5~mv2.jpg/v1/fill/w_2500,h_1395,al_c/d705dd_5d60e01ab003432792ee1835bce905f5~mv2.jpg",
+   "imageSource": "og:image",
+   "width": 2500,
+   "height": 1395,
+   "bytes": 396123,
+   "status": "OK"
+  },
+  {
+   "slug": "kuusamo-the-french-cafe",
+   "name": "The French Café",
+   "city": "Kuusamo",
+   "website": "https://www.kahvilathefrench.cafe/",
+   "status": "sivu HTTP 307"
+  },
+  {
+   "slug": "pyhatunturi-huttuhippu",
+   "name": "Huttuhippu",
+   "city": "Pyhätunturi",
+   "website": "https://eatlappi.fi/en/restaurant-huttuhippu",
+   "finalUrl": "https://eatlappi.fi/en/restaurant-huttuhippu",
+   "imageUrl": "https://images.squarespace-cdn.com/content/v1/5f5ff3faa43edf6bae93c17a/1600267668104-M96V2AS8GY5ET67B04DD/logo.png",
+   "imageSource": "json-ld",
+   "width": 180,
+   "height": 63,
+   "bytes": 2745,
+   "status": "liian kapea (180px)"
+  },
+  {
+   "slug": "yllas-velhon-kota",
+   "name": "Velhon Kota",
+   "city": "Ylläs",
+   "website": "https://velhonkota.fi/en/",
+   "finalUrl": "https://velhonkota.fi/en/",
+   "status": "ei og:image-kuvaa"
+  }
+ ]
+}

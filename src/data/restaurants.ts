@@ -1,6 +1,10 @@
 import mapsData from './generated/restaurants-from-maps.json';
+import restaurantImages from './generated/restaurant-images.json';
 import { restaurantOverrides } from './restaurant-overrides';
 import { restaurantGems } from './restaurant-gems';
+
+type ImageEntry = { src: string; kind: string; credit?: string };
+const imageRegistry = restaurantImages as Record<string, ImageEntry>;
 
 /**
  * LaplandDining restaurant catalog.
@@ -63,7 +67,17 @@ export interface Restaurant {
   shortAddress?: string;            // e.g. "Valtakatu 20, Rovaniemi"
   location: { latitude: number; longitude: number };
   openingHours?: string[];          // weekday descriptions
-  photo?: string;                   // /images/restaurants/{slug}.jpg
+  photo?: string;                   // /images/restaurants/{slug}.webp
+  /**
+   * Mistä kuva on peräisin. Ratkaisee kuvakaistan alareunan merkinnän.
+   *   'partner'      — ravintolan oma og:image, merkintä "Kuva: <domain>"
+   *   'illustration' — AI-kuvituskuva, merkintä "Kuvituskuva"
+   * Google Place Photos EI ole sallittu lähde: Places API:n käytännöt kieltävät
+   * sisällön tallentamisen ja vaativat kuvaajan tekijämerkinnän (vain place_id
+   * saa säilöä). Poistettu käytöstä 2026-08-09.
+   */
+  photoKind?: 'partner' | 'illustration';
+  photoCredit?: string;             // esim. "nili.fi" — vain partner-kuville
   slug: string;
   lastVerified: string;             // YYYY-MM-DD
   primaryType?: string;
@@ -112,9 +126,16 @@ interface MapsRestaurant {
 
 const merged: Restaurant[] = (mapsData as MapsRestaurant[]).map((m) => {
   const override = restaurantOverrides[m.googlePlaceId] ?? {};
+  // Kuvarekisteri on ainoa kuvalähde. `m.photo` (Google Place Photo) jätetään
+  // tarkoituksella huomiotta — ks. photoKind-kentän kommentti.
+  const img = imageRegistry[m.slug];
+  const usable = img && (img.kind === 'partner' || img.kind === 'illustration') ? img : undefined;
   return {
     ...m,
     ...override,
+    photo: usable?.src,
+    photoKind: usable?.kind as 'partner' | 'illustration' | undefined,
+    photoCredit: usable?.kind === 'partner' ? usable.credit : undefined,
     // override may not include these required fields — preserve from maps
     name: m.name,
     city: m.city,
@@ -132,8 +153,24 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[]).map((m) => {
   };
 });
 
+/**
+ * Käsin kuratoidut gems kulkevat saman kuvarekisterin läpi kuin muut.
+ * Ilman tätä ne jäisivät ainoiksi kortteiksi ilman kuvamerkintää — ja niiden
+ * vanhat .jpg-kuvat olivat tuntematonta alkuperää.
+ */
+const gemsWithImages: Restaurant[] = restaurantGems.map((g) => {
+  const img = imageRegistry[g.slug];
+  const usable = img && (img.kind === 'partner' || img.kind === 'illustration') ? img : undefined;
+  return {
+    ...g,
+    photo: usable?.src ?? undefined,
+    photoKind: usable?.kind as 'partner' | 'illustration' | undefined,
+    photoCredit: usable?.kind === 'partner' ? usable.credit : undefined,
+  };
+});
+
 /** All restaurants, merged (Maps + editorial overrides) plus hand-curated gems. */
-export const restaurants: Restaurant[] = [...merged, ...restaurantGems];
+export const restaurants: Restaurant[] = [...merged, ...gemsWithImages];
 
 /** All cities with at least one restaurant, in display order. */
 export const cities: string[] = [
@@ -406,4 +443,37 @@ const PARTNERSHIP_LABELS: Record<Locale, Record<Exclude<PartnershipTier, 'editor
 export function partnershipBadgeLocalized(tier: PartnershipTier, locale: Locale): string | null {
   if (tier === 'editorial') return null;
   return PARTNERSHIP_LABELS[locale][tier];
+}
+
+/**
+ * Kuvakaistan alareunan merkintä.
+ *
+ * AI-kuvituskuva merkitään aina, jotta kortti ei väitä esittävänsä juuri tätä
+ * ravintolaa. Kumppanin oma kuva merkitään lähteellä. Merkintä on osa kuvaa,
+ * ei erillinen rivi — Vesan ohje 2026-08-09.
+ */
+const ILLUSTRATION_LABEL: Record<Locale, string> = {
+  en: 'Illustration',
+  fi: 'Kuvituskuva',
+  de: 'Symbolbild',
+  ja: 'イメージ画像',
+  es: 'Imagen ilustrativa',
+  'pt-BR': 'Imagem ilustrativa',
+  'zh-CN': '示意图',
+  ko: '이미지 사진',
+  fr: "Image d'illustration",
+  it: 'Immagine illustrativa',
+  nl: 'Illustratiebeeld',
+  sv: 'Illustrationsbild',
+};
+
+const PHOTO_BY: Record<Locale, string> = {
+  en: 'Photo', fi: 'Kuva', de: 'Foto', ja: '写真', es: 'Foto', 'pt-BR': 'Foto',
+  'zh-CN': '图片', ko: '사진', fr: 'Photo', it: 'Foto', nl: 'Foto', sv: 'Foto',
+};
+
+export function photoCaption(r: Restaurant, locale: Locale): string | null {
+  if (r.photoKind === 'illustration') return ILLUSTRATION_LABEL[locale];
+  if (r.photoKind === 'partner' && r.photoCredit) return `${PHOTO_BY[locale]}: ${r.photoCredit}`;
+  return null;
 }

@@ -2,6 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
+import PhotoCaption from '../components/PhotoCaption';
 import { Star, MapPin, ExternalLink, Award, Quote, UtensilsCrossed } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { DINING } from '../data/images';
@@ -141,6 +142,7 @@ export default function FineDining() {
                         )}
                       </div>
                     )}
+                    <PhotoCaption r={r} locale={locale} />
                     <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm">
                       <MapPin size={11} className="text-amber" />
                       <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>

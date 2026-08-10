@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocation } from 'react-router-dom';
 import { useLocale } from '../i18n/useLocale';
+import PhotoCaption from '../components/PhotoCaption';
 import { MapPin, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
@@ -134,6 +135,7 @@ function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Restaurant; i18n:
             )}
           </div>
         )}
+        <PhotoCaption r={r} locale={locale} />
         {r.rating && (
           <a
             href={googleReviewsUrl(r.googlePlaceId)}

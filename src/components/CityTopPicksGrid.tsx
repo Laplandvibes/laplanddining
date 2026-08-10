@@ -3,6 +3,7 @@ import { Star, MapPin, Award, Quote, UtensilsCrossed } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLocale } from '../i18n/useLocale';
 import AffiliateCTA from './AffiliateCTA';
+import PhotoCaption from './PhotoCaption';
 import { getTopPicksByCity, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant, type Locale } from '../data/restaurants';
 import { withReferral } from '../lib/outbound';
 
@@ -60,6 +61,8 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
             </div>
           )}
         </Link>
+
+        <PhotoCaption r={r} locale={locale} />
 
         <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm pointer-events-none">
           <MapPin size={11} className="text-amber" />
