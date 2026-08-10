@@ -132,7 +132,9 @@
       "Salla": "Erämaasolaa ja Suomen itäisin hiihtokylä",
       "Posio": "Järvien ja käsityön sydän Riisitunturin maisemissa"
     },
-    "editorsPick": "Toimituksen valinta"
+    "editorsPick": "Toimituksen valinta",
+    "menuLabel": "Ruokalista",
+    "menuLabelPdf": "Ruokalista (PDF)"
   },
   "fineDining": {
     "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",

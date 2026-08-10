@@ -132,7 +132,9 @@
       "Salla": "ウィルダネス峠 + フィンランド最東端のスキー村",
       "Posio": "ライシトゥントゥリ地方の湖と工芸の中心地"
     },
-    "editorsPick": "編集部の一推し"
+    "editorsPick": "編集部の一推し",
+    "menuLabel": "メニュー",
+    "menuLabelPdf": "メニュー（PDF）"
   },
   "fineDining": {
     "title": "ラップランドと近郊のファインダイニング | LaplandDining",

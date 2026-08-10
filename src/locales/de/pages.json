@@ -132,7 +132,9 @@
       "Salla": "Wildnis-Pass + Finnlands östlichstes Skidorf",
       "Posio": "See- und Handwerks-Herz des Riisitunturi-Gebiets"
     },
-    "editorsPick": "Redaktionstipp"
+    "editorsPick": "Redaktionstipp",
+    "menuLabel": "Speisekarte",
+    "menuLabelPdf": "Speisekarte (PDF)"
   },
   "fineDining": {
     "title": "Fine Dining in und um Lappland | LaplandDining",

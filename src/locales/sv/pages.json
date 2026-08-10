@@ -132,7 +132,9 @@
       "Salla": "Vildmarkspass + Finlands östligaste skidby",
       "Posio": "Sjö- och hantverkshjärtat i Riisitunturitrakten"
     },
-    "editorsPick": "Redaktionens val"
+    "editorsPick": "Redaktionens val",
+    "menuLabel": "Meny",
+    "menuLabelPdf": "Meny (PDF)"
   },
   "fineDining": {
     "title": "Fine dining i och kring Lappland | LaplandDining",

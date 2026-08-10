@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
 import PhotoCaption from '../components/PhotoCaption';
+import MenuLink from '../components/MenuLink';
 import { Star, MapPin, ExternalLink, Award, Quote, UtensilsCrossed } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { DINING } from '../data/images';
@@ -214,6 +215,12 @@ export default function FineDining() {
                       </div>
                     )}
                     <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-warm-ink/10">
+                      <MenuLink
+                        restaurant={r}
+                        label={t('restaurants.menuLabel')}
+                        labelPdf={t('restaurants.menuLabelPdf')}
+                        campaign="dining_menu_finedining"
+                      />
                       {r.website && (
                         <a
                           href={withReferral(r.website, 'dining_finedining')}

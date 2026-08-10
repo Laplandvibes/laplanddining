@@ -132,7 +132,9 @@
       "Salla": "Passo selvaggio + villaggio sciistico più a est della Finlandia",
       "Posio": "Cuore di laghi e artigianato della regione di Riisitunturi"
     },
-    "editorsPick": "Scelta della redazione"
+    "editorsPick": "Scelta della redazione",
+    "menuLabel": "Menù",
+    "menuLabelPdf": "Menù (PDF)"
   },
   "fineDining": {
     "title": "Alta cucina in Lapponia e dintorni | LaplandDining",

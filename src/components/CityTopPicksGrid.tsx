@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocale } from '../i18n/useLocale';
 import AffiliateCTA from './AffiliateCTA';
 import PhotoCaption from './PhotoCaption';
+import MenuLink from './MenuLink';
 import { getTopPicksByCity, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant, type Locale } from '../data/restaurants';
 import { withReferral } from '../lib/outbound';
 
@@ -22,6 +23,8 @@ function tierClass(tier: Restaurant['partnership']) {
 
 export interface CardLabels {
   websiteLabel: string;
+  menuLabel: string;
+  menuLabelPdf: string;
   mapsLabel: string;
   stayNearby: string;
   seeMore: (city: string) => string;
@@ -128,6 +131,12 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
         )}
 
         <div className="flex flex-wrap items-center gap-3 mt-auto pt-3 border-t border-warm-ink/10">
+          <MenuLink
+            restaurant={r}
+            label={labels.menuLabel}
+            labelPdf={labels.menuLabelPdf}
+            campaign="dining_menu_toppicks"
+          />
           {r.website && (
             <a
               href={withReferral(r.website, 'dining_toppicks')}
@@ -167,6 +176,8 @@ export default function CityTopPicksGrid() {
 
   const labels: CardLabels = {
     websiteLabel: t('restaurants.websiteLabel'),
+    menuLabel: t('restaurants.menuLabel'),
+    menuLabelPdf: t('restaurants.menuLabelPdf'),
     mapsLabel: t('restaurants.mapsLabel'),
     stayNearby: t('common.stayNearby'),
     seeMore: (city: string) => t('common.seeMoreInCity', { city }),

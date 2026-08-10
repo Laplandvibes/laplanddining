@@ -132,7 +132,9 @@
       "Salla": "Paso natural y el pueblo de esquí más oriental de Finlandia",
       "Posio": "Corazón de lagos y artesanía en la región de Riisitunturi"
     },
-    "editorsPick": "Elección de la redacción"
+    "editorsPick": "Elección de la redacción",
+    "menuLabel": "Carta",
+    "menuLabelPdf": "Carta (PDF)"
   },
   "fineDining": {
     "title": "Alta cocina en Laponia y alrededores | LaplandDining",

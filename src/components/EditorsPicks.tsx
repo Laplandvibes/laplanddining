@@ -30,6 +30,8 @@ export default function EditorsPicks() {
 
   const labels: CardLabels = {
     websiteLabel: t('restaurants.websiteLabel'),
+    menuLabel: t('restaurants.menuLabel'),
+    menuLabelPdf: t('restaurants.menuLabelPdf'),
     mapsLabel: t('restaurants.mapsLabel'),
     stayNearby: t('common.stayNearby'),
     seeMore: (city: string) => t('common.seeMoreInCity', { city }),

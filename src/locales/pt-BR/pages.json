@@ -132,7 +132,9 @@
       "Salla": "Passagem natural e o vilarejo de esqui mais oriental da Finlândia",
       "Posio": "Coração de lagos e artesanato na região de Riisitunturi"
     },
-    "editorsPick": "Escolha da redação"
+    "editorsPick": "Escolha da redação",
+    "menuLabel": "Cardápio",
+    "menuLabelPdf": "Cardápio (PDF)"
   },
   "fineDining": {
     "title": "Alta gastronomia na Lapônia e arredores | LaplandDining",

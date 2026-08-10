@@ -132,7 +132,9 @@
       "Salla": "Col sauvage + village de ski le plus à l'est de la Finlande",
       "Posio": "Cœur lacustre et artisanal du pays de Riisitunturi"
     },
-    "editorsPick": "Choix de la rédaction"
+    "editorsPick": "Choix de la rédaction",
+    "menuLabel": "Carte",
+    "menuLabelPdf": "Carte (PDF)"
   },
   "fineDining": {
     "title": "Haute gastronomie en Laponie et alentours | LaplandDining",

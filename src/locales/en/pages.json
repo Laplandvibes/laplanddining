@@ -132,7 +132,9 @@
       "Salla": "Wilderness pass + Finland's easternmost ski village",
       "Posio": "Lake-and-craft heart of Riisitunturi country"
     },
-    "editorsPick": "Editor's pick"
+    "editorsPick": "Editor's pick",
+    "menuLabel": "Menu",
+    "menuLabelPdf": "Menu (PDF)"
   },
   "fineDining": {
     "title": "Fine Dining in and around Lapland | LaplandDining",

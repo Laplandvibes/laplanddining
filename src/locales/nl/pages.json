@@ -132,7 +132,9 @@
       "Salla": "Wilde bergpas + Finlands oostelijkste skidorp",
       "Posio": "Hart van meren en ambacht in Riisitunturi"
     },
-    "editorsPick": "Keuze van de redactie"
+    "editorsPick": "Keuze van de redactie",
+    "menuLabel": "Menukaart",
+    "menuLabelPdf": "Menukaart (PDF)"
   },
   "fineDining": {
     "title": "Fine dining in en rond Lapland | LaplandDining",

@@ -132,7 +132,9 @@
       "Salla": "야생의 고개 + 핀란드 최동단 스키 마을",
       "Posio": "리시툰투리 일대의 호수와 공예의 중심"
     },
-    "editorsPick": "에디터 추천"
+    "editorsPick": "에디터 추천",
+    "menuLabel": "메뉴",
+    "menuLabelPdf": "메뉴 (PDF)"
   },
   "fineDining": {
     "title": "라플란드와 인근 지역 파인 다이닝 | LaplandDining",

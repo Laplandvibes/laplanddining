@@ -132,7 +132,9 @@
       "Salla": "荒野隘口 + 芬兰最东端的滑雪村",
       "Posio": "里西山地的湖泊与手工艺之心"
     },
-    "editorsPick": "编辑推荐"
+    "editorsPick": "编辑推荐",
+    "menuLabel": "菜单",
+    "menuLabelPdf": "菜单（PDF）"
   },
   "fineDining": {
     "title": "拉普兰及周边的高级餐饮 | LaplandDining",

@@ -4,6 +4,7 @@ import Hreflang from '../i18n/Hreflang';
 import { useLocation } from 'react-router-dom';
 import { useLocale } from '../i18n/useLocale';
 import PhotoCaption from '../components/PhotoCaption';
+import MenuLink from '../components/MenuLink';
 import { MapPin, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, Quote } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
@@ -64,6 +65,8 @@ function hotelsSid(city: string) {
 
 interface CardI18n {
   websiteLabel: string;
+  menuLabel: string;
+  menuLabelPdf: string;
   mapsLabel: string;
   googleReview: string;
   editorsPickLabel: string;
@@ -197,7 +200,13 @@ function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Restaurant; i18n:
           )
         )}
 
-        <div className="flex items-center gap-4 mt-auto pt-3 border-t border-warm-ink/10">
+        <div className="flex flex-wrap items-center gap-4 mt-auto pt-3 border-t border-warm-ink/10">
+          <MenuLink
+            restaurant={r}
+            label={i18n.menuLabel}
+            labelPdf={i18n.menuLabelPdf}
+            campaign="dining_menu_restaurants"
+          />
           {r.website && (
             <a
               href={withReferral(r.website, 'dining_restaurants')}
@@ -254,6 +263,8 @@ export default function Restaurants() {
 
   const cardI18n: CardI18n = {
     websiteLabel: t('restaurants.websiteLabel'),
+    menuLabel: t('restaurants.menuLabel'),
+    menuLabelPdf: t('restaurants.menuLabelPdf'),
     mapsLabel: t('restaurants.mapsLabel'),
     googleReview: t('restaurants.googleReview'),
     editorsPickLabel: t('restaurants.editorsPick'),
@@ -290,6 +301,7 @@ export default function Restaurants() {
               servesCuisine: cuisineLabel(r) ?? 'Lappish',
               priceRange: r.priceRange,
               ...(r.website ? { url: r.website } : {}),
+              ...(r.menuUrl ? { hasMenu: r.menuUrl } : {}),
               ...(r.rating ? {
                 aggregateRating: {
                   '@type': 'AggregateRating',
