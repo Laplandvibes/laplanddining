@@ -32,8 +32,12 @@ myöhemmäksi. Vaihetta 3 ei kannata rakentaa ennen kuin maksavia kumppaneita on
 
 ## Mittaustulos (10.8.2026)
 
-80 ravintolalla 81:stä on verkkosivu, joista 10 on pelkkä Facebook tai Instagram. 70 oikeaa
-verkkosivua koeajettiin: haettiin etusivu ja etsittiin menulinkkiehdokkaita.
+Ravintoloita on **87**: 81 Maps-synkasta plus 6 käsin kuratoitua gemsiä. Maps-joukosta 80:llä on
+verkkosivu, joista 10 on pelkkä Facebook tai Instagram. Kaikilla 6 gemsillä on oma verkkosivu.
+Oikeita koeajettavia verkkosivuja on siis **76**, joista koeajo 10.8. kattoi 70 (gemsit vielä
+ajamatta).
+
+Koeajo haki etusivun ja etsi menulinkkiehdokkaita:
 
 | | kpl |
 |---|---|
@@ -60,19 +64,22 @@ Kaksi johtopäätöstä:
 ### 1. Datataso
 
 Uusi `src/data/generated/restaurant-menus.json`. Sama kuvio kuin `restaurant-images.json`: skripti
-ehdottaa, ihminen kuittaa, tiedosto committoidaan ja se on ainoa lähde jota sivusto lukee. Avaimena
-`googlePlaceId`, kuten `restaurant-overrides.ts`:ssä.
+ehdottaa, ihminen kuittaa, tiedosto committoidaan ja se on ainoa lähde jota sivusto lukee.
+
+**Avaimena `slug`**, kuten kuvarekisterissä. Ei `googlePlaceId`, koska 6 käsin kuratoitua gemsiä
+(`restaurant-gems.ts`) kulkee eri polkua kuin Maps-data ja niiden Place ID on tekaistu
+(`manual-saariselka-laanilan-kievari`). Slug kattaa molemmat joukot yhdellä avaimella.
 
 ```json
 {
-  "ChIJvySHpvNLK0QRY-dnGYTVum4": {
+  "rovaniemi-nili-restaurant": {
     "url": "https://www.nili.fi/ruokalista",
     "kind": "page",
     "title": "Ruokalista – Ravintola Nili",
     "evidence": 14,
     "checkedAt": "2026-08-10"
   },
-  "ChIJ0xK2example": {
+  "sodankyla-tori-kioski-mikkola-ky": {
     "status": "none",
     "reason": "vain Facebook-sivu, ei omaa verkkosivua",
     "checkedAt": "2026-08-10"
@@ -81,7 +88,7 @@ ehdottaa, ihminen kuittaa, tiedosto committoidaan ja se on ainoa lähde jota siv
 ```
 
 `status: "none"` -rivit ovat tarkoituksellisia. Niistä näkee että kohta on käyty läpi eikä vain
-unohtunut. **81 riviä = 81 tarkistettua ravintolaa**, kattavuus on todistettavissa tiedostosta.
+unohtunut. **87 riviä = 87 tarkistettua ravintolaa**, kattavuus on todistettavissa tiedostosta.
 
 `restaurants.ts` sulauttaa rekisterin sisään samalla tavalla kuin kuvarekisterin. Kortti saa
 `r.menuUrl` ja `r.menuKind`. Maps-sync ei koske tähän tiedostoon koskaan.
@@ -177,7 +184,8 @@ jo kuukausirytmissä. URL on pysyvä mutta ei ikuinen.
 
 ## Määritelmä valmiille
 
-1. 81/81 ravintolaa kirjattu `restaurant-menus.json`:iin, joko URL tai `status: "none"` syineen
+1. 87/87 ravintolaa kirjattu `restaurant-menus.json`:iin, joko URL tai `status: "none"` syineen.
+   Koneellinen tarkistus (`scripts/verify-menu-registry.mjs`) varmistaa kattavuuden, ei silmämäärä.
 2. Jokainen julkaistu URL läpäissyt todisteportin **ja** ihmissilmän
 3. 4 rikkinäistä verkkosivulinkkiä korjattu tai poistettu
 4. Build vihreä, prerender läpi
