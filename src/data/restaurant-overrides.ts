@@ -33,9 +33,42 @@ type Override = Partial<Pick<Restaurant,
   | 'menuHighlights'
   | 'dietary'
   | 'reservationPolicy'
+  | 'website'
 >>;
 
 export const restaurantOverrides: Record<string, Override> = {
+  // ── Rikkinäiset verkkosivulinkit, tarkistettu 2026-08-10 ────────────────
+  // Maps-datan `website` osoitti neljällä ravintolalla sivulle joka ei vastaa.
+  // Nämä olivat livenä `Nettisivut →` -linkkeinä ja veivät 404-sivulle.
+  // Korjaus kuuluu tänne eikä generoituun tiedostoon, koska seuraava
+  // sync-restaurants.mjs pyyhkisi sen.
+
+  // Tori-Kioski Mikkola — Sodankylä. Maps-osoite /hinnasto/eng oli 404;
+  // domainin juuri vastaa ja on oikean ravintolan sivu.
+  'ChIJ4bE7F8Ir00URltDAnU0CI5Q': { website: 'https://torikioski.fi/' },
+
+  // CAMP Kitchen & Bar — Pyhätunturi. campkitchen.fi/pyha/ on 404 ja koko
+  // sivusto on nykyään pelkkä CAMP RUKA: nolla mainintaa Pyhästä. Ruka-sivulle
+  // linkittäminen Pyhätunturin kortista olisi väärä tieto, joten linkki pois.
+  'ChIJudCrtkbrLEQRQCnerLesTPM': { website: undefined },
+
+  // Luoston Hovi — Luosto. Koko luosto.fi ei vastaa nimipalvelussa,
+  // eikä luostonhovi.fi tai ravintolaluostonhovi.fi ole olemassa.
+  'ChIJlwbjdmHPLEQRqKhaPx0gHV0': { website: undefined },
+
+  // Niestapaikka — Hetta. niestapaikka.onverkossa.fi ei vastaa,
+  // eikä niestapaikka.fi ole olemassa.
+  'ChIJBfuXzkyN0UURA2S2OkxMsVA': { website: undefined },
+
+  // Sataman Krouwi ja Perämeren Jähti — Kemi. Sivuston JUURI on 404 (sekä
+  // www että apex), mutta /lounaslista/ vastaa ja on oikean ravintolan sivu.
+  // Verkkosivulinkki pois; ruokalistalinkki jää, jottei kaksi nappia veisi
+  // samaan osoitteeseen.
+  'ChIJ8QV9vzJL1UUR09TOcEEMzhg': { website: undefined },
+
+  // Skiknööli — Luosto. Sama kuollut luosto.fi kuin Luoston Hovilla.
+  'ChIJcTDrKGfPLEQRi7X4v_876hc': { website: undefined },
+
   // Nili — Rovaniemi
   'ChIJvySHpvNLK0QRY-dnGYTVum4': {
     cuisine: {
