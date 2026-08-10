@@ -12,6 +12,24 @@ export const DINING = {
   foodMoody: '/images/drive/foodMoody.webp',
   kotaInside: '/images/drive/kotaInside.webp',
   kotaFire: '/images/drive/kotaFire.webp',
+  // Keskiyön aurinko -kuvat. Etusivun kesäosio käytti ennen kotaFirea, joka oli
+  // sama kuva kuin sivun KOTA-kortissa (Vesa 2026-08-10: "sama kuva kahteen
+  // kertaan?"). Nyt osio näyttää sen sivun kuvan jolle se linkittää.
+  midnightSunCard: '/images/midnight-sun-hero-800.webp',
+  midnightSunBand: '/images/drive/midnightSunBand.webp',
+
+  // Kaupunkikohtaiset bannerit (generoitu 2026-08-10, gpt-image-2).
+  // Ennen tätä neljä kuvaa palveli 11:tä kaupunkia: Levi ja Kittilä näyttivät
+  // saman kuvan peräkkäisissä osioissa (Vesa), foodMoody neljällä,
+  // ingredientsAlt kahdella, snowVillage kolmella + sivun herolla talvella.
+  kittilaDining: '/images/drive/kittilaDining.webp',
+  sodankylaDining: '/images/drive/sodankylaDining.webp',
+  hettaDining: '/images/drive/hettaDining.webp',
+  posioDining: '/images/drive/posioDining.webp',
+  muonioDining: '/images/drive/muonioDining.webp',
+  luostoWinter: '/images/drive/luostoWinter.webp',
+  sallaWinter: '/images/drive/sallaWinter.webp',
+  restaurantsHeroWinter: '/images/drive/restaurantsHeroWinter.webp',
   ingredients: '/images/drive/ingredients.webp',
   ingredientsAlt: '/images/drive/ingredientsAlt.webp',
   exterior: '/images/drive/exterior.webp',

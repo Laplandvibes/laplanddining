@@ -9,9 +9,15 @@ const imageRegistry = restaurantImages as Record<string, ImageEntry>;
 
 type MenuEntry = {
   url?: string; kind?: string; title?: string; evidence?: number;
+  urlEn?: string; kindEn?: string; titleEn?: string; evidenceEn?: number;
   status?: string; reason?: string; note?: string; checkedAt: string;
 };
 const menuRegistry = restaurantMenus as Record<string, MenuEntry>;
+
+type MenuFields = {
+  menuUrl?: string; menuKind?: 'page' | 'pdf';
+  menuUrlEn?: string; menuKindEn?: 'page' | 'pdf';
+};
 
 /**
  * Ruokalistalinkki rekisterista. Vain `page` ja `pdf` kelpaavat; rivit joilla
@@ -19,11 +25,20 @@ const menuRegistry = restaurantMenus as Record<string, MenuEntry>;
  *
  * Rekisteri on avainnettu slugilla samoin kuin kuvarekisteri, koska kasin
  * kuratoitujen gemsien googlePlaceId on tekaistu.
+ *
+ * `menuUrlEn` on ravintolan oma englanninkielinen lista silloin kun sellainen
+ * on olemassa ja se lapaisi todisteportin. MenuLink valitsee sen kaikille
+ * muille kuin suomenkielisille kavijoille.
  */
-function menuFor(slug: string): { menuUrl?: string; menuKind?: 'page' | 'pdf' } {
+function menuFor(slug: string): MenuFields {
   const m = menuRegistry[slug];
   if (!m?.url || (m.kind !== 'page' && m.kind !== 'pdf')) return {};
-  return { menuUrl: m.url, menuKind: m.kind };
+  const out: MenuFields = { menuUrl: m.url, menuKind: m.kind };
+  if (m.urlEn && (m.kindEn === 'page' || m.kindEn === 'pdf')) {
+    out.menuUrlEn = m.urlEn;
+    out.menuKindEn = m.kindEn;
+  }
+  return out;
 }
 
 /**
@@ -105,6 +120,10 @@ export interface Restaurant {
    */
   menuUrl?: string;
   menuKind?: 'page' | 'pdf';
+  /** Ravintolan oma englanninkielinen lista, jos sellainen on. Muut kuin
+   *  suomenkieliset kävijät saavat tämän. */
+  menuUrlEn?: string;
+  menuKindEn?: 'page' | 'pdf';
   slug: string;
   lastVerified: string;             // YYYY-MM-DD
   primaryType?: string;

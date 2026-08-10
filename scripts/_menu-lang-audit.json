@@ -1,0 +1,488 @@
+[
+ {
+  "slug": "haparanda-haparanda-stadshotell",
+  "nimi": "Haparanda Stadshotell",
+  "url": "https://www.haparandastadshotell.se/restaurang/meny/",
+  "kind": "page",
+  "htmlLang": "sv-SE",
+  "kieli": "sv",
+  "title": "Meny - Haparanda Stadshotell",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "inari-restaurant-aanaar",
+  "nimi": "Restaurant Aanaar",
+  "url": "https://www.restaurantaanaar.fi/a-la-carte/",
+  "kind": "page",
+  "htmlLang": "en-GB",
+  "kieli": "en",
+  "title": "À la carte | Restaurant Aanaar, Inari, L",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "inari-gastropub-giitu",
+  "nimi": "Gastropub Giitu",
+  "url": "https://gastropubgiitu.fi/ruokalista",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ruokalista",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "inari-arctic-river-resort",
+  "nimi": "Arctic River Resort",
+  "url": "https://www.arcticriverresort.fi/wp-content/uploads/2026/05/Menu-FI.pdf",
+  "kind": "pdf",
+  "kieli": "pdf",
+  "omaNimi": true
+ },
+ {
+  "slug": "kemi-ravintola-mori-kemi",
+  "nimi": "Ravintola Mori Kemi",
+  "url": "https://www.ravintolamori.fi/kemi/menu-2",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "epaselva",
+  "title": "Pizzat &#8211; Ravintola Mori &#8211; Ke",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "haparanda-cape-east",
+  "nimi": "Cape East",
+  "url": "https://capeeast.se/dining/meny/",
+  "kind": "page",
+  "htmlLang": "en-US",
+  "kieli": "en",
+  "title": "Meny - Cape East",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "kemi-kemin-puistopaviljonki-ky",
+  "nimi": "Kemin Puistopaviljonki Ky",
+  "url": "https://www.puistopaviljonki.fi/a-la-carte",
+  "kind": "page",
+  "htmlLang": "",
+  "kieli": "fi",
+  "title": "� la carte | Puistopaviljonki",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "kemijarvi-mestarin-kievari",
+  "nimi": "Mestarin Kievari",
+  "url": "https://www.mestarinkievari.fi/ravintola",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ravintola | Mestarinkievari",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.mestarinkievari.fi/en/ravintola"
+  ]
+ },
+ {
+  "slug": "kemi-sataman-krouwi-ja-perameren-jahti",
+  "nimi": "Sataman Krouwi ja Perämeren Jähti",
+  "url": "https://satamankrouwi.fi/lounaslista/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Lounaslista | Sataman Krouwi",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "kittila-kekale",
+  "nimi": "Kekäle",
+  "url": "https://kekale.levihotelspa.fi/menu/",
+  "kind": "page",
+  "htmlLang": "en",
+  "kieli": "fi",
+  "title": "Menu",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://kekale.levihotelspa.fi/en/menu/",
+   "https://kekale.levihotelspa.fi/en/"
+  ]
+ },
+ {
+  "slug": "kittila-riihi-restaurant",
+  "nimi": "Riihi Restaurant",
+  "url": "https://immelkartano.fi/ravintola-riihi/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ravintola Riihi - Immelkartano Levi Lapl",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://immelkartano.fi/riihi-restaurant/?lang=en"
+  ]
+ },
+ {
+  "slug": "kuusamo-ruka-trek-gasthaus-hard-trek-cafe",
+  "nimi": "Ruka Trek | Gasthaus & Hard Trek Café",
+  "url": "https://rukatrek.fi/en/food-drink/",
+  "kind": "page",
+  "htmlLang": "en-GB",
+  "kieli": "en",
+  "title": "Syö &amp; juo | Rukatrek",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "kuusamo-ravintola-talonpoyta-kuusamo",
+  "nimi": "Ravintola Talonpöytä Kuusamo",
+  "url": "https://talonpoyta.fi/cafe-prisma/cafe-prisma-ala-carte/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Cafe-ravintola Prisma ruokalista - Ravin",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "kuusamo-pizzeria-ruka",
+  "nimi": "Pizzeria Ruka",
+  "url": "https://www.pizzeriaruka.fi/menu",
+  "kind": "page",
+  "htmlLang": "en-US",
+  "kieli": "fi",
+  "title": "Menu 1 &mdash; PIZZERIA RUKA",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.pizzeriaruka.fi/english"
+  ]
+ },
+ {
+  "slug": "levi-ravintola-wanha-hullu-poro",
+  "nimi": "Ravintola Wanha Hullu Poro",
+  "url": "https://www.hulluporo.fi/ravintolat/wanha-hullu-poro/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Wanha Hullu Poro - Levi Center Hullu Por",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.hulluporo.fi/en/restaurants/wanha-hullu-poro/"
+  ]
+ },
+ {
+  "slug": "kittila-saamen-kammi",
+  "nimi": "Saamen Kammi",
+  "url": "https://www.kammi.fi/menu2",
+  "kind": "page",
+  "htmlLang": "",
+  "kieli": "en",
+  "title": "Menu | kammi",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "muonio-jeris-lakeside-resort",
+  "nimi": "Jeris Lakeside Resort",
+  "url": "https://harriniva.fi/en/3-wilderness-resorts/jeris-lakeside-resort/restaurant/",
+  "kind": "page",
+  "htmlLang": "en-US",
+  "kieli": "en",
+  "title": "Restaurant at Jeris Lakeside Resort - Ha",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "kemijarvi-jauri-resort",
+  "nimi": "Jauri Resort",
+  "url": "https://www.jauriresort.com/fi/ravintola/ravintola-menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ravintola menu | Jauri Resort",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.jauriresort.com/restaurant/restaurant-menu/"
+  ]
+ },
+ {
+  "slug": "posio-restaurant-sky-kitchen-view",
+  "nimi": "Restaurant Sky Kitchen & View",
+  "url": "https://www.kitchensky.fi/menut/a-la-carte.html",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "SKYN herkullinen À la carte - www.kitche",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.kitchensky.fi/en/menu/a-la-carte.html",
+   "https://www.kitchensky.fi/en/sky-kitchen-view.html"
+  ]
+ },
+ {
+  "slug": "posio-lapland-restaurant-kotahovi",
+  "nimi": "Lapland Restaurant Kotahovi",
+  "url": "https://laplandrestaurant.fi/wp-content/uploads/lapland-restaurant-kotahovi-summer-2026-menu.pdf",
+  "kind": "pdf",
+  "kieli": "pdf",
+  "omaNimi": true
+ },
+ {
+  "slug": "muonio-ravintola-tunturikettu",
+  "nimi": "Ravintola Tunturikettu",
+  "url": "https://www.tunturikettu.fi/menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ruokalista | MENU :: Ravintola Tunturike",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.tunturikettu.fi/en/"
+  ]
+ },
+ {
+  "slug": "pyhatunturi-cafe-loimu",
+  "nimi": "Café Loimu",
+  "url": "https://cafeloimu.fi/wp-content/uploads/2026/08/viikko-33-1.pdf",
+  "kind": "pdf",
+  "kieli": "pdf",
+  "omaNimi": false
+ },
+ {
+  "slug": "pyhatunturi-huttuhippu",
+  "nimi": "Huttuhippu",
+  "url": "https://eatlappi.fi/huttuhippu-menu",
+  "kind": "page",
+  "htmlLang": "fi-FI",
+  "kieli": "en",
+  "title": "Eatlappi.fi • • Huttuhippu Menu",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "rovaniemi-all-about-salmon",
+  "nimi": "All About Salmon",
+  "url": "https://www.allaboutsalmon.fi/menus",
+  "kind": "page",
+  "htmlLang": "en",
+  "kieli": "en",
+  "title": "Winter Menu | All About Salmon",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "pyhatunturi-ravintola-popolo",
+  "nimi": "Ravintola Popolo",
+  "url": "https://www.ravintolapopolo.fi/menu",
+  "kind": "page",
+  "htmlLang": "fi-FI",
+  "kieli": "fi",
+  "title": "Menu 1 &mdash; POPOLO",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "levi-grill-it-levi",
+  "nimi": "Grill it! Levi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi/menu/13419/ruokalista",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ruokalista | Grill it! Levi | Raflaamo.f",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.raflaamo.fi/en/restaurant/kittila/grill-it-levi/menu/13419/a-la-carte"
+  ]
+ },
+ {
+  "slug": "rovaniemi-arctic-restaurant",
+  "nimi": "Arctic Restaurant",
+  "url": "https://www.arcticrestaurant.fi/#menu",
+  "kind": "page",
+  "htmlLang": "en-US",
+  "kieli": "en",
+  "title": "Arctic Restaurant - Rovaniemi | Discover",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "rovaniemi-cafe-bar-21",
+  "nimi": "Cafe & Bar 21",
+  "url": "https://www.cafebar21.fi/fi/menu",
+  "kind": "page",
+  "htmlLang": "en-US",
+  "kieli": "fi",
+  "title": "Menu &mdash; Cafe &amp; Bar 21",
+  "omaNimi": null,
+  "enVaihtoehto": [
+   "https://www.cafebar21.fi/en/sugar",
+   "https://www.cafebar21.fi/en/catering",
+   "https://www.cafebar21.fi/en/about-us"
+  ]
+ },
+ {
+  "slug": "saariselka-fieno",
+  "nimi": "Fieno",
+  "url": "https://fieno.fi/ruokalistat/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ruokalistat - Fieno Saariselkä",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://fieno.fi/en/menus/",
+   "https://fieno.fi/en"
+  ]
+ },
+ {
+  "slug": "saariselka-laanilan-kievari",
+  "nimi": "Laanilan Kievari",
+  "url": "https://www.laanilankievari.fi/en/menu",
+  "kind": "page",
+  "htmlLang": "en",
+  "kieli": "en",
+  "title": "À la carte | Laanilan Kievari",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "saariselka-scanburger-saariselka",
+  "nimi": "ScanBurger Saariselkä",
+  "url": "https://www.nestesaariselka.fi/lounas",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Lounas &amp; lounasbuffet | Neste Saaris",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "sodankyla-restaurant-punakettu",
+  "nimi": "Restaurant Punakettu",
+  "url": "https://punakettu.fi/menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "en",
+  "title": "Menu | Ravintola Punakettu",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "salla-sallan-maja",
+  "nimi": "Sallan Maja",
+  "url": "https://www.ravintolasallanmaja.fi/menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Menu :: Ravintola Sallan Maja",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.ravintolasallanmaja.fi/en/"
+  ]
+ },
+ {
+  "slug": "tornio-ravintola-umpitunneli",
+  "nimi": "Ravintola Umpitunneli",
+  "url": "http://umpitunneli.fi/wp-content/uploads/2026/06/Umpitunneli-Menu-2026.pdf",
+  "kind": "pdf",
+  "kieli": "pdf",
+  "omaNimi": false
+ },
+ {
+  "slug": "rovaniemi-restaurant-roka-street-bistro",
+  "nimi": "Restaurant Roka Street Bistro",
+  "url": "https://ravintolaroka.fi/menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Menu &#8211; Ravintola Roka Street Bistr",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://ravintolaroka.fi/en/menu-2/"
+  ]
+ },
+ {
+  "slug": "rovaniemi-nili-restaurant",
+  "nimi": "Nili Restaurant",
+  "url": "https://nili.fi/menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Menu - Ravintola Nili",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://nili.fi/en/mainpage-english/"
+  ]
+ },
+ {
+  "slug": "tornio-mustaparran-paamaja",
+  "nimi": "Mustaparran Päämaja",
+  "url": "http://www.mustapartahotels.fi/wp-content/uploads/2026/06/Kesa-26-Mustaparran-Lapinlisa-menu-A4-2.pdf",
+  "kind": "pdf",
+  "kieli": "pdf",
+  "omaNimi": true
+ },
+ {
+  "slug": "yllas-restaurant-yllaskota",
+  "nimi": "Restaurant Ylläskota",
+  "url": "https://www.yllaskota.fi/menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ylläskota menu - Yll&auml;skota",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.yllaskota.fi/en/lunch-alacarte/"
+  ]
+ },
+ {
+  "slug": "yllas-yllaksen-evaskori-joiku-pub",
+  "nimi": "Ylläksen Eväskori & Joiku Pub",
+  "url": "https://www.evaskori.fi/ruokalista.html",
+  "kind": "page",
+  "htmlLang": "fi_FI",
+  "kieli": "fi",
+  "title": "Ruokalista - YLL&Auml;KSEN EV&Auml;SKORI",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ },
+ {
+  "slug": "yllas-ravintola-otso-yllasjarvi",
+  "nimi": "Ravintola Otso Ylläsjärvi",
+  "url": "https://www.ravintolaotso.fi/menu-otso/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Otson menu &#8211; Ravintola Otso",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.ravintolaotso.fi/english/"
+  ]
+ },
+ {
+  "slug": "yllas-ravintola-rouhe",
+  "nimi": "Ravintola Rouhe",
+  "url": "https://www.ravintolarouhe.fi/a-la-carte/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Ravintola Rouhe | À la carte -menu",
+  "omaNimi": true,
+  "enVaihtoehto": [
+   "https://www.ravintolarouhe.fi/en/ala-carte/"
+  ]
+ },
+ {
+  "slug": "tornio-ravintola-golden-flower-tornio",
+  "nimi": "Ravintola Golden Flower Tornio",
+  "url": "https://goldenflower.fi/menu/",
+  "kind": "page",
+  "htmlLang": "fi",
+  "kieli": "fi",
+  "title": "Menu - Golden Flower",
+  "omaNimi": true,
+  "enVaihtoehto": []
+ }
+]

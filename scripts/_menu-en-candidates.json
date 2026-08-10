@@ -1,0 +1,212 @@
+[
+ {
+  "slug": "inari-gastropub-giitu",
+  "nimi": "Gastropub Giitu",
+  "fiUrl": "https://gastropubgiitu.fi/ruokalista",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "kittila-kekale",
+  "nimi": "Kekäle",
+  "fiUrl": "https://kekale.levihotelspa.fi/menu/",
+  "verdict": "strong",
+  "url": "https://kekale.levihotelspa.fi/en/menu/",
+  "title": "Menu",
+  "evidence": 8,
+  "nameOk": true
+ },
+ {
+  "slug": "kemi-kemin-puistopaviljonki-ky",
+  "nimi": "Kemin Puistopaviljonki Ky",
+  "fiUrl": "https://www.puistopaviljonki.fi/a-la-carte",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "kittila-riihi-restaurant",
+  "nimi": "Riihi Restaurant",
+  "fiUrl": "https://immelkartano.fi/ravintola-riihi/",
+  "verdict": "strong",
+  "url": "https://immelkartano.fi/riihi-restaurant/?lang=en",
+  "title": "Riihi Restaurant - Immelkartano Levi Lapland Finland",
+  "evidence": 6,
+  "nameOk": true
+ },
+ {
+  "slug": "kemi-sataman-krouwi-ja-perameren-jahti",
+  "nimi": "Sataman Krouwi ja Perämeren Jähti",
+  "fiUrl": "https://satamankrouwi.fi/lounaslista/",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "kemijarvi-mestarin-kievari",
+  "nimi": "Mestarin Kievari",
+  "fiUrl": "https://www.mestarinkievari.fi/ravintola",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "kuusamo-pizzeria-ruka",
+  "nimi": "Pizzeria Ruka",
+  "fiUrl": "https://www.pizzeriaruka.fi/menu",
+  "verdict": "strong",
+  "url": "https://www.pizzeriaruka.fi/menu/?lang=en",
+  "title": "Menu 1 &mdash; PIZZERIA RUKA",
+  "evidence": 182,
+  "nameOk": true
+ },
+ {
+  "slug": "levi-ravintola-wanha-hullu-poro",
+  "nimi": "Ravintola Wanha Hullu Poro",
+  "fiUrl": "https://www.hulluporo.fi/ravintolat/wanha-hullu-poro/",
+  "verdict": "strong",
+  "url": "https://www.hulluporo.fi/en/restaurants/wanha-hullu-poro/",
+  "title": "Wanha Hullu Poro - Levi Center Hullu Poro",
+  "evidence": 66,
+  "nameOk": true
+ },
+ {
+  "slug": "posio-restaurant-sky-kitchen-view",
+  "nimi": "Restaurant Sky Kitchen & View",
+  "fiUrl": "https://www.kitchensky.fi/menut/a-la-carte.html",
+  "verdict": "titled",
+  "url": "https://www.kitchensky.fi/en/menu/a-la-carte.html",
+  "title": "À la carte - www.kitchensky.fi",
+  "evidence": 0,
+  "nameOk": true
+ },
+ {
+  "slug": "kemijarvi-jauri-resort",
+  "nimi": "Jauri Resort",
+  "fiUrl": "https://www.jauriresort.com/fi/ravintola/ravintola-menu/",
+  "verdict": "strong",
+  "url": "https://www.jauriresort.com/restaurant/restaurant-menu/",
+  "title": "Restaurant menu | Jauri Resort",
+  "evidence": 19,
+  "nameOk": true
+ },
+ {
+  "slug": "muonio-ravintola-tunturikettu",
+  "nimi": "Ravintola Tunturikettu",
+  "fiUrl": "https://www.tunturikettu.fi/menu/",
+  "verdict": "titled",
+  "url": "https://www.tunturikettu.fi/en/menu/",
+  "title": "MENU :: Ravintola Tunturikettu",
+  "evidence": 0,
+  "nameOk": true
+ },
+ {
+  "slug": "levi-grill-it-levi",
+  "nimi": "Grill it! Levi",
+  "fiUrl": "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi/menu/13419/ruokalista",
+  "verdict": "strong",
+  "url": "https://www.raflaamo.fi/en/restaurant/kittila/grill-it-levi/menu/13419/a-la-carte",
+  "title": "À la Carte | Grill it! Levi | Raflaamo.fi",
+  "evidence": 70,
+  "nameOk": true
+ },
+ {
+  "slug": "saariselka-fieno",
+  "nimi": "Fieno",
+  "fiUrl": "https://fieno.fi/ruokalistat/",
+  "verdict": "strong",
+  "url": "https://fieno.fi/en/menus/",
+  "title": "Menus - Fieno Saariselkä",
+  "evidence": 40,
+  "nameOk": true
+ },
+ {
+  "slug": "pyhatunturi-ravintola-popolo",
+  "nimi": "Ravintola Popolo",
+  "fiUrl": "https://www.ravintolapopolo.fi/menu",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "rovaniemi-cafe-bar-21",
+  "nimi": "Cafe & Bar 21",
+  "fiUrl": "https://www.cafebar21.fi/fi/menu",
+  "verdict": "strong",
+  "url": "https://www.cafebar21.fi/en/menu",
+  "title": "Menu &mdash; Cafe &amp; Bar 21",
+  "evidence": 58,
+  "nameOk": false
+ },
+ {
+  "slug": "saariselka-scanburger-saariselka",
+  "nimi": "ScanBurger Saariselkä",
+  "fiUrl": "https://www.nestesaariselka.fi/lounas",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "rovaniemi-restaurant-roka-street-bistro",
+  "nimi": "Restaurant Roka Street Bistro",
+  "fiUrl": "https://ravintolaroka.fi/menu/",
+  "verdict": "strong",
+  "url": "https://ravintolaroka.fi/en/menu-2/",
+  "title": "Menu &#8211; Ravintola Roka Street Bistro Rovaniemi",
+  "evidence": 29,
+  "nameOk": true
+ },
+ {
+  "slug": "yllas-restaurant-yllaskota",
+  "nimi": "Restaurant Ylläskota",
+  "fiUrl": "https://www.yllaskota.fi/menu/",
+  "verdict": "strong",
+  "url": "https://www.yllaskota.fi/en/lunch-alacarte/",
+  "title": "Ylläskota lunch and á la carte - Yll&auml;skota",
+  "evidence": 26,
+  "nameOk": true
+ },
+ {
+  "slug": "salla-sallan-maja",
+  "nimi": "Sallan Maja",
+  "fiUrl": "https://www.ravintolasallanmaja.fi/menu/",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "yllas-ravintola-otso-yllasjarvi",
+  "nimi": "Ravintola Otso Ylläsjärvi",
+  "fiUrl": "https://www.ravintolaotso.fi/menu-otso/",
+  "verdict": "strong",
+  "url": "https://www.ravintolaotso.fi/english/",
+  "title": "English &#8211; Ravintola Otso",
+  "evidence": 104,
+  "nameOk": true
+ },
+ {
+  "slug": "kuusamo-ravintola-talonpoyta-kuusamo",
+  "nimi": "Ravintola Talonpöytä Kuusamo",
+  "fiUrl": "https://talonpoyta.fi/cafe-prisma/cafe-prisma-ala-carte/",
+  "verdict": "titled",
+  "url": "https://talonpoyta.fi/en/ruka/menu/",
+  "title": "Café &amp; Pinseria Ruka menu - Ravintola Talonpöytä, Kuusamo",
+  "evidence": 0,
+  "nameOk": true
+ },
+ {
+  "slug": "yllas-yllaksen-evaskori-joiku-pub",
+  "nimi": "Ylläksen Eväskori & Joiku Pub",
+  "fiUrl": "https://www.evaskori.fi/ruokalista.html",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "yllas-ravintola-rouhe",
+  "nimi": "Ravintola Rouhe",
+  "fiUrl": "https://www.ravintolarouhe.fi/a-la-carte/",
+  "verdict": "strong",
+  "url": "https://www.ravintolarouhe.fi/en/ala-carte/",
+  "title": "Restaurant Rouhe | À la Carte",
+  "evidence": 32,
+  "nameOk": true
+ },
+ {
+  "slug": "rovaniemi-nili-restaurant",
+  "nimi": "Nili Restaurant",
+  "fiUrl": "https://nili.fi/menu/",
+  "verdict": "ei loytynyt"
+ },
+ {
+  "slug": "tornio-ravintola-golden-flower-tornio",
+  "nimi": "Ravintola Golden Flower Tornio",
+  "fiUrl": "https://goldenflower.fi/menu/",
+  "verdict": "ei loytynyt"
+ }
+]

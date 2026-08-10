@@ -21,6 +21,26 @@ const evidence = JSON.parse(fs.readFileSync(path.join(HERE, '_menu-evidence.json
 const evBySlug = Object.fromEntries(evidence.map((e) => [e.slug, e]));
 
 /**
+ * Englanninkieliset ruokalistat (Vesa 2026-08-10: "monet menut ohjaa suomen
+ * kielelle vaikka olisi englanti mahdollisuus").
+ *
+ * Ehdokkaat ajettu saman todisteportin läpi kuin suomenkieliset: ei etusivua,
+ * sama domain, hinnat tai ruokalistaotsikko. Portti hylkäsi Nilin ja Sallan
+ * Majan, joiden "englanninkielinen vastine" oli etusivu.
+ */
+const enCandidates = fs.existsSync(path.join(HERE, '_menu-en-candidates.json'))
+  ? JSON.parse(fs.readFileSync(path.join(HERE, '_menu-en-candidates.json'), 'utf8'))
+  : [];
+
+/** Käsin hylätyt englanninkieliset ehdokkaat. */
+const EN_REJECT = {
+  // Suomenkielinen linkki on Prisman toimipiste, englanninkielinen osoittaa
+  // RUKAN toimipisteeseen — sama yritys, eri paikka. Prisman /en/-polku
+  // vastaa 200 mutta tarjoilee suomea, joten englanninkielistä ei ole.
+  'kuusamo-ravintola-talonpoyta-kuusamo': 'englanninkielinen osoite osoittaa Rukan toimipisteeseen, ei Prisman',
+};
+
+/**
  * Kasin tehdyt paatokset. Jokainen naista on katsottu sivulta asti.
  * OVERRIDE korvaa automaatin ehdotuksen, REJECT hylkaa sen syineen.
  */
@@ -108,6 +128,20 @@ for (const c of candidates) {
   };
 }
 
+// Englanninkieliset osoitteet niille joilla suomenkielinen linkki on julkaistu.
+let enAdded = 0;
+for (const c of enCandidates) {
+  if (!c.url || EN_REJECT[c.slug]) continue;
+  const entry = registry[c.slug];
+  if (!entry?.url) continue;
+  if (classifyKind(c.url) === 'image' || isFrontPage(c.url)) continue;
+  entry.urlEn = c.url;
+  entry.kindEn = classifyKind(c.url);
+  entry.titleEn = c.title || '';
+  entry.evidenceEn = c.evidence ?? 0;
+  enAdded++;
+}
+
 // Vakaa jarjestys, jotta diffit pysyvat luettavina.
 const sorted = Object.fromEntries(Object.keys(registry).sort().map((k) => [k, registry[k]]));
 fs.writeFileSync(
@@ -117,6 +151,7 @@ fs.writeFileSync(
 
 const withUrl = Object.values(sorted).filter((e) => e.url).length;
 console.log(`${Object.keys(sorted).length} ravintolaa`);
-console.log(`  ruokalistalinkki: ${withUrl}`);
-console.log(`  ei linkkia:       ${Object.keys(sorted).length - withUrl}`);
+console.log(`  ruokalistalinkki:        ${withUrl}`);
+console.log(`  joista englanninkielinen: ${enAdded}`);
+console.log(`  ei linkkia:              ${Object.keys(sorted).length - withUrl}`);
 console.log('-> src/data/generated/restaurant-menus.json');

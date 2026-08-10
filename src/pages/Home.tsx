@@ -174,7 +174,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 lg:gap-12 items-center">
             <div className="md:col-span-2 relative aspect-[4/5] md:aspect-auto md:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-amber/15">
               <img
-                src={DINING.kotaFire}
+                src={DINING.midnightSunCard}
                 alt="Midnight sun terrace dinner in Lapland"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"

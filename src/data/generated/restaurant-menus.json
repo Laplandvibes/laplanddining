@@ -111,7 +111,11 @@
     "kind": "page",
     "title": "Ravintola menu | Jauri Resort",
     "evidence": 19,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.jauriresort.com/restaurant/restaurant-menu/",
+    "kindEn": "page",
+    "titleEn": "Restaurant menu | Jauri Resort",
+    "evidenceEn": 19
   },
   "kemijarvi-mestarin-kievari": {
     "url": "https://www.mestarinkievari.fi/ravintola",
@@ -145,14 +149,22 @@
     "kind": "page",
     "title": "Menu",
     "evidence": 8,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://kekale.levihotelspa.fi/en/menu/",
+    "kindEn": "page",
+    "titleEn": "Menu",
+    "evidenceEn": 8
   },
   "kittila-riihi-restaurant": {
     "url": "https://immelkartano.fi/ravintola-riihi/",
     "kind": "page",
     "title": "Ravintola Riihi - Immelkartano Levi Lapland Finland",
     "evidence": 6,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://immelkartano.fi/riihi-restaurant/?lang=en",
+    "kindEn": "page",
+    "titleEn": "Riihi Restaurant - Immelkartano Levi Lapland Finland",
+    "evidenceEn": 6
   },
   "kittila-saamen-kammi": {
     "url": "https://www.kammi.fi/menu2",
@@ -166,7 +178,11 @@
     "kind": "page",
     "title": "Menu 1 &mdash; PIZZERIA RUKA",
     "evidence": 182,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.pizzeriaruka.fi/menu/?lang=en",
+    "kindEn": "page",
+    "titleEn": "Menu 1 &mdash; PIZZERIA RUKA",
+    "evidenceEn": 182
   },
   "kuusamo-ravintola-talonpoyta-kuusamo": {
     "url": "https://talonpoyta.fi/cafe-prisma/cafe-prisma-ala-carte/",
@@ -202,7 +218,11 @@
     "kind": "page",
     "title": "Ruokalista | Grill it! Levi | Raflaamo.fi",
     "evidence": 70,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.raflaamo.fi/en/restaurant/kittila/grill-it-levi/menu/13419/a-la-carte",
+    "kindEn": "page",
+    "titleEn": "À la Carte | Grill it! Levi | Raflaamo.fi",
+    "evidenceEn": 70
   },
   "levi-panoramic-restaurant-tuikku": {
     "status": "none",
@@ -220,7 +240,11 @@
     "title": "Wanha Hullu Poro - Levi Center Hullu Poro",
     "evidence": 17,
     "note": "Ravintolan oma sivu talon sivustolla; automaatti tarjosi sisarravintola Ammilan lounasbuffetia.",
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.hulluporo.fi/en/restaurants/wanha-hullu-poro/",
+    "kindEn": "page",
+    "titleEn": "Wanha Hullu Poro - Levi Center Hullu Poro",
+    "evidenceEn": 66
   },
   "levi-ristorante-renna": {
     "status": "none",
@@ -274,7 +298,11 @@
     "kind": "page",
     "title": "Ruokalista | MENU :: Ravintola Tunturikettu",
     "evidence": 0,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.tunturikettu.fi/en/menu/",
+    "kindEn": "page",
+    "titleEn": "MENU :: Ravintola Tunturikettu",
+    "evidenceEn": 0
   },
   "posio-korpihilla": {
     "status": "none",
@@ -298,7 +326,11 @@
     "kind": "page",
     "title": "SKYN herkullinen À la carte - www.kitchensky.fi",
     "evidence": 0,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.kitchensky.fi/en/menu/a-la-carte.html",
+    "kindEn": "page",
+    "titleEn": "À la carte - www.kitchensky.fi",
+    "evidenceEn": 0
   },
   "pyhatunturi-bistro-vanha-pappila": {
     "status": "none",
@@ -357,7 +389,11 @@
     "kind": "page",
     "title": "Menu &mdash; Cafe &amp; Bar 21",
     "evidence": 63,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.cafebar21.fi/en/menu",
+    "kindEn": "page",
+    "titleEn": "Menu &mdash; Cafe &amp; Bar 21",
+    "evidenceEn": 58
   },
   "rovaniemi-hanki": {
     "status": "none",
@@ -376,7 +412,11 @@
     "kind": "page",
     "title": "Menu &#8211; Ravintola Roka Street Bistro Rovaniemi",
     "evidence": 30,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://ravintolaroka.fi/en/menu-2/",
+    "kindEn": "page",
+    "titleEn": "Menu &#8211; Ravintola Roka Street Bistro Rovaniemi",
+    "evidenceEn": 29
   },
   "saariselka-bistro-cafe-kuukkeli": {
     "status": "none",
@@ -388,7 +428,11 @@
     "kind": "page",
     "title": "Ruokalistat - Fieno Saariselkä",
     "evidence": 40,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://fieno.fi/en/menus/",
+    "kindEn": "page",
+    "titleEn": "Menus - Fieno Saariselkä",
+    "evidenceEn": 40
   },
   "saariselka-galdu-restaurant": {
     "status": "none",
@@ -491,21 +535,33 @@
     "kind": "page",
     "title": "Otson menu &#8211; Ravintola Otso",
     "evidence": 110,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.ravintolaotso.fi/english/",
+    "kindEn": "page",
+    "titleEn": "English &#8211; Ravintola Otso",
+    "evidenceEn": 104
   },
   "yllas-ravintola-rouhe": {
     "url": "https://www.ravintolarouhe.fi/a-la-carte/",
     "kind": "page",
     "title": "Ravintola Rouhe | À la carte -menu",
     "evidence": 32,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.ravintolarouhe.fi/en/ala-carte/",
+    "kindEn": "page",
+    "titleEn": "Restaurant Rouhe | À la Carte",
+    "evidenceEn": 32
   },
   "yllas-restaurant-yllaskota": {
     "url": "https://www.yllaskota.fi/menu/",
     "kind": "page",
     "title": "Ylläskota menu - Yll&auml;skota",
     "evidence": 26,
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-08-10",
+    "urlEn": "https://www.yllaskota.fi/en/lunch-alacarte/",
+    "kindEn": "page",
+    "titleEn": "Ylläskota lunch and á la carte - Yll&auml;skota",
+    "evidenceEn": 26
   },
   "yllas-velhon-kota": {
     "status": "none",

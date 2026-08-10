@@ -1,4 +1,5 @@
 import type { Restaurant } from '../data/restaurants';
+import { useLocale } from '../i18n/useLocale';
 import { withReferral } from '../lib/outbound';
 
 interface Props {
@@ -22,15 +23,28 @@ interface Props {
  * jotta kumppani näkee mistä kävijä tuli.
  */
 export default function MenuLink({ restaurant, label, labelPdf, campaign }: Props) {
-  if (!restaurant.menuUrl) return null;
+  const { locale } = useLocale();
+
+  // Suomenkielinen kävijä saa ravintolan suomenkielisen listan; kaikki muut
+  // englanninkielisen jos sellainen on. Yksikään näistä ravintoloista ei julkaise
+  // saksaksi tai japaniksi, joten englanti on paras saatavilla oleva muille.
+  //
+  // Vesa 2026-08-10: 25/42 linkistä vei suomenkieliselle sivulle, vaikka 15:llä
+  // oli englanninkielinen vastine. Englanninkielinen ETUSIVU ei kelpaa
+  // vastineeksi — se toistaisi juuri sen vian jota tämä nappi korjaa.
+  const useEn = locale !== 'fi' && Boolean(restaurant.menuUrlEn);
+  const url = useEn ? restaurant.menuUrlEn : restaurant.menuUrl;
+  const kind = useEn ? restaurant.menuKindEn : restaurant.menuKind;
+
+  if (!url) return null;
   return (
     <a
-      href={withReferral(restaurant.menuUrl, campaign)}
+      href={withReferral(url, campaign)}
       target="_blank"
       rel="nofollow noopener"
       className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
     >
-      {restaurant.menuKind === 'pdf' ? labelPdf : label} →
+      {kind === 'pdf' ? labelPdf : label} →
     </a>
   );
 }

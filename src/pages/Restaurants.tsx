@@ -31,16 +31,16 @@ const cityImages: Record<string, string> = {
   'Ylläs': DINING.ingredientsAlt,
   Tornio: DINING.ingredients,
   Haparanda: DINING.fineDining,
-  Kittilä: DINING.kotaInside,
-  'Sodankylä': DINING.foodMoody,
+  Kittilä: DINING.kittilaDining,
+  'Sodankylä': DINING.sodankylaDining,
   Pyhätunturi: seasonal(DINING.snowVillage, DINING.pyhaSummer),
-  Luosto: seasonal(DINING.snowVillage, DINING.luostoSummer),
-  Muonio: DINING.ingredientsAlt,
-  Hetta: DINING.foodMoody,
+  Luosto: seasonal(DINING.luostoWinter, DINING.luostoSummer),
+  Muonio: DINING.muonioDining,
+  Hetta: DINING.hettaDining,
   Kuusamo: DINING.exterior,
   Kemijärvi: DINING.exteriorAlt,
-  Salla: seasonal(DINING.snowVillage, DINING.sallaSummer),
-  Posio: DINING.foodMoody,
+  Salla: seasonal(DINING.sallaWinter, DINING.sallaSummer),
+  Posio: DINING.posioDining,
 };
 
 const cityGygCatalog: Record<string, { citySlug: string; sid: string }> = {
@@ -328,7 +328,7 @@ export default function Restaurants() {
 
       <section className="relative min-h-[56svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={seasonal(DINING.snowVillage, DINING.heroSummer)}
+          src={seasonal(DINING.restaurantsHeroWinter, DINING.heroSummer)}
           alt="Dining in Finnish Lapland"
           className="absolute inset-0 w-full h-full object-cover scale-105"
           loading="eager"

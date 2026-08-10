@@ -45,9 +45,21 @@ for (const slug of slugs) {
   seenUrls.set(e.url, slug);
   // Ruokalistan pitaa olla ravintolan omalla sivustolla.
   const site = siteBySlug[slug];
-  if (site) {
-    const bare = (u) => { try { return new URL(u).hostname.replace(/^www\./i, '').toLowerCase(); } catch { return ''; } };
-    if (bare(e.url) !== bare(site)) errors.push(`${slug}: url on eri domainilla kuin verkkosivu (${bare(e.url)} vs ${bare(site)})`);
+  const bare = (u) => { try { return new URL(u).hostname.replace(/^www\./i, '').toLowerCase(); } catch { return ''; } };
+  if (site && bare(e.url) !== bare(site)) {
+    errors.push(`${slug}: url on eri domainilla kuin verkkosivu (${bare(e.url)} vs ${bare(site)})`);
+  }
+
+  // Englanninkielinen osoite on vapaaehtoinen, mutta jos se on, samat saannot.
+  if (e.urlEn) {
+    if (!/^https?:\/\//i.test(e.urlEn)) errors.push(`${slug}: urlEn ei ole http(s)`);
+    if (classifyKind(e.urlEn) === 'image') errors.push(`${slug}: urlEn on kuvatiedosto`);
+    if (e.kindEn !== classifyKind(e.urlEn)) errors.push(`${slug}: kindEn ei vastaa urlEn:aa`);
+    if (isFrontPage(e.urlEn)) errors.push(`${slug}: urlEn on sivuston etusivu (${e.urlEn})`);
+    if (e.urlEn === e.url) errors.push(`${slug}: urlEn on sama kuin url`);
+    if (site && bare(e.urlEn) !== bare(site)) {
+      errors.push(`${slug}: urlEn on eri domainilla kuin verkkosivu (${bare(e.urlEn)} vs ${bare(site)})`);
+    }
   }
 }
 

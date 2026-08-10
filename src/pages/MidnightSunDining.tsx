@@ -201,7 +201,7 @@ export default function MidnightSunDining() {
       {/* Bottom CTA */}
       <section className="relative py-20 overflow-hidden">
         <img
-          src={DINING.fineDining}
+          src={DINING.midnightSunBand}
           alt="Lapland summer terrace dining"
           className="absolute inset-0 w-full h-full object-cover"
         />
