@@ -96,10 +96,14 @@ test('sameHost sivuuttaa www-etuliitteen', () => {
 - [ ] **Step 2: Run test to verify it fails**
 
 ```bash
-node --test scripts/lib/
+node --test "scripts/lib/*.test.mjs"
 ```
 
 Expected: FAIL, `Cannot find module` tai `ERR_MODULE_NOT_FOUND` for `./menu-detect.mjs`.
+
+Huom: glob on lainattava ja tiedostokuvio annettava. Node 24 ei hyvaksy pelkkaa
+hakemistoa (`node --test scripts/lib/` yrittaa suorittaa hakemiston moduulina ja
+kaatuu `MODULE_NOT_FOUND`-virheeseen, mika nayttaa testin epaonnistumiselta).
 
 - [ ] **Step 3: Write minimal implementation**
 
@@ -179,16 +183,22 @@ export function sameHost(a, b) {
 
 - [ ] **Step 4: Run test to verify it passes**
 
-```bash
-node --test scripts/lib/
+Lisaa `package.json`:n `scripts`-lohkoon, jotta portti on yhden sanan komento:
+
+```json
+    "test": "node --test \"scripts/lib/*.test.mjs\"",
 ```
 
-Expected: PASS, `# pass 8` ja `# fail 0`.
+```bash
+npm test
+```
+
+Expected: PASS, `pass 8` ja `fail 0`.
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add scripts/lib/menu-detect.mjs scripts/lib/menu-detect.test.mjs
+git add scripts/lib/menu-detect.mjs scripts/lib/menu-detect.test.mjs package.json
 git commit -m "feat: ruokalistan tunnistusportti omaksi testatuksi kirjastoksi"
 ```
 
@@ -1121,7 +1131,7 @@ git commit -m "feat: kuukausivahti ruokalistalinkeille"
 - [ ] **Step 1: Aja koko portisto vielä kerran**
 
 ```bash
-node --test scripts/lib/ && node scripts/verify-menu-registry.mjs && node scripts/check-menu-links.mjs && npm run build
+npm test && node scripts/verify-menu-registry.mjs && node scripts/check-menu-links.mjs && npm run build
 ```
 
 Expected: kaikki neljä exit 0.
