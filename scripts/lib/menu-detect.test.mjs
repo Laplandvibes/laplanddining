@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  scoreCandidate, countPriceTokens, classifyKind, sameHost, titleLooksLikeMenu, isFrontPage, EVIDENCE_MIN,
+  scoreCandidate, countPriceTokens, classifyKind, sameHost, titleLooksLikeMenu, isFrontPage,
+  redirectedToFrontPage, EVIDENCE_MIN,
 } from './menu-detect.mjs';
 
 test('kotimainen termi voittaa yleisen sanan menu', () => {
@@ -71,6 +72,15 @@ test('etusivu ei kelpaa ruokalistalinkiksi', () => {
   // Ankkuri osioon on kelvollinen: se hyppaa ruokalistaan, ei sivun alkuun.
   assert.ok(!isFrontPage('https://www.arcticrestaurant.fi/#menu'));
   assert.ok(isFrontPage('https://x.fi/#'));
+});
+
+// Kuukausivahti antoi vaaran halytyksen: fetch ei laheta risuaitaa
+// palvelimelle, joten /#menu palautuu muodossa / eika se ole ohjaus.
+test('ohjaus etusivulle tunnistetaan, ankkuri ei ole ohjaus', () => {
+  assert.ok(redirectedToFrontPage('https://x.fi/ruokalista', 'https://x.fi/'));
+  assert.ok(!redirectedToFrontPage('https://x.fi/#menu', 'https://x.fi/'));
+  assert.ok(!redirectedToFrontPage('https://x.fi/menu', 'https://x.fi/menu/'));
+  assert.ok(!redirectedToFrontPage('https://x.fi/menu', 'https://x.fi/fi/menu'));
 });
 
 test('EVIDENCE_MIN on kolme', () => {

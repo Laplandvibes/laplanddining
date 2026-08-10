@@ -110,3 +110,19 @@ export function isFrontPage(url) {
     return false;
   }
 }
+
+const barePath = (u) => { try { return new URL(u).pathname.replace(/\/+$/, ''); } catch { return null; } };
+
+/**
+ * Ohjautuiko linkki etusivulle. Yleinen tapa jolla ruokalista katoaa:
+ * sivu poistetaan ja palvelin ohjaa etusivulle 200-koodilla.
+ *
+ * Vertaa POLKUJA, ei koko osoitetta: fetch ei laheta risuaitaa palvelimelle,
+ * joten `/#menu` palaa muodossa `/` eika se ole ohjaus.
+ */
+export function redirectedToFrontPage(originalUrl, finalUrl) {
+  const from = barePath(originalUrl);
+  const to = barePath(finalUrl);
+  if (from === null || to === null) return false;
+  return from !== '' && to === '';
+}
