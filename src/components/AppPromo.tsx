@@ -412,14 +412,23 @@ export function AppPromoHero() {
                   {c.title}
                 </h2>
 
-                {/* The scale is the argument, so it sits directly under the title. */}
-                <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2.5">
+                {/* The scale is the argument, so it sits directly under the title.
+                    🔴 Not a free-wrapping flex row below md: wrapping put
+                    "475 tarkistettua paikkaa" alone on its own row — a ragged
+                    2/1/1 stack at 375 and a 3+1 at 640 (Vesa 2026-08-07, with
+                    screenshots). Below sm each cell stacks the number over its
+                    label (the label sharing the baseline wrapped haphazardly in
+                    a ~100 px cell — Vesa 2026-08-06 on gifts: "luvut 32, 211
+                    jne menee miten sattuu"); sm–md the same 2×2 with the pair
+                    inline, since ~200 px cells hold one line; from md the
+                    single row fits and flex returns. */}
+                <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 sm:mt-4 sm:gap-x-6 sm:gap-y-2.5 md:flex md:flex-wrap md:gap-x-6">
                   {FIGURES.map((n, i) => (
-                    <div key={n} className="flex items-baseline gap-1.5">
+                    <div key={n} className="flex min-w-0 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-1.5">
                       <span style={DISPLAY_FONT} className="tracking-wide text-[#EC4899] text-2xl sm:text-3xl leading-none">
                         {n}
                       </span>
-                      <span className="text-[#F9FAFB]/65 text-[11px] sm:text-xs">{c.stats[i]}</span>
+                      <span className="min-w-0 text-[#F9FAFB]/65 text-[11px] leading-tight sm:text-xs">{c.stats[i]}</span>
                     </div>
                   ))}
                 </div>
@@ -433,23 +442,35 @@ export function AppPromoHero() {
                   640 up the side media block takes over. */}
               <div className="relative shrink-0 sm:hidden">
                 <div aria-hidden className="absolute -inset-2 rounded-[24px] bg-[#EC4899]/20 blur-2xl" />
+                {/* 🔴 The bottom fade is not decoration: the capture's lower
+                    edge slices through a half-visible row of app content, and
+                    at every width that read as a rendering bug (Vesa
+                    2026-08-07). Fading the last quarter turns the crop into an
+                    intentional "there is more below" edge. */}
                 <img
                   src={SHOT_SRC}
                   alt={c.title}
                   width={234}
                   height={507}
                   loading="lazy"
-                  className="relative w-[86px] h-auto rounded-[14px] border-2 border-white/15 shadow-2xl"
+                  className="relative w-[86px] h-auto rounded-[14px] border-2 border-white/15 shadow-2xl [mask-image:linear-gradient(to_bottom,#000_72%,transparent_100%)]"
                 />
               </div>
             </div>
 
             {/* A grid, not free-flowing pills: wrapping pills produced ragged rows of
                 different lengths and read as a heap. Two aligned columns, one item
-                per cell, same rhythm on every row. */}
-            <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-                {[...c.features].sort((a, b) => a.length - b.length).map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-[13px] leading-[1.45] text-[#F9FAFB]/85">
+                per cell, same rhythm on every row.
+                🔴 The split is md, NOT sm (Vesa 2026-08-07, with screenshots):
+                at 640–767 the side media block leaves ~200 px per column and
+                every single bullet wrapped to 2–3 lines — the exact heap this
+                grid exists to prevent. One full-width column there keeps every
+                item on one line; from 768 the columns are wide enough. */}
+            <ul className="mt-4 sm:mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5">
+                {/* Phones get the two shortest items only: the full list made
+                    the mobile card "aivan liian korkea" (Vesa 2026-08-06). */}
+                {[...c.features].sort((a, b) => a.length - b.length).map((f, fi) => (
+                <li key={f} className={`${fi >= 2 ? 'hidden sm:flex' : 'flex'} items-start gap-2.5 text-[13px] leading-[1.45] text-[#F9FAFB]/85`}>
                   <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#EC4899]" />
                   <span>{f}</span>
                 </li>
@@ -459,7 +480,9 @@ export function AppPromoHero() {
             {/* 🔴 Literal green, not text-aurora-green: the blog remaps that
                 token to pink (#DB2777), and this card must not inherit any
                 site's palette decisions. */}
-            <p style={DISPLAY_FONT} className="mt-5 tracking-wide text-[#10B981] text-lg sm:text-xl leading-none">
+            {/* Hype line only from sm up: it is the cheapest line to drop from
+                the too-tall mobile card, and the CTA already says it. */}
+            <p style={DISPLAY_FONT} className="mt-4 hidden tracking-wide text-[#10B981] text-lg sm:mt-5 sm:block sm:text-xl leading-none">
               {c.hype}
             </p>
 
@@ -490,13 +513,14 @@ export function AppPromoHero() {
                 aria-hidden
                 className="absolute -inset-3 rounded-[32px] bg-[#EC4899]/20 blur-2xl"
               />
+              {/* Same bottom fade as the in-heading thumbnail, same reason. */}
               <img
                 src={SHOT_SRC}
                 alt={c.title}
                 width={234}
                 height={507}
                 loading="lazy"
-                className="relative w-[132px] lg:w-[168px] h-auto rounded-[18px] border-2 border-white/15 shadow-2xl"
+                className="relative w-[132px] lg:w-[168px] h-auto rounded-[18px] border-2 border-white/15 shadow-2xl [mask-image:linear-gradient(to_bottom,#000_72%,transparent_100%)]"
               />
             </div>
 
