@@ -850,18 +850,44 @@ npm run build
 
 Expected: exit 0. `tsc -b` läpi, vite build läpi, prerender läpi.
 
-- [ ] **Step 8: Tarkista että napit ovat prerenderöidyssä HTML:ssä**
+- [ ] **Step 8: Tarkista napit oikeasta DOMista, EI staattisesta HTML:stä**
+
+🔴 **Tämän sivuston prerender kirjoittaa vain metan.** `dist/restaurants/index.html`
+on 13 kt ja sen `<div id="root">` on tyhjä: ei ravintoloita, ei kortteja, ei
+ItemList-skeemaa. Kaikki sisältö renderöityy selaimessa. Staattisen HTML:n
+greppaaminen antaa 0 osumaa vaikka kaikki toimisi.
+
+Todiste kaksiosaisena. Ensin että koodi ja data ovat mukana bundlessa:
 
 ```bash
 node -e "
 const fs=require('fs');
-const html=fs.readFileSync('dist/restaurants/index.html','utf8');
-const n=(html.match(/Ruokalista|>Menu</g)||[]).length;
-console.log('menu-nappeja /restaurants-sivun HTML:ssa:',n);
-if(n===0) process.exit(1);"
+let h={Ruokalista:0,hasMenu:0,dining_menu:0,Speisekarte:0};
+for(const f of fs.readdirSync('dist/assets').filter(f=>f.endsWith('.js'))){
+  const s=fs.readFileSync('dist/assets/'+f,'utf8');
+  for(const k of Object.keys(h)) h[k]+=s.split(k).length-1;}
+console.log(h);"
 ```
 
-Expected: nollaa suurempi luku. Jos 0, komponentti ei renderöidy prerenderissä.
+Expected: jokainen nollaa suurempi.
+
+Sitten oikeasta DOMista dev-palvelimella (`preview_start` nimellä `laplanddining`,
+portti 5198), sivulla `/fi/restaurants`:
+
+```js
+const menu=[...document.querySelectorAll('a')].filter(a=>/Ruokalista/i.test(a.textContent));
+const ld=[...document.querySelectorAll('script[type="application/ld+json"]')].map(s=>JSON.parse(s.textContent));
+({ nappeja: menu.length,
+   pdf: menu.filter(a=>/PDF/.test(a.textContent)).length,
+   hasMenu: ld.find(j=>j['@type']==='ItemList').itemListElement.filter(x=>x.item.hasMenu).length })
+```
+
+Expected: `hasMenu` = rekisterin linkkimäärä tasan (42), nappeja > 0, `rel` on
+`nofollow noopener` ilman `noreferrer`, href sisältää `utm_campaign=dining_menu_*`.
+
+🔴 **Mittaa vasta kun selainpaneelilla on koko.** Mitoittamattomassa paneelissa
+`document.documentElement.clientWidth` on 0, jolloin jokainen elementti näyttää
+vuotavan vaakasuunnassa. Aja `resize_window` 1280×800 ja 375×812 ennen mittausta.
 
 - [ ] **Step 9: Commit**
 
@@ -889,31 +915,20 @@ git commit -m "feat: ruokalistanappi neljalle korttipinnalle, 12 kielta"
               ...(r.menuUrl ? { hasMenu: r.menuUrl } : {}),
 ```
 
-- [ ] **Step 2: Buildaa ja tarkista skeemasta**
+- [ ] **Step 2: Tarkista skeema DOMista**
 
-```bash
-npm run build && node -e "
-const fs=require('fs');
-const html=fs.readFileSync('dist/restaurants/index.html','utf8');
-const n=(html.match(/hasMenu/g)||[]).length;
-console.log('hasMenu-esiintymia skeemassa:',n);
-if(n===0) process.exit(1);"
+Sama huomio kuin Task 5 Step 8:ssa: ItemList ei ole staattisessa HTML:ssä, se
+renderöityy selaimessa. Tarkista dev-palvelimen DOMista, että jokainen
+`hasMenu`-arvo vastaa rekisteriä ja että kaikki JSON-LD-lohkot parsiutuvat:
+
+```js
+const ld=[...document.querySelectorAll('script[type="application/ld+json"]')];
+const parsed=ld.map(s=>{try{return JSON.parse(s.textContent)}catch{return null}});
+({ lohkoja: ld.length, rikki: parsed.filter(x=>!x).length,
+   hasMenu: parsed.find(j=>j&&j['@type']==='ItemList').itemListElement.filter(x=>x.item.hasMenu).length })
 ```
 
-Expected: nollaa suurempi luku, exit 0.
-
-- [ ] **Step 3: Tarkista että JSON-LD on yhä validia JSONia**
-
-```bash
-node -e "
-const fs=require('fs');
-const html=fs.readFileSync('dist/restaurants/index.html','utf8');
-const blocks=[...html.matchAll(/<script type=\"application\/ld\+json\">([\s\S]*?)<\/script>/g)];
-blocks.forEach((b,i)=>{try{JSON.parse(b[1]);}catch(e){console.error('LOHKO',i,'RIKKI',e.message);process.exit(1);}});
-console.log(blocks.length,'JSON-LD-lohkoa, kaikki validia JSONia');"
-```
-
-Expected: kaikki lohkot parsiutuvat, exit 0.
+Expected: `rikki: 0` ja `hasMenu` = 42.
 
 - [ ] **Step 4: Commit**
 
@@ -1148,12 +1163,16 @@ Expected: deploy-URL muodossa `https://<hash>.laplanddining.pages.dev`.
 
 Tarkista **deploy-URLista**, ei apexista. Apex valehtelee selainvälimuistin takia — tämä nimenomainen ansa osui 3.8. tällä sivustolla.
 
+🔴 **curl + grep EI kelpaa tälle sivustolle**: palvelin lähettää tyhjän
+`#root`-kuoren, joten `grep Ruokalista` antaa 0 vaikka kaikki toimisi. curlilla
+tarkistetaan vain että oikea JS-nippu tarjoillaan:
+
 ```bash
-curl -s 'https://<hash>.laplanddining.pages.dev/restaurants' -H 'User-Agent: Mozilla/5.0' | grep -o 'Ruokalista[^<]*' | head -5
-curl -s 'https://<hash>.laplanddining.pages.dev/restaurants' -H 'User-Agent: Mozilla/5.0' | grep -o 'hasMenu' | wc -l
+curl -s 'https://<hash>.laplanddining.pages.dev/restaurants' -H 'User-Agent: Mozilla/5.0' | grep -o 'assets/index-[A-Za-z0-9_-]*\.js' | head -1
 ```
 
-Expected: ruokalistanappien tekstit näkyvät ja `hasMenu` esiintyy skeemassa.
+Expected: sama chunk-nimi kuin `dist/assets/`-hakemistossa. Sisällön todiste
+tulee selaimesta seuraavassa vaiheessa.
 
 - [ ] **Step 4: Tarkista apex ja mobiili silmillä**
 
