@@ -53,6 +53,14 @@ const OVERRIDE = {
     title: 'Wanha Hullu Poro - Levi Center Hullu Poro',
     note: 'Ravintolan oma sivu talon sivustolla; automaatti tarjosi sisarravintola Ammilan lounasbuffetia.',
   },
+  // Automaatti nappasi viikoittain vaihtuvan PDF:n (viikko-33-1.pdf), joka
+  // kuolee paivissa. Sivustolla on vakaa /menu/-sivu (burgerit + a la carte),
+  // joka ei vanhene. Vakaa sivu voittaa tuoreemman mutta katoavan tiedoston.
+  'pyhatunturi-cafe-loimu': {
+    url: 'https://cafeloimu.fi/menu/',
+    title: 'Menu - Cafe Loimu',
+    note: 'Vakaa menusivu; automaatti tarjosi viikoittain vaihtuvaa PDF:aa.',
+  },
   // Ruokalista on ankkurina etusivulla. Ilman ankkuria linkki veisi
   // etusivulle, mika on juuri se vika jota tama hanke korjaa.
   'rovaniemi-arctic-restaurant': {
@@ -65,6 +73,9 @@ const OVERRIDE = {
 const REJECT = {
   'muonio-arctic-sauna-world': 'Harrinivan sivustolla ei ole talle omaa ruokalistaa, vain Jeris Lakeside Resortin ravintolasivu.',
   'kemi-pizzeria-san-milano': 'Pizzerian oma sivu ohjaa talon yhteiseen a la carteen; omaa listaa ei ole julkaistu.',
+  // Listaus piilotettu kokonaan (permanentlyClosed restaurant-overrides.ts:ssa):
+  // ravintolan oma etusivu ilmoittaa "Suljettu toistaiseksi!".
+  'muonio-ravintola-tunturikettu': 'ravintola ilmoittaa sivullaan suljettu toistaiseksi, listaus piilotettu 2026-08-10',
 };
 
 const REASONS = {

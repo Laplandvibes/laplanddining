@@ -294,15 +294,9 @@
     "checkedAt": "2026-08-10"
   },
   "muonio-ravintola-tunturikettu": {
-    "url": "https://www.tunturikettu.fi/menu/",
-    "kind": "page",
-    "title": "Ruokalista | MENU :: Ravintola Tunturikettu",
-    "evidence": 0,
-    "checkedAt": "2026-08-10",
-    "urlEn": "https://www.tunturikettu.fi/en/menu/",
-    "kindEn": "page",
-    "titleEn": "MENU :: Ravintola Tunturikettu",
-    "evidenceEn": 0
+    "status": "none",
+    "reason": "ravintola ilmoittaa sivullaan suljettu toistaiseksi, listaus piilotettu 2026-08-10",
+    "checkedAt": "2026-08-10"
   },
   "posio-korpihilla": {
     "status": "none",
@@ -338,12 +332,12 @@
     "checkedAt": "2026-08-10"
   },
   "pyhatunturi-cafe-loimu": {
-    "url": "https://cafeloimu.fi/wp-content/uploads/2026/08/viikko-33-1.pdf",
-    "kind": "pdf",
-    "title": "Café Loimu (PDF)",
+    "url": "https://cafeloimu.fi/menu/",
+    "kind": "page",
+    "title": "Menu - Cafe Loimu",
     "evidence": 0,
-    "checkedAt": "2026-08-10",
-    "note": "paivatty PDF-polku, vaihtuu kaudessa — kuukausivahti seuraa"
+    "note": "Vakaa menusivu; automaatti tarjosi viikoittain vaihtuvaa PDF:aa.",
+    "checkedAt": "2026-08-10"
   },
   "pyhatunturi-huttuhippu": {
     "url": "https://eatlappi.fi/huttuhippu-menu",

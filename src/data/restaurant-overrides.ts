@@ -34,7 +34,17 @@ type Override = Partial<Pick<Restaurant,
   | 'dietary'
   | 'reservationPolicy'
   | 'website'
->>;
+>> & {
+  /**
+   * Ravintola on lopettanut tai ilmoittaa olevansa suljettu toistaiseksi.
+   * Listaus piilotetaan kokonaan: kortti, skeema ja kaupungin laskuri.
+   *
+   * Maps voi näyttää lopettaneen ravintolan yhä avoimena kuukausia, joten
+   * tämä on toimituksellinen päätös eikä synkasta tuleva tieto. Peruste
+   * kirjataan aina kommenttiin.
+   */
+  permanentlyClosed?: boolean;
+};
 
 export const restaurantOverrides: Record<string, Override> = {
   // ── Rikkinäiset verkkosivulinkit, tarkistettu 2026-08-10 ────────────────
@@ -59,6 +69,14 @@ export const restaurantOverrides: Record<string, Override> = {
   // Niestapaikka — Hetta. niestapaikka.onverkossa.fi ei vastaa,
   // eikä niestapaikka.fi ole olemassa.
   'ChIJBfuXzkyN0UURA2S2OkxMsVA': { website: undefined },
+
+  // ── Piilotetut listaukset ───────────────────────────────────────────────
+  // Ravintola Tunturikettu — Muonio. Sivuston etusivun pääotsikko on
+  // "Suljettu toistaiseksi!" (myös englanniksi "closed until further notice"),
+  // eikä avaamisajankohtaa mainita. Maps näyttää sen yhä avoimena, mutta
+  // ruokaopas ei voi lähettää ihmistä suljettuun ravintolaan. Tarkistettu
+  // 2026-08-10. Jos ravintola avaa uudelleen, poista tämä rivi.
+  'ChIJST3thVW900URZ7CT6hKOiqY': { permanentlyClosed: true },
 
   // Sataman Krouwi ja Perämeren Jähti — Kemi. Sivuston JUURI on 404 (sekä
   // www että apex), mutta /lounaslista/ vastaa ja on oikean ravintolan sivu.

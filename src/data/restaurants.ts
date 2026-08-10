@@ -170,7 +170,20 @@ interface MapsRestaurant {
   types?: string[];
 }
 
-const merged: Restaurant[] = (mapsData as MapsRestaurant[]).map((m) => {
+/**
+ * Toimituksellisesti piilotetut listaukset. Maps voi näyttää lopettaneen
+ * ravintolan avoimena kuukausia, joten sulkeminen on ihmisen päätös eikä
+ * synkasta tuleva tieto. Perustelu on aina kommenttina overrides-tiedostossa.
+ */
+const hidden = new Set(
+  Object.entries(restaurantOverrides)
+    .filter(([, o]) => o.permanentlyClosed)
+    .map(([placeId]) => placeId),
+);
+
+const merged: Restaurant[] = (mapsData as MapsRestaurant[])
+  .filter((m) => !hidden.has(m.googlePlaceId))
+  .map((m) => {
   const override = restaurantOverrides[m.googlePlaceId] ?? {};
   // Kuvarekisteri on ainoa kuvalähde. `m.photo` (Google Place Photo) jätetään
   // tarkoituksella huomiotta — ks. photoKind-kentän kommentti.
