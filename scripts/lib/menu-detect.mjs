@@ -41,12 +41,35 @@ export function scoreCandidate(href, text) {
   return s;
 }
 
-// "24,50 €" | "€ 24,50" | "EUR 12.50" | "24.50€"
-const PRICE = /(?:€|\bEUR\b)\s?\d{1,3}(?:[.,]\d{2})|\d{1,3}[.,]\d{2}\s?(?:€|\bEUR\b)/gi;
+// "24,50 €" | "€ 24,50" | "EUR 12.50" | "24.50€" | "18€" | "24 €" | "€18"
+//
+// Sentit ovat VAPAAEHTOISET. Suomalainen ruokalista kirjoittaa tyypillisesti
+// "18€" ilman desimaaleja; kahden desimaalin pakko hylkasi 10.8.2026 ajossa
+// 33 oikeaa ruokalistaa (mm. restaurantaanaar.fi/a-la-carte, 13 hintaa).
+//
+// (?<!\d) estaa vuosiluvun keskelta osumisen: "2026 €" ei ole hinta.
+const PRICE = /(?:€|\bEUR\b)\s?\d{1,3}(?:[.,]\d{2})?(?!\d)|(?<!\d)\d{1,3}(?:[.,]\d{2})?\s?(?:€|\bEUR\b)/gi;
 
 /** Hintamerkintojen maara. Pelkka "10 euroa" ei kelpaa, koska se osuu esitteisiin. */
 export function countPriceTokens(text) {
   return (text.match(PRICE) ?? []).length;
+}
+
+// Sivun otsikossa esiintyva ruokalistatermi. Ei sisalla yleista sanaa "food",
+// joka osuu myos ravintolan esittelysivuihin.
+const TITLE_MENU = /ruokalist|\bmeny\b|menyy|speisekarte|a-?la-?carte|à\s?la\s?carte|annokset|lounas|\bmenu\b|\bmenut\b|\bcarte\b|\bcardapio\b/i;
+
+/**
+ * Kertooko otsikko etta sivu on ruokalista, vaikka hintoja ei saataisi luettua.
+ *
+ * Tarpeen kahdesta syysta: osa sivuista renderoi listan JS:lla (nili.fi,
+ * kammi.fi — staattisessa HTML:ssa 0 euromerkkia), ja PDF-listojen tavuvirta
+ * on pakattu eika siita voi laskea hintoja. Nama eivat ole automaattisesti
+ * hyvaksyttavia, mutta ne erottuvat taysin osumattomista.
+ */
+export function titleLooksLikeMenu(title) {
+  if (!title) return false;
+  return TITLE_MENU.test(title);
 }
 
 export function classifyKind(url) {

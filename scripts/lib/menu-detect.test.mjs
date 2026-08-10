@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  scoreCandidate, countPriceTokens, classifyKind, sameHost, EVIDENCE_MIN,
+  scoreCandidate, countPriceTokens, classifyKind, sameHost, titleLooksLikeMenu, EVIDENCE_MIN,
 } from './menu-detect.mjs';
 
 test('kotimainen termi voittaa yleisen sanan menu', () => {
@@ -27,6 +27,36 @@ test('hintamerkinnat lasketaan suomalaisesta ja kansainvalisesta muodosta', () =
   assert.equal(countPriceTokens('Poronkaristys 24,50 € ja lohta 29,00 € seka kahvi 4,50 €'), 3);
   assert.equal(countPriceTokens('Menu EUR 12.50 / EUR 18.00'), 2);
   assert.equal(countPriceTokens('Tervetuloa! Avoinna 11-21. Hinnat alkaen 10 euroa.'), 0);
+});
+
+// Aidosta datasta 10.8.2026: restaurantaanaar.fi/a-la-carte listaa 13 hintaa
+// muodossa "KAMMI L,G (D) 18€". Ensimmainen versio vaati kaksi desimaalia ja
+// hylkasi koko sivun, jolloin 33 oikeaa ruokalistaa putosi heikoiksi.
+test('kokonaiseurot ovat hintoja — suomalainen ruokalista kirjoittaa 18€', () => {
+  assert.equal(countPriceTokens('KAMMI L,G (D) 18€ Juutuan yo L,G 18€ vihulainen d,g,v 16€'), 3);
+  assert.equal(countPriceTokens('Poronkaristys 24 € Lohi 29 €'), 2);
+  assert.equal(countPriceTokens('€18 / €22'), 2);
+});
+
+test('vuosiluku ei ole hinta', () => {
+  assert.equal(countPriceTokens('Perustettu 1997. Kausi 2026 €-alueella.'), 0);
+});
+
+test('sekamuodot lasketaan yhdessa', () => {
+  assert.equal(countPriceTokens('Alku 12,50 € · paa 28€ · jalki EUR 9.00'), 3);
+});
+
+// Nili ja Kammi renderoivat ruokalistan JS:lla: staattisessa HTML:ssa ei ole
+// yhtaan euromerkkia, mutta <title> kertoo tyypin. Sama koskee PDF-listoja,
+// joiden tavuvirta on pakattu eika siita voi laskea hintoja.
+test('otsikko paljastaa ruokalistan kun hintoja ei saada luettua', () => {
+  assert.ok(titleLooksLikeMenu('Menu - Ravintola Nili'));
+  assert.ok(titleLooksLikeMenu('Ruokalista | Gastropub Giitu'));
+  assert.ok(titleLooksLikeMenu('À la carte | Restaurant Aanaar'));
+  assert.ok(!titleLooksLikeMenu('Etusivu - Ravintola Nili'));
+  assert.ok(!titleLooksLikeMenu('Yhteystiedot'));
+  assert.ok(!titleLooksLikeMenu(''));
+  assert.ok(!titleLooksLikeMenu(undefined));
 });
 
 test('EVIDENCE_MIN on kolme', () => {
