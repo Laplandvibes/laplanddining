@@ -1,10 +1,30 @@
 import mapsData from './generated/restaurants-from-maps.json';
 import restaurantImages from './generated/restaurant-images.json';
+import restaurantMenus from './generated/restaurant-menus.json';
 import { restaurantOverrides } from './restaurant-overrides';
 import { restaurantGems } from './restaurant-gems';
 
 type ImageEntry = { src: string; kind: string; credit?: string };
 const imageRegistry = restaurantImages as Record<string, ImageEntry>;
+
+type MenuEntry = {
+  url?: string; kind?: string; title?: string; evidence?: number;
+  status?: string; reason?: string; note?: string; checkedAt: string;
+};
+const menuRegistry = restaurantMenus as Record<string, MenuEntry>;
+
+/**
+ * Ruokalistalinkki rekisterista. Vain `page` ja `pdf` kelpaavat; rivit joilla
+ * on `status: 'none'` palauttavat tyhjan, jolloin korttiin ei tule nappia.
+ *
+ * Rekisteri on avainnettu slugilla samoin kuin kuvarekisteri, koska kasin
+ * kuratoitujen gemsien googlePlaceId on tekaistu.
+ */
+function menuFor(slug: string): { menuUrl?: string; menuKind?: 'page' | 'pdf' } {
+  const m = menuRegistry[slug];
+  if (!m?.url || (m.kind !== 'page' && m.kind !== 'pdf')) return {};
+  return { menuUrl: m.url, menuKind: m.kind };
+}
 
 /**
  * LaplandDining restaurant catalog.
@@ -78,6 +98,13 @@ export interface Restaurant {
    */
   photoKind?: 'partner' | 'illustration';
   photoCredit?: string;             // esim. "nili.fi" — vain partner-kuville
+  /**
+   * Ravintolan oma ruokalista. Lähde: generated/restaurant-menus.json, jonka
+   * jokainen rivi on kuitattu käsin. 42/87 ravintolalla on linkki; lopuilla
+   * rekisterissä on kirjattu syy miksi ei ole.
+   */
+  menuUrl?: string;
+  menuKind?: 'page' | 'pdf';
   slug: string;
   lastVerified: string;             // YYYY-MM-DD
   primaryType?: string;
@@ -136,6 +163,7 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[]).map((m) => {
     photo: usable?.src,
     photoKind: usable?.kind as 'partner' | 'illustration' | undefined,
     photoCredit: usable?.kind === 'partner' ? usable.credit : undefined,
+    ...menuFor(m.slug),
     // override may not include these required fields — preserve from maps
     name: m.name,
     city: m.city,
@@ -163,6 +191,7 @@ const gemsWithImages: Restaurant[] = restaurantGems.map((g) => {
   const usable = img && (img.kind === 'partner' || img.kind === 'illustration') ? img : undefined;
   return {
     ...g,
+    ...menuFor(g.slug),
     photo: usable?.src ?? undefined,
     photoKind: usable?.kind as 'partner' | 'illustration' | undefined,
     photoCredit: usable?.kind === 'partner' ? usable.credit : undefined,
