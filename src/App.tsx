@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocale } from './i18n/useLocale';
 import LocaleAutoRedirect from './i18n/LocaleAutoRedirect';
@@ -22,6 +22,23 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 const Terms = lazy(() => import('./pages/Terms'))
 const CookiePolicy = lazy(() => import('./pages/CookiePolicy'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+/**
+ * 🔴 The app layout's landmark, EXCEPT on /terms.
+ *
+ * shared/Legal/TermsContent opens its own <main>; nesting it inside this one is
+ * invalid HTML and gives a screen reader two "main" regions. Its siblings
+ * PrivacyContent/CookieContent open a <div>, so only /terms is affected.
+ * Measured from the rendered DOM 2026-08-13 (12 network sites) -- the raw HTML
+ * has zero <main> elements, so this is invisible to grep.
+ *
+ * Do NOT "simplify" this back to a plain <main>.
+ */
+function MainOrDiv({ children }: { children?: ReactNode }) {
+  const { pathname } = useLocation();
+  const Tag = /(^|\/)terms\/?$/.test(pathname) ? 'div' : 'main';
+  return <Tag className="pt-16">{children}</Tag>;
+}
+
 function useFooterPillarLinks() {
   const { t, i18n } = useTranslation('common');
   const tx = (key: string, fallback: string): string =>
@@ -128,7 +145,7 @@ function AppLayout() {
       <LocaleAutoRedirect />
       <LocaleSync />
       <Navbar />
-      <main className="pt-16">
+      <MainOrDiv>
         {/* Pääkumppaninauha — sivuston näkyvin mainospaikka, joka sivulla
             heti navin alla. Tyhjänä myyntinauha → LV Media -portaali. */}
         <SponsorStrip
@@ -155,7 +172,7 @@ function AppLayout() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Suspense>
-      </main>
+      </MainOrDiv>
       <SharedFooter pillarLinks={pillarLinks} dict={dict} />
       <SharedCookieBanner consentKey="laplanddining_cookie_consent" lang={i18n.language} />
       <NewsletterPopup />
