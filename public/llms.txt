@@ -1,0 +1,23 @@
+# LaplandDining
+
+> Hand-picked restaurants across Finnish Lapland, Sami fine dining, kota fire cooking and Arctic ingredients in Rovaniemi, Levi, Inari, Saariselkä and Ylläs.
+
+## Main pages
+
+- [Home](https://laplanddining.com/): Independent restaurant guide to Finnish Lapland, from local pubs to fine dining
+- [Restaurants](https://laplanddining.com/restaurants): 60+ hand-picked restaurants in and around Finnish Lapland with menus, hours and direct booking links
+- [Fine dining](https://laplanddining.com/fine-dining): Lapland's fine-dining rooms: Restaurant Aanaar, Nili, Rakas, with tasting menus and what to book
+- [Midnight sun dining](https://laplanddining.com/midnight-sun-dining): Where to eat under the midnight sun: late dinners, terrace seats, summer-only menus
+- [Food history](https://laplanddining.com/food-history): The story of Lapland food: Sami foodways, reindeer cuisine, eight-season eating
+- [Local food](https://laplanddining.com/local-food): What "local" means on a Lapland menu: reindeer, Arctic char, cloudberries, foraged herbs
+- [About](https://laplanddining.com/about): About LaplandDining, an independent editorial restaurant guide to Finnish Lapland
+
+## Languages
+
+English (default, no prefix), Finnish (/fi), German (/de), Japanese (/ja), Spanish (/es), Brazilian Portuguese (/br), Simplified Chinese (/cn), Korean (/kr), French (/fr), Italian (/it), Dutch (/nl), Swedish (/sv)
+
+## Network
+
+- Hub: https://laplandvibes.com/
+- Sitemap: https://laplanddining.com/sitemap.xml
+- Contact: info@laplanddining.com
