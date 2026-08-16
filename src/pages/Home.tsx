@@ -329,8 +329,14 @@ export default function Home() {
       {/* ── FAQ (visible accordion backing the FAQPage JSON-LD) ──── */}
       <FAQ />
 
+      {/* [LV-CONSENT-KIELI 2026-08-16] lang eksplisiittisesti URL:sta: ilman
+          proppia komponentti lukee document.documentElement.lang render-hetkellä,
+          joka asetetaan vasta effectissä → suostumus renderöityi englanniksi.
+          privacyHref lokaaliprefiksillä samasta syystä (hubin 0bf517d-malli). */}
       <NewsletterInline
         siteId="laplanddining"
+        lang={locale}
+        privacyHref={to('/privacy')}
         supabaseUrl={import.meta.env.VITE_SUPABASE_URL}
         supabaseAnonKey={import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}
       />

@@ -27,7 +27,9 @@ const PORT = Number(process.env.PRERENDER_PORT || 4321)
 const ORIGIN = `http://localhost:${PORT}`
 
 // ---- Locale prefixes (must match src/App.tsx PREFIXES) ---------------------
-const LOCALE_PREFIXES = ['', '/fi', '/de', '/ja', '/es', '/br', '/cn', '/kr', '/fr', '/it', '/nl']
+// [2026-08-16] '/sv' puuttui vaikka App tarjoilee 12 kieltä → /sv sai SPA-kuoren
+// (<html lang="en">) ja sv-suostumus renderöityi englanniksi koko sessioksi.
+const LOCALE_PREFIXES = ['', '/fi', '/de', '/ja', '/es', '/br', '/cn', '/kr', '/fr', '/it', '/nl', '/sv']
 
 // ---- Routes (must match PAGES in src/App.tsx) ------------------------------
 const ROUTES = [
