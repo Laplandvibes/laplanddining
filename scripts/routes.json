@@ -1,12 +1,54 @@
 [
-  { "path": "/", "jsonKey": "home" },
-  { "path": "/restaurants", "jsonKey": "restaurants" },
-  { "path": "/fine-dining", "jsonKey": "fineDining" },
-  { "path": "/midnight-sun-dining", "jsonKey": "midnightSunDining" },
-  { "path": "/food-history", "jsonKey": "foodHistory" },
-  { "path": "/local-food", "jsonKey": "localFood" },
-  { "path": "/about", "jsonKey": "about" },
-  { "path": "/privacy", "jsonKey": "privacy", "fallbackTitle": "Privacy Policy | LaplandDining" },
-  { "path": "/terms", "jsonKey": "terms", "fallbackTitle": "Terms of Use | LaplandDining" },
-  { "path": "/cookie-policy", "jsonKey": "cookie", "fallbackTitle": "Cookie Policy | LaplandDining" }
+  {
+    "path": "/",
+    "jsonKey": "home"
+  },
+  {
+    "path": "/restaurants",
+    "jsonKey": "restaurants"
+  },
+  {
+    "path": "/fine-dining",
+    "jsonKey": "fineDining"
+  },
+  {
+    "path": "/midnight-sun-dining",
+    "jsonKey": "midnightSunDining"
+  },
+  {
+    "path": "/food-history",
+    "jsonKey": "foodHistory"
+  },
+  {
+    "path": "/local-food",
+    "jsonKey": "localFood"
+  },
+  {
+    "path": "/about",
+    "jsonKey": "about"
+  },
+  {
+    "path": "/privacy",
+    "jsonKey": "privacy",
+    "fallbackTitle": "Privacy Policy | LaplandDining",
+    "harvestFiles": [
+      "../shared/Legal/PrivacyContent.tsx"
+    ]
+  },
+  {
+    "path": "/terms",
+    "jsonKey": "terms",
+    "fallbackTitle": "Terms of Use | LaplandDining",
+    "harvestFiles": [
+      "../shared/Legal/TermsContent.tsx"
+    ]
+  },
+  {
+    "path": "/cookie-policy",
+    "jsonKey": "cookie",
+    "fallbackTitle": "Cookie Policy | LaplandDining",
+    "harvestFiles": [
+      "../shared/Legal/CookieContent.tsx"
+    ]
+  }
 ]
