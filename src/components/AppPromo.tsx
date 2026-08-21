@@ -490,6 +490,8 @@ export function AppPromoHero() {
               <a
                 href={APP_URL}
                 onClick={() => track('hero')}
+                data-umami-event="app_cta"
+                data-umami-event-surface="promo"
                 className="inline-flex items-center gap-2 rounded-full bg-[#EC4899] px-7 py-3.5 text-base sm:text-lg font-bold text-white shadow-[0_10px_30px_-8px_rgba(236,72,153,0.7)] transition-transform active:scale-[0.98] hover:bg-pink-500"
               >
                 <Download className="h-5 w-5" />
@@ -661,6 +663,8 @@ export function AppPromoNudge() {
           <a
             href={APP_URL}
             onClick={openApp}
+            data-umami-event="app_cta"
+            data-umami-event-surface="promo_nudge"
             className="hidden sm:inline-flex shrink-0 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-[#EC4899] shadow-md active:scale-[0.98] transition-transform"
           >
             {c.cta}
@@ -677,6 +681,8 @@ export function AppPromoNudge() {
         <a
           href={APP_URL}
           onClick={openApp}
+          data-umami-event="app_cta"
+          data-umami-event-surface="promo_nudge"
           className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-[#EC4899] no-underline shadow-md transition-transform active:scale-[0.98] sm:hidden"
         >
           <Download className="h-4 w-4" />
