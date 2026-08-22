@@ -585,7 +585,14 @@ function harvestFromObject(node, out, meta, seen, budget) {
 
 function harvestFromTsBlock(block, out, meta, seen, budget) {
   if (!block || budget.words <= 0) return;
-  const kvRe = /(\w+)\s*:\s*(['"`])((?:\\.|(?!\2).)*)\2/g;
+  // 🔴 The key may be QUOTED. Half the network's copy files are auto-generated
+  // JSON-style (`"metaTitle": "…"`, laplandkids' header says so in line 1), and
+  // a bare `(\w+)\s*:` never matches those — the closing quote sits between the
+  // key and the colon. Measured 2026-08-22 on laplandkids: the 47 000-character
+  // `pages.destinations` block yielded ZERO strings while the same content in
+  // an unquoted file yielded thousands of words. The build looked healthy
+  // ("harvest: 48 pages with body copy"), just with most routes silently empty.
+  const kvRe = /["']?(\w+)["']?\s*:\s*(['"`])((?:\\.|(?!\2).)*)\2/g;
   let m;
   while ((m = kvRe.exec(block)) !== null && budget.words > 0) {
     if (HARVEST_SKIP_KEY_RE.test(m[1])) continue;
