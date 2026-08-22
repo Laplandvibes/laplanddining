@@ -280,7 +280,11 @@ function pickTD(block) {
 // ---------- READER 1: per-lang copy.{lang}.ts (original) ----------
 const perLangSources = {};
 for (const loc of LOCALE_LIST) {
-  const fp = resolve(LOCALES, loc.file);
+  // Both spellings occur in the network: copy.ptBR.ts (most sites) and
+  // copy.pt-BR.ts (stayinlapland, laplandkids). Trying only the first left
+  // those locales with an empty copy source and no error anywhere.
+  const fp = [loc.file, `copy.${loc.lang}.ts`]
+    .map((n) => resolve(LOCALES, n)).find((p) => existsSync(p)) || resolve(LOCALES, loc.file);
   let src = existsSync(fp) ? readFileSync(fp, 'utf-8') : '';
   // 🔴 Some sites keep the locale file as a thin re-export and the real text in
   // an overrides file beside it: laplandnature's copy.sv.ts is 232 bytes,
@@ -288,7 +292,7 @@ for (const loc of LOCALE_LIST) {
   // Swedish. Readers that looked only at the stub harvested nothing for eight
   // of twelve locales. Both files are the SAME locale, so appending cannot leak
   // another language in, and duplicate strings are dropped by harvestKeep.
-  const ovr = resolve(LOCALES, loc.file.replace(/^copy\./, 'overrides.'));
+  const ovr = fp.replace(/copy\.(?=[^\\\/]*$)/, 'overrides.');
   if (ovr !== fp && existsSync(ovr)) src += '\n' + readFileSync(ovr, 'utf-8');
   if (src) perLangSources[loc.lang] = src;
 }
