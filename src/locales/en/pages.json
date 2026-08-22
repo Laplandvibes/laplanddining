@@ -146,7 +146,10 @@
     "mapsLabel": "Maps",
     "stayInTemplate": "Stay in {{city}}",
     "readAllReviews": "Read all {{count}} reviews on Google →",
-    "statsAvgRating": "Average Google rating"
+    "statsAvgRating": "Average Google rating",
+    "introTitle": "How this list is ordered, and what it leaves out",
+    "introP1": "The rooms below are sorted by their Google rating, not by who paid, and every rating on the page links back to the reviews it came from so you can check the number and its age yourself. What that ordering cannot tell you is fit: a tasting menu built around reindeer heart and fermented roots is a very different evening from a dining room doing refined Nordic classics, even when both sit at the same score.",
+    "introP2": "Read the card, not the rank. Lapland fine dining is seasonal by necessity, so menus shift with what the forest, the lake and the herd can supply, and the same kitchen reads differently in February and in August. Book ahead: these are small rooms in small towns, several of them inside hotels, and the winter weeks fill long before the tables do in summer."
   },
   "midnightSunDining": {
     "title": "Midnight Sun Dining in Lapland | LaplandDining",

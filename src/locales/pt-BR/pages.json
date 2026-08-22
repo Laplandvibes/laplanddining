@@ -146,7 +146,10 @@
     "mapsLabel": "Maps",
     "stayInTemplate": "Hospede-se em {{city}}",
     "readAllReviews": "Ler todas as {{count}} avaliações no Google →",
-    "statsAvgRating": "Nota média no Google"
+    "statsAvgRating": "Nota média no Google",
+    "introTitle": "Como esta lista está ordenada e o que ela não diz",
+    "introP1": "Os salões abaixo estão ordenados pela nota do Google, não por quem pagou, e cada nota na página leva de volta às avaliações de onde veio, para você conferir o número e a idade dele por conta própria. O que essa ordem não diz é a adequação: um menu degustação construído em torno de coração de rena e raízes fermentadas é uma noite muito diferente de um salão que faz clássicos nórdicos refinados, mesmo com a mesma pontuação.",
+    "introP2": "Leia o card, não a posição. A alta gastronomia da Lapônia é sazonal por necessidade, então os menus acompanham o que a floresta, o lago e o rebanho conseguem entregar, e a mesma cozinha se lê de um jeito em fevereiro e de outro em agosto. Reserve com antecedência: são salões pequenos em cidades pequenas, vários dentro de hotéis, e as semanas de inverno lotam bem antes das de verão."
   },
   "midnightSunDining": {
     "title": "Jantar sob o sol da meia-noite na Lapônia | LaplandDining",

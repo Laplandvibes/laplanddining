@@ -146,7 +146,10 @@
     "mapsLabel": "Mappa",
     "stayInTemplate": "Dormire a {{city}}",
     "readAllReviews": "Leggi tutte le {{count}} recensioni su Google →",
-    "statsAvgRating": "Valutazione media su Google"
+    "statsAvgRating": "Valutazione media su Google",
+    "introTitle": "Come è ordinata questa lista e che cosa non dice",
+    "introP1": "Le sale qui sotto sono ordinate per valutazione Google, non per chi ha pagato, e ogni valutazione rimanda alle recensioni da cui proviene, così può verificare da sé sia il numero sia la sua età. Quello che l'ordine non dice è l'affinità: un menu degustazione costruito attorno al cuore di renna e alle radici fermentate è una serata molto diversa da una sala che lavora classici nordici raffinati, anche a parità di punteggio.",
+    "introP2": "Legga la scheda, non la posizione. L'alta cucina lappone è stagionale per necessità, quindi i menu seguono ciò che bosco, lago e mandria riescono a dare, e la stessa cucina si legge diversamente a febbraio e ad agosto. Prenoti per tempo: sono sale piccole in paesi piccoli, diverse dentro hotel, e le settimane invernali si riempiono molto prima di quelle estive."
   },
   "midnightSunDining": {
     "title": "Cena sotto il sole di mezzanotte in Lapponia | LaplandDining",

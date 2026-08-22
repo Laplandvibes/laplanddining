@@ -146,7 +146,10 @@
     "mapsLabel": "Maps",
     "stayInTemplate": "Alójese en {{city}}",
     "readAllReviews": "Leer las {{count}} opiniones en Google →",
-    "statsAvgRating": "Nota media en Google"
+    "statsAvgRating": "Nota media en Google",
+    "introTitle": "Cómo está ordenada esta lista y qué deja fuera",
+    "introP1": "Los locales de abajo están ordenados por su valoración de Google, no por quién ha pagado, y cada valoración enlaza con las reseñas de las que procede para que usted mismo compruebe la cifra y su antigüedad. Lo que ese orden no dice es si encaja con usted: un menú degustación construido en torno al corazón de reno y las raíces fermentadas es una velada muy distinta de un comedor que trabaja clásicos nórdicos afinados, aunque la nota sea la misma.",
+    "introP2": "Lea la ficha, no el puesto. La alta cocina lapona es estacional por necesidad, así que las cartas siguen lo que el bosque, el lago y el rebaño pueden dar, y la misma cocina se lee distinta en febrero y en agosto. Reserve con antelación: son salas pequeñas en pueblos pequeños, varias dentro de hoteles, y las semanas de invierno se llenan mucho antes que las de verano."
   },
   "midnightSunDining": {
     "title": "Cenas bajo el sol de medianoche en Laponia | LaplandDining",

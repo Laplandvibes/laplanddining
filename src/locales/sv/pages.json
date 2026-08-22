@@ -146,7 +146,10 @@
     "mapsLabel": "Maps",
     "stayInTemplate": "Bo i {{city}}",
     "readAllReviews": "Läs alla {{count}} recensioner på Google →",
-    "statsAvgRating": "Genomsnittligt Google-betyg"
+    "statsAvgRating": "Genomsnittligt Google-betyg",
+    "introTitle": "Hur listan är sorterad, och vad den inte säger",
+    "introP1": "Rummen nedan är sorterade efter sitt Google-betyg, inte efter vem som betalat, och varje betyg på sidan länkar tillbaka till recensionerna det kommer från så att du kan kontrollera både siffran och dess ålder själv. Vad ordningen inte kan säga är passform: en avsmakningsmeny byggd kring renhjärta och fermenterade rötter är en helt annan kväll än en matsal som gör förfinade nordiska klassiker, även när betyget är detsamma.",
+    "introP2": "Läs kortet, inte placeringen. Fine dining i Lappland är säsongsbunden av nödvändighet, så menyerna följer vad skogen, sjön och renhjorden kan ge, och samma kök läser sig olika i februari och i augusti. Boka i förväg: det här är små rum i små orter, flera av dem inne på hotell, och vintveckorna fylls långt före sommarens."
   },
   "midnightSunDining": {
     "title": "Middag i midnattssol i Lappland | LaplandDining",

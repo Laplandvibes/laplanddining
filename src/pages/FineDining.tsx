@@ -113,6 +113,16 @@ export default function FineDining() {
         <PageBreadcrumb />
       </div>
 
+      {/* Editorial lead — the same pages.json block routes.json harvests through
+          this route's jsonKey, so reader and crawler get one text in one language. */}
+      <section className="px-4 sm:px-6 lg:px-8 pt-12 bg-night">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl sm:text-4xl text-cream mb-4">{t('fineDining.introTitle')}</h2>
+          <p className="text-cream/75 text-sm sm:text-base leading-relaxed mb-4">{t('fineDining.introP1')}</p>
+          <p className="text-cream/75 text-sm sm:text-base leading-relaxed">{t('fineDining.introP2')}</p>
+        </div>
+      </section>
+
       {/* Fine dining grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-night">
         <div className="max-w-7xl mx-auto">

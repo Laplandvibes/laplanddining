@@ -146,7 +146,10 @@
     "mapsLabel": "Kartta",
     "stayInTemplate": "Yövy {{city}}ssä",
     "readAllReviews": "Lue kaikki {{count}} arvostelua Googlessa →",
-    "statsAvgRating": "Google-arvioiden keskiarvo"
+    "statsAvgRating": "Google-arvioiden keskiarvo",
+    "introTitle": "Miten tämä lista on järjestetty ja mitä se jättää kertomatta",
+    "introP1": "Alla olevat ravintolat on järjestetty Google-arvion mukaan, ei sen mukaan kuka maksaa, ja jokainen arvio linkittää takaisin arvosteluihin, joista se on peräisin, jotta voit tarkistaa sekä luvun että sen iän itse. Järjestys ei kerro sopivuutta: poron sydämen ja hapatettujen juurten ympärille rakennettu maistelumenu on hyvin toisenlainen ilta kuin hiotun pohjoismaisen klassikon sali, vaikka pisteet olisivat samat.",
+    "introP2": "Lue kortti, älä sijoitusta. Lapin fine dining on pakosta kausiluontoista, joten menut liikkuvat sen mukaan mitä metsä, järvi ja poro antavat, ja sama keittiö näyttää erilaiselta helmikuussa ja elokuussa. Varaa etukäteen: nämä ovat pieniä saleja pienissä kaupungeissa, useat hotellien sisällä, ja talviviikot täyttyvät paljon ennen kesää."
   },
   "midnightSunDining": {
     "title": "Keskiyön auringon ruokailu Lapissa | LaplandDining",

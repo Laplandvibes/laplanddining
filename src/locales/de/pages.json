@@ -146,7 +146,10 @@
     "mapsLabel": "Maps",
     "stayInTemplate": "In {{city}} übernachten",
     "readAllReviews": "Alle {{count}} Bewertungen auf Google lesen →",
-    "statsAvgRating": "Durchschnittliche Google-Bewertung"
+    "statsAvgRating": "Durchschnittliche Google-Bewertung",
+    "introTitle": "Wie diese Liste sortiert ist und was sie nicht sagt",
+    "introP1": "Die Häuser unten sind nach ihrer Google-Bewertung sortiert, nicht danach, wer bezahlt hat, und jede Bewertung auf der Seite verlinkt zurück auf die Rezensionen, aus denen sie stammt, damit Sie Zahl und Alter selbst prüfen können. Was diese Reihenfolge nicht sagt, ist die Passung: ein Menü rund um Rentierherz und fermentierte Wurzeln ist ein ganz anderer Abend als ein Speisesaal mit fein gearbeiteten nordischen Klassikern, selbst bei gleicher Punktzahl.",
+    "introP2": "Lesen Sie die Karte, nicht den Rang. Fine Dining in Lappland ist notgedrungen saisonal, die Menüs folgen dem, was Wald, See und Herde hergeben, und dieselbe Küche liest sich im Februar anders als im August. Reservieren Sie früh: das sind kleine Räume in kleinen Orten, mehrere davon in Hotels, und die Winterwochen sind lange vor dem Sommer ausgebucht."
   },
   "midnightSunDining": {
     "title": "Dinieren unter der Mitternachtssonne in Lappland | LaplandDining",

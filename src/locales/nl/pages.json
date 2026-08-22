@@ -146,7 +146,10 @@
     "mapsLabel": "Kaart",
     "stayInTemplate": "Verblijf in {{city}}",
     "readAllReviews": "Lees alle {{count}} reviews op Google →",
-    "statsAvgRating": "Gemiddelde Google-score"
+    "statsAvgRating": "Gemiddelde Google-score",
+    "introTitle": "Hoe deze lijst is geordend, en wat ze niet vertelt",
+    "introP1": "De zalen hieronder staan gesorteerd op hun Google-beoordeling, niet op wie betaald heeft, en elke beoordeling op deze pagina linkt terug naar de reviews waaruit ze komt, zodat u het cijfer én de ouderdom zelf kunt nagaan. Wat die volgorde niet vertelt, is of het bij u past: een menu rond rendierhart en gefermenteerde wortels is een heel andere avond dan een zaal met verfijnde Noordse klassiekers, ook bij dezelfde score.",
+    "introP2": "Lees de kaart, niet de rangorde. Fine dining in Lapland is noodgedwongen seizoensgebonden, de menu's volgen wat het bos, het meer en de kudde kunnen leveren, en dezelfde keuken leest in februari anders dan in augustus. Reserveer op tijd: dit zijn kleine zalen in kleine plaatsen, meerdere in hotels, en de winterweken zitten ruim voor de zomer vol."
   },
   "midnightSunDining": {
     "title": "Dineren onder de middernachtzon in Lapland | LaplandDining",

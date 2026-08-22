@@ -146,7 +146,10 @@
     "mapsLabel": "Carte",
     "stayInTemplate": "Dormir à {{city}}",
     "readAllReviews": "Lire les {{count}} avis sur Google →",
-    "statsAvgRating": "Note moyenne sur Google"
+    "statsAvgRating": "Note moyenne sur Google",
+    "introTitle": "Comment cette liste est classée, et ce qu'elle ne dit pas",
+    "introP1": "Les tables ci-dessous sont classées selon leur note Google, pas selon qui a payé, et chaque note renvoie aux avis dont elle est issue pour que vous puissiez vérifier vous-même le chiffre et son ancienneté. Ce que ce classement ne dit pas, c'est l'adéquation : un menu dégustation bâti autour du cœur de renne et de racines fermentées n'est pas la même soirée qu'une salle qui travaille des classiques nordiques raffinés, même à note égale.",
+    "introP2": "Lisez la fiche, pas le rang. La haute cuisine lapone est saisonnière par nécessité : les menus suivent ce que la forêt, le lac et le troupeau peuvent fournir, et la même cuisine ne se lit pas pareil en février et en août. Réservez tôt : ce sont de petites salles dans de petites villes, plusieurs installées dans des hôtels, et les semaines d'hiver se remplissent bien avant celles de l'été."
   },
   "midnightSunDining": {
     "title": "Dîner sous le soleil de minuit en Laponie | LaplandDining",
