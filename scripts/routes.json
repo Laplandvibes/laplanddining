@@ -32,7 +32,7 @@
     "jsonKey": "privacy",
     "fallbackTitle": "Privacy Policy | LaplandDining",
     "harvestFiles": [
-      "../shared/Legal/PrivacyContent.tsx"
+      "src/shared/Legal/PrivacyContent.tsx"
     ]
   },
   {
@@ -40,7 +40,7 @@
     "jsonKey": "terms",
     "fallbackTitle": "Terms of Use | LaplandDining",
     "harvestFiles": [
-      "../shared/Legal/TermsContent.tsx"
+      "src/shared/Legal/TermsContent.tsx"
     ]
   },
   {
@@ -48,7 +48,7 @@
     "jsonKey": "cookie",
     "fallbackTitle": "Cookie Policy | LaplandDining",
     "harvestFiles": [
-      "../shared/Legal/CookieContent.tsx"
+      "src/shared/Legal/CookieContent.tsx"
     ]
   }
 ]

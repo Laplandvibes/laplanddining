@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
-import { CATEGORY_LINKS, gygCategoryHref } from '../../../shared/gyg/picks';
+import { CATEGORY_LINKS, gygCategoryHref } from '../shared/gyg/picks';
 import { useLocale } from '../i18n/useLocale';
 
 /**

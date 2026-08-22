@@ -1,6 +1,6 @@
 
 import { useTranslation } from 'react-i18next';
-import Hreflang from '../i18n/Hreflang';import PrivacyContent from '../../../shared/Legal/PrivacyContent';
+import Hreflang from '../i18n/Hreflang';import PrivacyContent from '../shared/Legal/PrivacyContent';
 import { useLocale } from '../i18n/useLocale';
 
 export default function PrivacyPolicy() {

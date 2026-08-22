@@ -5,7 +5,7 @@
    Without this, shared classes like bg-deep-night/text-vibe-pink/text-snow
    are NOT emitted into the production CSS and shared components render
    unstyled. See lv_critical_react_dedupe.md. */
-@source "../../shared/**/*.{ts,tsx}";
+@source "./shared/**/*.{ts,tsx}";
 
 @theme {
   --font-heading: 'Bebas Neue', sans-serif;

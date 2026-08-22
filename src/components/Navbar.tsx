@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 import LanguageSwitcher from '../i18n/LanguageSwitcher';
 import { useLocale } from '../i18n/useLocale';
-import EcosystemMenu from '../../../shared/EcosystemMenu';
+import EcosystemMenu from '../shared/EcosystemMenu';
 
 const NAV_KEYS = [
   { key: 'restaurants', basePath: '/restaurants' },

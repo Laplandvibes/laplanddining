@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { useLocale } from './i18n/useLocale';
 import LocaleAutoRedirect from './i18n/LocaleAutoRedirect';
 import Navbar from './components/Navbar';
-import SharedFooter from '../../shared/Footer';
-import type { FooterDict } from '../../shared/Footer';
-import SharedCookieBanner from '../../shared/CookieBanner';
+import SharedFooter from './shared/Footer';
+import type { FooterDict } from './shared/Footer';
+import SharedCookieBanner from './shared/CookieBanner';
 import NewsletterPopup from './components/NewsletterPopup';
-import SponsorStrip from '../../shared/SponsorStrip';
+import SponsorStrip from './shared/SponsorStrip';
 import { AD_SLOTS } from './data/partners';
 import { AppPromoNudge } from './components/AppPromo';
 const Home = lazy(() => import('./pages/Home'))

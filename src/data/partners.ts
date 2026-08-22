@@ -9,9 +9,9 @@
  * Myyty kumppani lisätään tähän + deploy. Paikkojen määrä = lv_placements-seedin slotit.
  */
 
-import type { Partner } from '../../../shared/PartnerSlot';
-import type { HomeAdSlotsConfig } from '../../../shared/HomeAdSlots';
-import { DEFAULT_PREMIUM_SPOTS } from '../../../shared/PremiumSpotGrid';
+import type { Partner } from '../shared/PartnerSlot';
+import type { HomeAdSlotsConfig } from '../shared/HomeAdSlots';
+import { DEFAULT_PREMIUM_SPOTS } from '../shared/PremiumSpotGrid';
 
 export const PARTNERS: {
   mainPartner: Partner | null;
@@ -59,5 +59,5 @@ export const AD_SLOTS: HomeAdSlotsConfig = {
 };
 
 /** /kumppanit-koontisivun artikkelit (maksaneet kumppanit). Tyhjä = ei vielä. */
-import type { PartnerDirEntry } from '../../../shared/PartnersDirectory';
+import type { PartnerDirEntry } from '../shared/PartnersDirectory';
 export const PARTNER_ARTICLES: PartnerDirEntry[] = [];

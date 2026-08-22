@@ -6,11 +6,11 @@ import { ChevronDown, MapPin, Star, UtensilsCrossed, Flame, Sun } from 'lucide-r
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import EditorsPicks from '../components/EditorsPicks';
-import NewsletterInline from '../../../shared/NewsletterInline';
+import NewsletterInline from '../shared/NewsletterInline';
 import FAQ from '../components/FAQ';
 import { DINING } from '../data/images';
 import { restaurants, cities } from '../data/restaurants';
-import HomeAdSlots from '../../../shared/HomeAdSlots';
+import HomeAdSlots from '../shared/HomeAdSlots';
 import { AD_SLOTS } from '../data/partners';
 import GygPicks from '../components/GygPicks';
 import { AppPromoHero } from '../components/AppPromo';

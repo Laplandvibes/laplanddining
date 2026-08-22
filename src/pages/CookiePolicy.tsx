@@ -1,6 +1,6 @@
 
 import { useTranslation } from 'react-i18next';
-import Hreflang from '../i18n/Hreflang';import CookieContent from '../../../shared/Legal/CookieContent';
+import Hreflang from '../i18n/Hreflang';import CookieContent from '../shared/Legal/CookieContent';
 import { useLocale } from '../i18n/useLocale';
 
 export default function CookiePolicy() {

@@ -9,10 +9,10 @@ import { MapPin, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, 
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
 import { withReferral } from '../lib/outbound';
-import PartnerSlot, { type Partner } from '../../../shared/PartnerSlot';
-import SubpageAd from '../../../shared/SubpageAd';
-import PremiumSpotGrid from '../../../shared/PremiumSpotGrid';
-import { adLocaleEnabled } from '../../../shared/adSlotsCopy';
+import PartnerSlot, { type Partner } from '../shared/PartnerSlot';
+import SubpageAd from '../shared/SubpageAd';
+import PremiumSpotGrid from '../shared/PremiumSpotGrid';
+import { adLocaleEnabled } from '../shared/adSlotsCopy';
 import { PARTNERS, AD_SLOTS } from '../data/partners';
 import {
   restaurants, cities, composeCardBody, cuisineLabel,

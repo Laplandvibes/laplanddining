@@ -1,4 +1,4 @@
-import Breadcrumbs from '../../../shared/Breadcrumbs';
+import Breadcrumbs from '../shared/Breadcrumbs';
 import { useLocale } from '../i18n/useLocale';
 import { useTranslation } from 'react-i18next';
 

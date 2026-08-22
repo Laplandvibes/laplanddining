@@ -1,4 +1,4 @@
-import SharedNewsletterPopup from '../../../shared/NewsletterPopup';
+import SharedNewsletterPopup from '../shared/NewsletterPopup';
 import { trackNewsletterSignup } from '../lib/analytics';
 import { useLocale } from '../i18n/useLocale'
 

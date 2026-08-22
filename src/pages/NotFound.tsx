@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useLocale } from '../i18n/useLocale';
-import SharedNotFound from '../../../shared/NotFound';
+import SharedNotFound from '../shared/NotFound';
 
 // Thin wrapper around the shared LV-network 404 (see ../../../shared/NotFound.tsx
 // for the design contract). Supplies this site's language, home path, and a
