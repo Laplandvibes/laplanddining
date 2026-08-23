@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "LaplandDining, Where to Actually Eat in Lapland",
-    "description": "The independent restaurant guide to Finnish Lapland, hand-picked restaurants, menus, hours, direct booking links. From local pubs to fine dining.",
+    "title": "LaplandDining: Where to Eat in Finnish Lapland",
+    "description": "Hand-picked restaurants across Finnish Lapland: kota fires, Sámi kitchens and fine dining in Rovaniemi, Levi and Inari, with review quotes and menu links.",
     "heroH1": "Discover Lapland's Best Restaurants",
     "heroLead": "Real, hand-picked restaurants across Finnish Lapland, from traditional Sami fine dining to kota fire cooking and Arctic ingredients you won't find anywhere else.",
     "heroCtaExplore": "Explore All Restaurants",
@@ -86,7 +86,7 @@
   },
   "restaurants": {
     "title": "Restaurants in and around Finnish Lapland | LaplandDining",
-    "description": "60+ hand-picked restaurants in and around Finnish Lapland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menus, hours, and direct booking links.",
+    "description": "Hand-picked restaurants across Rovaniemi, Levi, Saariselkä, Inari, Ylläs and more, grouped by destination: Google ratings, review quotes and menu links.",
     "heroKicker": "Arctic Dining Guide",
     "heroH1": "All Restaurants",
     "heroLeadTemplate": "{{restaurantCount}} hand-picked restaurants across {{cityCount}} destinations in and around Lapland. Real customer reviews, photos, and opening hours, paired with a hotel walking distance away.",
@@ -141,10 +141,10 @@
   },
   "fineDining": {
     "title": "Fine Dining in and around Lapland | LaplandDining",
-    "description": "Lapland's fine-dining rooms, Restaurant Aanaar, Nili, Rakas. Tasting menus, signature dishes, what to book and when.",
+    "description": "The highest-rated of our Lapland picks, sorted by Google rating: dining rooms, wilderness kitchens and kota tables, with review quotes and menu links.",
     "heroH1": "Fine Dining in and around Lapland",
     "heroLeadTemplate": "Top-rated tasting menus where Sámi heritage meets modern gastronomy. Curated from {{count}} restaurants in and around Lapland, sorted by Google rating, paired with a hotel within walking distance.",
-    "metaDescriptionTemplate": "Lapland's top-rated restaurants for tasting menus and fine dining, sorted by Google rating, picked editorially. {{count}} city top picks across Finnish Lapland and nearby.",
+    "metaDescriptionTemplate": "The highest-rated of our Lapland picks, sorted by Google rating: {{count}} restaurants across Lapland and nearby, with review quotes and menu links.",
     "websiteLabel": "Website",
     "mapsLabel": "Maps",
     "stayInTemplate": "Stay in {{city}}",
@@ -156,7 +156,7 @@
   },
   "midnightSunDining": {
     "title": "Midnight Sun Dining in Lapland | LaplandDining",
-    "description": "Where to eat under the midnight sun, late dinners, terrace seats, summer-only menus across Lapland's restaurant scene.",
+    "description": "Where to eat under the midnight sun: terraces, kota fires and late dinners in Rovaniemi, Levi, Inari and Saariselkä through the 32-day window of no sunset.",
     "heroBadge": "June 6 → July 7 · 32 days",
     "heroH1Line1": "A plate outside,",
     "heroH1Line2": "the sun overhead.",
@@ -202,8 +202,8 @@
     "bottomCtaArctic": "Read about Arctic ingredients"
   },
   "foodHistory": {
-    "title": "Lapland Food History, Sami Cuisine | LaplandDining",
-    "description": "The story of Lapland food, Sami foodways, reindeer cuisine, eight-season eating, and how the menus you see today got here.",
+    "title": "Lapland Food History and Sámi Cuisine | LaplandDining",
+    "description": "How Arctic survival shaped Lappish cuisine: Sámi foodways, reindeer herding, smoked river fish, wild berries, the kota fire and the New Nordic turn.",
     "heroH1": "A Story Told Through Food",
     "heroLead": "How thousands of years of Arctic survival shaped one of the world's most distinctive food cultures.",
     "intro": "Smoke rises off a kota fire before the sun is fully up. Strips of reindeer cure under the eaves of a wooden cabin. A salmon slides through river fog. In Lapland, food never began in the kitchen, it began on the land. This is the story of why.",
@@ -261,8 +261,8 @@
     "ctaExplore": "Explore the Restaurants"
   },
   "localFood": {
-    "title": "Local Lapland Food, Reindeer, Berries, Fish | LaplandDining",
-    "description": "What 'local' means on a Lapland menu, reindeer, Arctic char, cloudberries, lingonberries, foraged herbs.",
+    "title": "Local Lapland Food: Reindeer, Berries, Fish | LaplandDining",
+    "description": "What 'local' means on a Lapland menu: free-ranging reindeer, Arctic char, cloudberries, lingonberries, wild mushrooms and foraged herbs, season by season.",
     "heroH1": "Local Food & Ingredients",
     "heroLead": "Why Lapland produces some of the cleanest, most nutrient-dense food on Earth and how Finnish food production sets the standard for purity.",
     "intro": "A fisher hauls an Arctic char out of Lake Inari before sunrise. The chef in the next village knows about it within twenty minutes. The food chain in Lapland is that short and that's why the food tastes the way it does.",
@@ -355,7 +355,7 @@
   },
   "about": {
     "title": "About LaplandDining",
-    "description": "About LaplandDining, independent editorial restaurant guide to Finnish Lapland.",
+    "description": "About LaplandDining: an independent editorial restaurant guide to Finnish Lapland, part of the LaplandVibes network.",
     "heroH1": "About LaplandDining",
     "heroLead": "Your guide to real, hand-picked restaurants across Finnish Lapland.",
     "networkTitle": "LaplandVibes Network",

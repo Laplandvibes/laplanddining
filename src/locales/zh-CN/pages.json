@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "LaplandDining，拉普兰真正值得就餐的地方",
-    "description": "芬兰拉普兰独立的餐厅指南，经过甄选的餐厅、菜单、营业时间与直接预订链接。从本地酒馆到高级餐饮,一应俱全。",
+    "title": "LaplandDining：芬兰拉普兰餐厅指南",
+    "description": "精选芬兰拉普兰餐厅：科塔篝火、萨米料理与高级餐饮，遍及罗瓦涅米、莱维与伊纳里，附真实点评引文与菜单链接。",
     "heroH1": "发现拉普兰最棒的餐厅",
     "heroLead": "遍布芬兰拉普兰、真实存在、精心挑选的餐厅，从传统的萨米高级餐饮到 kota 篝火料理,以及别处难得一见的北极食材。",
     "heroCtaExplore": "浏览全部餐厅",
@@ -86,7 +86,7 @@
   },
   "restaurants": {
     "title": "芬兰拉普兰及周边的餐厅 | LaplandDining",
-    "description": "遍布芬兰拉普兰及周边、精心挑选的 60 多家餐厅，罗瓦涅米、莱维、萨利色尔卡、伊纳里、于拉斯。菜单、营业时间与直接预订链接。",
+    "description": "按城市精选的拉普兰餐厅：罗瓦涅米、莱维、萨利色尔卡、伊纳里、于拉斯等。附 Google 评分、真实点评引文与菜单链接。",
     "heroKicker": "北极餐饮指南",
     "heroH1": "全部餐厅",
     "heroLeadTemplate": "{{cityCount}} 个拉普兰及周边目的地、{{restaurantCount}} 家精选餐厅。真实的顾客评价、照片与营业时间，并搭配一家步行可达的酒店。",
@@ -141,10 +141,10 @@
   },
   "fineDining": {
     "title": "拉普兰及周边的高级餐饮 | LaplandDining",
-    "description": "拉普兰的高级餐厅，Restaurant Aanaar、Nili、Rakas。品尝菜单、招牌菜品,以及该订什么、何时订。",
+    "description": "编辑精选中评分最高的餐厅，按 Google 评分排序：从雅致餐室到科塔餐厅，附点评引文与菜单链接。",
     "heroH1": "拉普兰及周边的高级餐饮",
     "heroLeadTemplate": "评分最高的品尝菜单,萨米传承在此邂逅现代美食学。从 {{count}} 家拉普兰及周边餐厅中精选，按 Google 评分排序,并搭配一家步行可达的酒店。",
-    "metaDescriptionTemplate": "拉普兰评分最高、主打品尝菜单与高级餐饮的餐厅，按 Google 评分排序,由编辑精选。遍布芬兰拉普兰及周边的 {{count}} 个城市首选。",
+    "metaDescriptionTemplate": "编辑精选中评分最高的餐厅，按 Google 评分排序：芬兰拉普兰及周边共 {{count}} 家，附点评引文与菜单链接。",
     "websiteLabel": "网站",
     "mapsLabel": "地图",
     "stayInTemplate": "入住 {{city}}",
@@ -156,7 +156,7 @@
   },
   "midnightSunDining": {
     "title": "拉普兰午夜阳光下的用餐 | LaplandDining",
-    "description": "在午夜阳光下何处用餐，遍布拉普兰餐饮圈的深夜晚餐、露台座位与仅限夏季的菜单。",
+    "description": "在午夜阳光下用餐：罗瓦涅米、莱维、伊纳里与萨利色尔卡的露台、科塔篝火与深夜晚餐，尽在 32 天不落日的季节。",
     "heroBadge": "6月6日 → 7月7日 · 32 天",
     "heroH1Line1": "一盘菜置于户外,",
     "heroH1Line2": "太阳高悬头顶。",
@@ -202,8 +202,8 @@
     "bottomCtaArctic": "了解北极食材"
   },
   "foodHistory": {
-    "title": "拉普兰美食史，萨米料理 | LaplandDining",
-    "description": "拉普兰美食的故事，萨米的饮食传统、驯鹿料理、八季而食,以及今日所见的菜单是如何走到这一步的。",
+    "title": "拉普兰美食史与萨米料理 | LaplandDining",
+    "description": "北极生存塑造的拉普兰饮食：萨米食俗、驯鹿放牧、烟熏鱼、野生浆果、科塔篝火，以及走向新北欧料理的转变。",
     "heroH1": "用食物讲述的故事",
     "heroLead": "数千年的北极生存如何塑造出世界上最独特的饮食文化之一。",
     "intro": "太阳尚未完全升起,kota 的篝火已升起炊烟。一条条驯鹿肉在木屋的屋檐下风干。一尾三文鱼滑过河上的薄雾。在拉普兰,食物从来不是从厨房开始的，它始于这片土地。这就是其中的缘由。",
@@ -261,8 +261,8 @@
     "ctaExplore": "探索这些餐厅"
   },
   "localFood": {
-    "title": "拉普兰的本地食物，驯鹿、浆果、鱼 | LaplandDining",
-    "description": "在拉普兰的菜单上,“本地”意味着什么，驯鹿、北极红点鲑、云莓、越橘与野外采集的香草。",
+    "title": "拉普兰本地食材：驯鹿、浆果、鱼 | LaplandDining",
+    "description": "拉普兰菜单上的“本地”意味着什么：自由放牧的驯鹿、北极红点鲑、云莓、越橘、野生蘑菇与采集香草，按季节呈现。",
     "heroH1": "本地食物与食材",
     "heroLead": "为什么拉普兰出产地球上最洁净、最富营养的一些食物，以及芬兰的食品生产如何为纯净立下标杆。",
     "intro": "日出之前,一位渔民从伊纳里湖里拉起一条北极红点鲑。不到二十分钟,邻村的厨师便已知晓。拉普兰的食物链就是这么短，这也正是食物如此美味的原因。",
@@ -355,7 +355,7 @@
   },
   "about": {
     "title": "关于 LaplandDining",
-    "description": "关于 LaplandDining，一份独立的芬兰拉普兰餐厅编辑指南。",
+    "description": "关于 LaplandDining：芬兰拉普兰的独立编辑餐厅指南，隶属 LaplandVibes 网络。",
     "heroH1": "关于 LaplandDining",
     "heroLead": "你的指南,带你走遍芬兰拉普兰真实、精心挑选的餐厅。",
     "networkTitle": "LaplandVibes 网络",

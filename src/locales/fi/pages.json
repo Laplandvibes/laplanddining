@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "LaplandDining, Mistä Lapista löytyy oikeasti ruokaa",
-    "description": "Riippumaton ravintolaopas Suomen Lappiin, valitut paikat, menut, aukioloajat ja suorat varauslinkit. Kyläpubista fine diningiin.",
+    "title": "LaplandDining: Lapin ravintolaopas",
+    "description": "Käsin valitut ravintolat Lapissa: kotaruokailua, saamelaista keittiötä ja fine diningia Rovaniemellä, Levillä ja Inarissa. Arviositaatit ja menulinkit.",
     "heroH1": "Lapin parhaat ravintolat",
     "heroLead": "Aitoja ravintoloita ympäri Suomen Lappia, saamelaista fine diningia, kodassa avotulella paistettua lohta ja arktisia raaka-aineita, joita ei muualta saa.",
     "heroCtaExplore": "Selaa ravintoloita",
@@ -86,7 +86,7 @@
   },
   "restaurants": {
     "title": "Ravintolat Lapissa ja lähialueilla | LaplandDining",
-    "description": "60+ huolella valittua ravintolaa Lapissa ja lähialueilla, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menut, aukioloajat ja suorat varauslinkit.",
+    "description": "Käsin valitut ravintolat kohteittain: Rovaniemi, Levi, Saariselkä, Inari, Ylläs ja muut. Google-arviot, aidot asiakassitaatit ja varmistetut menulinkit.",
     "heroKicker": "Arktinen ruokaopas",
     "heroH1": "Kaikki ravintolat",
     "heroLeadTemplate": "{{restaurantCount}} huolella valittua ravintolaa {{cityCount}} kohteessa Lapissa ja lähialueilla. Aitoja asiakasarvioita, kuvia ja aukioloaikoja, pari kävelymatkan päässä olevaan hotelliin.",
@@ -141,10 +141,10 @@
   },
   "fineDining": {
     "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",
-    "description": "Lapin fine dining -ravintolat: Restaurant Aanaar, Nili, Rakas. Tasting-menut, signature-annokset, milloin kannattaa varata.",
+    "description": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: ruokasaleja, erämaakeittiöitä ja kotaravintoloita. Arviositaatit ja menulinkit.",
     "heroH1": "Fine dining Lapissa ja lähialueilla",
     "heroLeadTemplate": "Korkealle arvioidut tasting-menut, joissa saamelaisperintö kohtaa modernin keittiön. Käsin valittu {{count}} ravintolan joukosta Lapista ja lähialueilta, järjestetty Google-arvion mukaan, parina kävelymatkan päässä oleva hotelli.",
-    "metaDescriptionTemplate": "Lapin korkeimmin arvioidut tasting-menun ja fine diningin ravintolat, järjestetty Google-arvion mukaan, toimituksen käsin poimimat. {{count}} kaupungin ykkönen Lapissa ja lähialueilla.",
+    "metaDescriptionTemplate": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: {{count}} ravintolaa Lapissa ja lähialueilla. Arviositaatit ja menulinkit.",
     "websiteLabel": "Nettisivut",
     "mapsLabel": "Kartta",
     "stayInTemplate": "Yövy {{city}}ssä",
@@ -156,7 +156,7 @@
   },
   "midnightSunDining": {
     "title": "Keskiyön auringon ruokailu Lapissa | LaplandDining",
-    "description": "Missä syöt keskiyön auringon alla, myöhäiset illalliset, terassipaikat ja vain kesän menut Lapin ravintoloissa.",
+    "description": "Missä syöt keskiyön auringon alla: terassit, kotatulet ja myöhäiset illalliset Rovaniemellä, Levillä, Inarissa ja Saariselällä yöttömän yön 32 päivänä.",
     "heroBadge": "6.6. → 7.7. · 32 päivää",
     "heroH1Line1": "Lautanen ulkona,",
     "heroH1Line2": "aurinko korkealla.",
@@ -202,8 +202,8 @@
     "bottomCtaArctic": "Lue arktisista raaka-aineista"
   },
   "foodHistory": {
-    "title": "Lapin ruokahistoria, saamelainen keittiö | LaplandDining",
-    "description": "Lapin ruoan tarina, saamelaiset ruokatavat, poro, kahdeksan vuodenajan rytmi ja se, mistä nykypäivän menut syntyivät.",
+    "title": "Lapin ruokahistoria ja saamelainen keittiö | LaplandDining",
+    "description": "Miten arktinen selviytyminen muovasi Lapin keittiön: saamelaiset ruokatavat, poronhoito, savukala, villimarjat, kotatuli ja uusi pohjoismainen keittiö.",
     "heroH1": "Tarina, joka kerrotaan ruoan kautta",
     "heroLead": "Miten tuhansien vuosien arktinen elämä muovasi yhden maailman tunnistettavimmista ruokakulttuureista.",
     "intro": "Savu nousee kotalaitumelta varhain aamulla. Poronlihaa kuivuu räystään alla. Joessa lipuu sumun seasta lohi. Lapissa ruoka ei alkanut keittiöstä: se alkoi maasta. Tämä on tarina siitä, miksi.",
@@ -261,8 +261,8 @@
     "ctaExplore": "Tutustu ravintoloihin"
   },
   "localFood": {
-    "title": "Paikallinen lappilainen ruoka, poro, marjat, kala | LaplandDining",
-    "description": "Mitä \"paikallinen\" tarkoittaa Lapin ruokalistalla, poro, nieriä, hilla, puolukka, kerätyt villiyrtit.",
+    "title": "Lapin lähiruoka: poro, marjat, kala | LaplandDining",
+    "description": "Mitä ”paikallinen” tarkoittaa Lapin ruokalistalla: vapaana laiduntava poro, nieriä, hilla, puolukka, villisienet ja kerätyt villiyrtit vuodenajan mukaan.",
     "heroH1": "Paikallinen ruoka ja raaka-aineet",
     "heroLead": "Miksi Lapista nousee maailman puhtainta ja ravinneintensiivisintä ruokaa ja miten suomalainen ruoantuotanto asettaa puhtauden mitan.",
     "intro": "Kalastaja nostaa nieriän Inarijärvestä aamulla. Naapurikylän ravintolan kokki tietää siitä parinkymmenen minuutin sisällä. Lapissa ruokaketju on lyhyt ja siksi ruoka maistuu siltä kuin maistuu.",
@@ -355,7 +355,7 @@
   },
   "about": {
     "title": "Tietoa LaplandDiningista",
-    "description": "Tietoa LaplandDiningista, riippumaton toimituksellinen ravintolaopas Suomen Lappiin.",
+    "description": "Tietoa LaplandDiningista: riippumaton toimituksellinen ravintolaopas Suomen Lappiin, osa LaplandVibes-verkostoa.",
     "heroH1": "Tietoa LaplandDiningista",
     "heroLead": "Opas Suomen Lapin aitoihin, huolella valittuihin ravintoloihin.",
     "networkTitle": "LaplandVibes-verkosto",

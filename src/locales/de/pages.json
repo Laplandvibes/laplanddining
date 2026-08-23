@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "LaplandDining, Wo man in Lappland wirklich isst",
-    "description": "Der unabhängige Restaurantführer für Finnisch-Lappland, handverlesene Restaurants, Speisekarten, Öffnungszeiten, direkte Buchungslinks. Vom lokalen Pub bis zum Fine Dining.",
+    "title": "LaplandDining: Wo man in Finnisch-Lappland gut isst",
+    "description": "Handverlesene Restaurants in Finnisch-Lappland: Kota-Feuer, samische Küche und Fine Dining in Rovaniemi, Levi und Inari, mit Gästezitaten und Menülinks.",
     "heroH1": "Entdecken Sie Lapplands beste Restaurants",
     "heroLead": "Echte, handverlesene Restaurants in ganz Finnisch-Lappland, von traditioneller samischer Spitzenküche über Feuerstellen-Küche im Kota bis zu arktischen Zutaten, die Sie nirgends sonst finden.",
     "heroCtaExplore": "Alle Restaurants ansehen",
@@ -86,7 +86,7 @@
   },
   "restaurants": {
     "title": "Restaurants in und um Finnisch-Lappland | LaplandDining",
-    "description": "60+ handverlesene Restaurants in und um Finnisch-Lappland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Speisekarten, Öffnungszeiten und direkte Buchungslinks.",
+    "description": "Handverlesene Restaurants nach Orten geordnet: Rovaniemi, Levi, Saariselkä, Inari, Ylläs und mehr. Google-Bewertungen, echte Gästezitate und Menülinks.",
     "heroKicker": "Arktischer Restaurantführer",
     "heroH1": "Alle Restaurants",
     "heroLeadTemplate": "{{restaurantCount}} handverlesene Restaurants in {{cityCount}} Reisezielen in und um Lappland. Echte Gästebewertungen, Fotos und Öffnungszeiten, kombiniert mit einem Hotel in Gehweite.",
@@ -141,10 +141,10 @@
   },
   "fineDining": {
     "title": "Fine Dining in und um Lappland | LaplandDining",
-    "description": "Lapplands Fine-Dining-Stuben, Restaurant Aanaar, Nili, Rakas. Degustationsmenüs, Signature-Gerichte, was Sie wann reservieren sollten.",
+    "description": "Die bestbewerteten unserer Lappland-Auswahl, sortiert nach Google-Bewertung: Speisesäle, Wildnisküchen und Kota-Tische, mit Gästezitaten und Menülinks.",
     "heroH1": "Fine Dining in und um Lappland",
     "heroLeadTemplate": "Top-bewertete Degustationsmenüs, in denen samisches Erbe auf moderne Gastronomie trifft. Kuratiert aus {{count}} Restaurants in und um Lappland, nach Google-Bewertung sortiert, kombiniert mit einem Hotel in Gehweite.",
-    "metaDescriptionTemplate": "Lapplands bestbewertete Restaurants für Degustationsmenüs und Fine Dining, nach Google-Bewertung sortiert, redaktionell ausgewählt. {{count}} Stadt-Top-Picks in und um Finnisch-Lappland.",
+    "metaDescriptionTemplate": "Die bestbewerteten unserer Auswahl, sortiert nach Google-Bewertung: {{count}} Restaurants in und um Finnisch-Lappland, mit Gästezitaten und Menülinks.",
     "websiteLabel": "Webseite",
     "mapsLabel": "Maps",
     "stayInTemplate": "In {{city}} übernachten",
@@ -156,7 +156,7 @@
   },
   "midnightSunDining": {
     "title": "Dinieren unter der Mitternachtssonne in Lappland | LaplandDining",
-    "description": "Wo man unter der Mitternachtssonne speist, späte Abendessen, Terrassenplätze, sommerexklusive Speisekarten in Lapplands Restaurantszene.",
+    "description": "Essen unter der Mitternachtssonne: Terrassen, Kota-Feuer und späte Abendessen in Rovaniemi, Levi, Inari und Saariselkä an 32 Tagen ohne Sonnenuntergang.",
     "heroBadge": "6. Juni → 7. Juli · 32 Tage",
     "heroH1Line1": "Ein Teller draußen,",
     "heroH1Line2": "die Sonne über dem Kopf.",
@@ -202,8 +202,8 @@
     "bottomCtaArctic": "Über arktische Zutaten lesen"
   },
   "foodHistory": {
-    "title": "Geschichte der lappländischen Küche, Samische Speisen | LaplandDining",
-    "description": "Die Geschichte der lappländischen Küche, samische Esstraditionen, Rentier-Küche, das Essen in acht Jahreszeiten, und wie die heutigen Speisekarten entstanden sind.",
+    "title": "Lapplands Esskultur und samische Küche | LaplandDining",
+    "description": "Wie das Überleben in der Arktis Lapplands Küche prägte: samische Esstraditionen, Rentierhaltung, Räucherfisch, wilde Beeren, Kota-Feuer und New Nordic.",
     "heroH1": "Eine Geschichte, erzählt durch das Essen",
     "heroLead": "Wie Jahrtausende des arktischen Überlebens eine der eigenständigsten Esskulturen der Welt geformt haben.",
     "intro": "Rauch steigt vor Sonnenaufgang über einer Kota-Feuerstelle. Streifen Rentierfleisch trocknen unter den Dachvorsprüngen einer Holzhütte. Ein Lachs gleitet durch den Flussnebel. In Lappland begann das Essen nie in der Küche, es begann am Land. Dies ist die Geschichte, warum.",
@@ -261,8 +261,8 @@
     "ctaExplore": "Die Restaurants entdecken"
   },
   "localFood": {
-    "title": "Regionale Küche Lapplands, Rentier, Beeren, Fisch | LaplandDining",
-    "description": "Was „regional\" auf einer lappländischen Speisekarte bedeutet, Rentier, arktischer Saibling, Moltebeeren, Preiselbeeren, gesammelte Wildkräuter.",
+    "title": "Lapplands Zutaten: Rentier, Beeren, Fisch | LaplandDining",
+    "description": "Was „lokal“ auf Lapplands Speisekarten bedeutet: frei lebende Rentiere, Saibling, Moltebeeren, Preiselbeeren, Wildpilze und gesammelte Kräuter der Saison.",
     "heroH1": "Regionale Küche & Zutaten",
     "heroLead": "Warum Lappland einige der saubersten und nährstoffreichsten Lebensmittel der Erde hervorbringt und wie die finnische Lebensmittelproduktion den Maßstab für Reinheit setzt.",
     "intro": "Ein Fischer holt vor Sonnenaufgang einen arktischen Saibling aus dem Inarisee. Der Küchenchef im Nachbardorf weiß binnen zwanzig Minuten davon. So kurz ist die Versorgungskette in Lappland und genau deshalb schmeckt das Essen so, wie es schmeckt.",
@@ -355,7 +355,7 @@
   },
   "about": {
     "title": "Über LaplandDining",
-    "description": "Über LaplandDining, unabhängiger redaktioneller Restaurantführer für Finnisch-Lappland.",
+    "description": "Über LaplandDining: unabhängiger redaktioneller Restaurantführer für Finnisch-Lappland, Teil des LaplandVibes-Netzwerks.",
     "heroH1": "Über LaplandDining",
     "heroLead": "Ihr Leitfaden zu echten, handverlesenen Restaurants in ganz Finnisch-Lappland.",
     "networkTitle": "LaplandVibes-Netzwerk",

@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "LaplandDining – var du faktiskt äter i Lappland",
-    "description": "Den oberoende restaurangguiden till finska Lappland – handplockade restauranger, menyer, öppettider och direkta bokningslänkar. Från lokala pubar till fine dining.",
+    "title": "LaplandDining: var du äter i finska Lappland",
+    "description": "Handplockade restauranger i finska Lappland: kåtaeldar, samisk matkultur och fine dining i Rovaniemi, Levi och Inari, med riktiga gästcitat och menylänkar.",
     "heroH1": "Upptäck Lapplands bästa restauranger",
     "heroLead": "Riktiga, handplockade restauranger i hela finska Lappland – från traditionell samisk fine dining till matlagning över kotaeld och arktiska råvaror du inte hittar någon annanstans.",
     "heroCtaExplore": "Utforska alla restauranger",
@@ -86,7 +86,7 @@
   },
   "restaurants": {
     "title": "Restauranger i och kring finska Lappland | LaplandDining",
-    "description": "60+ handplockade restauranger i och kring finska Lappland – Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menyer, öppettider och direkta bokningslänkar.",
+    "description": "Handplockade restauranger ort för ort: Rovaniemi, Levi, Saariselkä, Inari, Ylläs med flera. Google-betyg, riktiga gästcitat och menylänkar.",
     "heroKicker": "Arktisk matguide",
     "heroH1": "Alla restauranger",
     "heroLeadTemplate": "{{restaurantCount}} handplockade restauranger på {{cityCount}} destinationer i och kring Lappland. Riktiga kundrecensioner, foton och öppettider – i par med ett hotell inom gångavstånd.",
@@ -141,10 +141,10 @@
   },
   "fineDining": {
     "title": "Fine dining i och kring Lappland | LaplandDining",
-    "description": "Lapplands fine dining-salar – Restaurant Aanaar, Nili, Rakas. Avsmakningsmenyer, signaturrätter, vad du ska boka och när.",
+    "description": "De högst rankade i vårt Lapplandsurval, sorterade efter Google-betyg: matsalar, vildmarkskök och kåtabord, med gästcitat och menylänkar.",
     "heroH1": "Fine dining i och kring Lappland",
     "heroLeadTemplate": "Högt rankade avsmakningsmenyer där samiskt arv möter modern gastronomi. Kurerat från {{count}} restauranger i och kring Lappland, sorterat efter Google-betyg och i par med ett hotell inom gångavstånd.",
-    "metaDescriptionTemplate": "Lapplands högst rankade restauranger för avsmakningsmenyer och fine dining, sorterade efter Google-betyg och redaktionellt utvalda. {{count}} topptips per stad i och kring finska Lappland.",
+    "metaDescriptionTemplate": "De högst rankade i vårt urval, sorterade efter Google-betyg: {{count}} restauranger i och kring finska Lappland, med gästcitat och menylänkar.",
     "websiteLabel": "Webbplats",
     "mapsLabel": "Maps",
     "stayInTemplate": "Bo i {{city}}",
@@ -156,7 +156,7 @@
   },
   "midnightSunDining": {
     "title": "Middag i midnattssol i Lappland | LaplandDining",
-    "description": "Var du äter under midnattssolen – sena middagar, terrassplatser och menyer bara på sommaren i Lapplands restaurangvärld.",
+    "description": "Var du äter under midnattssolen: terrasser, kåtaeldar och sena middagar i Rovaniemi, Levi, Inari och Saariselkä under 32 dygn utan solnedgång.",
     "heroBadge": "6 juni → 7 juli · 32 dagar",
     "heroH1Line1": "En tallrik ute,",
     "heroH1Line2": "solen ovanför.",
@@ -202,8 +202,8 @@
     "bottomCtaArctic": "Läs om arktiska råvaror"
   },
   "foodHistory": {
-    "title": "Lapplands mathistoria, samisk mat | LaplandDining",
-    "description": "Berättelsen om Lapplands mat – samiska mattraditioner, renkött, mat efter åtta årstider och hur menyerna du ser i dag kom till.",
+    "title": "Lapplands mathistoria och det samiska köket | LaplandDining",
+    "description": "Hur överlevnad i Arktis formade Lapplands mat: samiska mattraditioner, renskötsel, rökt fisk, vilda bär, kåtans eld och det nya nordiska köket.",
     "heroH1": "En historia berättad genom mat",
     "heroLead": "Hur tusentals år av arktisk överlevnad formade en av världens mest särpräglade matkulturer.",
     "intro": "Röken stiger från en kotaeld innan solen är helt uppe. Renköttsremsor torkar under takfoten på en trästuga. En lax glider genom älvdimman. I Lappland började maten aldrig i köket – den började på marken. Det här är berättelsen om varför.",
@@ -261,8 +261,8 @@
     "ctaExplore": "Utforska restaurangerna"
   },
   "localFood": {
-    "title": "Lokal mat i Lappland – ren, bär, fisk | LaplandDining",
-    "description": "Vad 'lokalt' betyder på en meny i Lappland – ren, röding, hjortron, lingon, plockade örter.",
+    "title": "Lokal mat i Lappland: ren, bär, fisk | LaplandDining",
+    "description": "Vad 'lokalt' betyder på en meny i Lappland: frigående renar, röding, hjortron, lingon, vild svamp och plockade örter, säsong för säsong.",
     "heroH1": "Lokal mat & råvaror",
     "heroLead": "Varför Lappland ger några av de renaste, mest näringstäta råvarorna på jorden – och hur finsk livsmedelsproduktion sätter standarden för renhet.",
     "intro": "En fiskare drar upp en röding ur Enare träsk före soluppgången. Kocken i grannbyn vet om det inom tjugo minuter. Livsmedelskedjan i Lappland är så kort – och det är därför maten smakar som den gör.",
@@ -355,7 +355,7 @@
   },
   "about": {
     "title": "Om LaplandDining",
-    "description": "Om LaplandDining – oberoende redaktionell restaurangguide till finska Lappland.",
+    "description": "Om LaplandDining: oberoende redaktionell restaurangguide till finska Lappland, en del av LaplandVibes-nätverket.",
     "heroH1": "Om LaplandDining",
     "heroLead": "Din guide till riktiga, handplockade restauranger i hela finska Lappland.",
     "networkTitle": "LaplandVibes-nätverket",

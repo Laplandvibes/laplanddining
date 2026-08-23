@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "LaplandDining, Waar u écht eet in Lapland",
-    "description": "De onafhankelijke restaurantgids voor Fins Lapland, zorgvuldig geselecteerde restaurants, menu's, openingstijden, directe boekingslinks. Van lokale pub tot fine dining.",
+    "title": "LaplandDining: waar u eet in Fins Lapland",
+    "description": "Zorgvuldig gekozen restaurants in Fins Lapland: kotavuren, Samische keuken en fine dining in Rovaniemi, Levi en Inari, met echte citaten en menulinks.",
     "heroH1": "Ontdek Laplands beste restaurants",
     "heroLead": "Echte, zorgvuldig geselecteerde restaurants in heel Fins Lapland, van traditionele Samische fine dining tot kota-vuurkeuken en Arctische ingrediënten die u nergens anders vindt.",
     "heroCtaExplore": "Bekijk alle restaurants",
@@ -86,7 +86,7 @@
   },
   "restaurants": {
     "title": "Restaurants in en rond Fins Lapland | LaplandDining",
-    "description": "Meer dan 60 zorgvuldig geselecteerde restaurants in en rond Fins Lapland, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menu's, openingstijden en directe boekingslinks.",
+    "description": "Zorgvuldig gekozen restaurants per bestemming: Rovaniemi, Levi, Saariselkä, Inari, Ylläs en meer. Google-beoordelingen, echte citaten en menulinks.",
     "heroKicker": "Arctische dining-gids",
     "heroH1": "Alle restaurants",
     "heroLeadTemplate": "{{restaurantCount}} zorgvuldig geselecteerde restaurants in {{cityCount}} bestemmingen in en rond Lapland. Echte klantbeoordelingen, foto's en openingstijden, gekoppeld aan een hotel op loopafstand.",
@@ -141,10 +141,10 @@
   },
   "fineDining": {
     "title": "Fine dining in en rond Lapland | LaplandDining",
-    "description": "Laplands fine-diningzalen, Restaurant Aanaar, Nili, Rakas. Proefmenu's, signatuurgerechten, wat en wanneer te boeken.",
+    "description": "De hoogst beoordeelde van onze Lapland-selectie, gesorteerd op Google-rating: eetzalen, wilderniskeukens en kotatafels, met citaten en menulinks.",
     "heroH1": "Fine dining in en rond Lapland",
     "heroLeadTemplate": "Hoogst beoordeelde proefmenu's waar Samisch erfgoed moderne gastronomie ontmoet. Geselecteerd uit {{count}} restaurants in en rond Lapland, gesorteerd op Google-rating, gekoppeld aan een hotel op loopafstand.",
-    "metaDescriptionTemplate": "Laplands hoogst beoordeelde restaurants voor proefmenu's en fine dining, gesorteerd op Google-rating, redactioneel gekozen. {{count}} stadstoppers in en rond Fins Lapland.",
+    "metaDescriptionTemplate": "De hoogst beoordeelde van onze selectie, gesorteerd op Google-rating: {{count}} restaurants in en rond Fins Lapland, met citaten en menulinks.",
     "websiteLabel": "Website",
     "mapsLabel": "Kaart",
     "stayInTemplate": "Verblijf in {{city}}",
@@ -156,7 +156,7 @@
   },
   "midnightSunDining": {
     "title": "Dineren onder de middernachtzon in Lapland | LaplandDining",
-    "description": "Waar u eet onder de middernachtzon, late diners, terrasplekken, zomer-only menu's in heel Lapland.",
+    "description": "Waar u eet onder de middernachtzon: terrassen, kotavuren en late diners in Rovaniemi, Levi, Inari en Saariselkä, 32 dagen lang zonder zonsondergang.",
     "heroBadge": "6 juni → 7 juli · 32 dagen",
     "heroH1Line1": "Een bord buiten,",
     "heroH1Line2": "de zon boven u.",
@@ -202,8 +202,8 @@
     "bottomCtaArctic": "Lees over Arctische ingrediënten"
   },
   "foodHistory": {
-    "title": "Voedselgeschiedenis van Lapland, Samische keuken | LaplandDining",
-    "description": "Het verhaal achter Laplands eten, Samische eetcultuur, rendierkeuken, acht seizoenen, en hoe de menu's van vandaag hier zijn aangekomen.",
+    "title": "Laplands eetgeschiedenis en Samische keuken | LaplandDining",
+    "description": "Hoe overleven in het hoge noorden de Lapse keuken vormde: Samische eetcultuur, rendierhouderij, gerookte vis, wilde bessen, het kotavuur en New Nordic.",
     "heroH1": "Een verhaal verteld via eten",
     "heroLead": "Hoe duizenden jaren Arctisch overleven een van 's werelds meest kenmerkende eetculturen vormden.",
     "intro": "Rook stijgt op van een kota-vuur voor de zon volledig opgekomen is. Rendierreepjes hangen onder de dakrand van een houten hut te rijpen. Een zalm glijdt door de riviernevel. In Lapland begon eten nooit in de keuken, het begon op het land. Dit is het verhaal waarom.",
@@ -261,8 +261,8 @@
     "ctaExplore": "Verken de restaurants"
   },
   "localFood": {
-    "title": "Lokaal Laplands eten, Rendier, bessen, vis | LaplandDining",
-    "description": "Wat 'lokaal' betekent op een Laplands menu, rendier, Arctische zalmforel, kruipbramen, vossenbessen, geplukte kruiden.",
+    "title": "Lokaal eten in Lapland: rendier, bessen, vis | LaplandDining",
+    "description": "Wat 'lokaal' betekent op een Laplands menu: vrij grazende rendieren, Arctische zalmforel, kruipbramen, vossenbessen, wilde paddenstoelen en kruiden.",
     "heroH1": "Lokaal eten en ingrediënten",
     "heroLead": "Waarom Lapland tot het schoonste en meest nutriëntrijke voedsel ter wereld levert en hoe de Finse voedselproductie de norm voor zuiverheid zet.",
     "intro": "Een visser haalt voor zonsopgang een Arctische zalmforel uit het Inarimeer. De kok in het dorp ernaast weet het binnen twintig minuten. De voedselketen in Lapland is zo kort en dáárom smaakt het eten zoals het smaakt.",
@@ -355,7 +355,7 @@
   },
   "about": {
     "title": "Over LaplandDining",
-    "description": "Over LaplandDining, onafhankelijke redactionele restaurantgids voor Fins Lapland.",
+    "description": "Over LaplandDining: onafhankelijke redactionele restaurantgids voor Fins Lapland, onderdeel van het LaplandVibes-netwerk.",
     "heroH1": "Over LaplandDining",
     "heroLead": "Uw gids naar echte, zorgvuldig geselecteerde restaurants in heel Fins Lapland.",
     "networkTitle": "LaplandVibes-netwerk",

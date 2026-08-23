@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "LaplandDining, Dove mangiare davvero in Lapponia",
-    "description": "La guida indipendente ai ristoranti della Lapponia finlandese, ristoranti selezionati, menù, orari, link di prenotazione diretta. Dal pub locale all'alta cucina.",
+    "title": "LaplandDining: dove mangiare nella Lapponia finlandese",
+    "description": "Ristoranti selezionati con cura in Lapponia: fuochi di kota, cucina sami e alta cucina a Rovaniemi, Levi e Inari, con citazioni reali e link ai menù.",
     "heroH1": "Scopra i migliori ristoranti della Lapponia",
     "heroLead": "Ristoranti veri, selezionati con cura in tutta la Lapponia finlandese, dall'alta cucina sami tradizionale alla cucina al fuoco di kota e a ingredienti artici che non troverà altrove.",
     "heroCtaExplore": "Esplora tutti i ristoranti",
@@ -86,7 +86,7 @@
   },
   "restaurants": {
     "title": "Ristoranti in Lapponia e dintorni | LaplandDining",
-    "description": "Oltre 60 ristoranti selezionati con cura nella Lapponia finlandese e dintorni, Rovaniemi, Levi, Saariselkä, Inari, Ylläs. Menù, orari e link di prenotazione diretta.",
+    "description": "Ristoranti selezionati con cura per destinazione: Rovaniemi, Levi, Saariselkä, Inari, Ylläs e altre. Valutazioni Google, citazioni reali e link ai menù.",
     "heroKicker": "Guida gastronomica artica",
     "heroH1": "Tutti i ristoranti",
     "heroLeadTemplate": "{{restaurantCount}} ristoranti selezionati con cura in {{cityCount}} destinazioni della Lapponia e dintorni. Recensioni reali dei clienti, foto e orari, abbinati a un hotel a distanza di passeggiata.",
@@ -141,10 +141,10 @@
   },
   "fineDining": {
     "title": "Alta cucina in Lapponia e dintorni | LaplandDining",
-    "description": "Le sale dell'alta cucina lappone, Restaurant Aanaar, Nili, Rakas. Menù degustazione, piatti signature, cosa prenotare e quando.",
+    "description": "I più votati della nostra selezione lappone, in ordine di valutazione Google: sale da pranzo, locande e tavoli nella kota, con citazioni e link ai menù.",
     "heroH1": "Alta cucina in Lapponia e dintorni",
     "heroLeadTemplate": "Menù degustazione tra i più valutati dove l'eredità sami incontra la gastronomia moderna. Selezionati tra {{count}} ristoranti della Lapponia e dintorni, ordinati per valutazione Google, abbinati a un hotel a distanza di passeggiata.",
-    "metaDescriptionTemplate": "I ristoranti più valutati della Lapponia per menù degustazione e alta cucina, ordinati per valutazione Google, scelti dalla redazione. {{count}} top picks per città nella Lapponia finlandese e dintorni.",
+    "metaDescriptionTemplate": "I più votati della nostra selezione, in ordine di valutazione Google: {{count}} ristoranti nella Lapponia finlandese e dintorni, con citazioni e menù.",
     "websiteLabel": "Sito web",
     "mapsLabel": "Mappa",
     "stayInTemplate": "Dormire a {{city}}",
@@ -156,7 +156,7 @@
   },
   "midnightSunDining": {
     "title": "Cena sotto il sole di mezzanotte in Lapponia | LaplandDining",
-    "description": "Dove mangiare sotto il sole di mezzanotte, cene tardive, posti in terrazza, menù solo estivi nella scena ristorativa della Lapponia.",
+    "description": "Dove mangiare sotto il sole di mezzanotte: terrazze, fuochi di kota e cene tardive a Rovaniemi, Levi, Inari e Saariselkä nei 32 giorni senza tramonto.",
     "heroBadge": "6 giugno → 7 luglio · 32 giorni",
     "heroH1Line1": "Un piatto all'aperto,",
     "heroH1Line2": "il sole sopra di Lei.",
@@ -202,8 +202,8 @@
     "bottomCtaArctic": "Leggi sugli ingredienti artici"
   },
   "foodHistory": {
-    "title": "Storia gastronomica della Lapponia, Cucina sami | LaplandDining",
-    "description": "La storia del cibo lappone, alimentazione sami, cucina della renna, otto stagioni, e come i menù di oggi sono arrivati fin qui.",
+    "title": "Lapponia: storia gastronomica e cucina sami | LaplandDining",
+    "description": "Come l'Artico ha plasmato la cucina lappone: tradizioni sami, allevamento delle renne, pesce affumicato, bacche, fuoco della kota e nuova cucina nordica.",
     "heroH1": "Una storia raccontata attraverso il cibo",
     "heroLead": "Come migliaia di anni di sopravvivenza artica hanno plasmato una delle culture gastronomiche più distintive del mondo.",
     "intro": "Il fumo si alza da un fuoco di kota prima che il sole sia del tutto sorto. Strisce di renna si stagionano sotto la gronda di una capanna di legno. Un salmone scivola nella nebbia del fiume. In Lapponia il cibo non è mai cominciato in cucina, è cominciato sulla terra. Questa è la storia del perché.",
@@ -261,8 +261,8 @@
     "ctaExplore": "Esplora i ristoranti"
   },
   "localFood": {
-    "title": "Cibo locale lappone, Renna, bacche, pesce | LaplandDining",
-    "description": "Cosa significa 'locale' su un menù lappone, renna, salmerino artico, lamponi artici, mirtilli rossi, erbe raccolte.",
+    "title": "Cibo locale lappone: renna, bacche, pesce | LaplandDining",
+    "description": "Cosa significa 'locale' su un menù lappone: renne allo stato brado, salmerino artico, lamponi artici, mirtilli rossi, funghi ed erbe raccolte in stagione.",
     "heroH1": "Cibo locale e ingredienti",
     "heroLead": "Perché la Lapponia produce alcuni dei cibi più puliti e densi di nutrienti della Terra e come la produzione alimentare finlandese fissa lo standard di purezza.",
     "intro": "Un pescatore tira fuori un salmerino artico dal Lago Inari prima dell'alba. Lo chef del villaggio accanto lo sa nel giro di venti minuti. La filiera del cibo in Lapponia è così corta, ed è per questo che il cibo ha quel sapore.",
@@ -354,8 +354,8 @@
     "imageAlt": "{{name}} nella Lapponia finlandese"
   },
   "about": {
-    "title": "Chi siamo, LaplandDining",
-    "description": "Chi siamo, LaplandDining è la guida editoriale indipendente ai ristoranti della Lapponia finlandese.",
+    "title": "Chi siamo | LaplandDining",
+    "description": "Chi siamo: LaplandDining è la guida editoriale indipendente ai ristoranti della Lapponia finlandese, parte della rete LaplandVibes.",
     "heroH1": "Chi siamo, LaplandDining",
     "heroLead": "La Sua guida ai ristoranti reali, selezionati con cura, della Lapponia finlandese.",
     "networkTitle": "Rete LaplandVibes",
