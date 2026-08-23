@@ -640,6 +640,50 @@ function harvestFromTsBlock(block, out, meta, seen, budget) {
   }
 }
 
+/** Slice the balanced ( … ) starting at openIdx, returning the inside. */
+function sliceParens(src, openIdx) {
+  let depth = 0, start = -1;
+  for (let i = openIdx; i < src.length; i++) {
+    const c = src[i];
+    if (c === '(') { if (depth === 0) start = i + 1; depth++; }
+    else if (c === ')') { depth--; if (depth === 0) return src.slice(start, i); }
+  }
+  return null;
+}
+
+/** Harvest the prose out of JSX bodies inside a record block.
+ *
+ *  `{ heading: '…', body: (<><p>Late September … </p></>) }` — the headings are
+ *  ordinary string fields and are picked up by harvestFromTsBlock, but the
+ *  paragraphs are JSX text nodes. Strip the tags (which takes their attributes
+ *  with them, so no className or href text leaks in) and the {expressions},
+ *  then keep what is left line by line. */
+const INLINE_TAG = /^<\/?(?:em|strong|b|i|u|a|span|code|small|sup|sub|abbr|mark|time|BlogLink|Link)\b/i;
+
+function harvestJsxBodies(block, out, meta, seen, budget) {
+  const re = /\bbody\s*:\s*\(/g;
+  let m;
+  while ((m = re.exec(block)) !== null && budget.words > 0) {
+    const jsx = sliceParens(block, m.index + m[0].length - 1);
+    if (!jsx) continue;
+    re.lastIndex = m.index + m[0].length + (jsx.length || 0);
+    // An inline tag closes a WORD, a block tag closes a LINE. Cutting the line
+    // at every tag looked simpler but split paragraphs mid-sentence: "Late
+    // September to mid-October is <em>ruska</em> — the Finnish autumn…" came
+    // apart into three fragments, two of them under the keep threshold, and the
+    // survivor began mid-clause.
+    const text = jsx
+      .replace(/<[^>]*>/g, (tag) => (INLINE_TAG.test(tag) ? ' ' : '\n'))
+      .replace(/\{[^{}]*\}/g, ' ')    // {' '} and other simple expressions
+      .replace(/&nbsp;/g, ' ');
+    for (const line of text.split('\n')) {
+      if (budget.words <= 0) break;
+      const kept = harvestKeep(line.replace(/\s+/g, ' ').trim(), meta, seen);
+      if (kept) { out.push(kept); budget.words -= kept.split(/\s+/).length; }
+    }
+  }
+}
+
 /** Argument order of the network's `pick(lang, en, fi, …)` helper. A missing
  *  argument falls back to English, exactly as the runtime helper does. */
 const PICK_ORDER = ['en', 'fi', 'de', 'ja', 'es', 'pt-BR', 'zh-CN', 'ko', 'fr', 'it', 'nl', 'sv'];
@@ -829,6 +873,16 @@ function harvestRouteText(loc, route, meta) {
             while ((mm = re.exec(b)) !== null && budget.words > 0) {
               const kept = harvestKeep(unescapeJsString(mm[2]), meta, seen);
               if (kept) { out.push(kept); budget.words -= kept.split(/\s+/).length; }
+            }
+          } else if (rec.mode === 'jsx') {
+            // The prose is in JSX text nodes, so it exists in ONE language only.
+            // Allowed on every locale URL when the route declares
+            // canonicalLocale (that flag's whole meaning is "one language on
+            // every locale URL"); otherwise English pages only.
+            const single = route.canonicalLocale || 'en';
+            if (route.canonicalLocale || loc.lang === single) {
+              harvestFromTsBlock(b, out, meta, seen, budget);
+              harvestJsxBodies(b, out, meta, seen, budget);
             }
           } else {
             harvestFromTsBlock(b, out, meta, seen, budget);
