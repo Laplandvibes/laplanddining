@@ -134,7 +134,10 @@
     },
     "editorsPick": "Scelta della redazione",
     "menuLabel": "Menù",
-    "menuLabelPdf": "Menù (PDF)"
+    "menuLabelPdf": "Menù (PDF)",
+    "introTitle": "Come è ordinata questa pagina",
+    "introP1": "I ristoranti sono raggruppati per destinazione, non messi in classifica fra loro. Dove una città ha una scelta della redazione, quella apre la griglia con una sua etichetta; tutto il resto segue senza un ordine preciso, quindi leggete le schede e non le posizioni. I punteggi mostrati sono quelli di Google e rimandano alle recensioni da cui arrivano.",
+    "introP2": "La scheda larga sopra ogni griglia è uno spazio partner a pagamento ed è segnalata come pubblicità. Nient’altro in questa pagina è posizionamento pagato. Gli orari seguono la stagione — in Lapponia \"chiuso per la stagione\" può voler dire mesi e non settimane — quindi controllate la pagina del ristorante prima di mettervi in strada."
   },
   "fineDining": {
     "title": "Alta cucina in Lapponia e dintorni | LaplandDining",

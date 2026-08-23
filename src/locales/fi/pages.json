@@ -134,7 +134,10 @@
     },
     "editorsPick": "Toimituksen valinta",
     "menuLabel": "Ruokalista",
-    "menuLabelPdf": "Ruokalista (PDF)"
+    "menuLabelPdf": "Ruokalista (PDF)",
+    "introTitle": "Miten tämä sivu on järjestetty",
+    "introP1": "Ravintolat on ryhmitelty kohteittain, ei asetettu paremmuusjärjestykseen. Jos kaupungissa on toimituksen valinta, se on ruudukon ensimmäisenä omalla merkinnällään; sen jälkeen tulevat muut ilman järjestystä, joten lue kortit äläkä sijoituksia. Näkyvät arviot ovat Googlen omia, ja jokaisesta pääsee niihin arvosteluihin joista luku on peräisin.",
+    "introP2": "Jokaisen kaupungin ruudukon yläpuolella oleva leveä kortti on maksettu esittelykumppanipaikka ja merkitty mainokseksi. Muuta maksettua näkyvyyttä tällä sivulla ei ole. Aukioloajat elävät kauden mukaan — Lapissa \"suljettu kaudeksi\" voi tarkoittaa kuukausia eikä viikkoja — joten tarkista ravintolan oma sivu ennen kuin ajat paikalle."
   },
   "fineDining": {
     "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",

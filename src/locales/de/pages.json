@@ -134,7 +134,10 @@
     },
     "editorsPick": "Redaktionstipp",
     "menuLabel": "Speisekarte",
-    "menuLabelPdf": "Speisekarte (PDF)"
+    "menuLabelPdf": "Speisekarte (PDF)",
+    "introTitle": "Wie diese Seite geordnet ist",
+    "introP1": "Die Restaurants sind nach Zielort gruppiert, nicht gegeneinander gereiht. Gibt es in einem Ort eine Redaktionsempfehlung, steht sie mit eigener Kennzeichnung vorn; alles danach folgt ohne Rangfolge, lesen Sie also die Karten und nicht die Positionen. Die angezeigten Bewertungen stammen von Google und verlinken zurück auf die Rezensionen, aus denen sie kommen.",
+    "introP2": "Die breite Karte über jedem Ortsraster ist ein bezahlter Partnerplatz und als Werbung gekennzeichnet. Sonst ist auf dieser Seite nichts bezahlte Platzierung. Öffnungszeiten richten sich nach der Saison – in Lappland kann \"außerhalb der Saison geschlossen\" Monate statt Wochen bedeuten –, prüfen Sie also die Seite des Restaurants, bevor Sie losfahren."
   },
   "fineDining": {
     "title": "Fine Dining in und um Lappland | LaplandDining",

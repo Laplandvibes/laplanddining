@@ -22,12 +22,43 @@
  * - The block mirrors what the page genuinely shows: the H1 repeats the <title>,
  *   the <p> repeats the meta description verbatim, and the links are the same
  *   ecosystem footer links every page renders — localized to the SAME locale.
- * - It is styled and inherits the site's own colours/fonts, because on 7 sites
- *   React's mount waits on an async translation chunk for non-EN routes and this
- *   block is genuinely PAINTED for ~1.8s (hub: FCP 308ms, removal 2156ms).
- *   Before, users stared at a blank shell for that time.
  * - Fails open everywhere: any parse problem returns null and the caller skips
  *   injection, leaving output byte-identical to before.
+ *
+ * WHY THE TEXT IS NOT PAINTED TO HUMANS (changed 2026-08-23)
+ * The block sits inside #root, so it is on screen until React's first commit —
+ * measured on laplandvibes.com/fi that day: HTML responseEnd 110ms, entry chunk
+ * done 390ms, domContentLoadedEventEnd 672ms warm; 1.8–2.2s cold. Until this
+ * change it was painted AS TEXT for that whole window, on every route of 9/10
+ * live domains sampled (7–24 kB of harvested title + description + link list;
+ * gifts 24 kB at 201 routes). Vesa, 2026-08-23: "joka ikinen sivu näyttää
+ * jonkun pelkän tekstin sinistä taustaa vasten … ihan kuin jotkut lakitekstit".
+ * The earlier reasoning — that a blank shell for 1.8s is worse — was his call to
+ * make and he made it the other way. Note this is the SECOND complaint about
+ * this block's appearance; 2026-08-16's "h1-kirjaimet venyy" was patched
+ * cosmetically (font-weight 400, below) instead of questioning the paint itself.
+ *
+ * So the block is now hidden from JS browsers and shown to everything else:
+ *   - an inline script adds `lv-js` to <html> BEFORE the text is parsed, and
+ *     `.lv-js #lv-prerender{display:none}` hides it — no paint, no flash;
+ *   - a non-JS crawler never runs that script, the rule never matches, and it
+ *     reads exactly the same text as before. The whole SEO purpose is intact.
+ *     Googlebot runs JS and renders the real app, whose h1/links are the same
+ *     content — this is progressive enhancement, not cloaking.
+ * 🔴 `<noscript>` cannot do this job: crawlers do not count a noscript H1 (see
+ * the laplandvisit note on injectCrawlableBody — trusting one took that site
+ * from missing-h1 0/100 to 100/100).
+ * 🔴 The hiding rule MUST stay class-scoped. An unconditional
+ * `#lv-prerender{display:none}` hides it from the non-JS crawlers too, which
+ * silently deletes the feature while leaving the bytes in place.
+ *
+ * In its place a branded splash (#LAPLAND<BRAND> wordmark) fades in only after
+ * 350ms, so a fast mount shows nothing at all and a slow one shows the brand.
+ * A 6s watchdog puts the text back if React never mounts, so a broken bundle
+ * degrades to a readable, linked page instead of the blank screen that hid the
+ * app's death for 17h on 2026-08-18.
+ *
+ * Gate: `node scripts/test_crawlable_body_splash.mjs` pins all of the above.
  */
 
 import { existsSync, readFileSync } from 'node:fs';
@@ -241,13 +272,22 @@ export function buildCrawlableBody(
   const ul = 'list-style:none;padding:0;margin:.5rem 0 0;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem';
 
   return (
-    `<div id="lv-prerender" style="${wrap}">` +
+    // Marker comments delimit everything this module owns, so stripCrawlableBody
+    // can remove it in one match no matter how many elements it grows. The old
+    // strip regex keyed on `<div id="root"><div id="lv-prerender"` and on the
+    // block ending `</nav></div></div>`, which both stop being true here.
+    PRE_OPEN +
+    // Runs during parse, BEFORE the text below is parsed, so the text is never
+    // painted in a JS browser. A non-JS crawler never gets the class, so the
+    // rule in SPLASH_CSS never matches and it reads the text exactly as before.
+    `<script>${BOOT_JS}</script>` +
     // One rule instead of the same 44-byte inline style on every anchor. The block
     // carries 27 network links + up to ~200 internal ones, so inline styling cost
     // ~3,2 kB per page on weddings (72 anchors) and would scale with route count —
     // gifts has 201 routes. Scoped to #lv-prerender so it cannot leak into the app,
     // and it is removed with the block when React mounts.
-    `<style>#lv-prerender a{color:inherit;text-decoration:none}</style>` +
+    `<style>${SPLASH_CSS}</style>` +
+    `<div id="lv-prerender" style="${wrap}">` +
     `<h1 style="${h1}">${esc(title)}</h1>` +
     (description ? `<p style="${p}">${esc(description)}</p>` : '') +
     (paras.length
@@ -259,8 +299,71 @@ export function buildCrawlableBody(
       : '') +
     `<nav aria-label="${esc(siteName || 'LaplandVibes')} network" style="${nav}">` +
     `<ul style="${ul}">${items}</ul></nav>` +
-    `</div>`
+    `</div>` +
+    // What a human actually sees while React loads. Sits after the text so the
+    // h1 demotion in injectCrawlableBody keeps matching the block's own heading.
+    `<div id="lv-splash" aria-hidden="true"><span style="${mark}">${wordmark(siteName)}</span></div>` +
+    PRE_CLOSE
   );
+}
+
+const PRE_OPEN = '<!--LV-PRE-->';
+const PRE_CLOSE = '<!--/LV-PRE-->';
+
+// 6s, not 2s: a cold 3G mount is legitimately slow and re-showing the text on a
+// page that is merely slow would put the flash straight back. This fires only
+// when React never commits at all.
+const BOOT_JS =
+  "document.documentElement.classList.add('lv-js');" +
+  "setTimeout(function(){var e=document.getElementById('lv-prerender');" +
+  "if(e){e.style.display='block';" + // inline, so it beats the class rule below
+  "var s=document.getElementById('lv-splash');if(s&&s.parentNode)s.parentNode.removeChild(s)}},6000)";
+
+// 🔴 `.lv-js`-scoped, never bare — see the module header. The 350ms delay is the
+// point of the splash: a warm mount lands at ~670ms but a cached one is faster
+// still, and anything that mounts before the delay elapses shows NOTHING, which
+// is better than a wordmark that blinks once per navigation.
+const SPLASH_CSS =
+  '.lv-js #lv-prerender{display:none}' +
+  '#lv-splash{display:none}' +
+  // 🔴 The delay lives in `from{opacity:0}` + `both`, NOT in a base `opacity:0`.
+  // Both spellings look identical when the animation runs, but they fail in
+  // opposite directions when it does not (animations suppressed by the UA, a
+  // non-compositing/backgrounded renderer — observed in this repo's own preview
+  // pane 2026-08-23): base-0 leaves a permanently BLANK screen, `both` with a
+  // base of 1 just shows the wordmark immediately. Never make content depend on
+  // an animation running in order to become visible.
+  '.lv-js #lv-splash{display:flex;position:fixed;inset:0;align-items:center;' +
+  'justify-content:center;animation:lvSplashIn .45s ease .35s both}' +
+  '@keyframes lvSplashIn{from{opacity:0}to{opacity:1}}' +
+  '@media (prefers-reduced-motion:reduce){.lv-js #lv-splash{animation-duration:.01ms}}' +
+  '#lv-prerender a{color:inherit;text-decoration:none}';
+
+// var(--font-logo) first: the network rule is that the wordmark is Bebas Neue on
+// EVERY site including the font variants (carrental/hoteldeals), and those carry
+// the token precisely for that. Standard sites have no --font-logo and fall
+// through to --font-heading, which is already Bebas.
+const mark =
+  'font-family:var(--font-logo,var(--font-heading,inherit));font-weight:400;' +
+  'font-size:clamp(1.75rem,6vw,3rem);letter-spacing:.06em;line-height:1';
+
+/**
+ * `#LAPLAND<BRAND>` in the network's colours.
+ *
+ * The middle word inherits instead of hardcoding --color-snow: laplandstays is
+ * a cream site (#FAFAF8 body) where snow-on-cream is invisible, and christmas
+ * runs a warm palette. Inheriting is what the text block already relies on.
+ * The pink keeps a literal fallback because a variant site may not define the
+ * token at all, and a wordmark with no accent still reads correctly.
+ */
+function wordmark(siteName) {
+  const raw = String(siteName || 'LaplandVibes').trim();
+  const pink = 'color:var(--color-vibe-pink,#EC4899)';
+  const rest = /^lapland[\s_-]*(.+)$/i.exec(raw);
+  return rest
+    ? `<span style="${pink}">#</span><span>LAPLAND</span>` +
+        `<span style="${pink}">${esc(rest[1].toUpperCase())}</span>`
+    : `<span style="${pink}">#</span><span>${esc(raw.toUpperCase())}</span>`;
 }
 
 /**
@@ -274,9 +377,18 @@ export function buildCrawlableBody(
  * HOME page's h1/description/nav.
  */
 export function stripCrawlableBody(html) {
-  return html.replace(
-    /<div id="root"><div id="lv-prerender"[^>]*>[\s\S]*?<\/nav><\/div><\/div>/i,
-    '<div id="root"></div>'
+  return (
+    html
+      // Current shape: everything this module owns sits between the markers.
+      .replace(/<div id="root"><!--LV-PRE-->[\s\S]*?<!--\/LV-PRE--><\/div>/i, '<div id="root"></div>')
+      // Pre-2026-08-23 shape. 🔴 KEEP: dist/ shells on disk still hold blocks in
+      // the old form, and the prerenderers read the shell they overwrite. Drop
+      // this and the first run after the splash change stacks a new block on top
+      // of the old one instead of replacing it.
+      .replace(
+        /<div id="root"><div id="lv-prerender"[^>]*>[\s\S]*?<\/nav><\/div><\/div>/i,
+        '<div id="root"></div>'
+      )
   );
 }
 

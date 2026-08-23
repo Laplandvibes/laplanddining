@@ -134,7 +134,10 @@
     },
     "editorsPick": "Redaktionens val",
     "menuLabel": "Meny",
-    "menuLabelPdf": "Meny (PDF)"
+    "menuLabelPdf": "Meny (PDF)",
+    "introTitle": "Så är sidan ordnad",
+    "introP1": "Restaurangerna är grupperade efter destination, inte rangordnade mot varandra. Har en ort ett redaktionellt val ligger det först i rutnätet med en egen markering; därefter kommer de övriga utan inbördes ordning, så läs korten och inte placeringarna. Betygen som visas är Googles egna och länkar tillbaka till de recensioner de kommer från.",
+    "introP2": "Det breda kortet ovanför varje ortsrutnät är en betald partnerplats och är märkt som annons. Ingen annan placering på sidan är betald. Öppettiderna följer säsongen — i Lappland kan \"stängt för säsongen\" betyda månader snarare än veckor — så kolla restaurangens egen sida innan du kör dit."
   },
   "fineDining": {
     "title": "Fine dining i och kring Lappland | LaplandDining",

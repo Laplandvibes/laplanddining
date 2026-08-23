@@ -134,7 +134,10 @@
     },
     "editorsPick": "Choix de la rédaction",
     "menuLabel": "Carte",
-    "menuLabelPdf": "Carte (PDF)"
+    "menuLabelPdf": "Carte (PDF)",
+    "introTitle": "Comment cette page est organisée",
+    "introP1": "Les restaurants sont regroupés par destination, pas classés les uns contre les autres. Quand une ville a un choix de la rédaction, il ouvre la grille avec sa propre mention ; tout ce qui suit vient sans ordre particulier, lisez donc les fiches et non les positions. Les notes affichées sont celles de Google et renvoient aux avis dont elles proviennent.",
+    "introP2": "La large carte au-dessus de chaque grille est un emplacement partenaire payant, signalé comme publicité. Rien d’autre sur cette page n’est un placement payé. Les horaires suivent la saison — en Laponie, « fermé pour la saison » peut vouloir dire des mois et non des semaines — vérifiez donc la page du restaurant avant de prendre la route."
   },
   "fineDining": {
     "title": "Haute gastronomie en Laponie et alentours | LaplandDining",

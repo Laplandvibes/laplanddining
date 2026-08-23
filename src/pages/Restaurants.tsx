@@ -384,6 +384,18 @@ export default function Restaurants() {
 
       <PageBreadcrumb />
 
+      {/* Editorial lead — the same pages.json block routes.json harvests through
+          this route's jsonKey, so reader and crawler get one text in one
+          language. Sits above the filter bar: it explains the arrangement the
+          reader is about to scroll through, including the paid slot. */}
+      <section className="px-4 sm:px-6 lg:px-8 pt-12 bg-night">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl sm:text-4xl text-cream mb-4">{t('restaurants.introTitle')}</h2>
+          <p className="text-cream/75 text-sm sm:text-base leading-relaxed mb-4">{t('restaurants.introP1')}</p>
+          <p className="text-cream/75 text-sm sm:text-base leading-relaxed">{t('restaurants.introP2')}</p>
+        </div>
+      </section>
+
       {/* Filter bar */}
       <section className="sticky top-16 z-30 bg-night/95 backdrop-blur-md border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">

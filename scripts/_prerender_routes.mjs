@@ -217,11 +217,15 @@ function sliceBlock(src, openIdx) {
 
 /** Find ALL `<key>: { … }` blocks in src, return list of inner slices. */
 function findKeyBlocks(src, key) {
-  const re = new RegExp(`(?:["']${key.replace(/[-/]/g, '\\$&')}["']|\\b${key}\\b)\\s*:\\s*\\{`, 'g');
+  // `key: {` and `key: [` both count. A per-language block is as often a LIST
+  // as an object (`Record<Lang, Faq[]>`), and matching only the object form
+  // made every entry of such a list invisible in all twelve languages at once.
+  const re = new RegExp(`(?:["']${key.replace(/[-/]/g, '\\$&')}["']|\\b${key}\\b)\\s*:\\s*([\\{\\[])`, 'g');
   const out = [];
   let m;
   while ((m = re.exec(src)) !== null) {
-    const inner = sliceBlock(src, m.index + m[0].length - 1);
+    const at = m.index + m[0].length - 1;
+    const inner = m[1] === '{' ? sliceBlock(src, at) : sliceArray(src, at);
     if (inner != null) out.push(inner);
   }
   return out;
@@ -636,6 +640,54 @@ function harvestFromTsBlock(block, out, meta, seen, budget) {
   }
 }
 
+/** Argument order of the network's `pick(lang, en, fi, …)` helper. A missing
+ *  argument falls back to English, exactly as the runtime helper does. */
+const PICK_ORDER = ['en', 'fi', 'de', 'ja', 'es', 'pt-BR', 'zh-CN', 'ko', 'fr', 'it', 'nl', 'sv'];
+
+/** Split the balanced ( … ) starting at openIdx into top-level arguments,
+ *  respecting nested brackets and string literals. Returns null on imbalance. */
+function splitCallArgs(src, openIdx) {
+  let depth = 0, start = -1, inStr = false, q = '', esc = false;
+  const args = [];
+  for (let i = openIdx; i < src.length; i++) {
+    const c = src[i];
+    if (inStr) {
+      if (esc) { esc = false; continue; }
+      if (c === '\\') { esc = true; continue; }
+      if (c === q) inStr = false;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === '`') { inStr = true; q = c; continue; }
+    if (c === '(' || c === '[' || c === '{') { depth++; if (depth === 1) start = i + 1; continue; }
+    if (c === ')' || c === ']' || c === '}') {
+      depth--;
+      if (depth === 0) { args.push(src.slice(start, i)); return args; }
+      continue;
+    }
+    if (c === ',' && depth === 1) { args.push(src.slice(start, i)); start = i + 1; }
+  }
+  return null;
+}
+
+/** Harvest this locale's argument out of every `pick(lang, …)` call in src. */
+function harvestPickCalls(src, loc, out, meta, seen, budget) {
+  const idx = PICK_ORDER.indexOf(loc.lang);
+  if (idx < 0) return;
+  const re = /\bpick\s*\(/g;
+  let m;
+  while ((m = re.exec(src)) !== null && budget.words > 0) {
+    const args = splitCallArgs(src, m.index + m[0].length - 1);
+    if (!args || args.length < 2) continue;
+    // args[0] is the lang argument; args[1] is English.
+    const pickArg = args[1 + idx] !== undefined ? args[1 + idx].trim() : '';
+    const chosen = pickArg || (args[1] || '').trim();
+    const lit = /^(['"`])((?:\\.|(?!\1).)*)\1$/.exec(chosen);
+    if (!lit) continue;
+    const kept = harvestKeep(unescapeJsString(lit[2]), meta, seen);
+    if (kept) { out.push(kept); budget.words -= kept.split(/\s+/).length; }
+  }
+}
+
 /** Slice the balanced [ … ] starting at openIdx. Same fail-open contract as
  *  sliceBlock: an imbalance yields null and the caller harvests nothing. */
 function sliceArray(src, openIdx) {
@@ -784,6 +836,18 @@ function harvestRouteText(loc, route, meta) {
         }
       }
     }
+    }
+
+    // Positional pick(lang, en, fi, …) copy co-located with a page.
+    if (Array.isArray(route.harvestPickFiles)) {
+      for (const rel of route.harvestPickFiles) {
+        if (budget.words <= 0) break;
+        const fp = resolve(CWD, rel);
+        if (!existsSync(fp)) continue;
+        let src = inlinePageCache.get(fp);
+        if (!src) { src = readFileSync(fp, 'utf-8'); inlinePageCache.set(fp, src); }
+        harvestPickCalls(src, loc, out, meta, seen, budget);
+      }
     }
 
     if (Array.isArray(route.harvestFiles)) {
@@ -1350,7 +1414,21 @@ if (args.crawlableBody && NETWORK && lastOut) {
   const probe = readFileSync(lastOut, 'utf-8');
   const problems = [];
   if (!probe.includes('id="lv-prerender"')) problems.push('crawlable body block missing');
-  if (!/<div id="root"><(?:div|style)/.test(probe)) problems.push('block is not inside #root');
+  if (!/<div id="root"><!--LV-PRE-->/.test(probe)) problems.push('block is not inside #root');
+
+  // The block is hidden from JS browsers (2026-08-23) and the two halves of that
+  // fail in OPPOSITE directions, so both are asserted on the artefact:
+  //   - no class-setting script → the text is painted again and every route
+  //     flashes a wall of copy before the hero, which is what Vesa reported;
+  //   - a hide rule that is NOT gated on that class → the text is hidden from
+  //     the non-JS crawlers as well, which silently deletes the entire SEO
+  //     purpose while leaving the bytes on the page. Nothing else would notice.
+  if (!probe.includes("classList.add('lv-js')")) problems.push('lv-js marker script missing — the block would be painted');
+  if (!probe.includes('.lv-js #lv-prerender{display:none}')) problems.push('class-scoped hide rule missing');
+  for (const m of probe.matchAll(/([^{}]*)#lv-prerender\s*\{\s*display:\s*none/g)) {
+    if (!/\.lv-js\s+$/.test(m[1])) problems.push('hide rule is not class-scoped — non-JS crawlers would lose the block');
+  }
+  if (!probe.includes('id="lv-splash"')) problems.push('branded splash missing');
 
   if (problems.length) {
     console.error(`
