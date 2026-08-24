@@ -47,7 +47,7 @@ export default function FineDining() {
           mainEntityOfPage: 'https://laplanddining.com/fine-dining',
           headline: 'Fine Dining in Finnish Lapland',
           description:
-            'Top-rated tasting menus across Finnish Lapland: Sámi heritage meets modern Nordic gastronomy.',
+            'The highest-rated of our Finnish Lapland picks, sorted by Google rating: dining rooms, wilderness kitchens and kota tables, several of them inside small hotels and guesthouses.',
           publisher: {
             '@type': 'Organization',
             name: 'LaplandDining',

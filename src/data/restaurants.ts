@@ -101,7 +101,14 @@ export interface Restaurant {
   address: string;
   shortAddress?: string;            // e.g. "Valtakatu 20, Rovaniemi"
   location: { latitude: number; longitude: number };
-  openingHours?: string[];          // weekday descriptions
+  /**
+   * Weekday descriptions from the Maps sync. Deliberately NOT rendered, and the
+   * copy must not promise opening hours (2026-08-24): the rows carry
+   * `lastVerified: 2026-05-03`, the strings are English-only 12-hour clock, and
+   * Places terms allow storing `place_id` only — not cached content. Send the
+   * reader to the restaurant's own page instead, as `restaurants.introP2` does.
+   */
+  openingHours?: string[];
   photo?: string;                   // /images/restaurants/{slug}.webp
   /**
    * Mistä kuva on peräisin. Ratkaisee kuvakaistan alareunan merkinnän.
@@ -322,35 +329,6 @@ export function cuisineLabel(r: Restaurant, locale: Locale = 'en'): string | nul
     if (TYPE_LABELS[t]) return TYPE_LABELS[t][labelLocale];
   }
   return null;
-}
-
-/**
- * Today's opening hours, parsed from regularOpeningHours.weekdayDescriptions
- * (which are localized strings like "Monday: 5:00 – 10:00 PM" or
- * "Wednesday: Closed"). Returns just the time portion, or null if unknown.
- */
-const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const CLOSED_TODAY: Record<Locale, string> = {
-  en: 'Closed today',
-  fi: 'Suljettu tänään',
-  de: 'Heute geschlossen',
-  ja: '本日休業',
-  es: 'Cerrado hoy',
-  'pt-BR': 'Fechado hoje',
-  'zh-CN': '今日休息',
-  ko: '오늘 휴무',
-  fr: 'Fermé aujourd\'hui',
-  it: 'Chiuso oggi',
-  nl: 'Vandaag gesloten',
-  sv: 'Stängt idag',
-};
-export function todayHours(r: Restaurant, locale: Locale = 'en'): string | null {
-  if (!r.openingHours || r.openingHours.length === 0) return null;
-  const today = WEEKDAYS[new Date().getDay()];
-  const entry = r.openingHours.find((d) => d.startsWith(`${today}:`));
-  if (!entry) return null;
-  const after = entry.slice(today.length + 1).trim();
-  return after === 'Closed' ? CLOSED_TODAY[locale] : after;
 }
 
 /**
