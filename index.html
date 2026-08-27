@@ -133,6 +133,10 @@
          IP-suodatin ei kata naita lainkaan. */
       var lvHost = location.hostname;
       if (lvHost === 'localhost' || lvHost === '127.0.0.1' || lvHost === '[::1]' || lvHost.indexOf('.pages.dev') !== -1) {
+        /* GA:n virallinen opt-out. Pelkka gtagin neutralointi ei riita:
+           gtag/js?id=... lataa kontin joka tapauksessa (mitattu esikatselu-
+           hostilla: google_tag_manager sai avaimen vaikka gtag oli no-op). */
+        window['ga-disable-G-YBTJJJDJTV'] = true;
         gtag = function () {};
       }
       gtag('config', 'G-YBTJJJDJTV', {
