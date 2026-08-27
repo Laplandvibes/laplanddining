@@ -112,6 +112,11 @@
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
+        /* 🔴 Nama kaksi puuttuivat 27.8.2026 asti. Consent Mode v2 vaatii
+           ETA-alueella kaikki nelja; ilman naita ad_user_data ja
+           ad_personalization eivat ole denied-tilassa ennen bannerin vastausta. */
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
         wait_for_update: 500
       });
       if (localStorage.getItem('laplanddining_cookie_consent') === 'accepted') {
