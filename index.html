@@ -126,6 +126,15 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBTJJJDJTV"></script>
     <script>
       gtag('js', new Date());
+      /* 🔴 Ala mittaa kehityskonetta eika Cloudflaren esikatselubuildeja tuotanto-
+         propertyyn. Mitattu 27.8.2026 hubin GA:sta: hostnamena esiintyi localhost
+         (/fi 96 katselua, /fi/media 81) ja SEITSEMAN eri *.pages.dev-esikatselua.
+         Sama portti jonka Umami saa data-domains-attribuutista; GA:n oma
+         IP-suodatin ei kata naita lainkaan. */
+      var lvHost = location.hostname;
+      if (lvHost === 'localhost' || lvHost === '127.0.0.1' || lvHost === '[::1]' || lvHost.indexOf('.pages.dev') !== -1) {
+        gtag = function () {};
+      }
       gtag('config', 'G-YBTJJJDJTV', {
         linker: {
           domains: [
