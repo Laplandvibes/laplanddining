@@ -46,7 +46,7 @@
     "stayAffiliateLink": "Miksi linkitämme näin",
     "toursKicker": "Syö oppaan kanssa",
     "toursHeadline": "Ruokakierrokset, kokkauskurssit ja panimokäynnit",
-    "toursLead": "Kun haluat aterian lisäksi tarinan: saamelaisia makukävelyjä, lappilaisia kokkauskursseja, panimoilta lähteviä illallisia ja lohenpaistoelämyksiä. Varaukset GetYourGuiden kautta, ilmainen peruutus 24 tuntia ennen alkua.",
+    "toursLead": "Kun haluat aterian lisäksi tarinan: saamelaisia makukävelyjä, lappilaisia kokkauskursseja, panimoilta lähteviä illallisia ja lohenpaistoelämyksiä. Varaukset GetYourGuiden kautta, ilmainen peruutus viimeistään 24 tuntia ennen alkua.",
     "tourLinks": [
       "Lapin ruokakierrokset",
       "Kokkauskurssit",
@@ -310,7 +310,7 @@
       },
       {
         "name": "Nieriä ja lohi",
-        "fact": "Nostettu Euroopan puhtaimpiin kuuluvista joista ja järvistä. Pelkkä Inarijärvi antaa nieriää, siikaa ja taimenta, kaikki villinä pyydettyä, sillä Lapin vesissä kalaa ei kasvateta. Vanha tapa kypsentää lohta on loimulohi: filee kiinnitetään koivulautaan ja paistetaan hitaasti avotulen vieressä.",
+        "fact": "Nostettu Euroopan puhtaimpiin kuuluvista joista ja järvistä. Pelkkä Inarijärvi antaa nieriää, siikaa ja taimenta, kaikki villinä pyydettyä, ei koskaan Lapin vesissä kasvatettua. Vanha tapa kypsentää lohta on loimulohi: filee kiinnitetään koivulautaan ja paistetaan hitaasti avotulen vieressä.",
         "season": "Kesä ja syksy"
       },
       {
