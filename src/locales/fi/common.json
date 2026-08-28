@@ -33,7 +33,7 @@
     },
     "spottedError": {
       "title": "Huomasitko virheen?",
-      "body": "Jos jokin kaipaa korjausta, kerro meille, fixaamme sen.",
+      "body": "Jos jokin kaipaa korjausta, kerro meille, niin korjaamme sen heti.",
       "cta": "Ilmoita virheestä →"
     },
     "partner": {
@@ -47,7 +47,7 @@
       "cta": "Lehdistö­tiedustelut →"
     },
     "affiliate": "Tämä sivusto sisältää kumppanuus­linkkejä. Jos varaat niiden kautta, LaplandVibes voi saada komission ilman lisäkustannuksia sinulle.",
-    "copyright": "{{year}} #LaplandVibes, Osa #LaplandVibes-verkostoa",
+    "copyright": "{{year}} #LaplandVibes, osa #LaplandVibes-verkostoa",
     "websiteBy": "Sivuston toteutus: Yrityspaketit.fi",
     "legal": {
       "privacy": "Tietosuojaseloste",

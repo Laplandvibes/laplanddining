@@ -159,7 +159,7 @@ export const restaurantOverrides: Record<string, Override> = {
   'ChIJ7zWSIUxN0kUREMxPrEL0c40': {
     curatedDescription: {
       en: 'The atmosphere is joyful, vibrant, and authentic: the kind of place where strangers become one happy crowd, while winter stays far outside.',
-      fi: 'Tunnelma on lämmin ja aito, paikka, jossa vieraat puhuvat keskenään parin tunnin päästä ja talvi unohtuu täysin oven taakse.',
+      fi: 'Tunnelma on lämmin ja aito: sellainen paikka, jossa tuntemattomatkin alkavat pian jutella keskenään ja talvi unohtuu täysin oven taakse.',
       de: 'Die Atmosphäre ist warm, lebendig und echt, ein Ort, an dem Fremde nach einer Stunde miteinander reden und der Winter draußen bleibt.',
       ja: '雰囲気は温かく、にぎやかで、飾り気がない。見知らぬ者どうしが一時間後には語り合い、冬は外に置き去りになる、そんな店です。',
       es: 'El ambiente es cálido, animado y auténtico: de esos lugares donde los desconocidos acaban charlando en una hora y el invierno se queda fuera.',
@@ -176,7 +176,7 @@ export const restaurantOverrides: Record<string, Override> = {
   'ChIJd2up905N0kURTWJBTBizK7A': {
     curatedDescription: {
       en: 'The smoked salmon cooked next to the fire was beautiful.',
-      fi: 'Avotulen vieressä savustettu lohi on aterian paras hetki, leiki­tetty tulella ja syöty kodassa, ei vain salissa.',
+      fi: 'Avotulen vieressä savustettu lohi on aterian paras hetki: liekitetty tulella ja syöty kodassa, ei vain salissa.',
       de: 'Der Lachs, am offenen Feuer geräuchert, ist der Höhepunkt des Abends, im Kota gegart, nicht nur im Saal serviert.',
       ja: '直火のそばで燻したサーモンが、その夜いちばんの瞬間。ホールではなく kota のなかで、火を相手に仕上げられます。',
       es: 'El salmón ahumado junto al fuego es el mejor momento de la cena: cocinado al fuego dentro de la kota, no solo servido en la sala.',
