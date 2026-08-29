@@ -3,9 +3,9 @@
     "title": "LaplandDining: Wo man in Finnisch-Lappland gut isst",
     "description": "Handverlesene Restaurants in Finnisch-Lappland: Kota-Feuer, samische Küche und Fine Dining in Rovaniemi, Levi und Inari, mit Gästezitaten und Menülinks.",
     "heroH1": "Entdecken Sie Lapplands beste Restaurants",
-    "heroLead": "Echte, handverlesene Restaurants in ganz Finnisch-Lappland, von traditioneller samischer Spitzenküche über Feuerstellen-Küche im Kota bis zu arktischen Zutaten, die Sie nirgends sonst finden.",
+    "heroLead": "Echte, handverlesene Restaurants in ganz Finnisch-Lappland, von traditioneller samischer Spitzenküche über Feuerstellen-Küche in der Kota bis zu arktischen Zutaten, die Sie nirgends sonst finden.",
     "heroCtaExplore": "Alle Restaurants ansehen",
-    "heroCtaStay": "Übernachten in Essensnähe",
+    "heroCtaStay": "Übernachten in Restaurantnähe",
     "heroCtaFine": "Fine Dining in Lappland",
     "picksKicker": "Empfehlungen der Redaktion",
     "picksHeadline": "Beginnen Sie mit diesen sechs",
@@ -15,7 +15,7 @@
     "midnightHeadline1": "Abendessen um 1 Uhr nachts.",
     "midnightHeadline2": "Die Sonne steht noch hoch.",
     "midnightBadge": "6. Juni → 7. Juli",
-    "midnightBody": "Einen guten Monat lang sinkt die Sonne nördlich des Polarkreises nicht unter den Horizont. Flussterrassen in Rovaniemi, Kota-Feuer in Saariselkä, das seezugewandte Degustationsmenü im Aanaar, alles im goldenen Dauerlicht serviert. Die leiseste und beste Hälfte des kulinarischen Jahres in Lappland.",
+    "midnightBody": "Einen guten Monat lang sinkt die Sonne nördlich des Polarkreises nicht unter den Horizont. Flussterrassen in Rovaniemi, Kota-Feuer in Saariselkä, das Degustationsmenü mit Seeblick im Aanaar, alles im goldenen Dauerlicht serviert. Die leiseste und beste Hälfte des kulinarischen Jahres in Lappland.",
     "midnightCtaGuide": "Zum Mitternachtssonne-Guide",
     "midnightCtaStays": "Sommerunterkünfte finden",
     "cuisineHeadline": "Highlights der Küche",
@@ -40,13 +40,13 @@
     "statsDestinations": "Reiseziele",
     "statsYear": "Dieses Jahr aktualisiert",
     "stayKicker": "Übernachten, wo Sie essen",
-    "stayHeadline": "Buchen Sie ein Hotel in der Nähe des heutigen Tisches",
-    "stayLead": "Abendessen in Lappland zieht sich oft in die Länge und endet weit außerhalb der Stadt. Am klügsten ist eine Unterkunft in Gehweite des Restaurants und Trip.com zeigt am übersichtlichsten, was tatsächlich neben jedem Kota, jedem Fjell-Hotel und jedem Eisrestaurant verfügbar ist.",
+    "stayHeadline": "Buchen Sie ein Hotel in der Nähe Ihres Tisches für heute Abend",
+    "stayLead": "Abendessen in Lappland zieht sich oft in die Länge und endet weit außerhalb der Stadt. Am klügsten ist eine Unterkunft in Gehweite des Restaurants und Trip.com zeigt am übersichtlichsten, was tatsächlich neben jeder Kota, jedem Fjell-Hotel und jedem Eisrestaurant verfügbar ist.",
     "stayAffiliateNote": "Affiliate-Links, wir erhalten ggf. eine Provision, ohne Mehrkosten für Sie.",
     "stayAffiliateLink": "Warum wir so verlinken",
     "toursKicker": "Mit Guide schlemmen",
     "toursHeadline": "Kulinarische Touren, Kochkurse & Brauereibesuche",
-    "toursLead": "Für Reisende, die zur Mahlzeit auch den Kontext suchen, samische Tasting-Walks, lappländische Kochkurse, Brauerei-Dinner und Lachs-Koch-Erlebnisse. Gebucht über GetYourGuide, kostenlos stornierbar bis 24 Stunden vor Beginn.",
+    "toursLead": "Für Reisende, die zur Mahlzeit auch den Kontext suchen, samische Verkostungstouren, lappländische Kochkurse, Brauerei-Dinner und Lachs-Koch-Erlebnisse. Gebucht über GetYourGuide, kostenlos stornierbar bis 24 Stunden vor Beginn.",
     "tourLinks": [
       "Kulinarische Touren in Lappland",
       "Kochkurse",
@@ -63,15 +63,15 @@
       "items": [
         {
           "question": "Was ist das berühmteste Restaurant in Lappland?",
-          "answer": "Das Restaurant Aanaar in Inari gehört zu den bestbewerteten Fine-Dining-Adressen Lapplands, 4,8 bei Google aus über 460 Bewertungen. Es ehrt das samische Esserbe mit Degustationsmenüs rund um Fisch, der am selben Morgen aus dem Inarisee gezogen wurde, handgepflückte Wildkräuter und Rentier von örtlichen Rentierhaltern."
+          "answer": "Das Restaurant Aanaar in Inari gehört zu den bestbewerteten Fine-Dining-Adressen Lapplands, 4,8 Sterne bei Google aus über 460 Bewertungen. Es ehrt das kulinarische Erbe der Samen mit Degustationsmenüs rund um Fisch, der am selben Morgen aus dem Inarisee gezogen wurde, handgepflückte Wildkräuter und Rentier von örtlichen Rentierhaltern."
         },
         {
           "question": "Was ist Poronkäristys?",
-          "answer": "Poronkäristys ist das ikonischste Gericht Lapplands, hauchdünn gehobeltes Rentier, in Butter sautiert und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und zutiefst befriedigend, Sie finden es überall, vom Straßencafé bis zum Fine-Dining-Haus."
+          "answer": "Poronkäristys ist das bekannteste Gericht Lapplands, hauchdünn gehobeltes Rentier, in Butter sautiert und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und zutiefst befriedigend, Sie finden es überall, vom Straßencafé bis zum Fine-Dining-Haus."
         },
         {
           "question": "Was ist ein Kota-Dinner?",
-          "answer": "Eine Kota ist ein traditionelles samisches Zelt mit offener Feuerstelle in der Mitte. Kota-Restaurants wie das Kammi im Hullu Poro in Levi setzen Sie auf Rentierfelle rund ums Feuer, während geräucherter Lachs, Rentierwürste und gegrilltes Wild vor Ihren Augen zubereitet werden, das Menü kostet etwa 64 € pro Person."
+          "answer": "Eine Kota ist ein traditionelles samisches Zelt mit offener Feuerstelle in der Mitte. In Kota-Restaurants wie dem Kammi im Hullu Poro in Levi sitzen Sie auf Rentierfellen rund ums Feuer, während geräucherter Lachs, Rentierwürste und gegrilltes Wild vor Ihren Augen zubereitet werden, das Menü kostet etwa 64 € pro Person."
         },
         {
           "question": "Wann isst man in Lappland am besten draußen?",
@@ -79,7 +79,7 @@
         },
         {
           "question": "Auf welchen Zutaten baut Lapplands Küche auf?",
-          "answer": "Frei weidende Rentiere, Saibling und Felchen aus Seen wie dem Inarisee, wilde Heidel- und Preiselbeeren, von Hand gesammelte Pilze und Wildkräuter, und die Moltebeere, das „Gold der Arktis\", die nur wenige Wochen im Juli auf subarktischen Mooren reift."
+          "answer": "Frei weidende Rentiere, Saibling und Felchen aus Seen wie dem Inarisee, wilde Heidel- und Preiselbeeren, von Hand gesammelte Pilze und Wildkräuter, und die Moltebeere, das „Gold der Arktis“, die nur wenige Wochen im Juli auf subarktischen Mooren reift."
         }
       ]
     }
@@ -89,20 +89,20 @@
     "description": "Handverlesene Restaurants nach Orten geordnet: Rovaniemi, Levi, Saariselkä, Inari, Ylläs und mehr. Google-Bewertungen, echte Gästezitate und Menülinks.",
     "heroKicker": "Arktischer Restaurantführer",
     "heroH1": "Alle Restaurants",
-    "heroLeadTemplate": "{{restaurantCount}} handverlesene Restaurants in {{cityCount}} Reisezielen in und um Lappland. Google-Bewertungen, echte Gästezitate und ein Menülink, wo die Küche ihre Karte veröffentlicht, kombiniert mit einem Hotel in Gehweite.",
+    "heroLeadTemplate": "{{restaurantCount}} handverlesene Restaurants in {{cityCount}} Reisezielen in und um Lappland. Google-Bewertungen, echte Gästezitate und ein Menülink, sofern die Küche ihre Karte veröffentlicht, kombiniert mit einem Hotel in Gehweite.",
     "heroChipKota": "Kota-Dining",
     "heroChipWilderness": "Wildnis",
     "heroChipArctic": "Arktisch",
     "filterAll": "Alle Städte",
     "showAllInCity": "Alle {{count}} Restaurants in {{city}} anzeigen",
-    "cityTopPickLabel": "Stadt-Top-Pick",
+    "cityTopPickLabel": "Top-Tipp der Stadt",
     "cityRestaurantsSingular": "Restaurant",
     "cityRestaurantsPlural": "Restaurants",
     "websiteLabel": "Webseite besuchen",
     "mapsLabel": "In Maps öffnen",
     "readReviews": "Alle {{count}} Bewertungen auf Google lesen →",
     "googleReview": "Google-Bewertung →",
-    "stayKicker": "Übernachten in Tisch-Nähe",
+    "stayKicker": "Übernachten in Restaurantnähe",
     "stayHeadlineTemplate": "Hotels in {{city}} buchen, zu Fuß zum Abendessen",
     "stayBtnTemplate": "Unterkünfte in {{city}} ansehen",
     "foodToursBtnTemplate": "Kulinarische Touren in {{city}}",
@@ -120,15 +120,15 @@
       "Kemi": "Wo Eis auf Feuer trifft, einzigartige saisonale Erlebnisse",
       "Ylläs": "Charme eines Fjell-Dorfes mit authentisch lappländischen Aromen",
       "Tornio": "Charakter einer Grenzstadt und finnische Hausmannskost",
-      "Haparanda": "Über die Grenze für schwedisch-nordische Fusion",
+      "Haparanda": "Über die Grenze zur schwedisch-nordischen Fusionsküche",
       "Sodankylä": "Flussstadt-Traditionen und das Publikum des Midnight Sun Film Festivals",
       "Pyhätunturi": "Speisen auf dem Fjell-Gipfel am südlichen Tor zur Wildnis",
-      "Luosto": "Amethyst-Bergdorf mit Kelo-Block-Restaurants",
+      "Luosto": "Amethyst-Bergdorf mit Restaurants aus Kelo-Blockholz",
       "Muonio": "Polarlicht-Hochland oberhalb der Baumgrenze",
-      "Hetta": "Enontekiö-Drehscheibe am Rand dreier Grenzen",
-      "Kuusamo": "Resort Ruka, knapp südlich der Grenze Lapplands",
+      "Hetta": "Zentrum von Enontekiö nahe drei Landesgrenzen",
+      "Kuusamo": "Ferienort Ruka, knapp südlich der Grenze Lapplands",
       "Kemijärvi": "Nördlichste Bahnstadt mit Tischen am Fluss",
-      "Salla": "Wildnis-Pass + Finnlands östlichstes Skidorf",
+      "Salla": "Wildnispass und Finnlands östlichstes Skidorf",
       "Posio": "See- und Handwerks-Herz des Riisitunturi-Gebiets"
     },
     "editorsPick": "Redaktionstipp",
@@ -136,7 +136,7 @@
     "menuLabelPdf": "Speisekarte (PDF)",
     "introTitle": "Wie diese Seite geordnet ist",
     "introP1": "Die Restaurants sind nach Zielort gruppiert, nicht gegeneinander gereiht. Gibt es in einem Ort eine Redaktionsempfehlung, steht sie mit eigener Kennzeichnung vorn; alles danach folgt ohne Rangfolge, lesen Sie also die Karten und nicht die Positionen. Die angezeigten Bewertungen stammen von Google und verlinken zurück auf die Rezensionen, aus denen sie kommen.",
-    "introP2": "Die breite Karte über jedem Ortsraster ist ein bezahlter Partnerplatz und als Werbung gekennzeichnet. Sonst ist auf dieser Seite nichts bezahlte Platzierung. Öffnungszeiten richten sich nach der Saison – in Lappland kann \"außerhalb der Saison geschlossen\" Monate statt Wochen bedeuten –, prüfen Sie also die Seite des Restaurants, bevor Sie losfahren."
+    "introP2": "Die breite Karte über jedem Ortsraster ist ein bezahlter Partnerplatz und als Werbung gekennzeichnet. Sonst ist auf dieser Seite nichts bezahlte Platzierung. Öffnungszeiten richten sich nach der Saison – in Lappland kann „außerhalb der Saison geschlossen“ Monate statt Wochen bedeuten –, prüfen Sie also die Seite des Restaurants, bevor Sie losfahren."
   },
   "fineDining": {
     "title": "Fine Dining in und um Lappland | LaplandDining",
@@ -150,27 +150,27 @@
     "readAllReviews": "Alle {{count}} Bewertungen auf Google lesen →",
     "statsAvgRating": "Durchschnittliche Google-Bewertung",
     "introTitle": "Wie diese Liste sortiert ist und was sie nicht sagt",
-    "introP1": "Die Häuser unten sind nach ihrer Google-Bewertung sortiert, nicht danach, wer bezahlt hat, und jede Bewertung auf der Seite verlinkt zurück auf die Rezensionen, aus denen sie stammt, damit Sie Zahl und Alter selbst prüfen können. Was diese Reihenfolge nicht sagt, ist die Passung: ein Menü rund um Rentierherz und fermentierte Wurzeln ist ein ganz anderer Abend als ein Speisesaal mit fein gearbeiteten nordischen Klassikern, selbst bei gleicher Punktzahl.",
-    "introP2": "Lesen Sie die Karte, nicht den Rang. Fine Dining in Lappland ist notgedrungen saisonal, die Menüs folgen dem, was Wald, See und Herde hergeben, und dieselbe Küche liest sich im Februar anders als im August. Reservieren Sie früh: das sind kleine Räume in kleinen Orten, mehrere davon in Hotels, und die Winterwochen sind lange vor dem Sommer ausgebucht."
+    "introP1": "Die Häuser unten sind nach ihrer Google-Bewertung sortiert, nicht danach, wer bezahlt hat, und jede Bewertung auf der Seite verlinkt zurück auf die Rezensionen, aus denen sie stammt, damit Sie Zahl und Alter selbst prüfen können. Was diese Reihenfolge nicht sagt, ist die Passung: Ein Menü rund um Rentierherz und fermentierte Wurzeln ist ein ganz anderer Abend als ein Speisesaal mit fein gearbeiteten nordischen Klassikern, selbst bei gleicher Punktzahl.",
+    "introP2": "Lesen Sie die Karte, nicht den Rang. Fine Dining in Lappland ist notgedrungen saisonal, die Menüs folgen dem, was Wald, See und Herde hergeben, und dieselbe Küche liest sich im Februar anders als im August. Reservieren Sie früh: Das sind kleine Räume in kleinen Orten, mehrere davon in Hotels, und die Winterwochen sind lange vor dem Sommer ausgebucht."
   },
   "midnightSunDining": {
-    "title": "Dinieren unter der Mitternachtssonne in Lappland | LaplandDining",
+    "title": "Essen unter der Mitternachtssonne in Lappland | LaplandDining",
     "description": "Essen unter der Mitternachtssonne: Terrassen, Kota-Feuer und späte Abendessen in Rovaniemi, Levi, Inari und Saariselkä an 32 Tagen ohne Sonnenuntergang.",
     "heroBadge": "6. Juni → 7. Juli · 32 Tage",
     "heroH1Line1": "Ein Teller draußen,",
     "heroH1Line2": "die Sonne über dem Kopf.",
-    "heroLead": "Einen Monat lang sinkt die Sonne nördlich des Polarkreises nicht unter den Horizont. Terrassen bleiben offen. Kota-Feuer bleiben entzündet. Restaurants wechseln still in eine sommerliche See- und Fluss-Palette und Lappland wird zum am meisten unterschätzten Sommer-Ess-Ziel Europas.",
+    "heroLead": "Einen Monat lang sinkt die Sonne nördlich des Polarkreises nicht unter den Horizont. Terrassen bleiben offen. Kota-Feuer bleiben entzündet. Restaurants wechseln still in eine sommerliche See- und Fluss-Palette und Lappland wird zum meistunterschätzten kulinarischen Sommerziel Europas.",
     "heroCtaWhere": "Wo man unter der Mitternachtssonne isst",
     "heroCtaStays": "Mitternachtssonne-Unterkünfte finden",
     "whyKicker": "Was sich ändert",
     "whyHeadline": "Wenn die Sonne nicht untergeht",
     "whyParagraphs": [
       "Die meisten Reiseberichte über Lappland drehen sich um Nordlicht, Schnee und Rentiere in der Dunkelheit. Das sind neun Monate im Jahr. Die anderen drei Monate sind etwas völlig anderes und die Esskultur wächst daran.",
-      "Von Anfang Juni bis Anfang Juli geht die Sonne nördlich des Polarkreises nicht unter. Selbst südlich der Linie, in Rovaniemi, weicht die Nacht der Dämmerung, um 1 Uhr nachts können Sie draußen eine Speisekarte ohne Taschenlampe lesen. Terrassen, die im Winter um 21 Uhr schließen, bleiben bis Mitternacht offen. Kota-Zelte servieren Sommer-Sitzungen zu Zeiten, die unmöglich scheinen.",
+      "Von Anfang Juni bis Anfang Juli geht die Sonne nördlich des Polarkreises nicht unter. Selbst südlich der Linie, in Rovaniemi, weicht die Nacht der Dämmerung, um 1 Uhr nachts können Sie draußen eine Speisekarte ohne Taschenlampe lesen. Terrassen, die im Winter um 21 Uhr schließen, bleiben bis Mitternacht offen. Kotas servieren Sommermenüs zu Zeiten, die unmöglich scheinen.",
       "Auch die Zutaten verändern sich. Wildkräuter betreiben rund um die Uhr Photosynthese. Seefische ziehen ins flache, warme Wasser. Waldpilze sind noch nicht so weit, aber Moltebeeren reifen gegen Ende des Zeitraums in den Mooren. Restaurants, die ihren Ruf auf Winterwild aufgebaut haben, wechseln leise zu einer leichteren Palette aus See und Fluss."
     ],
-    "citiesHeadline": "Vier Städte, vier Arten die Sonne zu essen",
-    "citiesLead": "Jede bietet einen anderen Blickwinkel auf das Dinieren unter der Mitternachtssonne. Verbinden Sie das Essen mit einer Unterkunft in Gehweite, in diesen Wochen zählt das richtige Hotel ebenso viel wie der richtige Tisch.",
+    "citiesHeadline": "Vier Städte, vier Arten, die Sonne zu essen",
+    "citiesLead": "Jede bietet einen anderen Blickwinkel auf das Essen unter der Mitternachtssonne. Verbinden Sie das Essen mit einer Unterkunft in Gehweite, in diesen Wochen zählt das richtige Hotel ebenso viel wie der richtige Tisch.",
     "summerCities": [
       {
         "name": "Rovaniemi",
@@ -180,7 +180,7 @@
       {
         "name": "Levi",
         "angle": "Dinner auf dem Fjell-Gipfel",
-        "body": "Die Terrasse von Hullu Poro und der sommerliche Gondelbetrieb von Levi bieten einen 360°-Fjell-Blick zu lappländischen Kleingerichten. Nehmen Sie eine Jacke mit, auch um 2 Uhr nachts kann es auf 8 °C abkühlen."
+        "body": "Die Terrasse von Hullu Poro und Levis sommerlicher Gondelbetrieb servieren lappländische Kleingerichte mit 360°-Fjellblick. Nehmen Sie eine Jacke mit, auch um 2 Uhr nachts kann es auf 8 °C abkühlen."
       },
       {
         "name": "Inari",
@@ -190,13 +190,13 @@
       {
         "name": "Saariselkä",
         "angle": "Wildnis-Kotas mit Sonne am Himmel",
-        "body": "Pirkon Pirtti und Star Arctic servieren Rentier vom offenen Feuer zu Zeiten, die unmöglich scheinen, 23-Uhr-Beginn, der bei vollem Tageslicht endet. Der Kota-Rauch vor dem goldenen Himmel ist das Foto."
+        "body": "Pirkon Pirtti und Star Arctic servieren Rentier vom offenen Feuer zu Zeiten, die unmöglich scheinen: Tischzeiten ab 23 Uhr, die bei vollem Tageslicht enden. Der Kota-Rauch vor dem goldenen Himmel ist das Motiv."
       }
     ],
     "stayInTemplate": "In {{city}} übernachten",
     "summerFoodTours": "Sommerliche kulinarische Touren",
     "bottomHeadline": "Stellen Sie Ihre Mitternachtssonne-Reise zusammen",
-    "bottomLead": "Verbinden Sie diese Tische mit dem breiteren lappländischen Sommer, Fjell-Wanderungen, Seenbaden um 23 Uhr und die seltene Stille eines arktischen Hochsommers. Beginnen Sie mit den gewünschten Restaurants und buchen Sie den Rest darum herum.",
+    "bottomLead": "Verbinden Sie diese Tische mit dem breiteren lappländischen Sommer, Fjell-Wanderungen, Seenbaden um 23 Uhr und der seltenen Stille eines arktischen Hochsommers. Beginnen Sie mit den gewünschten Restaurants und buchen Sie den Rest darum herum.",
     "bottomCtaBrowse": "Alle Restaurants ansehen",
     "bottomCtaArctic": "Über arktische Zutaten lesen"
   },
@@ -205,13 +205,13 @@
     "description": "Wie das Überleben in der Arktis Lapplands Küche prägte: samische Esstraditionen, Rentierhaltung, Räucherfisch, wilde Beeren, Kota-Feuer und New Nordic.",
     "heroH1": "Eine Geschichte, erzählt durch das Essen",
     "heroLead": "Wie Jahrtausende des arktischen Überlebens eine der eigenständigsten Esskulturen der Welt geformt haben.",
-    "intro": "Rauch steigt vor Sonnenaufgang über einer Kota-Feuerstelle. Streifen Rentierfleisch trocknen unter den Dachvorsprüngen einer Holzhütte. Ein Lachs gleitet durch den Flussnebel. In Lappland begann das Essen nie in der Küche, es begann am Land. Dies ist die Geschichte, warum.",
+    "intro": "Rauch steigt vor Sonnenaufgang über einer Kota-Feuerstelle. Streifen Rentierfleisch trocknen unter den Dachvorsprüngen einer Holzhütte. Ein Lachs gleitet durch den Flussnebel. In Lappland begann das Essen nie in der Küche, es begann in der Natur. Dies ist die Geschichte, warum.",
     "sections": [
       {
         "title": "Eine Küche, geboren aus Notwendigkeit",
         "paragraphs": [
-          "Der Winter dauert acht Monate. Die Temperaturen sinken auf dreißig, manchmal vierzig unter Null. Das nächste Feld, das überhaupt etwas hergibt, liegt hunderte Kilometer südlich und selbst dann nur manchmal. Das war Alltag, Jahrtausende lang.",
-          "Das Essen kam aus dem, was nahe lag: aus Flüssen voller Lachs und arktischem Saibling, aus Wäldern voller Wild und Wildbeeren, aus der Tundra, durch die Rentiere mit den Jahreszeiten ziehen. Für die Sámi, die indigene Bevölkerung Nordskandinaviens, war Essen nie vom Land getrennt. Es <em>war</em> das Land.",
+          "Der Winter dauert acht Monate. Die Temperaturen sinken auf dreißig, manchmal vierzig unter Null. Das nächste Feld, das überhaupt etwas hergibt, liegt Hunderte Kilometer südlich und selbst dann nur manchmal. Das war Alltag, Jahrtausende lang.",
+          "Das Essen kam aus dem, was nahe lag: aus Flüssen voller Lachs und arktischem Saibling, aus Wäldern voller Wild und Wildbeeren, aus der Tundra, durch die Rentiere mit den Jahreszeiten ziehen. Für die Sámi, die indigene Bevölkerung des europäischen Nordens, war Essen nie vom Land getrennt. Es <em>war</em> das Land.",
           "Die finnische Küche erwuchs anderswo aus jahrtausendealter Landwirtschaft. Doch im Norden war Ackerbau nie verlässlich. Jagen, Fischen und Sammeln waren keine Nebensache. Sie waren der ganze Plan."
         ]
       },
@@ -219,24 +219,24 @@
         "title": "Das Rentier, alles für jeden",
         "paragraphs": [
           "Die Rentierhaltung wurde im 19. Jahrhundert zentral für das samische Leben, als sie Jagd und Fischerei als Haupterwerb im östlichen Sápmi ablöste. Doch die Beziehung zwischen Mensch und Rentier reicht viel weiter zurück und es geht um weit mehr als nur Fleisch.",
-          "Heute hat Finnland rund 5.600 Rentierhalter, die etwa 200.000 Tiere in 56 Hegegebieten betreuen, auf rund einem Drittel der Gesamtfläche Finnlands. 1999–2000 wurden etwa 93.000 Rentiere geschlachtet, was 2,1 Millionen Kilogramm Fleisch ergab. Die jährliche Branche bringt rund 60 Millionen Euro ein.",
-          "Anders als in Norwegen und Schweden ist die Rentierhaltung in Finnland nicht ausschließlich ein samisches Recht, jede EU-Bürgerin und jeder EU-Bürger kann mit der entsprechenden Zulassung teilnehmen. Doch das Wissen, die Verbundenheit mit dem Land und die Traditionen, die Rentierfleisch so schmecken lassen, wie es schmeckt? Diese stammen aus jahrhundertelanger samischer Hege.",
-          "Das prägendste Gericht ist <strong>Renntiergeschnetzeltes</strong> (poronkäristys), dünn gehobeltes Rentier, in Butter gegart und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und tief befriedigend. Sie finden es in jedem Restaurant in Lappland, vom Straßencafé bis zum Fine-Dining-Haus."
+          "Heute hat Finnland rund 5.600 Rentierhalter, die etwa 200.000 Tiere in 54 Hegegebieten betreuen, auf rund einem Drittel der Gesamtfläche Finnlands. Die jährliche Fleischproduktion liegt bei rund 2 Millionen Kilogramm, und die Branche erwirtschaftet rund 60 Millionen Euro im Jahr.",
+          "Anders als in Norwegen und Schweden ist die Rentierhaltung in Finnland nicht ausschließlich ein samisches Recht, jede EU-Bürgerin und jeder EU-Bürger kann mit der entsprechenden Zulassung teilnehmen. Doch das Wissen, die Verbundenheit mit dem Land und die Traditionen, die Rentierfleisch so schmecken lassen, wie es schmeckt, stammen aus jahrhundertelanger samischer Hege.",
+          "Das prägendste Gericht ist <strong>Rentiergeschnetzeltes</strong> (poronkäristys), dünn gehobeltes Rentier, in Butter gegart und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und tief befriedigend. Sie finden es in jedem Restaurant in Lappland, vom Straßencafé bis zum Fine-Dining-Haus."
         ]
       },
       {
         "title": "Wasser, Eis und Feuer",
         "paragraphs": [
           "Lapplands Flüsse und Seen waren stets seine zweite Speisekammer. Lachs, Felchen, Barsch, arktischer Saibling und Hecht, diese Fische trugen Familien durch die dunkelsten Winter und die hellsten Mitternachtssonne-Sommer.",
-          "Die traditionellen Garmethoden leben in den heutigen Restaurants weiter. Über der Flamme gegrillter Lachs auf einem Holzbrett neben offenem Feuer. Geräucherter Felchen, in Birkenrinde gewickelt. Fischsuppe, dick mit Sahne und frischem Dill. Das sind keine „Nachstellungen\" alter Rezepte, es sind lebendige Traditionen, von Generation zu Generation weitergegeben und heute Gästen aus aller Welt serviert.",
+          "Die traditionellen Garmethoden leben in den heutigen Restaurants weiter. Über der Flamme gegrillter Lachs auf einem Holzbrett neben offenem Feuer. Geräucherter Felchen, in Birkenrinde gewickelt. Fischsuppe, dick mit Sahne und frischem Dill. Das sind keine „Nachstellungen“ alter Rezepte, es sind lebendige Traditionen, von Generation zu Generation weitergegeben und heute Gästen aus aller Welt serviert.",
           "Der Inarisee, der drittgrößte See Finnlands, liefert einige der feinsten Süßwasserfische Europas. Das Restaurant Aanaar in Inari baut ganze Degustationsmenüs um das auf, was die örtlichen Fischer am Morgen aus seinen Gewässern ziehen."
         ]
       },
       {
         "title": "Die Apotheke des Waldbodens",
         "paragraphs": [
-          "Spazieren Sie im Spätsommer durch einen lappländischen Wald, gehen Sie durch einen Supermarkt. Heidelbeeren, Preiselbeeren, Moltebeeren und Sanddorn wachsen wild in der arktischen Wildnis. Pilze, Pfifferlinge, Steinpilze und der begehrte Matsutake, drücken aus dem Waldboden. Wildkräuter wie Engelwurz, Mädesüß und arktischer Thymian duften in der Luft.",
-          "Die Moltebeere nimmt einen besonderen Platz in der lappländischen Esskultur ein. Auf Finnisch <strong>lakka</strong> genannt, wächst sie nur in arktischen und subarktischen Mooren, reift nur wenige Wochen im Juli und lässt sich nicht großflächig kultivieren. Ihre bernsteinfarbene Farbe, ihre honigartige Süße und ihre Seltenheit machen sie zum „Gold der Arktis\". Sie finden sie in Desserts, Likören und als Garnitur in nahezu jedem Fine-Dining-Restaurant Lapplands.",
+          "Wer im Spätsommer durch einen lappländischen Wald spaziert, geht durch einen Supermarkt. Heidelbeeren, Preiselbeeren, Moltebeeren und Sanddorn wachsen wild in der arktischen Wildnis. Pfifferlinge, Steinpilze und der begehrte Matsutake drängen aus dem Waldboden. Wildkräuter wie Engelwurz, Mädesüß und arktischer Thymian duften in der Luft.",
+          "Die Moltebeere nimmt einen besonderen Platz in der lappländischen Esskultur ein. Auf Finnisch <strong>lakka</strong> genannt, wächst sie nur in arktischen und subarktischen Mooren, reift nur wenige Wochen im Juli und lässt sich nicht großflächig kultivieren. Ihre Bernsteinfarbe, ihre honigartige Süße und ihre Seltenheit machen sie zum „Gold der Arktis“. Sie finden sie in Desserts, Likören und als Garnitur in nahezu jedem Fine-Dining-Restaurant Lapplands.",
           "Was diese Wildzutaten außergewöhnlich macht, ist nicht nur ihr Geschmack, es ist ihre Umgebung. Die extremen Bedingungen der Arktis, mit 24 Stunden Sommersonne, unberührter Luft und einigem der saubersten Wasser der Erde, lassen Beeren mit höheren Konzentrationen an Vitaminen, Antioxidantien und Flavonoiden entstehen als ihre südlichen Verwandten."
         ]
       },
@@ -244,16 +244,16 @@
         "title": "Vom Überleben zur Kunst",
         "paragraphs": [
           "Die meiste Zeit ihrer Geschichte ging es in der lappländischen Küche um Konservierung und Sättigung. Räuchern, Trocknen, Salzen, diese Techniken entstanden aus Notwendigkeit, nicht aus Kreativität. Gewürze jenseits von Salz waren praktisch unbekannt. Das Essen war ehrlich und nahrhaft, aber niemand richtete es auf handgemachter Keramik an.",
-          "Das änderte sich mit der New-Nordic-Bewegung. Als Restaurants wie das Noma in Kopenhagen in den 2000ern strikt regionale, gesammelte Zutaten feierten, begannen Köche in ganz Nordeuropa, ihren eigenen Hinterhof mit frischem Blick zu betrachten. In Lappland fanden sie Zutaten, die der Rest der Welt nie geschmeckt hatte und Traditionen, die bereits Jahrhunderte alt waren.",
+          "Das änderte sich mit der New-Nordic-Bewegung. Als Restaurants wie das Noma in Kopenhagen in den 2000ern strikt regionale, gesammelte Zutaten feierten, begannen Köche in ganz Nordeuropa, ihren eigenen Hinterhof mit frischem Blick zu betrachten. In Lappland fanden sie Zutaten, die der Rest der Welt nie geschmeckt hatte, und Traditionen, die bereits Jahrhunderte alt waren.",
           "Heute leisten Restaurants wie das Aanaar in Inari, das Nili in Rovaniemi und das Gustav in Rovaniemi etwas Bemerkenswertes: Sie ehren samische Traditionen und verschieben zugleich die Grenzen dessen, was arktische Küche sein kann. Ein Rentiergericht im Aanaar ist nicht nur Essen, es ist eine Geschichte indigenen Erbes, ökologischer Verantwortung und kulinarischer Innovation, serviert auf einem einzigen Teller."
         ]
       },
       {
-        "title": "Das Kota, wo Geschichten geteilt werden",
+        "title": "Die Kota, wo Geschichten geteilt werden",
         "paragraphs": [
-          "Das vielleicht prägendste Esserlebnis Lapplands ist überhaupt kein Restaurant. Es ist das <strong>Kota</strong>, ein traditionelles samisches Zelt in Tipi-Form mit einer Feuerstelle in der Mitte. Jahrhundertelang war das Kota Heim, Küche und Versammlungsort. Essen wurde über offener Flamme gegart, Geschichten wurden erzählt, und der Rauch trug Gebete in den Himmel.",
-          "Heute halten Kota-Restaurants wie das Kammi im Hullu Poro in Levi diese Tradition lebendig. Sie sitzen auf Rentierfellen rund um ein knisterndes Feuer, während geräucherter Lachs, Rentierwürste und gegrilltes Wild vor Ihren Augen zubereitet werden. Die Mahlzeit kostet 64 € pro Person, doch das Erlebnis ist unbezahlbar.",
-          "Das ist es, was Dinieren in Lappland von allem anderen auf Erden unterscheidet. Es geht nicht nur um das, was auf dem Teller liegt, es geht um das Feuer, den Rauch, den Schnee draußen, das Nordlicht darüber und die Jahrtausende menschlichen Erfindungsreichtums, die diese Mahlzeit möglich gemacht haben."
+          "Das vielleicht prägendste Esserlebnis Lapplands ist überhaupt kein Restaurant. Es ist die <strong>Kota</strong>, ein traditionelles samisches Zelt in Tipi-Form mit einer Feuerstelle in der Mitte. Jahrhundertelang war die Kota Heim, Küche und Versammlungsort. Essen wurde über offener Flamme gegart, Geschichten wurden erzählt, und der Rauch trug Gebete in den Himmel.",
+          "Heute halten Kota-Restaurants wie das Kammi im Hullu Poro in Levi diese Tradition lebendig. Sie sitzen auf Rentierfellen rund um ein knisterndes Feuer, während geräucherter Lachs, Rentierwürste und gegrilltes Wild vor Ihren Augen zubereitet werden. Die Mahlzeit kostet etwa 64 € pro Person, doch das Erlebnis ist unbezahlbar.",
+          "Das ist es, was das Essen in Lappland von allem anderen auf Erden unterscheidet. Es geht nicht nur um das, was auf dem Teller liegt, es geht um das Feuer, den Rauch, den Schnee draußen, das Nordlicht darüber und die Jahrtausende menschlichen Erfindungsreichtums, die diese Mahlzeit möglich gemacht haben."
         ]
       }
     ],
@@ -269,25 +269,25 @@
       {
         "title": "Der Wald",
         "paragraphs": [
-          "Spätsommer in einem lappländischen Wald ist praktisch Lebensmitteleinkauf. Heidelbeeren, Preiselbeeren, Walderdbeeren, Pilze und Wildkräuter wachsen in solchen Mengen, dass jeder Finne pflücken lernt, bevor er Auto fahren lernt. Das <strong>Jedermannsrecht</strong> (jokamiehenoikeus) macht das möglich: jede Person, ob Einheimische oder Gast, darf in der Natur gehen, sammeln und pflücken, unabhängig davon, wem das Land gehört.",
+          "Spätsommer in einem lappländischen Wald ist praktisch Lebensmitteleinkauf. Heidelbeeren, Preiselbeeren, Walderdbeeren, Pilze und Wildkräuter wachsen in solchen Mengen, dass jeder Finne pflücken lernt, bevor er Auto fahren lernt. Das <strong>Jedermannsrecht</strong> (jokamiehenoikeus) macht das möglich: Jede Person, ob Einheimische oder Gast, darf sich in der Natur bewegen, sammeln und pflücken, unabhängig davon, wem das Land gehört.",
           "Das ist keine bloße Geste. Es prägt die gesamte Esskultur. Finnlands Wälder bringen schätzungsweise 500 Millionen Kilogramm wilde Heidelbeeren pro Jahr hervor, doch nur 5–10 % werden gepflückt. Der Rest ernährt das Wild und erneuert das Ökosystem.",
-          "Viele der besten Restaurants Lapplands beschäftigen professionelle Sammler, die den Sommer auf den Fjell-Wiesen und an den Rändern der Urwälder verbringen. „Farm-to-Table\" trifft das nicht. Hier ist es Wald-zu-Tisch und der Wald beginnt hinter der Küchentür."
+          "Viele der besten Restaurants Lapplands beschäftigen professionelle Sammler, die den Sommer auf den Fjell-Wiesen und an den Rändern der Urwälder verbringen. „Farm-to-Table“ trifft das nicht. Hier ist es Wald-zu-Tisch und der Wald beginnt hinter der Küchentür."
         ]
       },
       {
         "title": "Fluss und See",
         "paragraphs": [
-          "Der Tornio gehört zu den wenigen Lachsflüssen Europas, in denen Lachs noch aus genuin wilden Beständen gefangen wird. Der Inarisee liefert arktischen Saibling, Felchen und Bachforelle. Der äußerste Norden Finnlands ist voller Seen, deren Wasser sauberer ist, als sich viele Länder vorstellen können.",
-          "Die finnische Fischtradition läuft hier oben fast auf Haushaltsgröße, Netze am Morgen gesetzt, Lachssuppe am Abend. Lachs in Birkenrinde geräuchert. Felchen an einem Holzbrett am offenen Feuer (loimu) gegart. Sahne und Dill schwimmen in der Suppe.",
+          "Der Tornionjoki gehört zu den wenigen Lachsflüssen Europas, in denen Lachs noch aus genuin wilden Beständen gefangen wird. Der Inarisee liefert arktischen Saibling, Felchen und Bachforelle. Der äußerste Norden Finnlands ist voller Seen, deren Wasser sauberer ist, als sich viele Länder vorstellen können.",
+          "Die finnische Fischtradition ist hier oben fast eine Sache des einzelnen Haushalts: Netze am Morgen gesetzt, Lachssuppe am Abend. Lachs in Birkenrinde geräuchert. Felchen auf einem Holzbrett neben offenem Feuer (loimu) gegart. Sahne und Dill schwimmen in der Suppe.",
           "Im Tornio-Tal an der finnisch-schwedischen Grenze lebt die alte Lippokalastus-Tradition weiter: ein langstieliges Netz, gegen die Strömung in den Strom getaucht. In Kukkolaforsen auf der schwedischen Seite kann man auf dem Heimweg vom Abendessen den hauseigenen geräucherten Fisch mitnehmen."
         ]
       },
       {
         "title": "Rentierhaltung",
         "paragraphs": [
-          "Jedes Rentier in Finnisch-Lappland lebt in Freiheit. Es gibt keine klassischen Rentierfarmen, die Tiere ziehen über rund 123.000 km² Wildnis und ernähren sich von Flechten, Moos, Wildgräsern und Birkenlaub. Sie sind halb-domestiziert: Hirten verfolgen und betreuen sie, doch die Bewegung gehört dem Tier.",
+          "Jedes Rentier in Finnisch-Lappland lebt in Freiheit. Es gibt keine klassischen Rentierfarmen, die Tiere ziehen über rund 123.000 km² Wildnis und ernähren sich von Flechten, Moos, Wildgräsern und Birkenlaub. Sie sind halbdomestiziert: Hirten verfolgen und betreuen sie, doch die Bewegung gehört dem Tier.",
           "Das schmeckt man im Fleisch. Ein frei lebendes Rentier, das sein Leben über Fjell-Landschaften wandernd und Wildpflanzen fressend verbracht hat, liefert Fleisch, das mager ist, reich an Omega-3-Fettsäuren und tief im Geschmack. Kein getreidegefüttertes Stalltier kommt da heran.",
-          "Finnlands Rentierwirtschaft wird über 56 Hege-Genossenschaften geführt, mit gesetzlich gedeckelten Herdengrößen. Herbst-Zusammentriebe entscheiden, wie viele geschlachtet werden, um Herden gesund und die Landschaft im Gleichgewicht zu halten. Die Jahresproduktion liegt bei rund 2 Millionen Kilogramm Fleisch."
+          "Finnlands Rentierwirtschaft wird über 54 Hege-Genossenschaften geführt, mit gesetzlich gedeckelten Herdengrößen. Herbst-Zusammentriebe entscheiden, wie viele geschlachtet werden, um Herden gesund und die Landschaft im Gleichgewicht zu halten. Die Jahresproduktion liegt bei rund 2 Millionen Kilogramm Fleisch."
         ]
       },
       {
@@ -305,7 +305,7 @@
     "ingredients": [
       {
         "name": "Rentier",
-        "fact": "Rund 200.000 Rentiere ziehen durch Finnisch-Lappland, verteilt auf 56 Weidegebiete, und grasen frei an Flechten, Moos und Wildpflanzen, ohne Mastbetriebe und ohne Wachstumshormone. Das Fleisch ist mager und eisenreich, und der Klassiker ist poronkäristys: dünn gehobeltes Rentier, angebraten und mit Kartoffelpüree und Preiselbeeren serviert.",
+        "fact": "Rund 200.000 Rentiere ziehen durch Finnisch-Lappland, verteilt auf 54 Weidegebiete, und grasen frei an Flechten, Moos und Wildpflanzen, ohne Mastbetriebe und ohne Wachstumshormone. Das Fleisch ist mager und eisenreich, und der Klassiker ist poronkäristys: dünn gehobeltes Rentier, angebraten und mit Kartoffelpüree und Preiselbeeren serviert.",
         "season": "Ganzjährig (Herbstschlachtung)"
       },
       {
@@ -320,7 +320,7 @@
       },
       {
         "name": "Wilde Heidelbeere",
-        "fact": "Finnische wilde Blaubeeren enthalten drei- bis viermal mehr Anthocyane als Kulturheidelbeeren und färben die Finger beim Pflücken sofort tiefviolett. Die Wälder bringen schätzungsweise 500 Millionen kg im Jahr hervor, von denen nur 5 bis 10 Prozent gesammelt werden.",
+        "fact": "Finnische Wildheidelbeeren enthalten drei- bis viermal mehr Anthocyane als Kulturheidelbeeren und färben die Finger beim Pflücken sofort tiefviolett. Die Wälder bringen schätzungsweise 500 Millionen kg im Jahr hervor, von denen nur 5 bis 10 Prozent gesammelt werden.",
         "season": "Juli–September"
       },
       {
@@ -330,7 +330,7 @@
       },
       {
         "name": "Waldpilze",
-        "fact": "Goldene Pfifferlinge, Steinpilze und Trompetenpfifferlinge kommen ab dem Spätsommer reichlich in Lapplands Wäldern hervor. Sammeln darf sie jeder: das alte Jedermannsrecht erlaubt das Pflücken von Pilzen und Beeren in fast jedem Wald, gleich wem er gehört.",
+        "fact": "Goldene Pfifferlinge, Steinpilze und Trompetenpfifferlinge kommen ab dem Spätsommer reichlich in Lapplands Wäldern hervor. Sammeln darf sie jeder: Das alte Jedermannsrecht erlaubt das Pflücken von Pilzen und Beeren in fast jedem Wald, gleich wem er gehört.",
         "season": "August–Oktober"
       },
       {
@@ -340,12 +340,12 @@
       },
       {
         "name": "Wildkräuter",
-        "fact": "Arktische Engelwurz, Mädesüß, Weidenröschen und Arktischer Thymian, von Hand von Fjellwiesen und Waldrändern gesammelt. Unter Wochen nie untergehender Mitternachtssonne bilden sie konzentrierte Aromaöle, sodass schon eine kleine Prise weit reicht.",
+        "fact": "Arktische Engelwurz, Mädesüß, Weidenröschen und arktischer Thymian, von Hand von Fjellwiesen und Waldrändern gesammelt. Unter einer Mitternachtssonne, die wochenlang nicht untergeht, bilden sie konzentrierte Aromaöle, sodass schon eine kleine Prise weit reicht.",
         "season": "Juni–August"
       }
     ],
     "ctaHeadline": "Dort kosten, wo es wächst",
-    "ctaLead": "Lapplands Esskultur versteht man erst, wenn man sie isst. Finden Sie die Restaurants, die direkt bei Hirten, Fischern und Sammlern einkaufen und buchen Sie eine Unterkunft in Gehweite.",
+    "ctaLead": "Lapplands Esskultur versteht man erst, wenn man sie isst. Finden Sie die Restaurants, die direkt bei Hirten, Fischern und Sammlern einkaufen, und buchen Sie eine Unterkunft in Gehweite.",
     "ctaBrowse": "Restaurants entdecken",
     "ctaStay": "Unterkunft buchen",
     "ctaTours": "Kochkurse & Foodtouren",
@@ -356,13 +356,13 @@
     "title": "Über LaplandDining",
     "description": "Über LaplandDining: unabhängiger redaktioneller Restaurantführer für Finnisch-Lappland, Teil des LaplandVibes-Netzwerks.",
     "heroH1": "Über LaplandDining",
-    "heroLead": "Ihr Leitfaden zu echten, handverlesenen Restaurants in ganz Finnisch-Lappland.",
+    "heroLead": "Ihr Wegweiser zu echten, handverlesenen Restaurants in ganz Finnisch-Lappland.",
     "networkTitle": "LaplandVibes-Netzwerk",
     "networkBodyA": "LaplandDining ist Teil des <strong>LaplandVibes</strong>-Ökosystems, einer Familie spezialisierter Webseiten, die Reisende dabei unterstützen, das Beste Finnisch-Lapplands zu entdecken. Jede Seite konzentriert sich auf einen bestimmten Aspekt des Lappland-Erlebnisses: Unterkunft, Essen, Aktivitäten, Natur, Shopping, Nachtleben und mehr.",
     "networkBodyB": "Jedes auf LaplandDining gelistete Restaurant ist ein echtes Lokal. Wir führen keine fiktiven oder Platzhalter-Restaurants. Die Einträge stammen aus öffentlichen Registern, Google-Places-Daten und den eigenen Websites der Restaurants.",
     "affiliateTitle": "Affiliate-Hinweis",
-    "affiliateBodyA": "Einige Links auf LaplandDining sind Affiliate-Links, vor allem Hotelbuchungen über unsere Partner Sembo und Trip.com sowie kulinarische Erlebnisse über GetYourGuide. Buchen Sie darüber, erhalten wir ggf. eine kleine Provision, ohne Mehrkosten für Sie. Diese Provisionen helfen uns, diese kostenfreie Quelle zu erhalten und auszubauen.",
-    "affiliateBodyB": "Redaktionelle Auswahl bleibt unabhängig. Affiliate-Partnerschaften beeinflussen weder, welche Restaurants vorgestellt werden, noch wie sie beschrieben werden, nur Restaurants, die nach einem wirklich guten Ort zum Essen aussehen, schaffen es auf die Seite.",
+    "affiliateBodyA": "Einige Links auf LaplandDining sind Affiliate-Links, vor allem Hotelbuchungen über unsere Partner Sembo und Trip.com sowie kulinarische Erlebnisse über GetYourGuide. Buchen Sie darüber, erhalten wir ggf. eine kleine Provision, ohne Mehrkosten für Sie. Diese Provisionen helfen uns, dieses kostenlose Angebot zu erhalten und auszubauen.",
+    "affiliateBodyB": "Redaktionelle Auswahl bleibt unabhängig. Affiliate-Partnerschaften beeinflussen weder, welche Restaurants vorgestellt werden, noch wie sie beschrieben werden. Nur Restaurants, die nach einem wirklich guten Ort zum Essen aussehen, schaffen es auf die Seite.",
     "operatorTitle": "Betreiber",
     "operatorBodyA": "LaplandDining.com wird betrieben von <strong>Lapeso Oy</strong>, einem finnischen Unternehmen mit Sitz in Lappland.",
     "operatorBodyB": "Redaktionelle Fragen, Korrekturen, Kooperationsanfragen, Presseanfragen:",
@@ -395,6 +395,6 @@
   "relatedLinks": {
     "kicker": "Weiter entdecken",
     "headline": "Wohin als Nächstes",
-    "lead": "Runde die Reise ab: Nimm Platz in <bars>Lapplands Cocktail- und Eisbars</bars>, finde heraus, <nightlife>wohin es nach dem Essen geht</nightlife>, und kläre, <stays>wo du in der Nähe dieser Restaurants übernachtest</stays>."
+    "lead": "Runden Sie die Reise ab: Nehmen Sie Platz in <bars>Lapplands Cocktail- und Eisbars</bars>, finden Sie heraus, <nightlife>wohin es nach dem Essen geht</nightlife>, und klären Sie, <stays>wo Sie in der Nähe dieser Restaurants übernachten</stays>."
   }
 }

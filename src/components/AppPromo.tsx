@@ -151,7 +151,7 @@ const COPY: Record<string, Copy> = {
   de: {
     eyebrow: 'Neu',
     title: 'Ganz Lappland. Eine App.',
-    hype: 'Hol dir den ganzen Norden in die Tasche',
+    hype: 'Holen Sie sich den ganzen Norden in die Tasche',
     lead: 'Noch nie hat jemand das gesamte finnische Lappland an einem Ort versammelt. Jede Gemeinde, jede Piste, jede Ladesäule, jeder Wanderparkplatz. Und es funktioniert auch dann, wenn kein Netz mehr da ist.',
     stats: ['Gemeinden', 'Pisten', 'Lifte', 'geprüfte Orte'],
     features: [

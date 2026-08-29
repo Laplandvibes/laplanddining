@@ -211,7 +211,7 @@
         "title": "Pakon synnyttämä keittiö",
         "paragraphs": [
           "Talvi kestää kahdeksan kuukautta. Lämpötila putoaa kolmeenkymmeneen, joskus neljäänkymmeneen pakkasasteeseen. Lähin pelto on satojen kilometrien päässä etelässä, eikä silloinkaan tuota mitään. Tämä oli arki tuhansia vuosia.",
-          "Ruoka tuli siitä, mikä oli lähellä: lohta ja nieriää vilisevistä joista, riistaa ja marjoja kasvattavista metsistä, tundralta, jolla porot vaelsivat vuodenaikojen mukaan. Saamelaisille, Pohjois-Skandinavian alkuperäiskansalle, ruoka ei ollut maasta erillinen asia. Se <em>oli</em> maa.",
+          "Ruoka tuli siitä, mikä oli lähellä: lohta ja nieriää vilisevistä joista, riistaa ja marjoja kasvattavista metsistä, tundralta, jolla porot vaelsivat vuodenaikojen mukaan. Saamelaisille, Pohjois-Euroopan alkuperäiskansalle, ruoka ei ollut maasta erillinen asia. Se <em>oli</em> maa.",
           "Suomalainen keittiö kasvoi muualla maatalousperinteistä, mutta pohjoisessa pelto ei koskaan ollut luotettava. Metsästys, kalastus ja keräily eivät olleet sivuosassa. Ne olivat selviytymistä."
         ]
       },
@@ -219,7 +219,7 @@
         "title": "Poro: kaikki, mitä ihminen tarvitsee",
         "paragraphs": [
           "Saamelaisten ja poron suhde ulottuu hyvin kauas, mutta poronhoito nykyisessä muodossaan nousi pääelinkeinoksi 1800-luvulla, kun se syrjäytti metsästyksen ja kalastuksen itäisellä Sápmilla. Suhteessa ei ole koskaan ollut kysymys vain lihasta: turkis, sarvet, jänteet ja jopa luut päätyivät kaikki johonkin käyttöön.",
-          "Tänään Suomessa on noin 5 600 poronhoitajaa, jotka huolehtivat noin 200 000 eläimestä 56 paliskunnassa. Poronhoitoalueen pinta-ala on noin kolmannes Suomesta. Vuotuinen lihantuotto on noin 2 miljoonaa kiloa, ja elinkeinon arvo arvioidaan 60 miljoonaksi euroksi vuodessa.",
+          "Tänään Suomessa on noin 5 600 poronhoitajaa, jotka huolehtivat noin 200 000 eläimestä 54 paliskunnassa. Poronhoitoalueen pinta-ala on noin kolmannes Suomesta. Vuotuinen lihantuotto on noin 2 miljoonaa kiloa, ja elinkeinon arvo arvioidaan 60 miljoonaksi euroksi vuodessa.",
           "Toisin kuin Norjassa ja Ruotsissa, poronhoito Suomessa ei ole pelkästään saamelaisten oikeus: kuka tahansa EU-kansalainen voi olla mukana, kun luvat ovat kunnossa. Mutta tieto, side maahan ja perinteet, jotka tekevät poronlihasta sen makuista kuin se on, tulevat saamelaisten vuosisataisesta hoidosta.",
           "Tunnetuin annos on <strong>poronkäristys</strong>: ohuiksi viipaloitua poroa, käristettyä voissa, perunamuusilla ja puolukkahillolla. Yksinkertainen, rehellinen ja syvästi tyydyttävä. Sen löytää joka ravintolasta Lapissa, tienvarren kahvilasta fine dining -taloon."
         ]
@@ -287,7 +287,7 @@
         "paragraphs": [
           "Jokainen poro Suomen Lapissa elää vapaana. Porotiloja ei tavanomaisessa mielessä ole: eläimet vaeltavat noin 123 000 neliökilometrin alueella ja syövät jäkälää, sammalta, villiheinää ja koivun lehtiä. Ne ovat puolikesyjä: poronhoitajat seuraavat ja paimentavat niitä, mutta liikkuminen on poron oma asia.",
           "Tämä näkyy lihassa. Vapaasti laiduntava poro, joka on viettänyt elämänsä tunturimaisemissa kävellen ja villikasveja syöden, tuottaa vähärasvaista lihaa, jossa on runsaasti omega-3-rasvahappoja ja syvä maku. Mikään viljalla ruokittu tuotantoeläin ei pääse lähellekään.",
-          "Suomen porotalous on järjestetty 56 paliskuntaan, joiden suurimmat sallitut poromäärät on rajattu laissa. Syksyiset erotukset määrittävät, kuinka monta poroa teurastetaan, jotta tokat pysyvät terveinä ja maisema tasapainossa. Vuosituotto on noin 2 miljoonaa kiloa lihaa."
+          "Suomen porotalous on järjestetty 54 paliskuntaan, joiden suurimmat sallitut poromäärät on rajattu laissa. Syksyiset erotukset määrittävät, kuinka monta poroa teurastetaan, jotta tokat pysyvät terveinä ja maisema tasapainossa. Vuosituotto on noin 2 miljoonaa kiloa lihaa."
         ]
       },
       {
@@ -305,7 +305,7 @@
     "ingredients": [
       {
         "name": "Poro",
-        "fact": "Noin 200 000 poroa kulkee Suomen Lapissa 56 paliskunnassa, vapaana laiduntaen jäkälää, sammalta ja villikasveja, ilman tehotuotantoa ja kasvuhormoneja. Liha on vähärasvaista ja rautapitoista, ja klassikkoannos on poronkäristys: ohueksi höylättyä poroa paistettuna, lisänä perunamuusi ja puolukka.",
+        "fact": "Noin 200 000 poroa kulkee Suomen Lapissa 54 paliskunnassa, vapaana laiduntaen jäkälää, sammalta ja villikasveja, ilman tehotuotantoa ja kasvuhormoneja. Liha on vähärasvaista ja rautapitoista, ja klassikkoannos on poronkäristys: ohueksi höylättyä poroa paistettuna, lisänä perunamuusi ja puolukka.",
         "season": "Ympäri vuoden (syksyn teurastus)"
       },
       {

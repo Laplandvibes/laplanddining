@@ -211,7 +211,7 @@
         "title": "Uma cozinha nascida da necessidade",
         "paragraphs": [
           "O inverno dura oito meses. As temperaturas caem a trinta, às vezes quarenta graus negativos. O campo de cultivo mais próximo que produz alguma coisa fica a centenas de quilômetros ao sul, e mesmo assim só às vezes. Essa foi a vida cotidiana por milhares de anos.",
-          "A comida vinha do que estava perto, rios cheios de salmão e truta-ártica, florestas com caça e frutas silvestres, tundra por onde as renas se moviam com as estações. Para os sami, o povo indígena do norte da Escandinávia, a comida nunca esteve separada da terra. Ela <em>era</em> a terra.",
+          "A comida vinha do que estava perto, rios cheios de salmão e truta-ártica, florestas com caça e frutas silvestres, tundra por onde as renas se moviam com as estações. Para os sami, o povo indígena do norte da Europa, a comida nunca esteve separada da terra. Ela <em>era</em> a terra.",
           "A cozinha finlandesa de outras regiões surgiu de uma agricultura que remonta à pré-história. Mas no norte o cultivo nunca foi confiável. Caça, pesca e coleta não eram um detalhe à parte. Eram o plano inteiro."
         ]
       },
@@ -219,7 +219,7 @@
         "title": "A rena, tudo o que uma pessoa precisa",
         "paragraphs": [
           "A relação entre o povo sami e a rena remonta a muito antes do pastoreio. Mas o modelo de pastoreio como o conhecemos tomou forma no século XIX, quando substituiu a caça e a pesca como principal meio de vida no leste de Sápmi. A relação nunca foi só carne, pele, galhada, tendões e ossos todos tinham uso.",
-          "Hoje, a Finlândia tem cerca de 5.600 pastores de renas que cuidam de aproximadamente 200.000 animais em 56 cooperativas de pastoreio. A área de criação de renas cobre cerca de um terço da Finlândia. A produção anual de carne fica em torno de 2 milhões de quilogramas, e o setor vale cerca de 60 milhões de euros por ano.",
+          "Hoje, a Finlândia tem cerca de 5.600 pastores de renas que cuidam de aproximadamente 200.000 animais em 54 cooperativas de pastoreio. A área de criação de renas cobre cerca de um terço da Finlândia. A produção anual de carne fica em torno de 2 milhões de quilogramas, e o setor vale cerca de 60 milhões de euros por ano.",
           "Ao contrário da Noruega e da Suécia, o pastoreio de renas na Finlândia não é reservado aos sami, qualquer cidadão da UE pode participar com as devidas licenças. Mas o conhecimento, a ligação com a terra e as tradições que fazem a carne de rena ter o sabor que tem vêm de séculos de cuidado sami.",
           "O prato-assinatura é o <strong>poronkäristys</strong>: lascas finas de rena salteadas na manteiga, servidas com purê de batata e geleia de oxicoco. Simples, honesto, profundamente reconfortante. Você o encontra em todos os restaurantes da Lapônia, de cafés de estrada a salas de alta gastronomia."
         ]
@@ -287,7 +287,7 @@
         "paragraphs": [
           "Toda rena da Lapônia finlandesa vive livre. Não há fazendas de renas convencionais, os animais percorrem cerca de 123.000 km² de natureza selvagem, pastando líquen, musgo, gramíneas silvestres e folhas de bétula. São semidomesticados: os pastores os rastreiam e manejam, mas o movimento é do próprio animal.",
           "Isso aparece na carne. Uma rena de vida livre, que passou a vida caminhando pelos fjells e comendo plantas silvestres, dá uma carne magra, rica em ácidos graxos ômega-3 e de sabor profundo. Nenhum animal de fazenda alimentado com grão chega perto.",
-          "O setor finlandês da rena é gerido por 56 cooperativas de pastoreio, com tamanhos máximos de rebanho limitados por lei. As reuniões de outono decidem quantas podem ser abatidas para manter os rebanhos saudáveis e a paisagem em equilíbrio. A produção anual fica em torno de 2 milhões de quilogramas de carne."
+          "O setor finlandês da rena é gerido por 54 cooperativas de pastoreio, com tamanhos máximos de rebanho limitados por lei. As reuniões de outono decidem quantas podem ser abatidas para manter os rebanhos saudáveis e a paisagem em equilíbrio. A produção anual fica em torno de 2 milhões de quilogramas de carne."
         ]
       },
       {
@@ -305,7 +305,7 @@
     "ingredients": [
       {
         "name": "Rena",
-        "fact": "Cerca de 200.000 renas percorrem a Lapônia finlandesa distribuídas por 56 distritos de pastoreio, alimentando-se livremente de líquens, musgo e plantas silvestres, sem confinamento nem hormônios de crescimento. A carne é magra e rica em ferro, e o prato clássico é o poronkäristys: rena fatiada bem fina, salteada e servida com purê de batata e airela.",
+        "fact": "Cerca de 200.000 renas percorrem a Lapônia finlandesa distribuídas por 54 distritos de pastoreio, alimentando-se livremente de líquens, musgo e plantas silvestres, sem confinamento nem hormônios de crescimento. A carne é magra e rica em ferro, e o prato clássico é o poronkäristys: rena fatiada bem fina, salteada e servida com purê de batata e airela.",
         "season": "O ano todo (abate no outono)"
       },
       {

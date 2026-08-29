@@ -211,7 +211,7 @@
         "title": "Ett kök format av nödvändighet",
         "paragraphs": [
           "Vintern varar i åtta månader. Temperaturen sjunker till trettio, ibland fyrtio minusgrader. Närmaste åker som ger något ligger hundratals kilometer söderut, och även då bara ibland. Så såg vardagen ut i tusentals år.",
-          "Maten kom från det som fanns nära – älvar täta av lax och röding, skogar med vilt och vilda bär, tundra där renen rörde sig med årstiderna. För samerna, urfolket i norra Skandinavien, var maten aldrig skild från marken. Den <em>var</em> marken.",
+          "Maten kom från det som fanns nära – älvar täta av lax och röding, skogar med vilt och vilda bär, tundra där renen rörde sig med årstiderna. För samerna, urfolket i norra Europa, var maten aldrig skild från marken. Den <em>var</em> marken.",
           "Det finska köket längre söderut växte fram ur jordbruk som går tillbaka till förhistorien. Men i norr var odling aldrig pålitlig. Jakt, fiske och insamling var ingen bisak. De var hela planen."
         ]
       },
@@ -219,7 +219,7 @@
         "title": "Renen – allt en människa behöver",
         "paragraphs": [
           "Förhållandet mellan samer och ren går mycket längre tillbaka än renskötseln gör. Men skötselmodellen som vi känner den tog form på 1800-talet, när den ersatte jakt och fiske som huvudnäring i östra Sápmi. Relationen har aldrig bara handlat om kött – päls, horn, senor och ben kom alla till användning.",
-          "I dag har Finland omkring 5 600 renskötare som sköter ungefär 200 000 djur i 56 renbeteslag. Renskötselområdet täcker ungefär en tredjedel av Finland. Den årliga köttproduktionen ligger runt 2 miljoner kilo, och näringen är värd omkring 60 miljoner € per år.",
+          "I dag har Finland omkring 5 600 renskötare som sköter ungefär 200 000 djur i 54 renbeteslag. Renskötselområdet täcker ungefär en tredjedel av Finland. Den årliga köttproduktionen ligger runt 2 miljoner kilo, och näringen är värd omkring 60 miljoner € per år.",
           "Till skillnad från Norge och Sverige är renskötseln i Finland inte förbehållen samerna – vilken EU-medborgare som helst kan delta med rätt tillstånd. Men kunskapen, bandet till marken och traditionerna som får renköttet att smaka som det gör kommer från århundraden av samisk förvaltning.",
           "Signaturrätten är <strong>poronkäristys</strong>: tunt skavd ren som fräses i smör och serveras med potatismos och lingonsylt. Enkelt, ärligt, djupt mättande. Du hittar den på varenda restaurang i Lappland, från vägkrogar till fine dining-salar."
         ]
@@ -287,7 +287,7 @@
         "paragraphs": [
           "Varenda ren i finska Lappland lever fritt. Det finns inga vanliga rengårdar – djuren strövar över ungefär 123 000 km² vildmark och betar lav, mossa, vilda gräs och björklöv. De är halvtama: skötare spårar och sköter dem, men rörelsen är djurets egen.",
           "Det syns i köttet. En frigående ren som tillbringat livet med att vandra på fjället och äta vilda växter ger kött som är magert, rikt på omega-3-fettsyror och djupt smakrikt. Inget spannmålsuppfött gårdsdjur kommer i närheten.",
-          "Finlands rennäring drivs genom 56 renbeteslag med lagstadgade maxantal för hjordarna. Höstens skiljningar avgör hur många som kan slaktas för att hålla hjordarna friska och landskapet i balans. Den årliga produktionen ligger runt 2 miljoner kilo kött."
+          "Finlands rennäring drivs genom 54 renbeteslag med lagstadgade maxantal för hjordarna. Höstens skiljningar avgör hur många som kan slaktas för att hålla hjordarna friska och landskapet i balans. Den årliga produktionen ligger runt 2 miljoner kilo kött."
         ]
       },
       {
@@ -305,7 +305,7 @@
     "ingredients": [
       {
         "name": "Ren",
-        "fact": "Omkring 200 000 renar strövar över finska Lappland fördelade på 56 renbeteslag, och betar fritt på lav, mossa och vilda växter, utan gödningsanläggningar och utan tillväxthormoner. Köttet är magert och järnrikt, och klassikern är poronkäristys: tunt skavd ren, stekt och serverad med potatismos och lingon.",
+        "fact": "Omkring 200 000 renar strövar över finska Lappland fördelade på 54 renbeteslag, och betar fritt på lav, mossa och vilda växter, utan gödningsanläggningar och utan tillväxthormoner. Köttet är magert och järnrikt, och klassikern är poronkäristys: tunt skavd ren, stekt och serverad med potatismos och lingon.",
         "season": "Året runt (höstslakt)"
       },
       {

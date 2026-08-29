@@ -177,7 +177,7 @@ export const restaurantOverrides: Record<string, Override> = {
     curatedDescription: {
       en: 'The smoked salmon cooked next to the fire was beautiful.',
       fi: 'Avotulen vieressä savustettu lohi on aterian paras hetki: liekitetty tulella ja syöty kodassa, ei vain salissa.',
-      de: 'Der Lachs, am offenen Feuer geräuchert, ist der Höhepunkt des Abends, im Kota gegart, nicht nur im Saal serviert.',
+      de: 'Der Lachs, am offenen Feuer geräuchert, ist der Höhepunkt des Abends, in der Kota gegart, nicht nur im Saal serviert.',
       ja: '直火のそばで燻したサーモンが、その夜いちばんの瞬間。ホールではなく kota のなかで、火を相手に仕上げられます。',
       es: 'El salmón ahumado junto al fuego es el mejor momento de la cena: cocinado al fuego dentro de la kota, no solo servido en la sala.',
       'pt-BR': 'O salmão defumado junto ao fogo é o melhor momento da noite: preparado no fogo dentro da kota, não apenas servido no salão.',
@@ -245,7 +245,7 @@ export const restaurantOverrides: Record<string, Override> = {
     curatedDescription: {
       en: 'Local fish dishes and reindeer specialties can be warmly recommended.',
       fi: 'Paikallisia kala-annoksia ja poro­erikoisuuksia: molempia voi suositella ilman epäilystä.',
-      de: 'Heimische Fischgerichte und Rentier­spezialitäten: beide sind eine klare Empfehlung.',
+      de: 'Heimische Fischgerichte und Rentierspezialitäten: beide sind eine klare Empfehlung.',
       ja: '地元の魚料理と、トナカイのスペシャリテ。どちらも迷わず勧められる一皿です。',
       es: 'Pescados de la zona y especialidades de reno: ambos se recomiendan sin dudarlo.',
       'pt-BR': 'Peixes da região e especialidades de rena: ambos se recomendam sem hesitar.',
@@ -262,7 +262,7 @@ export const restaurantOverrides: Record<string, Override> = {
     curatedDescription: {
       en: 'The Tornio river runs right past your table, and on the way out you can pick up fish smoked on the premises, a detail that makes the evening its own.',
       fi: 'Tornionjoki virtaa pöydän vieressä, ja paikan päällä savustettua kalaa saa lähtiessä mukaan, pieni yksityiskohta, joka tekee illasta omanlaisensa.',
-      de: 'Der Tornio-Fluss läuft direkt am Tisch vorbei, und auf dem Heimweg kann man den im Haus geräucherten Fisch mitnehmen, ein Detail, das den Abend besonders macht.',
+      de: 'Der Tornionjoki fließt direkt am Tisch vorbei, und auf dem Heimweg kann man den im Haus geräucherten Fisch mitnehmen, ein Detail, das den Abend besonders macht.',
       ja: 'トルニオ川がテーブルのすぐそばを流れ、帰り際には自家燻製の魚を持ち帰れます。その一手間が、夜をかけがえのないものにしてくれます。',
       es: 'El río Tornio pasa justo al lado de tu mesa y, al salir, puedes llevarte pescado ahumado en la casa: un detalle que hace la velada única.',
       'pt-BR': 'O rio Tornio passa bem ao lado da sua mesa e, na saída, dá para levar peixe defumado na casa, um detalhe que torna a noite única.',
@@ -281,7 +281,7 @@ export const restaurantOverrides: Record<string, Override> = {
     curatedDescription: {
       en: 'Good food and an easy, friendly mood, kept going by staff who clearly work hard. A warm stop at the foot of the fell.',
       fi: 'Hyvää ruokaa ja rento, ystävällinen tunnelma, jota pitää yllä selvästi ahkera henkilökunta. Lämmin pysähdys tunturin juurella.',
-      de: 'Gutes Essen und eine unkomplizierte, freundliche Stimmung, getragen von einem sichtlich fleißigen Team. Ein warmer Halt am Fuß des Fjälls.',
+      de: 'Gutes Essen und eine unkomplizierte, freundliche Stimmung, getragen von einem sichtlich fleißigen Team. Ein warmer Halt am Fuß des Fjells.',
       ja: 'おいしい料理と、気取らない親しみやすい空気。よく働くスタッフがそれを支えています。フェルの麓の、心あたたまる立ち寄り先です。',
       es: 'Buena comida y un ambiente cercano y relajado, sostenido por un personal que se nota que trabaja de firme. Una parada cálida al pie del fell.',
       'pt-BR': 'Boa comida e um clima descontraído e acolhedor, mantido por uma equipe que claramente trabalha com afinco. Uma parada calorosa ao pé do fell.',
