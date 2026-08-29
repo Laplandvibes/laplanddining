@@ -136,7 +136,7 @@
     "menuLabelPdf": "Menu (PDF)",
     "introTitle": "How this page is arranged",
     "introP1": "Restaurants are grouped by destination, not ranked against each other. Where a city has an editor’s pick it leads the grid with a marked chip; everything after it is in no particular order, so read the cards rather than the positions. The ratings shown are Google’s own and link back to the reviews they came from.",
-    "introP2": "The wide card above each city grid is a paid featured-partner slot and is labelled as advertising. Nothing else on this page is paid placement. Opening hours move with the season ( in Lapland \"closed for the season\" can mean months rather than weeks ) so check the restaurant’s own page before you drive out."
+    "introP2": "The wide card above each city grid is a paid featured-partner slot and is labelled as advertising. Nothing else on this page is paid placement. Opening hours move with the season (in Lapland \"closed for the season\" can mean months rather than weeks) so check the restaurant’s own page before you drive out."
   },
   "fineDining": {
     "title": "Fine Dining in and around Lapland | LaplandDining",
@@ -219,7 +219,7 @@
         "title": "Reindeer, Everything a Person Needs",
         "paragraphs": [
           "The relationship between Sámi people and reindeer goes back much further than herding does. But the herding model as we know it took shape in the 19th century, when it replaced hunting and fishing as the main livelihood in eastern Sápmi. The relationship has never been just about meat, fur, antlers, sinew and bone all found a use.",
-          "Today, Finland has around 5,600 reindeer herders managing roughly 200,000 animals across 56 herding cooperatives. The reindeer-husbandry area covers about one-third of Finland. Annual meat production runs around 2 million kilograms, and the industry is worth roughly €60 million a year.",
+          "Today, Finland has around 5,600 reindeer herders managing roughly 200,000 animals across 54 herding cooperatives. The reindeer-husbandry area covers about one-third of Finland. Annual meat production runs around 2 million kilograms, and the industry is worth roughly €60 million a year.",
           "Unlike Norway and Sweden, reindeer herding in Finland isn't reserved for the Sámi, any EU citizen can participate with the proper permits. But the knowledge, the connection to the land and the traditions that make reindeer meat taste the way it does come from centuries of Sámi stewardship.",
           "The signature dish is <strong>poronkäristys</strong>: thin-shaved reindeer sautéed in butter, served with mashed potato and lingonberry jam. Simple, honest, deeply satisfying. You'll find it in every restaurant in Lapland, from roadside cafés to fine dining rooms."
         ]
@@ -287,7 +287,7 @@
         "paragraphs": [
           "Every reindeer in Finnish Lapland lives free. There are no conventional reindeer farms, the animals roam across roughly 123,000 km² of wilderness, grazing on lichen, moss, wild grasses and birch leaves. They're semi-domesticated: herders track and manage them, but movement is the animal's own.",
           "It shows in the meat. A free-ranging reindeer that has spent its life walking the fells and eating wild plants produces meat that is lean, rich in omega-3 fatty acids and deeply flavoured. No grain-fed farm animal comes close.",
-          "Finland's reindeer industry is run through 56 herding cooperatives with legally capped maximum herd sizes. Autumn round-ups decide how many can be slaughtered to keep herds healthy and the landscape in balance. Annual production runs around 2 million kilograms of meat."
+          "Finland's reindeer industry is run through 54 herding cooperatives with legally capped maximum herd sizes. Autumn round-ups decide how many can be slaughtered to keep herds healthy and the landscape in balance. Annual production runs around 2 million kilograms of meat."
         ]
       },
       {
@@ -305,7 +305,7 @@
     "ingredients": [
       {
         "name": "Reindeer",
-        "fact": "Around 200,000 reindeer roam Finnish Lapland across 56 herding districts, grazing freely on lichen, moss and wild plants, with no feedlots and no growth hormones. The meat is lean and iron-rich, and the classic plate is poronkäristys: thin-shaved reindeer sautéed and served with mashed potato and lingonberry.",
+        "fact": "Around 200,000 reindeer roam Finnish Lapland across 54 herding districts, grazing freely on lichen, moss and wild plants, with no feedlots and no growth hormones. The meat is lean and iron-rich, and the classic plate is poronkäristys: thin-shaved reindeer sautéed and served with mashed potato and lingonberry.",
         "season": "Year-round (autumn slaughter)"
       },
       {
