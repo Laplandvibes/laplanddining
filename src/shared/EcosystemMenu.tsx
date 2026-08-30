@@ -245,7 +245,7 @@ export default function EcosystemMenu({ currentDomain = 'laplandvibes.com', lang
         aria-haspopup="true"
         aria-expanded={open}
         aria-label={heading}
-        className={`group flex items-center gap-1.5 rounded-full border px-2.5 sm:px-3 py-1.5 min-h-11 sm:min-h-0 backdrop-blur-sm transition-all duration-200 ${hint ? 'lv-eco-ring' : ''}`}
+        className={`group flex items-center gap-1.5 rounded-full border px-2.5 sm:px-3 py-1.5 backdrop-blur-sm transition-all duration-200 ${hint ? 'lv-eco-ring' : ''}`}
         style={(() => {
           const active = open || btnHover;
           return variant === 'light'
