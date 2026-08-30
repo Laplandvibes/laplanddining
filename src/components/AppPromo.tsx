@@ -235,7 +235,7 @@ const COPY: Record<string, Copy> = {
   nl: {
     eyebrow: 'Nieuw',
     title: 'Heel Lapland. Eén app.',
-    hype: 'Het hele noorden in je zak',
+    hype: 'Het hele noorden in uw zak',
     lead: 'Niemand heeft ooit heel Fins Lapland op één plek samengebracht. Elke gemeente, elke piste, elke laadpaal, elk startpunt. En het werkt ook als er geen bereik is.',
     stats: ['gemeenten', 'pistes', 'liften', 'gecontroleerde plekken'],
     features: [
@@ -249,7 +249,7 @@ const COPY: Record<string, Copy> = {
       'Alarmnummers en dichtstbijzijnde apotheek',
     ],
     cta: 'Haal de gratis app',
-    scan: 'Scan om op je telefoon te openen',
+    scan: 'Scan om op uw telefoon te openen',
     free: 'Geen account nodig om te bladeren',
     dismiss: 'Sluiten',
   },
