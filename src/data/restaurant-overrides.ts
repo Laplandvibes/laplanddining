@@ -201,7 +201,7 @@ export const restaurantOverrides: Record<string, Override> = {
       'zh-CN': '徒步、雪地摩托，还有萨米传统。三文鱼以明火烤制，那味道整晚萦绕不散。',
       ko: '하이킹, 스노모빌, 그리고 사미 전통. 연어를 모닥불에 구워내고, 그 맛은 밤새 마음에 남습니다.',
       fr: 'Randonnées, motoneiges et tradition samie: le saumon grillé au feu de bois, dont le goût vous accompagne toute la soirée.',
-      it: 'Escursioni, motoslitte e tradizione sami: il salmone cotto sul fuoco vivo, e il sapore ti resta per tutta la sera.',
+      it: 'Escursioni, motoslitte e tradizione sami: il salmone cotto sul fuoco vivo, e il sapore Le resta per tutta la sera.',
       nl: 'Wandelingen, sneeuwscooters en Samische traditie: de zalm boven open vuur bereid, de smaak blijft de hele avond hangen.',
     },
   },
