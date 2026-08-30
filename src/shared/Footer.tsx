@@ -930,20 +930,20 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
   // data-fv: footer build version. Bump when a footer fix must bypass a stale
   // Cloudflare edge-cached chunk that rebuilt to the same hashed name.
   return (
-    <footer data-fv="20260615">
+    <footer data-fv="20260830">
 
       {/* Soft transition from page content above into the blue band below */}
       <div
         aria-hidden="true"
-        style={{ height: '100px', background: `linear-gradient(to bottom, transparent, ${BLUE})` }}
+        style={{ height: '48px', background: `linear-gradient(to bottom, transparent, ${BLUE})` }}
       />
 
       {/* ═══ BAND A: BLUE, Network badge, Logo + socials, full site network ═══ */}
       <div style={{ background: BLUE }}>
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-12 py-10 sm:py-12">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-12 py-8 sm:py-10">
 
           {/* Finnish Lapland Network badge */}
-          <div className="flex items-center gap-3 mb-7 sm:mb-9">
+          <div className="flex items-center gap-3 mb-6 sm:mb-7">
             <div className="flex-1 h-px" style={{ background: 'rgba(248,250,252,0.25)' }} />
             <div
               /* text-[12px] not text-xs: text-xs also sets line-height, which
@@ -966,7 +966,7 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
           </div>
 
           {/* Logo + tagline + socials */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8 mb-8 sm:mb-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8 mb-7 sm:mb-8">
             <div>
               <img
                 src="/lv-footer-logo.webp"
@@ -1070,10 +1070,10 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
 
       {/* ═══ BAND B: WHITE, Pillar pills, About, contact CTAs, copyright + legal ═══ */}
       <div style={{ background: WHITE }}>
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-12 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-12 py-10">
 
           {/* Travel Guide pillar pills */}
-          <div className="mb-12 sm:mb-14">
+          <div className="mb-8">
             <p
               className="text-[12px] sm:text-[10px] font-normal uppercase tracking-[0.15em] sm:tracking-[0.25em] mb-4 sm:mb-5"
               style={{ color: BLUE }}
@@ -1134,40 +1134,41 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
             </div>
           </div>
 
-          {/* About + 3 contact CTA cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 mb-12 sm:mb-14">
-
-            <div className="lg:col-span-2">
-              <p
-                className="text-[12px] sm:text-[10px] font-normal uppercase tracking-[0.15em] sm:tracking-[0.25em] mb-5 pb-3 border-b"
-                style={{ color: BLUE, borderColor: 'rgba(0,47,108,0.2)' }}
-              >
-                {d.about.eyebrow}
-              </p>
-              <p className="text-sm font-normal leading-relaxed mb-5" style={{ color: '#374151' }}>
-                {d.about.body}
-              </p>
-              <div
-                className="inline-flex items-center gap-2 text-xs font-normal px-3 py-1.5 rounded-full"
-                style={{ background: 'rgba(16,185,129,0.10)', border: '1px solid rgba(16,185,129,0.25)', color: '#047857' }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#10b981' }} />
-                {d.about.badge}
-              </div>
+          {/* About the network */}
+          <div className="mb-8 max-w-[65ch]">
+            <p
+              className="text-[12px] sm:text-[10px] font-normal uppercase tracking-[0.15em] sm:tracking-[0.25em] mb-5 pb-3 border-b"
+              style={{ color: BLUE, borderColor: 'rgba(0,47,108,0.2)' }}
+            >
+              {d.about.eyebrow}
+            </p>
+            <p className="text-sm font-normal leading-relaxed mb-5" style={{ color: '#374151' }}>
+              {d.about.body}
+            </p>
+            <div
+              className="inline-flex items-center gap-2 text-xs font-normal px-3 py-1.5 rounded-full"
+              style={{ background: 'rgba(16,185,129,0.10)', border: '1px solid rgba(16,185,129,0.25)', color: '#047857' }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#10b981' }} />
+              {d.about.badge}
             </div>
+          </div>
 
-            {/* 🔴 Kortit PINOTAAN, ei kolmea saraketta (2026-08-13).
-                `sm:grid-cols-3` katkaisi SELAINIKKUNAN leveydellä (640 px), mutta tämä
-                ruudukko asuu kiinteänlevyisessä palstassa (`lg:col-span-3` viiden sarakkeen
-                ruudukossa) joka on vain 618 px leveä 1440 px:n ikkunassa — ja kapeimmillaan
-                532 px juuri `lg`:n kohdalla. Kolme saraketta jätti leipätekstille 151 px eli
-                15–20 merkkiä riville (luettava on 45–75). Viewport-katkaisukohta ei voi
-                korjata tätä, koska palsta ei seuraa ikkunan leveyttä. Pinottuna teksti saa
-                koko kortin leveyden. `@container` on vain painikkeen leveyttä varten:
-                Tailwind v3:lla (laplandvisit) se ei käänny, jolloin painike jää `w-full`
-                — turvallinen fallback, ei koskaan ahdasta tekstiä. Älä palauta
-                `sm:grid-cols-3`:a. */}
-            <div className="lg:col-span-3 @container grid grid-cols-1 gap-4">
+          {/* 🔴 Kortit KOKO KONTIN levyisenä 3-sarakerivinä lg+:ssa (2026-08-30,
+              korvaa 13.8. pinoamispäätöksen). 13.8. kielsi `sm:grid-cols-3`:n
+              koska kortit asuivat silloin 5-sarakkeisen ruudukon
+              `lg:col-span-3`-palstassa (618 px @ 1440 px) ja leipäteksti kutistui
+              151 px:iin. Pinoaminen korjasi luettavuuden mutta kasvatti
+              alatunnisteen 1874 px:iin 1080p:llä ja jätti about-palstan viereen
+              ~400 px tyhjää (Vesa 30.8.: "venyttää aivan turhaan"). Nyt rivi vie
+              koko max-w-6xl-kontin (928 px @ lg, 1056 px @ ≥1280): kortin
+              leipäteksti ~250–300 px ≈ 45–55 merkkiä rivillä — luettava. Mitattu
+              30.8.: footer 1874 → ~1460 px. Älä siirrä tätä riviä takaisin
+              kapeampaan palstaan äläkä pinoa lg+:ssa. `@container` on painikkeen
+              leveyttä varten: Tailwind v3:lla (laplandvisit) `@md` ei käänny →
+              nappi jää `w-full` — turvallinen fallback; `lg:grid-cols-3` kääntyy
+              myös v3:lla. */}
+          <div className="@container grid grid-cols-1 lg:grid-cols-3 gap-4 mb-9">
 
               {/* Spotted an Error */}
               <div
@@ -1254,7 +1255,6 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                 </div>
               </div>
 
-            </div>
           </div>
 
           {/* Bottom strip, affiliate disclosure + copyright + legal links */}
