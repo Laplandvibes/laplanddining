@@ -31,7 +31,7 @@ const COPY = {
     "zh-CN": "立即预订",
     "ko": "지금 예약",
     "fr": "Réservez",
-    "it": "Prenota ora",
+    "it": "Prenoti ora",
     "nl": "Boek nu",
     "sv": "Boka nu"
   },
@@ -143,7 +143,7 @@ const COPY = {
     "zh-CN": "在 GetYourGuide 浏览并预订",
     "ko": "GetYourGuide에서 둘러보고 예약",
     "fr": "Parcourez et réservez sur GetYourGuide",
-    "it": "Sfoglia e prenota su GetYourGuide",
+    "it": "Sfogli e prenoti su GetYourGuide",
     "nl": "Bekijk en boek op GetYourGuide",
     "sv": "Bläddra och boka på GetYourGuide"
   },
