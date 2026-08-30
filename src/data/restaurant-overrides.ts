@@ -270,7 +270,7 @@ export const restaurantOverrides: Record<string, Override> = {
       ko: '토르니오 강이 식탁 바로 옆을 흐르고, 나갈 때는 직접 훈제한 생선을 챙겨 갈 수 있습니다. 그 작은 디테일이 저녁을 특별하게 만듭니다.',
       fr: 'La rivière Tornio coule juste à côté de votre table et, en repartant, on peut emporter du poisson fumé sur place, un détail qui rend la soirée unique.',
       it: 'Il fiume Tornio scorre proprio accanto al tavolo e, all\'uscita, si può portare via il pesce affumicato in casa, un dettaglio che rende la serata unica.',
-      nl: 'De rivier de Tornio stroomt vlak langs je tafel, en op weg naar buiten kun je in huis gerookte vis meenemen, een detail dat de avond bijzonder maakt.',
+      nl: 'De rivier de Tornio stroomt vlak langs uw tafel, en op weg naar buiten kunt u in huis gerookte vis meenemen, een detail dat de avond bijzonder maakt.',
     },
   },
 
@@ -325,7 +325,7 @@ export const restaurantOverrides: Record<string, Override> = {
       ko: '우연히 들어갔다가 나오면서 절로 “와” 하게 되는 그런 피자집. 루카 기슭의 소박하고 믿음직한 단골입니다.',
       fr: 'Le genre de pizzeria où l\'on entre par hasard et d\'où l\'on ressort en disant waouh. Une valeur sûre et sans chichis au pied de Ruka.',
       it: 'Quel tipo di pizzeria in cui entri per caso e da cui esci dicendo wow. Un punto fermo semplice e affidabile ai piedi di Ruka.',
-      nl: 'Zo\'n pizzeria waar je per toeval binnenloopt en met een wauw weer naar buiten komt. Een eenvoudige, betrouwbare favoriet aan de voet van Ruka.',
+      nl: 'Zo\'n pizzeria waar u per toeval binnenloopt en met een wauw weer naar buiten komt. Een eenvoudige, betrouwbare favoriet aan de voet van Ruka.',
     },
   },
 
@@ -408,7 +408,7 @@ export const restaurantOverrides: Record<string, Override> = {
       ko: '집에 있는 듯 아늑하고 따뜻한 분위기에, 주인 내외의 다정함이 저녁을 더욱 특별하게 만듭니다. 퓌하 기슭의 옛 목사관에 자리한 비스트로입니다.',
       fr: 'L\'ambiance est chaleureuse et accueillante, comme à la maison, et la gentillesse des propriétaires rend la soirée encore plus particulière. Un bistrot dans un ancien presbytère au pied du Pyhä.',
       it: 'L\'atmosfera è accogliente e calda, come a casa, e la gentilezza dei proprietari rende la serata ancora più speciale. Un bistrot in una vecchia canonica ai piedi del Pyhä.',
-      nl: 'De sfeer is knus en gastvrij, alsof je thuis bent, en de vriendelijkheid van de eigenaren maakt de avond nog specialer. Een bistro in een oude pastorie aan de voet van Pyhä.',
+      nl: 'De sfeer is knus en gastvrij, alsof u thuis bent, en de vriendelijkheid van de eigenaren maakt de avond nog specialer. Een bistro in een oude pastorie aan de voet van Pyhä.',
     },
   },
 
