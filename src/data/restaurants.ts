@@ -118,8 +118,8 @@ export interface Restaurant {
    * sisällön tallentamisen ja vaativat kuvaajan tekijämerkinnän (vain place_id
    * saa säilöä). Poistettu käytöstä 2026-08-09.
    */
-  photoKind?: 'partner' | 'illustration';
-  photoCredit?: string;             // esim. "nili.fi" — vain partner-kuville
+  photoKind?: 'partner' | 'illustration' | 'photo';  // photo = LV:n oma aito valokuva kohteesta
+  photoCredit?: string;             // esim. "nili.fi" (partner) tai "LaplandVibes" (photo)
   /**
    * Ravintolan oma ruokalista. Lähde: generated/restaurant-menus.json, jonka
    * jokainen rivi on kuitattu käsin. 42/87 ravintolalla on linkki; lopuilla
@@ -195,13 +195,13 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[])
   // Kuvarekisteri on ainoa kuvalähde. `m.photo` (Google Place Photo) jätetään
   // tarkoituksella huomiotta — ks. photoKind-kentän kommentti.
   const img = imageRegistry[m.slug];
-  const usable = img && (img.kind === 'partner' || img.kind === 'illustration') ? img : undefined;
+  const usable = img && (img.kind === 'partner' || img.kind === 'illustration' || img.kind === 'photo') ? img : undefined;
   return {
     ...m,
     ...override,
     photo: usable?.src,
-    photoKind: usable?.kind as 'partner' | 'illustration' | undefined,
-    photoCredit: usable?.kind === 'partner' ? usable.credit : undefined,
+    photoKind: usable?.kind as 'partner' | 'illustration' | 'photo' | undefined,
+    photoCredit: usable?.kind === 'partner' || usable?.kind === 'photo' ? usable.credit : undefined,
     ...menuFor(m.slug),
     // override may not include these required fields — preserve from maps
     name: m.name,
@@ -227,13 +227,13 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[])
  */
 const gemsWithImages: Restaurant[] = restaurantGems.map((g) => {
   const img = imageRegistry[g.slug];
-  const usable = img && (img.kind === 'partner' || img.kind === 'illustration') ? img : undefined;
+  const usable = img && (img.kind === 'partner' || img.kind === 'illustration' || img.kind === 'photo') ? img : undefined;
   return {
     ...g,
     ...menuFor(g.slug),
     photo: usable?.src ?? undefined,
-    photoKind: usable?.kind as 'partner' | 'illustration' | undefined,
-    photoCredit: usable?.kind === 'partner' ? usable.credit : undefined,
+    photoKind: usable?.kind as 'partner' | 'illustration' | 'photo' | undefined,
+    photoCredit: usable?.kind === 'partner' || usable?.kind === 'photo' ? usable.credit : undefined,
   };
 });
 
@@ -513,6 +513,10 @@ const PHOTO_BY: Record<Locale, string> = {
 
 export function photoCaption(r: Restaurant, locale: Locale): string | null {
   if (r.photoKind === 'illustration') return ILLUSTRATION_LABEL[locale];
-  if (r.photoKind === 'partner' && r.photoCredit) return `${PHOTO_BY[locale]}: ${r.photoCredit}`;
+  // 'partner' = kumppanin oma kuva, 'photo' = LV:n itse paikan päällä ottama aito
+  // valokuva kohteesta (Vesa 30.8.2026: "oma aito valokuva voittaa") — molemmat
+  // esittävät juuri tätä ravintolaa, joten Kuvituskuva-merkintää EI näytetä.
+  if ((r.photoKind === 'partner' || r.photoKind === 'photo') && r.photoCredit)
+    return `${PHOTO_BY[locale]}: ${r.photoCredit}`;
   return null;
 }

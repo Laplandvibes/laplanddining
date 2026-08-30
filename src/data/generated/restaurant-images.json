@@ -511,19 +511,21 @@
  },
  "tornio-mustaparran-paamaja": {
   "src": "/images/restaurants/tornio-mustaparran-paamaja.webp",
-  "kind": "illustration",
-  "model": "gpt-image-2",
+  "kind": "photo",
+  "credit": "LaplandVibes",
+  "note": "Oma valokuva paikan päältä 22.7.2026 (terassi + PÄÄMAJA-ikkunalogot, Hallituskatu 6). Korvasi gpt-image-2-kuvituksen, Vesa 30.8.2026: oma aito valokuva voittaa.",
   "width": 800,
   "height": 449,
-  "generatedAt": "2026-08-10"
+  "shotAt": "2026-07-22"
  },
  "tornio-tmi-hevi-pizza": {
   "src": "/images/restaurants/tornio-tmi-hevi-pizza.webp",
-  "kind": "illustration",
-  "model": "gpt-image-2",
+  "kind": "photo",
+  "credit": "LaplandVibes",
+  "note": "Oma valokuva paikan päältä 21.7.2026 (julkisivu + terassi, Hallituskatu 10). Korvasi gpt-image-2-kuvituksen.",
   "width": 800,
   "height": 449,
-  "generatedAt": "2026-08-10"
+  "shotAt": "2026-07-21"
  },
  "tornio-amico-pizza-kebab-restaurant": {
   "src": "/images/restaurants/tornio-amico-pizza-kebab-restaurant.webp",

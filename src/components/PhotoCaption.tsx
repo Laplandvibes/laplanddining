@@ -4,7 +4,10 @@ import { photoCaption, type Restaurant, type Locale } from '../data/restaurants'
  * Kuvakaistan alareunan merkintä.
  *
  * AI-kuvituskuva merkitään AINA ("Kuvituskuva"), jotta kortti ei väitä esittävänsä
- * juuri tätä ravintolaa. Kumppanin oma kuva merkitään lähteellä ("Kuva: nili.fi").
+ * juuri tätä ravintolaa. Kumppanin oma kuva merkitään lähteellä ("Kuva: nili.fi"),
+ * ja LV:n itse paikan päällä ottama aito valokuva (kind "photo") lähteellä
+ * "Kuva: LaplandVibes" — se ESITTÄÄ juuri tätä ravintolaa, joten Kuvituskuva-
+ * merkintä olisi väärin (Vesa 30.8.2026: oma aito valokuva voittaa AI:n).
  * Vesan ohje 2026-08-09: merkintä pienellä kuvan alareunaan.
  *
  * 🔴 Käytä tätä JOKAISELLA pinnalla joka renderöi `r.photo` — kortti ilman merkintää
