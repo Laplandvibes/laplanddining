@@ -67,7 +67,7 @@ const CONTACT_FORM_COPY: Record<string, ContactFormCopy> = {
   'zh-CN': { name:'您的姓名', email:'您的邮箱', subject:'主题', message:'留言', send:'发送', sending:'发送中…', successTitle:'已发送!', successBody:'谢谢，我们将在 24–48 小时内回复。', errorMsg:'出错了,请重试。', close:'关闭', required:'请填写所有字段并提供有效邮箱。', subj:{ error:'错误报告', partner:'合作咨询', press:'媒体咨询', general:'一般咨询' } },
   ko: { name:'이름', email:'이메일', subject:'제목', message:'메시지', send:'보내기', sending:'전송 중…', successTitle:'전송되었습니다!', successBody:'감사합니다, 24~48시간 이내에 답변드리겠습니다.', errorMsg:'문제가 발생했습니다. 다시 시도해 주세요.', close:'닫기', required:'모든 항목과 유효한 이메일을 입력해 주세요.', subj:{ error:'오류 신고', partner:'제휴 문의', press:'언론 문의', general:'일반 문의' } },
   fr: { name:'Votre nom', email:'Votre e-mail', subject:'Objet', message:'Message', send:'Envoyer', sending:'Envoi…', successTitle:'Message envoyé !', successBody:'Merci, nous vous répondrons sous 24–48 heures.', errorMsg:'Une erreur est survenue. Réessayez.', close:'Fermer', required:'Veuillez remplir tous les champs avec un e-mail valide.', subj:{ error:'Signalement d\'erreur', partner:'Demande de partenariat', press:'Demande presse', general:'Demande générale' } },
-  it: { name:'Il tuo nome', email:'La tua email', subject:'Oggetto', message:'Messaggio', send:'Invia messaggio', sending:'Invio…', successTitle:'Messaggio inviato!', successBody:'Grazie, ti risponderemo entro 24–48 ore.', errorMsg:'Qualcosa è andato storto. Riprova.', close:'Chiudi', required:'Compila tutti i campi con un\'email valida.', subj:{ error:'Segnalazione di errore', partner:'Richiesta di collaborazione', press:'Richiesta stampa', general:'Richiesta generale' } },
+  it: { name:'Il Suo nome', email:'La Sua email', subject:'Oggetto', message:'Messaggio', send:'Invia messaggio', sending:'Invio…', successTitle:'Messaggio inviato!', successBody:'Grazie, Le risponderemo entro 24–48 ore.', errorMsg:'Qualcosa è andato storto. Riprovi.', close:'Chiudi', required:'Compili tutti i campi con un\'email valida.', subj:{ error:'Segnalazione di errore', partner:'Richiesta di collaborazione', press:'Richiesta stampa', general:'Richiesta generale' } },
   nl: { name:'Uw naam', email:'Uw e-mail', subject:'Onderwerp', message:'Bericht', send:'Bericht versturen', sending:'Versturen…', successTitle:'Bericht verzonden!', successBody:'Bedankt, we reageren binnen 24–48 uur.', errorMsg:'Er ging iets mis. Probeer opnieuw.', close:'Sluiten', required:'Vul alle velden in met een geldig e-mailadres.', subj:{ error:'Foutmelding', partner:'Samenwerkingsverzoek', press:'Persaanvraag', general:'Algemene vraag' } },
   sv: { name:'Ditt namn', email:'Din e-post', subject:'Ämne', message:'Meddelande', send:'Skicka meddelande', sending:'Skickar…', successTitle:'Meddelandet skickat!', successBody:'Tack, vi återkommer inom 24–48 timmar.', errorMsg:'Något gick fel. Försök igen.', close:'Stäng', required:'Fyll i alla fält med en giltig e-postadress.', subj:{ error:'Felrapport', partner:'Samarbetsförfrågan', press:'Pressförfrågan', general:'Allmän förfrågan' } },
 };
@@ -863,7 +863,7 @@ function ContactModal({ kind, title, c, lang, onClose }: { kind: ContactKind; ti
   );
 }
 
-export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editorialNote, extraLegalLinks = [], dict, websiteByHref = 'https://yrityspaketit.fi' }: SharedFooterProps) {
+export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editorialNote, extraLegalLinks = [], legalPaths, dict, websiteByHref = 'https://yrityspaketit.fi' }: SharedFooterProps) {
   const d = mergeDict(dict);
   const siteGroups = buildSiteGroups(d);
   const [contactKind, setContactKind] = useState<ContactKind | null>(null);
@@ -1291,9 +1291,9 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
             <div className="flex flex-col items-center gap-3 text-xs font-normal">
               <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-1">
                 {[
-                  { to: `${localePrefix}/privacy/`, label: d.legal.privacy },
-                  { to: `${localePrefix}/cookie-policy/`, label: d.legal.cookie },
-                  { to: `${localePrefix}/terms/`, label: d.legal.terms },
+                  { to: `${localePrefix}${legalPaths?.privacy ?? '/privacy'}/`, label: d.legal.privacy },
+                  { to: `${localePrefix}${legalPaths?.cookie ?? '/cookie-policy'}/`, label: d.legal.cookie },
+                  { to: `${localePrefix}${legalPaths?.terms ?? '/terms'}/`, label: d.legal.terms },
                   ...extraLegalLinks,
                 ].map(({ to, label }) => (
                   <Link

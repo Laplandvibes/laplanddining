@@ -86,7 +86,7 @@ const COPY: Record<NfLang, NfCopy> = {
   it: {
     h1: 'Persi in Lapponia',
     body: 'Questa pagina non esiste, ma il Nord è pieno di pagine che esistono. Ogni percorso qui sotto porta in un posto che vale la pena.',
-    home: 'Torna alla home',
+    home: 'Alla pagina iniziale',
   },
   nl: {
     h1: 'Verdwaald in Lapland',
