@@ -943,6 +943,14 @@ const COPY: Record<Lang, TermsCopy> = {
 };
 
 /**
+ * @harvest-stop — esirenderöinnin haravointi loppuu tähän.
+ *
+ * Kaikki tämän alapuolella oleva on opt-in-varianttitekstiä (`variant="shop"`), jota
+ * käyttää vain kaksi sivustoa. Crawlable-body-haravoija lukee koko tiedoston ja poimii
+ * JOKAISEN per-kieli-lohkon, joten ilman tätä katkoa matkailusivuston lakisivulle päätyi
+ * verkkokaupan ehdot 12 kielellä (mitattu 31.8.2026: 23 sivustoa, 276 sivua).
+ */
+/**
  * Shop-variant overrides (`variant="shop"`).
  *
  * 🔴 Why this exists instead of an edit to COPY: this file is shared by the
@@ -1174,7 +1182,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
       </>
     ),
     s2Body: '가격, 크기, 소재, 성분, 재고 등 상품 정보는 자주 바뀌며, 표시된 날짜에 판매자의 페이지에서 읽어온 것입니다. 정확하게 유지하려고 노력하지만 방문 시점에 최신이라고 보장할 수는 없습니다. 주문하기 전에 가격, 배송 조건, 성분과 알레르기 유발 물질 정보를 판매자의 페이지에서 반드시 확인하십시오.',
-    s3P2: '제휴 파트너에는 Suomikauppa, Nordicbuddies, Finlayson, Scandinavian Outdoor 등 핀란드 상점과 브랜드가 포함되며, Adtraction과 Daisycon 같은 제휴 네트워크를 통해 연결합니다. 저희에게 아무런 대가를 지급하지 않는 상점으로도 연결합니다. 모든 주문에는 해당 상품을 판매하는 상점의 약관이 적용됩니다.',
+    s3P2: '제휴 파트너에는 Suomikauppa, Nordicbuddies, Finlayson, Scandinavian Outdoor 등 핀란드 상점과 브랜드가 포함되며, Adtraction과 Daisycon 같은 제휴 네트워크를 통해 연결합니다. 당사에 아무런 대가를 지급하지 않는 상점으로도 연결합니다. 모든 주문에는 해당 상품을 판매하는 상점의 약관이 적용됩니다.',
     s5P1: (siteName) => (
       <>
         이 사이트의 모든 상품은 제3자 상점이 판매하고 배송하며, 버튼을 누르면 그 상점의 웹사이트로
