@@ -113,7 +113,7 @@
     "bottomPartner": "Você é dono de um restaurante? Os anúncios de Parceiro em Destaque recebem textos escritos à mão, destaques do cardápio e um card aprimorado.",
     "cityVibes": {
       "Rovaniemi": "Capital da Lapônia, onde a cultura ártica encontra a ambição culinária",
-      "Levi": "Jantar à beira do fogo depois de um dia nos fjells",
+      "Levi": "Jantar à beira do fogo depois de um dia nos fjälls",
       "Kittilä": "Vilarejo de montanha além da agitação da estação de Levi",
       "Inari": "Herança sami e os ingredientes árticos mais puros",
       "Saariselkä": "Jantar em plena natureza sob a aurora boreal",
@@ -122,7 +122,7 @@
       "Tornio": "Caráter de cidade de fronteira e comida caseira finlandesa",
       "Haparanda": "Cruze a fronteira para uma fusão sueco-nórdica",
       "Sodankylä": "Tradições de cidade ribeirinha e o público do Festival de Cinema do Sol da Meia-Noite",
-      "Pyhätunturi": "Jantar no topo do fjell, na porta sul para a natureza selvagem",
+      "Pyhätunturi": "Jantar no topo do fjäll, na porta sul para a natureza selvagem",
       "Luosto": "Vilarejo da montanha de ametista com restaurantes de troncos de kelo",
       "Muonio": "Planaltos do cinturão das auroras, acima do limite das árvores",
       "Hetta": "Polo de Enontekiö no encontro de três fronteiras",
@@ -179,8 +179,8 @@
       },
       {
         "name": "Levi",
-        "angle": "Jantares no topo do fjell",
-        "body": "O terraço do Hullu Poro e o serviço de verão do teleférico de Levi entregam vistas de 360° sobre os fjells com pequenos pratos lapônicos. Leve uma camada extra, mesmo às 2 da manhã pode cair para 8 °C."
+        "angle": "Jantares no topo do fjäll",
+        "body": "O terraço do Hullu Poro e o serviço de verão do teleférico de Levi entregam vistas de 360° sobre os fjälls com pequenos pratos lapônicos. Leve uma camada extra, mesmo às 2 da manhã pode cair para 8 °C."
       },
       {
         "name": "Inari",
@@ -196,7 +196,7 @@
     "stayInTemplate": "Hospede-se em {{city}}",
     "summerFoodTours": "Tours gastronômicos de verão",
     "bottomHeadline": "Monte sua viagem sob o sol da meia-noite",
-    "bottomLead": "Combine estas mesas com o resto do verão lapônico, caminhadas pelos fjells, mergulhos no lago às 23h e a rara quietude de um pleno verão ártico. Comece pelos restaurantes que você quer e reserve o resto em torno deles.",
+    "bottomLead": "Combine estas mesas com o resto do verão lapônico, caminhadas pelos fjälls, mergulhos no lago às 23h e a rara quietude de um pleno verão ártico. Comece pelos restaurantes que você quer e reserve o resto em torno deles.",
     "bottomCtaBrowse": "Ver todos os restaurantes",
     "bottomCtaArctic": "Leia sobre os ingredientes árticos"
   },
@@ -271,7 +271,7 @@
         "paragraphs": [
           "O fim do verão numa floresta lapônica é, na prática, fazer compras de mercado. Mirtilos, oxicocos, framboesas silvestres, cogumelos e ervas crescem em tal volume que todo finlandês aprende a colher antes de aprender a dirigir. O Direito de Todos, <strong>jokamiehenoikeus</strong>, torna isso possível: qualquer pessoa, residente ou visitante, pode caminhar, colher e recolher por toda a natureza, seja de quem for a terra.",
           "Não é um gesto simbólico. Molda toda a cultura gastronômica. As florestas da Finlândia produzem cerca de 500 milhões de quilogramas de mirtilos silvestres por ano, mas só 5 a 10% são colhidos. O resto alimenta a fauna e repõe o ecossistema.",
-          "Muitos dos melhores restaurantes da Lapônia mantêm coletores profissionais na folha de pagamento, passando o verão nos fjells e nas bordas da floresta antiga. \"Da fazenda à mesa\" não dá conta. Isto é da floresta à mesa e a floresta começa atrás da porta da cozinha."
+          "Muitos dos melhores restaurantes da Lapônia mantêm coletores profissionais na folha de pagamento, passando o verão nos fjälls e nas bordas da floresta antiga. \"Da fazenda à mesa\" não dá conta. Isto é da floresta à mesa e a floresta começa atrás da porta da cozinha."
         ]
       },
       {
@@ -286,7 +286,7 @@
         "title": "A criação de renas",
         "paragraphs": [
           "Toda rena da Lapônia finlandesa vive livre. Não há fazendas de renas convencionais, os animais percorrem cerca de 123.000 km² de natureza selvagem, pastando líquen, musgo, gramíneas silvestres e folhas de bétula. São semidomesticados: os pastores os rastreiam e manejam, mas o movimento é do próprio animal.",
-          "Isso aparece na carne. Uma rena de vida livre, que passou a vida caminhando pelos fjells e comendo plantas silvestres, dá uma carne magra, rica em ácidos graxos ômega-3 e de sabor profundo. Nenhum animal de fazenda alimentado com grão chega perto.",
+          "Isso aparece na carne. Uma rena de vida livre, que passou a vida caminhando pelos fjälls e comendo plantas silvestres, dá uma carne magra, rica em ácidos graxos ômega-3 e de sabor profundo. Nenhum animal de fazenda alimentado com grão chega perto.",
           "O setor finlandês da rena é gerido por 54 cooperativas de pastoreio, com tamanhos máximos de rebanho limitados por lei. As reuniões de outono decidem quantas podem ser abatidas para manter os rebanhos saudáveis e a paisagem em equilíbrio. A produção anual fica em torno de 2 milhões de quilogramas de carne."
         ]
       },
@@ -340,7 +340,7 @@
       },
       {
         "name": "Ervas silvestres",
-        "fact": "Angélica-ártica, ulmária, epilóbio e tomilho-ártico, colhidos à mão nos prados dos fjells e nas bordas da floresta. Crescendo sob semanas de sol da meia-noite que não se põe, concentram óleos aromáticos, e por isso uma pitada pequena rende muito.",
+        "fact": "Angélica-ártica, ulmária, epilóbio e tomilho-ártico, colhidos à mão nos prados dos fjälls e nas bordas da floresta. Crescendo sob semanas de sol da meia-noite que não se põe, concentram óleos aromáticos, e por isso uma pitada pequena rende muito.",
         "season": "Junho–agosto"
       }
     ],

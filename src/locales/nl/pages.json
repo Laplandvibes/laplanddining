@@ -9,7 +9,7 @@
     "heroCtaFine": "Fine dining in Lapland",
     "picksKicker": "Keuze van de redactie",
     "picksHeadline": "Begin met deze zes",
-    "picksLead": "Samische fine dining, kota-vuren en keukens op de fjelltop. Zes plekken die we zelf als eerste zouden boeken.",
+    "picksLead": "Samische fine dining, kota-vuren en keukens op de fjälltop. Zes plekken die we zelf als eerste zouden boeken.",
     "picksCtaAll": "Bekijk alle {{count}} restaurants",
     "midnightKicker": "De Laplandse zomer",
     "midnightHeadline1": "Diner om 1 uur 's nachts.",
@@ -41,7 +41,7 @@
     "statsYear": "Dit jaar bijgewerkt",
     "stayKicker": "Slaap waar u eet",
     "stayHeadline": "Boek een hotel dicht bij de tafel van vanavond",
-    "stayLead": "Diners in Lapland lopen vaak laat door en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het schoonste overzicht van wat er echt beschikbaar is naast elke kota, fjell-hotel en ijsrestaurant.",
+    "stayLead": "Diners in Lapland lopen vaak laat door en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het schoonste overzicht van wat er echt beschikbaar is naast elke kota, fjäll-hotel en ijsrestaurant.",
     "stayAffiliateNote": "Affiliate links, we kunnen een commissie verdienen zonder extra kosten voor u.",
     "stayAffiliateLink": "Waarom we het zo doen",
     "toursKicker": "Eet met een gids",
@@ -113,16 +113,16 @@
     "bottomPartner": "Bent u restauranteigenaar? Vermeldingen van uitgelichte partners krijgen redactionele tekst, menu-uitlichtingen en een upgrade-kaart.",
     "cityVibes": {
       "Rovaniemi": "Hoofdstad van Lapland, waar Arctische cultuur culinaire ambitie ontmoet",
-      "Levi": "Diner aan het vuur na een dag op de fjells",
-      "Kittilä": "Fjell-dorp voorbij de resortzone van Levi",
+      "Levi": "Diner aan het vuur na een dag op de fjälls",
+      "Kittilä": "Fjäll-dorp voorbij de resortzone van Levi",
       "Inari": "Samisch erfgoed en de zuiverste Arctische ingrediënten",
       "Saariselkä": "Wildernisdineren onder het noorderlicht",
       "Kemi": "Waar ijs vuur ontmoet, unieke seizoenservaringen",
-      "Ylläs": "Fjell-dorpscharme met authentieke Laplandse smaken",
+      "Ylläs": "Fjäll-dorpscharme met authentieke Laplandse smaken",
       "Tornio": "Karakter van een grensstad en Finse comfortfood",
       "Haparanda": "Steek de grens over voor Zweeds-Noordse fusion",
       "Sodankylä": "Riviertraditie en het publiek van het Midnight Sun Film Festival",
-      "Pyhätunturi": "Dineren op fjell-top aan de zuidelijke poort van de wildernis",
+      "Pyhätunturi": "Dineren op fjäll-top aan de zuidelijke poort van de wildernis",
       "Luosto": "Amethist-bergdorp met kelo-houtblok-restaurants",
       "Muonio": "noorderlicht-zone-hooglanden boven de boomgrens",
       "Hetta": "Enontekiö-knooppunt aan de rand van drie grenzen",
@@ -179,8 +179,8 @@
       },
       {
         "name": "Levi",
-        "angle": "Diners op de fjell-top",
-        "body": "Het terras van Hullu Poro + de zomerdienst van de Levi-gondel geven u 360°-uitzicht over de fjells met Laplandse kleine borden. Neem een extra laag, zelfs om 2 uur 's nachts kan het 8 °C zijn."
+        "angle": "Diners op de fjäll-top",
+        "body": "Het terras van Hullu Poro + de zomerdienst van de Levi-gondel geven u 360°-uitzicht over de fjälls met Laplandse kleine borden. Neem een extra laag, zelfs om 2 uur 's nachts kan het 8 °C zijn."
       },
       {
         "name": "Inari",
@@ -196,7 +196,7 @@
     "stayInTemplate": "Verblijf in {{city}}",
     "summerFoodTours": "Zomer-foodtours",
     "bottomHeadline": "Bouw uw middernachtzon-reis",
-    "bottomLead": "Combineer deze tafels met de bredere Laplandse zomer, fjell-wandelingen, meerzwemmen om 23.00 uur en de zeldzame stilte van een Arctische midzomer. Begin met de restaurants die u wilt en boek de rest eromheen.",
+    "bottomLead": "Combineer deze tafels met de bredere Laplandse zomer, fjäll-wandelingen, meerzwemmen om 23.00 uur en de zeldzame stilte van een Arctische midzomer. Begin met de restaurants die u wilt en boek de rest eromheen.",
     "bottomCtaBrowse": "Bekijk alle restaurants",
     "bottomCtaArctic": "Lees over Arctische ingrediënten"
   },
@@ -271,7 +271,7 @@
         "paragraphs": [
           "Laatzomer in een Laplands bos is in feite boodschappen doen. Blauwe bosbessen, vossenbessen, wilde frambozen, paddenstoelen en wilde kruiden groeien in zulke aantallen dat elke Fin leert plukken voor hij leert rijden. Het toegangsrecht, <strong>jokamiehenoikeus</strong>, maakt het mogelijk: iedereen, lokaal of bezoeker, mag overal in de natuur lopen, foerageren en plukken, ongeacht wie het land bezit.",
           "Het is geen symbolisch gebaar. Het vormt de hele eetcultuur. Finlands bossen leveren jaarlijks zo'n 500 miljoen kilo wilde bosbessen, maar slechts 5–10 % wordt geplukt. De rest voedt de fauna en vult het ecosysteem opnieuw.",
-          "Veel topkoks in Lapland houden professionele plukkers op de loonlijst die de zomer doorbrengen op de fjells en aan de randen van oerbos. \"Farm-to-table\" beschrijft het niet. Dit is forest-to-table en het bos begint achter de keukendeur."
+          "Veel topkoks in Lapland houden professionele plukkers op de loonlijst die de zomer doorbrengen op de fjälls en aan de randen van oerbos. \"Farm-to-table\" beschrijft het niet. Dit is forest-to-table en het bos begint achter de keukendeur."
         ]
       },
       {
@@ -286,7 +286,7 @@
         "title": "Rendierherderij",
         "paragraphs": [
           "Elk rendier in Fins Lapland leeft vrij. Er bestaan geen conventionele rendierboerderijen, de dieren trekken over zo'n 123.000 km² wildernis en grazen op korstmos, mos, wilde grassen en berkenbladeren. Ze zijn semi-gedomesticeerd: herders volgen en beheren ze, maar het bewegen is van het dier zelf.",
-          "Dat ziet u in het vlees. Een vrij rondtrekkend rendier dat zijn leven op de fjells doorbracht en wilde planten at, levert vlees dat mager, rijk aan omega-3-vetzuren en diep van smaak is. Geen graangevoerd boerderijdier komt in de buurt.",
+          "Dat ziet u in het vlees. Een vrij rondtrekkend rendier dat zijn leven op de fjälls doorbracht en wilde planten at, levert vlees dat mager, rijk aan omega-3-vetzuren en diep van smaak is. Geen graangevoerd boerderijdier komt in de buurt.",
           "De Finse rendierindustrie loopt via 54 herderscoöperaties met wettelijk vastgelegde maximumkuddes. Najaarsrondes bepalen hoeveel dieren geslacht mogen worden om de kuddes gezond en het landschap in balans te houden. De jaarlijkse productie ligt rond 2 miljoen kilo vlees."
         ]
       },
@@ -340,7 +340,7 @@
       },
       {
         "name": "Wilde kruiden",
-        "fact": "Arctische engelwortel, moerasspirea, wilgenroosje en arctische tijm, met de hand geplukt van fjellweiden en bosranden. Doordat ze weken onder de nooit ondergaande middernachtszon groeien, bouwen ze geconcentreerde aromatische oliën op, zodat een klein snufje ver reikt.",
+        "fact": "Arctische engelwortel, moerasspirea, wilgenroosje en arctische tijm, met de hand geplukt van fjällweiden en bosranden. Doordat ze weken onder de nooit ondergaande middernachtszon groeien, bouwen ze geconcentreerde aromatische oliën op, zodat een klein snufje ver reikt.",
         "season": "Juni–augustus"
       }
     ],

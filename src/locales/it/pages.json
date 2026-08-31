@@ -41,7 +41,7 @@
     "statsYear": "Aggiornati quest'anno",
     "stayKicker": "Dormi dove mangi",
     "stayHeadline": "Prenoti un hotel vicino al ristorante di stasera",
-    "stayLead": "Le cene lapponi spesso si protraggono tardi e finiscono lontano dal centro. La scelta più saggia è alloggiare a distanza di passeggiata dal ristorante e Trip.com offre la visione più pulita di ciò che è davvero disponibile accanto a ogni kota, hotel di fjell e ristorante di ghiaccio.",
+    "stayLead": "Le cene lapponi spesso si protraggono tardi e finiscono lontano dal centro. La scelta più saggia è alloggiare a distanza di passeggiata dal ristorante e Trip.com offre la visione più pulita di ciò che è davvero disponibile accanto a ogni kota, hotel di fjäll e ristorante di ghiaccio.",
     "stayAffiliateNote": "Link di affiliazione, possiamo ricevere una commissione senza costi aggiuntivi per Lei.",
     "stayAffiliateLink": "Perché funziona così",
     "toursKicker": "Mangia con una guida",
@@ -113,16 +113,16 @@
     "bottomPartner": "È proprietario di un ristorante? Le schede dei Partner in evidenza hanno testo editoriale, piatti in evidenza e una scheda potenziata.",
     "cityVibes": {
       "Rovaniemi": "Capitale della Lapponia, dove la cultura artica incontra l'ambizione culinaria",
-      "Levi": "Cena accanto al fuoco dopo una giornata sui fjell",
-      "Kittilä": "Villaggio di fjell oltre il comprensorio di Levi",
+      "Levi": "Cena accanto al fuoco dopo una giornata sui fjäll",
+      "Kittilä": "Villaggio di fjäll oltre il comprensorio di Levi",
       "Inari": "Patrimonio sami e ingredienti artici più puri",
       "Saariselkä": "Cucina nella natura selvaggia sotto l'aurora boreale",
       "Kemi": "Dove il ghiaccio incontra il fuoco, esperienze stagionali uniche",
-      "Ylläs": "Fascino del villaggio di fjell con autentici sapori lapponi",
+      "Ylläs": "Fascino del villaggio di fjäll con autentici sapori lapponi",
       "Tornio": "Carattere di città di frontiera e anima della cucina finlandese",
       "Haparanda": "Attraversi il confine per una fusione svedese-nordica",
       "Sodankylä": "Tradizioni di città fluviale e pubblico del Festival del Sole di Mezzanotte",
-      "Pyhätunturi": "Cena in cima al fjell alla porta meridionale della natura selvaggia",
+      "Pyhätunturi": "Cena in cima al fjäll alla porta meridionale della natura selvaggia",
       "Luosto": "Villaggio della montagna d'ametista con ristoranti in tronchi di kelo",
       "Muonio": "Altopiani della fascia aurorale sopra il limite degli alberi",
       "Hetta": "Snodo di Enontekiö al confine di tre Stati",
@@ -179,8 +179,8 @@
       },
       {
         "name": "Levi",
-        "angle": "Cene in cima al fjell",
-        "body": "La terrazza di Hullu Poro e il servizio estivo della cabinovia di Levi offrono viste a 360° sui fjell con piccoli piatti lapponi. Porti uno strato in più, anche alle 2 di notte può scendere a 8 °C."
+        "angle": "Cene in cima al fjäll",
+        "body": "La terrazza di Hullu Poro e il servizio estivo della cabinovia di Levi offrono viste a 360° sui fjäll con piccoli piatti lapponi. Porti uno strato in più, anche alle 2 di notte può scendere a 8 °C."
       },
       {
         "name": "Inari",
@@ -196,7 +196,7 @@
     "stayInTemplate": "Dormire a {{city}}",
     "summerFoodTours": "Tour gastronomici estivi",
     "bottomHeadline": "Costruisca il Suo viaggio sole di mezzanotte",
-    "bottomLead": "Abbini queste tavole all'estate lappone nel suo insieme, escursioni sui fjell, bagni nei laghi alle 23 e il raro silenzio di un pieno estate artico. Cominci dai ristoranti che desidera, poi prenoti il resto attorno.",
+    "bottomLead": "Abbini queste tavole all'estate lappone nel suo insieme, escursioni sui fjäll, bagni nei laghi alle 23 e il raro silenzio di un pieno estate artico. Cominci dai ristoranti che desidera, poi prenoti il resto attorno.",
     "bottomCtaBrowse": "Sfoglia tutti i ristoranti",
     "bottomCtaArctic": "Leggi sugli ingredienti artici"
   },
@@ -271,7 +271,7 @@
         "paragraphs": [
           "La fine dell'estate in una foresta lappone è, in pratica, fare la spesa. Mirtilli, mirtilli rossi, lamponi selvatici, funghi ed erbe selvatiche crescono in tale quantità che ogni finlandese impara a raccogliere prima di imparare a guidare. Il diritto di accesso, <strong>jokamiehenoikeus</strong>, lo rende possibile: chiunque, residente o turista, può camminare, cercare e raccogliere ovunque in natura indipendentemente da chi possiede la terra.",
           "Non è un gesto simbolico. Modella l'intera cultura del cibo. Le foreste finlandesi producono circa 500 milioni di chilogrammi di mirtilli selvatici l'anno, ma solo il 5–10 % viene raccolto. Il resto nutre la fauna e rialimenta l'ecosistema.",
-          "Molti dei migliori ristoranti della Lapponia tengono raccoglitori professionisti a libro paga, che passano l'estate sui fjell e ai margini delle foreste antiche. \"Dal campo alla tavola\" non basta a descriverlo. Questo è dal bosco alla tavola e il bosco comincia dietro la porta della cucina."
+          "Molti dei migliori ristoranti della Lapponia tengono raccoglitori professionisti a libro paga, che passano l'estate sui fjäll e ai margini delle foreste antiche. \"Dal campo alla tavola\" non basta a descriverlo. Questo è dal bosco alla tavola e il bosco comincia dietro la porta della cucina."
         ]
       },
       {
@@ -286,7 +286,7 @@
         "title": "Allevamento della renna",
         "paragraphs": [
           "Ogni renna nella Lapponia finlandese vive libera. Non esistono allevamenti convenzionali di renne, gli animali percorrono circa 123.000 km² di natura selvaggia, brucando licheni, muschio, erbe e foglie di betulla. Sono semi-domestici: i pastori li seguono e li gestiscono, ma il movimento appartiene all'animale.",
-          "Si vede nella carne. Una renna che ha passato la vita a camminare i fjell e a mangiare piante selvatiche produce carne magra, ricca di acidi grassi omega-3 e di sapore profondo. Nessun animale da allevamento alimentato a granaglie le si avvicina.",
+          "Si vede nella carne. Una renna che ha passato la vita a camminare i fjäll e a mangiare piante selvatiche produce carne magra, ricca di acidi grassi omega-3 e di sapore profondo. Nessun animale da allevamento alimentato a granaglie le si avvicina.",
           "L'industria finlandese della renna è gestita tramite 54 cooperative di allevamento con dimensioni massime del branco fissate per legge. I raduni autunnali decidono quanti capi possono essere macellati per mantenere la salute dei branchi e l'equilibrio del paesaggio. La produzione annua si aggira sui 2 milioni di chilogrammi di carne."
         ]
       },
@@ -340,7 +340,7 @@
       },
       {
         "name": "Erbe selvatiche",
-        "fact": "Angelica artica, olmaria, epilobio e timo artico, raccolti a mano dai prati dei fjell e dai margini del bosco. Crescendo sotto settimane di sole di mezzanotte che non tramonta, accumulano oli aromatici concentrati, così un piccolo pizzico rende molto.",
+        "fact": "Angelica artica, olmaria, epilobio e timo artico, raccolti a mano dai prati dei fjäll e dai margini del bosco. Crescendo sotto settimane di sole di mezzanotte che non tramonta, accumulano oli aromatici concentrati, così un piccolo pizzico rende molto.",
         "season": "Giugno–agosto"
       }
     ],

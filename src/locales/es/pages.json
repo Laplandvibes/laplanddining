@@ -113,7 +113,7 @@
     "bottomPartner": "¿Es propietario de un restaurante? Las fichas de Socio Destacado incluyen textos redactados a mano, lo más destacado del menú y una tarjeta mejorada.",
     "cityVibes": {
       "Rovaniemi": "Capital de Laponia, donde la cultura ártica se encuentra con la ambición culinaria",
-      "Levi": "Cenar junto al fuego tras una jornada en los fjells",
+      "Levi": "Cenar junto al fuego tras una jornada en los fjälls",
       "Kittilä": "Pueblo de montaña más allá del bullicio de la estación de Levi",
       "Inari": "Herencia sami y los ingredientes árticos más puros",
       "Saariselkä": "Cenar en plena naturaleza bajo la aurora boreal",
@@ -122,7 +122,7 @@
       "Tornio": "Carácter de ciudad fronteriza y cocina casera finlandesa",
       "Haparanda": "Cruce la frontera para una fusión sueco-nórdica",
       "Sodankylä": "Tradiciones de pueblo ribereño y el público del Festival de Cine del Sol de Medianoche",
-      "Pyhätunturi": "Cenar en lo alto del fjell, en la puerta sur a la naturaleza salvaje",
+      "Pyhätunturi": "Cenar en lo alto del fjäll, en la puerta sur a la naturaleza salvaje",
       "Luosto": "Pueblo de la montaña de amatista con restaurantes de troncos de kelo",
       "Muonio": "Tierras altas del cinturón de auroras, por encima del límite del bosque",
       "Hetta": "Centro de Enontekiö en el cruce de tres fronteras",
@@ -179,8 +179,8 @@
       },
       {
         "name": "Levi",
-        "angle": "Cenas en lo alto del fjell",
-        "body": "La terraza de Hullu Poro y el servicio estival del telecabina de Levi le dan vistas de 360° sobre los fjells con platillos laponos. Lleve una capa de abrigo, incluso a las 2 de la madrugada puede bajar a 8 °C."
+        "angle": "Cenas en lo alto del fjäll",
+        "body": "La terraza de Hullu Poro y el servicio estival del telecabina de Levi le dan vistas de 360° sobre los fjälls con platillos laponos. Lleve una capa de abrigo, incluso a las 2 de la madrugada puede bajar a 8 °C."
       },
       {
         "name": "Inari",
@@ -196,7 +196,7 @@
     "stayInTemplate": "Alójese en {{city}}",
     "summerFoodTours": "Rutas gastronómicas de verano",
     "bottomHeadline": "Diseñe su viaje bajo el sol de medianoche",
-    "bottomLead": "Combine estas mesas con el resto del verano lapón, caminatas por los fjells, baños en el lago a las 11 de la noche y la rara calma de un pleno verano ártico. Empiece por los restaurantes que quiere y reserve lo demás a su alrededor.",
+    "bottomLead": "Combine estas mesas con el resto del verano lapón, caminatas por los fjälls, baños en el lago a las 11 de la noche y la rara calma de un pleno verano ártico. Empiece por los restaurantes que quiere y reserve lo demás a su alrededor.",
     "bottomCtaBrowse": "Ver todos los restaurantes",
     "bottomCtaArctic": "Lea sobre los ingredientes árticos"
   },
@@ -271,7 +271,7 @@
         "paragraphs": [
           "El final del verano en un bosque lapón es, en la práctica, ir a la compra. El arándano azul, el arándano rojo, la frambuesa silvestre, las setas y las hierbas silvestres crecen en tal cantidad que todo finlandés aprende a recolectar antes que a conducir. El derecho de todos, <strong>jokamiehenoikeus</strong>, lo hace posible: cualquiera, residente o de visita, puede caminar, recolectar y recoger por toda la naturaleza, sea de quien sea la tierra.",
           "No es un gesto simbólico. Da forma a toda la cultura gastronómica. Los bosques de Finlandia producen unos 500 millones de kilogramos de arándanos azules silvestres al año, pero solo se recoge entre el 5 y el 10 %. El resto alimenta a la fauna y repone el ecosistema.",
-          "Muchos de los mejores restaurantes de Laponia tienen recolectores profesionales en nómina, que pasan el verano en los fjells y en los lindes del bosque maduro. \"De la granja a la mesa\" no lo describe. Esto es del bosque a la mesa y el bosque empieza detrás de la puerta de la cocina."
+          "Muchos de los mejores restaurantes de Laponia tienen recolectores profesionales en nómina, que pasan el verano en los fjälls y en los lindes del bosque maduro. \"De la granja a la mesa\" no lo describe. Esto es del bosque a la mesa y el bosque empieza detrás de la puerta de la cocina."
         ]
       },
       {
@@ -286,7 +286,7 @@
         "title": "La cría del reno",
         "paragraphs": [
           "Todos los renos de la Laponia finlandesa viven en libertad. No hay granjas de renos convencionales, los animales recorren unos 123.000 km² de naturaleza salvaje, pastando líquenes, musgo, hierbas silvestres y hojas de abedul. Están semidomesticados: los pastores los rastrean y gestionan, pero el movimiento es del propio animal.",
-          "Se nota en la carne. Un reno en libertad que ha pasado la vida recorriendo los fjells y comiendo plantas silvestres da una carne magra, rica en ácidos grasos omega-3 y de sabor profundo. Ningún animal de granja alimentado con grano se le acerca.",
+          "Se nota en la carne. Un reno en libertad que ha pasado la vida recorriendo los fjälls y comiendo plantas silvestres da una carne magra, rica en ácidos grasos omega-3 y de sabor profundo. Ningún animal de granja alimentado con grano se le acerca.",
           "El sector finlandés del reno se gestiona a través de 54 cooperativas de pastoreo con tamaños máximos de rebaño limitados por ley. Los rodeos de otoño deciden cuántos pueden sacrificarse para mantener los rebaños sanos y el paisaje en equilibrio. La producción anual ronda los 2 millones de kilogramos de carne."
         ]
       },
@@ -340,7 +340,7 @@
       },
       {
         "name": "Hierbas silvestres",
-        "fact": "Angélica ártica, reina de los prados, epilobio y tomillo ártico, recogidos a mano en los prados de los fjells y las lindes del bosque. Al crecer bajo semanas de sol de medianoche que no se pone, concentran aceites aromáticos, y por eso una pizca pequeña rinde mucho.",
+        "fact": "Angélica ártica, reina de los prados, epilobio y tomillo ártico, recogidos a mano en los prados de los fjälls y las lindes del bosque. Al crecer bajo semanas de sol de medianoche que no se pone, concentran aceites aromáticos, y por eso una pizca pequeña rinde mucho.",
         "season": "Junio–agosto"
       }
     ],
