@@ -346,7 +346,7 @@ const BUILT_IN_FULL_DICT: Record<string, Partial<typeof DEFAULT_DICT>> = {
     travelGuideKicker: 'ラップランド旅行ガイド',
     pillars: { northernLights: 'オーロラ', huskySafaris: 'ハスキーサファリ', skiResorts: 'スキー場', whereToStay: '宿泊', thingsToDo: 'アクティビティ', natureParks: '自然と公園', destinations: '目的地', categories: 'カテゴリー', snowmobileTours: 'スノーモービルツアー', hotels: 'ホテル', activities: 'アクティビティ', flights: 'フライト', cars: 'レンタカー', packages: 'パッケージ', summer: '夏', findJobs: '求人を探す', seasonalWork: '季節雇用', employers: '雇用主向け', movingToFinland: 'フィンランドへの移住', workingConditions: '労働条件', livingInLapland: 'ラップランドでの暮らし' },
     about: { eyebrow: 'LaplandVibesについて', body: 'オーロラから白夜まで、フィンランド・ラップランドの決定版ガイド。厳選した体験と現地の知恵、出典を明記した情報で、北極圏の旅の計画を支えます。', badge: '独立運営 · 出典明記' },
-    spottedError: { title: '間違いを見つけましたか?', body: '修正が必要な箇所がありましたら教えてください。すぐに修正します。', cta: '報告する →' },
+    spottedError: { title: '間違いを見つけましたか？', body: '修正が必要な箇所がありましたら教えてください。すぐに修正します。', cta: '報告する →' },
     partner: { title: '提携のご相談', body: '25以上のラップランドサイトで広告・コラボレーション。', cta: 'お問い合わせ →' },
     press: { title: 'プレス・メディア', body: '編集パートナーシップとプレスキット。', cta: 'プレスお問い合わせ →' },
     affiliate: 'このサイトにはアフィリエイトリンクが含まれます。これらのリンクを通じて予約された場合、LaplandVibesに追加費用なしで手数料が支払われることがあります。',
