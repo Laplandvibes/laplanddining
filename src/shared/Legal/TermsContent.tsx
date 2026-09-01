@@ -1096,11 +1096,11 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         realmente venden y envían los artículos.
       </>
     ),
-    s2Body: 'Los datos de producto, como precios, tallas, materiales, ingredientes y disponibilidad, cambian con frecuencia y se toman de las páginas del propio vendedor en la fecha indicada. Procuramos mantenerlos exactos, pero no podemos garantizar que estén actualizados en el momento de tu visita. Comprueba siempre el precio, las condiciones de envío y la información de ingredientes y alérgenos en la página del vendedor antes de pedir.',
+    s2Body: 'Los datos de producto, como precios, tallas, materiales, ingredientes y disponibilidad, cambian con frecuencia y se toman de las páginas del propio vendedor en la fecha indicada. Procuramos mantenerlos exactos, pero no podemos garantizar que estén actualizados en el momento de su visita. Compruebe siempre el precio, las condiciones de envío y la información de ingredientes y alérgenos en la página del vendedor antes de pedir.',
     s3P2: 'Entre los socios se incluyen, sin limitarse a ellos, tiendas y marcas finlandesas como Suomikauppa, Nordicbuddies, Finlayson y Scandinavian Outdoor, a las que enlazamos mediante redes de afiliación como Adtraction y Daisycon. También enlazamos a tiendas que no nos pagan nada. Cada pedido se rige por las condiciones de la tienda que vende el artículo.',
     s5P1: (siteName) => (
       <>
-        Todos los productos de este sitio los vende y envía una tienda externa, y los botones te llevan a
+        Todos los productos de este sitio los vende y envía una tienda externa, y los botones le llevan a
         su propia web. <strong className="text-snow/90">{siteName} no es un comercio minorista, un
         vendedor ni un revendedor.</strong> No tenemos stock ni pasarela de pago, y nunca recibimos su
         pago ni su dirección de entrega.

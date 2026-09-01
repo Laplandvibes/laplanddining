@@ -186,7 +186,7 @@ const LOCALE_HEADLINES: Record<SupportedLang, { headline: string; description: s
   },
   es: {
     headline: '¡Hola! Soy Vesa 👋',
-    description: 'Fundador de LaplandVibes. Auroras, colores de otoño, la temporada navideña y el sol de medianoche: viajo por Laponia y te cuento por dónde empezar, qué reservar y cuándo, y qué lugares de verdad sorprenden.',
+    description: 'Fundador de LaplandVibes. Auroras, colores de otoño, la temporada navideña y el sol de medianoche: viajo por Laponia y le cuento por dónde empezar, qué reservar y cuándo, y qué lugares de verdad sorprenden.',
   },
   'pt-BR': {
     headline: 'Oi, aqui é o Vesa 👋',
