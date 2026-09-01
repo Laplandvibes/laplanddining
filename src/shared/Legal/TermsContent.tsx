@@ -1102,13 +1102,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
       <>
         Todos los productos de este sitio los vende y envía una tienda externa, y los botones te llevan a
         su propia web. <strong className="text-snow/90">{siteName} no es un comercio minorista, un
-        vendedor ni un revendedor.</strong> No tenemos stock ni pasarela de pago, y nunca recibimos tu
-        pago ni tu dirección de entrega.
+        vendedor ni un revendedor.</strong> No tenemos stock ni pasarela de pago, y nunca recibimos su
+        pago ni su dirección de entrega.
       </>
     ),
     s5P2: () => (
       <>
-        El contrato de compra se celebra directamente entre tú y esa tienda, conforme a sus condiciones y
+        El contrato de compra se celebra directamente entre usted y esa tienda, conforme a sus condiciones y
         a su política de privacidad. Los plazos de entrega, los gastos de envío, el IVA y los aranceles
         de los pedidos fuera de la UE, las devoluciones, los reembolsos y la garantía son responsabilidad
         suya, no nuestra. El derecho legal de desistimiento en la venta a distancia, en Finlandia según{' '}
