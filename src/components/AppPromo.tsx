@@ -193,7 +193,7 @@ const COPY: Record<string, Copy> = {
   es: {
     eyebrow: 'Nuevo',
     title: 'Toda Laponia. Una app.',
-    hype: 'Todo el norte en tu bolsillo',
+    hype: 'Todo el norte en su bolsillo',
     lead: 'Nadie había reunido antes toda la Laponia finlandesa en un solo sitio. Cada municipio, cada pista, cada punto de recarga, cada inicio de ruta. Y funciona también sin cobertura.',
     stats: ['municipios', 'pistas', 'remontes', 'lugares verificados'],
     features: [
@@ -206,8 +206,8 @@ const COPY: Record<string, Copy> = {
       'Vuelos, hoteles y coches en una búsqueda',
       'Emergencias y farmacia más cercana',
     ],
-    cta: 'Consigue la app gratis',
-    scan: 'Escanea para abrirla en tu móvil',
+    cta: 'Consiga la app gratis',
+    scan: 'Escanee para abrirla en su móvil',
     free: 'No hace falta cuenta para explorar',
     dismiss: 'Cerrar',
   },
