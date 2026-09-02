@@ -945,7 +945,7 @@ const COPY: Record<Lang, {
       { strong: 'Rätt till dataportabilitet (artikel 20)', body: 'få dina uppgifter i ett strukturerat, maskinläsbart format.' },
       { strong: 'Rätt att invända (artikel 21)', body: 'invända mot behandling som grundas på berättigat intresse, inklusive direktmarknadsföring.' },
       { strong: 'Rätt att återkalla samtycke', body: 'när som helst, med verkan från och med återkallandet.' },
-      { strong: 'Rätt att lämna in klagomål (artikel 77)', body: 'till den finska dataskyddsombudsmannen (Tietosuojavaltuutettu) på tietosuoja.fi, eller till tillsynsmyndigheten där du stadigvarande bor inom EU.' },
+      { strong: 'Rätt att lämna in klagomål (artikel 77)', body: 'till dataombudsmannen i Finland (Tietosuojavaltuutettu) på tietosuoja.fi, eller till tillsynsmyndigheten där du stadigvarande bor inom EU.' },
     ],
     s9Tail: (email) => <>För att utöva någon av dessa rättigheter, kontakta oss på {email}. Vi svarar inom en månad.</>,
     s10Title: '10. Automatiserat beslutsfattande',
