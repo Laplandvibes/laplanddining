@@ -15,7 +15,7 @@
     "midnightHeadline1": "Diner om 1 uur 's nachts.",
     "midnightHeadline2": "De zon staat nog hoog.",
     "midnightBadge": "6 juni → 7 juli",
-    "midnightBody": "Tweeëndertig dagen lang zakt de zon ten noorden van de Poolcirkel nooit onder de horizon. Terrassen aan de rivier in Rovaniemi, kota-vuren in Saariselkä, een proefmenu met uitzicht op het meer in Aanaar, alles in een ononderbroken gouden licht. De stilste, beste helft van het Laplandse culinaire jaar.",
+    "midnightBody": "Tweeëndertig dagen lang zakt de zon ten noorden van de Poolcirkel nooit onder de horizon. Terrassen aan de rivier in Rovaniemi, kota-vuren in Saariselkä, het proefmenu van Aanaar met uitzicht op het meer, alles in een ononderbroken gouden licht. De stilste, beste helft van het Laplandse culinaire jaar.",
     "midnightCtaGuide": "Lees de gids over de middernachtzon",
     "midnightCtaStays": "Vind zomerverblijven",
     "cuisineHeadline": "Pijlers van de Laplandse keuken",
@@ -41,8 +41,8 @@
     "statsYear": "Dit jaar bijgewerkt",
     "stayKicker": "Slaap waar u eet",
     "stayHeadline": "Boek een hotel dicht bij de tafel van vanavond",
-    "stayLead": "Diners in Lapland lopen vaak laat door en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het schoonste overzicht van wat er echt beschikbaar is naast elke kota, fjäll-hotel en ijsrestaurant.",
-    "stayAffiliateNote": "Affiliate links, we kunnen een commissie verdienen zonder extra kosten voor u.",
+    "stayLead": "Diners in Lapland lopen vaak laat door en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het duidelijkste overzicht van wat er echt beschikbaar is naast elke kota, fjäll-hotel en ijsrestaurant.",
+    "stayAffiliateNote": "Affiliate-links, we kunnen een commissie verdienen zonder extra kosten voor u.",
     "stayAffiliateLink": "Waarom we het zo doen",
     "toursKicker": "Eet met een gids",
     "toursHeadline": "Foodtours, kookcursussen en brouwerijbezoeken",
@@ -71,7 +71,7 @@
         },
         {
           "question": "Wat is dineren in een kota?",
-          "answer": "Een kota is de traditionele Samische tent met een open vuur in het midden. Kota-restaurants zoals Kammi bij Hullu Poro in Levi zetten u op rendiervellen rond de vlammen terwijl gerookte zalm, rendierworstjes en gegrild wild voor uw neus worden bereid, een menu kost zo'n 64 € per persoon."
+          "answer": "Een kota is de traditionele Samische tent met een open vuur in het midden. Kota-restaurants zoals Kammi bij Hullu Poro in Levi zetten u op rendiervellen rond de vlammen terwijl gerookte zalm, rendierworstjes en gegrild wild voor uw neus worden bereid, een menu kost zo'n € 64 per persoon."
         },
         {
           "question": "Wanneer eet u in Lapland het best buiten?",
@@ -79,7 +79,7 @@
         },
         {
           "question": "Op welke lokale ingrediënten is de Laplandse keuken gebouwd?",
-          "answer": "Vrij grazende rendieren, Arctische zalmforel en houting uit meren als het Inarimeer, wilde blauwe bosbessen en vossenbessen, met de hand geplukte paddenstoelen en kruiden, en de kruipbraam, het \"goud van het Arctische gebied\", die maar een paar weken in juli rijpt op subarctische venen."
+          "answer": "Vrij grazende rendieren, Arctische zalmforel en marene uit meren als het Inarimeer, wilde blauwe bosbessen en vossenbessen, met de hand geplukte paddenstoelen en kruiden, en de kruipbraam, het \"goud van het Arctische gebied\", die maar een paar weken in juli rijpt op subarctische venen."
         }
       ]
     }
@@ -109,7 +109,7 @@
     "stayNearby": "Slaap in de buurt",
     "stayInTemplate": "Verblijf in {{city}}",
     "bottomHeadlineTemplate": "Geselecteerd uit {{count}} echte restaurants",
-    "bottomLead": "Catalogus uit Google Places (rating × aantal reviews, fastfoodketens uitgesloten), vervolgens editorieel top-1 per stad gekozen. Elk citaat op deze pagina komt uit een echte Google-review. Bijgewerkt op {{date}}.",
+    "bottomLead": "Catalogus uit Google Places (rating × aantal reviews, fastfoodketens uitgesloten), vervolgens redactioneel één toppick per stad gekozen. Elk citaat op deze pagina komt uit een echte Google-review. Bijgewerkt op {{date}}.",
     "bottomPartner": "Bent u restauranteigenaar? Vermeldingen van uitgelichte partners krijgen redactionele tekst, menu-uitlichtingen en een upgrade-kaart.",
     "cityVibes": {
       "Rovaniemi": "Hoofdstad van Lapland, waar Arctische cultuur culinaire ambitie ontmoet",
@@ -122,9 +122,9 @@
       "Tornio": "Karakter van een grensstad en Finse comfortfood",
       "Haparanda": "Steek de grens over voor Zweeds-Noordse fusion",
       "Sodankylä": "Riviertraditie en het publiek van het Midnight Sun Film Festival",
-      "Pyhätunturi": "Dineren op fjäll-top aan de zuidelijke poort van de wildernis",
-      "Luosto": "Amethist-bergdorp met kelo-houtblok-restaurants",
-      "Muonio": "noorderlicht-zone-hooglanden boven de boomgrens",
+      "Pyhätunturi": "Dineren op de fjälltop aan de zuidelijke poort van de wildernis",
+      "Luosto": "Amethist-bergdorp met restaurants van kelo-hout",
+      "Muonio": "Hooglanden in de noorderlichtgordel, boven de boomgrens",
       "Hetta": "Enontekiö-knooppunt aan de rand van drie grenzen",
       "Kuusamo": "Resort Ruka, net ten zuiden van Lapland",
       "Kemijärvi": "Noordelijkste spoorstad met tafels aan de rivier",
@@ -165,12 +165,12 @@
     "whyKicker": "Wat verandert er",
     "whyHeadline": "Wanneer de zon nooit ondergaat",
     "whyParagraphs": [
-      "Het meeste reisverhaal over Lapland gaat over noorderlicht, sneeuw en rendieren in het donker. Dat is negen maanden per jaar. De andere drie maanden zijn iets heel anders en de eetcultuur komt eraan tegemoet.",
-      "Van begin juni tot begin juli gaat de zon boven de Poolcirkel niet onder. Zelfs ten zuiden van die lijn, in Rovaniemi, vervangt schemering de duisternis, om 1 uur 's nachts leest u buiten een menu zonder zaklamp. Terrassen die in de winter om 21.00 uur sluiten, blijven open tot middernacht. Kota-tenten doen zomerdineershifts op uren die onmogelijk lijken.",
-      "Ook de ingrediënten veranderen. Wilde kruiden fotosynthetiseren rond de klok. Meervis voedt zich in ondiep warm water. Boschampignons zijn nog niet zover, maar kruipbramen rijpen op de venen tegen het eind van het venster. Restaurants die hun naam op winterwild bouwden, schuiven stilletjes naar een lichter, meer-en-rivier-palet."
+      "De meeste reisverhalen over Lapland gaan over noorderlicht, sneeuw en rendieren in het donker. Dat is negen maanden per jaar. De andere drie maanden zijn iets heel anders en de eetcultuur komt eraan tegemoet.",
+      "Van begin juni tot begin juli gaat de zon boven de Poolcirkel niet onder. Zelfs ten zuiden van die lijn, in Rovaniemi, vervangt schemering de duisternis, om 1 uur 's nachts leest u buiten een menu zonder zaklamp. Terrassen die in de winter om 21.00 uur sluiten, blijven open tot middernacht. Kota-tenten serveren in de zomer diners op uren die onmogelijk lijken.",
+      "Ook de ingrediënten veranderen. Wilde kruiden fotosynthetiseren rond de klok. Meervis voedt zich in ondiep warm water. Bospaddenstoelen zijn er nog niet, maar kruipbramen rijpen op de venen tegen het eind van het venster. Restaurants die hun naam op winterwild bouwden, schuiven stilletjes naar een lichter, meer-en-rivier-palet."
     ],
     "citiesHeadline": "Vier steden, vier manieren om de zon te eten",
-    "citiesLead": "Elk biedt een andere hoek op middernachtzon-dineren. Combineer de maaltijd met een verblijf op loopafstand, dit zijn de momenten waarop het juiste hotel net zo telt als de juiste tafel.",
+    "citiesLead": "Elke stad biedt een andere invalshoek op dineren onder de middernachtzon. Combineer de maaltijd met een verblijf op loopafstand, dit zijn de momenten waarop het juiste hotel net zo telt als de juiste tafel.",
     "summerCities": [
       {
         "name": "Rovaniemi",
@@ -180,7 +180,7 @@
       {
         "name": "Levi",
         "angle": "Diners op de fjäll-top",
-        "body": "Het terras van Hullu Poro + de zomerdienst van de Levi-gondel geven u 360°-uitzicht over de fjälls met Laplandse kleine borden. Neem een extra laag, zelfs om 2 uur 's nachts kan het 8 °C zijn."
+        "body": "Het terras van Hullu Poro + de zomerdienst van de Levi-gondel geven u 360°-uitzicht over de fjälls met Laplandse kleine gerechten. Neem een extra laag kleding mee, zelfs om 2 uur 's nachts kan het 8 °C zijn."
       },
       {
         "name": "Inari",
@@ -202,7 +202,7 @@
   },
   "foodHistory": {
     "title": "Laplands eetgeschiedenis en Samische keuken | LaplandDining",
-    "description": "Hoe overleven in het hoge noorden de Lapse keuken vormde: Samische eetcultuur, rendierhouderij, gerookte vis, wilde bessen, het kotavuur en New Nordic.",
+    "description": "Hoe overleven in het hoge noorden de Laplandse keuken vormde: Samische eetcultuur, rendierhouderij, gerookte vis, wilde bessen, het kotavuur en New Nordic.",
     "heroH1": "Een verhaal verteld via eten",
     "heroLead": "Hoe duizenden jaren Arctisch overleven een van 's werelds meest kenmerkende eetculturen vormden.",
     "intro": "Rook stijgt op van een kota-vuur voor de zon volledig opgekomen is. Rendierreepjes hangen onder de dakrand van een houten hut te rijpen. Een zalm glijdt door de riviernevel. In Lapland begon eten nooit in de keuken, het begon op het land. Dit is het verhaal waarom.",
@@ -218,25 +218,25 @@
       {
         "title": "Rendier, alles wat een mens nodig heeft",
         "paragraphs": [
-          "De relatie tussen het Samische volk en het rendier gaat veel verder terug dan de herderij zelf. Maar het herdersmodel zoals we het kennen, kreeg in de 19e eeuw vorm, toen het jagen en vissen verving als belangrijkste levensonderhoud in oostelijk Sápmi. De relatie ging nooit alleen over vlees, bont, gewei, pezen en bot vonden allemaal hun gebruik.",
+          "De relatie tussen het Samische volk en het rendier gaat veel verder terug dan de rendierhouderij zelf. Maar het herdersmodel zoals we het kennen, kreeg in de 19e eeuw vorm, toen het jagen en vissen verving als belangrijkste levensonderhoud in oostelijk Sápmi. De relatie ging nooit alleen over vlees, bont, gewei, pezen en bot vonden allemaal hun gebruik.",
           "Finland telt vandaag ongeveer 5.600 rendierherders die zo'n 200.000 dieren beheren via 54 herderscoöperaties. Het herdersgebied beslaat ongeveer een derde van Finland. De jaarlijkse vleesproductie ligt rond 2 miljoen kilo, en de industrie is jaarlijks zo'n 60 miljoen euro waard.",
-          "Anders dan in Noorwegen en Zweden is rendierherderij in Finland niet voorbehouden aan de Sami, elke EU-burger kan meedoen met de juiste vergunningen. Maar de kennis, de verbondenheid met het land en de tradities die de smaak van rendiervlees maken, komen uit eeuwen van Samisch rentmeesterschap.",
-          "Het signatuurgerecht is <strong>poronkäristys</strong>: flinterdun gesneden rendier, gebakken in boter, opgediend met aardappelpuree en vossenbessenjam. Eenvoudig, eerlijk, diep bevredigend. U vindt het in elk restaurant in Lapland, van de wegcafé's tot de fine-diningzalen."
+          "Anders dan in Noorwegen en Zweden is rendierhouderij in Finland niet voorbehouden aan de Sami, elke EU-burger kan meedoen met de juiste vergunningen. Maar de kennis, de verbondenheid met het land en de tradities die de smaak van rendiervlees maken, komen uit eeuwen van Samisch rentmeesterschap.",
+          "Het signatuurgerecht is <strong>poronkäristys</strong>: flinterdun gesneden rendier, gebakken in boter, opgediend met aardappelpuree en vossenbessenjam. Eenvoudig, eerlijk, diep bevredigend. U vindt het in elk restaurant in Lapland, van de wegcafés tot de fine-diningzalen."
         ]
       },
       {
         "title": "Rivieren, meren, rook en vuur",
         "paragraphs": [
           "Laplands wateren waren altijd de andere voorraadkast. Zalm, marene, baars, Arctische zalmforel en snoek brachten gezinnen door de donkerste winters en de helderste middernachtzon-zomers. Visrechten behoorden eeuwenlang toe aan rivierfamilies, geregeld via afstamming en gewoonte, niet via geld.",
-          "De traditionele technieken leven in de restaurants nog steeds voort. Zalm op een houten plank naast een open vuur op vlam gegrild. Marene gerookt in berkenbast. Vissoep ingedikt met room en verse dille. Dit zijn geen \"reconstructies\" van oude recepten, het zijn levende tradities, van generatie op generatie doorgegeven.",
+          "De traditionele technieken leven in de restaurants nog steeds voort. Zalm op een houten plank gegrild naast een open vuur. Marene gerookt in berkenbast. Vissoep ingedikt met room en verse dille. Dit zijn geen \"reconstructies\" van oude recepten, het zijn levende tradities, van generatie op generatie doorgegeven.",
           "Het Inarimeer, het op twee na grootste meer van Finland, levert enkele van de beste zoetwatervissen van Europa. Restaurant Aanaar in Inari bouwt hele proefmenu's rond wat lokale vissers diezelfde ochtend uit het water halen."
         ]
       },
       {
         "title": "De bosbodem",
         "paragraphs": [
-          "Loop in laatzomer door een Laplands bos en u loopt door een supermarkt. Blauwe bosbessen, vossenbessen, kruipbramen en duindoorn groeien wild. Cantharellen, eekhoorntjesbrood en de gewaardeerde matsutake duwen door het mos omhoog. Wilde kruiden, engelwortel, moerasspirea, Arctische tijm, geuren in de lucht.",
-          "De kruipbraam heeft een bijzondere plaats. In het Fins <strong>lakka</strong> genoemd, groeit alleen in Arctische en subarctische venen, rijpt een paar weken in juli en is commercieel niet te telen. De amberkleur, honingzoetheid en zeldzaamheid maken er het \"goud van het Arctische gebied\" van. U vindt het in desserts, likeuren en als garnering in vrijwel elk fine-diningrestaurant in Lapland.",
+          "Loop in de nazomer door een Laplands bos en u loopt door een supermarkt. Blauwe bosbessen, vossenbessen, kruipbramen en duindoorn groeien wild. Cantharellen, eekhoorntjesbrood en de gewaardeerde matsutake duwen door het mos omhoog. Wilde kruiden als engelwortel, moerasspirea en Arctische tijm vullen de lucht met hun geur.",
+          "De kruipbraam heeft een bijzondere plaats. In het Fins <strong>lakka</strong> genoemd, groeit hij alleen in Arctische en subarctische venen, rijpt een paar weken in juli en is commercieel niet te telen. De amberkleur, honingzoetheid en zeldzaamheid maken er het \"goud van het Arctische gebied\" van. U vindt het in desserts, likeuren en als garnering in vrijwel elk fine-diningrestaurant in Lapland.",
           "Wat deze ingrediënten zo bijzonder maakt is niet alleen hun smaak, het is hun omgeving. Arctische omstandigheden, 24-uurs zomerlicht, schone lucht en sommige van 's werelds zuiverste waters leveren bessen met hogere concentraties vitamines, antioxidanten en flavonoïden dan hun zuidelijke verwanten."
         ]
       },
@@ -244,15 +244,15 @@
         "title": "Van overleven naar kunst",
         "paragraphs": [
           "Het grootste deel van zijn geschiedenis ging de Laplandse keuken over conserveren en mensen te eten geven. Roken, drogen, zouten, technieken geboren uit noodzaak, niet creativiteit. Specerijen anders dan zout waren bijna onbekend. Het eten was eerlijk en voedzaam, maar niemand zette het op handgemaakt aardewerk.",
-          "De New Nordic-beweging veranderde dat. Toen Noma in Kopenhagen begin jaren 2000 begon te vieren wat hyperlokaal en geplukt was, gingen koks in heel Scandinavië anders naar hun eigen achtertuin kijken. In Lapland vonden ze ingrediënten die de meeste mensen nooit hadden geproefd en tradities die al eeuwen oud waren.",
-          "Vandaag doen restaurants als Aanaar in Inari, Nili en Gustav in Rovaniemi iets opmerkelijks: ze eren Samische tradities en duwen tegelijk wat Arctische keuken kan zijn. Een rendiergang bij Aanaar is niet zomaar eten, het is een verhaal van inheems erfgoed, ecologisch rentmeesterschap en culinaire herontdekking op één bord."
+          "De New Nordic-beweging veranderde dat. Toen Noma in Kopenhagen begin jaren 2000 begon te vieren wat hyperlokaal en geplukt was, gingen koks in de Noordse landen anders naar hun eigen achtertuin kijken. In Lapland vonden ze ingrediënten die de meeste mensen nooit hadden geproefd en tradities die al eeuwen oud waren.",
+          "Vandaag doen restaurants als Aanaar in Inari, Nili en Gustav in Rovaniemi iets opmerkelijks: ze eren Samische tradities en verleggen tegelijk de grenzen van wat Arctische keuken kan zijn. Een rendiergang bij Aanaar is niet zomaar eten, het is een verhaal van inheems erfgoed, ecologisch rentmeesterschap en culinaire herontdekking op één bord."
         ]
       },
       {
         "title": "De kota, waar verhalen worden gedeeld",
         "paragraphs": [
           "Misschien is de meest kenmerkende dineerervaring in Lapland helemaal geen restaurant. Het is de <strong>kota</strong>, een traditionele Samische tent, kegelvormig, met een vuurplaats in het midden. Eeuwenlang was de kota huis, keuken en ontmoetingsplek. Eten werd op het open vuur bereid, verhalen werden verteld, rook droeg gebeden naar de hemel.",
-          "Vandaag houden kota-restaurants als Kammi bij Hullu Poro in Levi de traditie levend. U zit op rendierpels rond een knetterend vuur terwijl gerookte zalm, rendierworst en gegrild wild voor uw ogen worden bereid. Het diner kost zo'n 64 € per persoon, maar het moment is moeilijk te prijzen.",
+          "Vandaag houden kota-restaurants als Kammi bij Hullu Poro in Levi de traditie levend. U zit op rendierpels rond een knetterend vuur terwijl gerookte zalm, rendierworst en gegrild wild voor uw ogen worden bereid. Het diner kost zo'n € 64 per persoon, maar het moment is moeilijk te prijzen.",
           "Dit maakt Laplands dineren anders. Het is niet alleen wat op het bord ligt, het is het vuur, de rook, de sneeuw buiten, het noorderlicht boven u en de duizenden jaren menselijk vernuft die deze maaltijd mogelijk maakten."
         ]
       }
@@ -263,15 +263,15 @@
     "title": "Lokaal eten in Lapland: rendier, bessen, vis | LaplandDining",
     "description": "Wat 'lokaal' betekent op een Laplands menu: vrij grazende rendieren, Arctische zalmforel, kruipbramen, vossenbessen, wilde paddenstoelen en kruiden.",
     "heroH1": "Lokaal eten en ingrediënten",
-    "heroLead": "Waarom Lapland tot het schoonste en meest nutriëntrijke voedsel ter wereld levert en hoe de Finse voedselproductie de norm voor zuiverheid zet.",
+    "heroLead": "Waarom het voedsel uit Lapland tot het schoonste en meest voedzame ter wereld behoort en hoe de Finse voedselproductie de norm voor zuiverheid zet.",
     "intro": "Een visser haalt voor zonsopgang een Arctische zalmforel uit het Inarimeer. De kok in het dorp ernaast weet het binnen twintig minuten. De voedselketen in Lapland is zo kort en dáárom smaakt het eten zoals het smaakt.",
     "sections": [
       {
         "title": "Het bos",
         "paragraphs": [
-          "Laatzomer in een Laplands bos is in feite boodschappen doen. Blauwe bosbessen, vossenbessen, wilde frambozen, paddenstoelen en wilde kruiden groeien in zulke aantallen dat elke Fin leert plukken voor hij leert rijden. Het toegangsrecht, <strong>jokamiehenoikeus</strong>, maakt het mogelijk: iedereen, lokaal of bezoeker, mag overal in de natuur lopen, foerageren en plukken, ongeacht wie het land bezit.",
+          "De nazomer in een Laplands bos is in feite boodschappen doen. Blauwe bosbessen, vossenbessen, wilde frambozen, paddenstoelen en wilde kruiden groeien in zulke aantallen dat elke Fin leert plukken voor hij leert rijden. Het allemansrecht, <strong>jokamiehenoikeus</strong>, maakt het mogelijk: iedereen, lokaal of bezoeker, mag overal in de natuur lopen, foerageren en plukken, ongeacht wie het land bezit.",
           "Het is geen symbolisch gebaar. Het vormt de hele eetcultuur. Finlands bossen leveren jaarlijks zo'n 500 miljoen kilo wilde bosbessen, maar slechts 5–10 % wordt geplukt. De rest voedt de fauna en vult het ecosysteem opnieuw.",
-          "Veel topkoks in Lapland houden professionele plukkers op de loonlijst die de zomer doorbrengen op de fjälls en aan de randen van oerbos. \"Farm-to-table\" beschrijft het niet. Dit is forest-to-table en het bos begint achter de keukendeur."
+          "Veel van de beste restaurants in Lapland hebben professionele plukkers in dienst, die de zomer doorbrengen op de fjälls en aan de randen van oerbos. \"Farm-to-table\" beschrijft het niet. Dit is forest-to-table en het bos begint achter de keukendeur."
         ]
       },
       {
@@ -283,19 +283,19 @@
         ]
       },
       {
-        "title": "Rendierherderij",
+        "title": "Rendierhouderij",
         "paragraphs": [
-          "Elk rendier in Fins Lapland leeft vrij. Er bestaan geen conventionele rendierboerderijen, de dieren trekken over zo'n 123.000 km² wildernis en grazen op korstmos, mos, wilde grassen en berkenbladeren. Ze zijn semi-gedomesticeerd: herders volgen en beheren ze, maar het bewegen is van het dier zelf.",
+          "Elk rendier in Fins Lapland leeft vrij. Er bestaan geen conventionele rendierboerderijen, de dieren trekken over zo'n 123.000 km² wildernis en grazen op korstmos, mos, wilde grassen en berkenbladeren. Ze zijn semi-gedomesticeerd: herders volgen en beheren ze, maar waar ze heen trekken, bepalen de dieren zelf.",
           "Dat ziet u in het vlees. Een vrij rondtrekkend rendier dat zijn leven op de fjälls doorbracht en wilde planten at, levert vlees dat mager, rijk aan omega-3-vetzuren en diep van smaak is. Geen graangevoerd boerderijdier komt in de buurt.",
-          "De Finse rendierindustrie loopt via 54 herderscoöperaties met wettelijk vastgelegde maximumkuddes. Najaarsrondes bepalen hoeveel dieren geslacht mogen worden om de kuddes gezond en het landschap in balans te houden. De jaarlijkse productie ligt rond 2 miljoen kilo vlees."
+          "De Finse rendierindustrie loopt via 54 herderscoöperaties met wettelijk vastgelegde maximumkuddes. Bij het bijeendrijven van de kuddes in het najaar wordt bepaald hoeveel dieren geslacht mogen worden om de kuddes gezond en het landschap in balans te houden. De jaarlijkse productie ligt rond 2 miljoen kilo vlees."
         ]
       },
       {
         "title": "Stille meren en een Arctische omgeving",
         "paragraphs": [
-          "De Finse landbouw gebruikt minder pesticide per hectare dan vrijwel elk ander EU-land. Het antibioticagebruik in de veehouderij is een van de laagste van Europa. Koude winters fungeren als natuurlijke plaagbestrijding, insecten die warmere klimaten teisteren overleven de Arctische vorst gewoon niet. Het resultaat: minder chemische ingreep en schonere producten.",
+          "De Finse landbouw gebruikt minder bestrijdingsmiddelen per hectare dan vrijwel elk ander EU-land. Het antibioticagebruik in de veehouderij is een van de laagste van Europa. Koude winters fungeren als natuurlijke plaagbestrijding, insecten die warmere klimaten teisteren overleven de Arctische vorst gewoon niet. Het resultaat: minder chemische ingrepen en schonere producten.",
           "Kraanwater is in heel het land drinkbaar. In Lapland komt het rechtstreeks uit enkele van de zuiverste grondwaterbronnen van het continent, vaak hetzelfde water dat twee dagen eerder als sneeuw op een herdersweide viel.",
-          "Planten die onder strenge omstandigheden groeien, ontwikkelen meer beschermende verbindingen. Een wilde Finse bosbes bevat 3–4 keer meer anthocyanen dan een gekweekte bosbes. Kruipbramen zijn rijk aan vitamine C, vitamine E en omega-vetzuren. Duindoorn heeft per gram meer vitamine C dan sinaasappel. Dat is geen marketing, dat is botanie."
+          "Planten die onder strenge omstandigheden groeien, ontwikkelen meer beschermende verbindingen. Een wilde Finse bosbes bevat 3–4 keer meer anthocyanen dan een gekweekte blauwe bes. Kruipbramen zijn rijk aan vitamine C, vitamine E en omega-vetzuren. Duindoorn heeft per gram meer vitamine C dan sinaasappel. Dat is geen marketing, dat is botanie."
         ]
       }
     ],
@@ -305,12 +305,12 @@
     "ingredients": [
       {
         "name": "Rendier",
-        "fact": "Zo'n 200.000 rendieren trekken door Fins Lapland, verdeeld over 54 begrazingsdistricten, en grazen vrij op korstmos, mos en wilde planten, zonder mestbedrijven en zonder groeihormonen. Het vlees is mager en ijzerrijk, en het klassieke gerecht is poronkäristys: flinterdun gesneden rendier, aangebakken en geserveerd met aardappelpuree en rode bosbes.",
+        "fact": "Zo'n 200.000 rendieren trekken door Fins Lapland, verdeeld over 54 begrazingsdistricten, en grazen vrij op korstmos, mos en wilde planten, zonder mestbedrijven en zonder groeihormonen. Het vlees is mager en ijzerrijk, en het klassieke gerecht is poronkäristys: flinterdun gesneden rendier, aangebakken en geserveerd met aardappelpuree en vossenbessen.",
         "season": "Het hele jaar (najaarsslacht)"
       },
       {
         "name": "Arctische zalmforel & zalm",
-        "fact": "Gevangen in enkele van de schoonste rivieren en meren van Europa. Alleen al het Inarimeer levert riddervis, marene en beekforel, allemaal wild gevangen, nooit gekweekt in de wateren van Lapland. De oude manier om zalm te bereiden is loimulohi: een filet vastgezet op een berkenplank en langzaam naast een open vlam geroosterd.",
+        "fact": "Gevangen in enkele van de schoonste rivieren en meren van Europa. Alleen al het Inarimeer levert Arctische zalmforel, marene en beekforel, allemaal wild gevangen, nooit gekweekt in de wateren van Lapland. De oude manier om zalm te bereiden is loimulohi: een filet vastgezet op een berkenplank en langzaam naast een open vlam geroosterd.",
         "season": "Zomer & najaar"
       },
       {
@@ -320,17 +320,17 @@
       },
       {
         "name": "Wilde bosbes",
-        "fact": "Finse wilde bosbessen bevatten drie tot vier keer meer anthocyanen dan gekweekte bosbessen, en kleuren de vingers bij het plukken meteen dieppaars. De bossen brengen naar schatting 500 miljoen kg per jaar voort, waarvan slechts 5 tot 10 procent ooit wordt geplukt.",
+        "fact": "Finse wilde bosbessen bevatten drie tot vier keer meer anthocyanen dan gekweekte blauwe bessen, en kleuren de vingers bij het plukken meteen dieppaars. De bossen brengen naar schatting 500 miljoen kg per jaar voort, waarvan slechts 5 tot 10 procent ooit wordt geplukt.",
         "season": "Juli–september"
       },
       {
         "name": "Vossenbes",
-        "fact": "De meest geplukte wilde bes van Finland, tegelijk zuur en zoet. Door het natuurlijke benzoëzuur blijft een pot rauw geroerde rode bosbessen de hele winter goed zonder koken, en daarom staat de zoetzure lepel naast bijna elk rendiergerecht.",
+        "fact": "De meest geplukte wilde bes van Finland, tegelijk zuur en zoet. Door het natuurlijke benzoëzuur blijft een pot rauw geroerde vossenbessen de hele winter goed zonder koken, en daarom staat de zoetzure lepel naast bijna elk rendiergerecht.",
         "season": "Augustus–oktober"
       },
       {
         "name": "Wilde paddenstoelen",
-        "fact": "Gouden cantharellen, eekhoorntjesbrood en trechtercantharellen komen vanaf het einde van de zomer volop op in de bossen van Lapland. Iedereen mag ze plukken: het oude natuurrecht laat u in vrijwel elk bos paddenstoelen en bessen plukken, wie de grond ook bezit.",
+        "fact": "Gouden cantharellen, eekhoorntjesbrood en trechtercantharellen komen vanaf het einde van de zomer volop op in de bossen van Lapland. Iedereen mag ze plukken: het eeuwenoude allemansrecht laat u in vrijwel elk bos paddenstoelen en bessen plukken, wie de grond ook bezit.",
         "season": "Augustus–oktober"
       },
       {
@@ -340,12 +340,12 @@
       },
       {
         "name": "Wilde kruiden",
-        "fact": "Arctische engelwortel, moerasspirea, wilgenroosje en arctische tijm, met de hand geplukt van fjällweiden en bosranden. Doordat ze weken onder de nooit ondergaande middernachtszon groeien, bouwen ze geconcentreerde aromatische oliën op, zodat een klein snufje ver reikt.",
+        "fact": "Arctische engelwortel, moerasspirea, wilgenroosje en arctische tijm, met de hand geplukt van fjällweiden en bosranden. Doordat ze weken onder de nooit ondergaande middernachtzon groeien, bouwen ze geconcentreerde aromatische oliën op, zodat een klein snufje ver reikt.",
         "season": "Juni–augustus"
       }
     ],
     "ctaHeadline": "Proef het waar het groeit",
-    "ctaLead": "U begrijpt de eetcultuur van Lapland pas als u het hebt geproefd. Vind de restaurants die rechtstreeks bij lokale herders, vissers en plukkers inkopen, boek dan een verblijf op loopafstand.",
+    "ctaLead": "U begrijpt de eetcultuur van Lapland pas als u het eten hebt geproefd. Vind de restaurants die rechtstreeks bij lokale herders, vissers en plukkers inkopen, boek dan een verblijf op loopafstand.",
     "ctaBrowse": "Bekijk restaurants",
     "ctaStay": "Boek een verblijf",
     "ctaTours": "Kookcursus & foodtours",
@@ -356,13 +356,13 @@
     "title": "Over LaplandDining",
     "description": "Over LaplandDining: onafhankelijke redactionele restaurantgids voor Fins Lapland, onderdeel van het LaplandVibes-netwerk.",
     "heroH1": "Over LaplandDining",
-    "heroLead": "Uw gids naar echte, zorgvuldig geselecteerde restaurants in heel Fins Lapland.",
+    "heroLead": "Uw gids voor echte, zorgvuldig geselecteerde restaurants in heel Fins Lapland.",
     "networkTitle": "LaplandVibes-netwerk",
     "networkBodyA": "LaplandDining maakt deel uit van het <strong>LaplandVibes</strong>-ecosysteem, een familie van gespecialiseerde sites die reizigers helpen het beste van Fins Lapland te ontdekken. Elke site richt zich op een specifiek deel van de Laplandse ervaring: accommodatie, dineren, activiteiten, natuur, shoppen, nachtleven en meer.",
     "networkBodyB": "Elk restaurant op LaplandDining is een echt etablissement. We tonen geen fictieve of placeholder-restaurants. Vermeldingen zijn samengesteld uit openbare registers, Google Places-gegevens en de eigen websites van de restaurants.",
     "affiliateTitle": "Affiliate-disclosure",
-    "affiliateBodyA": "Sommige links op LaplandDining zijn affiliate links, vooral hotelboekingen via onze partners Sembo en Trip.com en culinaire ervaringen via GetYourGuide. We kunnen een kleine commissie verdienen als u via deze links boekt, zonder extra kosten voor u. Deze commissies helpen ons deze gratis bron te onderhouden en te verbeteren.",
-    "affiliateBodyB": "De redactionele selecties zijn onafhankelijk. Affiliate-partnerships beïnvloeden niet welke restaurants worden uitgelicht of hoe ze worden beschreven, alleen restaurants die er echt goed uitzien halen de lijst.",
+    "affiliateBodyA": "Sommige links op LaplandDining zijn affiliate-links, vooral hotelboekingen via onze partners Sembo en Trip.com en culinaire ervaringen via GetYourGuide. We kunnen een kleine commissie verdienen als u via deze links boekt, zonder extra kosten voor u. Deze commissies helpen ons deze gratis bron te onderhouden en te verbeteren.",
+    "affiliateBodyB": "De redactionele selecties zijn onafhankelijk. Affiliate-partnerships beïnvloeden niet welke restaurants worden uitgelicht of hoe ze worden beschreven, alleen restaurants die er echt uitzien als een goede plek om te eten, komen op de lijst.",
     "operatorTitle": "Exploitant",
     "operatorBodyA": "LaplandDining.com wordt geëxploiteerd door <strong>LaPeso Oy</strong>, een Fins bedrijf met hoofdkantoor in Lapland.",
     "operatorBodyB": "Redactionele vragen, correcties, partnership-aanvragen, persvragen:",

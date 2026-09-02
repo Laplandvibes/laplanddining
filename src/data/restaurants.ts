@@ -290,29 +290,29 @@ export function partnershipBadge(tier: PartnershipTier): string | null {
  * the editorial layer hasn't supplied one. Filters out generic types like
  * `restaurant`, `food`, `point_of_interest`.
  */
-const TYPE_LABELS: Record<string, { en: string; fi: string; de: string; ja: string }> = {
-  pizza_restaurant: { en: 'Pizza', fi: 'Pizza', de: 'Pizza', ja: 'ピザ' },
-  italian_restaurant: { en: 'Italian', fi: 'Italialainen', de: 'Italienisch', ja: 'イタリアン' },
-  finnish_restaurant: { en: 'Finnish', fi: 'Suomalainen', de: 'Finnisch', ja: 'フィンランド料理' },
-  scandinavian_restaurant: { en: 'Scandinavian', fi: 'Skandinaavinen', de: 'Skandinavisch', ja: '北欧料理' },
-  fine_dining_restaurant: { en: 'Fine dining', fi: 'Fine dining', de: 'Fine Dining', ja: 'ファインダイニング' },
-  steak_house: { en: 'Steakhouse', fi: 'Pihviravintola', de: 'Steakhouse', ja: 'ステーキハウス' },
-  seafood_restaurant: { en: 'Seafood', fi: 'Merenherkut', de: 'Meeresfrüchte', ja: 'シーフード' },
-  asian_restaurant: { en: 'Asian', fi: 'Aasialainen', de: 'Asiatisch', ja: 'アジア料理' },
-  chinese_restaurant: { en: 'Chinese', fi: 'Kiinalainen', de: 'Chinesisch', ja: '中華料理' },
-  japanese_restaurant: { en: 'Japanese', fi: 'Japanilainen', de: 'Japanisch', ja: '日本料理' },
-  thai_restaurant: { en: 'Thai', fi: 'Thai', de: 'Thai', ja: 'タイ料理' },
-  vegetarian_restaurant: { en: 'Vegetarian', fi: 'Kasvisravintola', de: 'Vegetarisch', ja: 'ベジタリアン' },
-  vegan_restaurant: { en: 'Vegan', fi: 'Vegaani', de: 'Vegan', ja: 'ヴィーガン' },
-  hamburger_restaurant: { en: 'Burger', fi: 'Burger', de: 'Burger', ja: 'バーガー' },
-  cafe: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ' },
-  coffee_shop: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ' },
-  bar: { en: 'Bar & restaurant', fi: 'Baari & ravintola', de: 'Bar & Restaurant', ja: 'バー & レストラン' },
-  pub: { en: 'Pub & restaurant', fi: 'Pubi & ravintola', de: 'Pub & Restaurant', ja: 'パブ & レストラン' },
-  fast_food_restaurant: { en: 'Casual', fi: 'Casual', de: 'Casual', ja: 'カジュアル' },
-  meal_takeaway: { en: 'Takeaway', fi: 'Take away', de: 'Zum Mitnehmen', ja: 'テイクアウト' },
-  meal_delivery: { en: 'Delivery', fi: 'Kotiinkuljetus', de: 'Lieferung', ja: 'デリバリー' },
-  bakery: { en: 'Bakery', fi: 'Leipomo', de: 'Bäckerei', ja: 'ベーカリー' },
+const TYPE_LABELS: Record<string, { en: string; fi: string; de: string; ja: string; nl: string }> = {
+  pizza_restaurant: { en: 'Pizza', fi: 'Pizza', de: 'Pizza', ja: 'ピザ', nl: 'Pizza' },
+  italian_restaurant: { en: 'Italian', fi: 'Italialainen', de: 'Italienisch', ja: 'イタリアン', nl: 'Italiaans' },
+  finnish_restaurant: { en: 'Finnish', fi: 'Suomalainen', de: 'Finnisch', ja: 'フィンランド料理', nl: 'Fins' },
+  scandinavian_restaurant: { en: 'Scandinavian', fi: 'Skandinaavinen', de: 'Skandinavisch', ja: '北欧料理', nl: 'Scandinavisch' },
+  fine_dining_restaurant: { en: 'Fine dining', fi: 'Fine dining', de: 'Fine Dining', ja: 'ファインダイニング', nl: 'Fine dining' },
+  steak_house: { en: 'Steakhouse', fi: 'Pihviravintola', de: 'Steakhouse', ja: 'ステーキハウス', nl: 'Steakhouse' },
+  seafood_restaurant: { en: 'Seafood', fi: 'Merenherkut', de: 'Meeresfrüchte', ja: 'シーフード', nl: 'Vis en zeevruchten' },
+  asian_restaurant: { en: 'Asian', fi: 'Aasialainen', de: 'Asiatisch', ja: 'アジア料理', nl: 'Aziatisch' },
+  chinese_restaurant: { en: 'Chinese', fi: 'Kiinalainen', de: 'Chinesisch', ja: '中華料理', nl: 'Chinees' },
+  japanese_restaurant: { en: 'Japanese', fi: 'Japanilainen', de: 'Japanisch', ja: '日本料理', nl: 'Japans' },
+  thai_restaurant: { en: 'Thai', fi: 'Thai', de: 'Thai', ja: 'タイ料理', nl: 'Thais' },
+  vegetarian_restaurant: { en: 'Vegetarian', fi: 'Kasvisravintola', de: 'Vegetarisch', ja: 'ベジタリアン', nl: 'Vegetarisch' },
+  vegan_restaurant: { en: 'Vegan', fi: 'Vegaani', de: 'Vegan', ja: 'ヴィーガン', nl: 'Veganistisch' },
+  hamburger_restaurant: { en: 'Burger', fi: 'Burger', de: 'Burger', ja: 'バーガー', nl: 'Burgers' },
+  cafe: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ', nl: 'Café' },
+  coffee_shop: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ', nl: 'Café' },
+  bar: { en: 'Bar & restaurant', fi: 'Baari & ravintola', de: 'Bar & Restaurant', ja: 'バー & レストラン', nl: 'Bar & restaurant' },
+  pub: { en: 'Pub & restaurant', fi: 'Pubi & ravintola', de: 'Pub & Restaurant', ja: 'パブ & レストラン', nl: 'Pub & restaurant' },
+  fast_food_restaurant: { en: 'Casual', fi: 'Casual', de: 'Casual', ja: 'カジュアル', nl: 'Casual' },
+  meal_takeaway: { en: 'Takeaway', fi: 'Take away', de: 'Zum Mitnehmen', ja: 'テイクアウト', nl: 'Afhaal' },
+  meal_delivery: { en: 'Delivery', fi: 'Kotiinkuljetus', de: 'Lieferung', ja: 'デリバリー', nl: 'Bezorging' },
+  bakery: { en: 'Bakery', fi: 'Leipomo', de: 'Bäckerei', ja: 'ベーカリー', nl: 'Bakkerij' },
 };
 
 export function cuisineLabel(r: Restaurant, locale: Locale = 'en'): string | null {
@@ -321,9 +321,9 @@ export function cuisineLabel(r: Restaurant, locale: Locale = 'en'): string | nul
   const type = localizedStr(r.type, locale);
   if (type) return type;
   if (!r.types) return null;
-  // Fallback to EN for locales not yet present in TYPE_LABELS (es, pt-BR, zh-CN).
-  const labelLocale = (['en', 'fi', 'de', 'ja'] as const).includes(locale as 'en' | 'fi' | 'de' | 'ja')
-    ? (locale as 'en' | 'fi' | 'de' | 'ja')
+  // Fallback to EN for locales not yet present in TYPE_LABELS (es, pt-BR, zh-CN, ko, fr, it, sv).
+  const labelLocale = (['en', 'fi', 'de', 'ja', 'nl'] as const).includes(locale as 'en' | 'fi' | 'de' | 'ja' | 'nl')
+    ? (locale as 'en' | 'fi' | 'de' | 'ja' | 'nl')
     : 'en';
   for (const t of r.types) {
     if (TYPE_LABELS[t]) return TYPE_LABELS[t][labelLocale];
@@ -391,6 +391,10 @@ function factualLine(r: Restaurant, locale: Locale): string | null {
   }
   if (locale === 'sv') {
     return `${rating} stjärnor · ${count} recensioner${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+  }
+  if (locale === 'nl') {
+    const nlRating = r.rating.toLocaleString('nl-NL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    return `${nlRating} sterren · ${count} beoordelingen${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
   }
   // de
   return `${rating} Sterne • ${count} Bewertungen${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
