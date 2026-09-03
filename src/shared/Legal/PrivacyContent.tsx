@@ -405,7 +405,7 @@ const COPY: Record<Lang, {
     ],
     s8Title: '8. Publicidad',
     s8Body1: (siteName) => `Este sitio muestra contenido patrocinado de terceros anunciantes. El contenido patrocinado está claramente identificado con la etiqueta "Patrocinado". Al hacer clic en enlaces patrocinados puede ser redirigido a sitios externos con sus propias políticas de privacidad. ${siteName} no es responsable de las prácticas de tratamiento de datos de los anunciantes externos.`,
-    s8Body2: 'Participamos en programas de afiliación a través de las redes Adtraction, Daisycon y Travelpayouts y del programa de socios de Trip.com; entre nuestros socios están Sembo, Lomarengas, Trip.com y EconomyBookings. Cuando hace clic en un enlace de afiliado y realiza una compra o reserva, podemos recibir una comisión sin coste adicional para usted.',
+    s8Body2: 'Participamos en programas de afiliación a través de las redes Adtraction, Daisycon y Travelpayouts y del programa de socios de Trip.com; entre nuestros socios están Sembo, Lomarengas, Trip.com y EconomyBookings. Cuando hace clic en un enlace de afiliado y realiza una compra o reserva, podemos recibir una comisión sin costo adicional para usted.',
     s8aTitle: '8a. Transferencias internacionales de datos',
     s8aIntro: 'Varios de los servicios externos que utilizamos tienen su sede o transfieren datos a países fuera del Espacio Económico Europeo (EEE), normalmente Estados Unidos:',
     s8aItems: [

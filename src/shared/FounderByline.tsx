@@ -21,7 +21,7 @@ const STRINGS: Record<string, { role: string; note: string; alt: string }> = {
   en: { role: 'Vesa, founder of LaplandVibes', note: 'These letters come from me.', alt: 'Vesa, founder of LaplandVibes' },
   fi: { role: 'Vesa, LaplandVibesin perustaja', note: 'Nämä kirjeet tulevat minulta.', alt: 'Vesa, LaplandVibesin perustaja' },
   de: { role: 'Vesa, Gründer von LaplandVibes', note: 'Diese Briefe kommen von mir.', alt: 'Vesa, Gründer von LaplandVibes' },
-  ja: { role: 'ヴェサ・LaplandVibes創業者', note: 'このレターは私が書いています。', alt: 'LaplandVibes創業者のヴェサ' },
+  ja: { role: 'ヴェサ｜LaplandVibes創業者', note: 'このレターは私が書いています。', alt: 'LaplandVibes創業者のヴェサ' },
   es: { role: 'Vesa, fundador de LaplandVibes', note: 'Estas cartas las escribo yo.', alt: 'Vesa, fundador de LaplandVibes' },
   'pt-BR': { role: 'Vesa, fundador do LaplandVibes', note: 'Estas cartas vêm de mim.', alt: 'Vesa, fundador do LaplandVibes' },
   'zh-CN': { role: 'Vesa，LaplandVibes创始人', note: '这些信由我亲自撰写。', alt: 'LaplandVibes创始人Vesa' },

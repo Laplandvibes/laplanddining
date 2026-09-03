@@ -9,13 +9,13 @@
     "heroCtaFine": "Alta cucina in Lapponia",
     "picksKicker": "Scelti dalla redazione",
     "picksHeadline": "Inizia da questi sei",
-    "picksLead": "Alta cucina sami, fuochi di kota e cucine in cima ai monti. Sei posti che prenoteremmo per primi.",
+    "picksLead": "Alta cucina sami, fuochi di kota e cucine in cima ai fjäll. Sei posti che prenoteremmo per primi.",
     "picksCtaAll": "Vedi tutti i {{count}} ristoranti",
     "midnightKicker": "L'estate lappone",
     "midnightHeadline1": "Cena all'una di notte.",
     "midnightHeadline2": "Il sole è ancora alto.",
     "midnightBadge": "6 giugno → 7 luglio",
-    "midnightBody": "Per trentadue giorni il sole non scende mai sotto l'orizzonte a nord del Circolo Polare. Terrazze sul fiume a Rovaniemi, fuochi di kota a Saariselkä, menù degustazione affacciato sul lago ad Aanaar, tutto consumato in una luce dorata ininterrotta. La metà più silenziosa e più bella dell'anno gastronomico lappone.",
+    "midnightBody": "Per trentadue giorni il sole non scende mai sotto l'orizzonte a nord del Circolo polare artico. Terrazze sul fiume a Rovaniemi, fuochi di kota a Saariselkä, menù degustazione con vista sul lago ad Aanaar, tutto consumato in una luce dorata ininterrotta. La metà più silenziosa e più bella dell'anno gastronomico lappone.",
     "midnightCtaGuide": "Leggi la guida al sole di mezzanotte",
     "midnightCtaStays": "Trova alloggi estivi",
     "cuisineHeadline": "I pilastri della cucina lappone",
@@ -27,11 +27,11 @@
       },
       {
         "title": "Esperienza kota",
-        "desc": "Cena dentro una tenda sami tradizionale attorno a un fuoco vivo. Salmone, renna e selvaggina grigliati alla fiamma in un'atmosfera indimenticabile."
+        "desc": "Ceni dentro una tenda sami tradizionale attorno a un fuoco vivo. Salmone, renna e selvaggina grigliati alla fiamma in un'atmosfera indimenticabile."
       },
       {
         "title": "Ingredienti artici",
-        "desc": "Erbe selvatiche, renna, pesci di lago, lamponi artici e funghi raccolti in una natura artica incontaminata. Iper-locali, di stagione e puri."
+        "desc": "Erbe selvatiche, renna, pesci di lago, more artiche e funghi raccolti in una natura artica incontaminata. Iper-locali, di stagione e puri."
       }
     ],
     "destinationsHeadline": "Sfoglia per destinazione",
@@ -41,7 +41,7 @@
     "statsYear": "Aggiornati quest'anno",
     "stayKicker": "Dormi dove mangi",
     "stayHeadline": "Prenoti un hotel vicino al ristorante di stasera",
-    "stayLead": "Le cene lapponi spesso si protraggono tardi e finiscono lontano dal centro. La scelta più saggia è alloggiare a distanza di passeggiata dal ristorante e Trip.com offre la visione più pulita di ciò che è davvero disponibile accanto a ogni kota, hotel di fjäll e ristorante di ghiaccio.",
+    "stayLead": "Le cene lapponi spesso si protraggono tardi e finiscono lontano dal centro. La scelta più saggia è alloggiare a due passi dal ristorante e Trip.com offre il quadro più chiaro di ciò che è davvero disponibile accanto a ogni kota, hotel di fjäll e ristorante di ghiaccio.",
     "stayAffiliateNote": "Link di affiliazione, possiamo ricevere una commissione senza costi aggiuntivi per Lei.",
     "stayAffiliateLink": "Perché funziona così",
     "toursKicker": "Mangia con una guida",
@@ -71,7 +71,7 @@
         },
         {
           "question": "Che cos'è la cena nella kota?",
-          "answer": "La kota è la tenda tradizionale sami con un fuoco aperto al centro. Ristoranti kota come il Kammi dell'Hullu Poro a Levi ti fanno sedere su pelli di renna attorno alle fiamme mentre salmone affumicato, salsicce di renna e selvaggina alla griglia vengono preparati davanti a te, il menù costa circa 64 € a persona."
+          "answer": "La kota è la tenda tradizionale sami con un fuoco aperto al centro. Ristoranti kota come il Kammi dell'Hullu Poro a Levi La fanno sedere su pelli di renna attorno alle fiamme mentre salmone affumicato, salsicce di renna e selvaggina alla griglia vengono preparati davanti a te, il menù costa circa 64 € a persona."
         },
         {
           "question": "Qual è il periodo migliore per mangiare all'aperto in Lapponia?",
@@ -79,7 +79,7 @@
         },
         {
           "question": "Su quali ingredienti locali si fonda la cucina lappone?",
-          "answer": "Renne allo stato brado, salmerino artico e coregone da laghi come l'Inari, mirtilli e mirtilli rossi selvatici, funghi ed erbe raccolti a mano, e il lampone artico, l'\"oro dell'Artico\", che matura sulle torbiere subartiche solo poche settimane a luglio."
+          "answer": "Renne allo stato brado, salmerino artico e coregone da laghi come l'Inari, mirtilli e mirtilli rossi selvatici, funghi ed erbe raccolti a mano, e il lampone artico, l'\"oro dell'Artico\", che matura nelle torbiere subartiche solo poche settimane a luglio."
         }
       ]
     }
@@ -136,7 +136,7 @@
     "menuLabelPdf": "Menù (PDF)",
     "introTitle": "Come è ordinata questa pagina",
     "introP1": "I ristoranti sono raggruppati per destinazione, non messi in classifica fra loro. Dove una città ha una scelta della redazione, quella apre la griglia con una sua etichetta; tutto il resto segue senza un ordine preciso, quindi legga le schede e non le posizioni. I punteggi mostrati sono quelli di Google e rimandano alle recensioni da cui arrivano.",
-    "introP2": "La scheda larga sopra ogni griglia è uno spazio partner a pagamento ed è segnalata come pubblicità. Nient’altro in questa pagina è posizionamento pagato. Gli orari seguono la stagione ( in Lapponia \"chiuso per la stagione\" può voler dire mesi e non settimane ) quindi controllate la pagina del ristorante prima di mettervi in strada."
+    "introP2": "La scheda larga sopra ogni griglia è uno spazio partner a pagamento ed è segnalata come pubblicità. Nient'altro in questa pagina è posizionamento pagato. Gli orari seguono la stagione ( in Lapponia \"chiuso per la stagione\" può voler dire mesi e non settimane ) quindi controlli la pagina del ristorante prima di mettersi in viaggio."
   },
   "fineDining": {
     "title": "Alta cucina in Lapponia e dintorni | LaplandDining",
@@ -159,7 +159,7 @@
     "heroBadge": "6 giugno → 7 luglio · 32 giorni",
     "heroH1Line1": "Un piatto all'aperto,",
     "heroH1Line2": "il sole sopra di Lei.",
-    "heroLead": "Per un mese, il sole non scende mai sotto l'orizzonte a nord del Circolo Polare. Le terrazze restano aperte. I fuochi di kota restano accesi. I ristoranti si spostano in silenzio verso una tavolozza estiva di lago e fiume e la Lapponia diventa la destinazione gastronomica estiva più sottovalutata d'Europa.",
+    "heroLead": "Per un mese, il sole non scende mai sotto l'orizzonte a nord del Circolo polare artico. Le terrazze restano aperte. I fuochi di kota restano accesi. I ristoranti si spostano in silenzio verso una tavolozza estiva di lago e fiume e la Lapponia diventa la destinazione gastronomica estiva più sottovalutata d'Europa.",
     "heroCtaWhere": "Dove mangiare sotto il sole di mezzanotte",
     "heroCtaStays": "Trova alloggi sole di mezzanotte",
     "whyKicker": "Cosa cambia",
@@ -373,11 +373,11 @@
     "description": "Come LaplandDining tratta i Suoi dati."
   },
   "terms": {
-    "title": "Termini di utilizzo | LaplandDining",
-    "description": "Termini di utilizzo di LaplandDining."
+    "title": "Termini di servizio | LaplandDining",
+    "description": "Termini di servizio di LaplandDining."
   },
   "cookie": {
-    "title": "Politica dei cookie | LaplandDining",
+    "title": "Informativa sui cookie | LaplandDining",
     "description": "Come LaplandDining utilizza i cookie."
   },
   "common": {

@@ -9,13 +9,13 @@
     "heroCtaFine": "Alta cocina en Laponia",
     "picksKicker": "Selección del equipo",
     "picksHeadline": "Empieza por estos seis",
-    "picksLead": "Alta cocina sami, fuegos de kota y cocinas en lo alto del monte. Seis lugares que nosotros reservaríamos primero.",
+    "picksLead": "Alta cocina sami, fuegos de kota y cocinas en lo alto del fjäll. Seis lugares que nosotros reservaríamos primero.",
     "picksCtaAll": "Ver los {{count}} restaurantes",
     "midnightKicker": "El verano de Laponia",
     "midnightHeadline1": "Cena a la 1 de la madrugada.",
     "midnightHeadline2": "El sol sigue en lo alto.",
     "midnightBadge": "6 jun → 7 jul",
-    "midnightBody": "Durante treinta y dos días, el sol no desciende por debajo del horizonte sobre el Círculo Polar Ártico. Terrazas a orillas del río en Rovaniemi, fuegos de kota en Saariselkä, el menú degustación con vistas al lago de Aanaar, todo se come bajo una luz dorada continua. La mitad más tranquila, y mejor, del año gastronómico de Laponia.",
+    "midnightBody": "Durante treinta y dos días, el sol no desciende por debajo del horizonte al norte del Círculo Polar Ártico. Terrazas a orillas del río en Rovaniemi, fuegos de kota en Saariselkä, el menú degustación con vistas al lago, en Aanaar, todo se come bajo una luz dorada continua. La mitad más tranquila, y mejor, del año gastronómico de Laponia.",
     "midnightCtaGuide": "Lea la guía del sol de medianoche",
     "midnightCtaStays": "Buscar alojamiento de verano",
     "cuisineHeadline": "Lo más destacado de la cocina",
@@ -31,7 +31,7 @@
       },
       {
         "title": "Ingredientes árticos",
-        "desc": "Hierbas silvestres, reno, pescado de lago, mora de los pantanos y setas recolectados en una naturaleza ártica intacta. Hiperlocal, de temporada y puro."
+        "desc": "Hierbas silvestres, reno, pescado de lago, mora ártica y hongos recolectados en una naturaleza ártica intacta. Hiperlocales, de temporada y puros."
       }
     ],
     "destinationsHeadline": "Buscar por destino",
@@ -42,7 +42,7 @@
     "stayKicker": "Alójese donde come",
     "stayHeadline": "Reserve un hotel cerca de la mesa de esta noche",
     "stayLead": "Las cenas en Laponia suelen alargarse y terminar lejos del centro. El plan más inteligente es alojarse a pocos pasos del restaurante y Trip.com ofrece la visión más clara de lo que de verdad hay disponible junto a cada kota, hotel de montaña y restaurante de hielo.",
-    "stayAffiliateNote": "Enlaces de afiliados, podemos recibir una comisión sin coste adicional para usted.",
+    "stayAffiliateNote": "Enlaces de afiliados, podemos recibir una comisión sin costo adicional para usted.",
     "stayAffiliateLink": "Por qué enlazamos así",
     "toursKicker": "Coma con un guía",
     "toursHeadline": "Rutas gastronómicas, clases de cocina y visitas a cervecerías",
@@ -63,23 +63,23 @@
       "items": [
         {
           "question": "¿Cuál es el restaurante más famoso de Laponia?",
-          "answer": "El Restaurant Aanaar, en Inari, es una de las salas de alta cocina mejor valoradas de Laponia, 4,8 en Google con más de 460 reseñas. Celebra la herencia gastronómica sami con menús degustación construidos en torno al pescado sacado esa misma mañana del lago Inari, hierbas silvestres recogidas a mano y reno de pastores locales."
+          "answer": "El Restaurant Aanaar, en Inari, es uno de los restaurantes de alta cocina mejor valorados de Laponia, 4,8 en Google con más de 460 reseñas. Celebra la herencia gastronómica sami con menús degustación construidos en torno al pescado sacado esa misma mañana del lago Inari, hierbas silvestres recogidas a mano y reno de pastores locales."
         },
         {
           "question": "¿Qué es el poronkäristys?",
-          "answer": "El poronkäristys es el plato más icónico de Laponia, virutas finas de reno salteadas en mantequilla, servidas con puré de patata y mermelada de arándano rojo. Sencillo, honesto y profundamente reconfortante, lo encontrará en todas partes, desde cafeterías de carretera hasta salas de alta cocina."
+          "answer": "El poronkäristys es el plato más icónico de Laponia, virutas finas de reno salteadas en mantequilla, servidas con puré de papa y mermelada de arándano rojo. Sencillo, honesto y profundamente reconfortante, lo encontrará en todas partes, desde cafeterías de carretera hasta salas de alta cocina."
         },
         {
           "question": "¿Qué es cenar en una kota?",
-          "answer": "La kota es la tienda tradicional sami con un fuego abierto en el centro. Restaurantes kota como Kammi, en Hullu Poro (Levi), le sientan sobre pieles de reno alrededor de las llamas mientras preparan ante usted salmón ahumado, salchichas de reno y caza a la parrilla, el menú cuesta unos 64 € por persona."
+          "answer": "La kota es la tienda tradicional sami con un fuego abierto en el centro. Restaurantes kota como Kammi, en Hullu Poro (Levi), lo sientan sobre pieles de reno alrededor de las llamas mientras preparan ante usted salmón ahumado, salchichas de reno y caza a la parrilla, el menú cuesta unos 64 € por persona."
         },
         {
           "question": "¿Cuándo es la mejor época para comer al aire libre en Laponia?",
-          "answer": "La ventana de sol de medianoche de 32 días, del 6 de junio al 7 de julio, cuando el sol nunca se pone al norte del Círculo Polar Ártico. Las terrazas abren hasta medianoche, los fuegos de kota siguen encendidos y las mesas junto al lago en Inari y Saariselkä se bañan en una luz dorada continua."
+          "answer": "La ventana de sol de medianoche de 32 días, del 6 de junio al 7 de julio, cuando el sol nunca se pone al norte del Círculo Polar Ártico. Las terrazas permanecen abiertas hasta la medianoche, los fuegos de kota siguen encendidos y las mesas junto al lago en Inari y Saariselkä se bañan en una luz dorada continua."
         },
         {
           "question": "¿Sobre qué ingredientes locales se construye la cocina de Laponia?",
-          "answer": "Renos en libertad, salvelino ártico y corégono de lagos como el Inari, arándanos azules y arándanos rojos silvestres, setas y hierbas recogidas a mano, y la mora de los pantanos, el \"oro del Ártico\", que madura en las turberas subárticas solo unas semanas en julio."
+          "answer": "Renos en libertad, salvelino ártico y corégono de lagos como el Inari, arándanos azules y arándanos rojos silvestres, hongos y hierbas recogidos a mano, y la mora de los pantanos, el \"oro del Ártico\", que madura en las turberas subárticas solo unas semanas en julio."
         }
       ]
     }
@@ -135,8 +135,8 @@
     "menuLabel": "Carta",
     "menuLabelPdf": "Carta (PDF)",
     "introTitle": "Cómo está organizada esta página",
-    "introP1": "Los restaurantes están agrupados por destino, no clasificados entre sí. Si una ciudad tiene una elección de la redacción, encabeza la cuadrícula con su propia marca; lo demás va sin orden concreto, así que lee las fichas y no las posiciones. Las valoraciones que se muestran son las de Google y enlazan a las reseñas de las que salen.",
-    "introP2": "La tarjeta ancha que hay sobre cada cuadrícula es un espacio de socio pagado y está señalada como publicidad. Nada más en esta página es colocación pagada. Los horarios cambian con la temporada ( en Laponia \"cerrado por temporada\" puede significar meses y no semanas ) así que consulta la página del propio restaurante antes de conducir hasta allí."
+    "introP1": "Los restaurantes están agrupados por destino, no clasificados entre sí. Si una ciudad tiene una elección de la redacción, encabeza la cuadrícula con su propia marca; lo demás va sin orden concreto, así que lea las fichas y no las posiciones. Las valoraciones que se muestran son las de Google y enlazan a las reseñas de las que salen.",
+    "introP2": "La tarjeta ancha que hay sobre cada cuadrícula es un espacio de socio pagado y está señalada como publicidad. Nada más en esta página es colocación pagada. Los horarios cambian con la temporada ( en Laponia \"cerrado por temporada\" puede significar meses y no semanas ) así que consulte la página del propio restaurante antes de manejar hasta allá."
   },
   "fineDining": {
     "title": "Alta cocina en Laponia y alrededores | LaplandDining",
@@ -221,7 +221,7 @@
           "La relación entre el pueblo sami y el reno se remonta mucho más atrás que el pastoreo. Pero el modelo de pastoreo tal como lo conocemos tomó forma en el siglo XIX, cuando sustituyó a la caza y la pesca como medio de vida principal en el este de Sápmi. La relación nunca ha sido solo carne, la piel, la cornamenta, los tendones y el hueso encontraban todos un uso.",
           "Hoy, Finlandia cuenta con unos 5.600 pastores de renos que gestionan cerca de 200.000 animales en 54 cooperativas de pastoreo. La zona de cría de renos abarca cerca de un tercio de Finlandia. La producción anual de carne ronda los 2 millones de kilogramos, y el sector vale aproximadamente 60 millones de euros al año.",
           "A diferencia de Noruega y Suecia, el pastoreo de renos en Finlandia no está reservado a los sami, cualquier ciudadano de la UE puede participar con los permisos adecuados. Pero el conocimiento, el vínculo con la tierra y las tradiciones que hacen que la carne de reno sepa como sabe vienen de siglos de cuidado sami.",
-          "El plato emblemático es el <strong>poronkäristys</strong>: virutas finas de reno salteadas en mantequilla, servidas con puré de patata y mermelada de arándano rojo. Sencillo, honesto, profundamente reconfortante. Lo encontrará en todos los restaurantes de Laponia, desde cafeterías de carretera hasta salas de alta cocina."
+          "El plato emblemático es el <strong>poronkäristys</strong>: virutas finas de reno salteadas en mantequilla, servidas con puré de papa y mermelada de arándano rojo. Sencillo, honesto, profundamente reconfortante. Lo encontrará en todos los restaurantes de Laponia, desde cafeterías de carretera hasta salas de alta cocina."
         ]
       },
       {
@@ -373,8 +373,8 @@
     "description": "Cómo trata LaplandDining sus datos."
   },
   "terms": {
-    "title": "Condiciones de uso | LaplandDining",
-    "description": "Condiciones de uso de LaplandDining."
+    "title": "Términos de servicio | LaplandDining",
+    "description": "Términos de servicio de LaplandDining."
   },
   "cookie": {
     "title": "Política de cookies | LaplandDining",

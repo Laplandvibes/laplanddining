@@ -3,7 +3,7 @@
     "title": "LaplandDining: Where to Eat in Finnish Lapland",
     "description": "Hand-picked restaurants across Finnish Lapland: kota fires, Sámi kitchens and fine dining in Rovaniemi, Levi and Inari, with review quotes and menu links.",
     "heroH1": "Discover Lapland's Best Restaurants",
-    "heroLead": "Real, hand-picked restaurants across Finnish Lapland, from traditional Sami fine dining to kota fire cooking and Arctic ingredients you won't find anywhere else.",
+    "heroLead": "Real, hand-picked restaurants across Finnish Lapland, from traditional Sámi fine dining to kota fire cooking and Arctic ingredients you won't find anywhere else.",
     "heroCtaExplore": "Explore All Restaurants",
     "heroCtaStay": "Stay near the food",
     "heroCtaFine": "Fine dining in Lapland",
@@ -15,7 +15,7 @@
     "midnightHeadline1": "Dinner at 1 a.m.",
     "midnightHeadline2": "The sun is still up.",
     "midnightBadge": "Jun 6 → Jul 7",
-    "midnightBody": "For thirty-two days, the sun never drops below the horizon above the Arctic Circle. Riverside terraces in Rovaniemi, kota fires in Saariselkä, Aanaar's lake-facing tasting menu, all eaten in continuous gold light. The quietest, best half of Lapland's food year.",
+    "midnightBody": "For thirty-two days north of the Arctic Circle, the sun never drops below the horizon. Riverside terraces in Rovaniemi, kota fires in Saariselkä, Aanaar's lake-facing tasting menu, all eaten in continuous gold light. The quietest, best half of Lapland's food year.",
     "midnightCtaGuide": "Read the midnight-sun guide",
     "midnightCtaStays": "Find summer stays",
     "cuisineHeadline": "Cuisine Highlights",
@@ -23,11 +23,11 @@
     "cuisineCards": [
       {
         "title": "Fine Dining",
-        "desc": "Award-winning tasting menus transforming Arctic ingredients into culinary art. From Sami traditions to Nordic innovation."
+        "desc": "Award-winning tasting menus transforming Arctic ingredients into culinary art. From Sámi traditions to Nordic innovation."
       },
       {
         "title": "Kota Experience",
-        "desc": "Dine inside a traditional Sami tent around an open fire. Flame-grilled salmon, reindeer, and game in an unforgettable atmosphere."
+        "desc": "Dine inside a traditional Sami tent around an open fire. Flame-grilled salmon, reindeer and game in an unforgettable atmosphere."
       },
       {
         "title": "Arctic Ingredients",
@@ -41,12 +41,12 @@
     "statsYear": "Updated this year",
     "stayKicker": "Stay where you eat",
     "stayHeadline": "Book a hotel near tonight's table",
-    "stayLead": "Lapland dinners often run late and end far from town. The smartest plan is a stay within walking distance of the restaurant and Trip.com gives you the cleanest view of what's actually available next to each kota, fell hotel and ice restaurant.",
-    "stayAffiliateNote": "Affiliate links, we may earn a commission at no extra cost to you.",
+    "stayLead": "Lapland dinners often run late and end far from town. The smartest plan is a stay within walking distance of the restaurant, and Trip.com gives you the cleanest view of what's actually available next to each kota, fell hotel and ice restaurant.",
+    "stayAffiliateNote": "Affiliate links — we may earn a commission at no extra cost to you.",
     "stayAffiliateLink": "Why we link this way",
     "toursKicker": "Eat with a guide",
     "toursHeadline": "Food tours, cooking classes & brewery visits",
-    "toursLead": "For travellers who want context with the meal, Sámi tasting walks, Lappish cooking classes, brewery dinners and salmon-cooking experiences. Booked through GetYourGuide with free cancellation up to 24 hours before.",
+    "toursLead": "For travellers who want context with the meal: Sámi tasting walks, Lappish cooking classes, brewery dinners and salmon-cooking experiences. Booked through GetYourGuide with free cancellation up to 24 hours before.",
     "tourLinks": [
       "Lapland food tours",
       "Cooking classes",
@@ -56,26 +56,26 @@
     "faq": {
       "eyebrow": "Common Questions",
       "headline": "Lapland Dining FAQ",
-      "lead": "The questions travellers ask most before booking a table in Lapland, the famous rooms, the signature dish, kota fires and eating under the midnight sun.",
+      "lead": "The questions travellers ask most before booking a table in Lapland: the famous rooms, the signature dish, kota fires and eating under the midnight sun.",
       "stillWonderingKicker": "Still wondering?",
       "stillWonderingBodyPrefix": "Email ",
       "stillWonderingBodySuffix": ", we usually answer same day.",
       "items": [
         {
           "question": "What is the most famous restaurant in Lapland?",
-          "answer": "Restaurant Aanaar in Inari is one of Lapland's highest-rated fine-dining rooms, 4.8 on Google across 460+ reviews. It celebrates Sami food heritage with tasting menus built around fish pulled from Lake Inari that morning, hand-picked wild herbs and reindeer from local herders."
+          "answer": "Restaurant Aanaar in Inari is one of Lapland's highest-rated fine-dining rooms, 4.8 on Google across 460+ reviews. It celebrates Sámi food heritage with tasting menus built around fish pulled from Lake Inari that morning, hand-picked wild herbs and reindeer from local herders."
         },
         {
           "question": "What is poronkäristys?",
-          "answer": "Poronkäristys is the most iconic Lappish dish, thin-shaved reindeer sautéed in butter, served with mashed potatoes and lingonberry jam. Simple, honest and deeply satisfying, you'll find it everywhere from roadside cafés to fine-dining rooms."
+          "answer": "Poronkäristys is the most iconic Lappish dish, thin-shaved reindeer sautéed in butter, served with mashed potatoes and lingonberry jam. Simple, honest and deeply satisfying — you'll find it everywhere from roadside cafés to fine-dining rooms."
         },
         {
           "question": "What is kota dining?",
-          "answer": "A kota is a traditional Sami tent with an open fire at its centre. Kota restaurants like Kammi at Hullu Poro in Levi seat you on reindeer furs around the flames while smoked salmon, reindeer sausages and grilled game are cooked in front of you, a set menu runs around €64 a head."
+          "answer": "A kota is a traditional Sámi tent with an open fire at its centre. Kota restaurants like Kammi at Hullu Poro in Levi seat you on reindeer furs around the flames while smoked salmon, reindeer sausages and grilled game are cooked in front of you; a set menu runs around €64 a head."
         },
         {
           "question": "When is the best time to dine outdoors in Lapland?",
-          "answer": "The 32-day midnight-sun window from June 6 to July 7, when the sun never sets above the Arctic Circle. Terraces stay open until midnight, kota fires stay lit, and lake-side tables in Inari and Saariselkä sit in continuous gold light."
+          "answer": "The 32-day midnight-sun window from 6 June to 7 July, when the sun never sets above the Arctic Circle. Terraces stay open until midnight, kota fires stay lit, and lake-side tables in Inari and Saariselkä sit in continuous gold light."
         },
         {
           "question": "What local ingredients is Lapland food built on?",
@@ -117,15 +117,15 @@
       "Kittilä": "Fell village beyond the Levi resort sprawl",
       "Inari": "Sámi heritage and the purest Arctic ingredients",
       "Saariselkä": "Wilderness dining under the Northern Lights",
-      "Kemi": "Where ice meets fire, unique seasonal experiences",
-      "Ylläs": "Fell village charm with authentic Lappish flavors",
+      "Kemi": "Where ice meets fire — unique seasonal experiences",
+      "Ylläs": "Fell village charm with authentic Lappish flavours",
       "Tornio": "Border town character and Finnish soul food",
       "Haparanda": "Cross the border for Swedish-Nordic fusion",
       "Sodankylä": "River town traditions and the Midnight Sun Film Festival crowd",
       "Pyhätunturi": "Fell-top dining at the southern gateway to wilderness",
       "Luosto": "Amethyst-mountain village with kelo log restaurants",
       "Muonio": "Aurora-belt highlands above the tree line",
-      "Hetta": "Enontekiö hub at the edge of three borders",
+      "Hetta": "Enontekiö, where three countries meet",
       "Kuusamo": "Ruka resort hub, just south of the Lapland border",
       "Kemijärvi": "Northernmost rail town with riverside tables",
       "Salla": "Wilderness pass + Finland's easternmost ski village",

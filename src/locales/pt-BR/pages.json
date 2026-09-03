@@ -9,13 +9,13 @@
     "heroCtaFine": "Alta gastronomia na Lapônia",
     "picksKicker": "Escolhas da redação",
     "picksHeadline": "Comece por estes seis",
-    "picksLead": "Alta gastronomia sámi, fogueiras de kota e cozinhas no alto das colinas. Seis lugares que nós reservaríamos primeiro.",
+    "picksLead": "Alta gastronomia sámi, fogueiras de kota e cozinhas no alto dos fjälls. Seis lugares que nós reservaríamos primeiro.",
     "picksCtaAll": "Ver todos os {{count}} restaurantes",
     "midnightKicker": "O verão da Lapônia",
     "midnightHeadline1": "Jantar à 1 da manhã.",
     "midnightHeadline2": "E o sol ainda no céu.",
     "midnightBadge": "6 jun → 7 jul",
-    "midnightBody": "Por trinta e dois dias, o sol não desce abaixo do horizonte acima do Círculo Polar Ártico. Terraços à beira-rio em Rovaniemi, fogos de kota em Saariselkä, o menu degustação com vista para o lago em Aanaar, tudo comido sob uma luz dourada ininterrupta. A metade mais silenciosa e melhor do ano gastronômico da Lapônia.",
+    "midnightBody": "Durante trinta e dois dias, o sol não desce abaixo do horizonte ao norte do Círculo Polar Ártico. Mesas ao ar livre à beira-rio em Rovaniemi, fogos de kota em Saariselkä, o menu degustação com vista para o lago em Aanaar, tudo saboreado sob uma luz dourada ininterrupta. A metade mais silenciosa e melhor do ano gastronômico da Lapônia.",
     "midnightCtaGuide": "Leia o guia do sol da meia-noite",
     "midnightCtaStays": "Encontrar hospedagem de verão",
     "cuisineHeadline": "Destaques da cozinha",
@@ -31,7 +31,7 @@
       },
       {
         "title": "Ingredientes árticos",
-        "desc": "Ervas silvestres, rena, peixe de lago, amora ártica e cogumelos colhidos na natureza ártica intocada. Hiperlocal, sazonal e puro."
+        "desc": "Ervas silvestres, rena, peixe de lago, amora ártica e cogumelos colhidos na natureza ártica intocada. Hiperlocais, sazonais e puros."
       }
     ],
     "destinationsHeadline": "Navegar por destino",
@@ -41,12 +41,12 @@
     "statsYear": "Atualizados neste ano",
     "stayKicker": "Hospede-se onde você come",
     "stayHeadline": "Reserve um hotel perto da mesa de hoje à noite",
-    "stayLead": "Os jantares na Lapônia frequentemente se estendem e terminam longe da cidade. O plano mais inteligente é uma hospedagem a poucos minutos a pé do restaurante e a Trip.com mostra de forma mais clara o que está realmente disponível ao lado de cada kota, hotel de montanha e restaurante de gelo.",
+    "stayLead": "Os jantares na Lapônia costumam se estender e terminar longe do centro. O mais inteligente é se hospedar a poucos minutos a pé do restaurante e a Trip.com mostra de forma mais clara o que está realmente disponível ao lado de cada kota, hotel de montanha e restaurante de gelo.",
     "stayAffiliateNote": "Links de afiliados, podemos receber comissão sem custo adicional para você.",
     "stayAffiliateLink": "Por que recomendamos assim",
     "toursKicker": "Coma com guia",
     "toursHeadline": "Tours gastronômicos, aulas de cozinha e visitas a cervejarias",
-    "toursLead": "Para viajantes que querem contexto junto com a refeição, caminhadas de degustação sámi, aulas de cozinha lapônica, jantares em cervejarias e experiências de preparo de salmão. Reservas pela GetYourGuide com cancelamento gratuito até 24 horas antes.",
+    "toursLead": "Para viajantes que querem contexto junto com a refeição, caminhadas de degustação sámi, aulas de cozinha lapônica, jantares em cervejarias e experiências de preparo de salmão. Reserve pela GetYourGuide com cancelamento gratuito até 24 horas antes.",
     "tourLinks": [
       "Tours gastronômicos na Lapônia",
       "Aulas de cozinha",
@@ -63,7 +63,7 @@
       "items": [
         {
           "question": "Qual é o restaurante mais famoso da Lapônia?",
-          "answer": "O Restaurant Aanaar, em Inari, é uma das casas de alta gastronomia mais bem avaliadas da Lapônia, 4,8 no Google com mais de 460 avaliações. Ele celebra a herança gastronômica sámi com menus degustação montados em torno do peixe tirado do lago Inari naquela mesma manhã, ervas silvestres colhidas à mão e rena de criadores locais."
+          "answer": "O Restaurant Aanaar, em Inari, é um dos restaurantes de alta gastronomia mais bem avaliados da Lapônia, 4,8 no Google com mais de 460 avaliações. Ele celebra a herança gastronômica sámi com menus degustação montados em torno do peixe tirado do lago Inari naquela mesma manhã, ervas silvestres colhidas à mão e rena de criadores locais."
         },
         {
           "question": "O que é poronkäristys?",
@@ -71,11 +71,11 @@
         },
         {
           "question": "O que é jantar em uma kota?",
-          "answer": "A kota é a tenda tradicional sámi com uma fogueira aberta no centro. Restaurantes kota como o Kammi, no Hullu Poro, em Levi, sentam você sobre peles de rena ao redor das chamas enquanto salmão defumado, linguiças de rena e caça grelhada são preparados na sua frente, o menu custa cerca de 64 € por pessoa."
+          "answer": "A kota é a tenda tradicional sámi com uma fogueira aberta no centro. Restaurantes kota como o Kammi, no Hullu Poro, em Levi, acomodam você em peles de rena ao redor das chamas enquanto salmão defumado, linguiças de rena e caça grelhada são preparados na sua frente, o cardápio fechado custa cerca de € 64 por pessoa."
         },
         {
           "question": "Qual é a melhor época para comer ao ar livre na Lapônia?",
-          "answer": "A janela de 32 dias do sol da meia-noite, de 6 de junho a 7 de julho, quando o sol nunca se põe ao norte do Círculo Polar Ártico. Os terraços ficam abertos até a meia-noite, os fogos de kota continuam acesos e as mesas à beira do lago em Inari e Saariselkä banham-se em uma luz dourada contínua."
+          "answer": "A janela de 32 dias do sol da meia-noite, de 6 de junho a 7 de julho, quando o sol nunca se põe ao norte do Círculo Polar Ártico. Os terraços ficam abertos até a meia-noite, os fogos de kota continuam acesos e as mesas à beira do lago em Inari e Saariselkä ficam banhadas em uma luz dourada contínua."
         },
         {
           "question": "Em quais ingredientes locais a cozinha da Lapônia se apoia?",
@@ -128,7 +128,7 @@
       "Hetta": "Polo de Enontekiö no encontro de três fronteiras",
       "Kuusamo": "Estação de Ruka, logo ao sul da Lapônia",
       "Kemijärvi": "A cidade ferroviária mais ao norte, com mesas à beira-rio",
-      "Salla": "Passagem natural e o vilarejo de esqui mais oriental da Finlândia",
+      "Salla": "Passagem selvagem e o vilarejo de esqui mais oriental da Finlândia",
       "Posio": "Coração de lagos e artesanato na região de Riisitunturi"
     },
     "editorsPick": "Escolha da redação",
@@ -260,7 +260,7 @@
     "ctaExplore": "Explore os restaurantes"
   },
   "localFood": {
-    "title": "Comida local da Lapônia: rena, frutas, peixe | LaplandDining",
+    "title": "Comida local da Lapônia: rena, frutas vermelhas, peixe | LaplandDining",
     "description": "O que “local” significa num cardápio da Lapônia: renas em liberdade, salvelino-ártico, amoras árticas, airelas-vermelhas, cogumelos e ervas silvestres, estação a estação.",
     "heroH1": "Comida e ingredientes locais",
     "heroLead": "Por que a Lapônia produz alguns dos alimentos mais limpos e nutritivos da Terra e como a produção de alimentos na Finlândia define o padrão de pureza.",

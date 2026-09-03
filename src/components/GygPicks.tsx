@@ -172,7 +172,7 @@ export default function GygPicks() {
 const CAT_LABEL: Record<string, Record<string, string>> = {
   'ski-snowboard-tc146':      { en: 'Ski & snowboard', fi: 'Hiihto ja lumilautailu' },
   'snow-winter-sports-tc113': { en: 'Snow & winter sports', fi: 'Talviurheilu' },
-  'food-drinks-tc103':        { en: 'Food & drinks', fi: 'Ruoka ja juoma' },
+  'food-drinks-tc103':        { en: '음식 & 음료', fi: 'Ruoka ja juoma' },
   'dinner-packages-tc100':    { en: 'Dinner packages', fi: 'Illalliskokonaisuudet' },
   'airport-transfers-tc153':  { en: 'Airport transfers', fi: 'Lentokenttäkuljetukset' },
   'transfers-tc152':          { en: 'Transfers', fi: 'Kuljetukset' },

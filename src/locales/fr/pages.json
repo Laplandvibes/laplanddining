@@ -3,7 +3,7 @@
     "title": "LaplandDining : où manger en Laponie finlandaise",
     "description": "Restaurants choisis avec soin en Laponie : feux de kota, cuisine sâme et gastronomie à Rovaniemi, Levi et Inari, avec avis réels et liens vers les menus.",
     "heroH1": "Découvrez les meilleurs restaurants de Laponie",
-    "heroLead": "Des restaurants réels, choisis avec soin à travers la Laponie finlandaise, de la haute gastronomie sâme traditionnelle à la cuisine au feu de kota et aux ingrédients arctiques introuvables ailleurs.",
+    "heroLead": "De vrais restaurants, choisis avec soin dans toute la Laponie finlandaise, de la haute gastronomie sami traditionnelle à la cuisine au feu de kota et aux ingrédients arctiques introuvables ailleurs.",
     "heroCtaExplore": "Voir tous les restaurants",
     "heroCtaStay": "Dormir près de la table",
     "heroCtaFine": "Gastronomie en Laponie",
@@ -15,7 +15,7 @@
     "midnightHeadline1": "Dîner à 1 h du matin.",
     "midnightHeadline2": "Le soleil est toujours là.",
     "midnightBadge": "6 juin → 7 juillet",
-    "midnightBody": "Pendant trente-deux jours, le soleil ne passe jamais sous l'horizon au nord du cercle polaire. Terrasses au bord du fleuve à Rovaniemi, feux de kota à Saariselkä, menu dégustation face au lac à Aanaar, tout cela se savoure dans une lumière dorée continue. La moitié la plus calme et la plus belle de l'année gastronomique lapone.",
+    "midnightBody": "Pendant trente-deux jours, le soleil ne passe jamais sous l'horizon au nord du cercle polaire arctique. Terrasses au bord du fleuve à Rovaniemi, feux de kota à Saariselkä, menu dégustation face au lac à Aanaar, tout cela se savoure dans une lumière dorée continue. La moitié la plus calme et la plus belle de l'année gastronomique lapone.",
     "midnightCtaGuide": "Lire le guide du soleil de minuit",
     "midnightCtaStays": "Trouver un hébergement d'été",
     "cuisineHeadline": "Les piliers de la cuisine lapone",
@@ -35,18 +35,18 @@
       }
     ],
     "destinationsHeadline": "Choisir par destination",
-    "destinationsLead": "Sélectionnez une ville et découvrez ce qui se trouve à table.",
+    "destinationsLead": "Choisissez une ville et découvrez ce qu'il y a au menu.",
     "statsVerified": "Restaurants sélectionnés",
     "statsDestinations": "Destinations",
     "statsYear": "Mis à jour cette année",
     "stayKicker": "Dormez là où vous mangez",
     "stayHeadline": "Réservez un hôtel près de la table du soir",
-    "stayLead": "Les dîners lapons s'étirent souvent tard et se terminent loin du centre. Le plus malin est de loger à distance de marche du restaurant et Trip.com vous donne l'image la plus fidèle de ce qui est réellement disponible à côté de chaque kota, hôtel de fjäll et restaurant de glace.",
+    "stayLead": "Les dîners lapons s'étirent souvent tard et se terminent loin du centre. Le plus judicieux est de loger à quelques minutes à pied du restaurant et Trip.com vous donne l'image la plus fidèle de ce qui est réellement disponible à côté de chaque kota, hôtel de fjäll et restaurant de glace.",
     "stayAffiliateNote": "Liens affiliés, nous pouvons percevoir une commission sans coût supplémentaire pour vous.",
     "stayAffiliateLink": "Pourquoi nous procédons ainsi",
     "toursKicker": "Manger avec un guide",
     "toursHeadline": "Visites gastronomiques, cours de cuisine et visites de brasseries",
-    "toursLead": "Pour les voyageurs qui veulent du contexte avec leur repas, promenades de dégustation sâme, cours de cuisine lapone, dîners brasserie et expériences de cuisson du saumon. Réservés via GetYourGuide avec annulation gratuite jusqu'à 24 h avant.",
+    "toursLead": "Pour les voyageurs qui veulent du contexte avec leur repas, promenades de dégustation sâme, cours de cuisine lapone, dîners brasserie et expériences de cuisson du saumon. Réservables via GetYourGuide, avec annulation gratuite jusqu'à 24 h avant.",
     "tourLinks": [
       "Visites gastronomiques en Laponie",
       "Cours de cuisine",
@@ -59,7 +59,7 @@
       "lead": "Les questions que les voyageurs posent le plus avant de réserver une table en Laponie, les adresses célèbres, le plat emblématique, les feux de kota et les dîners sous le soleil de minuit.",
       "stillWonderingKicker": "Encore une question ?",
       "stillWonderingBodyPrefix": "Écrivez à ",
-      "stillWonderingBodySuffix": ", nous répondons en général le jour même.",
+      "stillWonderingBodySuffix": "Une question ? Écrivez-nous, nous répondons en général le jour même.",
       "items": [
         {
           "question": "Quel est le restaurant le plus célèbre de Laponie ?",
@@ -75,7 +75,7 @@
         },
         {
           "question": "Quelle est la meilleure période pour dîner dehors en Laponie ?",
-          "answer": "La fenêtre de soleil de minuit de 32 jours, du 6 juin au 7 juillet, quand le soleil ne se couche jamais au nord du cercle polaire. Les terrasses restent ouvertes jusqu'à minuit, les feux de kota brûlent toujours et les tables au bord du lac, à Inari et Saariselkä, baignent dans une lumière dorée continue."
+          "answer": "La fenêtre de 32 jours du soleil de minuit, du 6 juin au 7 juillet, quand le soleil ne se couche jamais au nord du cercle polaire. Les terrasses restent ouvertes jusqu'à minuit, les feux de kota brûlent toujours et les tables au bord du lac, à Inari et Saariselkä, baignent dans une lumière dorée continue."
         },
         {
           "question": "Sur quels ingrédients locaux repose la cuisine lapone ?",
@@ -116,7 +116,7 @@
       "Levi": "Repas au coin du feu après une journée sur les fjälls",
       "Kittilä": "Village de fjäll au-delà du domaine de Levi",
       "Inari": "Patrimoine sâme et ingrédients arctiques les plus purs",
-      "Saariselkä": "Restauration sauvage sous les aurores boréales",
+      "Saariselkä": "Dîner en pleine nature sous les aurores boréales",
       "Kemi": "Là où la glace rencontre le feu, expériences saisonnières uniques",
       "Ylläs": "Charme de village de fjäll et saveurs lapones authentiques",
       "Tornio": "Caractère de ville-frontière et cuisine réconfortante finlandaise",
@@ -136,7 +136,7 @@
     "menuLabelPdf": "Carte (PDF)",
     "introTitle": "Comment cette page est organisée",
     "introP1": "Les restaurants sont regroupés par destination, pas classés les uns contre les autres. Quand une ville a un choix de la rédaction, il ouvre la grille avec sa propre mention ; tout ce qui suit vient sans ordre particulier, lisez donc les fiches et non les positions. Les notes affichées sont celles de Google et renvoient aux avis dont elles proviennent.",
-    "introP2": "Le grand encart au-dessus de chaque grille est un emplacement partenaire payant, signalé comme publicité. Rien d’autre sur cette page n’est un placement payé. Les horaires suivent la saison, en Laponie, « fermé pour la saison » peut vouloir dire des mois et non des semaines, vérifiez donc la page du restaurant avant de prendre la route."
+    "introP2": "Le grand encart au-dessus de chaque grille est un emplacement partenaire payant, signalé comme publicité. Rien d'autre sur cette page n'est un placement payé. Les horaires suivent la saison (en Laponie, « fermé pour la saison » peut vouloir dire des mois et non des semaines, vérifiez donc la page du restaurant avant de prendre la route."
   },
   "fineDining": {
     "title": "Haute gastronomie en Laponie et alentours | LaplandDining",
@@ -377,7 +377,7 @@
     "description": "Conditions d'utilisation de LaplandDining."
   },
   "cookie": {
-    "title": "Politique de cookies | LaplandDining",
+    "title": "Politique des cookies | LaplandDining",
     "description": "Comment LaplandDining utilise les cookies."
   },
   "common": {
