@@ -302,7 +302,7 @@ const LOCALE_DICTS: Record<SupportedLang, Required<NewsletterPopupDict>> = {
     later: 'Quizá más tarde',
     closeAria: 'Cerrar',
     closeLabel: 'Cerrar',
-    trust: 'Solo cuando hay algo que merezca la pena. Cancele cuando quiera. Nunca compartimos su correo.',
+    trust: 'Solo cuando hay algo que valga la pena. Cancele cuando quiera. Nunca compartimos su correo.',
     errorGeneric: 'Suscripción fallida. Inténtelo de nuevo.',
     socialLead: 'Mientras tanto, mis publicaciones desde Laponia:',
     founderAlt: 'Vesa, fundador de LaplandVibes',

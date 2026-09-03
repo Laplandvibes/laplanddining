@@ -715,7 +715,7 @@ export default function CookieContent({
       gyg: 'Widgets do GetYourGuide, rastreiam interações com os widgets e atribuem reservas ao site',
     },
     'zh-CN': {
-      consent: '保存您的 Cookie 同意偏好(已接受/已拒绝)',
+      consent: '保存您的 Cookie 同意偏好（已接受/已拒绝）',
       popup: '记住您是否关闭或订阅了电子简报弹窗，以避免重复显示',
       gaUser: 'Google Analytics，区分独立用户',
       gaSession: 'Google Analytics，维护会话状态',

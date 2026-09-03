@@ -339,7 +339,7 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '（Cloudflare Inc.、米国）：EU–US Data Privacy Framework と標準契約条項（SCC）の対象。' },
       { strong: 'Resend', body: '（Resend Inc.、米国）：標準契約条項（SCC）の対象。' },
       { strong: 'Supabase', body: '（Supabase Inc.、米国、EU リージョン利用可能）：標準契約条項（SCC）の対象。' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB（スウェーデン、EU）、Daisycon B.V.（オランダ、EU）、Travelpayouts と Trip.com（国際）):EU/EEA 域外への移転は標準契約条項（SCC）の対象です。' },
+      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB（スウェーデン、EU）、Daisycon B.V.（オランダ、EU）、Travelpayouts と Trip.com（国際））:EU/EEA 域外への移転は標準契約条項（SCC）の対象です。' },
       { strong: 'GetYourGuide', body: '（GetYourGuide GmbH, ドイツ）：EEA 内。' },
     ],
     s8aTail: 'いずれの場合も、移転は欧州委員会の十分性決定、EU–US Data Privacy Framework、または欧州委員会承認の標準契約条項によって保護されています。関連する保護措置のコピーは、お問い合わせにより提供可能です。',
