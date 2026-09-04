@@ -3,7 +3,7 @@
     "title": "LaplandDining: waar u eet in Fins Lapland",
     "description": "Zorgvuldig gekozen restaurants in Fins Lapland: kotavuren, Samische keuken en fine dining in Rovaniemi, Levi en Inari, met echte citaten en menulinks.",
     "heroH1": "Ontdek Laplands beste restaurants",
-    "heroLead": "Echte, zorgvuldig geselecteerde restaurants in heel Fins Lapland, van traditionele Samische fine dining tot kota-vuurkeuken en Arctische ingrediënten die u nergens anders vindt.",
+    "heroLead": "Echte, zorgvuldig geselecteerde restaurants in heel Fins Lapland, van traditionele Samische fine dining tot kota-vuurkeuken en arctische ingrediënten die u nergens anders vindt.",
     "heroCtaExplore": "Bekijk alle restaurants",
     "heroCtaStay": "Slaap dicht bij het eten",
     "heroCtaFine": "Fine dining in Lapland",
@@ -31,7 +31,7 @@
       },
       {
         "title": "Arctische ingrediënten",
-        "desc": "Wilde kruiden, rendier, meervis, kruipbramen en paddenstoelen, geplukt uit ongerepte Arctische wildernis. Hyperlokaal, seizoensgebonden en puur."
+        "desc": "Wilde kruiden, rendier, zoetwatervis, kruipbramen en paddenstoelen, geplukt uit ongerepte Arctische wildernis. Hyperlokaal, seizoensgebonden en puur."
       }
     ],
     "destinationsHeadline": "Blader op bestemming",
@@ -41,12 +41,12 @@
     "statsYear": "Dit jaar bijgewerkt",
     "stayKicker": "Slaap waar u eet",
     "stayHeadline": "Boek een hotel dicht bij de tafel van vanavond",
-    "stayLead": "Diners in Lapland lopen vaak laat door en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het duidelijkste overzicht van wat er echt beschikbaar is naast elke kota, fjäll-hotel en ijsrestaurant.",
+    "stayLead": "Diners in Lapland lopen vaak uit en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het duidelijkste overzicht van wat er echt beschikbaar is naast elke kota, elk fjäll-hotel en elk ijsrestaurant.",
     "stayAffiliateNote": "Affiliate-links, we kunnen een commissie verdienen zonder extra kosten voor u.",
     "stayAffiliateLink": "Waarom we het zo doen",
     "toursKicker": "Eet met een gids",
     "toursHeadline": "Foodtours, kookcursussen en brouwerijbezoeken",
-    "toursLead": "Voor reizigers die context bij de maaltijd willen, Samische proefwandelingen, Laplandse kookcursussen, brouwerijdiners en zalmkook-belevingen. Geboekt via GetYourGuide met gratis annulering tot 24 uur van tevoren.",
+    "toursLead": "Voor reizigers die context bij de maaltijd willen: Samische proefwandelingen, Laplandse kookcursussen, brouwerijdiners en zalmkookworkshops. Geboekt via GetYourGuide met gratis annulering tot 24 uur van tevoren.",
     "tourLinks": [
       "Laplandse foodtours",
       "Kookcursussen",
@@ -56,18 +56,18 @@
     "faq": {
       "eyebrow": "Veelgestelde vragen",
       "headline": "Lapland dining-FAQ",
-      "lead": "De vragen die reizigers het vaakst stellen voordat ze in Lapland een tafel boeken, de beroemde zaken, het signatuurgerecht, kota-vuren en eten onder de middernachtzon.",
+      "lead": "De vragen die reizigers het vaakst stellen voordat ze in Lapland een tafel boeken, de beroemde adressen, het signatuurgerecht, kota-vuren en eten onder de middernachtzon.",
       "stillWonderingKicker": "Nog vragen?",
       "stillWonderingBodyPrefix": "Mail ",
       "stillWonderingBodySuffix": ", we antwoorden meestal dezelfde dag.",
       "items": [
         {
           "question": "Wat is het beroemdste restaurant van Lapland?",
-          "answer": "Restaurant Aanaar in Inari is een van de best beoordeelde fine-diningzalen van Lapland, 4,8 op Google met ruim 460 reviews. Het eert het Samische culinaire erfgoed met proefmenu's rond vis die diezelfde ochtend uit het Inarimeer is gehaald, handgeplukte wilde kruiden en rendier van lokale herders."
+          "answer": "Restaurant Aanaar in Inari is een van de best beoordeelde fine-diningrestaurants van Lapland, 4,8 op Google met ruim 460 reviews. Het eert het Samische culinaire erfgoed met proefmenu's rond vis die diezelfde ochtend uit het Inarimeer is gehaald, handgeplukte wilde kruiden en rendier van lokale rendierhouders."
         },
         {
           "question": "Wat is poronkäristys?",
-          "answer": "Poronkäristys is het meest iconische gerecht van Lapland, flinterdun geschaafd rendier gebakken in boter, geserveerd met aardappelpuree en vossenbessenjam. Eenvoudig, eerlijk en diep bevredigend, u vindt het overal, van wegcafé tot fine-diningzaal."
+          "answer": "Poronkäristys is het meest iconische gerecht van Lapland, flinterdun geschaafd rendier gebakken in boter, geserveerd met aardappelpuree en vossenbessenjam. Eenvoudig, eerlijk en bijzonder smakelijk. U vindt het overal, van wegrestaurant tot sterrenrestaurant."
         },
         {
           "question": "Wat is dineren in een kota?",
@@ -75,11 +75,11 @@
         },
         {
           "question": "Wanneer eet u in Lapland het best buiten?",
-          "answer": "In het 32-daagse middernachtzonvenster van 6 juni tot 7 juli, wanneer de zon boven de Poolcirkel nooit ondergaat. Terrassen blijven tot middernacht open, kota-vuren blijven branden en de tafels aan het meer in Inari en Saariselkä baden in onafgebroken gouden licht."
+          "answer": "In de 32 dagen met middernachtzon van 6 juni tot 7 juli, wanneer de zon boven de Poolcirkel nooit ondergaat. Terrassen blijven tot middernacht open, kota-vuren blijven branden en de tafels aan het meer in Inari en Saariselkä baden in onafgebroken gouden licht."
         },
         {
           "question": "Op welke lokale ingrediënten is de Laplandse keuken gebouwd?",
-          "answer": "Vrij grazende rendieren, Arctische zalmforel en marene uit meren als het Inarimeer, wilde blauwe bosbessen en vossenbessen, met de hand geplukte paddenstoelen en kruiden, en de kruipbraam, het \"goud van het Arctische gebied\", die maar een paar weken in juli rijpt op subarctische venen."
+          "answer": "Vrij grazende rendieren, Arctische zalmforel en marene uit meren als het Inarimeer, wilde blauwe bosbessen en vossenbessen, met de hand geplukte paddenstoelen en kruiden, en de kruipbraam, het ‘goud van de Arctis’, die maar een paar weken in juli rijpt op subarctische venen."
         }
       ]
     }
@@ -110,25 +110,25 @@
     "stayInTemplate": "Verblijf in {{city}}",
     "bottomHeadlineTemplate": "Geselecteerd uit {{count}} echte restaurants",
     "bottomLead": "Catalogus uit Google Places (rating × aantal reviews, fastfoodketens uitgesloten), vervolgens redactioneel één toppick per stad gekozen. Elk citaat op deze pagina komt uit een echte Google-review. Bijgewerkt op {{date}}.",
-    "bottomPartner": "Bent u restauranteigenaar? Vermeldingen van uitgelichte partners krijgen redactionele tekst, menu-uitlichtingen en een upgrade-kaart.",
+    "bottomPartner": "Bent u restauranteigenaar? Vermeldingen van uitgelichte partners krijgen redactionele tekst, menuhoogtepunten en een opgewaardeerde kaart.",
     "cityVibes": {
       "Rovaniemi": "Hoofdstad van Lapland, waar Arctische cultuur culinaire ambitie ontmoet",
-      "Levi": "Diner aan het vuur na een dag op de fjälls",
+      "Levi": "Diner aan het vuur na een dag op de fjällen",
       "Kittilä": "Fjäll-dorp voorbij de resortzone van Levi",
       "Inari": "Samisch erfgoed en de zuiverste Arctische ingrediënten",
       "Saariselkä": "Wildernisdineren onder het noorderlicht",
       "Kemi": "Waar ijs vuur ontmoet, unieke seizoenservaringen",
       "Ylläs": "Fjäll-dorpscharme met authentieke Laplandse smaken",
-      "Tornio": "Karakter van een grensstad en Finse comfortfood",
+      "Tornio": "Karakter van een grensstad en Finse huiskost",
       "Haparanda": "Steek de grens over voor Zweeds-Noordse fusion",
       "Sodankylä": "Riviertraditie en het publiek van het Midnight Sun Film Festival",
       "Pyhätunturi": "Dineren op de fjälltop aan de zuidelijke poort van de wildernis",
       "Luosto": "Amethist-bergdorp met restaurants van kelo-hout",
       "Muonio": "Hooglanden in de noorderlichtgordel, boven de boomgrens",
-      "Hetta": "Enontekiö-knooppunt aan de rand van drie grenzen",
+      "Hetta": "Het centrum van Enontekiö, waar drie landsgrenzen samenkomen",
       "Kuusamo": "Resort Ruka, net ten zuiden van Lapland",
-      "Kemijärvi": "Noordelijkste spoorstad met tafels aan de rivier",
-      "Salla": "Wilde bergpas + Finlands oostelijkste skidorp",
+      "Kemijärvi": "Noordelijkste spoorwegstad met tafels aan de rivier",
+      "Salla": "Poort naar de wildernis + Finlands oostelijkste skidorp",
       "Posio": "Hart van meren en ambacht in Riisitunturi"
     },
     "editorsPick": "Keuze van de redactie",
@@ -136,7 +136,7 @@
     "menuLabelPdf": "Menukaart (PDF)",
     "introTitle": "Hoe deze pagina is ingedeeld",
     "introP1": "De restaurants staan gegroepeerd per bestemming, niet tegen elkaar afgezet. Heeft een plaats een redactiekeuze, dan staat die vooraan in het raster met een eigen label; alles daarna volgt zonder volgorde, dus lees de kaarten en niet de posities. De getoonde beoordelingen zijn die van Google en linken terug naar de recensies waar ze vandaan komen.",
-    "introP2": "De brede kaart boven elk raster is een betaalde partnerplek en is als advertentie aangeduid. Verder is niets op deze pagina betaalde plaatsing. Openingstijden bewegen mee met het seizoen, in Lapland kan \"gesloten buiten het seizoen\" maanden betekenen in plaats van weken, dus kijk op de eigen pagina van het restaurant voordat u erheen rijdt."
+    "introP2": "De brede kaart boven elk raster is een betaalde partnerplek en is als advertentie aangeduid. Verder bevat deze pagina geen betaalde plaatsingen. Openingstijden bewegen mee met het seizoen: in Lapland kan ‘gesloten buiten het seizoen’ maanden betekenen in plaats van weken, dus kijk op de eigen pagina van het restaurant voordat u erheen rijdt."
   },
   "fineDining": {
     "title": "Fine dining in en rond Lapland | LaplandDining",
@@ -236,7 +236,7 @@
         "title": "De bosbodem",
         "paragraphs": [
           "Loop in de nazomer door een Laplands bos en u loopt door een supermarkt. Blauwe bosbessen, vossenbessen, kruipbramen en duindoorn groeien wild. Cantharellen, eekhoorntjesbrood en de gewaardeerde matsutake duwen door het mos omhoog. Wilde kruiden als engelwortel, moerasspirea en Arctische tijm vullen de lucht met hun geur.",
-          "De kruipbraam heeft een bijzondere plaats. In het Fins <strong>lakka</strong> genoemd, groeit hij alleen in Arctische en subarctische venen, rijpt een paar weken in juli en is commercieel niet te telen. De amberkleur, honingzoetheid en zeldzaamheid maken er het \"goud van het Arctische gebied\" van. U vindt het in desserts, likeuren en als garnering in vrijwel elk fine-diningrestaurant in Lapland.",
+          "De kruipbraam heeft een bijzondere plaats. In het Fins <strong>lakka</strong> genoemd, groeit hij alleen in Arctische en subarctische venen, rijpt een paar weken in juli en is commercieel niet te telen. De amberkleur, honingzoetheid en zeldzaamheid maken er het ‘goud van de Arctis’ van. U vindt het in desserts, likeuren en als garnering in vrijwel elk fine-diningrestaurant in Lapland.",
           "Wat deze ingrediënten zo bijzonder maakt is niet alleen hun smaak, het is hun omgeving. Arctische omstandigheden, 24-uurs zomerlicht, schone lucht en sommige van 's werelds zuiverste waters leveren bessen met hogere concentraties vitamines, antioxidanten en flavonoïden dan hun zuidelijke verwanten."
         ]
       },

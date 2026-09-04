@@ -15,7 +15,7 @@
     "midnightHeadline1": "Middag klockan ett på natten",
     "midnightHeadline2": "Solen är fortfarande uppe.",
     "midnightBadge": "6 juni → 7 juli",
-    "midnightBody": "I trettiotvå dagar sjunker solen aldrig under horisonten norr om polcirkeln. Terrasser vid älven i Rovaniemi, kåtaeldar i Saariselkä, Aanaars avsmakningsmeny mot sjön – allt äts i oavbrutet gyllene ljus. Den lugnaste och bästa halvan av Lapplands matår.",
+    "midnightBody": "I 32 dagar sjunker solen aldrig under horisonten norr om polcirkeln. Terrasser vid älven i Rovaniemi, kåtaeldar i Saariselkä, Aanaars avsmakningsmeny med utsikt över sjön – allt äts i oavbrutet gyllene ljus. Den lugnaste och bästa halvan av Lapplands matår.",
     "midnightCtaGuide": "Läs guiden till midnattssolen",
     "midnightCtaStays": "Hitta sommarboenden",
     "cuisineHeadline": "Höjdpunkter i köket",
@@ -41,12 +41,12 @@
     "statsYear": "Uppdaterad i år",
     "stayKicker": "Bo där du äter",
     "stayHeadline": "Boka ett hotell nära kvällens bord",
-    "stayLead": "Middagar i Lappland drar ofta ut på tiden och slutar långt från stan. Det smartaste är ett boende inom gångavstånd från restaurangen, och Trip.com ger dig den tydligaste överblicken över vad som faktiskt finns ledigt intill varje kåta, fjällhotell och isrestaurang.",
+    "stayLead": "Middagar i Lappland drar ofta ut på tiden och slutar långt från stan. Det smartaste är ett boende på gångavstånd från restaurangen, och Trip.com ger dig den tydligaste överblicken över vad som faktiskt finns ledigt intill varje kåta, fjällhotell och isrestaurang.",
     "stayAffiliateNote": "Affiliatelänkar – vi kan få provision utan att det kostar dig något extra.",
     "stayAffiliateLink": "Varför vi länkar så här",
     "toursKicker": "Ät med en guide",
     "toursHeadline": "Matturer, matlagningskurser & bryggeribesök",
-    "toursLead": "För dig som vill ha sammanhang till måltiden – samiska smakvandringar, lapska matlagningskurser, bryggerimiddagar och laxlagningsupplevelser. Bokas via GetYourGuide med fri avbokning fram till 24 timmar innan.",
+    "toursLead": "För dig som vill ha sammanhang till måltiden – samiska smakvandringar, lappländska matlagningskurser, bryggerimiddagar och laxupplevelser. Bokas via GetYourGuide med fri avbokning fram till 24 timmar innan.",
     "tourLinks": [
       "Matturer i Lappland",
       "Matlagningskurser",
@@ -63,23 +63,23 @@
       "items": [
         {
           "question": "Vilken är den mest kända restaurangen i Lappland?",
-          "answer": "Restaurant Aanaar i Inari är en av Lapplands högst rankade fine dining-salar – 4,8 på Google över 460+ recensioner. Den hyllar det samiska matarvet med avsmakningsmenyer byggda kring fisk som dragits upp ur Enare träsk samma morgon, handplockade vilda örter och ren från lokala renskötare."
+          "answer": "Restaurant Aanaar i Inari är en av Lapplands högst rankade fine dining-restauranger – 4,8 på Google baserat på över 460 recensioner. Den hyllar det samiska matarvet med avsmakningsmenyer byggda kring fisk som dragits upp ur Enare träsk samma morgon, handplockade vilda örter och ren från lokala renskötare."
         },
         {
           "question": "Vad är poronkäristys?",
-          "answer": "Poronkäristys är Lapplands mest ikoniska rätt – tunt skavd ren som fräses i smör och serveras med potatismos och lingonsylt. Enkelt, ärligt och djupt mättande. Du hittar den överallt, från vägkrogar till fine dining-salar."
+          "answer": "Poronkäristys är Lapplands mest ikoniska rätt – tunt skavd ren som fräses i smör och serveras med potatismos och lingonsylt. Enkelt, ärligt och djupt tillfredsställande. Du hittar den överallt, från vägkrogar till fine dining-salar."
         },
         {
           "question": "Vad är en kåtamiddag?",
-          "answer": "En kåta är ett traditionellt samiskt tält med öppen eld i mitten. Kåtarestauranger som Kammi på Hullu Poro i Levi sätter dig på renfällar runt lågorna medan rökt lax, renkorv och grillat vilt tillagas framför dig – en fast meny kostar runt 64 € per person."
+          "answer": "En kåta är ett traditionellt samiskt tält med öppen eld i mitten. Kåtarestauranger som Kammi på Hullu Poro i Levi här sitter du på renfällar runt elden medan rökt lax, renkorv och grillat vilt tillagas framför dig – en fast meny kostar runt 64 € per person."
         },
         {
           "question": "När är bästa tiden att äta utomhus i Lappland?",
-          "answer": "Under det 32 dagar långa midnattssolsfönstret från 6 juni till 7 juli, när solen aldrig går ner norr om polcirkeln. Terrasserna håller öppet till midnatt, kåtaeldarna hålls tända och borden vid sjön i Inari och Saariselkä ligger i oavbrutet gyllene ljus."
+          "answer": "Under de 32 dagarna med midnattssol från 6 juni till 7 juli, när solen aldrig går ner norr om polcirkeln. Terrasserna håller öppet till midnatt, kåtaeldarna hålls tända och borden vid sjön i Inari och Saariselkä ligger i oavbrutet gyllene ljus."
         },
         {
           "question": "Vilka lokala råvaror bygger Lapplands mat på?",
-          "answer": "Frigående ren, röding och sik från sjöar som Enare träsk, vilda blåbär och lingon, handplockad svamp och örter, och hjortronet – 'Arktis guld' – som mognar på subarktiska myrar bara några veckor i juli."
+          "answer": "Frigående ren, röding och sik från sjöar som Enare träsk, vilda blåbär och lingon, handplockad svamp och örter, och hjortronet – ”Arktis guld” – som mognar på subarktiska myrar bara några veckor i juli."
         }
       ]
     }
@@ -110,33 +110,33 @@
     "stayInTemplate": "Bo i {{city}}",
     "bottomHeadlineTemplate": "Kurerat från {{count}} riktiga restauranger",
     "bottomLead": "Katalogen är hämtad från Google Places (betyg × antal recensioner, snabbmatskedjor borträknade) och sedan redaktionellt topp-1-utvald per stad. Varje citat på den här sidan kommer från en riktig Google-recension. Uppdaterad {{date}}.",
-    "bottomPartner": "Är du restaurangägare? Listningar som Utvald partner får handkurerad text, menyhöjdpunkter och ett uppgraderat kort.",
+    "bottomPartner": "Är du restaurangägare? Annonser märkta Utvald partner får redaktionell text, menytips och ett uppgraderat kort.",
     "cityVibes": {
       "Rovaniemi": "Lapplands huvudstad, där arktisk kultur möter kulinarisk ambition",
       "Levi": "Middag vid elden efter en dag på fjället",
-      "Kittilä": "Fjällby bortom Levis vidsträckta anläggning",
+      "Kittilä": "Fjällby en bit utanför Levis stora skidanläggning",
       "Inari": "Samiskt arv och de renaste arktiska råvarorna",
       "Saariselkä": "Vildmarksmiddag under norrskenet",
       "Kemi": "Där is möter eld – unika säsongsupplevelser",
       "Ylläs": "Fjällbycharm med äkta lapska smaker",
       "Tornio": "Gränsstadskaraktär och finsk husmanskost",
-      "Haparanda": "Gå över gränsen för svensk-nordisk fusion",
+      "Haparanda": "Ta steget över gränsen till svensk-nordiskt fusionskök",
       "Sodankylä": "Älvstadstraditioner och publiken från Midnight Sun Film Festival",
       "Pyhätunturi": "Middag på fjälltopp vid den södra porten till vildmarken",
       "Luosto": "Ametistbergsby med restauranger i kelotimmer",
       "Muonio": "Norrskensbältets höglänta trakter ovanför trädgränsen",
-      "Hetta": "Enontekiös nav vid mötet mellan tre gränser",
-      "Kuusamo": "Rukaanläggningen, strax söder om Lapplands gräns",
+      "Hetta": "Enontekiös centrum där tre riksgränser möts",
+      "Kuusamo": "Ruka-anläggningen, strax söder om Lapplands gräns",
       "Kemijärvi": "Nordligaste järnvägsstaden med bord vid älven",
-      "Salla": "Vildmarkspass + Finlands östligaste skidby",
+      "Salla": "Porten till vildmarken + Finlands östligaste skidby",
       "Posio": "Sjö- och hantverkshjärtat i Riisitunturitrakten"
     },
     "editorsPick": "Redaktionens val",
     "menuLabel": "Meny",
     "menuLabelPdf": "Meny (PDF)",
     "introTitle": "Så är sidan ordnad",
-    "introP1": "Restaurangerna är grupperade efter destination, inte rangordnade mot varandra. Har en ort ett redaktionellt val ligger det först i rutnätet med en egen markering; därefter kommer de övriga utan inbördes ordning, så läs korten och inte placeringarna. Betygen som visas är Googles egna och länkar tillbaka till de recensioner de kommer från.",
-    "introP2": "Det breda kortet ovanför varje ortsrutnät är en betald partnerplats och är märkt som annons. Ingen annan placering på sidan är betald. Öppettiderna följer säsongen (i Lappland kan \"stängt för säsongen\" betyda månader snarare än veckor) så kolla restaurangens egen sida innan du kör dit."
+    "introP1": "Restaurangerna är grupperade efter destination, inte rangordnade mot varandra. Har en ort en redaktionsfavorit, ligger den först i rutnätet med en egen markering; därefter kommer de övriga utan inbördes ordning, så läs korten och inte placeringarna. Betygen som visas är Googles egna och länkar tillbaka till de recensioner de kommer från.",
+    "introP2": "Det breda kortet ovanför varje ortsrutnät är en betald partnerplats och är märkt som annons. Ingen annan placering på sidan är betald. Öppettiderna följer säsongen (i Lappland kan ”stängt för säsongen” betyda månader snarare än veckor) så kolla restaurangens egen sida innan du kör dit."
   },
   "fineDining": {
     "title": "Fine dining i och kring Lappland | LaplandDining",

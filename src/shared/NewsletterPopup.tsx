@@ -392,7 +392,7 @@ const LOCALE_DICTS: Record<SupportedLang, Required<NewsletterPopupDict>> = {
     later: 'Forse più tardi',
     closeAria: 'Chiudi',
     closeLabel: 'Chiudi',
-    trust: 'Solo quando c\'è qualcosa che vale davvero. Disiscrizione in qualsiasi momento. Non condividiamo mai il Suo indirizzo e-mail.',
+    trust: 'Solo quando c\'è qualcosa che vale davvero. Annulla iscrizione in qualsiasi momento. Non condividiamo mai il Suo indirizzo e-mail.',
     errorGeneric: 'Iscrizione fallita. Riprovi.',
     socialLead: 'Nel frattempo, i miei post dalla Lapponia:',
     founderAlt: 'Vesa, fondatore di LaplandVibes',

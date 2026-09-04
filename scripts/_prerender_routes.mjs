@@ -576,7 +576,7 @@ function routeUrl(route, loc) {
 // Fail-open everywhere: any parse problem yields fewer paragraphs, never a
 // broken build. Routes may opt into extra source blocks via routes.json
 // "harvestKeys": ["hero", "intro"] when their own copy block is meta-only.
-const HARVEST_SKIP_KEY_RE = /(aria|alt$|alt[A-Z]|cta|button|label|placeholder|img|image|icon|logo|photo|src|href|url|link|badge|eyebrow|kicker|watching|scroll|consent|cookie[A-Z]|menu|^nav$|nav[A-Z]|search|lang|switch|toggle|price|amount|date|meta[A-Z]|seo)/i;
+const HARVEST_SKIP_KEY_RE = /(pre$|post$|suffix|prefix|aria|alt$|alt[A-Z]|cta|button|label|placeholder|img|image|icon|logo|photo|src|href|url|link|badge|eyebrow|kicker|watching|scroll|consent|cookie[A-Z]|menu|^nav$|nav[A-Z]|search|lang|switch|toggle|price|amount|date|meta[A-Z]|seo)/i;
 
 function harvestKeep(value, meta, seen) {
   if (typeof value !== 'string') return null;
@@ -626,6 +626,31 @@ function harvestFromTsBlock(block, out, meta, seen, budget) {
   // `pages.destinations` block yielded ZERO strings while the same content in
   // an unquoted file yielded thousands of words. The build looked healthy
   // ("harvest: 48 pages with body copy"), just with most routes silently empty.
+  // [LV-FAQ-PAIR 2026-09-04] Short FAQ questions ("Onko Lapissa yöelämää
+  // kesällä?" = 30 chars, every zh-CN question < 18 chars) fell under
+  // harvestKeep's minimum length and were dropped while their answers were
+  // kept, so the crawlable body showed orphaned answers (laplandnightlife /fi/
+  // and /cn/, measured 2026-09-04). Harvest faqNQ + faqNA as ONE string first,
+  // then mark both raw values seen so the generic loop below skips them.
+  const faqRe = /["']?faq(\d+)Q["']?\s*:\s*(['"`])((?:\\.|(?!\2).)*)\2/g;
+  let fm;
+  while ((fm = faqRe.exec(block)) !== null && budget.words > 0) {
+    const aIdx = block.search(new RegExp('["\']?faq' + fm[1] + 'A["\']?\\s*:'));
+    if (aIdx < 0) continue;
+    const kvA = /["']?(\w+)["']?\s*:\s*(['"`])((?:\\.|(?!\2).)*)\2/g;
+    kvA.lastIndex = aIdx;
+    const am = kvA.exec(block);
+    if (!am || am[1] !== 'faq' + fm[1] + 'A') continue;
+    const q = unescapeJsString(fm[3]);
+    const a = unescapeJsString(am[3]);
+    const kept = harvestKeep(q + ' ' + a, meta, seen);
+    if (kept) {
+      seen.add(q.replace(/\s+/g, ' ').trim());
+      seen.add(a.replace(/\s+/g, ' ').trim());
+      out.push(kept);
+      budget.words -= kept.split(/\s+/).length;
+    }
+  }
   const kvRe = /["']?(\w+)["']?\s*:\s*(['"`])((?:\\.|(?!\2).)*)\2/g;
   let m;
   while ((m = kvRe.exec(block)) !== null && budget.words > 0) {

@@ -9,7 +9,7 @@
     "heroCtaFine": "Fine Dining in Lappland",
     "picksKicker": "Empfehlungen der Redaktion",
     "picksHeadline": "Beginnen Sie mit diesen sechs",
-    "picksLead": "Samisches Fine Dining, Kota-Feuer und Küchen auf dem Fjell. Sechs Adressen, die wir selbst zuerst buchen würden.",
+    "picksLead": "Samisches Fine Dining, Kota-Feuer und Küchen auf dem Fjäll. Sechs Adressen, die wir selbst zuerst buchen würden.",
     "picksCtaAll": "Alle {{count}} Restaurants ansehen",
     "midnightKicker": "Lapplands Sommer",
     "midnightHeadline1": "Abendessen um 1 Uhr nachts.",
@@ -40,13 +40,13 @@
     "statsDestinations": "Reiseziele",
     "statsYear": "Dieses Jahr aktualisiert",
     "stayKicker": "Übernachten, wo Sie essen",
-    "stayHeadline": "Buchen Sie ein Hotel in der Nähe Ihres Tisches für heute Abend",
-    "stayLead": "Abendessen in Lappland zieht sich oft in die Länge und endet weit außerhalb der Stadt. Am klügsten ist eine Unterkunft in Gehweite des Restaurants und Trip.com zeigt am übersichtlichsten, was tatsächlich neben jeder Kota, jedem Fjell-Hotel und jedem Eisrestaurant verfügbar ist.",
+    "stayHeadline": "Buchen Sie für heute Abend ein Hotel in der Nähe Ihres Tisches",
+    "stayLead": "Das Abendessen zieht sich in Lappland oft in die Länge und endet weit außerhalb der Stadt. Am klügsten ist eine Unterkunft in Gehweite des Restaurants und Trip.com zeigt am übersichtlichsten, was tatsächlich neben jeder Kota, jedem Fjell-Hotel und jedem Eisrestaurant verfügbar ist.",
     "stayAffiliateNote": "Affiliate-Links, wir erhalten ggf. eine Provision, ohne Mehrkosten für Sie.",
     "stayAffiliateLink": "Warum wir so verlinken",
     "toursKicker": "Mit Guide schlemmen",
     "toursHeadline": "Kulinarische Touren, Kochkurse & Brauereibesuche",
-    "toursLead": "Für Reisende, die zur Mahlzeit auch den Kontext suchen, samische Verkostungstouren, lappländische Kochkurse, Brauerei-Dinner und Lachs-Koch-Erlebnisse. Gebucht über GetYourGuide, kostenlos stornierbar bis 24 Stunden vor Beginn.",
+    "toursLead": "Für Reisende, die zur Mahlzeit auch den Kontext suchen: samische Verkostungstouren, lappländische Kochkurse, Brauerei-Dinner und Lachs-Koch-Erlebnisse. Gebucht über GetYourGuide, kostenlos stornierbar bis 24 Stunden vor Beginn.",
     "tourLinks": [
       "Kulinarische Touren in Lappland",
       "Kochkurse",
@@ -63,11 +63,11 @@
       "items": [
         {
           "question": "Was ist das berühmteste Restaurant in Lappland?",
-          "answer": "Das Restaurant Aanaar in Inari gehört zu den bestbewerteten Fine-Dining-Adressen Lapplands, 4,8 Sterne bei Google aus über 460 Bewertungen. Es ehrt das kulinarische Erbe der Samen mit Degustationsmenüs rund um Fisch, der am selben Morgen aus dem Inarisee gezogen wurde, handgepflückte Wildkräuter und Rentier von örtlichen Rentierhaltern."
+          "answer": "Das Restaurant Aanaar in Inari gehört zu den bestbewerteten Fine-Dining-Adressen Lapplands, 4,8 Sterne bei Google bei über 460 Bewertungen. Es ehrt das kulinarische Erbe der Samen mit Degustationsmenüs rund um Fisch, der am selben Morgen aus dem Inarisee gezogen wurde, handgepflückte Wildkräuter und Rentier von örtlichen Rentierzüchtern."
         },
         {
           "question": "Was ist Poronkäristys?",
-          "answer": "Poronkäristys ist das bekannteste Gericht Lapplands, hauchdünn gehobeltes Rentier, in Butter sautiert und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und zutiefst befriedigend, Sie finden es überall, vom Straßencafé bis zum Fine-Dining-Haus."
+          "answer": "Poronkäristys ist das bekannteste Gericht Lapplands, hauchdünn gehobeltes Rentier, in Butter sautiert und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und zutiefst befriedigend, Sie finden es überall, vom Imbiss am Straßenrand bis zum Spitzenrestaurant."
         },
         {
           "question": "Was ist ein Kota-Dinner?",
@@ -75,7 +75,7 @@
         },
         {
           "question": "Wann isst man in Lappland am besten draußen?",
-          "answer": "Im 32-tägigen Mitternachtssonnen-Fenster vom 6. Juni bis 7. Juli, wenn die Sonne nördlich des Polarkreises nie untergeht. Terrassen bleiben bis Mitternacht geöffnet, Kota-Feuer brennen weiter, und die Tische am See in Inari und Saariselkä liegen in ununterbrochenem goldenem Licht."
+          "answer": "In den 32 Tagen der Mitternachtssonne vom 6. Juni bis 7. Juli, wenn die Sonne nördlich des Polarkreises nie untergeht. Terrassen bleiben bis Mitternacht geöffnet, Kota-Feuer brennen weiter, und die Tische am See in Inari und Saariselkä liegen in ununterbrochenem goldenem Licht."
         },
         {
           "question": "Auf welchen Zutaten baut Lapplands Küche auf?",
@@ -113,7 +113,7 @@
     "bottomPartner": "Sind Sie Inhaber eines Restaurants? Partner-Einträge erhalten redaktionell verfasste Texte, Menü-Highlights und eine aufgewertete Karte.",
     "cityVibes": {
       "Rovaniemi": "Hauptstadt Lapplands, wo arktische Kultur auf kulinarischen Anspruch trifft",
-      "Levi": "Speisen am Feuer nach einem Tag auf den Fjells",
+      "Levi": "Speisen am Feuer nach einem Tag auf dem Fjäll",
       "Kittilä": "Fjell-Dorf jenseits des Resort-Trubels von Levi",
       "Inari": "Samisches Erbe und reinste arktische Zutaten",
       "Saariselkä": "Wildnis-Dining unter dem Nordlicht",
@@ -127,16 +127,16 @@
       "Muonio": "Polarlicht-Hochland oberhalb der Baumgrenze",
       "Hetta": "Zentrum von Enontekiö nahe drei Landesgrenzen",
       "Kuusamo": "Ferienort Ruka, knapp südlich der Grenze Lapplands",
-      "Kemijärvi": "Nördlichste Bahnstadt mit Tischen am Fluss",
-      "Salla": "Wildnispass und Finnlands östlichstes Skidorf",
-      "Posio": "See- und Handwerks-Herz des Riisitunturi-Gebiets"
+      "Kemijärvi": "Nördlichste Eisenbahnstadt mit Tischen am Fluss",
+      "Salla": "Tor zur Wildnis und Finnlands östlichstes Skidorf",
+      "Posio": "Zentrum für Seen und Handwerk in der Riisitunturi-Region"
     },
     "editorsPick": "Redaktionstipp",
     "menuLabel": "Speisekarte",
     "menuLabelPdf": "Speisekarte (PDF)",
     "introTitle": "Wie diese Seite geordnet ist",
     "introP1": "Die Restaurants sind nach Zielort gruppiert, nicht gegeneinander gereiht. Gibt es in einem Ort eine Redaktionsempfehlung, steht sie mit eigener Kennzeichnung vorn; alles danach folgt ohne Rangfolge, lesen Sie also die Karten und nicht die Positionen. Die angezeigten Bewertungen stammen von Google und verlinken zurück auf die Rezensionen, aus denen sie kommen.",
-    "introP2": "Die breite Karte über jedem Ortsraster ist ein bezahlter Partnerplatz und als Werbung gekennzeichnet. Sonst ist auf dieser Seite nichts bezahlte Platzierung. Öffnungszeiten richten sich nach der Saison – in Lappland kann „außerhalb der Saison geschlossen“ Monate statt Wochen bedeuten –, prüfen Sie also die Seite des Restaurants, bevor Sie losfahren."
+    "introP2": "Die breite Karte über jedem Ortsblock ist ein bezahlter Partnerplatz und als Werbung gekennzeichnet. Ansonsten enthält diese Seite keine bezahlten Platzierungen. Öffnungszeiten richten sich nach der Saison – in Lappland kann „außerhalb der Saison geschlossen“ Monate statt Wochen bedeuten –, prüfen Sie also die Seite des Restaurants, bevor Sie losfahren."
   },
   "fineDining": {
     "title": "Fine Dining in und um Lappland | LaplandDining",
