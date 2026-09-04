@@ -128,6 +128,15 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
   // Ei myytyä eikä myyntikieltä → koko osio pois.
   const salesLocale = adLocaleEnabled(locale);
   const [a, b] = homeCards(config);
+  // 🔴 Vesa 2026-09-04: "poistaa hieman niitä vapaita mainospaikka juttuja".
+  // Measured on laplandbars.com/fi: an unsold front page carried a 223 px
+  // banner AND a 435 px card both saying "Haluatko mainoksesi tähän?" — 658 px
+  // of begging on 20+ sites. One "for sale" sign is honest inventory; two is
+  // dead space where a real product rail could earn. The MainPartnerBanner
+  // stays as the single sales sign; the empty CARD now renders nothing until
+  // it is actually sold. Sold cards are untouched — they render on all 12
+  // locales exactly as before.
+  if (!a && !b) return null;
   if (!salesLocale && !a && !b) return null;
 
   const t = adSlotsCopy(locale);

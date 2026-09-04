@@ -51,6 +51,12 @@ export type PremiumSpotGridProps = {
 export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'dark', className }: PremiumSpotGridProps) {
   // Mainospaikat vain fi/en (Vesa 2026-07-13).
   if (!adLocaleEnabled(locale)) return null;
+  // 🔴 Vesa 2026-09-04: six dashed "Mainospaikka vapaana" tiles on twelve
+  // listing pages, none sold, is not inventory on display — it is a page that
+  // looks unfinished. The grid renders only once at least one spot is sold;
+  // a sold spot still shows its unsold neighbours as open, so the upsell is
+  // intact where there is a buyer to see it.
+  if (!spots.some((s) => s.partner)) return null;
 
   const t = adSlotsCopy(locale);
   const light = surface === 'light';

@@ -1,4 +1,7 @@
 
+import ProductRail, { type RailLang } from '../shared/ads/ProductRail'
+import suomikauppaRail from '../shared/ads/rails/suomikauppa'
+import suomikauppaPicks from '../shared/ads/data/suomikauppaPicks'
 import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
@@ -227,6 +230,10 @@ export default function Home() {
           myyty kortti näkyy yhä etusivulla, mutta tyhjä house-ad ei enää
           omista näyttöä 2–3 ennen ensimmäistäkään ravintolaa. */}
       <HomeAdSlots config={AD_SLOTS} locale={locale} className="bg-night" />
+      {/* Oikea tuoterivi tyhjän house-ad-kortin tilalle (Vesa 4.9.). */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+        <ProductRail partner={suomikauppaRail} snapshot={suomikauppaPicks} lang={locale as RailLang} sid="home_finnish_pantry" variant="dark" />
+      </div>
 
       {/* ── By Destination — kaupunki-indeksi (18 kohdetta) ────────── */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
