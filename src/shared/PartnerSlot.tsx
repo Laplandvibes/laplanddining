@@ -176,6 +176,18 @@ export default function PartnerSlot({ partner, variant, locale, className, place
   // Tyhjä paikka: house-ad jos placeholder annettu, muuten ei DOM:ia lainkaan
   if (partner === null) {
     if (!placeholder) return null;
+    // 🔴 ONE house-ad per page (Vesa 2026-09-04: "poistaa hieman niitä vapaita
+    // mainospaikka juttuja"). Measured live the same day: laplanddining.com/fi/
+    // restaurants carried SEVEN "Haluatko mainoksesi tähän?" banners on one
+    // page, laplandstays.com/fi three — the main-partner banner plus a
+    // section-level "Esittelykumppani" placeholder under every content block.
+    // A page that asks seven times reads as unsold, and an unsold-looking page
+    // does not sell the eighth slot either. Only the main-partner banner
+    // (slotId 'main_partner_1', mounted once per page by MainPartnerBanner)
+    // still renders a placeholder; every other EMPTY slot renders nothing.
+    // Sold slots are untouched: a partner that paid for a section banner still
+    // gets it — this branch only runs when `partner === null`.
+    if (placeholder.slotId !== 'main_partner_1') return null;
     const t = adSlotsCopy(locale);
     const light = surface === 'light';
     const sub =
