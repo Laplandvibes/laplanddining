@@ -1,7 +1,7 @@
 // GENEROITU TIEDOSTO — älä muokkaa käsin.
 // Lähde: daisycon -tuotesyöte, Suomikauppa.fi (ohjelma 17977).
 // Päivitä: node scripts/sync_partner_feeds.mjs suomikauppa --refresh
-// Hinnat ovat 2026-09-04 hintoja ja ne renderöidään tarkistuspäivän kanssa.
+// Hinnat ovat 2026-09-05 hintoja ja ne renderöidään tarkistuspäivän kanssa.
 
 import type { PartnerSnapshot } from './partnerTypes'
 
@@ -15,79 +15,43 @@ const picks: PartnerSnapshot = {
     "cookieDays": 30
   },
   "route": "/go/suomikauppa",
-  "fetchedAt": "2026-09-04",
+  "fetchedAt": "2026-09-05",
   "products": [
     {
-      "sku": "41963121148123",
-      "name": "FazerÄssä Mix loose candy box 800g",
-      "localName": "Fazer Ässä Mix irtokarkkilaatikko 800g",
+      "sku": "43879425147099",
+      "name": "Emendo Sauna fragrances Salmiakki&Smoked herbs 2×10 ml",
+      "localName": "Emendo Saunatuoksut Salmiakki & Savuyrtti 2×10 ml",
       "shelf": "sweets",
-      "category": "Elintarvikkeet",
-      "brand": "Fazer Makeiset",
-      "price": 9.39,
+      "category": "Kylpyhuone ja saunatarvikkeet",
+      "brand": "Emendo",
+      "price": 11.9,
       "currency": "EUR",
-      "url": "https://suomikauppa.fi/products/assa-mix-800-g",
-      "image": "/images/partners/suomikauppa/41963121148123.webp"
+      "url": "https://suomikauppa.fi/products/emendo-saunatuoksut-salmiakki-savuyrtti-2-10-ml",
+      "image": "/images/partners/suomikauppa/43879425147099.webp"
     },
     {
-      "sku": "41963085562075",
-      "name": "Rento Birch sauna honey 150 ml",
-      "localName": "Rento Koivu saunahunaja 150 ml",
+      "sku": "41963266834651",
+      "name": "Mikebon Steel Thermos Flask Moose Finland",
+      "localName": "Mikebon Teräs Termospullo Hirvi Finland",
+      "shelf": "kitchen",
+      "category": "Keittiö ja kattaus",
+      "brand": "Mikebon",
+      "price": 14.69,
+      "currency": "EUR",
+      "url": "https://suomikauppa.fi/products/mikebon-teras-termospullo-hirvi-finland",
+      "image": "/images/partners/suomikauppa/41963266834651.webp"
+    },
+    {
+      "sku": "41963083759835",
+      "name": "Rento Blueberry shampoo 400 ml",
+      "localName": "Rento Mustikka shampoo 400 ml",
       "shelf": "sauna",
       "category": "Kylpyhuone ja saunatarvikkeet",
       "brand": "Tammer",
-      "price": 9.9,
+      "price": 16.12,
       "currency": "EUR",
-      "url": "https://suomikauppa.fi/products/rento-koivu-saunahunaja-150-ml",
-      "image": "/images/partners/suomikauppa/41963085562075.webp"
-    },
-    {
-      "sku": "46807846682953",
-      "name": "Hukka - Tunnelmatuikku candle",
-      "localName": "Hukka - Tunnelmatuikku",
-      "shelf": "sauna",
-      "category": "Kylpyhuone ja saunatarvikkeet",
-      "brand": "Hukka",
-      "price": 9.9,
-      "currency": "EUR",
-      "url": "https://suomikauppa.fi/products/hukka-tunnelmatuikku",
-      "image": "/images/partners/suomikauppa/46807846682953.webp"
-    },
-    {
-      "sku": "41962948985051",
-      "name": "Measuring container 0.25l stainless steel",
-      "localName": "Mitta-astia 0,25l rst",
-      "shelf": "kitchen",
-      "category": "Keittiö ja kattaus",
-      "brand": "Kespro",
-      "price": 12.9,
-      "currency": "EUR",
-      "url": "https://suomikauppa.fi/products/mitta-astia-025l-rst",
-      "image": "/images/partners/suomikauppa/41962948985051.webp"
-    },
-    {
-      "sku": "42763787108571",
-      "name": "Fiskars - Functional Form peeler 7cm",
-      "localName": "Fiskars - Functional Form kuorimaveitsi 7cm",
-      "shelf": "kitchen",
-      "category": "Keittiö ja kattaus",
-      "brand": "Fiskars",
-      "price": 12.9,
-      "currency": "EUR",
-      "url": "https://suomikauppa.fi/products/fiskars-functional-form-kuorimaveitsi-7cm",
-      "image": "/images/partners/suomikauppa/42763787108571.webp"
-    },
-    {
-      "sku": "42849106067675",
-      "name": "Martinex Moomin swim ring 110cm",
-      "localName": "Martinex Muumi uimarengas 110cm raita",
-      "shelf": "moomin",
-      "category": "Muumi-tuotteet",
-      "brand": "Martinex",
-      "price": 14.9,
-      "currency": "EUR",
-      "url": "https://suomikauppa.fi/products/muumi-uimarengas-110cm-raita",
-      "image": "/images/partners/suomikauppa/42849106067675.webp"
+      "url": "https://suomikauppa.fi/products/rento-mustikka-shampoo-400-ml",
+      "image": "/images/partners/suomikauppa/41963083759835.webp"
     },
     {
       "sku": "42763792515291",
@@ -102,16 +66,52 @@ const picks: PartnerSnapshot = {
       "image": "/images/partners/suomikauppa/42763792515291.webp"
     },
     {
-      "sku": "48765004939593",
-      "name": "Oppi&ilo - Chore cards for five year olds (preschool)",
-      "localName": "Oppi&ilo - Viskarilainen -puuhakortit 4-6 v",
+      "sku": "48764737552713",
+      "name": "Oppi&ilo - CHORE TRIP chore cards 3-4 yrs",
+      "localName": "Oppi&ilo - PUUHARETKI-puuhakortit 3-4 v",
       "shelf": "kids",
       "category": "Lapsille",
       "brand": "SanomaPro",
       "price": 16.9,
       "currency": "EUR",
-      "url": "https://suomikauppa.fi/products/oppi-ilo-viskarilainen-puuhakortit-4-6-v",
-      "image": "/images/partners/suomikauppa/48765004939593.webp"
+      "url": "https://suomikauppa.fi/products/oppi-ilo-puuharetki-puuhakortit-3-4-v",
+      "image": "/images/partners/suomikauppa/48764737552713.webp"
+    },
+    {
+      "sku": "41963043127515",
+      "name": "Arabia - Moomin mug\"Thingumy and Bob Green\"",
+      "localName": "Arabia - Muumimuki ”Tiuhti ja Viuhti Vihreä”",
+      "shelf": "kitchen",
+      "category": "Keittiö ja kattaus",
+      "brand": "Fiskars",
+      "price": 24.9,
+      "currency": "EUR",
+      "url": "https://suomikauppa.fi/products/arabia-muumimuki-tiuhti-ja-viuhti-vihrea",
+      "image": "/images/partners/suomikauppa/41963043127515.webp"
+    },
+    {
+      "sku": "43964565881051",
+      "name": "Arabia Moomin mug 0.3L Moomin house",
+      "localName": "Arabia Muumimuki 0,3L Muumitalo",
+      "shelf": "moomin",
+      "category": "Keittiö ja kattaus",
+      "brand": "Fiskars",
+      "price": 24.9,
+      "currency": "EUR",
+      "url": "https://suomikauppa.fi/products/arabia-muumimuki-0-3l-muumitalo",
+      "image": "/images/partners/suomikauppa/43964565881051.webp"
+    },
+    {
+      "sku": "43879433994459",
+      "name": "Emendo Linen Sauna Hat Little My",
+      "localName": "Emendo Pellavainen Saunahattu Pikku Myy",
+      "shelf": "sauna",
+      "category": "Kylpyhuone ja saunatarvikkeet",
+      "brand": "Emendo",
+      "price": 28.9,
+      "currency": "EUR",
+      "url": "https://suomikauppa.fi/products/emendo-pellavainen-saunahattu-pikku-myy",
+      "image": "/images/partners/suomikauppa/43879433994459.webp"
     }
   ]
 }

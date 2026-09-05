@@ -162,6 +162,11 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
   // paikkaa — se lukee rikkinäisenä käyttöliittymänä. Kun toinen paikka ON
   // myyty, tyhjä pari säilyy: silloin se on aito kutsu jäljellä olevaan paikkaan.
   const bothEmpty = !a && !b;
+  // Vain toinen paikka myyty: kortti B renderöi tyhjää (house-ad vain
+  // pääkumppanibannerissa, sääntö 4.9.) ⇒ kaksipalstainen ruudukko jätti
+  // oikealle tyhjän aukon (gifts/Keloa, Vesa 5.9.). Yksi myyty kortti saa
+  // yhden palstan ja rajatun leveyden — ei aukkoa eikä venytettyä korttia.
+  const single = (a !== null && b === null) || (a === null && b !== null);
 
   return (
     <section
@@ -182,7 +187,8 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
 
         <div className={[
           'grid grid-cols-1 gap-4 sm:gap-5 items-stretch',
-          bothEmpty ? '' : 'sm:grid-cols-2',
+          bothEmpty || single ? '' : 'sm:grid-cols-2',
+          single ? 'max-w-2xl' : '',
         ].filter(Boolean).join(' ')}>
           {/* Kortti A (vasen desktopissa). House-ad-placeholder vain
               myyntikielillä — muilla lokaaleilla tyhjä paikka ei renderöidy. */}
@@ -199,7 +205,7 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
           </div>
           {/* Kortti B (oikea desktopissa; parittomana päivänä ylin mobiilissa).
               Jätetään pois kun kumpaakaan ei ole myyty — ks. bothEmpty. */}
-          {!bothEmpty && (
+          {!bothEmpty && !single && (
             <div className={['flex', flipMobile ? 'max-sm:order-first' : ''].filter(Boolean).join(' ')}>
               <PartnerSlot
                 variant="card"
