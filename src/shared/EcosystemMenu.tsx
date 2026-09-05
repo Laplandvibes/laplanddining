@@ -1,7 +1,8 @@
 import { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback } from 'react';
 import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { createPortal } from 'react-dom';
-import { LayoutGrid, ChevronDown, ArrowUpRight, MapPin, Search, X, Smartphone } from 'lucide-react';
+import APP_STATS from './appStats';
+import { LayoutGrid, ChevronDown, ArrowUpRight, MapPin, Search, X, BedDouble, Compass, UtensilsCrossed, Car, Sparkles, ShoppingBag, BookOpen, Download } from 'lucide-react';
 
 /**
  * EcosystemMenu — the network jump-menu that sits to the LEFT of the logo on
@@ -19,6 +20,22 @@ import { LayoutGrid, ChevronDown, ArrowUpRight, MapPin, Search, X, Smartphone } 
  *     any of the 12 languages (es "Gastronomía y productos locales", 216 px);
  *   - the current site is marked IN PLACE inside its group ("Olet tässä");
  *   - lapland.blog and the app (footer's "Get the app") are in the menu.
+ *
+ * v2.1 (Vesa 2026-09-05 evening, "liian samanlaisia kaikki, valkoinen puurouttaa
+ * kaiken, 1–2 hierarkiaa väreissä, taustoja"): every group is a CARD with a
+ * tinted background and border in its category colour, the group title is set
+ * in that colour with a category icon, rows keep snow names + dimmer domains.
+ * Four visible levels instead of one wall of white text.
+ *
+ * v2.2 (Vesa, same evening, "laatikot on eri kokoisia ja ei istu hyvin"): the
+ * CSS column flow is replaced by a 4-column GRID whose cards stretch to the
+ * same height within a row. MENU_ORDER puts the four tallest groups on the
+ * top row (4/6/4/4 sites) and the three 3-site groups + the app tile on the
+ * bottom row, so no card sits under a tall neighbour with a long empty tail.
+ *
+ * v2.3 (Vesa: "lataa sovellus on poor"): the app cell is a real promo tile —
+ * title + counted figures (./appStats) + CTA + the app's own screenshot rising
+ * from the bottom edge; copy verbatim from the hub's AppPromo in 12 languages.
  *
  * SHARED across all sites, so it is THEME-INDEPENDENT: brand colours are inline
  * hex, and ALL layout lives in the scoped <style> block below (no Tailwind
@@ -56,6 +73,10 @@ const PINK_FILL = '#DB2777';
 const SNOW = '#F9FAFB';
 const HUB = 'laplandvibes.com';
 const APP = 'app.laplandvibes.com';
+/** Same landing as the network-wide AppPromo: opens straight onto the install offer. */
+const APP_URL = 'https://app.laplandvibes.com/?install=1&utm_source=web&utm_medium=network_menu';
+/** The app's own front page, a real capture (shipped as public/images on every site by AppPromo). */
+const APP_SHOT = '/images/app-screenshot.webp';
 
 /**
  * Network wordmark font. The `#LAPLANDVIBES` lockup is ALWAYS Bebas Neue, on
@@ -77,7 +98,7 @@ const CAT_RGB: Record<Cat, string> = {
   transport: '147, 197, 253', // sky blue
   season: '52, 211, 153',     // aurora green
   shopping: '167, 139, 250',  // violet
-  guide: '34, 211, 238',      // cyan-bright
+  guide: '251, 191, 36',      // amber (v2.1: was cyan-bright, indistinguishable from activity's cyan on tinted cards)
   hub: '236, 72, 153',        // pink
 };
 
@@ -118,6 +139,8 @@ export const SITES: Site[] = [
 ];
 
 const NAME_I18N: Record<string, Record<string, string>> = {"laplandvibes.com":{"de":"Zentrale (Netzwerk-Startseite)","ja":"ハブ（ネットワークの拠点）","es":"Inicio (centro de la red)","pt-BR":"Início (centro da rede)","zh-CN":"主站（网络主页）","ko":"메인 사이트(네트워크 홈)","fr":"Accueil (centre du réseau)","it":"Hub (centro della rete)","nl":"Hub (netwerkcentrum)","sv":"Nav (nätverkets startsida)"},"stayinlapland.com":{"de":"Übernachten in Lappland","ja":"ラップランドで泊まる","es":"Alojamiento en Laponia","pt-BR":"Hospedagem na Lapônia","zh-CN":"拉普兰住宿","ko":"라플란드 숙박","fr":"Séjour en Laponie","it":"Soggiorno in Lapponia","nl":"Verblijf in Lapland","sv":"Bo i Lappland"},"laplandstays.com":{"de":"Hütten & Unterkünfte","ja":"コテージと宿泊","es":"Cabañas y alojamiento","pt-BR":"Chalés e hospedagem","zh-CN":"小木屋与住宿","ko":"오두막과 숙소","fr":"Chalets et hébergements","it":"Chalet e alloggi","nl":"Vakantiehuisjes & verblijven","sv":"Stugor & boenden"},"laplandhoteldeals.com":{"de":"Hotelangebote","ja":"ホテルのお得情報","es":"Ofertas de hoteles","pt-BR":"Ofertas de hotéis","zh-CN":"酒店优惠","ko":"호텔 특가","fr":"Offres d'hôtels","it":"Offerte hotel","nl":"Hotelaanbiedingen","sv":"Hotellerbjudanden"},"laplandluxuryvillas.com":{"de":"Luxusvillen","ja":"ラグジュアリーヴィラ","es":"Villas de lujo","pt-BR":"Vilas de luxo","zh-CN":"豪华别墅","ko":"럭셔리 빌라","fr":"Villas de luxe","it":"Ville di lusso","nl":"Luxe villa's","sv":"Lyxvillor"},"laplandhuskysafaris.com":{"de":"Husky-Safaris","ja":"ハスキーサファリ","es":"Safaris con huskies","pt-BR":"Safáris de huskies","zh-CN":"哈士奇雪橇之旅","ko":"허스키 사파리","fr":"Safaris en traîneau de huskies","it":"Safari con husky","nl":"Husky-safari's","sv":"Huskysafarier"},"laplandsnowmobile.com":{"de":"Schneemobilfahren","ja":"スノーモービル","es":"Motos de nieve","pt-BR":"Passeios de moto de neve","zh-CN":"雪地摩托","ko":"스노모빌","fr":"Motoneige","it":"Motoslitta","nl":"Sneeuwscooteren","sv":"Snöskoteråkning"},"laplandskiresorts.com":{"de":"Skigebiete","ja":"スキーリゾート","es":"Estaciones de esquí","pt-BR":"Estações de esqui","zh-CN":"滑雪度假村","ko":"스키 리조트","fr":"Stations de ski","it":"Stazioni sciistiche","nl":"Skigebieden","sv":"Skidorter"},"laplandactivities.fi":{"de":"Aktivitäten & Touren","ja":"アクティビティとツアー","es":"Actividades y excursiones","pt-BR":"Atividades e passeios","zh-CN":"活动与游览","ko":"액티비티와 투어","fr":"Activités et excursions","it":"Attività ed escursioni","nl":"Activiteiten & tours","sv":"Aktiviteter & turer"},"laplandtours.online":{"de":"Geführte Touren","ja":"ガイドツアー","es":"Tours guiados","pt-BR":"Passeios guiados","zh-CN":"导览行程","ko":"가이드 투어","fr":"Visites guidées","it":"Tour guidati","nl":"Begeleide tours","sv":"Guidade turer"},"laplanddining.com":{"de":"Essen gehen","ja":"レストラン","es":"Restaurantes","pt-BR":"Restaurantes","zh-CN":"餐饮","ko":"다이닝","fr":"Restaurants","it":"Ristoranti","nl":"Uit eten","sv":"Äta ute"},"laplandfood.com":{"de":"Essen & regionale Produkte","ja":"食と地元の食材","es":"Gastronomía y productos locales","pt-BR":"Comida e produtos locais","zh-CN":"美食与当地特产","ko":"음식과 로컬 식재료","fr":"Cuisine et produits locaux","it":"Cibo e prodotti locali","nl":"Eten & streekproducten","sv":"Mat & lokala produkter"},"laplandbars.com":{"de":"Bars & Brauereien","ja":"バーとブルワリー","es":"Bares y cervecerías","pt-BR":"Bares e cervejarias","zh-CN":"酒吧与啤酒厂","ko":"바와 브루어리","fr":"Bars et brasseries","it":"Bar e birrifici","nl":"Bars & brouwerijen","sv":"Barer & bryggerier"},"laplandtransport.com":{"de":"Transport","ja":"交通","es":"Transporte","pt-BR":"Transporte","zh-CN":"交通","ko":"교통","fr":"Transport","it":"Trasporti","nl":"Vervoer","sv":"Transport"},"laplandcarrental.com":{"de":"Autovermietung","ja":"レンタカー","es":"Alquiler de autos","pt-BR":"Aluguel de carros","zh-CN":"租车","ko":"렌터카","fr":"Location de voiture","it":"Autonoleggio","nl":"Autoverhuur","sv":"Biluthyrning"},"laplandchristmas.com":{"de":"Weihnachten","ja":"クリスマス","es":"Navidad","pt-BR":"Natal","zh-CN":"圣诞","ko":"크리스마스","fr":"Noël","it":"Natale","nl":"Kerstmis","sv":"Jul"},"laplandwellness.com":{"de":"Wellness & Spa","ja":"ウェルネスとスパ","es":"Bienestar y spa","pt-BR":"Bem-estar e spa","zh-CN":"养生与水疗","ko":"웰니스와 스파","fr":"Bien-être et spa","it":"Benessere e spa","nl":"Wellness & spa","sv":"Wellness & spa"},"laplandnightlife.com":{"de":"Nachtleben","ja":"ナイトライフ","es":"Vida nocturna","pt-BR":"Vida noturna","zh-CN":"夜生活","ko":"나이트라이프","fr":"Vie nocturne","it":"Vita notturna","nl":"Uitgaansleven","sv":"Nattliv"},"laplandweddings.online":{"de":"Hochzeiten","ja":"ウェディング","es":"Bodas","pt-BR":"Casamentos","zh-CN":"婚礼","ko":"웨딩","fr":"Mariages","it":"Matrimoni","nl":"Bruiloften","sv":"Bröllop"},"laplandgifts.com":{"de":"Geschenke & Souvenirs","ja":"ギフトとお土産","es":"Regalos y recuerdos","pt-BR":"Presentes e lembranças","zh-CN":"礼品与纪念品","ko":"선물과 기념품","fr":"Cadeaux et souvenirs","it":"Regali e souvenir","nl":"Cadeaus & souvenirs","sv":"Presenter & souvenirer"},"laplanddeals.com":{"de":"Angebote & Deals","ja":"セールとお得情報","es":"Ofertas y promociones","pt-BR":"Ofertas e promoções","zh-CN":"优惠与特价","ko":"할인과 특가","fr":"Bons plans et offres","it":"Offerte e promozioni","nl":"Deals & aanbiedingen","sv":"Erbjudanden & deals"},"laplandstore.fi":{"de":"Onlineshop","ja":"オンラインストア","es":"Tienda online","pt-BR":"Loja online","zh-CN":"在线商店","ko":"온라인 스토어","fr":"Boutique en ligne","it":"Negozio online","nl":"Webshop","sv":"Webbutik"},"laplandvisit.com":{"de":"Reiseführer","ja":"旅行ガイド","es":"Guía de viaje","pt-BR":"Guia de viagem","zh-CN":"旅行指南","ko":"여행 가이드","fr":"Guide de voyage","it":"Guida di viaggio","nl":"Reisgids","sv":"Reseguide"},"laplandnature.com":{"de":"Natur & Nationalparks","ja":"自然と国立公園","es":"Naturaleza y parques","pt-BR":"Natureza e parques","zh-CN":"自然与国家公园","ko":"자연과 국립공원","fr":"Nature et parcs","it":"Natura e parchi","nl":"Natuur & parken","sv":"Natur & nationalparker"},"laplandkids.com":{"de":"Familienreisen","ja":"家族旅行","es":"Viajes en familia","pt-BR":"Viagens em família","zh-CN":"亲子旅行","ko":"가족 여행","fr":"Voyages en famille","it":"Viaggi in famiglia","nl":"Gezinsreizen","sv":"Familjeresor"},"laplandflights.fi":{"de":"Flüge nach Lappland","ja":"ラップランドへの航空券","es":"Vuelos a Laponia","pt-BR":"Voos para a Lapônia","zh-CN":"飞往拉普兰的航班","ko":"라플란드행 항공편","fr":"Vols vers la Laponie","it":"Voli per la Lapponia","nl":"Vluchten naar Lapland","sv":"Flyg till Lappland"},"laplandwork.com":{"de":"Arbeiten in Lappland","ja":"ラップランドで働く","es":"Trabajar en Laponia","pt-BR":"Trabalhar na Lapônia","zh-CN":"在拉普兰工作","ko":"라플란드에서 일하기","fr":"Travailler en Laponie","it":"Lavorare in Lapponia","nl":"Werken in Lapland","sv":"Jobba i Lappland"},"lapland.blog":{"de":"Reiseblog","ja":"旅行ブログ","es":"Blog de viajes","pt-BR":"Blog de viagem","zh-CN":"旅行博客","ko":"여행 블로그","fr":"Blog voyage","it":"Blog di viaggio","nl":"Reisblog","sv":"Reseblogg"}};
+/** App tile copy, verbatim from laplandvibes/src/components/AppPromo.tsx COPY (title, stats[0..2], cta). Numbers come from ./appStats, never typed here. */
+const APP_I18N: Record<string, { title: string; stats: string[]; cta: string }> = {"en":{"title":"All of Lapland. One app.","stats":["destinations","slopes","lifts"],"cta":"Get the free app"},"fi":{"title":"Koko Lappi. Yksi sovellus.","stats":["kohdetta","rinnettä","hissiä"],"cta":"Lataa ilmainen sovellus"},"sv":{"title":"Hela Lappland. En app.","stats":["resmål","backar","liftar"],"cta":"Hämta appen gratis"},"de":{"title":"Ganz Lappland. Eine App.","stats":["Ziele","Pisten","Lifte"],"cta":"Kostenlose App holen"},"fr":{"title":"Toute la Laponie. Une appli.","stats":["destinations","pistes","remontées"],"cta":"Obtenir l’appli gratuite"},"es":{"title":"Toda Laponia. Una app.","stats":["destinos","pistas","remontes"],"cta":"Consiga la app gratis"},"it":{"title":"Tutta la Lapponia. Un’app.","stats":["destinazioni","piste","impianti"],"cta":"Scarica l’app gratis"},"nl":{"title":"Heel Lapland. Eén app.","stats":["bestemmingen","pistes","liften"],"cta":"Haal de gratis app"},"pt-BR":{"title":"Toda a Lapônia. Um app.","stats":["destinos","pistas","teleféricos"],"cta":"Baixar o app grátis"},"ja":{"title":"ラップランドのすべてを、ひとつのアプリに。","stats":["目的地","ゲレンデ","リフト"],"cta":"無料アプリを入手"},"ko":{"title":"라플란드 전체를, 하나의 앱에.","stats":["목적지","슬로프","리프트"],"cta":"무료 앱 받기"},"zh-CN":{"title":"整个拉普兰，装进一个应用。","stats":["目的地","雪道","缆车"],"cta":"免费下载应用"}};
 const CHROME_I18N: Record<string, Record<string, string>> = {"label":{"de":"Netzwerk","ja":"ネットワーク","es":"Red","pt-BR":"Rede","zh-CN":"站点网络","ko":"네트워크","fr":"Réseau","it":"Rete","nl":"Netwerk","sv":"Nätverk"},"heading":{"de":"Das gesamte Lappland-Netzwerk","ja":"ラップランド・ネットワーク全体","es":"Toda la red de Laponia","pt-BR":"Toda a rede da Lapônia","zh-CN":"整个拉普兰站点网络","ko":"라플란드 네트워크 전체","fr":"Tout le réseau Laponie","it":"Tutta la rete Lapponia","nl":"Het hele Lapland-netwerk","sv":"Hela Lappland-nätverket"},"here":{"de":"Sie sind hier","ja":"現在のページ","es":"Está aquí","pt-BR":"Você está aqui","zh-CN":"当前位置","ko":"현재 위치","fr":"Vous êtes ici","it":"Si trova qui","nl":"U bent hier","sv":"Du är här"},"hint":{"de":"Alle Seiten des Netzwerks: hier!","ja":"ネットワークの全サイトはここから！","es":"¡Todos los sitios de la red, aquí!","pt-BR":"Todos os sites da rede: aqui!","zh-CN":"整个站点网络都在这里！","ko":"네트워크의 모든 사이트가 여기에!","fr":"Tous les sites du réseau: ici !","it":"Tutti i siti della rete: qui!","nl":"Alle sites van het netwerk: hier!","sv":"Alla sajter i nätverket: här!"},"jump":{"de":"Zu einer Seite wechseln","ja":"サイトへ移動","es":"Ir a un sitio","pt-BR":"Ir para um site","zh-CN":"前往站点","ko":"사이트로 이동","fr":"Aller sur un site","it":"Vai a un sito","nl":"Ga naar een site","sv":"Gå till en sajt"},"search":{"de":"Website suchen…","ja":"サイトを検索…","es":"Buscar sitio…","pt-BR":"Buscar site…","zh-CN":"搜索站点…","ko":"사이트 검색…","fr":"Rechercher un site…","it":"Cerca un sito…","nl":"Site zoeken…","sv":"Sök sajt…"},"noResults":{"de":"Keine Treffer.","ja":"該当なし","es":"Sin resultados.","pt-BR":"Sem resultados.","zh-CN":"无匹配结果","ko":"검색 결과 없음","fr":"Aucun résultat.","it":"Nessun risultato.","nl":"Geen resultaten.","sv":"Inga träffar."},"close":{"de":"Schließen","ja":"閉じる","es":"Cerrar","pt-BR":"Fechar","zh-CN":"关闭","ko":"닫기","fr":"Fermer","it":"Chiudi","nl":"Sluiten","sv":"Stäng"},"getApp":{"de":"App holen","ja":"アプリを入手","es":"Descargar la app","pt-BR":"Baixar o app","zh-CN":"获取应用","ko":"앱 받기","fr":"Obtenir l'app","it":"Scarica l'app","nl":"Download de app","sv":"Hämta appen"}};
 
 /**
@@ -181,6 +204,18 @@ function norm(s: string): string {
   return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
+/**
+ * Grid order (v2.2). Not CAT_ORDER: the 4-column grid stretches every card in a
+ * row to the tallest one, so the row that holds Tekeminen (6 sites) should
+ * hold the other 4-site groups, and the 3-site groups share the second row
+ * with the app tile. Majoitus keeps the first slot.
+ */
+const MENU_ORDER: Cat[] = ['stay', 'activity', 'season', 'guide', 'food', 'transport', 'shopping'];
+
+type IconCmp = typeof LayoutGrid;
+/** One icon per group so the seven cards differ by shape as well as by colour. */
+const CAT_ICON: Record<Cat, IconCmp> = { hub: LayoutGrid, stay: BedDouble, activity: Compass, food: UtensilsCrossed, transport: Car, season: Sparkles, shopping: ShoppingBag, guide: BookOpen };
+
 const MOBILE_QUERY = '(max-width: 767px)';
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
@@ -202,14 +237,15 @@ const CSS = `
 .lv-eco-btn--light{background:rgba(15,23,42,.05);border-color:rgba(15,23,42,.22);color:rgba(15,23,42,.78)}
 .lv-eco-btn--light .lv-eco-lbl{text-shadow:none}
 .lv-eco-btn--light:hover,.lv-eco-btn--light[aria-expanded="true"]{background:rgba(236,72,153,.08);border-color:rgba(236,72,153,.55);color:${PINK}}
-@media(max-width:639px){.lv-eco-btn{height:44px;min-width:44px;padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
+@media(max-width:767px){.lv-eco-btn{height:44px;min-width:44px}}
+@media(max-width:639px){.lv-eco-btn{padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 12px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoNudge 1.6s ease-in-out infinite}
 @media(min-width:768px){.lv-eco-hint{display:block}}
 .lv-eco-hint-arrow{position:absolute;top:-7px;left:20px;width:14px;height:14px;transform:rotate(45deg);border-radius:3px;background:${PINK};box-shadow:0 0 14px rgba(236,72,153,.55)}
 .lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:${PINK_FILL};color:#fff;box-shadow:0 14px 34px -12px rgba(236,72,153,.7)}
 .lv-eco-hint-x{display:flex;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);font:inherit;line-height:1}
 .lv-eco-hint-x:hover{color:#fff}
-.lv-eco-panel{position:fixed;z-index:9990;top:var(--lv-eco-t,72px);left:var(--lv-eco-l,16px);width:min(1160px,calc(100vw - var(--lv-eco-l,16px) - 16px));max-height:calc(100vh - var(--lv-eco-t,72px) - 16px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:rgba(15,23,42,.97);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -24px rgba(0,0,0,.85),0 0 60px -30px rgba(236,72,153,.5);color:${SNOW};padding:16px 22px 18px;font-family:${BODY_FONT};animation:lvEcoPop .16s ease-out;transform-origin:top left;text-align:left;line-height:1.4}
+.lv-eco-panel{position:fixed;z-index:9990;top:var(--lv-eco-t,72px);left:var(--lv-eco-l,16px);width:min(1160px,calc(100vw - 32px));max-height:calc(100vh - var(--lv-eco-t,72px) - 16px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:rgba(15,23,42,.97);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -24px rgba(0,0,0,.85),0 0 60px -30px rgba(236,72,153,.5);color:${SNOW};padding:16px 22px 18px;font-family:${BODY_FONT};animation:lvEcoPop .16s ease-out;transform-origin:top left;text-align:left;line-height:1.4}
 .lv-eco-panel:focus{outline:0}
 .lv-eco-panel *,.lv-eco-panel *::before,.lv-eco-panel *::after{box-sizing:border-box}
 .lv-eco-top{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap}
@@ -227,25 +263,38 @@ const CSS = `
 .lv-eco-search input::-webkit-search-cancel-button,.lv-eco-search input::-webkit-search-decoration{-webkit-appearance:none;appearance:none}
 .lv-eco-close{display:none}
 .lv-eco-rule{height:1px;margin:14px 0 16px;background:linear-gradient(to right,rgba(236,72,153,.45),rgba(255,255,255,.1),transparent)}
-.lv-eco-cols{columns:215px;column-gap:22px}
-.lv-eco-group{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;display:block;margin:0 0 18px;padding:0}
-.lv-eco-h{font-family:${WORDMARK_FONT};font-weight:400;font-size:19px;letter-spacing:.06em;line-height:1.1;color:${SNOW};margin:0 0 6px 8px;text-transform:none}
-.lv-eco-h::after{content:"";display:block;width:28px;height:3px;border-radius:2px;background:rgb(var(--c));box-shadow:0 0 10px rgba(var(--c),.55);margin-top:5px}
+.lv-eco-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+@media(min-width:768px) and (max-width:1023px){.lv-eco-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.lv-eco-group{display:flex;flex-direction:column;min-width:0;height:100%;box-sizing:border-box;margin:0;padding:9px 9px 6px;border-radius:14px;background:linear-gradient(180deg,rgba(var(--c),.15),rgba(var(--c),.05));border:1px solid rgba(var(--c),.32);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.lv-eco-group--app{background:none;border:0;padding:0;box-shadow:none}
+.lv-eco-group--app .lv-eco-app{position:relative;overflow:hidden;height:100%;display:flex;align-items:stretch;justify-content:space-between;gap:10px;padding:14px 0 14px 14px;border-radius:14px;background:linear-gradient(150deg,rgba(236,72,153,.32),rgba(15,23,42,.3) 58%,rgba(6,182,212,.18));border:1px solid rgba(236,72,153,.5);text-decoration:none;color:${SNOW}}
+.lv-eco-app-txt{display:flex;flex-direction:column;gap:9px;min-width:0;flex:1;justify-content:center}
+.lv-eco-app-title{font-family:${WORDMARK_FONT};font-weight:400;font-size:22px;letter-spacing:.04em;line-height:1;color:${SNOW};text-transform:none}
+.lv-eco-app-stats{font-size:11.5px;line-height:1.35;color:rgba(249,250,251,.72)}
+.lv-eco-app-cta{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;max-width:100%;padding:7px 11px;border-radius:14px;background:${PINK_FILL};color:#fff;font-size:12px;font-weight:700;letter-spacing:.01em;line-height:1.2;text-align:left;transition:background .15s}
+.lv-eco-app-cta svg{flex:none}
+.lv-eco-app:hover .lv-eco-app-cta{background:#BE185D}
+.lv-eco-app-shot{flex:none;width:84px;align-self:flex-end;margin-bottom:-44px;border-radius:14px 14px 0 0;overflow:hidden;border:2px solid rgba(255,255,255,.2);border-bottom:0;box-shadow:0 12px 30px -10px rgba(0,0,0,.8);background:#0F172A;transition:transform .2s}
+.lv-eco-app:hover .lv-eco-app-shot{transform:translateY(-4px)}
+.lv-eco-app-shot img{display:block;width:100%;height:auto}
+.lv-eco-h{display:flex;align-items:center;gap:8px;font-family:${WORDMARK_FONT};font-weight:400;font-size:19px;letter-spacing:.06em;line-height:1.1;color:rgb(var(--c));margin:0 0 5px 3px;padding-bottom:6px;border-bottom:1px solid rgba(var(--c),.22);text-transform:none}
+.lv-eco-h svg{flex:none;filter:drop-shadow(0 0 6px rgba(var(--c),.55))}
+.lv-eco-h .lv-eco-here{margin-left:auto}
+.lv-eco-h .lv-eco-here svg{filter:none}
 .lv-eco-group ul{list-style:none;margin:0;padding:0}
 .lv-eco-group li{margin:0;padding:0}
-.lv-eco-row{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;text-decoration:none;color:${SNOW};transition:background .15s}
-.lv-eco-row:hover{background:rgba(255,255,255,.07);color:${SNOW}}
-.lv-eco-row:focus-visible{outline:0;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 2px rgba(6,182,212,.7)}
+.lv-eco-row{display:flex;align-items:center;gap:10px;padding:6px 7px;border-radius:9px;text-decoration:none;color:${SNOW};transition:background .15s}
+.lv-eco-row:hover{background:rgba(var(--c),.2);color:${SNOW}}
+.lv-eco-row:focus-visible{outline:0;background:rgba(var(--c),.2);box-shadow:inset 0 0 0 2px rgba(6,182,212,.7)}
 .lv-eco-txt{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
-.lv-eco-name{font-size:14px;font-weight:500;line-height:1.25;color:${SNOW}}
-.lv-eco-dom{font-size:12px;color:rgba(249,250,251,.55);line-height:1.2;overflow-wrap:anywhere}
+.lv-eco-name{font-size:14px;font-weight:600;line-height:1.25;color:${SNOW}}
+.lv-eco-dom{font-size:11.5px;color:rgba(249,250,251,.5);line-height:1.2;overflow-wrap:anywhere}
 .lv-eco-arrow{width:14px;height:14px;flex:none;color:rgba(249,250,251,.3);transition:color .15s}
 .lv-eco-row:hover .lv-eco-arrow,.lv-eco-row:focus-visible .lv-eco-arrow{color:${PINK}}
-.lv-eco-row.is-current{background:rgba(236,72,153,.08);box-shadow:inset 0 0 0 1px rgba(236,72,153,.35)}
+.lv-eco-row.is-current{background:rgba(236,72,153,.2);box-shadow:inset 0 0 0 1px rgba(236,72,153,.6)}
 .lv-eco-here{flex:none;display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;background:${PINK_FILL};color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1;white-space:nowrap}
-.lv-eco-app{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;text-decoration:none;color:${SNOW};border:1px solid rgba(236,72,153,.35);background:rgba(236,72,153,.06);transition:background .15s,border-color .15s}
-.lv-eco-app:hover,.lv-eco-app:focus-visible{background:rgba(236,72,153,.12);border-color:rgba(236,72,153,.6);outline:0;color:${SNOW}}
-.lv-eco-appicon{flex:none;width:30px;height:30px;border-radius:10px;background:${PINK_FILL};display:inline-flex;align-items:center;justify-content:center;color:#fff}
+.lv-eco-app:hover,.lv-eco-app:focus-visible{border-color:rgba(236,72,153,.85);outline:0;color:${SNOW}}
+.lv-eco-app:focus-visible{box-shadow:0 0 0 2px rgba(6,182,212,.7)}
 .lv-eco-empty{margin:18px 8px 6px;color:rgba(249,250,251,.6);font-size:14px}
 @keyframes lvEcoPop{from{opacity:0;transform:translateY(-6px) scale(.985)}to{opacity:1;transform:none}}
 @keyframes lvEcoSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -264,8 +313,12 @@ const CSS = `
 .lv-eco-search{order:3;flex:1 1 100%;max-width:none;height:46px}
 .lv-eco-search input{font-size:16px}
 .lv-eco-rule{display:none}
-.lv-eco-cols{columns:auto;column-count:1;padding:10px 10px 0}
-.lv-eco-h{font-size:20px;margin:6px 0 6px 10px}
+.lv-eco-cols{display:block;padding:10px 10px 0}
+.lv-eco-group{height:auto;margin:0 0 12px;padding:10px 10px 6px}
+.lv-eco-group--app .lv-eco-app{height:auto;min-height:0;padding:12px 0 12px 14px}
+.lv-eco-app-title{font-size:20px}
+.lv-eco-app-shot{width:72px;margin-bottom:-30px}
+.lv-eco-h{font-size:20px;margin:0 0 6px 4px}
 .lv-eco-row{min-height:50px;padding:6px 10px;border-radius:12px}
 .lv-eco-name{font-size:15.5px}
 .lv-eco-dom{font-size:12.5px}
@@ -309,6 +362,7 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   const noResults = chrome('noResults', 'Ei osumia.', 'No matches.');
   const closeLabel = chrome('close', 'Sulje', 'Close');
   const appLabel = chrome('getApp', 'Lataa sovellus', 'Get the app');
+  const app = APP_I18N[L] ?? (isFi ? APP_I18N.fi : APP_I18N.en);
   const onHub = currentDomain === HUB;
 
   useEffect(() => {
@@ -333,7 +387,7 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   }, []);
 
   // Groups in trip order; the hub is the wordmark, not a row.
-  const groups = useMemo(() => CAT_ORDER.filter((c) => c !== 'hub').map((cat) => ({
+  const groups = useMemo(() => MENU_ORDER.map((cat) => ({
     cat,
     label: ecosystemCatLabel(cat, lang),
     rgb: CAT_RGB[cat],
@@ -347,7 +401,7 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   const visible = groups
     .map((g) => ({ ...g, sites: q ? g.sites.filter((x) => x.key.includes(q)) : g.sites }))
     .filter((g) => g.sites.length > 0);
-  const appVisible = !q || norm(`${appLabel} app appi sovellus ${APP}`).includes(q);
+  const appVisible = !q || norm(`${appLabel} ${app.title} ${app.cta} app appi sovellus ${APP}`).includes(q);
   const total = visible.reduce((n, g) => n + g.sites.length, 0) + (appVisible ? 1 : 0);
 
   const close = useCallback((returnFocus = true) => {
@@ -361,7 +415,11 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
     if (!open) return;
     const update = () => {
       const r = btnRef.current?.getBoundingClientRect();
-      if (r) setPos({ top: Math.round(r.bottom + 8), left: Math.round(r.left) });
+      if (!r) return;
+      const vw = document.documentElement.clientWidth;
+      const w = Math.min(1160, vw - 32);
+      // Right-anchored triggers (laplandgifts) would otherwise push the panel off-screen.
+      setPos({ top: Math.round(r.bottom + 8), left: Math.round(Math.max(16, Math.min(r.left, vw - 16 - w))) });
     };
     update();
     let raf = 0;
@@ -470,9 +528,9 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
       </div>
       <div className="lv-eco-rule" />
       <div className="lv-eco-cols">
-        {visible.map((g) => (
+        {visible.map((g) => { const Icon = CAT_ICON[g.cat]; return (
           <section key={g.cat} className="lv-eco-group" style={{ '--c': g.rgb } as CSSProperties}>
-            <h3 className="lv-eco-h">{g.label}</h3>
+            <h3 className="lv-eco-h"><Icon size={18} strokeWidth={2.2} aria-hidden="true" />{g.label}{g.sites.some((x) => x.site.domain === currentDomain) && herePill}</h3>
             <ul>
               {g.sites.map(({ site, name }) => {
                 const cur = site.domain === currentDomain;
@@ -489,21 +547,24 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
                         <span className="lv-eco-name">{name}</span>
                         <span className="lv-eco-dom">{site.domain}</span>
                       </span>
-                      {cur ? herePill : arrow}
+                      {cur ? null : arrow}
                     </a>
                   </li>
                 );
               })}
             </ul>
           </section>
-        ))}
+        ); })}
         {appVisible && (
-          <div className="lv-eco-group">
-            <a className="lv-eco-app" href={`https://${APP}`} target="_blank" rel="noopener" data-umami-event="eco_jump" data-umami-event-site={APP}>
-              <span className="lv-eco-appicon"><Smartphone size={16} strokeWidth={2.2} aria-hidden="true" /></span>
-              <span className="lv-eco-txt">
-                <span className="lv-eco-name">{appLabel}</span>
-                <span className="lv-eco-dom">{APP}</span>
+          <div className="lv-eco-group lv-eco-group--app">
+            <a className="lv-eco-app" href={APP_URL} target="_blank" rel="noopener" aria-label={`${app.title} ${app.cta}`} data-umami-event="eco_jump" data-umami-event-site={APP}>
+              <span className="lv-eco-app-txt">
+                <span className="lv-eco-app-title">{app.title}</span>
+                <span className="lv-eco-app-stats">{APP_STATS.destinations} {app.stats[0]} · {APP_STATS.slopes} {app.stats[1]} · {APP_STATS.lifts} {app.stats[2]}</span>
+                <span className="lv-eco-app-cta"><Download size={13} strokeWidth={2.4} aria-hidden="true" />{app.cta}</span>
+              </span>
+              <span className="lv-eco-app-shot" aria-hidden="true">
+                <img src={APP_SHOT} alt="" loading="lazy" decoding="async" width={468} height={1013} onError={(e) => { (e.currentTarget.parentElement as HTMLElement).style.display = 'none'; }} />
               </span>
             </a>
           </div>
