@@ -24,6 +24,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import APP_STATS from '../shared/appStats';
 import { useLocation } from 'react-router-dom';
 import { X, Smartphone, Download } from 'lucide-react';
 
@@ -74,11 +75,14 @@ type Copy = {
 };
 
 /**
- * 🔴 Every number below is counted from the app's own data, never rounded up:
- * 31 municipalities, 211 slopes and 105 lifts across 9 resorts, 475 checked
- * places (120 restaurants, 85 shops, 47 cafes, 47 fuel stations, 39 gyms,
- * 37 ATMs, 37 bars, 33 pharmacies, 29 saunas). EV chargers come live from
- * /api/chargers, so they get no fixed figure.
+ * 🔴 EVERY NUMBER COMES FROM ../shared/appStats (node scripts/app_stats.mjs),
+ * counted from the app's own data modules, never typed here. Vesa 5.9.2026:
+ * "tarkastaa että appimainoksessa tiedot on tätä päivää ja paikkansapitäviä."
+ * Measured that day: this promo said "475 checked places" while the app held
+ * 478, and "31 municipalities" for what are 31 DESTINATIONS (Levi, Ylläs and
+ * Saariselkä are villages; Lapland has 21 municipalities). The app itself
+ * stopped freezing counts into copy (src/test/home-counts.test.ts) — same rule
+ * here. The figures are destinations, slopes, lifts, places.
  *
  * The excitement has to come from the scale being real. "Never before" is a
  * claim anyone can make; "211 slopes and the nearest charger, offline, free"
@@ -90,14 +94,13 @@ const COPY: Record<string, Copy> = {
     title: 'All of Lapland. One app.',
     hype: 'Get the whole north in your pocket',
     lead: 'Nobody has put the whole of Finnish Lapland in one place before. Every municipality, every slope, every charger, every trailhead. And it still works when the signal does not.',
-    stats: ['municipalities', 'slopes', 'lifts', 'checked places'],
+    stats: ['destinations', 'slopes', 'lifts', 'places'],
     features: [
       'Slope and lift counts for nine resorts',
       'EV charging points and petrol stations',
       'Trails, wilderness huts and campsites',
       'Events from across Lapland',
       'Tickets kept in the app wallet',
-      'Slope conditions from other skiers',
       'Flights, hotels and cars in one search',
       'Emergency numbers and nearest pharmacy',
     ],
@@ -111,14 +114,13 @@ const COPY: Record<string, Copy> = {
     title: 'Koko Lappi. Yksi sovellus.',
     hype: 'Ota koko pohjoinen taskuusi',
     lead: 'Kukaan ei ole aiemmin koonnut koko Suomen Lappia yhteen paikkaan. Jokainen kunta, jokainen rinne, jokainen latausasema, jokainen reitin lähtöpaikka. Ja se toimii silloinkin kun kenttää ei ole.',
-    stats: ['kuntaa', 'rinnettä', 'hissiä', 'tarkistettua paikkaa'],
+    stats: ['kohdetta', 'rinnettä', 'hissiä', 'paikkaa'],
     features: [
       'Yhdeksän keskuksen rinteet ja hissit',
       'Sähköautojen latausasemat, huoltoasemat',
       'Vaellusreitit, autiotuvat, leirintä',
       'Tapahtumat koko Lapin alueelta',
       'Liput sovelluksen lompakossa',
-      'Rinnetilanne muilta hiihtäjiltä',
       'Lennot, hotellit ja autot',
       'Hätänumerot ja lähin apteekki',
     ],
@@ -132,14 +134,13 @@ const COPY: Record<string, Copy> = {
     title: 'Hela Lappland. En app.',
     hype: 'Ta hela norr i fickan',
     lead: 'Ingen har tidigare samlat hela finska Lappland på ett ställe. Varje kommun, varje backe, varje laddstation, varje ledstart. Och det fungerar även när täckningen tar slut.',
-    stats: ['kommuner', 'backar', 'liftar', 'kontrollerade platser'],
+    stats: ['resmål', 'backar', 'liftar', 'platser'],
     features: [
       'Antal backar och liftar för nio orter',
       'Laddstationer för elbil och bensinstationer',
       'Leder, ödestugor och campingplatser',
       'Evenemang från hela Lappland',
       'Biljetter i appens plånbok',
-      'Backförhållanden från andra åkare',
       'Flyg, hotell och bilar i en sökning',
       'Nödnummer och närmaste apotek',
     ],
@@ -153,14 +154,13 @@ const COPY: Record<string, Copy> = {
     title: 'Ganz Lappland. Eine App.',
     hype: 'Holen Sie sich den ganzen Norden in die Tasche',
     lead: 'Noch nie hat jemand das gesamte finnische Lappland an einem Ort versammelt. Jede Gemeinde, jede Piste, jede Ladesäule, jeder Wanderparkplatz. Und es funktioniert auch dann, wenn kein Netz mehr da ist.',
-    stats: ['Gemeinden', 'Pisten', 'Lifte', 'geprüfte Orte'],
+    stats: ['Ziele', 'Pisten', 'Lifte', 'Orte'],
     features: [
       'Pisten- und Liftzahlen für neun Gebiete',
       'Ladesäulen für E-Autos und Tankstellen',
       'Wege, Wildnishütten und Campingplätze',
       'Veranstaltungen aus ganz Lappland',
       'Tickets in der Wallet der App',
-      'Pistenzustand von anderen Fahrern',
       'Flüge, Hotels und Autos in einer Suche',
       'Notrufnummern und nächste Apotheke',
     ],
@@ -174,14 +174,13 @@ const COPY: Record<string, Copy> = {
     title: 'Toute la Laponie. Une appli.',
     hype: 'Tout le Grand Nord dans votre poche',
     lead: 'Personne n’avait encore réuni toute la Laponie finlandaise au même endroit. Chaque commune, chaque piste, chaque borne de recharge, chaque départ de sentier. Et ça marche même sans réseau.',
-    stats: ['communes', 'pistes', 'remontées', 'lieux vérifiés'],
+    stats: ['destinations', 'pistes', 'remontées', 'lieux'],
     features: [
       'Pistes et remontées de neuf stations',
       'Bornes de recharge et stations-service',
       'Sentiers, refuges et campings',
       'Événements de toute la Laponie',
       'Billets dans le portefeuille de l’appli',
-      'État des pistes par d’autres skieurs',
       'Vols, hôtels et voitures en une recherche',
       'Numéros d’urgence et pharmacie proche',
     ],
@@ -195,14 +194,13 @@ const COPY: Record<string, Copy> = {
     title: 'Toda Laponia. Una app.',
     hype: 'Todo el norte en su bolsillo',
     lead: 'Nadie había reunido antes toda la Laponia finlandesa en un solo sitio. Cada municipio, cada pista, cada punto de recarga, cada inicio de ruta. Y funciona también sin cobertura.',
-    stats: ['municipios', 'pistas', 'remontes', 'lugares verificados'],
+    stats: ['destinos', 'pistas', 'remontes', 'lugares'],
     features: [
       'Pistas y remontes de nueve estaciones',
       'Puntos de recarga y gasolineras',
       'Rutas, refugios y campings',
       'Eventos de toda Laponia',
       'Entradas en la cartera de la app',
-      'Estado de pistas por otros esquiadores',
       'Vuelos, hoteles y coches en una búsqueda',
       'Emergencias y farmacia más cercana',
     ],
@@ -216,14 +214,13 @@ const COPY: Record<string, Copy> = {
     title: 'Tutta la Lapponia. Un’app.',
     hype: 'Tutto il nord in tasca',
     lead: 'Nessuno aveva mai riunito tutta la Lapponia finlandese in un unico posto. Ogni comune, ogni pista, ogni colonnina, ogni punto di partenza. E funziona anche quando il segnale non c’è.',
-    stats: ['comuni', 'piste', 'impianti', 'luoghi verificati'],
+    stats: ['destinazioni', 'piste', 'impianti', 'luoghi'],
     features: [
       'Piste e impianti di nove comprensori',
       'Colonnine per auto elettriche e distributori',
       'Sentieri, rifugi e campeggi',
       'Eventi da tutta la Lapponia',
       'Biglietti nel portafoglio dell’app',
-      'Stato delle piste da altri sciatori',
       'Voli, hotel e auto in una ricerca',
       'Numeri d’emergenza e farmacia vicina',
     ],
@@ -237,14 +234,13 @@ const COPY: Record<string, Copy> = {
     title: 'Heel Lapland. Eén app.',
     hype: 'Het hele noorden in uw zak',
     lead: 'Niemand heeft ooit heel Fins Lapland op één plek samengebracht. Elke gemeente, elke piste, elke laadpaal, elk startpunt. En het werkt ook als er geen bereik is.',
-    stats: ['gemeenten', 'pistes', 'liften', 'gecontroleerde plekken'],
+    stats: ['bestemmingen', 'pistes', 'liften', 'plekken'],
     features: [
       'Aantal pistes en liften van negen skigebieden',
       'Laadpalen voor elektrische auto’s en tankstations',
       'Routes, wildernishutten en campings',
       'Evenementen uit heel Lapland',
       'Tickets in de wallet van de app',
-      'Pistestatus van andere skiërs',
       'Vluchten, hotels en auto’s in één zoekopdracht',
       'Alarmnummers en dichtstbijzijnde apotheek',
     ],
@@ -258,14 +254,13 @@ const COPY: Record<string, Copy> = {
     title: 'Toda a Lapônia. Um app.',
     hype: 'Todo o norte no seu bolso',
     lead: 'Ninguém havia reunido toda a Lapônia finlandesa em um só lugar. Cada município, cada pista, cada carregador, cada início de trilha. E funciona mesmo sem sinal.',
-    stats: ['municípios', 'pistas', 'teleféricos', 'lugares verificados'],
+    stats: ['destinos', 'pistas', 'teleféricos', 'lugares'],
     features: [
       'Pistas e teleféricos de nove estações',
       'Carregadores para carros elétricos e postos',
       'Trilhas, abrigos e campings',
       'Eventos de toda a Lapônia',
       'Ingressos na carteira do app',
-      'Condições das pistas por outros esquiadores',
       'Voos, hotéis e carros em uma busca',
       'Emergências e farmácia mais próxima',
     ],
@@ -279,14 +274,13 @@ const COPY: Record<string, Copy> = {
     title: 'ラップランドのすべてを、ひとつのアプリに。',
     hype: '北のすべてをポケットに',
     lead: 'フィンランド領ラップランド全体をひとつにまとめたアプリは、これまでありませんでした。すべての自治体、ゲレンデ、充電スタンド、登山口。電波が届かない場所でも使えます。',
-    stats: ['自治体', 'ゲレンデ', 'リフト', '確認済みスポット'],
+    stats: ['目的地', 'ゲレンデ', 'リフト', 'スポット'],
     features: [
       'スキー場9か所のゲレンデ数とリフト数',
       'EV充電スタンドとガソリンスタンド',
       'トレイル、無人小屋、キャンプ場',
       'ラップランド全域のイベント',
       'チケットはアプリのウォレットに',
-      '他の滑走者によるゲレンデ状況',
       '航空券・ホテル・レンタカーを一度に検索',
       '緊急連絡先と最寄りの薬局',
     ],
@@ -300,14 +294,13 @@ const COPY: Record<string, Copy> = {
     title: '라플란드 전체를, 하나의 앱에.',
     hype: '북쪽 전체를 주머니에',
     lead: '핀란드 라플란드 전체를 한곳에 모은 앱은 지금까지 없었습니다. 모든 지자체, 모든 슬로프, 모든 충전소, 모든 트레일 입구. 신호가 없는 곳에서도 작동합니다.',
-    stats: ['지자체', '슬로프', '리프트', '검증된 장소'],
+    stats: ['목적지', '슬로프', '리프트', '장소'],
     features: [
       '스키장 아홉 곳의 슬로프와 리프트 수',
       '전기차 충전소와 주유소',
       '트레일, 산장, 캠핑장',
       '라플란드 전역의 행사',
       '티켓은 앱 지갑에 보관',
-      '다른 스키어들이 남긴 슬로프 상태',
       '항공·호텔·렌터카를 한 번에 검색',
       '긴급 전화번호와 가장 가까운 약국',
     ],
@@ -321,14 +314,13 @@ const COPY: Record<string, Copy> = {
     title: '整个拉普兰，装进一个应用。',
     hype: '把整个北方装进口袋',
     lead: '此前从未有人把整个芬兰拉普兰装进一个地方。每个市镇、每条雪道、每个充电桩、每个步道起点。没有信号时它依然可用。',
-    stats: ['市镇', '雪道', '缆车', '已核实地点'],
+    stats: ['目的地', '雪道', '缆车', '地点'],
     features: [
       '九家滑雪场的雪道与缆车数量',
       '电动汽车充电桩与加油站',
       '步道、野外小屋与营地',
       '整个拉普兰的活动',
       '门票存放在应用卡包中',
-      '来自其他雪友的雪道状况',
       '机票、酒店与租车一次搜完',
       '紧急电话与最近的药房',
     ],
@@ -384,7 +376,7 @@ export function AppPromoHero() {
   const { pathname } = useLocation();
   const c = copyFor(localeFromPath(pathname));
 
-  const FIGURES = ['31', '211', '105', '475'] as const;
+  const FIGURES = [String(APP_STATS.destinations), String(APP_STATS.slopes), String(APP_STATS.lifts), String(APP_STATS.places)] as const;
   return (
     <section className="my-8 not-prose">
       <div style={BODY_FONT} className="relative overflow-hidden rounded-3xl border border-[#EC4899]/40 bg-gradient-to-br from-[#4a1236] via-[#241a3f] to-[#123152] px-5 py-5 sm:px-7 sm:py-6">

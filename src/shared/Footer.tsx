@@ -1343,7 +1343,7 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                   <button
                     type="button"
                     onClick={() => setContactKind('general')}
-                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:min-w-0 justify-center px-1 bg-transparent border-0 cursor-pointer text-xs font-normal"
+                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:min-w-0 justify-start sm:justify-center px-1 bg-transparent border-0 cursor-pointer text-xs font-normal"
                     style={{ color: BLUE }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#EC4899')}
                     onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = BLUE)}
