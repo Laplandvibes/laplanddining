@@ -176,6 +176,7 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
       <div className="max-w-6xl mx-auto">
         {/* Kävijälle vain neutraali "Kumppanit" — tier-nimet ovat myyntikieltä
             (elävät vain house-adien pitchissä + LV Media -portaalissa). */}
+        {!single && (
         <p
           className={[
             'text-xs uppercase tracking-[0.2em] font-semibold mb-5',
@@ -184,11 +185,13 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
         >
           {t.partners}
         </p>
+        )}
 
         <div className={[
           'grid grid-cols-1 gap-4 sm:gap-5 items-stretch',
           bothEmpty || single ? '' : 'sm:grid-cols-2',
-          single ? 'max-w-2xl' : '',
+          // 62rem = sama sisäleveys kuin tuoteriveillä (max-w-5xl − px-4).
+          single ? 'max-w-[62rem] mx-auto' : '',
         ].filter(Boolean).join(' ')}>
           {/* Kortti A (vasen desktopissa). House-ad-placeholder vain
               myyntikielillä — muilla lokaaleilla tyhjä paikka ei renderöidy. */}
@@ -199,6 +202,7 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
               locale={locale}
               surface={surface}
               houseAdTone={houseAdTone}
+              layout={single ? 'wide' : 'stack'}
               className={['w-full', cardClassName].filter(Boolean).join(' ')}
               placeholder={salesLocale ? { siteSlug: config.siteSlug, slotId: 'card_a', level: 'card' } : undefined}
             />

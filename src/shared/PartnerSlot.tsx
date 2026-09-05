@@ -144,6 +144,9 @@ export type PartnerSlotProps = {
    * Koskee VAIN house-adia; myyty kumppanikortti renderöityy aina samoin.
    */
   houseAdTone?: 'loud' | 'subtle';
+  /** 'wide' = kuva vasemmalla, teksti oikealla md:stä ylöspäin. Käytetään kun
+   *  sivulla on vain yksi myyty kortti ja se istuu tuoterivien rinnalla. */
+  layout?: 'stack' | 'wide';
   /** Vaaleat sivustot (christmas/stays/hoteldeals/nature): 'light' säätää house-adin värit */
   surface?: 'dark' | 'light';
 };
@@ -172,7 +175,7 @@ function pickLocalized(
   return en ?? base;
 }
 
-export default function PartnerSlot({ partner, variant, locale, className, placeholder, surface = 'dark', houseAdTone = 'loud' }: PartnerSlotProps) {
+export default function PartnerSlot({ partner, variant, locale, className, placeholder, surface = 'dark', houseAdTone = 'loud', layout = 'stack' }: PartnerSlotProps) {
   // Tyhjä paikka: house-ad jos placeholder annettu, muuten ei DOM:ia lainkaan
   if (partner === null) {
     if (!placeholder) return null;
@@ -366,10 +369,17 @@ export default function PartnerSlot({ partner, variant, locale, className, place
       <div
         data-partner-slot="card"
         className={[
-          'group relative flex flex-col overflow-hidden rounded-2xl border transition-all duration-300',
+          // 🔴 Vesa 5.9.2026: "kumppaniosuus ei sovi yhtään tähän, ihan eri
+          // tasolla suomikaupan kanssa." Kortti oli kapea reunaviivakortti
+          // kelluvan tuoterivikehyksen vieressä. Nyt sama kehys kuin
+          // shared/ads/ProductRail: 28 px pyöristys, kerrostettu varjo, ei
+          // reunaviivaa; layout='wide' asettaa kuvan vasemmalle ja tekstin
+          // oikealle md:stä ylöspäin.
+          'group relative flex flex-col overflow-hidden rounded-[28px] transition-[transform,box-shadow] duration-300',
+          layout === 'wide' ? 'md:flex-row md:items-stretch' : '',
           lightCard
-            ? 'border-[#0F172A]/12 bg-white shadow-sm hover:border-vibe-pink/50 hover:shadow-md'
-            : 'border-white/15 bg-white/5 backdrop-blur-sm hover:border-vibe-pink/40',
+            ? 'bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_28px_56px_-30px_rgba(15,23,42,0.28)] hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_32px_60px_-28px_rgba(15,23,42,0.34)]'
+            : 'bg-white/[0.045] shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_28px_56px_-28px_rgba(0,0,0,0.65)]',
           className,
         ]
           .filter(Boolean)
@@ -380,7 +390,10 @@ export default function PartnerSlot({ partner, variant, locale, className, place
           target="_blank"
           rel="sponsored nofollow noopener"
           aria-label={`${badge}: ${partner.name}`}
-          className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vibe-pink"
+          className={[
+            'block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vibe-pink',
+            layout === 'wide' ? 'md:w-5/12 md:shrink-0' : '',
+          ].filter(Boolean).join(' ')}
         >
         {/* KUVA + TEKSTI KUVAN PÄÄLLÄ.
             Vesa 2026-07-27: aiemmin kortti oli kuva + nimi + tagline erillisessä
@@ -390,7 +403,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
             vammalta kuin maksava asiakas. Maksetun paikan pitää viestiä että
             tuon voi varata: teksti kuvan päälle scrimin kanssa + oma CTA-nappi,
             samalla logiikalla kuin alasivujen AdUnit. */}
-        <div className="relative aspect-[16/10] overflow-hidden">
+        <div className={['relative aspect-[16/10] overflow-hidden', layout === 'wide' ? 'md:aspect-auto md:h-full md:min-h-[22rem]' : ''].filter(Boolean).join(' ')}>
           {partner.imageSrc ? (
             <img
               src={partner.imageSrc}
@@ -469,7 +482,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
         </a>
 
         {(cta || description || (articleUrl && articleLabel)) && (
-          <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
+          <div className={['p-5 sm:p-6 flex flex-col gap-3 sm:gap-4', layout === 'wide' ? 'md:flex-1 md:justify-center md:p-8 lg:p-10' : ''].filter(Boolean).join(' ')}>
             {/* Pidempi kuvaus vain sm+: desktopissa on tilaa, mobiilissa ei. */}
             {description && (
               <p

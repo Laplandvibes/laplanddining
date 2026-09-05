@@ -716,6 +716,22 @@ interface SharedFooterProps {
    */
   extraLegalLinks?: { to: string; label: string }[];
   /**
+   * Per-site slugs for the three canonical legal pages. Defaults are the
+   * network standard and 26/27 sites need nothing here.
+   *
+   * 🔴 laplandskiresorts serves its privacy policy at `/privacy-policy` — its
+   * canonical, sitemap and hreflang set have carried that slug since launch and
+   * `/privacy` has never existed there. The hardcoded `/privacy` link therefore
+   * pointed at a real 404 in the footer of every page on that site (found by
+   * e2e/check-links.mjs 2026-08-22). The same split already exists in
+   * shared/NewsletterPopup (`privacyHref`), which is why this is a prop and not
+   * a per-site fork of the Footer.
+   *
+   * Pass the slug WITHOUT locale prefix and WITHOUT trailing slash; the Footer
+   * adds both, so the link stays canonical and Cloudflare never answers 308.
+   */
+  legalPaths?: { privacy?: string; cookie?: string; terms?: string };
+  /**
    * Destination for the "Website by …" credit link. Defaults to yrityspaketit.fi;
    * pass e.g. "https://www.zatap.fi" on sites whose `websiteBy` label names Zatap,
    * so the label and the link target match.
@@ -863,7 +879,7 @@ function ContactModal({ kind, title, c, lang, onClose }: { kind: ContactKind; ti
   );
 }
 
-export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editorialNote, extraLegalLinks = [], dict, websiteByHref = 'https://yrityspaketit.fi' }: SharedFooterProps) {
+export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editorialNote, extraLegalLinks = [], legalPaths, dict, websiteByHref = 'https://yrityspaketit.fi' }: SharedFooterProps) {
   const d = mergeDict(dict);
   const siteGroups = buildSiteGroups(d);
   const [contactKind, setContactKind] = useState<ContactKind | null>(null);
@@ -1262,13 +1278,18 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
             className="pt-6 sm:pt-8 border-t flex flex-col gap-3"
             style={{ borderColor: 'rgba(0,47,108,0.18)' }}
           >
+            {/* 🔴 Vesa 5.9.2026 (gifts, mobiili): "footerin tekstit alhaalla on
+                ihan miten sattuu." editorialNote oli yksi keskitetty kappale,
+                jossa neljä eri asiaa oli ketjutettu " · "-erottimilla — 390 px
+                leveydellä kahdeksan riviä keskitettyä pientä tekstiä. Nyt
+                jokainen " · "-osa on oma rivinsä ja koko alaosa on tasattu
+                vasemmalle kuten muu footer. Sivuston oma teksti ei muutu. */}
             {editorialNote && (
-              <p
-                className="text-[12px] sm:text-[11px] leading-relaxed text-center md:text-left font-medium"
-                style={{ color: BLUE }}
-              >
-                {editorialNote}
-              </p>
+              <ul className="max-w-3xl space-y-1 text-[12px] sm:text-[11px] leading-relaxed text-left font-medium" style={{ color: BLUE }}>
+                {editorialNote.split(/\s+·\s+/).map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
             )}
             {/* 🔴 Kumppanuusmerkintä on lakisääteinen, ja tämä on koko verkoston
                 ainoa paikka jossa se näkyy joka sivulla — footer on kopioitu
@@ -1277,7 +1298,7 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                 teksti vaatii 4,5:1 — se jäi rikki hiuksenhienosti joka
                 sivustolla yhtä aikaa. 0,75 = 5,98:1 ja pysyy yhä selvästi
                 vaimeampana kuin yläpuolinen editorialNote. */}
-            <p className="text-[12px] sm:text-[11px] leading-relaxed text-center md:text-left" style={{ color: 'rgba(0,47,108,0.75)' }}>
+            <p className="max-w-3xl text-[12px] sm:text-[11px] leading-relaxed text-left" style={{ color: 'rgba(0,47,108,0.75)' }}>
               <span aria-hidden="true">ⓘ </span>
               {d.affiliate}
             </p>
@@ -1288,12 +1309,12 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                 dropped the 6th link to a lonely second line on wide screens
                 (Vesa 2026-07-03); full width + centre fits all six cleanly and
                 wraps evenly if it ever needs to. */}
-            <div className="flex flex-col items-center gap-3 text-xs font-normal">
-              <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-1">
+            <div className="flex flex-col items-start gap-3 text-xs font-normal sm:items-center">
+              <div className="grid w-full grid-cols-2 gap-x-4 gap-y-0 sm:flex sm:w-auto sm:flex-wrap sm:justify-center sm:items-center sm:gap-x-5 sm:gap-y-1">
                 {[
-                  { to: `${localePrefix}/privacy/`, label: d.legal.privacy },
-                  { to: `${localePrefix}/cookie-policy/`, label: d.legal.cookie },
-                  { to: `${localePrefix}/terms/`, label: d.legal.terms },
+                  { to: `${localePrefix}${legalPaths?.privacy ?? '/privacy'}/`, label: d.legal.privacy },
+                  { to: `${localePrefix}${legalPaths?.cookie ?? '/cookie-policy'}/`, label: d.legal.cookie },
+                  { to: `${localePrefix}${legalPaths?.terms ?? '/terms'}/`, label: d.legal.terms },
                   ...extraLegalLinks,
                 ].map(({ to, label }) => (
                   <Link
@@ -1303,7 +1324,7 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                        locale label ("Tietoa") gave a 42px-wide hit box even
                        though the height was already 44. Same trap as the
                        ecosystem links above. */
-                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:min-w-0 justify-center px-1"
+                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:min-w-0 justify-start sm:justify-center px-1"
                     style={{ color: BLUE }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#EC4899')}
                     onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = BLUE)}
