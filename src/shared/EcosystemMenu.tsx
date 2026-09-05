@@ -43,6 +43,10 @@ import { LayoutGrid, ChevronDown, ArrowUpRight, MapPin, Search, X, BedDouble, Co
  * logo and nav on any screen instead of being a fixed 1160 px box beside the
  * trigger.
  *
+ * v2.5 (Vesa, hub: "toi app kuva menee ruudusta ohi"): the phone screenshot
+ * sits fully inside the app tile in its own frame instead of rising out of the
+ * tile's bottom edge — the crop read as a broken image on a big screen.
+ *
  * SHARED across all sites, so it is THEME-INDEPENDENT: brand colours are inline
  * hex, and ALL layout lives in the scoped <style> block below (no Tailwind
  * utilities — a class that a site's Tailwind scan does not emit silently does
@@ -273,16 +277,16 @@ const CSS = `
 @media(min-width:768px) and (max-width:1023px){.lv-eco-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .lv-eco-group{display:flex;flex-direction:column;min-width:0;height:100%;box-sizing:border-box;margin:0;padding:9px 9px 6px;border-radius:14px;background:linear-gradient(180deg,rgba(var(--c),.15),rgba(var(--c),.05));border:1px solid rgba(var(--c),.32);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
 .lv-eco-group--app{background:none;border:0;padding:0;box-shadow:none}
-.lv-eco-group--app .lv-eco-app{position:relative;overflow:hidden;height:100%;display:flex;align-items:stretch;justify-content:space-between;gap:10px;padding:14px 0 14px 14px;border-radius:14px;background:linear-gradient(150deg,rgba(236,72,153,.32),rgba(15,23,42,.3) 58%,rgba(6,182,212,.18));border:1px solid rgba(236,72,153,.5);text-decoration:none;color:${SNOW}}
+.lv-eco-group--app .lv-eco-app{position:relative;overflow:hidden;height:100%;display:flex;align-items:stretch;justify-content:space-between;gap:12px;padding:14px;border-radius:14px;background:linear-gradient(150deg,rgba(236,72,153,.32),rgba(15,23,42,.3) 58%,rgba(6,182,212,.18));border:1px solid rgba(236,72,153,.5);text-decoration:none;color:${SNOW}}
 .lv-eco-app-txt{display:flex;flex-direction:column;gap:9px;min-width:0;flex:1;justify-content:center}
 .lv-eco-app-title{font-family:${WORDMARK_FONT};font-weight:400;font-size:22px;letter-spacing:.04em;line-height:1;color:${SNOW};text-transform:none}
 .lv-eco-app-stats{font-size:11.5px;line-height:1.35;color:rgba(249,250,251,.72)}
 .lv-eco-app-cta{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;max-width:100%;padding:7px 11px;border-radius:14px;background:${PINK_FILL};color:#fff;font-size:12px;font-weight:700;letter-spacing:.01em;line-height:1.2;text-align:left;transition:background .15s}
 .lv-eco-app-cta svg{flex:none}
 .lv-eco-app:hover .lv-eco-app-cta{background:#BE185D}
-.lv-eco-app-shot{flex:none;width:84px;align-self:flex-end;margin-bottom:-44px;border-radius:14px 14px 0 0;overflow:hidden;border:2px solid rgba(255,255,255,.2);border-bottom:0;box-shadow:0 12px 30px -10px rgba(0,0,0,.8);background:#0F172A;transition:transform .2s}
-.lv-eco-app:hover .lv-eco-app-shot{transform:translateY(-4px)}
-.lv-eco-app-shot img{display:block;width:100%;height:auto}
+.lv-eco-app-shot{flex:none;align-self:center;height:160px;width:auto;max-width:40%;margin:0;border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.22);box-shadow:0 8px 24px -10px rgba(0,0,0,.8);background:#0F172A;transition:transform .2s}
+.lv-eco-app:hover .lv-eco-app-shot{transform:translateY(-2px)}
+.lv-eco-app-shot img{display:block;height:100%;width:auto;object-fit:cover;object-position:top}
 .lv-eco-h{display:flex;align-items:center;gap:8px;font-family:${WORDMARK_FONT};font-weight:400;font-size:19px;letter-spacing:.06em;line-height:1.1;color:rgb(var(--c));margin:0 0 5px 3px;padding-bottom:6px;border-bottom:1px solid rgba(var(--c),.22);text-transform:none}
 .lv-eco-h svg{flex:none;filter:drop-shadow(0 0 6px rgba(var(--c),.55))}
 .lv-eco-h .lv-eco-here{margin-left:auto}
@@ -321,9 +325,9 @@ const CSS = `
 .lv-eco-rule{display:none}
 .lv-eco-cols{display:block;padding:10px 10px 0}
 .lv-eco-group{height:auto;margin:0 0 12px;padding:10px 10px 6px}
-.lv-eco-group--app .lv-eco-app{height:auto;min-height:0;padding:12px 0 12px 14px}
+.lv-eco-group--app .lv-eco-app{height:auto;min-height:0;padding:12px 14px}
 .lv-eco-app-title{font-size:20px}
-.lv-eco-app-shot{width:72px;margin-bottom:-30px}
+.lv-eco-app-shot{align-self:center;height:104px;max-width:none}
 .lv-eco-h{font-size:20px;margin:0 0 6px 4px}
 .lv-eco-row{min-height:50px;padding:6px 10px;border-radius:12px}
 .lv-eco-name{font-size:15.5px}
