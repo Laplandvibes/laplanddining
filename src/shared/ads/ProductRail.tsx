@@ -194,7 +194,13 @@ export default function ProductRail({
             // dark surface a black logotype needs a plate, like any real ad slot.
             <span
               className={`inline-flex h-11 items-center rounded-xl px-3 ${
-                dark ? 'bg-white shadow-[0_6px_16px_-8px_rgba(0,0,0,0.6)]' : ''
+                // Tumma logo tummalla pohjalla saa valkoisen laatan; vaalea logo
+                // vaalealla pohjalla tumman (Nordicbuddies). Muuten ei laattaa.
+                dark && brand.logoTone !== 'light'
+                  ? 'bg-white shadow-[0_6px_16px_-8px_rgba(0,0,0,0.6)]'
+                  : !dark && brand.logoTone === 'light'
+                    ? 'bg-[#141413] shadow-[0_6px_16px_-8px_rgba(15,23,42,0.5)]'
+                    : ''
               }`}
             >
               <img

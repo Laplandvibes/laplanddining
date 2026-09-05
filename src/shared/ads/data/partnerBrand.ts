@@ -5,6 +5,8 @@ export interface PartnerBrand {
   logo: string
   logoW: number
   logoH: number
+  /** 'light' = vaalea logo (tarvitsee tumman laatan vaalealla pohjalla). */
+  logoTone: 'light' | 'dark'
   accent: string | null
   accentDark: string | null
 }
@@ -13,6 +15,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/addnature/logo.png",
     "logoW": 480,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -20,6 +23,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/finlayson/logo.png",
     "logoW": 295,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -27,6 +31,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/halti/logo.png",
     "logoW": 307,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -34,6 +39,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/icebug/logo.png",
     "logoW": 90,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -41,6 +47,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/ivalo/logo.png",
     "logoW": 587,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -48,6 +55,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/jollyroom/logo.png",
     "logoW": 411,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": "#bf3a71",
     "accentDark": "#e24585"
   },
@@ -55,6 +63,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/makia/logo.png",
     "logoW": 560,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -62,6 +71,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/metsola/logo.png",
     "logoW": 473,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -69,6 +79,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/nanso/logo.png",
     "logoW": 409,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -76,6 +87,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/nordicnest/logo.png",
     "logoW": 210,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -83,6 +95,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/northoutdoor/logo.png",
     "logoW": 616,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -90,6 +103,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/onnipyora/logo.png",
     "logoW": 465,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -97,6 +111,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/polarnopyret/logo.png",
     "logoW": 1071,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -104,6 +119,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/scandinavianoutdoor/logo.png",
     "logoW": 314,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": "#771138",
     "accentDark": "#f04283"
   },
@@ -111,6 +127,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/silvantimanttikorut/logo.png",
     "logoW": 108,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -118,6 +135,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/smartphoto/logo.png",
     "logoW": 385,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": "#1278a0",
     "accentDark": "#179acd"
   },
@@ -125,6 +143,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/sukkamestarit/logo.png",
     "logoW": 500,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -132,6 +151,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/svala/logo.png",
     "logoW": 204,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   },
@@ -139,6 +159,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/suomikauppa/logo.png",
     "logoW": 381,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": "#1c409a",
     "accentDark": "#4a83ff"
   },
@@ -146,6 +167,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/nordicbuddies/logo.png",
     "logoW": 400,
     "logoH": 88,
+    "logoTone": "light",
     "accent": null,
     "accentDark": null
   },
@@ -153,6 +175,7 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "logo": "/images/partners/kalevala/logo.png",
     "logoW": 982,
     "logoH": 88,
+    "logoTone": "dark",
     "accent": null,
     "accentDark": null
   }
