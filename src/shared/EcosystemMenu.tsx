@@ -37,6 +37,12 @@ import { LayoutGrid, ChevronDown, ArrowUpRight, MapPin, Search, X, BedDouble, Co
  * title + counted figures (./appStats) + CTA + the app's own screenshot rising
  * from the bottom edge; copy verbatim from the hub's AppPromo in 12 languages.
  *
+ * v2.4 (Vesa, laplandgifts on a 2560 px screen, "mitoitettu ihan päin
+ * persettä"): the desktop panel takes the width and position of the header's
+ * content column (the site's max-width container), so it lines up with the
+ * logo and nav on any screen instead of being a fixed 1160 px box beside the
+ * trigger.
+ *
  * SHARED across all sites, so it is THEME-INDEPENDENT: brand colours are inline
  * hex, and ALL layout lives in the scoped <style> block below (no Tailwind
  * utilities — a class that a site's Tailwind scan does not emit silently does
@@ -245,7 +251,7 @@ const CSS = `
 .lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:${PINK_FILL};color:#fff;box-shadow:0 14px 34px -12px rgba(236,72,153,.7)}
 .lv-eco-hint-x{display:flex;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);font:inherit;line-height:1}
 .lv-eco-hint-x:hover{color:#fff}
-.lv-eco-panel{position:fixed;z-index:9990;top:var(--lv-eco-t,72px);left:var(--lv-eco-l,16px);width:min(1160px,calc(100vw - 32px));max-height:calc(100vh - var(--lv-eco-t,72px) - 16px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:rgba(15,23,42,.97);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -24px rgba(0,0,0,.85),0 0 60px -30px rgba(236,72,153,.5);color:${SNOW};padding:16px 22px 18px;font-family:${BODY_FONT};animation:lvEcoPop .16s ease-out;transform-origin:top left;text-align:left;line-height:1.4}
+.lv-eco-panel{position:fixed;z-index:9990;top:var(--lv-eco-t,72px);left:var(--lv-eco-l,16px);width:var(--lv-eco-w,min(1160px,calc(100vw - 32px)));max-height:calc(100vh - var(--lv-eco-t,72px) - 16px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:rgba(15,23,42,.97);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -24px rgba(0,0,0,.85),0 0 60px -30px rgba(236,72,153,.5);color:${SNOW};padding:16px 22px 18px;font-family:${BODY_FONT};animation:lvEcoPop .16s ease-out;transform-origin:top left;text-align:left;line-height:1.4}
 .lv-eco-panel:focus{outline:0}
 .lv-eco-panel *,.lv-eco-panel *::before,.lv-eco-panel *::after{box-sizing:border-box}
 .lv-eco-top{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap}
@@ -341,7 +347,7 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [mobile, setMobile] = useState(false);
-  const [pos, setPos] = useState({ top: 72, left: 16 });
+  const [pos, setPos] = useState({ top: 72, left: 16, width: 0 });
   // One-time discovery hint (Vesa 2026-07-10: "pop up nuoli joka näyttäisi
   // verkosto-tabin, jotta jengi tajuaa sen") — shows once per browser until
   // the menu is opened or the bubble dismissed. Desktop bubble only; on narrow
@@ -414,12 +420,23 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   useIsoLayoutEffect(() => {
     if (!open) return;
     const update = () => {
-      const r = btnRef.current?.getBoundingClientRect();
-      if (!r) return;
+      const btn = btnRef.current;
+      if (!btn) return;
+      const r = btn.getBoundingClientRect();
       const vw = document.documentElement.clientWidth;
-      const w = Math.min(1160, vw - 32);
-      // Right-anchored triggers (laplandgifts) would otherwise push the panel off-screen.
-      setPos({ top: Math.round(r.bottom + 8), left: Math.round(Math.max(16, Math.min(r.left, vw - 16 - w))) });
+      // Size and align the panel to the header's content column — the nearest
+      // ancestor narrower than the viewport, i.e. the site's max-width container
+      // (gifts ~1250 px centred, hub 1440, work 1536). A 2560 px screen otherwise
+      // showed a 1160 px box hugging the right-hand trigger with the site content
+      // centred far to its left (Vesa 2026-09-05). No container → viewport − 32.
+      let colLeft = 16, colWidth = vw - 32;
+      for (let el = btn.parentElement; el && el !== document.body; el = el.parentElement) {
+        const b = el.getBoundingClientRect();
+        if (b.width >= 700 && b.width <= vw - 40) { colLeft = b.left; colWidth = b.width; break; }
+      }
+      const width = Math.min(1600, Math.round(colWidth));
+      const left = Math.round(colLeft + (colWidth - width) / 2);
+      setPos({ top: Math.round(r.bottom + 8), left, width });
     };
     update();
     let raf = 0;
@@ -494,7 +511,7 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
       aria-label={heading}
       tabIndex={-1}
       onKeyDown={onPanelKeyDown}
-      style={{ '--lv-eco-t': `${pos.top}px`, '--lv-eco-l': `${pos.left}px` } as CSSProperties}
+      style={{ '--lv-eco-t': `${pos.top}px`, '--lv-eco-l': `${pos.left}px`, ...(pos.width ? { '--lv-eco-w': `${pos.width}px` } : {}) } as CSSProperties}
     >
       <div className="lv-eco-top">
         <a
