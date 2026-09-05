@@ -1,0 +1,87 @@
+{
+  "version": "20260905",
+  "domain": "laplanddining.com",
+  "brand": "DINING",
+  "tagline": "Where to eat in Finnish Lapland",
+  "generated": "2026-09-05T21:51:04.049Z",
+  "staticFallbackSeason": "summer",
+  "seasons": {
+    "summer": {
+      "heroUrl": "https://laplanddining.com/images/drive/heroInterior.webp",
+      "heroAlt": "Lapland restaurant interior",
+      "heroSha": "10b9f715cb8ac5fc",
+      "bytes": 181666,
+      "sha256": "ccbcd5ec695efe0b1ca267755ef6c29f6498e00d3b92a67077518994be0300ec",
+      "bandH": 168,
+      "photoPct": 73.3,
+      "ink": 16330,
+      "inkBox": [
+        381,
+        493,
+        818,
+        603
+      ],
+      "safe": true,
+      "accentP10": 5.06,
+      "accentMed": 5.06,
+      "whiteP10": 17.08,
+      "whiteMed": 17.08,
+      "mean": 65.4,
+      "centerSq": 73.7,
+      "photoRegion": 75.6,
+      "photoRegionRef": 75.6,
+      "overlayPixels": 0,
+      "maxDiff": 0,
+      "fit": {
+        "size": 74,
+        "lines": 1,
+        "ts": 30,
+        "tagW": 439,
+        "fits": true,
+        "bandH": 168
+      },
+      "contrastOk": true,
+      "zeroOverlay": true,
+      "errors": []
+    },
+    "winter": {
+      "heroUrl": "https://laplanddining.com/images/drive/heroInterior.webp",
+      "heroAlt": "Lapland restaurant interior",
+      "heroSha": "10b9f715cb8ac5fc",
+      "bytes": 181666,
+      "sha256": "ccbcd5ec695efe0b1ca267755ef6c29f6498e00d3b92a67077518994be0300ec",
+      "bandH": 168,
+      "photoPct": 73.3,
+      "ink": 16330,
+      "inkBox": [
+        381,
+        493,
+        818,
+        603
+      ],
+      "safe": true,
+      "accentP10": 5.06,
+      "accentMed": 5.06,
+      "whiteP10": 17.08,
+      "whiteMed": 17.08,
+      "mean": 65.4,
+      "centerSq": 73.7,
+      "photoRegion": 75.6,
+      "photoRegionRef": 75.6,
+      "overlayPixels": 0,
+      "maxDiff": 0,
+      "fit": {
+        "size": 74,
+        "lines": 1,
+        "ts": 30,
+        "tagW": 439,
+        "fits": true,
+        "bandH": 168
+      },
+      "contrastOk": true,
+      "zeroOverlay": true,
+      "errors": [],
+      "sameAsSummer": true
+    }
+  }
+}
