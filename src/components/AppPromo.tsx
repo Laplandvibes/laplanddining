@@ -632,42 +632,99 @@ export function AppPromoNudge() {
   // myös nyt").
   if (!show || onFrontPage) return null;
 
+  // 🔴 Redesigned 2026-09-06 (Vesa: "onhan se todella poor eikä meidän arvon
+  // mukainen, ja sen pitää oikeasti olla houkutteleva"). The old card was a flat
+  // pink bar with a download glyph in a tinted square — it read as an ad-network
+  // banner, not as our own product. What sells an app is the app: a real frame of
+  // it, the same slogan the front-page hero carries, one line that says why, two
+  // counted figures as proof, and a single pink button. The card is deep night so
+  // that button is the only thing on it asking for a tap. Every number comes from
+  // ../shared/appStats, exactly as in the hero — nothing here is typed in.
+
+  // The slogan as a two-line lockup: "Everything Lapland." over the localised
+  // half. Left to wrap on its own it broke mid-phrase at 375 ("… YKSI /
+  // SOVELLUS."). Titles without ". " (ja/ko/zh end in "。") stay on one line.
+  const dot = c.title.indexOf('. ');
+  const titleLines = dot > 0 ? [c.title.slice(0, dot + 1), c.title.slice(dot + 2)] : [c.title];
+
   return (
     <div
       role="complementary"
       aria-label={c.title}
-      className="fixed inset-x-0 bottom-0 z-40 p-3 sm:p-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] animate-[lvSlideUp_0.35s_cubic-bezier(.22,1,.36,1)]"
+      className="fixed inset-x-0 bottom-0 z-40 p-3 sm:p-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] animate-[lvSlideUp_0.45s_cubic-bezier(.22,1,.36,1)] motion-reduce:animate-none"
     >
       <style>{`@keyframes lvSlideUp{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}`}</style>
-      <div style={BODY_FONT} className="mx-auto max-w-2xl rounded-2xl border-2 border-white/25 bg-gradient-to-r from-[#EC4899] to-pink-600 px-4 py-3.5 sm:py-4 shadow-[0_-10px_50px_-10px_rgba(236,72,153,0.85)]">
-        {/* 🔴 The button cannot share a row with the words on a phone. It is
-            shrink-0 and ~190 px wide; with the 44 px icon, the close button and
-            three gaps that comes to 305 px of the 303 px a 375 px screen leaves,
-            so the text column collapsed to 10 px and set one word per line — a
-            209 px bar, a quarter of the screen, almost all of it wrapped text.
-            Below sm the button takes a full-width row of its own, and the hype
-            line steps aside there because the button already says it. */}
-        <div className="flex items-center gap-3 sm:gap-3.5">
-          <span className="grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-xl bg-white/20">
-            <Download className="h-5 w-5 text-white" />
-          </span>
+      <div
+        style={BODY_FONT}
+        className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-white/15 bg-[#0F172A] text-[#F9FAFB] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.75),0_0_0_1px_rgba(236,72,153,0.28)]"
+      >
+        {/* Aurora, not a flat fill: pink from the top-right corner, arctic cyan
+            from the bottom-left, both fading out before they reach the text. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(80% 120% at 100% 0%, rgba(236,72,153,0.32), transparent 60%), radial-gradient(70% 100% at 0% 100%, rgba(34,211,238,0.2), transparent 60%)',
+          }}
+        />
+
+        {/* 🔴 The button cannot share a row with the words on a phone (measured
+            2026-08-07: a 190 px button, the thumbnail, the close button and the
+            gaps left the text 10 px, one word per line). Below sm the button
+            takes a full-width row of its own, and the proof line steps aside
+            there because the screenshot already shows the product. */}
+        <div className="relative flex items-center gap-3 p-3 sm:gap-4 sm:p-4">
+          {/* A real frame of the app, not an icon. The top of the capture holds
+              the wordmark, a place name and live weather — the product in one
+              glance — and object-top keeps exactly that part in a short box. */}
+          <img
+            src={SHOT_SRC}
+            alt=""
+            width={468}
+            height={1013}
+            decoding="async"
+            className="h-[76px] w-[56px] shrink-0 rounded-[10px] border border-white/20 object-cover object-top shadow-[0_10px_24px_-8px_rgba(0,0,0,0.8)] sm:h-[88px] sm:w-[64px]"
+          />
           <div className="min-w-0 flex-1">
-            <p className="text-white font-bold text-[15px] leading-snug text-pretty">{c.title}</p>
-            <p className="hidden sm:block text-white/85 text-xs mt-0.5">{c.hype}</p>
+            <p style={DISPLAY_FONT} className="text-[22px] leading-none tracking-wide text-[#F9FAFB] sm:text-[26px]">
+              {titleLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </p>
+            <p className="mt-1 text-[13px] leading-snug text-[#F9FAFB]/80 text-pretty">{c.hype}</p>
+            {/* Two counted figures as proof; each pair is one unbreakable unit so
+                the line never splits a number from its label. The "no account"
+                reassurance sits under the button, where the hesitation is. */}
+            <p className="mt-1.5 hidden text-[12px] leading-none text-[#F9FAFB]/55 sm:block">
+              <span className="whitespace-nowrap">
+                <b className="font-semibold text-[#F9FAFB]/85">{APP_STATS.places}</b> {c.stats[3]}
+              </span>
+              <span aria-hidden className="mx-2 text-[#F9FAFB]/25">|</span>
+              <span className="whitespace-nowrap">
+                <b className="font-semibold text-[#F9FAFB]/85">{APP_STATS.destinations}</b> {c.stats[0]}
+              </span>
+            </p>
           </div>
-          <a
-            href={APP_URL}
-            onClick={openApp}
-            data-umami-event="app_cta"
-            data-umami-event-surface="promo_nudge"
-            className="hidden sm:inline-flex shrink-0 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-[#EC4899] shadow-md active:scale-[0.98] transition-transform"
-          >
-            {c.cta}
-          </a>
+          <div className="hidden shrink-0 flex-col items-center gap-1.5 sm:flex">
+            <a
+              href={APP_URL}
+              data-umami-event="app_cta"
+              data-umami-event-surface="promo_nudge"
+              onClick={openApp}
+              className="inline-flex items-center gap-2 rounded-full bg-[#DB2777] px-5 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_28px_-10px_rgba(236,72,153,0.9)] transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#EC4899] active:scale-[0.98]"
+            >
+              <Download className="h-4 w-4" />
+              {c.cta}
+            </a>
+            <span className="max-w-[220px] text-center text-[11px] leading-tight text-[#F9FAFB]/50">{c.free}</span>
+          </div>
           <button
             onClick={close}
             aria-label={c.dismiss}
-            className="shrink-0 rounded-full p-1.5 text-white/70 hover:text-white"
+            className="shrink-0 rounded-full p-2 text-[#F9FAFB]/55 transition-colors hover:bg-white/10 hover:text-[#F9FAFB]"
           >
             <X className="h-4 w-4" />
           </button>
@@ -675,10 +732,10 @@ export function AppPromoNudge() {
 
         <a
           href={APP_URL}
-          onClick={openApp}
           data-umami-event="app_cta"
           data-umami-event-surface="promo_nudge"
-          className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-[#EC4899] no-underline shadow-md transition-transform active:scale-[0.98] sm:hidden"
+          onClick={openApp}
+          className="relative mx-3 mb-3 flex items-center justify-center gap-2 rounded-full bg-[#DB2777] px-4 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_28px_-10px_rgba(236,72,153,0.9)] transition-transform active:scale-[0.98] sm:hidden"
         >
           <Download className="h-4 w-4" />
           {c.cta}
