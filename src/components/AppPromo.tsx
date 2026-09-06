@@ -91,7 +91,7 @@ type Copy = {
 const COPY: Record<string, Copy> = {
   en: {
     eyebrow: 'New',
-    title: 'All of Lapland. One app.',
+    title: 'Everything Lapland. One app.',
     hype: 'Get the whole north in your pocket',
     lead: 'Nobody has put the whole of Finnish Lapland in one place before. Every municipality, every slope, every charger, every trailhead. And it still works when the signal does not.',
     stats: ['destinations', 'slopes', 'lifts', 'places'],
@@ -111,7 +111,7 @@ const COPY: Record<string, Copy> = {
   },
   fi: {
     eyebrow: 'Uutta',
-    title: 'Koko Lappi. Yksi sovellus.',
+    title: 'Everything Lapland. Yksi sovellus.',
     hype: 'Ota koko pohjoinen taskuusi',
     lead: 'Kukaan ei ole aiemmin koonnut koko Suomen Lappia yhteen paikkaan. Jokainen kunta, jokainen rinne, jokainen latausasema, jokainen reitin lähtöpaikka. Ja se toimii silloinkin kun kenttää ei ole.',
     stats: ['kohdetta', 'rinnettä', 'hissiä', 'paikkaa'],
@@ -131,7 +131,7 @@ const COPY: Record<string, Copy> = {
   },
   sv: {
     eyebrow: 'Nytt',
-    title: 'Hela Lappland. En app.',
+    title: 'Everything Lapland. En app.',
     hype: 'Ta hela norr i fickan',
     lead: 'Ingen har tidigare samlat hela finska Lappland på ett ställe. Varje kommun, varje backe, varje laddstation, varje ledstart. Och det fungerar även när täckningen tar slut.',
     stats: ['resmål', 'backar', 'liftar', 'platser'],
@@ -151,7 +151,7 @@ const COPY: Record<string, Copy> = {
   },
   de: {
     eyebrow: 'Neu',
-    title: 'Ganz Lappland. Eine App.',
+    title: 'Everything Lapland. Eine App.',
     hype: 'Holen Sie sich den ganzen Norden in die Tasche',
     lead: 'Noch nie hat jemand das gesamte finnische Lappland an einem Ort versammelt. Jede Gemeinde, jede Piste, jede Ladesäule, jeder Wanderparkplatz. Und es funktioniert auch dann, wenn kein Netz mehr da ist.',
     stats: ['Ziele', 'Pisten', 'Lifte', 'Orte'],
@@ -171,7 +171,7 @@ const COPY: Record<string, Copy> = {
   },
   fr: {
     eyebrow: 'Nouveau',
-    title: 'Toute la Laponie. Une appli.',
+    title: 'Everything Lapland. Une appli.',
     hype: 'Tout le Grand Nord dans votre poche',
     lead: 'Personne n’avait encore réuni toute la Laponie finlandaise au même endroit. Chaque commune, chaque piste, chaque borne de recharge, chaque départ de sentier. Et ça marche même sans réseau.',
     stats: ['destinations', 'pistes', 'remontées', 'lieux'],
@@ -191,7 +191,7 @@ const COPY: Record<string, Copy> = {
   },
   es: {
     eyebrow: 'Nuevo',
-    title: 'Toda Laponia. Una app.',
+    title: 'Everything Lapland. Una app.',
     hype: 'Todo el norte en su bolsillo',
     lead: 'Nadie había reunido antes toda la Laponia finlandesa en un solo sitio. Cada municipio, cada pista, cada punto de recarga, cada inicio de ruta. Y funciona también sin cobertura.',
     stats: ['destinos', 'pistas', 'remontes', 'lugares'],
@@ -211,7 +211,7 @@ const COPY: Record<string, Copy> = {
   },
   it: {
     eyebrow: 'Novità',
-    title: 'Tutta la Lapponia. Un’app.',
+    title: 'Everything Lapland. Un’app.',
     hype: 'Tutto il nord in tasca',
     lead: 'Nessuno aveva mai riunito tutta la Lapponia finlandese in un unico posto. Ogni comune, ogni pista, ogni colonnina, ogni punto di partenza. E funziona anche quando il segnale non c’è.',
     stats: ['destinazioni', 'piste', 'impianti', 'luoghi'],
@@ -231,7 +231,7 @@ const COPY: Record<string, Copy> = {
   },
   nl: {
     eyebrow: 'Nieuw',
-    title: 'Heel Lapland. Eén app.',
+    title: 'Everything Lapland. Eén app.',
     hype: 'Het hele noorden in uw zak',
     lead: 'Niemand heeft ooit heel Fins Lapland op één plek samengebracht. Elke gemeente, elke piste, elke laadpaal, elk startpunt. En het werkt ook als er geen bereik is.',
     stats: ['bestemmingen', 'pistes', 'liften', 'plekken'],
@@ -251,7 +251,7 @@ const COPY: Record<string, Copy> = {
   },
   'pt-BR': {
     eyebrow: 'Novo',
-    title: 'Toda a Lapônia. Um app.',
+    title: 'Everything Lapland. Um app.',
     hype: 'Todo o norte no seu bolso',
     lead: 'Ninguém havia reunido toda a Lapônia finlandesa em um só lugar. Cada município, cada pista, cada carregador, cada início de trilha. E funciona mesmo sem sinal.',
     stats: ['destinos', 'pistas', 'teleféricos', 'lugares'],
@@ -271,7 +271,7 @@ const COPY: Record<string, Copy> = {
   },
   ja: {
     eyebrow: '新登場',
-    title: 'ラップランドのすべてを、ひとつのアプリに。',
+    title: 'Everything Lapland. ひとつのアプリに。',
     hype: '北のすべてをポケットに',
     lead: 'フィンランド領ラップランド全体をひとつにまとめたアプリは、これまでありませんでした。すべての自治体、ゲレンデ、充電スタンド、登山口。電波が届かない場所でも使えます。',
     stats: ['目的地', 'ゲレンデ', 'リフト', 'スポット'],
@@ -291,7 +291,7 @@ const COPY: Record<string, Copy> = {
   },
   ko: {
     eyebrow: '신규',
-    title: '라플란드 전체를, 하나의 앱에.',
+    title: 'Everything Lapland. 하나의 앱에.',
     hype: '북쪽 전체를 주머니에',
     lead: '핀란드 라플란드 전체를 한곳에 모은 앱은 지금까지 없었습니다. 모든 지자체, 모든 슬로프, 모든 충전소, 모든 트레일 입구. 신호가 없는 곳에서도 작동합니다.',
     stats: ['목적지', '슬로프', '리프트', '장소'],
@@ -311,7 +311,7 @@ const COPY: Record<string, Copy> = {
   },
   'zh-CN': {
     eyebrow: '全新',
-    title: '整个拉普兰，装进一个应用。',
+    title: 'Everything Lapland. 一个应用。',
     hype: '把整个北方装进口袋',
     lead: '此前从未有人把整个芬兰拉普兰装进一个地方。每个市镇、每条雪道、每个充电桩、每个步道起点。没有信号时它依然可用。',
     stats: ['目的地', '雪道', '缆车', '地点'],
