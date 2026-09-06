@@ -96,13 +96,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Nobody has put the whole of Finnish Lapland in one place before. Every municipality, every slope, every charger, every trailhead. And it still works when the signal does not.',
     stats: ['destinations', 'slopes', 'lifts', 'places'],
     features: [
-      'Slope and lift counts for nine resorts',
-      'EV charging points and petrol stations',
-      'Trails, wilderness huts and campsites',
+      'Slopes and lifts at 9 resorts',
+      'Chargers and petrol stations',
+      'Trails, huts and campsites',
       'Events from across Lapland',
       'Tickets kept in the app wallet',
-      'Flights, hotels and cars in one search',
-      'Emergency numbers and nearest pharmacy',
+      'Flights, hotels and cars',
+      'Emergency numbers, pharmacy',
     ],
     cta: 'Get the free app',
     scan: 'Scan to open on your phone',
@@ -116,10 +116,10 @@ const COPY: Record<string, Copy> = {
     lead: 'Kukaan ei ole aiemmin koonnut koko Suomen Lappia yhteen paikkaan. Jokainen kunta, jokainen rinne, jokainen latausasema, jokainen reitin lähtöpaikka. Ja se toimii silloinkin kun kenttää ei ole.',
     stats: ['kohdetta', 'rinnettä', 'hissiä', 'paikkaa'],
     features: [
-      'Yhdeksän keskuksen rinteet ja hissit',
-      'Sähköautojen latausasemat, huoltoasemat',
-      'Vaellusreitit, autiotuvat, leirintä',
-      'Tapahtumat koko Lapin alueelta',
+      'Rinteet ja hissit, 9 keskusta',
+      'Latausasemat ja huoltoasemat',
+      'Reitit, autiotuvat, leirintä',
+      'Tapahtumat koko Lapista',
       'Liput sovelluksen lompakossa',
       'Lennot, hotellit ja autot',
       'Hätänumerot ja lähin apteekki',
@@ -136,13 +136,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Ingen har tidigare samlat hela finska Lappland på ett ställe. Varje kommun, varje backe, varje laddstation, varje ledstart. Och det fungerar även när täckningen tar slut.',
     stats: ['resmål', 'backar', 'liftar', 'platser'],
     features: [
-      'Antal backar och liftar för nio orter',
-      'Laddstationer för elbil och bensinstationer',
-      'Leder, ödestugor och campingplatser',
+      'Backar och liftar, nio orter',
+      'Laddstationer och tankställen',
+      'Leder, ödestugor och camping',
       'Evenemang från hela Lappland',
       'Biljetter i appens plånbok',
-      'Flyg, hotell och bilar i en sökning',
-      'Nödnummer och närmaste apotek',
+      'Flyg, hotell och bilar',
+      'Nödnummer och apotek',
     ],
     cta: 'Hämta appen gratis',
     scan: 'Skanna för att öppna i telefonen',
@@ -156,13 +156,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Noch nie hat jemand das gesamte finnische Lappland an einem Ort versammelt. Jede Gemeinde, jede Piste, jede Ladesäule, jeder Wanderparkplatz. Und es funktioniert auch dann, wenn kein Netz mehr da ist.',
     stats: ['Ziele', 'Pisten', 'Lifte', 'Orte'],
     features: [
-      'Pisten- und Liftzahlen für neun Gebiete',
-      'Ladesäulen für E-Autos und Tankstellen',
-      'Wege, Wildnishütten und Campingplätze',
-      'Veranstaltungen aus ganz Lappland',
+      'Pisten und Lifte, neun Gebiete',
+      'Ladesäulen und Tankstellen',
+      'Wege, Hütten und Camping',
+      'Events aus ganz Lappland',
       'Tickets in der Wallet der App',
-      'Flüge, Hotels und Autos in einer Suche',
-      'Notrufnummern und nächste Apotheke',
+      'Flüge, Hotels und Autos',
+      'Notruf und nächste Apotheke',
     ],
     cta: 'Kostenlose App holen',
     scan: 'Zum Öffnen am Handy scannen',
@@ -176,13 +176,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Personne n’avait encore réuni toute la Laponie finlandaise au même endroit. Chaque commune, chaque piste, chaque borne de recharge, chaque départ de sentier. Et ça marche même sans réseau.',
     stats: ['destinations', 'pistes', 'remontées', 'lieux'],
     features: [
-      'Pistes et remontées de neuf stations',
-      'Bornes de recharge et stations-service',
+      'Pistes et remontées, 9 stations',
+      'Recharge et stations-service',
       'Sentiers, refuges et campings',
-      'Événements de toute la Laponie',
-      'Billets dans le portefeuille de l’appli',
-      'Vols, hôtels et voitures en une recherche',
-      'Numéros d’urgence et pharmacie proche',
+      'Événements de Laponie',
+      'Billets dans l’appli',
+      'Vols, hôtels et voitures',
+      'Urgences et pharmacie proche',
     ],
     cta: 'Obtenir l’appli gratuite',
     scan: 'Scannez pour ouvrir sur votre téléphone',
@@ -196,13 +196,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Nadie había reunido antes toda la Laponia finlandesa en un solo sitio. Cada municipio, cada pista, cada punto de recarga, cada inicio de ruta. Y funciona también sin cobertura.',
     stats: ['destinos', 'pistas', 'remontes', 'lugares'],
     features: [
-      'Pistas y remontes de nueve estaciones',
+      'Pistas y remontes, 9 estaciones',
       'Puntos de recarga y gasolineras',
       'Rutas, refugios y campings',
       'Eventos de toda Laponia',
-      'Entradas en la cartera de la app',
-      'Vuelos, hoteles y coches en una búsqueda',
-      'Emergencias y farmacia más cercana',
+      'Entradas en la app',
+      'Vuelos, hoteles y coches',
+      'Emergencias y farmacia',
     ],
     cta: 'Consiga la app gratis',
     scan: 'Escanee para abrirla en su móvil',
@@ -216,13 +216,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Nessuno aveva mai riunito tutta la Lapponia finlandese in un unico posto. Ogni comune, ogni pista, ogni colonnina, ogni punto di partenza. E funziona anche quando il segnale non c’è.',
     stats: ['destinazioni', 'piste', 'impianti', 'luoghi'],
     features: [
-      'Piste e impianti di nove comprensori',
-      'Colonnine per auto elettriche e distributori',
+      'Piste e impianti, nove località',
+      'Colonnine di ricarica e benzinai',
       'Sentieri, rifugi e campeggi',
       'Eventi da tutta la Lapponia',
-      'Biglietti nel portafoglio dell’app',
+      'Biglietti nell’app',
       'Voli, hotel e auto in una ricerca',
-      'Numeri d’emergenza e farmacia vicina',
+      'Emergenze e farmacia vicina',
     ],
     cta: 'Scarica l’app gratis',
     scan: 'Inquadra per aprirla sul telefono',
@@ -236,13 +236,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Niemand heeft ooit heel Fins Lapland op één plek samengebracht. Elke gemeente, elke piste, elke laadpaal, elk startpunt. En het werkt ook als er geen bereik is.',
     stats: ['bestemmingen', 'pistes', 'liften', 'plekken'],
     features: [
-      'Aantal pistes en liften van negen skigebieden',
-      'Laadpalen voor elektrische auto’s en tankstations',
-      'Routes, wildernishutten en campings',
+      'Pistes en liften, negen gebieden',
+      'Laadpalen en tankstations',
+      'Routes, hutten en campings',
       'Evenementen uit heel Lapland',
       'Tickets in de wallet van de app',
-      'Vluchten, hotels en auto’s in één zoekopdracht',
-      'Alarmnummers en dichtstbijzijnde apotheek',
+      'Vluchten, hotels en auto’s',
+      'Alarmnummers en apotheek',
     ],
     cta: 'Haal de gratis app',
     scan: 'Scan om op uw telefoon te openen',
@@ -256,13 +256,13 @@ const COPY: Record<string, Copy> = {
     lead: 'Ninguém havia reunido toda a Lapônia finlandesa em um só lugar. Cada município, cada pista, cada carregador, cada início de trilha. E funciona mesmo sem sinal.',
     stats: ['destinos', 'pistas', 'teleféricos', 'lugares'],
     features: [
-      'Pistas e teleféricos de nove estações',
-      'Carregadores para carros elétricos e postos',
+      'Pistas e teleféricos, 9 estações',
+      'Carregadores elétricos e postos',
       'Trilhas, abrigos e campings',
       'Eventos de toda a Lapônia',
       'Ingressos na carteira do app',
-      'Voos, hotéis e carros em uma busca',
-      'Emergências e farmácia mais próxima',
+      'Voos, hotéis e carros',
+      'Emergências e farmácia',
     ],
     cta: 'Baixar o app grátis',
     scan: 'Escaneie para abrir no celular',
@@ -276,12 +276,12 @@ const COPY: Record<string, Copy> = {
     lead: 'フィンランド領ラップランド全体をひとつにまとめたアプリは、これまでありませんでした。すべての自治体、ゲレンデ、充電スタンド、登山口。電波が届かない場所でも使えます。',
     stats: ['目的地', 'ゲレンデ', 'リフト', 'スポット'],
     features: [
-      'スキー場9か所のゲレンデ数とリフト数',
-      'EV充電スタンドとガソリンスタンド',
-      'トレイル、無人小屋、キャンプ場',
+      '9スキー場のコースとリフト',
+      'EV充電とガソリンスタンド',
+      'トレイル、小屋、キャンプ場',
       'ラップランド全域のイベント',
-      'チケットはアプリのウォレットに',
-      '航空券・ホテル・レンタカーを一度に検索',
+      'チケットはアプリ内に',
+      '航空券・ホテル・レンタカー',
       '緊急連絡先と最寄りの薬局',
     ],
     cta: '無料アプリを入手',
@@ -296,13 +296,13 @@ const COPY: Record<string, Copy> = {
     lead: '핀란드 라플란드 전체를 한곳에 모은 앱은 지금까지 없었습니다. 모든 지자체, 모든 슬로프, 모든 충전소, 모든 트레일 입구. 신호가 없는 곳에서도 작동합니다.',
     stats: ['목적지', '슬로프', '리프트', '장소'],
     features: [
-      '스키장 아홉 곳의 슬로프와 리프트 수',
+      '스키장 9곳의 슬로프와 리프트',
       '전기차 충전소와 주유소',
       '트레일, 산장, 캠핑장',
       '라플란드 전역의 행사',
       '티켓은 앱 지갑에 보관',
       '항공·호텔·렌터카를 한 번에 검색',
-      '긴급 전화번호와 가장 가까운 약국',
+      '긴급 전화와 가까운 약국',
     ],
     cta: '무료 앱 받기',
     scan: '스캔해서 휴대폰에서 열기',
@@ -451,14 +451,17 @@ export function AppPromoHero() {
             </div>
 
             {/* A grid, not free-flowing pills: wrapping pills produced ragged rows of
-                different lengths and read as a heap. Two aligned columns, one item
-                per cell, same rhythm on every row.
-                🔴 The split is md, NOT sm (Vesa 2026-08-07, with screenshots):
-                at 640–767 the side media block leaves ~200 px per column and
-                every single bullet wrapped to 2–3 lines — the exact heap this
-                grid exists to prevent. One full-width column there keeps every
-                item on one line; from 768 the columns are wide enough. */}
-            <ul className="mt-4 sm:mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5">
+                different lengths and read as a heap. Aligned columns, one item per
+                cell, same rhythm on every row.
+                🔴 Columns are content-driven, not breakpoint-driven (Vesa 2026-09-06:
+                "siis nämä pitäisi jakaa kahteen sarakkeeseen … ja kaikilla
+                sivustoilla"). His 7.8. rule still holds — a column that wraps every
+                bullet is worse than one column — so two things changed together:
+                every bullet in every language is ≤ 194 px at 13 px (21 strings
+                shortened, measured live), and auto-fit/minmax(210px) opens the
+                second column exactly when it can hold one line (~710 px viewport
+                beside the phone screenshot), capped at two from lg. */}
+            <ul className="mt-4 sm:mt-5 grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] gap-x-6 gap-y-2.5 lg:grid-cols-2">
                 {/* Phones get the two shortest items only: the full list made
                     the mobile card "aivan liian korkea" (Vesa 2026-08-06). */}
                 {[...c.features].sort((a, b) => a.length - b.length).map((f, fi) => (
