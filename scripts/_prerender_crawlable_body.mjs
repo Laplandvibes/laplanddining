@@ -277,6 +277,11 @@ export function buildCrawlableBody(
     // strip regex keyed on `<div id="root"><div id="lv-prerender"` and on the
     // block ending `</nav></div></div>`, which both stop being true here.
     PRE_OPEN +
+    // [LV-EMAIL-OFF 2026-09-06] Cloudflare's Email Address Obfuscation rewrites every
+    // address in the served HTML into <a href="/cdn-cgi/l/email-protection">, which
+    // 404s on our zones — OpenSEO flagged it as a broken internal link on 27 sites.
+    // The marker pair tells Cloudflare to leave this block alone.
+    EMAIL_OFF_OPEN +
     // Runs during parse, BEFORE the text below is parsed, so the text is never
     // painted in a JS browser. A non-JS crawler never gets the class, so the
     // rule in SPLASH_CSS never matches and it reads the text exactly as before.
@@ -303,11 +308,14 @@ export function buildCrawlableBody(
     // What a human actually sees while React loads. Sits after the text so the
     // h1 demotion in injectCrawlableBody keeps matching the block's own heading.
     `<div id="lv-splash" aria-hidden="true"><span style="${mark}">${wordmark(siteName)}</span></div>` +
+    EMAIL_OFF_CLOSE +
     PRE_CLOSE
   );
 }
 
 const PRE_OPEN = '<!--LV-PRE-->';
+const EMAIL_OFF_OPEN = '<!--email_off-->';
+const EMAIL_OFF_CLOSE = '<!--/email_off-->';
 const PRE_CLOSE = '<!--/LV-PRE-->';
 
 // 6s, not 2s: a cold 3G mount is legitimately slow and re-showing the text on a
