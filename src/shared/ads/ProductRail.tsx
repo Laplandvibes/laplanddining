@@ -246,7 +246,29 @@ export default function ProductRail({
           {c.sub}
         </p>
 
-        <ul className="-mx-2 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-2 pb-4 pt-1 [scrollbar-width:thin]">
+        {/* 🔴 KEHYS JA RAJAUS — sama korjaus ja sama syy kuin KalevalaRailissa
+            (Vesa 2026-09-06: "tuo karuselli tarvitsee jonkin kehikon,
+            rajauksen, liian epäselvä nyt"). Mitattu 412 px:llä: rivi on 1536 px
+            leveä 348 px:n ikkunassa, joten toinen kortti katkesi kesken sanan
+            suoraan osion reunaan. Katkaisu ILMAN häivytystä lukee
+            renderöintivirheenä, ei "jatkuu tuonne" -vihjeenä.
+            🔴🔴 Tämä ei ollut yhden sivuston vika: `scripts/mobile_wrap_audit.mjs`
+            löysi saman 19 sivustolta 27:stä, 34 vaakarivistä. Tämä tiedosto
+            kattaa niistä suurimman osan. */}
+        <div
+          className={`relative mt-6 rounded-[22px] ${
+            dark ? 'bg-white/[0.04] ring-1 ring-white/10' : 'bg-black/[0.02] ring-1 ring-black/[0.07]'
+          }`}
+        >
+        <ul
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto py-3 pl-3 pr-10 [scrollbar-width:thin]"
+          style={{
+            maskImage:
+              'linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 40px), transparent 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 40px), transparent 100%)',
+          }}
+        >
           {snapshot.products.map((p) => {
             // The shop's own language for that one locale; the feed's title
             // everywhere else. Both come from the partner, neither is ours.
@@ -280,7 +302,13 @@ export default function ProductRail({
                       style={{ transitionTimingFunction: EASE }}
                     />
                   </div>
-                  <div className="flex flex-1 flex-col gap-1.5 px-3.5 pb-3.5 pt-1">
+                  {/* Hiusviiva kuvan ja nimen väliin: tuotekuvat ovat
+                      valkopohjaisia valkoisella kortilla, joten ilman rajaa
+                      esine kelluu ilman reunaa. Sävytettyä laattaa ei voi
+                      käyttää — kuvat ovat läpinäkymättömiä. Sama kuin
+                      KalevalaRailissa, jotta rivit näyttävät samalta kun ne
+                      ovat samalla sivulla (gifts, store). */}
+                  <div className="flex flex-1 flex-col gap-1.5 border-t border-black/[0.06] px-3.5 pb-3.5 pt-2.5">
                     <span className="line-clamp-2 text-[12.5px] font-semibold leading-snug text-[#141413]">
                       {label}
                     </span>
@@ -301,6 +329,7 @@ export default function ProductRail({
             )
           })}
         </ul>
+        </div>
 
         {/* Kapealla ruudulla otsikkorivi ei mahdu: logo + pilleri kiertyivät
             niin että pilleri jäi yksin otsikon yläpuolelle. Siksi CTA on
@@ -310,7 +339,7 @@ export default function ProductRail({
           target="_blank"
           rel="sponsored nofollow noopener"
           onClick={() => onCtaClick?.(partner.key, `product_rail:${sid}_all`, allHref)}
-          className="mb-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 rounded-full px-4 text-[14px] font-semibold no-underline shadow-[0_8px_20px_-12px_rgba(15,23,42,0.45)] transition-transform duration-200 active:scale-[0.97] motion-reduce:transition-none sm:hidden"
+          className="mb-4 mt-4 inline-flex min-h-11 w-full items-center justify-center gap-1.5 rounded-full px-4 text-[14px] font-semibold no-underline shadow-[0_8px_20px_-12px_rgba(15,23,42,0.45)] transition-transform duration-200 active:scale-[0.97] motion-reduce:transition-none sm:hidden"
           style={{ backgroundColor: accent, color: pillText, transitionTimingFunction: EASE }}
         >
           {c.ctaAll}
