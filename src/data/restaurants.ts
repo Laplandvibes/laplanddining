@@ -205,7 +205,15 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[])
     ...menuFor(m.slug),
     // override may not include these required fields — preserve from maps
     name: m.name,
-    city: m.city,
+    /**
+     * Kaupunki on ainoa "maps-kentta" jonka toimitus saa ylikirjoittaa.
+     * Maps merkitsee osan ravintoloista kunnan mukaan (Gastropub Giitu ->
+     * Inari) ja osan yksinkertaisesti vaarin (Kotahovi -> Posio, 114 km
+     * paassa). Kaupunkisivu vaittaa otsikossaan "ravintolat kaupungissa X",
+     * joten vaara arvo on julkaistu vaite eika vain lajitteluvirhe.
+     * Peruste kirjataan aina koordinaatteina overrides-tiedostoon.
+     */
+    city: override.city ?? m.city,
     country: m.country,
     googleMapsUrl: m.googleMapsUrl,
     googlePlaceId: m.googlePlaceId,

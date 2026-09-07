@@ -13,6 +13,8 @@ import { AD_SLOTS } from './data/partners';
 import { AppPromoNudge } from './components/AppPromo';
 const Home = lazy(() => import('./pages/Home'))
 const Restaurants = lazy(() => import('./pages/Restaurants'))
+const Cities = lazy(() => import('./pages/Cities'))
+const CityPage = lazy(() => import('./pages/CityPage'))
 const FineDining = lazy(() => import('./pages/FineDining'))
 const About = lazy(() => import('./pages/About'))
 const FoodHistory = lazy(() => import('./pages/FoodHistory'))
@@ -159,6 +161,11 @@ function AppLayout() {
           {(['', '/fi', '/de', '/ja', '/es', '/br', '/cn', '/kr', '/fr', '/it', '/nl', '/sv'] as const).flatMap((prefix) => [
             <Route key={`${prefix}/`} path={prefix === '' ? '/' : prefix} element={<Home />} />,
             <Route key={`${prefix}/restaurants`} path={`${prefix}/restaurants`} element={<Restaurants />} />,
+            <Route key={`${prefix}/cities`} path={`${prefix}/cities`} element={<Cities />} />,
+            // Kaupunkisivut: yksi parametroitu reitti, ei 13 kovakoodattua.
+            // Tuntematon slug palauttaa CityPagesta verkoston 404:n, joten
+            // /city/mika-tahansa ei tuota indeksoitavaa tyhjaa runkoa.
+            <Route key={`${prefix}/city/:slug`} path={`${prefix}/city/:slug`} element={<CityPage />} />,
             <Route key={`${prefix}/fine-dining`} path={`${prefix}/fine-dining`} element={<FineDining />} />,
             <Route key={`${prefix}/midnight-sun-dining`} path={`${prefix}/midnight-sun-dining`} element={<MidnightSunDining />} />,
             <Route key={`${prefix}/food-history`} path={`${prefix}/food-history`} element={<FoodHistory />} />,

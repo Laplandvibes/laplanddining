@@ -34,6 +34,7 @@ type Override = Partial<Pick<Restaurant,
   | 'dietary'
   | 'reservationPolicy'
   | 'website'
+  | 'city'
 >> & {
   /**
    * Ravintola on lopettanut tai ilmoittaa olevansa suljettu toistaiseksi.
@@ -174,8 +175,11 @@ export const restaurantOverrides: Record<string, Override> = {
     },
   },
 
-  // Saamen Kammi — Kittilä (top pick)
+  // Saamen Kammi — Levi (top pick).
+  // Maps merkitsi Kittilään; Kätkänrannantie 2 on 0,3 km Levin keskustasta ja
+  // 17,4 km Kittilän kirkonkylästä (mitattu 7.9.2026).
   'ChIJd2up905N0kURTWJBTBizK7A': {
+    city: 'Levi',
     curatedDescription: {
       en: 'The smoked salmon cooked next to the fire was beautiful.',
       fi: 'Avotulen vieressä savustettu lohi on aterian paras hetki: liekitetty tulella ja syöty kodassa, ei vain salissa.',
@@ -348,8 +352,11 @@ export const restaurantOverrides: Record<string, Override> = {
     },
   },
 
-  // Lapland Restaurant Kotahovi — Posio (top pick)
+  // Lapland Restaurant Kotahovi — Rovaniemi (top pick).
+  // Maps merkitsi tämän Posiolle; osoite Joulumaantie 13 ja koordinaatti ovat
+  // Rovaniemellä, 114 km Posiolta ja 7 km keskustasta (mitattu 7.9.2026).
   'ChIJe-d8LX5OK0QR5GbJ1coh5xE': {
+    city: 'Rovaniemi',
     curatedDescription: {
       en: 'A happy accident for the guests who find it: the atmosphere, the menu and the whole evening tend to leave people genuinely surprised.',
       fi: 'Iloinen sattuma sille, joka tänne osuu: tunnelma, ruokalista ja koko ilta jättävät vieraat usein aidosti yllättyneiksi.',
@@ -432,4 +439,55 @@ export const restaurantOverrides: Record<string, Override> = {
       nl: 'Een gevarieerde kaart en goede bieren, zoals een recensie het samenvat. Een ontspannen lokaal hoofdkwartier voor het diner in Tornio.',
     },
   },
+  // ── Kaupunkikorjaukset, mitattu koordinaateista 2026-09-07 ─────────────
+  // Maps-datan `city` oli kuudella ravintolalla eri kuin niiden todellinen
+  // sijainti. Kahdella tapauksista syy on ymmärrettävä (Maps merkitsee KUNNAN:
+  // Saariselkä kuuluu Inariin, Luosto Sodankylään), neljässä arvo on suoraan
+  // väärin — Kotahovi ja Sky Kitchen ovat Rovaniemellä, 114 km Posiolta.
+  //
+  // Tämä ei ollut kosmeettinen vika: kaupunkisivu väittää otsikossaan
+  // "ravintolat kaupungissa X" 12 kielellä, joten väärä rivi olisi julkaissut
+  // katteettoman väitteen. Etäisyys on mitattu rivin omasta `location`-kentästä
+  // kunkin taajaman keskipisteeseen; portti `scripts/check-city-tags.mjs` vahtii
+  // ettei uusi sync tuo virhettä takaisin.
+
+  // Gastropub Giitu — Revontulentie 1, Saariselkä. Inariin 56 km, Saariselkään 0 km.
+  'ChIJ28sX2mBDzUUR-RdjF-N22Do': { city: 'Saariselkä' },
+
+  // Restaurant Punakettu — Luostontie 4, Luosto. Sodankylään 32 km, Luostolle 2 km.
+  'ChIJma4ZRPLFLEQRydyDo4y0Rm8': { city: 'Luosto' },
+
+  // Los Lompolo's — Sivulantie 5 E, Äkäslompolo. Muonioon 44 km, Ylläkselle 1 km.
+  // Äkäslompolo = Ylläs koko verkostossa (CLAUDE.md).
+  'ChIJpandWPy500URV2CX__a5qLk': { city: 'Ylläs' },
+
+  // Ravintola Tunturikettu on merkitty yllä `permanentlyClosed`, joten se ei
+  // renderoidy eikä tarvitse kaupunkikorjausta — vaikka Maps-data väittää sen
+  // olevan Muoniossa ja koordinaatti sanoo Ylläs.
+
+  // Restaurant Sky Kitchen & View — Juhannuskalliontie, Rovaniemi. Posiolle 115 km,
+  // Rovaniemelle 3 km.
+  'ChIJ1dMGxKlOK0QRxJemz9QdbA0': { city: 'Rovaniemi' },
+
+  // ── Kittilä → Levi, mitattu 7.9.2026 ─────────────────────────────
+  // Kaikki neljä "Kittilään" merkittyä ravintolaa ovat Levillä: 0,0–1,7 km
+  // Levin keskustasta ja 16–17 km Kittilän kirkonkylästä. Levi ON Kittilän
+  // kunnassa, joten Maps ei ole väärässä — mutta kaupunkisivu ei ole kunta.
+  // "Ravintolat Kittilässä" olisi ollut neljän Levin ravintolan lista väärän
+  // otsikon alla, ja se olisi kilpaillut Levin oman sivun kanssa samoista
+  // kohteista. Kittilällä ei ole omaa kaupunkisivua; nämä kuuluvat Leville.
+
+  // Riihi Restaurant — Tuomikuruntie 136. Leville 1,7 km, Kittilään 16,0 km.
+  'ChIJqRNr4LGy00URZOb6pM88YDo': { city: 'Levi' },
+
+  // Boneless Levi Center — Hissitie 3. Leville 0,1 km, Kittilään 17,2 km.
+  'ChIJI6moDwBN0kURREHahNWYqmg': { city: 'Levi' },
+
+  // Kekäle — Levin keskusta. Leville 0,0 km, Kittilään 17,2 km.
+  'ChIJ15wJlt1N0kUR0NXQXtWz7qE': { city: 'Levi' },
+
+  // Ravintola RuusuSuola — Jäämerentie 28, Sodankylä. Luostolle 35 km,
+  // Sodankylään 0 km. Tämä jäi osoitevertailulta huomaamatta (Luoston rivien
+  // postiosoite ON Sodankylä), ja vain koordinaatti paljasti sen.
+  'ChIJyXxrB9wr00URG1jR2vpkkl0': { city: 'Sodankylä' },
 };

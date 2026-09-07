@@ -138,6 +138,208 @@
     "introP1": "餐厅按目的地分组，彼此之间不排名次。某座城市若有编辑推荐，它会带着专门的标记排在网格最前面；后面的部分没有特定顺序，所以请读卡片而不是位置。页面上显示的评分来自谷歌，并链接回这个数字所依据的评价。",
     "introP2": "每个城市网格上方那张宽卡片是付费的合作伙伴位，已标注为广告。这个页面上其余部分没有付费排位。营业时间随季节变动——在拉普兰，\"季节性歇业\"可能意味着几个月而不是几周——所以开车前往之前，请先看看餐厅自己的页面。"
   },
+  "cities": {
+    "title": "拉普兰吃什么，按城镇分 | LaplandDining",
+    "description": "罗瓦涅米、莱维、于拉斯、萨里塞尔卡、伊纳里、凯米等芬兰拉普兰13个城镇的餐厅，每镇一页，附评分与菜单链接。",
+    "h1": "拉普兰，按城镇看",
+    "lead": "13个目的地共76家餐厅，每个城镇各有一页。",
+    "moreLead": "穆奥尼奥、赫塔、萨拉和波西奥的餐厅太少，没有单独页面，但仍在完整名单里。",
+    "shared": {
+      "kicker": "去哪儿吃",
+      "countLabel": "{{at}}的{{count}}家餐厅",
+      "countLabel_one": "{{at}}的1家餐厅",
+      "bestRated": "最高评分 {{rating}}",
+      "hoursNote": "营业时间随季节变动。开车前往之前，请先看餐厅自己的页面。",
+      "stayHeadline": "住在{{at}}吗？",
+      "stayLead": "在上面这些餐桌附近订间房。",
+      "stayCta": "查看{{at}}住宿",
+      "otherCities": "去拉普兰别处吃",
+      "allRestaurants": "全部餐厅 →",
+      "cityPageCta": "{{at}}餐厅指南 →"
+    },
+    "rovaniemi": {
+      "name": "罗瓦涅米",
+      "title": "罗瓦涅米餐厅：去哪儿吃 | LaplandDining",
+      "description": "8家罗瓦涅米餐厅，从瓦尔塔卡图街的驯鹿里脊到本站评分最高的一家厨房。评分、评论摘录与菜单链接。",
+      "h1": "罗瓦涅米餐厅",
+      "tagline": "拉普兰餐桌最密集的一座城，其中五家挤在四条街里。",
+      "intro": "罗瓦涅米是拉普兰唯一一座能靠步行挑餐厅的城市。Nili和Arctic Restaurant在瓦尔塔卡图街几乎面对面，把驯鹿和云莓做在€€€的价位上。两百米开外，艾诺卡图街的Roka Street Bistro和罗瓦卡图街的Cafe & Bar 21，是本地人平常周二会去的地方。评分最高的一家并不做拉普兰菜：科尔卡隆卡图街的韩餐Hanki，以一千多条评论稳在4.9。",
+      "know": [
+        "市中心的五家彼此相距不到500米，全部选择就是一段步行。",
+        "有三家在市中心之外：Sky Kitchen & View 2.4公里，Kotahovi在通往圣诞老人村的路上6.8公里，All About Salmon就在村里。",
+        "Hanki以4.9成为全站评分最高的餐厅——而它是韩餐，不是拉普兰菜。"
+      ],
+      "at": "罗瓦涅米"
+    },
+    "levi": {
+      "name": "莱维",
+      "title": "莱维餐厅：去哪儿吃 | LaplandDining",
+      "description": "9家莱维餐厅。芬兰最大滑雪度假区里的全景餐厅、雪道旁的意大利菜，以及锡尔卡村的本地馆子。",
+      "h1": "莱维餐厅",
+      "tagline": "芬兰最大的滑雪度假区，吃法也随之而来：量大、露台多、评论一长串。",
+      "intro": "山脚下的村子正式名称是锡尔卡，几乎每个地址都这么写。Panoramic Restaurant TUIKKU的评论数遥遥领先。Ämmilä和Wanha Hullu Poro在拉卡瓦拉兰蒂路上比邻，Ristorante Renna隔一条街做意大利菜，Saamen Kammi、Riihi、Boneless和Kekäle填满了中心区。这里的评分比拉普兰其他地方略低，在4.1到4.6之间，但评论数是好几倍——一个每周喂饱数千人的度假区，数字通常就是这个样子。",
+      "know": [
+        "莱维的邮寄地址写的是锡尔卡或基蒂莱。它们是同一个度假区：村子叫锡尔卡，市镇叫基蒂莱。",
+        "基蒂莱镇中心在17公里之外，本站没有一家餐厅在那里。",
+        "Panoramic Restaurant TUIKKU距村中心2.4公里，评论数比莱维任何一家都多。"
+      ],
+      "at": "莱维"
+    },
+    "yllas": {
+      "name": "于拉斯",
+      "title": "于拉斯餐厅：去哪儿吃 | LaplandDining",
+      "description": "7家于拉斯餐厅，分布在山两侧的阿卡斯隆波洛和于拉斯耶尔维，另有一家在山顶。评分与菜单链接。",
+      "h1": "于拉斯餐厅",
+      "tagline": "两个村子、一座山，你这桌与那桌之间大约11公里。",
+      "intro": "于拉斯不是一个村子，而是两个，分处山的两侧。北边的阿卡斯隆波洛有Ravintola Rouhe、Ylläksen Eväskori & Joiku Pub和Los Lompolo's；南边的于拉斯耶尔维有Ravintola Otso和Restaurant Ylläskota。两者之间，Ylläskammi的地址就是山顶本身。评论数上Rouhe明显最多；评分最高的是Los Lompolo's的4.7，但条数少得多。",
+      "know": [
+        "阿卡斯隆波洛与于拉斯耶尔维绕山相距约11公里。出发前先确认你的餐厅在哪个村。",
+        "Ylläskammi在山顶，不属于任何一个村子。",
+        "本站若未点名村子，于拉斯即指阿卡斯隆波洛；于拉斯耶尔维一定会写明。"
+      ],
+      "at": "于拉斯"
+    },
+    "saariselka": {
+      "name": "萨里塞尔卡",
+      "title": "萨里塞尔卡餐厅：去哪儿吃 | LaplandDining",
+      "description": "7家萨里塞尔卡餐厅，全都步行可达：一家评分4.8的厨房、一间美食酒馆、一座拉武帐篷，还有村里的汉堡店。",
+      "h1": "萨里塞尔卡餐厅",
+      "tagline": "一个小小的山村，评分跨度却是全站最大。",
+      "intro": "萨里塞尔卡紧凑到挑餐厅只需散步而不必开车，其中两家还在同一条街上。少见的是评分的跨度：Fieno以529条评论保持4.8，Gáldu是干净的5.0；而ScanBurger、Lieggâ Láávu和Bistro & Cafe Kuukkeli落在4.1到4.2之间。评分4.7的Gastropub Giitu被谷歌归到伊纳里名下，实际就在萨里塞尔卡。",
+      "know": [
+        "Gáldu的5.0来自30条评论，Fieno的4.8来自529条，后者要稳得多。",
+        "本页所有餐厅都在村内。最近的机场是伊瓦洛，约25分钟车程。",
+        "萨里塞尔卡属伊纳里市镇，因此在别处常被归入伊纳里。"
+      ],
+      "at": "萨里塞尔卡"
+    },
+    "inari": {
+      "name": "伊纳里",
+      "title": "伊纳里餐厅：去哪儿吃 | LaplandDining",
+      "description": "4家伊纳里市镇的餐厅，其中包括一家水边评分4.8的精致餐厅，另外三家彼此相隔甚远。",
+      "h1": "伊纳里餐厅",
+      "tagline": "芬兰面积最大的市镇。四个厨房，中间是很长的路。",
+      "intro": "伊纳里比欧洲好几个国家还大，这一页把这件事直接摊开：餐厅散布在数十公里之间，而不是聚在一个村中心。萨里科斯肯蒂路水边的Restaurant Aanaar是精致餐饮的那家，评分4.8也是最高。Kultahippu在南面35公里的伊瓦洛，Muotkan Ruoktu在通往卡里加斯尼耶米的路上39公里处，Arctic River Resort在两者之间。它们彼此都不在步行距离内。",
+      "know": [
+        "只有Aanaar在伊纳里村内，其余都需要开车。",
+        "Kultahippu在南面35公里的伊瓦洛，也就是有机场的那个镇。",
+        "Muotkan Ruoktu在卡里加斯尼耶米公路39公里处——是专程要去的距离，不是顺路。"
+      ],
+      "at": "伊纳里"
+    },
+    "kemi": {
+      "name": "凯米",
+      "title": "凯米餐厅：去哪儿吃 | LaplandDining",
+      "description": "5家波的尼亚湾畔凯米的餐厅：海边的亭阁、瓦尔塔卡图街的两家，以及港口的一家。评分与菜单链接。",
+      "h1": "凯米餐厅",
+      "tagline": "一座海边城市，餐桌也跟着水走。",
+      "intro": "凯米沿两条线吃饭：海岸和主街。Kemin Puistopaviljonki和Pizzeria San Milano共用梅里普伊斯通波尔库同一个海边地址，Sataman Krouwi ja Perämeren Jähti在港口。市中心，Pieni Lohikäärme和Ravintola Mori隔着瓦尔塔卡图街相望。评论数上Puistopaviljonki遥遥领先，评分最高的是San Milano。",
+      "know": [
+        "其中两家共用一个海边地址：Puistopaviljonki和San Milano。",
+        "凯米在从赫尔辛基北上的干线铁路上，是少数不用开车就能抵达的拉普兰城市之一。",
+        "港口那家的旺季与市中心不同——冬天把人拉过去的是雪堡。"
+      ],
+      "at": "凯米"
+    },
+    "tornio": {
+      "name": "托尔尼奥",
+      "title": "托尔尼奥餐厅：去哪儿吃 | LaplandDining",
+      "description": "5家瑞典边境城市托尔尼奥的餐厅，其中三家在同一条街上。评分、评论摘录与各店菜单链接。",
+      "h1": "托尔尼奥餐厅",
+      "tagline": "一座边境城市，五家里有三家共用一条街。",
+      "intro": "托尔尼奥的选择异常集中：Ravintola Umpitunneli、Mustaparran Päämaja和Tmi Hevi Pizza都在哈利图斯卡图街，彼此不过几分钟。埃利亚克森卡图街的Ravintola Golden Flower评论数最多，托里卡图街的Amico补足名单。评分最高的是Hevi Pizza的4.7。河对岸是哈帕兰达，那已是瑞典，另有专页。",
+      "know": [
+        "其中三家在哈利图斯卡图街——一段步行就能把三份菜单读完。",
+        "哈帕兰达在桥的另一头、在瑞典：货币不同，时钟回拨一小时。",
+        "托尔尼奥和哈帕兰达实际上像一座城市，去对岸吃饭是散步，不是出行。"
+      ],
+      "at": "托尔尼奥"
+    },
+    "haparanda": {
+      "name": "哈帕兰达",
+      "title": "瑞典哈帕兰达的餐厅 | LaplandDining",
+      "description": "5家与托尔尼奥隔河相望的哈帕兰达餐厅：广场上的酒店、上游15公里的老店、寿司与泰餐。评分与菜单链接。",
+      "h1": "哈帕兰达餐厅",
+      "tagline": "从托尔尼奥过一座桥——实际上是同一座城，纸面上是另一个国家。",
+      "intro": "哈帕兰达在瑞典，这在实务上改变了三件事：价格以克朗计，时钟比芬兰慢一小时，而市中心仍与托尔尼奥共用。Haparanda Stadshotell面向广场，Leilani和Haparanda Sushi & Indiskt在两条街外，Cape East在孙德霍尔门。评论最多的Kukkolaforsen在上游15公里处，是专程的一趟，而非散步。",
+      "know": [
+        "这里是瑞典不是芬兰：价格用瑞典克朗，当地时间比托尔尼奥慢一小时。",
+        "Kukkolaforsen沿河往北15公里——请备车。",
+        "芬兰与瑞典同属申根区，从托尔尼奥步行过境只需几分钟。"
+      ],
+      "at": "哈帕兰达"
+    },
+    "sodankyla": {
+      "name": "索丹屈莱",
+      "title": "索丹屈莱餐厅：去哪儿吃 | LaplandDining",
+      "description": "5家索丹屈莱的餐厅，其中三家就在通往北冰洋的公路旁。评分、评论摘录与各店菜单链接。",
+      "h1": "索丹屈莱餐厅",
+      "tagline": "北冰洋公路上的一站，多数餐厅就在这条路上。",
+      "intro": "索丹屈莱是北上长途的中点，餐厅也照此排开：Sodankylän turkinpippuri、Ravintola RuusuSuola和Sodankylän Olohuone Tähti都在耶迈伦蒂路上，也就是最终通往北冰洋的那条路。评论数上turkinpippuri明显最多。评分最高的是Olohuone Tähti的4.8，但条数少得多。Tori-Kioski Mikkola和Piitsi Pubi在主路稍外侧补上。",
+      "know": [
+        "其中三家在贯穿镇子的干道耶迈伦蒂路旁，正好与行车休息配在一起。",
+        "六月中旬午夜阳光电影节期间镇子会挤满人，那一周餐位紧张。",
+        "卢奥斯托在约32公里外，另有专页。"
+      ],
+      "at": "索丹屈莱"
+    },
+    "pyhatunturi": {
+      "name": "皮哈图恩图里",
+      "title": "皮哈图恩图里的餐厅 | LaplandDining",
+      "description": "6处皮哈图恩图里与佩尔科森涅米一带的吃饭去处：国家公园门口的咖啡馆、酒店厨房，以及一家评分5.0的小馆。",
+      "h1": "皮哈图恩图里的餐厅",
+      "tagline": "一个国家公园村落，评分最高的一桌在旧牧师住宅里。",
+      "intro": "皮哈是皮哈-卢奥斯托国家公园边缘的小度假区，属佩尔科森涅米市镇。Café Loimu在公园门口的卢翁托蒂路上；Ravintola Popolo和Restaurant CAMP Kitchen & Bar共用度假区中心库尔塔凯龙卡图街的酒店地址。评分最高的两家都在度假区之外：基尔科蒂路的Bistro Vanha Pappila是干净的5.0，Sunday Morning Resort为4.8，两家的评论数都不多。",
+      "know": [
+        "皮哈属佩尔科森涅米市镇，因此有些地址写的是佩尔科森涅米而不是皮哈图恩图里。",
+        "Vanha Pappila和Sunday Morning Resort在山下村里，不在上面的度假区。",
+        "卢奥斯托是同一座国家公园的另一半，21公里外，另有专页。"
+      ],
+      "at": "皮哈图恩图里"
+    },
+    "luosto": {
+      "name": "卢奥斯托",
+      "title": "卢奥斯托餐厅：去哪儿吃 | LaplandDining",
+      "description": "4处卢奥斯托的吃饭去处。皮哈-卢奥斯托较安静的一侧：酒店的枯木餐厅、旅馆厨房，以及雪道旁的一站。",
+      "h1": "卢奥斯托餐厅",
+      "tagline": "国家公园安静的那一半——四个厨房，不用排队。",
+      "intro": "卢奥斯托是皮哈-卢奥斯托两个度假区里较小也较安静的一个，名单短到一分钟就能看完。卢奥斯托蒂路的Restaurant Punakettu评论数是这里其他任何一家的六倍，事实上成了默认选项。Keloravintola Lapland Hotels Luostotunturi和Luoston Hovi都是4.4，Skiknööli是雪道边的一站。卢奥斯托属索丹屈莱市镇，因此不少地址写着索丹屈莱。",
+      "know": [
+        "在卢奥斯托，Punakettu的评论数遥遥领先，另外三家都是本地的小馆子。",
+        "邮寄地址常写索丹屈莱，而镇子本身在约32公里外。",
+        "皮哈在穿过公园21公里处，另有专页。"
+      ],
+      "at": "卢奥斯托"
+    },
+    "kuusamo": {
+      "name": "库萨莫",
+      "title": "库萨莫与鲁卡的餐厅 | LaplandDining",
+      "description": "6家餐厅分处相距22公里的鲁卡度假区与库萨莫镇：本站最忙的比萨店、一间美食酒馆和一家徒步咖啡馆。",
+      "h1": "库萨莫与鲁卡的餐厅",
+      "tagline": "两个中心相距22公里——先确认你那桌在哪一边。",
+      "intro": "库萨莫清楚地分成两半。上面度假区这边，Pizzeria Ruka的评论数是本站罗瓦涅米之外最多的一家，同一条路上还有Restaurant Burger Cafe & Bar Ruka，稍远处是评分4.8的Ruka Trek旅舍及Hard Trek Café。下面镇上，往南22公里，Ravintola Talonpöytä和Restaurant Wanha Mestari面对的是完全不同的客人。",
+      "know": [
+        "鲁卡与库萨莫镇相距22公里。地址会告诉你：鲁卡通图林蒂路和武塞林蒂路属于度假区。",
+        "按评论数算，Pizzeria Ruka是这里最忙的厨房，而且是好几倍的差距。",
+        "库萨莫属北波的尼亚省而非拉普兰本身，但它是奥兰卡国家公园的门户。"
+      ],
+      "at": "库萨莫"
+    },
+    "kemijarvi": {
+      "name": "凯米耶尔维",
+      "title": "凯米耶尔维餐厅：去哪儿吃 | LaplandDining",
+      "description": "5家凯米耶尔维的餐厅，全部集中在市中心800米范围内。评分、评论摘录与各店菜单链接。",
+      "h1": "凯米耶尔维餐厅",
+      "tagline": "全部选择都装在800米里。",
+      "intro": "凯米耶尔维是本站最适合步行的城市：每家餐厅都在市中心彼此800米之内，其中两家在瓦帕乌登卡图街比邻。评论数最多的是基尔科卡图街的Mestarin Kievari。评分最高的两家反而最小——Jauri Resort 4.8，Restaurant Susa's Bistro 4.7——中间由Rosa Pizza Kebab和Pizza Mestarit撑起日常那一端。",
+      "know": [
+        "全都在800米以内，一段步行就能把每份菜单看一遍。",
+        "Susa's Bistro和Rosa Pizza Kebab在瓦帕乌登卡图街比邻。",
+        "凯米耶尔维在铁路线上，不开车也能到。"
+      ],
+      "at": "凯米耶尔维"
+    }
+  },
   "fineDining": {
     "title": "拉普兰及周边的高级餐饮 | LaplandDining",
     "description": "编辑精选中评分最高的餐厅，按 Google 评分排序：从雅致餐室到科塔餐厅，附点评引文与菜单链接。",

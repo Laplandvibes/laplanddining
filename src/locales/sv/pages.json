@@ -138,6 +138,208 @@
     "introP1": "Restaurangerna är grupperade efter destination, inte rangordnade mot varandra. Har en ort en redaktionsfavorit, ligger den först i rutnätet med en egen markering; därefter kommer de övriga utan inbördes ordning, så läs korten och inte placeringarna. Betygen som visas är Googles egna och länkar tillbaka till de recensioner de kommer från.",
     "introP2": "Det breda kortet ovanför varje ortsrutnät är en betald partnerplats och är märkt som annons. Ingen annan placering på sidan är betald. Öppettiderna följer säsongen (i Lappland kan ”stängt för säsongen” betyda månader snarare än veckor) så kolla restaurangens egen sida innan du kör dit."
   },
+  "cities": {
+    "title": "Var man äter i Lappland — ort för ort | LaplandDining",
+    "description": "Restauranger i Rovaniemi, Levi, Ylläs, Saariselkä, Enare, Kemi och åtta orter till i finska Lappland, var och en på en egen sida. Betyg och länkar till menyerna.",
+    "h1": "Lappland, ort för ort",
+    "lead": "76 restauranger på 13 destinationer, varje ort på en egen sida.",
+    "moreLead": "Muonio, Hetta, Salla och Posio har tillsammans för få bord för en egen sida. De finns ändå med på hela listan.",
+    "shared": {
+      "kicker": "Var man äter",
+      "countLabel": "{{count}} restauranger i {{at}}",
+      "countLabel_one": "En restaurang i {{at}}",
+      "bestRated": "Högst betyg {{rating}}",
+      "hoursNote": "Öppettiderna följer säsongen. Kolla restaurangens egen sida innan du kör dit.",
+      "stayHeadline": "Bor du i {{at}}?",
+      "stayLead": "Boka rum nära borden ovan.",
+      "stayCta": "Hitta boende i {{at}}",
+      "otherCities": "Ät någon annanstans i Lappland",
+      "allRestaurants": "Alla restauranger →",
+      "cityPageCta": "{{at}}: restaurangguide →"
+    },
+    "rovaniemi": {
+      "name": "Rovaniemi",
+      "title": "Restauranger i Rovaniemi: var man äter | LaplandDining",
+      "description": "Åtta restauranger i Rovaniemi, från renfilé på Valtakatu till det högst betygsatta köket på hela sajten. Betyg, recensionscitat och menylänkar.",
+      "h1": "Restauranger i Rovaniemi",
+      "tagline": "Lapplands tätaste klunga av bord — fem av dem ryms på fyra gator.",
+      "intro": "Rovaniemi är den enda staden i Lappland där man väljer restaurang till fots. Nili och Arctic Restaurant ligger nästan mitt emot varandra på Valtakatu och sköter ren och hjortron i klassen €€€. Ett par hundra meter bort är Roka Street Bistro på Ainonkatu och Cafe & Bar 21 på Rovakatu de rum dit lokalborna går en vanlig tisdag. Det högsta betyget är inte lappländskt alls: Hanki, ett koreanskt kök på Korkalonkatu, håller 4,9 på över tusen recensioner.",
+      "know": [
+        "De fem restaurangerna i centrum ligger inom 500 m från varandra — hela urvalet är en promenad.",
+        "Tre ligger utanför centrum: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km längs vägen till Tomtens by och All About Salmon i själva byn.",
+        "Hanki är med 4,9 den högst betygsatta restaurangen på hela sajten — och den är koreansk, inte lappländsk."
+      ],
+      "at": "Rovaniemi"
+    },
+    "levi": {
+      "name": "Levi",
+      "title": "Restauranger i Levi: var man äter | LaplandDining",
+      "description": "Nio restauranger i Levi, Finlands största skidort: panoramasalen, italienskt vid backarna och byn Sirkkas egna rum.",
+      "h1": "Restauranger i Levi",
+      "tagline": "Finlands största skidort äter därefter — volym, terrasser och långa recensionslistor.",
+      "intro": "Byn vid fjällets fot heter officiellt Sirkka, och nästan varje adress säger det. Panoramic Restaurant TUIKKU samlar överlägset flest recensioner. Ämmilä och Wanha Hullu Poro är grannar på Rakkavaarantie, Ristorante Renna gör italienskt en gata bort, och Saamen Kammi, Riihi, Boneless och Kekäle fyller centrum. Betygen ligger här något lägre än i övriga Lappland — 4,1 till 4,6 — på flera gånger så många recensioner, vilket är vad en ort som matar tusentals i veckan brukar se ut som.",
+      "know": [
+        "På Levis postadresser står Sirkka eller Kittilä. Det är samma ort: byn heter Sirkka, kommunen Kittilä.",
+        "Kittilä kyrkby ligger 17 km bort och har inte en enda restaurang på den här sajten.",
+        "Panoramic Restaurant TUIKKU ligger 2,4 km från byns centrum och har fler recensioner än något annat bord i Levi."
+      ],
+      "at": "Levi"
+    },
+    "yllas": {
+      "name": "Ylläs",
+      "title": "Restauranger i Ylläs: var man äter | LaplandDining",
+      "description": "Sju restauranger i Ylläs, fördelade mellan Äkäslompolo och Ylläsjärvi på var sin sida av fjället — plus en på toppen. Betyg och menylänkar.",
+      "h1": "Restauranger i Ylläs",
+      "tagline": "Två byar, ett fjäll och ungefär 11 km mellan ditt bord och det andra.",
+      "intro": "Ylläs är inte en by utan två, på var sin sida av fjället. I norra Äkäslompolo finns Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub och Los Lompolo's; i södra Ylläsjärvi Ravintola Otso och Restaurant Ylläskota. Däremellan är Ylläskammis adress själva fjälltoppen. Rouhe samlar klart flest recensioner här; högst betyg har Los Lompolo's med 4,7 på ett betydligt mindre antal.",
+      "know": [
+        "Äkäslompolo och Ylläsjärvi ligger ungefär 11 km isär runt fjället. Kolla vilken by din restaurang ligger i innan du åker.",
+        "Ylläskammi ligger uppe på fjället, inte i någon av byarna.",
+        "Ylläs betyder Äkäslompolo på den här sajten när ingen by nämns — Ylläsjärvi nämns alltid."
+      ],
+      "at": "Ylläs"
+    },
+    "saariselka": {
+      "name": "Saariselkä",
+      "title": "Restauranger i Saariselkä: var man äter | LaplandDining",
+      "description": "Sju restauranger i Saariselkä, alla inom gångavstånd: ett kök med 4,8, en gastropub, en lávvu och byns hamburgerställe.",
+      "h1": "Restauranger i Saariselkä",
+      "tagline": "En liten fjällby med sajtens bredaste betygsspann.",
+      "intro": "Saariselkä är kompakt nog att valet blir en promenad och inte en bilresa — två av dem ligger på samma gata. Det ovanliga är spannet: Fieno håller 4,8 på 529 recensioner och Gáldu rena 5,0, medan ScanBurger, Lieggâ Láávu och Bistro & Cafe Kuukkeli lägger sig mellan 4,1 och 4,2. Gastropub Giitu, 4,7, är den som Google för under Enare — den ligger i Saariselkä.",
+      "know": [
+        "Gáldus 5,0 kommer från 30 recensioner. Fienos 4,8 kommer från 529 — ett betydligt stadigare tal.",
+        "Allt på den här sidan ligger inne i byn. Närmaste flygplats är Ivalo, ungefär 25 minuter bort.",
+        "Saariselkä hör till Enare kommun, så på andra håll förs det ofta under Enare."
+      ],
+      "at": "Saariselkä"
+    },
+    "inari": {
+      "name": "Enare",
+      "title": "Restauranger i Enare: var man äter | LaplandDining",
+      "description": "Fyra restauranger i Enare kommun, bland dem en fine dining-sal vid vattnet med 4,8 — och tre som ligger långt ifrån varandra.",
+      "h1": "Restauranger i Enare",
+      "tagline": "Finlands största kommun. Fyra kök, och mycket väg emellan.",
+      "intro": "Enare är större än flera europeiska länder, och den här sidan visar det: restaurangerna ligger utspridda över tiotals kilometer i stället för i ett bycentrum. Restaurant Aanaar vid vattnet på Saarikoskentie är fine dining-salen och den högst betygsatta med 4,8. Kultahippu ligger 35 km söderut i Ivalo, Muotkan Ruoktu 39 km längs vägen mot Karigasniemi, och Arctic River Resort däremellan. Ingen av dem ligger inom gångavstånd från en annan.",
+      "know": [
+        "Aanaar är den enda i själva Enare by. För de övriga behöver du bil.",
+        "Kultahippu ligger i Ivalo, 35 km söderut — orten med flygplatsen.",
+        "Muotkan Ruoktu ligger 39 km längs vägen mot Karigasniemi — en medveten körning, ingen avstickare."
+      ],
+      "at": "Enare"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "title": "Restauranger i Kemi: var man äter | LaplandDining",
+      "description": "Fem restauranger i Kemi vid Bottenviken: paviljongen vid havet, två på Valtakatu och ett kök i hamnen. Betyg och menylänkar.",
+      "h1": "Restauranger i Kemi",
+      "tagline": "En stad vid havet, och borden följer vattnet.",
+      "intro": "Kemi äter längs två linjer: stranden och huvudgatan. Kemin Puistopaviljonki och Pizzeria San Milano delar samma adress vid havet på Meripuistonpolku, och Sataman Krouwi ja Perämeren Jähti ligger nere i hamnen. I centrum står Pieni Lohikäärme och Ravintola Mori mitt emot varandra över Valtakatu. Puistopaviljonki har här överlägset flest recensioner; San Milano högst betyg.",
+      "know": [
+        "Två av dem delar en adress vid havet — Puistopaviljonki och San Milano.",
+        "Kemi ligger vid huvudbanan från Helsingfors, så det är en av få lappländska städer man når utan bil.",
+        "Hamnrestaurangen lever på en annan säsong än de i centrum — på vintern drar SnowCastle folket."
+      ],
+      "at": "Kemi"
+    },
+    "tornio": {
+      "name": "Torneå",
+      "title": "Restauranger i Torneå: var man äter | LaplandDining",
+      "description": "Fem restauranger i Torneå vid svenska gränsen — tre av dem på samma gata. Betyg, citat och länkar till deras egna menyer.",
+      "h1": "Restauranger i Torneå",
+      "tagline": "En gränsstad där tre av fem delar en gata.",
+      "intro": "Utbudet i Torneå är ovanligt tätt: Ravintola Umpitunneli, Mustaparran Päämaja och Tmi Hevi Pizza ligger alla på Hallituskatu, ett par minuter från varandra. Ravintola Golden Flower på Eliaksenkatu har flest recensioner här, och Amico fyller ut listan på Torikatu. Högst betyg har Hevi Pizza med 4,7. På andra sidan älven ligger Haparanda, som är Sverige och har en egen sida.",
+      "know": [
+        "Tre av dem ligger på Hallituskatu — alla tre menyerna hinner du läsa på en promenad.",
+        "Haparanda ligger över bron och i Sverige: annan valuta, och klockan går tillbaka en timme.",
+        "Torneå och Haparanda fungerar i praktiken som en stad, så ett bord på andra sidan är en promenad, inte en resa."
+      ],
+      "at": "Torneå"
+    },
+    "haparanda": {
+      "name": "Haparanda",
+      "title": "Restauranger i Haparanda | LaplandDining",
+      "description": "Fem restauranger i Haparanda mitt emot Torneå: hotellet vid torget, en klassiker 15 km uppströms, sushi och thai. Betyg och menylänkar.",
+      "h1": "Restauranger i Haparanda",
+      "tagline": "Över bron från Torneå — i praktiken samma stad, på papperet ett annat land.",
+      "intro": "Haparanda ligger i Sverige, vilket ändrar tre praktiska saker: priserna är i kronor, klockan går en timme efter Finland, och centrum delas ändå med Torneå. Haparanda Stadshotell ligger vid torget, Leilani och Haparanda Sushi & Indiskt ett par gator bort, och Cape East ute på Sundholmen. Kukkolaforsen, den mest recenserade av dem, ligger 15 km uppströms och är en medveten utflykt snarare än en promenad.",
+      "know": [
+        "Sverige, inte Finland: priser i SEK, och lokal tid ligger en timme efter Torneå.",
+        "Kukkolaforsen ligger 15 km norrut längs älven — planera för bil.",
+        "Finland och Sverige är båda med i Schengen; att gå över från Torneå tar minuter."
+      ],
+      "at": "Haparanda"
+    },
+    "sodankyla": {
+      "name": "Sodankylä",
+      "title": "Restauranger i Sodankylä: var man äter | LaplandDining",
+      "description": "Fem restauranger i Sodankylä, tre av dem längs Ishavsvägen genom orten. Betyg, citat och länkar till deras egna menyer.",
+      "h1": "Restauranger i Sodankylä",
+      "tagline": "Ett stopp vid Ishavsvägen, och det mesta ligger längs den.",
+      "intro": "Sodankylä är halvvägs på den långa körningen norrut, och restaurangerna ställer upp sig därefter: Sodankylän turkinpippuri, Ravintola RuusuSuola och Sodankylän Olohuone Tähti ligger alla vid Jäämerentie, vägen som till slut når Ishavet. Turkinpippuri har här klart flest recensioner. Olohuone Tähti har högst betyg med 4,8, på ett betydligt mindre antal. Tori-Kioski Mikkola och Piitsi Pubi fyller ut vid sidan av huvudvägen.",
+      "know": [
+        "Tre av dem ligger vid Jäämerentie, huvudvägen genom orten — lätt att kombinera med en körpaus.",
+        "Orten fylls i mitten av juni under Midnattssolens filmfestival; bord blir knappa den veckan.",
+        "Luosto ligger ungefär 32 km bort och har en egen sida."
+      ],
+      "at": "Sodankylä"
+    },
+    "pyhatunturi": {
+      "name": "Pyhätunturi",
+      "title": "Restauranger vid Pyhätunturi | LaplandDining",
+      "description": "Sex ställen att äta på vid Pyhätunturi och runt Pelkosenniemi: ett kafé vid nationalparkens port, ett hotellkök och en bistro med 5,0.",
+      "h1": "Restauranger vid Pyhätunturi",
+      "tagline": "En nationalparksby där det högst betygsatta bordet står i den gamla prästgården.",
+      "intro": "Pyhä är en liten ort vid kanten av nationalparken Pyhä-Luosto, i Pelkosenniemi kommun. Café Loimu ligger vid Luontotie intill parkporten; Ravintola Popolo och Restaurant CAMP Kitchen & Bar delar hotelladressen på Kultakeronkatu i centrum. De två högsta betygen ligger här utanför orten: Bistro Vanha Pappila på Kirkkotie med rena 5,0 och Sunday Morning Resort med 4,8, båda på måttliga antal recensioner.",
+      "know": [
+        "Pyhä hör till Pelkosenniemi kommun, så i en del adresser står Pelkosenniemi i stället för Pyhätunturi.",
+        "Vanha Pappila och Sunday Morning Resort ligger nere i byarna, inte uppe i orten.",
+        "Luosto är den andra halvan av samma nationalpark, 21 km bort, och har en egen sida."
+      ],
+      "at": "Pyhätunturi"
+    },
+    "luosto": {
+      "name": "Luosto",
+      "title": "Restauranger i Luosto: var man äter | LaplandDining",
+      "description": "Fyra ställen att äta på i Luosto, den lugnare halvan av Pyhä-Luosto: hotellets kelorestaurang, gårdens kök och stoppet vid backen.",
+      "h1": "Restauranger i Luosto",
+      "tagline": "Nationalparkens lugnare halva — fyra kök, ingen kö.",
+      "intro": "Luosto är den mindre och lugnare av Pyhä-Luostos två orter, och listan är kort nog att läsas på en minut. Restaurant Punakettu vid Luostontie har sex gånger så många recensioner som något annat här, vilket gör den till förvalet. Keloravintola Lapland Hotels Luostotunturi och Luoston Hovi ligger båda på 4,4, och Skiknööli är stoppet vid backen. Luosto hör till Sodankylä kommun, så flera adresser säger Sodankylä.",
+      "know": [
+        "Punakettu har överlägset flest recensioner i Luosto — de andra tre är små, lokala rum.",
+        "På postadresserna står det ofta Sodankylä. Själva orten ligger ungefär 32 km bort.",
+        "Pyhä ligger 21 km tvärs över parken och har en egen sida."
+      ],
+      "at": "Luosto"
+    },
+    "kuusamo": {
+      "name": "Kuusamo",
+      "title": "Restauranger i Kuusamo & Ruka | LaplandDining",
+      "description": "Sex restauranger fördelade mellan skidorten Ruka och Kuusamo stad, 22 km isär: sajtens mest trafikerade pizzeria, en gastropub och ett vandringskafé.",
+      "h1": "Restauranger i Kuusamo och Ruka",
+      "tagline": "Två centrum, 22 km isär — kolla i vilket ditt bord står.",
+      "intro": "Kuusamo delar sig tydligt i två. Uppe på skidorten har Pizzeria Ruka fler recensioner än någon annan restaurang på sajten utanför Rovaniemi, på samma väg Restaurant Burger Cafe & Bar Ruka och en bit därifrån Ruka Treks Gasthaus & Hard Trek Café med 4,8. Nere i staden, 22 km söderut, betjänar Ravintola Talonpöytä och Restaurant Wanha Mestari en helt annan publik.",
+      "know": [
+        "Ruka och Kuusamo stad ligger 22 km isär. Adressen avslöjar vilket: Rukatunturintie och Vuosselintie är skidorten.",
+        "Pizzeria Ruka är det mest trafikerade köket här räknat i recensioner, flera gånger om.",
+        "Kuusamo hör till Norra Österbotten och inte till egentliga Lappland, men det är porten till Oulanka nationalpark."
+      ],
+      "at": "Kuusamo"
+    },
+    "kemijarvi": {
+      "name": "Kemijärvi",
+      "title": "Restauranger i Kemijärvi: var man äter | LaplandDining",
+      "description": "Fem restauranger i Kemijärvi, alla inom 800 m från varandra i centrum. Betyg, citat och länkar till deras egna menyer.",
+      "h1": "Restauranger i Kemijärvi",
+      "tagline": "Hela urvalet ryms på 800 meter.",
+      "intro": "Kemijärvi är sajtens mest gångvänliga stad: varje restaurang här ligger inom 800 meter från de andra i centrum, två av dem som grannar på Vapaudenkatu. Mestarin Kievari på Kirkkokatu har flest recensioner. De två högst betygsatta är de minsta — Jauri Resort med 4,8 och Restaurant Susa's Bistro med 4,7 — och däremellan täcker Rosa Pizza Kebab och Pizza Mestarit vardagen.",
+      "know": [
+        "Alla ligger inom 800 m — varje meny hinner du titta på under en promenad.",
+        "Susa's Bistro och Rosa Pizza Kebab är grannar på Vapaudenkatu.",
+        "Kemijärvi ligger vid järnvägen, så det går att ta sig dit utan bil."
+      ],
+      "at": "Kemijärvi"
+    }
+  },
   "fineDining": {
     "title": "Fine dining i och kring Lappland | LaplandDining",
     "description": "De högst rankade i vårt Lapplandsurval, sorterade efter Google-betyg: matsalar, vildmarkskök och kåtabord, med gästcitat och menylänkar.",

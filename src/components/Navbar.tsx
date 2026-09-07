@@ -9,6 +9,7 @@ import EcosystemMenu from '../shared/EcosystemMenu';
 
 const NAV_KEYS = [
   { key: 'restaurants', basePath: '/restaurants' },
+  { key: 'cities', basePath: '/cities' },
   { key: 'fineDining', basePath: '/fine-dining' },
   { key: 'midnightSun', basePath: '/midnight-sun-dining' },
   { key: 'foodHistory', basePath: '/food-history' },

@@ -138,6 +138,208 @@
     "introP1": "Ravintolat on ryhmitelty kohteittain, ei asetettu paremmuusjärjestykseen. Jos kaupungissa on toimituksen valinta, se on ruudukon ensimmäisenä omalla merkinnällään; sen jälkeen tulevat muut ilman järjestystä, joten lue kortit, älä sijoituksia. Näkyvät arviot ovat Googlen omia, ja jokaisesta pääsee niihin arvosteluihin, joista luku on peräisin.",
     "introP2": "Jokaisen kaupungin ruudukon yläpuolella oleva leveä kortti on maksettu kumppanipaikka, joka on merkitty mainokseksi. Muuta maksettua näkyvyyttä tällä sivulla ei ole. Aukioloajat elävät kauden mukaan: Lapissa \"suljettu kaudeksi\" voi tarkoittaa kuukausia eikä viikkoja, joten tarkista ravintolan oma sivu ennen kuin ajat paikalle."
   },
+  "cities": {
+    "title": "Missä syödä Lapissa — paikkakunnittain | LaplandDining",
+    "description": "Ravintolat Rovaniemellä, Levillä, Ylläksellä, Saariselällä, Inarissa, Kemissä ja kahdeksalla muulla paikkakunnalla, jokainen omalla sivullaan. Arviot ja ruokalistalinkit.",
+    "h1": "Lappi paikkakunnittain",
+    "lead": "76 ravintolaa 13 kohteessa, jokainen paikkakunta omalla sivullaan.",
+    "moreLead": "Muoniossa, Hetassa, Sallassa ja Posiolla on liian vähän pöytiä omaan sivuun. Ne löytyvät silti koko listalta.",
+    "shared": {
+      "kicker": "Missä syödä",
+      "countLabel": "{{count}} ravintolaa {{at}}",
+      "countLabel_one": "Yksi ravintola {{at}}",
+      "bestRated": "Paras arvio {{rating}}",
+      "hoursNote": "Aukioloajat elävät kaudessa. Tarkista ravintolan oma sivu ennen kuin lähdet ajamaan.",
+      "stayHeadline": "Yövytkö {{at}}?",
+      "stayLead": "Varaa huone lähietäisyydeltä yllä olevista pöydistä.",
+      "stayCta": "Katso majoitus {{at}}",
+      "otherCities": "Syö muualla Lapissa",
+      "allRestaurants": "Kaikki ravintolat →",
+      "cityPageCta": "Ravintolat {{at}} →"
+    },
+    "rovaniemi": {
+      "name": "Rovaniemi",
+      "title": "Ravintolat Rovaniemellä: missä syödä | LaplandDining",
+      "description": "Kahdeksan ravintolaa Rovaniemellä, Valtakadun poronfileestä koko sivuston parhaiten arvioituun keittiöön. Arviot, arvositaatit ja ruokalistalinkit.",
+      "h1": "Ravintolat Rovaniemellä",
+      "tagline": "Lapin tihein pöytien rypäs — ja viisi niistä mahtuu neljälle kadulle.",
+      "intro": "Rovaniemi on ainoa Lapin kaupunki, jossa ravintolan voi valita kävellen. Nili ja Arctic Restaurant ovat lähes vastakkain Valtakadulla ja hoitavat poron ja lakan hintaluokassa €€€. Parinsadan metrin päässä Roka Street Bistro Ainonkadulla ja Cafe & Bar 21 Rovakadulla ovat niitä paikkoja, joihin paikalliset menevät tavallisena tiistaina. Korkein arvio ei ole lappilainen lainkaan: Korkalonkadun korealainen Hanki pitää 4,9:ää yli tuhannella arviolla.",
+      "know": [
+        "Keskustan viisi ravintolaa ovat 500 metrin säteellä toisistaan — koko valinta on yksi kävelymatka.",
+        "Kolme on keskustan ulkopuolella: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km Joulupukin pajakylän tiellä ja All About Salmon itse kylässä.",
+        "Hanki on 4,9:llä koko sivuston parhaiten arvioitu ravintola — ja se on korealainen, ei lappilainen."
+      ],
+      "at": "Rovaniemellä"
+    },
+    "levi": {
+      "name": "Levi",
+      "title": "Ravintolat Levillä: missä syödä | LaplandDining",
+      "description": "Yhdeksän ravintolaa Levillä, Suomen suurimmassa hiihtokeskuksessa: panoraamasali, italialainen rinteiden kupeessa ja Sirkan kylän omat paikat.",
+      "h1": "Ravintolat Levillä",
+      "tagline": "Suomen suurin hiihtokeskus syö sen mukaisesti — volyymia, terasseja ja pitkiä arviolistoja.",
+      "intro": "Tunturin juurella oleva kylä on virallisesti Sirkka, ja lähes jokainen osoite kertoo sen. Panoramic Restaurant TUIKKU kerää ylivoimaisesti eniten arvioita. Ämmilä ja Wanha Hullu Poro ovat naapureita Rakkavaarantiellä, Ristorante Renna tekee italialaista kadun päässä, ja Saamen Kammi, Riihi, Boneless ja Kekäle täyttävät keskustan. Arviot ovat täällä hieman muuta Lappia matalampia — 4,1–4,6 — mutta arviomäärät moninkertaisia, mikä on tyypillistä keskukselle joka ruokkii tuhansia viikossa.",
+      "know": [
+        "Levin postiosoitteissa lukee Sirkka tai Kittilä. Kyse on samasta keskuksesta: kylä on Sirkka, kunta Kittilä.",
+        "Kittilän kirkonkylä on 17 km päässä, eikä sillä ole yhtään ravintolaa tällä sivustolla.",
+        "Panoramic Restaurant TUIKKU on 2,4 km kylän keskustasta ja kerää enemmän arvioita kuin mikään muu Levin pöytä."
+      ],
+      "at": "Levillä"
+    },
+    "yllas": {
+      "name": "Ylläs",
+      "title": "Ravintolat Ylläksellä: missä syödä | LaplandDining",
+      "description": "Seitsemän ravintolaa Ylläksellä, jaettuna Äkäslompolon ja Ylläsjärven kesken tunturin eri puolille — ja yksi huipulla. Arviot ja ruokalistalinkit.",
+      "h1": "Ravintolat Ylläksellä",
+      "tagline": "Kaksi kylää, yksi tunturi ja noin 11 kilometriä pöytäsi ja sen toisen välillä.",
+      "intro": "Ylläs ei ole yksi kylä vaan kaksi, tunturin vastakkaisilla puolilla. Pohjoisessa Äkäslompolossa ovat Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub ja Los Lompolo's; etelässä Ylläsjärvellä Ravintola Otso ja Restaurant Ylläskota. Niiden välissä Ylläskammin osoite on itse tunturin huippu. Rouhe kerää selvästi eniten arvioita; Los Lompolo'silla on korkein arvio, 4,7, huomattavasti pienemmällä määrällä.",
+      "know": [
+        "Äkäslompolon ja Ylläsjärven väli on noin 11 km tunturin ympäri. Tarkista kumpaan kylään olet menossa ennen kuin lähdet.",
+        "Ylläskammi on tunturin päällä, ei kummassakaan kylässä.",
+        "Ylläs tarkoittaa tällä sivustolla Äkäslompoloa silloin kun kylää ei erikseen mainita — Ylläsjärvi mainitaan aina."
+      ],
+      "at": "Ylläksellä"
+    },
+    "saariselka": {
+      "name": "Saariselkä",
+      "title": "Ravintolat Saariselällä: missä syödä | LaplandDining",
+      "description": "Seitsemän ravintolaa Saariselällä, kaikki kävelymatkan päässä: 4,8:n keittiö, gastropub, lávvu ja kylän burgeripaikka. Arviot ja ruokalistalinkit.",
+      "h1": "Ravintolat Saariselällä",
+      "tagline": "Pieni tunturikylä, jossa on sivuston laajin arviohaitari.",
+      "intro": "Saariselkä on niin kompakti, että valinta on kävelymatka eikä ajomatka — kaksi niistä on samalla kadulla. Poikkeuksellista on kirjo: Fieno pitää 4,8:aa 529 arviolla ja Gáldu puhdasta 5,0:aa, kun taas ScanBurger, Lieggâ Láávu ja Bistro & Cafe Kuukkeli asettuvat välille 4,1–4,2. Gastropub Giitu, 4,7, on se jonka Google kirjaa Inariin — se on Saariselällä.",
+      "know": [
+        "Gáldun 5,0 tulee 30 arviosta. Fienon 4,8 tulee 529:stä — huomattavasti vakaampi luku.",
+        "Kaikki tämän sivun paikat ovat kylän sisällä. Lähin lentoasema on Ivalo, noin 25 minuutin päässä.",
+        "Saariselkä kuuluu Inarin kuntaan, joten muualla se kirjataan usein Inariksi."
+      ],
+      "at": "Saariselällä"
+    },
+    "inari": {
+      "name": "Inari",
+      "title": "Ravintolat Inarissa: missä syödä | LaplandDining",
+      "description": "Neljä ravintolaa Inarin kunnassa, mukaan lukien 4,8:n fine dining -sali veden äärellä — ja kolme pitkän ajomatkan päässä toisistaan. Arviot ja ruokalistalinkit.",
+      "h1": "Ravintolat Inarissa",
+      "tagline": "Suomen suurin kunta. Neljä keittiötä, ja paljon tietä niiden välissä.",
+      "intro": "Inari on suurempi kuin moni Euroopan valtio, ja tämä sivu näyttää sen: ravintolat ovat hajallaan kymmenien kilometrien päässä toisistaan, eivät kylän keskustassa. Restaurant Aanaar veden äärellä Saarikoskentiellä on fine dining -sali ja parhaiten arvioitu, 4,8. Kultahippu on 35 km etelässä Ivalossa, Muotkan Ruoktu 39 km Karigasniementietä, ja Arctic River Resort niiden välissä. Yksikään ei ole kävelymatkan päässä toisesta.",
+      "know": [
+        "Aanaar on ainoa itse Inarin kylässä. Muihin tarvitset auton.",
+        "Kultahippu on Ivalossa, 35 km etelässä — lentoaseman kylässä.",
+        "Muotkan Ruoktu on 39 km Karigasniementietä — harkittu ajomatka, ei poikkeama."
+      ],
+      "at": "Inarissa"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "title": "Ravintolat Kemissä: missä syödä | LaplandDining",
+      "description": "Viisi ravintolaa Kemissä Perämeren rannalla: merenrannan paviljonki, kaksi Valtakadulla ja sataman keittiö. Arviot, arvositaatit ja ruokalistalinkit.",
+      "h1": "Ravintolat Kemissä",
+      "tagline": "Merikaupunki, ja pöydät seuraavat vettä.",
+      "intro": "Kemi syö kahta linjaa pitkin: rantaa ja pääkatua. Kemin Puistopaviljonki ja Pizzeria San Milano jakavat saman merenranta-osoitteen Meripuistonpolulla, ja Sataman Krouwi ja Perämeren Jähti on satamassa. Keskustassa Pieni Lohikäärme ja Ravintola Mori ovat vastakkain Valtakadun yli. Puistopaviljongilla on ylivoimaisesti eniten arvioita; San Milanolla korkein arvio.",
+      "know": [
+        "Kaksi niistä jakaa yhden osoitteen merenrannalla — Puistopaviljonki ja San Milano.",
+        "Kemi on Helsingin päärataverkossa, joten se on yksi harvoista Lapin kaupungeista jonne pääsee ilman autoa.",
+        "Sataman ravintola elää eri kautta kuin keskustan paikat — LumiLinna vetää talvella väen."
+      ],
+      "at": "Kemissä"
+    },
+    "tornio": {
+      "name": "Tornio",
+      "title": "Ravintolat Torniossa: missä syödä | LaplandDining",
+      "description": "Viisi ravintolaa Torniossa Ruotsin rajalla — kolme niistä samalla kadulla. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
+      "h1": "Ravintolat Torniossa",
+      "tagline": "Rajakaupunki, jossa kolme viidestä jakaa yhden kadun.",
+      "intro": "Tornion valikoima on poikkeuksellisen tiivis: Ravintola Umpitunneli, Mustaparran Päämaja ja Tmi Hevi Pizza ovat kaikki Hallituskadulla, parin minuutin päässä toisistaan. Ravintola Golden Flower Eliaksenkadulla kerää eniten arvioita, ja Amico täydentää listan Torikadulla. Korkein arvio on Hevi Pizzalla, 4,7. Joen toisella puolella on Haparanda, joka on Ruotsia ja jolla on oma sivunsa.",
+      "know": [
+        "Kolme niistä on Hallituskadulla — kaikkien kolmen ruokalistat ehtii lukea yhdellä kävelyllä.",
+        "Haparanda on sillan yli ja Ruotsissa: eri valuutta, ja kello siirtyy tunnin taaksepäin.",
+        "Tornio ja Haparanda toimivat käytännössä yhtenä kaupunkina, joten pöytä toisella puolella on kävelymatka, ei matka."
+      ],
+      "at": "Torniossa"
+    },
+    "haparanda": {
+      "name": "Haaparanta",
+      "title": "Ravintolat Haaparannalla, Ruotsissa | LaplandDining",
+      "description": "Viisi ravintolaa Haaparannalla Tornion rajan takana: torin hotelli, jokivarren klassikko 15 km ylävirtaan, sushia ja thaita. Arviot ja ruokalistalinkit.",
+      "h1": "Ravintolat Haaparannalla",
+      "tagline": "Sillan yli Torniosta — käytännössä sama kaupunki, paperilla eri maa.",
+      "intro": "Haaparanta on Ruotsissa, mikä muuttaa kolme käytännön asiaa: hinnat ovat kruunuissa, kello on tunnin Suomea jäljessä, ja keskusta on silti yhteinen Tornion kanssa. Haparanda Stadshotell on torilla, Leilani ja Haparanda Sushi & Indiskt parin kadun päässä, ja Cape East Sundholmenilla. Kukkolaforsen, eniten arvioita kerännyt, on 15 km ylävirtaan ja harkittu retki eikä kävelymatka.",
+      "know": [
+        "Ruotsi, ei Suomi: hinnat kruunuissa, ja paikallinen aika on tunnin Torniota jäljessä.",
+        "Kukkolaforsen on 15 km pohjoiseen jokivartta — varaa auto.",
+        "Suomi ja Ruotsi ovat molemmat Schengenissä; Torniosta kävelee yli minuuteissa."
+      ],
+      "at": "Haaparannalla"
+    },
+    "sodankyla": {
+      "name": "Sodankylä",
+      "title": "Ravintolat Sodankylässä: missä syödä | LaplandDining",
+      "description": "Viisi ravintolaa Sodankylässä, kolme niistä Jäämerentien varrella. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
+      "h1": "Ravintolat Sodankylässä",
+      "tagline": "Pysähdys Jäämerentiellä, ja suurin osa valikoimasta on sen varrella.",
+      "intro": "Sodankylä on pitkän pohjoisen ajomatkan puoliväli, ja ravintolat asettuvat sen mukaan: Sodankylän turkinpippuri, Ravintola RuusuSuola ja Sodankylän Olohuone Tähti ovat kaikki Jäämerentiellä, sillä tiellä joka lopulta päätyy Jäämerelle. Turkinpippuri kerää selvästi eniten arvioita. Olohuone Tähdellä on korkein arvio, 4,8, huomattavasti pienemmällä määrällä. Tori-Kioski Mikkola ja Piitsi Pubi täydentävät listan päätien ulkopuolelta.",
+      "know": [
+        "Kolme niistä on Jäämerentiellä, kaupungin läpi kulkevalla päätiellä — helppo yhdistää ajotaukoon.",
+        "Kaupunki täyttyy kesäkuun puolivälissä Sodankylän elokuvajuhlien aikaan; pöydistä on silloin pulaa.",
+        "Luosto on noin 32 km päässä ja sillä on oma sivunsa."
+      ],
+      "at": "Sodankylässä"
+    },
+    "pyhatunturi": {
+      "name": "Pyhätunturi",
+      "title": "Ravintolat Pyhätunturilla | LaplandDining",
+      "description": "Kuusi ruokapaikkaa Pyhätunturilla ja Pelkosenniemen seudulla: kahvila kansallispuiston portilla, hotellin keittiö ja 5,0:n bistro. Arviot ja ruokalistalinkit.",
+      "h1": "Ravintolat Pyhätunturilla",
+      "tagline": "Kansallispuiston kylä, jossa parhaiten arvioitu pöytä on vanhassa pappilassa.",
+      "intro": "Pyhä on pieni keskus Pyhä-Luoston kansallispuiston reunalla, Pelkosenniemen kunnassa. Café Loimu on Luontotiellä puiston portilla; Ravintola Popolo ja Restaurant CAMP Kitchen & Bar jakavat Kultakeronkadun hotelliosoitteen keskuksessa. Kaksi korkeinta arviota ovat keskuksen ulkopuolella: Bistro Vanha Pappila Kirkkotiellä puhtaalla 5,0:lla ja Sunday Morning Resort 4,8:lla, molemmat maltillisilla arviomäärillä.",
+      "know": [
+        "Pyhä kuuluu Pelkosenniemen kuntaan, joten osassa osoitteista lukee Pelkosenniemi eikä Pyhätunturi.",
+        "Vanha Pappila ja Sunday Morning Resort ovat alhaalla kylissä, eivät ylhäällä keskuksessa.",
+        "Luosto on saman kansallispuiston toinen puolisko 21 km päässä, ja sillä on oma sivunsa."
+      ],
+      "at": "Pyhätunturilla"
+    },
+    "luosto": {
+      "name": "Luosto",
+      "title": "Ravintolat Luostolla: missä syödä | LaplandDining",
+      "description": "Neljä ruokapaikkaa Luostolla, Pyhä-Luoston hiljaisemmalla puoliskolla: hotellin keloravintola, hovin keittiö ja rinteen pysähdys. Arviot ja ruokalistalinkit.",
+      "h1": "Ravintolat Luostolla",
+      "tagline": "Kansallispuiston hiljaisempi puolisko — neljä keittiötä, ei jonoa.",
+      "intro": "Luosto on Pyhä-Luoston kahdesta keskuksesta pienempi ja hiljaisempi, ja lista on niin lyhyt että sen lukee minuutissa. Restaurant Punakettu Luostontiellä kerää kuusinkertaisesti arvioita mihinkään muuhun täkäläiseen verrattuna, mikä tekee siitä oletusvalinnan. Keloravintola Lapland Hotels Luostotunturi ja Luoston Hovi ovat molemmat 4,4:ssä, ja Skiknööli on rinteen pysähdys. Luosto kuuluu Sodankylän kuntaan, joten useassa osoitteessa lukee Sodankylä.",
+      "know": [
+        "Punaketulla on ylivoimaisesti eniten arvioita Luostolla — muut kolme ovat pieniä paikallisia saleja.",
+        "Postiosoitteissa lukee usein Sodankylä. Itse kirkonkylä on noin 32 km päässä.",
+        "Pyhä on 21 km puiston toisella puolella ja sillä on oma sivunsa."
+      ],
+      "at": "Luostolla"
+    },
+    "kuusamo": {
+      "name": "Kuusamo",
+      "title": "Ravintolat Kuusamossa ja Rukalla | LaplandDining",
+      "description": "Kuusi ravintolaa jaettuna Rukan keskuksen ja Kuusamon kirkonkylän kesken, 22 km toisistaan: sivuston vilkkain pizzeria, gastropub ja vaelluskahvila.",
+      "h1": "Ravintolat Kuusamossa ja Rukalla",
+      "tagline": "Kaksi keskusta, 22 km välissä — tarkista kummassa pöytäsi on.",
+      "intro": "Kuusamo jakautuu selvästi kahtia. Ylhäällä keskuksessa Pizzeria Rukalla on enemmän arvioita kuin millään muulla sivuston ravintolalla Rovaniemen ulkopuolella, samalla tiellä Restaurant Burger Cafe & Bar Ruka ja vähän sivummalla Ruka Trekin Gasthaus & Hard Trek Café, arvio 4,8. Alhaalla kirkonkylässä, 22 km etelässä, Ravintola Talonpöytä ja Restaurant Wanha Mestari palvelevat aivan eri väkeä.",
+      "know": [
+        "Ruka ja Kuusamon kirkonkylä ovat 22 km päässä toisistaan. Osoite kertoo kumpi: Rukatunturintie ja Vuosselintie ovat keskusta.",
+        "Pizzeria Ruka on täkäläisistä vilkkain arviomäärällä mitattuna, moninkertaisesti.",
+        "Kuusamo kuuluu Pohjois-Pohjanmaahan eikä varsinaiseen Lappiin, mutta se on portti Oulangan kansallispuistoon."
+      ],
+      "at": "Kuusamossa"
+    },
+    "kemijarvi": {
+      "name": "Kemijärvi",
+      "title": "Ravintolat Kemijärvellä: missä syödä | LaplandDining",
+      "description": "Viisi ravintolaa Kemijärvellä, kaikki 800 metrin säteellä toisistaan keskustassa. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
+      "h1": "Ravintolat Kemijärvellä",
+      "tagline": "Koko valikoima mahtuu 800 metriin.",
+      "intro": "Kemijärvi on sivuston kävelyystävällisin kaupunki: jokainen täkäläinen ravintola on 800 metrin säteellä toisistaan keskustassa, kaksi niistä naapureina Vapaudenkadulla. Mestarin Kievarilla Kirkkokadulla on eniten arvioita. Kaksi parhaiten arvioitua ovat pienimpiä — Jauri Resort 4,8:lla ja Restaurant Susa's Bistro 4,7:llä — ja niiden välissä Rosa Pizza Kebab ja Pizza Mestarit hoitavat arjen.",
+      "know": [
+        "Kaikki ovat 800 metrin säteellä — jokaisen ruokalistan ehtii katsoa yhdellä kävelyllä.",
+        "Susa's Bistro ja Rosa Pizza Kebab ovat naapureita Vapaudenkadulla.",
+        "Kemijärvi on radan varrella, joten sinne pääsee ilman autoa."
+      ],
+      "at": "Kemijärvellä"
+    }
+  },
   "fineDining": {
     "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",
     "description": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: ruokasaleja, erämaakeittiöitä ja kotaravintoloita. Arviositaatit ja menulinkit.",

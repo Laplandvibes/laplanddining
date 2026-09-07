@@ -138,6 +138,208 @@
     "introP1": "Restaurants are grouped by destination, not ranked against each other. Where a city has an editor’s pick it leads the grid with a marked chip; everything after it is in no particular order, so read the cards rather than the positions. The ratings shown are Google’s own and link back to the reviews they came from.",
     "introP2": "The wide card above each city grid is a paid featured-partner slot and is labelled as advertising. Nothing else on this page is paid placement. Opening hours move with the season (in Lapland \"closed for the season\" can mean months rather than weeks) so check the restaurant’s own page before you drive out."
   },
+  "cities": {
+    "title": "Where to Eat in Lapland, Town by Town | LaplandDining",
+    "description": "Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi and eight more towns across Finnish Lapland, each on its own page with Google ratings and menu links.",
+    "h1": "Lapland, town by town",
+    "lead": "76 restaurants across 13 destinations, each town on its own page.",
+    "moreLead": "Muonio, Hetta, Salla and Posio have too few tables between them for a page of their own. They are still on the full list.",
+    "shared": {
+      "kicker": "Where to eat",
+      "countLabel": "{{count}} restaurants in {{at}}",
+      "countLabel_one": "1 restaurant in {{at}}",
+      "bestRated": "Top rated {{rating}}",
+      "hoursNote": "Opening hours move with the season here. Check the restaurant's own page before you drive out.",
+      "stayHeadline": "Staying in {{at}}?",
+      "stayLead": "Book a room near the tables above.",
+      "stayCta": "Find stays in {{at}}",
+      "otherCities": "Eat somewhere else in Lapland",
+      "allRestaurants": "All restaurants →",
+      "cityPageCta": "{{at}} restaurant guide →"
+    },
+    "rovaniemi": {
+      "name": "Rovaniemi",
+      "title": "Restaurants in Rovaniemi: Where to Eat | LaplandDining",
+      "description": "Eight restaurants in Rovaniemi, from reindeer fillet on Valtakatu to the highest-rated kitchen on this site. Ratings, review quotes and menu links.",
+      "h1": "Restaurants in Rovaniemi",
+      "tagline": "The densest cluster of tables in Lapland — and five of them share four streets.",
+      "intro": "Rovaniemi is the one town in Lapland where you can choose a restaurant on foot. Nili and Arctic Restaurant sit almost opposite each other on Valtakatu and cover the reindeer-and-cloudberry end of the menu at €€€. A few hundred metres away, Roka Street Bistro on Ainonkatu and Cafe & Bar 21 on Rovakatu are the rooms locals use on an ordinary Tuesday. The highest rating here is not Lappish at all: Hanki, a Korean kitchen on Korkalonkatu, holds 4.9 from more than a thousand reviews.",
+      "know": [
+        "The five city-centre restaurants are within 500 m of each other — the whole choice is one walk.",
+        "Three are outside the centre: Sky Kitchen & View 2.4 km out, Kotahovi 6.8 km out on the Santa Claus Village road, and All About Salmon at the village itself.",
+        "Hanki, at 4.9, is the highest-rated restaurant anywhere on this site — and it is Korean, not Lappish."
+      ],
+      "at": "Rovaniemi"
+    },
+    "levi": {
+      "name": "Levi",
+      "title": "Restaurants in Levi: Where to Eat | LaplandDining",
+      "description": "Nine restaurants at Levi, Finland's biggest ski resort: the panoramic dining room, Italian by the slopes, and the local rooms in Sirkka village.",
+      "h1": "Restaurants in Levi",
+      "tagline": "Finland's biggest ski resort eats like one — volume, terraces and long review counts.",
+      "intro": "The village at the foot of the fell is officially Sirkka, and almost every address here says so. Panoramic Restaurant TUIKKU has by far the most reviews here. Ämmilä and Wanha Hullu Poro are next door to each other on Rakkavaarantie, Ristorante Renna does Italian a street away, and Saamen Kammi, Riihi, Boneless and Kekäle fill in around the centre. Ratings here run a little lower than elsewhere in Lapland — 4.1 to 4.6 — on review counts several times higher, which is what a resort feeding thousands a week tends to look like.",
+      "know": [
+        "Levi's postal addresses say Sirkka or Kittilä. It is the same resort — the village is Sirkka, the municipality is Kittilä.",
+        "Kittilä village itself is 17 km away and has no restaurant on this site.",
+        "Panoramic Restaurant TUIKKU is 2.4 km from the village centre and has more reviews than any other table at Levi."
+      ],
+      "at": "Levi"
+    },
+    "yllas": {
+      "name": "Ylläs",
+      "title": "Restaurants in Ylläs: Where to Eat | LaplandDining",
+      "description": "Seven restaurants at Ylläs, split between Äkäslompolo and Ylläsjärvi on opposite sides of the fell — plus one at the summit. Ratings and menu links.",
+      "h1": "Restaurants in Ylläs",
+      "tagline": "Two villages, one fell, and about 11 km between your table and the other one.",
+      "intro": "Ylläs is not a village but two, on opposite sides of the fell. Äkäslompolo in the north has Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub and Los Lompolo's; Ylläsjärvi in the south has Ravintola Otso and Restaurant Ylläskota. Between them, Ylläskammi's address is the summit of Ylläs itself. Rouhe carries the most reviews here by a wide margin; Los Lompolo's the highest rating, at 4.7 on a much smaller count.",
+      "know": [
+        "Äkäslompolo and Ylläsjärvi are about 11 km apart around the fell. Check which village your restaurant is in before you set off.",
+        "Ylläskammi is on the fell top, not in either village.",
+        "Ylläs means Äkäslompolo on this site when no village is named — Ylläsjärvi is always named."
+      ],
+      "at": "Ylläs"
+    },
+    "saariselka": {
+      "name": "Saariselkä",
+      "title": "Restaurants in Saariselkä: Where to Eat | LaplandDining",
+      "description": "Seven restaurants in Saariselkä, all walkable: a 4.8-rated kitchen, a gastropub, a Sámi-style lávvu and the village burger place. Ratings and menu links.",
+      "h1": "Restaurants in Saariselkä",
+      "tagline": "A small fell village with the widest spread of ratings on this site.",
+      "intro": "Saariselkä is compact enough that the choice is a walk, not a drive — two of them are on the same street. What is unusual here is the range: Fieno holds 4.8 across 529 reviews and Gáldu a clean 5.0, while ScanBurger, Lieggâ Láávu and Bistro & Cafe Kuukkeli sit between 4.1 and 4.2. Gastropub Giitu, at 4.7, is the one Google files under Inari — it is in Saariselkä.",
+      "know": [
+        "Gáldu's 5.0 comes from 30 reviews. Fieno's 4.8 comes from 529 — a much steadier number.",
+        "Everything on this page is inside the village. The nearest airport is Ivalo, about 25 minutes away.",
+        "Saariselkä is in Inari municipality, so some listings elsewhere file it under Inari."
+      ],
+      "at": "Saariselkä"
+    },
+    "inari": {
+      "name": "Inari",
+      "title": "Restaurants in Inari: Where to Eat | LaplandDining",
+      "description": "Four restaurants in Inari municipality, including a 4.8-rated fine-dining room by the water — and three that are a long drive apart. Ratings and menu links.",
+      "h1": "Restaurants in Inari",
+      "tagline": "Finland's largest municipality. Four kitchens, and a lot of road between them.",
+      "intro": "Inari is bigger than several European countries, and this page reflects it: its restaurants are spread across tens of kilometres rather than a village centre. Restaurant Aanaar, by the water on Saarikoskentie, is the fine-dining room and the best rated at 4.8. Kultahippu is 35 km south in Ivalo, Muotkan Ruoktu 39 km out along the Karigasniemi road, and Arctic River Resort sits between them. None of these is a walk from another.",
+      "know": [
+        "Aanaar is the only one in Inari village itself. Plan a car for the rest.",
+        "Kultahippu is in Ivalo, 35 km south — the airport town.",
+        "Muotkan Ruoktu is 39 km out along the Karigasniemi road — a deliberate drive, not a detour."
+      ],
+      "at": "Inari"
+    },
+    "kemi": {
+      "name": "Kemi",
+      "title": "Restaurants in Kemi: Where to Eat | LaplandDining",
+      "description": "Five restaurants in Kemi on the Bay of Bothnia: the seafront pavilion, two on Valtakatu and a harbour kitchen. Ratings, review quotes and menu links.",
+      "h1": "Restaurants in Kemi",
+      "tagline": "A sea town, and the tables follow the water.",
+      "intro": "Kemi eats along two lines: the shore and the main street. Kemin Puistopaviljonki and Pizzeria San Milano share the same seafront address on Meripuistonpolku, and Sataman Krouwi ja Perämeren Jähti is down at the harbour. In the centre, Pieni Lohikäärme and Ravintola Mori face each other across Valtakatu. Puistopaviljonki has by far the most reviews here; San Milano the highest rating.",
+      "know": [
+        "Two of them share one address on the seafront — Puistopaviljonki and San Milano.",
+        "Kemi is on the main railway line from Helsinki, so this is one of the few Lapland towns you can reach without a car.",
+        "The harbour restaurant is a different season from the centre ones — the SnowCastle winter draws the crowd."
+      ],
+      "at": "Kemi"
+    },
+    "tornio": {
+      "name": "Tornio",
+      "title": "Restaurants in Tornio: Where to Eat | LaplandDining",
+      "description": "Five restaurants in Tornio on the Swedish border — three of them on the same street. Ratings, review quotes and links to their own menus.",
+      "h1": "Restaurants in Tornio",
+      "tagline": "A border town where three of the five share one street.",
+      "intro": "Tornio's choice is unusually concentrated: Ravintola Umpitunneli, Mustaparran Päämaja and Tmi Hevi Pizza are all on Hallituskatu, within a couple of minutes of each other. Ravintola Golden Flower on Eliaksenkatu carries the most reviews here, and Amico rounds it out on Torikatu. Hevi Pizza has the highest rating here at 4.7. Across the river is Haparanda, which is Sweden and has its own page.",
+      "know": [
+        "Three of them are on Hallituskatu — you can read all three menus in one walk.",
+        "Haparanda is across the bridge and in Sweden: different currency, and the clock goes back an hour.",
+        "Tornio and Haparanda run as one town in practice, so a table on the other side is a short walk, not a trip."
+      ],
+      "at": "Tornio"
+    },
+    "haparanda": {
+      "name": "Haparanda",
+      "title": "Restaurants in Haparanda, Sweden | LaplandDining",
+      "description": "Five restaurants in Haparanda across the border from Tornio: the town square hotel, a riverside classic 15 km upstream, sushi and Thai. Ratings and menu links.",
+      "h1": "Restaurants in Haparanda",
+      "tagline": "Across the bridge from Tornio — same town in practice, different country on paper.",
+      "intro": "Haparanda is in Sweden, which changes three practical things: the prices are in kronor, the clock is an hour behind Finland, and the town shares a centre with Tornio anyway. Haparanda Stadshotell sits on the square, Leilani and Haparanda Sushi & Indiskt are a couple of streets away, and Cape East is out on Sundholmen. Kukkolaforsen, the most-reviewed of them, is 15 km upriver and a deliberate trip rather than a walk.",
+      "know": [
+        "Sweden, not Finland: prices in SEK, and local time is one hour behind Tornio.",
+        "Kukkolaforsen is 15 km north along the river — plan a car.",
+        "Finland and Sweden are both in Schengen; crossing from Tornio on foot takes minutes."
+      ],
+      "at": "Haparanda"
+    },
+    "sodankyla": {
+      "name": "Sodankylä",
+      "title": "Restaurants in Sodankylä: Where to Eat | LaplandDining",
+      "description": "Five restaurants in Sodankylä, three of them on the Arctic Ocean road through town. Ratings, review quotes and links to their own menus.",
+      "h1": "Restaurants in Sodankylä",
+      "tagline": "A stop on the Arctic Ocean road, and most of the choice is on it.",
+      "intro": "Sodankylä is the halfway town on the long drive north, and its restaurants line up accordingly: Sodankylän turkinpippuri, Ravintola RuusuSuola and Sodankylän Olohuone Tähti all sit on Jäämerentie, the road that eventually reaches the Arctic Ocean. Turkinpippuri carries the most reviews here by a distance. Olohuone Tähti has the highest rating at 4.8, on a much smaller count. Tori-Kioski Mikkola and Piitsi Pubi fill in off the main road.",
+      "know": [
+        "Three of them are on Jäämerentie, the main road through town — easy to combine with a driving break.",
+        "The town fills up in mid-June for the Midnight Sun Film Festival; tables get scarce that week.",
+        "Luosto is about 32 km away and has its own page."
+      ],
+      "at": "Sodankylä"
+    },
+    "pyhatunturi": {
+      "name": "Pyhätunturi",
+      "title": "Restaurants at Pyhä (Pyhätunturi) | LaplandDining",
+      "description": "Six places to eat at Pyhätunturi and around Pelkosenniemi: a café at the national park gate, a hotel kitchen and a 5.0-rated bistro. Ratings and menu links.",
+      "h1": "Restaurants at Pyhätunturi",
+      "tagline": "A national-park village where the best-rated table is in the old parsonage.",
+      "intro": "Pyhä is a small resort at the edge of Pyhä-Luosto National Park, in Pelkosenniemi municipality. Café Loimu sits on Luontotie by the park gate; Ravintola Popolo and Restaurant CAMP Kitchen & Bar share the Kultakeronkatu hotel address in the resort centre. The two highest ratings here are outside the resort: Bistro Vanha Pappila on Kirkkotie at a clean 5.0, and Sunday Morning Resort at 4.8, both on modest review counts.",
+      "know": [
+        "Pyhä is in Pelkosenniemi municipality, so some addresses here say Pelkosenniemi rather than Pyhätunturi.",
+        "Vanha Pappila and Sunday Morning Resort are down in the villages, not up at the resort.",
+        "Luosto is the other half of the same national park, 21 km away, with its own page."
+      ],
+      "at": "Pyhätunturi"
+    },
+    "luosto": {
+      "name": "Luosto",
+      "title": "Restaurants at Luosto: Where to Eat | LaplandDining",
+      "description": "Four places to eat at Luosto, the quieter half of Pyhä-Luosto National Park: a hotel kelo restaurant, a manor kitchen and the slope-side stop. Ratings and menu links.",
+      "h1": "Restaurants at Luosto",
+      "tagline": "The quieter half of the national park — four kitchens, no queue.",
+      "intro": "Luosto is the smaller and quieter of the two Pyhä-Luosto resorts, and the list is short enough to read in a minute. Restaurant Punakettu on Luostontie has six times the reviews of anything else here, which makes it the default. Keloravintola Lapland Hotels Luostotunturi and Luoston Hovi both sit at 4.4, and Skiknööli is the slope-side stop. Luosto is in Sodankylä municipality, so several addresses say Sodankylä.",
+      "know": [
+        "Punakettu has by far the most reviews at Luosto — the other three are small, local rooms.",
+        "Postal addresses here often say Sodankylä. The town itself is about 32 km away.",
+        "Pyhä is 21 km across the park and has its own page."
+      ],
+      "at": "Luosto"
+    },
+    "kuusamo": {
+      "name": "Kuusamo",
+      "title": "Restaurants in Kuusamo & Ruka | LaplandDining",
+      "description": "Six restaurants split between Ruka resort and Kuusamo town, 22 km apart: the busiest pizzeria on this site, a gastropub and a trekking café. Ratings and menu links.",
+      "h1": "Restaurants in Kuusamo and Ruka",
+      "tagline": "Two centres, 22 km apart — check which one your table is in.",
+      "intro": "Kuusamo splits cleanly in two. Up at the resort, Pizzeria Ruka has more reviews than any other restaurant on this site outside Rovaniemi, with Restaurant Burger Cafe & Bar Ruka on the same road and Ruka Trek's Gasthaus & Hard Trek Café — rated 4.8 — a short way off. Down in the town, 22 km south, Ravintola Talonpöytä and Restaurant Wanha Mestari serve a different crowd entirely.",
+      "know": [
+        "Ruka and Kuusamo town are 22 km apart. The addresses tell you which: Rukatunturintie and Vuosselintie are the resort.",
+        "Pizzeria Ruka is the busiest kitchen here by review count, several times over.",
+        "Kuusamo is in North Ostrobothnia rather than Lapland proper, but it is the gateway to Oulanka National Park."
+      ],
+      "at": "Kuusamo"
+    },
+    "kemijarvi": {
+      "name": "Kemijärvi",
+      "title": "Restaurants in Kemijärvi: Where to Eat | LaplandDining",
+      "description": "Five restaurants in Kemijärvi, all within 800 m of each other in the town centre. Ratings, review quotes and links to their own menus.",
+      "h1": "Restaurants in Kemijärvi",
+      "tagline": "The whole choice fits inside 800 metres.",
+      "intro": "Kemijärvi is the most walkable town on this site: every restaurant here sits within 800 metres of each other in the centre, two of them next door on Vapaudenkatu. Mestarin Kievari on Kirkkokatu has the most reviews. The two best rated are the smallest — Jauri Resort at 4.8 and Restaurant Susa's Bistro at 4.7 — and between them Rosa Pizza Kebab and Pizza Mestarit cover the everyday end.",
+      "know": [
+        "All of them are within 800 m — you can look at every menu on one walk.",
+        "Susa's Bistro and Rosa Pizza Kebab are next door to each other on Vapaudenkatu.",
+        "Kemijärvi is on the rail line, so it is reachable without a car."
+      ],
+      "at": "Kemijärvi"
+    }
+  },
   "fineDining": {
     "title": "Fine Dining in and around Lapland | LaplandDining",
     "description": "The highest-rated of our Lapland picks, sorted by Google rating: dining rooms, wilderness kitchens and kota tables, with review quotes and menu links.",

@@ -8,6 +8,62 @@
     "jsonKey": "restaurants"
   },
   {
+    "path": "/cities",
+    "jsonKey": "cities"
+  },
+  {
+    "path": "/city/rovaniemi",
+    "jsonKey": "cities.rovaniemi"
+  },
+  {
+    "path": "/city/levi",
+    "jsonKey": "cities.levi"
+  },
+  {
+    "path": "/city/yllas",
+    "jsonKey": "cities.yllas"
+  },
+  {
+    "path": "/city/saariselka",
+    "jsonKey": "cities.saariselka"
+  },
+  {
+    "path": "/city/inari",
+    "jsonKey": "cities.inari"
+  },
+  {
+    "path": "/city/kemi",
+    "jsonKey": "cities.kemi"
+  },
+  {
+    "path": "/city/tornio",
+    "jsonKey": "cities.tornio"
+  },
+  {
+    "path": "/city/haparanda",
+    "jsonKey": "cities.haparanda"
+  },
+  {
+    "path": "/city/sodankyla",
+    "jsonKey": "cities.sodankyla"
+  },
+  {
+    "path": "/city/pyhatunturi",
+    "jsonKey": "cities.pyhatunturi"
+  },
+  {
+    "path": "/city/luosto",
+    "jsonKey": "cities.luosto"
+  },
+  {
+    "path": "/city/kuusamo",
+    "jsonKey": "cities.kuusamo"
+  },
+  {
+    "path": "/city/kemijarvi",
+    "jsonKey": "cities.kemijarvi"
+  },
+  {
     "path": "/fine-dining",
     "jsonKey": "fineDining"
   },

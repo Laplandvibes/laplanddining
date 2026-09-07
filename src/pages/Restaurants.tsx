@@ -1,23 +1,20 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLocale } from '../i18n/useLocale';
-import PhotoCaption from '../components/PhotoCaption';
-import MenuLink from '../components/MenuLink';
-import { MapPin, Flame, Snowflake, Sun, UtensilsCrossed, TreePine, Star, Award, Quote } from 'lucide-react';
+import { MapPin, Flame, Snowflake, Sun, UtensilsCrossed, TreePine } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
-import { withReferral } from '../lib/outbound';
 import PartnerSlot, { type Partner } from '../shared/PartnerSlot';
+import RestaurantCard, { type CardI18n } from '../components/RestaurantCard';
 import SubpageAd from '../shared/SubpageAd';
 import PremiumSpotGrid from '../shared/PremiumSpotGrid';
 import { adLocaleEnabled } from '../shared/adSlotsCopy';
 import { PARTNERS, AD_SLOTS } from '../data/partners';
-import {
-  restaurants, cities, composeCardBody, cuisineLabel,
-  googleReviewsUrl, type Restaurant, type Locale,
-} from '../data/restaurants';
+import { restaurants, cities, cuisineLabel } from '../data/restaurants';
+import { slugForCity as citySlug } from '../data/diningCities';
+import { localePrefix } from '../i18n/config';
 import { DINING, seasonal, isSummerSeason } from '../data/images';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
@@ -63,15 +60,6 @@ function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
 }
 
-interface CardI18n {
-  websiteLabel: string;
-  menuLabel: string;
-  menuLabelPdf: string;
-  mapsLabel: string;
-  googleReview: string;
-  editorsPickLabel: string;
-}
-
 /** fi/en/sv copy for the sellable per-city featured partner slot (KKV: ad-marked). */
 function featuredCopy(locale: string) {
   const l = (locale || 'en').toLowerCase();
@@ -115,122 +103,6 @@ function CityFeaturedSlot({ city, slug, partner, locale }: { city: string; slug:
   );
 }
 
-function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Restaurant; i18n: CardI18n; locale: Locale; editorsPick?: boolean }) {
-  const body = composeCardBody(r, locale);
-  const cuisine = cuisineLabel(r, locale);
-
-  return (
-    <article className={`group relative rounded-2xl overflow-hidden bg-cream shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:shadow-[0_22px_45px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full${editorsPick ? ' ring-1 ring-amber/40' : ''}`}>
-      <div className="relative h-44 sm:h-48 overflow-hidden shrink-0">
-        {r.photo ? (
-          <img
-            src={r.photo}
-            alt={r.name}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-            decoding="async"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2">
-            <UtensilsCrossed className="w-9 h-9 text-amber/55" strokeWidth={1.5} />
-            {cuisine && (
-              <span className="text-amber/60 text-[10px] font-bold uppercase tracking-[0.2em] px-5 text-center leading-snug">{cuisine}</span>
-            )}
-          </div>
-        )}
-        <PhotoCaption r={r} locale={locale} />
-        {r.rating && (
-          <a
-            href={googleReviewsUrl(r.googlePlaceId)}
-            target="_blank"
-            rel="nofollow noopener"
-            className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
-          >
-            <Star size={10} className="text-amber fill-amber" />
-            <span>{r.rating.toFixed(1)}</span>
-            {r.reviewCount && (
-              <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
-            )}
-          </a>
-        )}
-        {(editorsPick || r.priceRange) && (
-          <div className="absolute top-3 left-3 flex flex-col items-start gap-1.5">
-            {editorsPick && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-warm-ink text-cream text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-md">
-                <Award size={10} className="text-amber" /> {i18n.editorsPickLabel}
-              </span>
-            )}
-            {r.priceRange && (
-              <span className="inline-flex items-center px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-[11px] font-bold tracking-wide shadow-md">
-                {r.priceRange}
-              </span>
-            )}
-          </div>
-        )}
-      </div>
-
-      <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-heading text-xl tracking-wide text-warm-ink leading-tight mb-1">
-          {r.name}
-        </h3>
-        {cuisine && (
-          <p className="text-[11px] text-amber-deep font-semibold uppercase tracking-[0.18em] mb-2.5">
-            {cuisine}
-          </p>
-        )}
-
-        {body && (
-          body.isQuote ? (
-            <div className="mb-3 flex-1">
-              <blockquote className="relative pl-5 text-[14px] text-warm-text leading-relaxed italic line-clamp-4">
-                <Quote size={11} className="absolute left-0 top-1.5 text-amber-deep -scale-x-100" />
-                {body.text}
-              </blockquote>
-              <a
-                href={googleReviewsUrl(r.googlePlaceId)}
-                target="_blank"
-                rel="nofollow noopener"
-                className="inline-block mt-1.5 ml-5 text-[10px] text-warm-muted hover:text-spice tracking-[0.15em] uppercase font-bold no-underline"
-              >
-                {i18n.googleReview}
-              </a>
-            </div>
-          ) : (
-            <p className="text-[14px] text-warm-text leading-relaxed mb-3 line-clamp-5 flex-1">{body.text}</p>
-          )
-        )}
-
-        <div className="flex flex-wrap items-center gap-4 mt-auto pt-3 border-t border-warm-ink/10">
-          <MenuLink
-            restaurant={r}
-            label={i18n.menuLabel}
-            labelPdf={i18n.menuLabelPdf}
-            campaign="dining_menu_restaurants"
-          />
-          {r.website && (
-            <a
-              href={withReferral(r.website, 'dining_restaurants')}
-              target="_blank"
-              rel="nofollow noopener"
-              className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
-            >
-              {i18n.websiteLabel} →
-            </a>
-          )}
-          <a
-            href={r.googleMapsUrl}
-            target="_blank"
-            rel="nofollow noopener"
-            className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
-          >
-            {i18n.mapsLabel} →
-          </a>
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export default function Restaurants() {
   const { t } = useTranslation('pages');
   const location = useLocation();
@@ -258,6 +130,7 @@ export default function Restaurants() {
   // Decorative season icon must match the hero image, which flips winter↔summer
   // on the same predicate (Snowflake over the snow-village shot Oct–Apr, Sun over
   // the summer-terrace shot May–Sep).
+  const cityLinkPrefix = localePrefix(locale);
   const summer = isSummerSeason();
   const SeasonIcon = summer ? Sun : Snowflake;
 
@@ -487,9 +360,34 @@ export default function Restaurants() {
                       <div>
                         <div className="flex items-center gap-3 mb-2">
                           <MapPin size={20} className="text-amber" />
-                          <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide">{city}</h2>
+                          {/* Kaupungin otsikko on linkki omalle sivulleen silloin kun
+                              sivu on olemassa (13/17 kaupungista). Tama on se sisainen
+                              linkki joka kertoo Googlelle etta kaupunkisivu on olemassa
+                              -- sitemap yksin ei riita. Kaupungit joilla ei ole sivua
+                              (Muonio, Hetta, Salla, Posio) pysyvat pelkkana otsikkona. */}
+                          <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide">
+                            {citySlug(city) ? (
+                              <Link
+                                to={`${cityLinkPrefix}/city/${citySlug(city)}`}
+                                className="text-white hover:text-amber transition-colors no-underline"
+                              >
+                                {city}
+                              </Link>
+                            ) : city}
+                          </h2>
                         </div>
                         <p className="text-white/75 text-sm max-w-lg">{cityVibes[city]}</p>
+                        {citySlug(city) && (
+                          <Link
+                            to={`${cityLinkPrefix}/city/${citySlug(city)}`}
+                            className="mt-2 inline-flex items-center gap-1 text-amber text-xs font-bold uppercase tracking-wider hover:text-spice transition-colors no-underline"
+                          >
+                            {t('cities.shared.cityPageCta', {
+                              at: t(`cities.${citySlug(city)}.at`, { defaultValue: city }),
+                              defaultValue: `${city} restaurant guide →`,
+                            })}
+                          </Link>
+                        )}
                       </div>
                       <span className="bg-white/10 backdrop-blur-sm border border-white/10 text-white/70 text-sm font-medium px-4 py-2 rounded-full shrink-0">
                         {count} {countLabel}
