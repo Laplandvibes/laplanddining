@@ -272,7 +272,23 @@ export default function Restaurants() {
       {/* Filter bar */}
       <section className="sticky top-16 z-30 bg-night/95 backdrop-blur-md border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide">
+          {/* 🔴 Reunahäivytys on pakollinen vieritysrivissä, jonka sisältö on
+              ikkunaa leveämpi. Ilman sitä viimeinen kaupunki katkeaa keskeltä
+              ja lukee renderöintivirheenä — Vesa 7.9.: "täällähän leikkaantuu
+              kaupunkien nimet". Suodatinrivi on 1 725 px ja mobiili-ikkuna
+              288–398 px, joten katkos osuu joka kerta.
+              Sama maski kuin verkoston muissa vieritysriveissä
+              (shared/ads/ProductRail.tsx); portti scripts/mobile_wrap_audit.mjs
+              juuressa vahtii tätä koko verkossa. */}
+          <div
+            className="flex items-center gap-3 overflow-x-auto scrollbar-hide"
+            style={{
+              maskImage:
+                'linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 40px), transparent 100%)',
+              WebkitMaskImage:
+                'linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 40px), transparent 100%)',
+            }}
+          >
             <UtensilsCrossed size={16} className="text-amber/60 shrink-0" />
             <button
               onClick={() => setActiveCity(null)}
