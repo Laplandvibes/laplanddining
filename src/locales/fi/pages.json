@@ -410,56 +410,96 @@
     "intro": "Savu nousee kotatulesta varhain aamulla. Poronlihaa kuivuu räystään alla. Joessa lipuu sumun seasta lohi. Lapissa ruoka ei alkanut keittiöstä: se alkoi maasta. Tämä on tarina siitä, miksi.",
     "sections": [
       {
-        "title": "Pakon synnyttämä keittiö",
+        "title": "Maanviljely ei toiminut täällä. Metsästys, kalastus ja keräily toimivat.",
         "paragraphs": [
-          "Talvi kestää kahdeksan kuukautta. Lämpötila putoaa kolmeenkymmeneen, joskus neljäänkymmeneen pakkasasteeseen. Lähin pelto on satojen kilometrien päässä etelässä, eikä silloinkaan tuota mitään. Tämä oli arki tuhansia vuosia.",
+          "Lähin pelto on satojen kilometrien päässä etelässä, eikä silloinkaan tuota mitään. Tämä oli arki tuhansia vuosia.",
           "Ruoka tuli siitä, mikä oli lähellä: lohta ja nieriää vilisevistä joista, riistaa ja marjoja kasvattavista metsistä, tundralta, jolla porot vaelsivat vuodenaikojen mukaan. Saamelaisille, Pohjois-Euroopan alkuperäiskansalle, ruoka ei ollut maasta erillinen asia. Se <em>oli</em> maa.",
           "Suomalainen keittiö kasvoi muualla maatalousperinteistä, mutta pohjoisessa pelto ei koskaan ollut luotettava. Metsästys, kalastus ja keräily eivät olleet sivuosassa. Ne olivat selviytymistä."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "kuukautta talvea"
+          },
+          {
+            "value": "-40 °C",
+            "label": "kylmimmillään"
+          }
         ]
       },
       {
-        "title": "Poro: kaikki, mitä ihminen tarvitsee",
+        "title": "Poro ei ollut koskaan pelkkää lihaa",
         "paragraphs": [
           "Saamelaisten ja poron suhde ulottuu hyvin kauas, mutta poronhoito nykyisessä muodossaan nousi pääelinkeinoksi 1800-luvulla, kun se syrjäytti metsästyksen ja kalastuksen itäisellä Sápmilla. Suhteessa ei ole koskaan ollut kysymys vain lihasta: turkis, sarvet, jänteet ja jopa luut päätyivät kaikki johonkin käyttöön.",
-          "Tänään Suomessa on noin 5 600 poronhoitajaa, jotka huolehtivat noin 200 000 eläimestä 54 paliskunnassa. Poronhoitoalueen pinta-ala on noin kolmannes Suomesta. Vuotuinen lihantuotto on noin 2 miljoonaa kiloa, ja elinkeinon arvo arvioidaan 60 miljoonaksi euroksi vuodessa.",
           "Toisin kuin Norjassa ja Ruotsissa, poronhoito Suomessa ei ole pelkästään saamelaisten oikeus: kuka tahansa EU-kansalainen voi olla mukana, kun luvat ovat kunnossa. Mutta tieto, side maahan ja perinteet, jotka tekevät poronlihasta sen makuista kuin se on, tulevat saamelaisten vuosisataisesta hoidosta.",
           "Tunnetuin annos on <strong>poronkäristys</strong>: ohuiksi viipaloitua poroa, käristettyä voissa, perunamuusilla ja puolukkahillolla. Yksinkertainen, rehellinen ja syvästi tyydyttävä. Sen löytää joka ravintolasta Lapissa, tienvarren kahvilasta fine dining -taloon."
+        ],
+        "figures": [
+          {
+            "value": "5 600",
+            "label": "poronhoitajaa"
+          },
+          {
+            "value": "200 000",
+            "label": "poroa"
+          },
+          {
+            "value": "54",
+            "label": "paliskuntaa"
+          },
+          {
+            "value": "1/3",
+            "label": "Suomen pinta-alasta"
+          },
+          {
+            "value": "2 milj. kg",
+            "label": "lihaa vuodessa"
+          },
+          {
+            "value": "60 M€",
+            "label": "elinkeinon arvo vuodessa"
+          }
         ]
       },
       {
-        "title": "Joet, järvet, savu ja tuli",
+        "title": "Nämä ovat eläviä perinteitä, eivät rekonstruktioita",
         "paragraphs": [
-          "Lapin vedet ovat olleet aina toinen ruokavarasto. Lohi, siika, ahven, nieriä ja hauki pitivät perheet pystyssä pimeimpinä talvina ja kirkkaimpina keskiyön auringon kesinä. Kalastusoikeudet kuuluivat vuosisatojen ajan jokivarsien suvuille, ja ne määräytyivät syntyperän ja paikallisen tavan mukaan, eivät rahalla.",
+          "Lohi, siika, ahven, nieriä ja hauki pitivät perheet pystyssä pimeimpinä talvina ja kirkkaimpina keskiyön auringon kesinä. Kalastusoikeudet kuuluivat vuosisatojen ajan jokivarsien suvuille, ja ne määräytyivät syntyperän ja paikallisen tavan mukaan, eivät rahalla.",
           "Perinteiset valmistustavat elävät yhä ravintoloissa. Liekitettyä lohta puulaudalla avotulen vieressä. Savustettua siikaa tuohessa. Lohikeittoa, jossa on kermaa ja tuoretta tilliä. Nämä eivät ole vanhojen reseptien \"rekonstruktioita\", ne ovat eläviä perinteitä, jotka siirtyvät sukupolvelta toiselle.",
           "Inarijärvi, Suomen kolmanneksi suurin järvi, tarjoaa joitain Euroopan hienoimmista makean veden kaloista. Restaurant Aanaar Inarissa rakentaa kokonaisia tasting-menuja sen ympärille, mitä paikalliset kalastajat nostavat vesistä aamulla."
-        ]
+        ],
+        "quote": "Lapin vedet ovat olleet aina toinen ruokavarasto."
       },
       {
-        "title": "Metsäpohjan apteekki",
+        "title": "Arktinen kulta kypsyy kaksi viikkoa vuodessa",
         "paragraphs": [
-          "Käy lappilaisessa metsässä loppukesästä, niin kävelet ruokakaupassa. Mustikkaa, puolukkaa, hillaa ja tyrniä kasvaa villinä. Sieniä nousee maasta: kantarelleja, herkkutatteja, suppilo­vahveroita ja matsutakea. Villiyrtit, kuten väinönputki, mesiangervo ja kangasajuruoho, tuoksuvat ilmassa.",
+          "Mustikkaa, puolukkaa, hillaa ja tyrniä kasvaa villinä. Sieniä nousee maasta: kantarelleja, herkkutatteja, suppilo­vahveroita ja matsutakea. Villiyrtit, kuten väinönputki, mesiangervo ja kangasajuruoho, tuoksuvat ilmassa.",
           "Hillalla on oma erityinen paikkansa lappilaisessa ruokakulttuurissa. <strong>Lakka</strong> kasvaa vain arktisilla ja subarktisilla soilla, kypsyy parin viikon ajan heinäkuussa, eikä sitä voi viljellä kaupallisesti. Sen meripihkanvärinen sävy, hunajainen makeus ja harvinaisuus tekevät siitä \"arktisen kullan\". Sitä löytyy jälkiruoista, likööreistä ja koristeena lähes joka fine dining -ravintolasta.",
           "Villi raaka-aine on poikkeuksellinen myös ympäristönsä takia. Arktinen ilmasto, 24 tunnin kesävalo, puhdas ilma ja maailman puhtaimpiin kuuluva vesi tuottavat marjoja, joissa on enemmän vitamiineja, antioksidantteja ja flavonoideja kuin etelämpänä."
-        ]
+        ],
+        "quote": "Käy lappilaisessa metsässä loppukesästä, niin kävelet ruokakaupassa."
       },
       {
-        "title": "Selviytymisestä taiteeksi",
+        "title": "Noma muutti sen, miten Lappi katsoi omaa takapihaansa",
         "paragraphs": [
-          "Suurimman osan historiastaan lappilainen ruoanlaitto oli säilömistä ja ravitsemista. Savustus, kuivaus, suolaus: tekniikat syntyivät pakosta, eivät luovuudesta. Mausteita suolan lisäksi tuskin tunnettiin. Ruoka oli rehellistä ja täyttävää, mutta kukaan ei asetellut sitä käsintehdylle keramiikalle.",
+          "Savustus, kuivaus, suolaus: tekniikat syntyivät pakosta, eivät luovuudesta. Mausteita suolan lisäksi tuskin tunnettiin. Ruoka oli rehellistä ja täyttävää, mutta kukaan ei asetellut sitä käsintehdylle keramiikalle.",
           "Tämä muuttui New Nordic -liikkeen myötä. Kun Noma Kööpenhaminassa alkoi 2000-luvulla nostaa hyperpaikallisia, kerättyjä raaka-aineita arvoonsa, kokit kautta Pohjoismaiden alkoivat katsoa omaa takapihaansa toisin silmin. Lapista löytyi raaka-aineita, joita suurin osa maailmaa ei ollut maistanut, ja perinteitä, jotka olivat jo vuosisatojen ikäisiä.",
           "Tänään ravintolat kuten Aanaar Inarissa, Nili Rovaniemellä ja Gustav Rovaniemellä tekevät jotain merkittävää: ne kunnioittavat saamelaista perinnettä ja samalla työntävät arktisen keittiön rajoja eteenpäin. Aanaarissa poro ei ole vain ruokaa, se on tarina alkuperäiskansa­perinnöstä, ympäristöstä huolehtimisesta ja kulinaarisesta uudistumisesta yhdellä lautasella."
-        ]
+        ],
+        "quote": "Suurimman osan historiastaan lappilainen ruoanlaitto oli säilömistä ja ravitsemista."
       },
       {
-        "title": "Kota: paikka, jossa tarinat jaetaan",
+        "title": "Kota oli vuosisatoja koti, keittiö ja kokoontumispaikka",
         "paragraphs": [
-          "Ehkä erottuvin ruokailupaikka Lapissa ei ole ravintola lainkaan. Se on <strong>kota</strong>: perinteinen saamelainen teltta, kartionmuotoinen, keskellään tulisija. Vuosisatojen ajan kota oli koti, keittiö ja kokoontumispaikka. Ruoka kypsyi avotulella, tarinoita kerrottiin, ja savu kantoi rukoukset taivaalle.",
+          "Se on <strong>kota</strong>: perinteinen saamelainen teltta, kartionmuotoinen, keskellään tulisija. Vuosisatojen ajan kota oli koti, keittiö ja kokoontumispaikka. Ruoka kypsyi avotulella, tarinoita kerrottiin, ja savu kantoi rukoukset taivaalle.",
           "Tänään kotaravintolat kuten Kammi Hullussa Porossa Levillä pitävät perinnettä elossa. Istut porontaljoilla rätisevän tulen ympärillä, kun savustettu lohi, poromakkarat ja grillattu riista valmistuvat silmiesi edessä. Hintaa kertyy noin 64 euroa hengeltä, mutta hetki on hinnaton.",
           "Tässä on se, mikä tekee Lapin ruokailusta toisenlaista kuin missään muualla. Kyse ei ole pelkästään lautasen sisällöstä, kyse on tulesta, savusta, ulkona kimmeltävästä lumesta, taivaalla välkkyvistä revontulista ja niistä tuhansista vuosista, jotka tekivät tästä ateriasta mahdollisen."
-        ]
+        ],
+        "quote": "Ehkä erottuvin ruokailupaikka Lapissa ei ole ravintola lainkaan."
       }
     ],
-    "ctaExplore": "Tutustu ravintoloihin"
+    "ctaExplore": "Tutustu ravintoloihin",
+    "chaptersLabel": "Tässä tarinassa"
   },
   "localFood": {
     "title": "Lapin lähiruoka: poro, marjat, kala | LaplandDining",

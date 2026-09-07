@@ -549,7 +549,7 @@ export const restaurantOverrides: Record<string, Override> = {
       es: 'El bistró y café del pueblo en Saariseläntie, abierto todo el día para un café, un plato de sopa o una comida completa.',
       'pt-BR': 'O bistrô e café da vila na Saariseläntie, aberto o dia todo para um café, uma sopa ou um prato completo.',
       'zh-CN': '萨里塞尔卡大街上的村中小馆兼咖啡馆，白天一直营业，喝杯咖啡、来碗汤或吃上一整份都行。',
-      ko: '사리셀캐 거리에 있는 마을 비스트로 겸 카페. 커피 한 잔이든 수프든 제대로 된 한 접시든, 낮 동안 계속 엽니다.',
+      ko: '사리셀카 거리에 있는 마을 비스트로 겸 카페. 커피 한 잔이든 수프든 제대로 된 한 접시든, 낮 동안 계속 엽니다.',
       fr: 'Le bistro-café du village sur Saariseläntie, ouvert toute la journée pour un café, une soupe ou une assiette complète.',
       it: 'Il bistrò e caffè del villaggio su Saariseläntie, aperto tutto il giorno per un caffè, una zuppa o un piatto completo.',
       nl: 'De bistro annex koffiezaak van het dorp aan de Saariseläntie, de hele dag open voor koffie, soep of een volledig bord.',

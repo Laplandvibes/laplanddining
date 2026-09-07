@@ -410,56 +410,96 @@
     "intro": "Röken stiger från en kåtaeld innan solen är helt uppe. Renköttsremsor torkar under takfoten på en trästuga. En lax glider genom älvdimman. I Lappland började maten aldrig i köket – den började på marken. Det här är berättelsen om varför.",
     "sections": [
       {
-        "title": "Ett kök format av nödvändighet",
+        "title": "Jordbruk fungerade aldrig här. Jakt, fiske och insamling gjorde det.",
         "paragraphs": [
-          "Vintern varar i åtta månader. Temperaturen sjunker till trettio, ibland fyrtio minusgrader. Närmaste åker som ger något ligger hundratals kilometer söderut, och även då bara ibland. Så såg vardagen ut i tusentals år.",
+          "Närmaste åker som ger något ligger hundratals kilometer söderut, och även då bara ibland. Så såg vardagen ut i tusentals år.",
           "Maten kom från det som fanns nära – älvar täta av lax och röding, skogar med vilt och vilda bär, tundra där renen rörde sig med årstiderna. För samerna, urfolket i norra Europa, var maten aldrig skild från marken. Den <em>var</em> marken.",
           "Det finska köket längre söderut växte fram ur jordbruk som går tillbaka till förhistorien. Men i norr var odling aldrig pålitlig. Jakt, fiske och insamling var ingen bisak. De var hela planen."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "månader vinter"
+          },
+          {
+            "value": "-40 °C",
+            "label": "som kallast"
+          }
         ]
       },
       {
-        "title": "Renen – allt en människa behöver",
+        "title": "Renen var aldrig bara kött",
         "paragraphs": [
           "Förhållandet mellan samer och ren går mycket längre tillbaka än renskötseln gör. Men skötselmodellen som vi känner den tog form på 1800-talet, när den ersatte jakt och fiske som huvudnäring i östra Sápmi. Relationen har aldrig bara handlat om kött – päls, horn, senor och ben kom alla till användning.",
-          "I dag har Finland omkring 5 600 renskötare som sköter ungefär 200 000 djur i 54 renbeteslag. Renskötselområdet täcker ungefär en tredjedel av Finland. Den årliga köttproduktionen ligger runt 2 miljoner kilo, och näringen är värd omkring 60 miljoner € per år.",
           "Till skillnad från Norge och Sverige är renskötseln i Finland inte förbehållen samerna – vilken EU-medborgare som helst kan delta med rätt tillstånd. Men kunskapen, bandet till marken och traditionerna som får renköttet att smaka som det gör kommer från århundraden av samisk förvaltning.",
           "Signaturrätten är <strong>poronkäristys</strong>: tunt skavd ren som fräses i smör och serveras med potatismos och lingonsylt. Enkelt, ärligt, djupt mättande. Du hittar den på varenda restaurang i Lappland, från vägkrogar till fine dining-salar."
+        ],
+        "figures": [
+          {
+            "value": "5 600",
+            "label": "renskötare"
+          },
+          {
+            "value": "200 000",
+            "label": "renar"
+          },
+          {
+            "value": "54",
+            "label": "renbeteslag"
+          },
+          {
+            "value": "1/3",
+            "label": "av Finlands yta"
+          },
+          {
+            "value": "2 milj. kg",
+            "label": "kött per år"
+          },
+          {
+            "value": "60 mn €",
+            "label": "i värde per år"
+          }
         ]
       },
       {
-        "title": "Älvar, sjöar, rök och eld",
+        "title": "Det här är levande traditioner, inte rekonstruktioner",
         "paragraphs": [
-          "Lapplands vatten har alltid varit det andra skafferiet. Lax, sik, abborre, röding och gädda bar familjerna genom de mörkaste vintrarna och de ljusaste midnattssolssomrarna. Fiskerätter tillhörde familjer vid älven i århundraden, avgjorda av släktled och sedvänja, inte av pengar.",
+          "Lax, sik, abborre, röding och gädda bar familjerna genom de mörkaste vintrarna och de ljusaste midnattssolssomrarna. Fiskerätter tillhörde familjer vid älven i århundraden, avgjorda av släktled och sedvänja, inte av pengar.",
           "De traditionella teknikerna lever kvar i restaurangerna. Lax flamgrillad på en träspjäla bredvid öppen eld. Sik rökt i näver. Fisksoppa gjord fyllig med grädde och färsk dill. Det här är inga \"rekonstruktioner\" av gamla recept – de är levande traditioner, förda vidare från generation till generation.",
           "Enare träsk, Finlands tredje största sjö, ger en del av den finaste sötvattenfisken i Europa. Restaurant Aanaar i Inari bygger hela avsmakningsmenyer kring det som lokala fiskare drar upp ur dess vatten samma morgon."
-        ]
+        ],
+        "quote": "Lapplands vatten har alltid varit det andra skafferiet."
       },
       {
-        "title": "Skogsbottnen",
+        "title": "Arktis guld mognar ett par veckor om året",
         "paragraphs": [
-          "Gå genom en lapsk skog i sensommaren och du går genom en mataffär. Blåbär, lingon, hjortron och havtorn växer vilt. Kantareller, karljohan och den eftertraktade matsutaken tränger upp genom mossan. Vilda örter – kvanne, älggräs, arktisk timjan – parfymerar luften.",
+          "Blåbär, lingon, hjortron och havtorn växer vilt. Kantareller, karljohan och den eftertraktade matsutaken tränger upp genom mossan. Vilda örter – kvanne, älggräs, arktisk timjan – parfymerar luften.",
           "Hjortronet har en särskild plats. Kallat <strong>lakka</strong> på finska växer det bara på arktiska och subarktiska myrar, mognar under ett par veckor i juli och går inte att odla kommersiellt. Dess bärnstensfärg, honungssötma och sällsynthet gör det till \"Arktis guld\". Du hittar det i desserter, likörer och som garnering på nästan varje fine dining-restaurang i Lappland.",
           "Det som gör de här råvarorna exceptionella är inte bara smaken – det är miljön. Arktiska förhållanden, sommarljus dygnet runt, ren luft och något av det renaste vattnet på jorden ger bär med högre halter av vitaminer, antioxidanter och flavonoider än sina sydligare motsvarigheter."
-        ]
+        ],
+        "quote": "Gå genom en lapsk skog i sensommaren och du går genom en mataffär."
       },
       {
-        "title": "Från överlevnad till konst",
+        "title": "Noma ändrade hur Lappland såg på sin egen bakgård",
         "paragraphs": [
-          "Under större delen av sin historia handlade det lapska köket om konservering och om att mätta människor. Rökning, torkning, saltning – tekniker födda ur nödvändighet, inte kreativitet. Kryddor utöver salt var nästan okända. Maten var ärlig och närande, men ingen lade upp den på handgjord keramik.",
+          "Rökning, torkning, saltning – tekniker födda ur nödvändighet, inte kreativitet. Kryddor utöver salt var nästan okända. Maten var ärlig och närande, men ingen lade upp den på handgjord keramik.",
           "Det ändrades med den nynordiska rörelsen. När Noma i Köpenhamn började hylla extremt lokala, plockade råvaror på 2000-talet började kockar i hela Norden se på sina egna bakgårdar med nya ögon. I Lappland fann de råvaror som större delen av världen aldrig smakat och traditioner redan århundraden gamla.",
           "I dag gör restauranger som Aanaar i Inari, Nili i Rovaniemi och Gustav i Rovaniemi något anmärkningsvärt: de hedrar samiska traditioner samtidigt som de tänjer på vad arktisk mat kan vara. En renrätt på Aanaar är inte bara mat – det är en berättelse om urfolksarv, miljöförvaltning och kulinarisk nytolkning på en och samma tallrik."
-        ]
+        ],
+        "quote": "Under större delen av sin historia handlade det lapska köket om konservering och om att mätta människor."
       },
       {
-        "title": "Kåtan – där historier delas",
+        "title": "I århundraden var kåtan hem, kök och samlingsplats",
         "paragraphs": [
-          "Kanske är den mest särpräglade matupplevelsen i Lappland inte en restaurang alls. Det är <strong>kåtan</strong> – ett traditionellt samiskt tält, konformat, med en eldstad i mitten. I århundraden var kåtan hem, kök och samlingsplats. Mat lagades över öppen låga, historier berättades, röken bar böner mot himlen.",
+          "Det är <strong>kåtan</strong> – ett traditionellt samiskt tält, konformat, med en eldstad i mitten. I århundraden var kåtan hem, kök och samlingsplats. Mat lagades över öppen låga, historier berättades, röken bar böner mot himlen.",
           "I dag håller kåtarestauranger som Kammi på Hullu Poro i Levi traditionen vid liv. Du sitter på renfällar runt en sprakande eld medan rökt lax, renkorv och grillat vilt tillagas framför dig. Måltiden kostar runt 64 € per person, men stunden är svår att prissätta.",
           "Det är det här som gör att äta i Lappland annorlunda. Det handlar inte bara om vad som ligger på tallriken – det är elden, röken, snön utanför, norrskenet ovanför och de tusentals år av mänsklig uppfinningsrikedom som gjorde måltiden möjlig."
-        ]
+        ],
+        "quote": "Kanske är den mest särpräglade matupplevelsen i Lappland inte en restaurang alls."
       }
     ],
-    "ctaExplore": "Utforska restaurangerna"
+    "ctaExplore": "Utforska restaurangerna",
+    "chaptersLabel": "I den här berättelsen"
   },
   "localFood": {
     "title": "Lokal mat i Lappland: ren, bär, fisk | LaplandDining",

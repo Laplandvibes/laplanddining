@@ -410,56 +410,96 @@
     "intro": "A fumaça sobe do fogo de um kota antes de o sol nascer por completo. Tiras de rena curam sob o beiral de uma cabana de madeira. Um salmão desliza pela névoa do rio. Na Lapônia, a comida nunca começou na cozinha, começou na terra. Esta é a história de por quê.",
     "sections": [
       {
-        "title": "Uma cozinha nascida da necessidade",
+        "title": "A agricultura nunca funcionou aqui. A caça, a pesca e a coleta, sim.",
         "paragraphs": [
-          "O inverno dura oito meses. As temperaturas caem a trinta, às vezes quarenta graus negativos. O campo de cultivo mais próximo que produz alguma coisa fica a centenas de quilômetros ao sul, e mesmo assim só às vezes. Essa foi a vida cotidiana por milhares de anos.",
+          "O campo de cultivo mais próximo que produz alguma coisa fica a centenas de quilômetros ao sul, e mesmo assim só às vezes. Essa foi a vida cotidiana por milhares de anos.",
           "A comida vinha do que estava perto, rios cheios de salmão e salvelino-ártico, florestas com caça e frutas silvestres, tundra por onde as renas se moviam com as estações. Para os sámi, o povo indígena do norte da Europa, a comida nunca esteve separada da terra. Ela <em>era</em> a terra.",
           "A cozinha finlandesa de outras regiões surgiu de uma agricultura que remonta à pré-história. Mas no norte o cultivo nunca foi confiável. Caça, pesca e coleta não eram um detalhe à parte. Eram o plano inteiro."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "meses de inverno"
+          },
+          {
+            "value": "-40 °C",
+            "label": "no auge do frio"
+          }
         ]
       },
       {
-        "title": "A rena, tudo o que uma pessoa precisa",
+        "title": "A rena nunca foi só carne",
         "paragraphs": [
           "A relação entre o povo sámi e a rena remonta a muito antes do pastoreio. Mas o modelo de pastoreio como o conhecemos tomou forma no século XIX, quando substituiu a caça e a pesca como principal meio de vida no leste de Sápmi. A relação nunca foi só carne, pele, galhada, tendões e ossos todos tinham uso.",
-          "Hoje, a Finlândia tem cerca de 5.600 pastores de renas que cuidam de aproximadamente 200.000 animais em 54 cooperativas de pastoreio. A área de criação de renas cobre cerca de um terço da Finlândia. A produção anual de carne fica em torno de 2 milhões de quilogramas, e o setor vale cerca de 60 milhões de euros por ano.",
           "Ao contrário da Noruega e da Suécia, o pastoreio de renas na Finlândia não é reservado aos sámi, qualquer cidadão da UE pode participar com as devidas licenças. Mas o conhecimento, a ligação com a terra e as tradições que fazem a carne de rena ter o sabor que tem vêm de séculos de cuidado sámi.",
           "O prato-assinatura é o <strong>poronkäristys</strong>: lascas finas de rena salteadas na manteiga, servidas com purê de batata e geleia de airela-vermelha. Simples, honesto, profundamente reconfortante. Você o encontra em todos os restaurantes da Lapônia, de cafés de estrada a salas de alta gastronomia."
+        ],
+        "figures": [
+          {
+            "value": "5.600",
+            "label": "pastores de renas"
+          },
+          {
+            "value": "200.000",
+            "label": "renas"
+          },
+          {
+            "value": "54",
+            "label": "cooperativas de pastoreio"
+          },
+          {
+            "value": "1/3",
+            "label": "da Finlândia"
+          },
+          {
+            "value": "2 mi kg",
+            "label": "de carne por ano"
+          },
+          {
+            "value": "€60 mi",
+            "label": "de valor por ano"
+          }
         ]
       },
       {
-        "title": "Rios, lagos, fumaça e fogo",
+        "title": "São tradições vivas, não recriações",
         "paragraphs": [
-          "As águas da Lapônia sempre foram a outra despensa. Salmão, peixe-branco, perca, salvelino-ártico e lúcio sustentaram as famílias pelos invernos mais escuros e pelos verões mais luminosos do sol da meia-noite. Os direitos de pesca pertenciam às famílias ribeirinhas havia séculos, definidos por linhagem e costume, não por dinheiro.",
+          "Salmão, peixe-branco, perca, salvelino-ártico e lúcio sustentaram as famílias pelos invernos mais escuros e pelos verões mais luminosos do sol da meia-noite. Os direitos de pesca pertenciam às famílias ribeirinhas havia séculos, definidos por linhagem e costume, não por dinheiro.",
           "As técnicas tradicionais seguem vivas nos restaurantes. Salmão grelhado na chama sobre uma tábua de madeira ao lado do fogo aberto. Peixe-branco defumado em casca de bétula. Sopa de peixe encorpada com creme e endro fresco. Não são \"recriações\" de receitas antigas, são tradições vivas, passadas de geração em geração.",
           "O lago Inari, o terceiro maior da Finlândia, produz alguns dos melhores peixes de água doce da Europa. O Restaurant Aanaar, em Inari, monta menus degustação inteiros em torno do que os pescadores locais tiram de suas águas naquela manhã."
-        ]
+        ],
+        "quote": "As águas da Lapônia sempre foram a outra despensa."
       },
       {
-        "title": "O chão da floresta",
+        "title": "O ouro do Ártico amadurece por duas semanas no ano",
         "paragraphs": [
-          "Caminhe por uma floresta lapônica no fim do verão e estará caminhando por um supermercado. Mirtilos, airelas-vermelhas, amoras árticas e espinheiro-marítimo crescem silvestres. Cantarelos, boletos e o cobiçado matsutake brotam entre o musgo. Ervas silvestres, angélica, ulmária, tomilho-ártico, perfumam o ar.",
+          "Mirtilos, airelas-vermelhas, amoras árticas e espinheiro-marítimo crescem silvestres. Cantarelos, boletos e o cobiçado matsutake brotam entre o musgo. Ervas silvestres, angélica, ulmária, tomilho-ártico, perfumam o ar.",
           "A amora ártica ocupa um lugar especial. Chamada de <strong>lakka</strong> em finlandês, cresce apenas em pântanos árticos e subárticos, amadurece por umas duas semanas em julho e não pode ser cultivada comercialmente. Sua cor âmbar, doçura de mel e raridade fazem dela o \"ouro do Ártico\". Você a encontra em sobremesas, licores e como guarnição em quase todo restaurante de alta gastronomia da Lapônia.",
           "O que torna esses ingredientes extraordinários não é só o sabor, é o ambiente. As condições árticas, as 24 horas de luz no verão, o ar puro e algumas das águas mais limpas da Terra produzem frutas com concentrações mais altas de vitaminas, antioxidantes e flavonoides do que suas equivalentes do sul."
-        ]
+        ],
+        "quote": "Caminhe por uma floresta lapônica no fim do verão e estará caminhando por um supermercado."
       },
       {
-        "title": "Da sobrevivência à arte",
+        "title": "O Noma mudou o olhar da Lapônia sobre o próprio quintal",
         "paragraphs": [
-          "Durante quase toda a sua história, a cozinha lapônica foi sobre conservação e sobre alimentar pessoas. Defumar, secar, salgar, técnicas nascidas da necessidade, não da criatividade. Temperos além do sal eram quase desconhecidos. A comida era honesta e nutritiva, mas ninguém a empratava em cerâmica artesanal.",
+          "Defumar, secar, salgar, técnicas nascidas da necessidade, não da criatividade. Temperos além do sal eram quase desconhecidos. A comida era honesta e nutritiva, mas ninguém a empratava em cerâmica artesanal.",
           "Isso mudou com o movimento da Nova Cozinha Nórdica. Quando o Noma, em Copenhague, passou a celebrar ingredientes hiperlocais e colhidos na natureza nos anos 2000, chefs de todos os países nórdicos começaram a olhar para o próprio quintal de outra forma. Na Lapônia, encontraram ingredientes que a maior parte do mundo nunca havia provado e tradições já com séculos de idade.",
           "Hoje, restaurantes como Aanaar em Inari, Nili em Rovaniemi e Gustav em Rovaniemi fazem algo notável: honram as tradições sámi ao mesmo tempo em que expandem o que a cozinha ártica pode ser. Um prato de rena no Aanaar não é só comida, é uma história de herança indígena, cuidado ambiental e reinvenção culinária em um único prato."
-        ]
+        ],
+        "quote": "Durante quase toda a sua história, a cozinha lapônica foi sobre conservação e sobre alimentar pessoas."
       },
       {
-        "title": "O kota, onde se compartilham as histórias",
+        "title": "Por séculos o kota foi lar, cozinha e ponto de encontro",
         "paragraphs": [
-          "Talvez a experiência gastronômica mais singular da Lapônia não seja um restaurante. É o <strong>kota</strong>, uma tenda sámi tradicional, de formato cônico, com uma fogueira ao centro. Por séculos, o kota foi lar, cozinha e ponto de encontro. A comida cozida na chama aberta, as histórias contadas, a fumaça levando preces ao céu.",
+          "É o <strong>kota</strong>, uma tenda sámi tradicional, de formato cônico, com uma fogueira ao centro. Por séculos, o kota foi lar, cozinha e ponto de encontro. A comida cozida na chama aberta, as histórias contadas, a fumaça levando preces ao céu.",
           "Hoje, restaurantes kota como o Kammi, no Hullu Poro (Levi), mantêm a tradição viva. Você se senta sobre peles de rena em torno do fogo crepitante enquanto salmão defumado, linguiças de rena e caça grelhada são preparados à sua frente. A refeição fica em torno de 64 € por pessoa, mas o momento é difícil de precificar.",
           "É isso que torna o jantar na Lapônia diferente. Não é só o que está no prato, é o fogo, a fumaça, a neve lá fora, a aurora boreal no alto e os milhares de anos de engenho humano que tornaram a refeição possível."
-        ]
+        ],
+        "quote": "Talvez a experiência gastronômica mais singular da Lapônia não seja um restaurante."
       }
     ],
-    "ctaExplore": "Explore os restaurantes"
+    "ctaExplore": "Explore os restaurantes",
+    "chaptersLabel": "Nesta história"
   },
   "localFood": {
     "title": "Comida local da Lapônia: rena, frutas vermelhas, peixe | LaplandDining",

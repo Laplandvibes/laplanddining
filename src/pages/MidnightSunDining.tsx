@@ -111,7 +111,7 @@ export default function MidnightSunDining() {
       <PageBreadcrumb />
 
       {/* Why it matters */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-night via-night-light/55 to-night">
         <div className="max-w-3xl mx-auto">
           <p className="text-yellow-300/80 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
             {t('midnightSunDining.whyKicker')}
@@ -177,7 +177,7 @@ export default function MidnightSunDining() {
                       sid={meta.hotelsSid}
                       destination={meta.hotelsQuery}
                       query={{ checkin: '2026-06-15', checkout: '2026-06-18' }}
-                      className="inline-flex items-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-xs font-bold px-4 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-amber/20"
+                      className="inline-flex items-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-xs font-bold px-4 py-2.5 min-h-[44px] rounded-full transition-all duration-200 no-underline shadow-md shadow-amber/20"
                     >
                       {t('midnightSunDining.stayInTemplate', { city: c.name })}
                     </AffiliateCTA>
@@ -185,7 +185,7 @@ export default function MidnightSunDining() {
                       href={gygSearchLink(`${c.name} food tour summer`, `midnight_sun_${c.name.toLowerCase().replace(/[^a-z]/g, '')}`, locale)}
                       target="_blank"
                       rel="sponsored nofollow noopener"
-                      className="inline-flex items-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/15 text-white text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 no-underline"
+                      className="inline-flex items-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/15 text-white text-xs font-semibold px-4 py-2.5 min-h-[44px] rounded-full transition-all duration-200 no-underline"
                     >
                       {t('midnightSunDining.summerFoodTours')}
                     </a>

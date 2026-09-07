@@ -99,7 +99,7 @@ export default function LocalFood() {
       </script>
 
       {/* Hero */}
-      <section className="relative min-h-[60svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+      <section className="relative min-h-[52svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
           src={DINING.heroLocalFood}
           alt="Local Arctic ingredients on plate"
@@ -178,7 +178,7 @@ export default function LocalFood() {
       </section>
 
       {/* Ingredients grid */}
-      <section className="py-16 bg-night/95 aurora-glow">
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-night via-night-light/55 to-night aurora-glow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
@@ -189,7 +189,7 @@ export default function LocalFood() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-stretch">
             {ingredients.map((item, idx) => {
               const media = ingredientMedia[idx];
               const photo = media && 'photo' in media ? media.photo : null;
@@ -201,7 +201,7 @@ export default function LocalFood() {
               return (
                 <div
                   key={item.name}
-                  className="group flex flex-col overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-amber/25 transition-all duration-300"
+                  className="group flex flex-col overflow-hidden rounded-3xl bg-white/[0.04] ring-1 ring-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.45),0_14px_28px_-10px_rgba(0,0,0,0.6),0_40px_72px_-32px_rgba(0,0,0,0.7)] hover:ring-amber/30 hover:-translate-y-1 transition-all duration-500"
                 >
                   {photo ? (
                     <div className="relative aspect-[16/10] overflow-hidden">
@@ -227,14 +227,26 @@ export default function LocalFood() {
                       <div className="absolute inset-0 bg-gradient-to-t from-night/45 via-transparent to-transparent" />
                     </div>
                   ) : (
-                    <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-amber/25 via-amber-deep/20 to-warm-ink flex items-center justify-center">
+                    /* 🔴 Paikanpitäjä, ei puuttuva kuva. Riekosta ei ole omaa
+                       valokuvaa, eikä stock- tai AI-kuva kelpaa aineksen
+                       kuvaksi. Vesa 7.9. luki tämän virheeksi ("yksi kuvakin
+                       puuttuu") — syystä: 34 px:n ikoni amber/45-sävyllä näytti
+                       lataamatta jääneeltä kuvalta. Nyt kuvio on selvästi
+                       piirretty: viivasto + iso ikoni + kehys, eli katsoja
+                       näkee että tässä EI kuulukaan olla valokuvaa. */
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-amber/20 via-amber-deep/15 to-warm-ink flex items-center justify-center">
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 opacity-[0.13] bg-[repeating-linear-gradient(45deg,#F59E0B_0_1px,transparent_1px_11px)]"
+                      />
+                      <div className="absolute inset-5 rounded-2xl border border-amber/25" />
                       {PlaceholderIcon && (
-                        <PlaceholderIcon size={34} strokeWidth={1.5} className="relative z-10 text-amber/45" />
+                        <PlaceholderIcon size={52} strokeWidth={1.25} className="relative z-10 text-amber/70" />
                       )}
-                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(245,158,11,0.20),transparent_62%)]" />
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(245,158,11,0.22),transparent_62%)]" />
                     </div>
                   )}
-                  <div className="p-6 flex flex-col flex-1">
+                  <div className="p-7 flex flex-col flex-1">
                     <h3 className="font-heading text-lg text-amber tracking-wide mb-2">
                       {item.name}
                     </h3>

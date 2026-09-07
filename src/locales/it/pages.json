@@ -410,56 +410,96 @@
     "intro": "Il fumo si alza da un fuoco di kota prima che il sole sia del tutto sorto. Strisce di renna si stagionano sotto la gronda di una capanna di legno. Un salmone scivola nella nebbia del fiume. In Lapponia il cibo non è mai cominciato in cucina, è cominciato sulla terra. Questa è la storia del perché.",
     "sections": [
       {
-        "title": "Una cucina costruita dalla necessità",
+        "title": "L'agricoltura qui non ha mai funzionato. La caccia, la pesca e la raccolta sì.",
         "paragraphs": [
-          "L'inverno dura otto mesi. Le temperature scendono a meno trenta, a volte meno quaranta. Il campo più vicino che produce qualcosa si trova centinaia di chilometri più a sud, e anche allora solo a volte. È stata la vita quotidiana per migliaia di anni.",
+          "Il campo più vicino che produce qualcosa si trova centinaia di chilometri più a sud, e anche allora solo a volte. È stata la vita quotidiana per migliaia di anni.",
           "Il cibo veniva da ciò che era vicino, fiumi ricchi di salmone e di salmerino artico, foreste che custodivano selvaggina e bacche selvatiche, tundra dove le renne si muovevano con le stagioni. Per i Sami, il popolo indigeno dell'Europa settentrionale, il cibo non è mai stato separato dalla terra. <em>Era</em> la terra.",
           "Altrove in Finlandia, la cucina è cresciuta dall'agricoltura, risalente alla preistoria. Ma nel nord, l'agricoltura non è mai stata affidabile. Caccia, pesca e raccolta non erano una nota a margine. Erano l'intero piano."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "mesi di inverno"
+          },
+          {
+            "value": "-40 °C",
+            "label": "nei giorni più freddi"
+          }
         ]
       },
       {
-        "title": "La renna, tutto ciò che serve a una persona",
+        "title": "La renna non è mai stata solo carne",
         "paragraphs": [
           "La relazione tra il popolo Sami e la renna è molto più antica dell'allevamento stesso. Ma il modello dell'allevamento come lo conosciamo oggi ha preso forma nel XIX secolo, quando ha sostituito caccia e pesca come principale sostentamento nel Sápmi orientale. La relazione non è mai stata solo questione di carne, pelliccia, corna, tendini e ossa trovavano tutti un utilizzo.",
-          "Oggi la Finlandia conta circa 5.600 pastori di renne che gestiscono circa 200.000 animali attraverso 54 cooperative di allevamento. La zona di allevamento copre circa un terzo della Finlandia. La produzione annuale di carne si attesta intorno ai 2 milioni di chilogrammi e l'industria vale circa 60 milioni di euro l'anno.",
           "Diversamente da Norvegia e Svezia, l'allevamento di renne in Finlandia non è riservato ai Sami, qualsiasi cittadino UE può parteciparvi con i permessi adeguati. Ma il sapere, il legame con la terra e le tradizioni che fanno sì che la carne di renna abbia quel sapore vengono da secoli di amministrazione sami.",
           "Il piatto signature è il <strong>poronkäristys</strong>: renna affettata sottile, saltata nel burro, servita con purè di patate e marmellata di mirtilli rossi. Semplice, onesto, profondamente appagante. Lo si trova in ogni ristorante della Lapponia, dai caffè di strada alle sale di alta cucina."
+        ],
+        "figures": [
+          {
+            "value": "5.600",
+            "label": "pastori di renne"
+          },
+          {
+            "value": "200.000",
+            "label": "renne"
+          },
+          {
+            "value": "54",
+            "label": "cooperative di allevamento"
+          },
+          {
+            "value": "1/3",
+            "label": "della Finlandia"
+          },
+          {
+            "value": "2 mln kg",
+            "label": "di carne all’anno"
+          },
+          {
+            "value": "60 mln €",
+            "label": "di valore all’anno"
+          }
         ]
       },
       {
-        "title": "Fiumi, laghi, fumo e fuoco",
+        "title": "Sono tradizioni vive, non ricostruzioni",
         "paragraphs": [
-          "Le acque della Lapponia sono sempre state l'altra dispensa. Salmone, coregone, persico, salmerino artico e luccio hanno portato le famiglie attraverso gli inverni più bui e le estati più luminose del sole di mezzanotte. I diritti di pesca appartenevano alle famiglie di sponda da secoli, stabiliti per discendenza e consuetudine, non per denaro.",
+          "Salmone, coregone, persico, salmerino artico e luccio hanno portato le famiglie attraverso gli inverni più bui e le estati più luminose del sole di mezzanotte. I diritti di pesca appartenevano alle famiglie di sponda da secoli, stabiliti per discendenza e consuetudine, non per denaro.",
           "Le tecniche tradizionali sono ancora vive nei ristoranti. Salmone grigliato alla fiamma su una tavola di legno accanto al fuoco vivo. Coregone affumicato nella corteccia di betulla. Zuppa di pesce resa densa da panna e aneto fresco. Non sono \"ricostruzioni\" di vecchie ricette, sono tradizioni viventi, tramandate di generazione in generazione.",
           "Il Lago Inari, terzo lago più grande della Finlandia, produce alcuni dei migliori pesci d'acqua dolce d'Europa. Il Restaurant Aanaar a Inari costruisce interi menù degustazione attorno a ciò che i pescatori locali tirano fuori dalle sue acque la mattina stessa."
-        ]
+        ],
+        "quote": "Le acque della Lapponia sono sempre state l'altra dispensa."
       },
       {
-        "title": "Il sottobosco",
+        "title": "L'oro dell'Artico matura un paio di settimane all'anno",
         "paragraphs": [
-          "Camminare in una foresta lappone a fine estate è come camminare in un supermercato. Mirtilli, mirtilli rossi, lamponi artici e olivello spinoso crescono spontanei. Galletti, porcini e il prezioso matsutake spuntano tra il muschio. Le erbe selvatiche, angelica, olmaria, timo artico, profumano l'aria.",
+          "Mirtilli, mirtilli rossi, lamponi artici e olivello spinoso crescono spontanei. Galletti, porcini e il prezioso matsutake spuntano tra il muschio. Le erbe selvatiche, angelica, olmaria, timo artico, profumano l'aria.",
           "Il lampone artico occupa un posto speciale. Chiamato <strong>lakka</strong> in finlandese, cresce solo nelle torbiere artiche e subartiche, matura per un paio di settimane a luglio e non può essere coltivato commercialmente. Il colore ambrato, la dolcezza di miele e la rarità ne fanno l'\"oro dell'Artico\". Lo si trova in dessert, liquori e come guarnizione in quasi tutti i ristoranti di alta cucina della Lapponia.",
           "Ciò che rende straordinari questi ingredienti non è solo il loro gusto, è il loro ambiente. Le condizioni artiche, la luce estiva di 24 ore, l'aria pura e alcune delle acque più pulite della Terra producono bacche con concentrazioni di vitamine, antiossidanti e flavonoidi superiori a quelle delle loro cugine meridionali."
-        ]
+        ],
+        "quote": "Camminare in una foresta lappone a fine estate è come camminare in un supermercato."
       },
       {
-        "title": "Dalla sopravvivenza all'arte",
+        "title": "Noma ha cambiato lo sguardo della Lapponia sul proprio cortile",
         "paragraphs": [
-          "Per la maggior parte della sua storia, la cucina lappone è stata conservazione e sfamare la gente. Affumicatura, essiccazione, salatura, tecniche nate dalla necessità, non dalla creatività. Le spezie oltre al sale erano quasi sconosciute. Il cibo era onesto e nutriente, ma nessuno lo impiattava su ceramiche fatte a mano.",
+          "Affumicatura, essiccazione, salatura, tecniche nate dalla necessità, non dalla creatività. Le spezie oltre al sale erano quasi sconosciute. Il cibo era onesto e nutriente, ma nessuno lo impiattava su ceramiche fatte a mano.",
           "Il movimento New Nordic ha cambiato tutto questo. Quando Noma a Copenhagen ha iniziato a celebrare gli ingredienti iper-locali e raccolti nei primi anni 2000, gli chef dei paesi nordici hanno cominciato a guardare il proprio cortile in modo diverso. In Lapponia hanno trovato ingredienti che la maggior parte del mondo non aveva mai assaggiato e tradizioni già vecchie di secoli.",
           "Oggi ristoranti come Aanaar a Inari, Nili e Gustav a Rovaniemi fanno qualcosa di notevole: onorano le tradizioni sami spingendo allo stesso tempo ciò che la cucina artica può diventare. Un piatto di renna da Aanaar non è solo cibo, è una storia di patrimonio indigeno, di amministrazione ambientale e di reinvenzione culinaria su un solo piatto."
-        ]
+        ],
+        "quote": "Per la maggior parte della sua storia, la cucina lappone è stata conservazione e sfamare la gente."
       },
       {
-        "title": "La kota, dove si condividono le storie",
+        "title": "Per secoli la kota fu casa, cucina e luogo di ritrovo",
         "paragraphs": [
-          "Forse l'esperienza ristorativa più distintiva della Lapponia non è affatto un ristorante. È la <strong>kota</strong>, una tenda sami tradizionale, conica, con un focolare al centro. Per secoli la kota è stata casa, cucina e luogo di ritrovo. Il cibo cuoceva sulla fiamma viva, si raccontavano storie, il fumo portava le preghiere al cielo.",
+          "È la <strong>kota</strong>, una tenda sami tradizionale, conica, con un focolare al centro. Per secoli la kota è stata casa, cucina e luogo di ritrovo. Il cibo cuoceva sulla fiamma viva, si raccontavano storie, il fumo portava le preghiere al cielo.",
           "Oggi ristoranti-kota come Kammi all'Hullu Poro di Levi mantengono viva la tradizione. Ci si siede su pelli di renna attorno a un fuoco crepitante mentre salmone affumicato, salsicce di renna e selvaggina grigliata vengono preparati davanti a Lei. Il pasto si aggira sui 64 € a testa, ma il momento è difficile da prezzare.",
           "È questo che rende diversa la cena lappone. Non è solo ciò che è nel piatto, è il fuoco, il fumo, la neve fuori, l'aurora sopra di Lei e le migliaia di anni di ingegno umano che hanno reso possibile il pasto."
-        ]
+        ],
+        "quote": "Forse l'esperienza ristorativa più distintiva della Lapponia non è affatto un ristorante."
       }
     ],
-    "ctaExplore": "Esplora i ristoranti"
+    "ctaExplore": "Esplora i ristoranti",
+    "chaptersLabel": "In questa storia"
   },
   "localFood": {
     "title": "Cibo locale lappone: renna, bacche, pesce | LaplandDining",

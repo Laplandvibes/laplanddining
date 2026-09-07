@@ -40,7 +40,7 @@ export default function About() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-night">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* About */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-9 h-9 shrink-0 rounded-xl flex items-center justify-center bg-amber/10 border border-amber/30">
                 <Globe size={18} className="text-amber" />
@@ -62,7 +62,7 @@ export default function About() {
           </div>
 
           {/* Affiliate Disclosure */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-9 h-9 shrink-0 rounded-xl flex items-center justify-center bg-amber/10 border border-amber/30">
                 <Info size={18} className="text-amber" />
@@ -80,7 +80,7 @@ export default function About() {
           </div>
 
           {/* Operator */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
             <h2 className="font-heading text-2xl text-white tracking-wide mb-4">
               {t('about.operatorTitle')}
             </h2>
@@ -103,7 +103,7 @@ export default function About() {
           </div>
 
           {/* Explore more */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
             <h2 className="font-heading text-2xl text-white tracking-wide mb-4">
               {t('about.exploreTitle')}
             </h2>

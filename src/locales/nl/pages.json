@@ -410,56 +410,96 @@
     "intro": "Rook stijgt op van een kota-vuur voor de zon volledig opgekomen is. Rendierreepjes hangen onder de dakrand van een houten hut te rijpen. Een zalm glijdt door de riviernevel. In Lapland begon eten nooit in de keuken, het begon op het land. Dit is het verhaal waarom.",
     "sections": [
       {
-        "title": "Een keuken gebouwd op noodzaak",
+        "title": "Landbouw werkte hier nooit. Jagen, vissen en verzamelen wel.",
         "paragraphs": [
-          "De winter duurt acht maanden. Temperaturen zakken naar dertig, soms veertig onder nul. Het dichtstbijzijnde veld dat iets oplevert, ligt honderden kilometers naar het zuiden, en dan nog maar soms. Dit was duizenden jaren lang het dagelijks leven.",
+          "Het dichtstbijzijnde veld dat iets oplevert, ligt honderden kilometers naar het zuiden, en dan nog maar soms. Dit was duizenden jaren lang het dagelijks leven.",
           "Eten kwam van wat dichtbij was, rivieren vol zalm en Arctische zalmforel, bossen met wild en wilde bessen, toendra waar rendieren met de seizoenen meebewogen. Voor de Sami, het inheemse volk van Noord-Europa, was voedsel nooit los van het land. Het <em>was</em> het land.",
           "Elders in Finland groeide de keuken uit landbouw die teruggaat tot de prehistorie. Maar in het noorden was landbouw nooit betrouwbaar. Jagen, vissen en verzamelen waren geen voetnoot. Ze waren het hele plan."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "maanden winter"
+          },
+          {
+            "value": "-40 °C",
+            "label": "op het koudst"
+          }
         ]
       },
       {
-        "title": "Rendier, alles wat een mens nodig heeft",
+        "title": "Het rendier was nooit alleen vlees",
         "paragraphs": [
           "De relatie tussen het Samische volk en het rendier gaat veel verder terug dan de rendierhouderij zelf. Maar het herdersmodel zoals we het kennen, kreeg in de 19e eeuw vorm, toen het jagen en vissen verving als belangrijkste levensonderhoud in oostelijk Sápmi. De relatie ging nooit alleen over vlees, bont, gewei, pezen en bot vonden allemaal hun gebruik.",
-          "Finland telt vandaag ongeveer 5.600 rendierherders die zo'n 200.000 dieren beheren via 54 herderscoöperaties. Het herdersgebied beslaat ongeveer een derde van Finland. De jaarlijkse vleesproductie ligt rond 2 miljoen kilo, en de industrie is jaarlijks zo'n 60 miljoen euro waard.",
           "Anders dan in Noorwegen en Zweden is rendierhouderij in Finland niet voorbehouden aan de Sami, elke EU-burger kan meedoen met de juiste vergunningen. Maar de kennis, de verbondenheid met het land en de tradities die de smaak van rendiervlees maken, komen uit eeuwen van Samisch rentmeesterschap.",
           "Het signatuurgerecht is <strong>poronkäristys</strong>: flinterdun gesneden rendier, gebakken in boter, opgediend met aardappelpuree en vossenbessenjam. Eenvoudig, eerlijk, diep bevredigend. U vindt het in elk restaurant in Lapland, van de wegcafés tot de fine-diningzalen."
+        ],
+        "figures": [
+          {
+            "value": "5.600",
+            "label": "rendierherders"
+          },
+          {
+            "value": "200.000",
+            "label": "rendieren"
+          },
+          {
+            "value": "54",
+            "label": "herderscoöperaties"
+          },
+          {
+            "value": "1/3",
+            "label": "van Finland"
+          },
+          {
+            "value": "2 mln kg",
+            "label": "vlees per jaar"
+          },
+          {
+            "value": "60 mln €",
+            "label": "waarde per jaar"
+          }
         ]
       },
       {
-        "title": "Rivieren, meren, rook en vuur",
+        "title": "Dit zijn levende tradities, geen reconstructies",
         "paragraphs": [
-          "Laplands wateren waren altijd de andere voorraadkast. Zalm, marene, baars, Arctische zalmforel en snoek brachten gezinnen door de donkerste winters en de helderste middernachtzon-zomers. Visrechten behoorden eeuwenlang toe aan rivierfamilies, geregeld via afstamming en gewoonte, niet via geld.",
+          "Zalm, marene, baars, Arctische zalmforel en snoek brachten gezinnen door de donkerste winters en de helderste middernachtzon-zomers. Visrechten behoorden eeuwenlang toe aan rivierfamilies, geregeld via afstamming en gewoonte, niet via geld.",
           "De traditionele technieken leven in de restaurants nog steeds voort. Zalm op een houten plank gegrild naast een open vuur. Marene gerookt in berkenbast. Vissoep ingedikt met room en verse dille. Dit zijn geen \"reconstructies\" van oude recepten, het zijn levende tradities, van generatie op generatie doorgegeven.",
           "Het Inarimeer, het op twee na grootste meer van Finland, levert enkele van de beste zoetwatervissen van Europa. Restaurant Aanaar in Inari bouwt hele proefmenu's rond wat lokale vissers diezelfde ochtend uit het water halen."
-        ]
+        ],
+        "quote": "Laplands wateren waren altijd de andere voorraadkast."
       },
       {
-        "title": "De bosbodem",
+        "title": "Het goud van de Arctis rijpt een paar weken per jaar",
         "paragraphs": [
-          "Loop in de nazomer door een Laplands bos en u loopt door een supermarkt. Blauwe bosbessen, vossenbessen, kruipbramen en duindoorn groeien wild. Cantharellen, eekhoorntjesbrood en de gewaardeerde matsutake duwen door het mos omhoog. Wilde kruiden als engelwortel, moerasspirea en Arctische tijm vullen de lucht met hun geur.",
+          "Blauwe bosbessen, vossenbessen, kruipbramen en duindoorn groeien wild. Cantharellen, eekhoorntjesbrood en de gewaardeerde matsutake duwen door het mos omhoog. Wilde kruiden als engelwortel, moerasspirea en Arctische tijm vullen de lucht met hun geur.",
           "De kruipbraam heeft een bijzondere plaats. In het Fins <strong>lakka</strong> genoemd, groeit hij alleen in Arctische en subarctische venen, rijpt een paar weken in juli en is commercieel niet te telen. De amberkleur, honingzoetheid en zeldzaamheid maken er het ‘goud van de Arctis’ van. U vindt het in desserts, likeuren en als garnering in vrijwel elk fine-diningrestaurant in Lapland.",
           "Wat deze ingrediënten zo bijzonder maakt is niet alleen hun smaak, het is hun omgeving. Arctische omstandigheden, 24-uurs zomerlicht, schone lucht en sommige van 's werelds zuiverste waters leveren bessen met hogere concentraties vitamines, antioxidanten en flavonoïden dan hun zuidelijke verwanten."
-        ]
+        ],
+        "quote": "Loop in de nazomer door een Laplands bos en u loopt door een supermarkt."
       },
       {
-        "title": "Van overleven naar kunst",
+        "title": "Noma veranderde hoe Lapland naar zijn eigen achtertuin keek",
         "paragraphs": [
-          "Het grootste deel van zijn geschiedenis ging de Laplandse keuken over conserveren en mensen te eten geven. Roken, drogen, zouten, technieken geboren uit noodzaak, niet creativiteit. Specerijen anders dan zout waren bijna onbekend. Het eten was eerlijk en voedzaam, maar niemand zette het op handgemaakt aardewerk.",
+          "Roken, drogen, zouten, technieken geboren uit noodzaak, niet creativiteit. Specerijen anders dan zout waren bijna onbekend. Het eten was eerlijk en voedzaam, maar niemand zette het op handgemaakt aardewerk.",
           "De New Nordic-beweging veranderde dat. Toen Noma in Kopenhagen begin jaren 2000 begon te vieren wat hyperlokaal en geplukt was, gingen koks in de Noordse landen anders naar hun eigen achtertuin kijken. In Lapland vonden ze ingrediënten die de meeste mensen nooit hadden geproefd en tradities die al eeuwen oud waren.",
           "Vandaag doen restaurants als Aanaar in Inari, Nili en Gustav in Rovaniemi iets opmerkelijks: ze eren Samische tradities en verleggen tegelijk de grenzen van wat Arctische keuken kan zijn. Een rendiergang bij Aanaar is niet zomaar eten, het is een verhaal van inheems erfgoed, ecologisch rentmeesterschap en culinaire herontdekking op één bord."
-        ]
+        ],
+        "quote": "Het grootste deel van zijn geschiedenis ging de Laplandse keuken over conserveren en mensen te eten geven."
       },
       {
-        "title": "De kota, waar verhalen worden gedeeld",
+        "title": "Eeuwenlang was de kota huis, keuken en ontmoetingsplek",
         "paragraphs": [
-          "Misschien is de meest kenmerkende dineerervaring in Lapland helemaal geen restaurant. Het is de <strong>kota</strong>, een traditionele Samische tent, kegelvormig, met een vuurplaats in het midden. Eeuwenlang was de kota huis, keuken en ontmoetingsplek. Eten werd op het open vuur bereid, verhalen werden verteld, rook droeg gebeden naar de hemel.",
+          "Het is de <strong>kota</strong>, een traditionele Samische tent, kegelvormig, met een vuurplaats in het midden. Eeuwenlang was de kota huis, keuken en ontmoetingsplek. Eten werd op het open vuur bereid, verhalen werden verteld, rook droeg gebeden naar de hemel.",
           "Vandaag houden kota-restaurants als Kammi bij Hullu Poro in Levi de traditie levend. U zit op rendierpels rond een knetterend vuur terwijl gerookte zalm, rendierworst en gegrild wild voor uw ogen worden bereid. Het diner kost zo'n € 64 per persoon, maar het moment is moeilijk te prijzen.",
           "Dit maakt Laplands dineren anders. Het is niet alleen wat op het bord ligt, het is het vuur, de rook, de sneeuw buiten, het noorderlicht boven u en de duizenden jaren menselijk vernuft die deze maaltijd mogelijk maakten."
-        ]
+        ],
+        "quote": "Misschien is de meest kenmerkende dineerervaring in Lapland helemaal geen restaurant."
       }
     ],
-    "ctaExplore": "Verken de restaurants"
+    "ctaExplore": "Verken de restaurants",
+    "chaptersLabel": "In dit verhaal"
   },
   "localFood": {
     "title": "Lokaal eten in Lapland: rendier, bessen, vis | LaplandDining",

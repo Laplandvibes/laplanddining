@@ -141,7 +141,7 @@ export default function Home() {
                 <Link
                   key={title || i}
                   to={to(card.href)}
-                  className="group relative rounded-2xl overflow-hidden h-96 block no-underline"
+                  className="group relative rounded-3xl overflow-hidden h-96 block no-underline"
                 >
                   <img
                     src={card.image}
@@ -175,7 +175,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 lg:gap-12 items-center">
-            <div className="md:col-span-2 relative aspect-[4/5] md:aspect-auto md:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-amber/15">
+            <div className="md:col-span-2 relative aspect-[4/5] md:aspect-auto md:h-96 rounded-3xl overflow-hidden shadow-2xl shadow-amber/15">
               <img
                 src={DINING.midnightSunCard}
                 alt="Midnight sun terrace dinner in Lapland"
@@ -236,7 +236,7 @@ export default function Home() {
       </div>
 
       {/* ── By Destination — kaupunki-indeksi (18 kohdetta) ────────── */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-night via-night-light/45 to-night overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber/5 rounded-full blur-[120px] animate-[aurora-drift_10s_ease-in-out_infinite]" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-[100px] animate-[aurora-drift_14s_ease-in-out_infinite_reverse]" />
 
@@ -270,7 +270,7 @@ export default function Home() {
             ].map((s) => (
               <div
                 key={s.label}
-                className="rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+                className="rounded-3xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
               >
                 <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide">{s.value}</p>
                 <p className="text-white/75 text-xs md:text-sm mt-1 leading-snug">{s.label}</p>

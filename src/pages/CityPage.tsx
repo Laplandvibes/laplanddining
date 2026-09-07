@@ -304,7 +304,7 @@ export default function CityPage() {
               <Link
                 key={c.slug}
                 to={`${prefix}/city/${c.slug}`}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-cream/80 text-sm font-semibold hover:border-amber/50 hover:text-amber transition-colors no-underline"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 min-h-[44px] sm:min-h-0 text-cream/80 text-sm font-semibold hover:border-amber/50 hover:text-amber transition-colors no-underline"
               >
                 <MapPin size={12} className="opacity-60" />
                 {tx(`cities.${c.slug}.name`, c.name)}
@@ -312,7 +312,7 @@ export default function CityPage() {
             ))}
             <Link
               to={`${prefix}/restaurants`}
-              className="inline-flex items-center rounded-full bg-amber/15 border border-amber/40 px-4 py-2 text-amber text-sm font-bold hover:bg-amber/25 transition-colors no-underline"
+              className="inline-flex items-center rounded-full bg-amber/15 border border-amber/40 px-4 py-2 min-h-[44px] sm:min-h-0 text-amber text-sm font-bold hover:bg-amber/25 transition-colors no-underline"
             >
               {t('cities.shared.allRestaurants', { defaultValue: 'All restaurants →' })}
             </Link>

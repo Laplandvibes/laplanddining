@@ -71,18 +71,24 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
           <MapPin size={11} className="text-amber" />
           <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
         </div>
+        {/* Kosketusalue 48 px, pilleri edelleen 28 px -- sama kuvio ja samat
+            perustelut kuin RestaurantCard.tsx:ssa. z-10 pysyy ULOMMALLA
+            ankkurilla, koska kuvan paalla on kortin oma <Link>. */}
         {r.rating && (
           <a
             href={googleReviewsUrl(r.googlePlaceId)}
             target="_blank"
             rel="nofollow noopener"
-            className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-xs font-bold shadow-md hover:bg-amber-warm transition-colors no-underline"
+            aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews: ${r.name}`}
+            className="group/rating absolute top-0.5 right-0.5 z-10 inline-flex p-2.5 rounded-full no-underline"
           >
-            <Star size={10} className="fill-warm-ink" />
-            <span>{r.rating.toFixed(1)}</span>
-            {r.reviewCount && (
-              <span className="font-semibold opacity-75">·&nbsp;{r.reviewCount.toLocaleString('en')}</span>
-            )}
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber-warm">
+              <Star size={10} className="fill-warm-ink" />
+              <span>{r.rating.toFixed(1)}</span>
+              {r.reviewCount && (
+                <span className="font-semibold opacity-75">·&nbsp;{r.reviewCount.toLocaleString('en')}</span>
+              )}
+            </span>
           </a>
         )}
         {badge && (
@@ -155,13 +161,17 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
           >
             {labels.mapsLabel} →
           </a>
+          {/* Kosketusalue 45 px negatiivisella marginaalilla, pilleri 29 px --
+              sama kuvio ja samat perustelut kuin FineDining.tsx:ssa. */}
           <AffiliateCTA
             partner="hotels"
             sid={`top_picks_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
             destination={`${r.city === 'Ylläs' ? 'Äkäslompolo' : r.city}, ${r.country}`}
-            className="ml-auto inline-flex items-center gap-1 bg-vibe-pink hover:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
+            className="group/stay ml-auto -my-2 py-2 inline-flex items-center rounded-full no-underline"
           >
-            {labels.stayNearby}
+            <span className="inline-flex items-center gap-1 bg-vibe-pink group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-vibe-pink/30">
+              {labels.stayNearby}
+            </span>
           </AffiliateCTA>
         </div>
       </div>

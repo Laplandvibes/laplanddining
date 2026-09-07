@@ -55,18 +55,35 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
           </div>
         )}
         <PhotoCaption r={r} locale={locale} />
+        {/* Arviopilleri on LINKKI Googlen arvosteluihin, ei koriste. Pilleri
+            on 28 px korkea, ja se ei saa kasvaa: kortin ilme lukittiin Fine
+            Diningin mallisivulla 7.9.2026. Kosketusalue tehdaan siksi
+            LAAJENTAMALLA ankkuria lapinakyvalla paddingilla -- pilleri siirtyy
+            sisempaan span-elementtiin ja <a> saa p-2.5:n ymparilleen => 48 px.
+            Sijainti sailyy pikselilleen: top-0.5 (2 px) + p-2.5 (10 px) = 12 px
+            eli entinen top-3.
+
+            🔴 rounded-full ULOMMALLA ankkurilla ei ole turha vaikka ankkuri on
+            lapinakyva: se muotoilee fokusrenkaan JA pitaa elementin nakyvana
+            portille scripts/mobile_wrap_audit.mjs, joka tunnistaa kontrollit
+            mm. luokkajonosta (rounded|btn|button|pill|chip). Ilman sita portti
+            ohittaisi ankkurin kokonaan eika mittaisi sita -- varoitus katoaisi
+            vaarasta syysta, eli portti sammuisi itse itsensa ohi. */}
         {r.rating && (
           <a
             href={googleReviewsUrl(r.googlePlaceId)}
             target="_blank"
             rel="nofollow noopener"
-            className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
+            aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews: ${r.name}`}
+            className="group/rating absolute top-0.5 right-0.5 inline-flex p-2.5 rounded-full no-underline"
           >
-            <Star size={10} className="text-amber fill-amber" />
-            <span>{r.rating.toFixed(1)}</span>
-            {r.reviewCount && (
-              <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
-            )}
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber">
+              <Star size={10} className="text-amber fill-amber" />
+              <span>{r.rating.toFixed(1)}</span>
+              {r.reviewCount && (
+                <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
+              )}
+            </span>
           </a>
         )}
         {(editorsPick || r.priceRange) && (

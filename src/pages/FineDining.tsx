@@ -74,7 +74,7 @@ export default function FineDining() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/50 to-night" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="w-16 h-16 bg-amber/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-amber/20 rounded-3xl flex items-center justify-center mx-auto mb-6">
             <Star size={32} className="text-amber" />
           </div>
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-4 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
@@ -89,16 +89,16 @@ export default function FineDining() {
       {/* Stat tiles — overlap the hero bottom (skiresorts recipe), real data only */}
       <div className="relative z-10 -mt-14 md:-mt-16 px-4 sm:px-6">
         <div className={`max-w-3xl mx-auto grid grid-cols-2 ${avgRating ? 'md:grid-cols-3' : ''} gap-3 md:gap-4`}>
-          <div className="rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+          <div className="rounded-3xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
             <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide">{fineDining.length}</p>
             <p className="text-white/75 text-xs md:text-sm mt-1 leading-snug">{t('home.statsVerified')}</p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+          <div className="rounded-3xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
             <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide">{fineDiningCities}</p>
             <p className="text-white/75 text-xs md:text-sm mt-1 leading-snug">{t('home.statsDestinations')}</p>
           </div>
           {avgRating && (
-            <div className="col-span-2 md:col-span-1 rounded-2xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+            <div className="col-span-2 md:col-span-1 rounded-3xl border border-white/10 bg-night/85 backdrop-blur-md p-4 md:p-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
               <p className="font-heading text-4xl md:text-5xl text-amber tracking-wide inline-flex items-center gap-2">
                 <Star size={22} className="text-amber fill-amber" aria-hidden="true" />
                 {avgRating}
@@ -169,19 +169,24 @@ export default function FineDining() {
                       <MapPin size={11} className="text-amber" />
                       <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
                     </div>
+                    {/* Kosketusalue 48 px, pilleri edelleen 28 px -- sama kuvio
+                        ja samat perustelut kuin RestaurantCard.tsx:ssa (lue
+                        selitys sielta ennen kuin muutat tata). */}
                     {r.rating && (
                       <a
                         href={googleReviewsUrl(r.googlePlaceId)}
                         target="_blank"
                         rel="nofollow noopener"
-                        className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md hover:bg-amber transition-colors no-underline"
+                        className="group/rating absolute top-0.5 right-0.5 inline-flex p-2.5 rounded-full no-underline"
                         aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews: ${r.name}`}
                       >
-                        <Star size={11} className="text-amber fill-amber" />
-                        <span>{r.rating.toFixed(1)}</span>
-                        {r.reviewCount && (
-                          <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
-                        )}
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber">
+                          <Star size={11} className="text-amber fill-amber" />
+                          <span>{r.rating.toFixed(1)}</span>
+                          {r.reviewCount && (
+                            <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
+                          )}
+                        </span>
                       </a>
                     )}
                     {badge && (
@@ -260,13 +265,22 @@ export default function FineDining() {
                       >
                         {t('fineDining.mapsLabel')} <ExternalLink size={12} />
                       </a>
+                      {/* Affiliate-CTA eli rahaa tuottava nappi: sen PITAA olla
+                          peukalolla osuttava. Pilleri on 29 px eika kasva (kortin
+                          alarivi on lukittua ilmetta), joten kosketusalue kasvaa
+                          negatiivisella marginaalilla: -my-2 py-2 tekee ankkurista
+                          45 px korkean mutta jattaa rivin korkeuden ennalleen,
+                          koska negatiivinen marginaali kumoaa paddingin flex-
+                          rivissa. Pilleri itse siirtyy sisempaan spaniin. */}
                       <AffiliateCTA
                         partner="hotels"
                         sid={`fine_dining_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
                         destination={`${r.city === 'Ylläs' ? 'Äkäslompolo' : r.city}, ${r.country}`}
-                        className="ml-auto inline-flex items-center gap-1 bg-vibe-pink hover:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all no-underline shadow-sm shadow-vibe-pink/30"
+                        className="group/stay ml-auto -my-2 py-2 inline-flex items-center rounded-full no-underline"
                       >
-                        {t('fineDining.stayInTemplate', { city: r.city })}
+                        <span className="inline-flex items-center gap-1 bg-vibe-pink group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-vibe-pink/30">
+                          {t('fineDining.stayInTemplate', { city: r.city })}
+                        </span>
                       </AffiliateCTA>
                     </div>
                   </div>

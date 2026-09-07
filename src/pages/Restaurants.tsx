@@ -302,7 +302,7 @@ export default function Restaurants() {
             <UtensilsCrossed size={16} className="text-amber/60 shrink-0 sm:hidden" />
             <button
               onClick={() => setActiveCity(null)}
-              className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[36px] ${
+              className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[36px] ${
                 !activeCity
                   ? 'bg-amber text-night shadow-lg shadow-amber/20'
                   : 'bg-white/5 text-white/75 hover:text-white hover:bg-white/10 border border-white/[0.06]'
@@ -314,7 +314,7 @@ export default function Restaurants() {
               <button
                 key={city}
                 onClick={() => setActiveCity(activeCity === city ? null : city)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[36px] ${
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[36px] ${
                   activeCity === city
                     ? 'bg-amber text-night shadow-lg shadow-amber/20'
                     : 'bg-white/5 text-white/75 hover:text-white hover:bg-white/10 border border-white/[0.06]'
@@ -368,7 +368,7 @@ export default function Restaurants() {
 
             return (
               <div key={city} id={slug} className="mb-20 last:mb-0 scroll-mt-36">
-                <div className="relative mb-8 rounded-2xl overflow-hidden group">
+                <div className="relative mb-8 rounded-3xl overflow-hidden group">
                   <div className="relative h-48 sm:h-56">
                     <img
                       src={cityImages[city] || DINING.heroInterior}
@@ -466,7 +466,7 @@ export default function Restaurants() {
                   );
                 })()}
 
-                <div className="mt-8 rounded-2xl border border-white/8 bg-gradient-to-br from-vibe-pink/8 via-night to-night p-6 sm:p-7">
+                <div className="mt-8 rounded-3xl border border-white/8 bg-gradient-to-br from-vibe-pink/8 via-night to-night p-6 sm:p-7">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
                     <div>
                       <p className="text-vibe-pink text-[10px] font-semibold tracking-[0.25em] uppercase mb-1.5">

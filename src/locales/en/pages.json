@@ -410,56 +410,96 @@
     "intro": "Smoke rises off a kota fire before the sun is fully up. Strips of reindeer cure under the eaves of a wooden cabin. A salmon slides through river fog. In Lapland, food never began in the kitchen, it began on the land. This is the story of why.",
     "sections": [
       {
-        "title": "A Cuisine Built by Necessity",
+        "title": "Farming never worked here. Hunting, fishing and gathering did.",
         "paragraphs": [
-          "Winter lasts eight months. Temperatures drop to thirty, sometimes forty below. The nearest field that produces anything is hundreds of kilometres south, and even then only sometimes. This was daily life for thousands of years.",
+          "The nearest field that produces anything is hundreds of kilometres south, and even then only sometimes. This was daily life for thousands of years.",
           "Food came from what was close, rivers thick with salmon and Arctic char, forests holding game and wild berries, tundra where reindeer moved with the seasons. For the Sámi, the indigenous people of northern Europe, food was never separate from the land. It <em>was</em> the land.",
           "Finnish cuisine elsewhere grew out of agriculture going back to prehistory. But in the north, farming was never reliable. Hunting, fishing and gathering weren't a side note. They were the entire plan."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "months of winter"
+          },
+          {
+            "value": "-40 °C",
+            "label": "at its coldest"
+          }
         ]
       },
       {
-        "title": "Reindeer, Everything a Person Needs",
+        "title": "The reindeer was never just meat",
         "paragraphs": [
           "The relationship between Sámi people and reindeer goes back much further than herding does. But the herding model as we know it took shape in the 19th century, when it replaced hunting and fishing as the main livelihood in eastern Sápmi. The relationship has never been just about meat, fur, antlers, sinew and bone all found a use.",
-          "Today, Finland has around 5,600 reindeer herders managing roughly 200,000 animals across 54 herding cooperatives. The reindeer-husbandry area covers about one-third of Finland. Annual meat production runs around 2 million kilograms, and the industry is worth roughly €60 million a year.",
           "Unlike Norway and Sweden, reindeer herding in Finland isn't reserved for the Sámi, any EU citizen can participate with the proper permits. But the knowledge, the connection to the land and the traditions that make reindeer meat taste the way it does come from centuries of Sámi stewardship.",
           "The signature dish is <strong>poronkäristys</strong>: thin-shaved reindeer sautéed in butter, served with mashed potato and lingonberry jam. Simple, honest, deeply satisfying. You'll find it in every restaurant in Lapland, from roadside cafés to fine dining rooms."
+        ],
+        "figures": [
+          {
+            "value": "5,600",
+            "label": "reindeer herders"
+          },
+          {
+            "value": "200,000",
+            "label": "reindeer"
+          },
+          {
+            "value": "54",
+            "label": "herding cooperatives"
+          },
+          {
+            "value": "1/3",
+            "label": "of Finland"
+          },
+          {
+            "value": "2m kg",
+            "label": "of meat a year"
+          },
+          {
+            "value": "€60m",
+            "label": "a year in value"
+          }
         ]
       },
       {
-        "title": "Rivers, Lakes, Smoke and Fire",
+        "title": "These are living traditions, not re-enactments",
         "paragraphs": [
-          "Lapland's waters have always been the other pantry. Salmon, whitefish, perch, Arctic char and pike carried families through the darkest winters and the brightest midnight-sun summers. Fishing rights belonged to riverside families for centuries, settled by lineage and custom, not by money.",
+          "Salmon, whitefish, perch, Arctic char and pike carried families through the darkest winters and the brightest midnight-sun summers. Fishing rights belonged to riverside families for centuries, settled by lineage and custom, not by money.",
           "The traditional techniques are still alive in the restaurants. Salmon flame-grilled on a wooden board next to an open fire. Whitefish smoked in birch bark. Fish soup made thick with cream and fresh dill. These aren't \"recreations\" of old recipes, they're living traditions, passed from generation to generation.",
           "Lake Inari, Finland's third-largest lake, produces some of the finest freshwater fish in Europe. Restaurant Aanaar in Inari builds entire tasting menus around what local fishers pull from its waters that morning."
-        ]
+        ],
+        "quote": "Lapland's waters have always been the other pantry."
       },
       {
-        "title": "The Forest Floor",
+        "title": "The Arctic's gold ripens for two weeks a year",
         "paragraphs": [
-          "Walk through a Lappish forest in late summer and you're walking through a supermarket. Bilberries, lingonberries, cloudberries and sea buckthorn grow wild. Chanterelles, ceps and the prized matsutake push through the moss. Wild herbs, angelica, meadowsweet, Arctic thyme, scent the air.",
+          "Bilberries, lingonberries, cloudberries and sea buckthorn grow wild. Chanterelles, ceps and the prized matsutake push through the moss. Wild herbs, angelica, meadowsweet, Arctic thyme, scent the air.",
           "The cloudberry holds a special place. Called <strong>lakka</strong> in Finnish, it grows only in Arctic and subarctic bogs, ripens for a couple of weeks in July, and cannot be commercially farmed. Its amber colour, honey sweetness and rarity make it the \"gold of the Arctic.\" You'll find it in desserts, liqueurs and as a garnish in almost every fine dining restaurant in Lapland.",
           "What makes these ingredients extraordinary isn't just their taste, it's their environment. Arctic conditions, 24-hour summer light, pristine air and some of the cleanest water on Earth produce berries with higher concentrations of vitamins, antioxidants and flavonoids than their southern counterparts."
-        ]
+        ],
+        "quote": "Walk through a Lappish forest in late summer and you're walking through a supermarket."
       },
       {
-        "title": "From Survival to Art",
+        "title": "Noma changed how Lapland saw its own backyard",
         "paragraphs": [
-          "For most of its history, Lappish cooking was about preservation and feeding people. Smoking, drying, salting, techniques born from necessity, not creativity. Spices beyond salt were almost unknown. The food was honest and nourishing, but nobody was plating it on handmade ceramics.",
+          "Smoking, drying, salting, techniques born from necessity, not creativity. Spices beyond salt were almost unknown. The food was honest and nourishing, but nobody was plating it on handmade ceramics.",
           "That changed with the New Nordic movement. When Noma in Copenhagen started celebrating hyper-local, foraged ingredients in the 2000s, chefs across the Nordic countries began looking at their own backyards differently. In Lapland, they found ingredients most of the world had never tasted and traditions already centuries old.",
           "Today restaurants like Aanaar in Inari, Nili in Rovaniemi and Gustav in Rovaniemi do something remarkable: they honour Sámi traditions while pushing what Arctic cuisine can be. A reindeer course at Aanaar isn't just food, it's a story of indigenous heritage, environmental stewardship and culinary reinvention on a single plate."
-        ]
+        ],
+        "quote": "For most of its history, Lappish cooking was about preservation and feeding people."
       },
       {
-        "title": "The Kota, Where Stories Are Shared",
+        "title": "For centuries the kota was home, kitchen and meeting place",
         "paragraphs": [
-          "Perhaps the most distinctive dining experience in Lapland isn't a restaurant at all. It's the <strong>kota</strong>, a traditional Sámi tent, cone-shaped, with a fire pit at the centre. For centuries, the kota was home, kitchen and gathering place. Food cooked over open flame, stories were told, smoke carried prayers to the sky.",
+          "It's the <strong>kota</strong>, a traditional Sámi tent, cone-shaped, with a fire pit at the centre. For centuries, the kota was home, kitchen and gathering place. Food cooked over open flame, stories were told, smoke carried prayers to the sky.",
           "Today, kota restaurants like Kammi at Hullu Poro in Levi keep the tradition alive. You sit on reindeer furs around a crackling fire while smoked salmon, reindeer sausages and grilled game are prepared in front of you. The meal runs around €64 a head, but the moment is hard to price.",
           "This is what makes Lapland dining different. It isn't only what's on the plate, it's the fire, the smoke, the snow outside, the Northern Lights overhead and the thousands of years of human ingenuity that made the meal possible."
-        ]
+        ],
+        "quote": "Perhaps the most distinctive dining experience in Lapland isn't a restaurant at all."
       }
     ],
-    "ctaExplore": "Explore the Restaurants"
+    "ctaExplore": "Explore the Restaurants",
+    "chaptersLabel": "In this story"
   },
   "localFood": {
     "title": "Local Lapland Food: Reindeer, Berries, Fish | LaplandDining",

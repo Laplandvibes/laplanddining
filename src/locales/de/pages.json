@@ -410,56 +410,96 @@
     "intro": "Rauch steigt vor Sonnenaufgang über einer Kota-Feuerstelle. Streifen Rentierfleisch trocknen unter den Dachvorsprüngen einer Holzhütte. Ein Lachs gleitet durch den Flussnebel. In Lappland begann das Essen nie in der Küche, es begann in der Natur. Dies ist die Geschichte, warum.",
     "sections": [
       {
-        "title": "Eine Küche, geboren aus Notwendigkeit",
+        "title": "Ackerbau funktionierte hier nie. Jagen, Fischen und Sammeln schon.",
         "paragraphs": [
-          "Der Winter dauert acht Monate. Die Temperaturen sinken auf dreißig, manchmal vierzig unter Null. Das nächste Feld, das überhaupt etwas hergibt, liegt Hunderte Kilometer südlich und selbst dann nur manchmal. Das war Alltag, Jahrtausende lang.",
+          "Das nächste Feld, das überhaupt etwas hergibt, liegt Hunderte Kilometer südlich und selbst dann nur manchmal. Das war Alltag, Jahrtausende lang.",
           "Das Essen kam aus dem, was nahe lag: aus Flüssen voller Lachs und arktischem Saibling, aus Wäldern voller Wild und Wildbeeren, aus der Tundra, durch die Rentiere mit den Jahreszeiten ziehen. Für die Sámi, die indigene Bevölkerung des europäischen Nordens, war Essen nie vom Land getrennt. Es <em>war</em> das Land.",
           "Die finnische Küche erwuchs anderswo aus jahrtausendealter Landwirtschaft. Doch im Norden war Ackerbau nie verlässlich. Jagen, Fischen und Sammeln waren keine Nebensache. Sie waren der ganze Plan."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "Monate Winter"
+          },
+          {
+            "value": "-40 °C",
+            "label": "an den kältesten Tagen"
+          }
         ]
       },
       {
-        "title": "Das Rentier, alles für jeden",
+        "title": "Das Rentier war nie nur Fleisch",
         "paragraphs": [
           "Die Rentierhaltung wurde im 19. Jahrhundert zentral für das samische Leben, als sie Jagd und Fischerei als Haupterwerb im östlichen Sápmi ablöste. Doch die Beziehung zwischen Mensch und Rentier reicht viel weiter zurück und es geht um weit mehr als nur Fleisch.",
-          "Heute hat Finnland rund 5.600 Rentierhalter, die etwa 200.000 Tiere in 54 Hegegebieten betreuen, auf rund einem Drittel der Gesamtfläche Finnlands. Die jährliche Fleischproduktion liegt bei rund 2 Millionen Kilogramm, und die Branche erwirtschaftet rund 60 Millionen Euro im Jahr.",
           "Anders als in Norwegen und Schweden ist die Rentierhaltung in Finnland nicht ausschließlich ein samisches Recht, jede EU-Bürgerin und jeder EU-Bürger kann mit der entsprechenden Zulassung teilnehmen. Doch das Wissen, die Verbundenheit mit dem Land und die Traditionen, die Rentierfleisch so schmecken lassen, wie es schmeckt, stammen aus jahrhundertelanger samischer Hege.",
           "Das prägendste Gericht ist <strong>Rentiergeschnetzeltes</strong> (poronkäristys), dünn gehobeltes Rentier, in Butter gegart und mit Kartoffelpüree und Preiselbeermarmelade serviert. Schlicht, ehrlich und tief befriedigend. Sie finden es in jedem Restaurant in Lappland, vom Straßencafé bis zum Fine-Dining-Haus."
+        ],
+        "figures": [
+          {
+            "value": "5.600",
+            "label": "Rentierhalter"
+          },
+          {
+            "value": "200.000",
+            "label": "Rentiere"
+          },
+          {
+            "value": "54",
+            "label": "Hegegebiete"
+          },
+          {
+            "value": "1/3",
+            "label": "der Fläche Finnlands"
+          },
+          {
+            "value": "2 Mio. kg",
+            "label": "Fleisch pro Jahr"
+          },
+          {
+            "value": "60 Mio. €",
+            "label": "Wert pro Jahr"
+          }
         ]
       },
       {
-        "title": "Wasser, Eis und Feuer",
+        "title": "Das sind lebendige Traditionen, keine Nachstellungen",
         "paragraphs": [
-          "Lapplands Flüsse und Seen waren stets seine zweite Speisekammer. Lachs, Felchen, Barsch, arktischer Saibling und Hecht, diese Fische trugen Familien durch die dunkelsten Winter und die hellsten Mitternachtssonne-Sommer.",
+          "Lachs, Felchen, Barsch, arktischer Saibling und Hecht, diese Fische trugen Familien durch die dunkelsten Winter und die hellsten Mitternachtssonne-Sommer.",
           "Die traditionellen Garmethoden leben in den heutigen Restaurants weiter. Über der Flamme gegrillter Lachs auf einem Holzbrett neben offenem Feuer. Geräucherter Felchen, in Birkenrinde gewickelt. Fischsuppe, dick mit Sahne und frischem Dill. Das sind keine „Nachstellungen“ alter Rezepte, es sind lebendige Traditionen, von Generation zu Generation weitergegeben und heute Gästen aus aller Welt serviert.",
           "Der Inarisee, der drittgrößte See Finnlands, liefert einige der feinsten Süßwasserfische Europas. Das Restaurant Aanaar in Inari baut ganze Degustationsmenüs um das auf, was die örtlichen Fischer am Morgen aus seinen Gewässern ziehen."
-        ]
+        ],
+        "quote": "Lapplands Flüsse und Seen waren stets seine zweite Speisekammer."
       },
       {
-        "title": "Die Apotheke des Waldbodens",
+        "title": "Das Gold der Arktis reift nur wenige Wochen im Jahr",
         "paragraphs": [
-          "Wer im Spätsommer durch einen lappländischen Wald spaziert, geht durch einen Supermarkt. Heidelbeeren, Preiselbeeren, Moltebeeren und Sanddorn wachsen wild in der arktischen Wildnis. Pfifferlinge, Steinpilze und der begehrte Matsutake drängen aus dem Waldboden. Wildkräuter wie Engelwurz, Mädesüß und arktischer Thymian duften in der Luft.",
+          "Heidelbeeren, Preiselbeeren, Moltebeeren und Sanddorn wachsen wild in der arktischen Wildnis. Pfifferlinge, Steinpilze und der begehrte Matsutake drängen aus dem Waldboden. Wildkräuter wie Engelwurz, Mädesüß und arktischer Thymian duften in der Luft.",
           "Die Moltebeere nimmt einen besonderen Platz in der lappländischen Esskultur ein. Auf Finnisch <strong>lakka</strong> genannt, wächst sie nur in arktischen und subarktischen Mooren, reift nur wenige Wochen im Juli und lässt sich nicht großflächig kultivieren. Ihre Bernsteinfarbe, ihre honigartige Süße und ihre Seltenheit machen sie zum „Gold der Arktis“. Sie finden sie in Desserts, Likören und als Garnitur in nahezu jedem Fine-Dining-Restaurant Lapplands.",
           "Was diese Wildzutaten außergewöhnlich macht, ist nicht nur ihr Geschmack, es ist ihre Umgebung. Die extremen Bedingungen der Arktis, mit 24 Stunden Sommersonne, unberührter Luft und einigem der saubersten Wasser der Erde, lassen Beeren mit höheren Konzentrationen an Vitaminen, Antioxidantien und Flavonoiden entstehen als ihre südlichen Verwandten."
-        ]
+        ],
+        "quote": "Wer im Spätsommer durch einen lappländischen Wald spaziert, geht durch einen Supermarkt."
       },
       {
-        "title": "Vom Überleben zur Kunst",
+        "title": "Noma veränderte den Blick Lapplands auf den eigenen Hinterhof",
         "paragraphs": [
-          "Die meiste Zeit ihrer Geschichte ging es in der lappländischen Küche um Konservierung und Sättigung. Räuchern, Trocknen, Salzen, diese Techniken entstanden aus Notwendigkeit, nicht aus Kreativität. Gewürze jenseits von Salz waren praktisch unbekannt. Das Essen war ehrlich und nahrhaft, aber niemand richtete es auf handgemachter Keramik an.",
+          "Räuchern, Trocknen, Salzen, diese Techniken entstanden aus Notwendigkeit, nicht aus Kreativität. Gewürze jenseits von Salz waren praktisch unbekannt. Das Essen war ehrlich und nahrhaft, aber niemand richtete es auf handgemachter Keramik an.",
           "Das änderte sich mit der New-Nordic-Bewegung. Als Restaurants wie das Noma in Kopenhagen in den 2000ern strikt regionale, gesammelte Zutaten feierten, begannen Köche in ganz Nordeuropa, ihren eigenen Hinterhof mit frischem Blick zu betrachten. In Lappland fanden sie Zutaten, die der Rest der Welt nie geschmeckt hatte, und Traditionen, die bereits Jahrhunderte alt waren.",
           "Heute leisten Restaurants wie das Aanaar in Inari, das Nili in Rovaniemi und das Gustav in Rovaniemi etwas Bemerkenswertes: Sie ehren samische Traditionen und verschieben zugleich die Grenzen dessen, was arktische Küche sein kann. Ein Rentiergericht im Aanaar ist nicht nur Essen, es ist eine Geschichte indigenen Erbes, ökologischer Verantwortung und kulinarischer Innovation, serviert auf einem einzigen Teller."
-        ]
+        ],
+        "quote": "Die meiste Zeit ihrer Geschichte ging es in der lappländischen Küche um Konservierung und Sättigung."
       },
       {
-        "title": "Die Kota, wo Geschichten geteilt werden",
+        "title": "Jahrhundertelang war die Kota Heim, Küche und Versammlungsort",
         "paragraphs": [
-          "Das vielleicht prägendste Esserlebnis Lapplands ist überhaupt kein Restaurant. Es ist die <strong>Kota</strong>, ein traditionelles samisches Zelt in Tipi-Form mit einer Feuerstelle in der Mitte. Jahrhundertelang war die Kota Heim, Küche und Versammlungsort. Essen wurde über offener Flamme gegart, Geschichten wurden erzählt, und der Rauch trug Gebete in den Himmel.",
+          "Es ist die <strong>Kota</strong>, ein traditionelles samisches Zelt in Tipi-Form mit einer Feuerstelle in der Mitte. Jahrhundertelang war die Kota Heim, Küche und Versammlungsort. Essen wurde über offener Flamme gegart, Geschichten wurden erzählt, und der Rauch trug Gebete in den Himmel.",
           "Heute halten Kota-Restaurants wie das Kammi im Hullu Poro in Levi diese Tradition lebendig. Sie sitzen auf Rentierfellen rund um ein knisterndes Feuer, während geräucherter Lachs, Rentierwürste und gegrilltes Wild vor Ihren Augen zubereitet werden. Die Mahlzeit kostet etwa 64 € pro Person, doch das Erlebnis ist unbezahlbar.",
           "Das ist es, was das Essen in Lappland von allem anderen auf Erden unterscheidet. Es geht nicht nur um das, was auf dem Teller liegt, es geht um das Feuer, den Rauch, den Schnee draußen, das Nordlicht darüber und die Jahrtausende menschlichen Erfindungsreichtums, die diese Mahlzeit möglich gemacht haben."
-        ]
+        ],
+        "quote": "Das vielleicht prägendste Esserlebnis Lapplands ist überhaupt kein Restaurant."
       }
     ],
-    "ctaExplore": "Die Restaurants entdecken"
+    "ctaExplore": "Die Restaurants entdecken",
+    "chaptersLabel": "In dieser Geschichte"
   },
   "localFood": {
     "title": "Lapplands Zutaten: Rentier, Beeren, Fisch | LaplandDining",

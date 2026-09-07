@@ -410,56 +410,96 @@
     "intro": "La fumée s'élève d'un feu de kota avant que le soleil ne soit complètement levé. Des lanières de renne sèchent sous l'avant-toit d'une cabane en bois. Un saumon glisse dans la brume du fleuve. En Laponie, la cuisine n'a jamais commencé dans la cuisine, elle a commencé sur la terre. Voici l'histoire de pourquoi.",
     "sections": [
       {
-        "title": "Une cuisine bâtie par la nécessité",
+        "title": "L'agriculture n'a jamais marché ici. La chasse, la pêche et la cueillette, oui.",
         "paragraphs": [
-          "L'hiver dure huit mois. Les températures descendent à moins trente, parfois moins quarante. Le champ le plus proche qui produit quelque chose se trouve à des centaines de kilomètres au sud, et encore, seulement parfois. C'était le quotidien pendant des milliers d'années.",
+          "Le champ le plus proche qui produit quelque chose se trouve à des centaines de kilomètres au sud, et encore, seulement parfois. C'était le quotidien pendant des milliers d'années.",
           "La nourriture venait de ce qui était proche, des rivières pleines de saumons et d'ombles arctiques, des forêts abritant gibier et baies sauvages, de la toundra où les rennes se déplaçaient au gré des saisons. Pour les Sâmes, peuple autochtone du nord de l'Europe, la nourriture n'a jamais été séparée de la terre. Elle <em>était</em> la terre.",
           "Ailleurs en Finlande, la cuisine a grandi à partir d'une agriculture remontant à la préhistoire. Mais dans le nord, l'agriculture n'a jamais été fiable. La chasse, la pêche et la cueillette n'étaient pas une note de bas de page. Elles étaient le plan tout entier."
+        ],
+        "figures": [
+          {
+            "value": "8",
+            "label": "mois d'hiver"
+          },
+          {
+            "value": "-40 °C",
+            "label": "au plus froid"
+          }
         ]
       },
       {
-        "title": "Le renne, tout ce dont une personne a besoin",
+        "title": "Le renne n'a jamais été seulement de la viande",
         "paragraphs": [
           "La relation entre les Sâmes et le renne remonte bien plus loin que l'élevage lui-même. Mais le modèle de l'élevage tel que nous le connaissons a pris forme au XIXe siècle, lorsqu'il a remplacé la chasse et la pêche comme principale activité dans l'est de Sápmi. Cette relation n'a jamais été uniquement une affaire de viande, fourrure, bois, tendons et os trouvaient tous un usage.",
-          "Aujourd'hui, la Finlande compte environ 5 600 éleveurs de rennes gérant quelque 200 000 animaux à travers 54 coopératives d'élevage. La zone d'élevage couvre environ un tiers de la Finlande. La production annuelle de viande atteint environ 2 millions de kilogrammes, et l'industrie pèse environ 60 millions d'euros par an.",
           "Contrairement à la Norvège et à la Suède, l'élevage de rennes en Finlande n'est pas réservé aux Sâmes, tout citoyen de l'UE peut y participer avec les autorisations adéquates. Mais le savoir, le lien à la terre et les traditions qui donnent à la viande de renne son goût viennent de siècles d'intendance sâme.",
           "Le plat signature est le <strong>poronkäristys</strong> : du renne finement émincé, sauté au beurre, servi avec une purée de pommes de terre et de la confiture d'airelles. Simple, honnête, profondément satisfaisant. On le trouve dans chaque restaurant de Laponie, du café de bord de route à la salle gastronomique."
+        ],
+        "figures": [
+          {
+            "value": "5 600",
+            "label": "éleveurs de rennes"
+          },
+          {
+            "value": "200 000",
+            "label": "rennes"
+          },
+          {
+            "value": "54",
+            "label": "coopératives d'élevage"
+          },
+          {
+            "value": "1/3",
+            "label": "de la Finlande"
+          },
+          {
+            "value": "2 M kg",
+            "label": "de viande par an"
+          },
+          {
+            "value": "60 M€",
+            "label": "de valeur par an"
+          }
         ]
       },
       {
-        "title": "Fleuves, lacs, fumée et feu",
+        "title": "Ce sont des traditions vivantes, pas des reconstitutions",
         "paragraphs": [
-          "Les eaux de Laponie ont toujours été l'autre garde-manger. Saumon, corégone, perche, omble arctique et brochet ont fait passer les familles à travers les hivers les plus sombres et les étés les plus lumineux du soleil de minuit. Les droits de pêche appartenaient à des familles riveraines depuis des siècles, réglés par la lignée et la coutume, pas par l'argent.",
+          "Saumon, corégone, perche, omble arctique et brochet ont fait passer les familles à travers les hivers les plus sombres et les étés les plus lumineux du soleil de minuit. Les droits de pêche appartenaient à des familles riveraines depuis des siècles, réglés par la lignée et la coutume, pas par l'argent.",
           "Les techniques traditionnelles sont toujours vivantes dans les restaurants. Saumon grillé à la flamme sur une planche en bois à côté d'un feu ouvert. Corégone fumé dans de l'écorce de bouleau. Soupe de poisson épaissie à la crème et à l'aneth frais. Ce ne sont pas des « recréations » d'anciennes recettes, ce sont des traditions vivantes, transmises de génération en génération.",
           "Le lac Inari, troisième plus grand lac de Finlande, produit certains des meilleurs poissons d'eau douce d'Europe. Le restaurant Aanaar à Inari bâtit des menus dégustation entiers autour de ce que les pêcheurs locaux tirent de ses eaux le matin même."
-        ]
+        ],
+        "quote": "Les eaux de Laponie ont toujours été l'autre garde-manger."
       },
       {
-        "title": "Le sol de la forêt",
+        "title": "L'or de l'Arctique ne mûrit que quelques semaines par an",
         "paragraphs": [
-          "Marcher dans une forêt lapone en fin d'été, c'est marcher dans un supermarché. Myrtilles, airelles, mûres arctiques et argousiers poussent à l'état sauvage. Girolles, cèpes et le précieux matsutake percent à travers la mousse. Les herbes sauvages, angélique, reine-des-prés, thym arctique, parfument l'air.",
+          "Myrtilles, airelles, mûres arctiques et argousiers poussent à l'état sauvage. Girolles, cèpes et le précieux matsutake percent à travers la mousse. Les herbes sauvages, angélique, reine-des-prés, thym arctique, parfument l'air.",
           "La mûre arctique, ou plaquebière, occupe une place particulière. Appelée <strong>lakka</strong> en finnois, elle pousse uniquement dans les tourbières arctiques et subarctiques, mûrit pendant quelques semaines en juillet et ne peut pas être cultivée commercialement. Sa couleur ambrée, sa douceur miellée et sa rareté en font l'« or de l'Arctique ». On la trouve en dessert, en liqueur et en garniture dans presque tous les restaurants gastronomiques de Laponie.",
           "Ce qui rend ces ingrédients extraordinaires, ce n'est pas seulement leur goût, c'est leur environnement. Les conditions arctiques, la lumière estivale de 24 heures, l'air pur et certaines des eaux les plus propres au monde produisent des baies aux concentrations en vitamines, antioxydants et flavonoïdes supérieures à celles de leurs cousines du sud."
-        ]
+        ],
+        "quote": "Marcher dans une forêt lapone en fin d'été, c'est marcher dans un supermarché."
       },
       {
-        "title": "De la survie à l'art",
+        "title": "Noma a changé le regard de la Laponie sur sa propre arrière-cour",
         "paragraphs": [
-          "Pendant la majeure partie de son histoire, la cuisine lapone visait la conservation et le ravitaillement des gens. Fumage, séchage, salage, techniques nées de la nécessité, pas de la créativité. Les épices au-delà du sel étaient quasi inconnues. La nourriture était honnête et nourrissante, mais personne ne la dressait sur de la céramique artisanale.",
+          "Fumage, séchage, salage, techniques nées de la nécessité, pas de la créativité. Les épices au-delà du sel étaient quasi inconnues. La nourriture était honnête et nourrissante, mais personne ne la dressait sur de la céramique artisanale.",
           "Le mouvement New Nordic a changé cela. Quand Noma à Copenhague a commencé à célébrer les ingrédients hyper-locaux et cueillis dans les années 2000, les chefs des pays nordiques ont commencé à regarder leur arrière-cour différemment. En Laponie, ils ont trouvé des ingrédients que le reste du monde n'avait jamais goûtés et des traditions déjà vieilles de plusieurs siècles.",
           "Aujourd'hui, des restaurants comme Aanaar à Inari, Nili et Gustav à Rovaniemi font quelque chose de remarquable : ils honorent les traditions sâmes tout en repoussant les limites de ce que la cuisine arctique peut devenir. Un service de renne chez Aanaar n'est pas simplement un plat, c'est une histoire d'héritage autochtone, d'intendance environnementale et de réinvention culinaire sur une seule assiette."
-        ]
+        ],
+        "quote": "Pendant la majeure partie de son histoire, la cuisine lapone visait la conservation et le ravitaillement des gens."
       },
       {
-        "title": "Le kota, où se partagent les histoires",
+        "title": "Pendant des siècles, le kota fut maison, cuisine et lieu de rassemblement",
         "paragraphs": [
-          "L'expérience gastronomique la plus distinctive de Laponie n'est peut-être pas un restaurant. C'est le <strong>kota</strong>, une tente sâme traditionnelle, conique, avec un foyer en son centre. Pendant des siècles, le kota a été maison, cuisine et lieu de rassemblement. La nourriture cuisait sur la flamme, les histoires se racontaient, la fumée portait les prières vers le ciel.",
+          "C'est le <strong>kota</strong>, une tente sâme traditionnelle, conique, avec un foyer en son centre. Pendant des siècles, le kota a été maison, cuisine et lieu de rassemblement. La nourriture cuisait sur la flamme, les histoires se racontaient, la fumée portait les prières vers le ciel.",
           "Aujourd'hui, des restaurants-kota comme Kammi chez Hullu Poro à Levi maintiennent la tradition vivante. Vous vous asseyez sur des peaux de renne autour d'un feu crépitant tandis que saumon fumé, saucisses de renne et gibier grillé sont préparés devant vous. Le repas tourne autour de 64 € par tête, mais le moment est difficile à chiffrer.",
           "Voilà ce qui rend la table lapone différente. Ce n'est pas seulement ce qu'il y a dans l'assiette, c'est le feu, la fumée, la neige dehors, les aurores au-dessus et les milliers d'années d'ingéniosité humaine qui ont rendu ce repas possible."
-        ]
+        ],
+        "quote": "L'expérience gastronomique la plus distinctive de Laponie n'est peut-être pas un restaurant."
       }
     ],
-    "ctaExplore": "Explorer les restaurants"
+    "ctaExplore": "Explorer les restaurants",
+    "chaptersLabel": "Dans ce récit"
   },
   "localFood": {
     "title": "Produits de Laponie : renne, baies, poisson | LaplandDining",
