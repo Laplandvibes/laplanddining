@@ -143,7 +143,7 @@ export default function MidnightSunDining() {
               return (
                 <article
                   key={c.name}
-                  className="group relative overflow-hidden bg-gradient-to-br from-amber/8 via-white/[0.03] to-transparent border border-amber/15 hover:border-yellow-300/40 rounded-2xl transition-all duration-300"
+                  className="group relative overflow-hidden bg-gradient-to-br from-amber/8 via-white/[0.03] to-transparent border border-amber/15 hover:border-yellow-300/40 rounded-3xl transition-all duration-300"
                 >
                   <div className="relative h-36 sm:h-40 overflow-hidden">
                     <img

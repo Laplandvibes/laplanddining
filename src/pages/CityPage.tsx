@@ -225,7 +225,7 @@ export default function CityPage() {
 
       {/* Intro + "mitä on hyvä tietää" */}
       {(intro || know.length > 0) && (
-        <section className="bg-night py-14 sm:py-16">
+        <section className="bg-gradient-to-b from-night via-night-light/40 to-night py-16 sm:py-20">
           <div className="max-w-3xl mx-auto px-5">
             {intro && (
               <p className="text-cream/85 text-[17px] leading-relaxed">{intro}</p>
@@ -245,12 +245,12 @@ export default function CityPage() {
       )}
 
       {/* Ravintolat */}
-      <section className="bg-night pb-16">
+      <section className="relative bg-gradient-to-b from-night via-night-light/55 to-night pb-20">
         <div className="max-w-6xl mx-auto px-5">
           <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-white mb-8">
             {countLabel}
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {list.map((r) => (
               <RestaurantCard
                 key={r.slug}

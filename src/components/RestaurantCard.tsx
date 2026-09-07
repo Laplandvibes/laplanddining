@@ -32,8 +32,12 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
   const cuisine = cuisineLabel(r, locale);
 
   return (
-    <article className={`group relative rounded-2xl overflow-hidden bg-cream shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:shadow-[0_22px_45px_-12px_rgba(0,0,0,0.7)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full${editorsPick ? ' ring-1 ring-amber/40' : ''}`}>
-      <div className="relative h-44 sm:h-48 overflow-hidden shrink-0">
+    /* Ilme yhtenaistetty Fine Diningin mallisivun mukaan 7.9.2026 (Vesa
+       hyvaksyi): kolmikerroksinen varjo + ohut reunus, isompi pyoristys.
+       Jamakkyys syntyy TERAVASTA lahivarjosta — yksi pehmea varjo lukee
+       sumeana. Tama komponentti kattaa /restaurants ja /city/{slug}. */
+    <article className={`group relative rounded-3xl overflow-hidden bg-cream ring-1 ring-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.45),0_14px_28px_-10px_rgba(0,0,0,0.6),0_40px_72px_-32px_rgba(0,0,0,0.7)] hover:shadow-[0_2px_4px_rgba(0,0,0,0.5),0_20px_38px_-12px_rgba(0,0,0,0.68),0_56px_96px_-36px_rgba(0,0,0,0.78)] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full${editorsPick ? ' !ring-amber/45' : ''}`}>
+      <div className="relative h-48 sm:h-56 overflow-hidden shrink-0">
         {r.photo ? (
           <img
             src={r.photo}
@@ -81,7 +85,7 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
         )}
       </div>
 
-      <div className="p-5 flex flex-col flex-1">
+      <div className="p-6 sm:p-7 flex flex-col flex-1">
         <h3 className="font-heading text-xl tracking-wide text-warm-ink leading-tight mb-1">
           {r.name}
         </h3>

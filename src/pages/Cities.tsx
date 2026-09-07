@@ -98,14 +98,14 @@ export default function Cities() {
 
       <PageBreadcrumb />
 
-      <section className="bg-night py-14 sm:py-16">
+      <section className="relative bg-gradient-to-b from-night via-night-light/55 to-night py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-5">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {rows.map(({ city, count, best }) => (
               <Link
                 key={city.slug}
                 to={`${prefix}/city/${city.slug}`}
-                className="group relative rounded-2xl overflow-hidden h-56 no-underline shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-0.5 transition-all duration-300"
+                className="group relative rounded-3xl overflow-hidden h-60 no-underline ring-1 ring-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.45),0_14px_28px_-10px_rgba(0,0,0,0.6),0_40px_72px_-32px_rgba(0,0,0,0.7)] hover:shadow-[0_2px_4px_rgba(0,0,0,0.5),0_20px_38px_-12px_rgba(0,0,0,0.68),0_56px_96px_-36px_rgba(0,0,0,0.78)] hover:-translate-y-1 transition-all duration-500"
               >
                 <img
                   src={city.photo ?? city.img}

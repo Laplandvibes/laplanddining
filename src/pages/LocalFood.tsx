@@ -135,7 +135,7 @@ export default function LocalFood() {
               return (
                 <div key={i}>
                   {img && (
-                    <div className="group relative aspect-[16/9] rounded-2xl overflow-hidden mb-7 border border-white/10 shadow-xl shadow-black/40">
+                    <div className="group relative aspect-[16/9] rounded-3xl overflow-hidden mb-7 border border-white/10 shadow-xl shadow-black/40">
                       <img
                         src={img.src}
                         alt={img.alt}
@@ -201,7 +201,7 @@ export default function LocalFood() {
               return (
                 <div
                   key={item.name}
-                  className="group flex flex-col overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber/25 transition-all duration-300"
+                  className="group flex flex-col overflow-hidden rounded-3xl bg-white/[0.03] border border-white/10 hover:border-amber/25 transition-all duration-300"
                 >
                   {photo ? (
                     <div className="relative aspect-[16/10] overflow-hidden">

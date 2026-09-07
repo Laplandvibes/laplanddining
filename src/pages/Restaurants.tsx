@@ -280,17 +280,26 @@ export default function Restaurants() {
               että jotain jatkuu; se ei kerro MITÄ, eikä työpöydällä ole mitään
               syytä piilottaa kaupunkeja kun tilaa on kahdelle riville.
 
-              sm+ : rivittyy, kaikki 18 näkyvät kerralla, ei maskia.
-              alle sm: vieritys + häivytys, koska 18 chippiä olisi 6 riviä
+              🔴 Pelkkä rivitys ei riittänyt. Vasemmalle tasattuna flex-wrap
+              täyttää ensimmäisen rivin ja pudottaa loput — 12 + 7 näytti
+              rikkinäiseltä (Vesa: "asettelu on huono ja epäsymmetrinen").
+              Keskitys + kapeampi max-w tekee jaosta tasaisen millä tahansa
+              leveydellä, koska rivit hakeutuvat samaan pituuteen.
+
+              sm+ : rivittyy KESKITETTYNÄ, kaikki 19 näkyvät, ei maskia.
+              alle sm: vieritys + häivytys, koska 19 chippiä olisi 6 riviä
               puhelimessa ja työntäisi sisällön alas.
               Portti: scripts/mobile_wrap_audit.mjs (juuri). */}
           <div
             className="flex items-center gap-3 overflow-x-auto scrollbar-hide
-                       sm:flex-wrap sm:gap-y-2.5 sm:overflow-visible
+                       sm:flex-wrap sm:justify-center sm:gap-y-2.5 sm:overflow-visible
+                       sm:mx-auto sm:max-w-5xl
                        [mask-image:linear-gradient(to_right,transparent_0,#000_12px,#000_calc(100%-40px),transparent_100%)]
                        sm:[mask-image:none]"
           >
-            <UtensilsCrossed size={16} className="text-amber/60 shrink-0" />
+            {/* Koriste vain vieritysrivissa. Rivitettaessa se vei oman rivinsa
+                ja rikkoi jaon (8 + IKONI + 8 + 2). */}
+            <UtensilsCrossed size={16} className="text-amber/60 shrink-0 sm:hidden" />
             <button
               onClick={() => setActiveCity(null)}
               className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[36px] ${
