@@ -160,7 +160,18 @@ export default function CityPage() {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/75 via-night/65 to-night" />
+        {/* 🔴 Scrim on KEVYEMPI aidolle valokuvalle. AI-kuvitukset ovat kirkkaita
+            ja kestävät /75:n, mutta heinäkuun ilta- ja sisäkuvat katoavat sen alle
+            kokonaan — Levin ravintolaterassi oli livenä käytännössä musta.
+            Sama opetus kuin jakokuvissa 6.9.: scrim ei yksin riitä valokuvalle,
+            joten teksti saa lisäksi oman varjonsa (.hero-ink alla). */}
+        <div
+          className={
+            city.photo
+              ? 'absolute inset-0 bg-gradient-to-b from-night/45 via-night/40 to-night'
+              : 'absolute inset-0 bg-gradient-to-b from-night/75 via-night/65 to-night'
+          }
+        />
         {/* Kuvateksti vain omalle valokuvalle. Se nimeaa TARKAN paikan eika
             kaupunkisivun otsikkoa: Kuusamon sivu kattaa myos Rukan 22 km:n
             paassa (Vesa 7.9.: "riistaravintola on rukalla, ei kuusamossa"). */}
@@ -173,11 +184,23 @@ export default function CityPage() {
           <p className="inline-flex items-center gap-2 text-amber text-[11px] font-bold uppercase tracking-[0.25em] mb-4">
             <MapPin size={13} /> {t('cities.shared.kicker', { defaultValue: 'Where to eat' })}
           </p>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-wide text-white leading-[1.05]">
+          <h1
+            className={
+              'font-heading text-4xl sm:text-5xl md:text-6xl tracking-wide text-white leading-[1.05]' +
+              (city.photo ? ' [text-shadow:0_2px_18px_rgba(0,0,0,0.85)]' : '')
+            }
+          >
             {tx(`${cityKey}.h1`, `Restaurants in ${name}`)}
           </h1>
           {tagline && (
-            <p className="mt-4 text-lg sm:text-xl text-cream/85 leading-relaxed max-w-2xl mx-auto">
+            <p
+              className={
+                'mt-4 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto' +
+                (city.photo
+                  ? ' text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.9)]'
+                  : ' text-cream/85')
+              }
+            >
               {tagline}
             </p>
           )}
