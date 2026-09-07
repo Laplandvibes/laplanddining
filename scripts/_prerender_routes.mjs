@@ -524,7 +524,10 @@ function resolveRouteMeta(loc, route) {
 // that is already long enough, or a page with nothing harvested, is untouched.
 function ensureDescriptionLength(desc, paragraphs, lang) {
   const cjk = /^(ja|ko|zh|kr|cn)/.test(String(lang || ''));
-  const MIN = cjk ? 40 : 70;
+  // CJK floor raised 40 → 70 on 2026-09-07: OpenSEO measures characters regardless of script,
+  // and the extension text is the page's own same-locale copy, so a 70-char ja/ko/zh
+  // description is two sentences of real content, not padding.
+  const MIN = 70;
   const MAX = 160;
   const d = String(desc || '').trim();
   // Over 160: Google cuts the rest, and 409 built pages shipped longer ones on 2026-09-06
