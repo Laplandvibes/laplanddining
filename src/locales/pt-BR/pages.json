@@ -134,9 +134,9 @@
     "editorsPick": "Escolha da redação",
     "menuLabel": "Cardápio",
     "menuLabelPdf": "Cardápio (PDF)",
-    "introTitle": "Como esta página está organizada",
-    "introP1": "Os restaurantes estão agrupados por destino, não classificados entre si. Quando uma cidade tem uma escolha da redação, ela abre a grade com uma marcação própria; o que vem depois não segue ordem alguma, então leia os cards e não as posições. As notas exibidas são as do Google e levam de volta às avaliações de onde saíram.",
-    "introP2": "O card largo acima de cada grade é um espaço de parceiro pago e está sinalizado como publicidade. Nada mais nesta página é posicionamento pago. Os horários mudam com a temporada (na Lapônia, \"fechado na baixa temporada\" pode significar meses e não semanas) então confira a página do próprio restaurante antes de dirigir até lá."
+    "introTitle": "Agrupado por localidade, sem ranking",
+    "introP1": "Onde uma localidade tem uma escolha da redação, ela abre a lista com um selo. As demais vêm sem ordem definida. As notas são do Google e levam às avaliações de origem.",
+    "introP2": "O cartão largo acima de cada localidade é um espaço de parceiro pago e está marcado como publicidade — nada mais nesta página é posição paga. Os horários seguem a estação, e na Lapônia \"fechado na temporada\" pode significar meses. Confira a página do restaurante antes de pegar a estrada."
   },
   "cities": {
     "title": "Onde comer na Lapônia, cidade por cidade | LaplandDining",
@@ -344,16 +344,16 @@
     "title": "Alta gastronomia na Lapônia e arredores | LaplandDining",
     "description": "Os mais bem avaliados da nossa seleção da Lapônia, em ordem de nota do Google: salões, pousadas e mesas de kota, com citações e links de cardápio.",
     "heroH1": "Alta gastronomia na Lapônia e arredores",
-    "heroLeadTemplate": "Os mais bem avaliados da nossa seleção da Lapônia: salões, cozinhas na natureza e mesas de kota, vários deles dentro de pequenos hotéis e pousadas. Selecionados entre {{count}} restaurantes, ordenados pela nota do Google, cada um combinado com um hotel a poucos minutos a pé.",
+    "heroLeadTemplate": "As mesas mais bem avaliadas da Lapônia, escolhidas entre {{count}} restaurantes: salões, cozinhas de natureza e fogueiras de kota.",
     "metaDescriptionTemplate": "Os mais bem avaliados da nossa seleção, em ordem de nota do Google: {{count}} restaurantes na Lapônia finlandesa e arredores, com citações e cardápios.",
     "websiteLabel": "Site",
     "mapsLabel": "Maps",
     "stayInTemplate": "Hospede-se em {{city}}",
     "readAllReviews": "Ler todas as {{count}} avaliações no Google →",
     "statsAvgRating": "Nota média no Google",
-    "introTitle": "Como esta lista está ordenada e o que ela não diz",
-    "introP1": "Os salões abaixo estão ordenados pela nota do Google, não por quem pagou, e cada nota na página leva de volta às avaliações de onde veio, para você conferir o número e a idade dele por conta própria. O que essa ordem não diz é a adequação: um menu degustação construído em torno de coração de rena e raízes fermentadas é uma noite muito diferente de um salão que faz clássicos nórdicos refinados, mesmo com a mesma pontuação.",
-    "introP2": "Leia o card, não a posição. A alta gastronomia da Lapônia é sazonal por necessidade, então os menus acompanham o que a floresta, o lago e o rebanho conseguem entregar, e a mesma cozinha se lê de um jeito em fevereiro e de outro em agosto. Reserve com antecedência: são salões pequenos em cidades pequenas, vários dentro de hotéis, e as semanas de inverno lotam bem antes das de verão."
+    "introTitle": "A ordem é uma nota do Google, não um lugar pago",
+    "introP1": "Cada nota é do próprio Google e leva às avaliações de origem, então você vê a pontuação e a idade dela. A mesma nota pode significar duas noites bem diferentes: um menu degustação e um salão de hotel caprichado não são a mesma coisa.",
+    "introP2": "Os cardápios seguem a estação, e a mesma cozinha se lê de um jeito em fevereiro e de outro em agosto. Os salões são pequenos e o inverno lota cedo — reserve com antecedência."
   },
   "midnightSunDining": {
     "title": "Jantar sob o sol da meia-noite na Lapônia | LaplandDining",

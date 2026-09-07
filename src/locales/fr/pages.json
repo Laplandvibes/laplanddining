@@ -134,9 +134,9 @@
     "editorsPick": "Choix de la rédaction",
     "menuLabel": "Carte",
     "menuLabelPdf": "Carte (PDF)",
-    "introTitle": "Comment cette page est organisée",
-    "introP1": "Les restaurants sont regroupés par destination, pas classés les uns contre les autres. Quand une ville a un choix de la rédaction, il ouvre la grille avec sa propre mention ; tout ce qui suit vient sans ordre particulier, lisez donc les fiches et non les positions. Les notes affichées sont celles de Google et renvoient aux avis dont elles proviennent.",
-    "introP2": "Le grand encart au-dessus de chaque grille est un emplacement partenaire payant, signalé comme publicité. Rien d'autre sur cette page n'est un placement payé. Les horaires suivent la saison (en Laponie, « fermé pour la saison » peut vouloir dire des mois et non des semaines, vérifiez donc la page du restaurant avant de prendre la route."
+    "introTitle": "Regroupé par localité, sans classement",
+    "introP1": "Là où une localité a un choix de la rédaction, il ouvre la liste avec une pastille. Les autres suivent sans ordre particulier. Les notes viennent de Google et renvoient aux avis d'origine.",
+    "introP2": "La carte large au-dessus de chaque localité est un emplacement partenaire payant, signalé comme publicité — rien d'autre ici n'est payé. Les horaires suivent la saison, et en Laponie « fermé pour la saison » peut vouloir dire des mois. Vérifiez la page du restaurant avant de partir."
   },
   "cities": {
     "title": "Où manger en Laponie, ville par ville | LaplandDining",
@@ -344,16 +344,16 @@
     "title": "Haute gastronomie en Laponie et alentours | LaplandDining",
     "description": "Les mieux notés de notre sélection lapone, classés par note Google : salles à manger, auberges et tables de kota, avec avis et liens vers les menus.",
     "heroH1": "Haute gastronomie en Laponie et alentours",
-    "heroLeadTemplate": "Les mieux notés de notre sélection lapone : salles à manger, cuisines de nature et tables de kota, plusieurs installées dans de petits hôtels et auberges. Sélectionnés parmi {{count}} restaurants, classés par note Google, chacun associé à un hôtel à distance de marche.",
+    "heroLeadTemplate": "Les meilleures tables de Laponie, choisies parmi {{count}} restaurants : salles à manger, cuisines de nature et feux de kota.",
     "metaDescriptionTemplate": "Les mieux notés de notre sélection, classés par note Google : {{count}} restaurants en Laponie finlandaise et alentours, avec avis et menus.",
     "websiteLabel": "Site web",
     "mapsLabel": "Carte",
     "stayInTemplate": "Dormir à {{city}}",
     "readAllReviews": "Lire les {{count}} avis sur Google →",
     "statsAvgRating": "Note moyenne sur Google",
-    "introTitle": "Comment cette liste est classée, et ce qu'elle ne dit pas",
-    "introP1": "Les tables ci-dessous sont classées selon leur note Google, pas selon qui a payé, et chaque note renvoie aux avis dont elle est issue pour que vous puissiez vérifier vous-même le chiffre et son ancienneté. Ce que ce classement ne dit pas, c'est l'adéquation : un menu dégustation bâti autour du cœur de renne et de racines fermentées n'est pas la même soirée qu'une salle qui travaille des classiques nordiques raffinés, même à note égale.",
-    "introP2": "Lisez la fiche, pas le rang. La haute cuisine lapone est saisonnière par nécessité : les menus suivent ce que la forêt, le lac et le troupeau peuvent fournir, et la même cuisine ne se lit pas pareil en février et en août. Réservez tôt : ce sont de petites salles dans de petites villes, plusieurs installées dans des hôtels, et les semaines d'hiver se remplissent bien avant celles de l'été."
+    "introTitle": "Le classement est une note Google, pas une place payée",
+    "introP1": "Chaque note vient de Google et renvoie aux avis d'origine : vous voyez le score et son ancienneté. Une même note peut pourtant désigner deux soirées très différentes — un menu dégustation et une salle d'hôtel soignée ne se ressemblent pas.",
+    "introP2": "Les cartes suivent la saison : la même cuisine ne se lit pas pareil en février et en août. Les salles sont petites et l'hiver se remplit tôt — réservez à l'avance."
   },
   "midnightSunDining": {
     "title": "Dîner sous le soleil de minuit en Laponie | LaplandDining",

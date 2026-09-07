@@ -134,9 +134,9 @@
     "editorsPick": "Redaktionens val",
     "menuLabel": "Meny",
     "menuLabelPdf": "Meny (PDF)",
-    "introTitle": "Så är sidan ordnad",
-    "introP1": "Restaurangerna är grupperade efter destination, inte rangordnade mot varandra. Har en ort en redaktionsfavorit, ligger den först i rutnätet med en egen markering; därefter kommer de övriga utan inbördes ordning, så läs korten och inte placeringarna. Betygen som visas är Googles egna och länkar tillbaka till de recensioner de kommer från.",
-    "introP2": "Det breda kortet ovanför varje ortsrutnät är en betald partnerplats och är märkt som annons. Ingen annan placering på sidan är betald. Öppettiderna följer säsongen (i Lappland kan ”stängt för säsongen” betyda månader snarare än veckor) så kolla restaurangens egen sida innan du kör dit."
+    "introTitle": "Grupperat efter ort, inte rangordnat",
+    "introP1": "Där en ort har ett redaktionsval leder det med en egen markering. Resten följer utan inbördes ordning. Betygen är Googles egna och leder till recensionerna bakom.",
+    "introP2": "Det breda kortet ovanför varje ort är en betald partnerplats och märkt som annons — inget annat här är betald placering. Öppettiderna följer säsongen, och i Lappland kan \"stängt för säsongen\" betyda månader. Kolla restaurangens egen sida innan du kör dit."
   },
   "cities": {
     "title": "Var man äter i Lappland — ort för ort | LaplandDining",
@@ -344,16 +344,16 @@
     "title": "Fine dining i och kring Lappland | LaplandDining",
     "description": "De högst rankade i vårt Lapplandsurval, sorterade efter Google-betyg: matsalar, vildmarkskök och kåtabord, med gästcitat och menylänkar.",
     "heroH1": "Fine dining i och kring Lappland",
-    "heroLeadTemplate": "De högst rankade i vårt Lapplandsurval: matsalar, vildmarkskök och kåtabord, flera av dem inne på små hotell och gästgiverier. Kurerat från {{count}} restauranger, sorterat efter Google-betyg, vart och ett i par med ett hotell inom gångavstånd.",
+    "heroLeadTemplate": "Lapplands högst betygsatta bord, valda ur {{count}} restauranger: matsalar, vildmarkskök och kåtaeldar.",
     "metaDescriptionTemplate": "De högst rankade i vårt urval, sorterade efter Google-betyg: {{count}} restauranger i och kring finska Lappland, med gästcitat och menylänkar.",
     "websiteLabel": "Webbplats",
     "mapsLabel": "Maps",
     "stayInTemplate": "Bo i {{city}}",
     "readAllReviews": "Läs alla {{count}} recensioner på Google →",
     "statsAvgRating": "Genomsnittligt Google-betyg",
-    "introTitle": "Hur listan är sorterad, och vad den inte säger",
-    "introP1": "Rummen nedan är sorterade efter sitt Google-betyg, inte efter vem som betalat, och varje betyg på sidan länkar tillbaka till recensionerna det kommer från så att du kan kontrollera både siffran och dess ålder själv. Vad ordningen inte kan säga är passform: en avsmakningsmeny byggd kring renhjärta och fermenterade rötter är en helt annan kväll än en matsal som gör förfinade nordiska klassiker, även när betyget är detsamma.",
-    "introP2": "Läs kortet, inte placeringen. Fine dining i Lappland är säsongsbunden av nödvändighet, så menyerna följer vad skogen, sjön och renhjorden kan ge, och samma kök läser sig olika i februari och i augusti. Boka i förväg: det här är små rum i små orter, flera av dem inne på hotell, och vinterveckorna fylls långt före sommarens."
+    "introTitle": "Ordningen är ett Google-betyg, inte en betald plats",
+    "introP1": "Varje betyg är Googles eget och leder till recensionerna bakom, så du ser både poängen och hur gammal den är. Samma poäng kan ändå betyda två helt olika kvällar: en avsmakningsmeny och en slipad hotellmatsal är inte samma sak.",
+    "introP2": "Menyerna följer säsongen, så samma kök läses olika i februari och i augusti. Salarna är små och vintern fylls tidigt — boka i tid."
   },
   "midnightSunDining": {
     "title": "Middag i midnattssol i Lappland | LaplandDining",

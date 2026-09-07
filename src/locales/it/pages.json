@@ -134,9 +134,9 @@
     "editorsPick": "Scelta della redazione",
     "menuLabel": "Menù",
     "menuLabelPdf": "Menù (PDF)",
-    "introTitle": "Come è ordinata questa pagina",
-    "introP1": "I ristoranti sono raggruppati per destinazione, non messi in classifica fra loro. Dove una città ha una scelta della redazione, quella apre la griglia con una sua etichetta; tutto il resto segue senza un ordine preciso, quindi legga le schede e non le posizioni. I punteggi mostrati sono quelli di Google e rimandano alle recensioni da cui arrivano.",
-    "introP2": "La scheda larga sopra ogni griglia è uno spazio partner a pagamento ed è segnalata come pubblicità. Nient'altro in questa pagina è posizionamento pagato. Gli orari seguono la stagione ( in Lapponia \"chiuso per la stagione\" può voler dire mesi e non settimane ) quindi controlli la pagina del ristorante prima di mettersi in viaggio."
+    "introTitle": "Raggruppato per località, senza classifica",
+    "introP1": "Dove una località ha una scelta della redazione, questa apre con il suo contrassegno. Le altre seguono senza un ordine. I voti sono di Google e rimandano alle recensioni d'origine.",
+    "introP2": "La scheda larga sopra ogni località è uno spazio partner a pagamento ed è segnalata come pubblicità: nient'altro qui è a pagamento. Gli orari seguono la stagione e in Lapponia \"chiuso per la stagione\" può voler dire mesi. Controlla la pagina del ristorante prima di metterti in strada."
   },
   "cities": {
     "title": "Dove mangiare in Lapponia, paese per paese | LaplandDining",
@@ -344,16 +344,16 @@
     "title": "Alta cucina in Lapponia e dintorni | LaplandDining",
     "description": "I più votati della nostra selezione lappone, in ordine di valutazione Google: sale da pranzo, locande e tavoli nella kota, con citazioni e link ai menù.",
     "heroH1": "Alta cucina in Lapponia e dintorni",
-    "heroLeadTemplate": "I più votati della nostra selezione lappone: sale da pranzo, cucine nella natura e tavoli nella kota, diversi dei quali dentro piccoli hotel e locande. Selezionati tra {{count}} ristoranti, ordinati per valutazione Google, ciascuno abbinato a un hotel a distanza di passeggiata.",
+    "heroLeadTemplate": "I tavoli più votati della Lapponia, scelti tra {{count}} ristoranti: sale da pranzo, cucine di natura e fuochi di kota.",
     "metaDescriptionTemplate": "I più votati della nostra selezione, in ordine di valutazione Google: {{count}} ristoranti nella Lapponia finlandese e dintorni, con citazioni e menù.",
     "websiteLabel": "Sito web",
     "mapsLabel": "Mappa",
     "stayInTemplate": "Dormire a {{city}}",
     "readAllReviews": "Leggi tutte le {{count}} recensioni su Google →",
     "statsAvgRating": "Valutazione media su Google",
-    "introTitle": "Come è ordinata questa lista e che cosa non dice",
-    "introP1": "Le sale qui sotto sono ordinate per valutazione Google, non per chi ha pagato, e ogni valutazione rimanda alle recensioni da cui proviene, così può verificare da sé sia il numero sia la sua età. Quello che l'ordine non dice è l'affinità: un menu degustazione costruito attorno al cuore di renna e alle radici fermentate è una serata molto diversa da una sala che lavora classici nordici raffinati, anche a parità di punteggio.",
-    "introP2": "Legga la scheda, non la posizione. L'alta cucina lappone è stagionale per necessità, quindi i menu seguono ciò che bosco, lago e mandria riescono a dare, e la stessa cucina si legge diversamente a febbraio e ad agosto. Prenoti per tempo: sono sale piccole in paesi piccoli, diverse dentro hotel, e le settimane invernali si riempiono molto prima di quelle estive."
+    "introTitle": "L'ordine è un voto Google, non un posto a pagamento",
+    "introP1": "Ogni voto è di Google e rimanda alle recensioni da cui arriva, così vedi sia il punteggio sia quanto è vecchio. Lo stesso voto può però indicare due serate molto diverse: un menù degustazione e una curata sala d'albergo non sono la stessa cosa.",
+    "introP2": "I menù seguono la stagione, e la stessa cucina si legge diversamente a febbraio e ad agosto. Le sale sono piccole e l'inverno si riempie presto: prenota per tempo."
   },
   "midnightSunDining": {
     "title": "Cena sotto il sole di mezzanotte in Lapponia | LaplandDining",

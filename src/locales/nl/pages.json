@@ -134,9 +134,9 @@
     "editorsPick": "Keuze van de redactie",
     "menuLabel": "Menukaart",
     "menuLabelPdf": "Menukaart (PDF)",
-    "introTitle": "Hoe deze pagina is ingedeeld",
-    "introP1": "De restaurants staan gegroepeerd per bestemming, niet tegen elkaar afgezet. Heeft een plaats een redactiekeuze, dan staat die vooraan in het raster met een eigen label; alles daarna volgt zonder volgorde, dus lees de kaarten en niet de posities. De getoonde beoordelingen zijn die van Google en linken terug naar de recensies waar ze vandaan komen.",
-    "introP2": "De brede kaart boven elk raster is een betaalde partnerplek en is als advertentie aangeduid. Verder bevat deze pagina geen betaalde plaatsingen. Openingstijden bewegen mee met het seizoen: in Lapland kan ‘gesloten buiten het seizoen’ maanden betekenen in plaats van weken, dus kijk op de eigen pagina van het restaurant voordat u erheen rijdt."
+    "introTitle": "Gegroepeerd per plaats, niet gerangschikt",
+    "introP1": "Waar een plaats een redactiekeuze heeft, staat die vooraan met een eigen label. De rest volgt zonder volgorde. De beoordelingen komen van Google en verwijzen naar de recensies erachter.",
+    "introP2": "De brede kaart boven elke plaats is een betaalde partnerplek en is als advertentie gemarkeerd — verder is hier niets betaalde plaatsing. Openingstijden volgen het seizoen, en in Lapland kan \"gesloten voor het seizoen\" maanden betekenen. Kijk op de eigen pagina van het restaurant voordat u erheen rijdt."
   },
   "cities": {
     "title": "Waar u eet in Lapland, plaats voor plaats | LaplandDining",
@@ -344,16 +344,16 @@
     "title": "Fine dining in en rond Lapland | LaplandDining",
     "description": "De hoogst beoordeelde van onze Lapland-selectie, gesorteerd op Google-rating: eetzalen, wilderniskeukens en kotatafels, met citaten en menulinks.",
     "heroH1": "Fine dining in en rond Lapland",
-    "heroLeadTemplate": "De hoogst beoordeelde van onze Lapland-selectie: eetzalen, wilderniskeukens en kotatafels, meerdere ervan in kleine hotels en gasthuizen. Geselecteerd uit {{count}} restaurants, gesorteerd op Google-rating, elk gekoppeld aan een hotel op loopafstand.",
+    "heroLeadTemplate": "De best beoordeelde tafels van Lapland, gekozen uit {{count}} restaurants: eetzalen, wildernis­keukens en kotavuren.",
     "metaDescriptionTemplate": "De hoogst beoordeelde van onze selectie, gesorteerd op Google-rating: {{count}} restaurants in en rond Fins Lapland, met citaten en menulinks.",
     "websiteLabel": "Website",
     "mapsLabel": "Kaart",
     "stayInTemplate": "Verblijf in {{city}}",
     "readAllReviews": "Lees alle {{count}} reviews op Google →",
     "statsAvgRating": "Gemiddelde Google-score",
-    "introTitle": "Hoe deze lijst is geordend, en wat ze niet vertelt",
-    "introP1": "De zalen hieronder staan gesorteerd op hun Google-beoordeling, niet op wie betaald heeft, en elke beoordeling op deze pagina linkt terug naar de reviews waaruit ze komt, zodat u het cijfer én de ouderdom zelf kunt nagaan. Wat die volgorde niet vertelt, is of het bij u past: een menu rond rendierhart en gefermenteerde wortels is een heel andere avond dan een zaal met verfijnde Noordse klassiekers, ook bij dezelfde score.",
-    "introP2": "Lees de kaart, niet de rangorde. Fine dining in Lapland is noodgedwongen seizoensgebonden, de menu's volgen wat het bos, het meer en de kudde kunnen leveren, en dezelfde keuken leest in februari anders dan in augustus. Reserveer op tijd: dit zijn kleine zalen in kleine plaatsen, meerdere in hotels, en de winterweken zitten ruim voor de zomer vol."
+    "introTitle": "De volgorde is een Google-beoordeling, geen betaalde plek",
+    "introP1": "Elke beoordeling komt van Google en verwijst naar de recensies erachter, dus u ziet zowel het cijfer als hoe oud het is. Hetzelfde cijfer kan toch twee heel verschillende avonden betekenen: een proefmenu en een verzorgde hotelzaal zijn niet hetzelfde.",
+    "introP2": "De kaarten volgen het seizoen, dus dezelfde keuken leest anders in februari dan in augustus. De zalen zijn klein en de winter loopt vroeg vol — reserveer op tijd."
   },
   "midnightSunDining": {
     "title": "Dineren onder de middernachtzon in Lapland | LaplandDining",

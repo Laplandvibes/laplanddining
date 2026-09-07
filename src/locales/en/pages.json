@@ -134,9 +134,9 @@
     "editorsPick": "Editor's pick",
     "menuLabel": "Menu",
     "menuLabelPdf": "Menu (PDF)",
-    "introTitle": "How this page is arranged",
-    "introP1": "Restaurants are grouped by destination, not ranked against each other. Where a city has an editor’s pick it leads the grid with a marked chip; everything after it is in no particular order, so read the cards rather than the positions. The ratings shown are Google’s own and link back to the reviews they came from.",
-    "introP2": "The wide card above each city grid is a paid featured-partner slot and is labelled as advertising. Nothing else on this page is paid placement. Opening hours move with the season (in Lapland \"closed for the season\" can mean months rather than weeks) so check the restaurant’s own page before you drive out."
+    "introTitle": "Grouped by town, not ranked against each other",
+    "introP1": "Where a town has an editor's pick, it leads with a marked chip. The rest follow in no particular order. Ratings are Google's own and link to the reviews behind them.",
+    "introP2": "The wide card above each town is a paid partner slot and is labelled as advertising — nothing else here is paid placement. Opening hours follow the season, and in Lapland \"closed for the season\" can mean months. Check the restaurant's own page before you drive out."
   },
   "cities": {
     "title": "Where to Eat in Lapland, Town by Town | LaplandDining",
@@ -344,16 +344,16 @@
     "title": "Fine Dining in and around Lapland | LaplandDining",
     "description": "The highest-rated of our Lapland picks, sorted by Google rating: dining rooms, wilderness kitchens and kota tables, with review quotes and menu links.",
     "heroH1": "Fine Dining in and around Lapland",
-    "heroLeadTemplate": "The highest-rated of our Lapland picks: dining rooms, wilderness kitchens and kota tables, several of them inside small hotels and guesthouses. Curated from {{count}} restaurants, sorted by Google rating, each paired with a hotel within walking distance.",
+    "heroLeadTemplate": "The highest-rated tables in Lapland, picked from {{count}} restaurants: dining rooms, wilderness kitchens and kota fires.",
     "metaDescriptionTemplate": "The highest-rated of our Lapland picks, sorted by Google rating: {{count}} restaurants across Lapland and nearby, with review quotes and menu links.",
     "websiteLabel": "Website",
     "mapsLabel": "Maps",
     "stayInTemplate": "Stay in {{city}}",
     "readAllReviews": "Read all {{count}} reviews on Google →",
     "statsAvgRating": "Average Google rating",
-    "introTitle": "How this list is ordered, and what it leaves out",
-    "introP1": "The rooms below are sorted by their Google rating, not by who paid, and every rating on the page links back to the reviews it came from so you can check the number and its age yourself. What that ordering cannot tell you is fit: a tasting menu built around reindeer heart and fermented roots is a very different evening from a dining room doing refined Nordic classics, even when both sit at the same score.",
-    "introP2": "Read the card, not the rank. Lapland fine dining is seasonal by necessity, so menus shift with what the forest, the lake and the herd can supply, and the same kitchen reads differently in February and in August. Book ahead: these are small rooms in small towns, several of them inside hotels, and the winter weeks fill long before the tables do in summer."
+    "introTitle": "The order is a Google rating, not a paid slot",
+    "introP1": "Every rating here is Google's own and links to the reviews behind it, so you can check the score and how old it is. The same score can still mean two very different evenings: a tasting menu and a polished hotel dining room are not the same night out.",
+    "introP2": "Menus follow the season, so a kitchen reads differently in February and in August. The rooms are small and winter fills early — book ahead."
   },
   "midnightSunDining": {
     "title": "Midnight Sun Dining in Lapland | LaplandDining",

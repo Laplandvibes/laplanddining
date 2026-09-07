@@ -134,9 +134,9 @@
     "editorsPick": "Toimituksen valinta",
     "menuLabel": "Ruokalista",
     "menuLabelPdf": "Ruokalista (PDF)",
-    "introTitle": "Miten tämä sivu on järjestetty",
-    "introP1": "Ravintolat on ryhmitelty kohteittain, ei asetettu paremmuusjärjestykseen. Jos kaupungissa on toimituksen valinta, se on ruudukon ensimmäisenä omalla merkinnällään; sen jälkeen tulevat muut ilman järjestystä, joten lue kortit, älä sijoituksia. Näkyvät arviot ovat Googlen omia, ja jokaisesta pääsee niihin arvosteluihin, joista luku on peräisin.",
-    "introP2": "Jokaisen kaupungin ruudukon yläpuolella oleva leveä kortti on maksettu kumppanipaikka, joka on merkitty mainokseksi. Muuta maksettua näkyvyyttä tällä sivulla ei ole. Aukioloajat elävät kauden mukaan: Lapissa \"suljettu kaudeksi\" voi tarkoittaa kuukausia eikä viikkoja, joten tarkista ravintolan oma sivu ennen kuin ajat paikalle."
+    "introTitle": "Ryhmitelty paikkakunnittain, ei paremmuusjärjestykseen",
+    "introP1": "Jos paikkakunnalla on toimituksen valinta, se on ensimmäisenä omalla merkinnällään. Muut tulevat ilman järjestystä. Arviot ovat Googlen omia ja vievät niihin arvosteluihin, joista luku on peräisin.",
+    "introP2": "Jokaisen paikkakunnan yläpuolella oleva leveä kortti on maksettu kumppanipaikka ja merkitty mainokseksi — muuta maksettua tällä sivulla ei ole. Aukioloajat elävät kaudessa, ja Lapissa \"suljettu kaudeksi\" voi tarkoittaa kuukausia. Tarkista ravintolan oma sivu ennen kuin lähdet ajamaan."
   },
   "cities": {
     "title": "Missä syödä Lapissa — paikkakunnittain | LaplandDining",
@@ -344,16 +344,16 @@
     "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",
     "description": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: ruokasaleja, erämaakeittiöitä ja kotaravintoloita. Arviositaatit ja menulinkit.",
     "heroH1": "Fine dining Lapissa ja lähialueilla",
-    "heroLeadTemplate": "Valintojemme korkeimmin arvioidut paikat: ruokasaleja, erämaakeittiöitä ja kotaravintoloita, osa niistä pienten hotellien ja majatalojen sisällä. Käsin valittu {{count}} ravintolan joukosta, järjestetty Google-arvion mukaan, kunkin parina kävelymatkan päässä oleva hotelli.",
+    "heroLeadTemplate": "Lapin korkeimmin arvioidut pöydät {{count}} ravintolan joukosta: ruokasaleja, erämaakeittiöitä ja kotanuotioita.",
     "metaDescriptionTemplate": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: {{count}} ravintolaa Lapissa ja lähialueilla. Arviositaatit ja menulinkit.",
     "websiteLabel": "Nettisivut",
     "mapsLabel": "Kartta",
     "stayInTemplate": "Yövy {{city}}ssä",
     "readAllReviews": "Lue kaikki {{count}} arvostelua Googlessa →",
     "statsAvgRating": "Google-arvioiden keskiarvo",
-    "introTitle": "Miten tämä lista on järjestetty ja mitä se jättää kertomatta",
-    "introP1": "Alla olevat ravintolat on järjestetty Google-arvion mukaan, ei sen mukaan, kuka maksaa, ja jokainen arvio linkittää takaisin arvosteluihin, joista se on peräisin, jotta voit tarkistaa sekä luvun että sen iän itse. Järjestys ei kerro sopivuutta: poron sydämen ja hapatettujen juurten ympärille rakennettu maistelumenu on hyvin toisenlainen ilta kuin hiotun pohjoismaisen klassikon sali, vaikka pisteet olisivat samat.",
-    "introP2": "Lue kortti, älä sijoitusta. Lapin fine dining on pakosta kausiluontoista, joten menut liikkuvat sen mukaan, mitä metsä, järvi ja poro antavat, ja sama keittiö näyttää erilaiselta helmikuussa ja elokuussa. Varaa etukäteen: nämä ovat pieniä saleja pienissä kaupungeissa, useat hotellien sisällä, ja talviviikot täyttyvät paljon aikaisemmin kuin kesän pöydät."
+    "introTitle": "Järjestys on Googlen arvio, ei maksettu paikka",
+    "introP1": "Jokainen arvio on Googlen oma ja vie arvosteluihin, joten näet sekä pisteet että niiden iän. Sama pistemäärä voi silti tarkoittaa kahta hyvin eri iltaa: maistelumenu ja hiottu hotellin sali eivät ole sama juttu.",
+    "introP2": "Menut elävät kauden mukaan, joten sama keittiö on helmikuussa toinen kuin elokuussa. Salit ovat pieniä ja talvi täyttyy aikaisin — varaa ajoissa."
   },
   "midnightSunDining": {
     "title": "Illallinen yöttömän yön aikaan Lapissa | LaplandDining",
