@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build:nossg": "tsc -b && vite build",
-    "build": "node scripts/check-city-tags.mjs && node scripts/check-city-copy.mjs && node scripts/gen-sitemap.mjs && tsc -b && vite build && node scripts/assert-css-budget.mjs && node scripts/_prerender_routes.mjs --site=https://laplanddining.com --siteName=LaplandDining --twitter=@laplandvibes --defaultOg=/og.jpg?v=20260905 --routes=scripts/routes.json --addLocales=sv --crawlableBody --emit404",
+    "build": "node scripts/check-city-tags.mjs && node scripts/check-city-copy.mjs && node scripts/check-review-quotes.mjs && node scripts/check-image-fit.mjs && node scripts/gen-sitemap.mjs && tsc -b && vite build && node scripts/assert-css-budget.mjs && node scripts/_prerender_routes.mjs --site=https://laplanddining.com --siteName=LaplandDining --twitter=@laplandvibes --defaultOg=/og.jpg?v=20260905 --routes=scripts/routes.json --addLocales=sv --crawlableBody --emit404",
     "lint": "eslint .",
     "test": "node --test \"scripts/lib/*.test.mjs\"",
     "preview": "vite preview"

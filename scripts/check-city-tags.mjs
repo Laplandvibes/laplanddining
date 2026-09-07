@@ -125,9 +125,20 @@ if (gems.length === 0) {
  * `'<placeId>': { city: 'X' },` ja tiedosto on käsin ylläpidetty.
  */
 const overridesSrc = readFileSync(resolve(ROOT, 'src/data/restaurant-overrides.ts'), 'utf8');
+/**
+ * 🔴 Lohkorajat, ei `[^}]*?`. Kun merkintaan lisattiin curatedDescription
+ * (sisakkainen objekti), `[^}]*?` ei enaa paassyt sen yli city-kenttaan ja
+ * portti julisti Kekaleen korjauksen kadonneeksi vaikka se oli tiedostossa.
+ * Pilkotaan lahde merkintoihin ja luetaan kustakin oma city.
+ */
 const cityOverrides = new Map();
-for (const m of overridesSrc.matchAll(/'([A-Za-z0-9_\-]{20,})':\s*\{[^}]*?city:\s*'([^']+)'/g)) {
-  cityOverrides.set(m[1], m[2]);
+{
+  const osat = overridesSrc.split(/\n {2}'(?=[A-Za-z0-9_-]{20,}':)/);
+  for (const osa of osat) {
+    const id = osa.match(/^([A-Za-z0-9_-]{20,})':/);
+    const city = osa.match(/city:\s*'([^']+)'/);
+    if (id && city) cityOverrides.set(id[1], city[1]);
+  }
 }
 
 /**

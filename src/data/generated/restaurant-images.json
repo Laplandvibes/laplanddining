@@ -704,16 +704,6 @@
     "height": 449,
     "generatedAt": "2026-08-10"
   },
-  "saariselka-laanilan-kievari": {
-    "src": "/images/restaurants/saariselka-laanilan-kievari.webp",
-    "kind": "partner",
-    "credit": "laanilankievari.fi",
-    "sourceUrl": "https://www.laanilankievari.fi/en",
-    "imageUrl": "https://static.wixstatic.com/media/3b6469_e10eb040920b44a1812d3fc231bffeb0~mv2.png",
-    "width": 500,
-    "height": 500,
-    "fetchedAt": "2026-08-10"
-  },
   "rovaniemi-all-about-salmon": {
     "src": "/images/restaurants/rovaniemi-all-about-salmon.webp",
     "kind": "partner",

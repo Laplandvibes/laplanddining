@@ -31,9 +31,19 @@ const maps = JSON.parse(
 const ovSrc = readFileSync(resolve(ROOT, 'src/data/restaurant-overrides.ts'), 'utf8');
 const gemSrc = readFileSync(resolve(ROOT, 'src/data/restaurant-gems.ts'), 'utf8');
 
+/**
+ * 🔴 Lohkorajat, ei `[^}]*?`. Kun merkintään lisättiin curatedDescription
+ * (sisäkkäinen objekti), `[^}]*?` ei enää päässyt sen yli city-kenttään.
+ * Sama korjaus kuin check-city-tags.mjs:ssä.
+ */
 const cityOverride = new Map();
-for (const m of ovSrc.matchAll(/'([A-Za-z0-9_\-]{20,})':\s*\{[^}]*?city:\s*'([^']+)'/g)) {
-  cityOverride.set(m[1], m[2]);
+{
+  const osat = ovSrc.split(/\n {2}'(?=[A-Za-z0-9_-]{20,}':)/);
+  for (const osa of osat) {
+    const id = osa.match(/^([A-Za-z0-9_-]{20,})':/);
+    const city = osa.match(/city:\s*'([^']+)'/);
+    if (id && city) cityOverride.set(id[1], city[1]);
+  }
 }
 const closed = new Set();
 for (const m of ovSrc.matchAll(/'([A-Za-z0-9_\-]{20,})':\s*\{[^}]*?permanentlyClosed:\s*true/g)) {

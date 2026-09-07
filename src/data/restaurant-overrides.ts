@@ -83,7 +83,21 @@ export const restaurantOverrides: Record<string, Override> = {
   // www että apex), mutta /lounaslista/ vastaa ja on oikean ravintolan sivu.
   // Verkkosivulinkki pois; ruokalistalinkki jää, jottei kaksi nappia veisi
   // samaan osoitteeseen.
-  'ChIJ8QV9vzJL1UUR09TOcEEMzhg': { website: undefined },
+  'ChIJ8QV9vzJL1UUR09TOcEEMzhg': {
+    curatedDescription: {
+      en: 'Down at the Kemi harbour, where the menu keeps to what the sea and the season give: fish or meat, cooked plainly.',
+      fi: 'Kemin satamassa, jossa lista pitäytyy siinä mitä meri ja kausi antavat: kalaa tai lihaa, koruttomasti tehtynä.',
+      de: 'Unten am Hafen von Kemi, wo sich die Karte an das hält, was Meer und Saison hergeben: Fisch oder Fleisch, schlicht zubereitet.',
+      ja: 'ケミの港にある店。海と季節が与えるものに絞ったメニューで、魚か肉かを飾らずに仕上げます。',
+      es: 'Abajo, en el puerto de Kemi, donde la carta se ciñe a lo que dan el mar y la temporada: pescado o carne, cocinados sin adornos.',
+      'pt-BR': 'Lá embaixo no porto de Kemi, onde o cardápio se atém ao que o mar e a estação dão: peixe ou carne, preparados sem firulas.',
+      'zh-CN': '位于凯米港口，菜单只跟着大海与时令走：鱼或肉，做法朴素。',
+      ko: '케미 항구에 자리한 곳. 바다와 계절이 내주는 것에 메뉴를 맞춰, 생선이나 고기를 꾸밈없이 냅니다.',
+      fr: 'En bas, au port de Kemi, où la carte s\'en tient à ce que donnent la mer et la saison : poisson ou viande, cuisinés simplement.',
+      it: 'Giù al porto di Kemi, dove il menù si attiene a ciò che danno il mare e la stagione: pesce o carne, cucinati con semplicità.',
+      nl: 'Beneden in de haven van Kemi, waar de kaart zich houdt aan wat de zee en het seizoen geven: vis of vlees, eenvoudig bereid.',
+      sv: 'Nere i Kemi hamn, där menyn håller sig till vad havet och säsongen ger: fisk eller kött, enkelt tillagat.',
+    }, website: undefined },
 
   // Skiknööli — Luosto. Sama kuollut luosto.fi kuin Luoston Hovilla.
   'ChIJcTDrKGfPLEQRi7X4v_876hc': { website: undefined },
@@ -484,10 +498,176 @@ export const restaurantOverrides: Record<string, Override> = {
   'ChIJI6moDwBN0kURREHahNWYqmg': { city: 'Levi' },
 
   // Kekäle — Levin keskusta. Leville 0,0 km, Kittilään 17,2 km.
-  'ChIJ15wJlt1N0kUR0NXQXtWz7qE': { city: 'Levi' },
+  'ChIJ15wJlt1N0kUR0NXQXtWz7qE': {
+    curatedDescription: {
+      en: 'A small Levi kitchen that keeps the menu short. Its 4.6 is among the highest ratings on our Levi list.',
+      fi: 'Pieni levillinen keittiö, joka pitää ruokalistan lyhyenä. 4,6 on Levin listamme korkeimpia arvioita.',
+      de: 'Eine kleine Küche in Levi, die die Karte kurz hält. Die 4,6 gehört zu den höchsten Bewertungen unserer Levi-Liste.',
+      ja: 'メニューを絞ったレヴィの小さな厨房。4.6 は当サイトのレヴィ一覧でも上位の評価です。',
+      es: 'Una cocina pequeña de Levi que mantiene la carta corta. Su 4,6 está entre las notas más altas de nuestra lista de Levi.',
+      'pt-BR': 'Uma cozinha pequena em Levi que mantém o cardápio curto. Seu 4,6 está entre as melhores notas da nossa lista de Levi.',
+      'zh-CN': '莱维的一家小厨房，菜单刻意做得简短。4.6 分在我们的莱维名单里名列前茅。',
+      ko: '메뉴를 짧게 유지하는 레비의 작은 주방. 4.6은 저희 레비 목록에서 가장 높은 평점에 속합니다.',
+      fr: 'Une petite cuisine de Levi qui garde une carte courte. Son 4,6 compte parmi les meilleures notes de notre liste Levi.',
+      it: 'Una piccola cucina di Levi che tiene il menù corto. Il suo 4,6 è tra i voti più alti della nostra lista di Levi.',
+      nl: 'Een kleine keuken in Levi die de kaart kort houdt. De 4,6 hoort bij de hoogste beoordelingen op onze Levi-lijst.',
+      sv: 'Ett litet kök i Levi som håller menyn kort. Betyget 4,6 är bland de högsta på vår Levi-lista.',
+    }, city: 'Levi' },
 
   // Ravintola RuusuSuola — Jäämerentie 28, Sodankylä. Luostolle 35 km,
   // Sodankylään 0 km. Tämä jäi osoitevertailulta huomaamatta (Luoston rivien
   // postiosoite ON Sodankylä), ja vain koordinaatti paljasti sen.
   'ChIJyXxrB9wr00URG1jR2vpkkl0': { city: 'Sodankylä' },
+
+  // Ristorante Renna — Levi
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'We ordered spaghetti carbonara (our mistake, perhaps)'
+  'ChIJ26X0QFBN0kURov4U2qLMjbo': {
+    curatedDescription: {
+      en: 'Italian cooking a street back from the Levi slopes, with reindeer worked into the pasta alongside the classics.',
+      fi: 'Italialaista Levin rinteiden takana, ja poro on päässyt pastan sekaan klassikoiden rinnalle.',
+      de: 'Italienische Küche eine Straße hinter den Pisten von Levi, mit Rentier in der Pasta neben den Klassikern.',
+      ja: 'レヴィのゲレンデから一本入ったイタリア料理。定番に加えて、パスタにトナカイが使われています。',
+      es: 'Cocina italiana a una calle de las pistas de Levi, con reno incorporado a la pasta junto a los clásicos.',
+      'pt-BR': 'Cozinha italiana a uma rua das pistas de Levi, com rena incorporada à massa ao lado dos clássicos.',
+      'zh-CN': '距莱维雪道一街之隔的意大利菜，经典菜式之外，意面里也用上了驯鹿肉。',
+      ko: '레비 슬로프에서 한 블록 안쪽의 이탈리아 요리. 클래식 메뉴와 함께 파스타에 순록이 들어갑니다.',
+      fr: 'Cuisine italienne à une rue des pistes de Levi, avec du renne glissé dans les pâtes à côté des classiques.',
+      it: 'Cucina italiana a una strada dalle piste di Levi, con la renna nella pasta accanto ai classici.',
+      nl: 'Italiaanse keuken een straat achter de pistes van Levi, met rendier in de pasta naast de klassiekers.',
+      sv: 'Italienskt ett kvarter bakom Levis backar, med ren i pastan vid sidan av klassikerna.',
+    },
+  },
+
+  // Bistro & Cafe Kuukkeli — Saariselkä
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'very cozy with a fake fireplace'
+  'ChIJvziMW5JDzUURl3j85YeWwDU': {
+    curatedDescription: {
+      en: 'A village bistro and café on Saariseläntie, open through the day for a coffee, a bowl of soup or a full plate.',
+      fi: 'Kylän bistro ja kahvila Saariseläntiellä, auki pitkin päivää kahville, keitolle tai kunnon annokselle.',
+      de: 'Bistro und Café des Dorfes an der Saariseläntie, den Tag über offen für einen Kaffee, eine Suppe oder einen ganzen Teller.',
+      ja: 'サーリセルカ通りにある村のビストロ兼カフェ。日中ずっと開いていて、コーヒーでもスープでも一皿でも。',
+      es: 'El bistró y café del pueblo en Saariseläntie, abierto todo el día para un café, un plato de sopa o una comida completa.',
+      'pt-BR': 'O bistrô e café da vila na Saariseläntie, aberto o dia todo para um café, uma sopa ou um prato completo.',
+      'zh-CN': '萨里塞尔卡大街上的村中小馆兼咖啡馆，白天一直营业，喝杯咖啡、来碗汤或吃上一整份都行。',
+      ko: '사리셀캐 거리에 있는 마을 비스트로 겸 카페. 커피 한 잔이든 수프든 제대로 된 한 접시든, 낮 동안 계속 엽니다.',
+      fr: 'Le bistro-café du village sur Saariseläntie, ouvert toute la journée pour un café, une soupe ou une assiette complète.',
+      it: 'Il bistrò e caffè del villaggio su Saariseläntie, aperto tutto il giorno per un caffè, una zuppa o un piatto completo.',
+      nl: 'De bistro annex koffiezaak van het dorp aan de Saariseläntie, de hele dag open voor koffie, soep of een volledig bord.',
+      sv: 'Byns bistro och kafé vid Saariseläntie, öppet dagen igenom för en kaffe, en soppa eller en hel tallrik.',
+    },
+  },
+
+  // Ravintola Popolo — Pyhätunturi
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'the quality of pizza does not equal the price' (Vesan huomaama)
+  'ChIJCYByGKbrLEQRkdgTIiYbECI': {
+    curatedDescription: {
+      en: 'Pizza and pasta in the Pyhä resort centre, at the foot of the fell and a short walk from the national park gate.',
+      fi: 'Pizzaa ja pastaa Pyhän keskuksessa, tunturin juurella ja lyhyen kävelyn päässä kansallispuiston portilta.',
+      de: 'Pizza und Pasta im Zentrum von Pyhä, am Fuß des Fjells und wenige Schritte vom Tor des Nationalparks.',
+      ja: 'ピュハの中心部にあるピザとパスタの店。フィエルドのふもと、国立公園の入口からも歩いてすぐです。',
+      es: 'Pizza y pasta en el centro de la estación de Pyhä, al pie del fell y a un paseo corto de la puerta del parque nacional.',
+      'pt-BR': 'Pizza e massa no centro da estação de Pyhä, ao pé do fell e a uma curta caminhada da entrada do parque nacional.',
+      'zh-CN': '皮哈度假区中心的披萨与意面，就在山脚下，离国家公园入口只需步行片刻。',
+      ko: '퓌하 리조트 중심가의 피자와 파스타. 산 기슭에 있고 국립공원 입구에서 걸어서 금방입니다.',
+      fr: 'Pizzas et pâtes au centre de la station de Pyhä, au pied de la fjeld et à quelques pas de l\'entrée du parc national.',
+      it: 'Pizza e pasta nel centro della stazione di Pyhä, ai piedi della fjeld e a due passi dall\'ingresso del parco nazionale.',
+      nl: 'Pizza en pasta in het centrum van Pyhä, aan de voet van de fjeld en op loopafstand van de poort van het nationaal park.',
+      sv: 'Pizza och pasta i Pyhäs centrum, vid fjällets fot och en kort promenad från nationalparkens port.',
+    },
+  },
+
+  // Keloravintola Lapland Hotels Luostotunturi — Luosto
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'The dissatisfaction comes from the staff, they were super slow... didn't care'
+  'ChIJPx28EWHPLEQRiwFudZhTkdw': {
+    curatedDescription: {
+      en: 'The kelo-timber dining room of the Luosto hotel, serving Lappish plates under a log roof at the foot of the fell.',
+      fi: 'Luoston hotellin keloravintola, jossa lappilaiset annokset tarjoillaan hirsikaton alla tunturin juurella.',
+      de: 'Der Kelo-Speisesaal des Hotels in Luosto, wo lappländische Teller unter einem Blockdach am Fuß des Fjells serviert werden.',
+      ja: 'ルオストのホテルにあるケロ材の食堂。丸太の屋根の下、フィエルドのふもとでラップランドの皿が供されます。',
+      es: 'El comedor de madera de kelo del hotel de Luosto, donde los platos lapones se sirven bajo un techo de troncos al pie del fell.',
+      'pt-BR': 'O salão de madeira kelo do hotel de Luosto, onde os pratos lapões são servidos sob um teto de troncos ao pé do fell.',
+      'zh-CN': '卢奥斯托酒店的枯木餐厅，在原木屋顶下、山脚旁端上拉普兰菜式。',
+      ko: '루오스토 호텔의 켈로 목재 식당. 통나무 지붕 아래, 산기슭에서 라플란드식 요리를 냅니다.',
+      fr: 'La salle en bois de kelo de l\'hôtel de Luosto, où les assiettes lapones sont servies sous un toit de rondins, au pied de la fjeld.',
+      it: 'La sala in legno di kelo dell\'hotel di Luosto, dove i piatti lapponi arrivano sotto un tetto di tronchi ai piedi della fjeld.',
+      nl: 'De kelohouten eetzaal van het hotel in Luosto, waar Laplandse gerechten onder een blokhutdak aan de voet van de fjeld worden geserveerd.',
+      sv: 'Kelorestaurangen på hotellet i Luosto, där lappländska rätter serveras under timmertak vid fjällets fot.',
+    },
+  },
+
+  // Mirvan lounas ja kahvila — Muonio
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'the ambiente looks like from the 80s but it's cozy'
+  'ChIJk3HLJwDV00URhnCeC0qKpDk': {
+    curatedDescription: {
+      en: 'A roadside lunch café on the Muonio road: the kind of stop that feeds locals at noon and travellers heading north.',
+      fi: 'Tienvarren lounaskahvila Muonion tiellä: se pysähdys, joka ruokkii paikalliset puolelta päivin ja pohjoiseen menijät matkalla.',
+      de: 'Ein Mittagscafé an der Straße bei Muonio: die Art Halt, die mittags die Einheimischen und unterwegs die Reisenden nach Norden versorgt.',
+      ja: 'ムオニオの街道沿いにあるランチカフェ。昼どきは地元の人を、道中は北へ向かう旅行者を満たす類いの休憩所です。',
+      es: 'Un café de menú al borde de la carretera en Muonio: la clase de parada que da de comer a los vecinos al mediodía y a quienes suben al norte.',
+      'pt-BR': 'Um café de almoço à beira da estrada em Muonio: o tipo de parada que alimenta os moradores ao meio-dia e quem segue para o norte.',
+      'zh-CN': '穆奥尼奥公路边的午餐咖啡馆：正午喂饱本地人、路上喂饱北行旅人的那种停靠点。',
+      ko: '무오니오 도로변의 점심 카페. 정오에는 동네 사람을, 길에서는 북쪽으로 가는 여행자를 먹이는 그런 쉼터입니다.',
+      fr: 'Un café-déjeuner au bord de la route à Muonio : le genre d\'arrêt qui nourrit les habitants à midi et les voyageurs qui montent vers le nord.',
+      it: 'Un caffè con pranzo sulla strada di Muonio: il tipo di sosta che sfama i residenti a mezzogiorno e chi viaggia verso nord.',
+      nl: 'Een lunchcafé langs de weg bij Muonio: het soort stop dat de buurt om twaalf uur voedt en de reizigers op weg naar het noorden.',
+      sv: 'Ett lunchkafé vid vägen i Muonio: den sortens stopp som mättar lokalborna mitt på dagen och resenärerna på väg norrut.',
+    },
+  },
+
+  // Ravintola Talonpöytä Kuusamo
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'the fish... wasn't quite what I had expected'
+  'ChIJqRi5sfpPKUQRrStja_VqJPE': {
+    curatedDescription: {
+      en: 'A kitchen in Kuusamo town serving reindeer and local fish — the most-reviewed table away from the Ruka slopes.',
+      fi: 'Kuusamon kirkonkylän keittiö, jossa on poroa ja paikallista kalaa — kirkonkylän eniten arvioitu pöytä Rukan rinteiden ulkopuolella.',
+      de: 'Eine Küche im Ort Kuusamo mit Rentier und heimischem Fisch — der meistbewertete Tisch abseits der Pisten von Ruka.',
+      ja: 'クーサモ市街の厨房で、トナカイと地元の魚を出します。ルカのゲレンデを離れた場所では最もレビューの多い一軒です。',
+      es: 'Una cocina en el pueblo de Kuusamo con reno y pescado local: la mesa más reseñada fuera de las pistas de Ruka.',
+      'pt-BR': 'Uma cozinha na cidade de Kuusamo com rena e peixe local — a mesa mais avaliada fora das pistas de Ruka.',
+      'zh-CN': '库萨莫镇上的厨房，供应驯鹿与本地鱼——鲁卡雪道之外评论最多的一桌。',
+      ko: '쿠사모 시내의 주방으로 순록과 지역 생선을 냅니다. 루카 슬로프를 벗어난 곳에서는 리뷰가 가장 많은 곳입니다.',
+      fr: 'Une cuisine au bourg de Kuusamo, renne et poisson local — la table la plus commentée en dehors des pistes de Ruka.',
+      it: 'Una cucina nel paese di Kuusamo con renna e pesce locale — il tavolo più recensito fuori dalle piste di Ruka.',
+      nl: 'Een keuken in het dorp Kuusamo met rendier en lokale vis — de meest beoordeelde tafel buiten de pistes van Ruka.',
+      sv: 'Ett kök i Kuusamo tätort med ren och lokal fisk — det mest recenserade bordet utanför Rukas backar.',
+    },
+  },
+
+  // Rosa Pizza Kebab — Kemijärvi
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'they didn't really put that much reindeer meat on my pizza'
+  'ChIJpxh72T6FLEQRLYeMHroKQAs': {
+    curatedDescription: {
+      en: 'An everyday pizza and kebab place on Vapaudenkatu, next door to Susa\'s Bistro in the Kemijärvi centre.',
+      fi: 'Arjen pizza- ja kebabpaikka Vapaudenkadulla, Susa\'s Bistron naapurissa Kemijärven keskustassa.',
+      de: 'Ein alltäglicher Pizza- und Kebabladen an der Vapaudenkatu, direkt neben Susa\'s Bistro im Zentrum von Kemijärvi.',
+      ja: 'ヴァパウデンカトゥ通りの日常づかいのピザ・ケバブ店。ケミヤルヴィ中心部で Susa\'s Bistro の隣にあります。',
+      es: 'Un sitio cotidiano de pizza y kebab en Vapaudenkatu, puerta con puerta con Susa\'s Bistro en el centro de Kemijärvi.',
+      'pt-BR': 'Um lugar cotidiano de pizza e kebab na Vapaudenkatu, ao lado do Susa\'s Bistro no centro de Kemijärvi.',
+      'zh-CN': '瓦帕乌登卡图街上的日常披萨与烤肉店，就在凯米耶尔维市中心 Susa\'s Bistro 隔壁。',
+      ko: '바파우덴카투의 일상적인 피자·케밥집. 케미얘르비 중심가에서 Susa\'s Bistro 옆에 있습니다.',
+      fr: 'Une adresse de pizzas et kebabs du quotidien sur Vapaudenkatu, voisine de Susa\'s Bistro au centre de Kemijärvi.',
+      it: 'Un posto quotidiano di pizza e kebab in Vapaudenkatu, accanto a Susa\'s Bistro nel centro di Kemijärvi.',
+      nl: 'Een alledaagse pizza- en kebabzaak aan de Vapaudenkatu, naast Susa\'s Bistro in het centrum van Kemijärvi.',
+      sv: 'Ett vardagligt pizza- och kebabställe på Vapaudenkatu, granne med Susa\'s Bistro i Kemijärvis centrum.',
+    },
+  },
+
+  // Leilani Restaurant — Haparanda
+  // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti oli rikkinäinen katkelma: 'The review had talked about their pizza.'
+  'ChIJ-x6DqKBH1UURUnpP9mAQEhs': {
+    curatedDescription: {
+      en: 'A Haparanda restaurant a couple of streets from the square, on the Swedish side of the Tornio–Haparanda centre.',
+      fi: 'Haaparantalainen ravintola parin kadun päässä torilta, Tornion ja Haaparannan yhteisen keskustan Ruotsin puolella.',
+      de: 'Ein Restaurant in Haparanda, ein paar Straßen vom Marktplatz, auf der schwedischen Seite des gemeinsamen Zentrums von Tornio und Haparanda.',
+      ja: '広場から数ブロックのハパランダのレストラン。トルニオとハパランダが共有する中心部の、スウェーデン側にあります。',
+      es: 'Un restaurante de Haparanda a un par de calles de la plaza, en el lado sueco del centro común de Tornio y Haparanda.',
+      'pt-BR': 'Um restaurante em Haparanda a duas ruas da praça, no lado sueco do centro comum de Tornio e Haparanda.',
+      'zh-CN': '距广场两条街的哈帕兰达餐厅，位于托尔尼奥与哈帕兰达共用市中心的瑞典一侧。',
+      ko: '광장에서 두어 블록 떨어진 하파란다의 레스토랑. 토르니오와 하파란다가 공유하는 중심가의 스웨덴 쪽에 있습니다.',
+      fr: 'Un restaurant de Haparanda à deux rues de la place, côté suédois du centre commun de Tornio et Haparanda.',
+      it: 'Un ristorante di Haparanda a un paio di strade dalla piazza, sul lato svedese del centro comune di Tornio e Haparanda.',
+      nl: 'Een restaurant in Haparanda op een paar straten van het plein, aan de Zweedse kant van het gedeelde centrum van Tornio en Haparanda.',
+      sv: 'En restaurang i Haparanda ett par kvarter från torget, på den svenska sidan av Torneå–Haparandas gemensamma centrum.',
+    },
+  },
 };

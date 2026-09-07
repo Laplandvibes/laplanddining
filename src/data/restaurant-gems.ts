@@ -21,7 +21,6 @@ export const restaurantGems: Restaurant[] = [
     openingHours: ['Mon–Sat: 4:00 – 10:00 PM', 'Sun: Closed', '(Kitchen pauses May–June)'],
     priceRange: '€€€',
     slug: 'saariselka-laanilan-kievari',
-    photo: '/images/restaurants/saariselka-laanilan-kievari.jpg',
     lastVerified: '2026-06-14',
     topPick: true,
     partnership: 'editorial',
