@@ -153,7 +153,7 @@ export default function CityPage() {
           otsikko ei jää kiinteän navin alle matalilla ruuduilla. */}
       <section className="relative min-h-[46svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={city.img}
+          src={city.photo ?? city.img}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
@@ -161,6 +161,14 @@ export default function CityPage() {
           decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-night/75 via-night/65 to-night" />
+        {/* Kuvateksti vain omalle valokuvalle. Se nimeaa TARKAN paikan eika
+            kaupunkisivun otsikkoa: Kuusamon sivu kattaa myos Rukan 22 km:n
+            paassa (Vesa 7.9.: "riistaravintola on rukalla, ei kuusamossa"). */}
+        {city.photo && city.photoCredit && (
+          <p className="absolute bottom-3 right-4 z-10 text-[11px] text-white/65 tracking-wide">
+            Kuva: LaplandVibes · {city.photoCredit}
+          </p>
+        )}
         <div className="relative z-10 max-w-4xl mx-auto px-5 py-20 text-center">
           <p className="inline-flex items-center gap-2 text-amber text-[11px] font-bold uppercase tracking-[0.25em] mb-4">
             <MapPin size={13} /> {t('cities.shared.kicker', { defaultValue: 'Where to eat' })}

@@ -108,7 +108,7 @@ export default function Cities() {
                 className="group relative rounded-2xl overflow-hidden h-56 no-underline shadow-[0_15px_35px_-12px_rgba(0,0,0,0.55)] hover:-translate-y-0.5 transition-all duration-300"
               >
                 <img
-                  src={city.img}
+                  src={city.photo ?? city.img}
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
