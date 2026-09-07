@@ -11,7 +11,14 @@ const NAV_KEYS = [
   { key: 'restaurants', basePath: '/restaurants' },
   { key: 'cities', basePath: '/cities' },
   { key: 'fineDining', basePath: '/fine-dining' },
-  { key: 'midnightSun', basePath: '/midnight-sun-dining' },
+  // 🔴 Midnight Sun EI ole navissa (7.9.2026). Kaupunkisivujen myötä navissa oli
+  // seitsemän kohtaa, ja "Keskiyön aurinko" sekä "Paikallinen ruoka" taittuivat
+  // kahdelle riville. Poistettava valittiin GSC:n 3 kk datasta, ei mutulla:
+  //   /restaurants  6 078 näyttöä · Local Food ~740 · Food Story ~494
+  //   Fine Dining ~344 · Midnight Sun ~110 (1 klikki)
+  // Sivu itse säilyy, on sitemapissa ja linkitetään footerin pillarLinkeistä
+  // jokaisella sivulla — vain nav-linkki poistui.
+  // { key: 'midnightSun', basePath: '/midnight-sun-dining' },
   { key: 'foodHistory', basePath: '/food-history' },
   { key: 'localFood', basePath: '/local-food' },
   { key: 'about', basePath: '/about' },
