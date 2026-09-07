@@ -63,7 +63,7 @@ export default function FineDining() {
       </script>
 
       {/* Hero */}
-      <section className="relative min-h-[60svh] flex items-center justify-center px-4 sm:px-6 pb-24 md:pb-28 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+      <section className="relative min-h-[52svh] flex items-center justify-center px-4 sm:px-6 pb-20 md:pb-24 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
           src={DINING.fineDining}
           alt="Fine dining in Lapland"
@@ -115,18 +115,26 @@ export default function FineDining() {
 
       {/* Editorial lead — the same pages.json block routes.json harvests through
           this route's jsonKey, so reader and crawler get one text in one language. */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-12 bg-night">
+      <section className="px-4 sm:px-6 lg:px-8 pt-12 pb-4 bg-gradient-to-b from-night via-night-light/40 to-night">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl sm:text-4xl text-cream mb-4">{t('fineDining.introTitle')}</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-cream mb-4">{t('fineDining.introTitle')}</h2>
           <p className="text-cream/75 text-sm sm:text-base leading-relaxed mb-4">{t('fineDining.introP1')}</p>
           <p className="text-cream/75 text-sm sm:text-base leading-relaxed">{t('fineDining.introP2')}</p>
         </div>
       </section>
 
       {/* Fine dining grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-night">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Korttiruudukko. Tausta ei ole litteä musta: pystygradientti + hillitty
+          lämmin hehku antavat syvyyttä, jota vasten kermakortit nousevat esiin.
+          Vesa 7.9.: "lähtisin vähän rikkoon tätä sivun tummuutta pois." Pohjaväri
+          pysyy (brandisääntö), mutta pinta ei ole enää yksi taso. */}
+      <section className="relative py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-night via-night-light/55 to-night">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(60%_45%_at_50%_0%,rgba(245,158,11,0.10),transparent_70%)]"
+        />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
             {fineDining.map((r) => {
               const body = composeCardBody(r, locale);
               const cuisine = cuisineLabel(r, locale);
@@ -134,9 +142,12 @@ export default function FineDining() {
               return (
                 <article
                   key={r.googlePlaceId}
-                  className="group bg-cream rounded-2xl overflow-hidden shadow-[0_25px_55px_-20px_rgba(0,0,0,0.65)] hover:shadow-[0_35px_70px_-20px_rgba(0,0,0,0.8)] hover:-translate-y-0.5 transition-all duration-500"
+                  className="group relative bg-cream rounded-3xl overflow-hidden ring-1 ring-white/10
+                    shadow-[0_1px_2px_rgba(0,0,0,0.5),0_16px_32px_-12px_rgba(0,0,0,0.65),0_48px_88px_-36px_rgba(0,0,0,0.75)]
+                    hover:shadow-[0_2px_4px_rgba(0,0,0,0.55),0_24px_44px_-14px_rgba(0,0,0,0.7),0_64px_110px_-40px_rgba(0,0,0,0.8)]
+                    hover:-translate-y-1 transition-all duration-500"
                 >
-                  <div className="relative h-60 overflow-hidden">
+                  <div className="relative h-64 sm:h-72 overflow-hidden">
                     {r.photo ? (
                       <img
                         src={r.photo}
@@ -180,8 +191,8 @@ export default function FineDining() {
                     )}
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="font-heading text-2xl tracking-wide text-warm-ink leading-tight mb-1">{r.name}</h3>
+                  <div className="p-7 sm:p-8">
+                    <h3 className="font-heading text-2xl sm:text-[1.7rem] tracking-wide text-warm-ink leading-tight mb-1.5">{r.name}</h3>
                     {(cuisine || r.priceRange) && (
                       <p className="text-xs text-amber-deep font-semibold uppercase tracking-[0.18em] mb-3">
                         {cuisine}
