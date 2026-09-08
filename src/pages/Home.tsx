@@ -111,15 +111,26 @@ export default function Home() {
       {/* Pääkumppaninauha on nyt App-tasolla navin alla (SponsorStrip) —
           ei enää erillistä banneria tähän. */}
 
-      {/* ── Toimituksen valinnat — ruokaa heti heron alle (v2.0, Vesa 3.8.:
-          "koko etusivu on kaikkea muuta kuin ruokaa"). Ennen tätä ensimmäinen
-          oikea ravintola tuli vastaan vasta ~2 700 px kohdalla, mainospaikkojen
-          ja GYG-kategorianappien jälkeen. Nyt näytöllä 2 on kuusi käsin
-          valittua ravintolaa. */}
-      <EditorsPicks />
+      {/* ── Cuisine Highlights — alustus ennen ravintolanostoja. Kolme
+          pilarikorttia, jokainen linkittää omalle syventävälle sivulleen.
+          ─────────────────────────────────────────────────────────────
+          🔴 TÄMÄ ON HERON ALLA TARKOITUKSELLA, ÄLÄ SIIRRÄ TOIMITUKSEN
+          VALINTOJA TAKAISIN TÄHÄN. Vesa 8.9.2026: *"pitäisikö tässä etusivulla
+          kuitenkin olla vähän jotain alustusta ensin, heti tulee 6 iso
+          ravintolamainosta? ne voisi olla vähän syvemmällä, jotta tää alue
+          säilyy joskus aidosti maksaville asiakkaille."*
 
-      {/* ── Cuisine Highlights — kolme pilarikorttia, jokainen linkittää
-          omalle syventävälle sivulleen ─────────────────────────────── */}
+          Tämä KUMOAA 3.8.2026 järjestyksen (*"koko etusivu on kaikkea muuta
+          kuin ruokaa"*), jolloin `EditorsPicks` nostettiin heti heron alle.
+          Se ongelma ei palaa: keittiön kohokohdat OVAT ruokaa ja ne alkavat
+          heti hero jälkeen, eli lukija näkee ruokaa yhä ruudulla 2 — vain
+          nimetyt ravintolat siirtyivät yhden osion alemmas.
+
+          🔴🔴 Paikkaa EI merkitä mainospaikaksi millään tavalla. Vesa samassa
+          viestissä: *"mutta ei merkitä mitenkään, ei siis aiheuteta yrittäjille
+          tunnetta että oot etusivulla ilmatteeksi, ei kannata maksaa."* Eli ei
+          "mainospaikka vapaana" -merkintää eikä muutakaan vihjettä siitä että
+          tila on myytävissä. */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-night/95 aurora-glow">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -166,6 +177,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Toimituksen valinnat — kuusi käsin valittua ravintolaa.
+          Siirretty yhden osion alemmas 8.9.2026 (ks. perustelu Cuisine
+          Highlightsin yltä). Ruokaa on silti näytöllä 2, koska keittiön
+          kohokohdat tulevat heti heron jälkeen. */}
+      <EditorsPicks />
 
       {/* ── Midnight Sun Dining (kesä-sääntö) ─────────────────────── */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">

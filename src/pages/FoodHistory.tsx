@@ -254,10 +254,17 @@ export default function FoodHistory() {
                         <dl className="grid grid-cols-[auto_1fr] border-t border-white/12">
                         {figures.map((f, j) => (
                           <Fragment key={j}>
-                            <dt className="font-heading text-amber text-2xl sm:text-3xl leading-none text-right pr-5 sm:pr-8 py-3.5 border-b border-white/12">
+                            {/* 🔴 EI `self-center` dd:lle. Se estää solua venymästä
+                                rivin korkeuteen, jolloin sen alaviiva jää 4 px
+                                ylemmäs kuin arvon (mitattu: dd bottom 2178,7 vs
+                                dt 2182,7) ja hiusviiva pomppaa sarakkeiden
+                                rajalla. Vesa 8.9.: "nuo m viivat pomppii".
+                                Molemmat solut venyvät (oletus `stretch`), ja
+                                teksti keskitetään pystysuunnassa flexillä. */}
+                            <dt className="flex items-center justify-end font-heading text-amber text-2xl sm:text-3xl leading-none pr-5 sm:pr-8 py-3.5 border-b border-white/12">
                               {f.value}
                             </dt>
-                            <dd className="text-white/70 text-sm sm:text-base leading-snug py-3.5 border-b border-white/12 self-center">
+                            <dd className="flex items-center text-white/70 text-sm sm:text-base leading-snug py-3.5 border-b border-white/12">
                               {f.label}
                             </dd>
                           </Fragment>
