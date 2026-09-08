@@ -284,11 +284,27 @@ export default function Restaurants() {
           this route's jsonKey, so reader and crawler get one text in one
           language. Sits above the filter bar: it explains the arrangement the
           reader is about to scroll through, including the paid slot. */}
+      {/* 🔴 Alkuteksti kirjoitettiin uusiksi 2026-09-08. Vesa: *"miksi tässä on
+          tällaista paskaa? ei turistia kiinnosta onko se kumppanipaikka vai ei,
+          muutenkin visuaalisuus on tässä alussa poor."* Hän on oikeassa
+          molemmista:
+
+          1. Teksti selitti MEIDÄN prosessiamme (järjestyslogiikka, maksettu
+             paikka, "muuta maksettua tällä sivulla ei ole"). Lukija tuli
+             etsimään ravintolaa. Jäljellä on kaksi asiaa jotka häntä oikeasti
+             auttavat: mistä arvio tulee, ja että Lapissa kausisulku voi olla
+             kuukausia. 🔴 Mainosmerkintä EI ollut tässä kappaleessa vaan
+             mainosyksikössä itsessään (pinkki "Mainos"-merkki, `featuredCopy`),
+             joten KKV-vaatimus säilyy vaikka kappale poistuu.
+          2. Otsikossa oli `font-display` — Space Grotesk -ajan jäänne, jota ei
+             ole olemassa tässä teemassa. Otsikko ei siis renderöitynyt
+             Bebasilla ollenkaan vaan putosi oletusfonttiin. Se oli se "poor".
+             Otsikko poistettiin kokonaan (se oli prosessipuhetta), joten myös
+             ainoa `font-display`-osuma koko sivustolla lähti. */}
       <section className="px-4 sm:px-6 lg:px-8 pt-12 bg-night">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl sm:text-4xl text-cream mb-4">{t('restaurants.introTitle')}</h2>
-          <p className="text-cream/75 text-sm sm:text-base leading-relaxed mb-4">{t('restaurants.introP1')}</p>
-          <p className="text-cream/75 text-sm sm:text-base leading-relaxed">{t('restaurants.introP2')}</p>
+        <div className="max-w-3xl mx-auto border-l-2 border-amber/50 pl-5">
+          <p className="text-white/75 text-base sm:text-lg leading-relaxed mb-3">{t('restaurants.introP1')}</p>
+          <p className="text-white/75 text-base sm:text-lg leading-relaxed">{t('restaurants.introP2')}</p>
         </div>
       </section>
 

@@ -41,14 +41,22 @@ interface SectionI18n {
  * (luku selviytymisestä taiteeksi). Ei ravintolakohtaisia kuvia, koska kuvan
  * kohdalla sivu ei väitä mitään yksittäisestä ravintolasta.
  *
- * 🔴 Luku 3 sai kotaFiren tilalle jokikuvan: kotaFire ja kotaInside ovat lähes
- * sama kuva (seurue syömässä nuotion ympärillä kodassa), ja ne olivat sivulla
- * luvuissa 3 ja 6. Sama vika kuin etusivulla 10.8. — Vesa: *"sama kuva kahteen
- * kertaan?"* Nyt vesiluvulla on vesi ja kotaluvulla kota.
+ * 🔴 Luku 3 kävi kaksi kierrosta. Alun perin siinä oli `kotaFire`, joka on
+ * lähes sama kuva kuin luvun 6 `kotaInside` (seurue syömässä nuotion ympärillä
+ * kodassa) — sama vika kuin etusivulla 10.8., Vesa: *"sama kuva kahteen
+ * kertaan?"* Vaihdoin sen jokikuvaan, mutta se oli Paikallisen ruoan oma kuva
+ * samassa lukujärjestyksessä, eli kaksi peräkkäistä alasivua olisi näyttänyt
+ * samat kuvat samoissa kohdissa. Nyt siinä on `featKammi`: lohta puulaudalla
+ * avotulen vieressä — täsmälleen se mitä luvun oma teksti sanoo (*"Liekitettyä
+ * lohta puulaudalla avotulen vieressä"*).
  *
- * 🔴 localFoodReindeer ja localFoodRiver ovat 16:9, muut neljä 2,36:1. Kaista on
- * työpöydällä 21:9, joten näille annetaan objectPosition: poron sarvien kärki ja
- * joen vesi pysyvät kuvassa eivätkä leikkaudu keskitetyssä rajauksessa.
+ * 🔴 Jäljelle jää yksi tietoinen päällekkäisyys: `localFoodReindeer` on sekä
+ * täällä (luku 2) että Paikallisessa ruoassa (poronhoito-osio). Se on ainoa
+ * porokuva jonka omistamme, ja molemmat luvut kertovat porosta. Erottelu vaatii
+ * uuden kuvan, ei kuvien kierrättämistä väärään aiheeseen.
+ *
+ * 🔴 localFoodReindeer on 16:9, muut viisi 2,36:1. Kaista on työpöydällä 21:9,
+ * joten sille annetaan objectPosition, ettei sarvien kärki leikkaudu.
  */
 const CHAPTERS: { icon: typeof Snowflake; img: { src: string; alt: string; focus?: string } }[] = [
   {
@@ -66,9 +74,8 @@ const CHAPTERS: { icon: typeof Snowflake; img: { src: string; alt: string; focus
   {
     icon: Fish,
     img: {
-      src: DINING.localFoodRiver,
-      alt: 'A clear Arctic stream running over frosted stones through a Lapland forest',
-      focus: '50% 55%',
+      src: DINING.featKammi,
+      alt: 'Salmon grilled on a wooden board beside the open fire inside a Sámi kota',
     },
   },
   {

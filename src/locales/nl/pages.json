@@ -134,9 +134,8 @@
     "editorsPick": "Keuze van de redactie",
     "menuLabel": "Menukaart",
     "menuLabelPdf": "Menukaart (PDF)",
-    "introTitle": "Gegroepeerd per plaats, niet gerangschikt",
-    "introP1": "Waar een plaats een redactiekeuze heeft, staat die vooraan met een eigen label. De rest volgt zonder volgorde. De beoordelingen komen van Google en verwijzen naar de recensies erachter.",
-    "introP2": "De brede kaart boven elke plaats is een betaalde partnerplek en is als advertentie gemarkeerd — verder is hier niets betaalde plaatsing. Openingstijden volgen het seizoen, en in Lapland kan \"gesloten voor het seizoen\" maanden betekenen. Kijk op de eigen pagina van het restaurant voordat u erheen rijdt."
+    "introP1": "De beoordelingen komen van Google en leiden rechtstreeks naar de recensies waaruit ze komen.",
+    "introP2": "De openingstijden volgen het seizoen, en in Lapland kan \"gesloten voor het seizoen\" maanden betekenen. Controleer de eigen pagina van het restaurant voordat u de weg op gaat."
   },
   "cities": {
     "title": "Waar u eet in Lapland, plaats voor plaats | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "Een visser haalt voor zonsopgang een Arctische zalmforel uit het Inarimeer. De kok in het dorp ernaast weet het binnen twintig minuten. De voedselketen in Lapland is zo kort en dáárom smaakt het eten zoals het smaakt.",
     "sections": [
       {
-        "title": "Het bos",
+        "title": "Iedereen mag overal plukken, wie de grond ook bezit",
         "paragraphs": [
-          "De nazomer in een Laplands bos is in feite boodschappen doen. Blauwe bosbessen, vossenbessen, wilde frambozen, paddenstoelen en wilde kruiden groeien in zulke aantallen dat elke Fin leert plukken voor hij leert rijden. Het allemansrecht, <strong>jokamiehenoikeus</strong>, maakt het mogelijk: iedereen, lokaal of bezoeker, mag overal in de natuur lopen, foerageren en plukken, ongeacht wie het land bezit.",
+          "De nazomer in een Laplands bos is in feite boodschappen doen. Het allemansrecht, <strong>jokamiehenoikeus</strong>, maakt het mogelijk: iedereen, lokaal of bezoeker, mag overal in de natuur lopen, foerageren en plukken, ongeacht wie het land bezit.",
           "Het is geen symbolisch gebaar. Het vormt de hele eetcultuur. Finlands bossen leveren jaarlijks zo'n 500 miljoen kilo wilde bosbessen, maar slechts 5–10 % wordt geplukt. De rest voedt de fauna en vult het ecosysteem opnieuw.",
           "Veel van de beste restaurants in Lapland hebben professionele plukkers in dienst, die de zomer doorbrengen op de fjälls en aan de randen van oerbos. \"Farm-to-table\" beschrijft het niet. Dit is forest-to-table en het bos begint achter de keukendeur."
-        ]
+        ],
+        "quote": "Blauwe bosbessen, vossenbessen, wilde frambozen, paddenstoelen en wilde kruiden groeien in zulke aantallen dat elke Fin leert plukken voor hij leert rijden."
       },
       {
-        "title": "Rivier en meer",
+        "title": "Netten 's ochtends, soep 's avonds op tafel",
         "paragraphs": [
-          "De Tornio is een van de weinige zalmrivieren van Europa waar wilde zalm nog uit echt wilde stammen wordt gevangen. Het Inarimeer levert Arctische zalmforel, marene en bruine forel. Noordelijk Finland is vol meren met water schoner dan de meeste landen zich kunnen voorstellen.",
+          "Het Inarimeer levert Arctische zalmforel, marene en bruine forel. Noordelijk Finland is vol meren met water schoner dan de meeste landen zich kunnen voorstellen.",
           "De Finse visserijtraditie hier is bijna huishoudelijk van schaal, netten 's ochtends uitgezet, soep 's avonds op tafel. Zalm gerookt in berkenbast. Marene loimu-gegrild op een houten plank naast een open vuur. Room en dille drijven in de soep.",
           "In de Tornio-vallei, aan de Fins-Zweedse grens, leeft de oude lippokalastus-traditie nog: een lang steelnet dat vanaf een houten platform tegen de stroom in wordt gedompeld. Bij Kukkolaforsen aan de Zweedse oever koopt u de ter plekke gerookte vis voor het avondeten."
-        ]
+        ],
+        "quote": "De Tornio is een van de weinige zalmrivieren van Europa waar wilde zalm nog uit echt wilde stammen wordt gevangen."
       },
       {
-        "title": "Rendierhouderij",
+        "title": "Geen graangevoerd dier komt in de buurt",
         "paragraphs": [
-          "Elk rendier in Fins Lapland leeft vrij. Er bestaan geen conventionele rendierboerderijen, de dieren trekken over zo'n 123.000 km² wildernis en grazen op korstmos, mos, wilde grassen en berkenbladeren. Ze zijn semi-gedomesticeerd: herders volgen en beheren ze, maar waar ze heen trekken, bepalen de dieren zelf.",
+          "Er bestaan geen conventionele rendierboerderijen, de dieren trekken over zo'n 123.000 km² wildernis en grazen op korstmos, mos, wilde grassen en berkenbladeren. Ze zijn semi-gedomesticeerd: herders volgen en beheren ze, maar waar ze heen trekken, bepalen de dieren zelf.",
           "Dat ziet u in het vlees. Een vrij rondtrekkend rendier dat zijn leven op de fjälls doorbracht en wilde planten at, levert vlees dat mager, rijk aan omega-3-vetzuren en diep van smaak is. Geen graangevoerd boerderijdier komt in de buurt.",
           "De Finse rendierindustrie loopt via 54 herderscoöperaties met wettelijk vastgelegde maximumkuddes. Bij het bijeendrijven van de kuddes in het najaar wordt bepaald hoeveel dieren geslacht mogen worden om de kuddes gezond en het landschap in balans te houden. De jaarlijkse productie ligt rond 2 miljoen kilo vlees."
-        ]
+        ],
+        "quote": "Elk rendier in Fins Lapland leeft vrij."
       },
       {
-        "title": "Stille meren en een Arctische omgeving",
+        "title": "Een wilde bosbes bevat 3–4 keer meer anthocyanen dan een gekweekte",
         "paragraphs": [
-          "De Finse landbouw gebruikt minder bestrijdingsmiddelen per hectare dan vrijwel elk ander EU-land. Het antibioticagebruik in de veehouderij is een van de laagste van Europa. Koude winters fungeren als natuurlijke plaagbestrijding, insecten die warmere klimaten teisteren overleven de Arctische vorst gewoon niet. Het resultaat: minder chemische ingrepen en schonere producten.",
+          "Het antibioticagebruik in de veehouderij is een van de laagste van Europa. Koude winters fungeren als natuurlijke plaagbestrijding, insecten die warmere klimaten teisteren overleven de Arctische vorst gewoon niet. Het resultaat: minder chemische ingrepen en schonere producten.",
           "Kraanwater is in heel het land drinkbaar. In Lapland komt het rechtstreeks uit enkele van de zuiverste grondwaterbronnen van het continent, vaak hetzelfde water dat twee dagen eerder als sneeuw op een herdersweide viel.",
           "Planten die onder strenge omstandigheden groeien, ontwikkelen meer beschermende verbindingen. Een wilde Finse bosbes bevat 3–4 keer meer anthocyanen dan een gekweekte blauwe bes. Kruipbramen zijn rijk aan vitamine C, vitamine E en omega-vetzuren. Duindoorn heeft per gram meer vitamine C dan sinaasappel. Dat is geen marketing, dat is botanie."
-        ]
+        ],
+        "quote": "De Finse landbouw gebruikt minder bestrijdingsmiddelen per hectare dan vrijwel elk ander EU-land."
       }
     ],
     "ingredientsHeadline": "De ingrediënten van Lapland",
@@ -594,7 +597,8 @@
     "ctaStay": "Boek een verblijf",
     "ctaTours": "Kookcursus & foodtours",
     "whereToTaste": "Waar te proeven",
-    "imageAlt": "{{name}} in Fins Lapland"
+    "imageAlt": "{{name}} in Fins Lapland",
+    "chaptersLabel": "In dit verhaal"
   },
   "about": {
     "title": "Over LaplandDining",

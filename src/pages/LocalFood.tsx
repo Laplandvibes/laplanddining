@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
-import { Leaf, Droplets, Mountain, Award, Fish, Bird } from 'lucide-react';
+import { Leaf, Droplets, Mountain, Award, Fish, Bird, Quote, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygSearchLink } from '../lib/gyg';
@@ -11,7 +11,11 @@ import { restaurants } from '../data/restaurants';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
-interface SectionI18n { title: string; paragraphs: string[] }
+interface SectionI18n { title: string; paragraphs: string[]; quote?: string }
+
+/** Kolmikerroksinen varjo — sama resepti kuin mallisivun (FineDining) korteissa. */
+const CARD_SHADOW =
+  'shadow-[0_1px_2px_rgba(0,0,0,0.5),0_16px_32px_-12px_rgba(0,0,0,0.65),0_48px_88px_-36px_rgba(0,0,0,0.75)]';
 interface IngredientI18n { name: string; fact: string; season: string }
 
 const sectionIcons = [Award, Droplets, Leaf, Mountain];
@@ -121,21 +125,63 @@ export default function LocalFood() {
 
       <PageBreadcrumb />
 
-      {/* Finland's Clean Food */}
-      <section className="py-16 bg-night">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-white/75 text-lg sm:text-xl leading-relaxed mb-14 border-l-2 border-amber/60 pl-5 italic">
+      {/* Lukuhakemisto — sama kuvio kuin /food-history. Neljä väitettä yhdellä
+          ruudulla lukijalle joka ei jaksa lukea kaikkea. */}
+      <section className="bg-night">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-9 sm:py-12">
+          <p className="font-heading text-amber tracking-[0.28em] text-xs sm:text-sm uppercase mb-5">
+            {t('localFood.chaptersLabel')}
+          </p>
+          <ol className="border-t border-white/10">
+            {sections.map((section, i) => (
+              <li key={i}>
+                <a
+                  href={`#chapter-${i + 1}`}
+                  className="group flex items-center gap-4 sm:gap-6 py-4 border-b border-white/10 no-underline"
+                >
+                  <span className="font-heading text-amber/70 text-xl sm:text-2xl tracking-wide w-7 shrink-0 group-hover:text-amber transition-colors">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="font-heading text-white text-xl sm:text-2xl tracking-wide leading-tight text-balance group-hover:text-amber transition-colors">
+                    {section.title}
+                  </span>
+                  <ArrowRight
+                    size={16}
+                    className="ml-auto shrink-0 text-white/25 group-hover:text-amber group-hover:translate-x-1 transition-all duration-300"
+                    aria-hidden="true"
+                  />
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Luvut. Sama rakenne ja ilme kuin /food-history: leveä kuvakaista,
+          numeroitu tunnus + hiusviiva, väittävä otsikko, nosto kermakortissa
+          ENNEN leipätekstiä. Vesa 2026-09-08 pyysi ruokahistorian ilmeen tänne.
+          🔴 Nostot on leikattu leipätekstistä (ks.
+          scripts/_migrate-localfood-structure.mjs), ei kopioitu. */}
+      <section className="relative py-12 sm:py-16 bg-gradient-to-b from-night via-night-light/55 to-night">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(60%_45%_at_50%_0%,rgba(245,158,11,0.10),transparent_70%)]"
+        />
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="max-w-3xl mx-auto text-white/75 text-lg sm:text-xl leading-relaxed border-l-2 border-amber/60 pl-5 italic">
             {t('localFood.intro')}
           </p>
-          <div className="space-y-16">
 
+          <div className="mt-14 sm:mt-18 space-y-20 sm:space-y-24 lg:space-y-28">
             {sections.map((section, i) => {
               const Icon = sectionIcons[i] ?? Award;
               const img = sectionImages[i];
               return (
-                <div key={i}>
+                <article key={i} id={`chapter-${i + 1}`} className="scroll-mt-24">
                   {img && (
-                    <div className="group relative aspect-[16/9] rounded-3xl overflow-hidden mb-7 border border-white/10 shadow-xl shadow-black/40">
+                    <figure
+                      className={`group relative aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden ring-1 ring-white/10 mb-8 sm:mb-10 ${CARD_SHADOW}`}
+                    >
                       <img
                         src={img.src}
                         alt={img.alt}
@@ -143,36 +189,57 @@ export default function LocalFood() {
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-transparent" />
-                    </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-night/55 via-transparent to-transparent" />
+                    </figure>
                   )}
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="w-9 h-9 shrink-0 rounded-xl flex items-center justify-center bg-amber/10 border border-amber/30">
-                      <Icon size={18} className="text-amber" />
-                    </span>
-                    <h2 className="font-heading text-3xl text-white tracking-wide">
+
+                  <div className="max-w-3xl mx-auto">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="font-heading text-amber text-2xl leading-none">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span className="h-px flex-1 bg-gradient-to-r from-amber/45 to-transparent" />
+                      <Icon size={16} className="text-amber/70 shrink-0" aria-hidden="true" />
+                    </div>
+
+                    <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide leading-[1.05] text-balance mb-7">
                       {section.title}
                     </h2>
-                  </div>
-                  <div className="space-y-4 text-white/80 leading-relaxed">
-                    {section.paragraphs.map((p, j) => (
-                      <p key={j}>
-                        <Trans
-                          ns="pages"
-                          i18nKey={`localFood.sections.${i}.paragraphs.${j}`}
-                          components={{
-                            em: <em />,
-                            strong: <strong className="text-white/80" />,
-                          }}
-                          defaults={p}
+
+                    {section.quote && (
+                      <blockquote
+                        className={`relative rounded-3xl bg-cream ring-1 ring-white/10 pl-14 pr-7 py-7 sm:pl-16 sm:pr-10 sm:py-8 ${CARD_SHADOW}`}
+                      >
+                        <Quote
+                          size={26}
+                          className="absolute left-6 top-7 sm:left-7 sm:top-8 text-amber-deep/60 -scale-x-100"
+                          aria-hidden="true"
                         />
-                      </p>
-                    ))}
+                        <p className="text-warm-ink text-2xl sm:text-3xl font-medium leading-[1.25] text-balance">
+                          {section.quote}
+                        </p>
+                      </blockquote>
+                    )}
+
+                    <div className="mt-8 space-y-5 text-white/80 leading-relaxed">
+                      {section.paragraphs.map((p, j) => (
+                        <p key={j} className={j === 0 ? 'text-lg leading-relaxed text-white/85' : undefined}>
+                          <Trans
+                            ns="pages"
+                            i18nKey={`localFood.sections.${i}.paragraphs.${j}`}
+                            components={{
+                              em: <em />,
+                              strong: <strong className="text-white/80" />,
+                            }}
+                            defaults={p}
+                          />
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </article>
               );
             })}
-
           </div>
         </div>
       </section>

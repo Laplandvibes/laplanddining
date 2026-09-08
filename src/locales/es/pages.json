@@ -134,9 +134,8 @@
     "editorsPick": "Elección de la redacción",
     "menuLabel": "Carta",
     "menuLabelPdf": "Carta (PDF)",
-    "introTitle": "Agrupado por localidad, sin clasificación",
-    "introP1": "Donde una localidad tiene una elección de la redacción, esta encabeza con su distintivo. El resto va sin orden particular. Las notas son de Google y enlazan a las reseñas de origen.",
-    "introP2": "La tarjeta ancha sobre cada localidad es un espacio de socio pagado y está marcada como publicidad; nada más en esta página es pago. Los horarios siguen la temporada, y en Laponia \"cerrado por temporada\" puede significar meses. Consulta la página del restaurante antes de salir."
+    "introP1": "Las valoraciones son de Google y llevan directamente a las reseñas de las que proceden.",
+    "introP2": "Los horarios cambian con la temporada, y en Laponia \"cerrado por temporada\" puede significar meses. Consulte la página del restaurante antes de salir en coche."
   },
   "cities": {
     "title": "Dónde comer en Laponia, pueblo a pueblo | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "Un pescador saca una trucha alpina del lago Inari antes del amanecer. El chef del pueblo de al lado se entera en menos de veinte minutos. La cadena alimentaria en Laponia es así de corta y por eso la comida sabe como sabe.",
     "sections": [
       {
-        "title": "El bosque",
+        "title": "Cualquiera puede recolectar en cualquier lugar, sea de quien sea la tierra",
         "paragraphs": [
-          "El final del verano en un bosque lapón es, en la práctica, ir a la compra. El arándano azul, el arándano rojo, la frambuesa silvestre, las setas y las hierbas silvestres crecen en tal cantidad que todo finlandés aprende a recolectar antes que a conducir. El derecho de todos, <strong>jokamiehenoikeus</strong>, lo hace posible: cualquiera, residente o de visita, puede caminar, recolectar y recoger por toda la naturaleza, sea de quien sea la tierra.",
+          "El final del verano en un bosque lapón es, en la práctica, ir a la compra. El derecho de todos, <strong>jokamiehenoikeus</strong>, lo hace posible: cualquiera, residente o de visita, puede caminar, recolectar y recoger por toda la naturaleza, sea de quien sea la tierra.",
           "No es un gesto simbólico. Da forma a toda la cultura gastronómica. Los bosques de Finlandia producen unos 500 millones de kilogramos de arándanos azules silvestres al año, pero solo se recoge entre el 5 y el 10 %. El resto alimenta a la fauna y repone el ecosistema.",
           "Muchos de los mejores restaurantes de Laponia tienen recolectores profesionales en nómina, que pasan el verano en los fjälls y en los lindes del bosque maduro. \"De la granja a la mesa\" no lo describe. Esto es del bosque a la mesa y el bosque empieza detrás de la puerta de la cocina."
-        ]
+        ],
+        "quote": "El arándano azul, el arándano rojo, la frambuesa silvestre, las setas y las hierbas silvestres crecen en tal cantidad que todo finlandés aprende a recolectar antes que a conducir."
       },
       {
-        "title": "Río y lago",
+        "title": "Las redes por la mañana, la sopa en la mesa al anochecer",
         "paragraphs": [
-          "El río Tornio es uno de los pocos ríos salmoneros de Europa donde aún se pesca salmón de poblaciones genuinamente salvajes. El lago Inari produce trucha alpina, coregono y trucha común. El extremo norte de Finlandia está lleno de lagos con aguas más limpias de lo que la mayoría de los países pueden imaginar.",
+          "El lago Inari produce trucha alpina, coregono y trucha común. El extremo norte de Finlandia está lleno de lagos con aguas más limpias de lo que la mayoría de los países pueden imaginar.",
           "Aquí la tradición pesquera finlandesa es casi de escala doméstica, las redes se echan por la mañana y la sopa está en la mesa al anochecer. Salmón ahumado en corteza de abedul. Coregono asado a la loimu sobre una tabla de madera junto a un fuego abierto. Nata y eneldo flotan en la sopa.",
           "En el valle del Tornio, en la frontera entre Finlandia y Suecia, sigue viva la antigua tradición del lippokalastus: una red de mango largo que se sumerge contra la corriente desde una plataforma de madera. En Kukkolaforsen, en la orilla sueca, puede comprar el pescado ahumado in situ para llevárselo a casa tras la cena."
-        ]
+        ],
+        "quote": "El río Tornio es uno de los pocos ríos salmoneros de Europa donde aún se pesca salmón de poblaciones genuinamente salvajes."
       },
       {
-        "title": "La cría del reno",
+        "title": "Ningún animal alimentado con grano se le acerca",
         "paragraphs": [
-          "Todos los renos de la Laponia finlandesa viven en libertad. No hay granjas de renos convencionales, los animales recorren unos 123.000 km² de naturaleza salvaje, pastando líquenes, musgo, hierbas silvestres y hojas de abedul. Están semidomesticados: los pastores los rastrean y gestionan, pero el movimiento es del propio animal.",
+          "No hay granjas de renos convencionales, los animales recorren unos 123.000 km² de naturaleza salvaje, pastando líquenes, musgo, hierbas silvestres y hojas de abedul. Están semidomesticados: los pastores los rastrean y gestionan, pero el movimiento es del propio animal.",
           "Se nota en la carne. Un reno en libertad que ha pasado la vida recorriendo los fjälls y comiendo plantas silvestres da una carne magra, rica en ácidos grasos omega-3 y de sabor profundo. Ningún animal de granja alimentado con grano se le acerca.",
           "El sector finlandés del reno se gestiona a través de 54 cooperativas de pastoreo con tamaños máximos de rebaño limitados por ley. Los rodeos de otoño deciden cuántos pueden sacrificarse para mantener los rebaños sanos y el paisaje en equilibrio. La producción anual ronda los 2 millones de kilogramos de carne."
-        ]
+        ],
+        "quote": "Todos los renos de la Laponia finlandesa viven en libertad."
       },
       {
-        "title": "Lagos serenos y un entorno ártico",
+        "title": "Un arándano silvestre tiene de 3 a 4 veces más antocianinas que uno cultivado",
         "paragraphs": [
-          "La agricultura finlandesa usa menos pesticida por hectárea que casi cualquier otro país de la UE. El uso de antibióticos en el ganado es de los más bajos de Europa. Los inviernos fríos actúan como control natural de plagas, los insectos que asolan los climas más cálidos sencillamente no sobreviven a la helada ártica. El resultado es menos intervención química y productos más limpios.",
+          "El uso de antibióticos en el ganado es de los más bajos de Europa. Los inviernos fríos actúan como control natural de plagas, los insectos que asolan los climas más cálidos sencillamente no sobreviven a la helada ártica. El resultado es menos intervención química y productos más limpios.",
           "El agua del grifo es potable en todo el país. En Laponia procede directamente de algunas de las fuentes de aguas subterráneas más puras del continente, a menudo la misma agua que cayó como nieve sobre un pasto de renos dos días antes.",
           "Las plantas que crecen en condiciones duras desarrollan más compuestos protectores. Un arándano azul silvestre finlandés contiene de 3 a 4 veces más antocianinas que un arándano cultivado. Las moras de los pantanos son ricas en vitamina C, vitamina E y ácidos grasos omega. El espino amarillo lleva más vitamina C por gramo que la naranja. Esto no es marketing, es botánica."
-        ]
+        ],
+        "quote": "La agricultura finlandesa usa menos pesticida por hectárea que casi cualquier otro país de la UE."
       }
     ],
     "ingredientsHeadline": "Los ingredientes de Laponia",
@@ -594,7 +597,8 @@
     "ctaStay": "Reserve alojamiento",
     "ctaTours": "Clases de cocina y tours",
     "whereToTaste": "Dónde probarlo",
-    "imageAlt": "{{name}} en la Laponia finlandesa"
+    "imageAlt": "{{name}} en la Laponia finlandesa",
+    "chaptersLabel": "En esta historia"
   },
   "about": {
     "title": "Sobre LaplandDining",

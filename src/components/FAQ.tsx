@@ -29,8 +29,23 @@ const FAQ_LINKS: (keyof typeof FAQ_ROUTE)[][] = [
   ['localFood'],                  // 5 Arctic ingredients → local food
 ];
 
+/**
+ * Kuva per kysymys — sama järjestys kuin `home.faq.items`.
+ * 1 Aanaar (fine dining) · 2 poronkäristys · 3 kota · 4 ulkona syöminen /
+ * keskiyön aurinko · 5 arktiset raaka-aineet. Indeksi null = suljettu tila.
+ */
+const FAQ_SHOTS: { src: string; alt: string }[] = [
+  { src: DINING.featAanaar, alt: 'Plated Arctic fish with lingonberries at a Lapland fine dining table' },
+  { src: DINING.foodCloseup, alt: 'Sautéed reindeer with berry sauce and chanterelles on a dark plate' },
+  { src: DINING.kotaInside, alt: 'Traditional Sami kota dining around an open fire in Lapland' },
+  { src: DINING.midnightSunBand, alt: 'An outdoor table in Lapland under the midnight sun' },
+  { src: DINING.ingredients, alt: 'Wild berries, mushrooms and herbs foraged from the Lapland forest floor' },
+];
+const FAQ_SHOT_CLOSED = FAQ_SHOTS[2];
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const activeShot = (openIndex !== null && FAQ_SHOTS[openIndex]) || FAQ_SHOT_CLOSED;
   const { t } = useTranslation('pages');
   const { t: tNav } = useTranslation('nav');
   const { to } = useLocale();
@@ -51,11 +66,20 @@ export default function FAQ() {
               {t('home.faq.lead')}
             </p>
 
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 mb-6">
+            {/* 🔴 Kuva seuraa avattua kysymystä. Vesa 2026-09-08: *"ukk
+                vastaukset on jotenkin oudosti suhteessa vasemmalla oleviin
+                kuviin."* Kuva oli KIINTEÄSTI kota-illallinen, vaikka kysymyksiä
+                on viisi ja vain yksi koskee kotaa — lukija katsoi kotaa samalla
+                kun luki vastausta Aanaarista tai arktisista raaka-aineista.
+                Nyt jokaisella kysymyksellä on oma kuvansa ja suljetussa tilassa
+                näkyy kota. Vaihto on lähteen vaihdos + CSS-häivytys, ei
+                animaatiokirjastoa (verkoston sääntö). */}
+            <div className="relative rounded-3xl overflow-hidden ring-1 ring-white/10 mb-6 shadow-[0_1px_2px_rgba(0,0,0,0.5),0_16px_32px_-12px_rgba(0,0,0,0.65),0_48px_88px_-36px_rgba(0,0,0,0.75)]">
               <img
-                src={DINING.kotaInside}
-                alt="Traditional Sami kota dining around an open fire in Lapland"
-                className="w-full h-64 sm:h-80 object-cover"
+                key={activeShot.src}
+                src={activeShot.src}
+                alt={activeShot.alt}
+                className="w-full h-64 sm:h-80 object-cover faq-shot"
                 loading="lazy"
                 decoding="async"
                 width="800"
@@ -106,8 +130,18 @@ export default function FAQ() {
                       />
                     </button>
                     {isOpen && (
-                      <div className="px-5 sm:px-6 pb-5 pl-14 sm:pl-16">
-                        <p className="text-white/70 leading-relaxed text-sm sm:text-base">{faq.answer}</p>
+                      /* 🔴 Vastaus jämäkämmäksi ja luettavammaksi. Vesa
+                         2026-09-08: *"vastaukset ukk kysymyksissä ei firm. ja
+                         kiva lukea."* Vastaus oli 14 px, opacity 70 % ja se
+                         alkoi keskeltä tyhjää — pienempänä ja haaleampana kuin
+                         kysymys jonka alla se oli. Nyt 16–18 px, kirkkaampi
+                         muste, väljempi riviväli ja kysymykseen sitova
+                         merianviiva vasemmalla, jotta vastaus näyttää
+                         kuuluvan johonkin eikä leijuvan. */
+                      <div className="px-5 sm:px-6 pb-6 pl-14 sm:pl-16">
+                        <p className="border-l-2 border-amber/40 pl-4 text-white/85 text-base sm:text-[1.0625rem] leading-[1.7]">
+                          {faq.answer}
+                        </p>
                         {(FAQ_LINKS[index] ?? []).length > 0 && (
                           <div className="flex flex-wrap gap-x-5 gap-y-2 mt-4">
                             {FAQ_LINKS[index].map((key) => (

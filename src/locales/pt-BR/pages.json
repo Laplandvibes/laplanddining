@@ -134,9 +134,8 @@
     "editorsPick": "Escolha da redação",
     "menuLabel": "Cardápio",
     "menuLabelPdf": "Cardápio (PDF)",
-    "introTitle": "Agrupado por localidade, sem ranking",
-    "introP1": "Onde uma localidade tem uma escolha da redação, ela abre a lista com um selo. As demais vêm sem ordem definida. As notas são do Google e levam às avaliações de origem.",
-    "introP2": "O cartão largo acima de cada localidade é um espaço de parceiro pago e está marcado como publicidade — nada mais nesta página é posição paga. Os horários seguem a estação, e na Lapônia \"fechado na temporada\" pode significar meses. Confira a página do restaurante antes de pegar a estrada."
+    "introP1": "As avaliações são do Google e levam direto às resenhas de onde vêm.",
+    "introP2": "Os horários mudam com a estação e, na Lapônia, \"fechado na temporada\" pode significar meses. Confira a página do restaurante antes de pegar a estrada."
   },
   "cities": {
     "title": "Onde comer na Lapônia, cidade por cidade | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "Um pescador tira um salvelino-ártico do lago Inari antes do amanhecer. O chef do vilarejo vizinho fica sabendo em menos de vinte minutos. A cadeia alimentar na Lapônia é curta assim e é por isso que a comida tem o sabor que tem.",
     "sections": [
       {
-        "title": "A floresta",
+        "title": "Qualquer pessoa pode colher em qualquer lugar, seja de quem for a terra",
         "paragraphs": [
-          "O fim do verão numa floresta lapônica é, na prática, fazer compras de mercado. Mirtilos, airelas-vermelhas, framboesas silvestres, cogumelos e ervas crescem em tal volume que todo finlandês aprende a colher antes de aprender a dirigir. O Direito de Todos, <strong>jokamiehenoikeus</strong>, torna isso possível: qualquer pessoa, residente ou visitante, pode caminhar, colher e recolher por toda a natureza, seja de quem for a terra.",
+          "O fim do verão numa floresta lapônica é, na prática, fazer compras de mercado. O Direito de Todos, <strong>jokamiehenoikeus</strong>, torna isso possível: qualquer pessoa, residente ou visitante, pode caminhar, colher e recolher por toda a natureza, seja de quem for a terra.",
           "Não é um gesto simbólico. Molda toda a cultura gastronômica. As florestas da Finlândia produzem cerca de 500 milhões de quilogramas de mirtilos silvestres por ano, mas só 5 a 10% são colhidos. O resto alimenta a fauna e repõe o ecossistema.",
           "Muitos dos melhores restaurantes da Lapônia mantêm coletores profissionais na folha de pagamento, passando o verão nos fjälls e nas bordas da floresta antiga. \"Da fazenda à mesa\" não dá conta. Isto é da floresta à mesa e a floresta começa atrás da porta da cozinha."
-        ]
+        ],
+        "quote": "Mirtilos, airelas-vermelhas, framboesas silvestres, cogumelos e ervas crescem em tal volume que todo finlandês aprende a colher antes de aprender a dirigir."
       },
       {
-        "title": "Rio e lago",
+        "title": "As redes pela manhã, a sopa na mesa ao anoitecer",
         "paragraphs": [
-          "O rio Tornio é um dos poucos rios de salmão da Europa onde o salmão selvagem ainda é pescado de populações genuinamente selvagens. O lago Inari produz salvelino-ártico, peixe-branco e truta-marrom. O extremo norte da Finlândia é cheio de lagos com água mais limpa do que a maioria dos países consegue imaginar.",
+          "O lago Inari produz salvelino-ártico, peixe-branco e truta-marrom. O extremo norte da Finlândia é cheio de lagos com água mais limpa do que a maioria dos países consegue imaginar.",
           "Aqui, a tradição pesqueira finlandesa é quase de escala doméstica, as redes são lançadas pela manhã e a sopa está na mesa ao anoitecer. Salmão defumado em casca de bétula. Peixe-branco grelhado à loimu sobre uma tábua de madeira ao lado do fogo aberto. Creme e endro boiam na sopa.",
           "No vale do Tornio, na fronteira entre Finlândia e Suécia, a antiga tradição do lippokalastus segue viva: uma rede de cabo longo mergulhada contra a correnteza a partir de uma plataforma de madeira. Em Kukkolaforsen, na margem sueca, você pode comprar o peixe defumado no local para levar para casa depois do jantar."
-        ]
+        ],
+        "quote": "O rio Tornio é um dos poucos rios de salmão da Europa onde o salmão selvagem ainda é pescado de populações genuinamente selvagens."
       },
       {
-        "title": "A criação de renas",
+        "title": "Nenhum animal alimentado com grão chega perto",
         "paragraphs": [
-          "Toda rena da Lapônia finlandesa vive livre. Não há fazendas de renas convencionais, os animais percorrem cerca de 123.000 km² de natureza selvagem, pastando líquen, musgo, gramíneas silvestres e folhas de bétula. São semidomesticados: os pastores os rastreiam e manejam, mas o movimento é do próprio animal.",
+          "Não há fazendas de renas convencionais, os animais percorrem cerca de 123.000 km² de natureza selvagem, pastando líquen, musgo, gramíneas silvestres e folhas de bétula. São semidomesticados: os pastores os rastreiam e manejam, mas o movimento é do próprio animal.",
           "Isso aparece na carne. Uma rena de vida livre, que passou a vida caminhando pelos fjälls e comendo plantas silvestres, dá uma carne magra, rica em ácidos graxos ômega-3 e de sabor profundo. Nenhum animal de fazenda alimentado com grão chega perto.",
           "O setor finlandês da rena é gerido por 54 cooperativas de pastoreio, com tamanhos máximos de rebanho limitados por lei. As reuniões de outono decidem quantas podem ser abatidas para manter os rebanhos saudáveis e a paisagem em equilíbrio. A produção anual fica em torno de 2 milhões de quilogramas de carne."
-        ]
+        ],
+        "quote": "Toda rena da Lapônia finlandesa vive livre."
       },
       {
-        "title": "Lagos serenos e um ambiente ártico",
+        "title": "Um mirtilo silvestre tem de 3 a 4 vezes mais antocianinas que um cultivado",
         "paragraphs": [
-          "A agricultura finlandesa usa menos pesticida por hectare do que quase qualquer outro país da UE. O uso de antibióticos no gado é dos mais baixos da Europa. Os invernos frios funcionam como controle natural de pragas, os insetos que assolam os climas mais quentes simplesmente não sobrevivem ao congelamento ártico. O resultado é menos intervenção química e produtos mais limpos.",
+          "O uso de antibióticos no gado é dos mais baixos da Europa. Os invernos frios funcionam como controle natural de pragas, os insetos que assolam os climas mais quentes simplesmente não sobrevivem ao congelamento ártico. O resultado é menos intervenção química e produtos mais limpos.",
           "A água da torneira é potável em todo o país. Na Lapônia, ela vem direto de algumas das fontes de água subterrânea mais puras do continente, muitas vezes a mesma água que caiu como neve sobre um pasto de renas dois dias antes.",
           "Plantas que crescem em condições severas desenvolvem mais compostos protetores. Um mirtilo silvestre finlandês contém de 3 a 4 vezes mais antocianinas do que um mirtilo cultivado. As amoras árticas são ricas em vitamina C, vitamina E e ácidos graxos ômega. O espinheiro-marítimo carrega mais vitamina C por grama do que a laranja. Isto não é marketing, é botânica."
-        ]
+        ],
+        "quote": "A agricultura finlandesa usa menos pesticida por hectare do que quase qualquer outro país da UE."
       }
     ],
     "ingredientsHeadline": "Os ingredientes da Lapônia",
@@ -594,7 +597,8 @@
     "ctaStay": "Reserve hospedagem",
     "ctaTours": "Aulas de cozinha e tours",
     "whereToTaste": "Onde provar",
-    "imageAlt": "{{name}} na Lapônia finlandesa"
+    "imageAlt": "{{name}} na Lapônia finlandesa",
+    "chaptersLabel": "Nesta história"
   },
   "about": {
     "title": "Sobre o LaplandDining",

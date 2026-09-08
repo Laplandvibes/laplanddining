@@ -134,9 +134,8 @@
     "editorsPick": "Scelta della redazione",
     "menuLabel": "Menù",
     "menuLabelPdf": "Menù (PDF)",
-    "introTitle": "Raggruppato per località, senza classifica",
-    "introP1": "Dove una località ha una scelta della redazione, questa apre con il suo contrassegno. Le altre seguono senza un ordine. I voti sono di Google e rimandano alle recensioni d'origine.",
-    "introP2": "La scheda larga sopra ogni località è uno spazio partner a pagamento ed è segnalata come pubblicità: nient'altro qui è a pagamento. Gli orari seguono la stagione e in Lapponia \"chiuso per la stagione\" può voler dire mesi. Controlla la pagina del ristorante prima di metterti in strada."
+    "introP1": "I voti sono di Google e portano direttamente alle recensioni da cui provengono.",
+    "introP2": "Gli orari cambiano con la stagione e in Lapponia \"chiuso per la stagione\" può voler dire mesi. Controlli il sito del ristorante prima di mettersi in viaggio."
   },
   "cities": {
     "title": "Dove mangiare in Lapponia, paese per paese | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "Un pescatore tira fuori un salmerino artico dal Lago Inari prima dell'alba. Lo chef del villaggio accanto lo sa nel giro di venti minuti. La filiera del cibo in Lapponia è così corta, ed è per questo che il cibo ha quel sapore.",
     "sections": [
       {
-        "title": "Il bosco",
+        "title": "Chiunque può raccogliere ovunque, chiunque sia il proprietario",
         "paragraphs": [
-          "La fine dell'estate in una foresta lappone è, in pratica, fare la spesa. Mirtilli, mirtilli rossi, lamponi selvatici, funghi ed erbe selvatiche crescono in tale quantità che ogni finlandese impara a raccogliere prima di imparare a guidare. Il diritto di accesso, <strong>jokamiehenoikeus</strong>, lo rende possibile: chiunque, residente o turista, può camminare, cercare e raccogliere ovunque in natura indipendentemente da chi possiede la terra.",
+          "La fine dell'estate in una foresta lappone è, in pratica, fare la spesa. Il diritto di accesso, <strong>jokamiehenoikeus</strong>, lo rende possibile: chiunque, residente o turista, può camminare, cercare e raccogliere ovunque in natura indipendentemente da chi possiede la terra.",
           "Non è un gesto simbolico. Modella l'intera cultura del cibo. Le foreste finlandesi producono circa 500 milioni di chilogrammi di mirtilli selvatici l'anno, ma solo il 5–10 % viene raccolto. Il resto nutre la fauna e rialimenta l'ecosistema.",
           "Molti dei migliori ristoranti della Lapponia tengono raccoglitori professionisti a libro paga, che passano l'estate sui fjäll e ai margini delle foreste antiche. \"Dal campo alla tavola\" non basta a descriverlo. Questo è dal bosco alla tavola e il bosco comincia dietro la porta della cucina."
-        ]
+        ],
+        "quote": "Mirtilli, mirtilli rossi, lamponi selvatici, funghi ed erbe selvatiche crescono in tale quantità che ogni finlandese impara a raccogliere prima di imparare a guidare."
       },
       {
-        "title": "Fiume e lago",
+        "title": "Reti al mattino, zuppa in tavola entro sera",
         "paragraphs": [
-          "Il fiume Tornio è uno dei pochi fiumi salmoniferi d'Europa dove il salmone selvatico viene ancora pescato da ceppi davvero selvatici. Il Lago Inari produce salmerino artico, coregone e trota fario. L'estremo nord della Finlandia è pieno di laghi che portano acqua più pulita di quanto la maggior parte dei paesi possa immaginare.",
+          "Il Lago Inari produce salmerino artico, coregone e trota fario. L'estremo nord della Finlandia è pieno di laghi che portano acqua più pulita di quanto la maggior parte dei paesi possa immaginare.",
           "La tradizione di pesca finlandese qui è quasi a scala domestica, reti calate al mattino, zuppa in tavola entro sera. Salmone affumicato nella corteccia di betulla. Coregone loimu-grigliato su una tavola di legno accanto al fuoco vivo. Panna e aneto galleggiano nella zuppa.",
           "Nella valle del Tornio, al confine finno-svedese, la vecchia tradizione del lippokalastus è ancora viva: una lunga rete a manico immersa controcorrente da una piattaforma di legno. A Kukkolaforsen, sulla riva svedese, si può acquistare il pesce affumicato sul posto per portarlo a casa come cena."
-        ]
+        ],
+        "quote": "Il fiume Tornio è uno dei pochi fiumi salmoniferi d'Europa dove il salmone selvatico viene ancora pescato da ceppi davvero selvatici."
       },
       {
-        "title": "Allevamento della renna",
+        "title": "Nessun animale alimentato a granaglie le si avvicina",
         "paragraphs": [
-          "Ogni renna nella Lapponia finlandese vive libera. Non esistono allevamenti convenzionali di renne, gli animali percorrono circa 123.000 km² di natura selvaggia, brucando licheni, muschio, erbe e foglie di betulla. Sono semi-domestici: i pastori li seguono e li gestiscono, ma il movimento appartiene all'animale.",
+          "Non esistono allevamenti convenzionali di renne, gli animali percorrono circa 123.000 km² di natura selvaggia, brucando licheni, muschio, erbe e foglie di betulla. Sono semi-domestici: i pastori li seguono e li gestiscono, ma il movimento appartiene all'animale.",
           "Si vede nella carne. Una renna che ha passato la vita a camminare i fjäll e a mangiare piante selvatiche produce carne magra, ricca di acidi grassi omega-3 e di sapore profondo. Nessun animale da allevamento alimentato a granaglie le si avvicina.",
           "L'industria finlandese della renna è gestita tramite 54 cooperative di allevamento con dimensioni massime del branco fissate per legge. I raduni autunnali decidono quanti capi possono essere macellati per mantenere la salute dei branchi e l'equilibrio del paesaggio. La produzione annua si aggira sui 2 milioni di chilogrammi di carne."
-        ]
+        ],
+        "quote": "Ogni renna nella Lapponia finlandese vive libera."
       },
       {
-        "title": "Laghi silenziosi e ambiente artico",
+        "title": "Un mirtillo selvatico ha 3–4 volte più antociani di uno coltivato",
         "paragraphs": [
-          "L'agricoltura finlandese usa meno pesticidi per ettaro di quasi qualsiasi altro paese dell'UE. L'uso di antibiotici negli allevamenti è tra i più bassi d'Europa. Gli inverni freddi fanno da controllo naturale dei parassiti, gli insetti che affliggono i climi più caldi semplicemente non sopravvivono al gelo artico. Il risultato è meno intervento chimico e prodotti più puliti.",
+          "L'uso di antibiotici negli allevamenti è tra i più bassi d'Europa. Gli inverni freddi fanno da controllo naturale dei parassiti, gli insetti che affliggono i climi più caldi semplicemente non sopravvivono al gelo artico. Il risultato è meno intervento chimico e prodotti più puliti.",
           "L'acqua del rubinetto è potabile ovunque nel paese. In Lapponia arriva direttamente da alcune delle sorgenti sotterranee più pure del continente, spesso la stessa acqua caduta come neve su un pascolo di pastori due giorni prima.",
           "Le piante che crescono in condizioni rigide sviluppano più composti protettivi. Un mirtillo finlandese selvatico contiene 3–4 volte più antociani di un mirtillo coltivato. I lamponi artici sono ricchi di vitamina C, vitamina E e acidi grassi omega. L'olivello spinoso porta più vitamina C al grammo delle arance. Non è marketing, è botanica."
-        ]
+        ],
+        "quote": "L'agricoltura finlandese usa meno pesticidi per ettaro di quasi qualsiasi altro paese dell'UE."
       }
     ],
     "ingredientsHeadline": "Gli ingredienti della Lapponia",
@@ -594,7 +597,8 @@
     "ctaStay": "Prenota un soggiorno",
     "ctaTours": "Corsi di cucina & tour",
     "whereToTaste": "Dove assaggiarlo",
-    "imageAlt": "{{name}} nella Lapponia finlandese"
+    "imageAlt": "{{name}} nella Lapponia finlandese",
+    "chaptersLabel": "In questa storia"
   },
   "about": {
     "title": "Chi siamo | LaplandDining",

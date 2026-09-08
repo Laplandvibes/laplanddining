@@ -376,40 +376,58 @@ const NUMBER_LOCALES: Record<Locale, string> = {
  *   FI: "4.6 tähden arvio • 627 arvostelua • suomalainen"
  *   DE: "4.6 Sterne • 627 Bewertungen • finnisch"
  */
+/**
+ * Kortin varateksti, kun kuratoitua kuvausta ei ole.
+ *
+ * 🔴 Vesa 2026-09-08: *"miksi ei ole mitään kerrottu paikoista kahdessa
+ * kohdassa"* — suomenkielisellä sivulla kortissa luki vain "4.6 tähden arvio •
+ * 2 394 arvostelua • kahvila". Kaksi vikaa yhdessä rivissä:
+ *
+ * 1. Se ei kertonut paikasta mitään. Nyt rivi alkaa OSOITTEELLA, joka on
+ *    datassa kaikilla 81 ravintolalla (`shortAddress`). "Rovakatu 21,
+ *    Rovaniemi. 4,6 tähteä 2 394 arvostelusta." kertoo mikä ja missä.
+ * 2. Keittiö toistui: se renderöidään jo omalla rivillään kortin otsikon alla.
+ *    Poistettu tästä.
+ *
+ * 🔴 Lisäksi korjattu kielivuoto: haaraketju oli en → fi → ja → es → pt-BR →
+ * zh-CN → sv → nl → "// de", joten **ranska, italia ja korea putosivat läpi
+ * saksankieliseen tekstiin**. Nyt jokaisella kielellä on oma rivinsä.
+ *
+ * 🔴 Tämä EI korvaa oikeaa kuvausta. 86 ravintolasta 35:llä on kuratoitu
+ * kuvaus; loput 51 näyttävät tämän rivin muilla kielillä kuin englanniksi
+ * (englanniksi Googlen arviositaatti täyttää paikan). Aitojen esittelyjen
+ * kirjoittaminen on oma sisältötyönsä eikä sitä saa keksiä tästä datasta.
+ */
 function factualLine(r: Restaurant, locale: Locale): string | null {
   if (!r.rating || !r.reviewCount) return null;
-  const cuisine = cuisineLabel(r, locale);
   const numLocale = NUMBER_LOCALES[locale];
-  const rating = r.rating.toFixed(1);
+  const rating = r.rating.toLocaleString(numLocale, {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  });
   const count = r.reviewCount.toLocaleString(numLocale);
+  const place = r.shortAddress?.trim();
 
-  if (locale === 'en') {
-    return `${rating} stars from ${count} reviews${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}.`;
-  }
-  if (locale === 'fi') {
-    return `${rating} tähden arvio • ${count} arvostelua${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}`;
-  }
-  if (locale === 'ja') {
-    return `評価 ${rating} • レビュー ${count} 件${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}`;
-  }
-  if (locale === 'es') {
-    return `${rating} estrellas · ${count} reseñas${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
-  }
-  if (locale === 'pt-BR') {
-    return `${rating} estrelas · ${count} avaliações${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
-  }
-  if (locale === 'zh-CN') {
-    return `${rating} 星 · ${count} 条评论${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
-  }
-  if (locale === 'sv') {
-    return `${rating} stjärnor · ${count} recensioner${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
-  }
-  if (locale === 'nl') {
-    const nlRating = r.rating.toLocaleString('nl-NL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    return `${nlRating} sterren · ${count} beoordelingen${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
-  }
-  // de
-  return `${rating} Sterne • ${count} Bewertungen${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}`;
+  const stars: Record<Locale, string> = {
+    en: `${rating} stars from ${count} reviews.`,
+    fi: `${rating} tähteä ${count} arvostelusta.`,
+    sv: `${rating} stjärnor av ${count} recensioner.`,
+    de: `${rating} Sterne aus ${count} Bewertungen.`,
+    fr: `${rating} étoiles sur ${count} avis.`,
+    es: `${rating} estrellas de ${count} reseñas.`,
+    it: `${rating} stelle su ${count} recensioni.`,
+    nl: `${rating} sterren uit ${count} beoordelingen.`,
+    'pt-BR': `${rating} estrelas de ${count} avaliações.`,
+    ja: `評価${rating}、レビュー${count}件。`,
+    ko: `평점 ${rating}, 리뷰 ${count}개.`,
+    'zh-CN': `${rating} 星，${count} 条评论。`,
+  };
+
+  const line = stars[locale] ?? stars.en;
+  if (!place) return line;
+  // CJK: piste kuuluu täysleveänä, ja väliä ei tarvita.
+  const sep = locale === 'ja' || locale === 'zh-CN' ? '。' : '. ';
+  return `${place}${sep}${line}`;
 }
 
 export function composeCardBody(r: Restaurant, locale: Locale = 'en'): CardBody | null {

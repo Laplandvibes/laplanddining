@@ -134,9 +134,8 @@
     "editorsPick": "Redaktionstipp",
     "menuLabel": "Speisekarte",
     "menuLabelPdf": "Speisekarte (PDF)",
-    "introTitle": "Nach Orten gruppiert, nicht gegeneinander gereiht",
-    "introP1": "Wo ein Ort eine Redaktionsempfehlung hat, steht sie mit eigener Markierung vorn. Der Rest folgt ohne Reihenfolge. Die Bewertungen stammen von Google und führen zu den Rezensionen dahinter.",
-    "introP2": "Die breite Karte über jedem Ort ist ein bezahlter Partnerplatz und als Werbung gekennzeichnet — sonst ist hier nichts bezahlt. Öffnungszeiten folgen der Saison, und in Lappland kann \"geschlossen für die Saison\" Monate bedeuten. Prüfen Sie die Seite des Restaurants, bevor Sie losfahren."
+    "introP1": "Die Bewertungen stammen von Google und führen direkt zu den Rezensionen, aus denen sie kommen.",
+    "introP2": "Die Öffnungszeiten wechseln mit der Saison, und in Lappland kann \"außerhalb der Saison geschlossen\" Monate bedeuten. Prüfen Sie die Seite des Restaurants, bevor Sie losfahren."
   },
   "cities": {
     "title": "Wo man in Lappland isst — Ort für Ort | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "Ein Fischer holt vor Sonnenaufgang einen arktischen Saibling aus dem Inarisee. Der Küchenchef im Nachbardorf weiß binnen zwanzig Minuten davon. So kurz ist die Versorgungskette in Lappland und genau deshalb schmeckt das Essen so, wie es schmeckt.",
     "sections": [
       {
-        "title": "Der Wald",
+        "title": "Jede Person darf überall sammeln, egal wem das Land gehört",
         "paragraphs": [
-          "Spätsommer in einem lappländischen Wald ist praktisch Lebensmitteleinkauf. Heidelbeeren, Preiselbeeren, Walderdbeeren, Pilze und Wildkräuter wachsen in solchen Mengen, dass jeder Finne pflücken lernt, bevor er Auto fahren lernt. Das <strong>Jedermannsrecht</strong> (jokamiehenoikeus) macht das möglich: Jede Person, ob Einheimische oder Gast, darf sich in der Natur bewegen, sammeln und pflücken, unabhängig davon, wem das Land gehört.",
+          "Spätsommer in einem lappländischen Wald ist praktisch Lebensmitteleinkauf. Das <strong>Jedermannsrecht</strong> (jokamiehenoikeus) macht das möglich: Jede Person, ob Einheimische oder Gast, darf sich in der Natur bewegen, sammeln und pflücken, unabhängig davon, wem das Land gehört.",
           "Das ist keine bloße Geste. Es prägt die gesamte Esskultur. Finnlands Wälder bringen schätzungsweise 500 Millionen Kilogramm wilde Heidelbeeren pro Jahr hervor, doch nur 5–10 % werden gepflückt. Der Rest ernährt das Wild und erneuert das Ökosystem.",
           "Viele der besten Restaurants Lapplands beschäftigen professionelle Sammler, die den Sommer auf den Fjell-Wiesen und an den Rändern der Urwälder verbringen. „Farm-to-Table“ trifft das nicht. Hier ist es Wald-zu-Tisch und der Wald beginnt hinter der Küchentür."
-        ]
+        ],
+        "quote": "Heidelbeeren, Preiselbeeren, Walderdbeeren, Pilze und Wildkräuter wachsen in solchen Mengen, dass jeder Finne pflücken lernt, bevor er Auto fahren lernt."
       },
       {
-        "title": "Fluss und See",
+        "title": "Netze am Morgen, Suppe am Abend",
         "paragraphs": [
-          "Der Tornionjoki gehört zu den wenigen Lachsflüssen Europas, in denen Lachs noch aus genuin wilden Beständen gefangen wird. Der Inarisee liefert arktischen Saibling, Felchen und Bachforelle. Der äußerste Norden Finnlands ist voller Seen, deren Wasser sauberer ist, als sich viele Länder vorstellen können.",
+          "Der Inarisee liefert arktischen Saibling, Felchen und Bachforelle. Der äußerste Norden Finnlands ist voller Seen, deren Wasser sauberer ist, als sich viele Länder vorstellen können.",
           "Die finnische Fischtradition ist hier oben fast eine Sache des einzelnen Haushalts: Netze am Morgen gesetzt, Lachssuppe am Abend. Lachs in Birkenrinde geräuchert. Felchen auf einem Holzbrett neben offenem Feuer (loimu) gegart. Sahne und Dill schwimmen in der Suppe.",
           "Im Tornio-Tal an der finnisch-schwedischen Grenze lebt die alte Lippokalastus-Tradition weiter: ein langstieliges Netz, gegen die Strömung in den Strom getaucht. In Kukkolaforsen auf der schwedischen Seite kann man auf dem Heimweg vom Abendessen den hauseigenen geräucherten Fisch mitnehmen."
-        ]
+        ],
+        "quote": "Der Tornionjoki gehört zu den wenigen Lachsflüssen Europas, in denen Lachs noch aus genuin wilden Beständen gefangen wird."
       },
       {
-        "title": "Rentierhaltung",
+        "title": "Kein getreidegefüttertes Tier kommt da heran",
         "paragraphs": [
-          "Jedes Rentier in Finnisch-Lappland lebt in Freiheit. Es gibt keine klassischen Rentierfarmen, die Tiere ziehen über rund 123.000 km² Wildnis und ernähren sich von Flechten, Moos, Wildgräsern und Birkenlaub. Sie sind halbdomestiziert: Hirten verfolgen und betreuen sie, doch die Bewegung gehört dem Tier.",
+          "Es gibt keine klassischen Rentierfarmen, die Tiere ziehen über rund 123.000 km² Wildnis und ernähren sich von Flechten, Moos, Wildgräsern und Birkenlaub. Sie sind halbdomestiziert: Hirten verfolgen und betreuen sie, doch die Bewegung gehört dem Tier.",
           "Das schmeckt man im Fleisch. Ein frei lebendes Rentier, das sein Leben über Fjell-Landschaften wandernd und Wildpflanzen fressend verbracht hat, liefert Fleisch, das mager ist, reich an Omega-3-Fettsäuren und tief im Geschmack. Kein getreidegefüttertes Stalltier kommt da heran.",
           "Finnlands Rentierwirtschaft wird über 54 Hege-Genossenschaften geführt, mit gesetzlich gedeckelten Herdengrößen. Herbst-Zusammentriebe entscheiden, wie viele geschlachtet werden, um Herden gesund und die Landschaft im Gleichgewicht zu halten. Die Jahresproduktion liegt bei rund 2 Millionen Kilogramm Fleisch."
-        ]
+        ],
+        "quote": "Jedes Rentier in Finnisch-Lappland lebt in Freiheit."
       },
       {
-        "title": "Stille Seen und arktische Umwelt",
+        "title": "Eine Wildheidelbeere hat drei- bis viermal mehr Anthocyane als eine kultivierte",
         "paragraphs": [
-          "Die finnische Landwirtschaft verwendet weniger Pestizide pro Hektar als fast jedes andere EU-Land. Der Antibiotika-Einsatz in der Tierhaltung gehört zu den niedrigsten Europas. Kalte Winter wirken als natürliche Schädlingsbekämpfung, Insekten, die wärmere Klimazonen plagen, überstehen den arktischen Frost schlicht nicht. Das heißt: weniger chemische Eingriffe, sauberere Erzeugnisse.",
+          "Der Antibiotika-Einsatz in der Tierhaltung gehört zu den niedrigsten Europas. Kalte Winter wirken als natürliche Schädlingsbekämpfung, Insekten, die wärmere Klimazonen plagen, überstehen den arktischen Frost schlicht nicht. Das heißt: weniger chemische Eingriffe, sauberere Erzeugnisse.",
           "Leitungswasser ist im ganzen Land trinkbar. In Lappland kommt es direkt aus einigen der reinsten Grundwasserquellen des Kontinents, oft aus demselben Wasser, das zwei Tage zuvor als Schnee auf einer Hirtenweide gefallen ist.",
           "Pflanzen, die unter harten Bedingungen wachsen, bilden mehr Schutzstoffe. Eine finnische Wildheidelbeere enthält drei- bis viermal mehr Anthocyane als eine kultivierte Heidelbeere. Moltebeeren sind reich an Vitamin C, Vitamin E und Omega-Fettsäuren. Sanddorn trägt pro Gramm mehr Vitamin C als Orangen. Das ist kein Marketing, das ist Botanik."
-        ]
+        ],
+        "quote": "Die finnische Landwirtschaft verwendet weniger Pestizide pro Hektar als fast jedes andere EU-Land."
       }
     ],
     "ingredientsHeadline": "Die Zutaten Lapplands",
@@ -594,7 +597,8 @@
     "ctaStay": "Unterkunft buchen",
     "ctaTours": "Kochkurse & Foodtouren",
     "whereToTaste": "Wo man es probiert",
-    "imageAlt": "{{name}} in Finnisch-Lappland"
+    "imageAlt": "{{name}} in Finnisch-Lappland",
+    "chaptersLabel": "In dieser Geschichte"
   },
   "about": {
     "title": "Über LaplandDining",

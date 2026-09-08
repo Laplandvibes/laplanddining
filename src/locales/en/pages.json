@@ -134,9 +134,8 @@
     "editorsPick": "Editor's pick",
     "menuLabel": "Menu",
     "menuLabelPdf": "Menu (PDF)",
-    "introTitle": "Grouped by town, not ranked against each other",
-    "introP1": "Where a town has an editor's pick, it leads with a marked chip. The rest follow in no particular order. Ratings are Google's own and link to the reviews behind them.",
-    "introP2": "The wide card above each town is a paid partner slot and is labelled as advertising — nothing else here is paid placement. Opening hours follow the season, and in Lapland \"closed for the season\" can mean months. Check the restaurant's own page before you drive out."
+    "introP1": "Ratings are Google's own and link straight to the reviews they come from.",
+    "introP2": "Opening hours shift with the season, and in Lapland \"closed for the season\" can mean months. Check the restaurant's own page before you drive out."
   },
   "cities": {
     "title": "Where to Eat in Lapland, Town by Town | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "A fisher hauls an Arctic char out of Lake Inari before sunrise. The chef in the next village knows about it within twenty minutes. The food chain in Lapland is that short and that's why the food tastes the way it does.",
     "sections": [
       {
-        "title": "The Forest",
+        "title": "Anyone may pick anywhere, whoever owns the land",
         "paragraphs": [
-          "Late summer in a Lappish forest is, practically, grocery shopping. Bilberries, lingonberries, wild raspberries, mushrooms and wild herbs grow in such volume that every Finn learns to pick before they learn to drive. Everyman's Right, <strong>jokamiehenoikeus</strong>, makes it possible: anyone, local or visiting, can walk, forage and pick anywhere in nature regardless of who owns the land.",
+          "Late summer in a Lappish forest is, practically, grocery shopping. Everyman's Right, <strong>jokamiehenoikeus</strong>, makes it possible: anyone, local or visiting, can walk, forage and pick anywhere in nature regardless of who owns the land.",
           "It isn't a token gesture. It shapes the whole food culture. Finland's forests produce an estimated 500 million kilograms of wild bilberries a year, but only 5–10% are picked. The rest feeds the wildlife and replenishes the ecosystem.",
           "Many of Lapland's best restaurants keep professional foragers on payroll, spending the summer on the fells and at the edges of old-growth forest. \"Farm-to-table\" doesn't describe it. This is forest-to-table and the forest starts behind the kitchen door."
-        ]
+        ],
+        "quote": "Bilberries, lingonberries, wild raspberries, mushrooms and wild herbs grow in such volume that every Finn learns to pick before they learn to drive."
       },
       {
-        "title": "River and Lake",
+        "title": "Nets in the morning, soup on the table by evening",
         "paragraphs": [
-          "The Tornio River is one of Europe's few salmon rivers where wild salmon are still caught from genuinely wild stocks. Lake Inari produces Arctic char, whitefish and brown trout. Northernmost Finland is full of lakes carrying water cleaner than most countries can imagine.",
+          "Lake Inari produces Arctic char, whitefish and brown trout. Northernmost Finland is full of lakes carrying water cleaner than most countries can imagine.",
           "Finnish fishing tradition up here is almost household-scale, nets dropped in the morning, soup on the table by evening. Salmon smoked in birch bark. Whitefish loimu-grilled on a wooden board next to an open fire. Cream and dill float in the soup.",
           "In the Tornio valley, on the Finnish-Swedish border, the old lippokalastus tradition still runs: a long-handled net dipped against the current from a wooden platform. At Kukkolaforsen on the Swedish bank you can buy the on-site smoked fish to take home from dinner."
-        ]
+        ],
+        "quote": "The Tornio River is one of Europe's few salmon rivers where wild salmon are still caught from genuinely wild stocks."
       },
       {
-        "title": "Reindeer Husbandry",
+        "title": "No grain-fed animal comes close",
         "paragraphs": [
-          "Every reindeer in Finnish Lapland lives free. There are no conventional reindeer farms, the animals roam across roughly 123,000 km² of wilderness, grazing on lichen, moss, wild grasses and birch leaves. They're semi-domesticated: herders track and manage them, but movement is the animal's own.",
+          "There are no conventional reindeer farms, the animals roam across roughly 123,000 km² of wilderness, grazing on lichen, moss, wild grasses and birch leaves. They're semi-domesticated: herders track and manage them, but movement is the animal's own.",
           "It shows in the meat. A free-ranging reindeer that has spent its life walking the fells and eating wild plants produces meat that is lean, rich in omega-3 fatty acids and deeply flavoured. No grain-fed farm animal comes close.",
           "Finland's reindeer industry is run through 54 herding cooperatives with legally capped maximum herd sizes. Autumn round-ups decide how many can be slaughtered to keep herds healthy and the landscape in balance. Annual production runs around 2 million kilograms of meat."
-        ]
+        ],
+        "quote": "Every reindeer in Finnish Lapland lives free."
       },
       {
-        "title": "Quiet Lakes and an Arctic Environment",
+        "title": "A wild bilberry carries 3–4× the anthocyanins of a cultivated one",
         "paragraphs": [
-          "Finnish farming uses less pesticide per hectare than almost any other EU country. Antibiotic use in livestock is among the lowest in Europe. Cold winters act as natural pest control, insects that plague warmer climates simply don't survive the Arctic freeze. The result is less chemical intervention and cleaner produce.",
+          "Antibiotic use in livestock is among the lowest in Europe. Cold winters act as natural pest control, insects that plague warmer climates simply don't survive the Arctic freeze. The result is less chemical intervention and cleaner produce.",
           "Tap water is drinkable everywhere in the country. In Lapland it comes straight from some of the purest groundwater sources on the continent, often the same water that fell as snow on a herding pasture two days earlier.",
           "Plants that grow under harsh conditions develop more protective compounds. A wild Finnish bilberry contains 3–4 times more anthocyanins than a cultivated blueberry. Cloudberries are rich in vitamin C, vitamin E and omega fatty acids. Sea buckthorn carries more vitamin C per gram than oranges. This isn't marketing, it's botany."
-        ]
+        ],
+        "quote": "Finnish farming uses less pesticide per hectare than almost any other EU country."
       }
     ],
     "ingredientsHeadline": "The Ingredients of Lapland",
@@ -594,7 +597,8 @@
     "ctaStay": "Book a Lapland stay",
     "ctaTours": "Cooking & food tours",
     "whereToTaste": "Where to taste",
-    "imageAlt": "{{name}} in Finnish Lapland"
+    "imageAlt": "{{name}} in Finnish Lapland",
+    "chaptersLabel": "In this story"
   },
   "about": {
     "title": "About LaplandDining",

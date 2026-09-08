@@ -134,9 +134,8 @@
     "editorsPick": "Choix de la rédaction",
     "menuLabel": "Carte",
     "menuLabelPdf": "Carte (PDF)",
-    "introTitle": "Regroupé par localité, sans classement",
-    "introP1": "Là où une localité a un choix de la rédaction, il ouvre la liste avec une pastille. Les autres suivent sans ordre particulier. Les notes viennent de Google et renvoient aux avis d'origine.",
-    "introP2": "La carte large au-dessus de chaque localité est un emplacement partenaire payant, signalé comme publicité — rien d'autre ici n'est payé. Les horaires suivent la saison, et en Laponie « fermé pour la saison » peut vouloir dire des mois. Vérifiez la page du restaurant avant de partir."
+    "introP1": "Les notes viennent de Google et renvoient directement aux avis dont elles sont issues.",
+    "introP2": "Les horaires changent avec la saison, et en Laponie « fermé pour la saison » peut vouloir dire des mois. Vérifiez le site du restaurant avant de prendre la route."
   },
   "cities": {
     "title": "Où manger en Laponie, ville par ville | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "Un pêcheur sort un omble arctique du lac Inari avant le lever du soleil. Le chef du village voisin est au courant en vingt minutes. La chaîne alimentaire en Laponie est aussi courte que cela et c'est pour ça que la nourriture a ce goût-là.",
     "sections": [
       {
-        "title": "La forêt",
+        "title": "Chacun peut cueillir partout, quel que soit le propriétaire",
         "paragraphs": [
-          "La fin d'été dans une forêt lapone, c'est pratiquement faire ses courses. Myrtilles, airelles, framboises sauvages, champignons et herbes sauvages poussent en telle quantité que chaque Finlandais apprend à cueillir avant d'apprendre à conduire. Le droit d'accès, <strong>jokamiehenoikeus</strong>, le permet : n'importe qui, local ou de passage, peut marcher, cueillir et ramasser dans la nature, quel que soit le propriétaire de la terre.",
+          "La fin d'été dans une forêt lapone, c'est pratiquement faire ses courses. Le droit d'accès, <strong>jokamiehenoikeus</strong>, le permet : n'importe qui, local ou de passage, peut marcher, cueillir et ramasser dans la nature, quel que soit le propriétaire de la terre.",
           "Ce n'est pas un geste symbolique. Cela façonne toute la culture culinaire. Les forêts de Finlande produisent quelque 500 millions de kilogrammes de myrtilles sauvages par an, mais seulement 5 à 10 % sont cueillis. Le reste nourrit la faune et réalimente l'écosystème.",
           "Nombre des meilleurs restaurants de Laponie emploient des cueilleurs professionnels à plein temps, qui passent l'été sur les fjälls et en lisière des forêts primaires. « De la ferme à la table » ne le décrit pas. C'est de la forêt à la table et la forêt commence derrière la porte de la cuisine."
-        ]
+        ],
+        "quote": "Myrtilles, airelles, framboises sauvages, champignons et herbes sauvages poussent en telle quantité que chaque Finlandais apprend à cueillir avant d'apprendre à conduire."
       },
       {
-        "title": "Fleuve et lac",
+        "title": "Filets le matin, soupe sur la table le soir",
         "paragraphs": [
-          "Le fleuve Tornio est l'une des rares rivières à saumon d'Europe où l'on capture encore du saumon issu de souches véritablement sauvages. Le lac Inari produit omble arctique, corégone et truite fario. L'extrême nord de la Finlande regorge de lacs portant une eau plus propre que la plupart des pays ne peuvent l'imaginer.",
+          "Le lac Inari produit omble arctique, corégone et truite fario. L'extrême nord de la Finlande regorge de lacs portant une eau plus propre que la plupart des pays ne peuvent l'imaginer.",
           "La tradition de pêche finlandaise ici est presque à échelle domestique, filets posés le matin, soupe sur la table le soir. Saumon fumé dans l'écorce de bouleau. Corégone grillé à la flamme sur une planche en bois à côté du feu ouvert. La crème et l'aneth flottent dans la soupe.",
           "Dans la vallée de Tornio, à la frontière finno-suédoise, l'ancienne tradition du lippokalastus se pratique toujours : un long filet à manche plongé contre le courant depuis une plateforme en bois. À Kukkolaforsen, côté suédois, vous pouvez acheter sur place le poisson fumé et l'emporter pour le dîner."
-        ]
+        ],
+        "quote": "Le fleuve Tornio est l'une des rares rivières à saumon d'Europe où l'on capture encore du saumon issu de souches véritablement sauvages."
       },
       {
-        "title": "Élevage du renne",
+        "title": "Aucun animal nourri au grain n'en approche",
         "paragraphs": [
-          "Tout renne en Laponie finlandaise vit libre. Il n'existe pas de fermes à rennes conventionnelles, les animaux parcourent environ 123 000 km² de nature sauvage, broutant lichens, mousses, herbes et feuilles de bouleau. Ils sont semi-domestiqués : les éleveurs les suivent et les gèrent, mais le mouvement appartient à l'animal.",
+          "Il n'existe pas de fermes à rennes conventionnelles, les animaux parcourent environ 123 000 km² de nature sauvage, broutant lichens, mousses, herbes et feuilles de bouleau. Ils sont semi-domestiqués : les éleveurs les suivent et les gèrent, mais le mouvement appartient à l'animal.",
           "Cela se sent dans la viande. Un renne qui a passé sa vie à arpenter les fjälls et à manger des plantes sauvages donne une viande maigre, riche en oméga-3 et profondément parfumée. Aucun animal d'élevage nourri au grain n'en approche.",
           "L'industrie finlandaise du renne fonctionne via 54 coopératives d'élevage avec des effectifs maximaux fixés par la loi. Les rassemblements d'automne décident combien peuvent être abattus pour maintenir la santé des troupeaux et l'équilibre du paysage. La production annuelle tourne autour de 2 millions de kilogrammes de viande."
-        ]
+        ],
+        "quote": "Tout renne en Laponie finlandaise vit libre."
       },
       {
-        "title": "Lacs tranquilles et environnement arctique",
+        "title": "Une myrtille sauvage contient 3 à 4 fois plus d’anthocyanes qu’une cultivée",
         "paragraphs": [
-          "L'agriculture finlandaise utilise moins de pesticides par hectare que presque tout autre pays de l'UE. L'usage d'antibiotiques chez le bétail est parmi les plus faibles d'Europe. Les hivers froids servent de lutte naturelle contre les nuisibles, les insectes qui ravagent les climats chauds ne survivent pas au gel arctique. Le résultat : moins d'intervention chimique et des produits plus propres.",
+          "L'usage d'antibiotiques chez le bétail est parmi les plus faibles d'Europe. Les hivers froids servent de lutte naturelle contre les nuisibles, les insectes qui ravagent les climats chauds ne survivent pas au gel arctique. Le résultat : moins d'intervention chimique et des produits plus propres.",
           "L'eau du robinet est potable partout dans le pays. En Laponie, elle vient directement de certaines des sources souterraines les plus pures du continent, souvent la même eau tombée en neige sur un pâturage d'éleveur deux jours plus tôt.",
           "Les plantes qui poussent dans des conditions rudes développent davantage de composés protecteurs. Une myrtille sauvage finlandaise contient 3 à 4 fois plus d'anthocyanes qu'une myrtille cultivée. La mûre arctique est riche en vitamine C, vitamine E et acides gras oméga. L'argousier porte plus de vitamine C par gramme que l'orange. Ce n'est pas du marketing, c'est de la botanique."
-        ]
+        ],
+        "quote": "L'agriculture finlandaise utilise moins de pesticides par hectare que presque tout autre pays de l'UE."
       }
     ],
     "ingredientsHeadline": "Les ingrédients de la Laponie",
@@ -594,7 +597,8 @@
     "ctaStay": "Réserver un séjour",
     "ctaTours": "Cours de cuisine & visites",
     "whereToTaste": "Où le goûter",
-    "imageAlt": "{{name}} en Laponie finlandaise"
+    "imageAlt": "{{name}} en Laponie finlandaise",
+    "chaptersLabel": "Dans ce récit"
   },
   "about": {
     "title": "À propos de LaplandDining",

@@ -134,9 +134,8 @@
     "editorsPick": "Toimituksen valinta",
     "menuLabel": "Ruokalista",
     "menuLabelPdf": "Ruokalista (PDF)",
-    "introTitle": "Ryhmitelty paikkakunnittain, ei paremmuusjärjestykseen",
-    "introP1": "Jos paikkakunnalla on toimituksen valinta, se on ensimmäisenä omalla merkinnällään. Muut tulevat ilman järjestystä. Arviot ovat Googlen omia ja vievät niihin arvosteluihin, joista luku on peräisin.",
-    "introP2": "Jokaisen paikkakunnan yläpuolella oleva leveä kortti on maksettu kumppanipaikka ja merkitty mainokseksi — muuta maksettua tällä sivulla ei ole. Aukioloajat elävät kaudessa, ja Lapissa \"suljettu kaudeksi\" voi tarkoittaa kuukausia. Tarkista ravintolan oma sivu ennen kuin lähdet ajamaan."
+    "introP1": "Arviot ovat Googlen omia ja vievät suoraan niihin arvosteluihin, joista luku on peräisin.",
+    "introP2": "Aukioloajat elävät kaudessa, ja Lapissa \"suljettu kaudeksi\" voi tarkoittaa kuukausia. Tarkista ravintolan oma sivu ennen kuin lähdet ajamaan."
   },
   "cities": {
     "title": "Missä syödä Lapissa — paikkakunnittain | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "Kalastaja nostaa nieriän Inarijärvestä aamulla. Naapurikylän ravintolan kokki tietää siitä parinkymmenen minuutin sisällä. Lapissa ruokaketju on lyhyt ja siksi ruoka maistuu siltä kuin maistuu.",
     "sections": [
       {
-        "title": "Metsä",
+        "title": "Kuka tahansa saa poimia missä tahansa, omisti maan kuka hyvänsä",
         "paragraphs": [
-          "Loppukesästä lappilainen metsä on käytännössä ruokakauppa. Mustikkaa, puolukkaa, vatukkaa, sieniä ja villiyrttejä on niin paljon, että jokainen suomalainen oppii poimimaan ennen kuin oppii ajamaan. Jokamiehenoikeus tekee tämän mahdolliseksi: kuka tahansa, paikallinen tai vieras, saa kävellä, sienestää ja marjastaa metsässä riippumatta siitä, kuka maan omistaa.",
+          "Loppukesästä lappilainen metsä on käytännössä ruokakauppa. Jokamiehenoikeus tekee tämän mahdolliseksi: kuka tahansa, paikallinen tai vieras, saa kävellä, sienestää ja marjastaa metsässä riippumatta siitä, kuka maan omistaa.",
           "Tämä ei ole pelkkä mukava lakipykälä: se muovaa koko ruokakulttuurin. Suomen metsät tuottavat arviolta 500 miljoonaa kiloa villimustikkaa vuosittain, mutta vain 5–10 prosenttia poimitaan. Loput ruokkivat metsän eläimiä ja palautuvat ekosysteemin kiertoon.",
           "Monet Lapin parhaista ravintoloista pitävät palkkalistallaan ammatti­keräilijöitä, jotka viettävät kesän tunturiniityillä ja vanhojen metsien laidoilla. \"Pellolta pöytään\" ei kuvaa tätä. Täällä ruoka kulkee metsästä pöytään, ja metsä alkaa heti keittiön oven takaa."
-        ]
+        ],
+        "quote": "Mustikkaa, puolukkaa, vatukkaa, sieniä ja villiyrttejä on niin paljon, että jokainen suomalainen oppii poimimaan ennen kuin oppii ajamaan."
       },
       {
-        "title": "Joki ja järvi",
+        "title": "Verkot aamulla, keitto pöydässä illalla",
         "paragraphs": [
-          "Tornionjoki on yksi Euroopan harvoista lohijoista, joissa lohi on yhä aidosti luonnonvaraista kantaa. Inarijärvi tuottaa nieriää, siikaa ja taimenta. Pohjoisin Suomi on täynnä järviä, joiden vesi on puhtaampaa kuin useimmissa maissa osataan kuvitellakaan.",
+          "Inarijärvi tuottaa nieriää, siikaa ja taimenta. Pohjoisin Suomi on täynnä järviä, joiden vesi on puhtaampaa kuin useimmissa maissa osataan kuvitellakaan.",
           "Suomalainen kalastusperinne on pohjoisessa lähes kotitarvekalastusta: verkot lasketaan aamulla, keitto on pöydässä illalla. Lohi savustetaan tuohessa. Siika paistetaan loimulla puulaudalla avotulen vieressä. Kalakeitossa kelluu kermaa ja tilliä.",
           "Tornionjokilaaksossa, Suomen ja Ruotsin rajalla, vanha lippokalastusperinne elää yhä: pitkävartinen lippohaavi upotetaan puulavalta koskeen virtaa vasten. Kukkolaforsenissa Ruotsin puolella saa ostaa paikan päällä savustettua kalaa mukaan illalliselta lähtiessä."
-        ]
+        ],
+        "quote": "Tornionjoki on yksi Euroopan harvoista lohijoista, joissa lohi on yhä aidosti luonnonvaraista kantaa."
       },
       {
-        "title": "Poronhoito",
+        "title": "Mikään viljalla ruokittu eläin ei pääse lähellekään",
         "paragraphs": [
-          "Jokainen poro Suomen Lapissa elää vapaana. Porotiloja ei tavanomaisessa mielessä ole: eläimet vaeltavat noin 123 000 neliökilometrin alueella ja syövät jäkälää, sammalta, villiheinää ja koivun lehtiä. Ne ovat puolikesyjä: poronhoitajat seuraavat ja paimentavat niitä, mutta liikkuminen on poron oma asia.",
+          "Porotiloja ei tavanomaisessa mielessä ole: eläimet vaeltavat noin 123 000 neliökilometrin alueella ja syövät jäkälää, sammalta, villiheinää ja koivun lehtiä. Ne ovat puolikesyjä: poronhoitajat seuraavat ja paimentavat niitä, mutta liikkuminen on poron oma asia.",
           "Tämä näkyy lihassa. Vapaasti laiduntava poro, joka on viettänyt elämänsä tunturimaisemissa kävellen ja villikasveja syöden, tuottaa vähärasvaista lihaa, jossa on runsaasti omega-3-rasvahappoja ja syvä maku. Mikään viljalla ruokittu tuotantoeläin ei pääse lähellekään.",
           "Suomen porotalous on järjestetty 54 paliskuntaan, joiden suurimmat sallitut poromäärät on rajattu laissa. Syksyiset erotukset määrittävät, kuinka monta poroa teurastetaan, jotta tokat pysyvät terveinä ja maisema tasapainossa. Vuosituotto on noin 2 miljoonaa kiloa lihaa."
-        ]
+        ],
+        "quote": "Jokainen poro Suomen Lapissa elää vapaana."
       },
       {
-        "title": "Hiljaiset järvet ja arktinen ympäristö",
+        "title": "Villimustikassa on 3–4 kertaa enemmän antosyaaneja kuin viljellyssä",
         "paragraphs": [
-          "Suomalainen maatalous käyttää torjunta-aineita hehtaaria kohden vähemmän kuin lähes mikään muu EU-maa. Antibioottien käyttö kotieläintaloudessa on Euroopan alhaisimpia. Kylmät talvet toimivat luonnollisena tuholaistorjuntana: lämpimämmän ilmaston tuhohyönteiset eivät selviä arktisesta pakkasesta. Tuloksena on vähemmän kemiallista torjuntaa ja puhtaampaa satoa.",
+          "Antibioottien käyttö kotieläintaloudessa on Euroopan alhaisimpia. Kylmät talvet toimivat luonnollisena tuholaistorjuntana: lämpimämmän ilmaston tuhohyönteiset eivät selviä arktisesta pakkasesta. Tuloksena on vähemmän kemiallista torjuntaa ja puhtaampaa satoa.",
           "Hanavesi on juotavaa kaikkialla maassa. Lapissa se tulee suoraan Euroopan puhtaimpiin kuuluvista pohjavesilähteistä, usein samasta vedestä, joka pari vuorokautta aiemmin satoi lumena porolaitumelle.",
           "Ankarissa olosuhteissa kasvavat kasvit kehittävät enemmän suojayhdisteitä. Suomalaisessa villimustikassa on 3–4 kertaa enemmän antosyaaneja kuin lauhkean ilmaston viljellyssä pensasmustikassa. Hillassa on runsaasti C- ja E-vitamiinia sekä omegarasvahappoja. Tyrnissä on grammaa kohden enemmän C-vitamiinia kuin appelsiineissa. Tämä ei ole markkinointia, vaan kasvitiedettä."
-        ]
+        ],
+        "quote": "Suomalainen maatalous käyttää torjunta-aineita hehtaaria kohden vähemmän kuin lähes mikään muu EU-maa."
       }
     ],
     "ingredientsHeadline": "Lapin raaka-aineet",
@@ -594,7 +597,8 @@
     "ctaStay": "Varaa yöpaikka",
     "ctaTours": "Kokkauskurssit & retket",
     "whereToTaste": "Missä maistat",
-    "imageAlt": "{{name}} Suomen Lapissa"
+    "imageAlt": "{{name}} Suomen Lapissa",
+    "chaptersLabel": "Tässä tarinassa"
   },
   "about": {
     "title": "Tietoa LaplandDiningista",

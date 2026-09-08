@@ -134,9 +134,8 @@
     "editorsPick": "Redaktionens val",
     "menuLabel": "Meny",
     "menuLabelPdf": "Meny (PDF)",
-    "introTitle": "Grupperat efter ort, inte rangordnat",
-    "introP1": "Där en ort har ett redaktionsval leder det med en egen markering. Resten följer utan inbördes ordning. Betygen är Googles egna och leder till recensionerna bakom.",
-    "introP2": "Det breda kortet ovanför varje ort är en betald partnerplats och märkt som annons — inget annat här är betald placering. Öppettiderna följer säsongen, och i Lappland kan \"stängt för säsongen\" betyda månader. Kolla restaurangens egen sida innan du kör dit."
+    "introP1": "Betygen är Googles egna och länkar direkt till recensionerna de kommer från.",
+    "introP2": "Öppettiderna följer säsongen, och i Lappland kan \"stängt för säsongen\" betyda månader. Kolla restaurangens egen sida innan du kör iväg."
   },
   "cities": {
     "title": "Var man äter i Lappland — ort för ort | LaplandDining",
@@ -511,36 +510,40 @@
     "intro": "En fiskare drar upp en röding ur Enare träsk före soluppgången. Kocken i grannbyn vet om det inom tjugo minuter. Livsmedelskedjan i Lappland är så kort – och det är därför maten smakar som den gör.",
     "sections": [
       {
-        "title": "Skogen",
+        "title": "Vem som helst får plocka var som helst, oavsett vem som äger marken",
         "paragraphs": [
-          "Sensommaren i en lapsk skog är, i praktiken, matinköp. Blåbär, lingon, vilda hallon, svamp och vilda örter växer i sådan mängd att varje finländare lär sig plocka innan hen lär sig köra bil. Allemansrätten, <strong>jokamiehenoikeus</strong>, gör det möjligt: vem som helst, lokalbo eller besökare, får gå, plocka och samla var som helst i naturen oavsett vem som äger marken.",
+          "Sensommaren i en lapsk skog är, i praktiken, matinköp. Allemansrätten, <strong>jokamiehenoikeus</strong>, gör det möjligt: vem som helst, lokalbo eller besökare, får gå, plocka och samla var som helst i naturen oavsett vem som äger marken.",
           "Det är ingen symbolisk gest. Den formar hela matkulturen. Finlands skogar ger uppskattningsvis 500 miljoner kilo vilda blåbär om året, men bara 5–10 % plockas. Resten föder viltet och fyller på ekosystemet.",
           "Många av Lapplands bästa restauranger har professionella plockare på lönelistan, som tillbringar sommaren på fjället och i kanten av gammelskogen. \"Farm-to-table\" beskriver det inte. Det här är skog-till-bord – och skogen börjar bakom köksdörren."
-        ]
+        ],
+        "quote": "Blåbär, lingon, vilda hallon, svamp och vilda örter växer i sådan mängd att varje finländare lär sig plocka innan hen lär sig köra bil."
       },
       {
-        "title": "Älv och sjö",
+        "title": "Nät på morgonen, soppa på bordet till kvällen",
         "paragraphs": [
-          "Torneälven är en av Europas få laxälvar där vild lax fortfarande fångas ur genuint vilda bestånd. Enare träsk ger röding, sik och öring. Nordligaste Finland är fullt av sjöar med vatten renare än de flesta länder kan föreställa sig.",
+          "Enare träsk ger röding, sik och öring. Nordligaste Finland är fullt av sjöar med vatten renare än de flesta länder kan föreställa sig.",
           "Den finska fisketraditionen här uppe är nästan i hushållsskala – nät läggs på morgonen, soppa på bordet till kvällen. Lax rökt i näver. Sik loimu-grillad på en träspjäla bredvid öppen eld. Grädde och dill flyter i soppan.",
           "I Torneälvdalen, på gränsen mellan Finland och Sverige, lever den gamla lippokalastus-traditionen kvar: ett långskaftat nät som doppas mot strömmen från en träplattform. Vid Kukkolaforsen på den svenska sidan kan du köpa den rökta fisken på plats att ta med hem från middagen."
-        ]
+        ],
+        "quote": "Torneälven är en av Europas få laxälvar där vild lax fortfarande fångas ur genuint vilda bestånd."
       },
       {
-        "title": "Renskötsel",
+        "title": "Inget spannmålsuppfött djur kommer i närheten",
         "paragraphs": [
-          "Varenda ren i finska Lappland lever fritt. Det finns inga vanliga rengårdar – djuren strövar över ungefär 123 000 km² vildmark och betar lav, mossa, vilda gräs och björklöv. De är halvtama: skötare spårar och sköter dem, men rörelsen är djurets egen.",
+          "Det finns inga vanliga rengårdar – djuren strövar över ungefär 123 000 km² vildmark och betar lav, mossa, vilda gräs och björklöv. De är halvtama: skötare spårar och sköter dem, men rörelsen är djurets egen.",
           "Det syns i köttet. En frigående ren som tillbringat livet med att vandra på fjället och äta vilda växter ger kött som är magert, rikt på omega-3-fettsyror och djupt smakrikt. Inget spannmålsuppfött gårdsdjur kommer i närheten.",
           "Finlands rennäring drivs genom 54 renbeteslag med lagstadgade maxantal för hjordarna. Höstens skiljningar avgör hur många som kan slaktas för att hålla hjordarna friska och landskapet i balans. Den årliga produktionen ligger runt 2 miljoner kilo kött."
-        ]
+        ],
+        "quote": "Varenda ren i finska Lappland lever fritt."
       },
       {
-        "title": "Stilla sjöar och en arktisk miljö",
+        "title": "Ett vilt blåbär har 3–4 gånger mer antocyaniner än ett odlat",
         "paragraphs": [
-          "Finskt jordbruk använder mindre bekämpningsmedel per hektar än nästan något annat EU-land. Antibiotikaanvändningen i djurhållningen är bland de lägsta i Europa. Kalla vintrar fungerar som naturlig skadedjursbekämpning – insekter som plågar varmare klimat överlever helt enkelt inte den arktiska kylan. Resultatet är mindre kemiska ingrepp och renare råvaror.",
+          "Antibiotikaanvändningen i djurhållningen är bland de lägsta i Europa. Kalla vintrar fungerar som naturlig skadedjursbekämpning – insekter som plågar varmare klimat överlever helt enkelt inte den arktiska kylan. Resultatet är mindre kemiska ingrepp och renare råvaror.",
           "Kranvattnet går att dricka överallt i landet. I Lappland kommer det direkt från några av de renaste grundvattenkällorna på kontinenten – ofta samma vatten som föll som snö på en renbetesmark två dagar tidigare.",
           "Växter som växer under hårda förhållanden utvecklar fler skyddande ämnen. Ett vilt finskt blåbär innehåller 3–4 gånger mer antocyaniner än ett odlat blåbär. Hjortron är rika på C-vitamin, E-vitamin och omegafettsyror. Havtorn bär mer C-vitamin per gram än apelsiner. Det här är ingen marknadsföring – det är botanik."
-        ]
+        ],
+        "quote": "Finskt jordbruk använder mindre bekämpningsmedel per hektar än nästan något annat EU-land."
       }
     ],
     "ingredientsHeadline": "Lapplands råvaror",
@@ -594,7 +597,8 @@
     "ctaStay": "Boka ett boende i Lappland",
     "ctaTours": "Matlagnings- & matturer",
     "whereToTaste": "Var du smakar det",
-    "imageAlt": "{{name}} i finska Lappland"
+    "imageAlt": "{{name}} i finska Lappland",
+    "chaptersLabel": "I den här berättelsen"
   },
   "about": {
     "title": "Om LaplandDining",
