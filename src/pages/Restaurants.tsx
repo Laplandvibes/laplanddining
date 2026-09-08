@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { Link, useLocation } from 'react-router-dom';
@@ -109,6 +109,29 @@ export default function Restaurants() {
   const { locale } = useLocale();
   const [activeCity, setActiveCity] = useState<string | null>(null);
   const [expandedCities, setExpandedCities] = useState<Set<string>>(new Set());
+  const listRef = useRef<HTMLElement>(null);
+
+  /**
+   * Kaupungin vaihto vierittää listan alkuun.
+   *
+   * 🔴 Vesa 2026-09-08: *"jos vaihdan kaupunkia niin se ei vedä näkymää sivun
+   * ylälaitaan vaan jää kohtaan missä oli edellisessä kaupungissa."* Suodatin
+   * vaihtoi listan sisällön mutta ei vierityskohtaa, joten Rovaniemen (8
+   * ravintolaa) kohdalta Hettaan (3) vaihtaminen jätti lukijan tyhjän alueen
+   * kohdalle — sivu oli lyhentynyt hänen allaan.
+   *
+   * 🔴 Kohde on TULOSLISTA, ei suodatinrivi. Ensimmäinen yritykseni vieritti
+   * chip-riviin — mutta se on `sticky top-16`, eli aina näkyvissä, joten
+   * scrollIntoView ei liikuttanut sivua lainkaan ja lukija jäi footerin
+   * kohdalle. Mitattu kuvakaappauksesta, ei pääteltynä. Sticky-elementti ei
+   * kelpaa vierityskohteeksi.
+   */
+  const selectCity = (city: string | null) => {
+    setActiveCity(city);
+    requestAnimationFrame(() => {
+      listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
 
   useEffect(() => {
     if (location.hash) {
@@ -301,7 +324,7 @@ export default function Restaurants() {
                 ja rikkoi jaon (8 + IKONI + 8 + 2). */}
             <UtensilsCrossed size={16} className="text-amber/60 shrink-0 sm:hidden" />
             <button
-              onClick={() => setActiveCity(null)}
+              onClick={() => selectCity(null)}
               className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[36px] ${
                 !activeCity
                   ? 'bg-amber text-night shadow-lg shadow-amber/20'
@@ -313,7 +336,7 @@ export default function Restaurants() {
             {cities.map((city) => (
               <button
                 key={city}
-                onClick={() => setActiveCity(activeCity === city ? null : city)}
+                onClick={() => selectCity(activeCity === city ? null : city)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[36px] ${
                   activeCity === city
                     ? 'bg-amber text-night shadow-lg shadow-amber/20'
@@ -327,7 +350,17 @@ export default function Restaurants() {
         </div>
       </section>
 
-      <section className="relative py-16 bg-night min-h-screen overflow-hidden">
+      {/* 🔴 Vierityskohde on TULOSLISTA, ei suodatinrivi. Ensimmäinen yritys
+          vieritti chip-riviin, mutta se on `sticky top-16` — se on aina
+          näkyvissä, joten siihen vierittäminen ei liikuttanut sivua listan
+          alkuun vaan jätti lukijan footerin kohdalle. Sticky-elementti ei
+          kelpaa scrollIntoView-kohteeksi. `scroll-mt-36` varaa tilan kiinteälle
+          naville (64 px) ja sticky-chipeille (~80 px), ettei ensimmäinen
+          kaupunki jää niiden alle. */}
+      <section
+        ref={listRef}
+        className="relative py-16 bg-night min-h-screen overflow-hidden scroll-mt-36"
+      >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.06)_0%,transparent_50%)] pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Premium-listanosto: maksaneet ravintolat nousevat listan kärkeen
