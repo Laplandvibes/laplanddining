@@ -344,7 +344,11 @@ export function cuisineLabel(r: Restaurant, locale: Locale = 'en'): string | nul
  *   1. curatedDescription (editorial override)
  *   2. editorialSummary (Google's blurb, only ~10% have it)
  *   3. reviewQuote (real customer voice, in italics, 80%+ have it)
- *   4. synthesized factual line (rating + reviews + priceRange + cuisine)
+ *   4. synthesized factual line (rating + reviews + cuisine)
+ *      🔴 EI hintaluokkaa: Googlen €–€€€€ pois näkyviltä pinnoilta (Vesa 7.9.2026:
+ *      "nämä google € merkit … on tyhmän näköinen"). Sama päätös tehtiin appiin
+ *      6.9. (commit 4dc1001). Kenttä jää dataan JSON-LD:tä ja fine dining
+ *      -suodatinta varten, mutta sitä ei renderöidä lukijalle.
  */
 export interface CardBody {
   text: string;
@@ -368,9 +372,9 @@ const NUMBER_LOCALES: Record<Locale, string> = {
 
 /**
  * Synthesised factual line, per locale:
- *   EN: "4.6 stars from 627 reviews · finnish · €€€."
- *   FI: "4.6 tähden arvio • 627 arvostelua • suomalainen • €€€"
- *   DE: "4.6 Sterne • 627 Bewertungen • finnisch • €€€"
+ *   EN: "4.6 stars from 627 reviews · finnish."
+ *   FI: "4.6 tähden arvio • 627 arvostelua • suomalainen"
+ *   DE: "4.6 Sterne • 627 Bewertungen • finnisch"
  */
 function factualLine(r: Restaurant, locale: Locale): string | null {
   if (!r.rating || !r.reviewCount) return null;
@@ -380,32 +384,32 @@ function factualLine(r: Restaurant, locale: Locale): string | null {
   const count = r.reviewCount.toLocaleString(numLocale);
 
   if (locale === 'en') {
-    return `${rating} stars from ${count} reviews${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}.`;
+    return `${rating} stars from ${count} reviews${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}.`;
   }
   if (locale === 'fi') {
-    return `${rating} tähden arvio • ${count} arvostelua${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
+    return `${rating} tähden arvio • ${count} arvostelua${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}`;
   }
   if (locale === 'ja') {
-    return `評価 ${rating} • レビュー ${count} 件${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
+    return `評価 ${rating} • レビュー ${count} 件${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}`;
   }
   if (locale === 'es') {
-    return `${rating} estrellas · ${count} reseñas${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+    return `${rating} estrellas · ${count} reseñas${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
   }
   if (locale === 'pt-BR') {
-    return `${rating} estrelas · ${count} avaliações${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+    return `${rating} estrelas · ${count} avaliações${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
   }
   if (locale === 'zh-CN') {
-    return `${rating} 星 · ${count} 条评论${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+    return `${rating} 星 · ${count} 条评论${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
   }
   if (locale === 'sv') {
-    return `${rating} stjärnor · ${count} recensioner${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+    return `${rating} stjärnor · ${count} recensioner${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
   }
   if (locale === 'nl') {
     const nlRating = r.rating.toLocaleString('nl-NL', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    return `${nlRating} sterren · ${count} beoordelingen${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` · ${r.priceRange}` : ''}`;
+    return `${nlRating} sterren · ${count} beoordelingen${cuisine ? ` · ${cuisine.toLowerCase()}` : ''}`;
   }
   // de
-  return `${rating} Sterne • ${count} Bewertungen${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}${r.priceRange ? ` • ${r.priceRange}` : ''}`;
+  return `${rating} Sterne • ${count} Bewertungen${cuisine ? ` • ${cuisine.toLowerCase()}` : ''}`;
 }
 
 export function composeCardBody(r: Restaurant, locale: Locale = 'en'): CardBody | null {

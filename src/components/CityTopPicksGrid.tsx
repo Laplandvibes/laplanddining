@@ -100,13 +100,11 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
       </div>
 
       <div className="p-5 sm:p-6 flex flex-col flex-1">
-        <div className="flex items-start justify-between gap-3 mb-1">
+        {/* Ei hintaluokkaa nimen perään — ks. RestaurantCard.tsx (Vesa 7.9.2026). */}
+        <div className="mb-1">
           <h3 className="font-heading text-xl sm:text-2xl tracking-wide text-warm-ink leading-tight">
             {r.name}
           </h3>
-          {r.priceRange && (
-            <span className="font-heading text-amber-deep text-sm tracking-widest shrink-0 mt-1">{r.priceRange}</span>
-          )}
         </div>
 
         {cuisine && (

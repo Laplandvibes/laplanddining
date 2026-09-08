@@ -163,7 +163,7 @@
       "description": "Acht Restaurants in Rovaniemi, vom Rentierfilet an der Valtakatu bis zur bestbewerteten Küche dieser Seite. Bewertungen, Zitate und Speisekarten.",
       "h1": "Restaurants in Rovaniemi",
       "tagline": "Die dichteste Ansammlung von Tischen in Lappland — fünf davon in vier Straßen.",
-      "intro": "Rovaniemi ist die einzige Stadt Lapplands, in der man das Restaurant zu Fuß aussucht. Nili und Arctic Restaurant liegen sich an der Valtakatu fast gegenüber und decken Rentier und Moltebeere in der Klasse €€€ ab. Ein paar hundert Meter weiter sind das Roka Street Bistro an der Ainonkatu und das Cafe & Bar 21 an der Rovakatu die Räume, in die Einheimische an einem gewöhnlichen Dienstag gehen. Die höchste Bewertung ist gar nicht lappländisch: Hanki, eine koreanische Küche an der Korkalonkatu, hält 4,9 bei über tausend Bewertungen.",
+      "intro": "Rovaniemi ist die einzige Stadt Lapplands, in der man das Restaurant zu Fuß aussucht. Nili und Arctic Restaurant liegen sich an der Valtakatu fast gegenüber und decken Rentier und Moltebeere ab. Ein paar hundert Meter weiter sind das Roka Street Bistro an der Ainonkatu und das Cafe & Bar 21 an der Rovakatu die Räume, in die Einheimische an einem gewöhnlichen Dienstag gehen. Die höchste Bewertung ist gar nicht lappländisch: Hanki, eine koreanische Küche an der Korkalonkatu, hält 4,9 bei über tausend Bewertungen.",
       "know": [
         "Die fünf Restaurants im Zentrum liegen keine 500 m auseinander — die ganze Auswahl ist ein Spaziergang.",
         "Drei liegen außerhalb: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km an der Straße zum Weihnachtsmanndorf und All About Salmon im Dorf selbst.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "an den kältesten Tagen"
           }
-        ]
+        ],
+        "figuresLabel": "Der Winter in Zahlen"
       },
       {
         "title": "Das Rentier war nie nur Fleisch",
@@ -459,7 +460,8 @@
             "value": "60 Mio. €",
             "label": "Wert pro Jahr"
           }
-        ]
+        ],
+        "figuresLabel": "Die Rentierhaltung in Zahlen"
       },
       {
         "title": "Das sind lebendige Traditionen, keine Nachstellungen",

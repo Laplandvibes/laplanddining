@@ -86,18 +86,16 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
             </span>
           </a>
         )}
-        {(editorsPick || r.priceRange) && (
-          <div className="absolute top-3 left-3 flex flex-col items-start gap-1.5">
-            {editorsPick && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-warm-ink text-cream text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-md">
-                <Award size={10} className="text-amber" /> {i18n.editorsPickLabel}
-              </span>
-            )}
-            {r.priceRange && (
-              <span className="inline-flex items-center px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-[11px] font-bold tracking-wide shadow-md">
-                {r.priceRange}
-              </span>
-            )}
+        {/* 🔴 Googlen hintaluokka (€–€€€€) EI kortille. Vesa 7.9.2026: "nämä
+            google € merkit … on tyhmän näköinen". Sama päätös tehtiin appiin
+            6.9. (commit 4dc1001, "näyttää niin hölmöltä"): tähdet, arviomäärä
+            ja lähde jäävät, hintaluokka lähtee. Kenttä jää dataan JSON-LD:tä ja
+            fine dining -suodatinta varten, mutta sitä ei renderöidä lukijalle. */}
+        {editorsPick && (
+          <div className="absolute top-3 left-3">
+            <span className="inline-flex items-center gap-1 rounded-full bg-warm-ink text-cream text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 shadow-md">
+              <Award size={10} className="text-amber" /> {i18n.editorsPickLabel}
+            </span>
           </div>
         )}
       </div>

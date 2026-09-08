@@ -163,7 +163,7 @@
       "description": "Oito restaurantes em Rovaniemi, do filé de rena na Valtakatu à cozinha mais bem avaliada de todo o site. Notas, trechos de avaliações e links de cardápio.",
       "h1": "Restaurantes em Rovaniemi",
       "tagline": "A maior concentração de mesas da Lapônia — cinco delas cabem em quatro ruas.",
-      "intro": "Rovaniemi é a única cidade da Lapônia em que se escolhe restaurante a pé. Nili e Arctic Restaurant ficam quase de frente um para o outro na Valtakatu e cobrem a rena e a amora-ártica na faixa €€€. Duzentos metros adiante, o Roka Street Bistro na Ainonkatu e o Cafe & Bar 21 na Rovakatu são os salões aonde os moradores vão numa terça-feira comum. A nota mais alta não é lapã: o Hanki, uma cozinha coreana na Korkalonkatu, mantém 4,9 com mais de mil avaliações.",
+      "intro": "Rovaniemi é a única cidade da Lapônia em que se escolhe restaurante a pé. Nili e Arctic Restaurant ficam quase de frente um para o outro na Valtakatu e cobrem a rena e a amora-ártica. Duzentos metros adiante, o Roka Street Bistro na Ainonkatu e o Cafe & Bar 21 na Rovakatu são os salões aonde os moradores vão numa terça-feira comum. A nota mais alta não é lapã: o Hanki, uma cozinha coreana na Korkalonkatu, mantém 4,9 com mais de mil avaliações.",
       "know": [
         "Os cinco restaurantes do centro ficam a menos de 500 m uns dos outros — a escolha inteira cabe numa caminhada.",
         "Três ficam fora do centro: Sky Kitchen & View a 2,4 km, Kotahovi a 6,8 km na estrada da vila do Papai Noel, e All About Salmon na própria vila.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "no auge do frio"
           }
-        ]
+        ],
+        "figuresLabel": "O inverno em números"
       },
       {
         "title": "A rena nunca foi só carne",
@@ -459,7 +460,8 @@
             "value": "€60 mi",
             "label": "de valor por ano"
           }
-        ]
+        ],
+        "figuresLabel": "A criação de renas em números"
       },
       {
         "title": "São tradições vivas, não recriações",

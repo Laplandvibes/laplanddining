@@ -1,4 +1,5 @@
 
+import { Fragment } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
@@ -16,6 +17,8 @@ interface SectionI18n {
   quote?: string;
   /** Luvut: leipätekstistä irrotetut numerot (luvut 1–2). */
   figures?: SectionFigure[];
+  /** Lukulistan otsikko ("Poronhoito lukuina") — antaa luvuille aiheen. */
+  figuresLabel?: string;
 }
 
 /**
@@ -84,14 +87,6 @@ const CHAPTERS: { icon: typeof Snowflake; img: { src: string; alt: string; focus
     img: { src: DINING.kotaInside, alt: 'Guests sharing a meal around the fire inside a traditional kota' },
   },
 ];
-
-/** Lukupaneelin ruudukko. Ei dynaamista `grid-cols-${n}` — Tailwind ei näe sitä. */
-function figureGridClass(n: number): string {
-  if (n >= 5) return 'grid-cols-2 sm:grid-cols-3';
-  if (n === 4) return 'grid-cols-2 sm:grid-cols-4';
-  if (n === 3) return 'grid-cols-3';
-  return 'grid-cols-2';
-}
 
 /** Kolmikerroksinen varjo — sama resepti kuin mallisivun (FineDining) korteissa. */
 const CARD_SHADOW =
@@ -238,25 +233,37 @@ export default function FoodHistory() {
                     </h2>
 
                     {/* Nosto tai luvut — aina otsikon alla, ennen leipätekstiä.
-                        Kermapinta rikkoo sivun tummuuden ja tekee luvun
-                        avauksesta silmäiltävän. */}
+                        🔴 Luvut EIVÄT ole korttiruudukko. Ensimmäinen versio oli
+                        kuusi laattaa 3×2-ruudukossa kermakortilla, ja Vesa 7.9.:
+                        *"nyt numeroita vaan leijailee, todella ai näköistä"*.
+                        Hän on oikeassa: kuusi samanarvoista lukua laatikossa on
+                        KPI-mittaristo, ei artikkeli. Nyt ne ovat almanakkalista
+                        — luku oikealle tasattuna omaan sarakkeeseensa, selite
+                        perässä, hiusviiva rivien välissä. Lista istuu palstaan
+                        eikä kellu sen päällä, ja lukujärjestys (luku ensin,
+                        selite perässä) pitää selitteen kieliopillisesti oikein
+                        kaikilla 12 kielellä — "5 600 poronhoitajaa",
+                        "5,600 人のトナカイ放牧者". */}
                     {figures && figures.length > 0 ? (
-                      <div
-                        className={`rounded-3xl bg-cream ring-1 ring-white/10 px-6 py-6 sm:px-9 sm:py-7 ${CARD_SHADOW}`}
-                      >
-                        <dl className={`grid gap-x-6 gap-y-6 ${figureGridClass(figures.length)}`}>
-                          {figures.map((f, j) => (
-                            <div key={j}>
-                              <dt className="font-heading text-4xl sm:text-5xl text-amber-deep tracking-wide leading-none">
-                                {f.value}
-                              </dt>
-                              <dd className="mt-1.5 text-warm-text text-xs sm:text-sm leading-snug">
-                                {f.label}
-                              </dd>
-                            </div>
-                          ))}
+                      <>
+                        {section.figuresLabel && (
+                          <p className="font-heading text-amber tracking-[0.28em] text-xs sm:text-sm uppercase mb-4">
+                            {section.figuresLabel}
+                          </p>
+                        )}
+                        <dl className="grid grid-cols-[auto_1fr] border-t border-white/12">
+                        {figures.map((f, j) => (
+                          <Fragment key={j}>
+                            <dt className="font-heading text-amber text-2xl sm:text-3xl leading-none text-right pr-5 sm:pr-8 py-3.5 border-b border-white/12">
+                              {f.value}
+                            </dt>
+                            <dd className="text-white/70 text-sm sm:text-base leading-snug py-3.5 border-b border-white/12 self-center">
+                              {f.label}
+                            </dd>
+                          </Fragment>
+                        ))}
                         </dl>
-                      </div>
+                      </>
                     ) : quote ? (
                       <blockquote
                         className={`relative rounded-3xl bg-cream ring-1 ring-white/10 pl-14 pr-7 py-7 sm:pl-16 sm:pr-10 sm:py-8 ${CARD_SHADOW}`}

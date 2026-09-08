@@ -163,7 +163,7 @@
       "description": "Eight restaurants in Rovaniemi, from reindeer fillet on Valtakatu to the highest-rated kitchen on this site. Ratings, review quotes and menu links.",
       "h1": "Restaurants in Rovaniemi",
       "tagline": "The densest cluster of tables in Lapland — and five of them share four streets.",
-      "intro": "Rovaniemi is the one town in Lapland where you can choose a restaurant on foot. Nili and Arctic Restaurant sit almost opposite each other on Valtakatu and cover the reindeer-and-cloudberry end of the menu at €€€. A few hundred metres away, Roka Street Bistro on Ainonkatu and Cafe & Bar 21 on Rovakatu are the rooms locals use on an ordinary Tuesday. The highest rating here is not Lappish at all: Hanki, a Korean kitchen on Korkalonkatu, holds 4.9 from more than a thousand reviews.",
+      "intro": "Rovaniemi is the one town in Lapland where you can choose a restaurant on foot. Nili and Arctic Restaurant sit almost opposite each other on Valtakatu and cover the reindeer-and-cloudberry end of the menu. A few hundred metres away, Roka Street Bistro on Ainonkatu and Cafe & Bar 21 on Rovakatu are the rooms locals use on an ordinary Tuesday. The highest rating here is not Lappish at all: Hanki, a Korean kitchen on Korkalonkatu, holds 4.9 from more than a thousand reviews.",
       "know": [
         "The five city-centre restaurants are within 500 m of each other — the whole choice is one walk.",
         "Three are outside the centre: Sky Kitchen & View 2.4 km out, Kotahovi 6.8 km out on the Santa Claus Village road, and All About Salmon at the village itself.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "at its coldest"
           }
-        ]
+        ],
+        "figuresLabel": "Winter in numbers"
       },
       {
         "title": "The reindeer was never just meat",
@@ -452,14 +453,15 @@
             "label": "of Finland"
           },
           {
-            "value": "2m kg",
+            "value": "2 million kg",
             "label": "of meat a year"
           },
           {
-            "value": "€60m",
+            "value": "€60 million",
             "label": "a year in value"
           }
-        ]
+        ],
+        "figuresLabel": "Reindeer herding in numbers"
       },
       {
         "title": "These are living traditions, not re-enactments",

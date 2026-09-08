@@ -163,7 +163,7 @@
       "description": "Acht restaurants in Rovaniemi, van rendierhaas aan de Valtakatu tot de best beoordeelde keuken van de hele site. Beoordelingen, citaten en menulinks.",
       "h1": "Restaurants in Rovaniemi",
       "tagline": "De dichtste verzameling tafels van Lapland — vijf ervan passen in vier straten.",
-      "intro": "Rovaniemi is de enige stad in Lapland waar u uw restaurant te voet uitkiest. Nili en Arctic Restaurant liggen bijna tegenover elkaar aan de Valtakatu en dekken rendier en kruipbraam af in de klasse €€€. Tweehonderd meter verderop zijn Roka Street Bistro aan de Ainonkatu en Cafe & Bar 21 aan de Rovakatu de zalen waar bewoners op een gewone dinsdag naartoe gaan. De hoogste beoordeling is helemaal niet Laps: Hanki, een Koreaanse keuken aan de Korkalonkatu, houdt 4,9 op ruim duizend beoordelingen.",
+      "intro": "Rovaniemi is de enige stad in Lapland waar u uw restaurant te voet uitkiest. Nili en Arctic Restaurant liggen bijna tegenover elkaar aan de Valtakatu en dekken rendier en kruipbraam af. Tweehonderd meter verderop zijn Roka Street Bistro aan de Ainonkatu en Cafe & Bar 21 aan de Rovakatu de zalen waar bewoners op een gewone dinsdag naartoe gaan. De hoogste beoordeling is helemaal niet Laps: Hanki, een Koreaanse keuken aan de Korkalonkatu, houdt 4,9 op ruim duizend beoordelingen.",
       "know": [
         "De vijf restaurants in het centrum liggen binnen 500 m van elkaar — de hele keuze is één wandeling.",
         "Drie liggen buiten het centrum: Sky Kitchen & View op 2,4 km, Kotahovi op 6,8 km aan de weg naar het kerstmandorp, en All About Salmon in het dorp zelf.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "op het koudst"
           }
-        ]
+        ],
+        "figuresLabel": "De winter in cijfers"
       },
       {
         "title": "Het rendier was nooit alleen vlees",
@@ -459,7 +460,8 @@
             "value": "60 mln €",
             "label": "waarde per jaar"
           }
-        ]
+        ],
+        "figuresLabel": "De rendierhouderij in cijfers"
       },
       {
         "title": "Dit zijn levende tradities, geen reconstructies",

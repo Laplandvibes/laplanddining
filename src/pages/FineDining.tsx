@@ -198,11 +198,12 @@ export default function FineDining() {
 
                   <div className="p-7 sm:p-8">
                     <h3 className="font-heading text-2xl sm:text-[1.7rem] tracking-wide text-warm-ink leading-tight mb-1.5">{r.name}</h3>
-                    {(cuisine || r.priceRange) && (
+                    {/* Ei hintaluokkaa keittiön perään — ks. RestaurantCard.tsx
+                        (Vesa 7.9.2026). priceRange ohjaa yhä sitä, mikä ravintola
+                        päätyy tälle sivulle (suodatin yllä), mutta ei näy. */}
+                    {cuisine && (
                       <p className="text-xs text-amber-deep font-semibold uppercase tracking-[0.18em] mb-3">
                         {cuisine}
-                        {cuisine && r.priceRange && <span className="text-warm-muted mx-2">·</span>}
-                        {r.priceRange && <span className="font-heading tracking-widest">{r.priceRange}</span>}
                       </p>
                     )}
                     {body && (

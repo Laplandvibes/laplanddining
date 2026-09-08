@@ -163,7 +163,7 @@
       "description": "Ocho restaurantes en Rovaniemi, del solomillo de reno en Valtakatu a la cocina mejor valorada de todo el sitio. Valoraciones, citas de reseñas y cartas.",
       "h1": "Restaurantes en Rovaniemi",
       "tagline": "La mayor concentración de mesas de Laponia: cinco de ellas caben en cuatro calles.",
-      "intro": "Rovaniemi es la única ciudad de Laponia donde el restaurante se elige a pie. Nili y Arctic Restaurant están casi enfrente en Valtakatu y cubren el reno y la mora ártica en categoría €€€. A doscientos metros, Roka Street Bistro en Ainonkatu y Cafe & Bar 21 en Rovakatu son las salas a las que van los vecinos un martes cualquiera. La nota más alta no es lapona: Hanki, una cocina coreana en Korkalonkatu, mantiene un 4,9 con más de mil reseñas.",
+      "intro": "Rovaniemi es la única ciudad de Laponia donde el restaurante se elige a pie. Nili y Arctic Restaurant están casi enfrente en Valtakatu y cubren el reno y la mora ártica. A doscientos metros, Roka Street Bistro en Ainonkatu y Cafe & Bar 21 en Rovakatu son las salas a las que van los vecinos un martes cualquiera. La nota más alta no es lapona: Hanki, una cocina coreana en Korkalonkatu, mantiene un 4,9 con más de mil reseñas.",
       "know": [
         "Los cinco restaurantes del centro están a menos de 500 m unos de otros: toda la elección cabe en un paseo.",
         "Tres quedan fuera del centro: Sky Kitchen & View a 2,4 km, Kotahovi a 6,8 km en la carretera de la aldea de Papá Noel, y All About Salmon en la aldea misma.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "en lo más frío"
           }
-        ]
+        ],
+        "figuresLabel": "El invierno en cifras"
       },
       {
         "title": "El reno nunca fue solo carne",
@@ -459,7 +460,8 @@
             "value": "60 M€",
             "label": "de valor al año"
           }
-        ]
+        ],
+        "figuresLabel": "La cría de renos en cifras"
       },
       {
         "title": "Son tradiciones vivas, no recreaciones",

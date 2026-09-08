@@ -163,7 +163,7 @@
       "description": "Åtta restauranger i Rovaniemi, från renfilé på Valtakatu till det högst betygsatta köket på hela sajten. Betyg, recensionscitat och menylänkar.",
       "h1": "Restauranger i Rovaniemi",
       "tagline": "Lapplands tätaste klunga av bord — fem av dem ryms på fyra gator.",
-      "intro": "Rovaniemi är den enda staden i Lappland där man väljer restaurang till fots. Nili och Arctic Restaurant ligger nästan mitt emot varandra på Valtakatu och sköter ren och hjortron i klassen €€€. Ett par hundra meter bort är Roka Street Bistro på Ainonkatu och Cafe & Bar 21 på Rovakatu de rum dit lokalborna går en vanlig tisdag. Det högsta betyget är inte lappländskt alls: Hanki, ett koreanskt kök på Korkalonkatu, håller 4,9 på över tusen recensioner.",
+      "intro": "Rovaniemi är den enda staden i Lappland där man väljer restaurang till fots. Nili och Arctic Restaurant ligger nästan mitt emot varandra på Valtakatu och sköter ren och hjortron. Ett par hundra meter bort är Roka Street Bistro på Ainonkatu och Cafe & Bar 21 på Rovakatu de rum dit lokalborna går en vanlig tisdag. Det högsta betyget är inte lappländskt alls: Hanki, ett koreanskt kök på Korkalonkatu, håller 4,9 på över tusen recensioner.",
       "know": [
         "De fem restaurangerna i centrum ligger inom 500 m från varandra — hela urvalet är en promenad.",
         "Tre ligger utanför centrum: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km längs vägen till Tomtens by och All About Salmon i själva byn.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "som kallast"
           }
-        ]
+        ],
+        "figuresLabel": "Vintern i siffror"
       },
       {
         "title": "Renen var aldrig bara kött",
@@ -456,10 +457,11 @@
             "label": "kött per år"
           },
           {
-            "value": "60 mn €",
+            "value": "60 milj. €",
             "label": "i värde per år"
           }
-        ]
+        ],
+        "figuresLabel": "Renskötseln i siffror"
       },
       {
         "title": "Det här är levande traditioner, inte rekonstruktioner",

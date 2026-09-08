@@ -163,7 +163,7 @@
       "description": "Otto ristoranti a Rovaniemi, dal filetto di renna in Valtakatu alla cucina meglio valutata di tutto il sito. Valutazioni, citazioni e link ai menù.",
       "h1": "Ristoranti a Rovaniemi",
       "tagline": "La concentrazione di tavoli più fitta della Lapponia: cinque stanno in quattro strade.",
-      "intro": "Rovaniemi è l'unica città della Lapponia in cui il ristorante si sceglie a piedi. Nili e Arctic Restaurant sono quasi uno di fronte all'altro in Valtakatu e coprono renna e camemoro nella fascia €€€. Duecento metri più in là, Roka Street Bistro in Ainonkatu e Cafe & Bar 21 in Rovakatu sono le sale in cui vanno i residenti un martedì qualunque. La valutazione più alta non è lappone: Hanki, cucina coreana in Korkalonkatu, tiene 4,9 su oltre mille recensioni.",
+      "intro": "Rovaniemi è l'unica città della Lapponia in cui il ristorante si sceglie a piedi. Nili e Arctic Restaurant sono quasi uno di fronte all'altro in Valtakatu e coprono renna e camemoro. Duecento metri più in là, Roka Street Bistro in Ainonkatu e Cafe & Bar 21 in Rovakatu sono le sale in cui vanno i residenti un martedì qualunque. La valutazione più alta non è lappone: Hanki, cucina coreana in Korkalonkatu, tiene 4,9 su oltre mille recensioni.",
       "know": [
         "I cinque ristoranti del centro distano meno di 500 m l'uno dall'altro: tutta la scelta è una passeggiata.",
         "Tre sono fuori centro: Sky Kitchen & View a 2,4 km, Kotahovi a 6,8 km sulla strada del villaggio di Babbo Natale, e All About Salmon nel villaggio stesso.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "nei giorni più freddi"
           }
-        ]
+        ],
+        "figuresLabel": "L'inverno in cifre"
       },
       {
         "title": "La renna non è mai stata solo carne",
@@ -459,7 +460,8 @@
             "value": "60 mln €",
             "label": "di valore all’anno"
           }
-        ]
+        ],
+        "figuresLabel": "L'allevamento di renne in cifre"
       },
       {
         "title": "Sono tradizioni vive, non ricostruzioni",

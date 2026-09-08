@@ -163,7 +163,7 @@
       "description": "Huit restaurants à Rovaniemi, du filet de renne sur Valtakatu à la cuisine la mieux notée de tout le site. Notes, citations d'avis et liens vers les cartes.",
       "h1": "Restaurants à Rovaniemi",
       "tagline": "La plus forte concentration de tables en Laponie — cinq d'entre elles tiennent dans quatre rues.",
-      "intro": "Rovaniemi est la seule ville de Laponie où l'on choisit son restaurant à pied. Nili et Arctic Restaurant se font presque face sur Valtakatu et couvrent le renne et la mûre arctique en catégorie €€€. À deux cents mètres, le Roka Street Bistro sur Ainonkatu et le Cafe & Bar 21 sur Rovakatu sont les salles où les habitants vont un mardi ordinaire. La meilleure note n'est pas lapone du tout : Hanki, une cuisine coréenne sur Korkalonkatu, tient 4,9 sur plus de mille avis.",
+      "intro": "Rovaniemi est la seule ville de Laponie où l'on choisit son restaurant à pied. Nili et Arctic Restaurant se font presque face sur Valtakatu et couvrent le renne et la mûre arctique. À deux cents mètres, le Roka Street Bistro sur Ainonkatu et le Cafe & Bar 21 sur Rovakatu sont les salles où les habitants vont un mardi ordinaire. La meilleure note n'est pas lapone du tout : Hanki, une cuisine coréenne sur Korkalonkatu, tient 4,9 sur plus de mille avis.",
       "know": [
         "Les cinq restaurants du centre sont à moins de 500 m les uns des autres — tout le choix tient en une promenade.",
         "Trois sont hors du centre : Sky Kitchen & View à 2,4 km, Kotahovi à 6,8 km sur la route du village du père Noël, et All About Salmon dans le village même.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "au plus froid"
           }
-        ]
+        ],
+        "figuresLabel": "L'hiver en chiffres"
       },
       {
         "title": "Le renne n'a jamais été seulement de la viande",
@@ -459,7 +460,8 @@
             "value": "60 M€",
             "label": "de valeur par an"
           }
-        ]
+        ],
+        "figuresLabel": "L'élevage de rennes en chiffres"
       },
       {
         "title": "Ce sont des traditions vivantes, pas des reconstitutions",

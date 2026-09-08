@@ -163,7 +163,7 @@
       "description": "Kahdeksan ravintolaa Rovaniemellä, Valtakadun poronfileestä koko sivuston parhaiten arvioituun keittiöön. Arviot, arvositaatit ja ruokalistalinkit.",
       "h1": "Ravintolat Rovaniemellä",
       "tagline": "Lapin tihein pöytien rypäs — ja viisi niistä mahtuu neljälle kadulle.",
-      "intro": "Rovaniemi on ainoa Lapin kaupunki, jossa ravintolan voi valita kävellen. Nili ja Arctic Restaurant ovat lähes vastakkain Valtakadulla ja hoitavat poron ja lakan hintaluokassa €€€. Parinsadan metrin päässä Roka Street Bistro Ainonkadulla ja Cafe & Bar 21 Rovakadulla ovat niitä paikkoja, joihin paikalliset menevät tavallisena tiistaina. Korkein arvio ei ole lappilainen lainkaan: Korkalonkadun korealainen Hanki pitää 4,9:ää yli tuhannella arviolla.",
+      "intro": "Rovaniemi on ainoa Lapin kaupunki, jossa ravintolan voi valita kävellen. Nili ja Arctic Restaurant ovat lähes vastakkain Valtakadulla ja hoitavat poron ja lakan. Parinsadan metrin päässä Roka Street Bistro Ainonkadulla ja Cafe & Bar 21 Rovakadulla ovat niitä paikkoja, joihin paikalliset menevät tavallisena tiistaina. Korkein arvio ei ole lappilainen lainkaan: Korkalonkadun korealainen Hanki pitää 4,9:ää yli tuhannella arviolla.",
       "know": [
         "Keskustan viisi ravintolaa ovat 500 metrin säteellä toisistaan — koko valinta on yksi kävelymatka.",
         "Kolme on keskustan ulkopuolella: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km Joulupukin pajakylän tiellä ja All About Salmon itse kylässä.",
@@ -425,7 +425,8 @@
             "value": "-40 °C",
             "label": "kylmimmillään"
           }
-        ]
+        ],
+        "figuresLabel": "Talvi lukuina"
       },
       {
         "title": "Poro ei ollut koskaan pelkkää lihaa",
@@ -459,7 +460,8 @@
             "value": "60 M€",
             "label": "elinkeinon arvo vuodessa"
           }
-        ]
+        ],
+        "figuresLabel": "Poronhoito lukuina"
       },
       {
         "title": "Nämä ovat eläviä perinteitä, eivät rekonstruktioita",
