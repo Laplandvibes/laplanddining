@@ -107,11 +107,21 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
           </h3>
         </div>
 
-        {cuisine && (
-          <p className="text-[11px] text-amber-deep font-semibold uppercase tracking-[0.18em] mb-3">
-            {cuisine}
-          </p>
-        )}
+        {/* 🔴 Keittiörivi renderöityy AINA, myös tyhjänä. Vesa 2026-09-08:
+            *"näissä mainoksissa ei ole identtisiä osioita, jossain lukee fine
+            dining ja jossain ei."* Ehdollinen rivi tarkoitti että kuudesta
+            kortista kahdessa oli tämä lohko ja neljässä ei, jolloin nimen ja
+            leipätekstin väli vaihteli kortista toiseen. Nyt paikka on varattu
+            kaikille ja `line-clamp-1` pitää sen yhtenä rivinä myös Nilillä,
+            jonka keittiöteksti vei kaksi riviä. Tyhjää ei täytetä keksityllä
+            tiedolla — puuttuva keittiötieto on puuttuvaa dataa, ei tyhjä
+            kenttä johon voi kirjoittaa jotain. */}
+        <p
+          className="text-[11px] text-amber-deep font-semibold uppercase tracking-[0.18em] mb-3 min-h-[1rem] line-clamp-1"
+          aria-hidden={cuisine ? undefined : true}
+        >
+          {cuisine || ' '}
+        </p>
 
         {body && (
           body.isQuote ? (
@@ -134,38 +144,48 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
           )
         )}
 
-        <div className="flex flex-wrap items-center gap-3 mt-auto pt-3 border-t border-warm-ink/10">
-          <MenuLink
-            restaurant={r}
-            label={labels.menuLabel}
-            labelPdf={labels.menuLabelPdf}
-            campaign="dining_menu_toppicks"
-          />
-          {r.website && (
+        {/* 🔴 Linkit ja "Yövy lähellä" ovat SAMALLA rivillä. Vesa 2026-09-08:
+            *"menut, visit website ja pitäisi olla samalla rivillä stay nearby
+            kanssa."* Aiemmin kaikki neljä olivat yhdessä `flex-wrap`-rivissä,
+            joten kortin leveydellä (~320 px) pilleri kääntyi omalle rivilleen.
+            Nyt tekstilinkit ovat omassa rivittyvässä laatikossaan ja pilleri
+            on sen vieressä `shrink-0`:na — pilleri pysyy ensimmäisellä rivillä
+            silloinkin kun linkit rivittyvät, eikä ratkaisu kaadu pidempiin
+            käännöksiin (saksa, portugali) kuten `flex-nowrap` olisi kaatunut. */}
+        <div className="flex items-start gap-3 mt-auto pt-3 border-t border-warm-ink/10">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 min-w-0 flex-1">
+            <MenuLink
+              restaurant={r}
+              label={labels.menuLabel}
+              labelPdf={labels.menuLabelPdf}
+              campaign="dining_menu_toppicks"
+            />
+            {r.website && (
+              <a
+                href={withReferral(r.website, 'dining_toppicks')}
+                target="_blank"
+                rel="nofollow noopener"
+                className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+              >
+                {labels.websiteLabel} →
+              </a>
+            )}
             <a
-              href={withReferral(r.website, 'dining_toppicks')}
+              href={r.googleMapsUrl}
               target="_blank"
               rel="nofollow noopener"
-              className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+              className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
-              {labels.websiteLabel} →
+              {labels.mapsLabel} →
             </a>
-          )}
-          <a
-            href={r.googleMapsUrl}
-            target="_blank"
-            rel="nofollow noopener"
-            className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
-          >
-            {labels.mapsLabel} →
-          </a>
+          </div>
           {/* Kosketusalue 45 px negatiivisella marginaalilla, pilleri 29 px --
               sama kuvio ja samat perustelut kuin FineDining.tsx:ssa. */}
           <AffiliateCTA
             partner="hotels"
             sid={`top_picks_stay_${r.city.toLowerCase().replace(/[^a-z]/g, '_')}`}
             destination={`${r.city === 'Ylläs' ? 'Äkäslompolo' : r.city}, ${r.country}`}
-            className="group/stay ml-auto -my-2 py-2 inline-flex items-center rounded-full no-underline"
+            className="group/stay shrink-0 -my-2 py-2 inline-flex items-center rounded-full no-underline"
           >
             <span className="inline-flex items-center gap-1 bg-vibe-pink group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-vibe-pink/30">
               {labels.stayNearby}

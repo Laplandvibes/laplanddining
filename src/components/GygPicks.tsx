@@ -133,19 +133,29 @@ const COPY = {
     "nl": "Geselecteerde dinerervaringen, online te boeken via GetYourGuide.",
     "sv": "Utvalda matupplevelser, bokas online via GetYourGuide."
   },
+  /**
+   * 🔴 Otsikko nimeää HYÖDYN, ei alustaa. Vesa 2026-09-08: *"miksi
+   * mainostetaan getyourguidea? aina mainostetaan jotain arvoa mitä turisti
+   * saa, ei jotain platformia."* Otsikko oli "Browse and book on
+   * GetYourGuide" — se myy kumppanin nimeä lukijalle joka ei tiedä siitä
+   * mitään eikä välitä. Sama sääntö kirjattiin laplandvisitissä 7.9. Sembon
+   * ja GYG:n mainoksista: *"mainoksen otsikko nimeää hyödyn, ei kumppania."*
+   * Kumppani näkyy yhä siellä minne se kuuluu: korttien "via GetYourGuide"
+   * -rivillä ja ledessä, ei otsikossa.
+   */
   "headingCategory": {
-    "en": "Browse and book on GetYourGuide",
-    "fi": "Selaa ja varaa GetYourGuidessa",
-    "de": "Auf GetYourGuide stöbern und buchen",
-    "ja": "GetYourGuide で探して予約",
-    "es": "Explora y reserva en GetYourGuide",
-    "pt-BR": "Explore e reserve no GetYourGuide",
-    "zh-CN": "在 GetYourGuide 浏览并预订",
-    "ko": "GetYourGuide에서 둘러보고 예약",
-    "fr": "Parcourez et réservez sur GetYourGuide",
-    "it": "Sfogli e prenoti su GetYourGuide",
-    "nl": "Bekijk en boek op GetYourGuide",
-    "sv": "Bläddra och boka på GetYourGuide"
+    "en": "Food experiences you can book online",
+    "fi": "Ruokaelämyksiä, jotka voi varata verkossa",
+    "de": "Kulinarische Erlebnisse, online buchbar",
+    "ja": "オンラインで予約できる食の体験",
+    "es": "Experiencias gastronómicas que puedes reservar online",
+    "pt-BR": "Experiências gastronômicas para reservar online",
+    "zh-CN": "可在线预订的美食体验",
+    "ko": "온라인으로 예약할 수 있는 미식 체험",
+    "fr": "Des expériences culinaires réservables en ligne",
+    "it": "Esperienze gastronomiche prenotabili online",
+    "nl": "Culinaire ervaringen die u online kunt boeken",
+    "sv": "Matupplevelser du kan boka online"
   },
   "ledeCategory": {
     "en": "A partner-maintained list, always current, we do not name a single tour here.",
@@ -169,11 +179,32 @@ export default function GygPicks() {
   const L = COPY;
   const rows = CATEGORY_LINKS['laplanddining-new'] ?? [];
 
+/**
+ * Kategorian nimi kortissa.
+ *
+ * 🔴 Vesa 2026-09-08: *"siis mikä ihme, japania täällä englannin kielellä"* —
+ * englanninkielisellä etusivulla luki "음식 & 음료". Korea oli kirjoitettu
+ * suoraan en-kenttään, eli vika ei ollut kielivalitsimessa vaan datassa.
+ * Fallback (m[lang] ?? m.en) levitti sen JOKAISELLE kielelle jolta rivi
+ * puuttui — eli kymmenelle kahdestatoista. Siksi tässä on nyt kaikki 12
+ * kieltä niille kahdelle kategorialle jotka tämä sivusto renderöi.
+ * Sisarsivusto laplandfood-new oli oikein; vika oli vain täällä.
+ */
 const CAT_LABEL: Record<string, Record<string, string>> = {
   'ski-snowboard-tc146':      { en: 'Ski & snowboard', fi: 'Hiihto ja lumilautailu' },
   'snow-winter-sports-tc113': { en: 'Snow & winter sports', fi: 'Talviurheilu' },
-  'food-drinks-tc103':        { en: '음식 & 음료', fi: 'Ruoka ja juoma' },
-  'dinner-packages-tc100':    { en: 'Dinner packages', fi: 'Illalliskokonaisuudet' },
+  'food-drinks-tc103': {
+    en: 'Food & drinks', fi: 'Ruoka ja juoma', sv: 'Mat och dryck',
+    de: 'Essen & Trinken', fr: 'Gastronomie et boissons', es: 'Comida y bebida',
+    it: 'Cibo e bevande', nl: 'Eten en drinken', 'pt-BR': 'Comida e bebida',
+    ja: '食べ物と飲み物', ko: '음식과 음료', 'zh-CN': '美食与饮品',
+  },
+  'dinner-packages-tc100': {
+    en: 'Dinner packages', fi: 'Illalliskokonaisuudet', sv: 'Middagspaket',
+    de: 'Dinner-Pakete', fr: 'Formules dîner', es: 'Paquetes de cena',
+    it: 'Pacchetti cena', nl: 'Dinerarrangementen', 'pt-BR': 'Pacotes de jantar',
+    ja: 'ディナーパッケージ', ko: '디너 패키지', 'zh-CN': '晚餐套餐',
+  },
   'airport-transfers-tc153':  { en: 'Airport transfers', fi: 'Lentokenttäkuljetukset' },
   'transfers-tc152':          { en: 'Transfers', fi: 'Kuljetukset' },
 };
