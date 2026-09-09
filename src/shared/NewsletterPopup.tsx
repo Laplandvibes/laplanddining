@@ -7,8 +7,16 @@ import { Send, AlertCircle, Loader2, X } from 'lucide-react';
  *
  * Mounted once at the root of every site (laplandvibes.com, laplandstays.com,
  * laplandhuskysafaris.com, etc.). Triggers after 25 s OR 55 % scroll, whichever
- * comes first. Suppressed on policy / utility routes. State stored per-site in
- * localStorage so a dismissal on one site does not silence the popup on others.
+ * comes first. Suppressed on policy / utility routes.
+ *
+ * 🔴 VERKOSTON MUISTI (Vesa 2026-09-09: *"uutiskirje tulee vähän liian nopeasti
+ * kaikilla sivuilla … jos mennään toiselle sisarsivulle, tulee sama pyyntö"*).
+ * Nopeus: 60 s / 60 % → 90 s / 75 %, muistutus 7 pv → 30 pv. Sisarsivustot:
+ * localStorage on originkohtainen eikä kolmannen osapuolen evästeitä ole, joten
+ * eri domainien välillä ei ole jaettua tilaa. Ainoa kanava on OMA linkkimme —
+ * tilannut tai sulkenut kävijä saa verkoston linkkeihin `?lv_nl=1`, ja
+ * kohdesivusto vaimenee ennen kuin ehtii pyytää mitään. Affiliate-reittiä (`go.`)
+ * ei koskaan merkitä. Rajoite: käsin kirjoitettu osoite ei kanna muistia.
  *
  * The newsletter list is shared across the entire ecosystem, submissions land
  * in the same Supabase + Resend pipeline. The `source` tag differentiates the
@@ -27,7 +35,7 @@ import { Send, AlertCircle, Loader2, X } from 'lucide-react';
  * degrades gracefully to the pre-founder layout (no broken-image icon).
  */
 
-const REMIND_AFTER_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+const REMIND_AFTER_MS = 30 * 24 * 60 * 60 * 1000; // 30 days (oli 7)
 const SUPPRESSED_PATHS = ['/privacy', '/terms', '/cookie-policy', '/unsubscribe'];
 
 /**
@@ -162,6 +170,62 @@ function writeStored(key: string, s: StoredState) {
   } catch {
     // ignore, Safari private mode etc.
   }
+}
+
+/* ── Verkoston muisti ────────────────────────────────────────────────────────
+   Parametri jolla sivusto kertoo sisarsivustolle, että tämä kävijä on jo
+   vastannut. Arvo on aina '1'; mitään henkilötietoa ei kulje mukana. */
+const NL_PARAM = 'lv_nl';
+
+/** Onko osoite verkoston oma sivusto (mutta ei affiliate-reititin)? */
+function isNetworkHost(host: string): boolean {
+  if (/^go\./i.test(host)) return false; // affiliate-Worker: parametri menisi kumppanille
+  return /lapland/i.test(host) || /^stayinlapland\./i.test(host);
+}
+
+/**
+ * 1) Lukee `?lv_nl=1`:n saapuvasta osoitteesta ja vaimentaa popupin tällä
+ *    sivustolla. 2) Kun tila on olemassa, merkitsee ulos vievät verkoston
+ *    linkit samalla parametrilla. Yksi delegoitu kuuntelija, ei muutoksia
+ *    yhteenkään linkkikomponenttiin.
+ */
+function useNetworkMemory(storageKey: string, sessionShownKey: string) {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const url = new URL(window.location.href);
+      if (url.searchParams.get(NL_PARAM) === '1') {
+        const stored = readStored(storageKey);
+        if (!stored?.subscribed && !stored?.dismissed) {
+          writeStored(storageKey, { ...(stored ?? {}), dismissed: Date.now() });
+        }
+        try { sessionStorage.setItem(sessionShownKey, '1'); } catch { /* private mode */ }
+        url.searchParams.delete(NL_PARAM);
+        window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+      }
+    } catch { /* vanha selain: ei muistia, ei kaatumista */ }
+  }, [storageKey, sessionShownKey]);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const stored = readStored(storageKey);
+    if (!stored?.subscribed && !stored?.dismissed) return;
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const a = target?.closest?.('a[href]') as HTMLAnchorElement | null;
+      if (!a) return;
+      let u: URL;
+      try { u = new URL(a.href, window.location.href); } catch { return; }
+      if (u.hostname === window.location.hostname) return;
+      if (!isNetworkHost(u.hostname)) return;
+      if (u.searchParams.has(NL_PARAM)) return;
+      u.searchParams.set(NL_PARAM, '1');
+      a.href = u.toString();
+    };
+    // Kaappausvaiheessa, jotta ehdimme ennen reitittimen omia käsittelijöitä.
+    document.addEventListener('click', onClick, true);
+    return () => document.removeEventListener('click', onClick, true);
+  }, [storageKey]);
 }
 
 // Built-in locale defaults. Founder note (2026-08-09) — Vesa speaking in first
@@ -526,8 +590,8 @@ export default function NewsletterPopup({
   dict,
   lang,
   onSubscribed,
-  delaySeconds = 60,
-  scrollPercent = 60,
+  delaySeconds = 90,
+  scrollPercent = 75,
   defaultOpen = false,
   endpoint,
   supabaseUrl,
@@ -550,6 +614,7 @@ export default function NewsletterPopup({
   // session ends. Layered on top of the localStorage dismiss (7 d) / subscribe.
   const sessionShownKey = `${siteId}_newsletter_shown`;
   const sourceTag = `${siteId}-popup`;
+  useNetworkMemory(storageKey, sessionShownKey);
   // Kieli talteen liidiin. `safeLang` ei kelpaa tähän: se putoaa 'en':ään aina
   // kun `lang`-proppia ei anneta, jolloin kirjaisimme englannin sivustoille
   // jotka eivät vain välitä lang-proppia. Käytä annettua proppia, muuten
