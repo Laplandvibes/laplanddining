@@ -1,3 +1,16 @@
+# >>> LV-PAGESDEV-NOINDEX (managed)
+# Google indeksoi Cloudflaren tyoosoitteen oikean domainin RINNALLE
+# (mitattu 9.9.2026, haku "site:pages.dev lapland"). Kanoninen on
+# vihje, ei kasky — tama on kova esto.
+#
+# 🔴🔴 Saanto koskee VAIN pages.dev-isantaa. Absoluuttinen URL rajaa
+# sen hostiin; oikea domain EI saa tata otsaketta. Muotoon "/*"
+# kirjoitettuna koko sivusto katoaisi hakutuloksista. Mittaa aina
+# molemmat isannat ennen kuin uskot taman olevan kunnossa.
+https://laplanddining.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+# <<< LV-PAGESDEV-NOINDEX
+
 # >>> LV-LINK-PRELOAD (managed by apply_link_preload_headers.py)
 /
   Link: </images/drive/heroInterior.webp>; rel=preload; as=image; fetchpriority=high
