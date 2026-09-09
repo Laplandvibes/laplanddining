@@ -70,14 +70,49 @@ function unescapeJs(s) {
     .replace(/\\n/g, ' ').replace(/\\t/g, ' ')
     .replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\`/g, '`')
     .replace(/\\\\/g, '\\')
+    // Hero-h1:n [[korostus]]-merkinta on React-tason ohje (renderAccent -> <em>);
+    // crawlable-tekstiin se vuotaisi kirjaimellisena - puretaan pelkaksi sanaksi.
+    .replace(/\[\[(.+?)\]\]/g, '$1')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
 function esc(s) {
   return String(s)
+    // [[korostus]] on React-tason merkinta (renderAccent) - ei saa vuotaa tekstiin.
+    .replace(/\[\[(.+?)\]\]/g, '$1')
     .replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/**
+ * Kappaleteksti, joka saa sisältää kapean joukon inline-markupia.
+ *
+ * 🔴 Miksi: lakisivujen (privacy / terms / cookie-policy) kappaleet tulevat omista
+ * lokaalitiedostoista ja sisältävät <a href> -linkkejä — selainten evästeohjeet,
+ * mailto-osoitteet ja sisäiset viitteet. Selaimessa ne renderöityvät oikein
+ * (LegalContent.tsx käyttää dangerouslySetInnerHTML), mutta esirenderöity
+ * crawlable-runko ajoi ne esc():n läpi, jolloin Google ja JS-ton lukija näkivät
+ * tekstinä `<a href="https://support.google.com/...">Google Chrome</a>`.
+ * Mitattu 2026-08-31: 203 kohtaa, kaikilla 12 kielellä, vain tällä sivustolla.
+ *
+ * Ratkaisu on tarkoituksella tässä järjestyksessä: escapetaan KAIKKI ensin ja
+ * palautetaan sen jälkeen vain sallittu joukko. Näin lähteeseen joskus eksyvä muu
+ * markup ei voi päätyä DOMiin, ja href hyväksytään vain jos se on http(s), mailto
+ * tai sivustonsisäinen polku.
+ */
+function escInline(s) {
+  return esc(s)
+    // Vain KOKONAINEN pari palautetaan. Jos href ei kelpaa (esim. javascript:),
+    // koko elementti jää escapetuksi — ei irtonaista </a>:ta jäljelle.
+    // Häntä: vain target="_blank" ja rel="…" (kirjaimia ja välilyöntejä) sallitaan.
+    // Ulkoiset linkit lakisivuilla kantavat ne, ja ilman häntää ne jäivät escapetuiksi
+    // 12 sivulle (yksi per kieli) — mitattu buildin jälkeen 31.8.
+    .replace(
+      /&lt;a href=&quot;((?:https?:\/\/|mailto:|\/|#)[^"&<>\s]*)&quot;((?:\s(?:target=&quot;_blank&quot;|rel=&quot;[a-z ]+&quot;))*)&gt;([^<>]*?)&lt;\/a&gt;/g,
+      (_m, href, tail, text) => `<a href="${href}"${tail.replace(/&quot;/g, '"')}>${text}</a>`,
+    )
+    .replace(/&lt;(strong|em|b|i)&gt;([^<>]*?)&lt;\/\1&gt;/g, '<$1>$2</$1>');
 }
 
 /** Walk braces from the first `{` at/after openIdx; return the inner slice. */
@@ -296,7 +331,7 @@ export function buildCrawlableBody(
     `<h1 style="${h1}">${esc(title)}</h1>` +
     (description ? `<p style="${p}">${esc(description)}</p>` : '') +
     (paras.length
-      ? `<div style="margin:0 0 3rem">${paras.map((t) => `<p style="${pBody}">${esc(t)}</p>`).join('')}</div>`
+      ? `<div style="margin:0 0 3rem">${paras.map((t) => `<p style="${pBody}">${escInline(t)}</p>`).join('')}</div>`
       : '') +
     (internalItems
       ? `<nav aria-label="${esc(siteName || 'LaplandVibes')} pages" style="${nav}">` +
