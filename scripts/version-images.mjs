@@ -74,6 +74,28 @@ if (!fs.existsSync(DIST)) {
 const REWRITABLE = new Set(['.html', '.js', '.json', '.xml', '.txt', '.css', '.webmanifest']);
 const IMG_RE = /\/images\/[A-Za-z0-9_.\-/]+?\.(?:webp|avif|jpe?g|png|svg|gif)/g;
 
+/**
+ * 🔴🔴 Osa sivustoista rakentaa polun apufunktiolla, jolloin nipussa EI OLE
+ * `/images/`-etuliitettä lainkaan:
+ *
+ *   src/data/images.ts:  local('activities/winter/downhill-skiers.webp')
+ *   nipussa:             "activities/winter/downhill-skiers.webp"
+ *
+ * Ensimmäinen versio vaati `/images/`-alun ja **ohitti nämä hiljaa**: mitattu
+ * livenä 9.9.2026 laplandactivities.fi 23/54 versioitu, gifts 6/22, nature
+ * 7/15. Skripti näytti onnistuneelta, koska osumia oli > 0 — osittainen kate
+ * ei kaada mitään porttia itsestään.
+ *
+ * ⇒ Toinen vaihe etsii lainausmerkkien sisältä paljaita polkuja ja hyväksyy
+ * vain ne, joita **vastaa oikea tiedosto levyllä**. Alias = täysi polku ilman
+ * ensimmäistä hakemistoa. Jos kaksi tiedostoa antaa saman aliaksen, se
+ * hylätään moniselitteisenä: arvaus olisi pahempi kuin väliin jättäminen.
+ */
+const BARE_RE = new RegExp(
+  '([\'"`])([A-Za-z0-9_][A-Za-z0-9_./-]*\\.(?:webp|avif|jpe?g|png|svg|gif))\\1',
+  'g',
+);
+
 const walk = (dir, out = []) => {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
@@ -93,6 +115,20 @@ for (const f of files) {
   if (rel.endsWith('.br') || rel.endsWith('.gz')) continue;
   hash.set(rel, crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex').slice(0, 8));
 }
+
+// 1b) Alias ilman ensimmäistä hakemistoa: "/images/a/b.webp" -> "a/b.webp".
+const alias = new Map();
+const ambiguous = new Set();
+for (const [full, h] of hash) {
+  const a = full.split('/').slice(2).join('/');
+  if (!a) continue;
+  if (alias.has(a) && alias.get(a).full !== full) {
+    ambiguous.add(a);
+    continue;
+  }
+  alias.set(a, { full, h });
+}
+for (const a of ambiguous) alias.delete(a);
 
 // 2) Uudelleenkirjoitus.
 let touched = 0;
@@ -124,11 +160,19 @@ for (const f of targets) {
     local++;
     return `${m}?v=${h}`;
   });
-  if (local && out !== src) {
+  // Toinen vaihe: paljaat polut ilman /images/-etuliitettä.
+  const out2 = out.replace(BARE_RE, (m, q, p2) => {
+    const hit = alias.get(p2);
+    if (!hit) return m;
+    local++;
+    return q + p2 + '?v=' + hit.h + q;
+  });
+
+  if (local && out2 !== src) {
     hits += local;
     touched++;
     if (!CHECK) {
-      fs.writeFileSync(f, out);
+      fs.writeFileSync(f, out2);
       if (fs.existsSync(f + '.br')) changedForBrotli.push(f);
     }
   }
