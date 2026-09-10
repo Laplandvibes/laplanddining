@@ -20,4 +20,4 @@ English (default, no prefix), Finnish (/fi), German (/de), Japanese (/ja), Spani
 
 - Hub: https://laplandvibes.com/
 - Sitemap: https://laplanddining.com/sitemap.xml
-- Contact: info@laplanddining.com
+- Contact: info@laplandvibes.com
