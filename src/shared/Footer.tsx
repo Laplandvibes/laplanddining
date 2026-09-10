@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { AlertCircle, Briefcase, Newspaper, X } from 'lucide-react';
 
+import JobNetworkBanner from "./JobNetworkBanner";
 /**
  * [LV-FUNNEL 2026-08-21] Lomakesuppilon eventit Umamiin (contact_view/-start/
  * -blocked/-submit/-success/-error + data.kind). Paikallinen apuri — ei
@@ -879,7 +880,7 @@ function ContactModal({ kind, title, c, lang, onClose }: { kind: ContactKind; ti
   );
 }
 
-export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editorialNote, extraLegalLinks = [], legalPaths, dict, websiteByHref = 'https://yrityspaketit.fi' }: SharedFooterProps) {
+function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editorialNote, extraLegalLinks = [], legalPaths, dict, websiteByHref = 'https://yrityspaketit.fi' }: SharedFooterProps) {
   const d = mergeDict(dict);
   const siteGroups = buildSiteGroups(d);
   const [contactKind, setContactKind] = useState<ContactKind | null>(null);
@@ -1392,5 +1393,26 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
       )}
 
     </footer>
+  );
+}
+
+/**
+ * Maksetun Network-tason ilmoituskortti tämän sivuston footerin yläpuolella
+ * (10.9.2026, Vesa: "kytke banner").
+ *
+ * 🔴 Footerin sisältöä EI kosketa: alkuperäinen komponentti on yhä SharedFooter ja
+ * tämä kääre vain renderöi bannerin sen eteen. Footerin markup vaihtelee
+ * sivustoittain, joten sen sisälle kirjoittaminen olisi 23 eri muokkausta ja
+ * 23 tapaa rikkoa jaettu footer.
+ *
+ * Banneri palauttaa null kun tämän sivuston nimeä ei ole ostettu yhteenkään
+ * ilmoitukseen, joten näkyvä muutos on nolla ennen ensimmäistä Network-kauppaa.
+ */
+export default function FooterWithNetworkJobs(props: React.ComponentProps<typeof SharedFooter>) {
+  return (
+    <>
+      <JobNetworkBanner siteId="laplanddining" />
+      <SharedFooter {...props} />
+    </>
   );
 }
