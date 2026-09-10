@@ -92,8 +92,14 @@ export default function JobNetworkBanner({
   if (!items || items.length === 0) return null;
 
   return (
+    /* 🔴 Oma leveysraja ja pystytila OVAT komponentin sisällä, eivät kutsujassa
+       (10.9.2026). Kutsuja on sivuston footer-kääre, joka renderöityy joka sivulla:
+       jos kehys olisi siellä, tyhjä `py-10` jäisi jokaiselle sivulle jokaisella
+       sivustolla vaikka ostettuja ilmoituksia ei ole yhtään. Tässä se syntyy vasta
+       kun kortti oikeasti piirretään. */
+    <section className="w-full px-5 sm:px-6 py-8">
     <aside
-      className={`bg-white/95 border border-slate-200 rounded-2xl p-5 shadow-sm ${className}`}
+      className={`mx-auto w-full max-w-3xl bg-white/95 border border-slate-200 rounded-2xl p-5 shadow-sm ${className}`}
       aria-label="Lapland job listings"
     >
       <div className="flex items-baseline justify-between gap-3 mb-3">
@@ -137,5 +143,6 @@ export default function JobNetworkBanner({
         Hiring? Post a job →
       </a>
     </aside>
+    </section>
   );
 }
