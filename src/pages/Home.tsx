@@ -80,7 +80,7 @@ export default function Home() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-tight mb-6 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('home.heroH1')}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-body leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl xl:max-w-4xl mx-auto mb-10 font-body leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] xl:text-2xl">
             {t('home.heroLead')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
