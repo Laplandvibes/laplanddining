@@ -210,7 +210,7 @@ export default function LanguageMenu({
 
   const trigger =
     variant === 'pill'
-      ? `inline-flex h-11 sm:h-9 items-center gap-2 rounded-full border pl-2 pr-2.5 sm:pr-3 transition-colors duration-200 ${
+      ? `inline-flex h-11 sm:h-9 items-center gap-2 rounded-full border px-2.5 transition-colors duration-200 ${
           dark
             ? 'border-white/30 bg-white/5 text-snow hover:border-vibe-pink hover:bg-white/10'
             : 'border-black/15 bg-black/[0.04] text-deep-night hover:border-vibe-pink hover:bg-black/[0.07]'
@@ -233,13 +233,11 @@ export default function LanguageMenu({
         aria-label={`${label}: ${current?.native ?? locale}`}
         className={trigger}
       >
-        <Flag code={locale} className="w-[22px] h-4" />
-        {/* Koodi piiloon alle 400 px:n: lippu yksin on kapeampi kuin vanha
-            select, joten navi ei ylivuoda 360 px:ssä. Kieli on silti luettavissa
-            ruudunlukijalle aria-labelista. */}
-        <span className="hidden min-[400px]:inline text-[12px] font-semibold uppercase tracking-[0.14em] leading-none">
-          {current?.label ?? locale.toUpperCase()}
-        </span>
+        {/* 🔴 VAIN LIPPU — EI KIELIKOODIA. Vesa 10.9.2026 nähtyään sen livenä:
+            *"tuolla ylhäällä pitää olla vain lipun kuva, ei tuota lyhennettä,
+            muuten ruman näköinen"*. Lippu on tunniste, ja "JA" sen vieressä oli
+            sama asia kahdesti. Kieli on silti ruudunlukijalle aria-labelissa. */}
+        <Flag code={locale} className="w-6 h-[17px]" />
         <ChevronDown
           aria-hidden="true"
           className={`w-3.5 h-3.5 shrink-0 opacity-70 transition-transform duration-200 motion-reduce:transition-none ${
