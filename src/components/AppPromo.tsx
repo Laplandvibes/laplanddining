@@ -617,8 +617,9 @@ export function AppPromoNudge() {
     }
   };
 
-  /** Same destination and same bookkeeping wherever the button lands — the
-   *  phone layout puts it on its own row, the wide one keeps it inline. */
+  /** One button, on its own row at every width (Vesa 11.9.2026: the card sits
+   *  bottom-right at 30 rem on sm+, and there the old inline button covered the
+   *  title — measured live on laplandhoteldeals). */
   const openApp = () => {
     track('nudge');
     close();
@@ -651,12 +652,12 @@ export function AppPromoNudge() {
     <div
       role="complementary"
       aria-label={c.title}
-      className="fixed inset-x-0 bottom-0 z-40 p-3 sm:p-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] animate-[lvSlideUp_0.45s_cubic-bezier(.22,1,.36,1)] motion-reduce:animate-none"
+      className="fixed inset-x-0 bottom-0 z-40 p-3 sm:inset-x-auto sm:right-0 sm:w-[30rem] sm:max-w-[calc(100vw-2rem)] sm:p-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] animate-[lvSlideUp_0.45s_cubic-bezier(.22,1,.36,1)] motion-reduce:animate-none"
     >
       <style>{`@keyframes lvSlideUp{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}`}</style>
       <div
         style={BODY_FONT}
-        className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-white/15 bg-[#0F172A] text-[#F9FAFB] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.75),0_0_0_1px_rgba(236,72,153,0.28)]"
+        className="relative mx-auto max-w-2xl sm:mx-0 sm:max-w-none overflow-hidden rounded-2xl border border-white/15 bg-[#0F172A] text-[#F9FAFB] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.75),0_0_0_1px_rgba(236,72,153,0.28)]"
       >
         {/* Aurora, not a flat fill: pink from the top-right corner, arctic cyan
             from the bottom-left, both fading out before they reach the text. */}
@@ -669,7 +670,7 @@ export function AppPromoNudge() {
           }}
         />
 
-        {/* 🔴 The button cannot share a row with the words on a phone (measured
+        {/* 🔴 The button cannot share a row with the words (measured on a phone
             2026-08-07: a 190 px button, the thumbnail, the close button and the
             gaps left the text 10 px, one word per line). Below sm the button
             takes a full-width row of its own, and the proof line steps aside
@@ -708,19 +709,6 @@ export function AppPromoNudge() {
               </span>
             </p>
           </div>
-          <div className="hidden shrink-0 flex-col items-center gap-1.5 sm:flex">
-            <a
-              href={APP_URL}
-              data-umami-event="app_cta"
-              data-umami-event-surface="promo_nudge"
-              onClick={openApp}
-              className="inline-flex items-center gap-2 rounded-full bg-[#DB2777] px-5 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_28px_-10px_rgba(236,72,153,0.9)] transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#EC4899] active:scale-[0.98]"
-            >
-              <Download className="h-4 w-4" />
-              {c.cta}
-            </a>
-            <span className="max-w-[220px] text-center text-[11px] leading-tight text-[#F9FAFB]/50">{c.free}</span>
-          </div>
           <button
             onClick={close}
             aria-label={c.dismiss}
@@ -735,11 +723,12 @@ export function AppPromoNudge() {
           data-umami-event="app_cta"
           data-umami-event-surface="promo_nudge"
           onClick={openApp}
-          className="relative mx-3 mb-3 flex items-center justify-center gap-2 rounded-full bg-[#DB2777] px-4 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_28px_-10px_rgba(236,72,153,0.9)] transition-transform active:scale-[0.98] sm:hidden"
+          className="relative mx-3 mb-3 flex items-center justify-center gap-2 rounded-full bg-[#DB2777] px-4 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_28px_-10px_rgba(236,72,153,0.9)] transition-transform active:scale-[0.98]"
         >
           <Download className="h-4 w-4" />
           {c.cta}
         </a>
+        <p className="relative mb-3 hidden text-center text-[11px] leading-tight text-[#F9FAFB]/50 sm:block">{c.free}</p>
       </div>
     </div>
   );
