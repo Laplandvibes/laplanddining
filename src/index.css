@@ -115,3 +115,20 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes faqFade { from { opacity: 0 } to { opacity: 1 } }
 .faq-shot { animation: faqFade 450ms ease-out both; }
 @media (prefers-reduced-motion: reduce) { .faq-shot { animation-duration: 0.01ms; } }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ORPOSANA — verkoston asetteluportti 12.9.2026 (lv-asetteluportti-orposana)
+
+   Vesa: "korjaa noi kaikki". Portti `npm run gate:asettelu` laski 199 kohtaa
+   29 sivustolta, joissa otsikon viimeiselle riville jaa yksi sana ja se rivi
+   on alle 35 % edellisesta. `text-wrap: balance` jakaa sanat riveille tasan
+   ja poisti mitattuna ~90 % loydoksista (laplandgifts 9 -> 0 @412 px).
+
+   Selain rajoittaa balancen lyhyisiin lohkoihin (~6 rivia), joten se ei osu
+   leipatekstiin; sille `pretty` estaa vain orvon viimeisen rivin.
+   ───────────────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6,
+button,
+[class*="uppercase"] {
+  text-wrap: balance;
+}
