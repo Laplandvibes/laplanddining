@@ -128,7 +128,10 @@ h1, h2, h3, h4, h5, h6 {
    leipatekstiin; sille `pretty` estaa vain orvon viimeisen rivin.
    ───────────────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6,
-button,
-[class*="uppercase"] {
+button, summary,
+[class*="uppercase"],
+/* Flex-nappi (UKK-haitari: teksti + ikoni) pitaa tekstinsa anonyymissa
+   lohkossa, johon balance ei yllä — siksi myos suora span-lapsi. */
+h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span {
   text-wrap: balance;
 }

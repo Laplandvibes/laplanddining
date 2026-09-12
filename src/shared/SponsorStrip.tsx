@@ -39,7 +39,7 @@ export default function SponsorStrip({ partner, siteSlug, locale, surface = 'dar
   if (partner === null && !showHouseAd) return null;
 
   const base = [
-    'flex items-center justify-center gap-2.5 px-4 py-1.5 text-[13px] leading-none',
+    'flex min-h-10 items-center justify-center gap-2.5 px-4 py-2 text-[13px] leading-none',
     light ? 'bg-[#EDF2F9] text-gray-700' : 'bg-white/[0.06] text-[#F9FAFB]/80',
     'border-b',
     light ? 'border-black/10' : 'border-white/10',
