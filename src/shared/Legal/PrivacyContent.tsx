@@ -759,7 +759,7 @@ const COPY: Record<Lang, {
     ],
     s3Tail: (cookieLink) => <>I cookie analitici vengono impostati solo dopo il Suo consenso tramite il banner. Per dettagli completi, consulti la nostra {cookieLink}.</>,
     s4Title: '4. Google Analytics',
-    s4Body: 'Utilizziamo Google Analytics 4 con Consent Mode v2. Se rifiuti i cookie, non viene raccolto alcun dato analitico. Se accetti, a Google vengono inviati dati di utilizzo (pagine visitate, tempo di permanenza, tipo di dispositivo e posizione a livello di paese e città). I dati sono pseudonimi: non inviamo il tuo nome, l’indirizzo e-mail né altri dati che ti identifichino direttamente, ma l’identificatore casuale del cookie e il tuo indirizzo IP sono dati personali ai sensi del GDPR.',
+    s4Body: 'Utilizziamo Google Analytics 4 con Consent Mode v2. Se Lei rifiuta i cookie, non viene raccolto alcun dato analitico. Se accetta, a Google vengono inviati dati di utilizzo (pagine visitate, tempo di permanenza, tipo di dispositivo e posizione a livello di paese e città). I dati sono pseudonimi: non inviamo il Suo nome, l’indirizzo e-mail né altri dati che La identifichino direttamente, ma l’identificatore casuale del cookie e il Suo indirizzo IP sono dati personali ai sensi del GDPR.',
     s5Title: '5. Newsletter',
     s5Body: (unsub) => <>Se Lei si iscrive alla nostra newsletter, il Suo indirizzo email viene conservato in modo sicuro tramite Resend e Supabase. Può disiscriversi in qualsiasi momento tramite il link presente in ogni email o tramite la nostra {unsub}.</>,
     s6Title: '6. Conservazione dei dati',
