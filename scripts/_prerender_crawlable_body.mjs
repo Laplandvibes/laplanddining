@@ -294,6 +294,36 @@ export function buildCrawlableBody(
     ? paragraphs.filter((t) => typeof t === 'string' && t.trim())
     : [];
 
+  // ── H1 ilman brändihäntää ────────────────────────────────────────────────
+  // 🔴🔴 Mitattu 13.9.2026 livenä: ryömittävän lohkon <h1> oli KOKO title-tagi
+  // brändihäntineen — laplandvibes.com/fi/destination/kokkola näytti
+  // `<h1>Kokkola: matkaopas | LaplandVibes</h1>`. Googlen oma ohje
+  // otsikkolinkeistä (developers.google.com/search/docs/appearance/title-link)
+  // listaa <h1>:n yhdeksi niistä lähteistä, joista se muodostaa hakutuloksen
+  // otsikkorivin, joten brändin toistaminen siinä on hukkaan heitetty paikka —
+  // ja sama brändi on jo <title>-tagissa ja sivuston sanamerkissä.
+  //
+  // Sama tiedosto osasi tämän jo: sisäisten linkkien ankkuriteksti riisutaan
+  // (_prerender_routes.mjs "the brand repeated 20× in one list is noise").
+  // H1 vain jäi tekemättä.
+  //
+  // 🔴 Yleinen `split(/\s[|—]\s/)` katkaisisi otsikot joissa ajatusviiva on
+  // keskellä ("Aja Lappiin itäreittiä: Helsinki — Saariselkä"), ja niitä on
+  // verkostossa. Siksi katsotaan vain VIIMEISEN erottimen jälkeinen pala.
+  const brandTail = String(siteName || '').trim();
+  let h1Text = String(title || '');
+  if (brandTail) {
+    // Otetaan VIIMEISEN erottimen jalkeinen pala ja pudotetaan se vain jos se
+    // ALKAA sivuston nimella. Nain lahtee seka " | LaplandVibes" etta
+    // " | LaplandVibes Blog" (85 blogisivua mitattu 13.9.), mutta otsikon
+    // keskella oleva ajatusviiva sailyy: "Helsinki — Saariselka" -hannan pala
+    // on "Saariselka", joka ei ala brandilla.
+    const m = /^([\s\S]*?)\s*[|\u2013\u2014]\s*([^|\u2013\u2014]+)$/.exec(h1Text);
+    if (m && m[1].trim() && m[2].trim().toLowerCase().startsWith(brandTail.toLowerCase())) {
+      h1Text = m[1].trim();
+    }
+  }
+
   const wrap = 'max-width:52rem;margin:0 auto;padding:12vh 1.5rem 4rem;color:inherit';
   // 🔴 font-weight MUST stay 400. Bebas Neue ships a single 400 face on every site
   // in the network, so asking for 700 does not load a bolder file — the browser
@@ -328,7 +358,7 @@ export function buildCrawlableBody(
     // and it is removed with the block when React mounts.
     `<style>${SPLASH_CSS}</style>` +
     `<div id="lv-prerender" style="${wrap}">` +
-    `<h1 style="${h1}">${esc(title)}</h1>` +
+    `<h1 style="${h1}">${esc(h1Text)}</h1>` +
     (description ? `<p style="${p}">${esc(description)}</p>` : '') +
     (paras.length
       ? `<div style="margin:0 0 3rem">${paras.map((t) => `<p style="${pBody}">${escInline(t)}</p>`).join('')}</div>`
