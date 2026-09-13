@@ -178,6 +178,9 @@ if (args.addLocales) {
 const LOCALE_FILTER = args.locales
   ? new Set(args.locales.split(',').map((s) => s.trim()))
   : null;
+// Loppukauttaviiva-normalisointi yhdessa paikassa.
+const SLASH_END = new RegExp(String.fromCharCode(47) + '?$');
+
 const LOCALE_LIST = LOCALE_FILTER
   ? FULL_LOCALE_LIST.filter((l) => LOCALE_FILTER.has(l.lang))
   : FULL_LOCALE_LIST;
@@ -322,7 +325,17 @@ function readPerLangCopy(loc, copyKey) {
   if (!copyKey) return null;
   const src = perLangSources[loc.lang];
   if (!src) return null;
-  let block = findKeyBlockWithMeta(src, copyKey);
+  // Dotted copyKey ("category.themes.cabins") walks nested blocks so a route can
+  // address one theme's meta. Before this, every blog /category/* page rendered
+  // the FIRST metaTitle inside the shared parent block (aurora's) in all 12
+  // languages — measured 29.8. A single-part key behaves exactly as before.
+  const parts = copyKey.split('.');
+  let scope = src;
+  for (let i = 0; i < parts.length - 1; i++) {
+    scope = findKeyBlock(scope, parts[i]);
+    if (!scope) return null;
+  }
+  let block = findKeyBlockWithMeta(scope, parts[parts.length - 1]);
   return pickTD(block);
 }
 
@@ -765,10 +778,32 @@ function harvestJsxPage(src, out, meta, seen, budget) {
   }
 }
 
+/** Strip JSX tags with a scanner instead of /<[^>]*>/: a `>` inside a quoted
+ *  attribute (`className="[&>svg]:…"`) or a brace expression (`onClick={() =>`)
+ *  ended the regex match early and dumped the rest of the tag — className text
+ *  included — into the harvested body (measured on stays /fi/iglumajoitus 29.8.). */
+function stripJsxTags(jsx) {
+  let out = '';
+  for (let i = 0; i < jsx.length; i++) {
+    if (jsx[i] !== '<') { out += jsx[i]; continue; }
+    let j = i + 1, inStr = false, q = '', depth = 0;
+    for (; j < jsx.length; j++) {
+      const d = jsx[j];
+      if (inStr) { if (d === q) inStr = false; continue; }
+      if (d === '"' || d === "'" || d === '`') { inStr = true; q = d; continue; }
+      if (d === '{') { depth++; continue; }
+      if (d === '}') { if (depth > 0) depth--; continue; }
+      if (d === '>' && depth === 0) break;
+    }
+    out += INLINE_TAG.test(jsx.slice(i, j + 1)) ? ' ' : '\n';
+    i = j;
+  }
+  return out;
+}
+
 /** Shared tag/expression stripping for a JSX fragment. */
 function harvestJsxText(jsx, out, meta, seen, budget) {
-  const text = jsx
-    .replace(/<[^>]*>/g, (tag) => (INLINE_TAG.test(tag) ? ' ' : '\n'))
+  const text = stripJsxTags(jsx)
     .replace(/\{[^{}]*\}/g, ' ')
     .replace(/&nbsp;/g, ' ');
   for (const line of text.split('\n')) {
@@ -946,7 +981,12 @@ function harvestRouteText(loc, route, meta) {
         // Varianttilohkot pois: jaetussa Legal-tiedostossa on COPY (oletus) ja
         // SHOP_OVERRIDES (opt-in). Alla oleva haku ottaa jokaisen per-kieli-lohkon,
         // joten ilman tätä katkoa verkkokaupan ehdot päätyivät matkailusivuston
-        // lakisivun crawlable-runkoon 12 kielellä. Merkki on jaetussa tiedostossa.
+        // lakisivun crawlable-runkoon 12 kielellä (mitattu 31.8.2026: 23 sivustoa,
+        // 276 sivua). Merkki @harvest-stop on jaetussa Legal-tiedostossa.
+        //
+        // 🔴 TÄMÄ ON KANONINEN KOPIO. sync-shared.mjs vie tämän tiedoston
+        // kahdeksalle sivustolle joka buildissa, joten pelkkä sivustokopion
+        // korjaus katoaa seuraavassa buildissa — niin kävi 31.8.–1.9.
         const stopIx = src.indexOf('@harvest-stop');
         if (stopIx >= 0) src = src.slice(0, stopIx);
         // An ARRAY of records identified by a field (`{ slug: 'levi', … }`)
@@ -964,6 +1004,34 @@ function harvestRouteText(loc, route, meta) {
         // English city pages silently dropped from ~370 words to ~248. `by` is
         // an explicit statement of how the record is identified, so it takes
         // precedence over a name that merely happens to collide.
+        // [LV-FILE-MODES 2026-09-07] Two shapes where the WHOLE FILE is the page's
+        // copy and there is no record to look up (rec.key is still required by
+        // the guard above; pass the slug). Same-locale by construction: the
+        // candidates above never fall back to English on a localized URL, so a
+        // missing per-locale file means nothing is harvested, never English.
+        //   jsxFile  — a per-locale post module exporting one component
+        //              (laplandvibes src/blog/posts/{lang}/<slug>.tsx): harvest
+        //              the JSX of its first `return (` … `)`.
+        //   jsonFile — a per-locale JSON copy file (src/locales/{lang}/<slug>.json):
+        //              harvest every string value in document order.
+        if (rec.mode === 'jsxFile') {
+          const ri = src.indexOf('return (');
+          const jsx = ri >= 0 ? sliceParens(src, ri + 'return '.length) : null;
+          if (jsx) harvestJsxText(jsx, out, meta, seen, budget);
+          continue;
+        }
+        if (rec.mode === 'jsonFile') {
+          let j = null;
+          try { j = JSON.parse(src); } catch { j = null; }
+          const walk = (v) => {
+            if (budget.words <= 0) return;
+            if (typeof v === 'string') { const kept = harvestKeep(v, meta, seen); if (kept) { out.push(kept); budget.words -= kept.split(/\s+/).length; } }
+            else if (Array.isArray(v)) v.forEach(walk);
+            else if (v && typeof v === 'object') Object.values(v).forEach(walk);
+          };
+          if (j) walk(j);
+          continue;
+        }
         let b = null;
         if (rec.by) b = findRecordByField(src, rec.by, rec.key);
         // Otherwise a keyed entry (`oulu: { … }`) or a top-level const
@@ -1017,7 +1085,12 @@ function harvestRouteText(loc, route, meta) {
         // Varianttilohkot pois: jaetussa Legal-tiedostossa on COPY (oletus) ja
         // SHOP_OVERRIDES (opt-in). Alla oleva haku ottaa jokaisen per-kieli-lohkon,
         // joten ilman tätä katkoa verkkokaupan ehdot päätyivät matkailusivuston
-        // lakisivun crawlable-runkoon 12 kielellä. Merkki on jaetussa tiedostossa.
+        // lakisivun crawlable-runkoon 12 kielellä (mitattu 31.8.2026: 23 sivustoa,
+        // 276 sivua). Merkki @harvest-stop on jaetussa Legal-tiedostossa.
+        //
+        // 🔴 TÄMÄ ON KANONINEN KOPIO. sync-shared.mjs vie tämän tiedoston
+        // kahdeksalle sivustolle joka buildissa, joten pelkkä sivustokopion
+        // korjaus katoaa seuraavassa buildissa — niin kävi 31.8.–1.9.
         const stopIx = src.indexOf('@harvest-stop');
         if (stopIx >= 0) src = src.slice(0, stopIx);
         harvestPickCalls(src, loc, out, meta, seen, budget);
@@ -1042,7 +1115,12 @@ function harvestRouteText(loc, route, meta) {
         // Varianttilohkot pois: jaetussa Legal-tiedostossa on COPY (oletus) ja
         // SHOP_OVERRIDES (opt-in). Alla oleva haku ottaa jokaisen per-kieli-lohkon,
         // joten ilman tätä katkoa verkkokaupan ehdot päätyivät matkailusivuston
-        // lakisivun crawlable-runkoon 12 kielellä. Merkki on jaetussa tiedostossa.
+        // lakisivun crawlable-runkoon 12 kielellä (mitattu 31.8.2026: 23 sivustoa,
+        // 276 sivua). Merkki @harvest-stop on jaetussa Legal-tiedostossa.
+        //
+        // 🔴 TÄMÄ ON KANONINEN KOPIO. sync-shared.mjs vie tämän tiedoston
+        // kahdeksalle sivustolle joka buildissa, joten pelkkä sivustokopion
+        // korjaus katoaa seuraavassa buildissa — niin kävi 31.8.–1.9.
         const stopIx = src.indexOf('@harvest-stop');
         if (stopIx >= 0) src = src.slice(0, stopIx);
         if (perLangFile) { harvestFromTsBlock(src, out, meta, seen, budget); continue; }
@@ -1203,7 +1281,7 @@ const BRAND_ALTS = [SITE_NAME, SITE_HOST, SITE_HOST.replace(/\.[a-z]+$/, '')]
   .map(reEsc)
   .join('|');
 const SITE_NAME_SUFFIX_RE = new RegExp(
-  `\\s*[|\\u2014\\u2013\\u00B7•-]\\s*(?:${BRAND_ALTS})(?:\\.(?:com|fi|online|blog))?\\s*$`,
+  `\\s*[|\\u2014\\u2013\\u00B7•-]\\s*#?(?:${BRAND_ALTS})(?:\\.(?:com|fi|online|blog))?\\s*$`,
   'i'
 );
 function shortenTitle(t) {
@@ -1212,7 +1290,23 @@ function shortenTitle(t) {
   return short.length >= 25 && short.length < t.length ? short : t;
 }
 
+// [LV-DESC-CLAMP 2026-09-04] Google shows ~155–160 characters of a meta description and
+// cuts the rest; 556 of 9 200 built pages shipped longer ones (stays 244, visit 241).
+// Cut at the last sentence end at or after 90 characters, else at the last word
+// boundary, never mid-word and never with an ellipsis. Titles are NOT clamped here:
+// article titles are content and Google truncates them on its own.
+function clampDescription(d, max = 160) {
+  if (!d || typeof d !== 'string') return d;
+  const s = d.replace(/\s+/g, ' ').trim();
+  if ([...s].length <= max) return s;
+  const head = [...s].slice(0, max).join('');
+  const sentenceEnd = Math.max(head.lastIndexOf('. '), head.lastIndexOf('! '), head.lastIndexOf('? '), head.endsWith('.') ? head.length - 1 : -1);
+  if (sentenceEnd >= 90) return head.slice(0, sentenceEnd + 1).trim();
+  const cut = head.lastIndexOf(' ');
+  return (cut > 60 ? head.slice(0, cut) : head).replace(/[\s,;:–—\-(]+$/u, '').trim();
+}
 function injectShell({ shell, bcp47, og, canonical, title, description, hreflangs, ogImage, faq, lang, internalLinks, paragraphs }) {
+  description = clampDescription(description);
   let html = shell;
   title = shortenTitle(title);
 
@@ -1444,17 +1538,37 @@ for (const route of routes) {
     // hreflang, so Google folds them into the single real version instead of
     // flagging "Duplicate, Google chose a different canonical than the user".
     // Routes without the field keep the default per-locale self-canonical.
-    const canonicalLoc = route.canonicalLocale
-      ? (LOCALE_LIST.find((l) => l.lang === route.canonicalLocale) || loc)
-      : loc;
-    const canonical = `${SITE}${canonicalLoc.prefix}${cleanPath}`.replace(/\/?$/, '/');
+    // Per-LOCALE consolidation: `nativeLocales` lists the locales that actually
+    // have their own body for this route. Every locale OUTSIDE the list is
+    // serving English prose on a localized URL, so it canonicalises to /en and
+    // drops out of the hreflang cluster; the listed locales keep their normal
+    // self-canonical and cluster among themselves.
+    //
+    // 🔴 Why this is not `canonicalLocale`: that flag is per-ROUTE and means
+    // "one language on this route". Measured 2026-09-01: five hub blog articles
+    // are English-only in SOME locales but translated in others
+    // (what-is-laplandvibes has de/es/fi bodies, aurora-countries-compared has
+    // fi/ko). Flagging the whole route would have folded the real translations
+    // away too. The English-only variants were self-canonical with an English
+    // <title> on 55 localized URLs — and nl is exactly the locale with the
+    // network's worst CTR (25 993 impressions, 262 clicks).
+    const nativeSet = Array.isArray(route.nativeLocales) ? new Set(route.nativeLocales) : null
+    const consolidateTo =
+      route.canonicalLocale || (nativeSet && !nativeSet.has(loc.lang) ? 'en' : null)
+    const canonicalLoc = consolidateTo
+      ? (LOCALE_LIST.find((l) => l.lang === consolidateTo) || loc)
+      : loc
+    const canonical = `${SITE}${canonicalLoc.prefix}${cleanPath}`.replace(SLASH_END, '/')
 
-    const hreflangs = route.canonicalLocale
+    const hreflangLocales = nativeSet
+      ? routeLocales.filter((l) => nativeSet.has(l.lang))
+      : routeLocales
+    const hreflangs = consolidateTo
       ? [{ hreflang: canonicalLoc.lang === 'en' ? 'en' : canonicalLoc.lang, url: canonical }]
-      : routeLocales.map((l) => ({
+      : hreflangLocales.map((l) => ({
           hreflang: l.lang === 'en' ? 'en' : l.lang,
-          url: `${SITE}${l.prefix}${cleanPath}`.replace(/\/?$/, '/'),
-        }));
+          url: `${SITE}${l.prefix}${cleanPath}`.replace(SLASH_END, '/'),
+        }))
 
     const outPath =
       loc.prefix === '' && cleanPath === ''
