@@ -319,7 +319,11 @@ export function buildCrawlableBody(
     // keskella oleva ajatusviiva sailyy: "Helsinki — Saariselka" -hannan pala
     // on "Saariselka", joka ei ala brandilla.
     const m = /^([\s\S]*?)\s*[|\u2013\u2014]\s*([^|\u2013\u2014]+)$/.exec(h1Text);
-    if (m && m[1].trim() && m[2].trim().toLowerCase().startsWith(brandTail.toLowerCase())) {
+    // Risuaita pois ennen vertailua: verkoston sanamerkki on "#LaplandTours",
+    // mutta --siteName on "LaplandTours" (mitattu laplandtours.online 13.9.:
+    // "Privacy Policy | #LaplandTours" jai leikkaamatta ilman tata).
+    const tail = m ? m[2].trim().replace(/^[#\s]+/, '') : '';
+    if (m && m[1].trim() && tail.toLowerCase().startsWith(brandTail.toLowerCase())) {
       h1Text = m[1].trim();
     }
   }
