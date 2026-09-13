@@ -272,15 +272,18 @@ export default function LanguageMenu({
             const focused = i === cursor;
             const inner = (
               <>
+                {/* 🔴 EI KIELIKOODIA MYÖSKÄÄN RIVILLÄ. Vesa 13.9.2026: *"miksi
+                    täällä on nämä lyhenteet vielä näkyvillä kun kuitenkin se
+                    kieli lukee lipun vieressä?"* Sama peruste kuin napissa
+                    10.9.: lippu ja kielen oma nimi kertovat jo kielen, joten
+                    "EN" niiden vieressä on KOLMAS merkitsijä samasta asiasta.
+                    Perustelin koodin aiemmin sillä että se erottaa `pt-BR`:n ja
+                    `es`:n — se ei pidä paikkaansa: nimet ovat "Português" ja
+                    "Español" ja liput ovat eri maiden. `item.label` jää
+                    rajapintaan koska sovittimet rakentavat sen, mutta sitä EI
+                    renderöidä; portti kaatuu jos se palaa. */}
                 <Flag code={item.code} className="w-6 h-[17px]" />
                 <span className="flex-1 truncate text-left text-sm">{item.native}</span>
-                <span
-                  className={`text-[10px] font-semibold uppercase tracking-[0.14em] tabular-nums ${
-                    dark ? 'text-snow/40' : 'text-deep-night/40'
-                  }`}
-                >
-                  {item.label}
-                </span>
                 {active ? (
                   <Check className="w-4 h-4 shrink-0 text-vibe-pink" aria-hidden="true" />
                 ) : (
