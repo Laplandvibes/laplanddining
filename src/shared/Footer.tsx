@@ -262,18 +262,18 @@ const BUILT_IN_SITE_LABELS: Record<string, Record<SiteLabelsKey, string>> = {
 // typed BUILT_IN_SITE_LABELS above stays valid without touching all 11 lines) ──
 type ExtLabelsKey = 'luxuryVillas' | 'tours' | 'weddings' | 'store' | 'flights';
 const EXT_SITE_LABELS: Record<string, Record<ExtLabelsKey, string>> = {
-  en: { luxuryVillas:'Private villas & luxury lodges', tours:'Guided tours & day trips', weddings:'Arctic weddings & elopements', store:'Lapland boutiques & makers', flights:'Flights to Lapland' },
-  fi: { luxuryVillas:'Yksityishuvilat & luksusmajat', tours:'Opastetut retket & päiväretket', weddings:'Arktiset häät & vihkimiset', store:'Lappilaiset puodit & tekijät', flights:'Lennot Lappiin' },
-  de: { luxuryVillas:'Private Villen & Luxus-Lodges', tours:'Geführte Touren & Tagesausflüge', weddings:'Arktische Hochzeiten', store:'Lappland-Boutiquen & Kunsthandwerk', flights:'Flüge nach Lappland' },
+  en: { luxuryVillas:'Private villas & luxury lodges', tours:'Guided tours & day trips', weddings:'Arctic weddings & elopements', store:'Lapland boutiques & makers', flights:'Flights to Lapland' },
+  fi: { luxuryVillas:'Yksityishuvilat & luksusmajat', tours:'Opastetut retket & päiväretket', weddings:'Arktiset häät & vihkimiset', store:'Lappilaiset puodit & tekijät', flights:'Lennot Lappiin' },
+  de: { luxuryVillas:'Private Villen & Luxus-Lodges', tours:'Geführte Touren & Tagesausflüge', weddings:'Arktische Hochzeiten', store:'Lappland-Boutiquen & Kunsthandwerk', flights:'Flüge nach Lappland' },
   ja: { luxuryVillas:'プライベートヴィラ・高級ロッジ', tours:'ガイドツアー・日帰り旅行', weddings:'北極圏ウェディング', store:'ラップランドの店とつくり手', flights:'ラップランドへの航空券' },
   es: { luxuryVillas:'Villas privadas y lodges de lujo', tours:'Tours guiados y excursiones', weddings:'Bodas árticas', store:'Tiendas y artesanos de Laponia', flights:'Vuelos a Laponia' },
   'pt-BR': { luxuryVillas:'Vilas privativas e lodges de luxo', tours:'Tours guiados e excursões de um dia', weddings:'Casamentos no Ártico', store:'Lojas e artesãos da Lapônia', flights:'Voos para a Lapônia' },
   'zh-CN': { luxuryVillas:'私人别墅与豪华小屋', tours:'导览游与一日游', weddings:'北极婚礼', store:'拉普兰精品店与手艺人', flights:'飞往拉普兰的航班' },
-  ko: { luxuryVillas:'프라이빗 빌라 & 럭셔리 로지', tours:'가이드 투어 & 당일 여행', weddings:'북극 웨딩', store:'라플란드 상점 & 공방', flights:'라플란드행 항공편' },
-  fr: { luxuryVillas:'Villas privées & lodges de luxe', tours:'Visites guidées & excursions', weddings:'Mariages arctiques', store:'Boutiques & artisans de Laponie', flights:'Vols vers la Laponie' },
+  ko: { luxuryVillas:'프라이빗 빌라 & 럭셔리 로지', tours:'가이드 투어 & 당일 여행', weddings:'북극 웨딩', store:'라플란드 상점 & 공방', flights:'라플란드행 항공편' },
+  fr: { luxuryVillas:'Villas privées & lodges de luxe', tours:'Visites guidées & excursions', weddings:'Mariages arctiques', store:'Boutiques & artisans de Laponie', flights:'Vols vers la Laponie' },
   it: { luxuryVillas:'Ville private e lodge di lusso', tours:'Tour guidati ed escursioni', weddings:'Matrimoni artici', store:'Botteghe e artigiani della Lapponia', flights:'Voli per la Lapponia' },
-  nl: { luxuryVillas:"Privévilla's & luxe lodges", tours:'Begeleide tours & dagtochten', weddings:'Arctische bruiloften', store:'Lapland-winkels & makers', flights:'Vluchten naar Lapland' },
-  sv: { luxuryVillas:'Privata villor & lyxstugor', tours:'Guidade turer & dagsutflykter', weddings:'Arktiska bröllop & spontanbröllop', store:'Lapplandsbutiker & hantverkare', flights:'Flyg till Lappland' },
+  nl: { luxuryVillas:"Privévilla's & luxe lodges", tours:'Begeleide tours & dagtochten', weddings:'Arctische bruiloften', store:'Lapland-winkels & makers', flights:'Vluchten naar Lapland' },
+  sv: { luxuryVillas:'Privata villor & lyxstugor', tours:'Guidade turer & dagsutflykter', weddings:'Arktiska bröllop & spontanbröllop', store:'Lapplandsbutiker & hantverkare', flights:'Flyg till Lappland' },
 };
 
 /** Detect lang from URL path prefix. Returns 'en' if none matches. */
