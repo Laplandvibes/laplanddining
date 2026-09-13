@@ -149,7 +149,7 @@ export default function CookieBanner({
         aria-label={D.ariaLabel}
         aria-modal="true"
       >
-        <div className="flex items-stretch gap-3 px-3 py-3">
+        <div className="flex items-stretch gap-3 px-4 py-3">
           {/* The flag, still on its pole — same 18:11 Nordic cross, just small
               enough to be an emblem rather than the container. */}
           <div className="shrink-0 flex items-stretch gap-1.5" aria-hidden="true">
