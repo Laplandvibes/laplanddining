@@ -35,7 +35,9 @@
  * Lippu `--check` = älä kirjoita mitään, tulosta vain yhteenveto (portti).
  * Ympäristö `SITEMAP_LASTMOD_DATE=YYYY-MM-DD` = pakota "tänään" (testeihin).
  *
- * Kanoninen lähde: shared/scripts/sitemap_lastmod.mjs — vendoroitu per sivusto
+ * Kanoninen lähde: scripts/sitemap_lastmod.mjs lv-opsin juuressa, HAARASSA MAIN
+ * (ei työhaaroilla — mitattu 14.9.2026, jolloin tämä väärä polku sai minut
+ * luomaan kaksoiskappaleen). Vendoroitu per sivusto
  * scripts/sitemap-lastmod.mjs:ksi (sama sopimus kuin _prerender_routes.mjs).
  */
 
