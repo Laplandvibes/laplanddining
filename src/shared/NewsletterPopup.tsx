@@ -833,7 +833,7 @@ export default function NewsletterPopup({
           type="button"
           onClick={dismiss}
           aria-label={D.closeAria}
-          className="absolute top-3 right-3 w-9 h-9 flex items-center justify-center rounded-full text-snow/60 hover:text-snow hover:bg-white/10 transition-colors cursor-pointer"
+          className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center rounded-full text-snow/60 hover:text-snow hover:bg-white/10 transition-colors cursor-pointer"
         >
           <X className="w-4 h-4" />
         </button>
