@@ -247,7 +247,7 @@ const CSS = `
 .lv-eco-btn--light{background:rgba(15,23,42,.05);border-color:rgba(15,23,42,.22);color:rgba(15,23,42,.78)}
 .lv-eco-btn--light .lv-eco-lbl{text-shadow:none}
 .lv-eco-btn--light:hover,.lv-eco-btn--light[aria-expanded="true"]{background:rgba(236,72,153,.08);border-color:rgba(236,72,153,.55);color:${PINK}}
-@media(max-width:767px){.lv-eco-btn{height:44px;min-width:44px}}
+@media(max-width:1023px){.lv-eco-btn{height:44px;min-width:44px}}
 @media(max-width:639px){.lv-eco-btn{padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 12px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoNudge 1.6s ease-in-out infinite}
 @media(min-width:768px){.lv-eco-hint{display:block}}

@@ -210,12 +210,12 @@ export default function LanguageMenu({
 
   const trigger =
     variant === 'pill'
-      ? `inline-flex h-11 sm:h-9 items-center gap-2 rounded-full border px-2.5 transition-colors duration-200 ${
+      ? `inline-flex h-11 lg:h-9 items-center gap-2 rounded-full border px-2.5 transition-colors duration-200 ${
           dark
             ? 'border-white/30 bg-white/5 text-snow hover:border-vibe-pink hover:bg-white/10'
             : 'border-black/15 bg-black/[0.04] text-deep-night hover:border-vibe-pink hover:bg-black/[0.07]'
         }`
-      : `inline-flex h-11 sm:h-9 items-center gap-2 rounded-md px-1.5 transition-colors duration-200 ${
+      : `inline-flex h-11 lg:h-9 items-center gap-2 rounded-md px-1.5 transition-colors duration-200 ${
           dark ? 'text-snow/85 hover:text-snow' : 'text-deep-night/85 hover:text-deep-night'
         }`;
 
@@ -294,7 +294,7 @@ export default function LanguageMenu({
             // Jokainen rivi on tarkalleen saman korkuinen ja levyinen — ei
             // poikkeuksia pitkille nimille (Nederlands, Português, 简体中文).
             const rowCls = [
-              'flex w-full items-center gap-3 rounded-lg px-2.5 h-11 sm:h-10 transition-colors duration-150 motion-reduce:transition-none',
+              'flex w-full items-center gap-3 rounded-lg px-2.5 h-11 lg:h-10 transition-colors duration-150 motion-reduce:transition-none',
               active
                 ? 'bg-vibe-pink/12 font-semibold ' + (dark ? 'text-snow' : 'text-deep-night')
                 : dark

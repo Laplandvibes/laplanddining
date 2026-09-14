@@ -1006,7 +1006,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                 rel="noopener"
                 data-umami-event="app_cta"
                 data-umami-event-surface="footer"
-                className="inline-flex items-center gap-1.5 mt-3 px-3.5 py-2 rounded-full text-[13px] font-semibold transition-colors duration-200 min-h-[44px] sm:min-h-0"
+                className="inline-flex items-center gap-1.5 mt-3 px-3.5 py-2 rounded-full text-[13px] font-semibold transition-colors duration-200 min-h-[44px] lg:min-h-0"
                 // #FFFFFF, ei #F9FAFB: lumenvalkoinen jaa 4,40:1 -- juuri alle rajan.
                 style={{ background: PINK_FILL, color: '#FFFFFF' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = PINK_FILL_HOVER; }}
@@ -1025,7 +1025,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center rounded-full transition-all duration-200"
+                  className="w-11 h-11 lg:w-10 lg:h-10 flex items-center justify-center rounded-full transition-all duration-200"
                   style={{ background: 'rgba(248,250,252,0.12)', border: '1px solid rgba(248,250,252,0.3)', color: WHITE }}
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLElement).style.background = '#EC4899';
@@ -1052,7 +1052,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                 >
                   {group.title}
                 </h3>
-                <ul className="space-y-0 sm:space-y-3.5">
+                <ul className="space-y-0 lg:space-y-3.5">
                   {group.links.map((link) => (
                     <li key={link.name}>
                       {/* 🔴 EI noreferreria (Vesa 2026-08-10). Nama ovat verkoston OMIA
@@ -1068,8 +1068,8 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                         /* min-w matters as much as min-h here: the link is
                            inline-flex, so its hit box is exactly as wide as the
                            label — and short locale labels ("Offres", "Erbjudanden")
-                           came out 37px wide. sm: restores the plain inline box. */
-                        className="text-[13px] sm:text-sm font-normal leading-snug transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:inline sm:min-h-0 sm:min-w-0"
+                           came out 37px wide. lg: restores the plain inline box. */
+                        className="text-[13px] sm:text-sm font-normal leading-snug transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] lg:inline lg:min-h-0 lg:min-w-0"
                         style={{ color: 'rgba(248,250,252,0.85)' }}
                         onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#EC4899')}
                         onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(248,250,252,0.85)')}
@@ -1103,7 +1103,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                 // Lokalisoitu label dictista; hubin propilla tulevat linkit (ei keytä)
                 // kantavat oman valmiiksi lokalisoidun nimensä.
                 const label = link.key ? (d.pillars[link.key] ?? link.name) : link.name;
-                const pillClassName = "text-[13px] sm:text-sm font-semibold px-3 sm:px-4 py-2.5 sm:py-2 rounded-full transition-all duration-200 hover:scale-105 whitespace-nowrap inline-flex items-center justify-center min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 shadow-sm";
+                const pillClassName = "text-[13px] sm:text-sm font-semibold px-3 sm:px-4 py-2.5 sm:py-2 rounded-full transition-all duration-200 hover:scale-105 whitespace-nowrap inline-flex items-center justify-center min-h-[44px] min-w-[44px] lg:min-h-0 lg:min-w-0 shadow-sm";
                 // 13px white text = normal text, so the 4.5:1 bar applies and
                 // brand pink #EC4899 (3.53:1) fails — same measurement as the
                 // 2026-08-02 batch, which missed this one row. Rest on
@@ -1325,7 +1325,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                        locale label ("Tietoa") gave a 42px-wide hit box even
                        though the height was already 44. Same trap as the
                        ecosystem links above. */
-                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:min-w-0 justify-start sm:justify-center px-1"
+                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] lg:min-w-0 justify-start sm:justify-center px-1"
                     style={{ color: BLUE }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#EC4899')}
                     onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = BLUE)}
@@ -1344,7 +1344,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                   <button
                     type="button"
                     onClick={() => setContactKind('general')}
-                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:min-w-0 justify-start sm:justify-center px-1 bg-transparent border-0 cursor-pointer text-xs font-normal"
+                    className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] lg:min-w-0 justify-start sm:justify-center px-1 bg-transparent border-0 cursor-pointer text-xs font-normal"
                     style={{ color: BLUE }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#EC4899')}
                     onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = BLUE)}
@@ -1368,7 +1368,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                   href={websiteByHref}
                   target="_blank"
                   rel="noopener sponsored"
-                  className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] sm:min-w-0 justify-center"
+                  className="transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] lg:min-w-0 justify-center"
                   style={{ color: BLUE }}
                   onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#EC4899')}
                   onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = BLUE)}
