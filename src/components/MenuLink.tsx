@@ -42,7 +42,7 @@ export default function MenuLink({ restaurant, label, labelPdf, campaign }: Prop
       href={withReferral(url, campaign)}
       target="_blank"
       rel="nofollow noopener"
-      className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+      className="lv-tap inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
     >
       {kind === 'pdf' ? labelPdf : label} →
     </a>

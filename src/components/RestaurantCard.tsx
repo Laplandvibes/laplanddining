@@ -143,7 +143,7 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
               href={withReferral(r.website, 'dining_restaurants')}
               target="_blank"
               rel="nofollow noopener"
-              className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+              className="lv-tap inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
               {i18n.websiteLabel} →
             </a>
@@ -152,7 +152,7 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
             href={r.googleMapsUrl}
             target="_blank"
             rel="nofollow noopener"
-            className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+            className="lv-tap inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
           >
             {i18n.mapsLabel} →
           </a>

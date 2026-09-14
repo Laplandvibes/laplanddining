@@ -7,6 +7,6 @@ export const APP_STATS = {
   "routes": 24,
   "slopes": 211,
   "lifts": 105,
-  "countedAt": "2026-09-05"
+  "countedAt": "2026-09-10"
 } as const
 export default APP_STATS

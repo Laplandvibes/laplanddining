@@ -53,7 +53,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3 sm:gap-5 shrink-0">
             <EcosystemMenu lang={locale} currentDomain="laplanddining.com" />
-            <Link to={to('/')} className="no-underline" aria-label="LaplandDining home">
+            <Link to={to('/')} className="no-underline inline-flex items-center min-h-11" aria-label="LaplandDining home">
               <Logo className="text-2xl sm:text-3xl" />
             </Link>
           </div>

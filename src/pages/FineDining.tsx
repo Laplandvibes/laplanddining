@@ -253,7 +253,7 @@ export default function FineDining() {
                           href={withReferral(r.website, 'dining_finedining')}
                           target="_blank"
                           rel="nofollow noopener"
-                          className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+                          className="lv-tap inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
                         >
                           {t('fineDining.websiteLabel')} <ExternalLink size={12} />
                         </a>
@@ -262,7 +262,7 @@ export default function FineDining() {
                         href={r.googleMapsUrl}
                         target="_blank"
                         rel="nofollow noopener"
-                        className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+                        className="lv-tap inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
                       >
                         {t('fineDining.mapsLabel')} <ExternalLink size={12} />
                       </a>

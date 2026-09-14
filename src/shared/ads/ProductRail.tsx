@@ -226,7 +226,7 @@ export default function ProductRail({
             target="_blank"
             rel="sponsored nofollow noopener"
             onClick={() => onCtaClick?.(partner.key, `product_rail:${sid}_all`, allHref)}
-            className="group/cta hidden min-h-10 items-center gap-1.5 rounded-full px-4 text-[13px] font-semibold no-underline sm:inline-flex shadow-[0_8px_20px_-12px_rgba(15,23,42,0.45)] transition-[transform,box-shadow] duration-200 hover:shadow-[0_14px_28px_-14px_rgba(15,23,42,0.5)] active:scale-[0.97] motion-reduce:transition-none"
+            className="group/cta hidden min-h-11 items-center gap-1.5 rounded-full px-4 text-[13px] font-semibold no-underline sm:inline-flex shadow-[0_8px_20px_-12px_rgba(15,23,42,0.45)] transition-[transform,box-shadow] duration-200 hover:shadow-[0_14px_28px_-14px_rgba(15,23,42,0.5)] active:scale-[0.97] motion-reduce:transition-none"
             style={{ backgroundColor: accent, color: pillText, transitionTimingFunction: EASE }}
           >
             {c.ctaAll}

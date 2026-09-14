@@ -135,3 +135,27 @@ button, summary,
 h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span {
   text-wrap: balance;
 }
+
+/* ── KOSKETUSKOKO: pieni tekstilinkki ─────────────────────────────────────────
+   Mitattu 14.9.2026 (768 px): kortin lopun tekstilinkit ("Katso kaikki",
+   "Lue lisaa") ovat 15-24 px korkeita, koska laatikko on tasan tekstirivin
+   korkuinen. WCAG 2.5.5 vaatii 44x44.
+
+   🔴 Korkeutta EI kasvateta: se tyontaisi kaiken alla olevan 24 px alaspain
+   196 paikassa. Sen sijaan piirretaan nakymaton 44 px korkea osuma-alue
+   linkin paalle. Nakyva koko ja asettelu pysyvat tasmalleen ennallaan.
+
+   🔴 Vain alle 1024 px: tyopoydalla osoitin osuu 20 px:n linkkiin hyvin, eika
+   ylimaaraista osuma-aluetta kannata jattaa sinne missa se voi peittaa muuta. */
+@media (max-width: 1023px) {
+  .lv-tap { position: relative; }
+  .lv-tap::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 44px;
+    transform: translateY(-50%);
+  }
+}

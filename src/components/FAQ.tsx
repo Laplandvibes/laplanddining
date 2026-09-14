@@ -148,7 +148,7 @@ export default function FAQ() {
                               <Link
                                 key={key}
                                 to={to(FAQ_ROUTE[key])}
-                                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber hover:text-vibe-pink transition-colors"
+                                className="lv-tap inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber hover:text-vibe-pink transition-colors"
                               >
                                 {tNav(`links.${key}`)} <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                               </Link>

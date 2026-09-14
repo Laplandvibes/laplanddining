@@ -253,8 +253,10 @@ const CSS = `
 @media(min-width:768px){.lv-eco-hint{display:block}}
 .lv-eco-hint-arrow{position:absolute;top:-7px;left:20px;width:14px;height:14px;transform:rotate(45deg);border-radius:3px;background:${PINK};box-shadow:0 0 14px rgba(236,72,153,.55)}
 .lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:${PINK_FILL};color:#fff;box-shadow:0 14px 34px -12px rgba(236,72,153,.7)}
-.lv-eco-hint-x{display:flex;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);font:inherit;line-height:1}
+.lv-eco-hint-x{display:flex;position:relative;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);font:inherit;line-height:1}
 .lv-eco-hint-x:hover{color:#fff}
+/* Nakyva merkki pysyy 20 px:na (pillerin mitta); sormelle annetaan 44x44. */
+.lv-eco-hint-x::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
 .lv-eco-panel{position:fixed;z-index:9990;top:var(--lv-eco-t,72px);left:var(--lv-eco-l,16px);width:var(--lv-eco-w,min(1160px,calc(100vw - 32px)));max-height:calc(100vh - var(--lv-eco-t,72px) - 16px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:rgba(15,23,42,.97);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -24px rgba(0,0,0,.85),0 0 60px -30px rgba(236,72,153,.5);color:${SNOW};padding:16px 22px 18px;font-family:${BODY_FONT};animation:lvEcoPop .16s ease-out;transform-origin:top left;text-align:left;line-height:1.4}
 .lv-eco-panel:focus{outline:0}
 .lv-eco-panel *,.lv-eco-panel *::before,.lv-eco-panel *::after{box-sizing:border-box}

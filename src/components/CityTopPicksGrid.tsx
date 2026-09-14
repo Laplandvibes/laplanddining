@@ -165,7 +165,7 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
                 href={withReferral(r.website, 'dining_toppicks')}
                 target="_blank"
                 rel="nofollow noopener"
-                className="inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+                className="lv-tap inline-flex items-center gap-1 text-amber-deep hover:text-spice text-xs font-bold uppercase tracking-wider transition-colors no-underline"
               >
                 {labels.websiteLabel} →
               </a>
@@ -174,7 +174,7 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
               href={r.googleMapsUrl}
               target="_blank"
               rel="nofollow noopener"
-              className="inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
+              className="lv-tap inline-flex items-center gap-1 text-warm-muted hover:text-warm-ink text-xs font-bold uppercase tracking-wider transition-colors no-underline"
             >
               {labels.mapsLabel} →
             </a>

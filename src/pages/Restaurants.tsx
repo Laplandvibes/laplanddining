@@ -455,7 +455,7 @@ export default function Restaurants() {
                         {citySlug(city) && (
                           <Link
                             to={`${cityLinkPrefix}/city/${citySlug(city)}`}
-                            className="mt-2 inline-flex items-center gap-1 text-amber text-xs font-bold uppercase tracking-wider hover:text-spice transition-colors no-underline"
+                            className="lv-tap mt-2 inline-flex items-center gap-1 text-amber text-xs font-bold uppercase tracking-wider hover:text-spice transition-colors no-underline"
                           >
                             {t('cities.shared.cityPageCta', {
                               at: t(`cities.${citySlug(city)}.at`, { defaultValue: city }),
