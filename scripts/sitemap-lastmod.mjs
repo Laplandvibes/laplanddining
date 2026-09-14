@@ -19,7 +19,8 @@
  *      <noscript>, tagit ja whitespace normalisoitu) ja laskee sha1:n.
  *   3. Vertaa scripts/sitemap-state.json:iin ({ url: { h, d } }). Sama hash ⇒
  *      vanha päivä säilyy. Uusi tai muuttunut ⇒ päivä = tänään (UTC).
- *   4. Kirjoittaa dist/sitemap.xml:n uusilla lastmodeilla ja päivittää state-tiedoston.
+ *   4. Kirjoittaa dist/sitemap.xml:n JA public/sitemap.xml:n uusilla lastmodeilla
+ *      ja päivittää state-tiedoston.
  *
  * 🔴 scripts/sitemap-state.json ON COMMITOITAVA. CI buildaa puhtaasta klonista eikä
  *    committaa mitään: jos tila ei ole gitissä, muuttuneen sivun päivä hyppää joka
@@ -46,6 +47,18 @@ const ROOT = process.cwd();
 const CHECK = process.argv.includes('--check');
 const DIST = resolve(ROOT, 'dist');
 const SITEMAP = resolve(DIST, 'sitemap.xml');
+/**
+ * 🔴🔴 public/-kopio KIRJOITETAAN MYÖS (14.9.2026).
+ *
+ * `generate-sitemap.mjs` kirjoittaa saman tiedoston sekä publiciin että distiin,
+ * ja sen lastmod on TÄMÄ PÄIVÄ jokaiselle URLille. Tämä skripti korjasi vain
+ * distin. Deployattu tiedosto oli siis oikein, mutta versionhallintaan jäi juuri
+ * se muoto jonka CLAUDE.md kieltää — ja repoa lukeva näki väärän tiedoston.
+ * Mitattu 14.9.2026: 17 sivustoa 28:sta kantoi publicissa yhtä ainoaa päivää.
+ *
+ * Sama sisältö molempiin, niin ero ei voi syntyä uudelleen.
+ */
+const PUBLIC_SITEMAP = resolve(ROOT, 'public/sitemap.xml');
 const STATE = resolve(ROOT, 'scripts/sitemap-state.json');
 const TODAY = process.env.SITEMAP_LASTMOD_DATE || new Date().toISOString().slice(0, 10);
 
@@ -124,8 +137,20 @@ const summary = `sitemap-lastmod: ${locs.length} URLia · säilyi ${kept} · muu
 console.log(summary);
 if (bumpedList.length) console.log('  muuttuneet: ' + bumpedList.slice(0, 20).join(', ') + (bumpedList.length > 20 ? ` … (+${bumpedList.length - 20})` : ''));
 
-if (!CHECK) {
+if (CHECK) {
+  // Portti: publicin pitää vastata sitä mitä dist lähettää.
+  if (existsSync(PUBLIC_SITEMAP)) {
+    const pub = readFileSync(PUBLIC_SITEMAP, 'utf8');
+    const paivat = (x) => [...new Set([...x.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]))];
+    if (paivat(pub).join() !== paivat(out).join()) {
+      console.error('  🔴 public/sitemap.xml ei vastaa distia: public ' +
+        paivat(pub).length + ' eri päivää, dist ' + paivat(out).length + '. Aja build.');
+      process.exitCode = 1;
+    }
+  }
+} else {
   writeFileSync(SITEMAP, out);
+  if (existsSync(PUBLIC_SITEMAP)) writeFileSync(PUBLIC_SITEMAP, out);
   const ordered = Object.fromEntries(Object.keys(next).sort().map((k) => [k, next[k]]));
   writeFileSync(STATE, JSON.stringify(ordered, null, 0).replace(/},"/g, '},\n"') + '\n');
 }
