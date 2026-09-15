@@ -436,11 +436,11 @@
         ],
         "figures": [
           {
-            "value": "5 600",
+            "value": "5 600",
             "label": "poronhoitajaa"
           },
           {
-            "value": "200 000",
+            "value": "200 000",
             "label": "poroa"
           },
           {
@@ -530,7 +530,7 @@
       {
         "title": "Mikään viljalla ruokittu eläin ei pääse lähellekään",
         "paragraphs": [
-          "Porotiloja ei tavanomaisessa mielessä ole: eläimet vaeltavat noin 123 000 neliökilometrin alueella ja syövät jäkälää, sammalta, villiheinää ja koivun lehtiä. Ne ovat puolikesyjä: poronhoitajat seuraavat ja paimentavat niitä, mutta liikkuminen on poron oma asia.",
+          "Porotiloja ei tavanomaisessa mielessä ole: eläimet vaeltavat noin 123 000 neliökilometrin alueella ja syövät jäkälää, sammalta, villiheinää ja koivun lehtiä. Ne ovat puolikesyjä: poronhoitajat seuraavat ja paimentavat niitä, mutta liikkuminen on poron oma asia.",
           "Tämä näkyy lihassa. Vapaasti laiduntava poro, joka on viettänyt elämänsä tunturimaisemissa kävellen ja villikasveja syöden, tuottaa vähärasvaista lihaa, jossa on runsaasti omega-3-rasvahappoja ja syvä maku. Mikään viljalla ruokittu tuotantoeläin ei pääse lähellekään.",
           "Suomen porotalous on järjestetty 54 paliskuntaan, joiden suurimmat sallitut poromäärät on rajattu laissa. Syksyiset erotukset määrittävät, kuinka monta poroa teurastetaan, jotta tokat pysyvät terveinä ja maisema tasapainossa. Vuosituotto on noin 2 miljoonaa kiloa lihaa."
         ],
@@ -552,7 +552,7 @@
     "ingredients": [
       {
         "name": "Poro",
-        "fact": "Noin 200 000 poroa kulkee Suomen Lapissa 54 paliskunnassa, vapaana laiduntaen jäkälää, sammalta ja villikasveja, ilman tehotuotantoa ja kasvuhormoneja. Liha on vähärasvaista ja rautapitoista, ja klassikkoannos on poronkäristys: ohueksi höylättyä poroa paistettuna, lisänä perunamuusi ja puolukka.",
+        "fact": "Noin 200 000 poroa kulkee Suomen Lapissa 54 paliskunnassa, vapaana laiduntaen jäkälää, sammalta ja villikasveja, ilman tehotuotantoa ja kasvuhormoneja. Liha on vähärasvaista ja rautapitoista, ja klassikkoannos on poronkäristys: ohueksi höylättyä poroa paistettuna, lisänä perunamuusi ja puolukka.",
         "season": "Ympäri vuoden (syksyn teurastus)"
       },
       {

@@ -436,11 +436,11 @@
         ],
         "figures": [
           {
-            "value": "5 600",
+            "value": "5 600",
             "label": "renskötare"
           },
           {
-            "value": "200 000",
+            "value": "200 000",
             "label": "renar"
           },
           {
@@ -530,7 +530,7 @@
       {
         "title": "Inget spannmålsuppfött djur kommer i närheten",
         "paragraphs": [
-          "Det finns inga vanliga rengårdar – djuren strövar över ungefär 123 000 km² vildmark och betar lav, mossa, vilda gräs och björklöv. De är halvtama: skötare spårar och sköter dem, men rörelsen är djurets egen.",
+          "Det finns inga vanliga rengårdar – djuren strövar över ungefär 123 000 km² vildmark och betar lav, mossa, vilda gräs och björklöv. De är halvtama: skötare spårar och sköter dem, men rörelsen är djurets egen.",
           "Det syns i köttet. En frigående ren som tillbringat livet med att vandra på fjället och äta vilda växter ger kött som är magert, rikt på omega-3-fettsyror och djupt smakrikt. Inget spannmålsuppfött gårdsdjur kommer i närheten.",
           "Finlands rennäring drivs genom 54 renbeteslag med lagstadgade maxantal för hjordarna. Höstens skiljningar avgör hur många som kan slaktas för att hålla hjordarna friska och landskapet i balans. Den årliga produktionen ligger runt 2 miljoner kilo kött."
         ],
@@ -552,7 +552,7 @@
     "ingredients": [
       {
         "name": "Ren",
-        "fact": "Omkring 200 000 renar strövar över finska Lappland fördelade på 54 renbeteslag, och betar fritt på lav, mossa och vilda växter, utan gödningsanläggningar och utan tillväxthormoner. Köttet är magert och järnrikt, och klassikern är poronkäristys: tunt skavd ren, stekt och serverad med potatismos och lingon.",
+        "fact": "Omkring 200 000 renar strövar över finska Lappland fördelade på 54 renbeteslag, och betar fritt på lav, mossa och vilda växter, utan gödningsanläggningar och utan tillväxthormoner. Köttet är magert och järnrikt, och klassikern är poronkäristys: tunt skavd ren, stekt och serverad med potatismos och lingon.",
         "season": "Året runt (höstslakt)"
       },
       {

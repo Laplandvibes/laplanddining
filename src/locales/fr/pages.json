@@ -436,11 +436,11 @@
         ],
         "figures": [
           {
-            "value": "5 600",
+            "value": "5 600",
             "label": "éleveurs de rennes"
           },
           {
-            "value": "200 000",
+            "value": "200 000",
             "label": "rennes"
           },
           {
@@ -530,7 +530,7 @@
       {
         "title": "Aucun animal nourri au grain n'en approche",
         "paragraphs": [
-          "Il n'existe pas de fermes à rennes conventionnelles, les animaux parcourent environ 123 000 km² de nature sauvage, broutant lichens, mousses, herbes et feuilles de bouleau. Ils sont semi-domestiqués : les éleveurs les suivent et les gèrent, mais le mouvement appartient à l'animal.",
+          "Il n'existe pas de fermes à rennes conventionnelles, les animaux parcourent environ 123 000 km² de nature sauvage, broutant lichens, mousses, herbes et feuilles de bouleau. Ils sont semi-domestiqués : les éleveurs les suivent et les gèrent, mais le mouvement appartient à l'animal.",
           "Cela se sent dans la viande. Un renne qui a passé sa vie à arpenter les fjälls et à manger des plantes sauvages donne une viande maigre, riche en oméga-3 et profondément parfumée. Aucun animal d'élevage nourri au grain n'en approche.",
           "L'industrie finlandaise du renne fonctionne via 54 coopératives d'élevage avec des effectifs maximaux fixés par la loi. Les rassemblements d'automne décident combien peuvent être abattus pour maintenir la santé des troupeaux et l'équilibre du paysage. La production annuelle tourne autour de 2 millions de kilogrammes de viande."
         ],
@@ -552,7 +552,7 @@
     "ingredients": [
       {
         "name": "Renne",
-        "fact": "Près de 200 000 rennes parcourent la Laponie finlandaise, répartis sur 54 coopératives d'élevage, broutant en liberté lichens, mousses et plantes sauvages, sans parcs d'engraissement ni hormones de croissance. La viande est maigre et riche en fer, et le plat classique est le poronkäristys : du renne coupé très fin, sauté et servi avec purée de pommes de terre et airelle rouge.",
+        "fact": "Près de 200 000 rennes parcourent la Laponie finlandaise, répartis sur 54 coopératives d'élevage, broutant en liberté lichens, mousses et plantes sauvages, sans parcs d'engraissement ni hormones de croissance. La viande est maigre et riche en fer, et le plat classique est le poronkäristys : du renne coupé très fin, sauté et servi avec purée de pommes de terre et airelle rouge.",
         "season": "Toute l'année (abattage à l'automne)"
       },
       {
