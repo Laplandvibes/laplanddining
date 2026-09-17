@@ -631,7 +631,7 @@
   "common": {
     "cityTopPicksKicker": "Eine Empfehlung pro Stadt · {{count}} Reiseziele",
     "cityTopPicksHeadline": "Lapplands bester Tisch, nach Stadt",
-    "cityTopPicksLead": "Für jedes Reiseziel in diesem Führer wird ein Restaurant als erste Anlaufstelle ausgewählt. Echte Gästezitate aus Google, kombiniert mit einem Hotel in Gehweite.",
+    "cityTopPicksLead": "Für jedes Reiseziel in diesem Restaurantführer wird ein Restaurant als erste Anlaufstelle ausgewählt. Echte Gästezitate aus Google, kombiniert mit einem Hotel in Gehweite.",
     "dataRefreshed": "Daten aktualisiert am {{date}} aus Google Places.",
     "howWeChoose": "Wie wir auswählen",
     "seeMoreInCity": "Mehr Restaurants in {{city}}",
