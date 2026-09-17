@@ -131,8 +131,23 @@
          (/fi 96 katselua, /fi/media 81) ja SEITSEMAN eri *.pages.dev-esikatselua.
          Sama portti jonka Umami saa data-domains-attribuutista; GA:n oma
          IP-suodatin ei kata naita lainkaan. */
+      /* QA-liikenne pois mittareista (Vesa 17.9.2026, laplandstays-auditin kohta 6;
+         levitys koko verkostoon 17.9. illalla). Ei IP-listoja: kotiyhteyden osoite
+         vaihtuu ja puhelin on eri verkossa. ?w=qa kerran => lippu jaa selaimen
+         localStorageen ja GA + Umami ovat pois paalta talla selaimella pysyvasti;
+         ?w=live palauttaa. navigator.webdriver = Playwright/Puppeteer-portit, eivat
+         kavijoita. Poikkeus lv_measure=1: verify_funnel_live DEEP tarvitsee lahetykset. */
+      var lvQa = false;
+      try {
+        var lvW = new URLSearchParams(location.search).get('w');
+        if (lvW === 'qa') localStorage.setItem('lv_qa', '1');
+        if (lvW === 'live') { localStorage.removeItem('lv_qa'); localStorage.removeItem('umami.disabled'); }
+        lvQa = localStorage.getItem('lv_qa') === '1' ||
+          (navigator.webdriver === true && localStorage.getItem('lv_measure') !== '1');
+        if (lvQa) localStorage.setItem('umami.disabled', '1');
+      } catch (e) {}
       var lvHost = location.hostname;
-      if (lvHost === 'localhost' || lvHost === '127.0.0.1' || lvHost === '[::1]' || lvHost.indexOf('.pages.dev') !== -1) {
+      if (lvQa || lvHost === 'localhost' || lvHost === '127.0.0.1' || lvHost === '[::1]' || lvHost.indexOf('.pages.dev') !== -1) {
         /* GA:n virallinen opt-out. Pelkka gtagin neutralointi ei riita:
            gtag/js?id=... lataa kontin joka tapauksessa (mitattu esikatselu-
            hostilla: google_tag_manager sai avaimen vaikka gtag oli no-op). */
