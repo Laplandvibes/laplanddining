@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Send, AlertCircle, Loader2, X } from 'lucide-react';
 
+/** `/privacy` → `/privacy/`: Cloudflare vastaa kauttaviivattomaan osoitteeseen 308:lla,
+ *  ja Google kirjaa jokaisen sellaisen linkin uudelleenohjaukseksi (18.9.2026). */
+const withSlash = (href: string) => href.replace(/^([^?#]*[^/?#])(?=[?#]|$)/, '$1/');
+
 /**
  * Shared LaplandVibes ecosystem newsletter popup — founder edition (2026-08-09).
  *
@@ -1006,7 +1010,7 @@ export default function NewsletterPopup({
                   <span className="text-white/70 text-[11px] leading-relaxed">
                     {D.consent}{' '}
                     <a
-                      href={privacyHref}
+                      href={withSlash(privacyHref)}
                       target="_blank"
                       rel="noopener"
                       onClick={(e) => e.stopPropagation()}

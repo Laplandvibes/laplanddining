@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import FounderByline from './FounderByline';
 
+/** `/privacy` → `/privacy/`: Cloudflare vastaa kauttaviivattomaan osoitteeseen 308:lla,
+ *  ja Google kirjaa jokaisen sellaisen linkin uudelleenohjaukseksi (18.9.2026). */
+const withSlash = (href: string) => href.replace(/^([^?#]*[^/?#])(?=[?#]|$)/, '$1/');
+
 /**
  * [LV-FUNNEL 2026-08-21] Lomakesuppilon eventit Umamiin — paikallinen apuri,
  * ei jaettua importtia (vendoroitu sync on refresh-only). Ei saa koskaan
@@ -276,7 +280,7 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                 <span className="text-white/85 text-xs leading-relaxed">
                   {s.consent}{' '}
                   <a
-                    href={privacyHref}
+                    href={withSlash(privacyHref)}
                     target="_blank"
                     rel="noopener"
                     onClick={(e) => e.stopPropagation()}
