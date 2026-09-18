@@ -208,6 +208,9 @@ export default function LanguageMenu({
     setOpen(false);
   };
 
+  // 🔴🔴 Kosketuskoko puretaan `lg:`ssa (1024), EI `sm:`ssa (640).
+  // Mitattu 14.9.2026: 768 px:lla nappi oli 36 px ja valikon rivit 40 px,
+  // koska sm: kohteli tablettia tyopoytana. Hiiri alkaa vasta lg:sta.
   const trigger =
     variant === 'pill'
       ? `inline-flex h-11 lg:h-9 items-center gap-2 rounded-full border px-2.5 transition-colors duration-200 ${
