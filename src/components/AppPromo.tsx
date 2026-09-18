@@ -712,9 +712,9 @@ export function AppPromoNudge() {
           <button
             onClick={close}
             aria-label={c.dismiss}
-            className="shrink-0 rounded-full p-2 text-[#F9FAFB]/55 transition-colors hover:bg-white/10 hover:text-[#F9FAFB]"
+            className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white transition-colors hover:bg-white/30"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" strokeWidth={2.5} />
           </button>
         </div>
 
