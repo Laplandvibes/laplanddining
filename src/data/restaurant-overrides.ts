@@ -618,18 +618,18 @@ export const restaurantOverrides: Record<string, Override> = {
   // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'the fish... wasn't quite what I had expected'
   'ChIJqRi5sfpPKUQRrStja_VqJPE': {
     curatedDescription: {
-      en: 'A kitchen in Kuusamo town serving reindeer and local fish — the most-reviewed table away from the Ruka slopes.',
-      fi: 'Kuusamon kirkonkylän keittiö, jossa on poroa ja paikallista kalaa — kirkonkylän eniten arvioitu pöytä Rukan rinteiden ulkopuolella.',
-      de: 'Eine Küche im Ort Kuusamo mit Rentier und heimischem Fisch — der meistbewertete Tisch abseits der Pisten von Ruka.',
+      en: 'A kitchen in Kuusamo town serving reindeer and local fish: the most-reviewed table away from the Ruka slopes.',
+      fi: 'Kuusamon kirkonkylän keittiö, jossa on poroa ja paikallista kalaa: kirkonkylän eniten arvioitu pöytä Rukan rinteiden ulkopuolella.',
+      de: 'Eine Küche im Ort Kuusamo mit Rentier und heimischem Fisch: der meistbewertete Tisch abseits der Pisten von Ruka.',
       ja: 'クーサモ市街の厨房で、トナカイと地元の魚を出します。ルカのゲレンデを離れた場所では最もレビューの多い一軒です。',
       es: 'Una cocina en el pueblo de Kuusamo con reno y pescado local: la mesa más reseñada fuera de las pistas de Ruka.',
-      'pt-BR': 'Uma cozinha na cidade de Kuusamo com rena e peixe local — a mesa mais avaliada fora das pistas de Ruka.',
-      'zh-CN': '库萨莫镇上的厨房，供应驯鹿与本地鱼——鲁卡雪道之外评论最多的一桌。',
+      'pt-BR': 'Uma cozinha na cidade de Kuusamo com rena e peixe local: a mesa mais avaliada fora das pistas de Ruka.',
+      'zh-CN': '库萨莫镇上的厨房，供应驯鹿与本地鱼，鲁卡雪道之外评论最多的一桌。',
       ko: '쿠사모 시내의 주방으로 순록과 지역 생선을 냅니다. 루카 슬로프를 벗어난 곳에서는 리뷰가 가장 많은 곳입니다.',
-      fr: 'Une cuisine au bourg de Kuusamo, renne et poisson local — la table la plus commentée en dehors des pistes de Ruka.',
-      it: 'Una cucina nel paese di Kuusamo con renna e pesce locale — il tavolo più recensito fuori dalle piste di Ruka.',
-      nl: 'Een keuken in het dorp Kuusamo met rendier en lokale vis — de meest beoordeelde tafel buiten de pistes van Ruka.',
-      sv: 'Ett kök i Kuusamo tätort med ren och lokal fisk — det mest recenserade bordet utanför Rukas backar.',
+      fr: 'Une cuisine au bourg de Kuusamo, renne et poisson local : la table la plus commentée en dehors des pistes de Ruka.',
+      it: 'Una cucina nel paese di Kuusamo con renna e pesce locale: il tavolo più recensito fuori dalle piste di Ruka.',
+      nl: 'Een keuken in het dorp Kuusamo met rendier en lokale vis: de meest beoordeelde tafel buiten de pistes van Ruka.',
+      sv: 'Ett kök i Kuusamo tätort med ren och lokal fisk: det mest recenserade bordet utanför Rukas backar.',
     },
   },
 

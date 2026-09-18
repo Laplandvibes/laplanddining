@@ -1681,7 +1681,7 @@ if (args.emit404) {
   // is the preferred version of the site root.
   html = html.replace(/\s*<link[^>]+rel=["']canonical["'][^>]*>/gi, '');
   html = html.replace(/\s*<link[^>]+rel=["']alternate["'][^>]+hreflang=[^>]*>/gi, '');
-  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>404 — ${SITE_NAME}</title>`);
+  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>404 | ${SITE_NAME}</title>`);
 
   const out404 = resolve(DIST, '404.html');
   writeFileSync(out404, html, 'utf-8');
