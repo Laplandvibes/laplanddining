@@ -1023,7 +1023,7 @@ export default function NewsletterPopup({
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full px-6 py-3 rounded-full hover:bg-pink-600 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-vibe-pink/25 cursor-pointer"
+                  className="w-full px-6 py-3 rounded-full hover:bg-[#BE185D] text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-vibe-pink/25 cursor-pointer"
                   style={{ backgroundColor: '#DB2777' }}
                 >
                   {status === 'loading' ? (

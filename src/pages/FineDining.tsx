@@ -279,7 +279,7 @@ export default function FineDining() {
                         destination={`${r.city === 'Ylläs' ? 'Äkäslompolo' : r.city}, ${r.country}`}
                         className="group/stay ml-auto -my-2 py-2 inline-flex items-center rounded-full no-underline"
                       >
-                        <span className="inline-flex items-center gap-1 bg-vibe-pink group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-vibe-pink/30">
+                        <span className="inline-flex items-center gap-1 bg-[#DB2777] group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-vibe-pink/30">
                           {t('fineDining.stayInTemplate', { city: r.city })}
                         </span>
                       </AffiliateCTA>

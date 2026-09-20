@@ -530,7 +530,7 @@ export default function Restaurants() {
                         partner="hotels"
                         sid={hotelsSid(city)}
                         destination={`${city === 'Ylläs' ? 'Äkäslompolo' : city}, Finland`}
-                        className="inline-flex items-center gap-1.5 bg-vibe-pink hover:bg-pink-600 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
+                        className="inline-flex items-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
                       >
                         {t('restaurants.stayBtnTemplate', { city })}
                       </AffiliateCTA>

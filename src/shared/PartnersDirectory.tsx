@@ -62,7 +62,7 @@ export default function PartnersDirectory({ items, siteSlug, locale, surface = '
             <a
               href={mediaSiteUrl(siteSlug, locale)}
               onClick={() => fireAdvertiseHereClick(siteSlug, 'partners_directory')}
-              className="inline-flex items-center gap-2 rounded-full bg-[#EC4899] hover:bg-[#EC4899]/90 text-white font-semibold px-7 py-3.5 text-sm transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-[#DB2777] hover:bg-[#EC4899]/90 text-white font-semibold px-7 py-3.5 text-sm transition-colors"
             >
               {t.bookCta}
             </a>

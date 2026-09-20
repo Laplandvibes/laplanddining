@@ -367,7 +367,7 @@ export default function LocalFood() {
               partner="hotels"
               sid="local_food_stay_lapland"
               destination="Lapland, Finland"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-vibe-pink hover:bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline shadow-lg shadow-vibe-pink/25"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-[#DB2777] hover:bg-[#BE185D] text-white px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 no-underline shadow-lg shadow-vibe-pink/25"
             >
               {t('localFood.ctaStay')}
             </AffiliateCTA>

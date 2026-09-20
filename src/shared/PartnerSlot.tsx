@@ -228,8 +228,8 @@ export default function PartnerSlot({ partner, variant, locale, className, place
       ? undefined
       : { boxShadow: light ? '0 8px 24px rgba(236,72,153,0.14)' : '0 12px 40px rgba(236,72,153,0.22)' };
     const houseCta = subtle
-      ? 'border border-[#EC4899]/50 text-[#EC4899] bg-transparent group-hover:bg-[#EC4899] group-hover:text-white'
-      : 'bg-[#EC4899] text-white shadow-sm group-hover:bg-[#DB2777]';
+      ? 'border border-[#DB2777]/50 text-[#F9A8D4] bg-transparent group-hover:bg-[#DB2777] group-hover:text-white'
+      : 'bg-[#DB2777] text-white shadow-sm group-hover:bg-[#BE185D]';
 
     // BANNER-variantin house-ad: kompakti vaakarivi (heron alle, ei työnnä sisältöä)
     if (variant === 'banner') {
@@ -503,7 +503,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
                   target="_blank"
                   rel="sponsored nofollow noopener"
                   className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-sm transition-all duration-200 hover:translate-x-0.5"
-                  style={{ backgroundColor: partner.accent || '#EC4899' }}
+                  style={{ backgroundColor: partner.accent || '#DB2777' }}
                 >
                   {cta}
                   <span aria-hidden="true">&rarr;</span>

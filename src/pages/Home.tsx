@@ -328,7 +328,7 @@ export default function Home() {
                 partner="hotels"
                 sid={c.sid}
                 destination={`${c.city}, Finland`}
-                className="inline-flex items-center justify-center gap-1.5 bg-vibe-pink hover:bg-pink-600 text-white px-4 py-3 rounded-full font-bold text-sm transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white px-4 py-3 rounded-full font-bold text-sm transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
               >
                 {c.city}
               </AffiliateCTA>
