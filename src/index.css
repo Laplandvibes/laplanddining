@@ -65,6 +65,13 @@ h1, h2, h3, h4, h5, h6 {
        tavurajan siellä missä selaimella on sanakirja, break-word on verkko. */
     overflow-wrap: break-word;
     hyphens: auto;
+    /* 🔴 Mitattu blogiarkki-portilla 19.9. (transport) ja 20.9. (hubi): selaimen
+       tavutussanakirja katkoi 375 px:lla LYHYITA sanoja otsikoissa — "Nacht-zug",
+       "Rei-sende", "Lap-pland", "ve-rano". Tavutus on pitkan yhdyssanan hatavara,
+       ei ladontakeino: vain >= 12-merkkinen sana saa katketa ja kummallekin
+       riville jaa >= 5 merkkia. Selaimet jotka eivat tue tata kayttaytyvat
+       kuten ennen — ei huonone. */
+    hyphenate-limit-chars: 12 5 5;
   font-family: var(--font-heading);
 }
 
