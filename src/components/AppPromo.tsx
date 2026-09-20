@@ -395,7 +395,7 @@ export function AppPromoHero() {
           <div className="flex-1 min-w-0">
             <div className="flex items-start gap-4">
               <div className="flex-1 min-w-0">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EC4899] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#DB2777] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
                   <Smartphone className="h-3 w-3" />
                   {c.eyebrow}
                 </span>
@@ -487,7 +487,13 @@ export function AppPromoHero() {
                 onClick={() => track('hero')}
                 data-umami-event="app_cta"
                 data-umami-event-surface="promo"
-                className="inline-flex items-center gap-2 rounded-full bg-[#EC4899] px-7 py-3.5 text-base sm:text-lg font-bold text-white shadow-[0_10px_30px_-8px_rgba(236,72,153,0.7)] transition-transform active:scale-[0.98] hover:bg-pink-500"
+                // 🔴 #DB2777, ei #EC4899 (korttiteksti-portti 20.9.2026, verkostonlaajuinen).
+                // Teksti on 16 px (sm 18 px) lihavoitu, ja WCAG:n "iso teksti" alkaa
+                // vasta 18,66 px:sta lihavoituna — eli tama on PIENTA tekstia ja raja
+                // on 4,5:1. Valkoinen #EC4899:n paalla on 3,50:1, valkoinen #DB2777:n
+                // paalla 4,63:1. Sama askel pinkin rampilla kuin laplandhoteldealsissa.
+                // Hover oli bg-pink-500, joka on sama #EC4899 — nyt #BE185D.
+                className="inline-flex items-center gap-2 rounded-full bg-[#DB2777] px-7 py-3.5 text-base sm:text-lg font-bold text-white shadow-[0_10px_30px_-8px_rgba(219,39,119,0.7)] transition-transform active:scale-[0.98] hover:bg-[#BE185D]"
               >
                 <Download className="h-5 w-5" />
                 {c.cta}
