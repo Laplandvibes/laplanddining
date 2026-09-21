@@ -168,7 +168,7 @@ export default function CityPage() {
         <div
           className={
             city.photo
-              ? 'absolute inset-0 bg-gradient-to-b from-night/45 via-night/40 to-night'
+              ? 'absolute inset-0 bg-gradient-to-b from-night/72 via-night/62 to-night'
               : 'absolute inset-0 bg-gradient-to-b from-night/75 via-night/65 to-night'
           }
         />
@@ -176,12 +176,12 @@ export default function CityPage() {
             kaupunkisivun otsikkoa: Kuusamon sivu kattaa myos Rukan 22 km:n
             paassa (Vesa 7.9.: "riistaravintola on rukalla, ei kuusamossa"). */}
         {city.photo && city.photoCredit && (
-          <p className="absolute bottom-3 right-4 z-10 text-[11px] text-white/65 tracking-wide">
+          <p className="absolute bottom-3 right-4 z-10 rounded bg-black/55 px-1.5 py-px text-[11px] text-white/90 tracking-wide">
             Kuva: LaplandVibes · {city.photoCredit}
           </p>
         )}
         <div className="relative z-10 max-w-4xl mx-auto px-5 py-20 text-center">
-          <p className="inline-flex items-center gap-2 text-amber text-[11px] font-bold uppercase tracking-[0.25em] mb-4">
+          <p className="inline-flex items-center gap-2 text-white text-[11px] font-bold uppercase tracking-[0.25em] mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
             <MapPin size={13} /> {t('cities.shared.kicker', { defaultValue: 'Where to eat' })}
           </p>
           <h1

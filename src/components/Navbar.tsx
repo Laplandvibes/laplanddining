@@ -58,7 +58,10 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className="hidden xl:flex items-center gap-7">
+          {/* 🔴 gap-7 riitti englannille mutta ei ranskalle: "Haute gastronomie",
+              "Histoire culinaire" ja "Produits locaux" rivittyivat 1280 px:ssa
+              (navi-portti 21.9.2026). Vali kasvaa vasta 2xl:ssa, jossa tilaa on. */}
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-7">
             {NAV_KEYS.map((link) => (
               <Link
                 key={link.basePath}
