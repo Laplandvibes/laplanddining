@@ -542,17 +542,42 @@ function ensureDescriptionLength(desc, paragraphs, lang) {
   // description is two sentences of real content, not padding.
   const MIN = 70;
   const MAX = 160;
+  // 🔴🔴 LEVEYS MERKKIMAARAN RINNALLA. Googlen snippetin raja on pikseleissa ja
+  // CJK-merkki on noin kaksi kertaa latinalaisen levyinen, joten pelkka merkkimaara
+  // on CJK:lla vaara mitta molempiin suuntiin: alaraja liimaa taysimittaiseen
+  // kuvaukseen turhaa jatkoa ja ylaraja paastaa lapi kaksinkertaisen snippetin.
+  // Mitattu 21.9.2026 livesta: laplandvisit /cn/ 209 ja laplandgifts /cn/ 201
+  // leveysyksikkoa, molemmat alarajan liimaaman jatkon takia.
+  // Latinalaisiin tama ei kosketa: 70 merkkia = 70 yksikkoa, 160 merkkia = 160.
+  const LEVEA = /[\u1100-\u11FF\u2E80-\uA4CF\uA960-\uA97F\uAC00-\uD7FF\uF900-\uFAFF\uFE30-\uFE4F\uFF00-\uFF60\uFFE0-\uFFE6]/;
+  const leveys = (x) => [...String(x)].reduce((n, c) => n + (LEVEA.test(c) ? 2 : 1), 0);
+  const MINW = 100;
+  const MAXW = 200;
+  /** Leikkaa merkkijonon niin etta sen leveys on enintaan w. */
+  const sliceW = (x, w) => {
+    let n = 0;
+    let out = '';
+    for (const c of String(x)) {
+      const step = LEVEA.test(c) ? 2 : 1;
+      if (n + step > w) break;
+      n += step;
+      out += c;
+    }
+    return out;
+  };
+  /** Kuvaus on tarpeeksi pitka kun kumpi tahansa mitta tayttyy. */
+  const riittava = (x) => String(x).length >= MIN || leveys(x) >= MINW;
   const d = String(desc || '').trim();
   // Over 160: Google cuts the rest, and 409 built pages shipped longer ones on 2026-09-06
   // (copies without the 2026-09-04 clampDescription). Cut at the last sentence end at or
   // after 90 characters, else at the last word boundary — never mid-word, no ellipsis.
-  if (d.length > MAX) {
-    const head = d.slice(0, MAX);
+  if (d.length > MAX || leveys(d) > MAXW) {
+    const head = sliceW(d.slice(0, MAX), MAXW);
     const lastEnd = Math.max(head.lastIndexOf('. '), head.lastIndexOf('! '), head.lastIndexOf('? '), head.lastIndexOf('。'));
-    if (lastEnd >= 90) return head.slice(0, lastEnd + 1).trim();
+    if (lastEnd >= 90 || (lastEnd > 0 && riittava(head.slice(0, lastEnd + 1)))) return head.slice(0, lastEnd + 1).trim();
     return (cjk ? head : head.replace(/\s+\S*$/, '')).replace(/[,;:\s]+$/, '');
   }
-  if (d.length >= MIN || !Array.isArray(paragraphs) || !paragraphs.length) return desc;
+  if (riittava(d) || !Array.isArray(paragraphs) || !paragraphs.length) return desc;
   const text = paragraphs.map((t) => String(t).replace(/\s+/g, ' ').trim()).filter(Boolean).join(' ');
   const sentences = (cjk ? text.split(/(?<=[。！？])/) : text.split(/(?<=[.!?])\s+/))
     .map((s) => s.trim())
@@ -562,14 +587,14 @@ function ensureDescriptionLength(desc, paragraphs, lang) {
     if (out.includes(s) || s.includes(out)) continue;
     const joiner = !out ? '' : (/[.!?。！？]$/.test(out) ? ' ' : '. ');
     const candidate = out + joiner + s;
-    if (candidate.length > MAX) {
-      if (out.length >= MIN) break;
-      const cut = cjk ? candidate.slice(0, MAX) : candidate.slice(0, MAX).replace(/\s+\S*$/, '');
-      if (cut.length >= MIN) out = cut.replace(/[,;:\s]+$/, '');
+    if (candidate.length > MAX || leveys(candidate) > MAXW) {
+      if (riittava(out)) break;
+      const cut = cjk ? sliceW(candidate, MAXW) : sliceW(candidate.slice(0, MAX), MAXW).replace(/\s+\S*$/, '');
+      if (riittava(cut)) out = cut.replace(/[,;:\s]+$/, '');
       break;
     }
     out = candidate;
-    if (out.length >= MIN) break;
+    if (riittava(out)) break;
   }
   return out.length > d.length ? out : desc;
 }
