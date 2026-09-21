@@ -1,12 +1,13 @@
 {
-  "version": "20260905",
+  "version": "20260921",
   "domain": "laplanddining.com",
   "brand": "DINING",
   "tagline": "Where to eat in Finnish Lapland",
-  "generated": "2026-09-21T08:31:06.359Z",
+  "generated": "2026-09-21T11:35:29.439Z",
   "staticFallbackSeason": "summer",
   "seasons": {
     "summer": {
+      "tagline": "Where to eat in Finnish Lapland",
       "heroUrl": "https://laplanddining.com/images/drive/heroInterior.webp?v=e0d5a179",
       "heroAlt": "Lapland restaurant interior",
       "heroSha": "e0d5a179e5fef97d",
@@ -45,6 +46,7 @@
       "errors": []
     },
     "winter": {
+      "tagline": "Where to eat in Finnish Lapland",
       "heroUrl": "https://laplanddining.com/images/drive/heroInterior.webp?v=e0d5a179",
       "heroAlt": "Lapland restaurant interior",
       "heroSha": "e0d5a179e5fef97d",
