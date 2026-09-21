@@ -63,7 +63,7 @@ export default function Navbar() {
               <Link
                 key={link.basePath}
                 to={to(link.basePath)}
-                className={`font-medium transition-colors duration-200 text-sm tracking-wide no-underline ${
+                className={`inline-flex items-center min-h-11 font-medium transition-colors duration-200 text-sm tracking-wide no-underline ${
                   pathWithoutLocale === link.basePath
                     ? 'text-amber'
                     : 'text-white/70 hover:text-amber'
