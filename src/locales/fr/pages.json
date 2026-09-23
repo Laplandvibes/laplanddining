@@ -85,7 +85,7 @@
     }
   },
   "restaurants": {
-    "title": "Restaurants en Laponie et alentours | LaplandDining",
+    "title": "Restaurants en Laponie et alentours",
     "description": "Restaurants choisis un à un, classés par destination : Rovaniemi, Levi, Saariselkä, Inari, Ylläs et plus. Notes Google, avis réels et liens vers les menus.",
     "heroKicker": "Guide gastronomique arctique",
     "heroH1": "Tous les restaurants",
@@ -138,7 +138,7 @@
     "introP2": "Les horaires changent avec la saison, et en Laponie « fermé pour la saison » peut vouloir dire des mois. Vérifiez le site du restaurant avant de prendre la route."
   },
   "cities": {
-    "title": "Où manger en Laponie, ville par ville | LaplandDining",
+    "title": "Où manger en Laponie, ville par ville",
     "description": "Restaurants à Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi et huit autres localités de Laponie finlandaise, chacune sur sa propre page. Notes et cartes.",
     "h1": "La Laponie, ville par ville",
     "lead": "76 restaurants dans 13 destinations, chaque localité sur sa propre page.",
@@ -158,7 +158,7 @@
     },
     "rovaniemi": {
       "name": "Rovaniemi",
-      "title": "Restaurants à Rovaniemi : où manger | LaplandDining",
+      "title": "Restaurants à Rovaniemi : où manger",
       "description": "Huit restaurants à Rovaniemi, du filet de renne sur Valtakatu à la cuisine la mieux notée de tout le site. Notes, citations d'avis et liens vers les cartes.",
       "h1": "Restaurants à Rovaniemi",
       "tagline": "La plus forte concentration de tables en Laponie — cinq d'entre elles tiennent dans quatre rues.",
@@ -172,7 +172,7 @@
     },
     "levi": {
       "name": "Levi",
-      "title": "Restaurants à Levi : où manger | LaplandDining",
+      "title": "Restaurants à Levi : où manger",
       "description": "Neuf restaurants à Levi, la plus grande station de ski de Finlande : la salle panoramique, l'italien près des pistes et les salles du village de Sirkka.",
       "h1": "Restaurants à Levi",
       "tagline": "La plus grande station de Finlande mange en conséquence : du volume, des terrasses et de longues listes d'avis.",
@@ -186,7 +186,7 @@
     },
     "yllas": {
       "name": "Ylläs",
-      "title": "Restaurants à Ylläs : où manger | LaplandDining",
+      "title": "Restaurants à Ylläs : où manger",
       "description": "Sept restaurants à Ylläs, répartis entre Äkäslompolo et Ylläsjärvi de part et d'autre de la fjeld — plus un au sommet. Notes et liens vers les cartes.",
       "h1": "Restaurants à Ylläs",
       "tagline": "Deux villages, une fjeld et environ 11 km entre votre table et l'autre.",
@@ -200,7 +200,7 @@
     },
     "saariselka": {
       "name": "Saariselkä",
-      "title": "Restaurants à Saariselkä : où manger | LaplandDining",
+      "title": "Restaurants à Saariselkä : où manger",
       "description": "Sept restaurants à Saariselkä, tous accessibles à pied : une cuisine notée 4,8, un gastropub, un lávvu et le burger du village.",
       "h1": "Restaurants à Saariselkä",
       "tagline": "Un petit village de fjeld avec le plus large éventail de notes du site.",
@@ -214,7 +214,7 @@
     },
     "inari": {
       "name": "Inari",
-      "title": "Restaurants à Inari : où manger | LaplandDining",
+      "title": "Restaurants à Inari : où manger",
       "description": "Quatre restaurants dans la commune d'Inari, dont une salle gastronomique au bord de l'eau notée 4,8 — et trois séparés par de longues distances.",
       "h1": "Restaurants à Inari",
       "tagline": "La plus grande commune de Finlande. Quatre cuisines, et beaucoup de route entre elles.",
@@ -228,7 +228,7 @@
     },
     "kemi": {
       "name": "Kemi",
-      "title": "Restaurants à Kemi : où manger | LaplandDining",
+      "title": "Restaurants à Kemi : où manger",
       "description": "Cinq restaurants à Kemi, au bord du golfe de Botnie : le pavillon face à la mer, deux sur Valtakatu et une cuisine au port. Notes et cartes.",
       "h1": "Restaurants à Kemi",
       "tagline": "Une ville de mer, et les tables suivent l'eau.",
@@ -242,7 +242,7 @@
     },
     "tornio": {
       "name": "Tornio",
-      "title": "Restaurants à Tornio : où manger | LaplandDining",
+      "title": "Restaurants à Tornio : où manger",
       "description": "Cinq restaurants à Tornio, à la frontière suédoise — trois d'entre eux dans la même rue. Notes, citations et liens vers leurs propres cartes.",
       "h1": "Restaurants à Tornio",
       "tagline": "Une ville frontière où trois sur cinq partagent une rue.",
@@ -256,7 +256,7 @@
     },
     "haparanda": {
       "name": "Haparanda",
-      "title": "Restaurants à Haparanda, Suède | LaplandDining",
+      "title": "Restaurants à Haparanda, Suède",
       "description": "Cinq restaurants à Haparanda, face à Tornio : l'hôtel de la place, un classique 15 km en amont, sushi et thaï. Notes et liens vers les cartes.",
       "h1": "Restaurants à Haparanda",
       "tagline": "De l'autre côté du pont depuis Tornio — la même ville en pratique, un autre pays sur le papier.",
@@ -270,7 +270,7 @@
     },
     "sodankyla": {
       "name": "Sodankylä",
-      "title": "Restaurants à Sodankylä : où manger | LaplandDining",
+      "title": "Restaurants à Sodankylä : où manger",
       "description": "Cinq restaurants à Sodankylä, dont trois le long de la route de l'océan Arctique. Notes, citations et liens vers leurs propres cartes.",
       "h1": "Restaurants à Sodankylä",
       "tagline": "Une halte sur la route de l'océan Arctique, et l'essentiel est dessus.",
@@ -284,7 +284,7 @@
     },
     "pyhatunturi": {
       "name": "Pyhätunturi",
-      "title": "Restaurants à Pyhätunturi | LaplandDining",
+      "title": "Restaurants à Pyhätunturi",
       "description": "Six adresses à Pyhätunturi et autour de Pelkosenniemi : un café à l'entrée du parc national, une cuisine d'hôtel et un bistro noté 5,0.",
       "h1": "Restaurants à Pyhätunturi",
       "tagline": "Un village de parc national où la table la mieux notée est l'ancien presbytère.",
@@ -298,7 +298,7 @@
     },
     "luosto": {
       "name": "Luosto",
-      "title": "Restaurants à Luosto : où manger | LaplandDining",
+      "title": "Restaurants à Luosto : où manger",
       "description": "Quatre adresses à Luosto, la moitié la plus calme de Pyhä-Luosto : le restaurant kelo de l'hôtel, la cuisine du manoir et la halte des pistes.",
       "h1": "Restaurants à Luosto",
       "tagline": "La moitié calme du parc national — quatre cuisines, aucune file.",
@@ -312,7 +312,7 @@
     },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Restaurants à Kuusamo et Ruka | LaplandDining",
+      "title": "Restaurants à Kuusamo et Ruka",
       "description": "Six restaurants répartis entre la station de Ruka et la ville de Kuusamo, à 22 km : la pizzeria la plus fréquentée du site, un gastropub et un café de randonnée.",
       "h1": "Restaurants à Kuusamo et Ruka",
       "tagline": "Deux centres, 22 km d'écart — vérifiez dans lequel se trouve votre table.",
@@ -326,7 +326,7 @@
     },
     "kemijarvi": {
       "name": "Kemijärvi",
-      "title": "Restaurants à Kemijärvi : où manger | LaplandDining",
+      "title": "Restaurants à Kemijärvi : où manger",
       "description": "Cinq restaurants à Kemijärvi, tous à moins de 800 m les uns des autres au centre. Notes, citations et liens vers leurs propres cartes.",
       "h1": "Restaurants à Kemijärvi",
       "tagline": "Tout le choix tient dans 800 mètres.",
@@ -340,7 +340,7 @@
     }
   },
   "fineDining": {
-    "title": "Haute gastronomie en Laponie et alentours | LaplandDining",
+    "title": "Haute gastronomie en Laponie et alentours",
     "description": "Les mieux notés de notre sélection lapone, classés par note Google : salles à manger, auberges et tables de kota, avec avis et liens vers les menus.",
     "heroH1": "Haute gastronomie en Laponie et alentours",
     "heroLeadTemplate": "Les meilleures tables de Laponie, choisies parmi {{count}} restaurants : salles à manger, cuisines de nature et feux de kota.",
@@ -355,7 +355,7 @@
     "introP2": "Les cartes suivent la saison : la même cuisine ne se lit pas pareil en février et en août. Les salles sont petites et l'hiver se remplit tôt — réservez à l'avance."
   },
   "midnightSunDining": {
-    "title": "Dîner sous le soleil de minuit en Laponie | LaplandDining",
+    "title": "Dîner sous le soleil de minuit en Laponie",
     "description": "Où manger sous le soleil de minuit : terrasses, feux de kota et dîners tardifs à Rovaniemi, Levi, Inari et Saariselkä pendant 32 jours sans nuit.",
     "heroBadge": "6 juin → 7 juillet · 32 jours",
     "heroH1Line1": "Une assiette dehors,",
@@ -402,7 +402,7 @@
     "bottomCtaArctic": "Lire sur les ingrédients arctiques"
   },
   "foodHistory": {
-    "title": "Laponie : histoire culinaire et cuisine sâme | LaplandDining",
+    "title": "Laponie : histoire culinaire et cuisine sâme",
     "description": "Comment la survie arctique a forgé la cuisine lapone : traditions sâmes, élevage de rennes, poisson fumé, baies sauvages, feu de kota et nouveau nordique.",
     "heroH1": "Une histoire racontée par la cuisine",
     "heroLead": "Comment des millénaires de survie arctique ont façonné l'une des cultures culinaires les plus distinctives au monde.",
@@ -503,7 +503,7 @@
     "chaptersLabel": "Dans ce récit"
   },
   "localFood": {
-    "title": "Produits de Laponie : renne, baies, poisson | LaplandDining",
+    "title": "Produits de Laponie : renne, baies, poisson",
     "description": "Ce que « local » veut dire sur un menu lapon : rennes en liberté, omble arctique, mûres arctiques, airelles, champignons sauvages et herbes cueillies.",
     "heroH1": "Cuisine locale et ingrédients",
     "heroLead": "Pourquoi la Laponie produit certaines des nourritures les plus propres et les plus denses en nutriments au monde et comment la production alimentaire finlandaise fixe la norme de pureté.",
@@ -617,15 +617,15 @@
     "exploreTitle": "Explorer l'écosystème"
   },
   "privacy": {
-    "title": "Politique de confidentialité | LaplandDining",
+    "title": "Politique de confidentialité",
     "description": "Comment LaplandDining traite vos données."
   },
   "terms": {
-    "title": "Conditions d'utilisation | LaplandDining",
+    "title": "Conditions d'utilisation",
     "description": "Conditions d'utilisation de LaplandDining."
   },
   "cookie": {
-    "title": "Politique des cookies | LaplandDining",
+    "title": "Politique des cookies",
     "description": "Comment LaplandDining utilise les cookies."
   },
   "common": {

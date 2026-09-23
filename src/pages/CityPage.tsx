@@ -82,7 +82,7 @@ export default function CityPage() {
 
   return (
     <>
-      <title>{tx(`${cityKey}.title`, `Restaurants in ${name} | LaplandDining`)}</title>
+      <title>{tx(`${cityKey}.title`, `Restaurants in ${name}`)}</title>
       <meta
         name="description"
         content={tx(
@@ -92,7 +92,7 @@ export default function CityPage() {
       />
       <Hreflang path={path} />
       <meta name="robots" content="index, follow, max-image-preview:large" />
-      <meta property="og:title" content={tx(`${cityKey}.title`, `Restaurants in ${name} | LaplandDining`)} />
+      <meta property="og:title" content={tx(`${cityKey}.title`, `Restaurants in ${name}`)} />
       <meta property="og:url" content={`${ORIGIN}${prefix}${path}/`} />
       <meta property="og:image" content={`${ORIGIN}${city.img}`} />
 

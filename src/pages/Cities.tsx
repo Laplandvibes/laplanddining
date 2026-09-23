@@ -33,7 +33,7 @@ export default function Cities() {
 
   return (
     <>
-      <title>{t('cities.title', { defaultValue: 'Where to Eat in Lapland, City by City | LaplandDining' })}</title>
+      <title>{t('cities.title', { defaultValue: 'Where to Eat in Lapland, City by City' })}</title>
       <meta
         name="description"
         content={t('cities.description', {

@@ -85,7 +85,7 @@
     }
   },
   "restaurants": {
-    "title": "Restauranger i och kring finska Lappland | LaplandDining",
+    "title": "Restauranger i och kring finska Lappland",
     "description": "Handplockade restauranger ort för ort: Rovaniemi, Levi, Saariselkä, Inari, Ylläs med flera. Google-betyg, riktiga gästcitat och menylänkar.",
     "heroKicker": "Arktisk matguide",
     "heroH1": "Alla restauranger",
@@ -138,7 +138,7 @@
     "introP2": "Öppettiderna följer säsongen, och i Lappland kan \"stängt för säsongen\" betyda månader. Kolla restaurangens egen sida innan du kör iväg."
   },
   "cities": {
-    "title": "Var man äter i Lappland — ort för ort | LaplandDining",
+    "title": "Var man äter i Lappland — ort för ort",
     "description": "Restauranger i Rovaniemi, Levi, Ylläs, Saariselkä, Enare, Kemi och åtta orter till i finska Lappland, var och en på en egen sida. Betyg och länkar till menyerna.",
     "h1": "Lappland, ort för ort",
     "lead": "76 restauranger på 13 destinationer, varje ort på en egen sida.",
@@ -158,7 +158,7 @@
     },
     "rovaniemi": {
       "name": "Rovaniemi",
-      "title": "Restauranger i Rovaniemi: var man äter | LaplandDining",
+      "title": "Restauranger i Rovaniemi: var man äter",
       "description": "Åtta restauranger i Rovaniemi, från renfilé på Valtakatu till det högst betygsatta köket på hela sajten. Betyg, recensionscitat och menylänkar.",
       "h1": "Restauranger i Rovaniemi",
       "tagline": "Lapplands tätaste klunga av bord — fem av dem ryms på fyra gator.",
@@ -172,7 +172,7 @@
     },
     "levi": {
       "name": "Levi",
-      "title": "Restauranger i Levi: var man äter | LaplandDining",
+      "title": "Restauranger i Levi: var man äter",
       "description": "Nio restauranger i Levi, Finlands största skidort: panoramasalen, italienskt vid backarna och byn Sirkkas egna rum.",
       "h1": "Restauranger i Levi",
       "tagline": "Finlands största skidort äter därefter — volym, terrasser och långa recensionslistor.",
@@ -186,7 +186,7 @@
     },
     "yllas": {
       "name": "Ylläs",
-      "title": "Restauranger i Ylläs: var man äter | LaplandDining",
+      "title": "Restauranger i Ylläs: var man äter",
       "description": "Sju restauranger i Ylläs, fördelade mellan Äkäslompolo och Ylläsjärvi på var sin sida av fjället — plus en på toppen. Betyg och menylänkar.",
       "h1": "Restauranger i Ylläs",
       "tagline": "Två byar, ett fjäll och ungefär 11 km mellan ditt bord och det andra.",
@@ -200,7 +200,7 @@
     },
     "saariselka": {
       "name": "Saariselkä",
-      "title": "Restauranger i Saariselkä: var man äter | LaplandDining",
+      "title": "Restauranger i Saariselkä: var man äter",
       "description": "Sju restauranger i Saariselkä, alla inom gångavstånd: ett kök med 4,8, en gastropub, en lávvu och byns hamburgerställe.",
       "h1": "Restauranger i Saariselkä",
       "tagline": "En liten fjällby med sajtens bredaste betygsspann.",
@@ -214,7 +214,7 @@
     },
     "inari": {
       "name": "Enare",
-      "title": "Restauranger i Enare: var man äter | LaplandDining",
+      "title": "Restauranger i Enare: var man äter",
       "description": "Fyra restauranger i Enare kommun, bland dem en fine dining-sal vid vattnet med 4,8 — och tre som ligger långt ifrån varandra.",
       "h1": "Restauranger i Enare",
       "tagline": "Finlands största kommun. Fyra kök, och mycket väg emellan.",
@@ -228,7 +228,7 @@
     },
     "kemi": {
       "name": "Kemi",
-      "title": "Restauranger i Kemi: var man äter | LaplandDining",
+      "title": "Restauranger i Kemi: var man äter",
       "description": "Fem restauranger i Kemi vid Bottenviken: paviljongen vid havet, två på Valtakatu och ett kök i hamnen. Betyg och menylänkar.",
       "h1": "Restauranger i Kemi",
       "tagline": "En stad vid havet, och borden följer vattnet.",
@@ -242,7 +242,7 @@
     },
     "tornio": {
       "name": "Torneå",
-      "title": "Restauranger i Torneå: var man äter | LaplandDining",
+      "title": "Restauranger i Torneå: var man äter",
       "description": "Fem restauranger i Torneå vid svenska gränsen — tre av dem på samma gata. Betyg, citat och länkar till deras egna menyer.",
       "h1": "Restauranger i Torneå",
       "tagline": "En gränsstad där tre av fem delar en gata.",
@@ -256,7 +256,7 @@
     },
     "haparanda": {
       "name": "Haparanda",
-      "title": "Restauranger i Haparanda | LaplandDining",
+      "title": "Restauranger i Haparanda",
       "description": "Fem restauranger i Haparanda mitt emot Torneå: hotellet vid torget, en klassiker 15 km uppströms, sushi och thai. Betyg och menylänkar.",
       "h1": "Restauranger i Haparanda",
       "tagline": "Över bron från Torneå — i praktiken samma stad, på papperet ett annat land.",
@@ -270,7 +270,7 @@
     },
     "sodankyla": {
       "name": "Sodankylä",
-      "title": "Restauranger i Sodankylä: var man äter | LaplandDining",
+      "title": "Restauranger i Sodankylä: var man äter",
       "description": "Fem restauranger i Sodankylä, tre av dem längs Ishavsvägen genom orten. Betyg, citat och länkar till deras egna menyer.",
       "h1": "Restauranger i Sodankylä",
       "tagline": "Ett stopp vid Ishavsvägen, och det mesta ligger längs den.",
@@ -284,7 +284,7 @@
     },
     "pyhatunturi": {
       "name": "Pyhätunturi",
-      "title": "Restauranger vid Pyhätunturi | LaplandDining",
+      "title": "Restauranger vid Pyhätunturi",
       "description": "Sex ställen att äta på vid Pyhätunturi och runt Pelkosenniemi: ett kafé vid nationalparkens port, ett hotellkök och en bistro med 5,0.",
       "h1": "Restauranger vid Pyhätunturi",
       "tagline": "En nationalparksby där det högst betygsatta bordet står i den gamla prästgården.",
@@ -298,7 +298,7 @@
     },
     "luosto": {
       "name": "Luosto",
-      "title": "Restauranger i Luosto: var man äter | LaplandDining",
+      "title": "Restauranger i Luosto: var man äter",
       "description": "Fyra ställen att äta på i Luosto, den lugnare halvan av Pyhä-Luosto: hotellets kelorestaurang, gårdens kök och stoppet vid backen.",
       "h1": "Restauranger i Luosto",
       "tagline": "Nationalparkens lugnare halva — fyra kök, ingen kö.",
@@ -312,7 +312,7 @@
     },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Restauranger i Kuusamo & Ruka | LaplandDining",
+      "title": "Restauranger i Kuusamo & Ruka",
       "description": "Sex restauranger fördelade mellan skidorten Ruka och Kuusamo stad, 22 km isär: sajtens mest trafikerade pizzeria, en gastropub och ett vandringskafé.",
       "h1": "Restauranger i Kuusamo och Ruka",
       "tagline": "Två centrum, 22 km isär — kolla i vilket ditt bord står.",
@@ -326,7 +326,7 @@
     },
     "kemijarvi": {
       "name": "Kemijärvi",
-      "title": "Restauranger i Kemijärvi: var man äter | LaplandDining",
+      "title": "Restauranger i Kemijärvi: var man äter",
       "description": "Fem restauranger i Kemijärvi, alla inom 800 m från varandra i centrum. Betyg, citat och länkar till deras egna menyer.",
       "h1": "Restauranger i Kemijärvi",
       "tagline": "Hela urvalet ryms på 800 meter.",
@@ -340,7 +340,7 @@
     }
   },
   "fineDining": {
-    "title": "Fine dining i och kring Lappland | LaplandDining",
+    "title": "Fine dining i och kring Lappland",
     "description": "De högst rankade i vårt Lapplandsurval, sorterade efter Google-betyg: matsalar, vildmarkskök och kåtabord, med gästcitat och menylänkar.",
     "heroH1": "Fine dining i och kring Lappland",
     "heroLeadTemplate": "Lapplands högst betygsatta bord, valda ur {{count}} restauranger: matsalar, vildmarkskök och kåtaeldar.",
@@ -355,7 +355,7 @@
     "introP2": "Menyerna följer säsongen, så samma kök läses olika i februari och i augusti. Salarna är små och vintern fylls tidigt — boka i tid."
   },
   "midnightSunDining": {
-    "title": "Middag i midnattssol i Lappland | LaplandDining",
+    "title": "Middag i midnattssol i Lappland",
     "description": "Var du äter under midnattssolen: terrasser, kåtaeldar och sena middagar i Rovaniemi, Levi, Inari och Saariselkä under 32 dygn utan solnedgång.",
     "heroBadge": "6 juni → 7 juli · 32 dagar",
     "heroH1Line1": "En tallrik ute,",
@@ -402,7 +402,7 @@
     "bottomCtaArctic": "Läs om arktiska råvaror"
   },
   "foodHistory": {
-    "title": "Lapplands mathistoria och det samiska köket | LaplandDining",
+    "title": "Lapplands mathistoria och det samiska köket",
     "description": "Hur överlevnad i Arktis formade Lapplands mat: samiska mattraditioner, renskötsel, rökt fisk, vilda bär, kåtans eld och det nya nordiska köket.",
     "heroH1": "En historia berättad genom mat",
     "heroLead": "Hur tusentals år av arktisk överlevnad formade en av världens mest särpräglade matkulturer.",
@@ -503,7 +503,7 @@
     "chaptersLabel": "I den här berättelsen"
   },
   "localFood": {
-    "title": "Lokal mat i Lappland: ren, bär, fisk | LaplandDining",
+    "title": "Lokal mat i Lappland: ren, bär, fisk",
     "description": "Vad 'lokalt' betyder på en meny i Lappland: frigående renar, röding, hjortron, lingon, vild svamp och plockade örter, säsong för säsong.",
     "heroH1": "Lokal mat & råvaror",
     "heroLead": "Varför Lappland ger några av de renaste, mest näringstäta råvarorna på jorden – och hur finsk livsmedelsproduktion sätter standarden för renhet.",
@@ -617,15 +617,15 @@
     "exploreTitle": "Utforska ekosystemet"
   },
   "privacy": {
-    "title": "Integritetspolicy | LaplandDining",
+    "title": "Integritetspolicy",
     "description": "Hur LaplandDining hanterar dina uppgifter."
   },
   "terms": {
-    "title": "Användarvillkor | LaplandDining",
+    "title": "Användarvillkor",
     "description": "Användarvillkor för LaplandDining."
   },
   "cookie": {
-    "title": "Cookiepolicy | LaplandDining",
+    "title": "Cookiepolicy",
     "description": "Hur LaplandDining använder cookies."
   },
   "common": {

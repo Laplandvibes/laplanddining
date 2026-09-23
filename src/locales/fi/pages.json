@@ -85,7 +85,7 @@
     }
   },
   "restaurants": {
-    "title": "Ravintolat Lapissa ja lähialueilla | LaplandDining",
+    "title": "Ravintolat Lapissa ja lähialueilla",
     "description": "Käsin valitut ravintolat kohteittain: Rovaniemi, Levi, Saariselkä, Inari, Ylläs ja muut. Google-arviot, aidot asiakassitaatit ja varmistetut menulinkit.",
     "heroKicker": "Arktinen ruokaopas",
     "heroH1": "Kaikki ravintolat",
@@ -138,7 +138,7 @@
     "introP2": "Aukioloajat elävät kaudessa, ja Lapissa \"suljettu kaudeksi\" voi tarkoittaa kuukausia. Tarkista ravintolan oma sivu ennen kuin lähdet ajamaan."
   },
   "cities": {
-    "title": "Missä syödä Lapissa — paikkakunnittain | LaplandDining",
+    "title": "Missä syödä Lapissa — paikkakunnittain",
     "description": "Ravintolat Rovaniemellä, Levillä, Ylläksellä, Saariselällä, Inarissa, Kemissä ja kahdeksalla muulla paikkakunnalla, jokainen omalla sivullaan. Arviot ja ruokalistalinkit.",
     "h1": "Lappi paikkakunnittain",
     "lead": "76 ravintolaa 13 kohteessa, jokainen paikkakunta omalla sivullaan.",
@@ -158,7 +158,7 @@
     },
     "rovaniemi": {
       "name": "Rovaniemi",
-      "title": "Ravintolat Rovaniemellä: missä syödä | LaplandDining",
+      "title": "Ravintolat Rovaniemellä: missä syödä",
       "description": "Kahdeksan ravintolaa Rovaniemellä, Valtakadun poronfileestä koko sivuston parhaiten arvioituun keittiöön. Arviot, arvositaatit ja ruokalistalinkit.",
       "h1": "Ravintolat Rovaniemellä",
       "tagline": "Lapin tihein pöytien rypäs — ja viisi niistä mahtuu neljälle kadulle.",
@@ -172,7 +172,7 @@
     },
     "levi": {
       "name": "Levi",
-      "title": "Ravintolat Levillä: missä syödä | LaplandDining",
+      "title": "Ravintolat Levillä: missä syödä",
       "description": "Yhdeksän ravintolaa Levillä, Suomen suurimmassa hiihtokeskuksessa: panoraamasali, italialainen rinteiden kupeessa ja Sirkan kylän omat paikat.",
       "h1": "Ravintolat Levillä",
       "tagline": "Suomen suurin hiihtokeskus syö sen mukaisesti — volyymia, terasseja ja pitkiä arviolistoja.",
@@ -186,7 +186,7 @@
     },
     "yllas": {
       "name": "Ylläs",
-      "title": "Ravintolat Ylläksellä: missä syödä | LaplandDining",
+      "title": "Ravintolat Ylläksellä: missä syödä",
       "description": "Seitsemän ravintolaa Ylläksellä, jaettuna Äkäslompolon ja Ylläsjärven kesken tunturin eri puolille — ja yksi huipulla. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Ylläksellä",
       "tagline": "Kaksi kylää, yksi tunturi ja noin 11 kilometriä pöytäsi ja sen toisen välillä.",
@@ -200,7 +200,7 @@
     },
     "saariselka": {
       "name": "Saariselkä",
-      "title": "Ravintolat Saariselällä: missä syödä | LaplandDining",
+      "title": "Ravintolat Saariselällä: missä syödä",
       "description": "Seitsemän ravintolaa Saariselällä, kaikki kävelymatkan päässä: 4,8:n keittiö, gastropub, lávvu ja kylän burgeripaikka. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Saariselällä",
       "tagline": "Pieni tunturikylä, jossa on sivuston laajin arviohaitari.",
@@ -214,7 +214,7 @@
     },
     "inari": {
       "name": "Inari",
-      "title": "Ravintolat Inarissa: missä syödä | LaplandDining",
+      "title": "Ravintolat Inarissa: missä syödä",
       "description": "Neljä ravintolaa Inarin kunnassa, mukaan lukien 4,8:n fine dining -sali veden äärellä — ja kolme pitkän ajomatkan päässä toisistaan. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Inarissa",
       "tagline": "Suomen suurin kunta. Neljä keittiötä, ja paljon tietä niiden välissä.",
@@ -228,7 +228,7 @@
     },
     "kemi": {
       "name": "Kemi",
-      "title": "Ravintolat Kemissä: missä syödä | LaplandDining",
+      "title": "Ravintolat Kemissä: missä syödä",
       "description": "Viisi ravintolaa Kemissä Perämeren rannalla: merenrannan paviljonki, kaksi Valtakadulla ja sataman keittiö. Arviot, arvositaatit ja ruokalistalinkit.",
       "h1": "Ravintolat Kemissä",
       "tagline": "Merikaupunki, ja pöydät seuraavat vettä.",
@@ -242,7 +242,7 @@
     },
     "tornio": {
       "name": "Tornio",
-      "title": "Ravintolat Torniossa: missä syödä | LaplandDining",
+      "title": "Ravintolat Torniossa: missä syödä",
       "description": "Viisi ravintolaa Torniossa Ruotsin rajalla — kolme niistä samalla kadulla. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
       "h1": "Ravintolat Torniossa",
       "tagline": "Rajakaupunki, jossa kolme viidestä jakaa yhden kadun.",
@@ -256,7 +256,7 @@
     },
     "haparanda": {
       "name": "Haaparanta",
-      "title": "Ravintolat Haaparannalla, Ruotsissa | LaplandDining",
+      "title": "Ravintolat Haaparannalla, Ruotsissa",
       "description": "Viisi ravintolaa Haaparannalla Tornion rajan takana: torin hotelli, jokivarren klassikko 15 km ylävirtaan, sushia ja thaita. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Haaparannalla",
       "tagline": "Sillan yli Torniosta — käytännössä sama kaupunki, paperilla eri maa.",
@@ -270,7 +270,7 @@
     },
     "sodankyla": {
       "name": "Sodankylä",
-      "title": "Ravintolat Sodankylässä: missä syödä | LaplandDining",
+      "title": "Ravintolat Sodankylässä: missä syödä",
       "description": "Viisi ravintolaa Sodankylässä, kolme niistä Jäämerentien varrella. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
       "h1": "Ravintolat Sodankylässä",
       "tagline": "Pysähdys Jäämerentiellä, ja suurin osa valikoimasta on sen varrella.",
@@ -284,7 +284,7 @@
     },
     "pyhatunturi": {
       "name": "Pyhätunturi",
-      "title": "Ravintolat Pyhätunturilla | LaplandDining",
+      "title": "Ravintolat Pyhätunturilla",
       "description": "Kuusi ruokapaikkaa Pyhätunturilla ja Pelkosenniemen seudulla: kahvila kansallispuiston portilla, hotellin keittiö ja 5,0:n bistro. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Pyhätunturilla",
       "tagline": "Kansallispuiston kylä, jossa parhaiten arvioitu pöytä on vanhassa pappilassa.",
@@ -298,7 +298,7 @@
     },
     "luosto": {
       "name": "Luosto",
-      "title": "Ravintolat Luostolla: missä syödä | LaplandDining",
+      "title": "Ravintolat Luostolla: missä syödä",
       "description": "Neljä ruokapaikkaa Luostolla, Pyhä-Luoston hiljaisemmalla puoliskolla: hotellin keloravintola, hovin keittiö ja rinteen pysähdys. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Luostolla",
       "tagline": "Kansallispuiston hiljaisempi puolisko — neljä keittiötä, ei jonoa.",
@@ -312,7 +312,7 @@
     },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Ravintolat Kuusamossa ja Rukalla | LaplandDining",
+      "title": "Ravintolat Kuusamossa ja Rukalla",
       "description": "Kuusi ravintolaa jaettuna Rukan keskuksen ja Kuusamon kirkonkylän kesken, 22 km toisistaan: sivuston vilkkain pizzeria, gastropub ja vaelluskahvila.",
       "h1": "Ravintolat Kuusamossa ja Rukalla",
       "tagline": "Kaksi keskusta, 22 km välissä — tarkista kummassa pöytäsi on.",
@@ -326,7 +326,7 @@
     },
     "kemijarvi": {
       "name": "Kemijärvi",
-      "title": "Ravintolat Kemijärvellä: missä syödä | LaplandDining",
+      "title": "Ravintolat Kemijärvellä: missä syödä",
       "description": "Viisi ravintolaa Kemijärvellä, kaikki 800 metrin säteellä toisistaan keskustassa. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
       "h1": "Ravintolat Kemijärvellä",
       "tagline": "Koko valikoima mahtuu 800 metriin.",
@@ -340,7 +340,7 @@
     }
   },
   "fineDining": {
-    "title": "Fine dining Lapissa ja lähialueilla | LaplandDining",
+    "title": "Fine dining Lapissa ja lähialueilla",
     "description": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: ruokasaleja, erämaakeittiöitä ja kotaravintoloita. Arviositaatit ja menulinkit.",
     "heroH1": "Fine dining Lapissa ja lähialueilla",
     "heroLeadTemplate": "Lapin korkeimmin arvioidut pöydät {{count}} ravintolan joukosta: ruokasaleja, erämaakeittiöitä ja kotanuotioita.",
@@ -355,7 +355,7 @@
     "introP2": "Menut elävät kauden mukaan, joten sama keittiö on helmikuussa toinen kuin elokuussa. Salit ovat pieniä ja talvi täyttyy aikaisin — varaa ajoissa."
   },
   "midnightSunDining": {
-    "title": "Illallinen yöttömän yön aikaan Lapissa | LaplandDining",
+    "title": "Illallinen yöttömän yön aikaan Lapissa",
     "description": "Missä syöt keskiyön auringon alla: terassit, kotatulet ja myöhäiset illalliset Rovaniemellä, Levillä, Inarissa ja Saariselällä yöttömän yön 32 päivänä.",
     "heroBadge": "6.6. → 7.7. · 32 päivää",
     "heroH1Line1": "Lautanen ulkona,",
@@ -402,7 +402,7 @@
     "bottomCtaArctic": "Lue arktisista raaka-aineista"
   },
   "foodHistory": {
-    "title": "Lapin ruokahistoria ja saamelainen keittiö | LaplandDining",
+    "title": "Lapin ruokahistoria ja saamelainen keittiö",
     "description": "Miten arktinen selviytyminen muovasi Lapin keittiön: saamelaiset ruokatavat, poronhoito, savukala, villimarjat, kotatuli ja uusi pohjoismainen keittiö.",
     "heroH1": "Tarina, joka kerrotaan ruoan kautta",
     "heroLead": "Miten tuhansien vuosien arktinen elämä muovasi yhden maailman tunnistettavimmista ruokakulttuureista.",
@@ -503,7 +503,7 @@
     "chaptersLabel": "Tässä tarinassa"
   },
   "localFood": {
-    "title": "Lapin lähiruoka: poro, marjat, kala | LaplandDining",
+    "title": "Lapin lähiruoka: poro, marjat, kala",
     "description": "Mitä ”paikallinen” tarkoittaa Lapin ruokalistalla: vapaana laiduntava poro, nieriä, hilla, puolukka, villisienet ja kerätyt villiyrtit vuodenajan mukaan.",
     "heroH1": "Paikallinen ruoka ja raaka-aineet",
     "heroLead": "Miksi Lapista nousee maailman puhtainta ja ravintorikkainta ruokaa ja miten suomalainen ruoantuotanto asettaa puhtauden mittapuun.",
@@ -617,15 +617,15 @@
     "exploreTitle": "Tutustu ekosysteemiin"
   },
   "privacy": {
-    "title": "Tietosuojaseloste | LaplandDining",
+    "title": "Tietosuojaseloste",
     "description": "Miten LaplandDining käsittelee tietojasi."
   },
   "terms": {
-    "title": "Käyttöehdot | LaplandDining",
+    "title": "Käyttöehdot",
     "description": "LaplandDiningin käyttöehdot."
   },
   "cookie": {
-    "title": "Evästekäytäntö | LaplandDining",
+    "title": "Evästekäytäntö",
     "description": "Miten LaplandDining käyttää evästeitä."
   },
   "common": {
