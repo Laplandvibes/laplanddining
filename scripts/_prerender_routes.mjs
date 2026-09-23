@@ -1430,6 +1430,15 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
     }
   } catch { /* never block the build on FAQ derivation */ }
 
+  // Poistaa metan kokonaan. Avaimet ovat tassa tiedostossa kirjoitettuja
+  // vakioita (`og:image:alt`), joten sailytetaan vain sanamerkit, kaksoispiste
+  // ja viiva — silloin regexiin ei voi paasta erikoismerkkeja lainkaan.
+  function poistaMeta(attr, key) {
+    const turvallinen = key.replace(/[^\w:-]/g, '');
+    const re = new RegExp(`[ \\t]*<meta\\s+${attr}="${turvallinen}"[^>]*>\\n?`, 'i');
+    if (hasTagOutsideComments(html, re)) html = replaceOutsideComments(html, re, '');
+  }
+
   function setMeta(attr, key, value) {
     const re = new RegExp(
       `<meta\\s+${attr}="${key.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')}"[^>]*>`,
@@ -1446,12 +1455,22 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
   setMeta('property', 'og:description', description || '');
   setMeta('property', 'og:url', canonical);
   setMeta('property', 'og:locale', og);
-  setMeta('property', 'og:image', /^https?:/.test(ogImage) ? ogImage : `${SITE}${ogImage}`);
+  const ogImageAbs = /^https?:/.test(ogImage) ? ogImage : `${SITE}${ogImage}`;
+  setMeta('property', 'og:image', ogImageAbs);
+  // 🔴🔴 Sivukohtainen jakokuva ei nay Facebookissa, jos `og:image:secure_url`
+  // jaa osoittamaan sivustokorttiin: kun molemmat ovat, Facebook kayttaa
+  // https-osoitetta eli secure_urlia. Se on kirjoitettu kasin jokaisen sivuston
+  // `index.html`-kuoreen, eika prerenderoija koskenut siihen ennen 21.9.2026.
+  // Portattu kanonisesta (monorepo ca110a3) 23.9.2026.
+  setMeta('property', 'og:image:secure_url', ogImageAbs);
+  // Kuoren `og:image:alt` kuvailee SIVUSTOKORTTIA. Kun sivulla on oma kortti,
+  // se kuvaus on vaara — ja vaara vaihtoehtoteksti on huonompi kuin ei mitaan.
+  if (ogImage !== DEFAULT_OG) poistaMeta('property', 'og:image:alt');
   setMeta('name', 'twitter:card', 'summary_large_image');
   setMeta('name', 'twitter:title', title);
   setMeta('name', 'twitter:description', description || '');
   setMeta('name', 'twitter:site', TWITTER);
-  setMeta('name', 'twitter:image', /^https?:/.test(ogImage) ? ogImage : `${SITE}${ogImage}`);
+  setMeta('name', 'twitter:image', ogImageAbs);
 
   // Pre-hydration crawlable body. Only touches an EMPTY #root, so a site that
   // already ships server-rendered markup is left alone; combined with the strip
