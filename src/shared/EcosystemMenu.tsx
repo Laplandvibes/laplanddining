@@ -247,6 +247,7 @@ const CSS = `
 .lv-eco-btn--light{background:rgba(15,23,42,.05);border-color:rgba(15,23,42,.22);color:rgba(15,23,42,.78)}
 .lv-eco-btn--light .lv-eco-lbl{text-shadow:none}
 .lv-eco-btn--light:hover,.lv-eco-btn--light[aria-expanded="true"]{background:rgba(236,72,153,.08);border-color:rgba(236,72,153,.55);color:${PINK}}
+/* 1023, ei 767: 768 px on tabletti eli yha sormi. Mitattu 14.9.2026 -> 36px. */
 @media(max-width:1023px){.lv-eco-btn{height:44px;min-width:44px}}
 @media(max-width:639px){.lv-eco-btn{padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 12px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoNudge 1.6s ease-in-out infinite}
@@ -261,12 +262,18 @@ const CSS = `
 .lv-eco-panel:focus{outline:0}
 .lv-eco-panel *,.lv-eco-panel *::before,.lv-eco-panel *::after{box-sizing:border-box}
 .lv-eco-top{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap}
-.lv-eco-brand{display:flex;flex-direction:column;gap:3px;text-decoration:none;color:${SNOW};flex:none;padding:2px 4px;border-radius:8px}
+.lv-eco-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:${SNOW};flex:none;padding:9px 13px;border-radius:12px;background:rgba(236,72,153,.10);border:1px solid rgba(236,72,153,.40);transition:background .15s,border-color .15s}
+.lv-eco-brand-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.lv-eco-brand:hover{background:rgba(236,72,153,.18);border-color:rgba(236,72,153,.75)}
 .lv-eco-brand:focus-visible{outline:2px solid #06B6D4;outline-offset:2px}
+.lv-eco-brand .lv-eco-arrow{width:16px;height:16px;color:rgba(249,250,251,.55)}
+.lv-eco-brand:hover .lv-eco-arrow,.lv-eco-brand:focus-visible .lv-eco-arrow{color:${PINK}}
+.lv-eco-brand.is-current{background:rgba(236,72,153,.2);border-color:rgba(236,72,153,.65)}
 .lv-eco-mark{font-family:${WORDMARK_FONT};font-size:24px;letter-spacing:.04em;line-height:1;white-space:nowrap;font-weight:400}
 .lv-eco-mark i{font-style:normal;color:${PINK}}
 .lv-eco-brand:hover .lv-eco-mark{color:#fff;text-shadow:0 0 18px rgba(236,72,153,.45)}
-.lv-eco-sub{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,250,251,.5);font-weight:600;white-space:nowrap}
+/* Content, not a label: the old tracked uppercase read as the panel title. */
+.lv-eco-sub{font-size:11.5px;color:rgba(249,250,251,.72);font-weight:500;white-space:nowrap;line-height:1.25}
 .lv-eco-search{flex:1 1 240px;max-width:420px;display:flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(249,250,251,.55);cursor:text;margin:0}
 .lv-eco-search:focus-within{border-color:rgba(6,182,212,.7);box-shadow:0 0 0 3px rgba(6,182,212,.18);color:${SNOW}}
 .lv-eco-search svg{flex:none}
@@ -317,8 +324,8 @@ const CSS = `
 @media(max-width:767px){
 .lv-eco-panel{inset:0;top:0;left:0;width:auto;max-width:none;max-height:none;border-radius:0;border:0;padding:0 0 24px;animation:lvEcoSlide .2s ease-out;transform-origin:center top}
 .lv-eco-top{position:sticky;top:0;z-index:1;gap:10px 12px;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 12px;background:#0F172A;border-bottom:1px solid rgba(255,255,255,.1)}
-.lv-eco-brand{flex:1;min-width:0}
-.lv-eco-sub{white-space:normal;font-size:10px;letter-spacing:.1em}
+.lv-eco-brand{flex:1;min-width:0;padding:8px 10px;gap:8px}
+.lv-eco-sub{white-space:normal;font-size:10.5px;overflow-wrap:anywhere}
 .lv-eco-top>.lv-eco-here{order:1}
 .lv-eco-close{order:2;display:inline-flex;flex:none;width:44px;height:44px;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:${SNOW};cursor:pointer;padding:0;margin:0}
 .lv-eco-close:focus-visible{outline:2px solid #06B6D4;outline-offset:2px}
@@ -376,6 +383,13 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   const appLabel = chrome('getApp', 'Lataa sovellus', 'Get the app');
   const app = APP_I18N[L] ?? (isFi ? APP_I18N.fi : APP_I18N.en);
   const onHub = currentDomain === HUB;
+  // The hub's own localised name, straight from SITES/NAME_I18N (12 languages,
+  // already written). The brand block used to say only "Koko Lapland-verkosto ·
+  // laplandvibes.com", which reads as the panel's TITLE, not as a place you can
+  // go — Vesa 2026-09-23, on a spoke: "tuo laplandvibes ohjaus jää kyllä
+  // epäselväksi, nyt tajusin että se on tuolla vasen yläkulma mistä pääsee hub
+  // sivulle, mutta se on kyllä tässä todella epäselvä."
+  const hubName = siteName(SITES.find((s) => s.domain === HUB) as Site);
 
   useEffect(() => {
     try {
@@ -414,7 +428,11 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
     .map((g) => ({ ...g, sites: q ? g.sites.filter((x) => x.key.includes(q)) : g.sites }))
     .filter((g) => g.sites.length > 0);
   const appVisible = !q || norm(`${appLabel} ${app.title} ${app.cta} app appi sovellus ${APP}`).includes(q);
-  const total = visible.reduce((n, g) => n + g.sites.length, 0) + (appVisible ? 1 : 0);
+  // The hub is not a row in any group, so a search for it used to return
+  // "Ei osumia." while its card sat right above the message. It is counted
+  // here instead (the card is in the sticky header and never hides).
+  const hubMatches = !q || norm(`${hubName} ${HUB} hub etusivu`).includes(q);
+  const total = visible.reduce((n, g) => n + g.sites.length, 0) + (appVisible ? 1 : 0) + (hubMatches ? 1 : 0);
 
   const close = useCallback((returnFocus = true) => {
     setOpen(false);
@@ -520,15 +538,26 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
       style={{ '--lv-eco-t': `${pos.top}px`, '--lv-eco-l': `${pos.left}px`, ...(pos.width ? { '--lv-eco-w': `${pos.width}px` } : {}) } as CSSProperties}
     >
       <div className="lv-eco-top">
+        {/* The way back to the hub. It is a CARD with a border and the same
+            arrow every other row carries, not a bare wordmark: a wordmark at
+            the top-left of a panel reads as branding, and a reader has no way
+            to tell it is also the only link to laplandvibes.com. The line under
+            it names the destination ("Etusivu (verkoston keskus)") instead of
+            describing the panel, and it is set as content rather than as a
+            tracked uppercase label for the same reason. Copy is unchanged —
+            hubName comes from SITES/NAME_I18N, which already has 12 languages. */}
         <a
-          className="lv-eco-brand"
+          className={`lv-eco-brand${onHub ? ' is-current' : ''}`}
           href={`https://${HUB}`}
           {...(onHub ? { 'aria-current': 'page' as const } : { target: '_blank', rel: 'noopener' })}
           data-umami-event="eco_jump"
           data-umami-event-site={HUB}
         >
-          <span className="lv-eco-mark"><i>#</i>LAPLAND<i>VIBES</i></span>
-          <span className="lv-eco-sub">{heading} · {HUB}</span>
+          <span className="lv-eco-brand-txt">
+            <span className="lv-eco-mark"><i>#</i>LAPLAND<i>VIBES</i></span>
+            <span className="lv-eco-sub">{hubName} · {HUB}</span>
+          </span>
+          {onHub ? null : <ArrowUpRight className="lv-eco-arrow" size={16} strokeWidth={2.2} aria-hidden="true" />}
         </a>
         {onHub && herePill}
         <label className="lv-eco-search">
