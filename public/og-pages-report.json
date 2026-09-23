@@ -1,0 +1,243 @@
+{
+  "restaurants": {
+    "route": "/restaurants",
+    "line": "Ratings, review quotes and menu links",
+    "kaudet": {
+      "summer": {
+        "hero": "/images/drive/pyhaSummer.webp",
+        "bytes": 205903,
+        "sha256": "ec49b03fcbe844213f55f380173339aa964777d88de61c887db5d8ce8c755232",
+        "heroSha": "372d932b6b477129",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 17274,
+        "inkBox": [
+          337,
+          493,
+          863,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 94.8,
+        "centerSq": 102.9,
+        "photoRegion": 115.5,
+        "photoRegionRef": 115.5,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 529,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      },
+      "winter": {
+        "hero": "/images/drive/restaurantsHeroWinter.webp",
+        "bytes": 151225,
+        "sha256": "a7a8953b6690fd8ab8e856a02c399fd49b68482b75c01d6bcdb2c67e5c033b5d",
+        "heroSha": "99b54d68785bf7dd",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 17274,
+        "inkBox": [
+          337,
+          493,
+          863,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 57.1,
+        "centerSq": 61.3,
+        "photoRegion": 64.2,
+        "photoRegionRef": 64.2,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 529,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      }
+    }
+  },
+  "cities": {
+    "route": "/cities",
+    "line": "Lapland restaurants, town by town",
+    "kaudet": {
+      "summer": {
+        "hero": "/images/cities/pyhatunturi.webp",
+        "bytes": 224120,
+        "sha256": "2af33987700d8de2049763a4cff9e30cefa88bdda075191d2b22d1723b7947d4",
+        "heroSha": "a50303a52f3401bd",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 16666,
+        "inkBox": [
+          360,
+          493,
+          839,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 98.6,
+        "centerSq": 107.5,
+        "photoRegion": 120.8,
+        "photoRegionRef": 120.8,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 482,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      },
+      "winter": {
+        "hero": "/images/drive/restaurantsHeroWinter.webp",
+        "bytes": 150027,
+        "sha256": "b70226d03073cb4a0f1cb05eee315f93df175fff396d2bb14c79c93b5773d32e",
+        "heroSha": "99b54d68785bf7dd",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 16666,
+        "inkBox": [
+          360,
+          493,
+          839,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 57,
+        "centerSq": 61.1,
+        "photoRegion": 64.2,
+        "photoRegionRef": 64.2,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 482,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      }
+    }
+  },
+  "city-levi": {
+    "route": "/city/levi",
+    "line": "Where to eat in Levi",
+    "kaudet": {
+      "summer": {
+        "hero": "/images/cities/levi.webp",
+        "bytes": 135080,
+        "sha256": "cbef5e38a241de33a5cf3490ed648687e2f99c64fbb886ad1c371b94749db9a1",
+        "heroSha": "4eb2281a58e6db52",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 14689,
+        "inkBox": [
+          402,
+          493,
+          795,
+          597
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 101.7,
+        "centerSq": 109,
+        "photoRegion": 125.6,
+        "photoRegionRef": 125.6,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 277,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      },
+      "winter": {
+        "hero": "/images/cities/levi.webp",
+        "bytes": 135080,
+        "sha256": "cbef5e38a241de33a5cf3490ed648687e2f99c64fbb886ad1c371b94749db9a1",
+        "heroSha": "4eb2281a58e6db52",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 14689,
+        "inkBox": [
+          402,
+          493,
+          795,
+          597
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 101.7,
+        "centerSq": 109,
+        "photoRegion": 125.6,
+        "photoRegionRef": 125.6,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 277,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": [],
+        "samaKuinKesa": true
+      }
+    }
+  }
+}

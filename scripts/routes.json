@@ -5,11 +5,23 @@
   },
   {
     "path": "/restaurants",
-    "jsonKey": "restaurants"
+    "jsonKey": "restaurants",
+    "ogImage": "/og/restaurants.jpg",
+    "ogCard": {
+      "heroKesa": "/images/drive/pyhaSummer.webp",
+      "heroTalvi": "/images/drive/restaurantsHeroWinter.webp",
+      "line": "Ratings, review quotes and menu links"
+    }
   },
   {
     "path": "/cities",
-    "jsonKey": "cities"
+    "jsonKey": "cities",
+    "ogImage": "/og/cities.jpg",
+    "ogCard": {
+      "heroKesa": "/images/cities/pyhatunturi.webp",
+      "heroTalvi": "/images/drive/restaurantsHeroWinter.webp",
+      "line": "Lapland restaurants, town by town"
+    }
   },
   {
     "path": "/city/rovaniemi",
@@ -17,7 +29,12 @@
   },
   {
     "path": "/city/levi",
-    "jsonKey": "cities.levi"
+    "jsonKey": "cities.levi",
+    "ogImage": "/og/city-levi.jpg",
+    "ogCard": {
+      "hero": "/images/cities/levi.webp",
+      "line": "Where to eat in Levi"
+    }
   },
   {
     "path": "/city/yllas",
