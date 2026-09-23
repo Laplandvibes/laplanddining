@@ -1103,7 +1103,11 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                 // Lokalisoitu label dictista; hubin propilla tulevat linkit (ei keytä)
                 // kantavat oman valmiiksi lokalisoidun nimensä.
                 const label = link.key ? (d.pillars[link.key] ?? link.name) : link.name;
-                const pillClassName = "text-[13px] sm:text-sm font-semibold px-3 sm:px-4 py-2.5 sm:py-2 rounded-full transition-all duration-200 hover:scale-105 whitespace-nowrap inline-flex items-center justify-center min-h-[44px] min-w-[44px] lg:min-h-0 lg:min-w-0 shadow-sm";
+                // Alle lg:n pillerit ovat 2/3-sarakkeinen ruudukko, joten pitkä nimi rivittyy
+                // pillerin sisään. nowrap valutti sen naapuripillerin päälle: mitattu 23.9.2026
+                // 163 kertaa 28 sivustolla (12 kieltä, 320–1023 px). Korea katkeaa vain
+                // välilyönnistä (keep-all), ei kesken sanan. lg: palauttaa yhden rivin.
+                const pillClassName = "text-[13px] sm:text-sm font-semibold px-3 sm:px-4 py-2.5 sm:py-2 rounded-full transition-all duration-200 hover:scale-105 whitespace-normal text-center [text-wrap:balance] [&:lang(ko)]:break-keep lg:whitespace-nowrap inline-flex items-center justify-center min-h-[44px] min-w-[44px] lg:min-h-0 lg:min-w-0 shadow-sm";
                 // 13px white text = normal text, so the 4.5:1 bar applies and
                 // brand pink #EC4899 (3.53:1) fails — same measurement as the
                 // 2026-08-02 batch, which missed this one row. Rest on
