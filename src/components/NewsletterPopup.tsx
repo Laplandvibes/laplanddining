@@ -1,4 +1,9 @@
 import SharedNewsletterPopup from '../shared/NewsletterPopup';
+import { POPUP_THEME, POPUP_COPY } from './newsletterPopupSite';
+// 🔴 23.9.2026 (Vesa: "tekstit ja värimaailma sivustokohtaisiksi" → "kyllä, vie kaikille"):
+// tämän sivuston oma teksti ja väri tulevat ./newsletterPopupSite.ts:stä. Alla oleva
+// 9.8.2026 kielto koski katteettomia lupauksia (hälytykset, lähetystahti), ei
+// sivustokohtaista tekstiä. Lupauskielto pätee yhä.
 import { trackNewsletterSignup } from '../lib/analytics';
 import { useLocale } from '../i18n/useLocale'
 
@@ -13,6 +18,8 @@ export default function NewsletterPopup() {
   const { locale } = useLocale();
   return (
     <SharedNewsletterPopup
+      theme={POPUP_THEME}
+      copy={POPUP_COPY}
       lang={locale as 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl' | 'sv'}
       siteId="laplanddining"
       brandWord="DINING"
