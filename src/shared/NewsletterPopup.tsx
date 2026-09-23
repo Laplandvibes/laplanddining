@@ -445,7 +445,7 @@ const LOCALE_DICTS: Record<SupportedLang, Required<NewsletterPopupDict>> = {
     errorGeneric: 'Falha na inscrição. Tente novamente.',
     socialLead: 'Enquanto isso, meus posts da Lapônia:',
     founderAlt: 'Vesa, fundador do LaplandVibes',
-    consent: `Aceito receber a newsletter da LaplandVibes no e-mail informado, com dicas de viagem, informações de temporada e ofertas. Tenho 18 anos ou mais.`,
+    consent: `Aceito receber a newsletter do LaplandVibes no e-mail informado, com dicas de viagem, informações de temporada e ofertas. Tenho 18 anos ou mais.`,
     privacy: `Política de Privacidade`,
   },
   'zh-CN': {

@@ -79,7 +79,7 @@
         },
         {
           "question": "Op welke lokale ingrediënten is de Laplandse keuken gebouwd?",
-          "answer": "Vrij grazende rendieren, Arctische zalmforel en marene uit meren als het Inarimeer, wilde blauwe bosbessen en vossenbessen, met de hand geplukte paddenstoelen en kruiden, en de kruipbraam, het ‘goud van de Arctis’, die maar een paar weken in juli rijpt op subarctische venen."
+          "answer": "Vrij grazende rendieren, beekridder en marene uit meren als het Inarimeer, wilde blauwe bosbessen en vossenbessen, met de hand geplukte paddenstoelen en kruiden, en de kruipbraam, het ‘goud van de Arctis’, die maar een paar weken in juli rijpt op subarctische venen."
         }
       ]
     }
@@ -412,7 +412,7 @@
         "title": "Landbouw werkte hier nooit. Jagen, vissen en verzamelen wel.",
         "paragraphs": [
           "Het dichtstbijzijnde veld dat iets oplevert, ligt honderden kilometers naar het zuiden, en dan nog maar soms. Dit was duizenden jaren lang het dagelijks leven.",
-          "Eten kwam van wat dichtbij was, rivieren vol zalm en Arctische zalmforel, bossen met wild en wilde bessen, toendra waar rendieren met de seizoenen meebewogen. Voor de Sami, het inheemse volk van Noord-Europa, was voedsel nooit los van het land. Het <em>was</em> het land.",
+          "Eten kwam van wat dichtbij was, rivieren vol zalm en beekridder, bossen met wild en wilde bessen, toendra waar rendieren met de seizoenen meebewogen. Voor de Sami, het inheemse volk van Noord-Europa, was voedsel nooit los van het land. Het <em>was</em> het land.",
           "Elders in Finland groeide de keuken uit landbouw die teruggaat tot de prehistorie. Maar in het noorden was landbouw nooit betrouwbaar. Jagen, vissen en verzamelen waren geen voetnoot. Ze waren het hele plan."
         ],
         "figures": [
@@ -465,7 +465,7 @@
       {
         "title": "Dit zijn levende tradities, geen reconstructies",
         "paragraphs": [
-          "Zalm, marene, baars, Arctische zalmforel en snoek brachten gezinnen door de donkerste winters en de helderste middernachtzon-zomers. Visrechten behoorden eeuwenlang toe aan rivierfamilies, geregeld via afstamming en gewoonte, niet via geld.",
+          "Zalm, marene, baars, beekridder en snoek brachten gezinnen door de donkerste winters en de helderste middernachtzon-zomers. Visrechten behoorden eeuwenlang toe aan rivierfamilies, geregeld via afstamming en gewoonte, niet via geld.",
           "De traditionele technieken leven in de restaurants nog steeds voort. Zalm op een houten plank gegrild naast een open vuur. Marene gerookt in berkenbast. Vissoep ingedikt met room en verse dille. Dit zijn geen \"reconstructies\" van oude recepten, het zijn levende tradities, van generatie op generatie doorgegeven.",
           "Het Inarimeer, het op twee na grootste meer van Finland, levert enkele van de beste zoetwatervissen van Europa. Restaurant Aanaar in Inari bouwt hele proefmenu's rond wat lokale vissers diezelfde ochtend uit het water halen."
         ],
@@ -504,10 +504,10 @@
   },
   "localFood": {
     "title": "Lokaal eten in Lapland: rendier, bessen, vis",
-    "description": "Wat 'lokaal' betekent op een Laplands menu: vrij grazende rendieren, Arctische zalmforel, kruipbramen, vossenbessen, wilde paddenstoelen en kruiden.",
+    "description": "Wat 'lokaal' betekent op een Laplands menu: vrij grazende rendieren, beekridder, kruipbramen, vossenbessen, wilde paddenstoelen en kruiden.",
     "heroH1": "Lokaal eten en ingrediënten",
     "heroLead": "Waarom het voedsel uit Lapland tot het schoonste en meest voedzame ter wereld behoort en hoe de Finse voedselproductie de norm voor zuiverheid zet.",
-    "intro": "Een visser haalt voor zonsopgang een Arctische zalmforel uit het Inarimeer. De kok in het dorp ernaast weet het binnen twintig minuten. De voedselketen in Lapland is zo kort en dáárom smaakt het eten zoals het smaakt.",
+    "intro": "Een visser haalt voor zonsopgang een beekridder uit het Inarimeer. De kok in het dorp ernaast weet het binnen twintig minuten. De voedselketen in Lapland is zo kort en dáárom smaakt het eten zoals het smaakt.",
     "sections": [
       {
         "title": "Iedereen mag overal plukken, wie de grond ook bezit",
@@ -521,7 +521,7 @@
       {
         "title": "Netten 's ochtends, soep 's avonds op tafel",
         "paragraphs": [
-          "Het Inarimeer levert Arctische zalmforel, marene en bruine forel. Noordelijk Finland is vol meren met water schoner dan de meeste landen zich kunnen voorstellen.",
+          "Het Inarimeer levert beekridder, marene en bruine forel. Noordelijk Finland is vol meren met water schoner dan de meeste landen zich kunnen voorstellen.",
           "De Finse visserijtraditie hier is bijna huishoudelijk van schaal, netten 's ochtends uitgezet, soep 's avonds op tafel. Zalm gerookt in berkenbast. Marene loimu-gegrild op een houten plank naast een open vuur. Room en dille drijven in de soep.",
           "In de Tornio-vallei, aan de Fins-Zweedse grens, leeft de oude lippokalastus-traditie nog: een lang steelnet dat vanaf een houten platform tegen de stroom in wordt gedompeld. Bij Kukkolaforsen aan de Zweedse oever koopt u de ter plekke gerookte vis voor het avondeten."
         ],
@@ -556,8 +556,8 @@
         "season": "Het hele jaar (najaarsslacht)"
       },
       {
-        "name": "Arctische zalmforel & zalm",
-        "fact": "Gevangen in enkele van de schoonste rivieren en meren van Europa. Alleen al het Inarimeer levert Arctische zalmforel, marene en beekforel, allemaal wild gevangen, nooit gekweekt in de wateren van Lapland. De oude manier om zalm te bereiden is loimulohi: een filet vastgezet op een berkenplank en langzaam naast een open vlam geroosterd.",
+        "name": "Beekridder & zalm",
+        "fact": "Gevangen in enkele van de schoonste rivieren en meren van Europa. Alleen al het Inarimeer levert beekridder, marene en beekforel, allemaal wild gevangen, nooit gekweekt in de wateren van Lapland. De oude manier om zalm te bereiden is loimulohi: een filet vastgezet op een berkenplank en langzaam naast een open vlam geroosterd.",
         "season": "Zomer & najaar"
       },
       {

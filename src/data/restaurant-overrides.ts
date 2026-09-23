@@ -127,7 +127,7 @@ export const restaurantOverrides: Record<string, Override> = {
       ko: '로바니에미 한복판에 자리한 오두막. Nili는 이십 년 넘게 라플란드의 맛을 내어 왔습니다. 순록 볶음, 북극 곤들매기, 클라우드베리 디저트. 네 코스의 셰프 추천 메뉴가 가장 좋은 시작입니다.',
       fr: 'Une cabane au cœur de la nature, en plein Rovaniemi. Depuis plus de vingt ans, Nili sert les saveurs de Laponie: renne sauté, omble arctique, desserts à la mûre arctique. Le menu surprise en quatre services est la meilleure porte d\'entrée.',
       it: 'Una baita immersa nella natura, nel cuore di Rovaniemi. Da oltre vent\'anni Nili porta in tavola i sapori della Lapponia: renna saltata, salmerino artico, dolci al lampone artico. Il menù a sorpresa di quattro portate è il modo migliore per cominciare.',
-      nl: 'Een wildernishut midden in Rovaniemi. Al meer dan twintig jaar serveert Nili Laplandse smaken: gebakken rendier, Arctische zalmforel en desserts van kruipbraam. Het verrassingsmenu van vier gangen is de beste manier om kennis te maken.',
+      nl: 'Een wildernishut midden in Rovaniemi. Al meer dan twintig jaar serveert Nili Laplandse smaken: gebakken rendier, beekridder en desserts van kruipbraam. Het verrassingsmenu van vier gangen is de beste manier om kennis te maken.',
     },
     highlights: [
       {
@@ -308,7 +308,7 @@ export const restaurantOverrides: Record<string, Override> = {
       'zh-CN': '美味的食物，加上轻松友好的气氛，由一群显然勤恳的员工撑起。这是山脚下一处暖心的歇脚处。',
       ko: '맛있는 음식과 편안하고 다정한 분위기, 그리고 부지런히 일하는 직원들이 그 분위기를 떠받칩니다. 펠 기슭의 따뜻한 쉼터입니다.',
       fr: 'Une bonne cuisine et une ambiance simple et chaleureuse, portée par une équipe qui travaille manifestement dur. Une halte accueillante au pied du fjäll.',
-      it: 'Buona cucina e un\'atmosfera semplice e cordiale, tenuta viva da un personale che si vede che lavora sodo. Una sosta calda ai piedi del fell.',
+      it: 'Buona cucina e un\'atmosfera semplice e cordiale, tenuta viva da un personale che si vede che lavora sodo. Una sosta calda ai piedi del fjäll.',
       nl: 'Lekker eten en een ongedwongen, vriendelijke sfeer, in stand gehouden door een personeel dat duidelijk hard werkt. Een warme stop aan de voet van de fjäll.',
     },
   },
