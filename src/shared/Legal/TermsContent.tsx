@@ -9,7 +9,7 @@
  * pass their own (e.g. `siteName="LaplandStays"` / `siteUrl="laplandstays.com"`)
  * so the prose accurately names the publisher the visitor is reading.
  */
-import { hubUnsubscribeUrl } from './localePath';
+import { hubUnsubscribeUrl, localePath } from './localePath';
 
 type Lang = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl' | 'sv';
 
@@ -1358,7 +1358,7 @@ export default function TermsContent({
     }</a>
   );
   const privacy = (
-    <a href="/privacy" className="text-vibe-pink hover:text-pink-300 underline">
+    <a href={localePath('/privacy', lang)} className="text-vibe-pink hover:text-pink-300 underline">
       {lang === 'fi' ? 'tietosuojaselosteemme'
       : lang === 'de' ? 'Datenschutzerklärung'
       : lang === 'ja' ? 'プライバシーポリシー'
