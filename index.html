@@ -12,7 +12,29 @@
           for (var p in map) {
             if (path === '/' + p || path.indexOf('/' + p + '/') === 0) { loc = map[p]; break; }
           }
-          if (T[loc]) document.title = T[loc];
+          // 🔴🔴 EI YLIKIRJOITETA ESIRENDEROITYA OTSIKKOA (21.9.2026, ajoitus korjattu 24.9.2026).
+          // T on kasin yllapidetty kopio etusivun otsikoista ja ehti vanhentua; sivut esirenderoidaan
+          // kielittain, joten palvelin lahettaa jo oikean otsikon. 21.9. vartija ei toiminut: tama
+          // lohko on headin alussa ja title-elementti jasennetaan vasta sen jalkeen, joten ajohetkella
+          // document.title oli '' ja kirjoitus loi oman elementin palvelimen otsikon eteen (mitattu
+          // 24.9.2026: laplandchristmas.com/fi/accommodation/ valilehdella "Joulu Lapissa: ..." 12 ms,
+          // kunnes React vaihtoi sivun oman 763 ms). Siksi vertailu vasta readyState 'interactive'
+          // -hetkella: koko HTML on jasennetty, Reactin moduuliskripti ei viela ajanut. T:ta kaytetaan
+          // vain kun otsikko puuttuu tai muunkielinen reitti kantaa yha kuoren EN-oletusta
+          // (= esirenderoimaton reitti). Lahde: scripts/lib/otsikkovartija.mjs, ala muokkaa kasin.
+          var oletus = "LaplandDining: Where to Eat in Finnish Lapland";
+          var aseta = function () {
+            try {
+              var nyt = (document.title || '').trim();
+              if (T[loc] && (!nyt || (nyt === oletus && loc !== 'en'))) document.title = T[loc];
+            } catch (e) { /* fail silent */ }
+          };
+          if (document.readyState === 'loading') {
+            document.addEventListener('readystatechange', function kun() {
+              document.removeEventListener('readystatechange', kun);
+              aseta();
+            });
+          } else aseta();
         } catch (e) { /* fail silent */ }
       })();
     </script>
