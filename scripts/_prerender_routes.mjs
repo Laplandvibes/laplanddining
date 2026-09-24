@@ -1379,7 +1379,9 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
   // Server-rendered BreadcrumbList JSON-LD (rich-result eligible), derived from the
   // canonical path. Skips the home page. Locale URL-prefix is treated as the locale root.
   try {
-    const LOC_PREFIXES = new Set(['fi', 'de', 'ja', 'es', 'br', 'cn', 'kr', 'fr', 'it', 'nl']);
+    // Locale URL prefixes come from the ACTIVE locale list (FULL_LOCALE_LIST + --addLocales),
+    // never a hardcoded set: an opt-in locale such as --addLocales=sv must not become a crumb.
+    const LOC_PREFIXES = new Set(FULL_LOCALE_LIST.map((l) => l.prefix.replace('/', '')).filter(Boolean));
     const u = new URL(canonical);
     const segs = u.pathname.split('/').filter(Boolean);
     const hasLoc = segs.length > 0 && LOC_PREFIXES.has(segs[0]);
