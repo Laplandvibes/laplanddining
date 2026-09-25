@@ -304,6 +304,79 @@ const LOCALE_PATH_PREFIX: Record<string, string> = {
   fr: '/fr', it: '/it', nl: '/nl', sv: '/sv',
 };
 
+// ─── LOCALE-HREF ALKU (scripts/rollout_kielietuliite.mjs lukee tämän lohkon) ────────────────────
+/** Polun ensimmäisenä segmenttinä esiintyvät kielietuliitteet. */
+const LOCALE_SEGMENTS = new Set(
+  Object.values(LOCALE_PATH_PREFIX).filter(Boolean).map((p) => p.slice(1)),
+);
+
+/**
+ * Verkoston omat verkkotunnukset — sama joukko josta buildSiteGroups rakentaa
+ * ekosysteemiruudukon, plus hubi. Jokainen tarjoaa kaikki 12 kieltä samoilla
+ * etuliitteillä: mitattu 25.9.2026, 308/308 lokaalietusivua vastasi 200,
+ * oikealla `<html lang>`illa ja omalla kanonisellaan.
+ *
+ * 🔴 `app.laplandvibes.com` EI ole listalla, vaikka sillä on 12 kieltä rekisterissä.
+ * Samassa mittauksessa sen `/fi/ /de/ …` vastasivat 200 — mutta sisältönä oli
+ * SPA-varareitin ENGLANNINKIELINEN etusivu (`lang="en"`, kanoninen `/`). Sovellukseen
+ * ei siis ole kielipolkuja, ja linkin lokalisointi olisi vienyt lukijan osoitteeseen
+ * joka ei ole olemassa sivuna. Sama koskee kumppanien ja yrityspaketit.fi:n osoitteita.
+ */
+const NETWORK_HOSTS = new Set([
+  'laplandvibes.com', 'laplandhoteldeals.com', 'laplandstays.com', 'laplandluxuryvillas.com',
+  'stayinlapland.com', 'laplandkids.com', 'laplandfood.com', 'laplanddining.com',
+  'laplandbars.com', 'laplandactivities.fi', 'laplandtours.online', 'laplandhuskysafaris.com',
+  'laplandskiresorts.com', 'laplandsnowmobile.com', 'laplandwellness.com', 'laplandnightlife.com',
+  'laplandnature.com', 'laplandvisit.com', 'laplandchristmas.com', 'laplandweddings.online',
+  'laplandgifts.com', 'laplandstore.fi', 'lapland.blog', 'laplanddeals.com',
+  'laplandtransport.com', 'laplandcarrental.com', 'laplandflights.fi', 'laplandwork.com',
+]);
+
+/** Polun etuliite on jo jonkin kielen — älä koske. */
+function hasLocaleSegment(pathname: string): boolean {
+  return LOCALE_SEGMENTS.has((pathname.split('/')[1] ?? '').toLowerCase());
+}
+
+/** `/jobs/` + `/ja` → `/ja/jobs/`, `/` + `/ja` → `/ja/`. Kysely ja ankkuri säilyvät. */
+function prefixPath(pathAndRest: string, prefix: string): string {
+  const osat = pathAndRest.match(/^([^?#]*)([?#].*)?$/);
+  const polku = osat?.[1] || '/';
+  const loppu = osat?.[2] ?? '';
+  if (hasLocaleSegment(polku)) return pathAndRest;
+  return `${prefix}${polku === '/' ? '/' : polku}${loppu}`;
+}
+
+/**
+ * Pitää alatunnisteen linkin LUKIJAN KIELESSÄ.
+ *
+ * 🔴🔴 Mitattu 25.9.2026 renderöidystä DOMista, 28 sivustoa × 12 kieltä × 2 sivua:
+ * tämän alatunnisteen linkeistä **2 022** vei lokaalisivulta englantiin ja lisäksi
+ * **17 545** ekosysteemiruudukon sisarsivustolinkkiä laskeutui englanninkieliselle
+ * etusivulle. Esimerkki vikailmoituksesta: `laplandwork.com/ja/privacy/` → pilleri
+ * "求人を探す" → `/jobs/`. Linkin MUOTO oli moitteeton (kauttaviiva paikallaan,
+ * Cloudflare 200), joten `gate:kauttaviivat` oli vihreä koko ajan — vika oli kielessä.
+ *
+ * Idempotentti: valmiiksi etuliitteellinen polku palautuu tavulleen ennallaan, joten
+ * ne 20 sivustoa jotka jo antavat lokalisoidut `pillarLinks`it eivät muutu lainkaan.
+ * Oletuskielellä (en, etuliite '') funktio on identiteetti.
+ */
+function localeHref(href: string | undefined, prefix: string): string {
+  const s = String(href ?? '');
+  if (!prefix || !s || s.startsWith('#')) return s;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(s) && !/^https?:\/\//i.test(s)) return s; // mailto:, tel:, …
+  if (/^https?:\/\//i.test(s)) {
+    let u: URL;
+    try { u = new URL(s); } catch { return s; }
+    if (!NETWORK_HOSTS.has(u.hostname.replace(/^www\./, ''))) return s;
+    if (hasLocaleSegment(u.pathname)) return s;
+    u.pathname = `${prefix}${u.pathname === '/' ? '/' : u.pathname}`;
+    return u.toString();
+  }
+  if (!s.startsWith('/')) return s; // suhteellinen polku: kohde riippuu sivusta, ei koskettu
+  return prefixPath(s, prefix);
+}
+// ─── LOCALE-HREF LOPPU ─────────────────────────────────────────────────────────────────────────
+
 // ─── Built-in 11-lang FULL footer dicts ────────────────────────────────────
 // Localized defaults for groups / kicker / about / partner / press / affiliate /
 // legal so every spoke site gets a native footer on /fi /de /ja /es /br /cn /
@@ -1062,7 +1135,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                           virtausta lainkaan. noopener sailyy (turvahyoty); noreferrer ei
                           anna mitaan lisaa omille domaineille. */}
                       <a
-                        href={link.url}
+                        href={localeHref(link.url, localePrefix)}
                         target="_blank"
                         rel="noopener"
                         /* min-w matters as much as min-h here: the link is
@@ -1125,7 +1198,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                   return (
                     <a
                       key={link.href}
-                      href={link.href}
+                      href={localeHref(link.href, localePrefix)}
                       target="_blank"
                       rel="noopener"
                       onClick={() => onPillarClick?.(link.name)}
@@ -1141,7 +1214,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                 return (
                   <Link
                     key={link.href}
-                    to={link.href}
+                    to={localeHref(link.href, localePrefix)}
                     onClick={() => onPillarClick?.(link.name)}
                     className={pillClassName}
                     style={pillStyle}
@@ -1265,7 +1338,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                       URL on ABSOLUUTTINEN, koska /press on vain hubissa ja tämä alatunniste
                       on byte-identtinen verkoston jokaisella sivustolla. */}
                   <a
-                    href="https://laplandvibes.com/press/"
+                    href={localeHref('https://laplandvibes.com/press/', localePrefix)}
                     className="inline-flex items-center justify-center w-full @md:w-auto @md:self-start px-3 @md:px-6 py-2.5 rounded-full text-xs font-semibold transition-all duration-200 min-h-[44px] shadow-sm cursor-pointer whitespace-nowrap no-underline"
                     style={{ background: PINK_FILL, border: `2px solid ${PINK_FILL}`, color: '#FFFFFF' }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = PINK_FILL_HOVER; (e.currentTarget as HTMLElement).style.borderColor = PINK_FILL_HOVER; }}
@@ -1324,7 +1397,7 @@ function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editori
                 ].map(({ to, label }) => (
                   <Link
                     key={to}
-                    to={to}
+                    to={localeHref(to, localePrefix)}
                     /* min-w as well as min-h: these are inline-flex, so a short
                        locale label ("Tietoa") gave a 42px-wide hit box even
                        though the height was already 44. Same trap as the
