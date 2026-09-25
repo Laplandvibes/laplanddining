@@ -585,7 +585,10 @@ function ensureDescriptionLength(desc, paragraphs, lang) {
   let out = d;
   for (const s of sentences) {
     if (out.includes(s) || s.includes(out)) continue;
-    const joiner = !out ? '' : (/[.!?。！？]$/.test(out) ? ' ' : '. ');
+    // [LV-CJK-JOIN 2026-09-25] ja/zh write sentences back to back: no space after 。！？.
+    // The Latin rule glued "…季节建议。 我们对比了…" into /cn/ descriptions (laplandsnowmobile,
+    // laplandwellness, measured live 25.9.2026). Korean spaces its sentences, so it keeps ' '.
+    const joiner = !out ? '' : (/^(ja|zh|cn)/.test(String(lang || '')) && /[。！？]$/.test(out) ? '' : (/[.!?。！？]$/.test(out) ? ' ' : '. '));
     const candidate = out + joiner + s;
     if (candidate.length > MAX || leveys(candidate) > MAXW) {
       if (riittava(out)) break;
@@ -1378,6 +1381,9 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
 
   // Server-rendered BreadcrumbList JSON-LD (rich-result eligible), derived from the
   // canonical path. Skips the home page. Locale URL-prefix is treated as the locale root.
+  // [LV-BC-SLASH 2026-09-25] Every crumb ends in '/' like the canonical and every internal
+  // link: a slashless item is a Cloudflare 308 (laplandsnowmobile /fi/rules/ published
+  // "item":"…/fi/rules", measured live 25.9.2026). The last crumb is the canonical itself.
   try {
     // Locale URL prefixes come from the ACTIVE locale list (FULL_LOCALE_LIST + --addLocales),
     // never a hardcoded set: an opt-in locale such as --addLocales=sv must not become a crumb.
@@ -1396,7 +1402,7 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
         const name = last
           ? title.replace(/\s*[|—–]\s.*$/, '').trim()
           : seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-        items.push({ name, url: acc });
+        items.push({ name, url: `${acc}/` });
       });
       const breadcrumb = {
         '@context': 'https://schema.org',
