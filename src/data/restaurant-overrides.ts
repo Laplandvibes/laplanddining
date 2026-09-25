@@ -585,7 +585,7 @@ export const restaurantOverrides: Record<string, Override> = {
       de: 'Der Kelo-Speisesaal des Hotels in Luosto, wo lappländische Teller unter einem Blockdach am Fuß des Fjells serviert werden.',
       ja: 'ルオストのホテルにあるケロ材の食堂。丸太の屋根の下、フィエルドのふもとでラップランドの皿が供されます。',
       es: 'El comedor de madera de kelo del hotel de Luosto, donde los platos lapones se sirven bajo un techo de troncos al pie del fell.',
-      'pt-BR': 'O salão de madeira kelo do hotel de Luosto, onde os pratos lapões são servidos sob um teto de troncos ao pé do fell.',
+      'pt-BR': 'O salão de madeira kelo do hotel de Luosto, onde pratos típicos da Lapônia são servidos sob um teto de troncos ao pé do fell.',
       'zh-CN': '卢奥斯托酒店的枯木餐厅，在原木屋顶下、山脚旁端上拉普兰菜式。',
       ko: '루오스토 호텔의 켈로 목재 식당. 통나무 지붕 아래, 산기슭에서 라플란드식 요리를 냅니다.',
       fr: 'La salle en bois de kelo de l\'hôtel de Luosto, où les assiettes lapones sont servies sous un toit de rondins, au pied de la fjeld.',

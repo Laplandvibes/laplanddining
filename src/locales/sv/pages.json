@@ -118,7 +118,7 @@
       "Inari": "Samiskt arv och de renaste arktiska råvarorna",
       "Saariselkä": "Vildmarksmiddag under norrskenet",
       "Kemi": "Där is möter eld – unika säsongsupplevelser",
-      "Ylläs": "Fjällbycharm med äkta lapska smaker",
+      "Ylläs": "Fjällbycharm med äkta lappländska smaker",
       "Tornio": "Gränsstadskaraktär och finsk husmanskost",
       "Haparanda": "Ta steget över gränsen till svensk-nordiskt fusionskök",
       "Sodankylä": "Älvstadstraditioner och publiken från Midnight Sun Film Festival",
@@ -381,7 +381,7 @@
       {
         "name": "Levi",
         "angle": "Middagar på fjälltopp",
-        "body": "Hullu Poros terrass + Levis gondol i sommartrafik ger dig 360° fjällvyer med lapska smårätter. Ta med ett lager extra – även klockan två på natten kan det sjunka till 8 °C."
+        "body": "Hullu Poros terrass + Levis gondol i sommartrafik ger dig 360° fjällvyer med lappländska smårätter. Ta med ett lager extra – även klockan två på natten kan det sjunka till 8 °C."
       },
       {
         "name": "Inari",
@@ -397,7 +397,7 @@
     "stayInTemplate": "Bo i {{city}}",
     "summerFoodTours": "Matturer på sommaren",
     "bottomHeadline": "Bygg din midnattssolsresa",
-    "bottomLead": "Kombinera de här borden med den bredare lapska sommaren – fjällvandringar, sjöbad klockan elva på kvällen och den sällsynta stillheten i en arktisk midsommar. Börja med restaurangerna du vill ha och boka resten runt dem.",
+    "bottomLead": "Kombinera de här borden med resten av den lappländska sommaren – fjällvandringar, sjöbad klockan elva på kvällen och den sällsynta stillheten i en arktisk midsommar. Börja med restaurangerna du vill ha och boka resten runt dem.",
     "bottomCtaBrowse": "Bläddra bland alla restauranger",
     "bottomCtaArctic": "Läs om arktiska råvaror"
   },
@@ -478,7 +478,7 @@
           "Hjortronet har en särskild plats. Kallat <strong>lakka</strong> på finska växer det bara på arktiska och subarktiska myrar, mognar under ett par veckor i juli och går inte att odla kommersiellt. Dess bärnstensfärg, honungssötma och sällsynthet gör det till \"Arktis guld\". Du hittar det i desserter, likörer och som garnering på nästan varje fine dining-restaurang i Lappland.",
           "Det som gör de här råvarorna exceptionella är inte bara smaken – det är miljön. Arktiska förhållanden, sommarljus dygnet runt, ren luft och något av det renaste vattnet på jorden ger bär med högre halter av vitaminer, antioxidanter och flavonoider än sina sydligare motsvarigheter."
         ],
-        "quote": "Gå genom en lapsk skog i sensommaren och du går genom en mataffär."
+        "quote": "Gå genom en lappländsk skog i sensommaren och du går genom en mataffär."
       },
       {
         "title": "Noma ändrade hur Lappland såg på sin egen bakgård",
@@ -487,7 +487,7 @@
           "Det ändrades med den nynordiska rörelsen. När Noma i Köpenhamn började hylla extremt lokala, plockade råvaror på 2000-talet började kockar i hela Norden se på sina egna bakgårdar med nya ögon. I Lappland fann de råvaror som större delen av världen aldrig smakat och traditioner redan århundraden gamla.",
           "I dag gör restauranger som Aanaar i Inari, Nili i Rovaniemi och Gustav i Rovaniemi något anmärkningsvärt: de hedrar samiska traditioner samtidigt som de tänjer på vad arktisk mat kan vara. En renrätt på Aanaar är inte bara mat – det är en berättelse om urfolksarv, miljöförvaltning och kulinarisk nytolkning på en och samma tallrik."
         ],
-        "quote": "Under större delen av sin historia handlade det lapska köket om konservering och om att mätta människor."
+        "quote": "Under större delen av sin historia handlade det lappländska köket om konservering och om att mätta människor."
       },
       {
         "title": "I århundraden var kåtan hem, kök och samlingsplats",
@@ -512,7 +512,7 @@
       {
         "title": "Vem som helst får plocka var som helst, oavsett vem som äger marken",
         "paragraphs": [
-          "Sensommaren i en lapsk skog är, i praktiken, matinköp. Allemansrätten, <strong>jokamiehenoikeus</strong>, gör det möjligt: vem som helst, lokalbo eller besökare, får gå, plocka och samla var som helst i naturen oavsett vem som äger marken.",
+          "Sensommaren i en lappländsk skog är, i praktiken, matinköp. Allemansrätten, <strong>jokamiehenoikeus</strong>, gör det möjligt: vem som helst, lokalbo eller besökare, får gå, plocka och samla var som helst i naturen oavsett vem som äger marken.",
           "Det är ingen symbolisk gest. Den formar hela matkulturen. Finlands skogar ger uppskattningsvis 500 miljoner kilo vilda blåbär om året, men bara 5–10 % plockas. Resten föder viltet och fyller på ekosystemet.",
           "Många av Lapplands bästa restauranger har professionella plockare på lönelistan, som tillbringar sommaren på fjället och i kanten av gammelskogen. \"Farm-to-table\" beskriver det inte. Det här är skog-till-bord – och skogen börjar bakom köksdörren."
         ],
