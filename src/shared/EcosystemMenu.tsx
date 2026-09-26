@@ -250,10 +250,17 @@ const CSS = `
 /* 1023, ei 767: 768 px on tabletti eli yha sormi. Mitattu 14.9.2026 -> 36px. */
 @media(max-width:1023px){.lv-eco-btn{height:44px;min-width:44px}}
 @media(max-width:639px){.lv-eco-btn{padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
-.lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 12px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoNudge 1.6s ease-in-out infinite}
+/* 🔴 EI ikuista pomppimista (Vesa 26.9.2026: "nayttaa etta leijailee, ei ole firm ja
+   laadukkaan nakoinen"). Vinkki nousi 5 px ylos ja alas 1,6 s valein niin kauan kuin se oli
+   nakyvissa — liike on se mika luki kelluntana. Nyt yksi lyhyt sisaantulo ja sen jalkeen se
+   pysyy paikallaan. Kiinnitys nappiin: 12 px -> 8 px. */
+.lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoIn .26s ease-out both}
 @media(min-width:768px){.lv-eco-hint{display:block}}
-.lv-eco-hint-arrow{position:absolute;top:-7px;left:20px;width:14px;height:14px;transform:rotate(45deg);border-radius:3px;background:${PINK};box-shadow:0 0 14px rgba(236,72,153,.55)}
-.lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:${PINK_FILL};color:#fff;box-shadow:0 14px 34px -12px rgba(236,72,153,.7)}
+/* 🔴 Nuoli oli ERI pinkki kuin pilleri (#EC4899 vs #DB2777) ja silla oli oma hohto —
+   kaksi eri savya ja sumea reuna saivat sen nayttamaan omalta kelluvalta palalta pillerin
+   vieressa. Nyt sama vari, ei hohtoa, kapeampi ja lahempana nappia. */
+.lv-eco-hint-arrow{position:absolute;top:-5px;left:18px;width:11px;height:11px;transform:rotate(45deg);border-radius:2px;background:${PINK_FILL}}
+.lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:${PINK_FILL};color:#fff;box-shadow:0 3px 10px -3px rgba(15,23,42,.55),0 0 0 1px rgba(255,255,255,.16) inset}
 .lv-eco-hint-x{display:flex;position:relative;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);font:inherit;line-height:1}
 .lv-eco-hint-x:hover{color:#fff}
 /* Nakyva merkki pysyy 20 px:na (pillerin mitta); sormelle annetaan 44x44. */
@@ -317,7 +324,7 @@ const CSS = `
 .lv-eco-empty{margin:18px 8px 6px;color:rgba(249,250,251,.6);font-size:14px}
 @keyframes lvEcoPop{from{opacity:0;transform:translateY(-6px) scale(.985)}to{opacity:1;transform:none}}
 @keyframes lvEcoSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes lvEcoNudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes lvEcoIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @keyframes lvEcoRing{0%{box-shadow:0 0 0 0 rgba(236,72,153,.55)}70%{box-shadow:0 0 0 9px rgba(236,72,153,0)}100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}}
 .lv-eco-ring{animation:lvEcoRing 1.8s ease-out infinite}
 @media(prefers-reduced-motion:reduce){.lv-eco-panel,.lv-eco-hint,.lv-eco-ring{animation:none}.lv-eco-btn .lv-eco-chev{transition:none}}
