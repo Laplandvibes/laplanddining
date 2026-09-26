@@ -158,7 +158,7 @@ const COPY = {
     "sv": "Matupplevelser du kan boka online"
   },
   "ledeCategory": {
-    "en": "A partner-maintained list, always current, we do not name a single tour here.",
+    "en": "A partner-maintained list, always current. We do not name a single tour here.",
     "fi": "Kumppanin ylläpitämä lista, aina ajantasainen. Emme nimeä yksittäistä retkeä.",
     "de": "Eine vom Partner gepflegte Liste, immer aktuell.",
     "ja": "パートナーが管理する最新のリストです。",

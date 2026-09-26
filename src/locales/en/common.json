@@ -34,7 +34,7 @@
     },
     "spottedError": {
       "title": "Spotted an Error?",
-      "body": "See something that needs fixing? Tell us, we'll correct it immediately.",
+      "body": "See something that needs fixing? Tell us and we'll correct it immediately.",
       "cta": "Report an Error →"
     },
     "partner": {
@@ -48,7 +48,7 @@
       "cta": "Press Enquiries →"
     },
     "affiliate": "This site contains affiliate links. If you book through these links, LaplandVibes may receive a commission at no extra cost to you.",
-    "copyright": "{{year}} #LaplandVibes, Part of the #LaplandVibes Network",
+    "copyright": "{{year}} #LaplandVibes, part of the #LaplandVibes Network",
     "websiteBy": "Website by Yrityspaketit.fi",
     "legal": {
       "privacy": "Privacy Policy",

@@ -95,7 +95,7 @@ const COPY: Record<Lang, TermsCopy> = {
         to external websites governed by their own terms and privacy policies.
       </>
     ),
-    s5Title: '5. Third-Party Services & We Are Not a Merchant',
+    s5Title: '5. Third-Party Services: We Are Not a Merchant',
     s5P1: (siteName) => (
       <>
         The hotel search, flight search, car rental, and activity booking tools on this site redirect to
@@ -107,7 +107,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Any contract for travel services, accommodation, flights, car rental, tours, is concluded directly
+        Any contract for travel services (accommodation, flights, car rental, tours) is concluded directly
         between you and the relevant third-party provider, on their terms and under their privacy policy.
         Their cancellation rules, refund policies, and consumer-protection rights apply, not ours. The Finnish
         consumer right of withdrawal under <em>kuluttajansuojalaki 6 luku</em> is exercised against the
@@ -170,7 +170,7 @@ const COPY: Record<Lang, TermsCopy> = {
         joilla on omat käyttöehtonsa ja tietosuojakäytäntönsä.
       </>
     ),
-    s5Title: '5. Kolmannen osapuolen palvelut, emme ole myyjä',
+    s5Title: '5. Kolmannen osapuolen palvelut: emme ole myyjä',
     s5P1: (siteName) => (
       <>
         Sivuston hotellihaut, lentohaut, autovuokraus- ja aktiviteettivarausvälineet ohjaavat kolmannen osapuolen alustoille
@@ -181,7 +181,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Sopimus matkailupalvelusta, majoituksesta, lennoista, autovuokrauksesta, retkistä, solmitaan suoraan sinun ja kyseisen
+        Sopimus matkailupalvelusta (majoituksesta, lennoista, autovuokrauksesta, retkistä) solmitaan suoraan sinun ja kyseisen
         kolmannen osapuolen palveluntarjoajan välillä, heidän ehtojensa ja tietosuojakäytäntönsä mukaisesti. Heidän peruutus-, hyvitys-
         ja kuluttajansuojasääntönsä pätevät, eivät meidän. Suomen <em>kuluttajansuojalain 6 luvun</em> mukainen peruuttamisoikeus
         kohdistuu elinkeinonharjoittajaan; {siteName} ei ole osapuolena kyseisessä prosessissa.
@@ -196,7 +196,7 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Tekijänoikeudet',
-    s7Body: (siteName) => `Kaikki ${siteName}-sivuston alkuperäissisältö, teksti, kuvitus ja muotoilu, kuuluu LaPeso Oy:lle tai on käytössä lisenssillä. Sisältöä ei saa jäljentää, jakaa tai muokata ilman kirjallista lupaa. Ei-kaupallinen henkilökohtainen käyttö lähteen mainiten on sallittu.`,
+    s7Body: (siteName) => `Kaikki ${siteName}-sivuston alkuperäissisältö (teksti, kuvitus ja muotoilu) kuuluu LaPeso Oy:lle tai on käytössä lisenssillä. Sisältöä ei saa jäljentää, jakaa tai muokata ilman kirjallista lupaa. Ei-kaupallinen henkilökohtainen käyttö lähteen mainiten on sallittu.`,
     s8Title: '8. Vastuunrajoitus',
     s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa menetyksistä, vahingoista tai haitoista, jotka aiheutuvat sivuston tietoihin luottamisesta, linkitettyjen kolmansien osapuolten palveluiden käytöstä tai sisällön perusteella tehdyistä matkapäätöksistä. Arktisille alueille matkustaminen sisältää aina riskejä; hanki kattava matkavakuutus ja noudata paikallisia turvallisuusohjeita.`,
     s9Title: '9. Sovellettava laki',
@@ -243,7 +243,7 @@ const COPY: Record<Lang, TermsCopy> = {
         eigenen Bedingungen und Datenschutzrichtlinien.
       </>
     ),
-    s5Title: '5. Dienste Dritter, wir sind kein Händler',
+    s5Title: '5. Dienste Dritter: Wir sind kein Händler',
     s5P1: (siteName) => (
       <>
         Hotelsuche, Flugsuche, Mietwagen- und Aktivitätsbuchungstools auf dieser Website leiten an externe Plattformen weiter
@@ -254,7 +254,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Verträge über Reiseleistungen, Unterkunft, Flüge, Mietwagen, Touren, kommen direkt zwischen Ihnen und dem jeweiligen Drittanbieter
+        Verträge über Reiseleistungen (Unterkunft, Flüge, Mietwagen, Touren) kommen direkt zwischen Ihnen und dem jeweiligen Drittanbieter
         nach dessen Bedingungen und Datenschutzrichtlinie zustande. Es gelten dessen Stornierungs-, Rückerstattungs- und Verbraucherrechtsregeln, nicht unsere.
         Das finnische Widerrufsrecht nach <em>kuluttajansuojalaki 6 luku</em> richtet sich gegen den Händler; {siteName} ist hieran nicht beteiligt.
       </>
@@ -268,7 +268,7 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Geistiges Eigentum',
-    s7Body: (siteName) => `Alle originalen Inhalte auf ${siteName}, Text, Grafiken, Design, gehören LaPeso Oy oder werden lizenziert genutzt. Vervielfältigung, Verbreitung oder Bearbeitung sind nur mit schriftlicher Genehmigung gestattet. Eine nicht-kommerzielle persönliche Nutzung mit Quellenangabe ist erlaubt.`,
+    s7Body: (siteName) => `Alle originalen Inhalte auf ${siteName} (Text, Grafiken, Design) gehören LaPeso Oy oder werden lizenziert genutzt. Vervielfältigung, Verbreitung oder Bearbeitung sind nur mit schriftlicher Genehmigung gestattet. Eine nicht-kommerzielle persönliche Nutzung mit Quellenangabe ist erlaubt.`,
     s8Title: '8. Haftungsbeschränkung',
     s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste, Verletzungen oder Schäden, die aus dem Vertrauen auf Informationen dieser Website, der Nutzung verlinkter Dienste Dritter oder Reiseentscheidungen auf Basis unserer Inhalte entstehen. Reisen in arktische Regionen sind mit inhärenten Risiken verbunden; schließen Sie eine geeignete Reiseversicherung ab und befolgen Sie örtliche Sicherheitsvorgaben.`,
     s9Title: '9. Anwendbares Recht',
@@ -379,7 +379,7 @@ const COPY: Record<Lang, TermsCopy> = {
         será dirigido a sitios externos sujetos a sus propios términos y políticas de privacidad.
       </>
     ),
-    s5Title: '5. Servicios de terceros, no somos comerciantes',
+    s5Title: '5. Servicios de terceros: no somos comerciantes',
     s5P1: (siteName) => (
       <>
         Las herramientas de búsqueda de hoteles, vuelos, alquiler de coches y reserva de actividades de este sitio redirigen
@@ -391,7 +391,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Todo contrato de servicios de viaje, alojamiento, vuelos, alquiler de coches, tours, se celebra directamente
+        Todo contrato de servicios de viaje (alojamiento, vuelos, alquiler de coches, tours) se celebra directamente
         entre usted y el proveedor externo correspondiente, según sus términos y su política de privacidad.
         Se aplican sus reglas de cancelación, reembolso y derechos del consumidor, no las nuestras. El derecho de
         desistimiento finlandés conforme al <em>kuluttajansuojalaki 6 luku</em> se ejerce frente al comerciante;
@@ -454,7 +454,7 @@ const COPY: Record<Lang, TermsCopy> = {
         você a sites externos regidos por seus próprios termos e políticas de privacidade.
       </>
     ),
-    s5Title: '5. Serviços de terceiros, não somos comerciantes',
+    s5Title: '5. Serviços de terceiros: não somos comerciantes',
     s5P1: (siteName) => (
       <>
         As ferramentas de busca de hotéis, voos, aluguel de carros e reserva de atividades neste site redirecionam para
@@ -466,7 +466,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Qualquer contrato relativo a serviços de viagem, hospedagem, voos, aluguel de carros, passeios, é celebrado
+        Qualquer contrato relativo a serviços de viagem (hospedagem, voos, aluguel de carros, passeios) é celebrado
         diretamente entre você e o respectivo fornecedor terceiro, sob os termos e a política de privacidade dele.
         São aplicáveis as regras de cancelamento, reembolso e defesa do consumidor desse fornecedor, e não as nossas.
         O direito de arrependimento finlandês previsto no <em>kuluttajansuojalaki 6 luku</em> é exercido contra o
@@ -659,7 +659,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'En accédant à ce site ou en l\'utilisant, vous acceptez ces conditions. Si vous n\'acceptez pas, veuillez cesser d\'utiliser le site.',
     s2Title: '2. Exactitude des informations',
-    s2Body: 'Les informations de voyage, prix, horaires d\'ouverture, conditions météorologiques, disponibilité, changent fréquemment. Nous nous efforçons de tenir le contenu à jour, mais nous ne pouvons garantir que toutes les informations sont actuelles au moment de votre visite. Vérifiez toujours les détails critiques directement auprès des prestataires avant de réserver.',
+    s2Body: 'Les informations de voyage (prix, horaires d\'ouverture, conditions météorologiques, disponibilité) changent fréquemment. Nous nous efforçons de tenir le contenu à jour, mais nous ne pouvons garantir que toutes les informations sont actuelles au moment de votre visite. Vérifiez toujours les détails critiques directement auprès des prestataires avant de réserver.',
     s3Title: '3. Liens d\'affiliation et partenariats',
     s3P1: (siteName) => `Certains liens sur ${siteName} sont des liens d'affiliation. Lorsque vous cliquez sur ces liens et effectuez une réservation ou un achat, nous pouvons percevoir une petite commission sans coût supplémentaire pour vous. Les relations d'affiliation n'influencent pas nos recommandations éditoriales. Nous ne créons des liens que vers des services dont nous estimons qu'ils apportent une réelle valeur.`,
     s3P2: 'Les partenaires d\'affiliation incluent notamment : Sembo, Trip.com, EconomyBookings, GetYourGuide et d\'autres prestataires de services de voyage via des réseaux d\'affiliation tels qu\'Adtraction et Travelpayouts. Chaque réservation est soumise aux conditions générales du prestataire concerné.',
@@ -684,7 +684,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Tout contrat portant sur des services de voyage, hébergement, vols, location de voiture, excursions, 
+        Tout contrat portant sur des services de voyage (hébergement, vols, location de voiture, excursions)
         est conclu directement entre vous et le prestataire tiers concerné, selon ses conditions et sa politique
         de confidentialité. Ses règles d\'annulation, de remboursement et ses droits de protection des
         consommateurs s\'appliquent, pas les nôtres. Le droit de rétractation finlandais prévu par{' '}
@@ -747,7 +747,7 @@ const COPY: Record<Lang, TermsCopy> = {
         link sponsorizzati verrà reindirizzato a siti esterni regolati da propri termini e politiche sulla privacy.
       </>
     ),
-    s5Title: '5. Servizi di terzi, non siamo un commerciante',
+    s5Title: '5. Servizi di terzi: non siamo un commerciante',
     s5P1: (siteName) => (
       <>
         Gli strumenti di ricerca hotel, voli, autonoleggio e prenotazione attività su questo sito reindirizzano
@@ -759,7 +759,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Qualsiasi contratto per servizi di viaggio, alloggio, voli, autonoleggio, tour, è concluso direttamente
+        Qualsiasi contratto per servizi di viaggio (alloggio, voli, autonoleggio, tour) è concluso direttamente
         tra Lei e il relativo fornitore terzo, secondo i suoi termini e la sua informativa sulla privacy.
         Si applicano le sue regole di cancellazione, rimborso e tutela del consumatore, non le nostre. Il diritto
         di recesso finlandese previsto dal <em>kuluttajansuojalaki 6 luku</em> si esercita nei confronti del
@@ -822,7 +822,7 @@ const COPY: Record<Lang, TermsCopy> = {
         brengt u naar externe websites die zijn onderworpen aan hun eigen voorwaarden en privacybeleid.
       </>
     ),
-    s5Title: '5. Diensten van derden, wij zijn geen handelaar',
+    s5Title: '5. Diensten van derden: wij zijn geen handelaar',
     s5P1: (siteName) => (
       <>
         De hotelzoekmachine, vluchtzoekmachine, autoverhuur- en activiteitenboekingstools op deze site verwijzen
@@ -834,7 +834,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Elk contract voor reisdiensten, accommodatie, vluchten, autoverhuur, tours, wordt rechtstreeks gesloten
+        Elk contract voor reisdiensten (accommodatie, vluchten, autoverhuur, tours) wordt rechtstreeks gesloten
         tussen u en de betreffende externe aanbieder, op diens voorwaarden en onder diens privacybeleid. Hun
         annulerings-, terugbetalings- en consumentenbeschermingsregels zijn van toepassing, niet de onze. Het
         Finse herroepingsrecht onder <em>kuluttajansuojalaki 6 luku</em> wordt uitgeoefend jegens de handelaar;
@@ -897,7 +897,7 @@ const COPY: Record<Lang, TermsCopy> = {
         till externa webbplatser som styrs av sina egna villkor och integritetspolicyer.
       </>
     ),
-    s5Title: '5. Tjänster från tredje part, vi är ingen återförsäljare',
+    s5Title: '5. Tjänster från tredje part: vi är ingen återförsäljare',
     s5P1: (siteName) => (
       <>
         Verktygen för hotellsökning, flygsökning, hyrbil och aktivitetsbokning på den här webbplatsen omdirigerar till
@@ -909,7 +909,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Alla avtal om resetjänster, boende, flyg, hyrbil, turer, ingås direkt mellan dig och den relevanta
+        Alla avtal om resetjänster (boende, flyg, hyrbil, turer) ingås direkt mellan dig och den relevanta
         tredjepartsleverantören, enligt dennes villkor och integritetspolicy. Deras regler för avbokning,
         återbetalning och konsumentskydd gäller, inte våra. Den finska konsumentens ångerrätt enligt{' '}
         <em>kuluttajansuojalaki 6 luku</em> (konsumentskyddslagen kapitel 6) utövas gentemot handlaren; {siteName} har ingen roll i den processen.
