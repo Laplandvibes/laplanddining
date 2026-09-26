@@ -1,0 +1,179 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Uutisosio (/news) — laplanddining.com, 26.9.2026.
+
+   Rakenne on kopioitu laplandstays.comin osiosta (25.9.2026), joka kopioi sen
+   laplandnature.comista ja se laplandflights.fi:stä (18.9.2026). Värit ovat tämän
+   sivuston omat.
+
+   🔴 TÄMÄ SIVUSTO ON TUMMA, toisin kuin nature ja stays. Sivun pohja on verkoston
+   `deep-night` #0F172A, ja jutun runko istuu KERMANVÄRISELLÄ ARKILLA — täsmälleen
+   sama kuvio kuin sivustolla on jo käytössä ravintolakorteissa ja kaupunkisivuilla
+   (`src/index.css`: *"cream cards float on the dark page"*), ja sama idea kuin hubin
+   blogin hyväksytyssä arkissa. Sivu, hero, listaus, "muita uutisia" ja sivulinkit
+   pysyvät tummina; kermalla on vain jutun teksti ja korttien tekstiosa.
+
+   Kaksi asiaa, jotka flightsilla tulivat sen omasta flights.css:stä ja jotka on
+   siksi määriteltävä tässä: .wrap, .serif, .eyebrow, .crumbs, .sechead.
+
+   🔴 Navi on kiinteä (Navbar.tsx `fixed`), mutta App.tsx antaa jokaiselle sivulle
+   `pt-16`, joten osio ei varaa navitilaa itse — toisin kuin staysilla.
+
+   Otsikot Bebas Neue (.serif) ≥ 26 px, alle ~18 px otsikot DM Sans 700 (CLAUDE.md).
+   🔴 Kontrastit mitattu ennen kirjoittamista, ei silmällä: keltainen #F59E0B jää
+   kermalla 2,15:1:een ⇒ kermalla käytetään sivuston omaa #B45309 (4,71:1) ja
+   tummalla #FCD34D (13,3:1). Vaalea muste kermalla #6F5A49 (6,09:1); sivuston
+   `--color-warm-muted` #87705C olisi 4,37:1 eli alle AA:n leipätekstissä.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.nw{
+  --night:#0F172A;
+  --night2:#16213B;
+  --ink:#1C1410;           /* muste kermalla  */
+  --ink2:#44362A;
+  --muted:#6F5A49;
+  --cream:#FAF7F2;         /* arkki ja kortit */
+  --line:#E7DFD3;          /* viiva kermalla  */
+  --accent:#B45309;        /* linkki kermalla */
+  --link:#B45309;
+  --onNight:#F4F7FB;       /* muste tummalla  */
+  --onNightMuted:#B8C2D0;
+  --gold:#FCD34D;          /* korostus tummalla */
+  --lineNight:rgba(255,255,255,.14);
+  background:var(--night);
+  color:var(--onNight);
+}
+.nw .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.nw-wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.nw .nw-narrow{max-width:960px}
+.nw .serif{font-family:var(--font-heading),'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.02em}
+.nw .eyebrow{font:600 12px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.nw .crumbs{display:flex;flex-wrap:wrap;gap:4px 8px;font-size:13.5px;line-height:1.5;margin-bottom:14px}
+.nw .crumbs a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.nw .crumbs .sep{margin:0 6px;opacity:.6}
+.nw .sechead{margin-bottom:18px}
+
+/* ── Osion etusivun yläpalkki ────────────────────────────────────────────── */
+.nw .nw-head{position:relative;color:#fff;padding:64px 0 56px;overflow:hidden;
+  background:radial-gradient(70% 90% at 86% -10%,rgba(245,158,11,.26) 0%,rgba(245,158,11,0) 62%),
+             radial-gradient(60% 70% at 0% 110%,rgba(0,47,108,.34) 0%,rgba(0,47,108,0) 60%),
+             linear-gradient(180deg,#0F172A 0%,#16213B 100%)}
+.nw .nw-head .wrap{position:relative}
+.nw .nw-head .eyebrow{color:var(--gold);display:block}
+.nw .nw-head .crumbs{color:var(--onNightMuted)}
+.nw .nw-head .crumbs a{color:#fff}
+.nw .nw-h1{font-size:clamp(42px,6.4vw,76px);line-height:.98;margin-top:10px;max-width:24ch;text-wrap:balance}
+/* 24ch eikä 18ch: 18ch pakotti 1440 px:llä pitkän otsikon katkeamaan kesken sanan, koska
+   sivuston oma hyphenate-limit-chars sallii tavutuksen 12 merkin sanoista (mitattu staysilla
+   26.9.2026). Juttusivun hero pitää oman 20ch-rajansa. */
+.nw .nw-lead{color:#D7DFEA;font-size:clamp(16px,2vw,19px);line-height:1.55;max-width:62ch;margin-top:16px}
+
+/* CJK: Bebas ei sisällä CJK-merkkejä ⇒ varafontti, eikä versaalimitoitus sovi niille. */
+.nw .nw-h1:lang(ja),.nw .nw-h1:lang(zh),.nw .nw-h1:lang(ko){font-family:var(--font-body),system-ui,sans-serif;font-weight:700;line-height:1.25;font-size:clamp(28px,4.4vw,48px);max-width:none;letter-spacing:0}
+.nw .nw-h1:lang(ko){word-break:keep-all}
+.nw .nw-h1:lang(ja){word-break:auto-phrase}
+
+/* ── Juttusivun hero: kuva koko leveydelle, otsikko kuvan päällä ─────────── */
+.nw .nw-art{position:relative;min-height:min(78vh,700px);display:flex;align-items:flex-end;overflow:hidden;background:#0F172A;color:#fff;padding:64px 0 52px}
+.nw .nw-art-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nw .nw-art-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,28,.94) 0%,rgba(10,15,28,.80) 34%,rgba(10,15,28,.26) 68%,rgba(10,15,28,.46) 100%)}
+.nw .nw-art-body{position:relative}
+.nw .nw-art .nw-h1{font-size:clamp(36px,4.8vw,62px);line-height:1;max-width:20ch;margin-top:10px;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.nw .nw-art .nw-dek{color:#EDF1F7;max-width:58ch}
+.nw .nw-art .crumbs{color:var(--onNightMuted)}
+.nw .nw-art .crumbs a{color:#fff}
+.nw .nw-kicker{font:600 12px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0}
+.nw .nw-dek{font-size:clamp(17px,2.1vw,21px);line-height:1.5;max-width:60ch;margin-top:16px}
+/* Kirjoittaja-, päivä- ja kuvatiedot ovat TUMMALLA sivulla (hero-kuvan alla), eivät arkilla. */
+.nw .nw-art-meta{padding-top:18px;padding-bottom:4px}
+/* 🔴 16 px eikä lähteen 14 px: lv_permanent_rules §33 (Vesa 20.9.2026) — kuvateksti ja
+   lähderivi OVAT leipätekstiä. Kuvakredit on lähderivi, ja 14 px:n rivi on juuri se, jonka
+   Vesa löysi blogista 23.9. Sama koskee alla olevaa lähdelistaa. */
+.nw .nw-byline{color:var(--onNightMuted);font-size:16px;line-height:1.6;margin:0}
+.nw .nw-art-cap{font-size:16px;line-height:1.55;color:var(--onNightMuted);margin-top:8px}
+.nw .nw-credit a{color:var(--onNight);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:640px){.nw .nw-art{min-height:520px;padding:40px 0 32px}.nw .nw-head{padding:44px 0 44px}}
+
+/* ── Arkki: jutun runko kermalla tummalla sivulla ────────────────────────── */
+.nw .nw-sheet{max-width:800px;margin:30px auto 0;background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4.6vw,54px);color:var(--ink)}
+/* Lapsiyhdistin (>): vain jutun omat kappaleet, ei upotuksen sisältöä. */
+.nw .nw-prose > p{font-size:18px;line-height:1.72;color:var(--ink);margin:0 0 18px}
+.nw .nw-prose > h2{font-size:clamp(30px,3.8vw,38px);line-height:1.04;color:var(--ink);margin:38px 0 12px;text-wrap:balance}
+.nw .nw-prose > h2:lang(ja),.nw .nw-prose > h2:lang(zh),.nw .nw-prose > h2:lang(ko){font-family:var(--font-body),system-ui,sans-serif;font-weight:700;font-size:24px;line-height:1.35;letter-spacing:0}
+.nw .nw-prose > ul{margin:0 0 18px;padding-left:1.25em;font-size:18px;line-height:1.65;color:var(--ink)}
+.nw .nw-prose > ul > li{margin:6px 0}
+.nw .nw-prose > .nw-note{font-size:15px;line-height:1.6;color:var(--ink2);border-left:3px solid var(--accent);padding-left:12px;margin:0 0 18px}
+.nw .nw-prose > .nw-linkp{font-size:17px}
+.nw .nw-inlink{color:var(--link);font-weight:700;text-decoration:none;border-bottom:2px solid rgba(180,83,9,.35);padding-bottom:1px}
+.nw .nw-inlink:hover{border-color:var(--link)}
+@media(max-width:640px){.nw .nw-prose > p,.nw .nw-prose > ul{font-size:17px}}
+
+/* ── Lähteet (arkin sisällä) ─────────────────────────────────────────────── */
+.nw .nw-sources{margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+.nw .nw-sources-h{font:700 12.5px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0}
+.nw .nw-sources ol{margin:12px 0 0;padding-left:20px;display:grid;gap:12px;font-size:16px;line-height:1.5;color:var(--ink2)}
+.nw .nw-src-pub{font-weight:700;color:var(--ink)}
+.nw .nw-src-date{color:var(--muted)}
+.nw .nw-sources a{color:var(--link);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+
+/* ── Kortit ja listaus ───────────────────────────────────────────────────── */
+.nw .nw-listing{padding:46px 0 12px}
+.nw .nw-listing > .wrap > .nw-card-wide{margin-bottom:24px}
+.nw .nw-grid{display:grid;gap:24px}
+.nw .nw-grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.nw .nw-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:860px){.nw .nw-grid-2,.nw .nw-grid-3{grid-template-columns:1fr}}
+.nw .nw-card{background:var(--cream);border:1px solid rgba(231,223,211,.5);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;color:var(--ink);
+  box-shadow:0 24px 60px -40px rgba(0,0,0,.7);
+  transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s cubic-bezier(.2,.8,.2,1)}
+.nw .nw-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px -24px rgba(0,0,0,.75)}
+@media(prefers-reduced-motion:reduce){.nw .nw-card,.nw .nw-card:hover{transition:none;transform:none}}
+.nw .nw-card-img{display:block;aspect-ratio:16/9;background:#1E293B;overflow:hidden}
+.nw .nw-card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.nw .nw-card-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.nw .nw-card-meta{font:600 12px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.5;margin:0}
+.nw .nw-card-title{font-size:clamp(28px,2.5vw,34px);line-height:1.02;color:var(--ink);margin:10px 0 0;text-wrap:balance}
+.nw .nw-card-title a{color:inherit;text-decoration:none}
+.nw .nw-card-title a:hover{color:var(--link)}
+.nw .nw-card-title:lang(ja),.nw .nw-card-title:lang(zh),.nw .nw-card-title:lang(ko){font-family:var(--font-body),system-ui,sans-serif;font-weight:700;font-size:22px;line-height:1.4;letter-spacing:0}
+.nw .nw-card-dek{color:var(--ink2);font-size:16px;line-height:1.55;margin:10px 0 0;flex:1}
+.nw .nw-card-more{align-self:flex-start;margin-top:16px;color:var(--link);font-weight:700;font-size:15px;text-decoration:none;border-bottom:2px solid rgba(180,83,9,.35);padding-bottom:1px}
+.nw .nw-card-wide{flex-direction:row}
+.nw .nw-card-wide .nw-card-img{flex:0 0 56%;aspect-ratio:auto;min-height:330px}
+.nw .nw-card-wide .nw-card-body{padding:34px 36px;justify-content:center}
+.nw .nw-card-wide .nw-card-title{font-size:clamp(32px,3.2vw,44px)}
+.nw .nw-card-wide .nw-card-dek{flex:0}
+@media(max-width:860px){
+  .nw .nw-card-wide{flex-direction:column}
+  .nw .nw-card-wide .nw-card-img{flex:none;aspect-ratio:16/9;min-height:0}
+  .nw .nw-card-wide .nw-card-body{padding:22px 24px 24px}
+}
+
+/* ── Osion etusivun "näin raportoimme" (tummalla) ────────────────────────── */
+.nw .nw-about{padding:26px 0 56px}
+.nw .nw-about-in{max-width:800px;border-top:1px solid var(--lineNight);padding-top:26px}
+.nw .nw-about-h{font:700 12.5px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0}
+.nw .nw-about p{color:var(--onNightMuted);font-size:16px;line-height:1.6;margin:8px 0 6px;max-width:66ch}
+.nw .nw-about .nw-inlink{color:var(--gold);border-bottom-color:rgba(252,211,77,.4)}
+
+/* ── Juttusivun "muita uutisia", etusivun nosto, sivulinkit (tummalla) ───── */
+.nw .nw-related{padding:52px 0 10px}
+.nw .nw-related-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;margin-bottom:18px}
+.nw .nw-related-head h2{font-size:clamp(30px,4vw,44px);color:var(--onNight);margin:0}
+.nw .nw-related .nw-inlink{color:var(--gold);border-bottom-color:rgba(252,211,77,.4)}
+.nw .nw-teaser{padding:64px 0 20px}
+.nw .nw-teaser .sechead .eyebrow{display:block;color:var(--gold)}
+.nw .nw-teaser .sechead h2{font-size:clamp(30px,4vw,44px);line-height:1.02;color:var(--onNight);margin:8px 0 0}
+.nw .nw-more{text-align:center;margin-top:24px}
+.nw .nw-more .nw-inlink{color:var(--gold);border-bottom-color:rgba(252,211,77,.4)}
+.nw .nw-morepages{padding:36px 0 56px}
+.nw .nw-morepages ul{display:flex;flex-wrap:wrap;gap:10px 12px;list-style:none;margin:0;padding:24px 0 0;border-top:1px solid var(--lineNight)}
+/* 🔴 Pilleri ei saa olla `white-space:nowrap` — verkoston alatunnisteessa se valui naapurin
+   päälle 22 sivustolla (footer_pillerit_rivitys_20260924). Pitkä nimi rivittyy pillerin sisällä. */
+.nw .nw-morepages a{display:inline-block;padding:9px 15px;border:1px solid var(--lineNight);border-radius:999px;background:rgba(255,255,255,.04);
+  color:var(--onNight);font-size:15px;font-weight:600;text-decoration:none;line-height:1.3;max-width:100%;overflow-wrap:break-word}
+.nw .nw-morepages a:hover{border-color:var(--gold);color:var(--gold)}
+.nw .nw-morepages a:lang(ko){word-break:keep-all}
+@media(max-width:640px){
+  .nw .nw-sheet{margin-top:22px;border-radius:16px;margin-left:12px;margin-right:12px}
+  .nw .nw-card-body{padding:20px 20px 22px}
+}

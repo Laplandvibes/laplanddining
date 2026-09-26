@@ -23,6 +23,8 @@ const MidnightSunDining = lazy(() => import('./pages/MidnightSunDining'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 const Terms = lazy(() => import('./pages/Terms'))
 const CookiePolicy = lazy(() => import('./pages/CookiePolicy'))
+const NewsIndex = lazy(() => import('./news/NewsIndex'))
+const NewsArticle = lazy(() => import('./news/NewsArticle'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 /**
  * 🔴 The app layout's landmark, EXCEPT on /terms.
@@ -51,6 +53,7 @@ function useFooterPillarLinks() {
     { name: tx('footer.pillars.midnightSun', 'Midnight Sun Dining'), href: '/midnight-sun-dining' },
     { name: tx('footer.pillars.foodHistory', 'Food Story'),          href: '/food-history' },
     { name: tx('footer.pillars.localFood',   'Local Food'),          href: '/local-food' },
+    { name: tx('footer.pillars.news',        'News'),                href: '/news' },
   ];
 }
 
@@ -170,6 +173,11 @@ function AppLayout() {
             <Route key={`${prefix}/midnight-sun-dining`} path={`${prefix}/midnight-sun-dining`} element={<MidnightSunDining />} />,
             <Route key={`${prefix}/food-history`} path={`${prefix}/food-history`} element={<FoodHistory />} />,
             <Route key={`${prefix}/local-food`} path={`${prefix}/local-food`} element={<LocalFood />} />,
+            // Uutisosio (src/news/) — sama reittipari jokaiselle kieliprefiksille.
+            // 🔴 Lista tulee samasta järjestyksestä kuin scripts/news-prerender.mjs:n LOCALES;
+            // käsin kirjoitettuna yhden kielen puuttuminen olisi hiljainen 404 vain siellä.
+            <Route key={`${prefix}/news`} path={`${prefix}/news`} element={<NewsIndex />} />,
+            <Route key={`${prefix}/news/:slug`} path={`${prefix}/news/:slug`} element={<NewsArticle />} />,
             <Route key={`${prefix}/about`} path={`${prefix}/about`} element={<About />} />,
             <Route key={`${prefix}/privacy`} path={`${prefix}/privacy`} element={<PrivacyPolicy />} />,
             <Route key={`${prefix}/terms`} path={`${prefix}/terms`} element={<Terms />} />,

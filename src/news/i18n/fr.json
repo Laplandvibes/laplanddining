@@ -1,0 +1,27 @@
+{
+  "section": "Actualité des restaurants",
+  "nav": "Actualités",
+  "index": {
+    "seoTitle": "Actualité des restaurants de Laponie, sourcée",
+    "description": "Les informations qui changent le choix de la table en Laponie finlandaise. Chaque article est écrit à partir de la source d’origine, citée, datée et liée.",
+    "h1": "Actualité des restaurants de Laponie",
+    "lead": "Ce qui ouvre, change et ferme dans les restaurants de Laponie, écrit à partir des sources d’origine. Chaque article cite et relie ce sur quoi il s’appuie.",
+    "aboutTitle": "Notre méthode",
+    "aboutText": "Nous ouvrons chaque source avant d’écrire et ne rapportons que ce qu’elle dit. Lorsqu’un prix, une date d’ouverture ou un horaire manque à la source, nous le disons au lieu de combler le vide.",
+    "allRoutes": "Parcourir les restaurants"
+  },
+  "ui": {
+    "home": "Accueil",
+    "readMore": "Lire l’article",
+    "published": "Publié",
+    "updated": "Mis à jour",
+    "byline": "Rédaction LaplandDining",
+    "sources": "Sources",
+    "source": "Source",
+    "read": "consulté le",
+    "photo": "Photo",
+    "latest": "Dernières actualités des restaurants",
+    "allNews": "Toute l’actualité des restaurants",
+    "moreNews": "Plus d’actualités des restaurants"
+  }
+}

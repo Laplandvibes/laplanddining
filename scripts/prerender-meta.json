@@ -1,0 +1,102 @@
+{
+  "/news": {
+    "en": {
+      "title": "Lapland restaurant news, with sources",
+      "description": "News that changes where you book a table in Finnish Lapland. Every story is written from the original source, which is named, dated and linked."
+    },
+    "fi": {
+      "title": "Lapin ravintolauutiset lähteineen",
+      "description": "Uutiset, jotka vaikuttavat siihen mistä kannattaa varata pöytä Lapissa. Jokainen juttu on kirjoitettu alkuperäisestä lähteestä, joka on nimetty ja linkitetty."
+    },
+    "de": {
+      "title": "Restaurantnews aus Lappland, mit Quellen",
+      "description": "Nachrichten, die beeinflussen, wo Sie in Finnisch-Lappland einen Tisch reservieren. Jeder Beitrag beruht auf der Originalquelle, die genannt und verlinkt wird."
+    },
+    "ja": {
+      "title": "ラップランドのレストランニュース（出典つき）",
+      "description": "フィンランド・ラップランドでどの店を予約するかの判断が変わるニュースをまとめています。どの記事も一次情報をもとに書き、出典を明記し、日付とリンクを添えます。"
+    },
+    "es": {
+      "title": "Noticias de restaurantes de Laponia, con fuentes",
+      "description": "Las noticias que cambian dónde reservar mesa en la Laponia finlandesa. Cada texto se escribe a partir de la fuente original, que se cita, se fecha y se enlaza."
+    },
+    "pt-BR": {
+      "title": "Notícias de restaurantes da Lapônia, com fontes",
+      "description": "As notícias que mudam onde você reserva mesa na Lapônia finlandesa. Cada texto é escrito a partir da fonte original, que é citada, datada e vinculada."
+    },
+    "zh-CN": {
+      "title": "拉普兰餐厅新闻（附出处）",
+      "description": "这些消息会改变你在芬兰拉普兰订哪一张餐桌：哪家新开、哪家换了主厨、哪家关门。每篇报道都依据原始来源撰写，注明出处与日期，并附上链接，方便你自己核对。"
+    },
+    "ko": {
+      "title": "라플란드 레스토랑 뉴스, 출처 표기",
+      "description": "핀란드 라플란드에서 어느 식당을 예약할지 판단이 달라지는 소식을 모읍니다. 모든 기사는 원출처를 바탕으로 쓰고, 출처와 날짜를 밝히며 링크합니다."
+    },
+    "fr": {
+      "title": "Actualité des restaurants de Laponie, sourcée",
+      "description": "Les informations qui changent le choix de la table en Laponie finlandaise. Chaque article est écrit à partir de la source d’origine, citée, datée et liée."
+    },
+    "it": {
+      "title": "Notizie sui ristoranti della Lapponia, con fonti",
+      "description": "Le notizie che cambiano la scelta del tavolo nella Lapponia finlandese. Ogni articolo nasce dalla fonte originale, che viene citata, datata e collegata."
+    },
+    "nl": {
+      "title": "Restaurantnieuws uit Lapland, met bronnen",
+      "description": "Nieuws dat bepaalt waar u in Fins Lapland een tafel reserveert. Elk artikel is geschreven vanuit de oorspronkelijke bron, die wordt genoemd en gelinkt."
+    },
+    "sv": {
+      "title": "Restaurangnyheter från Lappland, med källor",
+      "description": "Nyheter som påverkar var du bokar bord i finska Lappland. Varje text är skriven utifrån originalkällan, som namnges, dateras och länkas."
+    }
+  },
+  "/news/gallis-rovaniemi-bon-bistro-levi": {
+    "en": {
+      "title": "New Lapland restaurants: Gallis and Bon Bistro Levi",
+      "description": "Rovaniemi’s Gallis says diners who are not hotel guests are welcome, and Bon Bistro takes over Levinraitti 1 in Levi. What is confirmed and what is not."
+    },
+    "fi": {
+      "title": "Ravintolat Rovaniemellä ja Levillä: kaksi uutista",
+      "description": "Rovaniemen Gallis sanoo ottavansa vastaan muitakin kuin hotellivieraita, ja Bon Bistro avautuu Levinraitti 1:een. Mikä on varmaa ja mikä ei."
+    },
+    "de": {
+      "title": "Neue Restaurants: Gallis und Bon Bistro in Levi",
+      "description": "Gallis in Rovaniemi sagt, auch Gäste ohne Hotelzimmer seien willkommen, und Bon Bistro zieht in die Levinraitti 1 in Levi. Was feststeht und was nicht."
+    },
+    "ja": {
+      "title": "ラップランドの新店：ガリスとボン・ビストロ",
+      "description": "ロヴァニエミのガリスは宿泊客以外も歓迎だと明言し、レヴィではボン・ビストロがレヴィンライッティ1番地に入ります。確定していることと、していないこと。"
+    },
+    "es": {
+      "title": "Nuevos restaurantes: Gallis y Bon Bistro en Levi",
+      "description": "Gallis, en Rovaniemi, dice que también son bienvenidos quienes no se alojan allí, y Bon Bistro ocupará Levinraitti 1 en Levi. Qué está confirmado y qué no."
+    },
+    "pt-BR": {
+      "title": "Novos restaurantes: Gallis e Bon Bistro em Levi",
+      "description": "O Gallis, em Rovaniemi, diz receber também quem não está hospedado ali, e o Bon Bistro vai ocupar a Levinraitti 1 em Levi. O que está confirmado e o que não."
+    },
+    "zh-CN": {
+      "title": "拉普兰新餐厅：Gallis与莱维Bon Bistro",
+      "description": "罗瓦涅米的Gallis说不住店的客人同样欢迎，莱维的Bon Bistro将进驻Levinraitti 1号，目标是赶上世界杯。哪些已经确定，哪些还没有，我们逐条写明。"
+    },
+    "ko": {
+      "title": "라플란드 새 식당: 갈리스와 본 비스트로",
+      "description": "로바니에미의 갈리스는 숙박객이 아니어도 환영한다고 밝혔고, 레비에서는 본 비스트로가 레비라이티 1번지에 들어섭니다. 확정된 것과 아닌 것."
+    },
+    "fr": {
+      "title": "Nouveaux restaurants : Gallis et Bon Bistro à Levi",
+      "description": "Le Gallis de Rovaniemi accueille aussi les clients extérieurs, et Bon Bistro s’installe au Levinraitti 1 à Levi. Ce qui est sûr et ce qui ne l’est pas."
+    },
+    "it": {
+      "title": "Nuovi ristoranti: Gallis e Bon Bistro a Levi",
+      "description": "Gallis, a Rovaniemi, dice di accogliere anche chi non alloggia in hotel, e Bon Bistro apre in Levinraitti 1 a Levi. Che cosa è confermato e che cosa no."
+    },
+    "nl": {
+      "title": "Nieuwe restaurants: Gallis en Bon Bistro in Levi",
+      "description": "Gallis in Rovaniemi zegt dat ook gasten zonder hotelkamer welkom zijn, en Bon Bistro betrekt Levinraitti 1 in Levi. Wat vaststaat en wat niet."
+    },
+    "sv": {
+      "title": "Nya restauranger: Gallis och Bon Bistro i Levi",
+      "description": "Gallis i Rovaniemi säger att också gäster utan hotellrum är välkomna, och Bon Bistro flyttar in på Levinraitti 1 i Levi. Vad som är klart och vad som inte är."
+    }
+  }
+}

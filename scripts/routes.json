@@ -123,5 +123,35 @@
     "harvestFiles": [
       "src/shared/Legal/CookieContent.tsx"
     ]
+  },
+  {
+    "path": "/news",
+    "fallbackTitle": "Lapland restaurant news, with sources",
+    "fallbackDescription": "News that changes where you book a table in Finnish Lapland. Every story is written from the original source, which is named, dated and linked.",
+    "ogImage": "/og/news.jpg",
+    "ogCard": {
+      "hero": "/images/news/levi-village-centre-2026.webp",
+      "line": "Two openings, two different stages"
+    },
+    "harvestRecord": {
+      "file": "node_modules/.cache/lv-news/_index/{lang}.json",
+      "key": "news",
+      "mode": "jsonFile"
+    }
+  },
+  {
+    "path": "/news/gallis-rovaniemi-bon-bistro-levi",
+    "fallbackTitle": "New Lapland restaurants: Gallis and Bon Bistro Levi",
+    "fallbackDescription": "Rovaniemi’s Gallis says diners who are not hotel guests are welcome, and Bon Bistro takes over Levinraitti 1 in Levi. What is confirmed and what is not.",
+    "ogImage": "/og/news-gallis-rovaniemi-bon-bistro-levi.jpg",
+    "ogCard": {
+      "hero": "/images/news/levi-village-centre-2026.webp",
+      "line": "Two openings, two different stages"
+    },
+    "harvestRecord": {
+      "file": "node_modules/.cache/lv-news/gallis-rovaniemi-bon-bistro-levi/{lang}.json",
+      "key": "gallis-rovaniemi-bon-bistro-levi",
+      "mode": "jsonFile"
+    }
   }
 ]

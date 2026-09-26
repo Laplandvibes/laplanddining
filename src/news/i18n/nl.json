@@ -1,0 +1,27 @@
+{
+  "section": "Restaurantnieuws",
+  "nav": "Nieuws",
+  "index": {
+    "seoTitle": "Restaurantnieuws uit Lapland, met bronnen",
+    "description": "Nieuws dat bepaalt waar u in Fins Lapland een tafel reserveert. Elk artikel is geschreven vanuit de oorspronkelijke bron, die wordt genoemd en gelinkt.",
+    "h1": "Restaurantnieuws uit Lapland",
+    "lead": "Wat opent, verandert en sluit in de restaurants van Lapland, geschreven vanuit de oorspronkelijke bronnen. Elk artikel noemt en linkt waarop het is gebaseerd.",
+    "aboutTitle": "Zo werken wij",
+    "aboutText": "Wij openen elke bron voordat wij schrijven en geven alleen weer wat daarin staat. Ontbreekt in de bron een prijs, een openingsdatum of een openingstijd, dan zeggen wij dat in plaats van het gat te vullen.",
+    "allRoutes": "Bekijk de restaurants"
+  },
+  "ui": {
+    "home": "Home",
+    "readMore": "Lees het artikel",
+    "published": "Gepubliceerd",
+    "updated": "Bijgewerkt",
+    "byline": "LaplandDining-redactie",
+    "sources": "Bronnen",
+    "source": "Bron",
+    "read": "geraadpleegd op",
+    "photo": "Foto",
+    "latest": "Nieuwste restaurantnieuws",
+    "allNews": "Al het restaurantnieuws",
+    "moreNews": "Meer restaurantnieuws"
+  }
+}

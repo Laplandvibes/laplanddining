@@ -239,5 +239,86 @@
         "samaKuinKesa": true
       }
     }
+  },
+  "news-gallis-rovaniemi-bon-bistro-levi": {
+    "route": "/news/gallis-rovaniemi-bon-bistro-levi",
+    "line": "Two openings, two different stages",
+    "kaudet": {
+      "summer": {
+        "hero": "/images/news/levi-village-centre-2026.webp",
+        "bytes": 176435,
+        "sha256": "7bf2e9b8930dd480901bf32b763708cfe6f0ed0ca22d877a21a7b39f4696b64e",
+        "heroSha": "535efe38594e7b92",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 16927,
+        "inkBox": [
+          357,
+          493,
+          841,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 84.4,
+        "centerSq": 92.4,
+        "photoRegion": 101.4,
+        "photoRegionRef": 101.4,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 486,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      },
+      "winter": {
+        "hero": "/images/news/levi-village-centre-2026.webp",
+        "bytes": 176435,
+        "sha256": "7bf2e9b8930dd480901bf32b763708cfe6f0ed0ca22d877a21a7b39f4696b64e",
+        "heroSha": "535efe38594e7b92",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 16927,
+        "inkBox": [
+          357,
+          493,
+          841,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 84.4,
+        "centerSq": 92.4,
+        "photoRegion": 101.4,
+        "photoRegionRef": 101.4,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 486,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": [],
+        "samaKuinKesa": true
+      }
+    }
   }
 }

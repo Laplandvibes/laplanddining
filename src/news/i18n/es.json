@@ -1,0 +1,27 @@
+{
+  "section": "Noticias de restaurantes",
+  "nav": "Noticias",
+  "index": {
+    "seoTitle": "Noticias de restaurantes de Laponia, con fuentes",
+    "description": "Las noticias que cambian dónde reservar mesa en la Laponia finlandesa. Cada texto se escribe a partir de la fuente original, que se cita, se fecha y se enlaza.",
+    "h1": "Noticias de restaurantes de Laponia",
+    "lead": "Qué abre, qué cambia y qué cierra en los restaurantes de Laponia, escrito a partir de las fuentes originales. Cada texto cita y enlaza aquello en lo que se basa.",
+    "aboutTitle": "Cómo trabajamos",
+    "aboutText": "Abrimos cada fuente antes de escribir y contamos solo lo que dice. Si en la fuente falta un precio, una fecha de apertura o un horario, lo decimos en lugar de rellenar el hueco.",
+    "allRoutes": "Ver los restaurantes"
+  },
+  "ui": {
+    "home": "Inicio",
+    "readMore": "Leer el artículo",
+    "published": "Publicado",
+    "updated": "Actualizado",
+    "byline": "Redacción de LaplandDining",
+    "sources": "Fuentes",
+    "source": "Fuente",
+    "read": "consultado el",
+    "photo": "Foto",
+    "latest": "Últimas noticias de restaurantes",
+    "allNews": "Todas las noticias de restaurantes",
+    "moreNews": "Más noticias de restaurantes"
+  }
+}

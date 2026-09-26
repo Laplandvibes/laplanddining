@@ -1,0 +1,27 @@
+{
+  "section": "Restaurangnyheter",
+  "nav": "Nyheter",
+  "index": {
+    "seoTitle": "Restaurangnyheter från Lappland, med källor",
+    "description": "Nyheter som påverkar var du bokar bord i finska Lappland. Varje text är skriven utifrån originalkällan, som namnges, dateras och länkas.",
+    "h1": "Restaurangnyheter från Lappland",
+    "lead": "Vad som öppnar, ändras och stänger bland Lapplands restauranger, skrivet utifrån originalkällorna. Varje text namnger och länkar det den bygger på.",
+    "aboutTitle": "Så gör vi nyheterna",
+    "aboutText": "Vi öppnar varje källa innan vi skriver och återger bara det som står där. Saknas ett pris, ett öppningsdatum eller en öppettid i källan säger vi det i stället för att fylla luckan.",
+    "allRoutes": "Bläddra bland restaurangerna"
+  },
+  "ui": {
+    "home": "Startsida",
+    "readMore": "Läs texten",
+    "published": "Publicerad",
+    "updated": "Uppdaterad",
+    "byline": "LaplandDining-redaktionen",
+    "sources": "Källor",
+    "source": "Källa",
+    "read": "läst",
+    "photo": "Foto",
+    "latest": "Senaste restaurangnyheterna",
+    "allNews": "Alla restaurangnyheter",
+    "moreNews": "Fler restaurangnyheter"
+  }
+}

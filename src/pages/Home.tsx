@@ -17,6 +17,14 @@ import HomeAdSlots from '../shared/HomeAdSlots';
 import { AD_SLOTS } from '../data/partners';
 import GygPicks from '../components/GygPicks';
 import { AppPromoHero } from '../components/AppPromo';
+import { lazy, Suspense } from 'react';
+
+/**
+ * Uutisnosto (src/news/): laiskasti ladattuna, jotta etusivun nippu ei kanna
+ * uutisosion koodia eika 12 kielen tekstejä. `.nw` antaa osion omat muuttujat
+ * ja tumman pohjan — sama kuori kuin /news-sivuilla (laplandnature 24.9.2026).
+ */
+const LatestNews = lazy(() => import('../news/LatestNews'));
 
 interface CuisineCardI18n { title: string; desc: string }
 interface FAQItemI18n { question: string; answer: string }
@@ -346,6 +354,12 @@ export default function Home() {
           🔴 Leveyskehys pakollinen: AppPromoHero on täysleveä komponentti, ja
           ilman konttia kortti venyi 2 000 px näytöllä laidasta laitaan
           (Vesa 3.8.: "miksi appi mainos venyy koko näytön??"). */}
+      <div className="nw">
+        <Suspense fallback={<div style={{ minHeight: 420 }} />}>
+          <LatestNews />
+        </Suspense>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AppPromoHero />
       </div>

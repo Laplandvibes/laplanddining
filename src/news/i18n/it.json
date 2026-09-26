@@ -1,0 +1,27 @@
+{
+  "section": "Notizie sui ristoranti",
+  "nav": "Notizie",
+  "index": {
+    "seoTitle": "Notizie sui ristoranti della Lapponia, con fonti",
+    "description": "Le notizie che cambiano la scelta del tavolo nella Lapponia finlandese. Ogni articolo nasce dalla fonte originale, che viene citata, datata e collegata.",
+    "h1": "Notizie sui ristoranti della Lapponia",
+    "lead": "Che cosa apre, cambia e chiude nei ristoranti della Lapponia, scritto a partire dalle fonti originali. Ogni articolo cita e collega ciò su cui si basa.",
+    "aboutTitle": "Come lavoriamo",
+    "aboutText": "Apriamo ogni fonte prima di scrivere e riportiamo solo ciò che dice. Se nella fonte mancano un prezzo, una data di apertura o un orario, lo diciamo invece di colmare il vuoto.",
+    "allRoutes": "Sfoglia i ristoranti"
+  },
+  "ui": {
+    "home": "Home",
+    "readMore": "Leggi l’articolo",
+    "published": "Pubblicato",
+    "updated": "Aggiornato",
+    "byline": "Redazione LaplandDining",
+    "sources": "Fonti",
+    "source": "Fonte",
+    "read": "consultato il",
+    "photo": "Foto",
+    "latest": "Ultime notizie sui ristoranti",
+    "allNews": "Tutte le notizie sui ristoranti",
+    "moreNews": "Altre notizie sui ristoranti"
+  }
+}

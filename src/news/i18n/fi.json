@@ -1,0 +1,27 @@
+{
+  "section": "Ravintolauutiset",
+  "nav": "Uutiset",
+  "index": {
+    "seoTitle": "Lapin ravintolauutiset lähteineen",
+    "description": "Uutiset, jotka vaikuttavat siihen mistä kannattaa varata pöytä Lapissa. Jokainen juttu on kirjoitettu alkuperäisestä lähteestä, joka on nimetty ja linkitetty.",
+    "h1": "Lapin ravintolauutiset",
+    "lead": "Mikä avautuu, muuttuu ja sulkeutuu Lapin ravintoloissa. Jutut kirjoitetaan alkuperäisistä lähteistä, ja jokainen juttu nimeää ja linkittää sen mihin se perustuu.",
+    "aboutTitle": "Näin teemme uutiset",
+    "aboutText": "Avaamme jokaisen lähteen ennen kirjoittamista ja kerromme vain sen, mitä lähde sanoo. Jos hinta, avauspäivä tai aukioloaika puuttuu lähteestä, sanomme sen emmekä täytä aukkoa.",
+    "allRoutes": "Selaa ravintoloita"
+  },
+  "ui": {
+    "home": "Etusivu",
+    "readMore": "Lue juttu",
+    "published": "Julkaistu",
+    "updated": "Päivitetty",
+    "byline": "LaplandDining-toimitus",
+    "sources": "Lähteet",
+    "source": "Lähde",
+    "read": "luettu",
+    "photo": "Kuva",
+    "latest": "Uusimmat ravintolauutiset",
+    "allNews": "Kaikki ravintolauutiset",
+    "moreNews": "Lisää ravintolauutisia"
+  }
+}

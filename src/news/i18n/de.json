@@ -1,0 +1,27 @@
+{
+  "section": "Restaurantnews",
+  "nav": "News",
+  "index": {
+    "seoTitle": "Restaurantnews aus Lappland, mit Quellen",
+    "description": "Nachrichten, die beeinflussen, wo Sie in Finnisch-Lappland einen Tisch reservieren. Jeder Beitrag beruht auf der Originalquelle, die genannt und verlinkt wird.",
+    "h1": "Restaurantnews aus Lappland",
+    "lead": "Was in Lapplands Restaurants öffnet, sich ändert und schließt, geschrieben aus den Originalquellen. Jeder Beitrag nennt und verlinkt, worauf er beruht.",
+    "aboutTitle": "So berichten wir",
+    "aboutText": "Wir öffnen jede Quelle vor dem Schreiben und geben nur wieder, was dort steht. Fehlen in der Quelle ein Preis, ein Eröffnungsdatum oder eine Öffnungszeit, sagen wir das, statt die Lücke zu füllen.",
+    "allRoutes": "Restaurants durchsehen"
+  },
+  "ui": {
+    "home": "Startseite",
+    "readMore": "Beitrag lesen",
+    "published": "Veröffentlicht",
+    "updated": "Aktualisiert",
+    "byline": "LaplandDining-Redaktion",
+    "sources": "Quellen",
+    "source": "Quelle",
+    "read": "abgerufen",
+    "photo": "Foto",
+    "latest": "Neueste Restaurantnews",
+    "allNews": "Alle Restaurantnews",
+    "moreNews": "Weitere Restaurantnews"
+  }
+}

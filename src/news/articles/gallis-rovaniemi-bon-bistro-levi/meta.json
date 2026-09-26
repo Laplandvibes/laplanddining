@@ -1,0 +1,49 @@
+{
+  "slug": "gallis-rovaniemi-bon-bistro-levi",
+  "date": "2026-09-26",
+  "hero": {
+    "src": "/images/news/levi-village-centre-2026.webp",
+    "srcSmall": "/images/news/levi-village-centre-2026-800.webp",
+    "width": 1600,
+    "height": 900,
+    "credit": {
+      "author": "LaplandVibes",
+      "license": "© LaplandVibes",
+      "licenseUrl": "https://laplanddining.com/about",
+      "sourceUrl": "https://laplanddining.com/about",
+      "assetId": "20260720_174003",
+      "sourceName": "Levi 2026-07-20",
+      "taken": "2026-07-20",
+      "retrieved": "2026-09-26"
+    }
+  },
+  "sources": [
+    {
+      "publisher": "Avecmedia (Aromi)",
+      "title": "Lappi täyttyy laaturavintoloista: Rovaniemen Gallis yrittää hurmata turistien lisäksi paikalliset",
+      "url": "https://avecmedia.fi/ravintolat/isoja-ravintola-avauksia-lappi-rovaniemi-gallis-uutuus-yrittaa-hurmata-turistien-lisaksi-paikalliset-bon-bistro-levi/",
+      "date": "2026-09-23"
+    },
+    {
+      "publisher": "Bon Group Oy",
+      "title": "Bon Bistro avautuu Leville – ranskalainen ruokakulttuuri kohtaa pohjoisen sesongit",
+      "url": "https://www.epressi.com/tiedotteet/vapaa-aika/bon-bistro-avautuu-leville-ranskalainen-ruokakulttuuri-kohtaa-pohjoisen-sesongit.html",
+      "date": "2026-09-23"
+    },
+    {
+      "publisher": "Glass Resort",
+      "title": "Restaurant Gallis",
+      "url": "https://glassresort.fi/gallis/",
+      "read": "2026-09-26"
+    },
+    {
+      "publisher": "Levi",
+      "title": "World Cup Levi 2026",
+      "url": "https://www.levi.fi/en/events/fis-ski-alpine-world-cup-levi/",
+      "read": "2026-09-26"
+    }
+  ],
+  "ogCard": {
+    "line": "Two openings, two different stages"
+  }
+}

@@ -1,6 +1,7 @@
 // 2026-05-21: hreflang × 11 + og:locale + html lang.
 import { useEffect } from 'react';
 import { useLocale } from './useLocale';
+import { dedupeHeadLinks } from '../shared/seo/dedupeHeadLinks';
 import { SUPPORTED_LOCALES, LOCALE_BCP47, localePrefix } from './config';
 import type { Locale } from './config';
 
@@ -30,7 +31,15 @@ export default function Hreflang({
 
   useEffect(() => {
     document.documentElement.lang = LOCALE_BCP47[locale];
-  }, [locale]);
+    // 🔴 Esirenderöijä kirjoittaa kanonisen ja 13 hreflangia staattiseen HTML:ään, ja React 19
+    // nostaa tämän komponentin <link>-tagit headiin KORVAAMATTA samanlaisia. Mitattu
+    // renderöidystä sivusta 26.9.2026: 2 kanonista ja 26 hreflangia yhdellä sivulla.
+    // Arvot ovat identtisiä, joten Google siivoaa ne itse — mutta mittari ei, ja
+    // kaksoiskappale peittää sen oikean vian (sama kieli kahteen ERI osoitteeseen).
+    // Kanoninen lähde: monorepon shared/seo/dedupeHeadLinks.ts (fc9e546). Tällä sivustolla
+    // ei ole prebuild-synciä, joten src/shared/ on käsin viety kopio — korjaa juuri, vie tänne.
+    dedupeHeadLinks();
+  }, [locale, cleanPath]);
 
   return (
     <>

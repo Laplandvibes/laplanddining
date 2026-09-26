@@ -1,0 +1,27 @@
+{
+  "section": "Dining news",
+  "nav": "News",
+  "index": {
+    "seoTitle": "Lapland restaurant news, with sources",
+    "description": "News that changes where you book a table in Finnish Lapland. Every story is written from the original source, which is named, dated and linked.",
+    "h1": "Lapland restaurant news",
+    "lead": "What is opening, changing and closing in Lapland restaurants, written from the original sources. Every story names and links what it is based on.",
+    "aboutTitle": "How we report",
+    "aboutText": "We open every source before writing and report only what it says. Where a price, an opening date or an opening hour is missing from the source, we say so instead of filling the gap.",
+    "allRoutes": "Browse the restaurants"
+  },
+  "ui": {
+    "home": "Home",
+    "readMore": "Read the story",
+    "published": "Published",
+    "updated": "Updated",
+    "byline": "LaplandDining newsroom",
+    "sources": "Sources",
+    "source": "Source",
+    "read": "read",
+    "photo": "Photo",
+    "latest": "Latest restaurant news",
+    "allNews": "All restaurant news",
+    "moreNews": "More restaurant news"
+  }
+}
