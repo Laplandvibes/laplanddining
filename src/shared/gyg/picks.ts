@@ -48,7 +48,23 @@ export interface GygPick {
   path: string;
   /** Title as GetYourGuide renders it, minus the "City: " prefix. */
   title: string;
-  /** Destination shown to the visitor. */
+  /**
+   * The same title in the other eleven network locales (added 2026-09-26).
+   *
+   * 🔴 `title` above never changes: it is GetYourGuide's English name AND a
+   * lookup key (laplandgifts `pick()` matches rows by a fragment of it and
+   * breaks the gifts build on a miss; `pickIcon()` reads it). Translations
+   * sit beside it.
+   * Each one keeps the product's meaning exact — these are real bookable
+   * products, so a translation never adds a feature the English title does
+   * not state, and never a number the English title does not contain.
+   *
+   * A locale missing here renders NO card on that locale (`localizePick`
+   * returns null), never the English name — the network rule ProductRail and
+   * AdUnit follow. Render through `localizePicks()`, not `p.title`.
+   */
+  titles?: Partial<Record<GygLocale, string>>;
+  /** Destination shown to the visitor. English; other locales via PLACE_NAMES. */
   place: string;
   /**
    * GetYourGuide's "from" price on GYG_PRICE_AS_OF, euros, e.g. "188 €".
@@ -114,12 +130,173 @@ export function gygHref(pick: GygPick, lang?: string, sidOverride?: string): str
   return `${GO}/${pick.path}?${p.toString()}`;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Card text in the page's language (2026-09-26).
+//
+// Measured live 2026-09-26 with Playwright: laplandvibes.com, laplandkids.com,
+// laplandnature.com, laplandvisit.com and laplandwellness.com rendered these
+// cards in English on /de/, /ja/ and /fi/ ("Northern Lights Tour with
+// Guaranteed Sightings", place "FROM ROVANIEMI", duration "1 day", and the
+// Finnish word "LAPPI" as a place on every locale). Every consumer printed
+// `p.title`, `p.place` and `p.duration` straight from the rows below.
+//
+// Consumers now render `localizePicks(ROWS, lang)` instead of `ROWS`. It
+// returns rows whose title, place and duration are in `lang`, and DROPS a row
+// whose title or place has no translation for that locale.
+//
+// Place names follow the measured network canon (GLOSSARY-TIER3, FINDINGS-ko
+// §2, FINDINGS-zhCN cn-passi 31.8.): ja katakana, ko hangul, zh-CN the
+// established Chinese names (罗瓦涅米, 莱维, 萨利色尔卡, 于拉斯). Latin place
+// names inside a zh sentence were rewritten network-wide as a defect, so they
+// are not used here either. Brand names (Snowman World, Arctic SnowHotel,
+// Pyhäpiilo) stay Latin in every locale.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** The eleven network locales besides English, as the sites spell them. */
+export type GygLocale =
+  | "fi" | "sv" | "de" | "es" | "fr" | "it" | "nl"
+  | "ja" | "ko" | "zh-CN" | "pt-BR";
+
+const GYG_LOCALES: readonly GygLocale[] = [
+  "fi", "sv", "de", "es", "fr", "it", "nl", "ja", "ko", "zh-CN", "pt-BR",
+];
+
+const isGygLocale = (lang: string): lang is GygLocale =>
+  (GYG_LOCALES as readonly string[]).includes(lang);
+
+/** A place spelled the same in every Latin-script locale. */
+const latinPlace = (
+  name: string, ja: string, ko: string, zh: string,
+): Record<GygLocale, string> => ({
+  fi: name, sv: name, de: name, es: name, fr: name, it: name, nl: name,
+  "pt-BR": name, ja, ko, "zh-CN": zh,
+});
+
+/**
+ * `place` in the eleven locales, keyed by the English value. A place missing
+ * here drops the card on non-English pages (see localizePick), so a new row
+ * with a new place must add it here.
+ */
+export const PLACE_NAMES: Record<string, Record<GygLocale, string>> = {
+  Rovaniemi: latinPlace("Rovaniemi", "ロヴァニエミ", "로바니에미", "罗瓦涅米"),
+  Levi: latinPlace("Levi", "レヴィ", "레비", "莱维"),
+  "Saariselkä": latinPlace("Saariselkä", "サーリセルカ", "사리셀카", "萨利色尔卡"),
+  Ruka: latinPlace("Ruka", "ルカ", "루카", "鲁卡"),
+  "Kilpisjärvi": latinPlace("Kilpisjärvi", "キルピスヤルヴィ", "킬피스야르비", "基尔皮斯耶尔维"),
+  Kemi: latinPlace("Kemi", "ケミ", "케미", "凯米"),
+  "Ylläs": latinPlace("Ylläs", "ユッラス", "윌래스", "于拉斯"),
+  Inari: latinPlace("Inari", "イナリ", "이나리", "伊纳里"),
+  "From Rovaniemi": {
+    fi: "Rovaniemeltä", sv: "Från Rovaniemi", de: "Ab Rovaniemi",
+    es: "Desde Rovaniemi", fr: "Au départ de Rovaniemi", it: "Da Rovaniemi",
+    nl: "Vanuit Rovaniemi", "pt-BR": "Saindo de Rovaniemi",
+    ja: "ロヴァニエミ発", ko: "로바니에미 출발", "zh-CN": "从罗瓦涅米出发",
+  },
+  "Ivalo and Saariselkä": {
+    fi: "Ivalo ja Saariselkä", sv: "Ivalo och Saariselkä", de: "Ivalo und Saariselkä",
+    es: "Ivalo y Saariselkä", fr: "Ivalo et Saariselkä", it: "Ivalo e Saariselkä",
+    nl: "Ivalo en Saariselkä", "pt-BR": "Ivalo e Saariselkä",
+    ja: "イヴァロ、サーリセルカ", ko: "이발로·사리셀카", "zh-CN": "伊瓦洛与萨利色尔卡",
+  },
+};
+
+type DurationUnit = "h" | "min" | "day";
+
+/**
+ * How each locale writes a length. Units follow the network's own localized
+ * durations (laplandactivities data.gen.<lang>.ts, measured 2026-09-26:
+ * de "3 Std.", nl "3 uur", sv "3 timmar", ko "3시간", zh "3 小时").
+ */
+const DURATION_FORMAT: Record<"en" | GygLocale, {
+  decimal: "." | ",";
+  to: string;
+  space: boolean;
+  unit: (u: DurationUnit, one: boolean) => string;
+}> = {
+  en: { decimal: ".", to: "–", space: true, unit: (u, one) => (u === "day" ? (one ? "day" : "days") : u) },
+  fi: { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "day" ? (one ? "päivä" : "päivää") : u) },
+  sv: { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "h" ? (one ? "timme" : "timmar") : u === "day" ? (one ? "dag" : "dagar") : u) },
+  de: { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "h" ? "Std." : u === "min" ? "Min." : one ? "Tag" : "Tage") },
+  es: { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "day" ? (one ? "día" : "días") : u) },
+  fr: { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "day" ? (one ? "jour" : "jours") : u) },
+  it: { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "day" ? (one ? "giorno" : "giorni") : u) },
+  nl: { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "h" ? "uur" : u === "day" ? (one ? "dag" : "dagen") : u) },
+  "pt-BR": { decimal: ",", to: "–", space: true, unit: (u, one) => (u === "day" ? (one ? "dia" : "dias") : u) },
+  ja: { decimal: ".", to: "〜", space: false, unit: (u) => (u === "h" ? "時間" : u === "min" ? "分" : "日") },
+  ko: { decimal: ".", to: "~", space: false, unit: (u) => (u === "h" ? "시간" : u === "min" ? "분" : "일") },
+  "zh-CN": { decimal: ".", to: "–", space: true, unit: (u) => (u === "h" ? "小时" : u === "min" ? "分钟" : "天") },
+};
+
+/**
+ * A row's duration in `lang`, or undefined when the row has none or its value
+ * does not parse. The rows store GetYourGuide's value as read ("3,5 h",
+ * "6,5–7 h", "1 - 2 h", "30 min", "1 day"); the numbers are kept exactly and
+ * only the decimal mark, range dash and unit follow the locale. English is
+ * formatted too: "3,5 h" was a Finnish decimal comma on the English page.
+ */
+export function gygDuration(pick: GygPick, lang?: string): string | undefined {
+  if (!pick.duration) return undefined;
+  const loc = lang && isGygLocale(lang) ? lang : "en";
+  const m = pick.duration
+    .trim()
+    .match(/^(\d+(?:[.,]\d+)?)(?:\s*[-–]\s*(\d+(?:[.,]\d+)?))?\s*(h|min|days?)$/);
+  if (!m) return loc === "en" ? pick.duration : undefined;
+  const f = DURATION_FORMAT[loc];
+  const num = (s: string) => s.replace(/[.,]/, f.decimal);
+  const unit: DurationUnit = m[3].startsWith("day") ? "day" : (m[3] as DurationUnit);
+  const value = m[2] ? `${num(m[1])}${f.to}${num(m[2])}` : num(m[1]);
+  const one = !m[2] && Number(m[1].replace(",", ".")) === 1;
+  return `${value}${f.space ? " " : ""}${f.unit(unit, one)}`;
+}
+
+/** A row ready to render in one locale. `source` is the row as written above. */
+export interface LocalizedGygPick extends GygPick {
+  /** The untouched row: English title for title-keyed lookups such as pickIcon(). */
+  source: GygPick;
+}
+
+/**
+ * The row with title, place and duration in `lang`, or null when the title or
+ * the place has no translation for it (or `lang` is not a network locale).
+ * Null means: render nothing for this row. Never fall back to English.
+ */
+export function localizePick(pick: GygPick, lang?: string): LocalizedGygPick | null {
+  if (!lang || lang === "en") {
+    return { ...pick, duration: gygDuration(pick, "en"), source: pick };
+  }
+  if (!isGygLocale(lang)) return null;
+  const title = pick.titles?.[lang];
+  const place = PLACE_NAMES[pick.place]?.[lang];
+  if (!title || !place) return null;
+  return { ...pick, title, place, duration: gygDuration(pick, lang), source: pick };
+}
+
+/** Every row that can be shown in `lang`, in order. */
+export function localizePicks(picks: GygPick[], lang?: string): LocalizedGygPick[] {
+  return picks
+    .map((p) => localizePick(p, lang))
+    .filter((p): p is LocalizedGygPick => p !== null);
+}
+
 /** Family-bookable experiences for laplandkids.com. */
 export const KIDS_PICKS: GygPick[] = [
   {
     path: "rovaniemi-l2653/rovaniemi-reindeer-huskies-santa-claus-village-t301148",
     price: "188 €",
     title: "Reindeer, Huskies & Santa Claus Village",
+    titles: {
+      fi: "Porot, huskyt ja Joulupukin Pajakylä",
+      sv: "Renar, huskyer och Jultomtens by",
+      de: "Rentiere, Huskys und das Weihnachtsmanndorf",
+      es: "Renos, huskies y el Pueblo de Papá Noel",
+      fr: "Rennes, huskies et Village du Père Noël",
+      it: "Renne, husky e Villaggio di Babbo Natale",
+      nl: "Rendieren, husky’s en het Kerstmandorp",
+      "pt-BR": "Renas, huskies e Vila do Papai Noel",
+      ja: "トナカイ、ハスキー、サンタクロース村",
+      ko: "순록, 허스키, 산타클로스 마을",
+      "zh-CN": "驯鹿、哈士奇与圣诞老人村",
+    },
     place: "Rovaniemi",
     // duration omitted on purpose: the source value was a sales badge
     // ("#1 selling day trip"), not a length. A badge is not a duration.
@@ -129,6 +306,19 @@ export const KIDS_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/entrance-ticket-to-snowman-world-in-santa-claus-village-t404948",
     price: "37 €",
     title: "Snowman World Entry Ticket in Santa Claus Village",
+    titles: {
+      fi: "Snowman World -pääsylippu Joulupukin Pajakylässä",
+      sv: "Inträdesbiljett till Snowman World i Jultomtens by",
+      de: "Eintrittskarte für Snowman World im Weihnachtsmanndorf",
+      es: "Entrada a Snowman World en el Pueblo de Papá Noel",
+      fr: "Billet d’entrée pour Snowman World au Village du Père Noël",
+      it: "Biglietto d’ingresso per Snowman World nel Villaggio di Babbo Natale",
+      nl: "Toegangsticket voor Snowman World in het Kerstmandorp",
+      "pt-BR": "Ingresso para o Snowman World na Vila do Papai Noel",
+      ja: "サンタクロース村のSnowman World入場券",
+      ko: "산타클로스 마을 Snowman World 입장권",
+      "zh-CN": "圣诞老人村 Snowman World 门票",
+    },
     place: "Rovaniemi",
     duration: "1 day",
     sid: "kids_home_pick_snowman_world",
@@ -137,6 +327,19 @@ export const KIDS_PICKS: GygPick[] = [
     path: "saariselka-l181615/saariselka-husky-safari-with-kennel-visit-t853272",
     price: "249 €",
     title: "10 km Husky Safari with kennel visit",
+    titles: {
+      fi: "10 km:n huskysafari ja vierailu huskytarhalla",
+      sv: "Huskysafari på 10 km med kennelbesök",
+      de: "Husky-Safari über 10 km mit Besuch im Kennel",
+      es: "Safari de huskies de 10 km con visita al criadero",
+      fr: "Safari de 10 km en traîneau de huskies avec visite du chenil",
+      it: "Safari di 10 km con gli husky e visita all’allevamento",
+      nl: "Husky-safari van 10 km met bezoek aan de kennel",
+      "pt-BR": "Safári de huskies de 10 km com visita ao canil",
+      ja: "10kmのハスキーサファリ（犬舎見学付き）",
+      ko: "10km 허스키 사파리(허스키 농장 방문 포함)",
+      "zh-CN": "10 公里哈士奇雪橇之旅（含犬舍参观）",
+    },
     place: "Saariselkä",
     duration: "4 h",
     sid: "kids_home_pick_husky_kennel",
@@ -145,6 +348,19 @@ export const KIDS_PICKS: GygPick[] = [
     path: "ruka-l192178/ruka-reindeer-ride-with-snacks-and-storytime-t1106609",
     price: "77 €",
     title: "Reindeer Ride with Snacks and Storytime",
+    titles: {
+      fi: "Poroajelu, välipala ja satuhetki",
+      sv: "Renåktur med mellanmål och sagostund",
+      de: "Rentierfahrt mit Snacks und Geschichtenstunde",
+      es: "Paseo en reno con merienda y cuentacuentos",
+      fr: "Balade en renne avec goûter et heure du conte",
+      it: "Giro in renna con merenda e racconti",
+      nl: "Rendierrit met snacks en verhalenuurtje",
+      "pt-BR": "Passeio de rena com lanche e hora da história",
+      ja: "トナカイそり体験（軽食とお話の時間付き）",
+      ko: "순록 썰매 체험(간식과 이야기 시간 포함)",
+      "zh-CN": "驯鹿雪橇体验（含小吃和故事时间）",
+    },
     place: "Ruka",
     duration: "2 h",
     sid: "kids_home_pick_reindeer_storytime",
@@ -157,6 +373,19 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-drive-new-2025-snowmobiles-on-arctic-safari-bbq-t699161",
     price: "119 €",
     title: "Drive New 2025 Snowmobiles on Arctic Safari",
+    titles: {
+      fi: "Aja uusilla vuoden 2025 moottorikelkoilla arktisella safarilla",
+      sv: "Kör nya snöskotrar av 2025 års modell på arktisk safari",
+      de: "Fahren Sie neue Schneemobile, Modell 2025, auf einer arktischen Safari",
+      es: "Conduzca motonieves nuevas, modelo 2025, en un safari ártico",
+      fr: "Pilotez des motoneiges neuves, modèle 2025, lors d’un safari arctique",
+      it: "Guidi motoslitte nuove, modello 2025, in un safari artico",
+      nl: "Rijd op nieuwe sneeuwscooters van bouwjaar 2025 tijdens een arctische safari",
+      "pt-BR": "Pilote motos de neve novas, modelo 2025, em um safári ártico",
+      ja: "2025年モデルの新型スノーモービルを運転する北極圏サファリ",
+      ko: "2025년형 신형 스노모빌을 운전하는 북극 사파리",
+      "zh-CN": "驾驶 2025 款全新雪地摩托的北极探险之旅",
+    },
     place: "Rovaniemi",
     duration: "3 h",
     sid: "snowmobile_home_pick_arctic_safari_2025",
@@ -165,6 +394,19 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
     path: "sirkka-l139331/levi-forest-snowmobile-safari-t404689",
     price: "126 €",
     title: "Easy Snowmobile Safari into the Nature",
+    titles: {
+      fi: "Helppo moottorikelkkasafari luontoon",
+      sv: "Enkel snöskotersafari ut i naturen",
+      de: "Einfache Schneemobil-Safari in die Natur",
+      es: "Safari fácil en motonieve por la naturaleza",
+      fr: "Safari facile en motoneige en pleine nature",
+      it: "Safari facile in motoslitta nella natura",
+      nl: "Eenvoudige sneeuwscootersafari de natuur in",
+      "pt-BR": "Safári fácil de moto de neve pela natureza",
+      ja: "気軽なスノーモービル・サファリで大自然へ",
+      ko: "자연 속으로 떠나는 쉬운 스노모빌 사파리",
+      "zh-CN": "轻松的雪地摩托自然之旅",
+    },
     place: "Levi",
     duration: "2 h",
     sid: "snowmobile_home_pick_levi_forest",
@@ -173,6 +415,19 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
     path: "saariselka-l181615/saariselka-snowmobile-safari-on-tundra-with-bbq-t790865",
     price: "199 €",
     title: "Snowmobile Safari on Tundra",
+    titles: {
+      fi: "Moottorikelkkasafari tundralla",
+      sv: "Snöskotersafari på tundran",
+      de: "Schneemobil-Safari über die Tundra",
+      es: "Safari en motonieve por la tundra",
+      fr: "Safari en motoneige sur la toundra",
+      it: "Safari in motoslitta sulla tundra",
+      nl: "Sneeuwscootersafari over de toendra",
+      "pt-BR": "Safári de moto de neve pela tundra",
+      ja: "ツンドラを走るスノーモービル・サファリ",
+      ko: "툰드라 스노모빌 사파리",
+      "zh-CN": "苔原雪地摩托之旅",
+    },
     place: "Saariselkä",
     duration: "3,5 h",
     sid: "snowmobile_home_pick_tundra",
@@ -181,6 +436,19 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
     path: "kilpisjarvi-l146340/kilpisjarvi-border-of-three-countries-snowmobile-safari-t788580",
     price: "150 €",
     title: "Border of Three Countries Snowmobile Safari",
+    titles: {
+      fi: "Moottorikelkkasafari kolmen valtakunnan rajalle",
+      sv: "Snöskotersafari till treriksgränsen",
+      de: "Schneemobil-Safari zum Dreiländereck",
+      es: "Safari en motonieve a la frontera de los tres países",
+      fr: "Safari en motoneige jusqu’à la frontière des trois pays",
+      it: "Safari in motoslitta al confine dei tre Paesi",
+      nl: "Sneeuwscootersafari naar het drielandenpunt",
+      "pt-BR": "Safári de moto de neve até a fronteira dos três países",
+      ja: "三国国境へのスノーモービル・サファリ",
+      ko: "세 나라 국경으로 가는 스노모빌 사파리",
+      "zh-CN": "三国交界处雪地摩托之旅",
+    },
     place: "Kilpisjärvi",
     duration: "3 h",
     sid: "snowmobile_home_pick_three_countries",
@@ -197,6 +465,22 @@ export const HUB_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/northern-lights-tour-guaranteed-viewing-unlimited-mileage-t492901",
     price: "198 €",
     title: "Northern Lights Tour with Guaranteed Sightings",
+    // sv–pt-BR ja CJK samat kuin shared/resortHubs/levi.ts:n saman konseptin
+    // Levi-tuotteella t693623 (47426d9). fi sanoo "retki" eikä GYG:n "kierros",
+    // koska 8 tunnin revontulijahti ei ole kiertoajelu (natiivikatselmus 26.9.).
+    titles: {
+      fi: "Revontuliretki, jolla revontulet taataan",
+      sv: "Norrskenstur med garanterat norrsken",
+      de: "Polarlicht-Tour mit Sichtungsgarantie",
+      es: "Excursión de aurora boreal con avistamiento garantizado",
+      fr: "Excursion aux aurores boréales avec observation garantie",
+      it: "Tour dell’aurora boreale con avvistamento garantito",
+      nl: "Noorderlichttocht met gegarandeerd noorderlicht",
+      "pt-BR": "Passeio de aurora boreal com avistamento garantido",
+      ja: "オーロラ鑑賞保証付きツアー",
+      ko: "오로라 관측 보장 투어",
+      "zh-CN": "北极光观赏之旅（保证看到）",
+    },
     place: "Rovaniemi",
     duration: "8 h",
     sid: "hub_home_pick_aurora_rovaniemi",
@@ -205,6 +489,19 @@ export const HUB_PICKS: GygPick[] = [
     path: "kemi-l98127/kemi-afternoon-icebreaker-sampo-cruise-and-ice-floating-t504004",
     price: "402 €",
     title: "Icebreaker Sampo Cruise with Ice Floating",
+    titles: {
+      fi: "Jäänmurtaja Sampo -risteily ja jääkellunta",
+      sv: "Kryssning med isbrytaren Sampo där du flyter bland isflaken",
+      de: "Eisbrecherfahrt mit der Sampo und Treiben im Eiswasser",
+      es: "Crucero en el rompehielos Sampo con flotación en el hielo",
+      fr: "Croisière sur le brise-glace Sampo et flottaison dans les glaces",
+      it: "Crociera sul rompighiaccio Sampo con galleggiamento tra i ghiacci",
+      nl: "Cruise met ijsbreker Sampo en ijsdrijven",
+      "pt-BR": "Cruzeiro no quebra-gelo Sampo com flutuação no gelo",
+      ja: "砕氷船サンポ号クルーズとアイスフローティング",
+      ko: "쇄빙선 삼포호 크루즈와 아이스 플로팅",
+      "zh-CN": "桑波号破冰船巡航与冰海漂浮",
+    },
     place: "Kemi",
     duration: "6,5–7 h",
     sid: "hub_home_pick_icebreaker_sampo",
@@ -213,6 +510,20 @@ export const HUB_PICKS: GygPick[] = [
     path: "sirkka-l139331/levi-5-km-husky-sledding-ride-in-levi-t654057",
     price: "150 €",
     title: "5 km Husky Sledding Ride",
+    // Samat kuin shared/resortHubs/levi.ts:n samalla tuotteella (t654057).
+    titles: {
+      fi: "5 km:n huskykelkkaretki",
+      sv: "5 km hundspannstur med huskyer",
+      de: "Husky-Schlittenfahrt über 5 km",
+      es: "Paseo de 5 km en trineo tirado por huskies",
+      fr: "Balade de 5 km en traîneau à huskies",
+      it: "Giro di 5 km in slitta trainata dagli husky",
+      nl: "Huskysledetocht van 5 km",
+      "pt-BR": "Passeio de 5 km em trenó puxado por huskies",
+      ja: "5kmのハスキーそり体験",
+      ko: "5km 허스키 썰매 체험",
+      "zh-CN": "5 公里哈士奇雪橇体验",
+    },
     place: "Levi",
     duration: "2 h",
     sid: "hub_home_pick_husky_levi",
@@ -221,6 +532,19 @@ export const HUB_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-korouoma-canyon-frozen-waterfalls-hike-bbq-t495118",
     price: "139 €",
     title: "Korouoma Canyon Frozen Waterfalls Hike & BBQ",
+    titles: {
+      fi: "Vaellus Korouoman kanjonin jäätyneille vesiputouksille ja grillaus",
+      sv: "Vandring till Korouomakanjonens frusna vattenfall och grillning",
+      de: "Wanderung zu den gefrorenen Wasserfällen der Korouoma-Schlucht mit Grillen",
+      es: "Caminata a las cascadas heladas del cañón de Korouoma con barbacoa",
+      fr: "Randonnée aux cascades gelées du canyon de Korouoma et barbecue",
+      it: "Escursione alle cascate ghiacciate del canyon di Korouoma con barbecue",
+      nl: "Wandeling naar de bevroren watervallen van de Korouoma-kloof met barbecue",
+      "pt-BR": "Caminhada às cachoeiras congeladas do cânion de Korouoma com churrasco",
+      ja: "コロウオマ渓谷の凍った滝ハイキング＆バーベキュー",
+      ko: "코로우오마 협곡 얼어붙은 폭포 하이킹과 바비큐",
+      "zh-CN": "科罗乌奥马峡谷冰瀑徒步与烧烤",
+    },
     place: "Rovaniemi",
     duration: "7 h",
     sid: "hub_home_pick_korouoma",
@@ -291,6 +615,19 @@ export const ACTIVITIES_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-reindeer-experience-with-sleigh-ride-t300556",
     price: "87 €",
     title: "Reindeer Experience with Sleigh Ride",
+    titles: {
+      fi: "Poroelämys ja rekiajelu",
+      sv: "Renupplevelse med slädtur",
+      de: "Rentier-Erlebnis mit Schlittenfahrt",
+      es: "Experiencia con renos y paseo en trineo",
+      fr: "Expérience avec les rennes et balade en traîneau",
+      it: "Esperienza con le renne e giro in slitta",
+      nl: "Rendierervaring met sledetocht",
+      "pt-BR": "Experiência com renas e passeio de trenó",
+      ja: "トナカイ体験とそり乗り",
+      ko: "순록 체험과 썰매 타기",
+      "zh-CN": "驯鹿体验与雪橇之旅",
+    },
     place: "Rovaniemi",
     duration: "2,5 h",
     sid: "activities_home_pick_reindeer_experience_with_sleigh_ride",
@@ -299,6 +636,19 @@ export const ACTIVITIES_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-husky-reindeer-experience-with-snowmobile-ride-t320613",
     price: "198 €",
     title: "Husky & Reindeer Experience with Snowmobile Ride",
+    titles: {
+      fi: "Husky- ja poroelämys sekä moottorikelkka-ajelu",
+      sv: "Husky- och renupplevelse med snöskotertur",
+      de: "Husky- und Rentier-Erlebnis mit Schneemobilfahrt",
+      es: "Experiencia con huskies y renos y paseo en motonieve",
+      fr: "Expérience avec les huskies et les rennes, et balade en motoneige",
+      it: "Esperienza con husky e renne e giro in motoslitta",
+      nl: "Husky- en rendierervaring met sneeuwscooterrit",
+      "pt-BR": "Experiência com huskies e renas e passeio de moto de neve",
+      ja: "ハスキー＆トナカイ体験（スノーモービル乗車付き）",
+      ko: "허스키·순록 체험(스노모빌 타기 포함)",
+      "zh-CN": "哈士奇与驯鹿体验（含雪地摩托骑行）",
+    },
     place: "Rovaniemi",
     duration: "6 h",
     sid: "activities_home_pick_husky_reindeer_experience_with_snowmobil",
@@ -310,6 +660,20 @@ export const ACTIVITIES_PICKS: GygPick[] = [
     price: "199 €",
     priceAsOf: "2026-08-03",
     title: "Northern Lights Tour with Guaranteed Sightings",
+    // Sama tuote kuin shared/resortHubs/levi.ts:n kortilla (t693623).
+    titles: {
+      fi: "Revontuliretki, jolla revontulet taataan",
+      sv: "Norrskenstur med garanterat norrsken",
+      de: "Polarlicht-Tour mit Sichtungsgarantie",
+      es: "Excursión de aurora boreal con avistamiento garantizado",
+      fr: "Excursion aux aurores boréales avec observation garantie",
+      it: "Tour dell’aurora boreale con avvistamento garantito",
+      nl: "Noorderlichttocht met gegarandeerd noorderlicht",
+      "pt-BR": "Passeio de aurora boreal com avistamento garantido",
+      ja: "オーロラ鑑賞保証付きツアー",
+      ko: "오로라 관측 보장 투어",
+      "zh-CN": "北极光观赏之旅（保证看到）",
+    },
     place: "Levi",
     duration: "8 h",
     sid: "activities_home_pick_northern_lights_guaranteed_levi",
@@ -322,6 +686,19 @@ export const ACTIVITIES_PICKS: GygPick[] = [
     price: "132 €",
     priceAsOf: "2026-08-03",
     title: "Ylläsjärvi Ice-Floating Experience",
+    titles: {
+      fi: "Jääkellunta Ylläsjärvellä",
+      sv: "Flyt i isvaken i Ylläsjärvi",
+      de: "Treiben im Eiswasser in Ylläsjärvi",
+      es: "Experiencia de flotación en el hielo en Ylläsjärvi",
+      fr: "Flottaison dans les glaces à Ylläsjärvi",
+      it: "Galleggiamento tra i ghiacci a Ylläsjärvi",
+      nl: "IJsdrijven in Ylläsjärvi",
+      "pt-BR": "Flutuação no gelo em Ylläsjärvi",
+      ja: "ユッラスヤルヴィでのアイスフローティング体験",
+      ko: "윌래스야르비 아이스 플로팅 체험",
+      "zh-CN": "于拉斯耶尔维冰湖漂浮体验",
+    },
     place: "Ylläs",
     duration: "2,5 h",
     sid: "activities_home_pick_ice_floating_yllas",
@@ -377,6 +754,19 @@ export const VISIT_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-korouoma-canyon-frozen-waterfalls-tour-t349531",
     price: "145 €",
     title: "Korouoma Canyon and Frozen Waterfalls Tour",
+    titles: {
+      fi: "Retki Korouoman kanjonille ja jäätyneille vesiputouksille",
+      sv: "Tur till Korouomakanjonen och de frusna vattenfallen",
+      de: "Tour zur Korouoma-Schlucht und zu den gefrorenen Wasserfällen",
+      es: "Excursión al cañón de Korouoma y sus cascadas heladas",
+      fr: "Excursion au canyon de Korouoma et à ses cascades gelées",
+      it: "Tour del canyon di Korouoma e delle cascate ghiacciate",
+      nl: "Tocht naar de Korouoma-kloof en de bevroren watervallen",
+      "pt-BR": "Passeio ao cânion de Korouoma e às cachoeiras congeladas",
+      ja: "コロウオマ渓谷と凍った滝ツアー",
+      ko: "코로우오마 협곡과 얼어붙은 폭포 투어",
+      "zh-CN": "科罗乌奥马峡谷与冰瀑之旅",
+    },
     place: "From Rovaniemi",
     duration: "7 h",
     sid: "visit_home_pick_korouoma_canyon_and_frozen_waterfalls_to",
@@ -385,6 +775,19 @@ export const VISIT_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-winter-wonderland-in-riisitunturi-national-park-t439000",
     price: "190 €",
     title: "Riisitunturi National Park Day Trip with Lunch",
+    titles: {
+      fi: "Päiväretki Riisitunturin kansallispuistoon lounaineen",
+      sv: "Dagstur till Riisitunturi nationalpark med lunch",
+      de: "Tagesausflug in den Riisitunturi-Nationalpark mit Mittagessen",
+      es: "Excursión de un día al Parque Nacional de Riisitunturi con almuerzo",
+      fr: "Excursion d’une journée au parc national de Riisitunturi avec déjeuner",
+      it: "Gita di un giorno al Parco nazionale di Riisitunturi con pranzo",
+      nl: "Dagtocht naar Nationaal Park Riisitunturi met lunch",
+      "pt-BR": "Passeio de um dia ao Parque Nacional de Riisitunturi com almoço",
+      ja: "リーシトゥントゥリ国立公園日帰りツアー（ランチ付き）",
+      ko: "리시툰투리 국립공원 당일 투어(점심 포함)",
+      "zh-CN": "里西通图里国家公园一日游（含午餐）",
+    },
     place: "Rovaniemi",
     duration: "8 h",
     sid: "visit_home_pick_riisitunturi_national_park_day_trip_with",
@@ -393,6 +796,19 @@ export const VISIT_PICKS: GygPick[] = [
     path: "saariselka-l181615/auroras-northern-lights-in-saariselka-t762238",
     price: "179 €",
     title: "Auroras Northern Lights Viewing & Photographing",
+    titles: {
+      fi: "Revontulien katselu ja valokuvaus",
+      sv: "Norrskensskådning och fotografering",
+      de: "Polarlichter beobachten und fotografieren",
+      es: "Observación y fotografía de la aurora boreal",
+      fr: "Observation et photographie des aurores boréales",
+      it: "Osservazione e fotografia dell’aurora boreale",
+      nl: "Noorderlicht kijken en fotograferen",
+      "pt-BR": "Observação e fotografia da aurora boreal",
+      ja: "オーロラ鑑賞と撮影",
+      ko: "오로라 관측과 촬영",
+      "zh-CN": "北极光观赏与摄影",
+    },
     place: "Saariselkä",
     duration: "4 h",
     sid: "visit_home_pick_auroras_northern_lights_viewing_photogra",
@@ -401,6 +817,19 @@ export const VISIT_PICKS: GygPick[] = [
     path: "sirkka-l139331/levi-northern-lights-magic-and-stargazing-by-telescope-t600186",
     price: "109 €",
     title: "Northern Lights Tour and Stargazing by Telescope",
+    titles: {
+      fi: "Revontuliretki ja tähtien katselu kaukoputkella",
+      sv: "Norrskenstur och stjärnskådning med teleskop",
+      de: "Polarlicht-Tour und Sternbeobachtung mit dem Teleskop",
+      es: "Excursión de aurora boreal y observación de estrellas con telescopio",
+      fr: "Excursion aux aurores boréales et observation des étoiles au télescope",
+      it: "Tour dell’aurora boreale e osservazione delle stelle al telescopio",
+      nl: "Noorderlichttocht en sterrenkijken met een telescoop",
+      "pt-BR": "Passeio de aurora boreal e observação de estrelas com telescópio",
+      ja: "オーロラツアーと望遠鏡での星空観察",
+      ko: "오로라 투어와 망원경 별 관측",
+      "zh-CN": "北极光之旅与望远镜观星",
+    },
     place: "Levi",
     duration: "3 h",
     sid: "visit_home_pick_northern_lights_tour_and_stargazing_by_t",
@@ -413,6 +842,19 @@ export const NATURE_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-hiking-and-snowshoeing-adventure-in-lapland-t183797",
     price: "105 €",
     title: "Hiking and Snowshoeing Adventure in Lapland",
+    titles: {
+      fi: "Vaellus- ja lumikenkäseikkailu Lapissa",
+      sv: "Vandrings- och snöskoäventyr i Lappland",
+      de: "Wander- und Schneeschuhabenteuer in Lappland",
+      es: "Aventura de senderismo y raquetas de nieve en Laponia",
+      fr: "Aventure en Laponie\u00a0: randonnée et raquettes à neige",
+      it: "Avventura tra escursionismo e ciaspolata in Lapponia",
+      nl: "Wandel- en sneeuwschoenavontuur in Lapland",
+      "pt-BR": "Aventura de caminhada e raquetes de neve na Lapônia",
+      ja: "ラップランドでのハイキング＆スノーシュー体験",
+      ko: "라플란드 하이킹과 스노슈잉 어드벤처",
+      "zh-CN": "拉普兰健行与雪鞋徒步探险",
+    },
     place: "Rovaniemi",
     duration: "3 h",
     sid: "nature_home_pick_hiking_and_snowshoeing_adventure_in_lapl",
@@ -421,6 +863,19 @@ export const NATURE_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-frozen-waterfalls-of-korouoma-winter-adventure-t462678",
     price: "145 €",
     title: "Frozen Waterfalls of Korouoma Canyon & Pro Photos",
+    titles: {
+      fi: "Korouoman kanjonin jäätyneet vesiputoukset ja ammattilaisen kuvat",
+      sv: "Korouomakanjonens frusna vattenfall och proffsbilder",
+      de: "Gefrorene Wasserfälle der Korouoma-Schlucht und Profifotos",
+      es: "Cascadas heladas del cañón de Korouoma y fotos profesionales",
+      fr: "Cascades gelées du canyon de Korouoma et photos professionnelles",
+      it: "Cascate ghiacciate del canyon di Korouoma e foto professionali",
+      nl: "Bevroren watervallen van de Korouoma-kloof en professionele foto’s",
+      "pt-BR": "Cachoeiras congeladas do cânion de Korouoma e fotos profissionais",
+      ja: "コロウオマ渓谷の凍った滝（プロによる写真付き）",
+      ko: "코로우오마 협곡의 얼어붙은 폭포와 전문 사진 촬영",
+      "zh-CN": "科罗乌奥马峡谷冰瀑与专业摄影",
+    },
     place: "Rovaniemi",
     duration: "6,5 h",
     sid: "nature_home_pick_frozen_waterfalls_of_korouoma_canyon_pro",
@@ -429,6 +884,19 @@ export const NATURE_PICKS: GygPick[] = [
     path: "sirkka-l139331/snowshoeing-in-the-national-park-t449218",
     price: "279 €",
     title: "Private Pallas-Yllästunturi National Park Snowshoeing",
+    titles: {
+      fi: "Yksityinen lumikenkäretki Pallas-Yllästunturin kansallispuistossa",
+      sv: "Privat snöskovandring i Pallas-Yllästunturi nationalpark",
+      de: "Private Schneeschuhwanderung im Pallas-Yllästunturi-Nationalpark",
+      es: "Senderismo privado con raquetas de nieve en el Parque Nacional de Pallas-Yllästunturi",
+      fr: "Sortie privée en raquettes à neige dans le parc national de Pallas-Yllästunturi",
+      it: "Ciaspolata privata nel Parco nazionale di Pallas-Yllästunturi",
+      nl: "Privé-sneeuwschoenwandeling in Nationaal Park Pallas-Yllästunturi",
+      "pt-BR": "Caminhada privativa com raquetes de neve no Parque Nacional de Pallas-Yllästunturi",
+      ja: "パッラス・ユッラストゥントゥリ国立公園プライベート・スノーシュー",
+      ko: "팔라스-윌래스툰투리 국립공원 프라이빗 스노슈잉",
+      "zh-CN": "帕拉斯-于拉斯通图里国家公园私人雪鞋徒步",
+    },
     place: "Levi",
     duration: "5,5 h",
     sid: "nature_home_pick_private_pallas_yll_stunturi_national_par",
@@ -437,6 +905,19 @@ export const NATURE_PICKS: GygPick[] = [
     path: "saariselka-l181615/saariselka-snowshoeing-tour-in-urho-kekkonen-national-park-t800450",
     price: "75 €",
     title: "Snowshoeing Tour in Urho Kekkonen National Park",
+    titles: {
+      fi: "Lumikenkäretki Urho Kekkosen kansallispuistossa",
+      sv: "Snöskovandring i Urho Kekkonens nationalpark",
+      de: "Schneeschuhtour im Urho-Kekkonen-Nationalpark",
+      es: "Tour con raquetas de nieve en el Parque Nacional Urho Kekkonen",
+      fr: "Randonnée en raquettes à neige dans le parc national Urho Kekkonen",
+      it: "Ciaspolata nel Parco nazionale Urho Kekkonen",
+      nl: "Sneeuwschoenwandeling in Nationaal Park Urho Kekkonen",
+      "pt-BR": "Passeio com raquetes de neve no Parque Nacional Urho Kekkonen",
+      ja: "ウルホ・ケッコネン国立公園スノーシューツアー",
+      ko: "우르호 케코넨 국립공원 스노슈잉 투어",
+      "zh-CN": "乌尔霍·凯科宁国家公园雪鞋徒步之旅",
+    },
     place: "Saariselkä",
     duration: "2 - 4 h",
     sid: "nature_home_pick_snowshoeing_tour_in_urho_kekkonen_nation",
@@ -449,6 +930,21 @@ export const CHRISTMAS_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-arctic-snowhotel-tour-t302863",
     price: "37 €",
     title: "Arctic SnowHotel",
+    // Brändinimi pysyy latinaksi; CJK-kielillä selite perään, jotta lukija
+    // tietää mikä se on (hotellin nimi ei yksin kerro sitä kiinaksi).
+    titles: {
+      fi: "Arctic SnowHotel",
+      sv: "Arctic SnowHotel",
+      de: "Arctic SnowHotel",
+      es: "Arctic SnowHotel",
+      fr: "Arctic SnowHotel",
+      it: "Arctic SnowHotel",
+      nl: "Arctic SnowHotel",
+      "pt-BR": "Arctic SnowHotel",
+      ja: "Arctic SnowHotel（雪のホテル）",
+      ko: "Arctic SnowHotel(스노호텔)",
+      "zh-CN": "Arctic SnowHotel 冰雪酒店",
+    },
     place: "Rovaniemi",
     duration: "3,5 h",
     sid: "christmas_home_pick_arctic_snowhotel",
@@ -464,6 +960,19 @@ export const CHRISTMAS_PICKS: GygPick[] = [
     price: "150 €",
     priceAsOf: "2026-08-01",
     title: "The Santa Claus Village Visit",
+    titles: {
+      fi: "Vierailu Joulupukin Pajakylässä",
+      sv: "Besök i Jultomtens by",
+      de: "Besuch im Weihnachtsmanndorf",
+      es: "Visita al Pueblo de Papá Noel",
+      fr: "Visite du Village du Père Noël",
+      it: "Visita al Villaggio di Babbo Natale",
+      nl: "Bezoek aan het Kerstmandorp",
+      "pt-BR": "Visita à Vila do Papai Noel",
+      ja: "サンタクロース村訪問",
+      ko: "산타클로스 마을 방문",
+      "zh-CN": "圣诞老人村参观之旅",
+    },
     place: "Rovaniemi",
     duration: "3 h",
     sid: "christmas_home_pick_santa_claus_village",
@@ -472,6 +981,19 @@ export const CHRISTMAS_PICKS: GygPick[] = [
     path: "sirkka-l139331/levi-winter-wilderness-husky-reindeer-safari-combo-tour-t986260",
     price: "149 €",
     title: "3-in-1 Combo Husky, Reindeer & Snowmobile sleigh ride",
+    titles: {
+      fi: "3-in-1-yhdistelmä: rekiajelu huskyilla, poroilla ja moottorikelkalla",
+      sv: "3 i 1: slädtur med huskyer, renar och snöskoter",
+      de: "3-in-1-Kombi: Schlittenfahrt mit Huskys, Rentieren und Schneemobil",
+      es: "Combo 3 en 1: paseo en trineo con huskies, renos y motonieve",
+      fr: "Formule 3 en 1\u00a0: balade en traîneau avec huskies, rennes et motoneige",
+      it: "Combo 3 in 1: giro in slitta con husky, renne e motoslitta",
+      nl: "3-in-1-combi: sledetocht met husky’s, rendieren en sneeuwscooter",
+      "pt-BR": "Combo 3 em 1: passeio de trenó com huskies, renas e moto de neve",
+      ja: "3-in-1コンボ：ハスキー、トナカイ、スノーモービルのそり体験",
+      ko: "3-in-1 콤보: 허스키·순록·스노모빌 썰매 체험",
+      "zh-CN": "3合1组合：哈士奇、驯鹿与雪地摩托雪橇体验",
+    },
     place: "Levi",
     duration: "2 h",
     sid: "christmas_home_pick_3_in_1_combo_husky_reindeer_snowmobile_s",
@@ -480,6 +1002,19 @@ export const CHRISTMAS_PICKS: GygPick[] = [
     path: "saariselka-l181615/saariselka-northern-lights-reindeer-sledding-tour-t805244",
     price: "189 €",
     title: "Northern Lights & Reindeer Sledding Tour",
+    titles: {
+      fi: "Revontulet ja pororekiajelu",
+      sv: "Norrsken och renslädetur",
+      de: "Polarlichter und Rentierschlittenfahrt",
+      es: "Aurora boreal y paseo en trineo de renos",
+      fr: "Aurores boréales et balade en traîneau à rennes",
+      it: "Aurora boreale e giro in slitta trainata dalle renne",
+      nl: "Noorderlicht en rendiersledetocht",
+      "pt-BR": "Aurora boreal e passeio de trenó puxado por renas",
+      ja: "オーロラとトナカイそりツアー",
+      ko: "오로라와 순록 썰매 투어",
+      "zh-CN": "北极光与驯鹿雪橇之旅",
+    },
     place: "Saariselkä",
     duration: "2,5 h",
     sid: "christmas_home_pick_northern_lights_reindeer_sledding_tour",
@@ -492,6 +1027,19 @@ export const WELLNESS_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/traditional-finnish-sauna-and-ice-swimming-in-rovaniemi-t540471",
     price: "80 €",
     title: "Traditional Sauna and Ice Swimming Experience",
+    titles: {
+      fi: "Perinteinen sauna ja avantouinti",
+      sv: "Traditionell bastu och isbad",
+      de: "Traditionelle Sauna und Eisbaden",
+      es: "Sauna tradicional y baño en hielo",
+      fr: "Sauna traditionnel et bain glacé",
+      it: "Sauna tradizionale e bagno nel ghiaccio",
+      nl: "Traditionele sauna en ijszwemmen",
+      "pt-BR": "Sauna tradicional e banho no gelo",
+      ja: "伝統的なサウナとアイススイミング体験",
+      ko: "전통 사우나와 얼음 수영 체험",
+      "zh-CN": "传统桑拿与冬泳体验",
+    },
     place: "Rovaniemi",
     duration: "1,5 h",
     sid: "wellness_home_pick_traditional_sauna_and_ice_swimming_exper",
@@ -500,6 +1048,19 @@ export const WELLNESS_PICKS: GygPick[] = [
     path: "rovaniemi-l2653/rovaniemi-arctic-sauna-and-hot-tub-with-northern-lights-t192594",
     price: "159 €",
     title: "Northern Lights with Arctic Sauna, Jacuzzi & BBQ",
+    titles: {
+      fi: "Revontulet sekä arktinen sauna, poreallas ja grillaus",
+      sv: "Norrsken med arktisk bastu, bubbelpool och grill",
+      de: "Polarlichter mit arktischer Sauna, Whirlpool und Grillen",
+      es: "Aurora boreal con sauna ártica, jacuzzi y barbacoa",
+      fr: "Aurores boréales avec sauna arctique, jacuzzi et barbecue",
+      it: "Aurora boreale con sauna artica, jacuzzi e barbecue",
+      nl: "Noorderlicht met arctische sauna, jacuzzi en barbecue",
+      "pt-BR": "Aurora boreal com sauna ártica, jacuzzi e churrasco",
+      ja: "オーロラと北極圏サウナ、ジャグジー、バーベキュー",
+      ko: "오로라와 북극 사우나, 자쿠지, 바비큐",
+      "zh-CN": "北极光与北极桑拿、按摩浴缸和烧烤",
+    },
     place: "Rovaniemi",
     duration: "3 h",
     sid: "wellness_home_pick_northern_lights_with_arctic_sauna_jacuzz",
@@ -508,7 +1069,23 @@ export const WELLNESS_PICKS: GygPick[] = [
     path: "sirkka-l139331/authentic-finnish-wooden-sauna-with-dinner-in-the-wilderness-t675809",
     price: "359 €",
     title: "Private Traditional Sauna, Ice Dip and Dinner in the Wild",
-    place: "Lappi",
+    titles: {
+      fi: "Yksityinen perinteinen sauna, avantopulahdus ja illallinen erämaassa",
+      sv: "Privat traditionell bastu, isvaksdopp och middag i vildmarken",
+      de: "Private traditionelle Sauna, Sprung ins Eisloch und Abendessen in der Wildnis",
+      es: "Sauna tradicional privada, chapuzón en el hielo y cena en plena naturaleza",
+      fr: "Sauna traditionnel privé, plongeon dans l’eau glacée et dîner en pleine nature",
+      it: "Sauna tradizionale privata, tuffo nel ghiaccio e cena nella natura selvaggia",
+      nl: "Traditionele privésauna, ijsduik en diner in de wildernis",
+      "pt-BR": "Sauna tradicional privativa, mergulho no gelo e jantar na natureza",
+      ja: "プライベート伝統サウナ、アヴァント（氷の穴）での冷水浴、大自然でのディナー",
+      ko: "프라이빗 전통 사우나, 얼음물 입수, 대자연 속 디너",
+      "zh-CN": "私人传统桑拿、冰水浸泡与荒野晚餐",
+    },
+    // Oli "Lappi" (suomea englanninkielisellä sivulla, mitattu 26.9.). GYG:n
+    // sijainti on sirkka-l139331 eli Levi, kuten tämän listan muillakin
+    // Sirkka-riveillä.
+    place: "Levi",
     duration: "4 h",
     sid: "wellness_home_pick_private_traditional_sauna_ice_dip_and_di",
   },
@@ -516,6 +1093,19 @@ export const WELLNESS_PICKS: GygPick[] = [
     path: "ruka-l192178/ruka-pyhapiilo-sauna-duo-smoke-ice-sauna-experience-t1167518",
     price: "90 €",
     title: "Pyhäpiilo sauna duo: smoke & ice sauna experience",
+    titles: {
+      fi: "Pyhäpiilon saunapari: savusauna ja jääsauna",
+      sv: "Pyhäpiilos bastuduo: rökbastu och isbastu",
+      de: "Pyhäpiilo-Saunaduo: Rauchsauna und Eissauna",
+      es: "Dúo de saunas en Pyhäpiilo: sauna de humo y sauna de hielo",
+      fr: "Duo de saunas à Pyhäpiilo\u00a0: sauna à fumée et sauna de glace",
+      it: "Duo di saune a Pyhäpiilo: sauna a fumo e sauna di ghiaccio",
+      nl: "Saunaduo in Pyhäpiilo: rooksauna en ijssauna",
+      "pt-BR": "Dupla de saunas em Pyhäpiilo: sauna de fumaça e sauna de gelo",
+      ja: "Pyhäpiiloのサウナ体験：スモークサウナとアイスサウナ",
+      ko: "Pyhäpiilo 사우나 듀오: 스모크 사우나와 아이스 사우나",
+      "zh-CN": "Pyhäpiilo 双桑拿体验：烟熏桑拿与冰桑拿",
+    },
     place: "Ruka",
     duration: "2 h",
     sid: "wellness_home_pick_pyh_piilo_sauna_duo_smoke_ice_sauna_expe",
@@ -710,3 +1300,19 @@ export const CATEGORY_LINKS: Record<string, GygCategoryLink[]> = {
 export function gygCategoryHref(link: GygCategoryLink, lang?: string): string {
   return gygHref({ path: link.path, title: "", place: "", sid: link.sid }, lang);
 }
+
+/** Ylellisyys-sivun suuret päivät (laplandgifts /luxury + /experiences 'icebreaker'). */
+export const LUXURY_PICKS: GygPick[] = [
+  {
+    // Vesa 5.9.2026 (Ylellisyys-sivu): "eihän täällä ole edes sitä Kemin
+    // kelluntaa meressä Sampo-murtajan kanssa?" Hinta luettu GYG:n fi-sivulta
+    // 2026-09-05 (alkaen 402 €), kesto listauksesta (6,5–7 h). Tuotesivu
+    // verifioitu selaimessa (curl 403 partner-parametreilla).
+    path: "kemi-l98127/kemi-iltapaivan-jaanmurtaja-sampo-risteily-ja-jaalla-kellunta-t504004",
+    price: "402 €",
+    title: "Icebreaker Sampo Cruise with Ice Floating",
+    place: "Kemi",
+    duration: "6.5–7 h",
+    sid: "gifts_luxury_pick_icebreaker_kemi",
+  },
+];
