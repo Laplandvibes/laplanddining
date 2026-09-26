@@ -111,6 +111,16 @@ const GO = "https://go.laplandvibes.com/go/activities";
  * these picks sent its readers to the English page. Both halves of that bug
  * were invisible: the site looked like it was asking for a language, and the
  * parameter it asked with would not have worked anyway.
+ *
+ * 🔴🔴 Since 2026-09-20 that holds for LOCATION and CATEGORY paths only. A
+ * product path (`…-tNNN`) gets no prefix from the Worker (LV-GYG-PRODUCT-NOPREFIX,
+ * bd457ac): prefix + English slug had started falling to GYG's search page
+ * (`/s?…&et=<id>&lc=<loc>`). Without a prefix the product opens, but in the
+ * visitor's own GYG market language — measured 2026-09-26 in a browser with no
+ * GYG market set: `language=fi` and `language=de` both opened the ENGLISH page.
+ * So a non-English product link carries its own prefix, `<lang>-<cc>/-t<id>/`
+ * (gygProductPath below), and no `language`. See gygProductPath for the
+ * measurement.
  */
 export function gygHref(pick: GygPick, lang?: string, sidOverride?: string): string {
   // sidOverride: a pick's baked-in sid is named after the site the row was
@@ -126,8 +136,49 @@ export function gygHref(pick: GygPick, lang?: string, sidOverride?: string): str
     "zh-CN": "zh", ko: "ko", fr: "fr", it: "it", nl: "nl", sv: "sv",
   };
   const code = lang ? L[lang] : undefined;
-  if (code) p.set("language", code);
-  return `${GO}/${pick.path}?${p.toString()}`;
+  // English keeps the full English slug: with a non-English GYG market cookie a
+  // bare `-t<id>/` follows the cookie (measured → /fi-fi/), the slug stays English.
+  const path = lang && GYG_LOCALE_PREFIX[lang] ? gygProductPath(pick.path, lang) : pick.path;
+  // `language` only when the path does not already carry the locale; both
+  // together could double-prefix.
+  if (code && !path.includes("/-t")) p.set("language", code);
+  return `${GO}/${path}?${p.toString()}`;
+}
+
+/**
+ * 🔴🔴 PRODUCT LINK WITHOUT A SLUG: `<lang>-<cc>/-t<id>/` (promoted from
+ * laplandactivities, 2026-09-26).
+ *
+ * Vesa 20.9.2026: *"rapusafari ei mene syvälinkkinä, miksi ei?"* GetYourGuide
+ * translates BOTH parts of a product path, so an English slug under a locale
+ * prefix has no match and fell to the search page (`…/s?…&et=1158887&lc=97740`
+ * for the king crab safari). The Worker stopped prefixing product paths the
+ * same day, which fixed the search page but left every non-English reader on
+ * the English product page unless their GYG market says otherwise.
+ *
+ * An id cannot be mistranslated. Measured 2026-09-26 in a browser, same-origin
+ * fetch on getyourguide.com: all 50 product ids in this file × 11 locales,
+ * `<prefix>/-t<id>/` → 301 to that locale's own product slug for 48 ids, 0 to
+ * search. The other 2 (t449218, t1005215) redirect to their location page in
+ * every locale, bare id included, and so does their full English slug through
+ * the Worker: the products are gone, not mis-linked by this function.
+ *
+ * Location and category paths (no `-t<id>` at the end; `-tc146` is a
+ * category) are returned unchanged: the Worker prefixes those itself.
+ */
+export const GYG_LOCALE_PREFIX: Record<string, string> = {
+  fi: "fi-fi", de: "de-de", ja: "ja-jp", es: "es-es", "pt-BR": "pt-br",
+  "zh-CN": "zh-cn", ko: "ko-kr", fr: "fr-fr", it: "it-it", nl: "nl-nl", sv: "sv-se",
+};
+
+export function gygProductPath(path: string, lang?: string): string {
+  const m = path.match(/-t(\d+)\/?$/);
+  if (!m) return path;
+  const prefix = lang ? GYG_LOCALE_PREFIX[lang] : undefined;
+  // 🔴 The prefix has to be built here: the Worker adds none to an id path
+  // (measured 20.9.2026: `/go/activities/-t437502/?language=fi` →
+  // `getyourguide.com/-t437502/`). A prefixed path passes the Worker as is.
+  return prefix ? `${prefix}/-t${m[1]}/` : `-t${m[1]}/`;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
