@@ -11,14 +11,14 @@
     "picksHeadline": "Inizia da questi sei",
     "picksLead": "Alta cucina sami, fuochi di kota e cucine in cima ai fjäll. Sei posti che prenoteremmo per primi.",
     "picksCtaAll": "Vedi tutti i {{count}} ristoranti",
-    "midnightKicker": "L'estate lappone",
+    "midnightKicker": "L'estate in Lapponia",
     "midnightHeadline1": "Cena all'una di notte.",
     "midnightHeadline2": "Il sole è ancora alto.",
     "midnightBadge": "6 giugno → 7 luglio",
-    "midnightBody": "Per trentadue giorni il sole non scende mai sotto l'orizzonte a nord del Circolo polare artico. Terrazze sul fiume a Rovaniemi, fuochi di kota a Saariselkä, menù degustazione con vista sul lago ad Aanaar, tutto consumato in una luce dorata ininterrotta. La metà più silenziosa e più bella dell'anno gastronomico lappone.",
+    "midnightBody": "Per trentadue giorni il sole non scende mai sotto l'orizzonte a nord del Circolo polare artico. Terrazze sul fiume a Rovaniemi, fuochi di kota a Saariselkä, menù degustazione con vista sul lago ad Aanaar, tutto consumato in una luce dorata ininterrotta. La metà più silenziosa e più bella dell'anno gastronomico in Lapponia.",
     "midnightCtaGuide": "Leggi la guida al sole di mezzanotte",
     "midnightCtaStays": "Trova alloggi estivi",
-    "cuisineHeadline": "I pilastri della cucina lappone",
+    "cuisineHeadline": "I pilastri della cucina della Lapponia",
     "cuisineLead": "Tre fondamenti della scena culinaria unica della Lapponia.",
     "cuisineCards": [
       {
@@ -41,12 +41,12 @@
     "statsYear": "Aggiornati quest'anno",
     "stayKicker": "Dormi dove mangi",
     "stayHeadline": "Prenoti un hotel vicino al ristorante di stasera",
-    "stayLead": "Le cene lapponi spesso si protraggono tardi e finiscono lontano dal centro. La scelta più saggia è alloggiare a due passi dal ristorante e Trip.com offre il quadro più chiaro di ciò che è davvero disponibile accanto a ogni kota, hotel di fjäll e ristorante di ghiaccio.",
+    "stayLead": "Le cene in Lapponia spesso si protraggono tardi e finiscono lontano dal centro. La scelta più saggia è alloggiare a due passi dal ristorante e Trip.com offre il quadro più chiaro di ciò che è davvero disponibile accanto a ogni kota, hotel di fjäll e ristorante di ghiaccio.",
     "stayAffiliateNote": "Link di affiliazione, possiamo ricevere una commissione senza costi aggiuntivi per Lei.",
     "stayAffiliateLink": "Perché funziona così",
     "toursKicker": "Mangia con una guida",
     "toursHeadline": "Tour gastronomici, corsi di cucina e visite ai birrifici",
-    "toursLead": "Per i viaggiatori che vogliono contesto insieme al pasto, passeggiate di degustazione sami, corsi di cucina lappone, cene in birrificio e laboratori di preparazione del salmone. Prenotabili tramite GetYourGuide con cancellazione gratuita fino a 24 ore prima.",
+    "toursLead": "Per i viaggiatori che vogliono contesto insieme al pasto, passeggiate di degustazione sami, corsi di cucina della Lapponia, cene in birrificio e laboratori di preparazione del salmone. Prenotabili tramite GetYourGuide con cancellazione gratuita fino a 24 ore prima.",
     "tourLinks": [
       "Tour gastronomici in Lapponia",
       "Corsi di cucina",
@@ -55,7 +55,7 @@
     ],
     "faq": {
       "eyebrow": "Domande frequenti",
-      "headline": "FAQ della tavola lappone",
+      "headline": "FAQ: a tavola in Lapponia",
       "lead": "Le domande che i viaggiatori fanno più spesso prima di prenotare un tavolo in Lapponia, le sale famose, il piatto simbolo, i fuochi di kota e le cene sotto il sole di mezzanotte.",
       "stillWonderingKicker": "Ancora dubbi?",
       "stillWonderingBodyPrefix": "Scrivi a ",
@@ -78,7 +78,7 @@
           "answer": "La finestra di 32 giorni del sole di mezzanotte, dal 6 giugno al 7 luglio, quando il sole non tramonta mai a nord del Circolo Polare. Le terrazze restano aperte fino a mezzanotte, i fuochi di kota continuano ad ardere e i tavoli in riva al lago a Inari e Saariselkä restano immersi in una luce dorata continua."
         },
         {
-          "question": "Su quali ingredienti locali si fonda la cucina lappone?",
+          "question": "Su quali ingredienti locali si fonda la cucina della Lapponia?",
           "answer": "Renne allo stato brado, salmerino artico e coregone da laghi come l'Inari, mirtilli e mirtilli rossi selvatici, funghi ed erbe raccolti a mano, e il lampone artico, l'\"oro dell'Artico\", che matura nelle torbiere subartiche solo poche settimane a luglio."
         }
       ]
@@ -118,7 +118,7 @@
       "Inari": "Patrimonio sami e ingredienti artici più puri",
       "Saariselkä": "Cucina nella natura selvaggia sotto l'aurora boreale",
       "Kemi": "Dove il ghiaccio incontra il fuoco, esperienze stagionali uniche",
-      "Ylläs": "Fascino del villaggio di fjäll con autentici sapori lapponi",
+      "Ylläs": "Fascino del villaggio di fjäll con autentici sapori della Lapponia",
       "Tornio": "Carattere di città di frontiera e anima della cucina finlandese",
       "Haparanda": "Attraversi il confine per una fusione svedese-nordica",
       "Sodankylä": "Tradizioni di città fluviale e pubblico del Festival del Sole di Mezzanotte",
@@ -162,11 +162,11 @@
       "description": "Otto ristoranti a Rovaniemi, dal filetto di renna in Valtakatu alla cucina meglio valutata di tutto il sito. Valutazioni, citazioni e link ai menù.",
       "h1": "Ristoranti a Rovaniemi",
       "tagline": "La concentrazione di tavoli più fitta della Lapponia: cinque stanno in quattro strade.",
-      "intro": "Rovaniemi è l'unica città della Lapponia in cui il ristorante si sceglie a piedi. Nili e Arctic Restaurant sono quasi uno di fronte all'altro in Valtakatu e coprono renna e camemoro. Duecento metri più in là, Roka Street Bistro in Ainonkatu e Cafe & Bar 21 in Rovakatu sono le sale in cui vanno i residenti un martedì qualunque. La valutazione più alta non è lappone: Hanki, cucina coreana in Korkalonkatu, tiene 4,9 su oltre mille recensioni.",
+      "intro": "Rovaniemi è l'unica città della Lapponia in cui il ristorante si sceglie a piedi. Nili e Arctic Restaurant sono quasi uno di fronte all'altro in Valtakatu e coprono renna e camemoro. Duecento metri più in là, Roka Street Bistro in Ainonkatu e Cafe & Bar 21 in Rovakatu sono le sale in cui vanno i residenti un martedì qualunque. La valutazione più alta non va alla cucina della Lapponia: Hanki, cucina coreana in Korkalonkatu, tiene 4,9 su oltre mille recensioni.",
       "know": [
         "I cinque ristoranti del centro distano meno di 500 m l'uno dall'altro: tutta la scelta è una passeggiata.",
         "Tre sono fuori centro: Sky Kitchen & View a 2,4 km, Kotahovi a 6,8 km sulla strada del villaggio di Babbo Natale, e All About Salmon nel villaggio stesso.",
-        "Hanki, con 4,9, è il ristorante meglio valutato dell'intero sito: ed è coreano, non lappone."
+        "Hanki, con 4,9, è il ristorante meglio valutato dell'intero sito: e la sua cucina è coreana, non della Lapponia."
       ],
       "at": "Rovaniemi"
     },
@@ -235,7 +235,7 @@
       "intro": "Kemi mangia lungo due linee: la riva e la via principale. Kemin Puistopaviljonki e Pizzeria San Milano condividono lo stesso indirizzo sul mare in Meripuistonpolku, e Sataman Krouwi ja Perämeren Jähti sta giù al porto. In centro, Pieni Lohikäärme e Ravintola Mori si fronteggiano ai due lati di Valtakatu. Puistopaviljonki ha qui di gran lunga più recensioni; San Milano la valutazione più alta.",
       "know": [
         "Due di essi condividono un indirizzo sul mare: Puistopaviljonki e San Milano.",
-        "Kemi è sulla linea ferroviaria principale da Helsinki, quindi è una delle poche città lapponi raggiungibili senza auto.",
+        "Kemi è sulla linea ferroviaria principale da Helsinki, quindi è una delle poche città della Lapponia raggiungibili senza auto.",
         "Il ristorante del porto vive di una stagione diversa da quelli del centro: d'inverno tira lo SnowCastle."
       ],
       "at": "Kemi"
@@ -341,7 +341,7 @@
   },
   "fineDining": {
     "title": "Alta cucina in Lapponia e dintorni",
-    "description": "I più votati della nostra selezione lappone, in ordine di valutazione Google: sale da pranzo, locande e tavoli nella kota, con citazioni e link ai menù.",
+    "description": "I più votati della nostra selezione in Lapponia, in ordine di valutazione Google: sale da pranzo, locande e tavoli nella kota, con citazioni e link ai menù.",
     "heroH1": "Alta cucina in Lapponia e dintorni",
     "heroLeadTemplate": "I tavoli più votati della Lapponia, scelti tra {{count}} ristoranti: sale da pranzo, cucine di natura e fuochi di kota.",
     "metaDescriptionTemplate": "I più votati della nostra selezione, in ordine di valutazione Google: {{count}} ristoranti nella Lapponia finlandese e dintorni, con citazioni e menù.",
@@ -381,7 +381,7 @@
       {
         "name": "Levi",
         "angle": "Cene in cima al fjäll",
-        "body": "La terrazza di Hullu Poro e il servizio estivo della cabinovia di Levi offrono viste a 360° sui fjäll con piccoli piatti lapponi. Porti uno strato in più, anche alle 2 di notte può scendere a 8 °C."
+        "body": "La terrazza di Hullu Poro e il servizio estivo della cabinovia di Levi offrono viste a 360° sui fjäll con piccoli piatti tipici della Lapponia. Porti uno strato in più, anche alle 2 di notte può scendere a 8 °C."
       },
       {
         "name": "Inari",
@@ -397,13 +397,13 @@
     "stayInTemplate": "Dormire a {{city}}",
     "summerFoodTours": "Tour gastronomici estivi",
     "bottomHeadline": "Costruisca il Suo viaggio sole di mezzanotte",
-    "bottomLead": "Abbini queste tavole all'estate lappone nel suo insieme, escursioni sui fjäll, bagni nei laghi alle 23 e il raro silenzio di un pieno estate artico. Cominci dai ristoranti che desidera, poi prenoti il resto attorno.",
+    "bottomLead": "Abbini queste tavole all'estate in Lapponia nel suo insieme, escursioni sui fjäll, bagni nei laghi alle 23 e il raro silenzio di un pieno estate artico. Cominci dai ristoranti che desidera, poi prenoti il resto attorno.",
     "bottomCtaBrowse": "Sfoglia tutti i ristoranti",
     "bottomCtaArctic": "Leggi sugli ingredienti artici"
   },
   "foodHistory": {
     "title": "Lapponia: storia gastronomica e cucina sami",
-    "description": "Come l'Artico ha plasmato la cucina lappone: tradizioni sami, allevamento delle renne, pesce affumicato, bacche, fuoco della kota e nuova cucina nordica.",
+    "description": "Come l'Artico ha plasmato la cucina della Lapponia: tradizioni sami, allevamento delle renne, pesce affumicato, bacche, fuoco della kota e nuova cucina nordica.",
     "heroH1": "Una storia raccontata attraverso il cibo",
     "heroLead": "Come migliaia di anni di sopravvivenza artica hanno plasmato una delle culture gastronomiche più distintive del mondo.",
     "intro": "Il fumo si alza da un fuoco di kota prima che il sole sia del tutto sorto. Strisce di renna si stagionano sotto la gronda di una capanna di legno. Un salmone scivola nella nebbia del fiume. In Lapponia il cibo non è mai cominciato in cucina, è cominciato sulla terra. Questa è la storia del perché.",
@@ -478,7 +478,7 @@
           "Il lampone artico occupa un posto speciale. Chiamato <strong>lakka</strong> in finlandese, cresce solo nelle torbiere artiche e subartiche, matura per un paio di settimane a luglio e non può essere coltivato commercialmente. Il colore ambrato, la dolcezza di miele e la rarità ne fanno l'\"oro dell'Artico\". Lo si trova in dessert, liquori e come guarnizione in quasi tutti i ristoranti di alta cucina della Lapponia.",
           "Ciò che rende straordinari questi ingredienti non è solo il loro gusto, è il loro ambiente. Le condizioni artiche, la luce estiva di 24 ore, l'aria pura e alcune delle acque più pulite della Terra producono bacche con concentrazioni di vitamine, antiossidanti e flavonoidi superiori a quelle delle loro cugine meridionali."
         ],
-        "quote": "Camminare in una foresta lappone a fine estate è come camminare in un supermercato."
+        "quote": "Camminare in una foresta della Lapponia a fine estate è come camminare in un supermercato."
       },
       {
         "title": "Noma ha cambiato lo sguardo della Lapponia sul proprio cortile",
@@ -487,14 +487,14 @@
           "Il movimento New Nordic ha cambiato tutto questo. Quando Noma a Copenhagen ha iniziato a celebrare gli ingredienti iper-locali e raccolti nei primi anni 2000, gli chef dei paesi nordici hanno cominciato a guardare il proprio cortile in modo diverso. In Lapponia hanno trovato ingredienti che la maggior parte del mondo non aveva mai assaggiato e tradizioni già vecchie di secoli.",
           "Oggi ristoranti come Aanaar a Inari, Nili e Gustav a Rovaniemi fanno qualcosa di notevole: onorano le tradizioni sami spingendo allo stesso tempo ciò che la cucina artica può diventare. Un piatto di renna da Aanaar non è solo cibo, è una storia di patrimonio indigeno, di amministrazione ambientale e di reinvenzione culinaria su un solo piatto."
         ],
-        "quote": "Per la maggior parte della sua storia, la cucina lappone è stata conservazione e sfamare la gente."
+        "quote": "Per la maggior parte della sua storia, la cucina della Lapponia è stata conservazione e sfamare la gente."
       },
       {
         "title": "Per secoli la kota fu casa, cucina e luogo di ritrovo",
         "paragraphs": [
           "È la <strong>kota</strong>, una tenda sami tradizionale, conica, con un focolare al centro. Per secoli la kota è stata casa, cucina e luogo di ritrovo. Il cibo cuoceva sulla fiamma viva, si raccontavano storie, il fumo portava le preghiere al cielo.",
           "Oggi ristoranti-kota come Kammi all'Hullu Poro di Levi mantengono viva la tradizione. Ci si siede su pelli di renna attorno a un fuoco crepitante mentre salmone affumicato, salsicce di renna e selvaggina grigliata vengono preparati davanti a Lei. Il pasto si aggira sui 64 € a testa, ma il momento è difficile da prezzare.",
-          "È questo che rende diversa la cena lappone. Non è solo ciò che è nel piatto, è il fuoco, il fumo, la neve fuori, l'aurora sopra di Lei e le migliaia di anni di ingegno umano che hanno reso possibile il pasto."
+          "È questo che rende diversa una cena in Lapponia. Non è solo ciò che è nel piatto, è il fuoco, il fumo, la neve fuori, l'aurora sopra di Lei e le migliaia di anni di ingegno umano che hanno reso possibile il pasto."
         ],
         "quote": "Forse l'esperienza ristorativa più distintiva della Lapponia non è affatto un ristorante."
       }
@@ -503,8 +503,8 @@
     "chaptersLabel": "In questa storia"
   },
   "localFood": {
-    "title": "Cibo locale lappone: renna, bacche, pesce",
-    "description": "Cosa significa 'locale' su un menù lappone: renne allo stato brado, salmerino artico, lamponi artici, mirtilli rossi, funghi ed erbe raccolte in stagione.",
+    "title": "Cibo locale della Lapponia: renna, bacche, pesce",
+    "description": "Cosa significa 'locale' su un menù in Lapponia: renne allo stato brado, salmerino artico, lamponi artici, mirtilli rossi, funghi ed erbe raccolte in stagione.",
     "heroH1": "Cibo locale e ingredienti",
     "heroLead": "Perché la Lapponia produce alcuni dei cibi più puliti e densi di nutrienti della Terra e come la produzione alimentare finlandese fissa lo standard di purezza.",
     "intro": "Un pescatore tira fuori un salmerino artico dal Lago Inari prima dell'alba. Lo chef del villaggio accanto lo sa nel giro di venti minuti. La filiera del cibo in Lapponia è così corta, ed è per questo che il cibo ha quel sapore.",
@@ -512,7 +512,7 @@
       {
         "title": "Chiunque può raccogliere ovunque, chiunque sia il proprietario",
         "paragraphs": [
-          "La fine dell'estate in una foresta lappone è, in pratica, fare la spesa. Il diritto di accesso, <strong>jokamiehenoikeus</strong>, lo rende possibile: chiunque, residente o turista, può camminare, cercare e raccogliere ovunque in natura indipendentemente da chi possiede la terra.",
+          "La fine dell'estate in una foresta della Lapponia è, in pratica, fare la spesa. Il diritto di accesso, <strong>jokamiehenoikeus</strong>, lo rende possibile: chiunque, residente o turista, può camminare, cercare e raccogliere ovunque in natura indipendentemente da chi possiede la terra.",
           "Non è un gesto simbolico. Modella l'intera cultura del cibo. Le foreste finlandesi producono circa 500 milioni di chilogrammi di mirtilli selvatici l'anno, ma solo il 5–10 % viene raccolto. Il resto nutre la fauna e rialimenta l'ecosistema.",
           "Molti dei migliori ristoranti della Lapponia tengono raccoglitori professionisti a libro paga, che passano l'estate sui fjäll e ai margini delle foreste antiche. \"Dal campo alla tavola\" non basta a descriverlo. Questo è dal bosco alla tavola e il bosco comincia dietro la porta della cucina."
         ],
@@ -592,7 +592,7 @@
       }
     ],
     "ctaHeadline": "Assaggiarlo dove cresce",
-    "ctaLead": "Non si capisce la cultura gastronomica lappone finché non la si mangia. Trovi i ristoranti che si riforniscono direttamente da pastori, pescatori e raccoglitori locali, poi prenoti un soggiorno a distanza di passeggiata.",
+    "ctaLead": "Non si capisce la cultura gastronomica della Lapponia finché non la si mangia. Trovi i ristoranti che si riforniscono direttamente da pastori, pescatori e raccoglitori locali, poi prenoti un soggiorno a distanza di passeggiata.",
     "ctaBrowse": "Esplora i ristoranti",
     "ctaStay": "Prenota un soggiorno",
     "ctaTours": "Corsi di cucina & tour",
@@ -606,7 +606,7 @@
     "heroH1": "Chi siamo, LaplandDining",
     "heroLead": "La Sua guida ai ristoranti reali, selezionati con cura, della Lapponia finlandese.",
     "networkTitle": "Rete LaplandVibes",
-    "networkBodyA": "LaplandDining fa parte dell'ecosistema <strong>LaplandVibes</strong>, una famiglia di siti specializzati dedicati ad aiutare i viaggiatori a scoprire il meglio della Lapponia finlandese. Ogni sito si concentra su un aspetto specifico dell'esperienza lappone: alloggio, ristorazione, attività, natura, shopping, vita notturna e altro.",
+    "networkBodyA": "LaplandDining fa parte dell'ecosistema <strong>LaplandVibes</strong>, una famiglia di siti specializzati dedicati ad aiutare i viaggiatori a scoprire il meglio della Lapponia finlandese. Ogni sito si concentra su un aspetto specifico dell'esperienza in Lapponia: alloggio, ristorazione, attività, natura, shopping, vita notturna e altro.",
     "networkBodyB": "Ogni ristorante elencato su LaplandDining è un esercizio reale. Non elenchiamo ristoranti fittizi o di riempimento. Le schede sono ricavate da archivi pubblici, dai dati di Google Places e dai siti dei ristoranti stessi.",
     "affiliateTitle": "Disclosure affiliazione",
     "affiliateBodyA": "Alcuni link su LaplandDining sono link di affiliazione, principalmente prenotazioni alberghiere tramite i nostri partner Sembo e Trip.com ed esperienze gastronomiche tramite GetYourGuide. Possiamo guadagnare una piccola commissione se prenota tramite essi, senza costi aggiuntivi per Lei. Queste commissioni ci aiutano a mantenere e migliorare questa risorsa gratuita.",
@@ -631,7 +631,7 @@
   "common": {
     "cityTopPicksKicker": "Una scelta per città · {{count}} destinazioni",
     "cityTopPicksHeadline": "La miglior tavola della Lapponia, per città",
-    "cityTopPicksLead": "Per ogni destinazione lappone in questa guida, viene scelto un ristorante come primo posto da provare. Citazioni reali dei clienti da Google, abbinate a un hotel a distanza di passeggiata.",
+    "cityTopPicksLead": "Per ogni destinazione della Lapponia in questa guida, viene scelto un ristorante come primo posto da provare. Citazioni reali dei clienti da Google, abbinate a un hotel a distanza di passeggiata.",
     "dataRefreshed": "Dati aggiornati il {{date}} da Google Places.",
     "howWeChoose": "Come scegliamo",
     "seeMoreInCity": "Vedi altri ristoranti a {{city}}",
