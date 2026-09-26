@@ -23,7 +23,11 @@ interface TermsContentProps {
    * site that sells nothing and books nothing (see SHOP_OVERRIDES below).
    * Omitting the prop leaves every existing site byte for byte unchanged.
    */
-  variant?: 'travel' | 'shop';
+  variant?: 'travel' | 'shop' | 'jobs';
+  /** Site-specific first paragraph, when the site is not a travel or shop site (laplandwork: a job board). */
+  intro?: React.ReactNode;
+  /** Site-specific "last updated" line; the shared date is the network's, not the site's. */
+  lastUpdated?: string;
 }
 
 interface TermsCopy {
@@ -234,7 +238,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s4Body: (siteName) => (
       <>
         Diese Website zeigt gesponserte Anzeigen Dritter. Gesponserte Inhalte sind durch das Label{' '}
-        <strong className="text-snow/90">„Gesponsert"</strong> eindeutig gekennzeichnet. {siteName} ist nicht verantwortlich für die
+        <strong className="text-snow/90">„Gesponsert“</strong> eindeutig gekennzeichnet. {siteName} ist nicht verantwortlich für die
         Produkte, Dienste oder Aussagen der Werbetreibenden. Beim Klicken auf gesponserte Links gelangen Sie auf externe Websites mit
         eigenen Bedingungen und Datenschutzrichtlinien.
       </>
@@ -287,7 +291,7 @@ const COPY: Record<Lang, TermsCopy> = {
   ja: {
     kicker: '法的情報',
     h1: '利用規約',
-    lastUpdated: '最終更新: 2026年5月 · 運営: LaPeso Oy',
+    lastUpdated: '最終更新：2026年5月 · 運営：LaPeso Oy',
     s1Title: '1. 本サイトについて',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -338,7 +342,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s11Title: '11. 分離可能性',
     s11Body: '本規約のいずれかの条項が管轄裁判所により無効、違法、または執行不能と判断された場合でも、残りの条項は引き続き完全に有効です。無効とされた条項は、法律で認められる範囲内で、当初の商業的意図に最も近い有効な条項に置き換えられます。',
     s12Title: '12. デジタルサービス法(DSA)連絡窓口',
-    s12Intro: 'EU デジタルサービス法（規則 (EU) 2022/2065）に基づく、当局およびサービス利用者向けの指定連絡窓口は以下のとおりです:',
+    s12Intro: 'EU デジタルサービス法（規則 (EU) 2022/2065）に基づく、当局およびサービス利用者向けの指定連絡窓口は以下のとおりです：',
     s12Items: [
       'メール：info@laplandvibes.com',
       '運営者：LaPeso Oy、フィンランド',
@@ -364,7 +368,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s2Title: '2. Exactitud de la información',
     s2Body: 'La información turística, incluidos precios, horarios, condiciones meteorológicas y disponibilidad, cambia con frecuencia. Procuramos mantener el contenido preciso y actualizado, pero no podemos garantizar que toda la información esté vigente en el momento de su visita. Verifique siempre los detalles críticos directamente con el proveedor antes de reservar.',
     s3Title: '3. Enlaces de afiliados y colaboraciones',
-    s3P1: (siteName) => `Algunos enlaces de ${siteName} son enlaces de afiliados. Cuando hace clic en estos enlaces y realiza una reserva o compra, podemos recibir una pequeña comisión sin coste adicional para usted. Las relaciones de afiliación no influyen en nuestras recomendaciones editoriales. Solo enlazamos a servicios que consideramos que aportan valor real.`,
+    s3P1: (siteName) => `Algunos enlaces de ${siteName} son enlaces de afiliados. Cuando hace clic en estos enlaces y realiza una reserva o compra, podemos recibir una pequeña comisión sin costo adicional para usted. Las relaciones de afiliación no influyen en nuestras recomendaciones editoriales. Solo enlazamos a servicios que consideramos que aportan valor real.`,
     s3P2: 'Entre nuestros socios afiliados se incluyen, sin limitarse a: Sembo, Trip.com, EconomyBookings, GetYourGuide y otros proveedores de servicios turísticos a través de redes de afiliación como Adtraction y Travelpayouts. Cada reserva está sujeta a los términos y condiciones del proveedor correspondiente.',
     s4Title: '4. Contenido patrocinado',
     s4Body: (siteName) => (
@@ -505,7 +509,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s1Title: '1. 关于本网站',
     s1P1: (siteName, siteUrl) => (
       <>
-        {siteName}(<strong className="text-snow/90">{siteUrl}</strong>)是一个芬兰拉普兰旅游信息中心，由在芬兰注册的{' '}
+        {siteName}（<strong className="text-snow/90">{siteUrl}</strong>）是一个芬兰拉普兰旅游信息中心，由在芬兰注册的{' '}
         <strong className="text-snow/90">LaPeso Oy</strong> 运营。我们提供编辑型旅游指南、目的地信息以及指向第三方预订服务的链接。
       </>
     ),
@@ -534,7 +538,7 @@ const COPY: Record<Lang, TermsCopy> = {
       <>
         任何旅游服务合同（住宿、机票、租车、行程等）均由您与相应的第三方提供方直接签订，适用其条款与隐私政策。
         适用的是其取消、退款及消费者保护规则，而非我们的规则。芬兰《消费者保护法》第6章
-        (<em>kuluttajansuojalaki 6 luku</em>)规定的撤回权由您向商家主张;{siteName} 不参与该过程。
+        (<em>kuluttajansuojalaki 6 luku</em>)规定的撤回权由您向商家主张；{siteName} 不参与该过程。
       </>
     ),
     s6Title: '6. 电子简报',
@@ -555,8 +559,8 @@ const COPY: Record<Lang, TermsCopy> = {
     s10Body: '我们可能会不时更新本条款。变更自发布之日起生效。更新后继续使用本网站即视为接受修订后的条款。',
     s11Title: '11. 可分性',
     s11Body: '如果有管辖权的法院判定本条款中的任何条款无效、违法或不可执行，其余条款仍然完全有效。无效条款将在法律允许的范围内被替换为最接近原商业意图的有效条款。',
-    s12Title: '12. 《数字服务法》(DSA)联络点',
-    s12Intro: '根据欧盟《数字服务法》(法规 (EU) 2022/2065)，我们指定的面向监管机构与服务用户的联络点为：',
+    s12Title: '12. 《数字服务法》（DSA）联络点',
+    s12Intro: '根据欧盟《数字服务法》（法规 (EU) 2022/2065），我们指定的面向监管机构与服务用户的联络点为：',
     s12Items: [
       '电子邮件：info@laplandvibes.com',
       '运营者：LaPeso Oy，芬兰',
@@ -668,7 +672,7 @@ const COPY: Record<Lang, TermsCopy> = {
         lien sponsorisé vous amènera sur des sites externes régis par leurs propres conditions et politiques de confidentialité.
       </>
     ),
-    s5Title: '5. Services tiers, Nous ne sommes pas un commerçant',
+    s5Title: '5. Services tiers : nous ne sommes pas un commerçant',
     s5P1: (siteName) => (
       <>
         Les outils de recherche d\'hôtels, de vols, de location de voitures et de réservation d\'activités sur ce
@@ -687,10 +691,10 @@ const COPY: Record<Lang, TermsCopy> = {
         <em>kuluttajansuojalaki 6 luku</em> s\'exerce à l\'encontre du commerçant ; {siteName} n\'intervient pas dans ce processus.
       </>
     ),
-    s6Title: '6. Infolettre',
+    s6Title: '6. Newsletter',
     s6Body: (unsub, privacy) => (
       <>
-        Si vous vous inscrivez à notre infolettre, vous acceptez de recevoir périodiquement des e-mails sur le
+        Si vous vous inscrivez à notre newsletter, vous acceptez de recevoir périodiquement des e-mails sur le
         voyage en Laponie finlandaise. Vous pouvez vous désinscrire à tout moment via le lien dans tout e-mail
         ou en visitant {unsub}. Nous ne partageons pas votre adresse e-mail avec des tiers. Voir notre {privacy} pour plus de détails.
       </>
@@ -1325,7 +1329,173 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
   },
 };
 
+/**
+ * Jobs-variant overrides (`variant="jobs"`, laplandwork 5.9.2026). A job board sells no
+ * bookings and reviews no hotels: sections 2, 3, 4, 5 and 8 say what the site actually does.
+ * Opt-in like the shop variant; every other site stays byte for byte unchanged.
+ */
+const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
+  en: {
+    s2Title: "2. Listings and profiles",
+    s2Body: "Job listings are written by employers or collected from public sources, and candidate profiles are written by the job seekers themselves. We check listings before publication and remove content that breaks the law or these terms, but we do not verify every statement. Confirm the details with the employer or the candidate before you act on them.",
+    s3Title: "3. External links and partners",
+    s3P1: (siteName) => `${siteName} links to employers' own sites, to Työmarkkinatori, EURES and other services we do not control, and applications are often completed there. We are not responsible for the content, availability or terms of those sites.`,
+    s3P2: "Some links on the guide pages (moving, working conditions, transport) are affiliate links and are marked as such; a job listing or a candidate profile never is. A commission never changes what we recommend.",
+    s4Title: "4. Paid services",
+    s4Body: (siteName) => `Employers can buy listing tiers and packs of contact reveals. Prices, what each purchase includes, refunds and the moderation timetable are set out in the addendum below (A1–A5 and A10). Job seekers never pay ${siteName} anything.`,
+    s5Title: "5. Not an employment agency, not a party",
+    s5P1: (siteName) => `${siteName} is a self-service board. We do not select, rank or recommend candidates, we do not take recruitment assignments, and we are not a party to any application, contract or employment relationship.`,
+    s5P2: () => `The employer is responsible for its hiring process and for the lawfulness of its listing; the job seeker for the accuracy of their profile. Salary, contract, permits and housing are agreed between them directly, under Finnish labour law.`,
+    s8Body: (siteName) => `${siteName} and LaPeso Oy are not liable for loss or damage arising from a listing, a profile, an application or a hiring decision, from reliance on information on this site, or from the actions of employers, candidates or third-party sites. For paid services our liability is limited as set out in A8 of the addendum.`,
+  },
+  fi: {
+    s2Title: "2. Ilmoitukset ja profiilit",
+    s2Body: "Työpaikkailmoitukset kirjoittavat työnantajat tai ne on koottu julkisista lähteistä, ja hakijaprofiilit kirjoittavat työnhakijat itse. Tarkistamme ilmoitukset ennen julkaisua ja poistamme lakia tai näitä ehtoja rikkovan sisällön, mutta emme tarkista jokaista väitettä. Varmista tiedot työnantajalta tai hakijalta ennen kuin toimit niiden perusteella.",
+    s3Title: "3. Ulkoiset linkit ja kumppanit",
+    s3P1: (siteName) => `${siteName} linkittää työnantajien omille sivuille, Työmarkkinatoriin, EURESiin ja muihin palveluihin, joita emme hallitse, ja hakemus tehdään usein siellä. Emme vastaa näiden sivustojen sisällöstä, saatavuudesta tai ehdoista.`,
+    s3P2: "Osa opassivujen (muutto, työehdot, liikkuminen) linkeistä on kumppanilinkkejä, ja ne on merkitty; työpaikkailmoitus tai hakijaprofiili ei koskaan ole. Komissio ei vaikuta siihen, mitä suosittelemme.",
+    s4Title: "4. Maksulliset palvelut",
+    s4Body: (siteName) => `Työnantajat voivat ostaa ilmoitustasoja ja yhteystietojen avauspaketteja. Hinnat, ostoksen sisältö, palautukset ja moderoinnin aikataulu on kirjattu alla olevaan lisäosaan (A1–A5 ja A10). Työnhakija ei maksa ${siteName}-palvelulle koskaan mitään.`,
+    s5Title: "5. Emme ole työnvälittäjä emmekä osapuoli",
+    s5P1: (siteName) => `${siteName} on itsepalvelutaulu. Emme valitse, järjestä tai suosittele hakijoita, emme ota rekrytointitoimeksiantoja emmekä ole osapuoli hakemuksessa, sopimuksessa tai työsuhteessa.`,
+    s5P2: () => `Työnantaja vastaa rekrytointiprosessistaan ja ilmoituksensa lainmukaisuudesta, työnhakija profiilinsa oikeellisuudesta. Palkasta, sopimuksesta, luvista ja asumisesta sovitaan suoraan heidän välillään Suomen työlainsäädännön mukaisesti.`,
+    s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa menetyksestä tai vahingosta, joka aiheutuu ilmoituksesta, profiilista, hakemuksesta tai rekrytointipäätöksestä, sivuston tietoihin luottamisesta taikka työnantajien, hakijoiden tai kolmansien osapuolten sivustojen toiminnasta. Maksullisten palvelujen osalta vastuumme on rajattu lisäosan kohdan A8 mukaisesti.`,
+  },
+  de: {
+    s2Title: "2. Anzeigen und Profile",
+    s2Body: "Stellenanzeigen werden von Arbeitgebern verfasst oder aus öffentlichen Quellen gesammelt, Kandidatenprofile von den Arbeitsuchenden selbst. Wir prüfen Anzeigen vor der Veröffentlichung und entfernen Inhalte, die gegen das Gesetz oder diese Bedingungen verstoßen, überprüfen aber nicht jede Angabe. Bestätigen Sie die Details beim Arbeitgeber oder Kandidaten, bevor Sie darauf vertrauen.",
+    s3Title: "3. Externe Links und Partner",
+    s3P1: (siteName) => `${siteName} verlinkt auf eigene Seiten der Arbeitgeber, auf Työmarkkinatori, EURES und andere Dienste, die wir nicht kontrollieren; Bewerbungen werden oft dort abgeschlossen. Für Inhalt, Verfügbarkeit oder Bedingungen dieser Seiten sind wir nicht verantwortlich.`,
+    s3P2: "Einige Links auf den Ratgeberseiten (Umzug, Arbeitsbedingungen, Verkehr) sind Affiliate-Links und als solche gekennzeichnet; eine Stellenanzeige oder ein Kandidatenprofil nie. Eine Provision ändert nie, was wir empfehlen.",
+    s4Title: "4. Kostenpflichtige Leistungen",
+    s4Body: (siteName) => `Arbeitgeber können Anzeigenstufen und Pakete mit Kontaktfreischaltungen kaufen. Preise, Leistungsumfang, Erstattungen und der Moderationszeitplan stehen im Zusatz unten (A1–A5 und A10). Arbeitsuchende zahlen ${siteName} nie etwas.`,
+    s5Title: "5. Keine Arbeitsvermittlung, keine Vertragspartei",
+    s5P1: (siteName) => `${siteName} ist ein Selbstbedienungs-Board. Wir wählen keine Kandidaten aus, bewerten oder empfehlen sie nicht, übernehmen keine Rekrutierungsaufträge und sind keine Partei einer Bewerbung, eines Vertrags oder eines Arbeitsverhältnisses.`,
+    s5P2: () => `Der Arbeitgeber ist für sein Einstellungsverfahren und die Rechtmäßigkeit seiner Anzeige verantwortlich, der Arbeitsuchende für die Richtigkeit seines Profils. Gehalt, Vertrag, Genehmigungen und Unterkunft werden direkt zwischen ihnen nach finnischem Arbeitsrecht vereinbart.`,
+    s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste oder Schäden aus einer Anzeige, einem Profil, einer Bewerbung oder einer Einstellungsentscheidung, aus dem Vertrauen auf Informationen dieser Website oder aus dem Handeln von Arbeitgebern, Kandidaten oder Drittseiten. Für kostenpflichtige Leistungen ist unsere Haftung gemäß A8 des Zusatzes begrenzt.`,
+  },
+  ja: {
+    s2Title: "2. 求人と候補者プロフィール",
+    s2Body: "求人は雇用主が作成するか公的情報源から集めたもので、候補者プロフィールは求職者自身が作成します。求人は掲載前に確認し、法律や本規約に反する内容は削除しますが、すべての記載を検証するものではありません。行動する前に、雇用主または候補者に詳細を確認してください。",
+    s3Title: "3. 外部リンクとパートナー",
+    s3P1: (siteName) => `${siteName} は雇用主のサイト、Työmarkkinatori、EURES など当社が管理しないサービスへリンクしており、応募はそこで完結することが多くあります。これらのサイトの内容、可用性、条件について当社は責任を負いません。`,
+    s3P2: "ガイドページ（移住、労働条件、交通）の一部のリンクはアフィリエイトリンクであり、その旨を表示しています。求人や候補者プロフィールがアフィリエイトになることはありません。手数料が当社の推奨を変えることはありません。",
+    s4Title: "4. 有料サービス",
+    s4Body: (siteName) => `雇用主は掲載プランと連絡先開示パックを購入できます。料金、内容、返金、審査の時間は下記の付則（A1〜A5 および A10）に定めます。求職者が ${siteName} に支払うことはありません。`,
+    s5Title: "5. 職業紹介事業者でも当事者でもありません",
+    s5P1: (siteName) => `${siteName} はセルフサービスの掲示板です。候補者の選定、順位付け、推薦は行わず、採用委託も受けず、応募、契約、雇用関係の当事者にもなりません。`,
+    s5P2: () => `雇用主は自社の採用プロセスと求人の適法性に、求職者はプロフィールの正確性に責任を負います。給与、契約、許可、住居はフィンランド労働法に基づき両者間で直接取り決めます。`,
+    s8Body: (siteName) => `${siteName} および LaPeso Oy は、求人、プロフィール、応募、採用判断、本サイトの情報への依拠、または雇用主・候補者・第三者サイトの行為から生じる損失や損害について責任を負いません。有料サービスについての責任は付則 A8 のとおり制限されます。`,
+  },
+  es: {
+    s2Title: "2. Ofertas y perfiles",
+    s2Body: "Las ofertas de empleo las redactan los empleadores o se recopilan de fuentes públicas, y los perfiles los escriben los propios candidatos. Revisamos las ofertas antes de publicarlas y retiramos el contenido que infrinja la ley o estos términos, pero no verificamos cada afirmación. Confirme los detalles con el empleador o el candidato antes de actuar.",
+    s3Title: "3. Enlaces externos y socios",
+    s3P1: (siteName) => `${siteName} enlaza a los sitios de los empleadores, a Työmarkkinatori, EURES y otros servicios que no controlamos, y la solicitud suele completarse allí. No respondemos del contenido, la disponibilidad ni las condiciones de esos sitios.`,
+    s3P2: "Algunos enlaces de las guías (mudanza, condiciones laborales, transporte) son enlaces de afiliación y están marcados; una oferta de empleo o un perfil de candidato nunca lo es. Una comisión nunca cambia lo que recomendamos.",
+    s4Title: "4. Servicios de pago",
+    s4Body: (siteName) => `Los empleadores pueden comprar niveles de publicación y packs de desbloqueo de contactos. Los precios, el contenido de cada compra, los reembolsos y los plazos de moderación figuran en el anexo (A1–A5 y A10). Los candidatos nunca pagan nada a ${siteName}.`,
+    s5Title: "5. Ni agencia de colocación ni parte",
+    s5P1: (siteName) => `${siteName} es un tablón de autoservicio. No seleccionamos, clasificamos ni recomendamos candidatos, no aceptamos encargos de selección y no somos parte de ninguna solicitud, contrato ni relación laboral.`,
+    s5P2: () => `El empleador responde de su proceso de contratación y de la legalidad de su oferta; el candidato, de la exactitud de su perfil. Salario, contrato, permisos y alojamiento se acuerdan directamente entre ellos conforme al derecho laboral finlandés.`,
+    s8Body: (siteName) => `${siteName} y LaPeso Oy no responden de pérdidas o daños derivados de una oferta, un perfil, una solicitud o una decisión de contratación, de la confianza en la información de este sitio ni de las acciones de empleadores, candidatos o sitios de terceros. Para los servicios de pago, nuestra responsabilidad se limita según el punto A8 del anexo.`,
+  },
+  'pt-BR': {
+    s2Title: "2. Vagas e perfis",
+    s2Body: "As vagas são escritas pelos empregadores ou reunidas de fontes públicas, e os perfis são escritos pelos próprios candidatos. Revisamos as vagas antes da publicação e removemos conteúdo que viole a lei ou estes termos, mas não verificamos cada afirmação. Confirme os detalhes com o empregador ou o candidato antes de agir.",
+    s3Title: "3. Links externos e parceiros",
+    s3P1: (siteName) => `O ${siteName} tem links para os sites dos empregadores, para o Työmarkkinatori, o EURES e outros serviços que não controlamos, e a candidatura costuma ser concluída neles. Não nos responsabilizamos pelo conteúdo, pela disponibilidade nem pelas condições desses sites.`,
+    s3P2: "Alguns links das páginas de guia (mudança, condições de trabalho, transporte) são links de afiliado e estão identificados; uma vaga ou um perfil de candidato nunca é. Uma comissão nunca muda o que recomendamos.",
+    s4Title: "4. Serviços pagos",
+    s4Body: (siteName) => `Empregadores podem comprar níveis de anúncio e pacotes de liberação de contatos. Preços, conteúdo de cada compra, reembolsos e prazos de moderação estão no adendo abaixo (A1–A5 e A10). Candidatos nunca pagam nada ao ${siteName}.`,
+    s5Title: "5. Nem agência de recrutamento nem parte",
+    s5P1: (siteName) => `O ${siteName} é um quadro de autoatendimento. Não selecionamos, classificamos nem recomendamos candidatos, não aceitamos mandatos de recrutamento e não somos parte de nenhuma candidatura, contrato ou relação de trabalho.`,
+    s5P2: () => `O empregador responde pelo seu processo seletivo e pela legalidade da vaga; o candidato, pela exatidão do seu perfil. Salário, contrato, autorizações e moradia são acordados diretamente entre eles, conforme a legislação trabalhista finlandesa.`,
+    s8Body: (siteName) => `O ${siteName} e a LaPeso Oy não respondem por perdas ou danos decorrentes de uma vaga, um perfil, uma candidatura ou uma decisão de contratação, da confiança em informações deste site ou das ações de empregadores, candidatos ou sites de terceiros. Para serviços pagos, nossa responsabilidade é limitada conforme o item A8 do adendo.`,
+  },
+  'zh-CN': {
+    s2Title: "2. 招聘信息与档案",
+    s2Body: "招聘信息由雇主撰写或从公开来源汇集，候选人档案由求职者本人撰写。我们在发布前审核招聘信息并删除违法或违反本条款的内容，但不核实每一项陈述。采取行动前，请向雇主或候选人确认详情。",
+    s3Title: "3. 外部链接与合作伙伴",
+    s3P1: (siteName) => `${siteName} 链接至雇主自有网站、Työmarkkinatori、EURES 及其他我们无法控制的服务，申请通常在那里完成。我们对这些网站的内容、可用性或条款不承担责任。`,
+    s3P2: "指南页面（移居、劳动条件、交通）上的部分链接为联盟链接并已标明；招聘信息或候选人档案绝不会是联盟链接。佣金不会改变我们的推荐。",
+    s4Title: "4. 付费服务",
+    s4Body: (siteName) => `雇主可购买发布档次和联系方式解锁套餐。价格、每项购买包含的内容、退款和审核时限见下方附则（A1–A5 和 A10）。求职者无需向 ${siteName} 支付任何费用。`,
+    s5Title: "5. 非职业介绍机构，非任何一方",
+    s5P1: (siteName) => `${siteName} 是自助式平台。我们不筛选、排名或推荐候选人，不承接招聘委托，也不是任何申请、合同或雇佣关系的一方。`,
+    s5P2: () => `雇主对其招聘流程和招聘信息的合法性负责，求职者对其档案的准确性负责。薪资、合同、许可和住宿由双方依据芬兰劳动法直接商定。`,
+    s8Body: (siteName) => `${siteName} 和 LaPeso Oy 不对因招聘信息、档案、申请或录用决定、依赖本网站信息、或雇主、候选人及第三方网站的行为而产生的损失或损害承担责任。对于付费服务，我们的责任按附则 A8 限制。`,
+  },
+  ko: {
+    s2Title: "2. 공고와 프로필",
+    s2Body: "채용 공고는 고용주가 작성하거나 공개 출처에서 수집하며, 후보자 프로필은 구직자 본인이 작성합니다. 공고는 게시 전에 검토하고 법이나 본 약관에 어긋나는 내용은 삭제하지만, 모든 기재 사항을 검증하지는 않습니다. 행동하기 전에 고용주나 후보자에게 세부 사항을 확인하십시오.",
+    s3Title: "3. 외부 링크와 파트너",
+    s3P1: (siteName) => `${siteName}는 고용주 자체 사이트, Työmarkkinatori, EURES 등 당사가 통제하지 않는 서비스로 연결되며, 지원은 대개 그곳에서 완료됩니다. 해당 사이트의 내용, 이용 가능성, 조건에 대해 당사는 책임지지 않습니다.`,
+    s3P2: "가이드 페이지(이주, 근로 조건, 교통)의 일부 링크는 제휴 링크이며 표시되어 있습니다. 채용 공고나 후보자 프로필은 결코 제휴 링크가 아닙니다. 수수료가 당사의 추천을 바꾸지 않습니다.",
+    s4Title: "4. 유료 서비스",
+    s4Body: (siteName) => `고용주는 공고 등급과 연락처 열람 패키지를 구매할 수 있습니다. 가격, 구매 내용, 환불, 검수 일정은 아래 부칙(A1–A5, A10)에 정해져 있습니다. 구직자는 ${siteName}에 어떤 비용도 지불하지 않습니다.`,
+    s5Title: "5. 직업소개 기관도, 당사자도 아닙니다",
+    s5P1: (siteName) => `${siteName}는 셀프서비스 게시판입니다. 후보자를 선별, 순위 지정, 추천하지 않고, 채용 위탁을 받지 않으며, 지원·계약·고용 관계의 당사자가 아닙니다.`,
+    s5P2: () => `고용주는 자신의 채용 절차와 공고의 적법성에, 구직자는 프로필의 정확성에 책임이 있습니다. 급여, 계약, 허가, 주거는 핀란드 노동법에 따라 양측이 직접 합의합니다.`,
+    s8Body: (siteName) => `${siteName}와 LaPeso Oy는 공고, 프로필, 지원, 채용 결정, 본 사이트 정보에 대한 신뢰, 또는 고용주·후보자·제3자 사이트의 행위로 인한 손실이나 손해에 대해 책임지지 않습니다. 유료 서비스에 대한 책임은 부칙 A8에 따라 제한됩니다.`,
+  },
+  fr: {
+    s2Title: "2. Annonces et profils",
+    s2Body: "Les offres d'emploi sont rédigées par les employeurs ou collectées auprès de sources publiques, et les profils par les candidats eux-mêmes. Nous vérifions les annonces avant publication et retirons tout contenu contraire à la loi ou aux présentes conditions, sans vérifier chaque affirmation. Confirmez les détails auprès de l'employeur ou du candidat avant d'agir.",
+    s3Title: "3. Liens externes et partenaires",
+    s3P1: (siteName) => `${siteName} renvoie vers les sites des employeurs, vers Työmarkkinatori, EURES et d'autres services que nous ne contrôlons pas, où la candidature est souvent finalisée. Nous ne répondons ni du contenu, ni de la disponibilité, ni des conditions de ces sites.`,
+    s3P2: "Certains liens des pages guides (installation, conditions de travail, transports) sont des liens d'affiliation et sont signalés comme tels ; une offre d'emploi ou un profil de candidat ne l'est jamais. Une commission ne change jamais ce que nous recommandons.",
+    s4Title: "4. Services payants",
+    s4Body: (siteName) => `Les employeurs peuvent acheter des niveaux d'annonce et des packs de déblocage de coordonnées. Les prix, le contenu de chaque achat, les remboursements et les délais de modération figurent dans l'annexe ci-dessous (A1–A5 et A10). Les candidats ne paient jamais rien à ${siteName}.`,
+    s5Title: "5. Ni agence de placement, ni partie",
+    s5P1: (siteName) => `${siteName} est un tableau en libre-service. Nous ne sélectionnons, ne classons ni ne recommandons de candidats, nous n'acceptons aucun mandat de recrutement et nous ne sommes partie à aucune candidature, contrat ou relation de travail.`,
+    s5P2: () => `L'employeur répond de son processus de recrutement et de la licéité de son annonce ; le candidat, de l'exactitude de son profil. Salaire, contrat, permis et logement se conviennent directement entre eux, selon le droit du travail finlandais.`,
+    s8Body: (siteName) => `${siteName} et LaPeso Oy ne répondent pas des pertes ou dommages résultant d'une annonce, d'un profil, d'une candidature ou d'une décision d'embauche, de la confiance accordée aux informations de ce site, ni des actes des employeurs, des candidats ou des sites tiers. Pour les services payants, notre responsabilité est limitée conformément au point A8 de l'annexe.`,
+  },
+  it: {
+    s2Title: "2. Annunci e profili",
+    s2Body: "Gli annunci di lavoro sono scritti dai datori di lavoro o raccolti da fonti pubbliche, i profili dai candidati stessi. Controlliamo gli annunci prima della pubblicazione e rimuoviamo i contenuti contrari alla legge o a queste condizioni, ma non verifichiamo ogni affermazione. Confermi i dettagli con il datore di lavoro o il candidato prima di agire.",
+    s3Title: "3. Link esterni e partner",
+    s3P1: (siteName) => `${siteName} rimanda ai siti dei datori di lavoro, a Työmarkkinatori, EURES e ad altri servizi che non controlliamo, dove spesso si completa la candidatura. Non rispondiamo del contenuto, della disponibilità o delle condizioni di tali siti.`,
+    s3P2: "Alcuni link delle pagine guida (trasferimento, condizioni di lavoro, trasporti) sono link di affiliazione e sono segnalati; un annuncio di lavoro o un profilo di candidato non lo è mai. Una commissione non cambia mai ciò che consigliamo.",
+    s4Title: "4. Servizi a pagamento",
+    s4Body: (siteName) => `I datori di lavoro possono acquistare livelli di annuncio e pacchetti di sblocco dei recapiti. Prezzi, contenuto di ogni acquisto, rimborsi e tempi di moderazione sono indicati nell'appendice sottostante (A1–A5 e A10). I candidati non pagano mai nulla a ${siteName}.`,
+    s5Title: "5. Né agenzia per il lavoro né parte",
+    s5P1: (siteName) => `${siteName} è una bacheca self-service. Non selezioniamo, classifichiamo o raccomandiamo candidati, non accettiamo incarichi di ricerca del personale e non siamo parte di alcuna candidatura, contratto o rapporto di lavoro.`,
+    s5P2: () => `Il datore di lavoro risponde del proprio processo di selezione e della liceità dell'annuncio; il candidato dell'esattezza del proprio profilo. Retribuzione, contratto, permessi e alloggio si concordano direttamente tra loro secondo il diritto del lavoro finlandese.`,
+    s8Body: (siteName) => `${siteName} e LaPeso Oy non rispondono di perdite o danni derivanti da un annuncio, un profilo, una candidatura o una decisione di assunzione, dall'affidamento sulle informazioni di questo sito o dalle azioni di datori di lavoro, candidati o siti terzi. Per i servizi a pagamento la nostra responsabilità è limitata secondo il punto A8 dell'appendice.`,
+  },
+  nl: {
+    s2Title: "2. Vacatures en profielen",
+    s2Body: "Vacatures worden door werkgevers geschreven of uit openbare bronnen verzameld, profielen door de werkzoekenden zelf. Wij controleren vacatures vóór publicatie en verwijderen inhoud die in strijd is met de wet of deze voorwaarden, maar wij verifiëren niet elke bewering. Bevestig de details bij de werkgever of de kandidaat voordat u ernaar handelt.",
+    s3Title: "3. Externe links en partners",
+    s3P1: (siteName) => `${siteName} linkt naar de eigen sites van werkgevers, naar Työmarkkinatori, EURES en andere diensten die wij niet beheren, en de sollicitatie wordt vaak daar afgerond. Wij zijn niet verantwoordelijk voor de inhoud, beschikbaarheid of voorwaarden van die sites.`,
+    s3P2: "Sommige links op de gidspagina's (verhuizen, arbeidsvoorwaarden, vervoer) zijn affiliatelinks en zijn als zodanig gemarkeerd; een vacature of een kandidaatprofiel nooit. Een commissie verandert nooit wat wij aanbevelen.",
+    s4Title: "4. Betaalde diensten",
+    s4Body: (siteName) => `Werkgevers kunnen vacatureniveaus en pakketten met vrijgaven van contactgegevens kopen. Prijzen, wat elke aankoop omvat, terugbetalingen en de beoordelingstermijn staan in het addendum hieronder (A1–A5 en A10). Werkzoekenden betalen ${siteName} nooit iets.`,
+    s5Title: "5. Geen uitzendbureau, geen partij",
+    s5P1: (siteName) => `${siteName} is een selfservice-prikbord. Wij selecteren, rangschikken of bevelen geen kandidaten aan, wij nemen geen wervingsopdrachten aan en wij zijn geen partij bij een sollicitatie, contract of arbeidsrelatie.`,
+    s5P2: () => `De werkgever is verantwoordelijk voor zijn wervingsproces en de rechtmatigheid van zijn vacature; de werkzoekende voor de juistheid van zijn profiel. Salaris, contract, vergunningen en huisvesting worden rechtstreeks tussen hen afgesproken, volgens het Finse arbeidsrecht.`,
+    s8Body: (siteName) => `${siteName} en LaPeso Oy zijn niet aansprakelijk voor verlies of schade door een vacature, een profiel, een sollicitatie of een aanstellingsbeslissing, door vertrouwen op informatie op deze site, of door het handelen van werkgevers, kandidaten of sites van derden. Voor betaalde diensten is onze aansprakelijkheid beperkt zoals bepaald in A8 van het addendum.`,
+  },
+  sv: {
+    s2Title: "2. Annonser och profiler",
+    s2Body: "Jobbannonser skrivs av arbetsgivare eller samlas in från offentliga källor, och kandidatprofiler skrivs av de arbetssökande själva. Vi granskar annonser före publicering och tar bort innehåll som bryter mot lagen eller dessa villkor, men vi verifierar inte varje uppgift. Bekräfta detaljerna med arbetsgivaren eller kandidaten innan du agerar.",
+    s3Title: "3. Externa länkar och partner",
+    s3P1: (siteName) => `${siteName} länkar till arbetsgivarnas egna webbplatser, till Työmarkkinatori, EURES och andra tjänster som vi inte kontrollerar, och ansökan görs ofta där. Vi ansvarar inte för innehållet, tillgängligheten eller villkoren på de webbplatserna.`,
+    s3P2: "Vissa länkar på guidesidorna (flytt, arbetsvillkor, transport) är affiliatelänkar och är markerade; en jobbannons eller en kandidatprofil är det aldrig. En provision ändrar aldrig vad vi rekommenderar.",
+    s4Title: "4. Betaltjänster",
+    s4Body: (siteName) => `Arbetsgivare kan köpa annonsnivåer och paket med upplåsningar av kontaktuppgifter. Priser, vad varje köp omfattar, återbetalningar och granskningstider anges i tillägget nedan (A1–A5 och A10). Arbetssökande betalar aldrig något till ${siteName}.`,
+    s5Title: "5. Ingen arbetsförmedling, ingen part",
+    s5P1: (siteName) => `${siteName} är en självbetjäningstavla. Vi väljer inte ut, rangordnar eller rekommenderar kandidater, vi tar inga rekryteringsuppdrag och vi är inte part i någon ansökan, något avtal eller något anställningsförhållande.`,
+    s5P2: () => `Arbetsgivaren ansvarar för sin rekryteringsprocess och för annonsens lagenlighet, den arbetssökande för att profilen är korrekt. Lön, avtal, tillstånd och boende avtalas direkt mellan dem enligt finsk arbetsrätt.`,
+    s8Body: (siteName) => `${siteName} och LaPeso Oy ansvarar inte för förlust eller skada som uppstår genom en annons, en profil, en ansökan eller ett anställningsbeslut, genom förlitan på information på den här webbplatsen eller genom arbetsgivares, kandidaters eller tredje parts webbplatsers agerande. För betaltjänster är vårt ansvar begränsat enligt A8 i tillägget.`,
+  },
+};
+
 export default function TermsContent({
+  intro,
+  lastUpdated: lastUpdatedOverride,
   siteName = 'LaplandVibes',
   siteUrl = 'laplandvibes.com',
   lang = 'en',
@@ -1335,6 +1505,8 @@ export default function TermsContent({
   const t =
     variant === 'shop'
       ? { ...base, ...(SHOP_OVERRIDES[lang] ?? SHOP_OVERRIDES.en) }
+      : variant === 'jobs'
+      ? { ...base, ...(JOBS_OVERRIDES[lang] ?? JOBS_OVERRIDES.en) }
       : base;
   const email = <a href="mailto:info@laplandvibes.com" className="text-vibe-pink hover:text-pink-300 underline">info@laplandvibes.com</a>;
   // Paljas polku "/unsubscribe" oli sekä linkkiteksti että kohde: teksti luki
@@ -1379,13 +1551,13 @@ export default function TermsContent({
       <div className="max-w-3xl mx-auto px-4 py-20 sm:py-28">
         <p className="text-vibe-pink text-sm font-semibold tracking-[0.2em] uppercase mb-4">{t.kicker}</p>
         <h1 className="font-heading font-semibold text-4xl sm:text-5xl text-snow tracking-wide leading-tight mb-6">{t.h1}</h1>
-        <p className="text-snow/75 text-sm mb-12">{t.lastUpdated}</p>
+        <p className="text-snow/75 text-sm mb-12">{lastUpdatedOverride ?? t.lastUpdated}</p>
 
         <div className="space-y-10 text-snow/70 leading-relaxed">
 
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s1Title}</h2>
-            <p>{t.s1P1(siteName, siteUrl)}</p>
+            <p>{intro ?? t.s1P1(siteName, siteUrl)}</p>
             <p className="mt-3">{t.s1P2}</p>
           </section>
 

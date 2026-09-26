@@ -22,6 +22,12 @@ interface CookieContentProps {
   siteName?: string;
   /** Render language. */
   lang?: Lang;
+  /**
+   * Naytetaan istuntotallennuksen (Microsoft Clarity) evastelohko.
+   * 🔴 Vain sivustoille joilla Clarity on OIKEASTI asennettuna. Oletus false,
+   * jotta 27 muun sivuston seloste ei vaita nauhoittavansa mitaan.
+   */
+  sessionRecording?: boolean;
 }
 
 interface CookieCopy {
@@ -39,6 +45,8 @@ interface CookieCopy {
   analyticsNote: string;
   analyticsBody: string;
   analyticsDur: string;
+  recordingBody: string;
+  recordingDur: string;
   cjBadge: string;
   cjNote: string;
   cjBody: (siteName: string) => React.ReactNode;
@@ -89,6 +97,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Requires consent',
     analyticsBody: 'Google Analytics 4 cookies help us understand how visitors use the site: which pages are popular, how long people stay, what device they browse on, and where they come from (country and city level). We do not collect names, email addresses or other directly identifying information. Visitors are identified by a random ID stored in a cookie.',
     analyticsDur: 'Duration: 14 months',
+    recordingBody: 'Microsoft Clarity records an anonymised replay of the visit (mouse movement, clicks and scrolling) and builds heatmaps from it, so we can see which parts of a page confuse people. The recording is not linked to a person and is never used for advertising.',
+    recordingDur: 'Duration: 1 year',
     cjBadge: 'Affiliate',
     cjNote: 'Set by third parties when you click affiliate links',
     cjBody: (siteName) => <>When you click a booking or affiliate link on {siteName}, our affiliate networks may set a tracking cookie or add a tracking parameter to the link so the booking can be attributed to {siteName}: Adtraction (partners like Sembo and Lomarengas, via <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> and <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (partners like EconomyBookings, via <span className="font-mono text-xs text-snow/80">tp.media</span>) and Trip.com (partner parameters on <span className="font-mono text-xs text-snow/80">trip.com</span>). This is how we earn a small commission when you book, at no extra cost to you.</>,
@@ -137,6 +147,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Vaatii suostumuksen',
     analyticsBody: 'Google Analytics 4 ‑evästeet auttavat meitä ymmärtämään, miten kävijät käyttävät sivustoa: mitkä sivut ovat suosittuja, kuinka kauan kävijät viipyvät, millä laitteella he selaavat ja mistä he tulevat (maa- ja kaupunkitaso). Emme kerää nimeä, sähköpostiosoitetta tai muuta suoraan tunnistavaa tietoa. Kävijä tunnistetaan evästeessä olevalla satunnaisella tunnisteella.',
     analyticsDur: 'Kesto: 14 kuukautta',
+    recordingBody: 'Microsoft Clarity tallentaa käynnistä nimettömän toiston (hiiren liikkeet, klikkaukset ja vierityksen) ja muodostaa niistä lämpökarttoja, jotta näemme mitkä kohdat sivusta hämmentävät kävijää. Tallennetta ei yhdistetä henkilöön eikä sitä käytetä mainontaan.',
+    recordingDur: 'Kesto: 1 vuosi',
     cjBadge: 'Kumppani',
     cjNote: 'Asetetaan kolmannen osapuolen toimesta, kun klikkaat kumppanilinkkiä',
     cjBody: (siteName) => <>Kun klikkaat varaus- tai kumppanilinkkiä sivustolla {siteName}, kumppaniverkostomme voivat asettaa seurantaevästeen tai lisätä linkkiin seurantaparametrin, jotta varaus kohdistuu sivustolle {siteName}: Adtraction (kumppanit kuten Sembo ja Lomarengas, domainien <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> ja <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span> kautta), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (kumppanit kuten EconomyBookings, <span className="font-mono text-xs text-snow/80">tp.media</span>) ja Trip.com (kumppanitunnisteet osoitteessa <span className="font-mono text-xs text-snow/80">trip.com</span>). Näin saamme pienen komission varauksestasi ilman lisäkustannuksia sinulle.</>,
@@ -185,6 +197,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Einwilligung erforderlich',
     analyticsBody: 'Cookies von Google Analytics 4 helfen uns zu verstehen, wie Besucher die Website nutzen: welche Seiten beliebt sind, wie lange Besucher bleiben, mit welchem Gerät sie surfen und woher sie kommen (Land- und Stadtebene). Wir erheben keine Namen, E-Mail-Adressen oder andere direkt identifizierende Daten. Besucher werden über eine zufällige Kennung in einem Cookie erkannt.',
     analyticsDur: 'Dauer: 14 Monate',
+    recordingBody: 'Microsoft Clarity zeichnet einen anonymisierten Verlauf des Besuchs auf (Mausbewegungen, Klicks und Scrollen) und erstellt daraus Heatmaps, damit wir erkennen, welche Stellen einer Seite verwirren. Die Aufzeichnung wird keiner Person zugeordnet und nicht für Werbung verwendet.',
+    recordingDur: 'Dauer: 1 Jahr',
     cjBadge: 'Partner',
     cjNote: 'Werden von Dritten gesetzt, wenn Sie auf Partnerlinks klicken',
     cjBody: (siteName) => <>Wenn Sie auf {siteName} einen Buchungs- oder Partnerlink anklicken, können unsere Partnernetzwerke ein Tracking-Cookie setzen oder dem Link einen Tracking-Parameter hinzufügen, damit die Buchung {siteName} zugeordnet werden kann: Adtraction (Partner wie Sembo und Lomarengas, über <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> und <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (Partner wie EconomyBookings, über <span className="font-mono text-xs text-snow/80">tp.media</span>) und Trip.com (Partnerparameter auf <span className="font-mono text-xs text-snow/80">trip.com</span>). So erhalten wir eine kleine Provision, wenn Sie buchen, ohne Mehrkosten für Sie.</>,
@@ -221,21 +235,23 @@ const COPY: Record<Lang, CookieCopy> = {
   ja: {
     kicker: '法的情報',
     h1: 'クッキーポリシー',
-    lastUpdated: '最終更新: 2026年7月',
+    lastUpdated: '最終更新：2026年7月',
     whatAreTitle: 'クッキーとは？',
     whatAreBody: 'クッキーとは、ウェブサイトを訪問した際にお客様のデバイスに保存される小さなテキストファイルです。ウェブサイトがお客様の設定を記憶し、サイトの使われ方を把握するのに役立ちます。クッキーはブラウザの設定または当サイトの同意バナーから管理できます。',
     cookiesWeUseTitle: '使用しているクッキー',
     essentialBadge: '必須',
     essentialNote: '常時有効、無効化できません',
     essentialBody: 'これらのクッキーはウェブサイトの動作に必要です。ご訪問のたびに確認しないように、同意設定を保存します。',
-    essentialDur: '保存期間: 1年',
+    essentialDur: '保存期間：1年',
     analyticsBadge: '解析',
     analyticsNote: '同意が必要',
     analyticsBody: 'Google Analytics 4 のクッキーは、サイトの使われ方を把握するのに役立ちます：どのページが人気か、滞在時間、利用デバイス、訪問元の国と都市など。氏名やメールアドレスなど直接個人を特定できる情報は取得せず、クッキーに保存されたランダムな識別子で訪問者を区別しています。',
     analyticsDur: '保存期間：14ヶ月',
+    recordingBody: 'Microsoft Clarity は、マウスの動き、クリック、スクロールを匿名で記録し、そこからヒートマップを作成します。これにより、ページのどの部分が分かりにくいかを把握できます。記録は個人と結び付けられず、広告には使用しません。',
+    recordingDur: '保存期間：1年',
     cjBadge: 'アフィリエイト',
     cjNote: 'アフィリエイトリンクをクリックすると第三者によって設定されます',
-    cjBody: (siteName) => <>{siteName} で予約リンクやアフィリエイトリンクをクリックすると、提携ネットワークがトラッキングクッキーを設定するか、リンクに計測パラメータを付与し、予約を {siteName} に帰属させることがあります。対象：Adtraction(Sembo、Lomarengas などのパートナー。<span className="font-mono text-xs text-snow/80">do.sembo.fi</span> / <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span> 経由)、Daisycon(<span className="font-mono text-xs text-snow/80">jdt8.net</span>)、Travelpayouts(EconomyBookings など。<span className="font-mono text-xs text-snow/80">tp.media</span> 経由)、Trip.com(<span className="font-mono text-xs text-snow/80">trip.com</span> 上のパートナーパラメータ)。ご予約の際に追加費用なしで当サイトが少額の手数料を受け取る仕組みです。</>,
+    cjBody: (siteName) => <>{siteName} で予約リンクやアフィリエイトリンクをクリックすると、提携ネットワークがトラッキングクッキーを設定するか、リンクに計測パラメータを付与し、予約を {siteName} に帰属させることがあります。対象：Adtraction（Sembo、Lomarengas などのパートナー。<span className="font-mono text-xs text-snow/80">do.sembo.fi</span> / <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span> 経由）、Daisycon(<span className="font-mono text-xs text-snow/80">jdt8.net</span>)、Travelpayouts（EconomyBookings など。<span className="font-mono text-xs text-snow/80">tp.media</span> 経由）、Trip.com（<span className="font-mono text-xs text-snow/80">trip.com</span> 上のパートナーパラメータ）。ご予約の際に追加費用なしで当サイトが少額の手数料を受け取る仕組みです。</>,
     cjDur: '期間：セッション〜45日（パートナーにより異なる）',
     gygBadge: 'アフィリエイト (GYG)',
     gygNote: 'GetYourGuide のウィジェットとクリックによって設定されます',
@@ -243,7 +259,7 @@ const COPY: Record<Lang, CookieCopy> = {
     gygDur: '保存期間：セッション 〜 30日',
     lsBadge: 'localStorage',
     lsNote: 'ブラウザに保存され、サーバーには送信されません',
-    lsIntro: 'サイト体験を快適にするため、ブラウザの localStorage に2つの小さなエントリを保存しています:',
+    lsIntro: 'サイト体験を快適にするため、ブラウザの localStorage に2つの小さなエントリを保存しています：',
     lsConsentDesc: '同意/拒否のお客様の選択（上記の同意クッキーのミラー）',
     lsPopupDesc: 'ニュースレターポップアップを最後に閉じた、または登録した日時。7日間は再表示しません（登録された場合は表示しません）',
     lsTail: 'localStorage は技術的にはクッキーではありませんが、透明性のためここで記載しています。ブラウザのサイトデータ設定から削除できます。',
@@ -281,9 +297,11 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Requieren consentimiento',
     analyticsBody: 'Las cookies de Google Analytics 4 nos ayudan a entender cómo se utiliza el sitio: qué páginas son populares, cuánto tiempo permanecen los usuarios, con qué dispositivo navegan y de dónde proceden (a nivel de país y ciudad). No recogemos nombres, direcciones de correo electrónico ni otros datos que identifiquen directamente a una persona: distinguimos a los visitantes mediante un identificador aleatorio guardado en una cookie.',
     analyticsDur: 'Duración: 14 meses',
+    recordingBody: 'Microsoft Clarity graba una reproducción anónima de la visita (movimiento del ratón, clics y desplazamiento) y crea mapas de calor a partir de ella, para ver qué partes de una página confunden. La grabación no se vincula a ninguna persona ni se usa con fines publicitarios.',
+    recordingDur: 'Duración: 1 año',
     cjBadge: 'Afiliados',
     cjNote: 'Las establecen terceros al hacer clic en enlaces de afiliados',
-    cjBody: (siteName) => <>Cuando hace clic en un enlace de reserva o de afiliado en {siteName}, nuestras redes de afiliación pueden establecer una cookie de seguimiento o añadir un parámetro de seguimiento al enlace para atribuir la reserva a {siteName}: Adtraction (socios como Sembo y Lomarengas, a través de <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> y <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (socios como EconomyBookings, vía <span className="font-mono text-xs text-snow/80">tp.media</span>) y Trip.com (parámetros de socio en <span className="font-mono text-xs text-snow/80">trip.com</span>). Así ganamos una pequeña comisión cuando reserva, sin coste adicional para usted.</>,
+    cjBody: (siteName) => <>Cuando hace clic en un enlace de reserva o de afiliado en {siteName}, nuestras redes de afiliación pueden establecer una cookie de seguimiento o añadir un parámetro de seguimiento al enlace para atribuir la reserva a {siteName}: Adtraction (socios como Sembo y Lomarengas, a través de <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> y <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (socios como EconomyBookings, vía <span className="font-mono text-xs text-snow/80">tp.media</span>) y Trip.com (parámetros de socio en <span className="font-mono text-xs text-snow/80">trip.com</span>). Así ganamos una pequeña comisión cuando reserva, sin costo adicional para usted.</>,
     cjDur: 'Duración: sesión – 45 días (según el socio)',
     gygBadge: 'Afiliados (GYG)',
     gygNote: 'Establecidas por widgets y clics de GetYourGuide',
@@ -329,6 +347,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Requerem consentimento',
     analyticsBody: 'Os cookies do Google Analytics 4 nos ajudam a entender como os visitantes utilizam o site: quais páginas são populares, quanto tempo as pessoas permanecem, em que dispositivo navegam e de onde vêm (a nível de país e cidade). Não coletamos nomes, endereços de e-mail nem outros dados que identifiquem diretamente uma pessoa: os visitantes são distinguidos por um identificador aleatório guardado em um cookie.',
     analyticsDur: 'Duração: 14 meses',
+    recordingBody: 'O Microsoft Clarity grava uma reprodução anônima da visita (movimento do mouse, cliques e rolagem) e cria mapas de calor a partir dela, para vermos quais partes da página confundem. A gravação não é vinculada a nenhuma pessoa nem usada para publicidade.',
+    recordingDur: 'Duração: 1 ano',
     cjBadge: 'Afiliados',
     cjNote: 'Definidos por terceiros quando você clica em links de afiliados',
     cjBody: (siteName) => <>Quando você clica em um link de reserva ou de afiliado no {siteName}, nossas redes de afiliados podem definir um cookie de rastreamento ou adicionar um parâmetro de rastreamento ao link para atribuir a reserva ao {siteName}: Adtraction (parceiros como Sembo e Lomarengas, via <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> e <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (parceiros como EconomyBookings, via <span className="font-mono text-xs text-snow/80">tp.media</span>) e Trip.com (parâmetros de parceiro em <span className="font-mono text-xs text-snow/80">trip.com</span>). É assim que recebemos uma pequena comissão quando você reserva, sem custo adicional para você.</>,
@@ -377,9 +397,11 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: '需要您的同意',
     analyticsBody: 'Google Analytics 4 的 Cookie 帮助我们了解访客如何使用网站：哪些页面受欢迎、停留时间、使用的设备，以及访客来自哪个国家和城市。我们不会收集姓名、电子邮箱等可直接识别身份的信息，只通过 Cookie 中的随机标识符区分访客。',
     analyticsDur: '保留期限：14个月',
+    recordingBody: 'Microsoft Clarity 会匿名记录访问过程中的鼠标移动、点击和滚动，并据此生成热图，帮助我们了解页面的哪些部分让人困惑。记录不会关联到个人，也不会用于广告。',
+    recordingDur: '保留期限：1年',
     cjBadge: '联盟',
     cjNote: '当您点击联盟链接时由第三方设置',
-    cjBody: (siteName) => <>当您在 {siteName} 上点击预订或联盟链接时，我们的联盟网络可能会设置跟踪 Cookie 或在链接中加入跟踪参数，以便将预订归因于 {siteName}：Adtraction(合作伙伴如 Sembo、Lomarengas，经由 <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> 与 <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>)、Daisycon(<span className="font-mono text-xs text-snow/80">jdt8.net</span>)、Travelpayouts(如 EconomyBookings，经由 <span className="font-mono text-xs text-snow/80">tp.media</span>)以及 Trip.com(<span className="font-mono text-xs text-snow/80">trip.com</span> 上的合作参数)。您预订时我们因此获得少量佣金，您无需支付任何额外费用。</>,
+    cjBody: (siteName) => <>当您在 {siteName} 上点击预订或联盟链接时，我们的联盟网络可能会设置跟踪 Cookie 或在链接中加入跟踪参数，以便将预订归因于 {siteName}：Adtraction（合作伙伴如 Sembo、Lomarengas，经由 <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> 与 <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>）、Daisycon（<span className="font-mono text-xs text-snow/80">jdt8.net</span>）、Travelpayouts（如 EconomyBookings，经由 <span className="font-mono text-xs text-snow/80">tp.media</span>）以及 Trip.com（<span className="font-mono text-xs text-snow/80">trip.com</span> 上的合作参数）。您预订时我们因此获得少量佣金，您无需支付任何额外费用。</>,
     cjDur: '期限：会话至45天（视合作伙伴而定）',
     gygBadge: '联盟 (GYG)',
     gygNote: '由 GetYourGuide 的小组件和点击设置',
@@ -405,7 +427,7 @@ const COPY: Record<Lang, CookieCopy> = {
     backToHome: '← 返回首页',
     privacyLink: '隐私政策 →',
     typeEssential: '必要',
-    typeEssentialLs: '必要(localStorage)',
+    typeEssentialLs: '必要（localStorage）',
     typeAnalytics: '分析',
     typeAffiliateCj: '联盟（合作网络）',
     typeAffiliateGyg: '联盟 (GetYourGuide)',
@@ -425,6 +447,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: '동의가 필요합니다',
     analyticsBody: 'Google Analytics 4 쿠키는 방문자가 사이트를 어떻게 이용하는지(어떤 페이지가 인기 있는지, 체류 시간, 사용 기기, 국가 및 도시 단위의 접속 출처)를 파악하는 데 도움이 됩니다. 이름이나 이메일 주소처럼 직접 신원을 알 수 있는 정보는 수집하지 않으며, 쿠키에 저장된 임의의 식별자로 방문자를 구분합니다.',
     analyticsDur: '보관 기간: 14개월',
+    recordingBody: 'Microsoft Clarity는 마우스 움직임, 클릭, 스크롤을 익명으로 기록하고 이를 바탕으로 히트맵을 만듭니다. 이를 통해 페이지의 어느 부분이 혼란을 주는지 파악합니다. 기록은 개인과 연결되지 않으며 광고에 사용되지 않습니다.',
+    recordingDur: '보관 기간: 1년',
     cjBadge: '제휴',
     cjNote: '제휴 링크 클릭 시 제3자가 설정합니다',
     cjBody: (siteName) => <>{siteName}에서 예약 또는 제휴 링크를 클릭하시면 제휴 네트워크가 추적 쿠키를 설정하거나 링크에 추적 매개변수를 추가하여 예약을 {siteName}에 귀속시킬 수 있습니다: Adtraction(Sembo, Lomarengas 등의 파트너, <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> / <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span> 경유), Daisycon(<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts(EconomyBookings 등, <span className="font-mono text-xs text-snow/80">tp.media</span> 경유), Trip.com(<span className="font-mono text-xs text-snow/80">trip.com</span>의 파트너 매개변수). 이를 통해 추가 비용 없이 당사가 소액의 수수료를 받습니다.</>,
@@ -473,6 +497,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Nécessite le consentement',
     analyticsBody: 'Les cookies Google Analytics 4 nous aident à comprendre comment les visiteurs utilisent le site : quelles pages sont populaires, combien de temps les gens y restent, avec quel appareil ils naviguent et d’où ils viennent (niveau pays et ville). Nous ne collectons ni nom, ni adresse e-mail, ni aucune autre donnée identifiant directement une personne : les visiteurs sont distingués par un identifiant aléatoire stocké dans un cookie.',
     analyticsDur: 'Durée : 14 mois',
+    recordingBody: 'Microsoft Clarity enregistre une relecture anonyme de la visite (mouvements de souris, clics et défilement) et en tire des cartes de chaleur, afin de voir quelles parties d’une page prêtent à confusion. L’enregistrement n’est associé à aucune personne et n’est pas utilisé à des fins publicitaires.',
+    recordingDur: 'Durée : 1 an',
     cjBadge: 'Affiliation',
     cjNote: 'Posés par des tiers lorsque vous cliquez sur des liens d\'affiliation',
     cjBody: (siteName) => <>Lorsque vous cliquez sur un lien de réservation ou d'affiliation sur {siteName}, nos réseaux d'affiliation peuvent déposer un cookie de suivi ou ajouter un paramètre de suivi au lien afin d'attribuer la réservation à {siteName} : Adtraction (partenaires comme Sembo et Lomarengas, via <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> et <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (partenaires comme EconomyBookings, via <span className="font-mono text-xs text-snow/80">tp.media</span>) et Trip.com (paramètres partenaires sur <span className="font-mono text-xs text-snow/80">trip.com</span>). C'est ainsi que nous percevons une petite commission lorsque vous réservez, sans surcoût pour vous.</>,
@@ -485,7 +511,7 @@ const COPY: Record<Lang, CookieCopy> = {
     lsNote: 'Stocké dans votre navigateur, jamais envoyé à un serveur',
     lsIntro: 'Deux petites entrées sont stockées dans le localStorage de votre navigateur pour rendre le site moins intrusif :',
     lsConsentDesc: 'votre choix accepter/refuser (miroir du cookie de consentement ci-dessus)',
-    lsPopupDesc: 'un horodatage du moment où vous avez fermé pour la dernière fois ou souscrit avec succès au popup de l\'infolettre, afin de ne pas le réafficher pendant 7 jours (ou jamais si vous vous êtes inscrit)',
+    lsPopupDesc: 'un horodatage du moment où vous avez fermé pour la dernière fois ou souscrit avec succès au popup de la newsletter, afin de ne pas le réafficher pendant 7 jours (ou jamais si vous vous êtes inscrit)',
     lsTail: 'Le localStorage n\'est techniquement pas un cookie. Nous le listons ici pour la transparence. Vous pouvez l\'effacer via les paramètres de données de site de votre navigateur.',
     tableTitle: 'Tableau de référence des cookies',
     tableCookie: 'Cookie',
@@ -521,6 +547,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Richiedono il consenso',
     analyticsBody: 'I cookie di Google Analytics 4 ci aiutano a comprendere come i visitatori utilizzano il sito: quali pagine sono popolari, quanto tempo si fermano, con quale dispositivo navigano e da dove provengono (a livello di paese e città). Non raccogliamo nomi, indirizzi e-mail né altri dati che identifichino direttamente una persona: i visitatori vengono distinti da un identificatore casuale salvato in un cookie.',
     analyticsDur: 'Durata: 14 mesi',
+    recordingBody: 'Microsoft Clarity registra una riproduzione anonima della visita (movimenti del mouse, clic e scorrimento) e ne ricava mappe di calore, così vediamo quali parti di una pagina creano confusione. La registrazione non è collegata a nessuna persona e non viene usata per la pubblicità.',
+    recordingDur: 'Durata: 1 anno',
     cjBadge: 'Affiliazione',
     cjNote: 'Impostati da terzi quando Lei clicca su link di affiliazione',
     cjBody: (siteName) => <>Quando Lei clicca su un link di prenotazione o affiliazione su {siteName}, le nostre reti di affiliazione possono impostare un cookie di tracciamento o aggiungere al link un parametro di tracciamento per attribuire la prenotazione a {siteName}: Adtraction (partner come Sembo e Lomarengas, tramite <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> e <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (partner come EconomyBookings, tramite <span className="font-mono text-xs text-snow/80">tp.media</span>) e Trip.com (parametri partner su <span className="font-mono text-xs text-snow/80">trip.com</span>). È così che riceviamo una piccola commissione quando Lei prenota, senza costi aggiuntivi per Lei.</>,
@@ -569,6 +597,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Vereist toestemming',
     analyticsBody: 'Cookies van Google Analytics 4 helpen ons te begrijpen hoe bezoekers de site gebruiken: welke pagina’s populair zijn, hoe lang mensen blijven, met welk apparaat ze surfen en waar ze vandaan komen (land- en stadsniveau). We verzamelen geen namen, e-mailadressen of andere direct identificerende gegevens. Bezoekers worden onderscheiden via een willekeurige identificatiecode in een cookie.',
     analyticsDur: 'Duur: 14 maanden',
+    recordingBody: 'Microsoft Clarity legt een geanonimiseerde weergave van het bezoek vast (muisbewegingen, klikken en scrollen) en maakt daar heatmaps van, zodat we zien welke delen van een pagina verwarrend zijn. De opname wordt niet aan een persoon gekoppeld en niet voor advertenties gebruikt.',
+    recordingDur: 'Duur: 1 jaar',
     cjBadge: 'Affiliate',
     cjNote: 'Geplaatst door derden wanneer u op affiliate links klikt',
     cjBody: (siteName) => <>Wanneer u op een boekings- of affiliate link op {siteName} klikt, kunnen onze affiliatenetwerken een tracking-cookie plaatsen of een trackingparameter aan de link toevoegen zodat de boeking aan {siteName} kan worden toegeschreven: Adtraction (partners zoals Sembo en Lomarengas, via <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> en <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (partners zoals EconomyBookings, via <span className="font-mono text-xs text-snow/80">tp.media</span>) en Trip.com (partnerparameters op <span className="font-mono text-xs text-snow/80">trip.com</span>). Zo verdienen wij een kleine commissie wanneer u boekt, zonder extra kosten voor u.</>,
@@ -617,6 +647,8 @@ const COPY: Record<Lang, CookieCopy> = {
     analyticsNote: 'Kräver samtycke',
     analyticsBody: 'Cookies från Google Analytics 4 hjälper oss att förstå hur besökare använder webbplatsen: vilka sidor som är populära, hur länge besökare stannar, vilken enhet de surfar med och varifrån de kommer (land- och stadsnivå). Vi samlar inte in namn, e-postadresser eller andra direkt identifierande uppgifter. Besökare särskiljs med en slumpmässig identifierare som sparas i en cookie.',
     analyticsDur: 'Varaktighet: 14 månader',
+    recordingBody: 'Microsoft Clarity spelar in en anonymiserad återgivning av besöket (musrörelser, klick och scrollning) och bygger värmekartor av den, så att vi ser vilka delar av en sida som förvirrar. Inspelningen kopplas inte till någon person och används inte för annonsering.',
+    recordingDur: 'Varaktighet: 1 år',
     cjBadge: 'Affiliate',
     cjNote: 'Placeras av tredje part när du klickar på affiliatelänkar',
     cjBody: (siteName) => <>När du klickar på en boknings- eller affiliatelänk på {siteName} kan våra affiliatenätverk placera en spårningscookie eller lägga till en spårningsparameter i länken så att bokningen kan kopplas till {siteName}: Adtraction (partner som Sembo och Lomarengas, via <span className="font-mono text-xs text-snow/80">do.sembo.fi</span> och <span className="font-mono text-xs text-snow/80">on.lomarengas.fi</span>), Daisycon (<span className="font-mono text-xs text-snow/80">jdt8.net</span>), Travelpayouts (partner som EconomyBookings, via <span className="font-mono text-xs text-snow/80">tp.media</span>) och Trip.com (partnerparametrar på <span className="font-mono text-xs text-snow/80">trip.com</span>). Så tjänar vi en liten provision när du bokar, utan extra kostnad för dig.</>,
@@ -656,13 +688,15 @@ export default function CookieContent({
   siteId = 'laplandvibes',
   siteName = 'LaplandVibes',
   lang = 'en',
+  sessionRecording = false,
 }: CookieContentProps) {
   const t = COPY[lang] ?? COPY.en;
   const consentKey = `${siteId}_cookie_consent`;
   const popupKey = `${siteId}_newsletter_popup`;
-  /* Label/description separator. ja + zh-CN take the fullwidth colon with no space; ko uses the halfwidth one. */
+  /* Label/description separator. ja + zh-CN take the fullwidth colon with no space; fr puts a no-break
+     space before the colon, as every fr string in this file does ("Durée : 1 an"); ko uses the halfwidth one. */
   const cjk = lang === 'ja' || lang === 'zh-CN';
-  const sep = cjk ? '：' : ':';
+  const sep = cjk ? '：' : lang === 'fr' ? '\u00a0:' : ':';
   const gap = cjk ? '' : ' ';
 
   const purposeStrings: Record<Lang, { consent: string; popup: string; gaUser: string; gaSession: string; cj: string; gyg: string }> = {
@@ -732,7 +766,7 @@ export default function CookieContent({
     },
     fr: {
       consent: 'Stocke votre préférence de consentement aux cookies (accepté/refusé)',
-      popup: 'Mémorise si vous avez fermé ou souscrit au popup de l\'infolettre, afin de ne pas le réafficher',
+      popup: 'Mémorise si vous avez fermé ou souscrit au popup de la newsletter, afin de ne pas le réafficher',
       gaUser: 'Google Analytics, distingue les utilisateurs uniques',
       gaSession: 'Google Analytics, maintient l\'état de session',
       cj: 'Adtraction, Travelpayouts et Trip.com, attribuent les commissions d\'affiliation lorsque vous cliquez sur des liens de réservation. Déposés via do.sembo.fi / on.lomarengas.fi / tp.media ou en paramètres de lien trip.com',
@@ -830,6 +864,18 @@ export default function CookieContent({
                 <p className="text-xs text-snow/70 mt-2 font-mono">_ga, _ga_* · {t.analyticsDur}</p>
               </div>
 
+              {/* Istuntotallennus — vain sivustoilla joilla Clarity on asennettuna */}
+              {sessionRecording && (
+                <div className="rounded-xl p-5" style={{ background: 'rgba(0,47,108,0.12)', border: '1px solid rgba(0,47,108,0.30)' }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">{t.analyticsBadge}</span>
+                    <span className="text-snow/80 font-medium text-sm">{t.analyticsNote}</span>
+                  </div>
+                  <p className="text-sm">{t.recordingBody}</p>
+                  <p className="text-xs text-snow/70 mt-2 font-mono">_clck, _clsk · {t.recordingDur}</p>
+                </div>
+              )}
+
               {/* Affiliate, partner networks */}
               <div className="rounded-xl p-5" style={{ background: 'rgba(0,47,108,0.12)', border: '1px solid rgba(0,47,108,0.30)' }}>
                 <div className="flex items-center gap-2 mb-2">
@@ -880,7 +926,7 @@ export default function CookieContent({
                     <span className="text-xs text-snow/60 shrink-0">{row.type}</span>
                   </div>
                   <p className="text-sm text-snow/60 mt-1">{row.purpose}</p>
-                  <p className="text-xs text-snow/70 mt-1">{t.tableDuration}: {row.duration}</p>
+                  <p className="text-xs text-snow/70 mt-1">{t.tableDuration}{sep}{gap}{row.duration}</p>
                 </div>
               ))}
             </div>

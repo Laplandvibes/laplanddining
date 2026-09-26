@@ -24,6 +24,8 @@ type Lang = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' |
 interface PrivacyContentProps {
   siteName?: string;
   lang?: Lang;
+  /** Site-specific "last updated" line (the site's own addenda move faster than the network body). */
+  lastUpdated?: string;
 }
 
 const COPY: Record<Lang, {
@@ -256,7 +258,7 @@ const COPY: Record<Lang, {
       'Cloudflare, Hosting und CDN',
     ],
     s8Title: '8. Werbung',
-    s8Body1: (siteName) => `Diese Website zeigt gesponserte Inhalte Dritter. Gesponserte Inhalte sind eindeutig mit „Gesponsert" gekennzeichnet. Beim Klicken auf gesponserte Links werden Sie ggf. auf externe Websites mit eigenen Datenschutzrichtlinien weitergeleitet. ${siteName} ist nicht für die Datenpraxis externer Werbetreibender verantwortlich.`,
+    s8Body1: (siteName) => `Diese Website zeigt gesponserte Inhalte Dritter. Gesponserte Inhalte sind eindeutig mit „Gesponsert“ gekennzeichnet. Beim Klicken auf gesponserte Links werden Sie ggf. auf externe Websites mit eigenen Datenschutzrichtlinien weitergeleitet. ${siteName} ist nicht für die Datenpraxis externer Werbetreibender verantwortlich.`,
     s8Body2: 'Wir nehmen über die Netzwerke Adtraction, Daisycon und Travelpayouts sowie am Partnerprogramm von Trip.com an Partnerprogrammen teil; zu unseren Partnern zählen Sembo, Lomarengas, Trip.com und EconomyBookings. Wenn Sie über einen Partnerlink eine Buchung oder einen Kauf tätigen, erhalten wir ggf. eine kleine Provision, für Sie ohne zusätzliche Kosten.',
     s8aTitle: '8a. Internationale Datenübermittlungen',
     s8aIntro: 'Einige der von uns genutzten Dienste haben ihren Sitz außerhalb des Europäischen Wirtschaftsraums (EWR) oder übermitteln Daten dorthin, meist in die USA:',
@@ -274,7 +276,7 @@ const COPY: Record<Lang, {
     s9Items: [
       { strong: 'Auskunftsrecht (Art. 15)', body: 'Anforderung einer Kopie der über Sie gespeicherten personenbezogenen Daten.' },
       { strong: 'Recht auf Berichtigung (Art. 16)', body: 'Berichtigung unrichtiger oder unvollständiger Daten.' },
-      { strong: 'Recht auf Löschung („Recht auf Vergessenwerden", Art. 17)', body: 'Löschung Ihrer Daten, sofern kein vorrangiger Grund zur Speicherung besteht.' },
+      { strong: 'Recht auf Löschung („Recht auf Vergessenwerden“, Art. 17)', body: 'Löschung Ihrer Daten, sofern kein vorrangiger Grund zur Speicherung besteht.' },
       { strong: 'Recht auf Einschränkung der Verarbeitung (Art. 18)', body: 'Pausieren der Verarbeitung, solange eine Frage geprüft wird.' },
       { strong: 'Recht auf Datenübertragbarkeit (Art. 20)', body: 'Erhalt Ihrer Daten in einem strukturierten, maschinenlesbaren Format.' },
       { strong: 'Widerspruchsrecht (Art. 21)', body: 'Widerspruch gegen Verarbeitung auf Grundlage berechtigter Interessen, einschließlich Direktwerbung.' },
@@ -287,19 +289,19 @@ const COPY: Record<Lang, {
     s11Title: '11. Kinder',
     s11Body: 'Diese Website und unser Newsletter richten sich an Erwachsene. Wir erheben wissentlich keine Daten von Kindern unter 13 Jahren (Altersgrenze für digitale Dienste nach finnischem Recht und DSGVO). Sollte ein Kind uns personenbezogene Daten überlassen haben, kontaktieren Sie uns, wir löschen sie.',
     s12Title: '12. Änderungen dieser Erklärung',
-    s12Body: 'Wir können diese Datenschutzerklärung gelegentlich aktualisieren. Das oben angegebene Datum „Zuletzt aktualisiert" zeigt die jüngste Überarbeitung. Wesentliche Änderungen werden mindestens 14 Tage auf der Startseite hervorgehoben.',
+    s12Body: 'Wir können diese Datenschutzerklärung gelegentlich aktualisieren. Das oben angegebene Datum „Zuletzt aktualisiert“ zeigt die jüngste Überarbeitung. Wesentliche Änderungen werden mindestens 14 Tage auf der Startseite hervorgehoben.',
     backToHome: '← Zurück zur Startseite',
     cookiePolicy: 'Cookie-Richtlinie →',
   },
   ja: {
     h1: 'プライバシーポリシー',
-    lastUpdated: '最終更新: 2026年7月',
+    lastUpdated: '最終更新：2026年7月',
     s1Title: '1. 管理者',
-    s1Body: () => <>LaPeso Oy (ID 3309136-7), フィンランド。メール：<a href="mailto:info@laplandvibes.com" className="text-vibe-pink">info@laplandvibes.com</a></>,
+    s1Body: () => <>LaPeso Oy（ID 3309136-7）、フィンランド。メール：<a href="mailto:info@laplandvibes.com" className="text-vibe-pink">info@laplandvibes.com</a></>,
     s2Title: '2. 収集するデータ',
     s2Body: 'Google Analytics 4 を通じて仮名化されたアクセス解析データを収集しています。ニュースレターにご登録いただいた場合は、メールアドレスを安全に保管します。それ以外の個人を識別できる情報は、お客様から直接ご連絡をいただかない限り収集しません。',
     s2aTitle: '2a. 処理の法的根拠（GDPR 第6条）',
-    s2aIntro: '各処理活動について、以下の法的根拠に基づいて処理しています:',
+    s2aIntro: '各処理活動について、以下の法的根拠に基づいて処理しています：',
     s2aItems: [
       { strong: '同意(第6条1(a))', body: '解析クッキー(Google Analytics 4)および非必須クッキーについて。クッキーバナーで同意していただき、いつでも撤回できます。' },
       { strong: '同意(第6条1(a))', body: 'ニュースレターの登録について。登録フォームの送信で同意となり、配信停止リンクからいつでも撤回できます。' },
@@ -307,7 +309,7 @@ const COPY: Record<Lang, {
       { strong: '正当な利益(第6条1(f))', body: 'アフィリエイトリンクのクリック帰属について。当方の利益は編集上獲得した紹介料を受け取ることです。収集されるデータは最小限（参照元）で、アフィリエイトリンクをクリックしないことで回避できます。' },
     ],
     s3Title: '3. クッキー',
-    s3Intro: 'ブラウジング体験の向上と仮名化されたアクセス解析のため、当サイトではクッキーを使用しています。以下が含まれます:',
+    s3Intro: 'ブラウジング体験の向上と仮名化されたアクセス解析のため、当サイトではクッキーを使用しています。以下が含まれます：',
     s3Items: [
       { strong: '必須クッキー', body: 'ウェブサイトの正常な動作に必要（同意設定、セッションデータ）。' },
       { strong: '解析クッキー', body: 'Google Analytics 4 がサイトの利用状況を把握するために使用。仮名化された形で収集。' },
@@ -321,9 +323,9 @@ const COPY: Record<Lang, {
     s6Title: '6. データの保管期間',
     s6Body: '解析データは Google Analytics 内で14ヶ月間保管されます。ニュースレターのメールアドレスは、配信停止までの間保管されます。',
     s7Title: '7. 第三者',
-    s7Intro: '個人情報を第三者に販売・共有することはありません。ただし、運営の一環として以下の第三者サービスがデータを処理しています:',
+    s7Intro: '個人情報を第三者に販売・共有することはありません。ただし、運営の一環として以下の第三者サービスがデータを処理しています：',
     s7Items: [
-      'Google Analytics, 仮名化された利用分析',
+      'Google Analytics：仮名化された利用分析',
       'Adtraction、Daisycon、Travelpayouts、Trip.com：予約・パートナーリンクのクリック追跡',
       'Resend：ニュースレターの配信',
       'Supabase：バックエンド・データベースサービス',
@@ -333,18 +335,18 @@ const COPY: Record<Lang, {
     s8Body1: (siteName) => `本サイトには第三者によるスポンサーコンテンツが表示されることがあります。スポンサーコンテンツは「PR」マークで明確に識別されます。スポンサーリンクをクリックすると、独自のプライバシーポリシーを持つ外部サイトに移動する場合があります。${siteName} は外部広告主のデータ取り扱いについて責任を負いません。`,
     s8Body2: 'Adtraction と Daisycon と Travelpayouts のネットワーク、および Trip.com のパートナープログラムを通じてアフィリエイトプログラムに参加しています（パートナー例：Sembo、Lomarengas、Trip.com、EconomyBookings）。アフィリエイトリンクからご予約・ご購入された場合、お客様には追加費用なしで当社が手数料を受け取ることがあります。',
     s8aTitle: '8a. 国際的なデータ移転',
-    s8aIntro: '当方が利用している第三者サービスの一部は、欧州経済領域(EEA)外、特に米国を拠点としているか、データを移転しています:',
+    s8aIntro: '当方が利用している第三者サービスの一部は、欧州経済領域(EEA)外、特に米国を拠点としているか、データを移転しています：',
     s8aItems: [
-      { strong: 'Google Analytics', body: '（Google LLC、米国）：EU–US Data Privacy Framework (DPF) の対象。' },
+      { strong: 'Google Analytics', body: '（Google LLC、米国）：EU–米国データプライバシー枠組み（DPF）の対象。' },
       { strong: 'Cloudflare', body: '（Cloudflare Inc.、米国）：EU–US Data Privacy Framework と標準契約条項（SCC）の対象。' },
       { strong: 'Resend', body: '（Resend Inc.、米国）：標準契約条項（SCC）の対象。' },
       { strong: 'Supabase', body: '（Supabase Inc.、米国、EU リージョン利用可能）：標準契約条項（SCC）の対象。' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB（スウェーデン、EU）、Daisycon B.V.（オランダ、EU）、Travelpayouts と Trip.com（国際））:EU/EEA 域外への移転は標準契約条項（SCC）の対象です。' },
-      { strong: 'GetYourGuide', body: '（GetYourGuide GmbH, ドイツ）：EEA 内。' },
+      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB（スウェーデン、EU）、Daisycon B.V.（オランダ、EU）、Travelpayouts と Trip.com（国際））：EU/EEA 域外への移転は標準契約条項（SCC）の対象です。' },
+      { strong: 'GetYourGuide', body: '（GetYourGuide GmbH、ドイツ）：EEA 内。' },
     ],
     s8aTail: 'いずれの場合も、移転は欧州委員会の十分性決定、EU–US Data Privacy Framework、または欧州委員会承認の標準契約条項によって保護されています。関連する保護措置のコピーは、お問い合わせにより提供可能です。',
     s9Title: '9. GDPR に基づくお客様の権利',
-    s9Intro: '当方はフィンランドを拠点に EU 居住者にサービスを提供しているため、GDPR が完全に適用されます。お客様には以下の権利があります:',
+    s9Intro: '当方はフィンランドを拠点に EU 居住者にサービスを提供しているため、GDPR が完全に適用されます。お客様には以下の権利があります：',
     s9Items: [
       { strong: 'アクセス権（第15条）', body: '当方が保持しているお客様の個人データのコピーを請求できます。' },
       { strong: '訂正権（第16条）', body: '不正確または不完全なデータの訂正を求めることができます。' },
@@ -359,7 +361,7 @@ const COPY: Record<Lang, {
     s10Title: '10. 自動化された意思決定',
     s10Body: 'GDPR 第22条の意味における、お客様に法的または同等に重要な影響を与える自動意思決定、プロファイリング、その他の処理は行っていません。',
     s11Title: '11. 子ども',
-    s11Body: '本サイトおよびニュースレターは大人向けです。13歳未満の子ども（フィンランド法および GDPR でのデジタルサービス年齢基準）から意図的にデータを収集することはありません。子どもが個人情報を提供したと思われる場合は、お知らせください。削除いたします。',
+    s11Body: '本サイトおよびニュースレターは成人を対象としています。13歳未満の子ども（フィンランド法および GDPR でのデジタルサービス年齢基準）から意図的にデータを収集することはありません。子どもが個人情報を提供したと思われる場合は、お知らせください。削除いたします。',
     s12Title: '12. 本ポリシーの変更',
     s12Body: '本プライバシーポリシーは随時更新されることがあります。冒頭の「最終更新」日付が直近の改訂を反映しています。重要な変更については、ホームページで少なくとも14日間お知らせします。',
     backToHome: '← ホームへ戻る',
@@ -523,10 +525,10 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. 处理的法律依据（通用数据保护条例第6条）',
     s2aIntro: '我们针对每一项处理活动依据以下法律依据进行处理：',
     s2aItems: [
-      { strong: '同意(第6(1)(a)条)', body: '用于分析 cookie(Google Analytics 4)及其他非必要 cookie。您通过 cookie 横幅给予同意，并可随时撤回。' },
-      { strong: '同意(第6(1)(a)条)', body: '用于电子简报订阅。您通过提交订阅表单给予同意，可随时通过取消订阅链接撤回。' },
-      { strong: '合法利益(第6(1)(f)条)', body: '用于必要 cookie（存储您的同意偏好）以及防欺诈和安全日志。我们的利益是运营一个可正常使用的网站，并已与您的合理期望相平衡。' },
-      { strong: '合法利益(第6(1)(f)条)', body: '用于联盟链接点击归因。我们的利益是获得编辑工作所应得的佣金；收集的数据极少（来源），您也可以选择不点击联盟链接。' },
+      { strong: '同意（第6(1)(a)条）', body: '用于分析 cookie（Google Analytics 4）及其他非必要 cookie。您通过 cookie 横幅给予同意，并可随时撤回。' },
+      { strong: '同意（第6(1)(a)条）', body: '用于电子简报订阅。您通过提交订阅表单给予同意，可随时通过取消订阅链接撤回。' },
+      { strong: '合法利益（第6(1)(f)条）', body: '用于必要 cookie（存储您的同意偏好）以及防欺诈和安全日志。我们的利益是运营一个可正常使用的网站，并已与您的合理期望相平衡。' },
+      { strong: '合法利益（第6(1)(f)条）', body: '用于联盟链接点击归因。我们的利益是获得编辑工作所应得的佣金；收集的数据极少（来源），您也可以选择不点击联盟链接。' },
     ],
     s3Title: '3. Cookie',
     s3Intro: '我们的网站使用 cookie 以提升您的浏览体验并收集假名化分析数据。这些包括：',
@@ -555,31 +557,31 @@ const COPY: Record<Lang, {
     s8Body1: (siteName) => `本网站会展示第三方广告主的赞助内容。赞助内容会清晰标注"赞助"标识。点击赞助链接可能将您重定向到拥有自身隐私政策的外部网站。${siteName} 不对外部广告主的数据处理做法负责。`,
     s8Body2: '我们通过 Adtraction 和 Daisycon 和 Travelpayouts 网络以及 Trip.com 合作伙伴计划参与联盟计划，合作伙伴包括 Sembo、Lomarengas、Trip.com 和 EconomyBookings。当您点击联盟链接并完成购买或预订时，我们可能获得佣金，而您无需承担任何额外费用。',
     s8aTitle: '8a. 跨境数据传输',
-    s8aIntro: '我们使用的若干第三方服务的总部或数据传输目的地位于欧洲经济区(EEA)以外，最常见的是美国：',
+    s8aIntro: '我们使用的若干第三方服务的总部或数据传输目的地位于欧洲经济区（EEA）以外，最常见的是美国：',
     s8aItems: [
-      { strong: 'Google Analytics', body: '（Google LLC，美国）：受 EU–US 数据隐私框架(DPF)保护。' },
-      { strong: 'Cloudflare', body: '（Cloudflare Inc.，美国）：受 EU–US 数据隐私框架及标准合同条款(SCC)保护。' },
-      { strong: 'Resend', body: '（Resend Inc.，美国）：受标准合同条款(SCC)保护。' },
-      { strong: 'Supabase', body: '（Supabase Inc.，美国，亦可使用欧盟区域托管）：受标准合同条款(SCC)保护。' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB，瑞典，欧盟；Daisycon B.V.，荷兰，欧盟；Travelpayouts 与 Trip.com，国际）：欧盟/欧洲经济区以外的传输受标准合同条款(SCC)保护。' },
+      { strong: 'Google Analytics', body: '（Google LLC，美国）：受 EU–US 数据隐私框架（DPF）保护。' },
+      { strong: 'Cloudflare', body: '（Cloudflare Inc.，美国）：受 EU–US 数据隐私框架及标准合同条款（SCC）保护。' },
+      { strong: 'Resend', body: '（Resend Inc.，美国）：受标准合同条款（SCC）保护。' },
+      { strong: 'Supabase', body: '（Supabase Inc.，美国，亦可使用欧盟区域托管）：受标准合同条款（SCC）保护。' },
+      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB，瑞典，欧盟；Daisycon B.V.，荷兰，欧盟；Travelpayouts 与 Trip.com，国际）：欧盟/欧洲经济区以外的传输受标准合同条款（SCC）保护。' },
       { strong: 'GetYourGuide', body: '（GetYourGuide GmbH，德国）：位于欧洲经济区内。' },
     ],
     s8aTail: '在任何情形下，数据传输均通过欧盟委员会的充分性决定、EU–US 数据隐私框架或经欧盟委员会批准的标准合同条款进行保护。您可联系我们索取相应保护措施的副本。',
     s9Title: '9. 您在通用数据保护条例下的权利',
-    s9Intro: '由于我们在芬兰运营并向欧盟访客提供服务，通用数据保护条例(GDPR)完全适用。您享有以下权利：',
+    s9Intro: '由于我们在芬兰运营并向欧盟访客提供服务，通用数据保护条例（GDPR）完全适用。您享有以下权利：',
     s9Items: [
       { strong: '访问权（第15条）', body: '请求获取我们持有的关于您个人数据的副本。' },
       { strong: '更正权（第16条）', body: '要求我们更正不准确或不完整的数据。' },
-      { strong: '删除权 / "被遗忘权"（第17条）', body: '在不存在压倒性保留理由时，要求我们删除您的数据。' },
+      { strong: '删除权 / “被遗忘权”（第17条）', body: '在不存在压倒性保留理由时，要求我们删除您的数据。' },
       { strong: '限制处理权（第18条）', body: '在问题正在解决期间，要求我们暂停处理。' },
       { strong: '数据可携带权（第20条）', body: '以结构化、机器可读的格式获取您的数据。' },
       { strong: '反对权（第21条）', body: '反对基于合法利益的处理，包括直接营销。' },
       { strong: '撤回同意权', body: '可随时撤回，自撤回时刻起生效。' },
-      { strong: '投诉权（第77条）', body: '向芬兰数据保护专员公署(Tietosuojavaltuutettu,tietosuoja.fi)或您在欧盟惯常居住地的监管机构投诉。' },
+      { strong: '投诉权（第77条）', body: '向芬兰数据保护专员公署（Tietosuojavaltuutettu，tietosuoja.fi）或您在欧盟惯常居住地的监管机构投诉。' },
     ],
     s9Tail: (email) => <>如需行使上述任何权利，请通过 {email} 与我们联系。我们将在一个月内回复。</>,
     s10Title: '10. 自动化决策',
-    s10Body: '我们不会进行通用数据保护条例第22条所述的、对您产生法律或类似重大影响的自动化决策、用户画像或其他相关处理。',
+    s10Body: '我们不会进行 GDPR 第22条所述的、对您产生法律或类似重大影响的自动化决策、用户画像或其他相关处理。',
     s11Title: '11. 未成年人',
     s11Body: '本网站及我们的电子简报面向成年人。我们不会有意收集13岁以下儿童的数据（芬兰法律及通用数据保护条例规定的数字服务年龄门槛）。如果您认为某位儿童向我们提供了个人数据，请联系我们，我们将予以删除。',
     s12Title: '12. 本政策的变更',
@@ -639,8 +641,8 @@ const COPY: Record<Lang, {
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, 독일): EEA 내.' },
     ],
     s8aTail: '각 경우에 이전은 적정성 결정, EU–US 데이터 프라이버시 프레임워크 또는 유럽연합 집행위원회 승인 표준계약조항에 의해 보호됩니다. 해당 보호 조치의 사본은 당사에 문의하여 요청하실 수 있습니다.',
-    s9Title: '9. GDPR 및 PIPA에 따른 귀하의 권리',
-    s9Intro: '당사는 핀란드에서 운영하며 유럽연합 방문자에게 서비스를 제공하므로 GDPR이 전면 적용됩니다. 대한민국 거주자의 경우 개인정보 보호법(PIPA)에 따른 권리도 존중합니다. 귀하에게는 다음 권리가 있습니다:',
+    s9Title: '9. GDPR에 따른 귀하의 권리',
+    s9Intro: '당사는 핀란드에서 운영하며 유럽연합 방문자에게 서비스를 제공하므로 GDPR이 전면 적용됩니다. 귀하에게는 다음 권리가 있습니다:',
     s9Items: [
       { strong: '열람권 (제15조)', body: '당사가 보유한 귀하의 개인정보 사본을 요청하실 수 있습니다.' },
       { strong: '정정권 (제16조)', body: '부정확하거나 불완전한 데이터의 수정을 요청하실 수 있습니다.' },
@@ -649,7 +651,7 @@ const COPY: Record<Lang, {
       { strong: '데이터 이동권 (제20조)', body: '구조화된 기계 판독 가능 형식으로 데이터를 받으실 수 있습니다.' },
       { strong: '반대권 (제21조)', body: '직접 마케팅을 포함하여 정당한 이익에 근거한 처리에 반대하실 수 있습니다.' },
       { strong: '동의 철회권', body: '언제든지 철회하실 수 있으며, 철회 시점부터 효력이 발생합니다.' },
-      { strong: '감독기관에 대한 불만 제기권 (제77조)', body: '핀란드 개인정보 보호 옴부즈맨(Tietosuojavaltuutettu, tietosuoja.fi), EU 내 상시 거주지의 감독기관, 또는 대한민국의 경우 개인정보보호위원회(pipc.go.kr)에 제기하실 수 있습니다.' },
+      { strong: '감독기관에 대한 불만 제기권 (제77조)', body: '핀란드 개인정보 보호 옴부즈맨(Tietosuojavaltuutettu, tietosuoja.fi) 또는 EU 내 상시 거주지의 감독기관에 제기하실 수 있습니다.' },
     ],
     s9Tail: (email) => <>이 권리를 행사하시려면 {email}로 연락하십시오. 한 달 이내에 답변드리겠습니다.</>,
     s10Title: '10. 자동화된 의사결정',
@@ -667,12 +669,12 @@ const COPY: Record<Lang, {
     s1Title: '1. Responsable du traitement',
     s1Body: () => <>LaPeso Oy (n° 3309136-7), Finlande. Courriel : <a href="mailto:info@laplandvibes.com" className="text-vibe-pink">info@laplandvibes.com</a></>,
     s2Title: '2. Données que nous collectons',
-    s2Body: 'Nous collectons des données analytiques pseudonymes via Google Analytics 4. Si vous vous inscrivez à notre infolettre, nous stockons votre adresse e-mail en toute sécurité. Nous ne collectons aucune autre information personnelle identifiable, sauf si vous nous contactez directement.',
+    s2Body: 'Nous collectons des données analytiques pseudonymes via Google Analytics 4. Si vous vous inscrivez à notre newsletter, nous stockons votre adresse e-mail en toute sécurité. Nous ne collectons aucune autre information personnelle identifiable, sauf si vous nous contactez directement.',
     s2aTitle: '2a. Base légale du traitement (Art. 6 RGPD)',
     s2aIntro: 'Nous nous appuyons sur les bases légales suivantes pour chaque activité de traitement :',
     s2aItems: [
       { strong: 'Consentement (Art. 6(1)(a))', body: 'pour les cookies analytiques (Google Analytics 4) et autres cookies non essentiels. Vous donnez votre consentement via le bandeau de cookies et pouvez le retirer à tout moment.' },
-      { strong: 'Consentement (Art. 6(1)(a))', body: 'pour l\'abonnement à l\'infolettre. Vous donnez votre consentement en soumettant le formulaire et pouvez le retirer à tout moment via le lien de désinscription.' },
+      { strong: 'Consentement (Art. 6(1)(a))', body: 'pour l\'abonnement à la newsletter. Vous donnez votre consentement en soumettant le formulaire et pouvez le retirer à tout moment via le lien de désinscription.' },
       { strong: 'Intérêt légitime (Art. 6(1)(f))', body: 'pour les cookies essentiels (stockage de votre préférence de consentement) et les journaux de prévention de la fraude/sécurité. Notre intérêt est l\'exploitation d\'un site web fonctionnel, équilibré avec vos attentes raisonnables.' },
       { strong: 'Intérêt légitime (Art. 6(1)(f))', body: 'pour l\'attribution des clics sur les liens d\'affiliation. Notre intérêt est de percevoir la commission éditoriale que nous avons gagnée ; les données collectées sont minimales (source de référence) et vous pouvez choisir de ne pas cliquer sur les liens d\'affiliation.' },
     ],
@@ -686,16 +688,16 @@ const COPY: Record<Lang, {
     s3Tail: (cookieLink) => <>Les cookies analytiques ne sont déposés qu\'après votre consentement via le bandeau. Voir notre {cookieLink} pour plus de détails.</>,
     s4Title: '4. Google Analytics',
     s4Body: 'Nous utilisons Google Analytics 4 avec le Consent Mode v2. Si vous refusez les cookies, aucune donnée analytique n’est collectée. Si vous acceptez, des données d’usage (pages consultées, temps passé sur le site, type d’appareil et localisation au niveau du pays et de la ville) sont envoyées à Google. Ces données sont pseudonymes : nous n’envoyons ni nom, ni adresse e-mail, ni aucune autre donnée vous identifiant directement, mais l’identifiant aléatoire du cookie et votre adresse IP sont des données personnelles au sens du RGPD.',
-    s5Title: '5. Infolettre',
-    s5Body: (unsub) => <>Si vous vous inscrivez à notre infolettre, votre adresse e-mail est stockée en toute sécurité via Resend et Supabase. Vous pouvez vous désinscrire à tout moment via le lien dans chaque e-mail ou via notre {unsub}.</>,
+    s5Title: '5. Newsletter',
+    s5Body: (unsub) => <>Si vous vous inscrivez à notre newsletter, votre adresse e-mail est stockée en toute sécurité via Resend et Supabase. Vous pouvez vous désinscrire à tout moment via le lien dans chaque e-mail ou via notre {unsub}.</>,
     s6Title: '6. Conservation des données',
-    s6Body: 'Les données analytiques sont conservées 14 mois dans Google Analytics. Les adresses e-mail de l\'infolettre sont conservées jusqu\'à votre désinscription.',
+    s6Body: 'Les données analytiques sont conservées 14 mois dans Google Analytics. Les adresses e-mail de la newsletter sont conservées jusqu\'à votre désinscription.',
     s7Title: '7. Tiers',
     s7Intro: 'Nous ne vendons ni ne partageons vos données personnelles avec des tiers. Toutefois, les services tiers suivants traitent des données dans le cadre de notre activité :',
     s7Items: [
       'Google Analytics, analyse d\'usage pseudonyme',
       'Adtraction, Daisycon, Travelpayouts et Trip.com, suivi des clics sur les liens de réservation et d\'affiliation',
-      'Resend, envoi de l\'infolettre par e-mail',
+      'Resend, envoi de la newsletter par e-mail',
       'Supabase, services de base de données back-end',
       'Cloudflare, hébergement et CDN',
     ],
@@ -729,7 +731,7 @@ const COPY: Record<Lang, {
     s10Title: '10. Décision automatisée',
     s10Body: 'Nous ne procédons à aucune décision automatisée, à aucun profilage ni à aucun autre traitement produisant des effets juridiques ou similaires importants à votre égard au sens de l\'article 22 du RGPD.',
     s11Title: '11. Enfants',
-    s11Body: 'Ce site et notre infolettre s\'adressent à des adultes. Nous ne collectons pas sciemment de données auprès d\'enfants de moins de 13 ans (seuil d\'âge pour les services numériques selon le droit finlandais et le RGPD). Si vous pensez qu\'un enfant nous a transmis des données, contactez-nous, nous les supprimerons.',
+    s11Body: 'Ce site et notre newsletter s\'adressent à des adultes. Nous ne collectons pas sciemment de données auprès d\'enfants de moins de 13 ans (seuil d\'âge pour les services numériques selon le droit finlandais et le RGPD). Si vous pensez qu\'un enfant nous a transmis des données, contactez-nous, nous les supprimerons.',
     s12Title: '12. Modifications de la présente politique',
     s12Body: 'Nous pouvons mettre à jour la présente Politique de Confidentialité ponctuellement. La date « Dernière mise à jour » en haut reflète la révision la plus récente. Les modifications substantielles seront signalées en page d\'accueil pendant au moins 14 jours.',
     backToHome: '← Retour à l\'accueil',
@@ -960,13 +962,15 @@ const COPY: Record<Lang, {
 };
 
 export default function PrivacyContent({
+  lastUpdated: lastUpdatedOverride,
   siteName = 'LaplandVibes',
   lang = 'en',
 }: PrivacyContentProps = {}) {
   const t = COPY[lang] ?? COPY.en;
-  /* Label/description separator. ja + zh-CN take the fullwidth colon with no space; ko uses the halfwidth one. */
+  /* Label/description separator. ja + zh-CN take the fullwidth colon with no space; fr puts a no-break
+     space before the colon, as every fr string in this file does ("Durée : 1 an"); ko uses the halfwidth one. */
   const cjk = lang === 'ja' || lang === 'zh-CN';
-  const sep = cjk ? '：' : ':';
+  const sep = cjk ? '：' : lang === 'fr' ? '\u00a0:' : ':';
   const gap = cjk ? '' : ' ';
   const email = <a href="mailto:info@laplandvibes.com" className="text-vibe-pink">info@laplandvibes.com</a>;
   const cookieLink = <Link to={localePath('/cookie-policy', lang)} className="text-vibe-pink">{
@@ -1002,7 +1006,7 @@ export default function PrivacyContent({
     <div className="min-h-screen bg-deep-night pt-24 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-heading font-semibold text-4xl sm:text-5xl text-snow tracking-wide leading-tight mb-2 break-words">{t.h1}</h1>
-        <p className="text-snow/70 text-sm mb-10">{t.lastUpdated}</p>
+        <p className="text-snow/70 text-sm mb-10">{lastUpdatedOverride ?? t.lastUpdated}</p>
         <div className="space-y-8 text-snow/60 leading-relaxed">
 
           <section>
@@ -1070,7 +1074,7 @@ export default function PrivacyContent({
             <p>{t.s8aIntro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
               {t.s8aItems.map((it, i) => (
-                <li key={i}><strong className="text-snow/80">{it.strong}</strong> {it.body}</li>
+                <li key={i}><strong className="text-snow/80">{it.strong}</strong>{gap}{it.body}</li>
               ))}
             </ul>
             <p className="mt-3">{t.s8aTail}</p>
