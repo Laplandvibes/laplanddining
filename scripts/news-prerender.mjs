@@ -25,6 +25,8 @@
  *        - hakutuloksen otsikko > 60 merkkiä tai metakuvaus ei ole 70–160 merkkiä,
  *        - välimerkit: fr ilman sitomatonta väliä ennen ; : ! ?, es ilman ¿/¡-paria, ja/zh
  *          puolileveä ?/! tai pilkku CJK-tekstissä,
+ *        - em-viiva (U+2014) missä tahansa kielitiedoston kentässä (myös i18n), tai meta-puhe jutun
+ *          tekstissä fi/en/sv/de: lähdetyön selostus uutisen sijaan (11-artikkelin-viimeistely §4e),
  *        - hero-kuvaa ei ole public/-kansiossa tai lisenssikuitti puuttuu.
  *   2. scripts/routes.json — /news ja /news/<slug>: og-kuva ja ryömittävän rungon lähde.
  *   3. scripts/prerender-meta.json — otsikko + kuvaus joka kielelle (ei EN-varaotsikoita).
@@ -145,6 +147,109 @@ function punctuation(where, lang, s) {
   }
 }
 
+// ── Tekstiportti: em-viiva ja meta-puhe ─────────────────────────────────────
+// 🔴 Em-viiva (U+2014) on kielletty koko verkostossa joka kielessä, myös kiinan ——-pari (24.7.2026).
+// Poikkeus on verkoston oma: merkkijono joka on TÄSMÄLLEEN "—" (taulukon "ei tietoa" -merkki).
+// 🔴 Meta-puhe (11-artikkelin-viimeistely §4e, 26.9.2026) = lukijalle puhutaan meidän lähdetyöstämme
+// uutisen sijaan: "Avasimme…", "Tässä on mitä…", "Tiedote ei kerro…", "Sama juttu nimeää…". Koko tekstin
+// luku löysi sitä 6/9 jutusta 26.9., ja ne korjattiin käsin 12 kielellä. Mallit on ajettu niiden
+// korjausta edeltäneitä versioita vastaan (kaikki kuusi kaatuvat, korjatut menevät läpi) ja hubin
+// blogin 13 262 lausetta vastaan (osumat vain luokissa, jotka sääntö kieltää uutisessa).
+// Väite sille joka sen sanoi on sallittu ("Tiedotteen mukaan…", "The release says…"); lähteen sisällön
+// tai puutteen selostus ei ("Tiedote kertoo / ei kerro…"). Lainausmerkkien sisältö ohitetaan:
+// haastateltavan "me" ei ole meitä. Mallit vain fi/en/sv/de: muut kielet ovat samojen juttujen
+// käännöksiä, joten vika jää kiinni lähdekielestä. Osion i18n ("Näin teemme uutiset") saa puhua
+// työtavasta, joten siitä tarkistetaan vain em-viiva.
+// 🔴 Sama lohko on kuudessa kopiossa (flights, nature, luxuryvillas, stays, dining, work): muuta kaikkiin.
+const META = {
+  fi: [
+    ['tässä jutussa', /tässä (jutussa|artikkelissa|tekstissä)/],
+    ['sisällysluettelo virkkeenä', /tässä on (mitä|kuka|ketkä|keitä|miten|missä|milloin|mikä|mitkä)(?!\p{L})/],
+    ['lähdetyö me-muodossa', /(avasimme|tarkistimme|luimme|selvitimme)(?!\p{L})|tarkistushet/],
+    ['emme saaneet / löytäneet', /emme (saa|saaneet|löytäneet|pystyneet|voineet|ansaitse)(?!\p{L})/],
+    ['kumppanuuden puute', /ei ole (laplandvibes\p{L}*|meidän) kumppani|ei ole kumppanimme/],
+    ['meidät tänne ohjannut', /meidät tänne|ohjasi meidät/],
+    ['vinkki, ei lähde', /vinkki,? (ei|eikä) lähde/],
+    ['ylitti uutiskynnyksen', /uutiskynny/],
+    ['oikaisi oman juttunsa', /oikaisi oman/],
+    ['jutun selostus', /(nämä|ne) ovat sen jutun|sama juttu (nimeää|kertoo|mainitsee|listaa|sanoo)|samassa jutussa|jutun kamerat|juttu (ei )?(kerro|kertoo|mainitse|mainitsee|nimeä|nimeää|sano|sanoo|listaa)(?!\p{L})|juttu ilmestyi/],
+    ['tiedote kertoo / ei kerro', /tiedote (ei )?(kerro|kertoo|mainitse|mainitsee|sano|sanoo|anna|antaa)(?!\p{L})|tiedotteessa (niitä |sitä |näitä )?ei (ole|kerrota|mainita)/],
+    ['maksumuuri', /maksumuur/],
+    ['luettu / uutisoi <päivä>', /luettu \d|uutisoi (\p{L}+ )?\d/],
+  ],
+  en: [
+    ['this article', /this article(?!\p{L})|(what|for) this (story|piece)(?!\p{L})/],
+    ['sisällysluettelo virkkeenä', /here(’|')?s (what|who|how|when|where)(?!\p{L})|here is (what|who|how|when|where)(?!\p{L})/],
+    ['lähdetyö me-muodossa', /we (opened|checked|read|could not|couldn(’|')t|were unable|did not find|didn(’|')t find|leave (it|them|both) out)(?!\p{L})/],
+    ['pointed us', /pointed us|led us here/],
+    ['a tip, not a source', /a tip, not (a|the) source/],
+    ['paywall', /paywall/],
+    ['kumppanuuden puute', /we are paid nothing|we are not paid|we earn nothing|not a laplandvibes partner/],
+    ['the release does not say', /the (press )?release (does not|doesn(’|')t|did not) (say|give|list|name|mention|state)(?!\p{L})/],
+    ['jutun selostus', /the story ran|(the|that|same) (\p{L}+ )?(story|article) (names|lists|does not|doesn(’|')t)(?!\p{L})|(in|from) (that|the same) (story|article)(?!\p{L})|in the \p{L}+ story(?!\p{L})|corrected its own (piece|story|article)/],
+    ['uutiskynnys', /(were|was) in the news(?!\p{L})/],
+    ['read on <päivä>', /(read|retrieved|accessed) on \d/],
+  ],
+  sv: [
+    ['den här artikeln', /den här (artikeln|texten)/],
+    ['sisällysluettelo virkkeenä', /här står (vem|vad|när|hur)(?!\p{L})|så här vet du/],
+    ['lähdetyö me-muodossa', /vi (öppnade|kollade|kontrollerade|läste|hittade inte|kunde inte|fick inte|utelämnar)(?!\p{L})|(fick|kunde) vi inte|vi inte hittade/],
+    ['ledde oss', /(ledde|pekade) oss/],
+    ['ett tips, inte en källa', /ett tips, inte en källa/],
+    ['betalvägg', /betalvägg/],
+    ['kumppanuuden puute', /vi får ingen betalning|vi tjänar ingenting|inte partner till laplandvibes/],
+    ['pressmeddelandet säger inte', /pressmeddelandet (säger|anger|nämner|ger) inte|(finns|står) inte i pressmeddelandet|saknas i pressmeddelandet/],
+    ['jutun selostus', /(reportaget|reportage|texten|artikeln|samma text) (nämner|säger|räknar)(?!\p{L})|i \p{L}+s (reportage|artikel)(?!\p{L})|i den texten(?!\p{L})|texten publicerades|rättade sin egen/],
+    ['uutiskynnys', /kom i nyheterna/],
+    ['läst den <päivä>', /läst den \d/],
+  ],
+  de: [
+    // "dieser Artikel" on saksaksi myös tuote (hubin blogi, mitattu 26.9.) ⇒ vain Beitrag.
+    ['dieser Beitrag', /(dieser|diesem|diesen|dieses) beitrag/],
+    ['sisällysluettelo virkkeenä', /hier steht, (wer|was|wann|wie)(?!\p{L})/],
+    ['lähdetyö me-muodossa', /wir haben [^.]{0,60}(geöffnet|geprüft|nachgesehen|gelesen)(?!\p{L})|konnten wir nicht|wir konnten [^.]{0,40}nicht|wir [^.]{0,40}nicht gefunden|beim abruf/],
+    ['uns hierher', /uns hierher/],
+    ['ein Hinweis, keine Quelle', /ein hinweis, keine quelle/],
+    ['Bezahlschranke', /bezahlschranke|paywall/],
+    ['kumppanuuden puute', /wir werden [^.]{0,40}nicht bezahlt|kein partner von laplandvibes/],
+    ['die Mitteilung sagt nicht', /(pressemitteilung|mitteilung) (nennt|sagt|gibt|enthält) (nicht|keine|kein)(?!\p{L})|in der pressemitteilung (steht|stehen) [^.]{0,20}nicht|in der pressemitteilung fehl/],
+    ['jutun selostus', /(der|derselbe|jener) (\p{L}+-)?bericht (nennt|sagt|listet)(?!\p{L})|aus (dem|jenem) (\p{L}+-)?bericht|woche des berichts|korrigierte den eigenen/],
+    ['uutiskynnys', /in den nachrichten/],
+    ['abgerufen am <päivä>', /abgerufen am \d/],
+  ],
+};
+// Sanan alku (ei kesken sanaa), kirjainkoko ja Unicode: kootaan kerran.
+for (const rules of Object.values(META)) for (const r of rules) r[1] = new RegExp(`(?<![\\p{L}\\p{N}])(?:${r[1].source})`, 'iu');
+// Lainaus pois ennen meta-hakua: ”…” (fi/sv), “…” / "…" (en), „…“ / »…« (de).
+const ilmanLainauksia = (s) => s.replace(/”[^”]*”|“[^”]*”|"[^"]*"|„[^“]*“|»[^«]*«/g, ' ');
+// Kaikki merkkijonot polkuineen (".body[3].text"), jotta virhe osoittaa kohdan.
+function merkkijonot(v, polku = '', out = []) {
+  if (typeof v === 'string') out.push([polku, v]);
+  else if (Array.isArray(v)) v.forEach((x, i) => merkkijonot(x, `${polku}[${i}]`, out));
+  else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) merkkijonot(x, `${polku}.${k}`, out);
+  return out;
+}
+const ote = (s, i) => `"…${s.slice(Math.max(0, i - 50), i + 50).replace(/\s+/g, ' ')}…"`;
+// Luettu-laskuri: portti joka ei lukenut yhtään merkkijonoa ei ole vihreä (rakenne muuttui, teksti ei näy).
+const tekstit = { luettu: 0, meta: 0 };
+function tekstiportti(where, lang, obj, { meta }) {
+  const jonot = merkkijonot(obj);
+  if (!jonot.length) err(where, 'tekstiportti luki 0 merkkijonoa: tiedoston rakenne on muuttunut eikä portti näe tekstiä');
+  tekstit.luettu += jonot.length;
+  const mallit = meta ? META[lang] : null;
+  if (mallit) tekstit.meta += jonot.length;
+  for (const [polku, s] of jonot) {
+    const i = s.indexOf('—');
+    if (i >= 0 && s !== '—') err(`${where}${polku}`, `em-viiva (U+2014) on kielletty joka kielessä: ${ote(s, i)}`);
+    if (!mallit) continue;
+    const puhdas = ilmanLainauksia(s);
+    for (const [nimi, re] of mallit) {
+      const m = puhdas.match(re);
+      if (m) err(`${where}${polku}`, `meta-puhe "${nimi}": kerro uutinen tai anna väite sille joka sen sanoi, lähteet näkyvät lähderivillä (11-artikkelin-viimeistely §4e): ${ote(puhdas, m.index)}`);
+    }
+  }
+}
+
 // ── Lataus ja portti ────────────────────────────────────────────────────────
 const ui = {};
 for (const lang of LANGS) {
@@ -152,6 +257,7 @@ for (const lang of LANGS) {
   if (!existsSync(p)) { err('i18n', `puuttuu ${lang}.json`); continue; }
   ui[lang] = readJson(p);
   const u = ui[lang];
+  tekstiportti(`i18n/${lang}`, lang, u, { meta: false });
   for (const k of ['section', 'nav']) if (!u[k]) err(`i18n/${lang}`, `kenttä ${k} puuttuu`);
   for (const k of ['seoTitle', 'description', 'h1', 'lead', 'aboutTitle', 'aboutText', 'allRoutes']) if (!u.index?.[k]) err(`i18n/${lang}`, `index.${k} puuttuu`);
   for (const k of ['home', 'readMore', 'published', 'updated', 'byline', 'sources', 'source', 'read', 'photo', 'latest', 'allNews', 'moreNews']) if (!u.ui?.[k]) err(`i18n/${lang}`, `ui.${k} puuttuu`);
@@ -203,6 +309,7 @@ for (const slug of existsSync(ART_DIR) ? readdirSync(ART_DIR).sort() : []) {
     const t = texts[lang];
     if (!t) continue;
     const w = `${where}/${lang}`;
+    tekstiportti(w, lang, t, { meta: true });
     for (const k of ['title', 'description', 'dek', 'heroAlt']) if (!t[k]) err(w, `kenttä ${k} puuttuu`);
     const seo = t.seoTitle || t.title || '';
     if (len(seo) > 60) err(w, `hakuotsikko ${len(seo)} > 60 merkkiä: "${seo}"`);
@@ -234,6 +341,8 @@ for (const slug of existsSync(ART_DIR) ? readdirSync(ART_DIR).sort() : []) {
   articles.push({ slug, meta, texts });
 }
 
+// Kattavuus: juttuja on, mutta yhtäkään merkkijonoa ei ajettu meta-mallien läpi ⇒ kaatuu, ei vihreä.
+if (articles.length && !tekstit.meta) err('tekstiportti', `meta-puhetta ei tarkistettu yhdestäkään merkkijonosta (${Object.keys(META).join(', ')})`);
 if (errors.length) {
   console.error(`\n[news] PORTTI KAATUI — ${errors.length} virhettä:`);
   for (const e of errors) console.error(`  - ${e}`);
@@ -242,6 +351,7 @@ if (errors.length) {
 }
 articles.sort((a, b) => b.meta.date.localeCompare(a.meta.date) || a.slug.localeCompare(b.slug));
 console.log(`[news] portti OK — ${articles.length} juttua × ${LANGS.length} kieltä, i18n ${Object.keys(ui).length}/${LANGS.length}`);
+console.log(`[news] tekstiportti OK: ${tekstit.luettu} merkkijonoa ilman em-viivaa, joista ${tekstit.meta} ilman meta-puhetta (${Object.keys(META).join(', ')})`);
 if (CHECK) process.exit(0);
 
 // ── 5. Ryömittävän rungon tekstit ─────────────────────────────────────────────
