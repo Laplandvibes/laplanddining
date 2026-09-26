@@ -136,7 +136,9 @@ export interface ProductRailProps {
 export default function ProductRail({
   partner, snapshot, lang, sid, variant = 'light', disclosure, onCtaClick, className = '',
 }: ProductRailProps) {
-  const c = partner.copy[lang] ?? partner.copy.en
+  // No `?? partner.copy.en`: that fallback made fi/en-only rails English on the other
+  // ten locales (audit 25.9.2026, L4), contradicting the rule stated just below.
+  const c = partner.copy[lang]
   // A partner with no copy for this locale renders NOTHING rather than falling
   // back to a language the reader does not have — the same rule AdUnit follows.
   if (!c) return null
