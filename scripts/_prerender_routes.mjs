@@ -68,6 +68,7 @@
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
+import { createHash } from 'node:crypto';
 import {
   readFooterNetwork,
   buildCrawlableBody,
@@ -111,6 +112,58 @@ if (args.meta && typeof args.meta === 'string') {
 }
 
 const DIST = resolve(CWD, 'dist');
+
+// [LV-OG-SIVUKORTTI-VERSIO 2026-09-26] Sivukohtaisen jakokortin osoite saa sisällön
+// tiivisteen: og:image, og:image:secure_url ja twitter:image = /og/<slug>.jpg?v=<8 heksaa>.
+//
+// 🔴🔴 Miksi (mitattu 26.9.2026, laplandskiresorts): sivukortit /og/{resorts,beginners,
+// conditions,extreme}.jpg vaihtuivat tekoälykuvista oikeiksi valokuviksi klo 04.38, ja
+// Cloudflare tarjoili tunteja myöhemmin yhä vanhaa korttia (cf-cache-status: HIT,
+// Age: 79241). Kausifunktio functions/og/[card].js lähettää max-age=86400, eikä osoite
+// muuttunut, joten välimuisti ei voinut tietää kortin vaihtuneen. Facebook, LinkedIn ja X
+// tallentavat og:imagen samoin osoitteen mukaan. ?cb= palautti uuden kortin: uusi osoite
+// riittää.
+//
+// Miksi TÄÄLLÄ eikä routes.jsonissa: routes.json pysyy polun lähteenä, ja sitä lukevat
+// gen_page_cards.mjs, audit.mjs, jakokuvat-portti ja audit_live_js.mjs. Kyselyosa siellä
+// vanhenisi heti, kun kortti generoidaan uudelleen.
+//
+// Miksi SISÄLLÖN tiiviste eikä rekisterin og.ogVersion: og.ogVersion nostetaan käsin, ja
+// 26.9. vika oli juuri se, että kortti vaihtui mutta osoite ei. Tiiviste vaihtuu täsmälleen
+// silloin kun julkaistavat tavut vaihtuvat — sama periaate kuin version-images.mjs:llä, joka
+// ei tavoita näitä: se versioi vain /images/-polkuja eikä koske tiedostoon jota ei ole, ja
+// /og/<slug>.jpg on funktion reitti eikä tiedosto.
+//
+// Tiiviste = sha256(dist/og/<slug>-summer.jpg + dist/og/<slug>-winter.jpg), 8 ensimmäistä
+// heksaa. Jos samanniminen staattinen /og/<slug>.jpg on distissä, Pages tarjoilee sen ennen
+// funktiota, joten tiiviste lasketaan siitä. Kysely jo mukana, absoluuttinen URL, /images/…
+// ja sivustokortti /og.jpg?v=… jäävät ennalleen.
+//
+// Portti: scripts/og/audit.mjs kaataa sivuston, jolla on ogCard-reittejä ja jonka
+// prerenderöijä ei kutsu sivukorttiVersio(ogImage):a. Testi:
+// scripts/prerender_og_sivukortti.test.mjs. Livetodiste: scripts/og/verify_live.mjs.
+const SIVUKORTTI_VERSIOT = new Map();
+function sivukorttiVersio(img) {
+  const m = /^\/og\/([a-z0-9-]+)\.jpg$/i.exec(img || '');
+  if (!m) return img;
+  if (!SIVUKORTTI_VERSIOT.has(img)) {
+    const og = resolve(DIST, 'og');
+    const staattinen = resolve(og, `${m[1]}.jpg`);
+    const pari = ['summer', 'winter'].map((kausi) => resolve(og, `${m[1]}-${kausi}.jpg`));
+    const tiedostot = existsSync(staattinen) ? [staattinen] : pari.every((f) => existsSync(f)) ? pari : null;
+    let out = img;
+    if (tiedostot) {
+      const h = createHash('sha256');
+      for (const f of tiedostot) h.update(readFileSync(f));
+      out = `${img}?v=${h.digest('hex').slice(0, 8)}`;
+    } else {
+      console.warn(`[prerender] WARN: ${img}: distissä ei ole korttia eikä kausiparia — og:image jää ilman versiota`);
+    }
+    SIVUKORTTI_VERSIOT.set(img, out);
+  }
+  return SIVUKORTTI_VERSIOT.get(img);
+}
+
 const LOCALES = resolve(CWD, 'src', 'locales');
 
 if (!existsSync(resolve(DIST, 'index.html'))) {
@@ -1463,7 +1516,8 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
   setMeta('property', 'og:description', description || '');
   setMeta('property', 'og:url', canonical);
   setMeta('property', 'og:locale', og);
-  const ogImageAbs = /^https?:/.test(ogImage) ? ogImage : `${SITE}${ogImage}`;
+  // Sivukortti saa sisällön tiivisteen (?v=), ks. [LV-OG-SIVUKORTTI-VERSIO].
+  const ogImageAbs = /^https?:/.test(ogImage) ? ogImage : `${SITE}${sivukorttiVersio(ogImage)}`;
   setMeta('property', 'og:image', ogImageAbs);
   // 🔴🔴 Sivukohtainen jakokuva ei nay Facebookissa, jos `og:image:secure_url`
   // jaa osoittamaan sivustokorttiin: kun molemmat ovat, Facebook kayttaa
@@ -1473,7 +1527,10 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
   setMeta('property', 'og:image:secure_url', ogImageAbs);
   // Kuoren `og:image:alt` kuvailee SIVUSTOKORTTIA. Kun sivulla on oma kortti,
   // se kuvaus on vaara — ja vaara vaihtoehtoteksti on huonompi kuin ei mitaan.
-  if (ogImage !== DEFAULT_OG) poistaMeta('property', 'og:image:alt');
+  // [LV-OG-SIVUKORTTI-ALT 2026-09-26] twitter:image:alt kuvailee samaa sivustokorttia (install.mjs
+  // kirjoittaa molemmat kuoreen), ja 21.9. korjaus poisti vain og:image:alt:n — skiresortsin
+  // sivukorttisivut kertoivat X:lle Ylläksen ankkurihissistä (mitattu dististä 26.9.2026).
+  if (ogImage !== DEFAULT_OG) { poistaMeta('property', 'og:image:alt'); poistaMeta('name', 'twitter:image:alt'); }
   setMeta('name', 'twitter:card', 'summary_large_image');
   setMeta('name', 'twitter:title', title);
   setMeta('name', 'twitter:description', description || '');
