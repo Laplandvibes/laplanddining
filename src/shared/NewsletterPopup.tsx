@@ -50,6 +50,54 @@ const withSlash = (href: string) => href.replace(/^([^?#]*[^/?#])(?=[?#]|$)/, '$
 const REMIND_AFTER_MS = 30 * 24 * 60 * 60 * 1000; // 30 days (oli 7)
 const SUPPRESSED_PATHS = ['/privacy', '/terms', '/cookie-policy', '/unsubscribe'];
 
+// ─── POPUP-KIELI ALKU (scripts/rollout_popup_kielietuliite.mjs lukee tämän lohkon) ─────────────
+/**
+ * Verkoston kielietuliitteet polun ensimmäisenä segmenttinä: sama taulu kuin shared/Footer.tsx:n
+ * LOCALE_PATH_PREFIX (en asuu juuressa, pt-BR = /br, zh-CN = /cn, ko = /kr).
+ */
+const POPUP_LOCALE_SEGMENTS = new Set(['fi', 'de', 'ja', 'es', 'br', 'cn', 'kr', 'fr', 'it', 'nl', 'sv']);
+
+/** Polun kielisegmentti tai '' (`/es/foo/` → `es`, `/foo/` → ''). */
+function localeSegment(path: string): string {
+  const seg = (path.split(/[?#]/)[0].split('/')[1] ?? '').toLowerCase();
+  return POPUP_LOCALE_SEGMENTS.has(seg) ? seg : '';
+}
+
+/**
+ * Tietosuojalinkki LUKIJAN kielessä: `/privacy` sivulla `/es/…` → `/es/privacy`.
+ *
+ * 🔴 Mitattu 27.9.2026 (gate:kielietuliite, renderöity DOM): laplandfood /br/ ja laplandtours /es/:
+ * suostumusrivin linkki osoitti `/privacy/`:iin, eli lukija avasi englanninkielisen selosteen
+ * juuri kun häneltä pyydettiin suostumusta. Oletus oli '/privacy', eikä yksikään kääre skiresortsia
+ * lukuun ottamatta välittänyt lokalisoitua `privacyHref`iä. Kieli luetaan polusta eikä `lang`-propista,
+ * kuten alatunnisteessa: linkin pitää olla sen sivun kielessä jolla lukija on, ja `lang` tulee kunkin
+ * sivuston omasta tunnistuksesta (i18n.language, useLang, konteksti), jonka tyyppiliitoksista osa
+ * ei edes tunne ruotsia.
+ *
+ * Idempotentti: jo etuliitteellinen polku (skiresortsin `tp('/privacy-policy')`) palautuu ennallaan,
+ * ja englanninkielisellä sivulla funktio on identiteetti. Ulkoinen, protokollasuhteellinen ja
+ * suhteellinen polku jätetään koskematta.
+ */
+function localizedPrivacyHref(href: string, pathname: string): string {
+  const seg = localeSegment(pathname);
+  if (!seg || !href.startsWith('/') || href.startsWith('//')) return href;
+  if (localeSegment(href)) return href;
+  return `/${seg}${href}`;
+}
+
+/**
+ * `/es/privacy/` → `/privacy`, jotta tukahdutuslista osuu. Ennen 27.9.2026 listaa verrattiin
+ * `location.pathname`iin sellaisenaan, eikä se osunut kauttaviivalliseen polkuun (verkoston muoto
+ * 18.9. alkaen) eikä kielipolkuun: popup saattoi aueta sen tietosuojasivun päälle, jonka lukija
+ * juuri avasi popupin omasta linkistä.
+ */
+function barePath(path: string): string {
+  const osat = path.split(/[?#]/)[0].split('/');
+  if (localeSegment(path)) osat.splice(1, 1);
+  return osat.join('/').replace(/\/+$/, '') || '/';
+}
+// ─── POPUP-KIELI LOPPU ─────────────────────────────────────────────────────────────────────────
+
 /**
  * Network wordmark font. The `#LAPLAND<brand>` lockup is ALWAYS Bebas Neue, on
  * every site, including the variant-font sites where `font-heading` resolves to
@@ -734,7 +782,8 @@ export default function NewsletterPopup({
 
   useEffect(() => {
     if (defaultOpen) return;
-    if (SUPPRESSED_PATHS.includes(location.pathname)) return;
+    const bare = barePath(location.pathname);
+    if (SUPPRESSED_PATHS.includes(bare) || bare === barePath(privacyHref)) return;
 
     const stored = readStored(storageKey);
     if (stored?.subscribed) return; // never show again after subscribe
@@ -770,7 +819,7 @@ export default function NewsletterPopup({
       if (timer) window.clearTimeout(timer);
       if (scrollPercent > 0) window.removeEventListener('scroll', onScroll);
     };
-  }, [location.pathname, storageKey, sessionShownKey, defaultOpen, delaySeconds, scrollPercent]);
+  }, [location.pathname, privacyHref, storageKey, sessionShownKey, defaultOpen, delaySeconds, scrollPercent]);
 
   // Esc to dismiss when visible
   useEffect(() => {
@@ -1087,7 +1136,7 @@ export default function NewsletterPopup({
                   <span className="text-white/70 text-[11px] leading-relaxed">
                     {D.consent}{' '}
                     <a
-                      href={withSlash(privacyHref)}
+                      href={withSlash(localizedPrivacyHref(privacyHref, location.pathname))}
                       target="_blank"
                       rel="noopener"
                       onClick={(e) => e.stopPropagation()}
