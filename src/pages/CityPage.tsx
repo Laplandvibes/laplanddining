@@ -8,10 +8,11 @@ import RestaurantCard, { type CardI18n } from '../components/RestaurantCard';
 import AffiliateCTA from '../components/AffiliateCTA';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import NotFound from './NotFound';
-import { cuisineLabel, type Locale } from '../data/restaurants';
+import { cuisineLabel, PHOTO_BY, type Locale } from '../data/restaurants';
 import {
   DINING_CITIES, cityBySlug, restaurantsForCity,
 } from '../data/diningCities';
+import { ownPhotoCredit, OTHER_PHOTO_PLACES } from '../data/photoCredit';
 
 const ORIGIN = 'https://laplanddining.com';
 
@@ -59,6 +60,22 @@ export default function CityPage() {
   const intro = tx(`${cityKey}.intro`, '');
   const knowRaw = t(`${cityKey}.know`, { returnObjects: true });
   const know: string[] = Array.isArray(knowRaw) ? (knowRaw as string[]) : [];
+
+  /**
+   * Heron kuvateksti lukijan kielellä (photoCredit.ts). Paikan nimi on
+   * kaupunkisivun oma käännös, jotta kuvateksti ja otsikko käyttävät samaa
+   * muotoa, tai OTHER_PHOTO_PLACES, kun paikalla ei ole omaa sivua.
+   */
+  const credit = city.photo ? city.photoCredit : undefined;
+  const photoCaption = credit
+    ? ownPhotoCredit(
+        PHOTO_BY[locale],
+        OTHER_PHOTO_PLACES[credit.place]?.[locale]
+          ?? tx(`cities.${credit.place}.name`, cityBySlug(credit.place)?.name ?? credit.place),
+        credit.month,
+        locale,
+      )
+    : null;
 
   const ratings = list.map((r) => r.rating).filter((n): n is number => typeof n === 'number');
   const best = ratings.length ? Math.max(...ratings) : null;
@@ -174,9 +191,9 @@ export default function CityPage() {
         {/* Kuvateksti vain omalle valokuvalle. Se nimeaa TARKAN paikan eika
             kaupunkisivun otsikkoa: Kuusamon sivu kattaa myos Rukan 22 km:n
             paassa (Vesa 7.9.: "riistaravintola on rukalla, ei kuusamossa"). */}
-        {city.photo && city.photoCredit && (
+        {photoCaption && (
           <p className="absolute bottom-3 right-4 z-10 rounded bg-black/55 px-1.5 py-px text-[11px] text-white/90 tracking-wide">
-            Kuva: LaplandVibes · {city.photoCredit}
+            {photoCaption}
           </p>
         )}
         <div className="relative z-10 max-w-4xl mx-auto px-5 py-20 text-center">

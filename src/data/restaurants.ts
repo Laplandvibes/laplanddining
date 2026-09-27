@@ -3,6 +3,7 @@ import restaurantImages from './generated/restaurant-images.json';
 import restaurantMenus from './generated/restaurant-menus.json';
 import { restaurantOverrides } from './restaurant-overrides';
 import { restaurantGems } from './restaurant-gems';
+import { creditPrefix } from './photoCredit';
 
 type ImageEntry = { src: string; kind: string; credit?: string };
 const imageRegistry = restaurantImages as Record<string, ImageEntry>;
@@ -540,7 +541,8 @@ const ILLUSTRATION_LABEL: Record<Locale, string> = {
   sv: 'Illustrationsbild',
 };
 
-const PHOTO_BY: Record<Locale, string> = {
+/** Kuvaajamerkinnän sana. Kaksoispiste välimerkkeineen: `creditPrefix` (photoCredit.ts). */
+export const PHOTO_BY: Record<Locale, string> = {
   en: 'Photo', fi: 'Kuva', de: 'Foto', ja: '写真', es: 'Foto', 'pt-BR': 'Foto',
   'zh-CN': '图片', ko: '사진', fr: 'Photo', it: 'Foto', nl: 'Foto', sv: 'Foto',
 };
@@ -551,6 +553,6 @@ export function photoCaption(r: Restaurant, locale: Locale): string | null {
   // valokuva kohteesta (Vesa 30.8.2026: "oma aito valokuva voittaa") — molemmat
   // esittävät juuri tätä ravintolaa, joten Kuvituskuva-merkintää EI näytetä.
   if ((r.photoKind === 'partner' || r.photoKind === 'photo') && r.photoCredit)
-    return `${PHOTO_BY[locale]}: ${r.photoCredit}`;
+    return `${creditPrefix(PHOTO_BY[locale], locale)}${r.photoCredit}`;
   return null;
 }
