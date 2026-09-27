@@ -12,16 +12,10 @@
           for (var p in map) {
             if (path === '/' + p || path.indexOf('/' + p + '/') === 0) { loc = map[p]; break; }
           }
-          // 🔴🔴 EI YLIKIRJOITETA ESIRENDEROITYA OTSIKKOA (21.9.2026, ajoitus korjattu 24.9.2026).
-          // T on kasin yllapidetty kopio etusivun otsikoista ja ehti vanhentua; sivut esirenderoidaan
-          // kielittain, joten palvelin lahettaa jo oikean otsikon. 21.9. vartija ei toiminut: tama
-          // lohko on headin alussa ja title-elementti jasennetaan vasta sen jalkeen, joten ajohetkella
-          // document.title oli '' ja kirjoitus loi oman elementin palvelimen otsikon eteen (mitattu
-          // 24.9.2026: laplandchristmas.com/fi/accommodation/ valilehdella "Joulu Lapissa: ..." 12 ms,
-          // kunnes React vaihtoi sivun oman 763 ms). Siksi vertailu vasta readyState 'interactive'
-          // -hetkella: koko HTML on jasennetty, Reactin moduuliskripti ei viela ajanut. T:ta kaytetaan
-          // vain kun otsikko puuttuu tai muunkielinen reitti kantaa yha kuoren EN-oletusta
-          // (= esirenderoimaton reitti). Lahde: scripts/lib/otsikkovartija.mjs, ala muokkaa kasin.
+          // Otsikkovartija: T:ta kaytetaan vain, kun sivulla ei ole otsikkoa tai muunkielinen
+          // reitti kantaa yha kuoren EN-oletusta (= esirenderoimaton reitti). Vertailu tehdaan
+          // readyState 'interactive' -hetkella, kun title-elementti on jasennetty.
+          // Lahde: scripts/lib/otsikkovartija.mjs, ala muokkaa kasin.
           var oletus = "LaplandDining: Where to Eat in Finnish Lapland";
           var aseta = function () {
             try {
@@ -134,9 +128,8 @@
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
-        /* 🔴 Nama kaksi puuttuivat 27.8.2026 asti. Consent Mode v2 vaatii
-           ETA-alueella kaikki nelja; ilman naita ad_user_data ja
-           ad_personalization eivat ole denied-tilassa ennen bannerin vastausta. */
+        /* Consent Mode v2: ETA-alueella kaikki nelja oletuksena denied,
+           myos ad_user_data ja ad_personalization. */
         ad_user_data: 'denied',
         ad_personalization: 'denied',
         wait_for_update: 500
@@ -148,17 +141,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBTJJJDJTV"></script>
     <script>
       gtag('js', new Date());
-      /* 🔴 Ala mittaa kehityskonetta eika Cloudflaren esikatselubuildeja tuotanto-
-         propertyyn. Mitattu 27.8.2026 hubin GA:sta: hostnamena esiintyi localhost
-         (/fi 96 katselua, /fi/media 81) ja SEITSEMAN eri *.pages.dev-esikatselua.
-         Sama portti jonka Umami saa data-domains-attribuutista; GA:n oma
-         IP-suodatin ei kata naita lainkaan. */
-      /* QA-liikenne pois mittareista (Vesa 17.9.2026, laplandstays-auditin kohta 6;
-         levitys koko verkostoon 17.9. illalla). Ei IP-listoja: kotiyhteyden osoite
-         vaihtuu ja puhelin on eri verkossa. ?w=qa kerran => lippu jaa selaimen
-         localStorageen ja GA + Umami ovat pois paalta talla selaimella pysyvasti;
-         ?w=live palauttaa. navigator.webdriver = Playwright/Puppeteer-portit, eivat
-         kavijoita. Poikkeus lv_measure=1: verify_funnel_live DEEP tarvitsee lahetykset. */
+      /* Kehityskone (localhost) ja Cloudflaren esikatselubuildit (*.pages.dev) eivat
+         mittaa tuotanto-propertyyn. Umamilla sama rajaus on data-domains-attribuutti. */
+      /* QA-liikenne pois mittareista: ?w=qa asettaa selaimeen lipun, jolla GA ja Umami
+         ovat pois paalta; ?w=live palauttaa. Automaatioselain (navigator.webdriver)
+         ohitetaan samoin, paitsi kun localStorage lv_measure=1. */
       var lvQa = false;
       try {
         var lvW = new URLSearchParams(location.search).get('w');
@@ -170,9 +157,8 @@
       } catch (e) {}
       var lvHost = location.hostname;
       if (lvQa || lvHost === 'localhost' || lvHost === '127.0.0.1' || lvHost === '[::1]' || lvHost.indexOf('.pages.dev') !== -1) {
-        /* GA:n virallinen opt-out. Pelkka gtagin neutralointi ei riita:
-           gtag/js?id=... lataa kontin joka tapauksessa (mitattu esikatselu-
-           hostilla: google_tag_manager sai avaimen vaikka gtag oli no-op). */
+        /* GA:n virallinen opt-out. Pelkka gtagin neutralointi ei riita, koska
+           gtag/js?id=... lataa kontin joka tapauksessa. */
         window['ga-disable-G-YBTJJJDJTV'] = true;
         gtag = function () {};
       }
