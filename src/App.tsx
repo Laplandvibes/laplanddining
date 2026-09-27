@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocale } from './i18n/useLocale';
 import LocaleAutoRedirect from './i18n/LocaleAutoRedirect';
 import Navbar from './components/Navbar';
-import SharedFooter from './shared/Footer';
+import SharedFooter from './components/Footer';
 import type { FooterDict } from './shared/Footer';
 import SharedCookieBanner from './shared/CookieBanner';
 import NewsletterPopup from './components/NewsletterPopup';
