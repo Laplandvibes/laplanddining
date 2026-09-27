@@ -302,38 +302,15 @@ export default function CookieBanner({
 
       <style>{`
         /* ── Mobile ── (fixed pixel bottoms so mobile browser chrome resize does not displace the flag)
-           Sized down 2026-07-06 (Vesa: the flag was disproportionately huge), then
-           sized back UP 2026-08-02 — but only as far as legibility forces.
-
-           🔴 Why the card cannot stay at 215px: the flag is locked to the Finnish
-           18:11 ratio and the consent copy lives in the middle stripe, which is
-           only 3/11 of the height. So "body text >= 12px" is not a font-size edit,
-           it is a geometry constraint: card width drives stripe height drives how
-           many 12px lines fit. At 215px the copy needed 8px type to fit at all.
-           330px is the smallest width where the LONGEST locale (fr) still lands
-           in 3 lines at 12px. Do not shrink this without re-measuring all 12
-           locales at 375 AND 360 (see _cookiefit.mjs). */
-        /* 🔴 The flag used to fly 110px above the bottom edge. That offset is a
-           constant, so on a phone it did not read as "docked to the bottom" — it
-           read as "parked in the middle of the screen", which on a front page is
-           exactly where the booking buttons are. Measured on a first visit at
-           375x667: the card covered 8 controls including both hero CTAs, and on
-           laplandstays it covered "Hotellit ja mökit" by 97% at 390x844. The
-           110px below it was dead space. Pole and flag now come down together so
-           the flag still flies at the masthead, just lower on the pole.
-           🔴 Do not re-raise this without re-running _consentclash.mjs: the card
-           is ~200px tall at 375px (18:11 is fixed and the 330px width is a
-           legibility floor, see below), so every pixel of offset comes straight
-           out of the visible hero. */
-        /* 🔴 The masthead flag is gated on HEIGHT as well as width, and height is
-           the variable that actually matters. The card is ~202px tall, and on a short
-           window the hero fills the viewport so its booking buttons sit near the
-           bottom — which is where any docked 202px card lands. Measured on activities:
-           at bottom:220px a 1280x800 laptop had "Majoitus lähistöllä" 36% covered, and
-           lowering the flag instead only moved the collision onto 1024x640 (100%) and
-           1280x720 (67%). There is no offset that works at every height, so anything
-           under 900px tall gets the compact bar and the masthead flies only where
-           there is room for it. Verified 1440x900 / 1920x995 / 2560x1440 clean. */
+           Card width 330px: the flag keeps the Finnish 18:11 ratio and the copy sits in the
+           middle stripe (3/11 of the height), so the width sets how many 12px lines fit.
+           330px is the narrowest width at which the longest locale (fr) fits in 3 lines. */
+        /* On phones the banner sits 14px from the bottom edge. The card is ~200px tall at
+           375px (18:11 ratio, 330px width floor), so every pixel of offset comes out of the
+           visible hero, and a raised card covers the hero's booking buttons. */
+        /* The masthead flag is gated on height as well as width: on a short window the
+           hero's booking buttons sit near the bottom, where a docked ~200px card lands.
+           No offset works at every height, so windows under 900px tall get the compact bar. */
         .lv-pole   { width: 3px; left: 12px; height: 240px; display: none; }
         .lv-banner { display: none; }
         .lv-sheet  { display: block; }
@@ -343,23 +320,19 @@ export default function CookieBanner({
         .lv-rope   { width: 7px; height: 1.5px; background: #334155; border-radius: 1px; }
         .lv-label  { font-size: 12px; letter-spacing: 0.1em; }
         .lv-body   { font-size: 12px; }
-        /* 44x44 minimum touch target (WCAG 2.5.5) instead of the old 46x22 / 51x20. */
+        /* 44x44 minimum touch target (WCAG 2.5.5). */
         .lv-btn    { font-size: 12px; padding: 0 10px; min-height: 44px; min-width: 44px;
                      display: inline-flex; align-items: center; justify-content: center; }
         /* Inline consent-policy link: vertical padding grows the hit rect to 44px
            without touching the line box, so the stripe copy keeps its layout.
-           🔴 15px, not 14px. An INLINE box's rect is the font's own height
-           (~14.4px at 12px), NOT the 1.35 line box (16.2px) — 14px padding
-           measured 43px live and failed the 44px gate by one pixel. Do not
-           "tidy" this back to a round 14. */
+           15px, not 14px: an inline box's rect is the font's own height (~14.4px
+           at 12px), not the 1.35 line box, so 14px gives a 43px target. */
         .lv-policy { padding-top: 15px; padding-bottom: 15px; }
 
         /* ── Desktop ── */
-        /* 🔴 1024px, not 768px. A portrait tablet is 768x1024: wide enough to
-           trip a 768px breakpoint, but only 1024px tall, so the masthead flag at
-           bottom:220px landed back on the hero CTA strip (measured: "Vuokraa auto"
-           100% covered, "Majoitus lähistöllä" 85%). Touch-sized viewports get the
-           docked bar; the masthead flag starts where there is height for it. */
+        /* 1024px, not 768px: a portrait tablet (768x1024) is wide enough for a 768px
+           breakpoint but too short for the masthead flag at bottom:220px, which would
+           cover the hero CTA strip. Touch-sized viewports get the docked bar. */
         @media (min-width: 1024px) and (min-height: 900px) {
           .lv-pole   { width: 4px; left: 40px; height: 430px; display: block; }
           .lv-finial { top: -5px; width: 10px; height: 10px; }

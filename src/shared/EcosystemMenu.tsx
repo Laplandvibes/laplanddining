@@ -247,18 +247,15 @@ const CSS = `
 .lv-eco-btn--light{background:rgba(15,23,42,.05);border-color:rgba(15,23,42,.22);color:rgba(15,23,42,.78)}
 .lv-eco-btn--light .lv-eco-lbl{text-shadow:none}
 .lv-eco-btn--light:hover,.lv-eco-btn--light[aria-expanded="true"]{background:rgba(236,72,153,.08);border-color:rgba(236,72,153,.55);color:${PINK}}
-/* 1023, ei 767: 768 px on tabletti eli yha sormi. Mitattu 14.9.2026 -> 36px. */
+/* 1023, ei 767: 768 px on tabletti eli yha sormi. */
 @media(max-width:1023px){.lv-eco-btn{height:44px;min-width:44px}}
 @media(max-width:639px){.lv-eco-btn{padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
-/* 🔴 EI ikuista pomppimista (Vesa 26.9.2026: "nayttaa etta leijailee, ei ole firm ja
-   laadukkaan nakoinen"). Vinkki nousi 5 px ylos ja alas 1,6 s valein niin kauan kuin se oli
-   nakyvissa — liike on se mika luki kelluntana. Nyt yksi lyhyt sisaantulo ja sen jalkeen se
-   pysyy paikallaan. Kiinnitys nappiin: 12 px -> 8 px. */
+/* Vinkki tulee nakyviin yhdella lyhyella sisaantulolla ja pysyy sitten paikallaan:
+   jatkuva ylos-alas-liike nayttaa kellunnalta. Kiinnitys 8 px napin alle. */
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoIn .26s ease-out both}
 @media(min-width:768px){.lv-eco-hint{display:block}}
-/* 🔴 Nuoli oli ERI pinkki kuin pilleri (#EC4899 vs #DB2777) ja silla oli oma hohto —
-   kaksi eri savya ja sumea reuna saivat sen nayttamaan omalta kelluvalta palalta pillerin
-   vieressa. Nyt sama vari, ei hohtoa, kapeampi ja lahempana nappia. */
+/* Nuoli on samaa pinkkia kuin pilleri eika silla ole omaa hohtoa, jotta se luetaan
+   pillerin osaksi eika erilliseksi palaksi. */
 .lv-eco-hint-arrow{position:absolute;top:-5px;left:18px;width:11px;height:11px;transform:rotate(45deg);border-radius:2px;background:${PINK_FILL}}
 .lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:${PINK_FILL};color:#fff;box-shadow:0 3px 10px -3px rgba(15,23,42,.55),0 0 0 1px rgba(255,255,255,.16) inset}
 .lv-eco-hint-x{display:flex;position:relative;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);font:inherit;line-height:1}
@@ -279,7 +276,7 @@ const CSS = `
 .lv-eco-mark{font-family:${WORDMARK_FONT};font-size:24px;letter-spacing:.04em;line-height:1;white-space:nowrap;font-weight:400}
 .lv-eco-mark i{font-style:normal;color:${PINK}}
 .lv-eco-brand:hover .lv-eco-mark{color:#fff;text-shadow:0 0 18px rgba(236,72,153,.45)}
-/* Content, not a label: the old tracked uppercase read as the panel title. */
+/* Content, not a label: tracked uppercase would read as the panel title. */
 .lv-eco-sub{font-size:11.5px;color:rgba(249,250,251,.72);font-weight:500;white-space:nowrap;line-height:1.25}
 .lv-eco-search{flex:1 1 240px;max-width:420px;display:flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(249,250,251,.55);cursor:text;margin:0}
 .lv-eco-search:focus-within{border-color:rgba(6,182,212,.7);box-shadow:0 0 0 3px rgba(6,182,212,.18);color:${SNOW}}
