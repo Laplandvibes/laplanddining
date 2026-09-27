@@ -71,12 +71,12 @@ const COPY: Record<Lang, TermsCopy> = {
   en: {
     kicker: 'Legal',
     h1: 'Terms of Use',
-    lastUpdated: 'Last updated: May 2026 · Operated by LaPeso Oy',
+    lastUpdated: 'Last updated: September 2026 · Operated by LaPeso Oy',
     s1Title: '1. About This Site',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) is a Finnish Lapland travel information hub operated by{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>, registered in Finland. We provide editorial travel guides,
+        <strong className="text-snow/90">LaPeso Oy</strong>, registered in Finland. We provide editorial travel guides,
         destination information, and links to third-party booking services.
       </>
     ),
@@ -107,7 +107,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Any contract for travel services (accommodation, flights, car rental, tours) is concluded directly
+        Any contract for travel services (such as accommodation, flights, car rental, or tours) is concluded directly
         between you and the relevant third-party provider, on their terms and under their privacy policy.
         Their cancellation rules, refund policies, and consumer-protection rights apply, not ours. The Finnish
         consumer right of withdrawal under <em>kuluttajansuojalaki 6 luku</em> is exercised against the
@@ -123,9 +123,9 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Intellectual Property',
-    s7Body: (siteName) => `All original content on ${siteName}, including text, graphics, and design, is owned by LaPeso Oy or licensed for use. You may not reproduce, distribute, or create derivative works without written permission. Fair use for non-commercial personal reference is permitted with attribution.`,
+    s7Body: (siteName) => `All original content on ${siteName}, including text, graphics, and design, is owned by LaPeso Oy or licensed for use. You may not reproduce, distribute, or create derivative works without written permission. Fair use for non-commercial personal reference is permitted with attribution.`,
     s8Title: '8. Limitation of Liability',
-    s8Body: (siteName) => `${siteName} and LaPeso Oy are not liable for any loss, injury, or damage arising from reliance on information on this site, from use of linked third-party services, or from travel decisions made based on our content. Travel to Arctic regions involves inherent risks; always obtain appropriate travel insurance and follow local safety guidelines.`,
+    s8Body: (siteName) => `${siteName} and LaPeso Oy are not liable for any loss, injury, or damage arising from reliance on information on this site, from use of linked third-party services, or from travel decisions made based on our content. Travel to Arctic regions involves inherent risks; always obtain appropriate travel insurance and follow local safety guidelines.`,
     s9Title: '9. Governing Law',
     s9Body: 'These terms are governed by the laws of Finland. Any disputes shall be resolved in the courts of Finland.',
     s10Title: '10. Changes to These Terms',
@@ -136,7 +136,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'Under the EU Digital Services Act (Regulation (EU) 2022/2065), our designated contact point for authorities and recipients of the service is:',
     s12Items: [
       'Email: info@laplandvibes.com',
-      'Operator: LaPeso Oy, Finland',
+      'Operator: LaPeso Oy, Finland',
       'Communication languages: English, Finnish',
     ],
     s12Tail: (siteName) => `${siteName} is an editorial publisher; we do not host user-generated content as a primary service. Reports of illegal content, copyright infringement, or other DSA-relevant matters may be sent to the address above and will be handled within statutory timeframes.`,
@@ -146,12 +146,12 @@ const COPY: Record<Lang, TermsCopy> = {
   fi: {
     kicker: 'Lakitiedot',
     h1: 'Käyttöehdot',
-    lastUpdated: 'Viimeksi päivitetty: toukokuu 2026 · Ylläpitäjä LaPeso Oy',
+    lastUpdated: 'Viimeksi päivitetty: syyskuu 2026 · Ylläpitäjä LaPeso Oy',
     s1Title: '1. Tietoa sivustosta',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) on Suomen Lapin matkailutietopalvelu, jonka ylläpidosta vastaa{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>, Suomeen rekisteröity yhtiö. Tarjoamme toimituksellisia matkaoppaita,
+        <strong className="text-snow/90">LaPeso Oy</strong>, Suomeen rekisteröity yhtiö. Tarjoamme toimituksellisia matkaoppaita,
         kohdetietoa ja linkkejä kolmannen osapuolen varauspalveluihin.
       </>
     ),
@@ -181,7 +181,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Sopimus matkailupalvelusta (majoituksesta, lennoista, autovuokrauksesta, retkistä) solmitaan suoraan sinun ja kyseisen
+        Sopimus matkailupalvelusta (esimerkiksi majoituksesta, lennoista, autovuokrauksesta tai retkistä) solmitaan suoraan sinun ja kyseisen
         kolmannen osapuolen palveluntarjoajan välillä, heidän ehtojensa ja tietosuojakäytäntönsä mukaisesti. Heidän peruutus-, hyvitys-
         ja kuluttajansuojasääntönsä pätevät, eivät meidän. Suomen <em>kuluttajansuojalain 6 luvun</em> mukainen peruuttamisoikeus
         kohdistuu elinkeinonharjoittajaan; {siteName} ei ole osapuolena kyseisessä prosessissa.
@@ -191,14 +191,14 @@ const COPY: Record<Lang, TermsCopy> = {
     s6Body: (unsub, privacy) => (
       <>
         Tilaamalla uutiskirjeemme hyväksyt säännöllisten sähköpostien vastaanottamisen Suomen Lapin matkailusta.
-        Voit perua tilauksen milloin tahansa jokaisesta viestistä löytyvällä linkillä tai osoitteessa {unsub}. Emme jaa sähköpostiosoitettasi kolmansille osapuolille.
+        Voit perua tilauksen milloin tahansa jokaisesta viestistä löytyvällä linkillä tai {unsub}. Emme jaa sähköpostiosoitettasi kolmansille osapuolille.
         Katso {privacy} lisätietoja varten.
       </>
     ),
     s7Title: '7. Tekijänoikeudet',
-    s7Body: (siteName) => `Kaikki ${siteName}-sivuston alkuperäissisältö (teksti, kuvitus ja muotoilu) kuuluu LaPeso Oy:lle tai on käytössä lisenssillä. Sisältöä ei saa jäljentää, jakaa tai muokata ilman kirjallista lupaa. Ei-kaupallinen henkilökohtainen käyttö lähteen mainiten on sallittu.`,
+    s7Body: (siteName) => `Kaikki ${siteName}-sivuston alkuperäissisältö (teksti, kuvitus ja muotoilu) kuuluu LaPeso Oy:lle tai on käytössä lisenssillä. Sisältöä ei saa jäljentää, jakaa tai muokata ilman kirjallista lupaa. Ei-kaupallinen henkilökohtainen käyttö lähteen mainiten on sallittu.`,
     s8Title: '8. Vastuunrajoitus',
-    s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa menetyksistä, vahingoista tai haitoista, jotka aiheutuvat sivuston tietoihin luottamisesta, linkitettyjen kolmansien osapuolten palveluiden käytöstä tai sisällön perusteella tehdyistä matkapäätöksistä. Arktisille alueille matkustaminen sisältää aina riskejä; hanki kattava matkavakuutus ja noudata paikallisia turvallisuusohjeita.`,
+    s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa menetyksistä, vahingoista tai haitoista, jotka aiheutuvat sivuston tietoihin luottamisesta, linkitettyjen kolmansien osapuolten palveluiden käytöstä tai sisällön perusteella tehdyistä matkapäätöksistä. Arktisille alueille matkustaminen sisältää aina riskejä; hanki kattava matkavakuutus ja noudata paikallisia turvallisuusohjeita.`,
     s9Title: '9. Sovellettava laki',
     s9Body: 'Näihin käyttöehtoihin sovelletaan Suomen lakia. Mahdolliset riidat ratkaistaan Suomen tuomioistuimissa.',
     s10Title: '10. Käyttöehtojen muutokset',
@@ -209,7 +209,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'EU:n digipalvelusäädöksen (asetus (EU) 2022/2065) mukainen yhteyspisteemme viranomaisille ja palvelun vastaanottajille on:',
     s12Items: [
       'Sähköposti: info@laplandvibes.com',
-      'Ylläpitäjä: LaPeso Oy, Suomi',
+      'Ylläpitäjä: LaPeso Oy, Suomi',
       'Viestintäkielet: suomi, englanti',
     ],
     s12Tail: (siteName) => `${siteName} on toimituksellinen julkaisija; emme isännöi käyttäjien tuottamaa sisältöä ydinpalveluna. Ilmoitukset laittomasta sisällöstä, tekijänoikeusloukkauksista tai muista DSA:n piiriin kuuluvista asioista voi lähettää yllä olevaan osoitteeseen, ja ne käsitellään lakisääteisten aikarajojen mukaisesti.`,
@@ -219,12 +219,12 @@ const COPY: Record<Lang, TermsCopy> = {
   de: {
     kicker: 'Rechtliches',
     h1: 'Nutzungsbedingungen',
-    lastUpdated: 'Zuletzt aktualisiert: Mai 2026 · Betrieben von LaPeso Oy',
+    lastUpdated: 'Zuletzt aktualisiert: September 2026 · Betrieben von LaPeso Oy',
     s1Title: '1. Über diese Website',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) ist ein Reiseportal für Finnisch-Lappland, betrieben von{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>, eingetragen in Finnland. Wir veröffentlichen redaktionelle Reiseführer,
+        <strong className="text-snow/90">LaPeso Oy</strong>, eingetragen in Finnland. Wir veröffentlichen redaktionelle Reiseführer,
         Zielinformationen und Links zu Buchungsdiensten Dritter.
       </>
     ),
@@ -254,7 +254,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Verträge über Reiseleistungen (Unterkunft, Flüge, Mietwagen, Touren) kommen direkt zwischen Ihnen und dem jeweiligen Drittanbieter
+        Verträge über Reiseleistungen (z. B. Unterkunft, Flüge, Mietwagen oder Touren) kommen direkt zwischen Ihnen und dem jeweiligen Drittanbieter
         nach dessen Bedingungen und Datenschutzrichtlinie zustande. Es gelten dessen Stornierungs-, Rückerstattungs- und Verbraucherrechtsregeln, nicht unsere.
         Das finnische Widerrufsrecht nach <em>kuluttajansuojalaki 6 luku</em> richtet sich gegen den Händler; {siteName} ist hieran nicht beteiligt.
       </>
@@ -263,14 +263,14 @@ const COPY: Record<Lang, TermsCopy> = {
     s6Body: (unsub, privacy) => (
       <>
         Wenn Sie unseren Newsletter abonnieren, willigen Sie ein, regelmäßig E-Mails zu Reisen nach Finnisch-Lappland zu erhalten.
-        Sie können sich jederzeit über den Link in jeder E-Mail oder unter {unsub} abmelden. Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter.
+        Sie können sich jederzeit über den Link in jeder E-Mail oder auf {unsub} abmelden. Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter.
         Einzelheiten finden Sie in unserer {privacy}.
       </>
     ),
     s7Title: '7. Geistiges Eigentum',
-    s7Body: (siteName) => `Alle originalen Inhalte auf ${siteName} (Text, Grafiken, Design) gehören LaPeso Oy oder werden lizenziert genutzt. Vervielfältigung, Verbreitung oder Bearbeitung sind nur mit schriftlicher Genehmigung gestattet. Eine nicht-kommerzielle persönliche Nutzung mit Quellenangabe ist erlaubt.`,
+    s7Body: (siteName) => `Alle originalen Inhalte auf ${siteName} (Text, Grafiken, Design) gehören LaPeso Oy oder werden lizenziert genutzt. Vervielfältigung, Verbreitung oder Bearbeitung sind nur mit schriftlicher Genehmigung gestattet. Eine nicht-kommerzielle persönliche Nutzung mit Quellenangabe ist erlaubt.`,
     s8Title: '8. Haftungsbeschränkung',
-    s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste, Verletzungen oder Schäden, die aus dem Vertrauen auf Informationen dieser Website, der Nutzung verlinkter Dienste Dritter oder Reiseentscheidungen auf Basis unserer Inhalte entstehen. Reisen in arktische Regionen sind mit inhärenten Risiken verbunden; schließen Sie eine geeignete Reiseversicherung ab und befolgen Sie örtliche Sicherheitsvorgaben.`,
+    s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste, Verletzungen oder Schäden, die aus dem Vertrauen auf Informationen dieser Website, der Nutzung verlinkter Dienste Dritter oder Reiseentscheidungen auf Basis unserer Inhalte entstehen. Reisen in arktische Regionen sind mit inhärenten Risiken verbunden; schließen Sie eine geeignete Reiseversicherung ab und befolgen Sie örtliche Sicherheitsvorgaben.`,
     s9Title: '9. Anwendbares Recht',
     s9Body: 'Es gilt finnisches Recht. Streitigkeiten werden vor den Gerichten Finnlands entschieden.',
     s10Title: '10. Änderungen dieser Bedingungen',
@@ -281,7 +281,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'Gemäß der EU-Verordnung (EU) 2022/2065 (Digital Services Act) ist unsere Kontaktstelle für Behörden und Nutzer:',
     s12Items: [
       'E-Mail: info@laplandvibes.com',
-      'Betreiber: LaPeso Oy, Finnland',
+      'Betreiber: LaPeso Oy, Finnland',
       'Kommunikationssprachen: Englisch, Finnisch',
     ],
     s12Tail: (siteName) => `${siteName} ist ein redaktioneller Verlag; nutzergenerierte Inhalte sind nicht Kernbestandteil unseres Angebots. Meldungen zu rechtswidrigen Inhalten, Urheberrechtsverletzungen oder sonstigen DSA-relevanten Vorgängen senden Sie bitte an die oben genannte Adresse; sie werden innerhalb der gesetzlichen Fristen bearbeitet.`,
@@ -291,12 +291,12 @@ const COPY: Record<Lang, TermsCopy> = {
   ja: {
     kicker: '法的情報',
     h1: '利用規約',
-    lastUpdated: '最終更新：2026年5月 · 運営：LaPeso Oy',
+    lastUpdated: '最終更新：2026年9月 · 運営：LaPeso Oy',
     s1Title: '1. 本サイトについて',
     s1P1: (siteName, siteUrl) => (
       <>
-        {siteName}(<strong className="text-snow/90">{siteUrl}</strong>)は、フィンランドに登記された{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong> が運営するフィンランド・ラップランドの旅行情報サイトです。編集された旅行ガイド、目的地情報、および第三者の予約サービスへのリンクを提供しています。
+        {siteName}（<strong className="text-snow/90">{siteUrl}</strong>）は、フィンランドに登記された{' '}
+        <strong className="text-snow/90">LaPeso Oy</strong> が運営するフィンランド・ラップランドの旅行情報サイトです。編集された旅行ガイド、目的地情報、および第三者の予約サービスへのリンクを提供しています。
       </>
     ),
     s1P2: '本ウェブサイトをご利用いただくには、本規約に同意していただく必要があります。同意いただけない場合は、ご利用をお控えください。',
@@ -304,48 +304,48 @@ const COPY: Record<Lang, TermsCopy> = {
     s2Body: '旅行情報（料金、営業時間、天候、空き状況など）は頻繁に変動します。私たちは最新かつ正確な情報を心がけていますが、ご訪問時にすべての情報が最新であることを保証することはできません。ご予約前には、重要な情報は必ずサービス提供者に直接ご確認ください。',
     s3Title: '3. アフィリエイトリンクとパートナーシップ',
     s3P1: (siteName) => `${siteName} のリンクの一部はアフィリエイトリンクです。これらのリンクからご予約・ご購入された場合、お客様には追加費用なく、当サイトが少額の紹介料を受け取ることがあります。アフィリエイト関係は編集上の推奨に影響しません。本当に価値があると判断したサービスのみご紹介しています。`,
-    s3P2: 'パートナーには Sembo、Trip.com、EconomyBookings、GetYourGuide、および アフィリエイトネットワーク（Adtraction、Travelpayouts など）経由のその他の旅行サービス提供者が含まれます（これらに限りません）。各ご予約はそれぞれのサービス提供者の規約・条件に従います。',
+    s3P2: 'パートナーには Sembo、Trip.com、EconomyBookings、GetYourGuide、およびアフィリエイトネットワーク（Adtraction、Travelpayouts など）経由のその他の旅行サービス提供者が含まれます（これらに限りません）。各ご予約はそれぞれのサービス提供者の規約・条件に従います。',
     s4Title: '4. スポンサーコンテンツ',
     s4Body: (siteName) => (
       <>
-        本サイトには第三者によるスポンサー広告が表示されることがあります。スポンサーコンテンツは表示箇所に必ず{' '}
+        本サイトには第三者によるスポンサー広告が表示されることがあります。スポンサーコンテンツは表示箇所に必ず
         <strong className="text-snow/90">「PR」</strong>のラベルで明示されます。{siteName} は広告主の製品・サービス・主張については責任を負いません。スポンサーリンクをクリックすると、独自の規約とプライバシーポリシーを持つ外部サイトに移動します。
       </>
     ),
     s5Title: '5. 第三者サービス：当サイトは販売業者ではありません',
     s5P1: (siteName) => (
       <>
-        本サイトのホテル検索、航空券検索、レンタカー、アクティビティ予約の各ツールは、第三者のプラットフォーム（Sembo、Trip.com、EconomyBookings、GetYourGuide ほか）へリダイレクトされます。{' '}
-        <strong className="text-snow/90">{siteName} は旅行代理店、小売業者、販売業者ではありません。</strong>{' '}
+        本サイトのホテル検索、航空券検索、レンタカー、アクティビティ予約の各ツールは、第三者のプラットフォーム（Sembo、Trip.com、EconomyBookings、GetYourGuide ほか）へリダイレクトされます。
+        <strong className="text-snow/90">{siteName} は旅行代理店、小売業者、販売業者ではありません。</strong>
         当サイトは予約の販売、再販、処理を行っておりません。編集ガイドを公開し、実際にサービスを提供する事業者へ読者を案内しているだけです。
       </>
     ),
     s5P2: (siteName) => (
       <>
-        旅行サービス（宿泊、航空券、レンタカー、ツアー）の契約は、お客様と当該の第三者提供者との間で、その規約とプライバシーポリシーに基づいて直接成立します。キャンセル、返金、消費者保護のルールはその事業者のものが適用され、当サイトのものではありません。フィンランドの <em>kuluttajansuojalaki 6 luku</em> による消費者撤回権は販売業者に対して行使するものであり、{siteName} はそのプロセスに関与しません。
+        旅行サービス（宿泊、航空券、レンタカー、ツアーなど）の契約は、お客様と当該の第三者提供者との間で、その規約とプライバシーポリシーに基づいて直接成立します。キャンセル、返金、消費者保護のルールはその事業者のものが適用され、当サイトのものではありません。フィンランドの <em>kuluttajansuojalaki 6 luku</em> による消費者撤回権は販売業者に対して行使するものであり、{siteName} はそのプロセスに関与しません。
       </>
     ),
     s6Title: '6. ニュースレター',
     s6Body: (unsub, privacy) => (
       <>
-        ニュースレターにご登録いただくと、フィンランド・ラップランドの旅行情報に関する定期的なメールを受信することに同意したことになります。各メール内のリンク、または {unsub} から、いつでも配信停止が可能です。メールアドレスを第三者と共有することはありません。詳細は{privacy}をご覧ください。
+        ニュースレターにご登録いただくと、フィンランド・ラップランドの旅行情報に関する定期的なメールを受信することに同意したことになります。各メール内のリンク、または{unsub}から、いつでも配信停止が可能です。メールアドレスを第三者と共有することはありません。詳細は{privacy}をご覧ください。
       </>
     ),
     s7Title: '7. 知的財産',
-    s7Body: (siteName) => `${siteName} のオリジナルコンテンツ（テキスト、画像、デザイン）はすべて LaPeso Oy が所有するか、ライセンスを受けて使用しています。書面による許可なしに複製、配布、二次創作することはできません。出典明記の上、非商用個人参照目的のフェアユースは認められます。`,
+    s7Body: (siteName) => `${siteName} のオリジナルコンテンツ（テキスト、画像、デザイン）はすべて LaPeso Oy が所有するか、ライセンスを受けて使用しています。書面による許可なしに複製、配布、二次創作することはできません。出典明記の上、非商用個人参照目的のフェアユースは認められます。`,
     s8Title: '8. 免責',
-    s8Body: (siteName) => `${siteName} および LaPeso Oy は、本サイトの情報への信頼、リンクされた第三者サービスの利用、または当サイトのコンテンツに基づく旅行決定から生じる損失、傷害、損害について一切の責任を負いません。北極圏地域への旅行には本質的なリスクが伴います。必ず適切な旅行保険に加入し、現地の安全ガイドラインに従ってください。`,
+    s8Body: (siteName) => `${siteName} および LaPeso Oy は、本サイトの情報への信頼、リンクされた第三者サービスの利用、または当サイトのコンテンツに基づく旅行決定から生じる損失、傷害、損害について一切の責任を負いません。北極圏地域への旅行には本質的なリスクが伴います。必ず適切な旅行保険に加入し、現地の安全ガイドラインに従ってください。`,
     s9Title: '9. 準拠法',
     s9Body: '本規約はフィンランド法に準拠します。紛争はフィンランドの裁判所で解決されるものとします。',
     s10Title: '10. 本規約の変更',
     s10Body: '本規約は随時更新されることがあります。変更は掲載をもって有効となります。更新後の継続利用は、改訂された規約への同意とみなされます。',
     s11Title: '11. 分離可能性',
     s11Body: '本規約のいずれかの条項が管轄裁判所により無効、違法、または執行不能と判断された場合でも、残りの条項は引き続き完全に有効です。無効とされた条項は、法律で認められる範囲内で、当初の商業的意図に最も近い有効な条項に置き換えられます。',
-    s12Title: '12. デジタルサービス法(DSA)連絡窓口',
+    s12Title: '12. デジタルサービス法（DSA）連絡窓口',
     s12Intro: 'EU デジタルサービス法（規則 (EU) 2022/2065）に基づく、当局およびサービス利用者向けの指定連絡窓口は以下のとおりです：',
     s12Items: [
       'メール：info@laplandvibes.com',
-      '運営者：LaPeso Oy、フィンランド',
+      '運営者：LaPeso Oy、フィンランド',
       'コミュニケーション言語：英語、フィンランド語',
     ],
     s12Tail: (siteName) => `${siteName} は編集出版者であり、ユーザー生成コンテンツを主要サービスとしてはホストしていません。違法コンテンツ、著作権侵害、その他 DSA 関連の通報は、上記のアドレスにお送りいただけば、法定の期間内に対応いたします。`,
@@ -355,12 +355,12 @@ const COPY: Record<Lang, TermsCopy> = {
   es: {
     kicker: 'Legal',
     h1: 'Términos de Uso',
-    lastUpdated: 'Última actualización: mayo de 2026 · Operado por LaPeso Oy',
+    lastUpdated: 'Última actualización: septiembre de 2026 · Operado por LaPeso Oy',
     s1Title: '1. Sobre este sitio',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) es un portal de información turística sobre la Laponia finlandesa, operado por{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>, registrada en Finlandia. Publicamos guías editoriales de viaje,
+        <strong className="text-snow/90">LaPeso Oy</strong>, registrada en Finlandia. Publicamos guías editoriales de viaje,
         información sobre destinos y enlaces a servicios de reserva de terceros.
       </>
     ),
@@ -391,10 +391,10 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Todo contrato de servicios de viaje (alojamiento, vuelos, alquiler de coches, tours) se celebra directamente
+        Todo contrato de servicios de viaje (como alojamiento, vuelos, alquiler de coches o tours) se celebra directamente
         entre usted y el proveedor externo correspondiente, según sus términos y su política de privacidad.
         Se aplican sus reglas de cancelación, reembolso y derechos del consumidor, no las nuestras. El derecho de
-        desistimiento finlandés conforme al <em>kuluttajansuojalaki 6 luku</em> se ejerce frente al comerciante;
+        desistimiento finlandés conforme al <em>kuluttajansuojalaki 6 luku</em> se ejerce frente al comerciante;{' '}
         {siteName} no interviene en ese proceso.
       </>
     ),
@@ -407,9 +407,9 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Propiedad intelectual',
-    s7Body: (siteName) => `Todo el contenido original de ${siteName}, incluidos textos, gráficos y diseño, es propiedad de LaPeso Oy o se utiliza bajo licencia. No puede reproducirse, distribuirse ni crear obras derivadas sin autorización por escrito. Se permite un uso justo para referencia personal no comercial con cita de la fuente.`,
+    s7Body: (siteName) => `Todo el contenido original de ${siteName}, incluidos textos, gráficos y diseño, es propiedad de LaPeso Oy o se utiliza bajo licencia. No puede reproducirse, distribuirse ni crear obras derivadas sin autorización por escrito. Se permite un uso justo para referencia personal no comercial con cita de la fuente.`,
     s8Title: '8. Limitación de responsabilidad',
-    s8Body: (siteName) => `${siteName} y LaPeso Oy no se hacen responsables de pérdidas, lesiones o daños derivados de la confianza en la información de este sitio, del uso de servicios de terceros enlazados, o de decisiones de viaje tomadas a partir de nuestro contenido. Viajar a regiones árticas implica riesgos inherentes; contrate un seguro de viaje adecuado y siga las indicaciones de seguridad locales.`,
+    s8Body: (siteName) => `${siteName} y LaPeso Oy no se hacen responsables de pérdidas, lesiones o daños derivados de la confianza en la información de este sitio, del uso de servicios de terceros enlazados, o de decisiones de viaje tomadas a partir de nuestro contenido. Viajar a regiones árticas implica riesgos inherentes; contrate un seguro de viaje adecuado y siga las indicaciones de seguridad locales.`,
     s9Title: '9. Ley aplicable',
     s9Body: 'Estos términos se rigen por la ley finlandesa. Cualquier disputa se resolverá ante los tribunales de Finlandia.',
     s10Title: '10. Cambios en estos términos',
@@ -420,7 +420,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'Conforme al Reglamento (UE) 2022/2065 (DSA), nuestro punto de contacto designado para autoridades y destinatarios del servicio es:',
     s12Items: [
       'Correo electrónico: info@laplandvibes.com',
-      'Operador: LaPeso Oy, Finlandia',
+      'Operador: LaPeso Oy, Finlandia',
       'Idiomas de comunicación: inglés, finlandés',
     ],
     s12Tail: (siteName) => `${siteName} es un editor editorial; no alojamos contenido generado por usuarios como servicio principal. Las notificaciones sobre contenido ilegal, infracción de derechos de autor u otras cuestiones relevantes para la DSA pueden enviarse a la dirección anterior y se tramitarán dentro de los plazos legales.`,
@@ -430,12 +430,12 @@ const COPY: Record<Lang, TermsCopy> = {
   'pt-BR': {
     kicker: 'Aspectos legais',
     h1: 'Termos de Uso',
-    lastUpdated: 'Última atualização: maio de 2026 · Operado pela LaPeso Oy',
+    lastUpdated: 'Última atualização: setembro de 2026 · Operado pela LaPeso Oy',
     s1Title: '1. Sobre este site',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) é um portal de informações turísticas sobre a Lapônia finlandesa, operado pela{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>, registrada na Finlândia. Publicamos guias editoriais de viagem,
+        <strong className="text-snow/90">LaPeso Oy</strong>, registrada na Finlândia. Publicamos guias editoriais de viagem,
         informações sobre destinos e links para serviços de reserva de terceiros.
       </>
     ),
@@ -466,7 +466,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Qualquer contrato relativo a serviços de viagem (hospedagem, voos, aluguel de carros, passeios) é celebrado
+        Qualquer contrato relativo a serviços de viagem (como hospedagem, voos, aluguel de carros ou passeios) é celebrado
         diretamente entre você e o respectivo fornecedor terceiro, sob os termos e a política de privacidade dele.
         São aplicáveis as regras de cancelamento, reembolso e defesa do consumidor desse fornecedor, e não as nossas.
         O direito de arrependimento finlandês previsto no <em>kuluttajansuojalaki 6 luku</em> é exercido contra o
@@ -482,9 +482,9 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Propriedade intelectual',
-    s7Body: (siteName) => `Todo o conteúdo original em ${siteName}, incluindo textos, imagens e design, pertence à LaPeso Oy ou é usado mediante licença. Você não pode reproduzir, distribuir ou criar obras derivadas sem autorização por escrito. O uso justo para fins de referência pessoal não comercial é permitido com a devida atribuição.`,
+    s7Body: (siteName) => `Todo o conteúdo original em ${siteName}, incluindo textos, imagens e design, pertence à LaPeso Oy ou é usado mediante licença. Você não pode reproduzir, distribuir ou criar obras derivadas sem autorização por escrito. O uso justo para fins de referência pessoal não comercial é permitido com a devida atribuição.`,
     s8Title: '8. Limitação de responsabilidade',
-    s8Body: (siteName) => `O ${siteName} e a LaPeso Oy não se responsabilizam por perdas, lesões ou danos decorrentes da confiança nas informações deste site, do uso de serviços de terceiros vinculados ou de decisões de viagem tomadas com base em nosso conteúdo. Viajar a regiões árticas envolve riscos inerentes; contrate sempre um seguro de viagem adequado e siga as orientações locais de segurança.`,
+    s8Body: (siteName) => `O ${siteName} e a LaPeso Oy não se responsabilizam por perdas, lesões ou danos decorrentes da confiança nas informações deste site, do uso de serviços de terceiros vinculados ou de decisões de viagem tomadas com base em nosso conteúdo. Viajar a regiões árticas envolve riscos inerentes; contrate sempre um seguro de viagem adequado e siga as orientações locais de segurança.`,
     s9Title: '9. Legislação aplicável',
     s9Body: 'Estes termos são regidos pelas leis da Finlândia. Quaisquer disputas serão resolvidas nos tribunais da Finlândia.',
     s10Title: '10. Alterações nestes termos',
@@ -495,7 +495,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'Conforme o Regulamento (UE) 2022/2065 (DSA), nosso ponto de contato designado para autoridades e destinatários do serviço é:',
     s12Items: [
       'E-mail: info@laplandvibes.com',
-      'Operador: LaPeso Oy, Finlândia',
+      'Operador: LaPeso Oy, Finlândia',
       'Idiomas de comunicação: inglês, finlandês',
     ],
     s12Tail: (siteName) => `O ${siteName} é um editor editorial; não hospedamos conteúdo gerado por usuários como serviço principal. Notificações sobre conteúdo ilegal, violações de direitos autorais ou outras questões relevantes à DSA podem ser enviadas para o endereço acima e serão tratadas dentro dos prazos legais.`,
@@ -505,12 +505,12 @@ const COPY: Record<Lang, TermsCopy> = {
   'zh-CN': {
     kicker: '法律信息',
     h1: '服务条款',
-    lastUpdated: '最后更新：2026年5月 · 运营方：LaPeso Oy',
+    lastUpdated: '最后更新：2026年9月 · 运营方：LaPeso Oy',
     s1Title: '1. 关于本网站',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName}（<strong className="text-snow/90">{siteUrl}</strong>）是一个芬兰拉普兰旅游信息中心，由在芬兰注册的{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong> 运营。我们提供编辑型旅游指南、目的地信息以及指向第三方预订服务的链接。
+        <strong className="text-snow/90">LaPeso Oy</strong> 运营。我们提供编辑型旅游指南、目的地信息以及指向第三方预订服务的链接。
       </>
     ),
     s1P2: '访问或使用本网站，即表示您同意本条款。如果您不同意，请停止使用本网站。',
@@ -522,37 +522,33 @@ const COPY: Record<Lang, TermsCopy> = {
     s4Title: '4. 赞助内容',
     s4Body: (siteName) => (
       <>
-        本网站会展示来自第三方企业的赞助广告。赞助内容会清晰地标注 <strong className="text-snow/90">"赞助"</strong> 字样。
+        本网站会展示来自第三方企业的赞助广告。赞助内容会清晰地标注<strong className="text-snow/90">“赞助”</strong>字样。
         {siteName} 不对广告主的产品、服务或主张负责。点击赞助链接将带您前往拥有自身条款与隐私政策的外部网站。
       </>
     ),
     s5Title: '5. 第三方服务：我们不是销售方',
     s5P1: (siteName) => (
       <>
-        本网站上的酒店搜索、机票搜索、租车与活动预订工具会将您重定向至第三方平台（Sembo、Trip.com、EconomyBookings、GetYourGuide 等）。{' '}
-        <strong className="text-snow/90">{siteName} 既不是旅行社，也不是零售商或销售商。</strong>{' '}
+        本网站上的酒店搜索、机票搜索、租车与活动预订工具会将您重定向至第三方平台（Sembo、Trip.com、EconomyBookings、GetYourGuide 等）。
+        <strong className="text-snow/90">{siteName} 既不是旅行社，也不是零售商或销售商。</strong>
         我们不销售、不转售也不处理预订；我们发布编辑指南，并将读者引导至真正提供服务的运营商。
       </>
     ),
     s5P2: (siteName) => (
       <>
-        任何旅游服务合同（住宿、机票、租车、行程等）均由您与相应的第三方提供方直接签订，适用其条款与隐私政策。
-        适用的是其取消、退款及消费者保护规则，而非我们的规则。芬兰《消费者保护法》第6章
-        (<em>kuluttajansuojalaki 6 luku</em>)规定的撤回权由您向商家主张；{siteName} 不参与该过程。
+        任何旅游服务合同（住宿、机票、租车、行程等）均由您与相应的第三方提供方直接签订，适用其条款与隐私政策。适用的是其取消、退款及消费者保护规则，而非我们的规则。芬兰《消费者保护法》第6章（<em>kuluttajansuojalaki 6 luku</em>）规定的撤回权由您向商家主张；{siteName} 不参与该过程。
       </>
     ),
     s6Title: '6. 电子简报',
     s6Body: (unsub, privacy) => (
       <>
-        如果您订阅了我们的电子简报，即表示您同意接收关于芬兰拉普兰旅游的定期电子邮件。
-        您可以随时通过任何邮件中的链接，或通过 {unsub} 取消订阅。我们不会与第三方分享您的邮箱地址。
-        详情请参阅我们的{privacy}。
+        如果您订阅了我们的电子简报，即表示您同意接收关于芬兰拉普兰旅游的定期电子邮件。您可以随时通过任何邮件中的链接，或通过{unsub}取消订阅。我们不会与第三方分享您的邮箱地址。详情请参阅我们的{privacy}。
       </>
     ),
     s7Title: '7. 知识产权',
-    s7Body: (siteName) => `${siteName} 上的所有原创内容（包括文字、图形和设计）归 LaPeso Oy 所有或获许可使用。未经书面许可，不得复制、传播或创作衍生作品。在注明出处的前提下，允许出于非商业个人参考目的的合理使用。`,
+    s7Body: (siteName) => `${siteName} 上的所有原创内容（包括文字、图形和设计）归 LaPeso Oy 所有或获许可使用。未经书面许可，不得复制、传播或创作衍生作品。在注明出处的前提下，允许出于非商业个人参考目的的合理使用。`,
     s8Title: '8. 责任限制',
-    s8Body: (siteName) => `${siteName} 与 LaPeso Oy 不对因依赖本网站信息、使用所链接的第三方服务或基于我们内容作出的旅行决策而产生的任何损失、伤害或损害承担责任。前往北极地区旅行存在固有风险；请务必购买适当的旅游保险并遵守当地安全指引。`,
+    s8Body: (siteName) => `${siteName} 与 LaPeso Oy 不对因依赖本网站信息、使用所链接的第三方服务或基于我们内容作出的旅行决策而产生的任何损失、伤害或损害承担责任。前往北极地区旅行存在固有风险；请务必购买适当的旅游保险并遵守当地安全指引。`,
     s9Title: '9. 适用法律',
     s9Body: '本条款受芬兰法律管辖。任何争议应由芬兰法院解决。',
     s10Title: '10. 本条款的变更',
@@ -563,7 +559,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: '根据欧盟《数字服务法》（法规 (EU) 2022/2065），我们指定的面向监管机构与服务用户的联络点为：',
     s12Items: [
       '电子邮件：info@laplandvibes.com',
-      '运营者：LaPeso Oy，芬兰',
+      '运营者：LaPeso Oy，芬兰',
       '沟通语言：英语、芬兰语',
     ],
     s12Tail: (siteName) => `${siteName} 为编辑型出版机构；我们并不将用户生成内容作为主要服务进行托管。关于违法内容、版权侵权或其他与 DSA 相关事项的通知，可发送至上述地址，我们将在法定时限内处理。`,
@@ -573,12 +569,12 @@ const COPY: Record<Lang, TermsCopy> = {
   ko: {
     kicker: '법적 고지',
     h1: '이용약관',
-    lastUpdated: '최종 업데이트: 2026년 5월 · LaPeso Oy 운영',
+    lastUpdated: '최종 업데이트: 2026년 9월 · LaPeso Oy 운영',
     s1Title: '1. 본 사이트 소개',
     s1P1: (siteName, siteUrl) => (
       <>
-        {siteName}(<strong className="text-snow/90">{siteUrl}</strong>)은 핀란드에 등록된{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>가 운영하는 핀란드 라플란드 여행 정보 허브입니다.
+        {siteName}(<strong className="text-snow/90">{siteUrl}</strong>) 사이트는 핀란드에 등록된{' '}
+        <strong className="text-snow/90">LaPeso Oy</strong>가 운영하는 핀란드 라플란드 여행 정보 허브입니다.
         편집형 여행 가이드, 목적지 정보 및 제3자 예약 서비스 링크를 제공합니다.
       </>
     ),
@@ -592,17 +588,17 @@ const COPY: Record<Lang, TermsCopy> = {
     s4Body: (siteName) => (
       <>
         본 사이트는 제3자 사업자의 후원 광고를 표시합니다. 후원 콘텐츠는 표시되는 모든 곳에서{' '}
-        <strong className="text-snow/90">"후원"</strong> 라벨로 명확하게 식별됩니다. {siteName}은 광고주의 제품,
+        <strong className="text-snow/90">"후원"</strong> 라벨로 명확하게 식별됩니다. {siteName} 사이트는 광고주의 제품,
         서비스 또는 주장에 대해 책임지지 않습니다. 후원 링크를 클릭하시면 자체 약관 및 개인정보 처리방침을 가진
         외부 웹사이트로 이동합니다.
       </>
     ),
-    s5Title: '5. 제3자 서비스, 당사는 판매자가 아닙니다',
+    s5Title: '5. 제3자 서비스: 당사는 판매자가 아닙니다',
     s5P1: (siteName) => (
       <>
         본 사이트의 호텔 검색, 항공편 검색, 렌터카, 액티비티 예약 도구는 제3자 플랫폼(Sembo, Trip.com,
         EconomyBookings, GetYourGuide 등)으로 리디렉션됩니다.{' '}
-        <strong className="text-snow/90">{siteName}은 여행사, 소매업자 또는 판매자가 아닙니다.</strong>{' '}
+        <strong className="text-snow/90">{siteName} 사이트는 여행사, 소매업자 또는 판매자가 아닙니다.</strong>{' '}
         예약을 판매, 재판매 또는 처리하지 않습니다. 당사는 편집 가이드를 발행하고 실제 서비스를 제공하는
         운영자에게 독자를 안내합니다.
       </>
@@ -612,7 +608,7 @@ const COPY: Record<Lang, TermsCopy> = {
         여행 서비스(숙박, 항공, 렌터카, 투어 등)에 대한 모든 계약은 귀하와 해당 제3자 제공자 간에 직접 체결되며,
         해당 제공자의 약관 및 개인정보 처리방침이 적용됩니다. 해당 제공자의 취소 규정, 환불 정책, 소비자 보호 권리가
         적용됩니다. 핀란드 소비자 보호법 제6장(<em>kuluttajansuojalaki 6 luku</em>)에 따른 철회권은 판매자에 대해
-        행사되며, {siteName}은 그 과정에 참여하지 않습니다.
+        행사되며, {siteName} 사이트는 그 과정에 참여하지 않습니다.
       </>
     ),
     s6Title: '6. 뉴스레터',
@@ -624,9 +620,9 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. 지적재산권',
-    s7Body: (siteName) => `${siteName}의 모든 원본 콘텐츠(텍스트, 그래픽, 디자인 포함)는 LaPeso Oy의 소유이거나 사용 라이선스를 받은 것입니다. 서면 허가 없이 복제, 배포 또는 2차 저작물을 만들 수 없습니다. 비상업적 개인 참조를 위한 공정 이용은 출처 표시와 함께 허용됩니다.`,
+    s7Body: (siteName) => `${siteName}의 모든 원본 콘텐츠(텍스트, 그래픽, 디자인 포함)는 LaPeso Oy의 소유이거나 사용 라이선스를 받은 것입니다. 서면 허가 없이 복제, 배포 또는 2차 저작물을 만들 수 없습니다. 비상업적 개인 참조를 위한 공정 이용은 출처 표시와 함께 허용됩니다.`,
     s8Title: '8. 책임의 제한',
-    s8Body: (siteName) => `${siteName} 및 LaPeso Oy는 본 사이트의 정보에 대한 의존, 링크된 제3자 서비스의 이용, 당사 콘텐츠에 근거한 여행 결정으로 인해 발생한 어떠한 손실, 부상 또는 손해에 대해서도 책임지지 않습니다. 북극 지역 여행에는 본질적인 위험이 따릅니다. 항상 적절한 여행자 보험에 가입하시고 현지 안전 지침을 준수하십시오.`,
+    s8Body: (siteName) => `${siteName} 및 LaPeso Oy는 본 사이트의 정보에 대한 의존, 링크된 제3자 서비스의 이용, 당사 콘텐츠에 근거한 여행 결정으로 인해 발생한 어떠한 손실, 부상 또는 손해에 대해서도 책임지지 않습니다. 북극 지역 여행에는 본질적인 위험이 따릅니다. 항상 적절한 여행자 보험에 가입하시고 현지 안전 지침을 준수하십시오.`,
     s9Title: '9. 준거법',
     s9Body: '본 약관은 핀란드 법률에 의해 규율됩니다. 모든 분쟁은 핀란드 법원에서 해결됩니다.',
     s10Title: '10. 본 약관의 변경',
@@ -637,22 +633,22 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'EU 디지털 서비스법(규정 (EU) 2022/2065)에 따라 당국 및 서비스 수신자를 위한 당사의 지정 연락처는 다음과 같습니다:',
     s12Items: [
       '이메일: info@laplandvibes.com',
-      '운영자: LaPeso Oy, 핀란드',
+      '운영자: LaPeso Oy, 핀란드',
       '소통 언어: 영어, 핀란드어',
     ],
-    s12Tail: (siteName) => `${siteName}은 편집형 발행자입니다. 사용자 생성 콘텐츠를 주요 서비스로 호스팅하지 않습니다. 불법 콘텐츠, 저작권 침해 또는 기타 DSA 관련 사항에 대한 신고는 위 주소로 보내실 수 있으며, 법정 기한 내에 처리됩니다.`,
+    s12Tail: (siteName) => `${siteName} 사이트는 편집 매체이며, 사용자 생성 콘텐츠를 주요 서비스로 호스팅하지 않습니다. 불법 콘텐츠, 저작권 침해 또는 기타 DSA 관련 사항에 대한 신고는 위 주소로 보내실 수 있으며, 법정 기한 내에 처리됩니다.`,
     s13Title: '13. 연락처',
-    s13Body: (email) => <>법률 관련 문의는 {email}로 연락 주십시오</>,
+    s13Body: (email) => <>법률 관련 문의는 {email} 주소로 연락 주십시오</>,
   },
   fr: {
     kicker: 'Mentions légales',
     h1: 'Conditions d\'Utilisation',
-    lastUpdated: 'Dernière mise à jour : mai 2026 · Exploité par LaPeso Oy',
+    lastUpdated: 'Dernière mise à jour : septembre 2026 · Exploité par LaPeso Oy',
     s1Title: '1. À propos de ce site',
     s1P1: (siteName, siteUrl) => (
       <>
-        {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) est un portail d\'information sur le voyage
-        en Laponie finlandaise exploité par <strong className="text-snow/90">LaPeso Oy</strong>, immatriculé en Finlande.
+        {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) est un portail d'information sur le voyage
+        en Laponie finlandaise exploité par <strong className="text-snow/90">LaPeso Oy</strong>, immatriculé en Finlande.
         Nous proposons des guides de voyage éditoriaux, des informations sur les destinations et des liens vers
         des services de réservation tiers.
       </>
@@ -662,33 +658,33 @@ const COPY: Record<Lang, TermsCopy> = {
     s2Body: 'Les informations de voyage (prix, horaires d\'ouverture, conditions météorologiques, disponibilité) changent fréquemment. Nous nous efforçons de tenir le contenu à jour, mais nous ne pouvons garantir que toutes les informations sont actuelles au moment de votre visite. Vérifiez toujours les détails critiques directement auprès des prestataires avant de réserver.',
     s3Title: '3. Liens d\'affiliation et partenariats',
     s3P1: (siteName) => `Certains liens sur ${siteName} sont des liens d'affiliation. Lorsque vous cliquez sur ces liens et effectuez une réservation ou un achat, nous pouvons percevoir une petite commission sans coût supplémentaire pour vous. Les relations d'affiliation n'influencent pas nos recommandations éditoriales. Nous ne créons des liens que vers des services dont nous estimons qu'ils apportent une réelle valeur.`,
-    s3P2: 'Les partenaires d\'affiliation incluent notamment : Sembo, Trip.com, EconomyBookings, GetYourGuide et d\'autres prestataires de services de voyage via des réseaux d\'affiliation tels qu\'Adtraction et Travelpayouts. Chaque réservation est soumise aux conditions générales du prestataire concerné.',
+    s3P2: 'Les partenaires d\'affiliation incluent notamment : Sembo, Trip.com, EconomyBookings, GetYourGuide et d\'autres prestataires de services de voyage via des réseaux d\'affiliation tels qu\'Adtraction et Travelpayouts. Chaque réservation est soumise aux conditions générales du prestataire concerné.',
     s4Title: '4. Contenu sponsorisé',
     s4Body: (siteName) => (
       <>
-        Ce site affiche des publicités sponsorisées d\'entreprises tierces. Le contenu sponsorisé est clairement
-        identifié par la mention <strong className="text-snow/90">« Sponsorisé »</strong> partout où il apparaît.
-        {siteName} n\'est pas responsable des produits, services ou allégations des annonceurs. Cliquer sur un
+        Ce site affiche des publicités sponsorisées d'entreprises tierces. Le contenu sponsorisé est clairement
+        identifié par la mention <strong className="text-snow/90">« Sponsorisé »</strong> partout où il apparaît.{' '}
+        {siteName} n'est pas responsable des produits, services ou allégations des annonceurs. Cliquer sur un
         lien sponsorisé vous amènera sur des sites externes régis par leurs propres conditions et politiques de confidentialité.
       </>
     ),
-    s5Title: '5. Services tiers : nous ne sommes pas un commerçant',
+    s5Title: '5. Services tiers : nous ne sommes pas un commerçant',
     s5P1: (siteName) => (
       <>
-        Les outils de recherche d\'hôtels, de vols, de location de voitures et de réservation d\'activités sur ce
+        Les outils de recherche d'hôtels, de vols, de location de voitures et de réservation d'activités sur ce
         site redirigent vers des plateformes tierces (Sembo, Trip.com, EconomyBookings, GetYourGuide et autres).{' '}
-        <strong className="text-snow/90">{siteName} n\'est ni une agence de voyages, ni un détaillant, ni un commerçant.</strong>{' '}
-        Nous ne vendons, ne revendons ni ne traitons de réservations ; nous publions des guides éditoriaux et
+        <strong className="text-snow/90">{siteName} n'est ni une agence de voyages, ni un détaillant, ni un commerçant.</strong>{' '}
+        Nous ne vendons, ne revendons ni ne traitons de réservations ; nous publions des guides éditoriaux et
         orientons les lecteurs vers les opérateurs qui assurent effectivement le service.
       </>
     ),
     s5P2: (siteName) => (
       <>
-        Tout contrat portant sur des services de voyage (hébergement, vols, location de voiture, excursions)
+        Tout contrat portant sur des services de voyage (notamment hébergement, vols, location de voiture ou excursions)
         est conclu directement entre vous et le prestataire tiers concerné, selon ses conditions et sa politique
-        de confidentialité. Ses règles d\'annulation, de remboursement et ses droits de protection des
-        consommateurs s\'appliquent, pas les nôtres. Le droit de rétractation finlandais prévu par{' '}
-        <em>kuluttajansuojalaki 6 luku</em> s\'exerce à l\'encontre du commerçant ; {siteName} n\'intervient pas dans ce processus.
+        de confidentialité. Ses règles d'annulation, de remboursement et ses droits de protection des
+        consommateurs s'appliquent, pas les nôtres. Le droit de rétractation finlandais prévu par{' '}
+        <em>kuluttajansuojalaki 6 luku</em> s'exerce à l'encontre du commerçant ; {siteName} n'intervient pas dans ce processus.
       </>
     ),
     s6Title: '6. Newsletter',
@@ -700,35 +696,35 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Propriété intellectuelle',
-    s7Body: (siteName) => `Tout le contenu original sur ${siteName}, y compris les textes, graphismes et design, est la propriété de LaPeso Oy ou est utilisé sous licence. Vous ne pouvez ni reproduire, ni distribuer, ni créer d'œuvres dérivées sans autorisation écrite. L'usage loyal pour une référence personnelle non commerciale est autorisé avec attribution.`,
+    s7Body: (siteName) => `Tout le contenu original sur ${siteName}, y compris les textes, les graphismes et le design, est la propriété de LaPeso Oy ou est utilisé sous licence. Vous ne pouvez ni reproduire, ni distribuer, ni créer d'œuvres dérivées sans autorisation écrite. L'usage loyal pour une référence personnelle non commerciale est autorisé avec attribution.`,
     s8Title: '8. Limitation de responsabilité',
-    s8Body: (siteName) => `${siteName} et LaPeso Oy ne sont pas responsables des pertes, blessures ou dommages résultant de la confiance accordée aux informations de ce site, de l'utilisation de services tiers liés ou de décisions de voyage prises sur la base de notre contenu. Les voyages dans les régions arctiques comportent des risques inhérents ; souscrivez toujours une assurance voyage adaptée et suivez les consignes de sécurité locales.`,
+    s8Body: (siteName) => `${siteName} et LaPeso Oy ne sont pas responsables des pertes, blessures ou dommages résultant de la confiance accordée aux informations de ce site, de l'utilisation de services tiers liés ou de décisions de voyage prises sur la base de notre contenu. Les voyages dans les régions arctiques comportent des risques inhérents ; souscrivez toujours une assurance voyage adaptée et suivez les consignes de sécurité locales.`,
     s9Title: '9. Loi applicable',
     s9Body: 'Les présentes conditions sont régies par les lois de la Finlande. Tout litige sera tranché par les tribunaux finlandais.',
     s10Title: '10. Modifications de ces conditions',
     s10Body: 'Nous pouvons mettre à jour ces conditions de temps à autre. Les modifications prennent effet dès leur publication. L\'utilisation continue du site après les mises à jour vaut acceptation des conditions révisées.',
     s11Title: '11. Divisibilité',
     s11Body: 'Si une disposition des présentes Conditions est jugée invalide, illégale ou inapplicable par un tribunal compétent, les autres dispositions demeurent pleinement en vigueur. La disposition invalide sera remplacée, dans la mesure permise par la loi, par une disposition valide se rapprochant au plus près de l\'intention commerciale d\'origine.',
-    s12Title: '12. Point de contact Digital Services Act (DSA)',
-    s12Intro: 'En vertu du règlement européen sur les services numériques (Règlement (UE) 2022/2065), notre point de contact désigné pour les autorités et les destinataires du service est :',
+    s12Title: '12. Point de contact au titre du règlement sur les services numériques (DSA)',
+    s12Intro: 'En vertu du règlement européen sur les services numériques (Règlement (UE) 2022/2065), notre point de contact désigné pour les autorités et les destinataires du service est :',
     s12Items: [
-      'E-mail : info@laplandvibes.com',
-      'Exploitant : LaPeso Oy, Finlande',
-      'Langues de communication : anglais, finnois',
+      'E-mail : info@laplandvibes.com',
+      'Exploitant : LaPeso Oy, Finlande',
+      'Langues de communication : anglais, finnois',
     ],
-    s12Tail: (siteName) => `${siteName} est un éditeur éditorial ; nous n'hébergeons pas de contenu généré par les utilisateurs en tant que service principal. Les signalements de contenus illicites, d'atteinte aux droits d'auteur ou d'autres questions relevant du DSA peuvent être envoyés à l'adresse ci-dessus et seront traités dans les délais légaux.`,
+    s12Tail: (siteName) => `${siteName} est un éditeur éditorial ; nous n'hébergeons pas de contenu généré par les utilisateurs en tant que service principal. Les signalements de contenus illicites, d'atteinte aux droits d'auteur ou d'autres questions relevant du DSA peuvent être envoyés à l'adresse ci-dessus et seront traités dans les délais légaux.`,
     s13Title: '13. Contact',
     s13Body: (email) => <>Pour toute question juridique, contactez-nous à {email}</>,
   },
   it: {
     kicker: 'Note legali',
     h1: 'Termini di Utilizzo',
-    lastUpdated: 'Ultimo aggiornamento: maggio 2026 · Gestito da LaPeso Oy',
+    lastUpdated: 'Ultimo aggiornamento: settembre 2026 · Gestito da LaPeso Oy',
     s1Title: '1. Informazioni su questo sito',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) è un portale di informazioni di viaggio sulla
-        Lapponia finlandese gestito da <strong className="text-snow/90">LaPeso Oy</strong>, registrata in Finlandia.
+        Lapponia finlandese gestito da <strong className="text-snow/90">LaPeso Oy</strong>, registrata in Finlandia.
         Forniamo guide di viaggio editoriali, informazioni sulle destinazioni e link a servizi di prenotazione di terzi.
       </>
     ),
@@ -737,12 +733,12 @@ const COPY: Record<Lang, TermsCopy> = {
     s2Body: 'Le informazioni di viaggio, inclusi prezzi, orari di apertura, condizioni meteo e disponibilità, cambiano di frequente. Ci impegniamo a mantenere il contenuto accurato e aggiornato, ma non possiamo garantire che tutte le informazioni siano attuali al momento della Sua visita. Verifichi sempre i dettagli critici direttamente con i fornitori di servizi prima di prenotare.',
     s3Title: '3. Link di affiliazione e partnership',
     s3P1: (siteName) => `Alcuni link su ${siteName} sono link di affiliazione. Quando Lei clicca su questi link ed effettua una prenotazione o un acquisto, potremmo ricevere una piccola commissione senza costi aggiuntivi. I rapporti di affiliazione non influenzano le nostre raccomandazioni editoriali. Inseriamo link solo verso servizi che riteniamo offrano un valore reale.`,
-    s3P2: 'I partner di affiliazione includono, a titolo esemplificativo: Sembo, Trip.com, EconomyBookings, GetYourGuide e altri fornitori di servizi di viaggio tramite network di affiliazione come Adtraction e Travelpayouts. Ogni prenotazione è soggetta ai termini e alle condizioni del rispettivo fornitore.',
+    s3P2: 'I partner di affiliazione includono, a titolo esemplificativo: Sembo, Trip.com, EconomyBookings, GetYourGuide e altri fornitori di servizi di viaggio tramite reti di affiliazione come Adtraction e Travelpayouts. Ogni prenotazione è soggetta ai termini e alle condizioni del rispettivo fornitore.',
     s4Title: '4. Contenuti sponsorizzati',
     s4Body: (siteName) => (
       <>
         Questo sito mostra annunci sponsorizzati di aziende terze. I contenuti sponsorizzati sono chiaramente
-        contrassegnati con l\'etichetta <strong className="text-snow/90">"Sponsorizzato"</strong> ovunque appaiano.
+        contrassegnati con l'etichetta <strong className="text-snow/90">"Sponsorizzato"</strong> ovunque appaiano.{' '}
         {siteName} non è responsabile dei prodotti, servizi o affermazioni degli inserzionisti. Cliccando sui
         link sponsorizzati verrà reindirizzato a siti esterni regolati da propri termini e politiche sulla privacy.
       </>
@@ -752,14 +748,14 @@ const COPY: Record<Lang, TermsCopy> = {
       <>
         Gli strumenti di ricerca hotel, voli, autonoleggio e prenotazione attività su questo sito reindirizzano
         a piattaforme di terzi (Sembo, Trip.com, EconomyBookings, GetYourGuide e altre).{' '}
-        <strong className="text-snow/90">{siteName} non è un\'agenzia di viaggi, un rivenditore né un commerciante.</strong>{' '}
+        <strong className="text-snow/90">{siteName} non è un'agenzia di viaggi, un rivenditore né un commerciante.</strong>{' '}
         Non vendiamo, rivendiamo né processiamo prenotazioni; pubblichiamo guide editoriali e indirizziamo i
         lettori agli operatori che effettivamente erogano il servizio.
       </>
     ),
     s5P2: (siteName) => (
       <>
-        Qualsiasi contratto per servizi di viaggio (alloggio, voli, autonoleggio, tour) è concluso direttamente
+        Qualsiasi contratto per servizi di viaggio (ad esempio alloggio, voli, autonoleggio o tour) è concluso direttamente
         tra Lei e il relativo fornitore terzo, secondo i suoi termini e la sua informativa sulla privacy.
         Si applicano le sue regole di cancellazione, rimborso e tutela del consumatore, non le nostre. Il diritto
         di recesso finlandese previsto dal <em>kuluttajansuojalaki 6 luku</em> si esercita nei confronti del
@@ -775,20 +771,20 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Proprietà intellettuale',
-    s7Body: (siteName) => `Tutti i contenuti originali su ${siteName}, inclusi testi, grafica e design, sono di proprietà di LaPeso Oy o utilizzati su licenza. Non è consentito riprodurre, distribuire o creare opere derivate senza autorizzazione scritta. L'uso corretto per riferimento personale non commerciale è consentito con citazione della fonte.`,
+    s7Body: (siteName) => `Tutti i contenuti originali su ${siteName}, inclusi testi, grafica e design, sono di proprietà di LaPeso Oy o utilizzati su licenza. Non è consentito riprodurre, distribuire o creare opere derivate senza autorizzazione scritta. L'uso corretto per riferimento personale non commerciale è consentito con citazione della fonte.`,
     s8Title: '8. Limitazione di responsabilità',
-    s8Body: (siteName) => `${siteName} e LaPeso Oy non sono responsabili di alcuna perdita, lesione o danno derivante dall'affidamento alle informazioni di questo sito, dall'uso di servizi di terzi collegati o da decisioni di viaggio prese sulla base dei nostri contenuti. I viaggi in regioni artiche comportano rischi intrinseci; sottoscriva sempre un'assicurazione di viaggio adeguata e segua le indicazioni di sicurezza locali.`,
+    s8Body: (siteName) => `${siteName} e LaPeso Oy non sono responsabili di alcuna perdita, lesione o danno derivante dall'affidamento alle informazioni di questo sito, dall'uso di servizi di terzi collegati o da decisioni di viaggio prese sulla base dei nostri contenuti. I viaggi in regioni artiche comportano rischi intrinseci; sottoscriva sempre un'assicurazione di viaggio adeguata e segua le indicazioni di sicurezza locali.`,
     s9Title: '9. Legge applicabile',
     s9Body: 'I presenti termini sono regolati dalla legge finlandese. Eventuali controversie saranno risolte presso i tribunali finlandesi.',
     s10Title: '10. Modifiche ai presenti termini',
     s10Body: 'Possiamo aggiornare i presenti termini periodicamente. Le modifiche hanno effetto dal momento della pubblicazione. L\'uso continuato del sito dopo gli aggiornamenti costituisce accettazione dei termini rivisti.',
     s11Title: '11. Separabilità',
     s11Body: 'Qualora un\'autorità giurisdizionale competente dichiarasse non valida, illegittima o inapplicabile una qualsiasi disposizione dei presenti Termini, le restanti disposizioni rimarranno pienamente efficaci. La disposizione non valida sarà sostituita, nei limiti consentiti dalla legge, con una disposizione valida che rispecchi quanto più possibile l\'originaria intenzione commerciale.',
-    s12Title: '12. Punto di contatto Digital Services Act (DSA)',
+    s12Title: '12. Punto di contatto ai sensi del regolamento sui servizi digitali (DSA)',
     s12Intro: 'Ai sensi del Regolamento sui servizi digitali (Regolamento (UE) 2022/2065), il nostro punto di contatto designato per autorità e destinatari del servizio è:',
     s12Items: [
       'Email: info@laplandvibes.com',
-      'Gestore: LaPeso Oy, Finlandia',
+      'Gestore: LaPeso Oy, Finlandia',
       'Lingue di comunicazione: inglese, finlandese',
     ],
     s12Tail: (siteName) => `${siteName} è un editore editoriale; non ospitiamo contenuti generati dagli utenti come servizio principale. Segnalazioni di contenuti illeciti, violazioni del diritto d'autore o altre questioni rilevanti ai sensi del DSA possono essere inviate all'indirizzo indicato e saranno trattate entro i tempi previsti dalla legge.`,
@@ -798,20 +794,20 @@ const COPY: Record<Lang, TermsCopy> = {
   nl: {
     kicker: 'Juridisch',
     h1: 'Gebruiksvoorwaarden',
-    lastUpdated: 'Laatst bijgewerkt: mei 2026 · Beheerd door LaPeso Oy',
+    lastUpdated: 'Laatst bijgewerkt: september 2026 · Beheerd door LaPeso Oy',
     s1Title: '1. Over deze site',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) is een Fins Lapland-reisinformatieportaal dat
-        wordt beheerd door <strong className="text-snow/90">LaPeso Oy</strong>, geregistreerd in Finland. Wij bieden
+        wordt beheerd door <strong className="text-snow/90">LaPeso Oy</strong>, geregistreerd in Finland. Wij bieden
         redactionele reisgidsen, bestemmingsinformatie en links naar boekingsdiensten van derden.
       </>
     ),
     s1P2: 'Door deze website te bezoeken of te gebruiken, gaat u akkoord met deze voorwaarden. Als u niet akkoord gaat, dient u het gebruik van de site te staken.',
     s2Title: '2. Juistheid van informatie',
     s2Body: 'Reisinformatie, waaronder prijzen, openingstijden, weersomstandigheden en beschikbaarheid, verandert regelmatig. Wij streven ernaar de inhoud accuraat en actueel te houden, maar kunnen niet garanderen dat alle informatie actueel is op het moment van uw bezoek. Verifieer kritieke details altijd rechtstreeks bij dienstverleners voordat u boekt.',
-    s3Title: '3. Affiliate links en partnerschappen',
-    s3P1: (siteName) => `Sommige links op ${siteName} zijn affiliate links. Wanneer u op deze links klikt en een boeking of aankoop doet, kunnen wij een kleine commissie ontvangen zonder extra kosten voor u. Affiliate-relaties beïnvloeden onze redactionele aanbevelingen niet. Wij linken alleen naar diensten waarvan wij denken dat zij echte waarde bieden.`,
+    s3Title: '3. Affiliatelinks en partnerschappen',
+    s3P1: (siteName) => `Sommige links op ${siteName} zijn affiliatelinks. Wanneer u op deze links klikt en een boeking of aankoop doet, kunnen wij een kleine commissie ontvangen zonder extra kosten voor u. Affiliaterelaties beïnvloeden onze redactionele aanbevelingen niet. Wij linken alleen naar diensten waarvan wij denken dat zij echte waarde bieden.`,
     s3P2: 'Affiliate-partners omvatten onder meer: Sembo, Trip.com, EconomyBookings, GetYourGuide en andere aanbieders van reisdiensten via affiliatenetwerken zoals Adtraction en Travelpayouts. Elke boeking is onderworpen aan de algemene voorwaarden van de betreffende dienstverlener.',
     s4Title: '4. Gesponsorde inhoud',
     s4Body: (siteName) => (
@@ -834,10 +830,10 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Elk contract voor reisdiensten (accommodatie, vluchten, autoverhuur, tours) wordt rechtstreeks gesloten
+        Elk contract voor reisdiensten (zoals accommodatie, vluchten, autoverhuur of tours) wordt rechtstreeks gesloten
         tussen u en de betreffende externe aanbieder, op diens voorwaarden en onder diens privacybeleid. Hun
         annulerings-, terugbetalings- en consumentenbeschermingsregels zijn van toepassing, niet de onze. Het
-        Finse herroepingsrecht onder <em>kuluttajansuojalaki 6 luku</em> wordt uitgeoefend jegens de handelaar;
+        Finse herroepingsrecht onder <em>kuluttajansuojalaki 6 luku</em> wordt uitgeoefend jegens de handelaar;{' '}
         {siteName} speelt daarin geen rol.
       </>
     ),
@@ -850,9 +846,9 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Intellectueel eigendom',
-    s7Body: (siteName) => `Alle originele inhoud op ${siteName}, inclusief tekst, afbeeldingen en design, is eigendom van LaPeso Oy of wordt in licentie gebruikt. U mag deze niet reproduceren, verspreiden of er afgeleide werken van maken zonder schriftelijke toestemming. Redelijk gebruik voor niet-commerciële persoonlijke referentie is toegestaan met bronvermelding.`,
+    s7Body: (siteName) => `Alle originele inhoud op ${siteName}, inclusief tekst, afbeeldingen en design, is eigendom van LaPeso Oy of wordt in licentie gebruikt. U mag deze niet reproduceren, verspreiden of er afgeleide werken van maken zonder schriftelijke toestemming. Redelijk gebruik voor niet-commerciële persoonlijke referentie is toegestaan met bronvermelding.`,
     s8Title: '8. Beperking van aansprakelijkheid',
-    s8Body: (siteName) => `${siteName} en LaPeso Oy zijn niet aansprakelijk voor enig verlies, letsel of schade voortvloeiend uit het vertrouwen op informatie op deze site, uit het gebruik van gelinkte externe diensten of uit reisbeslissingen op basis van onze inhoud. Reizen naar het Arctische gebied brengt inherente risico's met zich mee; sluit altijd een passende reisverzekering af en volg lokale veiligheidsrichtlijnen.`,
+    s8Body: (siteName) => `${siteName} en LaPeso Oy zijn niet aansprakelijk voor enig verlies, letsel of schade voortvloeiend uit het vertrouwen op informatie op deze site, uit het gebruik van gelinkte externe diensten of uit reisbeslissingen op basis van onze inhoud. Reizen naar het Arctische gebied brengt inherente risico's met zich mee; sluit altijd een passende reisverzekering af en volg lokale veiligheidsrichtlijnen.`,
     s9Title: '9. Toepasselijk recht',
     s9Body: 'Deze voorwaarden vallen onder Fins recht. Eventuele geschillen worden voorgelegd aan de Finse rechtbanken.',
     s10Title: '10. Wijzigingen van deze voorwaarden',
@@ -863,7 +859,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'Onder de EU Digital Services Act (Verordening (EU) 2022/2065) is ons aangewezen contactpunt voor autoriteiten en afnemers van de dienst:',
     s12Items: [
       'E-mail: info@laplandvibes.com',
-      'Beheerder: LaPeso Oy, Finland',
+      'Beheerder: LaPeso Oy, Finland',
       'Communicatietalen: Engels, Fins',
     ],
     s12Tail: (siteName) => `${siteName} is een redactionele uitgever; wij hosten geen door gebruikers gegenereerde inhoud als primaire dienst. Meldingen van illegale inhoud, auteursrechtinbreuk of andere DSA-relevante zaken kunnen worden verzonden naar het bovenstaande adres en zullen binnen de wettelijke termijnen worden behandeld.`,
@@ -873,12 +869,12 @@ const COPY: Record<Lang, TermsCopy> = {
   sv: {
     kicker: 'Juridik',
     h1: 'Användarvillkor',
-    lastUpdated: 'Senast uppdaterad: maj 2026 · Drivs av LaPeso Oy',
+    lastUpdated: 'Senast uppdaterad: september 2026 · Drivs av LaPeso Oy',
     s1Title: '1. Om denna webbplats',
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) är en reseinformationsportal för finska Lappland som drivs av{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>, registrerat i Finland. Vi tillhandahåller redaktionella reseguider,
+        <strong className="text-snow/90">LaPeso Oy</strong>, registrerat i Finland. Vi tillhandahåller redaktionella reseguider,
         destinationsinformation och länkar till bokningstjänster hos tredje part.
       </>
     ),
@@ -909,7 +905,7 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s5P2: (siteName) => (
       <>
-        Alla avtal om resetjänster (boende, flyg, hyrbil, turer) ingås direkt mellan dig och den relevanta
+        Alla avtal om resetjänster (t.ex. boende, flyg, hyrbil eller turer) ingås direkt mellan dig och den relevanta
         tredjepartsleverantören, enligt dennes villkor och integritetspolicy. Deras regler för avbokning,
         återbetalning och konsumentskydd gäller, inte våra. Den finska konsumentens ångerrätt enligt{' '}
         <em>kuluttajansuojalaki 6 luku</em> (konsumentskyddslagen kapitel 6) utövas gentemot handlaren; {siteName} har ingen roll i den processen.
@@ -924,9 +920,9 @@ const COPY: Record<Lang, TermsCopy> = {
       </>
     ),
     s7Title: '7. Immateriella rättigheter',
-    s7Body: (siteName) => `Allt originalinnehåll på ${siteName}, inklusive text, grafik och design, ägs av LaPeso Oy eller används under licens. Du får inte återge, distribuera eller skapa bearbetningar utan skriftligt tillstånd. Skälig användning för icke-kommersiell personlig referens är tillåten med källhänvisning.`,
+    s7Body: (siteName) => `Allt originalinnehåll på ${siteName}, inklusive text, grafik och design, ägs av LaPeso Oy eller används under licens. Du får inte återge, distribuera eller skapa bearbetningar utan skriftligt tillstånd. Skälig användning för icke-kommersiell personlig referens är tillåten med källhänvisning.`,
     s8Title: '8. Ansvarsbegränsning',
-    s8Body: (siteName) => `${siteName} och LaPeso Oy ansvarar inte för förlust, skada eller men som uppstår genom att förlita sig på information på den här webbplatsen, från användning av länkade tredjepartstjänster eller från resebeslut som fattas utifrån vårt innehåll. Resor till arktiska regioner innebär inneboende risker; skaffa alltid en lämplig reseförsäkring och följ lokala säkerhetsanvisningar.`,
+    s8Body: (siteName) => `${siteName} och LaPeso Oy ansvarar inte för förlust, skada eller men som uppstår genom att förlita sig på information på den här webbplatsen, från användning av länkade tredjepartstjänster eller från resebeslut som fattas utifrån vårt innehåll. Resor till arktiska regioner innebär inneboende risker; skaffa alltid en lämplig reseförsäkring och följ lokala säkerhetsanvisningar.`,
     s9Title: '9. Tillämplig lag',
     s9Body: 'Dessa villkor regleras av finsk lag. Eventuella tvister ska avgöras i finsk domstol.',
     s10Title: '10. Ändringar av dessa villkor',
@@ -937,7 +933,7 @@ const COPY: Record<Lang, TermsCopy> = {
     s12Intro: 'Enligt EU:s förordning om digitala tjänster (förordning (EU) 2022/2065) är vår utsedda kontaktpunkt för myndigheter och mottagare av tjänsten:',
     s12Items: [
       'E-post: info@laplandvibes.com',
-      'Operatör: LaPeso Oy, Finland',
+      'Operatör: LaPeso Oy, Finland',
       'Kommunikationsspråk: engelska, finska',
     ],
     s12Tail: (siteName) => `${siteName} är en redaktionell utgivare; vi hostar inte användargenererat innehåll som en primär tjänst. Anmälningar om olagligt innehåll, upphovsrättsintrång eller andra frågor som rör DSA kan skickas till adressen ovan och behandlas inom lagstadgade tidsramar.`,
@@ -979,7 +975,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) is a curated Finnish Lapland gift
-        guide operated by <strong className="text-snow/90">LaPeso Oy</strong>, registered in Finland. We
+        guide operated by <strong className="text-snow/90">LaPeso Oy</strong>, registered in Finland. We
         publish editorial product guides and link to the shops that actually sell and ship the items.
       </>
     ),
@@ -1002,13 +998,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         shop that sold the item.
       </>
     ),
-    s8Body: (siteName) => `${siteName} and LaPeso Oy are not liable for any loss or damage arising from reliance on the product information on this site, from use of the shops we link to, or from a purchase made through them. Any claim about a product, its delivery or its condition is made against the shop that sold it. For foodstuffs and food supplements, always read the ingredient, allergen and dosage information on the packaging and on the seller's own page.`,
+    s8Body: (siteName) => `${siteName} and LaPeso Oy are not liable for any loss or damage arising from reliance on the product information on this site, from use of the shops we link to, or from a purchase made through them. Any claim about a product, its delivery or its condition is made against the shop that sold it. For foodstuffs and food supplements, always read the ingredient, allergen and dosage information on the packaging and on the seller's own page.`,
   },
   fi: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) on kuratoitu lahjaopas Suomen
-        Lappiin, ja sitä ylläpitää suomalainen <strong className="text-snow/90">LaPeso Oy</strong>.
+        Lappiin, ja sitä ylläpitää suomalainen <strong className="text-snow/90">LaPeso Oy</strong>.
         Julkaisemme toimituksellisia tuoteoppaita ja linkitämme kauppoihin, jotka myyvät ja toimittavat
         tuotteet.
       </>
@@ -1032,14 +1028,14 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         käytetään sitä kauppaa kohtaan, joka tuotteen myi.
       </>
     ),
-    s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa vahingosta, joka aiheutuu tämän sivuston tuotetietoihin luottamisesta, linkitettyjen kauppojen käytöstä tai niiden kautta tehdystä ostoksesta. Tuotetta, sen toimitusta tai kuntoa koskeva vaatimus esitetään sille kaupalle, joka tuotteen myi. Elintarvikkeissa ja ravintolisissä lue aina ainesosa-, allergeeni- ja annostustiedot pakkauksesta ja myyjän omalta sivulta.`,
+    s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa vahingosta, joka aiheutuu tämän sivuston tuotetietoihin luottamisesta, linkitettyjen kauppojen käytöstä tai niiden kautta tehdystä ostoksesta. Tuotetta, sen toimitusta tai kuntoa koskeva vaatimus esitetään sille kaupalle, joka tuotteen myi. Elintarvikkeissa ja ravintolisissä lue aina ainesosa-, allergeeni- ja annostustiedot pakkauksesta ja myyjän omalta sivulta.`,
   },
   de: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) ist ein kuratierter Geschenkeführer
         für Finnisch-Lappland, betrieben von der in Finnland eingetragenen{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>. Wir veröffentlichen redaktionelle
+        <strong className="text-snow/90">LaPeso Oy</strong>. Wir veröffentlichen redaktionelle
         Produktratgeber und verlinken auf die Shops, die die Artikel tatsächlich verkaufen und versenden.
       </>
     ),
@@ -1062,14 +1058,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         <em>kuluttajansuojalaki 6 luku</em>, wird gegenüber dem verkaufenden Shop ausgeübt.
       </>
     ),
-    s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste oder Schäden, die aus dem Vertrauen auf die Produktangaben dieser Website, aus der Nutzung der verlinkten Shops oder aus einem darüber getätigten Kauf entstehen. Ansprüche wegen eines Produkts, seiner Lieferung oder seines Zustands richten sich gegen den Shop, der es verkauft hat. Lesen Sie bei Lebensmitteln und Nahrungsergänzungsmitteln stets die Zutaten-, Allergen- und Dosierungsangaben auf der Verpackung und auf der Seite des Verkäufers.`,
+    s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste oder Schäden, die aus dem Vertrauen auf die Produktangaben dieser Website, aus der Nutzung der verlinkten Shops oder aus einem darüber getätigten Kauf entstehen. Ansprüche wegen eines Produkts, seiner Lieferung oder seines Zustands richten sich gegen den Shop, der es verkauft hat. Lesen Sie bei Lebensmitteln und Nahrungsergänzungsmitteln stets die Zutaten-, Allergen- und Dosierungsangaben auf der Verpackung und auf der Seite des Verkäufers.`,
   },
   ja: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName}（<strong className="text-snow/90">{siteUrl}</strong>）は、フィンランド法人{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong> が運営する、フィンランド・ラップランドのギフト
-        ガイドです。編集記事として商品ガイドを掲載し、実際に販売・発送を行う店舗へリンクしています。
+        <strong className="text-snow/90">LaPeso Oy</strong> が運営する、フィンランド・ラップランドのギフトガイドです。編集記事として商品ガイドを掲載し、実際に販売・発送を行う店舗へリンクしています。
       </>
     ),
     s2Body: '価格、サイズ、素材、原材料、在庫状況などの商品情報は頻繁に変わります。これらは表示された日付時点で販売店のページから取得したものです。正確さの維持に努めていますが、お客様のご覧の時点で最新である保証はいたしかねます。ご注文の前に、価格、配送条件、原材料やアレルゲンの表示を必ず販売店のページでご確認ください。',
@@ -1083,19 +1078,17 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     ),
     s5P2: () => (
       <>
-        売買契約は、お客様とその店舗との間で直接成立し、店舗の規約およびプライバシーポリシーが適用されます。
-        配送日数、送料、EU域外への注文にかかる付加価値税や関税、返品、返金、保証はいずれも当該店舗の責任であり、
-        当サイトの責任ではありません。通信販売における法定の解除権（フィンランドでは{' '}
+        売買契約は、お客様とその店舗との間で直接成立し、店舗の規約およびプライバシーポリシーが適用されます。配送日数、送料、EU域外への注文にかかる付加価値税や関税、返品、返金、保証はいずれも当該店舗の責任であり、当サイトの責任ではありません。通信販売における法定の解除権（フィンランドでは{' '}
         <em>kuluttajansuojalaki 6 luku</em>）は、その商品を販売した店舗に対して行使します。
       </>
     ),
-    s8Body: (siteName) => `${siteName} および LaPeso Oy は、当サイトの商品情報に依拠したこと、リンク先店舗を利用したこと、またはそこで購入したことにより生じた損失または損害について責任を負いません。商品、その配送または状態に関する請求は、販売した店舗に対して行ってください。食品および健康補助食品については、原材料、アレルゲン、摂取量の表示を必ずパッケージと販売店のページでご確認ください。`,
+    s8Body: (siteName) => `${siteName} および LaPeso Oy は、当サイトの商品情報に依拠したこと、リンク先店舗を利用したこと、またはそこで購入したことにより生じた損失または損害について責任を負いません。商品、その配送または状態に関する請求は、販売した店舗に対して行ってください。食品および健康補助食品については、原材料、アレルゲン、摂取量の表示を必ずパッケージと販売店のページでご確認ください。`,
   },
   es: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) es una guía de regalos de la
-        Laponia finlandesa gestionada por <strong className="text-snow/90">LaPeso Oy</strong>, sociedad
+        Laponia finlandesa gestionada por <strong className="text-snow/90">LaPeso Oy</strong>, sociedad
         registrada en Finlandia. Publicamos guías de producto editoriales y enlazamos a las tiendas que
         realmente venden y envían los artículos.
       </>
@@ -1119,13 +1112,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         <em>kuluttajansuojalaki 6 luku</em>, se ejerce frente a la tienda que vendió el artículo.
       </>
     ),
-    s8Body: (siteName) => `${siteName} y LaPeso Oy no se responsabilizan de pérdidas o daños derivados de confiar en la información de producto de este sitio, del uso de las tiendas enlazadas o de una compra realizada a través de ellas. Cualquier reclamación sobre un producto, su entrega o su estado se dirige a la tienda que lo vendió. En alimentos y complementos alimenticios, lee siempre la información de ingredientes, alérgenos y dosis en el envase y en la página del vendedor.`,
+    s8Body: (siteName) => `${siteName} y LaPeso Oy no se responsabilizan de pérdidas o daños derivados de confiar en la información de producto de este sitio, del uso de las tiendas enlazadas o de una compra realizada a través de ellas. Cualquier reclamación sobre un producto, su entrega o su estado se dirige a la tienda que lo vendió. En alimentos y complementos alimenticios, lea siempre la información de ingredientes, alérgenos y dosis en el envase y en la página del vendedor.`,
   },
   'pt-BR': {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) é um guia de presentes da Lapônia
-        finlandesa operado pela <strong className="text-snow/90">LaPeso Oy</strong>, registrada na
+        finlandesa operado pela <strong className="text-snow/90">LaPeso Oy</strong>, registrada na
         Finlândia. Publicamos guias editoriais de produtos e direcionamos às lojas que de fato vendem e
         enviam os itens.
       </>
@@ -1135,8 +1128,8 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5P1: (siteName) => (
       <>
         Todo produto deste site é vendido e enviado por uma loja de terceiros, e os botões levam você ao
-        site dessa loja. <strong className="text-snow/90">{siteName} não é varejista, vendedora nem
-        revendedora.</strong> Não temos estoque nem checkout, e nunca recebemos seu pagamento ou seu
+        site dessa loja. <strong className="text-snow/90">O {siteName} não é varejista, vendedor nem
+        revendedor.</strong> Não temos estoque nem checkout, e nunca recebemos seu pagamento ou seu
         endereço de entrega.
       </>
     ),
@@ -1149,14 +1142,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         <em>kuluttajansuojalaki 6 luku</em>, é exercido contra a loja que vendeu o item.
       </>
     ),
-    s8Body: (siteName) => `${siteName} e a LaPeso Oy não se responsabilizam por perdas ou danos decorrentes da confiança nas informações de produto deste site, do uso das lojas indicadas ou de uma compra feita por meio delas. Qualquer reclamação sobre um produto, sua entrega ou seu estado deve ser dirigida à loja que o vendeu. Em alimentos e suplementos alimentares, leia sempre as informações de ingredientes, alérgenos e dosagem na embalagem e na página do vendedor.`,
+    s8Body: (siteName) => `O ${siteName} e a LaPeso Oy não se responsabilizam por perdas ou danos decorrentes da confiança nas informações de produto deste site, do uso das lojas indicadas ou de uma compra feita por meio delas. Qualquer reclamação sobre um produto, sua entrega ou seu estado deve ser dirigida à loja que o vendeu. Em alimentos e suplementos alimentares, leia sempre as informações de ingredientes, alérgenos e dosagem na embalagem e na página do vendedor.`,
   },
   'zh-CN': {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName}（<strong className="text-snow/90">{siteUrl}</strong>）是由在芬兰注册的{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong> 运营的芬兰拉普兰礼品指南。我们发布编辑撰写的
-        商品指南，并链接到真正销售和发货的商店。
+        <strong className="text-snow/90">LaPeso Oy</strong> 运营的芬兰拉普兰礼品指南。我们发布编辑撰写的商品指南，并链接到真正销售和发货的商店。
       </>
     ),
     s2Body: '价格、尺寸、材质、成分和库存等商品信息经常变动，这些信息是在标注日期从卖家自己的页面读取的。我们力求准确，但无法保证您访问时信息仍然是最新的。下单前请务必在卖家自己的页面上核对价格、配送条款以及成分和过敏原信息。',
@@ -1170,18 +1162,17 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     ),
     s5P2: () => (
       <>
-        买卖合同直接在您与该商店之间成立，适用该商店的条款和隐私政策。配送时间、运费、寄往欧盟以外订单的
-        增值税和关税、退货、退款以及保修均由该商店负责，而非本站。远程销售中的法定撤销权（在芬兰依据{' '}
+        买卖合同直接在您与该商店之间成立，适用该商店的条款和隐私政策。配送时间、运费、寄往欧盟以外订单的增值税和关税、退货、退款以及保修均由该商店负责，而非本站。远程销售中的法定撤销权（在芬兰依据{' '}
         <em>kuluttajansuojalaki 6 luku</em>）应向销售该商品的商店行使。
       </>
     ),
-    s8Body: (siteName) => `${siteName} 与 LaPeso Oy 对因信赖本站商品信息、使用所链接的商店或通过其完成购买而产生的任何损失或损害不承担责任。有关商品、其配送或状况的任何主张，应向销售该商品的商店提出。对于食品和膳食补充剂，请务必阅读包装及卖家页面上的成分、过敏原和用量信息。`,
+    s8Body: (siteName) => `${siteName} 与 LaPeso Oy 对因信赖本站商品信息、使用所链接的商店或通过其完成购买而产生的任何损失或损害不承担责任。有关商品、其配送或状况的任何主张，应向销售该商品的商店提出。对于食品和膳食补充剂，请务必阅读包装及卖家页面上的成分、过敏原和用量信息。`,
   },
   ko: {
     s1P1: (siteName, siteUrl) => (
       <>
-        {siteName}(<strong className="text-snow/90">{siteUrl}</strong>)은 핀란드에 등록된{' '}
-        <strong className="text-snow/90">LaPeso Oy</strong>가 운영하는 핀란드 라플란드 선물 가이드입니다.
+        {siteName}(<strong className="text-snow/90">{siteUrl}</strong>) 사이트는 핀란드에 등록된{' '}
+        <strong className="text-snow/90">LaPeso Oy</strong>가 운영하는 핀란드 라플란드 선물 가이드입니다.
         저희는 편집 기준으로 만든 상품 가이드를 게시하고, 실제로 판매하고 배송하는 상점으로 연결합니다.
       </>
     ),
@@ -1190,7 +1181,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5P1: (siteName) => (
       <>
         이 사이트의 모든 상품은 제3자 상점이 판매하고 배송하며, 버튼을 누르면 그 상점의 웹사이트로
-        이동합니다. <strong className="text-snow/90">{siteName}은 소매업자나 판매자, 재판매자가
+        이동합니다. <strong className="text-snow/90">{siteName} 사이트는 소매업자나 판매자, 재판매자가
         아닙니다.</strong> 재고도 결제 시스템도 없으며, 고객의 결제 정보나 배송지를 받지 않습니다.
       </>
     ),
@@ -1202,13 +1193,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         <em>kuluttajansuojalaki 6 luku</em>에 따라, 상품을 판매한 상점을 상대로 행사합니다.
       </>
     ),
-    s8Body: (siteName) => `${siteName}과 LaPeso Oy는 이 사이트의 상품 정보를 신뢰한 결과, 연결된 상점을 이용한 결과, 또는 이를 통한 구매로 인해 발생한 손실이나 손해에 대해 책임지지 않습니다. 상품이나 배송, 상태에 관한 청구는 해당 상품을 판매한 상점에 제기합니다. 식품과 건강기능식품은 포장과 판매자 페이지에서 성분, 알레르기 유발 물질, 섭취량 정보를 반드시 확인하십시오.`,
+    s8Body: (siteName) => `${siteName} 및 LaPeso Oy는 이 사이트의 상품 정보를 신뢰한 결과, 연결된 상점을 이용한 결과, 또는 이를 통한 구매로 인해 발생한 손실이나 손해에 대해 책임지지 않습니다. 상품이나 배송, 상태에 관한 청구는 해당 상품을 판매한 상점에 제기합니다. 식품과 건강기능식품은 포장과 판매자 페이지에서 성분, 알레르기 유발 물질, 섭취량 정보를 반드시 확인하십시오.`,
   },
   fr: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) est un guide de cadeaux de la
-        Laponie finlandaise exploité par <strong className="text-snow/90">LaPeso Oy</strong>, société
+        Laponie finlandaise exploité par <strong className="text-snow/90">LaPeso Oy</strong>, société
         immatriculée en Finlande. Nous publions des guides de produits éditoriaux et renvoyons vers les
         boutiques qui vendent et expédient réellement les articles.
       </>
@@ -1233,19 +1224,19 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         l’article.
       </>
     ),
-    s8Body: (siteName) => `${siteName} et LaPeso Oy ne sont pas responsables des pertes ou dommages résultant de la confiance accordée aux informations produit de ce site, de l'utilisation des boutiques vers lesquelles nous renvoyons ou d'un achat effectué par leur intermédiaire. Toute réclamation portant sur un produit, sa livraison ou son état s'adresse à la boutique qui l'a vendu. Pour les denrées alimentaires et les compléments alimentaires, lisez toujours les informations sur les ingrédients, les allergènes et le dosage figurant sur l'emballage et sur la page du vendeur.`,
+    s8Body: (siteName) => `${siteName} et LaPeso Oy ne sont pas responsables des pertes ou dommages résultant de la confiance accordée aux informations produit de ce site, de l'utilisation des boutiques vers lesquelles nous renvoyons ou d'un achat effectué par leur intermédiaire. Toute réclamation portant sur un produit, sa livraison ou son état s'adresse à la boutique qui l'a vendu. Pour les denrées alimentaires et les compléments alimentaires, lisez toujours les informations sur les ingrédients, les allergènes et le dosage figurant sur l'emballage et sur la page du vendeur.`,
   },
   it: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) è una guida ai regali della
-        Lapponia finlandese gestita da <strong className="text-snow/90">LaPeso Oy</strong>, società
+        Lapponia finlandese gestita da <strong className="text-snow/90">LaPeso Oy</strong>, società
         registrata in Finlandia. Pubblichiamo guide ai prodotti redazionali e rimandiamo ai negozi che
         vendono e spediscono effettivamente gli articoli.
       </>
     ),
     s2Body: 'Le informazioni sui prodotti, come prezzi, taglie, materiali, ingredienti e disponibilità, cambiano di frequente e sono rilevate dalle pagine del venditore alla data indicata. Ci impegniamo a mantenerle corrette, ma non possiamo garantire che siano aggiornate al momento della Sua visita. Verifichi sempre il prezzo, le condizioni di consegna e le informazioni su ingredienti e allergeni sulla pagina del venditore prima di ordinare.',
-    s3P2: 'Tra i partner rientrano, a titolo esemplificativo, negozi e marchi finlandesi come Suomikauppa, Nordicbuddies, Finlayson e Scandinavian Outdoor, ai quali rimandiamo tramite network di affiliazione come Adtraction e Daisycon. Rimandiamo anche a negozi che non ci corrispondono nulla. Ogni ordine è soggetto alle condizioni del negozio che vende l\'articolo.',
+    s3P2: 'Tra i partner rientrano, a titolo esemplificativo, negozi e marchi finlandesi come Suomikauppa, Nordicbuddies, Finlayson e Scandinavian Outdoor, ai quali rimandiamo tramite reti di affiliazione come Adtraction e Daisycon. Rimandiamo anche a negozi che non ci corrispondono nulla. Ogni ordine è soggetto alle condizioni del negozio che vende l\'articolo.',
     s5P1: (siteName) => (
       <>
         Ogni prodotto di questo sito è venduto e spedito da un negozio terzo, e i pulsanti La portano al
@@ -1264,13 +1255,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         l’articolo.
       </>
     ),
-    s8Body: (siteName) => `${siteName} e LaPeso Oy non sono responsabili di perdite o danni derivanti dall'affidamento alle informazioni sui prodotti di questo sito, dall'uso dei negozi collegati o da un acquisto effettuato tramite essi. Ogni reclamo relativo a un prodotto, alla sua consegna o alle sue condizioni va rivolto al negozio che lo ha venduto. Per alimenti e integratori alimentari, legga sempre le informazioni su ingredienti, allergeni e dosaggio riportate sulla confezione e sulla pagina del venditore.`,
+    s8Body: (siteName) => `${siteName} e LaPeso Oy non sono responsabili di perdite o danni derivanti dall'affidamento alle informazioni sui prodotti di questo sito, dall'uso dei negozi collegati o da un acquisto effettuato tramite essi. Ogni reclamo relativo a un prodotto, alla sua consegna o alle sue condizioni va rivolto al negozio che lo ha venduto. Per alimenti e integratori alimentari, legga sempre le informazioni su ingredienti, allergeni e dosaggio riportate sulla confezione e sulla pagina del venditore.`,
   },
   nl: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) is een samengestelde cadeaugids
-        voor Fins Lapland, beheerd door <strong className="text-snow/90">LaPeso Oy</strong>, gevestigd in
+        voor Fins Lapland, beheerd door <strong className="text-snow/90">LaPeso Oy</strong>, gevestigd in
         Finland. Wij publiceren redactionele productgidsen en verwijzen naar de winkels die de artikelen
         daadwerkelijk verkopen en verzenden.
       </>
@@ -1295,13 +1286,13 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         verkocht.
       </>
     ),
-    s8Body: (siteName) => `${siteName} en LaPeso Oy zijn niet aansprakelijk voor verlies of schade voortvloeiend uit het vertrouwen op de productinformatie op deze site, uit het gebruik van de winkels waarnaar wij verwijzen of uit een aankoop die daar is gedaan. Een claim over een product, de levering of de staat ervan wordt ingediend bij de winkel die het heeft verkocht. Lees bij levensmiddelen en voedingssupplementen altijd de informatie over ingrediënten, allergenen en dosering op de verpakking en op de pagina van de verkoper.`,
+    s8Body: (siteName) => `${siteName} en LaPeso Oy zijn niet aansprakelijk voor verlies of schade voortvloeiend uit het vertrouwen op de productinformatie op deze site, uit het gebruik van de winkels waarnaar wij verwijzen of uit een aankoop die daar is gedaan. Een claim over een product, de levering of de staat ervan wordt ingediend bij de winkel die het heeft verkocht. Lees bij levensmiddelen en voedingssupplementen altijd de informatie over ingrediënten, allergenen en dosering op de verpakking en op de pagina van de verkoper.`,
   },
   sv: {
     s1P1: (siteName, siteUrl) => (
       <>
         {siteName} (<strong className="text-snow/90">{siteUrl}</strong>) är en kurerad presentguide för
-        finska Lappland som drivs av <strong className="text-snow/90">LaPeso Oy</strong>, registrerat i
+        finska Lappland som drivs av <strong className="text-snow/90">LaPeso Oy</strong>, registrerat i
         Finland. Vi publicerar redaktionella produktguider och länkar till de butiker som faktiskt säljer
         och skickar varorna.
       </>
@@ -1325,7 +1316,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         som sålde varan.
       </>
     ),
-    s8Body: (siteName) => `${siteName} och LaPeso Oy ansvarar inte för förlust eller skada som uppstår genom att förlita sig på produktinformationen på den här webbplatsen, genom användning av de butiker vi länkar till eller genom ett köp som gjorts via dem. Anspråk som gäller en vara, dess leverans eller dess skick riktas mot den butik som sålde den. För livsmedel och kosttillskott, läs alltid informationen om ingredienser, allergener och dosering på förpackningen och på säljarens egen sida.`,
+    s8Body: (siteName) => `${siteName} och LaPeso Oy ansvarar inte för förlust eller skada som uppstår genom att förlita sig på produktinformationen på den här webbplatsen, genom användning av de butiker vi länkar till eller genom ett köp som gjorts via dem. Anspråk som gäller en vara, dess leverans eller dess skick riktas mot den butik som sålde den. För livsmedel och kosttillskott, läs alltid informationen om ingredienser, allergener och dosering på förpackningen och på säljarens egen sida.`,
   },
 };
 
@@ -1346,7 +1337,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. Not an employment agency, not a party",
     s5P1: (siteName) => `${siteName} is a self-service board. We do not select, rank or recommend candidates, we do not take recruitment assignments, and we are not a party to any application, contract or employment relationship.`,
     s5P2: () => `The employer is responsible for its hiring process and for the lawfulness of its listing; the job seeker for the accuracy of their profile. Salary, contract, permits and housing are agreed between them directly, under Finnish labour law.`,
-    s8Body: (siteName) => `${siteName} and LaPeso Oy are not liable for loss or damage arising from a listing, a profile, an application or a hiring decision, from reliance on information on this site, or from the actions of employers, candidates or third-party sites. For paid services our liability is limited as set out in A8 of the addendum.`,
+    s8Body: (siteName) => `${siteName} and LaPeso Oy are not liable for loss or damage arising from a listing, a profile, an application or a hiring decision, from reliance on information on this site, or from the actions of employers, candidates or third-party sites. For paid services our liability is limited as set out in A8 of the addendum.`,
   },
   fi: {
     s2Title: "2. Ilmoitukset ja profiilit",
@@ -1359,7 +1350,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. Emme ole työnvälittäjä emmekä osapuoli",
     s5P1: (siteName) => `${siteName} on itsepalvelutaulu. Emme valitse, järjestä tai suosittele hakijoita, emme ota rekrytointitoimeksiantoja emmekä ole osapuoli hakemuksessa, sopimuksessa tai työsuhteessa.`,
     s5P2: () => `Työnantaja vastaa rekrytointiprosessistaan ja ilmoituksensa lainmukaisuudesta, työnhakija profiilinsa oikeellisuudesta. Palkasta, sopimuksesta, luvista ja asumisesta sovitaan suoraan heidän välillään Suomen työlainsäädännön mukaisesti.`,
-    s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa menetyksestä tai vahingosta, joka aiheutuu ilmoituksesta, profiilista, hakemuksesta tai rekrytointipäätöksestä, sivuston tietoihin luottamisesta taikka työnantajien, hakijoiden tai kolmansien osapuolten sivustojen toiminnasta. Maksullisten palvelujen osalta vastuumme on rajattu lisäosan kohdan A8 mukaisesti.`,
+    s8Body: (siteName) => `${siteName} ja LaPeso Oy eivät vastaa menetyksestä tai vahingosta, joka aiheutuu ilmoituksesta, profiilista, hakemuksesta tai rekrytointipäätöksestä, sivuston tietoihin luottamisesta taikka työnantajien, hakijoiden tai kolmansien osapuolten sivustojen toiminnasta. Maksullisten palvelujen osalta vastuumme on rajattu lisäosan kohdan A8 mukaisesti.`,
   },
   de: {
     s2Title: "2. Anzeigen und Profile",
@@ -1372,7 +1363,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. Keine Arbeitsvermittlung, keine Vertragspartei",
     s5P1: (siteName) => `${siteName} ist ein Selbstbedienungs-Board. Wir wählen keine Kandidaten aus, bewerten oder empfehlen sie nicht, übernehmen keine Rekrutierungsaufträge und sind keine Partei einer Bewerbung, eines Vertrags oder eines Arbeitsverhältnisses.`,
     s5P2: () => `Der Arbeitgeber ist für sein Einstellungsverfahren und die Rechtmäßigkeit seiner Anzeige verantwortlich, der Arbeitsuchende für die Richtigkeit seines Profils. Gehalt, Vertrag, Genehmigungen und Unterkunft werden direkt zwischen ihnen nach finnischem Arbeitsrecht vereinbart.`,
-    s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste oder Schäden aus einer Anzeige, einem Profil, einer Bewerbung oder einer Einstellungsentscheidung, aus dem Vertrauen auf Informationen dieser Website oder aus dem Handeln von Arbeitgebern, Kandidaten oder Drittseiten. Für kostenpflichtige Leistungen ist unsere Haftung gemäß A8 des Zusatzes begrenzt.`,
+    s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste oder Schäden aus einer Anzeige, einem Profil, einer Bewerbung oder einer Einstellungsentscheidung, aus dem Vertrauen auf Informationen dieser Website oder aus dem Handeln von Arbeitgebern, Kandidaten oder Drittseiten. Für kostenpflichtige Leistungen ist unsere Haftung gemäß A8 des Zusatzes begrenzt.`,
   },
   ja: {
     s2Title: "2. 求人と候補者プロフィール",
@@ -1385,7 +1376,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. 職業紹介事業者でも当事者でもありません",
     s5P1: (siteName) => `${siteName} はセルフサービスの掲示板です。候補者の選定、順位付け、推薦は行わず、採用委託も受けず、応募、契約、雇用関係の当事者にもなりません。`,
     s5P2: () => `雇用主は自社の採用プロセスと求人の適法性に、求職者はプロフィールの正確性に責任を負います。給与、契約、許可、住居はフィンランド労働法に基づき両者間で直接取り決めます。`,
-    s8Body: (siteName) => `${siteName} および LaPeso Oy は、求人、プロフィール、応募、採用判断、本サイトの情報への依拠、または雇用主・候補者・第三者サイトの行為から生じる損失や損害について責任を負いません。有料サービスについての責任は付則 A8 のとおり制限されます。`,
+    s8Body: (siteName) => `${siteName} および LaPeso Oy は、求人、プロフィール、応募、採用判断、本サイトの情報への依拠、または雇用主・候補者・第三者サイトの行為から生じる損失や損害について責任を負いません。有料サービスについての責任は付則 A8 のとおり制限されます。`,
   },
   es: {
     s2Title: "2. Ofertas y perfiles",
@@ -1396,9 +1387,9 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s4Title: "4. Servicios de pago",
     s4Body: (siteName) => `Los empleadores pueden comprar niveles de publicación y packs de desbloqueo de contactos. Los precios, el contenido de cada compra, los reembolsos y los plazos de moderación figuran en el anexo (A1–A5 y A10). Los candidatos nunca pagan nada a ${siteName}.`,
     s5Title: "5. Ni agencia de colocación ni parte",
-    s5P1: (siteName) => `${siteName} es un tablón de autoservicio. No seleccionamos, clasificamos ni recomendamos candidatos, no aceptamos encargos de selección y no somos parte de ninguna solicitud, contrato ni relación laboral.`,
+    s5P1: (siteName) => `${siteName} es un tablón de autoservicio. No seleccionamos, clasificamos ni recomendamos candidatos, no aceptamos encargos de selección y no somos parte de ninguna solicitud, ningún contrato ni ninguna relación laboral.`,
     s5P2: () => `El empleador responde de su proceso de contratación y de la legalidad de su oferta; el candidato, de la exactitud de su perfil. Salario, contrato, permisos y alojamiento se acuerdan directamente entre ellos conforme al derecho laboral finlandés.`,
-    s8Body: (siteName) => `${siteName} y LaPeso Oy no responden de pérdidas o daños derivados de una oferta, un perfil, una solicitud o una decisión de contratación, de la confianza en la información de este sitio ni de las acciones de empleadores, candidatos o sitios de terceros. Para los servicios de pago, nuestra responsabilidad se limita según el punto A8 del anexo.`,
+    s8Body: (siteName) => `${siteName} y LaPeso Oy no responden de pérdidas o daños derivados de una oferta, un perfil, una solicitud o una decisión de contratación, de la confianza en la información de este sitio ni de las acciones de empleadores, candidatos o sitios de terceros. Para los servicios de pago, nuestra responsabilidad se limita según el punto A8 del anexo.`,
   },
   'pt-BR': {
     s2Title: "2. Vagas e perfis",
@@ -1409,9 +1400,9 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s4Title: "4. Serviços pagos",
     s4Body: (siteName) => `Empregadores podem comprar níveis de anúncio e pacotes de liberação de contatos. Preços, conteúdo de cada compra, reembolsos e prazos de moderação estão no adendo abaixo (A1–A5 e A10). Candidatos nunca pagam nada ao ${siteName}.`,
     s5Title: "5. Nem agência de recrutamento nem parte",
-    s5P1: (siteName) => `O ${siteName} é um quadro de autoatendimento. Não selecionamos, classificamos nem recomendamos candidatos, não aceitamos mandatos de recrutamento e não somos parte de nenhuma candidatura, contrato ou relação de trabalho.`,
+    s5P1: (siteName) => `O ${siteName} é um quadro de autoatendimento. Não selecionamos, classificamos nem recomendamos candidatos, não aceitamos mandatos de recrutamento e não somos parte de nenhuma candidatura, nenhum contrato nem nenhuma relação de trabalho.`,
     s5P2: () => `O empregador responde pelo seu processo seletivo e pela legalidade da vaga; o candidato, pela exatidão do seu perfil. Salário, contrato, autorizações e moradia são acordados diretamente entre eles, conforme a legislação trabalhista finlandesa.`,
-    s8Body: (siteName) => `O ${siteName} e a LaPeso Oy não respondem por perdas ou danos decorrentes de uma vaga, um perfil, uma candidatura ou uma decisão de contratação, da confiança em informações deste site ou das ações de empregadores, candidatos ou sites de terceiros. Para serviços pagos, nossa responsabilidade é limitada conforme o item A8 do adendo.`,
+    s8Body: (siteName) => `O ${siteName} e a LaPeso Oy não respondem por perdas ou danos decorrentes de uma vaga, um perfil, uma candidatura ou uma decisão de contratação, da confiança em informações deste site ou das ações de empregadores, candidatos ou sites de terceiros. Para serviços pagos, nossa responsabilidade é limitada conforme o item A8 do adendo.`,
   },
   'zh-CN': {
     s2Title: "2. 招聘信息与档案",
@@ -1424,7 +1415,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. 非职业介绍机构，非任何一方",
     s5P1: (siteName) => `${siteName} 是自助式平台。我们不筛选、排名或推荐候选人，不承接招聘委托，也不是任何申请、合同或雇佣关系的一方。`,
     s5P2: () => `雇主对其招聘流程和招聘信息的合法性负责，求职者对其档案的准确性负责。薪资、合同、许可和住宿由双方依据芬兰劳动法直接商定。`,
-    s8Body: (siteName) => `${siteName} 和 LaPeso Oy 不对因招聘信息、档案、申请或录用决定、依赖本网站信息、或雇主、候选人及第三方网站的行为而产生的损失或损害承担责任。对于付费服务，我们的责任按附则 A8 限制。`,
+    s8Body: (siteName) => `${siteName} 和 LaPeso Oy 不对因招聘信息、档案、申请或录用决定、依赖本网站信息、或雇主、候选人及第三方网站的行为而产生的损失或损害承担责任。对于付费服务，我们的责任按附则 A8 限制。`,
   },
   ko: {
     s2Title: "2. 공고와 프로필",
@@ -1437,7 +1428,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. 직업소개 기관도, 당사자도 아닙니다",
     s5P1: (siteName) => `${siteName}는 셀프서비스 게시판입니다. 후보자를 선별, 순위 지정, 추천하지 않고, 채용 위탁을 받지 않으며, 지원·계약·고용 관계의 당사자가 아닙니다.`,
     s5P2: () => `고용주는 자신의 채용 절차와 공고의 적법성에, 구직자는 프로필의 정확성에 책임이 있습니다. 급여, 계약, 허가, 주거는 핀란드 노동법에 따라 양측이 직접 합의합니다.`,
-    s8Body: (siteName) => `${siteName}와 LaPeso Oy는 공고, 프로필, 지원, 채용 결정, 본 사이트 정보에 대한 신뢰, 또는 고용주·후보자·제3자 사이트의 행위로 인한 손실이나 손해에 대해 책임지지 않습니다. 유료 서비스에 대한 책임은 부칙 A8에 따라 제한됩니다.`,
+    s8Body: (siteName) => `${siteName}와 LaPeso Oy는 공고, 프로필, 지원, 채용 결정, 본 사이트 정보에 대한 신뢰, 또는 고용주·후보자·제3자 사이트의 행위로 인한 손실이나 손해에 대해 책임지지 않습니다. 유료 서비스에 대한 책임은 부칙 A8에 따라 제한됩니다.`,
   },
   fr: {
     s2Title: "2. Annonces et profils",
@@ -1448,9 +1439,9 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s4Title: "4. Services payants",
     s4Body: (siteName) => `Les employeurs peuvent acheter des niveaux d'annonce et des packs de déblocage de coordonnées. Les prix, le contenu de chaque achat, les remboursements et les délais de modération figurent dans l'annexe ci-dessous (A1–A5 et A10). Les candidats ne paient jamais rien à ${siteName}.`,
     s5Title: "5. Ni agence de placement, ni partie",
-    s5P1: (siteName) => `${siteName} est un tableau en libre-service. Nous ne sélectionnons, ne classons ni ne recommandons de candidats, nous n'acceptons aucun mandat de recrutement et nous ne sommes partie à aucune candidature, contrat ou relation de travail.`,
+    s5P1: (siteName) => `${siteName} est un tableau en libre-service. Nous ne sélectionnons, ne classons ni ne recommandons de candidats, nous n'acceptons aucun mandat de recrutement et nous ne sommes partie à aucune candidature, à aucun contrat ni à aucune relation de travail.`,
     s5P2: () => `L'employeur répond de son processus de recrutement et de la licéité de son annonce ; le candidat, de l'exactitude de son profil. Salaire, contrat, permis et logement se conviennent directement entre eux, selon le droit du travail finlandais.`,
-    s8Body: (siteName) => `${siteName} et LaPeso Oy ne répondent pas des pertes ou dommages résultant d'une annonce, d'un profil, d'une candidature ou d'une décision d'embauche, de la confiance accordée aux informations de ce site, ni des actes des employeurs, des candidats ou des sites tiers. Pour les services payants, notre responsabilité est limitée conformément au point A8 de l'annexe.`,
+    s8Body: (siteName) => `${siteName} et LaPeso Oy ne répondent pas des pertes ou dommages résultant d'une annonce, d'un profil, d'une candidature ou d'une décision d'embauche, de la confiance accordée aux informations de ce site, ni des actes des employeurs, des candidats ou des sites tiers. Pour les services payants, notre responsabilité est limitée conformément au point A8 de l'annexe.`,
   },
   it: {
     s2Title: "2. Annunci e profili",
@@ -1461,9 +1452,9 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s4Title: "4. Servizi a pagamento",
     s4Body: (siteName) => `I datori di lavoro possono acquistare livelli di annuncio e pacchetti di sblocco dei recapiti. Prezzi, contenuto di ogni acquisto, rimborsi e tempi di moderazione sono indicati nell'appendice sottostante (A1–A5 e A10). I candidati non pagano mai nulla a ${siteName}.`,
     s5Title: "5. Né agenzia per il lavoro né parte",
-    s5P1: (siteName) => `${siteName} è una bacheca self-service. Non selezioniamo, classifichiamo o raccomandiamo candidati, non accettiamo incarichi di ricerca del personale e non siamo parte di alcuna candidatura, contratto o rapporto di lavoro.`,
+    s5P1: (siteName) => `${siteName} è una bacheca self-service. Non selezioniamo, classifichiamo o raccomandiamo candidati, non accettiamo incarichi di ricerca del personale e non siamo parte di alcuna candidatura, di alcun contratto né di alcun rapporto di lavoro.`,
     s5P2: () => `Il datore di lavoro risponde del proprio processo di selezione e della liceità dell'annuncio; il candidato dell'esattezza del proprio profilo. Retribuzione, contratto, permessi e alloggio si concordano direttamente tra loro secondo il diritto del lavoro finlandese.`,
-    s8Body: (siteName) => `${siteName} e LaPeso Oy non rispondono di perdite o danni derivanti da un annuncio, un profilo, una candidatura o una decisione di assunzione, dall'affidamento sulle informazioni di questo sito o dalle azioni di datori di lavoro, candidati o siti terzi. Per i servizi a pagamento la nostra responsabilità è limitata secondo il punto A8 dell'appendice.`,
+    s8Body: (siteName) => `${siteName} e LaPeso Oy non rispondono di perdite o danni derivanti da un annuncio, un profilo, una candidatura o una decisione di assunzione, dall'affidamento sulle informazioni di questo sito o dalle azioni di datori di lavoro, candidati o siti terzi. Per i servizi a pagamento la nostra responsabilità è limitata secondo il punto A8 dell'appendice.`,
   },
   nl: {
     s2Title: "2. Vacatures en profielen",
@@ -1476,7 +1467,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. Geen uitzendbureau, geen partij",
     s5P1: (siteName) => `${siteName} is een selfservice-prikbord. Wij selecteren, rangschikken of bevelen geen kandidaten aan, wij nemen geen wervingsopdrachten aan en wij zijn geen partij bij een sollicitatie, contract of arbeidsrelatie.`,
     s5P2: () => `De werkgever is verantwoordelijk voor zijn wervingsproces en de rechtmatigheid van zijn vacature; de werkzoekende voor de juistheid van zijn profiel. Salaris, contract, vergunningen en huisvesting worden rechtstreeks tussen hen afgesproken, volgens het Finse arbeidsrecht.`,
-    s8Body: (siteName) => `${siteName} en LaPeso Oy zijn niet aansprakelijk voor verlies of schade door een vacature, een profiel, een sollicitatie of een aanstellingsbeslissing, door vertrouwen op informatie op deze site, of door het handelen van werkgevers, kandidaten of sites van derden. Voor betaalde diensten is onze aansprakelijkheid beperkt zoals bepaald in A8 van het addendum.`,
+    s8Body: (siteName) => `${siteName} en LaPeso Oy zijn niet aansprakelijk voor verlies of schade door een vacature, een profiel, een sollicitatie of een aanstellingsbeslissing, door vertrouwen op informatie op deze site, of door het handelen van werkgevers, kandidaten of sites van derden. Voor betaalde diensten is onze aansprakelijkheid beperkt zoals bepaald in A8 van het addendum.`,
   },
   sv: {
     s2Title: "2. Annonser och profiler",
@@ -1489,7 +1480,7 @@ const JOBS_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5Title: "5. Ingen arbetsförmedling, ingen part",
     s5P1: (siteName) => `${siteName} är en självbetjäningstavla. Vi väljer inte ut, rangordnar eller rekommenderar kandidater, vi tar inga rekryteringsuppdrag och vi är inte part i någon ansökan, något avtal eller något anställningsförhållande.`,
     s5P2: () => `Arbetsgivaren ansvarar för sin rekryteringsprocess och för annonsens lagenlighet, den arbetssökande för att profilen är korrekt. Lön, avtal, tillstånd och boende avtalas direkt mellan dem enligt finsk arbetsrätt.`,
-    s8Body: (siteName) => `${siteName} och LaPeso Oy ansvarar inte för förlust eller skada som uppstår genom en annons, en profil, en ansökan eller ett anställningsbeslut, genom förlitan på information på den här webbplatsen eller genom arbetsgivares, kandidaters eller tredje parts webbplatsers agerande. För betaltjänster är vårt ansvar begränsat enligt A8 i tillägget.`,
+    s8Body: (siteName) => `${siteName} och LaPeso Oy ansvarar inte för förlust eller skada som uppstår genom en annons, en profil, en ansökan eller ett anställningsbeslut, genom förlitan på information på den här webbplatsen eller genom arbetsgivares, kandidaters eller tredje parts webbplatsers agerande. För betaltjänster är vårt ansvar begränsat enligt A8 i tillägget.`,
   },
 };
 
