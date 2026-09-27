@@ -94,7 +94,6 @@ export default function CityPage() {
       <meta name="robots" content="index, follow, max-image-preview:large" />
       <meta property="og:title" content={tx(`${cityKey}.title`, `Restaurants in ${name}`)} />
       <meta property="og:url" content={`${ORIGIN}${prefix}${path}/`} />
-      <meta property="og:image" content={`${ORIGIN}${city.img}`} />
 
       <script type="application/ld+json">
         {JSON.stringify({
