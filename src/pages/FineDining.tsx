@@ -2,7 +2,8 @@
 import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
-import PhotoCaption from '../components/PhotoCaption';
+import IllustrationNote from '../components/IllustrationNote';
+import GridPhotoCredits from '../components/GridPhotoCredits';
 import MenuLink from '../components/MenuLink';
 import { Star, MapPin, ExternalLink, Award, Quote, UtensilsCrossed } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
@@ -164,7 +165,6 @@ export default function FineDining() {
                         )}
                       </div>
                     )}
-                    <PhotoCaption r={r} locale={locale} />
                     <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm">
                       <MapPin size={11} className="text-amber" />
                       <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
@@ -196,7 +196,9 @@ export default function FineDining() {
                     )}
                   </div>
 
-                  <div className="p-7 sm:p-8">
+                  {/* Kuvituskuva kuvan alle, ei päälle (Vesa 28.9.2026); lähteet ruudukon alla. */}
+                  <IllustrationNote r={r} locale={locale} className="px-7 sm:px-8 pt-2" />
+                  <div className="px-7 sm:px-8 pt-1.5 sm:pt-2.5 pb-7 sm:pb-8">
                     <h3 className="font-heading text-2xl sm:text-[1.7rem] tracking-wide text-warm-ink leading-tight mb-1.5">{r.name}</h3>
                     {/* Ei hintaluokkaa keittiön perään — ks. RestaurantCard.tsx
                         (Vesa 7.9.2026). priceRange ohjaa yhä sitä, mikä ravintola
@@ -289,6 +291,8 @@ export default function FineDining() {
               );
             })}
           </div>
+          {/* Korttien kuvalähteet ruudukon alle, ei kuvan päälle (Vesa 26.9.2026). */}
+          <GridPhotoCredits list={fineDining} locale={locale} className="mt-10" />
         </div>
       </section>
 

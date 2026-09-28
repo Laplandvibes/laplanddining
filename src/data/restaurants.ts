@@ -3,7 +3,6 @@ import restaurantImages from './generated/restaurant-images.json';
 import restaurantMenus from './generated/restaurant-menus.json';
 import { restaurantOverrides } from './restaurant-overrides';
 import { restaurantGems } from './restaurant-gems';
-import { creditPrefix } from './photoCredit';
 
 type ImageEntry = { src: string; kind: string; credit?: string };
 const imageRegistry = restaurantImages as Record<string, ImageEntry>;
@@ -520,11 +519,10 @@ export function partnershipBadgeLocalized(tier: PartnershipTier, locale: Locale)
 }
 
 /**
- * Kuvakaistan alareunan merkintä.
- *
- * AI-kuvituskuva merkitään aina, jotta kortti ei väitä esittävänsä juuri tätä
- * ravintolaa. Kumppanin oma kuva merkitään lähteellä. Merkintä on osa kuvaa,
- * ei erillinen rivi — Vesan ohje 2026-08-09.
+ * Kuvituskuvan merkintä. AI-kuvituskuva merkitään aina, jotta kortti ei väitä
+ * esittävänsä juuri tätä ravintolaa (Vesa 9.8.2026). Merkintä kulkee kortin mukana,
+ * mutta 28.9.2026 alkaen kuvan ALLA eikä sen päällä (Vesa: "Kuvan alle kortissa"),
+ * ks. components/IllustrationNote.tsx.
  */
 const ILLUSTRATION_LABEL: Record<Locale, string> = {
   en: 'Illustration',
@@ -547,12 +545,29 @@ export const PHOTO_BY: Record<Locale, string> = {
   'zh-CN': '图片', ko: '사진', fr: 'Photo', it: 'Foto', nl: 'Foto', sv: 'Foto',
 };
 
-export function photoCaption(r: Restaurant, locale: Locale): string | null {
-  if (r.photoKind === 'illustration') return ILLUSTRATION_LABEL[locale];
-  // 'partner' = kumppanin oma kuva, 'photo' = LV:n itse paikan päällä ottama aito
-  // valokuva kohteesta (Vesa 30.8.2026: "oma aito valokuva voittaa") — molemmat
-  // esittävät juuri tätä ravintolaa, joten Kuvituskuva-merkintää EI näytetä.
-  if ((r.photoKind === 'partner' || r.photoKind === 'photo') && r.photoCredit)
-    return `${creditPrefix(PHOTO_BY[locale], locale)}${r.photoCredit}`;
-  return null;
+/**
+ * Monikko ruudukon alle koottuun lähderiviin ("Kuvat: Nili (nili.fi) · …").
+ * Sama sanasto kuin laplandworkin ExploreGridin rivissä. Kaksoispiste: `creditPrefix`.
+ */
+export const PHOTOS_BY: Record<Locale, string> = {
+  en: 'Photos', fi: 'Kuvat', de: 'Fotos', ja: '写真', es: 'Fotos', 'pt-BR': 'Fotos',
+  'zh-CN': '图片', ko: '사진', fr: 'Photos', it: 'Foto', nl: "Foto's", sv: 'Foton',
+};
+
+/** "Kuvituskuva" kortin kuvan alle, tai null jos kuva ei ole kuvitusta. */
+export function illustrationNote(r: Restaurant, locale: Locale): string | null {
+  return r.photoKind === 'illustration' ? ILLUSTRATION_LABEL[locale] : null;
+}
+
+/**
+ * Kuvan lähde ruudukon alle koottavaan riviin: kumppanin domain ("nili.fi") tai
+ * "LaplandVibes". 'partner' = kumppanin oma kuva, 'photo' = LV:n itse paikan päällä
+ * ottama aito valokuva kohteesta (Vesa 30.8.2026: "oma aito valokuva voittaa").
+ * Molemmat esittävät juuri tätä ravintolaa, joten Kuvituskuva-merkintää ei näytetä.
+ *
+ * Korttiruudukossa lähde ei ole kuvan päällä vaan yhtenä rivinä ruudukon alla
+ * korttien järjestyksessä (Vesa 26.9.2026), ks. components/GridPhotoCredits.tsx.
+ */
+export function photoSource(r: Restaurant): string | null {
+  return (r.photoKind === 'partner' || r.photoKind === 'photo') && r.photoCredit ? r.photoCredit : null;
 }

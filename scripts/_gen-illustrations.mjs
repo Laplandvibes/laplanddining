@@ -1,8 +1,8 @@
 /**
  * Generoi kuvituskuvat niille ravintoloille joille ei saatu kumppanin omaa kuvaa.
  *
- * Kuva EI väitä esittävänsä kyseistä ravintolaa: kortin kuvakaistan alareunaan
- * renderöityy merkintä "Kuvituskuva" (photoCaption, 12 kieltä). Vesan päätös
+ * Kuva EI väitä esittävänsä kyseistä ravintolaa: kortissa kuvan alla lukee
+ * "Kuvituskuva" (IllustrationNote, 12 kieltä; kuvan alla 28.9.2026 alkaen). Vesan päätös
  * 2026-08-09: kuvituskuva on parempi kuin tyhjä kortti, kunhan se on merkitty.
  *
  * Vaihtelu: kohtaus, vuodenaika ja kuvakulma kiertävät slugin indeksin mukaan,

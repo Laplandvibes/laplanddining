@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocale } from '../i18n/useLocale';
 import { restaurants, cities, type Restaurant } from '../data/restaurants';
 import { CityCard, type CardLabels } from './CityTopPicksGrid';
+import GridPhotoCredits from './GridPhotoCredits';
 
 /**
  * Front-page editorial six. Hand-picked slugs, not a rating sort: a pure
@@ -59,6 +60,8 @@ export default function EditorsPicks() {
             <CityCard key={r.googlePlaceId} r={r} labels={labels} to={to} locale={locale} />
           ))}
         </div>
+        {/* Kuvien lähteet ruudukon alle, ei kuvan päälle (Vesa 26.9.2026). */}
+        <GridPhotoCredits list={picks} locale={locale} className="mt-6" />
 
         <div className="text-center mt-10">
           <Link

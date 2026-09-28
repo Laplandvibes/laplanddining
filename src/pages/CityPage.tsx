@@ -5,6 +5,7 @@ import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
 import { localePrefix } from '../i18n/config';
 import RestaurantCard, { type CardI18n } from '../components/RestaurantCard';
+import GridPhotoCredits from '../components/GridPhotoCredits';
 import AffiliateCTA from '../components/AffiliateCTA';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import NotFound from './NotFound';
@@ -277,6 +278,8 @@ export default function CityPage() {
               />
             ))}
           </div>
+          {/* Korttien kuvalähteet ruudukon alle, ei kuvan päälle (Vesa 26.9.2026). */}
+          <GridPhotoCredits list={list} locale={locale as Locale} className="mt-8" />
         </div>
       </section>
 

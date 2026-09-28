@@ -3,7 +3,8 @@ import { Star, MapPin, Award, Quote, UtensilsCrossed } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLocale } from '../i18n/useLocale';
 import AffiliateCTA from './AffiliateCTA';
-import PhotoCaption from './PhotoCaption';
+import IllustrationNote from './IllustrationNote';
+import GridPhotoCredits from './GridPhotoCredits';
 import MenuLink from './MenuLink';
 import { getTopPicksByCity, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant, type Locale } from '../data/restaurants';
 import { withReferral } from '../lib/outbound';
@@ -65,8 +66,6 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
           )}
         </Link>
 
-        <PhotoCaption r={r} locale={locale} />
-
         <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm pointer-events-none">
           <MapPin size={11} className="text-amber" />
           <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
@@ -99,7 +98,10 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
         )}
       </div>
 
-      <div className="p-5 sm:p-6 flex flex-col flex-1">
+      {/* Kuvituskuva kuvan alle, ei päälle (Vesa 28.9.2026). Kuvan lähde on ruudukon
+          alla (GridPhotoCredits, kutsupaikassa). */}
+      <IllustrationNote r={r} locale={locale} className="px-5 sm:px-6 pt-1.5" />
+      <div className="px-5 sm:px-6 pt-1 sm:pt-2 pb-5 sm:pb-6 flex flex-col flex-1">
         {/* Ei hintaluokkaa nimen perään — ks. RestaurantCard.tsx (Vesa 7.9.2026). */}
         <div className="mb-1">
           <h3 className="font-heading text-xl sm:text-2xl tracking-wide text-warm-ink leading-tight">
@@ -235,6 +237,7 @@ export default function CityTopPicksGrid() {
             <CityCard key={r.googlePlaceId} r={r} labels={labels} to={to} locale={locale} />
           ))}
         </div>
+        <GridPhotoCredits list={picks} locale={locale} className="mt-6" />
 
         <p className="text-center text-snow/75 text-xs mt-12 tracking-wider">
           {t('common.dataRefreshed', { date: picks[0]?.lastVerified || '' })}{' '}

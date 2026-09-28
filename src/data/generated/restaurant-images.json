@@ -132,16 +132,6 @@
     "height": 600,
     "fetchedAt": "2026-08-10"
   },
-  "haparanda-kukkolaforsen-turist-konferens": {
-    "src": "/images/restaurants/haparanda-kukkolaforsen-turist-konferens.webp",
-    "kind": "partner",
-    "credit": "kukkolaforsen.se",
-    "sourceUrl": "https://www.kukkolaforsen.se/",
-    "imageUrl": "https://www.kukkolaforsen.se/wp-content/uploads/2021/02/kukkola_og.jpg",
-    "width": 800,
-    "height": 420,
-    "fetchedAt": "2026-08-10"
-  },
   "haparanda-haparanda-stadshotell": {
     "src": "/images/restaurants/haparanda-haparanda-stadshotell.webp",
     "kind": "illustration",

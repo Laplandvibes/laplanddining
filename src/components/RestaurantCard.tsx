@@ -1,5 +1,5 @@
 import { UtensilsCrossed, Star, Award, Quote } from 'lucide-react';
-import PhotoCaption from './PhotoCaption';
+import IllustrationNote from './IllustrationNote';
 import MenuLink from './MenuLink';
 import { withReferral } from '../lib/outbound';
 import {
@@ -54,7 +54,6 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
             )}
           </div>
         )}
-        <PhotoCaption r={r} locale={locale} />
         {/* Arviopilleri on LINKKI Googlen arvosteluihin, ei koriste. Pilleri
             on 28 px korkea, ja se ei saa kasvaa: kortin ilme lukittiin Fine
             Diningin mallisivulla 7.9.2026. Kosketusalue tehdaan siksi
@@ -100,7 +99,10 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
         )}
       </div>
 
-      <div className="p-6 sm:p-7 flex flex-col flex-1">
+      {/* Kuvituskuva kuvan alle, ei päälle (Vesa 28.9.2026). Kuvan lähde on ruudukon
+          alla (GridPhotoCredits, kutsupaikassa). */}
+      <IllustrationNote r={r} locale={locale} className="px-6 sm:px-7 pt-1.5" />
+      <div className="px-6 sm:px-7 pt-1.5 sm:pt-2.5 pb-6 sm:pb-7 flex flex-col flex-1">
         <h3 className="font-heading text-xl tracking-wide text-warm-ink leading-tight mb-1">
           {r.name}
         </h3>

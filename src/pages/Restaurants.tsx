@@ -8,6 +8,7 @@ import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
 import PartnerSlot, { type Partner } from '../shared/PartnerSlot';
 import RestaurantCard, { type CardI18n } from '../components/RestaurantCard';
+import GridPhotoCredits from '../components/GridPhotoCredits';
 import SubpageAd from '../shared/SubpageAd';
 import PremiumSpotGrid from '../shared/PremiumSpotGrid';
 import { adLocaleEnabled } from '../shared/adSlotsCopy';
@@ -501,6 +502,8 @@ export default function Restaurants() {
                           />
                         ))}
                       </div>
+                      {/* Näkyvien korttien kuvalähteet ruudukon alle, ei kuvan päälle (Vesa 26.9.2026). */}
+                      <GridPhotoCredits list={visible} locale={locale} className="mt-4" />
                       {hiddenCount > 0 && (
                         <div className="mt-6 text-center">
                           <button

@@ -16,12 +16,18 @@
  * ja 3:2-valokuvat (joista object-cover leikkaa siedettävästi) mutta nappaa
  * neliölogot ja pystykuvat, jotka ovat aina väärä lähde.
  *
+ * 🔴 28.9.2026: kuvasuhde ei nappaa LEVEÄÄ logoa. Kukkolaforsenin og:image oli nimi
+ * valkoisella pohjalla 800×420 (suhde 1,90, poikkeama 7 %), ja kortissa luki "Photo:".
+ * Toinen tarkistus: yli 60 % kuvasta yhtä väriä = logo tai teksti tasaisella pohjalla
+ * (scripts/lib/tasainen.mjs). Mitattu 86 kuvasta: logo 95 %, muut enintään 29 %.
+ *
  * Aja: node scripts/check-image-fit.mjs
  *      node scripts/check-image-fit.mjs --all   (kaikki mitat)
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { tasaisenOsuus, TASAINEN_RAJA } from './lib/tasainen.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = resolve(ROOT, 'public/images/restaurants');
@@ -86,13 +92,22 @@ for (const [slug, meta] of Object.entries(reg)) {
   if (closedSlugs.has(slug)) continue;
   const f = resolve(DIR, `${slug}.webp`);
   if (!existsSync(f)) { ongelmat.push({ slug, syy: 'tiedosto puuttuu' }); continue; }
-  const koko = webpKoko(readFileSync(f));
+  // Puskuri eikä polku sharpille: libvips ei avaa Windowsissa yli 260 merkin polkua.
+  const buf = readFileSync(f);
+  const koko = webpKoko(buf);
   if (!koko) { ongelmat.push({ slug, syy: 'webp-otsaketta ei voitu lukea' }); continue; }
   mitattu++;
   const suhde = koko.w / koko.h;
   const poikkeama = Math.abs(suhde - KEHYS) / KEHYS;
+  const tasainen = await tasaisenOsuus(buf);
   if (all) {
-    console.log(`  ${slug.padEnd(44)} ${koko.w}x${koko.h}  ${suhde.toFixed(2)}  ${(poikkeama * 100).toFixed(0)}%`);
+    console.log(`  ${slug.padEnd(44)} ${koko.w}x${koko.h}  ${suhde.toFixed(2)}  ${(poikkeama * 100).toFixed(0)}%  yhtä väriä ${(tasainen * 100).toFixed(0)}%`);
+  }
+  if (tasainen > TASAINEN_RAJA && !KUITATUT.has(slug)) {
+    ongelmat.push({
+      slug, syy: `${(tasainen * 100).toFixed(0)} % kuvasta on yhtä väriä: logo tai teksti tasaisella pohjalla, ei valokuva (raja ${TASAINEN_RAJA * 100} %)`,
+      kind: meta.kind, credit: meta.credit,
+    });
   }
   if (poikkeama > RAJA && !KUITATUT.has(slug)) {
     ongelmat.push({
@@ -105,16 +120,16 @@ for (const [slug, meta] of Object.entries(reg)) {
 if (all) process.exit(0);
 
 if (ongelmat.length === 0) {
-  console.log(`✅ image-fit: ${mitattu} korttikuvaa, kaikki istuvat kehykseen (raja ${RAJA * 100} %)`);
+  console.log(`✅ image-fit: ${mitattu} korttikuvaa, kaikki istuvat kehykseen (raja ${RAJA * 100} %) eikä yksikään ole tasaista pohjaa (raja ${TASAINEN_RAJA * 100} %)`);
   process.exit(0);
 }
 
-console.error(`❌ image-fit: ${ongelmat.length} kuvaa ei istu kortin kehykseen\n`);
+console.error(`❌ image-fit: ${ongelmat.length} kuvaa ei kelpaa korttikuvaksi\n`);
 for (const o of ongelmat) {
   console.error(`   ${o.slug}\n      ${o.syy}${o.credit ? `  · lähde: ${o.credit}` : ''}`);
 }
 console.error(
-  '\n   Neliö tai pystykuva on lähes aina LOGO eikä valokuva — kumppanin og:image.\n' +
+  '\n   Neliö, pystykuva tai tasainen pohja on lähes aina LOGO eikä valokuva: kumppanin og:image.\n' +
   '   Korjaa: hae ravintolan sivulta oikea valokuva, TAI poista rivi\n' +
   '   restaurant-images.jsonista jolloin kortti näyttää siistin paikanpitäjän.\n' +
   '   Logoa ei venytetä korttiin.\n',
