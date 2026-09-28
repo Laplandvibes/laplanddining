@@ -140,7 +140,7 @@
   },
   "cities": {
     "title": "Wo man in Lappland isst, Ort für Ort",
-    "description": "Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi und acht weiteren Orten in Finnisch-Lappland, jeder auf einer eigenen Seite. Mit Bewertungen und Speisekarten.",
+    "description": "Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi und sieben weiteren Orten Finnisch-Lapplands, je Ort eine Seite mit Bewertungen und Speisekarten.",
     "h1": "Lappland, Ort für Ort",
     "lead": "76 Restaurants in 13 Zielen, jeder Ort auf einer eigenen Seite.",
     "moreLead": "Muonio, Hetta, Salla und Posio haben zusammen zu wenige Tische für eine eigene Seite. Auf der Gesamtliste stehen sie trotzdem.",
@@ -188,7 +188,7 @@
     "yllas": {
       "name": "Ylläs",
       "title": "Restaurants in Ylläs: wo man isst",
-      "description": "Sieben Restaurants in Ylläs, verteilt auf Äkäslompolo und Ylläsjärvi zu beiden Seiten des Fjells — und eines auf dem Gipfel. Bewertungen und Speisekarten.",
+      "description": "Sieben Restaurants in Ylläs, verteilt auf Äkäslompolo und Ylläsjärvi zu beiden Seiten des Fjells, dazu eines auf dem Gipfel. Bewertungen und Speisekarten.",
       "h1": "Restaurants in Ylläs",
       "tagline": "Zwei Dörfer, ein Fjell und rund 11 km zwischen Ihrem Tisch und dem anderen.",
       "intro": "Ylläs ist nicht ein Dorf, sondern zwei, auf gegenüberliegenden Seiten des Fjells. Im nördlichen Äkäslompolo liegen Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub und Los Lompolo's; im südlichen Ylläsjärvi Ravintola Otso und Restaurant Ylläskota. Dazwischen ist die Adresse von Ylläskammi der Gipfel selbst. Rouhe sammelt hier mit deutlichem Abstand die meisten Bewertungen; die höchste Note hat Los Lompolo's mit 4,7 bei viel kleinerer Zahl.",
@@ -216,7 +216,7 @@
     "inari": {
       "name": "Inari",
       "title": "Restaurants in Inari: wo man isst",
-      "description": "Vier Restaurants in der Gemeinde Inari, darunter ein mit 4,8 bewerteter Fine-Dining-Saal am Wasser — und drei, die weit auseinanderliegen.",
+      "description": "Vier Restaurants in der Gemeinde Inari: ein mit 4,8 bewerteter Fine-Dining-Saal am Wasser und drei weitere, die weit auseinanderliegen.",
       "h1": "Restaurants in Inari",
       "tagline": "Finnlands größte Gemeinde. Vier Küchen und viel Straße dazwischen.",
       "intro": "Inari ist größer als manches europäische Land, und diese Seite zeigt das: die Restaurants verteilen sich über Dutzende Kilometer statt über ein Dorfzentrum. Restaurant Aanaar am Wasser an der Saarikoskentie ist der Fine-Dining-Saal und mit 4,8 das bestbewertete. Kultahippu liegt 35 km südlich in Ivalo, Muotkan Ruoktu 39 km an der Straße nach Karigasniemi, und Arctic River Resort dazwischen. Keines davon ist von einem anderen zu Fuß erreichbar.",
@@ -244,7 +244,7 @@
     "tornio": {
       "name": "Tornio",
       "title": "Restaurants in Tornio: wo man isst",
-      "description": "Fünf Restaurants in Tornio an der schwedischen Grenze — drei davon in derselben Straße. Bewertungen, Zitate und Links zu den eigenen Speisekarten.",
+      "description": "Fünf Restaurants in Tornio an der schwedischen Grenze, drei davon in derselben Straße. Bewertungen, Zitate und Links zu den eigenen Speisekarten.",
       "h1": "Restaurants in Tornio",
       "tagline": "Eine Grenzstadt, in der sich drei von fünf eine Straße teilen.",
       "intro": "Die Auswahl in Tornio ist ungewöhnlich dicht: Ravintola Umpitunneli, Mustaparran Päämaja und Tmi Hevi Pizza liegen alle an der Hallituskatu, wenige Minuten voneinander entfernt. Ravintola Golden Flower an der Eliaksenkatu hat hier die meisten Bewertungen, und Amico ergänzt die Liste an der Torikatu. Die höchste Note hält Hevi Pizza mit 4,7. Auf der anderen Flussseite liegt Haparanda — das ist Schweden und hat eine eigene Seite.",

@@ -140,7 +140,7 @@
   },
   "cities": {
     "title": "Missä syödä Lapissa: ravintolat paikkakunnittain",
-    "description": "Ravintolat Rovaniemellä, Levillä, Ylläksellä, Saariselällä, Inarissa, Kemissä ja kahdeksalla muulla paikkakunnalla, jokainen omalla sivullaan. Arviot ja ruokalistalinkit.",
+    "description": "Ravintolat Rovaniemellä, Levillä, Ylläksellä, Saariselällä, Inarissa, Kemissä ja seitsemällä muulla paikkakunnalla, arvioineen ja ruokalistalinkkeineen.",
     "h1": "Lappi paikkakunnittain",
     "lead": "76 ravintolaa 13 kohteessa, jokainen paikkakunta omalla sivullaan.",
     "moreLead": "Muoniossa, Hetassa, Sallassa ja Posiolla on liian vähän pöytiä omaan sivuun. Ne löytyvät silti koko listalta.",
@@ -188,7 +188,7 @@
     "yllas": {
       "name": "Ylläs",
       "title": "Ravintolat Ylläksellä: missä syödä",
-      "description": "Seitsemän ravintolaa Ylläksellä, jaettuna Äkäslompolon ja Ylläsjärven kesken tunturin eri puolille — ja yksi huipulla. Arviot ja ruokalistalinkit.",
+      "description": "Seitsemän ravintolaa Ylläksellä: Äkäslompolossa ja Ylläsjärvellä tunturin eri puolilla sekä yksi huipulla. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Ylläksellä",
       "tagline": "Kaksi kylää, yksi tunturi ja noin 11 kilometriä pöytäsi ja sen toisen välillä.",
       "intro": "Ylläs ei ole yksi kylä vaan kaksi, tunturin vastakkaisilla puolilla. Pohjoisessa Äkäslompolossa ovat Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub ja Los Lompolo's; etelässä Ylläsjärvellä Ravintola Otso ja Restaurant Ylläskota. Niiden välissä Ylläskammin osoite on itse tunturin huippu. Rouhe kerää selvästi eniten arvioita; Los Lompolo'silla on korkein arvio, 4,7, huomattavasti pienemmällä määrällä.",
@@ -216,7 +216,7 @@
     "inari": {
       "name": "Inari",
       "title": "Ravintolat Inarissa: missä syödä",
-      "description": "Neljä ravintolaa Inarin kunnassa, mukaan lukien 4,8:n fine dining -sali veden äärellä — ja kolme pitkän ajomatkan päässä toisistaan. Arviot ja ruokalistalinkit.",
+      "description": "Neljä ravintolaa Inarin kunnassa: arvion 4,8 saanut fine dining -sali rannalla ja kolme muuta pitkän ajomatkan päässä toisistaan. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Inarissa",
       "tagline": "Suomen suurin kunta. Neljä keittiötä, ja paljon tietä niiden välissä.",
       "intro": "Inari on suurempi kuin moni Euroopan valtio, ja tämä sivu näyttää sen: ravintolat ovat hajallaan kymmenien kilometrien päässä toisistaan, eivät kylän keskustassa. Restaurant Aanaar veden äärellä Saarikoskentiellä on fine dining -sali ja parhaiten arvioitu, 4,8. Kultahippu on 35 km etelässä Ivalossa, Muotkan Ruoktu 39 km Karigasniementietä, ja Arctic River Resort niiden välissä. Yksikään ei ole kävelymatkan päässä toisesta.",
@@ -244,7 +244,7 @@
     "tornio": {
       "name": "Tornio",
       "title": "Ravintolat Torniossa: missä syödä",
-      "description": "Viisi ravintolaa Torniossa Ruotsin rajalla — kolme niistä samalla kadulla. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
+      "description": "Viisi ravintolaa Torniossa Ruotsin rajalla, niistä kolme samalla kadulla. Arviot, arvositaatit ja linkit ravintoloiden omiin ruokalistoihin.",
       "h1": "Ravintolat Torniossa",
       "tagline": "Rajakaupunki, jossa kolme viidestä jakaa yhden kadun.",
       "intro": "Tornion valikoima on poikkeuksellisen tiivis: Ravintola Umpitunneli, Mustaparran Päämaja ja Tmi Hevi Pizza ovat kaikki Hallituskadulla, parin minuutin päässä toisistaan. Ravintola Golden Flower Eliaksenkadulla kerää eniten arvioita, ja Amico täydentää listan Torikadulla. Korkein arvio on Hevi Pizzalla, 4,7. Joen toisella puolella on Haparanda, joka on Ruotsia ja jolla on oma sivunsa.",

@@ -216,7 +216,7 @@
     "inari": {
       "name": "이나리",
       "title": "이나리 레스토랑: 어디서 먹을까",
-      "description": "4곳의 이나리 지자체 레스토랑. 물가에 자리한 평점 4.8의 파인다이닝과, 서로 멀리 떨어진 세 곳.",
+      "description": "4곳의 이나리 지자체 레스토랑. 물가에 자리한 평점 4.8의 파인다이닝과, 서로 멀리 떨어진 세 곳. 평점과 메뉴 링크.",
       "h1": "이나리 레스토랑",
       "tagline": "핀란드에서 가장 큰 지자체. 네 개의 주방과 그 사이의 긴 도로.",
       "intro": "이나리는 유럽의 몇몇 나라보다 넓고, 이 페이지가 그 사실을 그대로 보여 줍니다. 식당들은 마을 중심이 아니라 수십 킬로미터에 걸쳐 흩어져 있습니다. 사리코스켄티에의 물가에 있는 Restaurant Aanaar가 파인다이닝이자 평점 4.8로 가장 높습니다. Kultahippu는 남쪽으로 35km 떨어진 이발로에, Muotkan Ruoktu는 카리가스니에미 방면 도로로 39km 지점에, Arctic River Resort는 그 사이에 있습니다. 어느 곳도 다른 곳에서 걸어갈 거리가 아닙니다.",
@@ -286,7 +286,7 @@
     "pyhatunturi": {
       "name": "퓌해툰투리",
       "title": "퓌해툰투리 레스토랑",
-      "description": "6곳의 퓌해툰투리와 펠코센니에미 일대 식당. 국립공원 입구의 카페, 호텔 주방, 평점 5.0의 비스트로.",
+      "description": "6곳의 퓌해툰투리와 펠코센니에미 일대 식당. 국립공원 입구의 카페, 호텔 주방, 평점 5.0의 비스트로. 평점과 메뉴 링크.",
       "h1": "퓌해툰투리 레스토랑",
       "tagline": "국립공원 마을. 평점이 가장 높은 식탁은 옛 목사관에 있습니다.",
       "intro": "퓌해는 퓌해-루오스토 국립공원 가장자리의 작은 리조트로, 펠코센니에미 지자체에 속합니다. Café Loimu는 공원 입구의 루온토티에에 있고, Ravintola Popolo와 Restaurant CAMP Kitchen & Bar는 리조트 중심 쿨타케론카투의 호텔 주소를 함께 씁니다. 평점 상위 두 곳은 리조트 바깥에 있습니다. 키르코티에의 Bistro Vanha Pappila가 깔끔한 5.0, Sunday Morning Resort가 4.8이며 둘 다 리뷰 건수는 많지 않습니다.",
@@ -603,7 +603,7 @@
   },
   "about": {
     "title": "LaplandDining 소개",
-    "description": "LaplandDining 소개: 핀란드 라플란드의 독립 편집 레스토랑 가이드. LaplandVibes 네트워크의 일원.",
+    "description": "LaplandDining 소개: LaplandVibes 네트워크에 속한 핀란드 라플란드의 독립 편집 레스토랑 가이드입니다. 라플란드 전역의 실제 레스토랑을 엄선해 안내합니다.",
     "heroH1": "LaplandDining 소개",
     "heroLead": "라플란드 전역의 실제 레스토랑을 엄선해 안내합니다.",
     "networkTitle": "LaplandVibes 네트워크",
@@ -619,15 +619,15 @@
   },
   "privacy": {
     "title": "개인정보처리방침",
-    "description": "LaplandDining이 귀하의 데이터를 어떻게 다루는지."
+    "description": "LaplandDining이 귀하의 데이터를 다루는 방식. 당사는 Google Analytics 4를 통해 가명 처리된 분석 데이터를 수집합니다."
   },
   "terms": {
     "title": "이용 약관",
-    "description": "LaplandDining 이용 약관."
+    "description": "LaplandDining 이용 약관. 본 웹사이트에 접속하거나 이용하시는 것은 본 약관에 동의하시는 것입니다. 동의하지 않으시면 사이트 이용을 중단해 주십시오."
   },
   "cookie": {
     "title": "쿠키 정책",
-    "description": "LaplandDining의 쿠키 사용 방침."
+    "description": "LaplandDining의 쿠키 사용 방침. 쿠키는 귀하가 웹사이트를 방문할 때 기기에 저장되는 작은 텍스트 파일입니다."
   },
   "common": {
     "cityTopPicksKicker": "도시별 한 곳 · {{count}}개 도시",

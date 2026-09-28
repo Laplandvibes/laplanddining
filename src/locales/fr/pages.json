@@ -140,7 +140,7 @@
   },
   "cities": {
     "title": "Où manger en Laponie, ville par ville",
-    "description": "Restaurants à Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi et huit autres localités de Laponie finlandaise, chacune sur sa propre page. Notes et cartes.",
+    "description": "Restaurants à Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi et sept autres localités de Laponie finlandaise, chacune sur sa propre page. Notes et cartes.",
     "h1": "La Laponie, ville par ville",
     "lead": "76 restaurants dans 13 destinations, chaque localité sur sa propre page.",
     "moreLead": "Muonio, Hetta, Salla et Posio comptent trop peu de tables pour une page dédiée. Elles figurent tout de même sur la liste complète.",
@@ -188,7 +188,7 @@
     "yllas": {
       "name": "Ylläs",
       "title": "Restaurants à Ylläs : où manger",
-      "description": "Sept restaurants à Ylläs, répartis entre Äkäslompolo et Ylläsjärvi de part et d'autre de la fjeld — plus un au sommet. Notes et liens vers les cartes.",
+      "description": "Sept restaurants à Ylläs, répartis entre Äkäslompolo et Ylläsjärvi de part et d'autre de la fjeld, et un au sommet. Notes et liens vers les cartes.",
       "h1": "Restaurants à Ylläs",
       "tagline": "Deux villages, une fjeld et environ 11 km entre votre table et l'autre.",
       "intro": "Ylläs n'est pas un village mais deux, de part et d'autre de la fjeld. Au nord, Äkäslompolo abrite Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub et Los Lompolo's ; au sud, Ylläsjärvi a Ravintola Otso et Restaurant Ylläskota. Entre les deux, l'adresse de Ylläskammi est le sommet lui-même. Rouhe rassemble ici nettement le plus d'avis ; la meilleure note revient à Los Lompolo's, 4,7, sur un volume bien moindre.",
@@ -216,7 +216,7 @@
     "inari": {
       "name": "Inari",
       "title": "Restaurants à Inari : où manger",
-      "description": "Quatre restaurants dans la commune d'Inari, dont une salle gastronomique au bord de l'eau notée 4,8 — et trois séparés par de longues distances.",
+      "description": "Quatre restaurants dans la commune d'Inari : une salle gastronomique au bord de l'eau, notée 4,8, et trois autres séparés par de longues distances.",
       "h1": "Restaurants à Inari",
       "tagline": "La plus grande commune de Finlande. Quatre cuisines, et beaucoup de route entre elles.",
       "intro": "Inari est plus vaste que plusieurs pays européens, et cette page le montre : les restaurants sont dispersés sur des dizaines de kilomètres plutôt que dans un centre-village. Restaurant Aanaar, au bord de l'eau sur Saarikoskentie, est la salle gastronomique et la mieux notée avec 4,8. Kultahippu est à 35 km au sud, à Ivalo, Muotkan Ruoktu à 39 km sur la route de Karigasniemi, et Arctic River Resort entre les deux. Aucun n'est à distance de marche d'un autre.",
@@ -244,7 +244,7 @@
     "tornio": {
       "name": "Tornio",
       "title": "Restaurants à Tornio : où manger",
-      "description": "Cinq restaurants à Tornio, à la frontière suédoise — trois d'entre eux dans la même rue. Notes, citations et liens vers leurs propres cartes.",
+      "description": "Cinq restaurants à Tornio, à la frontière suédoise, dont trois dans la même rue. Notes, citations et liens vers leurs propres cartes.",
       "h1": "Restaurants à Tornio",
       "tagline": "Une ville frontière où trois sur cinq partagent une rue.",
       "intro": "L'offre de Tornio est exceptionnellement resserrée : Ravintola Umpitunneli, Mustaparran Päämaja et Tmi Hevi Pizza sont tous sur Hallituskatu, à quelques minutes les uns des autres. Ravintola Golden Flower, sur Eliaksenkatu, compte ici le plus d'avis, et Amico complète la liste sur Torikatu. La meilleure note revient à Hevi Pizza, 4,7. De l'autre côté du fleuve se trouve Haparanda, qui est la Suède et possède sa propre page.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restaurants à Kuusamo et Ruka",
-      "description": "Six restaurants répartis entre la station de Ruka et la ville de Kuusamo, à 22 km : la pizzeria la plus fréquentée du site, un gastropub et un café de randonnée.",
+      "description": "Six restaurants à la station de Ruka et dans la ville de Kuusamo, à 22 km : la pizzeria la plus fréquentée du site, un gastropub et un café de randonnée.",
       "h1": "Restaurants à Kuusamo et Ruka",
       "tagline": "Deux centres, 22 km d'écart — vérifiez dans lequel se trouve votre table.",
       "intro": "Kuusamo se divise nettement en deux. En haut, à la station, Pizzeria Ruka compte plus d'avis que tout autre restaurant du site hors de Rovaniemi, avec Restaurant Burger Cafe & Bar Ruka sur la même route et, un peu à l'écart, le Gasthaus & Hard Trek Café de Ruka Trek, noté 4,8. En bas, en ville, 22 km au sud, Ravintola Talonpöytä et Restaurant Wanha Mestari servent un tout autre public.",
