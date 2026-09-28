@@ -68,6 +68,9 @@ export interface NewsSource {
   publisher: string;
   /** Lähteen oma otsikko alkuperäiskielellä. */
   title: string;
+  /** Otsikon kieli (BCP 47, esim. "fi", "en"), luettuna lähdesivun omasta <html lang> -merkinnästä.
+   *  Sivu merkitsee otsikon <cite lang>:lla, koska otsikkoa ei käännetä lukijan kielelle. */
+  lang: string;
   url: string;
   /** Julkaisupäivä ISO. */
   date?: string;

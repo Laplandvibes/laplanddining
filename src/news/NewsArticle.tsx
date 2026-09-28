@@ -125,7 +125,9 @@ function ArticleView({ meta }: { meta: NewsMeta }) {
                   <span className="nw-src-pub">{s.publisher}</span>
                   {when && <span className="nw-src-date"> · {when}</span>}
                   <br />
-                  <a href={loc?.url ?? s.url} target="_blank" rel="noopener">{loc?.title ?? s.title}</a>
+                  {/* Lähteen oma otsikko jää alkuperäiskieleensä: <cite lang> kertoo kielen ruudunlukijalle ja
+                      kielipuhtausportille. Lukijan kielinen versio (loc) on sivun kieltä, sille ei merkintää. */}
+                  <a href={loc?.url ?? s.url} target="_blank" rel="noopener"><cite lang={loc ? undefined : s.lang}>{loc?.title ?? s.title}</cite></a>
                 </li>
               );
             })}

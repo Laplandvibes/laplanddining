@@ -288,6 +288,7 @@ for (const slug of existsSync(ART_DIR) ? readdirSync(ART_DIR).sort() : []) {
   if (meta.ogCard && (!meta.ogCard.line || len(meta.ogCard.line) > 40)) err(where, `ogCard.line puuttuu tai yli 40 merkkiä (${len(meta.ogCard?.line ?? '')})`);
   if (!Array.isArray(meta.sources) || !meta.sources.length) err(where, 'lähteet puuttuvat');
   for (const s of meta.sources || []) if (!s.url || !s.publisher || !s.title || !(s.date || s.read)) err(where, `lähteestä puuttuu url/publisher/title/date|read: ${s.url}`);
+  for (const s of meta.sources || []) if (!/^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(s.lang || '')) err(where, `lähteen otsikon kieli puuttuu (lang = lähdesivun <html lang>, esim. "fi"): ${s.url}`);
 
   const texts = {};
   for (const lang of LANGS) {
