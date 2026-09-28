@@ -21,8 +21,8 @@
    Otsikot Bebas Neue (.serif) ≥ 26 px, alle ~18 px otsikot DM Sans 700 (CLAUDE.md).
    🔴 Kontrastit mitattu ennen kirjoittamista, ei silmällä: keltainen #F59E0B jää
    kermalla 2,15:1:een ⇒ kermalla käytetään sivuston omaa #B45309 (4,71:1) ja
-   tummalla #FCD34D (13,3:1). Vaalea muste kermalla #6F5A49 (6,09:1); sivuston
-   `--color-warm-muted` #87705C olisi 4,37:1 eli alle AA:n leipätekstissä.
+   tummalla #FCD34D (13,3:1). Vaalea muste kermalla #6F5A49 (6,09:1), sama arvo
+   kuin sivuston `--color-warm-muted` (index.css).
    ───────────────────────────────────────────────────────────────────────────── */
 
 .nw{

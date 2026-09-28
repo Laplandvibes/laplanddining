@@ -17,8 +17,8 @@ import { illustrationNote, type Restaurant, type Locale } from '../data/restaura
  * mitattu 28.9.), eikä `box-content` toimi, koska sivuston kerrostamaton
  * `* { box-sizing: border-box }` voittaa Tailwindin utilities-kerroksen.
  *
- * Kontrasti: warm-text/80 kermalla #FAF7F2 on 6,0:1 (10 px:n tekstin raja 4,5:1).
- * Sivuston warm-muted olisi samassa paikassa 4,36:1.
+ * Kontrasti: warm-text/80 kermalla #FAF7F2 on 6,0:1 (10 px:n tekstin raja 4,5:1),
+ * sama taso kuin sivuston warm-muted (#6F5A49, 6,08:1).
  */
 export default function IllustrationNote({ r, locale, className = '' }: { r: Restaurant; locale: Locale; className?: string }) {
   const note = illustrationNote(r, locale);

@@ -25,7 +25,10 @@
   --color-cream-warm: #F5EFE6;
   --color-warm-ink: #1C1410;       /* dark text on cream — crisp, food-mag */
   --color-warm-text: #44362A;      /* body text on cream */
-  --color-warm-muted: #87705C;     /* meta text on cream */
+  /* Meta text on cream (card links, review counts, 10–12 px): 6.08:1 on cream,
+     5.68:1 on cream-warm, i.e. above WCAG AA 4.5:1 for small text and still
+     well below warm-text (10.88:1). Same value as --muted in news/news.css. */
+  --color-warm-muted: #6F5A49;
   --color-spice: #C2410C;          /* warm red accent (paprika, autumn berry) */
   --color-leaf: #4D7C0F;           /* fresh green accent (forest herb) */
 

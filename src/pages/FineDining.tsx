@@ -183,8 +183,9 @@ export default function FineDining() {
                         <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber">
                           <Star size={11} className="text-amber fill-amber" />
                           <span>{r.rating.toFixed(1)}</span>
+                          {/* Hoverissa arviomäärä warm-inkillä, ks. RestaurantCard.tsx. */}
                           {r.reviewCount && (
-                            <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
+                            <span className="text-warm-muted font-semibold ml-0.5 transition-colors group-hover/rating:text-warm-ink">· {r.reviewCount.toLocaleString('en')}</span>
                           )}
                         </span>
                       </a>

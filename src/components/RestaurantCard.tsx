@@ -79,8 +79,10 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber">
               <Star size={10} className="text-amber fill-amber" />
               <span>{r.rating.toFixed(1)}</span>
+              {/* Hoverissa pilleri on amber: arviomäärä warm-inkillä (8,45:1),
+                  warm-muted jäisi amberilla 3,02:1:een. */}
               {r.reviewCount && (
-                <span className="text-warm-muted font-semibold ml-0.5">· {r.reviewCount.toLocaleString('en')}</span>
+                <span className="text-warm-muted font-semibold ml-0.5 transition-colors group-hover/rating:text-warm-ink">· {r.reviewCount.toLocaleString('en')}</span>
               )}
             </span>
           </a>
