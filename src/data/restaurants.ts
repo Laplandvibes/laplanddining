@@ -67,21 +67,19 @@ export type PartnershipTier = 'editorial' | 'verified' | 'premium' | 'gold';
 export type Locale = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl' | 'sv';
 
 /**
- * Localized string — either a single string (legacy = English only)
- * or an object with translations for each supported locale.
+ * Localized string with every supported locale. A missing language fails the
+ * type check instead of rendering English on that language's page (the Swedish
+ * cards showed English descriptions until 28.9.2026, because `sv` was optional
+ * here and the lookup fell back to `en`).
  */
-export type LocalizedStr =
-  | string
-  | { en: string; fi: string; de: string; ja?: string; es?: string; 'pt-BR'?: string; 'zh-CN'?: string; ko?: string; fr?: string; it?: string; nl?: string; sv?: string };
+export type LocalizedStr = Record<Locale, string>;
 
-/** Pick the right variant out of a LocalizedStr for the given locale. */
+/** Pick the right variant out of a LocalizedStr for the given locale. No English fallback. */
 export function localizedStr(
   value: LocalizedStr | undefined,
   locale: Locale,
 ): string | undefined {
-  if (value == null) return undefined;
-  if (typeof value === 'string') return value;
-  return value[locale] ?? value.en;
+  return value?.[locale];
 }
 
 export interface Restaurant {
@@ -140,7 +138,7 @@ export interface Restaurant {
   topPick: boolean;                 // shown in CityTopPicks home grid
   partnership: PartnershipTier;     // future B2B billing tier
   curatedDescription?: LocalizedStr; // overrides editorialSummary
-  highlights?: LocalizedStr[];      // hand-picked signature items (localized; legacy string = EN-only)
+  highlights?: LocalizedStr[];      // hand-picked signature items (every locale)
   cuisine?: LocalizedStr;           // human-readable cuisine label
   type?: LocalizedStr;              // human-readable category
   menuHighlights?: { dish: string; price: string; note?: string }[];
@@ -296,31 +294,33 @@ export function partnershipBadge(tier: PartnershipTier): string | null {
 /**
  * Human-friendly cuisine / category label, derived from Maps `types[]` when
  * the editorial layer hasn't supplied one. Filters out generic types like
- * `restaurant`, `food`, `point_of_interest`.
+ * `restaurant`, `food`, `point_of_interest`. Every locale is required, like
+ * LocalizedStr: es, pt-BR, zh-CN, ko, fr, it and sv showed English labels here
+ * until 28.9.2026.
  */
-const TYPE_LABELS: Record<string, { en: string; fi: string; de: string; ja: string; nl: string }> = {
-  pizza_restaurant: { en: 'Pizza', fi: 'Pizza', de: 'Pizza', ja: 'ピザ', nl: 'Pizza' },
-  italian_restaurant: { en: 'Italian', fi: 'Italialainen', de: 'Italienisch', ja: 'イタリアン', nl: 'Italiaans' },
-  finnish_restaurant: { en: 'Finnish', fi: 'Suomalainen', de: 'Finnisch', ja: 'フィンランド料理', nl: 'Fins' },
-  scandinavian_restaurant: { en: 'Scandinavian', fi: 'Skandinaavinen', de: 'Skandinavisch', ja: '北欧料理', nl: 'Scandinavisch' },
-  fine_dining_restaurant: { en: 'Fine dining', fi: 'Fine dining', de: 'Fine Dining', ja: 'ファインダイニング', nl: 'Fine dining' },
-  steak_house: { en: 'Steakhouse', fi: 'Pihviravintola', de: 'Steakhouse', ja: 'ステーキハウス', nl: 'Steakhouse' },
-  seafood_restaurant: { en: 'Seafood', fi: 'Merenherkut', de: 'Meeresfrüchte', ja: 'シーフード', nl: 'Vis en zeevruchten' },
-  asian_restaurant: { en: 'Asian', fi: 'Aasialainen', de: 'Asiatisch', ja: 'アジア料理', nl: 'Aziatisch' },
-  chinese_restaurant: { en: 'Chinese', fi: 'Kiinalainen', de: 'Chinesisch', ja: '中華料理', nl: 'Chinees' },
-  japanese_restaurant: { en: 'Japanese', fi: 'Japanilainen', de: 'Japanisch', ja: '日本料理', nl: 'Japans' },
-  thai_restaurant: { en: 'Thai', fi: 'Thai', de: 'Thai', ja: 'タイ料理', nl: 'Thais' },
-  vegetarian_restaurant: { en: 'Vegetarian', fi: 'Kasvisravintola', de: 'Vegetarisch', ja: 'ベジタリアン', nl: 'Vegetarisch' },
-  vegan_restaurant: { en: 'Vegan', fi: 'Vegaani', de: 'Vegan', ja: 'ヴィーガン', nl: 'Veganistisch' },
-  hamburger_restaurant: { en: 'Burger', fi: 'Burger', de: 'Burger', ja: 'バーガー', nl: 'Burgers' },
-  cafe: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ', nl: 'Café' },
-  coffee_shop: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ', nl: 'Café' },
-  bar: { en: 'Bar & restaurant', fi: 'Baari & ravintola', de: 'Bar & Restaurant', ja: 'バー & レストラン', nl: 'Bar & restaurant' },
-  pub: { en: 'Pub & restaurant', fi: 'Pubi & ravintola', de: 'Pub & Restaurant', ja: 'パブ & レストラン', nl: 'Pub & restaurant' },
-  fast_food_restaurant: { en: 'Casual', fi: 'Casual', de: 'Casual', ja: 'カジュアル', nl: 'Casual' },
-  meal_takeaway: { en: 'Takeaway', fi: 'Take away', de: 'Zum Mitnehmen', ja: 'テイクアウト', nl: 'Afhaal' },
-  meal_delivery: { en: 'Delivery', fi: 'Kotiinkuljetus', de: 'Lieferung', ja: 'デリバリー', nl: 'Bezorging' },
-  bakery: { en: 'Bakery', fi: 'Leipomo', de: 'Bäckerei', ja: 'ベーカリー', nl: 'Bakkerij' },
+const TYPE_LABELS: Record<string, Record<Locale, string>> = {
+  pizza_restaurant: { en: 'Pizza', fi: 'Pizza', de: 'Pizza', ja: 'ピザ', nl: 'Pizza', es: 'Pizza', 'pt-BR': 'Pizza', 'zh-CN': '披萨', ko: '피자', fr: 'Pizza', it: 'Pizza', sv: 'Pizza' },
+  italian_restaurant: { en: 'Italian', fi: 'Italialainen', de: 'Italienisch', ja: 'イタリアン', nl: 'Italiaans', es: 'Italiana', 'pt-BR': 'Italiana', 'zh-CN': '意大利菜', ko: '이탈리아 요리', fr: 'Italienne', it: 'Italiana', sv: 'Italienskt' },
+  finnish_restaurant: { en: 'Finnish', fi: 'Suomalainen', de: 'Finnisch', ja: 'フィンランド料理', nl: 'Fins', es: 'Finlandesa', 'pt-BR': 'Finlandesa', 'zh-CN': '芬兰菜', ko: '핀란드 요리', fr: 'Finlandaise', it: 'Finlandese', sv: 'Finskt' },
+  scandinavian_restaurant: { en: 'Scandinavian', fi: 'Skandinaavinen', de: 'Skandinavisch', ja: '北欧料理', nl: 'Scandinavisch', es: 'Escandinava', 'pt-BR': 'Escandinava', 'zh-CN': '北欧菜', ko: '북유럽 요리', fr: 'Scandinave', it: 'Scandinava', sv: 'Skandinaviskt' },
+  fine_dining_restaurant: { en: 'Fine dining', fi: 'Fine dining', de: 'Fine Dining', ja: 'ファインダイニング', nl: 'Fine dining', es: 'Alta cocina', 'pt-BR': 'Alta gastronomia', 'zh-CN': '高级餐厅', ko: '파인 다이닝', fr: 'Haute gastronomie', it: 'Alta cucina', sv: 'Fine dining' },
+  steak_house: { en: 'Steakhouse', fi: 'Pihviravintola', de: 'Steakhouse', ja: 'ステーキハウス', nl: 'Steakhouse', es: 'Asador', 'pt-BR': 'Carnes grelhadas', 'zh-CN': '牛排馆', ko: '스테이크하우스', fr: 'Grill', it: 'Bisteccheria', sv: 'Stekhus' },
+  seafood_restaurant: { en: 'Seafood', fi: 'Merenherkut', de: 'Meeresfrüchte', ja: 'シーフード', nl: 'Vis en zeevruchten', es: 'Pescados y mariscos', 'pt-BR': 'Frutos do mar', 'zh-CN': '海鲜', ko: '해산물', fr: 'Poissons et fruits de mer', it: 'Pesce', sv: 'Fisk och skaldjur' },
+  asian_restaurant: { en: 'Asian', fi: 'Aasialainen', de: 'Asiatisch', ja: 'アジア料理', nl: 'Aziatisch', es: 'Asiática', 'pt-BR': 'Asiática', 'zh-CN': '亚洲菜', ko: '아시아 요리', fr: 'Asiatique', it: 'Asiatica', sv: 'Asiatiskt' },
+  chinese_restaurant: { en: 'Chinese', fi: 'Kiinalainen', de: 'Chinesisch', ja: '中華料理', nl: 'Chinees', es: 'China', 'pt-BR': 'Chinesa', 'zh-CN': '中餐', ko: '중국 요리', fr: 'Chinoise', it: 'Cinese', sv: 'Kinesiskt' },
+  japanese_restaurant: { en: 'Japanese', fi: 'Japanilainen', de: 'Japanisch', ja: '日本料理', nl: 'Japans', es: 'Japonesa', 'pt-BR': 'Japonesa', 'zh-CN': '日本料理', ko: '일본 요리', fr: 'Japonaise', it: 'Giapponese', sv: 'Japanskt' },
+  thai_restaurant: { en: 'Thai', fi: 'Thai', de: 'Thai', ja: 'タイ料理', nl: 'Thais', es: 'Tailandesa', 'pt-BR': 'Tailandesa', 'zh-CN': '泰国菜', ko: '태국 요리', fr: 'Thaïlandaise', it: 'Thailandese', sv: 'Thailändskt' },
+  vegetarian_restaurant: { en: 'Vegetarian', fi: 'Kasvisravintola', de: 'Vegetarisch', ja: 'ベジタリアン', nl: 'Vegetarisch', es: 'Vegetariana', 'pt-BR': 'Vegetariana', 'zh-CN': '素食', ko: '채식', fr: 'Végétarienne', it: 'Vegetariana', sv: 'Vegetariskt' },
+  vegan_restaurant: { en: 'Vegan', fi: 'Vegaani', de: 'Vegan', ja: 'ヴィーガン', nl: 'Veganistisch', es: 'Vegana', 'pt-BR': 'Vegana', 'zh-CN': '纯素', ko: '비건', fr: 'Végane', it: 'Vegana', sv: 'Veganskt' },
+  hamburger_restaurant: { en: 'Burger', fi: 'Burger', de: 'Burger', ja: 'バーガー', nl: 'Burgers', es: 'Hamburguesas', 'pt-BR': 'Hambúrgueres', 'zh-CN': '汉堡', ko: '버거', fr: 'Burgers', it: 'Hamburger', sv: 'Hamburgare' },
+  cafe: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ', nl: 'Café', es: 'Café', 'pt-BR': 'Café', 'zh-CN': '咖啡馆', ko: '카페', fr: 'Café', it: 'Caffè', sv: 'Kafé' },
+  coffee_shop: { en: 'Café', fi: 'Kahvila', de: 'Café', ja: 'カフェ', nl: 'Café', es: 'Café', 'pt-BR': 'Café', 'zh-CN': '咖啡馆', ko: '카페', fr: 'Café', it: 'Caffè', sv: 'Kafé' },
+  bar: { en: 'Bar & restaurant', fi: 'Baari & ravintola', de: 'Bar & Restaurant', ja: 'バー & レストラン', nl: 'Bar & restaurant', es: 'Bar y restaurante', 'pt-BR': 'Bar e restaurante', 'zh-CN': '酒吧餐厅', ko: '바 & 레스토랑', fr: 'Bar-restaurant', it: 'Bar e ristorante', sv: 'Bar och restaurang' },
+  pub: { en: 'Pub & restaurant', fi: 'Pubi & ravintola', de: 'Pub & Restaurant', ja: 'パブ & レストラン', nl: 'Pub & restaurant', es: 'Pub y restaurante', 'pt-BR': 'Pub e restaurante', 'zh-CN': '酒馆餐厅', ko: '펍 & 레스토랑', fr: 'Pub-restaurant', it: 'Pub e ristorante', sv: 'Pub och restaurang' },
+  fast_food_restaurant: { en: 'Casual', fi: 'Casual', de: 'Casual', ja: 'カジュアル', nl: 'Casual', es: 'Informal', 'pt-BR': 'Casual', 'zh-CN': '休闲餐饮', ko: '캐주얼', fr: 'Décontracté', it: 'Informale', sv: 'Avslappnat' },
+  meal_takeaway: { en: 'Takeaway', fi: 'Take away', de: 'Zum Mitnehmen', ja: 'テイクアウト', nl: 'Afhaal', es: 'Para llevar', 'pt-BR': 'Para viagem', 'zh-CN': '外卖', ko: '테이크아웃', fr: 'À emporter', it: 'Da asporto', sv: 'Avhämtning' },
+  meal_delivery: { en: 'Delivery', fi: 'Kotiinkuljetus', de: 'Lieferung', ja: 'デリバリー', nl: 'Bezorging', es: 'A domicilio', 'pt-BR': 'Entrega', 'zh-CN': '外送', ko: '배달', fr: 'Livraison', it: 'Consegna a domicilio', sv: 'Hemleverans' },
+  bakery: { en: 'Bakery', fi: 'Leipomo', de: 'Bäckerei', ja: 'ベーカリー', nl: 'Bakkerij', es: 'Panadería', 'pt-BR': 'Padaria', 'zh-CN': '面包店', ko: '베이커리', fr: 'Boulangerie', it: 'Panetteria', sv: 'Bageri' },
 };
 
 export function cuisineLabel(r: Restaurant, locale: Locale = 'en'): string | null {
@@ -329,12 +329,8 @@ export function cuisineLabel(r: Restaurant, locale: Locale = 'en'): string | nul
   const type = localizedStr(r.type, locale);
   if (type) return type;
   if (!r.types) return null;
-  // Fallback to EN for locales not yet present in TYPE_LABELS (es, pt-BR, zh-CN, ko, fr, it, sv).
-  const labelLocale = (['en', 'fi', 'de', 'ja', 'nl'] as const).includes(locale as 'en' | 'fi' | 'de' | 'ja' | 'nl')
-    ? (locale as 'en' | 'fi' | 'de' | 'ja' | 'nl')
-    : 'en';
   for (const t of r.types) {
-    if (TYPE_LABELS[t]) return TYPE_LABELS[t][labelLocale];
+    if (TYPE_LABELS[t]) return TYPE_LABELS[t][locale];
   }
   return null;
 }

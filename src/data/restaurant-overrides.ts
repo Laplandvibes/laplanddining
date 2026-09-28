@@ -8,7 +8,7 @@ import type { Restaurant } from './restaurants';
  *   - Upgrade a restaurant's partnership tier (B2B billing flow)
  *   - Move a topPick to a different restaurant in the same city (editorial choice)
  *   - Add a curated `curatedDescription` written in our voice (vs Google's).
- *     Can be a plain string (English-only legacy) OR `{ en, fi, de }` for localized copy.
+ *     Every one of the 12 site languages is required (`LocalizedStr`).
  *   - Surface hand-picked `menuHighlights` (dish + price)
  *   - Tag dietary options + reservation policy
  *
@@ -109,12 +109,28 @@ export const restaurantOverrides: Record<string, Override> = {
       fi: 'Perinteinen lappilainen: poro, lohi, riista, lakka',
       de: 'Traditionell lappländisch: Rentier, Lachs, Wild, Moltebeere',
       nl: 'Traditioneel Laplands: rendier, zalm, wild, kruipbraam',
+      ja: '伝統的なラップランド料理：トナカイ、サーモン、ジビエ、クラウドベリー',
+      es: 'Tradicional de Laponia: reno, salmón, caza, mora ártica',
+      'pt-BR': 'Tradicional da Lapônia: rena, salmão, caça, amora-ártica',
+      'zh-CN': '传统拉普兰风味：驯鹿、三文鱼、野味、云莓',
+      ko: '전통 라플란드 요리: 순록, 연어, 야생고기, 클라우드베리',
+      fr: 'Cuisine traditionnelle de Laponie : renne, saumon, gibier, plaquebière',
+      it: 'Tradizionale della Lapponia: renna, salmone, selvaggina, mora artica',
+      sv: 'Traditionell lappländsk mat: ren, lax, vilt, hjortron',
     },
     type: {
       en: 'Fine Dining / Traditional Lappish',
       fi: 'Fine dining / perinteinen lappilainen',
       de: 'Fine Dining / traditionell lappländisch',
       nl: 'Fine dining / traditioneel Laplands',
+      ja: 'ファインダイニング／伝統的なラップランド料理',
+      es: 'Alta cocina / tradicional de Laponia',
+      'pt-BR': 'Alta gastronomia / tradicional da Lapônia',
+      'zh-CN': '高级餐厅／传统拉普兰风味',
+      ko: '파인 다이닝 / 전통 라플란드 요리',
+      fr: 'Haute gastronomie / cuisine traditionnelle de Laponie',
+      it: 'Alta cucina / tradizionale della Lapponia',
+      sv: 'Fine dining / traditionell lappländsk mat',
     },
     curatedDescription: {
       en: 'Step inside a wilderness cabin in the heart of Rovaniemi. Nili has served Lappish flavours for over two decades: sautéed reindeer, Arctic char, cloudberry desserts. The four-course surprise menu is the best way in.',
@@ -128,6 +144,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Une cabane au cœur de la nature, en plein Rovaniemi. Depuis plus de vingt ans, Nili sert les saveurs de Laponie: renne sauté, omble arctique, desserts à la mûre arctique. Le menu surprise en quatre services est la meilleure porte d\'entrée.',
       it: 'Una baita immersa nella natura, nel cuore di Rovaniemi. Da oltre vent\'anni Nili porta in tavola i sapori della Lapponia: renna saltata, salmerino artico, dolci al lampone artico. Il menù a sorpresa di quattro portate è il modo migliore per cominciare.',
       nl: 'Een wildernishut midden in Rovaniemi. Al meer dan twintig jaar serveert Nili Laplandse smaken: gebakken rendier, beekridder en desserts van kruipbraam. Het verrassingsmenu van vier gangen is de beste manier om kennis te maken.',
+      sv: 'Kliv in i en vildmarksstuga mitt i Rovaniemi. Nili har serverat lappländska smaker i över två decennier: renskav, röding och hjortrondesserter. Överraskningsmenyn i fyra rätter är den bästa vägen in.',
     },
     highlights: [
       {
@@ -142,6 +159,7 @@ export const restaurantOverrides: Record<string, Override> = {
         fr: 'Renne sauté',
         it: 'Renna saltata',
         nl: 'Gebakken rendier',
+        sv: 'Renskav',
       },
       {
         en: 'Surprise menu',
@@ -155,6 +173,7 @@ export const restaurantOverrides: Record<string, Override> = {
         fr: 'Menu surprise',
         it: 'Menù a sorpresa',
         nl: 'Verrassingsmenu',
+        sv: 'Överraskningsmeny',
       },
       {
         en: 'Wilderness cabin interior',
@@ -168,6 +187,7 @@ export const restaurantOverrides: Record<string, Override> = {
         fr: 'Décor de cabane sauvage',
         it: 'Interni da baita nella natura',
         nl: 'Interieur van een wildernishut',
+        sv: 'Vildmarksstugans stämning',
       },
     ],
   },
@@ -186,6 +206,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'L\'ambiance est chaleureuse, vivante et authentique, le genre d\'endroit où les inconnus se parlent au bout d\'une heure et où l\'hiver reste dehors.',
       it: 'L\'atmosfera è calda, vivace e autentica, uno di quei posti dove gli sconosciuti chiacchierano dopo un\'ora e l\'inverno resta fuori.',
       nl: 'De sfeer is warm, levendig en echt, zo\'n plek waar vreemden na een uur met elkaar praten en de winter buiten blijft.',
+      sv: 'Stämningen är glad, livlig och äkta: ett sådant ställe där främlingar blir ett enda glatt sällskap medan vintern stannar långt utanför.',
     },
   },
 
@@ -206,6 +227,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Le saumon fumé près du feu est le meilleur moment du repas, cuit au feu dans la kota, pas seulement servi en salle.',
       it: 'Il salmone affumicato accanto al fuoco è il momento più bello della cena, cotto sul fuoco dentro la kota, non solo servito in sala.',
       nl: 'De zalm, naast het vuur gerookt, is het mooiste moment van de avond, boven het vuur bereid in de kota, niet alleen in de zaal geserveerd.',
+      sv: 'Den rökta laxen, tillagad intill elden, var underbar.',
     },
   },
 
@@ -223,6 +245,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Randonnées, motoneiges et tradition samie: le saumon grillé au feu de bois, dont le goût vous accompagne toute la soirée.',
       it: 'Escursioni, motoslitte e tradizione sami: il salmone cotto sul fuoco vivo, e il sapore Le resta per tutta la sera.',
       nl: 'Wandelingen, sneeuwscooters en Samische traditie: de zalm boven open vuur bereid, de smaak blijft de hele avond hangen.',
+      sv: 'Naturvandringar och gott om aktiviteter, som snöskoter och den lokala samiska traditionen att tillaga lax över öppen eld. Utsökt.',
     },
   },
 
@@ -240,6 +263,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'À l\'intérieur, chaleureux et accueillant ; dehors, le paysage enneigé qui scintille: c\'est ce contraste qui fait la soirée.',
       it: 'Dentro, accogliente e caldo; fuori, il paesaggio innevato che luccica: è questo contrasto a fare la serata.',
       nl: 'Binnen warm en uitnodigend, buiten het glinsterende sneeuwlandschap: dat contrast maakt de avond.',
+      sv: 'Stämningen inne var så mysig och inbjudande, en perfekt kontrast till det glittrande snölandskapet utanför.',
     },
   },
 
@@ -257,6 +281,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Soupe de saumon et renne sauté: deux classiques de Laponie, préparés l\'un comme l\'autre avec soin.',
       it: 'Zuppa di salmone e renna saltata: due classici della Lapponia, preparati entrambi con cura.',
       nl: 'Zalmsoep en gebakken rendier: twee Laplandse klassiekers, beide met zorg bereid.',
+      sv: 'Laxsoppan och rengrytan var båda utsökta.',
     },
   },
 
@@ -274,6 +299,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Poissons du coin et spécialités de renne: les deux se recommandent sans hésiter.',
       it: 'Pesci del posto e specialità di renna: entrambi una raccomandazione senza riserve.',
       nl: 'Streekvis en rendierspecialiteiten: beide zonder twijfel een aanrader.',
+      sv: 'De lokala fiskrätterna och renspecialiteterna kan varmt rekommenderas.',
     },
   },
 
@@ -291,6 +317,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'La rivière Tornio coule juste à côté de votre table et, en repartant, on peut emporter du poisson fumé sur place, un détail qui rend la soirée unique.',
       it: 'Il fiume Tornio scorre proprio accanto al tavolo e, all\'uscita, si può portare via il pesce affumicato in casa, un dettaglio che rende la serata unica.',
       nl: 'De rivier de Tornio stroomt vlak langs uw tafel, en op weg naar buiten kunt u huisgerookte vis meenemen, een detail dat de avond bijzonder maakt.',
+      sv: 'Torne älv rinner förbi alldeles intill ditt bord, och på vägen ut kan du köpa med dig fisk som röks på stället, en detalj som gör kvällen till något eget.',
     },
   },
 
@@ -310,6 +337,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Une bonne cuisine et une ambiance simple et chaleureuse, portée par une équipe qui travaille manifestement dur. Une halte accueillante au pied du fjäll.',
       it: 'Buona cucina e un\'atmosfera semplice e cordiale, tenuta viva da un personale che si vede che lavora sodo. Una sosta calda ai piedi del fjäll.',
       nl: 'Lekker eten en een ongedwongen, vriendelijke sfeer, in stand gehouden door een personeel dat duidelijk hard werkt. Een warme stop aan de voet van de fjäll.',
+      sv: 'God mat och en lättsam, vänlig stämning som hålls uppe av personal som tydligt jobbar hårt. Ett varmt stopp vid fjällets fot.',
     },
   },
 
@@ -327,6 +355,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Une maison d\'hôtes chaleureuse et confortable, avec une salle à manger paisible, un bar et un sauna, et un personnel que les clients qualifient sans cesse d\'aimable et serviable.',
       it: 'Una locanda calda e accogliente, con una sala da pranzo tranquilla, un bar e una sauna, e un personale che gli ospiti continuano a definire gentile e disponibile.',
       nl: 'Een warm, gezellig gasthuis met een ontspannen eetzaal, een bar en een sauna, en personeel dat gasten keer op keer vriendelijk en behulpzaam noemen.',
+      sv: 'Ett varmt och mysigt gästhus med en avslappnad matsal, en bar och en bastu, och personal som gästerna gång på gång kallar vänlig och hjälpsam.',
     },
   },
 
@@ -346,6 +375,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Le genre de pizzeria où l\'on entre par hasard et d\'où l\'on ressort en disant waouh. Une valeur sûre et sans chichis au pied de Ruka.',
       it: 'Quel tipo di pizzeria in cui entri per caso e da cui esci dicendo wow. Un punto fermo semplice e affidabile ai piedi di Ruka.',
       nl: 'Zo\'n pizzeria waar u per toeval binnenloopt en met een wauw weer naar buiten komt. Een eenvoudige, betrouwbare favoriet aan de voet van Ruka.',
+      sv: 'En sådan pizzeria som du råkar gå in på och lämnar med ett wow. En enkel och pålitlig favorit vid foten av Ruka.',
     },
   },
 
@@ -363,6 +393,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Un domaine de chalets en pleine forêt, avec un restaurant décontracté et un pub, un endroit tout simple pour se réchauffer après une journée sur les sentiers.',
       it: 'Un villaggio di chalet immerso nel bosco, con un ristorante informale e un pub, un posto facile dove scaldarsi dopo una giornata sui sentieri.',
       nl: 'Een bosrijk huisjespark met een ongedwongen restaurant en pub, een fijne plek om op te warmen na een dag op de paden.',
+      sv: 'En stugby i skogen med en avslappnad restaurang och pub, ett enkelt ställe att värma sig på efter en dag ute på lederna.',
     },
   },
 
@@ -383,6 +414,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Une heureuse surprise pour qui le découvre: l\'ambiance, la carte et la soirée tout entière laissent souvent les clients sincèrement étonnés.',
       it: 'Una bella sorpresa per chi lo scopre: l\'atmosfera, il menù e l\'intera serata lasciano spesso gli ospiti davvero sorpresi.',
       nl: 'Een gelukkig toeval voor wie het vindt: de sfeer, de kaart en de hele avond laten mensen vaak oprecht verrast achter.',
+      sv: 'En lycklig slump för gästerna som hittar hit: stämningen, menyn och hela kvällen brukar lämna folk genuint överraskade.',
     },
   },
 
@@ -413,6 +445,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Une maison d\'hôtes du village de Ruka qui réunit cuisine et chambres sous le même toit: dîner et lit dans la même maison. Sa moyenne de 4,8 étoiles est la plus haute de notre catalogue de Kuusamo.',
       it: 'Una gasthaus nel villaggio di Ruka che unisce cucina e camere sotto lo stesso tetto: cena e letto nella stessa casa. La media di 4,8 stelle è la più alta del nostro catalogo di Kuusamo.',
       nl: 'Een gasthaus in het dorp Ruka met keuken en gastenkamers onder één dak: diner en bed in hetzelfde huis. Het gemiddelde van 4,8 sterren is het hoogste in onze Kuusamo-catalogus.',
+      sv: 'Ett gästhus i byn Ruka där köket hör ihop med gästrummen, så middag och säng kan finnas under samma tak. Snittbetyget 4,8 stjärnor är det högsta bland våra ställen i Kuusamo.',
     },
   },
 
@@ -432,6 +465,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'L\'ambiance est chaleureuse et accueillante, comme à la maison, et la gentillesse des propriétaires rend la soirée encore plus particulière. Un bistrot dans un ancien presbytère au pied du Pyhä.',
       it: 'L\'atmosfera è accogliente e calda, come a casa, e la gentilezza dei proprietari rende la serata ancora più speciale. Un bistrot in una vecchia canonica ai piedi del Pyhä.',
       nl: 'De sfeer is knus en gastvrij, alsof u thuis bent, en de vriendelijkheid van de eigenaren maakt de avond nog specialer. Een bistro in een oude pastorie aan de voet van Pyhä.',
+      sv: 'Stämningen är mysig och välkomnande, som att vara hemma, och ägarnas vänlighet gör kvällen ännu mer speciell. En bistro i en gammal prästgård vid foten av Pyhä.',
     },
   },
 
@@ -451,6 +485,7 @@ export const restaurantOverrides: Record<string, Override> = {
       fr: 'Une carte variée et de bonnes bières, comme le résume un avis. Un quartier général local et décontracté pour dîner à Tornio.',
       it: 'Un menù ricco di scelte e buone birre, come riassume una recensione. Un quartier generale locale e rilassato per la cena a Tornio.',
       nl: 'Een gevarieerde kaart en goede bieren, zoals een recensie het samenvat. Een ontspannen lokaal hoofdkwartier voor het diner in Tornio.',
+      sv: 'Gott om val på menyn och bra öl, som en recension uttrycker det. Ett avslappnat lokalt högkvarter för middag i Torneå.',
     },
   },
   // ── Kaupunkikorjaukset, mitattu koordinaateista 2026-09-07 ─────────────
