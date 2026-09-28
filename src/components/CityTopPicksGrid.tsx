@@ -60,7 +60,7 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
             <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2">
               <UtensilsCrossed className="w-10 h-10 text-amber/55" strokeWidth={1.5} />
               {cuisine && (
-                <span className="text-amber/60 text-[10px] font-bold uppercase tracking-[0.2em] px-5 text-center leading-snug">{cuisine}</span>
+                <span className="text-amber/80 text-[10px] font-bold uppercase tracking-[0.2em] px-5 text-center leading-snug">{cuisine}</span>
               )}
             </div>
           )}

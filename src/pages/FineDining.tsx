@@ -161,7 +161,7 @@ export default function FineDining() {
                       <div className="absolute inset-0 bg-gradient-to-br from-[#2a1c14] via-warm-ink to-[#3d2a1d] flex flex-col items-center justify-center gap-2.5">
                         <UtensilsCrossed className="w-10 h-10 text-amber/55" strokeWidth={1.5} />
                         {cuisine && (
-                          <span className="text-amber/60 text-[11px] font-bold uppercase tracking-[0.22em] px-6 text-center leading-snug">{cuisine}</span>
+                          <span className="text-amber/80 text-[11px] font-bold uppercase tracking-[0.22em] px-6 text-center leading-snug">{cuisine}</span>
                         )}
                       </div>
                     )}
@@ -236,7 +236,7 @@ export default function FineDining() {
                           return label ? (
                             <span
                               key={i}
-                              className="text-[11px] bg-cream-warm text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
+                              className="text-[11px] bg-cream text-amber-deep border border-amber/30 px-2.5 py-1 rounded-full font-semibold"
                             >
                               {label}
                             </span>
