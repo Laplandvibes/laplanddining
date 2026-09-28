@@ -183,6 +183,73 @@ if (!existsSync(ROUTES_FILE)) {
 // Stripping makes the script genuinely idempotent, as its docs claim.
 const SHELL = stripCrawlableBody(readFileSync(resolve(DIST, 'index.html'), 'utf-8'));
 
+// [LV-OG-KORTTI-ALT-KIELI 2026-09-28] Sivustokortin og:image:alt ja twitter:image:alt sivun kielellä.
+//
+// 🔴🔴 Miksi (mitattu livestä 28.9.2026): scripts/og/install.mjs kirjoittaa index.html-kuoreen sivustokortin
+// kuvauksen englanniksi (heron alt + sanamerkki, scripts/og/kortti_alt.mjs), ja tämä skripti kopioi kuoren
+// jokaiselle kielelle. 25 sivustoa 29:stä antoi englanninkielisen altin kaikilla 11 muulla kielellä jokaisella
+// sivulla, jolla ei ole omaa sivukorttia; laplanddining 21 reittiä × 11 kieltä = 231 sivua.
+//
+// Käännökset ovat sivuston omassa tiedostossa scripts/og-alt.json (--ogAlt=<polku> vaihtaa polun):
+//   { "<kuoren englanninkielinen og:image:alt>": { "fi": "…", "de": "…", "ja": "…", … } }
+// Avain on se englanninkielinen alt, josta käännös on tehty, merkki merkiltä sama kuin kuoressa. Kun kortti
+// vaihtuu, install.mjs kirjoittaa kuoreen uuden altin, vanha käännös ei enää osu avaimeen, ja sivu saa
+// englanninkielisen altin ja lokiin varoituksen. Vanhaa kuvaa kuvaava käännös ei siis voi päätyä uuden kortin
+// sivulle: väärän kuvan kuvaus on huonompi kuin englanninkielinen. Kesä- ja talvikortin altit voivat olla
+// tiedostossa rinnakkain, jolloin kausivaihdon install.mjs-ajo löytää omansa. Ilman tiedostoa ei muutu mitään.
+// Kielikoodit ovat tämän skriptin `lang`-arvot (fi, de, ja, es, pt-BR, zh-CN, ko, fr, it, nl, sv).
+// Testi: scripts/prerender_og_kortti_alt.test.mjs (--script=<polku> mittaa minkä tahansa vendoroidun kopion).
+const OG_ALT_TIEDOSTO = resolve(CWD, typeof args.ogAlt === 'string' ? args.ogAlt : 'scripts/og-alt.json');
+function puraEntiteetit(s) {
+  return String(s)
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&');
+}
+/** Kuoren metan content kommenttien ulkopuolelta, entiteetit purettuina; null jos tagia ei ole. */
+function kuorenMeta(attr, key) {
+  // Arvo luetaan lainausmerkkiparin mukaan: kaksoislainausmerkeissä oleva heittomerkki (Finland's) ei katkaise sitä.
+  for (const tagi of SHELL.replace(/<!--[\s\S]*?-->/g, '').match(/<meta\b[^>]*>/gi) || []) {
+    const k = tagi.match(new RegExp(`\\b${attr}\\s*=\\s*(["'])(.*?)\\1`, 'i'));
+    if (!k || k[2] !== key) continue;
+    const c = tagi.match(/\bcontent\s*=\s*(["'])(.*?)\1/i);
+    return c ? puraEntiteetit(c[2]) : null;
+  }
+  return null;
+}
+const KUOREN_KORTTI_ALT = kuorenMeta('property', 'og:image:alt');
+let KORTTI_ALT_KIELET = null;
+const korttiAltTila = { kielella: 0, englanniksi: 0, puuttuvat: new Set() };
+if (existsSync(OG_ALT_TIEDOSTO)) {
+  let kartta = null;
+  try {
+    kartta = JSON.parse(readFileSync(OG_ALT_TIEDOSTO, 'utf-8'));
+  } catch (e) {
+    console.warn(`[prerender] WARN: ${OG_ALT_TIEDOSTO}: ${e.message} — sivustokortin alt jää englanniksi`);
+  }
+  if (kartta && !KUOREN_KORTTI_ALT) {
+    console.warn('[prerender] WARN: og-alt: kuoressa ei ole og:image:alt-tagia — käännöksiä ei käytetä');
+  } else if (kartta) {
+    const osuma = Object.prototype.hasOwnProperty.call(kartta, KUOREN_KORTTI_ALT) ? kartta[KUOREN_KORTTI_ALT] : null;
+    if (osuma && typeof osuma === 'object') KORTTI_ALT_KIELET = osuma;
+    else console.warn(`[prerender] WARN: og-alt: ei käännöstä kuoren altille "${KUOREN_KORTTI_ALT}" (kortti vaihtunut?) — sivustokortin alt jää englanniksi kaikilla kielillä`);
+  }
+} else if (typeof args.ogAlt === 'string') {
+  console.warn(`[prerender] WARN: --ogAlt ${OG_ALT_TIEDOSTO} puuttuu — sivustokortin alt jää englanniksi`);
+}
+/** Sivustokortin alt kielellä lang; null = kuoren englanninkielinen alt jää. */
+function korttiAltKielella(lang) {
+  if (!KORTTI_ALT_KIELET || lang === 'en') return null;
+  const alt = KORTTI_ALT_KIELET[lang];
+  if (typeof alt === 'string' && alt.trim()) return alt.trim();
+  korttiAltTila.puuttuvat.add(lang);
+  return null;
+}
+
 // Extract the runtime LV-LOCALE-TITLE map (`var T = {…}`) baked into the shell by
 // scripts/inject_locale_titles.mjs — it holds the localized HOME/site title per
 // locale. Reused as a static per-locale <title>/og:title for the HOME route on
@@ -1320,7 +1387,11 @@ function replaceOutsideComments(html, pattern, replacement) {
     skipRanges.push([cm.index, cm.index + cm[0].length]);
   }
   // Find pattern matches not inside any comment.
-  const re = new RegExp(pattern.source, pattern.flags);
+  // [LV-KOMMENTTI-SILMUKKA 2026-09-28] Aina g-lipulla, jotta exec etenee kommentin sisäisen osuman ohi. Ilman sitä
+  // kuoren kommentoitu <meta property="og:image:alt"> ENNEN oikeaa tagia jumitti skriptin ikuiseen silmukkaan
+  // (exec palautti saman kommenttiosuman uudelleen); mitattu synteettisellä kuorella 28.9.2026. Ei-globaali kuvio
+  // korvaa yhä vain ensimmäisen kommentin ulkopuolisen osuman (break alla).
+  const re = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`);
   let result = '';
   let last = 0;
   let m;
@@ -1531,6 +1602,17 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
   // kirjoittaa molemmat kuoreen), ja 21.9. korjaus poisti vain og:image:alt:n — skiresortsin
   // sivukorttisivut kertoivat X:lle Ylläksen ankkurihissistä (mitattu dististä 26.9.2026).
   if (ogImage !== DEFAULT_OG) { poistaMeta('property', 'og:image:alt'); poistaMeta('name', 'twitter:image:alt'); }
+  else {
+    // [LV-OG-KORTTI-ALT-KIELI] Sivustokortin kuvaus sivun kielellä (scripts/og-alt.json, ks. yllä).
+    const altKielella = korttiAltKielella(lang);
+    if (altKielella) {
+      setMeta('property', 'og:image:alt', altKielella);
+      setMeta('name', 'twitter:image:alt', altKielella);
+      korttiAltTila.kielella++;
+    } else if (lang !== 'en' && KUOREN_KORTTI_ALT) {
+      korttiAltTila.englanniksi++;
+    }
+  }
   setMeta('name', 'twitter:card', 'summary_large_image');
   setMeta('name', 'twitter:title', title);
   setMeta('name', 'twitter:description', description || '');
@@ -1732,6 +1814,12 @@ for (const route of routes) {
 }
 
 console.log(`[prerender] wrote ${written} files for ${routes.length} routes × ${LOCALE_LIST.length} locales`);
+if (KUOREN_KORTTI_ALT) {
+  // [LV-OG-KORTTI-ALT-KIELI] rivi, jonka deploy-loki ja portit voivat lukea.
+  const syy = KORTTI_ALT_KIELET ? '' : existsSync(OG_ALT_TIEDOSTO) ? ' (og-alt.json ei tunne kuoren altia)' : ' (ei og-alt.json:ia)';
+  const puuttuu = korttiAltTila.puuttuvat.size ? ` · käännös puuttuu: ${[...korttiAltTila.puuttuvat].join(', ')}` : '';
+  console.log(`[prerender] sivustokortin alt: ${korttiAltTila.kielella} sivua sivun kielellä, ${korttiAltTila.englanniksi} muunkielistä englanniksi${syy}${puuttuu}`);
+}
 if (args.crawlableBody) {
   const avg = harvestStats.with ? Math.round(harvestStats.words / harvestStats.with) : 0;
   console.log(`[prerender] harvest: ${harvestStats.with} pages with body copy (avg ${avg} words), ${harvestStats.without} without`);

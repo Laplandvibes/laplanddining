@@ -70,7 +70,7 @@ export default function Home() {
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <img
           src={DINING.heroInterior}
-          alt="Lapland restaurant interior"
+          alt={t('home.heroAlt')}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
