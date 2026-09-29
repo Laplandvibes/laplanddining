@@ -5,6 +5,15 @@ on:
     branches:
       - main
 
+# One deploy at a time per branch. A push that arrives while a deploy is
+# running waits for it; if a newer push arrives meanwhile, the older waiting
+# run is dropped (the newer commit contains it), so the newest commit always
+# deploys last. Without this, two pushes a few minutes apart deployed in
+# parallel and whichever finished last won production.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
