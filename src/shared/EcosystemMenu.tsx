@@ -2,7 +2,6 @@ import { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback } fr
 import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { createPortal } from 'react-dom';
 import APP_STATS from './appStats';
-import { SHOTS_V } from './appPromo/screens';
 import { LayoutGrid, ChevronDown, ArrowUpRight, MapPin, Search, X, BedDouble, Compass, UtensilsCrossed, Car, Sparkles, ShoppingBag, BookOpen, Download } from 'lucide-react';
 
 /**
@@ -88,8 +87,12 @@ const APP = 'app.laplandvibes.com';
 const APP_URL = 'https://app.laplandvibes.com/?install=1&utm_source=web&utm_medium=network_menu';
 /** The app's own front page, a real capture (shipped as public/images on every site by AppPromo). */
 // Appin oma etusivu lukijan kielellä (shared/appPromo/shots, 1.10.2026). Ennen sama englanninkielinen kuva 12 kielellä.
+// ?v= = appimainoksen kuvien tiiviste (shared/appPromo/screens.ts SHOTS_V). Kirjaimellinen rivi eikä tuonti: prebuild-sync
+// päivittää tämän tiedoston myös sivustoille, joilla src/shared/appPromo/ ei vielä ole (christmas 2.10.2026). lv-opsin
+// app_promo_shots.mjs ja rollout_apppromo.mjs pitävät rivin samana, gate:apppromo-kopiot vertaa.
+const APP_SHOT_V = '6aa1e051';
 const APP_SHOT_LANGS = new Set(['en', 'fi', 'sv', 'de', 'fr', 'es', 'it', 'nl', 'pt-BR', 'ja', 'ko', 'zh-CN']);
-const appShot = (L: string) => `/images/app-promo/now-${APP_SHOT_LANGS.has(L) ? L : 'en'}.webp?v=${SHOTS_V}`;
+const appShot = (L: string) => `/images/app-promo/now-${APP_SHOT_LANGS.has(L) ? L : 'en'}.webp?v=${APP_SHOT_V}`;
 
 /**
  * Network wordmark font. The `#LAPLANDVIBES` lockup is ALWAYS Bebas Neue, on

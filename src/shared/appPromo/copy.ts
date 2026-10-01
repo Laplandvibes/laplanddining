@@ -3,7 +3,7 @@
  * src/shared/appPromo/copy.ts (gate:apppromo-kopiot vertaa tavuilleen; laplandstaysillä zh-CN muunnettu zh-hant.mjs:llä).
  *
  * MISTÄ TEKSTIT TULEVAT (1.10.2026):
- *  - screens[<näkymä>][0] = appin oma välilehden nimi (appin käännöstiedostot: surface.near, surface.view.weather,
+ *  - screens[<näkymä>][0] = appin oma välilehden nimi (zh events = appin 节庆赛事 2.10.2026, ennen 活动 kahdesti) (appin käännöstiedostot: surface.near, surface.view.weather,
  *    nav.taxi, nav.snowmobileRoutes, nav.outdoors, nav.activities, nav.events, outdoors.modes.ski, carHelp.title), jotta
  *    lukija tunnistaa sen appissa. Rivit [1] appin nav.sub-tekstistä, paitsi now, sos, routes, ski, carhelp, activities.
  *  - note + lead = appin oma asennuslause (install.installingIsFreeAnd) kahtia jaettuna: "ilmainen, ei kauppatiliä" ja
@@ -408,7 +408,7 @@ export const COPY: Record<string, Copy> = {
       carhelp: ['汽车|求助', '拖车、轮胎和修理厂，由近到远'],
       outdoors: ['户外', '步道、露营、庇护所'],
       activities: ['活动', '可在目的地预订的行程'],
-      events: ['近期|活动', '节庆与赛事'],
+      events: ['节庆|赛事', '即将举行的节庆、赛事与文化活动'],
     },
   },
 };
