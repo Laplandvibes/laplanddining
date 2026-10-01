@@ -268,7 +268,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
           <span className="min-w-0 flex-1 basis-60">
             <span className="flex items-center gap-2 mb-1">
               <span aria-hidden="true" className="shrink-0 inline-block w-2 h-2 rounded-full bg-[#EC4899]" />
-              <span className={`text-[10px] font-semibold uppercase tracking-widest ${houseLabel}`}>
+              <span className={`text-xs font-semibold leading-snug ${houseLabel}`}>
                 {topLabel}
               </span>
             </span>
@@ -302,7 +302,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
         style={houseGlow}
         aria-label={t.wantYourAd}
       >
-        <span className={`inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest ${houseLabel}`}>
+        <span className={`inline-flex items-center gap-1.5 text-xs font-semibold leading-snug ${houseLabel}`}>
           <span aria-hidden="true" className="inline-block w-2 h-2 rounded-full bg-[#EC4899]" />
           {topLabel}
         </span>

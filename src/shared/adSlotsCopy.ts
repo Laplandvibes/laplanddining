@@ -77,6 +77,8 @@ export type AdSlotsCopy = {
   slotCount: (n: number) => string;
   /** House-ad: pieni yläkulmalabel */
   slotOpen: string;
+  /** Pääkumppanin house-ad-leima yhtenä lauseena (ei " · "-ketjua, ei versaalia) */
+  mainPartnerOpen: string;
   /** /kumppanit-koontisivun otsikko */
   partnersDirTitle: string;
   /** /kumppanit-koontisivun johdanto */
@@ -111,6 +113,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Premium spots',
     slotCount: (n) => n === 1 ? '1 slot' : `${n} slots`,
     slotOpen: 'Ad spot available',
+    mainPartnerOpen: 'Main partner spot available',
     partnersDirTitle: 'Our partners',
     partnersDirLead: 'The companies we work with across the LaplandVibes network: sponsored features and advertisers, all marked as partners.',
     partnersDirEmptyTitle: 'Partner with us',
@@ -132,6 +135,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Premium-paikat',
     slotCount: (n) => n === 1 ? '1 paikka' : `${n} paikkaa`,
     slotOpen: 'Mainospaikka vapaana',
+    mainPartnerOpen: 'Pääkumppanin paikka on vapaana',
     partnersDirTitle: 'Kumppanimme',
     partnersDirLead: 'Yritykset, joiden kanssa teemme yhteistyötä LaplandVibes-verkostossa: sponsoroidut jutut ja mainostajat, kaikki merkitty kumppaneiksi.',
     partnersDirEmptyTitle: 'Ryhdy kumppaniksi',
@@ -153,6 +157,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Premium-Plätze',
     slotCount: (n) => n === 1 ? '1 Platz' : `${n} Plätze`,
     slotOpen: 'Werbeplatz frei',
+    mainPartnerOpen: 'Platz für Hauptpartner frei',
     partnersDirTitle: 'Unsere Partner',
     partnersDirLead: 'Die Unternehmen, mit denen wir im LaplandVibes-Netzwerk zusammenarbeiten: gesponserte Beiträge und Werbepartner, alle als Partner gekennzeichnet.',
     partnersDirEmptyTitle: 'Partner werden',
@@ -174,6 +179,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Emplacements premium',
     slotCount: (n) => n === 1 ? '1 emplacement' : `${n} emplacements`,
     slotOpen: 'Emplacement disponible',
+    mainPartnerOpen: 'Emplacement partenaire principal disponible',
     partnersDirTitle: 'Nos partenaires',
     partnersDirLead: 'Les entreprises avec lesquelles nous collaborons sur le réseau LaplandVibes: articles sponsorisés et annonceurs, tous signalés comme partenaires.',
     partnersDirEmptyTitle: 'Devenez partenaire',
@@ -195,6 +201,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Spazi premium',
     slotCount: (n) => n === 1 ? '1 spazio' : `${n} spazi`,
     slotOpen: 'Spazio pubblicitario libero',
+    mainPartnerOpen: 'Spazio per il partner principale disponibile',
     partnersDirTitle: 'I nostri partner',
     partnersDirLead: 'Le aziende con cui collaboriamo nella rete LaplandVibes: contenuti sponsorizzati e inserzionisti, tutti indicati come partner.',
     partnersDirEmptyTitle: 'Diventa partner',
@@ -216,6 +223,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Espacios premium',
     slotCount: (n) => n === 1 ? '1 espacio' : `${n} espacios`,
     slotOpen: 'Espacio publicitario libre',
+    mainPartnerOpen: 'Espacio para socio principal disponible',
     partnersDirTitle: 'Nuestros colaboradores',
     partnersDirLead: 'Las empresas con las que trabajamos en la red LaplandVibes: contenidos patrocinados y anunciantes, todos marcados como colaboradores.',
     partnersDirEmptyTitle: 'Colabora con nosotros',
@@ -237,6 +245,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Espaços premium',
     slotCount: (n) => n === 1 ? '1 espaço' : `${n} espaços`,
     slotOpen: 'Espaço publicitário livre',
+    mainPartnerOpen: 'Espaço para parceiro principal disponível',
     partnersDirTitle: 'Nossos parceiros',
     partnersDirLead: 'As empresas com as quais trabalhamos na rede LaplandVibes: conteúdos patrocinados e anunciantes, todos marcados como parceiros.',
     partnersDirEmptyTitle: 'Seja nosso parceiro',
@@ -258,6 +267,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Premium-plekken',
     slotCount: (n) => n === 1 ? '1 plek' : `${n} plekken`,
     slotOpen: 'Advertentieplek beschikbaar',
+    mainPartnerOpen: 'Hoofdpartnerplek beschikbaar',
     partnersDirTitle: 'Onze partners',
     partnersDirLead: 'De bedrijven waarmee we samenwerken in het LaplandVibes-netwerk: gesponsorde artikelen en adverteerders, allemaal als partner gemarkeerd.',
     partnersDirEmptyTitle: 'Word partner',
@@ -279,6 +289,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'Premiumplatser',
     slotCount: (n) => n === 1 ? '1 plats' : `${n} platser`,
     slotOpen: 'Annonsplats ledig',
+    mainPartnerOpen: 'Huvudpartnerplatsen är ledig',
     partnersDirTitle: 'Våra partner',
     partnersDirLead: 'Företagen vi samarbetar med i LaplandVibes-nätverket: sponsrat innehåll och annonsörer, alla märkta som partner.',
     partnersDirEmptyTitle: 'Bli partner',
@@ -300,6 +311,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: 'プレミアム枠',
     slotCount: (n) => `${n}枠`,
     slotOpen: '広告枠 募集中',
+    mainPartnerOpen: 'メインパートナー枠を募集中',
     partnersDirTitle: 'パートナー企業',
     partnersDirLead: 'LaplandVibes ネットワークで協業する企業：スポンサード記事と広告主、すべてパートナーとして表示されます。',
     partnersDirEmptyTitle: 'パートナーになる',
@@ -321,6 +333,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: '프리미엄 자리',
     slotCount: (n) => `${n}자리`,
     slotOpen: '광고 자리 모집 중',
+    mainPartnerOpen: '메인 파트너 모집 중',
     partnersDirTitle: '파트너 기업',
     partnersDirLead: 'LaplandVibes 네트워크에서 협업하는 기업: 스폰서 콘텐츠와 광고주, 모두 파트너로 표시됩니다.',
     partnersDirEmptyTitle: '파트너 되기',
@@ -342,6 +355,7 @@ export const AD_SLOTS_COPY: Record<AdLocale, AdSlotsCopy> = {
     premiumSpots: '高级广告位',
     slotCount: (n) => `${n} 个广告位`,
     slotOpen: '广告位招商中',
+    mainPartnerOpen: '主要合作伙伴广告位招商中',
     partnersDirTitle: '我们的合作伙伴',
     partnersDirLead: '在 LaplandVibes 网络中与我们合作的企业：赞助内容和广告主，均标注为合作伙伴。',
     partnersDirEmptyTitle: '成为合作伙伴',

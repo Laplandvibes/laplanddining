@@ -101,7 +101,7 @@ export function MainPartnerBanner({ config, locale, surface = 'dark', houseAdTon
             siteSlug: config.siteSlug,
             slotId: 'main_partner_1',
             level: 'sponsor',
-            label: `${t.mainPartnerOne} · ${t.slotOpen}`,
+            label: t.mainPartnerOpen,
           }}
         />
       </div>
