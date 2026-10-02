@@ -245,6 +245,8 @@ const CSS = `
 .lv-eco-btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.10);color:${SNOW};cursor:pointer;font-family:${WORDMARK_FONT};font-size:14px;letter-spacing:.14em;text-transform:uppercase;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .2s,border-color .2s,color .2s;white-space:nowrap;margin:0}
 .lv-eco-btn svg{flex:none}
 .lv-eco-btn .lv-eco-grid{color:${PINK}}
+/* Finland-sininen navipohja (variant="blue"): vaaleampi pinkki, jotta ikoni erottuu vähintään 3:1. */
+.lv-eco-btn--blue .lv-eco-grid{color:#F9A8D4}
 .lv-eco-btn .lv-eco-lbl{text-shadow:0 1px 6px rgba(0,0,0,.6);line-height:1;transform:translateY(1px)}
 .lv-eco-btn .lv-eco-chev{transition:transform .2s}
 .lv-eco-btn[aria-expanded="true"] .lv-eco-chev{transform:rotate(180deg)}
@@ -361,7 +363,7 @@ interface Props {
   /** Active locale (e.g. 'fi', 'en', 'de'). Passed by the site Nav. */
   lang?: string;
   /** Header tone. 'light' = for sites with a white/light header (stayinlapland, christmas…). */
-  variant?: 'dark' | 'light';
+  variant?: 'dark' | 'light' | 'blue';
 }
 
 export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'dark' }: Props) {
@@ -649,7 +651,7 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
         aria-expanded={open}
         aria-label={heading}
         data-umami-event="eco_open"
-        className={`lv-eco-btn${variant === 'light' ? ' lv-eco-btn--light' : ''}${hint ? ' lv-eco-ring' : ''}`}
+        className={`lv-eco-btn${variant === 'light' ? ' lv-eco-btn--light' : ''}${variant === 'blue' ? ' lv-eco-btn--blue' : ''}${hint ? ' lv-eco-ring' : ''}`}
       >
         <LayoutGrid className="lv-eco-grid" size={16} strokeWidth={2.3} aria-hidden="true" />
         <span className="lv-eco-lbl">{label}</span>
