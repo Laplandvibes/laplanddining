@@ -126,16 +126,25 @@ h1, h2, h3, h4, h5, h6 {
 .faq-shot { animation: faqFade 450ms ease-out both; }
 @media (prefers-reduced-motion: reduce) { .faq-shot { animation-duration: 0.01ms; } }
 
-/* ─────────────────────────────────────────────────────────────────────────
+/* LV-ORPOSANA:alku
+   ─────────────────────────────────────────────────────────────────────────
    ORPOSANA — verkoston asetteluportti 12.9.2026 (lv-asetteluportti-orposana)
+   Kanoninen lähde: lv-ops scripts/templates/orposana.css · jakelu scripts/rollout_orposana.mjs
+   (portti gate:orposana-jakelu). Älä muokkaa sivuston kopiota käsin.
 
    Vesa: "korjaa noi kaikki". Portti `npm run gate:asettelu` laski 199 kohtaa
    29 sivustolta, joissa otsikon viimeiselle riville jaa yksi sana ja se rivi
-   on alle 35 % edellisesta. `text-wrap: balance` jakaa sanat riveille tasan
-   ja poisti mitattuna ~90 % loydoksista (laplandgifts 9 -> 0 @412 px).
+   on alle 35 % edellisesta. Tasapainotettu rivitys (balance) jakaa sanat
+   riveille tasan ja poisti mitattuna ~90 % loydoksista (laplandgifts 9 -> 0 @412 px).
 
-   Selain rajoittaa balancen lyhyisiin lohkoihin (~6 rivia), joten se ei osu
-   leipatekstiin; sille `pretty` estaa vain orvon viimeisen rivin.
+   3.10.2026: `text-wrap-style: balance`, EI lyhennetta `text-wrap: balance`.
+   Lyhenne asettaa myos text-wrap-moden (= wrap), ja koska tama saanto on
+   kerrostamaton, se voitti Tailwindin `whitespace-nowrap`:n (kerroksessa)
+   jokaisessa napissa, summaryssa ja versaalirivissa: nowrap-napit rivittyivat
+   (laplandtransportin navi ja hakunappi, mitattu 2.10.). Pitkamuoto muuttaa
+   vain sita, MITEN rivittyva teksti jaetaan riveille; nowrap pysyy nowrapina.
+   Selaimet ilman pitkamuotoa (Chrome 114-129, Firefox 121-123): @supports-
+   varaus alla, nowrap-luokat ja niiden lapset rajattu pois.
    ───────────────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6,
 button, summary,
@@ -143,8 +152,16 @@ button, summary,
 /* Flex-nappi (UKK-haitari: teksti + ikoni) pitaa tekstinsa anonyymissa
    lohkossa, johon balance ei yllä — siksi myos suora span-lapsi. */
 h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span {
-  text-wrap: balance;
+  text-wrap-style: balance;
 }
+@supports not (text-wrap-style: balance) {
+  :where(h1, h2, h3, h4, h5, h6, button, summary, [class*="uppercase"],
+    h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span):not(
+    .whitespace-nowrap, .whitespace-nowrap *, .text-nowrap, .text-nowrap *, .truncate, .truncate *) {
+    text-wrap: balance;
+  }
+}
+/* LV-ORPOSANA:loppu */
 
 /* ── KOSKETUSKOKO: pieni tekstilinkki ─────────────────────────────────────────
    Mitattu 14.9.2026 (768 px): kortin lopun tekstilinkit ("Katso kaikki",
