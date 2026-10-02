@@ -169,3 +169,30 @@ h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span {
     transform: translateY(-50%);
   }
 }
+
+/* LV-NAV-SANAMERKKI:alku
+   Puhelin- ja tablettinavi (hampurilainen näkyy): sanamerkki keskellä vasemman napin ja oikeiden
+   ohjainten välissä, koko --lv-wm-max (24 px; 768 px:stä --lv-wm-max-md) tai pienempi vain sen
+   verran, että väli kumpaankin naapuriin on vähintään 11 px.
+   Rakenne: rivi .lv-navrivi > vasen ryhmä .lv-navvasen > [verkostonappi, .lv-wm-paikka > linkki > .lv-wm].
+   --lv-wm-k = sanamerkin leveys 1 px:n fontilla (Bebas Neue + tracking-wide), asetetaan .lv-wm:lle.
+   Valitsimissa kaksi luokkaa: ne voittavat Tailwindin yhden luokan apuluokat (text-*, gap-*, shrink-0)
+   myös sivustoilla, joiden @tailwind utilities tulostuu tämän lohkon jälkeen.
+   Leikkausraja 1280 px = tämän navin hampurilaisraja. */
+@media (max-width: 1279.98px) {
+  .lv-navrivi.lv-navrivi, .lv-navrivi .lv-navvasen { column-gap: 0; }
+  .lv-navrivi .lv-navvasen { flex: 1 1 0%; min-width: 0; }
+  .lv-navvasen .lv-wm-paikka { flex: 1 1 0%; min-width: 0; container-type: inline-size; display: flex; justify-content: center; align-items: center; }
+  .lv-wm-paikka .lv-wm {
+    white-space: nowrap;
+    font-size: var(--lv-wm-vara, 16px);
+    font-size: min(var(--lv-wm-max, 24px), calc((100cqi - 22px) / var(--lv-wm-k)));
+  }
+}
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .lv-wm-paikka .lv-wm { --lv-wm-max: var(--lv-wm-max-md, 24px); }
+}
+@media (min-width: 1280px) {
+  .lv-navvasen .lv-wm-paikka { display: contents; }
+}
+/* LV-NAV-SANAMERKKI:loppu */

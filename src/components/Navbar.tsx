@@ -50,12 +50,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+        <div className="lv-navrivi flex items-center justify-between h-16">
+          <div className="lv-navvasen flex items-center gap-3 sm:gap-5 shrink-0">
             <EcosystemMenu lang={locale} currentDomain="laplanddining.com" />
-            <Link to={to('/')} className="no-underline inline-flex items-center min-h-11" aria-label="LaplandDining home">
-              <Logo className="text-2xl sm:text-3xl" />
-            </Link>
+            <div className="lv-wm-paikka">
+              <Link to={to('/')} className="no-underline inline-flex items-center min-h-11" aria-label="LaplandDining home">
+                <Logo className="text-2xl sm:text-3xl" nav />
+              </Link>
+            </div>
           </div>
 
           {/* 🔴 gap-7 riitti englannille mutta ei ranskalle: "Haute gastronomie",
