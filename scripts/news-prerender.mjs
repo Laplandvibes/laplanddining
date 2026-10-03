@@ -106,7 +106,9 @@ for (const lang of ['en', 'de', 'fr', 'it', 'es', 'pt-BR', 'nl', 'sv']) {
 // Suomi: taivutetut muodot ("tammikuun", "maaliskuuksi") ja katkaistu "helmi- ja maaliskuu".
 const FI_STEMS = ['tammikuu', 'helmikuu', 'maaliskuu', 'huhtikuu', 'toukokuu', 'kesäkuu', 'heinäkuu', 'elokuu', 'syyskuu', 'lokakuu', 'marraskuu', 'joulukuu'];
 MONTH_RULES.fi = [
-  ...FI_STEMS.map((s, i) => [new RegExp(`(?<![\\p{L}])${s}\\p{L}*`, 'giu'), i + 1]),
+  // 🔴 laplandtransport 2.10.2026: "kesäkuukausina" (= kesän kuukausina) luettiin kesäkuuksi (6). Yhdyssana
+  // kuukausi-sanan kanssa ei ole kuukauden nimi ⇒ (?!kau). Negatiivitesti: "kesäkuussa" on yhä 6.
+  ...FI_STEMS.map((s, i) => [new RegExp(`(?<![\\p{L}])${s}(?!kau)\\p{L}*`, 'giu'), i + 1]),
   ...FI_STEMS.map((s, i) => [new RegExp(`(?<![\\p{L}])${s.replace(/kuu$/, '')}-(?=\\s)`, 'giu'), i + 1]),
 ];
 
