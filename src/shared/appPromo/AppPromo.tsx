@@ -16,8 +16,12 @@
  *    Alle 360 px näkymä 96 × 200 ja 360–389 px 120 × 246: 146 px:n kuvan vieressä hyödyille jäi 86 px (320) / 124 px (360),
  *    ja ruudukko venyi kortin yli (mitattu 320 px:llä; fr 360 px kortti 839 px korkea).
  *  - tabletti (640–1023): kaikki kolme näkymää rinnakkain kuvateksteineen, nappi alla.
- *  - työpöytä (≥ 1024): teksti ja nappi vasemmalla, kolme näkymää oikealla (1024–1279 näkymät 150 px ja otsikko 40 px: 184 px:n
- *    näkymillä tekstipalsta jäi 256 px:iin ja de-otsikko viidelle riville, mitattu 1.10.).
+ *  - työpöytä (≥ 1024): logo ja otsikko KOKO kortin levyisinä, niiden alla teksti ja nappi vasemmalla, kolme näkymää oikealla
+ *    (1024–1279 näkymät 150 px ja otsikko 40 px). 🔴 Vesa 3.10.2026 hubilla: *"miksi appi mainoksessa perillä lapissa on eri
+ *    rivillä? ihan kauhea"* — otsikko oli 318 px:n tekstipalstassa 48 px:n koolla NELJÄLLÄ rivillä ("PERILLÄ / LAPISSA? KAIKKI
+ *    / TARPEELLINEN / TASKUSSA.") jokaisella leveydellä 1280–2560, koska näkymät vievät palstasta 592 px. Leveä otsikko mahtuu
+ *    952 px:n kortissa yhdelle riville. Palstan sisältö (teksti, nappi, QR) pysyy näkymien vieressä.
+ *  - Otsikko katkeaa ensisijaisesti kysymyksen jälkeen (Lauseet: kumpikin lause oma inline-block), ei keskeltä lausetta.
  *  - QR vain hiiriruudulla (pointer: fine) 640 px:stä ylöspäin: Vesan ~720 px:n selainpaneeli saa sen yhä (3.8.2026), mutta
  *    kosketustabletti ei, koska appi avautuu tabletilla suoraan (appin deviceTarget.ts päästää tabletit sisään).
  * Mitattu prototyypistä 1.10.: sisällön peitto kortin sisäalasta 45 % → 73 % (390 px), 44 % → 72 % (768 px).
@@ -72,6 +76,18 @@ function Phr({ text }: { text: string }) {
   const osat = text.split('|');
   return <>{osat.map((o, i) => <Fragment key={i}>{i > 0 && <wbr />}{o}</Fragment>)}</>;
 }
+/** Otsikko kahtena lauseena: kysymys | vastaus. Kumpikin on oma inline-block, joten rivi katkeaa ensin lauseiden välistä
+ *  ("PERILLÄ LAPISSA? / KAIKKI TARPEELLINEN TASKUSSA.") ja vasta sitten lauseen sisältä. Raja = ensimmäinen ? ？ 、 tai ，
+ *  (ja/zh-otsikoissa kysymyksen paikalla on joskus pilkku). Ilman rajaa (revontuli- ja hätäyksiköt) yksi lause. */
+const LAUSERAJA = /^(.+?[?？、，])\s*(\S.*)$/;
+function Lauseet({ text }: { text: string }) {
+  const m = LAUSERAJA.exec(text);
+  if (!m) return <Phr text={text} />;
+  const [eka, toka] = [m[1].replace(/\|$/, ''), m[2].replace(/^\|/, '')];
+  // ja/zh: ei välilyöntiä lauseiden väliin, vain katkokohta (sama kuin | ⇒ <wbr>).
+  const raja = /[？、，]$/.test(eka) ? <wbr /> : ' ';
+  return <><span className="lvap-s"><Phr text={eka} /></span>{raja}<span className="lvap-s"><Phr text={toka} /></span></>;
+}
 const fill = (s: string): string =>
   s.replace('{slopes}', String(APP_STATS.slopes)).replace('{lifts}', String(APP_STATS.lifts)).replace('{resorts}', String(APP_STATS.skiResorts));
 
@@ -97,7 +113,8 @@ const CSS = `
 .lvap-title{margin:12px 0 0;font-family:'Bebas Neue','Arial Narrow',sans-serif;font-weight:400;font-size:31px;line-height:.98;letter-spacing:.025em;color:#F9FAFB;text-wrap:balance;text-transform:none}
 .lvap-cjk .lvap-title,.lvap-cjk .lvap-lab{word-break:keep-all;overflow-wrap:anywhere;letter-spacing:0;line-height:1.15;font-weight:700}
 .lvap-cjk .lvap-title{font-size:26px}
-.lvap-lead{margin:12px 0 0;max-width:56ch;font-size:15px;line-height:1.6;color:rgba(249,250,251,.85)}
+.lvap-s{display:inline-block}
+.lvap-lead{margin:12px 0 0;max-width:56ch;font-size:15px;line-height:1.6;color:rgba(249,250,251,.85);text-wrap:pretty}
 .lvap-phone{position:relative;flex-shrink:0;overflow:hidden;border-radius:20px;border:2px solid rgba(255,255,255,.15);background:#0F172A;box-shadow:0 22px 44px -14px rgba(0,0,0,.8);-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent);mask-image:linear-gradient(to bottom,#000 82%,transparent)}
 .lvap-phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;margin:0;max-width:none}
 .lvap-a{display:flex;align-items:flex-start;gap:16px}
@@ -110,7 +127,7 @@ const CSS = `
 .lvap .lvap-row:hover,.lvap .lvap-b a:hover{color:#F9FAFB}
 .lvap-txt{min-width:0;flex:1}
 .lvap-lab{display:block;font-family:'Bebas Neue','Arial Narrow',sans-serif;font-size:20px;line-height:1;letter-spacing:.025em;color:#F9FAFB}
-.lvap-line{display:block;margin-top:4px;font-size:13px;line-height:1.4;color:rgba(249,250,251,.75)}
+.lvap-line{display:block;margin-top:4px;font-size:13px;line-height:1.4;color:rgba(249,250,251,.75);text-wrap:pretty}
 .lvap-feat{display:block;padding:12px 0;font-size:14px;line-height:1.45;color:rgba(249,250,251,.85)}
 .lvap-chev{flex-shrink:0;width:16px;height:16px;margin-top:2px;color:#EC4899;transition:transform .2s cubic-bezier(.22,1,.36,1)}
 .lvap-b{display:none;margin:0;padding:0;list-style:none}
@@ -124,7 +141,7 @@ const CSS = `
 .lvap-cta:hover{background:#BE185D;color:#fff}
 .lvap-cta:active{transform:scale(.98)}
 .lvap-cta svg{width:20px;height:20px;flex-shrink:0}
-.lvap-note{margin:10px 0 0;font-size:12px;line-height:1.45;color:rgba(249,250,251,.6)}
+.lvap-note{margin:10px 0 0;font-size:12px;line-height:1.45;color:rgba(249,250,251,.6);text-wrap:pretty}
 .lvap-qr{display:none;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}
 .lvap-qr img{display:block;width:96px;height:96px;border-radius:16px;background:#fff;padding:8px;box-shadow:0 12px 24px -8px rgba(0,0,0,.5);margin:0}
 .lvap-qr span{max-width:132px;text-align:center;font-size:11px;line-height:1.35;color:rgba(249,250,251,.65)}
@@ -161,11 +178,16 @@ const CSS = `
  .lvap-card{padding:36px}
  .lvap-title{font-size:40px}
  .lvap-one .lvap-side{flex-direction:row}
- .lvap-three .lvap-in{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:32px}
- .lvap-three .lvap-b{grid-column:2;grid-row:1/span 2;grid-template-columns:repeat(3,150px);gap:16px}
+ .lvap-three .lvap-in{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto 1fr;align-items:start;column-gap:32px;row-gap:0}
+ .lvap-three .lvap-txt0{display:contents}
+ .lvap-three .lvap-lockup,.lvap-three .lvap-title{grid-column:1/-1}
+ .lvap-three .lvap-lead{grid-column:1;grid-row:3;margin-top:28px}
+ .lvap-three .lvap-b{grid-column:2;grid-row:3/span 2;margin-top:28px;grid-template-columns:repeat(3,150px);gap:16px}
  .lvap-three .lvap-b .lvap-phone{height:300px}
  .lvap-three .lvap-narrow{display:none}
- .lvap-three .lvap-wide{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:24px}
+ .lvap-three .lvap-wide{grid-column:1;grid-row:4;display:flex;flex-wrap:wrap;align-items:center;gap:24px 28px;margin-top:28px}
+ .lvap-three .lvap-wide .lvap-qr{flex-direction:row;gap:14px}
+ .lvap-three .lvap-wide .lvap-qr span{max-width:120px;text-align:left;font-size:12px}
  .lvap-one .lvap-side .lvap-phone{width:220px;height:420px}
  .lvap-one .lvap-side .lvap-qr img{width:128px;height:128px}
 }
@@ -276,9 +298,9 @@ export function AppPromoHero({ focus, placement = 'hero' }: Props) {
       <div className="lvap-card">
         <div aria-hidden className="lvap-glow" />
         <div className="lvap-in">
-          <div style={{ minWidth: 0 }}>
+          <div className="lvap-txt0" style={{ minWidth: 0 }}>
             <Lockup />
-            <h2 className="lvap-title"><Phr text={title} /></h2>
+            <h2 className="lvap-title"><Lauseet text={title} /></h2>
             <p className="lvap-lead">{lead}</p>
             {!one && (
               <div className="lvap-wide">

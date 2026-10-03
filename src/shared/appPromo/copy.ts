@@ -72,7 +72,7 @@ export const COPY: Record<string, Copy> = {
   },
   fi: {
     cta: 'Lataa ilmainen sovellus',
-    note: 'Asennus on ilmainen eikä vaadi kauppatiliä.',
+    note: 'Asennus on ilmainen, eikä sovelluskaupan tiliä tarvita.',
     lead: 'Asennettuna appi toimii myös ilman verkkoa: paikat, reitit ja hätänumerot ovat tallessa puhelimessa.',
     scan: 'Skannaa ja avaa puhelimessa',
     dismiss: 'Sulje',
@@ -88,7 +88,7 @@ export const COPY: Record<string, Copy> = {
       eat: 'Nälkä perillä? Lähimmät ravintolat taskussa.',
     },
     screens: {
-      now: ['Nyt kohteessa', 'Sää, revontulien todennäköisyys ja tuuli'],
+      now: ['Nyt kohteessa', 'Sää, tuuli ja revontuliennuste'],
       near: ['Lähellä', 'Ravintolat, saunat, kaupat'],
       weather: ['Sää ja keli', 'Tunneittain, Ilmatieteen laitos'],
       sos: ['Hätänumerot', '112 ja muut numerot soittonappeina'],
