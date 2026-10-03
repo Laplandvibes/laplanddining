@@ -5,6 +5,7 @@ import suomikauppaPicks from '../shared/ads/data/suomikauppaPicks'
 import { useTranslation } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
+import { bebasEm, Fraasit, ilmanValeja, riveiksi } from '../lib/otsikkoRivit';
 import { ChevronDown, MapPin, Star, UtensilsCrossed, Flame, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
@@ -39,6 +40,9 @@ const cuisineCardsMeta = [
 export default function Home() {
   const { t } = useTranslation('pages');
   const { to, locale } = useLocale();
+  // Heron otsikko on yksi lause: tietokoneella se kootaan lauseen rakenteesta yhdelle tai kahdelle riville
+  // ("Descubra los mejores / restaurantes de Laponia"), ks. lib/otsikkoRivit.
+  const h1 = riveiksi(t('home.heroH1'), locale, (s) => bebasEm(s, 0.025));
 
   const cuisineCardsCopy = (t('home.cuisineCards', { returnObjects: true }) as CuisineCardI18n[]) || [];
   // FAQPage JSON-LD is generated from the same localized items the visible
@@ -84,9 +88,21 @@ export default function Home() {
           }}
         />
 
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-tight mb-6 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)] xl:text-[clamp(96px,1.5vw_+_76.8px,115.2px)]">
-            {t('home.heroH1')}
+        {/* Vesa 3.10.2026: "tehdään turhaan kolmirivisiä". 848 px:n palstassa ja 106 px:n koolla otsikko oli 3–4 riviä
+            de/ja/es/pt-BR/fr/it ja fi:llä yhden sanan loppurivi. lg+: palsta 1104 px (@container), rivit lauseesta
+            (riveiksi) ja koko = pienempi kahdesta, suunniteltu --h1-max tai koko jolla pidempi rivi mahtuu (100cqi / em).
+            Puhelin ja tabletti pitävät entisen koon ja rivityksen; ja/zh katkeavat vain fraasien välistä. */}
+        <div className="@container relative z-10 text-center px-4 sm:px-6 w-full max-w-4xl lg:max-w-6xl mx-auto">
+          <h1
+            className={`font-heading text-5xl sm:text-6xl md:text-7xl lg:[--h1-max:6rem] xl:[--h1-max:clamp(96px,1.5vw_+_76.8px,115.2px)] lg:[font-size:min(var(--h1-max),calc(100cqi/var(--h1-em)))] text-white tracking-wide leading-tight mb-6 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]${ilmanValeja(locale) ? ' [word-break:keep-all] [overflow-wrap:anywhere]' : ''}`}
+            style={{ ['--h1-em' as string]: h1.em.toFixed(2) }}
+          >
+            {h1.rivit.map((r, i) => (
+              <span key={i} className="lg:block">
+                {i > 0 && (ilmanValeja(locale) ? <wbr /> : ' ')}
+                <Fraasit text={r} lang={locale} />
+              </span>
+            ))}
           </h1>
           <p className="text-lg sm:text-xl text-white max-w-2xl xl:max-w-4xl mx-auto mb-10 font-body leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] xl:text-2xl">
             {t('home.heroLead')}
