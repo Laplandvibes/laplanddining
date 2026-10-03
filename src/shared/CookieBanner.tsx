@@ -65,8 +65,9 @@ const DEFAULT_DICT: Required<CookieBannerDict> = COOKIE_BANNER_LOCALES.en;
   the bottom on either side, then the left and right edges at other heights
   (nearest to the designed height first), then along the bottom edge. Pages
   where the designed spot was already clear look exactly as before. If no spot
-  is clear, the one that covers the least wins (headings, links, buttons and
-  fixed widgets weigh more). The flag never rises over the top bar.
+  is clear, the one that covers the least wins: the main heading weighs most,
+  then subheadings, links, buttons and fixed widgets, and small print (under
+  13px: photo credits, breadcrumbs) least. The flag never rises over the top bar.
   Content that renders late (lazy routes, web fonts, images) is checked
   again a few times; the flag only moves if text has ended up under it.
   The geometry must match the desktop CSS below: card 330px wide at 18:11,
@@ -95,15 +96,18 @@ function pickFlagSpot(current: FlagSpot | null = null): FlagSpot | null {
     if (!inView(r)) return;
     if (!el.textContent?.trim() && !/^(INPUT|BUTTON|SELECT|TEXTAREA)$/.test(el.tagName)) return;
     if (!shown(el)) return;
-    obstacles.push([r, FLAG_HEAVY.test(el.tagName) ? 3 : 1]);
+    const small = parseFloat(getComputedStyle(el).fontSize) < 13;
+    obstacles.push([r, el.tagName === 'H1' ? 10 : small ? 1 : FLAG_HEAVY.test(el.tagName) ? 3 : 1]);
   });
-  // Fixed and sticky boxes anywhere on the page: side-rail ads, chat and toast widgets.
+  // Fixed boxes anywhere on the page: side-rail ads, chat and toast widgets. Sticky ones
+  // are left out: they sit in the flow (a filter bar spans the full width) and their
+  // text is already counted above.
   // A full-width one at the top is the site's top bar: the flag stays below it.
   let topBar = 64;
   document.body.querySelectorAll('*').forEach((el) => {
     if (el.closest('.lv-banner, .lv-pole, .lv-sheet')) return;
     const pos = getComputedStyle(el).position;
-    if (pos !== 'fixed' && pos !== 'sticky') return;
+    if (pos !== 'fixed') return;
     const r = el.getBoundingClientRect();
     if (!inView(r) || r.width * r.height > vw * vh * 0.5 || !el.textContent?.trim() || !shown(el)) return;
     if (r.top <= 0 && r.width > vw * 0.8) topBar = Math.max(topBar, r.bottom);
