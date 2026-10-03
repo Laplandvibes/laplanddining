@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 /*
@@ -56,6 +56,75 @@ export const COOKIE_BANNER_LOCALES: Record<string, Required<CookieBannerDict>> =
 
 const DEFAULT_DICT: Required<CookieBannerDict> = COOKIE_BANNER_LOCALES.en;
 
+/*
+  Desktop flag position. The masthead flag used to stand in one place (left,
+  220px up), and on a first visit it covered the hero heading, lead or main
+  button on 23 of 28 front pages at 1440x900-1920x1080 (measured 2026-10-03).
+  When it appears it now checks four spots and takes the first one with no
+  text or control under it. The designed spot comes first, so pages where it
+  was already clear look exactly as before. If no spot is clear, the one that
+  covers the least wins (headings, links, buttons and fixed widgets weigh more).
+  The geometry must match the desktop CSS below: card 330px wide at 18:11,
+  49px from the side edge, 220px or 24px from the bottom, pole 9px left of it.
+*/
+type FlagSpot = 'left' | 'right' | 'left-low' | 'right-low';
+const FLAG_W = 330;
+const FLAG_H = (FLAG_W * 11) / 18;
+const FLAG_MQ = '(min-width: 1024px) and (min-height: 900px)';
+const FLAG_BLOCKERS = 'h1,h2,h3,p,a,button,input,select,textarea,label,li,figcaption';
+const FLAG_HEAVY = /^(H1|H2|A|BUTTON|INPUT|SELECT)$/;
+
+function pickFlagSpot(): FlagSpot {
+  if (typeof window === 'undefined' || !window.matchMedia(FLAG_MQ).matches) return 'left';
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const spots: [FlagSpot, number, number][] = [
+    ['left', 49, vh - 220 - FLAG_H],
+    ['right', vw - 49 - FLAG_W, vh - 220 - FLAG_H],
+    ['left-low', 49, vh - 24 - FLAG_H],
+    ['right-low', vw - 49 - FLAG_W, vh - 24 - FLAG_H],
+  ];
+  const shown = (el: Element) =>
+    (el as Element & { checkVisibility?: (o: object) => boolean })
+      .checkVisibility?.({ opacityProperty: true, visibilityProperty: true }) !== false;
+  const inView = (r: DOMRect) => r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < vh;
+  const obstacles: [DOMRect, number][] = [];
+  const root = document.querySelector('main') ?? document.body;
+  root.querySelectorAll(FLAG_BLOCKERS).forEach((el) => {
+    if (el.closest('.lv-banner, .lv-sheet')) return;
+    const r = el.getBoundingClientRect();
+    if (!inView(r)) return;
+    if (!el.textContent?.trim() && !/^(INPUT|BUTTON|SELECT|TEXTAREA)$/.test(el.tagName)) return;
+    if (!shown(el)) return;
+    obstacles.push([r, FLAG_HEAVY.test(el.tagName) ? 3 : 1]);
+  });
+  // Fixed and sticky boxes anywhere on the page: side-rail ads, chat and toast widgets.
+  document.body.querySelectorAll('*').forEach((el) => {
+    if (el.closest('.lv-banner, .lv-pole, .lv-sheet')) return;
+    const pos = getComputedStyle(el).position;
+    if (pos !== 'fixed' && pos !== 'sticky') return;
+    const r = el.getBoundingClientRect();
+    if (!inView(r) || r.width * r.height > vw * vh * 0.5 || !el.textContent?.trim() || !shown(el)) return;
+    obstacles.push([r, 3]);
+  });
+  let best: FlagSpot = 'left';
+  let bestScore = Infinity;
+  for (const [spot, x, y] of spots) {
+    let score = 0;
+    for (const [r, weight] of obstacles) {
+      const w = Math.min(x + FLAG_W + 8, r.right) - Math.max(x - 17, r.left);
+      const h = Math.min(y + FLAG_H + 8, r.bottom) - Math.max(y - 8, r.top);
+      if (w > 4 && h > 4) score += weight;
+    }
+    if (score === 0) return spot;
+    if (score < bestScore) {
+      best = spot;
+      bestScore = score;
+    }
+  }
+  return best;
+}
+
 interface CookieBannerProps {
   consentKey?: string;
   /**
@@ -93,6 +162,23 @@ export default function CookieBanner({
   };
   const [visible, setVisible]       = useState(false);
   const [dismissing, setDismissing] = useState(false);
+
+  // Place the desktop flag before it is painted, again on a route change and on resize.
+  const [spot, setSpot] = useState<FlagSpot>('left');
+  useLayoutEffect(() => {
+    if (!visible) return;
+    setSpot(pickFlagSpot());
+    let timer = 0;
+    const onResize = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => setSpot(pickFlagSpot()), 150);
+    };
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [visible, pathname]);
 
   useEffect(() => {
     if (!localStorage.getItem(consentKey)) {
@@ -196,7 +282,7 @@ export default function CookieBanner({
 
       {/* ══ DESKTOP LAYOUT — the masthead flag, unchanged ══ */}
       {/* ── Flagpole, LEFT side ── */}
-      <div className="lv-pole fixed bottom-0 z-[9997] pointer-events-none">
+      <div className="lv-pole fixed bottom-0 z-[9997] pointer-events-none" data-spot={spot}>
         {/* Ball finial */}
         <div
           className="lv-finial absolute rounded-full"
@@ -216,6 +302,7 @@ export default function CookieBanner({
       {/* ── Outer div: rise / lower (translateY) ── */}
       <div
         className="lv-banner fixed z-[9999]"
+        data-spot={spot}
         style={{
           animation: dismissing
             ? 'cookieFlagLower 0.8s ease-in forwards'
@@ -337,6 +424,11 @@ export default function CookieBanner({
           .lv-pole   { width: 4px; left: 40px; height: 430px; display: block; }
           .lv-finial { top: -5px; width: 10px; height: 10px; }
           .lv-banner { left: 49px; bottom: 220px; display: block; }
+          /* pickFlagSpot(): the flag moves off text to the right side and/or 24px from the bottom. */
+          .lv-pole[data-spot^="right"]   { left: auto; right: 384px; }
+          .lv-banner[data-spot^="right"] { left: auto; right: 49px; }
+          .lv-pole[data-spot$="low"]     { height: 234px; }
+          .lv-banner[data-spot$="low"]   { bottom: 24px; }
           .lv-sheet  { display: none; }
           .lv-card   { width: 330px; }
           .lv-rope   { width: 9px; height: 2px; }
