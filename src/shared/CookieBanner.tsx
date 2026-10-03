@@ -67,6 +67,8 @@ const DEFAULT_DICT: Required<CookieBannerDict> = COOKIE_BANNER_LOCALES.en;
   where the designed spot was already clear look exactly as before. If no spot
   is clear, the one that covers the least wins (headings, links, buttons and
   fixed widgets weigh more). The flag never rises over the top bar.
+  Content that renders late (lazy routes, web fonts, images) is checked
+  again a few times; the flag only moves if text has ended up under it.
   The geometry must match the desktop CSS below: card 330px wide at 18:11,
   pole 9px left of the card and standing on the bottom edge.
 */
@@ -77,7 +79,7 @@ const FLAG_MQ = '(min-width: 1024px) and (min-height: 900px)';
 const FLAG_BLOCKERS = 'h1,h2,h3,p,a,button,input,select,textarea,label,li,figcaption';
 const FLAG_HEAVY = /^(H1|H2|A|BUTTON|INPUT|SELECT)$/;
 
-function pickFlagSpot(): FlagSpot | null {
+function pickFlagSpot(current: FlagSpot | null = null): FlagSpot | null {
   if (typeof window === 'undefined' || !window.matchMedia(FLAG_MQ).matches) return null;
   const vw = window.innerWidth;
   const vh = window.innerHeight;
@@ -120,10 +122,7 @@ function pickFlagSpot(): FlagSpot | null {
   heights.sort((a, c) => Math.abs(a - 220) - Math.abs(c - 220) || a - c);
   for (const b of heights) spots.push([left, b], [right, b]);
   for (let x = left + 40; x < right; x += 40) spots.push([x, 24]);
-  let best = spots[0];
-  let bestScore = Infinity;
-  for (const spot of spots) {
-    const [x, b] = spot;
+  const scoreAt = (x: number, b: number) => {
     const y = vh - b - FLAG_H;
     let score = 0;
     for (const [r, weight] of obstacles) {
@@ -131,6 +130,15 @@ function pickFlagSpot(): FlagSpot | null {
       const h = Math.min(y + FLAG_H + 8, r.bottom) - Math.max(y - 8, r.top);
       if (w > 4 && h > 4) score += weight;
     }
+    return score;
+  };
+  if (current && current.left >= left && current.left <= right && current.bottom <= Math.max(highest, 220)
+    && scoreAt(current.left, current.bottom) === 0) return current;
+  let best = spots[0];
+  let bestScore = Infinity;
+  for (const spot of spots) {
+    const [x, b] = spot;
+    const score = scoreAt(x, b);
     if (score === 0) return { left: x, bottom: b };
     if (score < bestScore) {
       best = spot;
@@ -178,19 +186,34 @@ export default function CookieBanner({
   const [visible, setVisible]       = useState(false);
   const [dismissing, setDismissing] = useState(false);
 
-  // Place the desktop flag before it is painted, again on a route change and on resize.
+  // Place the desktop flag before it is painted and again on a route change. Content
+  // that arrives later (lazy route chunks, web fonts, images) is checked at 0.7, 1.6 and
+  // 3.2 s, when fonts are ready and on window load; the flag keeps its spot unless text
+  // has ended up under it. A resize searches again from the top of the list.
   const [spot, setSpot] = useState<FlagSpot | null>(null);
   useLayoutEffect(() => {
     if (!visible) return;
-    setSpot(pickFlagSpot());
-    let timer = 0;
+    let live = true;
+    const recheck = () => {
+      if (live) setSpot((prev) => pickFlagSpot(prev));
+    };
+    recheck();
+    const timers = [700, 1600, 3200].map((ms) => window.setTimeout(recheck, ms));
+    document.fonts?.ready.then(recheck);
+    window.addEventListener('load', recheck);
+    let resizeTimer = 0;
     const onResize = () => {
-      window.clearTimeout(timer);
-      timer = window.setTimeout(() => setSpot(pickFlagSpot()), 150);
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        if (live) setSpot(pickFlagSpot(null));
+      }, 150);
     };
     window.addEventListener('resize', onResize);
     return () => {
-      window.clearTimeout(timer);
+      live = false;
+      timers.forEach((t) => window.clearTimeout(t));
+      window.clearTimeout(resizeTimer);
+      window.removeEventListener('load', recheck);
       window.removeEventListener('resize', onResize);
     };
   }, [visible, pathname]);
