@@ -4,7 +4,27 @@ import restaurantMenus from './generated/restaurant-menus.json';
 import { restaurantOverrides } from './restaurant-overrides';
 import { restaurantGems } from './restaurant-gems';
 
-type ImageEntry = { src: string; kind: string; credit?: string };
+type ImageEntry = {
+  src: string;
+  kind: string;
+  credit?: string;
+  /** kind 'commons': Wikimedia Commons -kuvan tekijä, lisenssi ja tiedostosivu (kuitti rekisterissä). */
+  title?: string;
+  author?: string;
+  license?: string;
+  licenseUrl?: string;
+  sourceUrl?: string;
+};
+
+/** Avoimen lisenssin kuvan merkintä ruudukon alle (kind 'commons'). */
+export type CommonsCredit = { author: string; license: string; licenseUrl: string; sourceUrl: string; title: string };
+
+function commonsCredit(img: ImageEntry | undefined): CommonsCredit | undefined {
+  if (!img || img.kind !== 'commons' || !img.author || !img.license || !img.licenseUrl || !img.sourceUrl) return undefined;
+  return { author: img.author, license: img.license, licenseUrl: img.licenseUrl, sourceUrl: img.sourceUrl, title: img.title ?? '' };
+}
+
+const USABLE_KINDS = new Set(['partner', 'illustration', 'photo', 'commons']);
 const imageRegistry = restaurantImages as Record<string, ImageEntry>;
 
 type MenuEntry = {
@@ -116,7 +136,13 @@ export interface Restaurant {
    * sisällön tallentamisen ja vaativat kuvaajan tekijämerkinnän (vain place_id
    * saa säilöä). Poistettu käytöstä 2026-08-09.
    */
-  photoKind?: 'partner' | 'illustration' | 'photo';  // photo = LV:n oma aito valokuva kohteesta
+  photoKind?: 'partner' | 'illustration' | 'photo' | 'commons';  // photo = LV:n oma aito valokuva kohteesta
+  /**
+   * 'commons' (4.10.2026): Wikimedia Commons -valokuva juuri tästä ravintolasta tai
+   * rakennuksesta, kun ravintolan omalla sivustolla ei ole kelvollista kuvaa. Tekijä,
+   * lisenssi ja linkit näkyvät ruudukon alla (GridPhotoCredits), ei kuvan päällä.
+   */
+  photoCommons?: CommonsCredit;
   photoCredit?: string;             // esim. "nili.fi" (partner) tai "LaplandVibes" (photo)
   /**
    * Ravintolan oma ruokalista. Lähde: generated/restaurant-menus.json, jonka
@@ -193,12 +219,13 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[])
   // Kuvarekisteri on ainoa kuvalähde. `m.photo` (Google Place Photo) jätetään
   // tarkoituksella huomiotta — ks. photoKind-kentän kommentti.
   const img = imageRegistry[m.slug];
-  const usable = img && (img.kind === 'partner' || img.kind === 'illustration' || img.kind === 'photo') ? img : undefined;
+  const usable = img && USABLE_KINDS.has(img.kind) ? img : undefined;
   return {
     ...m,
     ...override,
     photo: usable?.src,
-    photoKind: usable?.kind as 'partner' | 'illustration' | 'photo' | undefined,
+    photoKind: usable?.kind as Restaurant['photoKind'],
+    photoCommons: commonsCredit(usable),
     photoCredit: usable?.kind === 'partner' || usable?.kind === 'photo' ? usable.credit : undefined,
     ...menuFor(m.slug),
     // override may not include these required fields — preserve from maps
@@ -233,12 +260,13 @@ const merged: Restaurant[] = (mapsData as MapsRestaurant[])
  */
 const gemsWithImages: Restaurant[] = restaurantGems.map((g) => {
   const img = imageRegistry[g.slug];
-  const usable = img && (img.kind === 'partner' || img.kind === 'illustration' || img.kind === 'photo') ? img : undefined;
+  const usable = img && USABLE_KINDS.has(img.kind) ? img : undefined;
   return {
     ...g,
     ...menuFor(g.slug),
     photo: usable?.src ?? undefined,
-    photoKind: usable?.kind as 'partner' | 'illustration' | 'photo' | undefined,
+    photoKind: usable?.kind as Restaurant['photoKind'],
+    photoCommons: commonsCredit(usable),
     photoCredit: usable?.kind === 'partner' || usable?.kind === 'photo' ? usable.credit : undefined,
   };
 });

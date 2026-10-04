@@ -1,5 +1,5 @@
 import { creditPrefix } from '../data/photoCredit';
-import { PHOTOS_BY, photoSource, type Restaurant, type Locale } from '../data/restaurants';
+import { PHOTOS_BY, photoSource, type CommonsCredit, type Restaurant, type Locale } from '../data/restaurants';
 
 /** Sulkeet: ja ja zh täysleveinä verkoston kanonin mukaan, muissa välilyönti eteen. */
 const PARENS: Partial<Record<Locale, [string, string]>> = { ja: ['（', '）'], 'zh-CN': ['（', '）'] };
@@ -27,11 +27,19 @@ const PARENS: Partial<Record<Locale, [string, string]>> = { ja: ['（', '）'], 
  * Kontrasti: cream/75 on night-taustalla 9,7:1 ja night-light-taustalla 8,3:1.
  *
  * `data-lv-kuvalahteet`: mittarit löytävät rivin tällä attribuutilla.
+ *
+ * 4.10.2026: Wikimedia Commons -kuva (kind 'commons') saa rivissä tekijän, lisenssin ja
+ * linkit tiedostosivulle ja lisenssiin: "Umpitunneli (Estormiz, CC0 1.0, Wikimedia Commons)".
+ * CC BY ja CC BY-SA vaativat tekijän ja lisenssilinkin näkyviin; CC0 ei vaadi, mutta
+ * merkintä on sama, jotta lukija näkee mistä jokainen kuva tulee. Rivi on ruudukon
+ * ulkopuolella, joten linkit eivät ole kortin linkin sisällä.
  */
 export default function GridPhotoCredits({ list, locale, className = '' }: { list: Restaurant[]; locale: Locale; className?: string }) {
-  const items = list.flatMap((r) => {
+  const items = list.flatMap((r): { slug: string; name: string; source?: string; commons?: CommonsCredit }[] => {
     const source = photoSource(r);
-    return source ? [{ slug: r.slug, name: r.name, source }] : [];
+    if (source) return [{ slug: r.slug, name: r.name, source }];
+    if (r.photoKind === 'commons' && r.photoCommons) return [{ slug: r.slug, name: r.name, commons: r.photoCommons }];
+    return [];
   });
   if (items.length === 0) return null;
   const [open, close] = PARENS[locale] ?? [' (', ')'];
@@ -42,7 +50,21 @@ export default function GridPhotoCredits({ list, locale, className = '' }: { lis
         <span key={it.slug}>
           {i > 0 && <>&nbsp;· </>}
           {it.name}
-          <span className="whitespace-nowrap">{open}{it.source}{close}</span>
+          {it.commons ? (
+            <>
+              {open}{it.commons.author},{' '}
+              <a href={it.commons.licenseUrl} target="_blank" rel="license noopener" className="lv-tap whitespace-nowrap underline decoration-cream/40 underline-offset-2 hover:text-cream">
+                {it.commons.license}
+              </a>
+              ,{' '}
+              <a href={it.commons.sourceUrl} target="_blank" rel="noopener" className="lv-tap whitespace-nowrap underline decoration-cream/40 underline-offset-2 hover:text-cream">
+                Wikimedia Commons
+              </a>
+              {close}
+            </>
+          ) : (
+            <span className="whitespace-nowrap">{open}{it.source}{close}</span>
+          )}
         </span>
       ))}
     </p>
