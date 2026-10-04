@@ -12,19 +12,30 @@
  * ── TAITTO (Vesa 1.10.2026: "tilaa ei käytetä tarpeeksi hyödyksi ja ei ole mietitty miksi mikäkin on ja missä") ──
  * Jokainen hyöty on appin oikea näkymä: otsake = appin välilehden nimi, rivi = mitä siellä on, linkki = syvälinkki juuri
  * siihen näkymään (oma Umami-pinta promo_<näkymä>, eli klikit mittautuvat hyödyittäin).
- *  - puhelin (< 640 px): ensimmäinen näkymä isona (146 × 300) ja kolme hyötyä sen vieressä, nappi koko leveydeltä.
- *    Alle 360 px näkymä 96 × 200 ja 360–389 px 120 × 246: 146 px:n kuvan vieressä hyödyille jäi 86 px (320) / 124 px (360),
- *    ja ruudukko venyi kortin yli (mitattu 320 px:llä; fr 360 px kortti 839 px korkea).
- *  - tabletti (640–1023): kaikki kolme näkymää rinnakkain kuvateksteineen, nappi alla.
- *  - työpöytä (≥ 1024): logo ja otsikko KOKO kortin levyisinä, niiden alla teksti ja nappi vasemmalla, kolme näkymää oikealla
- *    (1024–1279 näkymät 150 px ja otsikko 40 px). 🔴 Vesa 3.10.2026 hubilla: *"miksi appi mainoksessa perillä lapissa on eri
- *    rivillä? ihan kauhea"* — otsikko oli 318 px:n tekstipalstassa 48 px:n koolla NELJÄLLÄ rivillä ("PERILLÄ / LAPISSA? KAIKKI
- *    / TARPEELLINEN / TASKUSSA.") jokaisella leveydellä 1280–2560, koska näkymät vievät palstasta 592 px. Leveä otsikko mahtuu
- *    952 px:n kortissa yhdelle riville. Palstan sisältö (teksti, nappi, QR) pysyy näkymien vieressä.
+ *
+ * 🔴🔴 KORTIN LEVEYS RATKAISEE, EI IKKUNAN (Vesa 4.10.2026 stayinlaplandilla ~2560 px:n näytöllä: *"tuo qr koodi ei ole
+ * tasapainossa ja aivan liian pienellä … kasvattaa puhelimien näyttöjä jotta niiden kuvien navit näkyisi"* ja *"vieläkään
+ * ole optimoinut mainosta joka näytölle"*). Kortti istuu sivustoilla eri levyisissä konteissa (max-w-5xl hubilla ja
+ * blogissa, 7xl muualla), joten ikkunan leveys ei kertonut, paljonko tilaa kortissa on: 900 px:n ikkunassa näkymät olivat
+ * 251 × 290 -laatikoita ja 1216 px:n kortissa 592 px näkymiä + 510 px:n palsta, jonka alaosa oli tyhjä. Nyt .lvap on
+ * container-kysely (container-type: inline-size) ja jokainen raja on kortin leveys.
+ *  - Näkymä on KOKO appiruutu kuvasuhteessaan 480 × 1039 puhelinkehyksessä, myös appin alapalkki (Etusivu, Lähellä …).
+ *    Ennen kuva rajattiin kiinteään korkeuteen (184 × 360) ja alaosa häivytettiin, joten alapalkki ei näkynyt millään leveydellä.
+ *  - kortti < 560 px (puhelin): ensimmäinen näkymä ja kolme hyötyä sen vieressä pystykeskitettynä, nappi koko leveydeltä.
+ *    Näkymän leveys = kortti − 212 px (hyödyille jää ≥ 156 px), 96–176 px; alle 320 px:n kortissa 84–120 px.
+ *  - kortti 560–899 px (tabletti, kapea ikkuna): kolme näkymää rinnakkain, enintään 224 px, reunat tekstin linjassa;
+ *    nappi vasemmalla ja QR-paneeli oikealla (alle 720 px:n kortissa QR:n teksti alla, muuten vieressä).
+ *  - kortti ≥ 900 px (tietokone): logo ja otsikko koko kortin levyisinä (Vesa 3.10.: *"ihan kauhea"*, kun otsikko oli
+ *    318 px:n palstassa neljällä rivillä), alla vasen palsta ja kolme näkymää. Näkymä = (kortti − 492 px) / 3, 150–224 px,
+ *    joten palstalle jää ≥ 340 px. Palstan kolme osaa jaetaan näkymien korkeudelle: ingressi ylös, nappi keskelle,
+ *    QR-paneeli alas näkymien kuvatekstien linjaan (ei enää tyhjää aluetta pienen QR:n alla).
+ *  - QR omana paneelinaan (koodi 104–152 px + "Skannaa ja avaa puhelimessa" vieressä); oli 96 px ja 11 px:n teksti.
  *  - Otsikko katkeaa ensisijaisesti kysymyksen jälkeen (Lauseet: kumpikin lause oma inline-block), ei keskeltä lausetta.
- *  - QR vain hiiriruudulla (pointer: fine) 640 px:stä ylöspäin: Vesan ~720 px:n selainpaneeli saa sen yhä (3.8.2026), mutta
- *    kosketustabletti ei, koska appi avautuu tabletilla suoraan (appin deviceTarget.ts päästää tabletit sisään).
- * Mitattu prototyypistä 1.10.: sisällön peitto kortin sisäalasta 45 % → 73 % (390 px), 44 % → 72 % (768 px).
+ *  - QR vain hiiriruudulla (pointer: fine) ja vähintään 560 px:n kortissa: Vesan ~720 px:n selainpaneeli saa sen yhä
+ *    (3.8.2026), mutta kosketustabletti ei, koska appi avautuu tabletilla suoraan (appin deviceTarget.ts päästää tabletit).
+ *  - Yhden näkymän yksiköt (laplandvisitin aurora/emergency): kuva ja QR sivupalstassa vasta 680 px:n kortista (560 px:llä
+ *    otsikko jäi kolmelle riville). 🔴 Puhelinkomponentin inline-tyyli display:block ohitti piilotussäännön, joten näissä
+ *    yksiköissä sama näkymä näkyi tabletilla ja tietokoneella KAHDESTI (mitattu livenä 4.10.) — inline-tyyli poistettu.
  *
  * Poistettu tietoisesti: UUTTA-pilleri (harvennettu versaali, eikä appi ole enää uusi), 2×2-luvut 31/211/105/478 (appin
  * varastolukuja, joista rinteet ja hissit eivät kuulu kelkka- tai majoitussivulle; luku näkyy nyt vain siellä missä se
@@ -100,7 +111,7 @@ function track(placement: string) {
 }
 
 const CSS = `
-.lvap{margin:32px 0;font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB}
+.lvap{width:100%;margin:32px 0;font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB;container-type:inline-size}
 .lvap *{box-sizing:border-box}
 .lvap-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(236,72,153,.4);background:linear-gradient(to bottom right,#4a1236,#241a3f,#123152);padding:20px}
 .lvap-glow{pointer-events:none;position:absolute;top:-96px;right:-64px;width:224px;height:224px;border-radius:9999px;background:rgba(236,72,153,.25);filter:blur(64px)}
@@ -114,11 +125,12 @@ const CSS = `
 .lvap-cjk .lvap-title,.lvap-cjk .lvap-lab{word-break:keep-all;overflow-wrap:anywhere;letter-spacing:0;line-height:1.15;font-weight:700}
 .lvap-cjk .lvap-title{font-size:26px}
 .lvap-s{display:inline-block}
-.lvap-lead{margin:12px 0 0;max-width:56ch;font-size:15px;line-height:1.6;color:rgba(249,250,251,.85);text-wrap:pretty}
-.lvap-phone{position:relative;flex-shrink:0;overflow:hidden;border-radius:20px;border:2px solid rgba(255,255,255,.15);background:#0F172A;box-shadow:0 22px 44px -14px rgba(0,0,0,.8);-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent);mask-image:linear-gradient(to bottom,#000 82%,transparent)}
-.lvap-phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;margin:0;max-width:none}
-.lvap-a{display:flex;align-items:flex-start;gap:16px}
-.lvap-a .lvap-phone{width:146px;height:300px}
+.lvap-col{min-width:0}
+.lvap-lead{margin:12px 0 0;max-width:60ch;font-size:15px;line-height:1.6;color:rgba(249,250,251,.85);text-wrap:pretty}
+.lvap-phone{position:relative;flex-shrink:0;display:block;padding:4px;border-radius:15%/7%;border:1px solid rgba(255,255,255,.22);background:#05080F;box-shadow:0 22px 44px -14px rgba(0,0,0,.8)}
+.lvap-phone img{display:block;width:100%;height:auto;aspect-ratio:480/1039;border-radius:12.5%/6%;margin:0;max-width:none}
+.lvap-a{display:flex;align-items:center;gap:16px}
+.lvap-a .lvap-phone{width:146px;width:clamp(96px,calc(100cqi - 212px),176px)}
 .lvap-list{margin:0;padding:0;list-style:none;min-width:0;flex:1}
 .lvap-list li{margin:0;padding:0;border-top:1px solid rgba(255,255,255,.1)}
 .lvap-list li:last-child{border-bottom:1px solid rgba(255,255,255,.1)}
@@ -133,8 +145,8 @@ const CSS = `
 .lvap-b{display:none;margin:0;padding:0;list-style:none}
 .lvap-b li{margin:0;padding:0;min-width:0}
 .lvap-b a{display:block;color:#F9FAFB;text-decoration:none}
-.lvap-b .lvap-phone{width:100%;height:290px}
-.lvap-b .lvap-lab{margin-top:12px;display:flex;align-items:center;gap:4px}
+.lvap-b .lvap-phone{width:100%}
+.lvap-b .lvap-lab{margin-top:14px;display:flex;align-items:center;gap:4px}
 .lvap-side{display:none}
 .lvap-act{display:grid;gap:16px}
 .lvap-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:9999px;background:#DB2777;padding:14px 28px;font-family:'DM Sans',system-ui,sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:#fff;text-decoration:none;box-shadow:0 10px 30px -8px rgba(219,39,119,.7);transition:transform .15s ease,background-color .15s ease}
@@ -142,60 +154,71 @@ const CSS = `
 .lvap-cta:active{transform:scale(.98)}
 .lvap-cta svg{width:20px;height:20px;flex-shrink:0}
 .lvap-note{margin:10px 0 0;font-size:12px;line-height:1.45;color:rgba(249,250,251,.6);text-wrap:pretty}
-.lvap-qr{display:none;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}
-.lvap-qr img{display:block;width:96px;height:96px;border-radius:16px;background:#fff;padding:8px;box-shadow:0 12px 24px -8px rgba(0,0,0,.5);margin:0}
-.lvap-qr span{max-width:132px;text-align:center;font-size:11px;line-height:1.35;color:rgba(249,250,251,.65)}
+.lvap-qr{display:none;align-items:center;gap:16px;flex-shrink:0;padding:12px 20px 12px 12px;border-radius:22px;border:1px solid rgba(255,255,255,.14);background:rgba(15,23,42,.4)}
+.lvap-qr img{display:block;flex-shrink:0;width:120px;height:120px;border-radius:14px;background:#fff;padding:9px;box-shadow:0 12px 24px -8px rgba(0,0,0,.5);margin:0}
+.lvap-qr span{max-width:156px;font-size:14px;font-weight:600;line-height:1.4;color:rgba(249,250,251,.88);text-wrap:pretty}
 .lvap-wide{display:none}
 .lvap a:focus-visible{outline:2px solid #F9A8D4;outline-offset:3px;border-radius:12px}
-@media (min-width:360px) and (max-width:389.98px){
- .lvap-a{gap:14px}
- .lvap-a .lvap-phone{width:120px;height:246px}
-}
-@media (max-width:359.98px){
+@container (max-width:319.98px){
  .lvap-card{padding:16px}
  .lvap-title{font-size:27px}
  .lvap-a{gap:12px}
- .lvap-a .lvap-phone{width:96px;height:200px;border-radius:14px}
+ .lvap-a .lvap-phone{width:clamp(84px,calc(100cqi - 192px),120px)}
  .lvap-lab{font-size:17px}
 }
-@media (min-width:640px){
+@container (min-width:560px){
  .lvap-card{padding:28px}
- .lvap-title{font-size:42px}
- .lvap-cjk .lvap-title{font-size:34px}
+ .lvap-title{font-size:38px}
+ .lvap-cjk .lvap-title{font-size:32px}
  .lvap-in{gap:24px}
  .lvap-three .lvap-a{display:none}
- .lvap-three .lvap-b{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
- .lvap-act{display:flex;align-items:center;justify-content:space-between;gap:24px}
+ .lvap-three .lvap-b{display:grid;grid-template-columns:repeat(3,minmax(0,224px));justify-content:space-between;gap:20px}
+ .lvap-act{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+ .lvap-act .lvap-ctaw{flex:1 1 260px;min-width:0}
+ .lvap-act .lvap-qr{flex-direction:column;gap:10px;padding:12px;text-align:center}
+ .lvap-act .lvap-qr img{width:104px;height:104px;padding:8px}
+ .lvap-act .lvap-qr span{max-width:128px;font-size:13px}
  .lvap-cta{width:auto;font-size:18px;white-space:nowrap}
+}
+@container (min-width:680px){
+ .lvap-title{font-size:42px}
+ .lvap-cjk .lvap-title{font-size:34px}
  .lvap-one .lvap-in{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:32px}
  .lvap-one .lvap-a .lvap-phone{display:none}
  .lvap-one .lvap-side{display:flex;flex-direction:column;align-items:center;gap:20px;grid-row:1/span 3;grid-column:2}
- .lvap-one .lvap-side .lvap-phone{width:196px;height:400px}
+ .lvap-one .lvap-side .lvap-phone{width:196px}
+ .lvap-one .lvap-side .lvap-qr{flex-direction:column;padding:12px;text-align:center}
+ .lvap-one .lvap-side .lvap-qr span{max-width:144px}
  .lvap-one .lvap-act{justify-content:flex-start}
 }
-@media (min-width:640px) and (pointer:fine){.lvap-qr{display:flex}}
-@media (min-width:1024px){
+@container (min-width:720px){
+ .lvap-act .lvap-qr{flex-direction:row;gap:16px;padding:12px 20px 12px 12px;text-align:left}
+ .lvap-act .lvap-qr img{width:120px;height:120px;padding:9px}
+ .lvap-act .lvap-qr span{max-width:156px;font-size:14px}
+}
+@media (pointer:fine){@container (min-width:560px){.lvap-qr{display:flex}}}
+@container (min-width:900px){
  .lvap-card{padding:36px}
  .lvap-title{font-size:40px}
- .lvap-one .lvap-side{flex-direction:row}
- .lvap-three .lvap-in{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto 1fr;align-items:start;column-gap:32px;row-gap:0}
+ .lvap-lead{font-size:16px}
+ .lvap-three .lvap-in{grid-template-columns:minmax(0,1fr) auto;column-gap:40px;row-gap:0}
  .lvap-three .lvap-txt0{display:contents}
  .lvap-three .lvap-lockup,.lvap-three .lvap-title{grid-column:1/-1}
- .lvap-three .lvap-lead{grid-column:1;grid-row:3;margin-top:28px}
- .lvap-three .lvap-b{grid-column:2;grid-row:3/span 2;margin-top:28px;grid-template-columns:repeat(3,150px);gap:16px}
- .lvap-three .lvap-b .lvap-phone{height:300px}
+ .lvap-three .lvap-col{grid-column:1;grid-row:3;margin-top:28px;display:flex;flex-direction:column}
+ .lvap-three .lvap-lead{margin-top:0}
+ .lvap-three .lvap-b{grid-column:2;grid-row:3;margin-top:28px;grid-template-columns:repeat(3,clamp(150px,calc((100cqi - 492px) / 3),224px));justify-content:start;gap:20px}
  .lvap-three .lvap-narrow{display:none}
- .lvap-three .lvap-wide{grid-column:1;grid-row:4;display:flex;flex-wrap:wrap;align-items:center;gap:24px 28px;margin-top:28px}
- .lvap-three .lvap-wide .lvap-qr{flex-direction:row;gap:14px}
- .lvap-three .lvap-wide .lvap-qr span{max-width:120px;text-align:left;font-size:12px}
- .lvap-one .lvap-side .lvap-phone{width:220px;height:420px}
- .lvap-one .lvap-side .lvap-qr img{width:128px;height:128px}
+ .lvap-three .lvap-col{justify-content:space-between;align-items:flex-start;gap:28px}
+ .lvap-three .lvap-wide{display:contents}
+ .lvap-one .lvap-side{flex-direction:row}
+ .lvap-one .lvap-side .lvap-phone{width:220px}
+ .lvap-qr img{width:140px;height:140px;padding:10px}
 }
-@media (min-width:1280px){
+@container (min-width:1100px){
  .lvap-title{font-size:48px}
- .lvap-three .lvap-in{column-gap:40px}
- .lvap-three .lvap-b{grid-template-columns:repeat(3,184px);gap:20px}
- .lvap-three .lvap-b .lvap-phone{height:360px}
+ .lvap-lead{font-size:18px}
+ .lvap-qr img{width:152px;height:152px}
+ .lvap-qr span{font-size:15px}
 }
 @media (prefers-reduced-motion:reduce){.lvap-chev,.lvap-cta{transition:none}}
 .lvap-nudge{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom));animation:lvSlideUp .45s cubic-bezier(.22,1,.36,1);font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB}
@@ -232,7 +255,7 @@ function Lockup() {
 
 function Phone({ screen, lang, alt }: { screen: Screen; lang: string; alt: string }) {
   return (
-    <span className="lvap-phone" style={{ display: 'block' }}>
+    <span className="lvap-phone">
       <img src={shotSrc(screen, lang)} alt={alt} width={480} height={1039} loading="lazy" decoding="async" />
     </span>
   );
@@ -266,7 +289,7 @@ export function AppPromoHero({ focus, placement = 'hero' }: Props) {
   const one = screens.length === 1;
 
   const cta = (
-    <div>
+    <div className="lvap-ctaw">
       <a href={appUrl(unit ? SCREEN_TAB[screens[0]] : '', 'cta')} data-umami-event="app_cta" data-umami-event-surface={surface} onClick={() => track(placement)} className="lvap-cta">
         <Download aria-hidden />
         {c.cta}
@@ -301,13 +324,15 @@ export function AppPromoHero({ focus, placement = 'hero' }: Props) {
           <div className="lvap-txt0" style={{ minWidth: 0 }}>
             <Lockup />
             <h2 className="lvap-title"><Lauseet text={title} /></h2>
-            <p className="lvap-lead">{lead}</p>
-            {!one && (
-              <div className="lvap-wide">
-                {cta}
-                <Qr c={c} />
-              </div>
-            )}
+            <div className="lvap-col">
+              <p className="lvap-lead">{lead}</p>
+              {!one && (
+                <div className="lvap-wide">
+                  {cta}
+                  <Qr c={c} />
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Puhelin: ensimmäinen näkymä isona ja hyödyt sen vieressä. Yksikössä sama myös leveämmällä, kuva sivupalstassa. */}
