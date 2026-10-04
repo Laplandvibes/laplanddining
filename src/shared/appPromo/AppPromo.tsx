@@ -33,6 +33,14 @@
  *  - Otsikko katkeaa ensisijaisesti kysymyksen jälkeen (Lauseet: kumpikin lause oma inline-block), ei keskeltä lausetta.
  *  - QR vain hiiriruudulla (pointer: fine) ja vähintään 560 px:n kortissa: Vesan ~720 px:n selainpaneeli saa sen yhä
  *    (3.8.2026), mutta kosketustabletti ei, koska appi avautuu tabletilla suoraan (appin deviceTarget.ts päästää tabletit).
+ *  - Nurkkakortti (AppPromoNudge, Vesa 4.10.2026 laplanddealsilla: *"itse laplandvibes app on liian pienellä suhteessa
+ *    muihin fontteihin … jotenkin tosi epäselvä eikä kuva näy"*). Mitattu: kuva oli 64 × 88 px:n pala näkymän yläreunasta
+ *    (appin välilehtinapit, joista ei erottanut mitään) ja sanamerkki 16 px, kortin pienin teksti 24 px:n otsikon rinnalla.
+ *    Nyt koko appinäkymä samassa puhelinkehyksessä kuin lohkossa (alapalkki näkyy), 84 px puhelimella ja 116 px
+ *    leveämmällä; sanamerkki 24 / 30 px eli otsikkoa (19 / 22 px) suurempi; 640 px:stä alkaen otsikon alla aiheen kolme
+ *    näkymää nimeltä (mitä appissa on), ja nappi samassa palstassa. Sulje-nappi kortin kulmassa, logo väistää sitä.
+ *    Alle 360 px:n näytöllä näkymä 64 px, sanamerkki 20 px ja asennusrivi pois: 320 px:llä sanamerkki rivittyi
+ *    ("…VIBES / APP") ja kortti vei 42 % ruudusta (mitattu 4.10. 320 × 640).
  *  - Yhden näkymän yksiköt (laplandvisitin aurora/emergency): kuva ja QR sivupalstassa vasta 680 px:n kortista (560 px:llä
  *    otsikko jäi kolmelle riville). 🔴 Puhelinkomponentin inline-tyyli display:block ohitti piilotussäännön, joten näissä
  *    yksiköissä sama näkymä näkyi tabletilla ja tietokoneella KAHDESTI (mitattu livenä 4.10.) — inline-tyyli poistettu.
@@ -223,23 +231,42 @@ const CSS = `
 @media (prefers-reduced-motion:reduce){.lvap-chev,.lvap-cta{transition:none}}
 .lvap-nudge{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom));animation:lvSlideUp .45s cubic-bezier(.22,1,.36,1);font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB}
 .lvap-nudge *{box-sizing:border-box}
-.lvap-ncard{position:relative;margin:0 auto;max-width:672px;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.15);background:#0F172A;box-shadow:0 24px 60px -16px rgba(0,0,0,.75),0 0 0 1px rgba(236,72,153,.28)}
+.lvap-ncard{position:relative;margin:0 auto;max-width:672px;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.15);background:#0F172A;box-shadow:0 24px 60px -16px rgba(0,0,0,.75),0 0 0 1px rgba(236,72,153,.28)}
 .lvap-naur{pointer-events:none;position:absolute;inset:0;background:radial-gradient(80% 120% at 100% 0%,rgba(236,72,153,.32),transparent 60%),radial-gradient(70% 100% at 0% 100%,rgba(34,211,238,.2),transparent 60%)}
-.lvap-nrow{position:relative;display:flex;align-items:center;gap:12px;padding:12px}
-.lvap-nimg{width:56px;height:76px;flex-shrink:0;border-radius:10px;border:1px solid rgba(255,255,255,.2);object-fit:cover;object-position:50% 0;box-shadow:0 10px 24px -8px rgba(0,0,0,.8);margin:0;max-width:none}
+.lvap-nrow{position:relative;display:flex;align-items:center;gap:14px;padding:14px}
+.lvap-nudge .lvap-phone{width:84px;padding:3px}
 .lvap-ntxt{min-width:0;flex:1}
-.lvap-nudge .lvap-wm{font-size:16px}
-.lvap-nudge .lvap-slogan{font-size:11px}
-.lvap-ntitle{margin:4px 0 0;font-family:'Bebas Neue','Arial Narrow',sans-serif;font-weight:400;font-size:21px;line-height:1;letter-spacing:.025em;color:#F9FAFB;text-wrap:balance}
-.lvap-nudge.lvap-cjk .lvap-ntitle{font-size:17px;line-height:1.2;letter-spacing:0;word-break:keep-all;overflow-wrap:anywhere}
-.lvap-nclose{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.15);color:#fff;cursor:pointer;padding:0}
+.lvap-nudge .lvap-lockup{padding-right:40px}
+.lvap-nudge .lvap-wm{font-size:24px}
+.lvap-nudge .lvap-slogan{font-size:12px}
+.lvap-ntitle{margin:6px 0 0;font-family:'Bebas Neue','Arial Narrow',sans-serif;font-weight:400;font-size:19px;line-height:1.02;letter-spacing:.025em;color:#F9FAFB;text-wrap:balance}
+.lvap-nudge.lvap-cjk .lvap-ntitle{font-size:16px;line-height:1.25;letter-spacing:0;font-weight:700;word-break:keep-all;overflow-wrap:anywhere}
+.lvap-nfeat{display:none;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.lvap-nfeat li{margin:0;padding:4px 10px;border-radius:9999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);font-size:12px;line-height:1.35;color:rgba(249,250,251,.92);white-space:nowrap}
+.lvap-nclose{position:absolute;top:6px;right:6px;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;border:1px solid rgba(255,255,255,.4);background:rgba(15,23,42,.6);color:#fff;cursor:pointer;padding:0}
 .lvap-nclose:hover{background:rgba(255,255,255,.3)}
 .lvap-nclose svg{width:20px;height:20px}
-.lvap-ncta{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;margin:0 12px 12px;min-height:44px;border-radius:9999px;background:#DB2777;padding:12px 16px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;box-shadow:0 12px 28px -10px rgba(236,72,153,.9)}
+.lvap-ncta{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 0;min-height:44px;border-radius:9999px;background:#DB2777;padding:11px 16px;font-size:14px;font-weight:700;line-height:1.25;text-align:center;color:#fff;text-decoration:none;box-shadow:0 12px 28px -10px rgba(236,72,153,.9)}
 .lvap-ncta:hover{background:#BE185D;color:#fff}
-.lvap-ncta svg{width:16px;height:16px}
-.lvap-nnote{position:relative;margin:-4px 12px 12px;text-align:center;font-size:11px;line-height:1.3;color:rgba(249,250,251,.5)}
-@media (min-width:640px){.lvap-nudge{left:auto;width:30rem;max-width:calc(100vw - 2rem);padding:16px}.lvap-ncard{margin:0;max-width:none}.lvap-nimg{width:64px;height:88px}.lvap-ntitle{font-size:24px}}
+.lvap-ncta svg{width:16px;height:16px;flex-shrink:0}
+.lvap-nnote{position:relative;margin:6px 0 0;text-align:center;font-size:11px;line-height:1.35;color:rgba(249,250,251,.6);text-wrap:pretty}
+@media (max-width:359px){
+ .lvap-nrow{gap:10px;padding:12px}
+ .lvap-nudge .lvap-phone{width:64px}
+ .lvap-nudge .lvap-wm{font-size:20px}
+ .lvap-nnote{display:none}
+}
+@media (min-width:640px){
+ .lvap-nudge{left:auto;width:35rem;max-width:calc(100vw - 2rem);padding:16px}
+ .lvap-ncard{margin:0;max-width:none}
+ .lvap-nrow{gap:18px;padding:16px}
+ .lvap-nudge .lvap-phone{width:116px;padding:4px}
+ .lvap-nudge .lvap-wm{font-size:30px}
+ .lvap-nudge .lvap-slogan{font-size:13px}
+ .lvap-ntitle{margin-top:8px;font-size:22px}
+ .lvap-nudge.lvap-cjk .lvap-ntitle{font-size:18px}
+ .lvap-nfeat{display:flex}
+}
 @keyframes lvSlideUp{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
 @media (prefers-reduced-motion:reduce){.lvap-nudge{animation:none}}
 `;
@@ -459,21 +486,24 @@ export function AppPromoNudge({ focus }: Props) {
       <style>{CSS}</style>
       <div className="lvap-ncard">
         <div aria-hidden className="lvap-naur" />
+        <button type="button" onClick={close} aria-label={c.dismiss} className="lvap-nclose">
+          <X aria-hidden strokeWidth={2.5} />
+        </button>
         <div className="lvap-nrow">
-          <img src={shotSrc(first, lang)} alt="" width={480} height={1039} decoding="async" className="lvap-nimg" />
+          <Phone screen={first} lang={lang} alt={first === 'aurora' ? '' : plain(c.screens[first][0])} />
           <div className="lvap-ntxt">
             <Lockup />
             <p className="lvap-ntitle"><Phr text={title} /></p>
+            <ul className="lvap-nfeat">
+              {FOCUS_SCREENS[textFocus].map((s) => (s === 'aurora' ? null : <li key={s}>{plain(c.screens[s][0])}</li>))}
+            </ul>
+            <a href={appUrl('', 'nudge')} data-umami-event="app_cta" data-umami-event-surface="promo_nudge" onClick={() => { track('nudge'); close(); }} className="lvap-ncta">
+              <Download aria-hidden />
+              {c.cta}
+            </a>
+            <p className="lvap-nnote">{c.note}</p>
           </div>
-          <button type="button" onClick={close} aria-label={c.dismiss} className="lvap-nclose">
-            <X aria-hidden strokeWidth={2.5} />
-          </button>
         </div>
-        <a href={appUrl('', 'nudge')} data-umami-event="app_cta" data-umami-event-surface="promo_nudge" onClick={() => { track('nudge'); close(); }} className="lvap-ncta">
-          <Download aria-hidden />
-          {c.cta}
-        </a>
-        <p className="lvap-nnote">{c.note}</p>
       </div>
     </div>
   );
