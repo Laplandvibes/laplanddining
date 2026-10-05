@@ -26,6 +26,12 @@ interface PrivacyContentProps {
   lang?: Lang;
   /** Site-specific "last updated" line (the site's own addenda move faster than the network body). */
   lastUpdated?: string;
+  /**
+   * Describe Microsoft Clarity (session recordings + heatmaps) in sections 2, 3, 4a, 6, 7 and 8a.
+   * Only for sites that really load Clarity after cookie consent (the hub). Default false, so the
+   * other sites' policies do not claim a recording tool they do not run. Same prop as CookieContent.
+   */
+  sessionRecording?: boolean;
 }
 
 const COPY: Record<Lang, {
@@ -965,8 +971,10 @@ export default function PrivacyContent({
   lastUpdated: lastUpdatedOverride,
   siteName = 'LaplandVibes',
   lang = 'en',
+  sessionRecording = false,
 }: PrivacyContentProps = {}) {
   const t = COPY[lang] ?? COPY.en;
+  const rec = SESSION_RECORDING[lang] ?? SESSION_RECORDING.en;
   /* Label/description separator. ja + zh-CN take the fullwidth colon with no space; fr puts a no-break
      space before the colon, as every fr string in this file does ("Durée : 1 an"); ko uses the halfwidth one. */
   const cjk = lang === 'ja' || lang === 'zh-CN';
@@ -1001,6 +1009,11 @@ export default function PrivacyContent({
     : lang === 'sv' ? 'avregistreringssida'
     : 'unsubscribe page'
   }</a>;
+  // Microsoft redirects this address to the reader's own language version.
+  const msLink = <a href="https://www.microsoft.com/privacy/privacystatement" target="_blank" rel="noopener" className="text-vibe-pink">{rec.msPrivacy}</a>;
+  /* Clarity rows go right after Google Analytics, the other analytics service, in both lists. */
+  const s7Items = sessionRecording ? [t.s7Items[0], rec.s7Item, ...t.s7Items.slice(1)] : t.s7Items;
+  const s8aItems = sessionRecording ? [t.s8aItems[0], rec.s8aItem, ...t.s8aItems.slice(1)] : t.s8aItems;
 
   return (
     <div className="min-h-screen bg-deep-night pt-24 pb-20">
@@ -1017,6 +1030,7 @@ export default function PrivacyContent({
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s2Title}</h2>
             <p>{t.s2Body}</p>
+            {sessionRecording && <p className="mt-3">{rec.s2}</p>}
           </section>
 
           <section>
@@ -1034,7 +1048,8 @@ export default function PrivacyContent({
             <p>{t.s3Intro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
               {t.s3Items.map((it, i) => (
-                <li key={i}><strong className="text-snow/80">{it.strong}{sep}</strong>{gap}{it.body}</li>
+                // Item 1 is the analytics-cookie row in every language.
+                <li key={i}><strong className="text-snow/80">{it.strong}{sep}</strong>{gap}{sessionRecording && i === 1 ? rec.s3Analytics : it.body}</li>
               ))}
             </ul>
             <p className="mt-3">{t.s3Tail(cookieLink)}</p>
@@ -1045,6 +1060,14 @@ export default function PrivacyContent({
             <p>{t.s4Body}</p>
           </section>
 
+          {sessionRecording && (
+            <section>
+              <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{rec.s4aTitle}</h2>
+              <p>{rec.s4aBody1}</p>
+              <p className="mt-3">{rec.s4aBody2(msLink)}</p>
+            </section>
+          )}
+
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s5Title}</h2>
             <p>{t.s5Body(unsubLink)}</p>
@@ -1052,14 +1075,14 @@ export default function PrivacyContent({
 
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s6Title}</h2>
-            <p>{t.s6Body}</p>
+            <p>{t.s6Body}{sessionRecording && <>{gap}{rec.s6}</>}</p>
           </section>
 
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s7Title}</h2>
-            <p>{t.s7Intro}</p>
+            <p>{sessionRecording ? rec.s7Intro : t.s7Intro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
-              {t.s7Items.map((it, i) => <li key={i}>{it}</li>)}
+              {s7Items.map((it, i) => <li key={i}>{it}</li>)}
             </ul>
           </section>
 
@@ -1073,7 +1096,7 @@ export default function PrivacyContent({
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s8aTitle}</h2>
             <p>{t.s8aIntro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
-              {t.s8aItems.map((it, i) => (
+              {s8aItems.map((it, i) => (
                 <li key={i}><strong className="text-snow/80">{it.strong}</strong>{gap}{it.body}</li>
               ))}
             </ul>
@@ -1115,3 +1138,183 @@ export default function PrivacyContent({
     </div>
   );
 }
+
+/**
+ * @harvest-stop — esirenderöinnin haravointi loppuu tähän.
+ *
+ * Kaikki tämän alapuolella oleva on `sessionRecording`-tekstiä (Microsoft Clarity), jota näyttää vain
+ * sivusto, joka oikeasti lataa Clarityn (hubi). Crawlable-body-haravoija lukee tiedostosta JOKAISEN
+ * kielilohkon ja leikkaa tämän merkin kohdalta. Kun nämä tekstit olivat COPY-kielilohkoissa, ne
+ * päätyivät myös muiden sivustojen staattiseen tietosuojasivuun, vaikka sivusto ei käytä Claritya
+ * (mitattu tuotannosta 5.10.2026: evästesivu 21 sivustolla, tietosuojasivu nightlife ja tours).
+ * Ehdollinen teksti kuuluu tämän merkin alle, ei COPY:yn. Merkkijonoa ei saa mainita tiedostossa
+ * aiemmin: haravoija leikkaa ENSIMMÄISESTÄ osumasta.
+ */
+/** Microsoft Clarity, rendered only when `sessionRecording` is on. */
+interface SessionRecordingCopy {
+  /** Extra paragraph after s2Body. */
+  s2: string;
+  /** Replaces the body of the analytics-cookie item (s3Items[1]). */
+  s3Analytics: string;
+  s4aTitle: string;
+  s4aBody1: string;
+  /** Microsoft's own role and uses, with a link to the Microsoft Privacy Statement (Clarity terms 4.4 b). */
+  s4aBody2: (msLink: React.ReactNode) => React.ReactNode;
+  /** Link text, in the grammatical form s4aBody2 needs. */
+  msPrivacy: string;
+  /** Appended to s6Body. */
+  s6: string;
+  /** Replaces s7Intro: Microsoft receives the data as an independent controller, so "we do not share" would be untrue. */
+  s7Intro: string;
+  /** Inserted after Google Analytics in s7Items. */
+  s7Item: string;
+  /** Inserted after Google Analytics in s8aItems. */
+  s8aItem: { strong: string; body: string };
+}
+
+const SESSION_RECORDING: Record<Lang, SessionRecordingCopy> = {
+  en: {
+    s2: 'If you accept cookies, we also use Microsoft Clarity to collect clicks, scrolling and mouse movement for session recordings and heatmaps. Section 4a explains how it works.',
+    s3Analytics: 'used by Google Analytics 4 and Microsoft Clarity to understand how visitors interact with our site. Collected pseudonymously.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'If you accept cookies, Microsoft Clarity records clicks, scrolling and mouse movement on our pages. We view them as session recordings and heatmaps to see which parts of a page confuse people. Anything you type into a form field is masked in your browser and never sent to Microsoft. Clarity links visits from the same browser with a random ID stored in a cookie. The data contains no name or email address, but the ID makes it pseudonymous personal data under the GDPR. If you decline cookies, Clarity does not load at all.',
+    s4aBody2: (ms) => <>We do not use Clarity data for advertising. When you accept cookies, our site gives Clarity consent for analytics only, not for advertising. However, Microsoft is an independent controller of this data: under the Clarity terms of use, it may also use the data for its own purposes, including product improvement and advertising (Microsoft Advertising). The {ms} explains how Microsoft handles personal data.</>,
+    msPrivacy: 'Microsoft Privacy Statement',
+    s6: 'Microsoft Clarity keeps session recordings for 30 days and heatmap and click data for 9 months. A recording that we save is kept for 9 months.',
+    s7Intro: 'We do not sell your personal data. The following third-party services process data as part of our operations:',
+    s7Item: 'Microsoft Clarity: session recordings and heatmaps (Microsoft is an independent controller, see section 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Ireland, EU; Microsoft Corporation, USA): transfers from Microsoft Ireland to Microsoft Corporation are covered by Standard Contractual Clauses, and Microsoft Corporation is certified under the EU–US Data Privacy Framework.' },
+  },
+  fi: {
+    s2: 'Jos hyväksyt evästeet, käytämme lisäksi Microsoft Clarity -palvelua, joka kokoaa klikkauksista, vierityksestä ja hiiren liikkeistä istuntotallenteita ja lämpökarttoja. Kohdassa 4a kerrotaan, miten se toimii.',
+    s3Analytics: 'Google Analytics 4 ja Microsoft Clarity käyttävät näitä ymmärtääkseen, miten kävijät käyttävät sivustoa. Kerätään pseudonyymisti.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Jos hyväksyt evästeet, Microsoft Clarity tallentaa klikkaukset, vierityksen ja hiiren liikkeet sivuillamme. Katsomme niitä istuntotallenteina ja lämpökarttoina nähdäksemme, mitkä kohdat sivusta hämmentävät kävijöitä. Lomakekenttään kirjoittamasi teksti peitetään jo selaimessasi eikä sitä lähetetä Microsoftille. Clarity yhdistää samasta selaimesta tehdyt käynnit evästeeseen tallennetulla satunnaisella tunnisteella. Tiedoissa ei ole nimeäsi eikä sähköpostiosoitettasi, mutta tunnisteen vuoksi ne ovat tietosuoja-asetuksen tarkoittamia pseudonyymejä henkilötietoja. Jos hylkäät evästeet, Clarity ei lataudu lainkaan.',
+    s4aBody2: (ms) => <>Emme käytä Clarityn tietoja mainontaan. Kun hyväksyt evästeet, sivustomme antaa Claritylle suostumuksen vain analytiikkaan, ei mainontaan. Microsoft on kuitenkin näiden tietojen itsenäinen rekisterinpitäjä: Clarityn käyttöehtojen mukaan se voi käyttää tietoja myös omiin tarkoituksiinsa, kuten tuotteidensa kehittämiseen ja mainontaan (Microsoft Advertising). {ms} näet, miten yhtiö käsittelee henkilötietoja.</>,
+    msPrivacy: 'Microsoftin tietosuojaselosteesta',
+    s6: 'Microsoft Clarity säilyttää istuntotallenteet 30 päivää sekä lämpökartta- ja klikkaustiedot 9 kuukautta. Tallenne, jonka otamme talteen, säilyy 9 kuukautta.',
+    s7Intro: 'Emme myy henkilötietojasi. Seuraavat palveluntarjoajat käsittelevät tietoja toimintamme yhteydessä:',
+    s7Item: 'Microsoft Clarity: istuntotallenteet ja lämpökartat (Microsoft on itsenäinen rekisterinpitäjä, ks. kohta 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irlanti, EU; Microsoft Corporation, Yhdysvallat): siirrot Microsoftin irlantilaisesta yhtiöstä Microsoft Corporationille on katettu vakiosopimuslausekkein (SCC) ja Microsoft Corporation kuuluu EU–US Data Privacy Framework -järjestelyyn.' },
+  },
+  de: {
+    s2: 'Wenn Sie Cookies akzeptieren, nutzen wir außerdem Microsoft Clarity, um Klicks, Scrollen und Mausbewegungen für Sitzungsaufzeichnungen und Heatmaps zu erfassen. Wie das funktioniert, erklärt Abschnitt 4a.',
+    s3Analytics: 'werden von Google Analytics 4 und Microsoft Clarity verwendet, um zu verstehen, wie Besucher die Website nutzen. Pseudonyme Erfassung.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Wenn Sie Cookies akzeptieren, erfasst Microsoft Clarity Klicks, Scrollen und Mausbewegungen auf unseren Seiten. Wir sehen sie uns in Form von Sitzungsaufzeichnungen und Heatmaps an, um zu erkennen, welche Stellen einer Seite verwirren. Was Sie in ein Formularfeld eingeben, wird bereits in Ihrem Browser maskiert und nie an Microsoft gesendet. Clarity verknüpft Besuche aus demselben Browser über eine zufällige Kennung in einem Cookie. Die Daten enthalten weder Ihren Namen noch Ihre E-Mail-Adresse, aber durch die Kennung sind sie pseudonyme personenbezogene Daten im Sinne der DSGVO. Wenn Sie Cookies ablehnen, wird Clarity gar nicht erst geladen.',
+    s4aBody2: (ms) => <>Wir nutzen Clarity-Daten nicht für Werbung. Wenn Sie Cookies akzeptieren, übermittelt unsere Website an Clarity eine Einwilligung nur für Analysezwecke, nicht für Werbezwecke. Microsoft ist für diese Daten jedoch eigenständiger Verantwortlicher: Nach den Nutzungsbedingungen von Clarity darf Microsoft sie auch für eigene Zwecke verwenden, etwa zur Verbesserung seiner Produkte und für Werbung (Microsoft Advertising). Wie Microsoft personenbezogene Daten verarbeitet, erfahren Sie in der {ms}.</>,
+    msPrivacy: 'Datenschutzerklärung von Microsoft',
+    s6: 'Microsoft Clarity speichert Sitzungsaufzeichnungen 30 Tage lang sowie Heatmap- und Klickdaten 9 Monate lang. Sichern wir eine Aufzeichnung, bleibt sie 9 Monate erhalten.',
+    s7Intro: 'Wir verkaufen Ihre personenbezogenen Daten nicht. Folgende Dienste verarbeiten im Rahmen unseres Betriebs Daten:',
+    s7Item: 'Microsoft Clarity: Sitzungsaufzeichnungen und Heatmaps (Microsoft ist eigenständiger Verantwortlicher, siehe Abschnitt 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irland, EU; Microsoft Corporation, USA): Übermittlungen von der irischen Microsoft-Gesellschaft an die Microsoft Corporation sind durch Standardvertragsklauseln abgedeckt, und die Microsoft Corporation ist nach dem EU-US Data Privacy Framework zertifiziert.' },
+  },
+  ja: {
+    s2: 'クッキーに同意された場合は、Microsoft Clarity も利用して、クリック、スクロール、マウスの動きをセッション記録とヒートマップのために収集します。仕組みについては「4a. Microsoft Clarity」で説明しています。',
+    s3Analytics: 'Google Analytics 4 と Microsoft Clarity がサイトの利用状況を把握するために使用。仮名化された形で収集。',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'クッキーに同意された場合、Microsoft Clarity は当サイトのページ上でのクリック、スクロール、マウスの動きを記録します。当方はこれをセッション記録やヒートマップとして確認し、ページのどの部分が分かりにくいかを把握します。フォームの入力欄に入力された内容はブラウザ上でマスクされ、Microsoft に送信されることはありません。Clarity は、クッキーに保存されたランダムな識別子によって、同じブラウザからの訪問を関連付けます。データに氏名やメールアドレスは含まれませんが、この識別子により、GDPR 上の仮名化された個人データに当たります。クッキーを拒否された場合、Clarity は一切読み込まれません。',
+    s4aBody2: (ms) => <>当方は Clarity のデータを広告に使用しません。クッキーに同意された場合も、当サイトが Clarity に伝える同意は分析目的に限られ、広告目的は含みません。ただし、Microsoft はこのデータについて独立した管理者であり、Clarity の利用規約に基づき、製品の改善や広告（Microsoft Advertising）など、自社の目的にもデータを使用することがあります。Microsoft による個人データの取り扱いについては、{ms}をご覧ください。</>,
+    msPrivacy: 'Microsoft のプライバシーに関する声明',
+    s6: 'Microsoft Clarity は、セッション記録を30日間、ヒートマップとクリックのデータを9ヶ月間保管します。当方が保存した記録は9ヶ月間保管されます。',
+    s7Intro: '個人情報を販売することはありません。運営の一環として、以下の第三者サービスがデータを処理しています：',
+    s7Item: 'Microsoft Clarity：セッション記録とヒートマップ（Microsoft は独立した管理者。「4a. Microsoft Clarity」を参照）',
+    s8aItem: { strong: 'Microsoft Clarity', body: '（Microsoft Ireland Operations Limited（アイルランド、EU）、Microsoft Corporation（米国））：アイルランドの Microsoft 法人から Microsoft Corporation への移転は標準契約条項（SCC）の対象で、Microsoft Corporation は EU–米国データプライバシーフレームワークの認証を受けています。' },
+  },
+  es: {
+    s2: 'Si acepta las cookies, también usamos Microsoft Clarity, que recopila clics, desplazamiento y movimientos del ratón para crear grabaciones de sesión y mapas de calor. La sección 4a explica cómo funciona.',
+    s3Analytics: 'utilizadas por Google Analytics 4 y Microsoft Clarity para entender cómo interactúan los visitantes con nuestro sitio. Se recogen de forma seudonimizada.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Si acepta las cookies, Microsoft Clarity registra los clics, el desplazamiento y los movimientos del ratón en nuestras páginas. Los revisamos como grabaciones de sesión y mapas de calor para ver qué partes de una página confunden. Lo que usted escribe en un campo de formulario se enmascara en su navegador y nunca se envía a Microsoft. Clarity vincula las visitas desde el mismo navegador mediante un identificador aleatorio guardado en una cookie. Los datos no incluyen su nombre ni su dirección de correo electrónico, pero el identificador los convierte en datos personales seudonimizados conforme al RGPD. Si rechaza las cookies, Clarity no se carga en absoluto.',
+    s4aBody2: (ms) => <>No usamos los datos de Clarity con fines publicitarios. Cuando usted acepta las cookies, nuestro sitio le comunica a Clarity un consentimiento solo para fines analíticos, no publicitarios. Sin embargo, Microsoft es responsable independiente del tratamiento de estos datos: según las condiciones de uso de Clarity, también puede usarlos para sus propios fines, como la mejora de sus productos y la publicidad (Microsoft Advertising). La {ms} explica cómo trata Microsoft los datos personales.</>,
+    msPrivacy: 'Declaración de privacidad de Microsoft',
+    s6: 'Microsoft Clarity conserva las grabaciones de sesión durante 30 días y los datos de mapas de calor y de clics durante 9 meses. Si guardamos una grabación, se conserva durante 9 meses.',
+    s7Intro: 'No vendemos sus datos personales. Los siguientes servicios externos procesan datos como parte de nuestras operaciones:',
+    s7Item: 'Microsoft Clarity: grabaciones de sesión y mapas de calor (Microsoft es responsable independiente del tratamiento; véase la sección 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irlanda, UE; Microsoft Corporation, EE. UU.): las transferencias de la empresa irlandesa de Microsoft a Microsoft Corporation están amparadas por Cláusulas Contractuales Tipo, y Microsoft Corporation está certificada en el Marco de Privacidad de Datos UE–EE. UU.' },
+  },
+  'pt-BR': {
+    s2: 'Se você aceitar os cookies, também usamos o Microsoft Clarity, que coleta cliques, rolagem e movimentos do mouse para criar gravações de sessão e mapas de calor. A seção 4a explica como funciona.',
+    s3Analytics: 'usados pelo Google Analytics 4 e pelo Microsoft Clarity para entender como os visitantes interagem com nosso site. Coletados de forma pseudonimizada.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Se você aceitar os cookies, o Microsoft Clarity registra cliques, rolagem e movimentos do mouse em nossas páginas. Analisamos esses dados como gravações de sessão e mapas de calor para ver quais partes de uma página confundem. O que você digita em um campo de formulário é mascarado no seu navegador e nunca é enviado à Microsoft. O Clarity vincula as visitas feitas no mesmo navegador por meio de um identificador aleatório guardado em um cookie. Os dados não incluem seu nome nem seu endereço de e-mail, mas o identificador faz deles dados pessoais pseudonimizados segundo o GDPR. Se você recusar os cookies, o Clarity nem chega a ser carregado.',
+    s4aBody2: (ms) => <>Não usamos os dados do Clarity para publicidade. Quando você aceita os cookies, nosso site informa ao Clarity um consentimento apenas para fins analíticos, não publicitários. A Microsoft, porém, é controladora independente desses dados: de acordo com os termos de uso do Clarity, ela também pode usá-los para fins próprios, como a melhoria de seus produtos e a publicidade (Microsoft Advertising). A {ms} explica como a Microsoft trata dados pessoais.</>,
+    msPrivacy: 'Política de Privacidade da Microsoft',
+    s6: 'O Microsoft Clarity retém as gravações de sessão por 30 dias e os dados de mapas de calor e de cliques por 9 meses. Se salvarmos uma gravação, ela fica guardada por 9 meses.',
+    s7Intro: 'Não vendemos seus dados pessoais. Os seguintes serviços externos processam dados como parte de nossas operações:',
+    s7Item: 'Microsoft Clarity: gravações de sessão e mapas de calor (a Microsoft é controladora independente; veja a seção 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irlanda, UE; Microsoft Corporation, EUA): as transferências da empresa irlandesa da Microsoft para a Microsoft Corporation são cobertas pelas Cláusulas Contratuais Padrão, e a Microsoft Corporation é certificada no Quadro de Privacidade de Dados UE–EUA.' },
+  },
+  'zh-CN': {
+    s2: '如果您同意使用 Cookie，我们还会使用 Microsoft Clarity 收集点击、滚动和鼠标移动数据，用于生成会话记录和热图。其工作方式详见“4a. Microsoft Clarity”。',
+    s3Analytics: 'Google Analytics 4 和 Microsoft Clarity 用于了解访客如何与本网站互动。以假名化方式收集。',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: '如果您同意使用 Cookie，Microsoft Clarity 会记录您在我们页面上的点击、滚动和鼠标移动。我们以会话记录和热图的形式查看这些数据，以了解页面的哪些部分让人困惑。您在表单输入框中输入的内容会在您的浏览器中被遮蔽，绝不会发送给 Microsoft。Clarity 通过 Cookie 中存储的随机标识符，将同一浏览器的多次访问相互关联。这些数据不包含您的姓名或电子邮件地址，但由于该标识符的存在，它们属于 GDPR 所称的假名化个人数据。如果您拒绝 Cookie，Clarity 根本不会加载。',
+    s4aBody2: (ms) => <>我们不会将 Clarity 数据用于广告。您同意使用 Cookie 时，本网站向 Clarity 传达的同意仅限于分析用途，不包括广告用途。不过，Microsoft 是这些数据的独立数据控制者：根据 Clarity 使用条款，Microsoft 也可将其用于自身目的，包括改进产品和广告（Microsoft Advertising）。有关 Microsoft 如何处理个人数据，请参阅 {ms}。</>,
+    msPrivacy: 'Microsoft 隐私声明',
+    s6: 'Microsoft Clarity 将会话记录保留30天，热图和点击数据保留9个月。我们保存的记录保留9个月。',
+    s7Intro: '我们不会出售您的个人数据。作为运营的一部分，以下第三方服务会处理数据：',
+    s7Item: 'Microsoft Clarity：会话记录和热图（Microsoft 为独立数据控制者，详见“4a. Microsoft Clarity”）',
+    s8aItem: { strong: 'Microsoft Clarity', body: '（Microsoft Ireland Operations Limited，爱尔兰，欧盟；Microsoft Corporation，美国）：从 Microsoft 爱尔兰公司向 Microsoft Corporation 的传输受标准合同条款（SCC）保护，且 Microsoft Corporation 已通过欧盟–美国数据隐私框架认证。' },
+  },
+  ko: {
+    s2: '쿠키에 동의하시면 당사는 Microsoft Clarity도 사용하여 클릭, 스크롤, 마우스 움직임을 수집하고 이를 세션 기록과 히트맵으로 만듭니다. 작동 방식은 4a항에서 설명합니다.',
+    s3Analytics: 'Google Analytics 4와 Microsoft Clarity가 방문자의 사이트 이용 방식을 이해하는 데 사용. 가명 처리되어 수집됩니다.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: '쿠키에 동의하시면 Microsoft Clarity가 당사 페이지에서의 클릭, 스크롤, 마우스 움직임을 기록합니다. 당사는 이를 세션 기록과 히트맵으로 확인하여 페이지의 어느 부분이 혼란을 주는지 파악합니다. 양식 입력란에 입력하신 내용은 브라우저에서 가려지며 Microsoft로 전송되지 않습니다. Clarity는 쿠키에 저장된 임의의 식별자로 같은 브라우저에서 이루어진 방문을 서로 연결합니다. 이 데이터에는 성명이나 이메일 주소가 포함되지 않지만, 이 식별자로 인해 GDPR상 가명 처리된 개인정보에 해당합니다. 쿠키를 거부하시면 Clarity는 아예 로드되지 않습니다.',
+    s4aBody2: (ms) => <>당사는 Clarity 데이터를 광고에 사용하지 않습니다. 쿠키에 동의하시면 당사 사이트는 Clarity에 분석 목적의 동의만 전달하며 광고 목적의 동의는 전달하지 않습니다. 다만 Microsoft는 이 데이터의 독립적인 관리자로서, Clarity 이용약관에 따라 제품 개선 및 광고(Microsoft Advertising)를 포함한 자체 목적으로도 데이터를 사용할 수 있습니다. Microsoft의 개인정보 처리 방식은 {ms}에서 확인하실 수 있습니다.</>,
+    msPrivacy: 'Microsoft 개인정보처리방침',
+    s6: 'Microsoft Clarity는 세션 기록을 30일간, 히트맵과 클릭 데이터를 9개월간 보관합니다. 당사가 저장한 기록은 9개월간 보관됩니다.',
+    s7Intro: '당사는 귀하의 개인정보를 판매하지 않습니다. 운영의 일환으로 다음 제3자 서비스가 데이터를 처리합니다:',
+    s7Item: 'Microsoft Clarity: 세션 기록 및 히트맵(Microsoft는 독립적인 관리자, 4a항 참조)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, 아일랜드, EU; Microsoft Corporation, 미국): 아일랜드 Microsoft 법인에서 Microsoft Corporation으로의 이전에는 표준계약조항(SCC)이 적용되며, Microsoft Corporation은 EU–미국 데이터 프라이버시 프레임워크 인증을 받았습니다.' },
+  },
+  fr: {
+    s2: 'Si vous acceptez les cookies, nous utilisons aussi Microsoft Clarity, qui recueille les clics, le défilement et les mouvements de souris pour en tirer des enregistrements de session et des cartes de chaleur. La section 4a en explique le fonctionnement.',
+    s3Analytics: 'utilisés par Google Analytics 4 et Microsoft Clarity pour comprendre l’usage du site par les visiteurs. Collectés de manière pseudonyme.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Si vous acceptez les cookies, Microsoft Clarity enregistre les clics, le défilement et les mouvements de souris sur nos pages. Nous les consultons sous forme d’enregistrements de session et de cartes de chaleur pour repérer les parties d’une page qui prêtent à confusion. Ce que vous saisissez dans un champ de formulaire est masqué dans votre navigateur et n’est jamais envoyé à Microsoft. Clarity relie les visites effectuées depuis le même navigateur grâce à un identifiant aléatoire stocké dans un cookie. Les données ne contiennent ni votre nom ni votre adresse e-mail, mais cet identifiant en fait des données personnelles pseudonymes au sens du RGPD. Si vous refusez les cookies, Clarity ne se charge pas du tout.',
+    s4aBody2: (ms) => <>Nous n’utilisons pas les données de Clarity à des fins publicitaires. Lorsque vous acceptez les cookies, notre site ne transmet à Clarity qu’un consentement à des fins d’analyse, et non à des fins publicitaires. Microsoft est toutefois responsable du traitement indépendant pour ces données : selon les conditions d’utilisation de Clarity, Microsoft peut aussi les utiliser à ses propres fins, notamment l’amélioration de ses produits et la publicité (Microsoft Advertising). La {ms} explique comment Microsoft traite les données personnelles.</>,
+    msPrivacy: 'Déclaration de confidentialité de Microsoft',
+    s6: 'Microsoft Clarity conserve les enregistrements de session pendant 30 jours et les données de cartes de chaleur et de clics pendant 9 mois. Un enregistrement que nous sauvegardons est conservé 9 mois.',
+    s7Intro: 'Nous ne vendons pas vos données personnelles. Les services tiers suivants traitent des données dans le cadre de notre activité :',
+    s7Item: 'Microsoft Clarity : enregistrements de session et cartes de chaleur (Microsoft est responsable du traitement indépendant, voir la section 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irlande, UE ; Microsoft Corporation, États-Unis) : les transferts de la société irlandaise de Microsoft vers Microsoft Corporation sont couverts par les clauses contractuelles types, et Microsoft Corporation est certifiée au titre du cadre de protection des données UE–États-Unis.' },
+  },
+  it: {
+    s2: 'Se Lei accetta i cookie, utilizziamo anche Microsoft Clarity, che raccoglie clic, scorrimento e movimenti del mouse per ricavarne registrazioni di sessione e mappe di calore. La sezione 4a ne spiega il funzionamento.',
+    s3Analytics: 'utilizzati da Google Analytics 4 e Microsoft Clarity per comprendere come i visitatori interagiscono con il sito. Raccolti in forma pseudonima.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Se Lei accetta i cookie, Microsoft Clarity registra clic, scorrimento e movimenti del mouse sulle nostre pagine. Li consultiamo come registrazioni di sessione e mappe di calore per capire quali parti di una pagina creano confusione. Ciò che Lei digita nei campi dei moduli viene mascherato nel Suo browser e non viene mai inviato a Microsoft. Clarity collega le visite effettuate dallo stesso browser tramite un identificatore casuale salvato in un cookie. I dati non contengono il Suo nome né il Suo indirizzo e-mail, ma l’identificatore li rende dati personali pseudonimi ai sensi del GDPR. Se Lei rifiuta i cookie, Clarity non viene caricato affatto.',
+    s4aBody2: (ms) => <>Non utilizziamo i dati di Clarity per la pubblicità. Quando Lei accetta i cookie, il nostro sito trasmette a Clarity un consenso solo per finalità di analisi, non pubblicitarie. Microsoft è tuttavia titolare autonomo del trattamento di questi dati: in base alle condizioni d’uso di Clarity, può utilizzarli anche per finalità proprie, tra cui il miglioramento dei suoi prodotti e la pubblicità (Microsoft Advertising). L’{ms} spiega come Microsoft tratta i dati personali.</>,
+    msPrivacy: 'Informativa sulla privacy di Microsoft',
+    s6: 'Microsoft Clarity conserva le registrazioni di sessione per 30 giorni e i dati delle mappe di calore e dei clic per 9 mesi. Una registrazione che salviamo viene conservata per 9 mesi.',
+    s7Intro: 'Non vendiamo i Suoi dati personali. I seguenti servizi di terze parti trattano dati nell’ambito delle nostre operazioni:',
+    s7Item: 'Microsoft Clarity: registrazioni di sessione e mappe di calore (Microsoft è titolare autonomo del trattamento, si veda la sezione 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irlanda, UE; Microsoft Corporation, USA): i trasferimenti dalla società irlandese di Microsoft a Microsoft Corporation sono coperti dalle clausole contrattuali tipo e Microsoft Corporation è certificata nell’ambito dell’EU–US Data Privacy Framework.' },
+  },
+  nl: {
+    s2: 'Als u cookies accepteert, gebruiken wij ook Microsoft Clarity om klikken, scrollen en muisbewegingen vast te leggen voor sessieopnamen en heatmaps. In paragraaf 4a leest u hoe dat werkt.',
+    s3Analytics: 'gebruikt door Google Analytics 4 en Microsoft Clarity om te begrijpen hoe bezoekers onze site gebruiken. Gepseudonimiseerd verzameld.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Als u cookies accepteert, legt Microsoft Clarity klikken, scrollen en muisbewegingen op onze pagina’s vast. Wij bekijken die als sessieopnamen en heatmaps om te zien welke delen van een pagina verwarrend zijn. Wat u in een formulierveld typt, wordt al in uw browser gemaskeerd en nooit naar Microsoft verzonden. Clarity koppelt bezoeken vanuit dezelfde browser aan elkaar via een willekeurige identificatiecode in een cookie. De gegevens bevatten geen naam of e-mailadres, maar door die code zijn het gepseudonimiseerde persoonsgegevens in de zin van de AVG. Als u cookies weigert, wordt Clarity helemaal niet geladen.',
+    s4aBody2: (ms) => <>Wij gebruiken Clarity-gegevens niet voor advertenties. Als u cookies accepteert, geeft onze site Clarity alleen toestemming voor analyse, niet voor advertenties. Microsoft is echter zelfstandig verwerkingsverantwoordelijke voor deze gegevens: volgens de gebruiksvoorwaarden van Clarity mag Microsoft ze ook voor eigen doeleinden gebruiken, onder meer om zijn producten te verbeteren en voor advertenties (Microsoft Advertising). In de {ms} leest u hoe Microsoft met persoonsgegevens omgaat.</>,
+    msPrivacy: 'privacyverklaring van Microsoft',
+    s6: 'Microsoft Clarity bewaart sessieopnamen 30 dagen en heatmap- en klikgegevens 9 maanden. Een opname die wij opslaan, blijft 9 maanden bewaard.',
+    s7Intro: 'Wij verkopen uw persoonsgegevens niet. De volgende externe diensten verwerken gegevens als onderdeel van onze activiteiten:',
+    s7Item: 'Microsoft Clarity: sessieopnamen en heatmaps (Microsoft is zelfstandig verwerkingsverantwoordelijke, zie paragraaf 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Ierland, EU; Microsoft Corporation, VS): doorgiften van de Ierse Microsoft-vennootschap aan Microsoft Corporation worden gedekt door de standaardcontractbepalingen, en Microsoft Corporation is gecertificeerd onder het EU–US Data Privacy Framework.' },
+  },
+  sv: {
+    s2: 'Om du godkänner cookies använder vi också Microsoft Clarity, som samlar in klick, scrollning och musrörelser för sessionsinspelningar och värmekartor. I avsnitt 4a förklarar vi hur det fungerar.',
+    s3Analytics: 'används av Google Analytics 4 och Microsoft Clarity för att förstå hur besökare interagerar med vår webbplats. Samlas in pseudonymt.',
+    s4aTitle: '4a. Microsoft Clarity',
+    s4aBody1: 'Om du godkänner cookies registrerar Microsoft Clarity klick, scrollning och musrörelser på våra sidor. Vi tittar på dem som sessionsinspelningar och värmekartor för att se vilka delar av en sida som förvirrar. Det du skriver i ett formulärfält maskeras redan i din webbläsare och skickas aldrig till Microsoft. Clarity kopplar ihop besök från samma webbläsare med en slumpmässig identifierare som sparas i en cookie. Uppgifterna innehåller inte ditt namn eller din e-postadress, men identifieraren gör dem till pseudonyma personuppgifter enligt GDPR. Om du avböjer cookies laddas Clarity inte alls.',
+    s4aBody2: (ms) => <>Vi använder inte Clarity-data för annonsering. När du godkänner cookies ger vår webbplats Clarity samtycke endast för analys, inte för annonsering. Microsoft är dock självständigt personuppgiftsansvarig för dessa uppgifter: enligt Claritys användarvillkor får Microsoft även använda dem för egna ändamål, bland annat för att förbättra sina produkter och för annonsering (Microsoft Advertising). I {ms} kan du läsa hur Microsoft hanterar personuppgifter.</>,
+    msPrivacy: 'Microsofts sekretesspolicy',
+    s6: 'Microsoft Clarity sparar sessionsinspelningar i 30 dagar och data från värmekartor och klick i 9 månader. En inspelning som vi väljer att spara finns kvar i 9 månader.',
+    s7Intro: 'Vi säljer inte dina personuppgifter. Följande tredjepartstjänster behandlar uppgifter som en del av vår verksamhet:',
+    s7Item: 'Microsoft Clarity: sessionsinspelningar och värmekartor (Microsoft är självständigt personuppgiftsansvarig, se avsnitt 4a)',
+    s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irland, EU; Microsoft Corporation, USA): överföringar från Microsofts irländska bolag till Microsoft Corporation omfattas av standardavtalsklausuler, och Microsoft Corporation är certifierat enligt EU–US Data Privacy Framework.' },
+  },
+};
