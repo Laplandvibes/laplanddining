@@ -45,7 +45,7 @@ export interface JobNetworkBannerProps {
    */
   maxItems?: number;
   /**
-   * Compact card title. Defaults to "Lapland jobs hiring now".
+   * Compact card title. Defaults to the page language's own title (BANNER_I18N).
    */
   title?: string;
   /**
@@ -55,10 +55,23 @@ export interface JobNetworkBannerProps {
   className?: string;
 }
 
+/** Tekstit sivun kielellä; kieli luetaan osoitteen etuliitteestä samoin kuin jaetussa Footerissa. */
+const BANNER_I18N: Record<string, { aria: string; eyebrow: string; viewAll: string; title: string; remote: string; place: string; post: string }> = {"en":{"aria":"Lapland job listings","eyebrow":"Now hiring · LaplandWork","viewAll":"View all","title":"Lapland jobs hiring now","remote":"Remote (Finland)","place":"Lapland","post":"Hiring? Post a job →"},"fi":{"aria":"Työpaikkailmoituksia Lapista","eyebrow":"Nyt haetaan · LaplandWork","viewAll":"Katso kaikki","title":"Lapin avoimet työpaikat nyt","remote":"Etätyö (Suomi)","place":"Lappi","post":"Rekrytoitko? Jätä ilmoitus →"},"de":{"aria":"Stellenangebote in Lappland","eyebrow":"Aktuelle Stellen · LaplandWork","viewAll":"Alle ansehen","title":"Offene Stellen in Lappland","remote":"Remote (Finnland)","place":"Lappland","post":"Sie stellen ein? Stelle ausschreiben →"},"ja":{"aria":"ラップランドの求人","eyebrow":"募集中 · LaplandWork","viewAll":"すべて表示","title":"ラップランドの最新求人","remote":"リモート（フィンランド国内）","place":"ラップランド","post":"採用担当の方へ：求人を掲載 →"},"es":{"aria":"Ofertas de empleo en Laponia","eyebrow":"Empleos disponibles · LaplandWork","viewAll":"Ver todo","title":"Empleos disponibles en Laponia","remote":"Remoto (Finlandia)","place":"Laponia","post":"¿Busca personal? Publique una oferta →"},"pt-BR":{"aria":"Vagas de emprego na Lapônia","eyebrow":"Vagas abertas · LaplandWork","viewAll":"Ver tudo","title":"Vagas abertas na Lapônia","remote":"Remoto (Finlândia)","place":"Lapônia","post":"Está contratando? Publique uma vaga →"},"zh-CN":{"aria":"拉普兰招聘信息","eyebrow":"正在招聘 · LaplandWork","viewAll":"查看全部","title":"拉普兰最新职位","remote":"远程（芬兰）","place":"拉普兰","post":"正在招人？发布职位 →"},"ko":{"aria":"라플란드 채용 정보","eyebrow":"채용 중 · LaplandWork","viewAll":"모두 보기","title":"라플란드 최신 채용","remote":"원격 근무(핀란드)","place":"라플란드","post":"채용 중이신가요? 공고 등록 →"},"fr":{"aria":"Offres d’emploi en Laponie","eyebrow":"Recrutements en cours · LaplandWork","viewAll":"Tout voir","title":"Emplois à pourvoir en Laponie","remote":"À distance (Finlande)","place":"Laponie","post":"Vous recrutez ? Publiez une offre →"},"it":{"aria":"Offerte di lavoro in Lapponia","eyebrow":"Si assume · LaplandWork","viewAll":"Vedi tutti","title":"Lavori disponibili in Lapponia","remote":"Da remoto (Finlandia)","place":"Lapponia","post":"Cerca personale? Pubblichi un annuncio →"},"nl":{"aria":"Vacatures in Lapland","eyebrow":"Vacatures · LaplandWork","viewAll":"Bekijk alles","title":"Openstaande vacatures in Lapland","remote":"Op afstand (Finland)","place":"Lapland","post":"Personeel gezocht? Plaats een vacature →"},"sv":{"aria":"Lediga jobb i Lappland","eyebrow":"Lediga jobb · LaplandWork","viewAll":"Visa alla","title":"Lediga jobb i Lappland just nu","remote":"Distans (Finland)","place":"Lappland","post":"Rekryterar du? Lägg upp en annons →"}};
+
+function bannerLang(): string {
+  if (typeof window === 'undefined') return 'en';
+  const seg = window.location.pathname.split('/')[1]?.toLowerCase() ?? '';
+  const map: Record<string, string> = {
+    fi: 'fi', de: 'de', ja: 'ja', es: 'es', br: 'pt-BR', 'pt-br': 'pt-BR', pt: 'pt-BR',
+    cn: 'zh-CN', 'zh-cn': 'zh-CN', zh: 'zh-CN', kr: 'ko', ko: 'ko', fr: 'fr', it: 'it', nl: 'nl', sv: 'sv',
+  };
+  return map[seg] ?? 'en';
+}
+
 export default function JobNetworkBanner({
   siteId,
   maxItems = 3,
-  title = "Lapland jobs hiring now",
+  title,
   className = "",
 }: JobNetworkBannerProps) {
   const [items, setItems] = useState<Listing[] | null>(null);
@@ -90,6 +103,7 @@ export default function JobNetworkBanner({
   }, [siteId, maxItems]);
 
   if (!items || items.length === 0) return null;
+  const tx = BANNER_I18N[bannerLang()] ?? BANNER_I18N.en;
 
   return (
     /* 🔴 Oma leveysraja ja pystytila OVAT komponentin sisällä, eivät kutsujassa
@@ -100,22 +114,22 @@ export default function JobNetworkBanner({
     <section className="w-full px-5 sm:px-6 py-8">
     <aside
       className={`mx-auto w-full max-w-3xl bg-white/95 border border-slate-200 rounded-2xl p-5 shadow-sm ${className}`}
-      aria-label="Lapland job listings"
+      aria-label={tx.aria}
     >
       <div className="flex items-baseline justify-between gap-3 mb-3">
         <p className="text-pink-600 uppercase tracking-[0.2em] text-[10px] font-bold">
-          Now hiring · LaplandWork
+          {tx.eyebrow}
         </p>
         <a
           href="https://laplandwork.com/jobs"
           rel="noopener"
           className="text-slate-500 hover:text-slate-800 text-[11px] underline"
         >
-          View all
+          {tx.viewAll}
         </a>
       </div>
       <h3 className="font-semibold text-slate-900 text-base mb-3 leading-snug">
-        {title}
+        {title ?? tx.title}
       </h3>
       <ul className="space-y-2.5">
         {items.map((p) => (
@@ -129,7 +143,7 @@ export default function JobNetworkBanner({
                 {p.job_title}
               </p>
               <p className="text-slate-500 text-[11px] mt-0.5">
-                {p.company_name} · {p.is_remote ? "Remote (Finland)" : p.location || "Lapland"}
+                {p.company_name} · {p.is_remote ? tx.remote : p.location || tx.place}
               </p>
             </a>
           </li>
@@ -140,7 +154,7 @@ export default function JobNetworkBanner({
         rel="noopener"
         className="mt-4 inline-flex items-center gap-1 text-slate-400 hover:text-slate-700 text-[10px] tracking-wide uppercase font-semibold"
       >
-        Hiring? Post a job →
+        {tx.post}
       </a>
     </aside>
     </section>
