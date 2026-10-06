@@ -67,7 +67,7 @@ interface TermsCopy {
   s13Body: (email: React.ReactNode) => React.ReactNode;
 }
 
-const COPY: Record<Lang, TermsCopy> = {
+const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   en: {
     kicker: 'Legal',
     h1: 'Terms of Use',
@@ -82,10 +82,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'By accessing or using this website, you agree to these terms. If you do not agree, please stop using the site.',
     s2Title: '2. Information Accuracy',
-    s2Body: 'Travel information, including prices, opening hours, weather conditions, and availability, changes frequently. We aim to keep content accurate and up to date, but we cannot guarantee that all information is current at the time of your visit. Always verify critical details directly with service providers before making bookings.',
     s3Title: '3. Affiliate Links & Partnerships',
     s3P1: (siteName) => `Some links on ${siteName} are affiliate links. When you click these links and make a booking or purchase, we may receive a small commission at no additional cost to you. Affiliate relationships do not influence our editorial recommendations. We only link to services we believe provide genuine value.`,
-    s3P2: 'Affiliate partners include but are not limited to: Sembo, Trip.com, EconomyBookings, GetYourGuide, and other travel service providers via affiliate networks such as Adtraction and Travelpayouts. Each booking is subject to the terms and conditions of the respective service provider.',
     s4Title: '4. Sponsored Content',
     s4Body: (siteName) => (
       <>
@@ -157,10 +155,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'Käyttämällä tätä sivustoa hyväksyt nämä käyttöehdot. Jos et hyväksy niitä, lopeta sivuston käyttö.',
     s2Title: '2. Tietojen ajantasaisuus',
-    s2Body: 'Matkailutiedot, kuten hinnat, aukioloajat, sääolosuhteet ja saatavuus, muuttuvat usein. Pyrimme pitämään sisällön ajantasaisena ja tarkkana, mutta emme voi taata, että kaikki tiedot ovat ajantasaisia vierailuhetkelläsi. Tarkista kriittiset yksityiskohdat aina suoraan palveluntarjoajalta ennen varauksen tekemistä.',
     s3Title: '3. Kumppanilinkit ja yhteistyökumppanit',
     s3P1: (siteName) => `Osa ${siteName}-sivuston linkeistä on kumppanilinkkejä. Kun klikkaat näitä linkkejä ja teet varauksen tai ostoksen, saatamme saada pienen komission ilman lisäkustannuksia sinulle. Kumppanuussuhteet eivät vaikuta toimituksellisiin suosituksiimme. Linkitämme vain palveluihin, joiden uskomme tuottavan aitoa arvoa.`,
-    s3P2: 'Kumppaneitamme ovat esimerkiksi Sembo, Trip.com, EconomyBookings, GetYourGuide ja muut matkailupalvelujen tarjoajat kumppaniverkostojen (mm. Adtraction ja Travelpayouts) kautta. Jokainen varaus on kunkin palveluntarjoajan omien ehtojen alainen.',
     s4Title: '4. Sponsoroitu sisältö',
     s4Body: (siteName) => (
       <>
@@ -230,10 +226,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'Mit dem Zugriff auf bzw. der Nutzung dieser Website erklären Sie sich mit diesen Bedingungen einverstanden. Sind Sie damit nicht einverstanden, stellen Sie die Nutzung bitte ein.',
     s2Title: '2. Richtigkeit der Informationen',
-    s2Body: 'Reiseinformationen, einschließlich Preise, Öffnungszeiten, Wetterbedingungen und Verfügbarkeit, ändern sich häufig. Wir bemühen uns um aktuelle und genaue Inhalte, können jedoch nicht garantieren, dass alle Angaben zum Zeitpunkt Ihres Besuchs aktuell sind. Bitte prüfen Sie wesentliche Details vor jeder Buchung direkt beim Anbieter.',
     s3Title: '3. Partnerlinks und Kooperationen',
     s3P1: (siteName) => `Einige Links auf ${siteName} sind Partnerlinks. Wenn Sie über diese Links eine Buchung oder einen Kauf tätigen, erhalten wir ggf. eine kleine Provision, für Sie ohne zusätzliche Kosten. Partnerschaften beeinflussen unsere redaktionellen Empfehlungen nicht. Wir verlinken ausschließlich Dienste, die wir für sinnvoll halten.`,
-    s3P2: 'Zu unseren Partnern gehören u. a. Sembo, Trip.com, EconomyBookings, GetYourGuide sowie weitere Reisedienstleister über Partnernetzwerke wie Adtraction und Travelpayouts. Jede Buchung unterliegt den Bedingungen des jeweiligen Anbieters.',
     s4Title: '4. Gesponserte Inhalte',
     s4Body: (siteName) => (
       <>
@@ -301,10 +295,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: '本ウェブサイトをご利用いただくには、本規約に同意していただく必要があります。同意いただけない場合は、ご利用をお控えください。',
     s2Title: '2. 情報の正確性',
-    s2Body: '旅行情報（料金、営業時間、天候、空き状況など）は頻繁に変動します。私たちは最新かつ正確な情報を心がけていますが、ご訪問時にすべての情報が最新であることを保証することはできません。ご予約前には、重要な情報は必ずサービス提供者に直接ご確認ください。',
     s3Title: '3. アフィリエイトリンクとパートナーシップ',
     s3P1: (siteName) => `${siteName} のリンクの一部はアフィリエイトリンクです。これらのリンクからご予約・ご購入された場合、お客様には追加費用なく、当サイトが少額の紹介料を受け取ることがあります。アフィリエイト関係は編集上の推奨に影響しません。本当に価値があると判断したサービスのみご紹介しています。`,
-    s3P2: 'パートナーには Sembo、Trip.com、EconomyBookings、GetYourGuide、およびアフィリエイトネットワーク（Adtraction、Travelpayouts など）経由のその他の旅行サービス提供者が含まれます（これらに限りません）。各ご予約はそれぞれのサービス提供者の規約・条件に従います。',
     s4Title: '4. スポンサーコンテンツ',
     s4Body: (siteName) => (
       <>
@@ -366,10 +358,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'Al acceder o utilizar este sitio web, usted acepta estos términos. Si no está de acuerdo, deje de utilizar el sitio.',
     s2Title: '2. Exactitud de la información',
-    s2Body: 'La información turística, incluidos precios, horarios, condiciones meteorológicas y disponibilidad, cambia con frecuencia. Procuramos mantener el contenido preciso y actualizado, pero no podemos garantizar que toda la información esté vigente en el momento de su visita. Verifique siempre los detalles críticos directamente con el proveedor antes de reservar.',
     s3Title: '3. Enlaces de afiliados y colaboraciones',
     s3P1: (siteName) => `Algunos enlaces de ${siteName} son enlaces de afiliados. Cuando hace clic en estos enlaces y realiza una reserva o compra, podemos recibir una pequeña comisión sin costo adicional para usted. Las relaciones de afiliación no influyen en nuestras recomendaciones editoriales. Solo enlazamos a servicios que consideramos que aportan valor real.`,
-    s3P2: 'Entre nuestros socios afiliados se incluyen, sin limitarse a: Sembo, Trip.com, EconomyBookings, GetYourGuide y otros proveedores de servicios turísticos a través de redes de afiliación como Adtraction y Travelpayouts. Cada reserva está sujeta a los términos y condiciones del proveedor correspondiente.',
     s4Title: '4. Contenido patrocinado',
     s4Body: (siteName) => (
       <>
@@ -441,10 +431,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'Ao acessar ou usar este site, você concorda com estes termos. Se não concordar, interrompa o uso do site.',
     s2Title: '2. Precisão das informações',
-    s2Body: 'As informações de viagem, incluindo preços, horários, condições climáticas e disponibilidade, mudam com frequência. Buscamos manter o conteúdo atualizado e preciso, mas não podemos garantir que todas as informações estejam vigentes no momento da sua visita. Sempre confirme os detalhes críticos diretamente com os fornecedores antes de reservar.',
     s3Title: '3. Links de afiliados e parcerias',
     s3P1: (siteName) => `Alguns links em ${siteName} são links de afiliados. Quando você clica nesses links e faz uma reserva ou compra, podemos receber uma pequena comissão, sem custo adicional para você. As relações de afiliação não influenciam nossas recomendações editoriais. Só indicamos serviços que acreditamos oferecer valor genuíno.`,
-    s3P2: 'Entre os parceiros afiliados estão, sem se limitar a: Sembo, Trip.com, EconomyBookings, GetYourGuide e outros fornecedores de serviços de viagem por meio de redes de afiliados como Adtraction e Travelpayouts. Cada reserva está sujeita aos termos e condições do respectivo fornecedor.',
     s4Title: '4. Conteúdo patrocinado',
     s4Body: (siteName) => (
       <>
@@ -515,10 +503,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: '访问或使用本网站，即表示您同意本条款。如果您不同意，请停止使用本网站。',
     s2Title: '2. 信息准确性',
-    s2Body: '旅行信息（包括价格、营业时间、天气状况和可订情况）经常发生变化。我们努力保持内容准确并保持更新，但无法保证您访问时所有信息都是最新的。在预订前，请始终直接向相关服务提供方核实关键信息。',
     s3Title: '3. 联盟链接与合作',
     s3P1: (siteName) => `${siteName} 上的某些链接是联盟链接。当您点击这些链接并完成预订或购买时，我们可能会获得一笔少量佣金，而您无需承担额外费用。联盟合作不会影响我们的编辑推荐。我们只链接我们认为真正具有价值的服务。`,
-    s3P2: '联盟合作伙伴包括但不限于：Sembo、Trip.com、EconomyBookings、GetYourGuide，以及通过 Adtraction、Travelpayouts 等联盟网络接入的其他旅游服务提供方。每一笔预订均受相应服务提供方的条款与条件约束。',
     s4Title: '4. 赞助内容',
     s4Body: (siteName) => (
       <>
@@ -580,10 +566,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: '본 웹사이트에 접속하거나 이용하시는 것은 본 약관에 동의하시는 것입니다. 동의하지 않으시면 사이트 이용을 중단해 주십시오.',
     s2Title: '2. 정보의 정확성',
-    s2Body: '여행 정보(가격, 영업시간, 기상 조건, 이용 가능 여부 등)는 자주 변경됩니다. 콘텐츠를 정확하고 최신으로 유지하고자 노력하지만, 귀하의 방문 시점에 모든 정보가 최신임을 보장할 수는 없습니다. 예약 전에는 반드시 해당 서비스 제공자에게 중요한 세부 사항을 직접 확인하시기 바랍니다.',
     s3Title: '3. 제휴 링크 및 파트너십',
     s3P1: (siteName) => `${siteName}의 일부 링크는 제휴 링크입니다. 이러한 링크를 클릭하시고 예약 또는 구매를 하시면 귀하께 추가 비용 없이 당사가 소액의 수수료를 받을 수 있습니다. 제휴 관계는 당사의 편집 추천에 영향을 미치지 않습니다. 당사는 진정한 가치를 제공한다고 믿는 서비스에만 링크합니다.`,
-    s3P2: '제휴 파트너에는 Sembo, Trip.com, EconomyBookings, GetYourGuide 및 Adtraction, Travelpayouts 등 제휴 네트워크를 통한 기타 여행 서비스 제공자가 포함됩니다. 각 예약은 해당 서비스 제공자의 약관 및 조건에 따릅니다.',
     s4Title: '4. 후원 콘텐츠',
     s4Body: (siteName) => (
       <>
@@ -655,10 +639,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'En accédant à ce site ou en l\'utilisant, vous acceptez ces conditions. Si vous n\'acceptez pas, veuillez cesser d\'utiliser le site.',
     s2Title: '2. Exactitude des informations',
-    s2Body: 'Les informations de voyage (prix, horaires d\'ouverture, conditions météorologiques, disponibilité) changent fréquemment. Nous nous efforçons de tenir le contenu à jour, mais nous ne pouvons garantir que toutes les informations sont actuelles au moment de votre visite. Vérifiez toujours les détails critiques directement auprès des prestataires avant de réserver.',
     s3Title: '3. Liens d\'affiliation et partenariats',
     s3P1: (siteName) => `Certains liens sur ${siteName} sont des liens d'affiliation. Lorsque vous cliquez sur ces liens et effectuez une réservation ou un achat, nous pouvons percevoir une petite commission sans coût supplémentaire pour vous. Les relations d'affiliation n'influencent pas nos recommandations éditoriales. Nous ne créons des liens que vers des services dont nous estimons qu'ils apportent une réelle valeur.`,
-    s3P2: 'Les partenaires d\'affiliation incluent notamment : Sembo, Trip.com, EconomyBookings, GetYourGuide et d\'autres prestataires de services de voyage via des réseaux d\'affiliation tels qu\'Adtraction et Travelpayouts. Chaque réservation est soumise aux conditions générales du prestataire concerné.',
     s4Title: '4. Contenu sponsorisé',
     s4Body: (siteName) => (
       <>
@@ -730,10 +712,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'Accedendo o utilizzando il presente sito web, Lei accetta i presenti termini. Se non accetta, La preghiamo di interrompere l\'uso del sito.',
     s2Title: '2. Accuratezza delle informazioni',
-    s2Body: 'Le informazioni di viaggio, inclusi prezzi, orari di apertura, condizioni meteo e disponibilità, cambiano di frequente. Ci impegniamo a mantenere il contenuto accurato e aggiornato, ma non possiamo garantire che tutte le informazioni siano attuali al momento della Sua visita. Verifichi sempre i dettagli critici direttamente con i fornitori di servizi prima di prenotare.',
     s3Title: '3. Link di affiliazione e partnership',
     s3P1: (siteName) => `Alcuni link su ${siteName} sono link di affiliazione. Quando Lei clicca su questi link ed effettua una prenotazione o un acquisto, potremmo ricevere una piccola commissione senza costi aggiuntivi. I rapporti di affiliazione non influenzano le nostre raccomandazioni editoriali. Inseriamo link solo verso servizi che riteniamo offrano un valore reale.`,
-    s3P2: 'I partner di affiliazione includono, a titolo esemplificativo: Sembo, Trip.com, EconomyBookings, GetYourGuide e altri fornitori di servizi di viaggio tramite reti di affiliazione come Adtraction e Travelpayouts. Ogni prenotazione è soggetta ai termini e alle condizioni del rispettivo fornitore.',
     s4Title: '4. Contenuti sponsorizzati',
     s4Body: (siteName) => (
       <>
@@ -805,10 +785,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'Door deze website te bezoeken of te gebruiken, gaat u akkoord met deze voorwaarden. Als u niet akkoord gaat, dient u het gebruik van de site te staken.',
     s2Title: '2. Juistheid van informatie',
-    s2Body: 'Reisinformatie, waaronder prijzen, openingstijden, weersomstandigheden en beschikbaarheid, verandert regelmatig. Wij streven ernaar de inhoud accuraat en actueel te houden, maar kunnen niet garanderen dat alle informatie actueel is op het moment van uw bezoek. Verifieer kritieke details altijd rechtstreeks bij dienstverleners voordat u boekt.',
     s3Title: '3. Affiliatelinks en partnerschappen',
     s3P1: (siteName) => `Sommige links op ${siteName} zijn affiliatelinks. Wanneer u op deze links klikt en een boeking of aankoop doet, kunnen wij een kleine commissie ontvangen zonder extra kosten voor u. Affiliaterelaties beïnvloeden onze redactionele aanbevelingen niet. Wij linken alleen naar diensten waarvan wij denken dat zij echte waarde bieden.`,
-    s3P2: 'Affiliate-partners omvatten onder meer: Sembo, Trip.com, EconomyBookings, GetYourGuide en andere aanbieders van reisdiensten via affiliatenetwerken zoals Adtraction en Travelpayouts. Elke boeking is onderworpen aan de algemene voorwaarden van de betreffende dienstverlener.',
     s4Title: '4. Gesponsorde inhoud',
     s4Body: (siteName) => (
       <>
@@ -880,10 +858,8 @@ const COPY: Record<Lang, TermsCopy> = {
     ),
     s1P2: 'Genom att öppna eller använda denna webbplats godkänner du dessa villkor. Om du inte godkänner dem, vänligen sluta använda webbplatsen.',
     s2Title: '2. Informationens korrekthet',
-    s2Body: 'Reseinformation, inklusive priser, öppettider, väderförhållanden och tillgänglighet, ändras ofta. Vi strävar efter att hålla innehållet korrekt och uppdaterat, men kan inte garantera att all information är aktuell vid tidpunkten för ditt besök. Kontrollera alltid viktiga uppgifter direkt hos tjänsteleverantören innan du bokar.',
     s3Title: '3. Affiliatelänkar och samarbeten',
     s3P1: (siteName) => `Vissa länkar på ${siteName} är affiliatelänkar. När du klickar på dessa länkar och gör en bokning eller ett köp kan vi få en liten provision utan extra kostnad för dig. Affiliaterelationer påverkar inte våra redaktionella rekommendationer. Vi länkar endast till tjänster vi tror ger genuint värde.`,
-    s3P2: 'Affiliatepartner omfattar men är inte begränsade till: Sembo, Trip.com, EconomyBookings, GetYourGuide och andra resetjänsteleverantörer via affiliatenätverk som Adtraction och Travelpayouts. Varje bokning omfattas av respektive tjänsteleverantörs egna villkor.',
     s4Title: '4. Sponsrat innehåll',
     s4Body: (siteName) => (
       <>
@@ -950,6 +926,64 @@ const COPY: Record<Lang, TermsCopy> = {
  * JOKAISEN per-kieli-lohkon, joten ilman tätä katkoa matkailusivuston lakisivulle päätyi
  * verkkokaupan ehdot 12 kielellä (mitattu 31.8.2026: 23 sivustoa, 276 sivua).
  */
+/**
+ * Matkailutekstit kohtiin 2 (s2Body) ja 3 (s3P2), siirretty COPYsta tähän 6.10.2026. Ne puhuvat matkavarauksista ja
+ * nimeävät matkailukumppanit, ja COPYssa ne haravoitiin jokaisen sivuston staattiseen HTML:ään: laplandstore.fi:n ja
+ * laplandwork.comin staattinen käyttöehtosivu nimesi Sembon, Trip.comin ja EconomyBookingsin, vaikka selaimessa piirtyvä
+ * sivu näytti kauppa- tai työversion (mitattu buildista 6.10.). Komponentti yhdistää nämä COPYyn, ja SHOP_OVERRIDES /
+ * JOBS_OVERRIDES korvaavat ne kuten ennenkin. Hinta: myös matkailusivustojen staattisesta käyttöehtosivusta puuttuvat
+ * nämä kaksi kappaletta; selaimessa piirtyvä sivu on tavulleen ennallaan kaikilla kolmella variantilla.
+ */
+const TRAVEL_TERMS: Record<Lang, Pick<TermsCopy, 's2Body' | 's3P2'>> = {
+  en: {
+    s2Body: 'Travel information, including prices, opening hours, weather conditions, and availability, changes frequently. We aim to keep content accurate and up to date, but we cannot guarantee that all information is current at the time of your visit. Always verify critical details directly with service providers before making bookings.',
+    s3P2: 'Affiliate partners include but are not limited to: Sembo, Trip.com, EconomyBookings, GetYourGuide, and other travel service providers via affiliate networks such as Adtraction and Travelpayouts. Each booking is subject to the terms and conditions of the respective service provider.',
+  },
+  fi: {
+    s2Body: 'Matkailutiedot, kuten hinnat, aukioloajat, sääolosuhteet ja saatavuus, muuttuvat usein. Pyrimme pitämään sisällön ajantasaisena ja tarkkana, mutta emme voi taata, että kaikki tiedot ovat ajantasaisia vierailuhetkelläsi. Tarkista kriittiset yksityiskohdat aina suoraan palveluntarjoajalta ennen varauksen tekemistä.',
+    s3P2: 'Kumppaneitamme ovat esimerkiksi Sembo, Trip.com, EconomyBookings, GetYourGuide ja muut matkailupalvelujen tarjoajat kumppaniverkostojen (mm. Adtraction ja Travelpayouts) kautta. Jokainen varaus on kunkin palveluntarjoajan omien ehtojen alainen.',
+  },
+  de: {
+    s2Body: 'Reiseinformationen, einschließlich Preise, Öffnungszeiten, Wetterbedingungen und Verfügbarkeit, ändern sich häufig. Wir bemühen uns um aktuelle und genaue Inhalte, können jedoch nicht garantieren, dass alle Angaben zum Zeitpunkt Ihres Besuchs aktuell sind. Bitte prüfen Sie wesentliche Details vor jeder Buchung direkt beim Anbieter.',
+    s3P2: 'Zu unseren Partnern gehören u. a. Sembo, Trip.com, EconomyBookings, GetYourGuide sowie weitere Reisedienstleister über Partnernetzwerke wie Adtraction und Travelpayouts. Jede Buchung unterliegt den Bedingungen des jeweiligen Anbieters.',
+  },
+  ja: {
+    s2Body: '旅行情報（料金、営業時間、天候、空き状況など）は頻繁に変動します。私たちは最新かつ正確な情報を心がけていますが、ご訪問時にすべての情報が最新であることを保証することはできません。ご予約前には、重要な情報は必ずサービス提供者に直接ご確認ください。',
+    s3P2: 'パートナーには Sembo、Trip.com、EconomyBookings、GetYourGuide、およびアフィリエイトネットワーク（Adtraction、Travelpayouts など）経由のその他の旅行サービス提供者が含まれます（これらに限りません）。各ご予約はそれぞれのサービス提供者の規約・条件に従います。',
+  },
+  es: {
+    s2Body: 'La información turística, incluidos precios, horarios, condiciones meteorológicas y disponibilidad, cambia con frecuencia. Procuramos mantener el contenido preciso y actualizado, pero no podemos garantizar que toda la información esté vigente en el momento de su visita. Verifique siempre los detalles críticos directamente con el proveedor antes de reservar.',
+    s3P2: 'Entre nuestros socios afiliados se incluyen, sin limitarse a: Sembo, Trip.com, EconomyBookings, GetYourGuide y otros proveedores de servicios turísticos a través de redes de afiliación como Adtraction y Travelpayouts. Cada reserva está sujeta a los términos y condiciones del proveedor correspondiente.',
+  },
+  'pt-BR': {
+    s2Body: 'As informações de viagem, incluindo preços, horários, condições climáticas e disponibilidade, mudam com frequência. Buscamos manter o conteúdo atualizado e preciso, mas não podemos garantir que todas as informações estejam vigentes no momento da sua visita. Sempre confirme os detalhes críticos diretamente com os fornecedores antes de reservar.',
+    s3P2: 'Entre os parceiros afiliados estão, sem se limitar a: Sembo, Trip.com, EconomyBookings, GetYourGuide e outros fornecedores de serviços de viagem por meio de redes de afiliados como Adtraction e Travelpayouts. Cada reserva está sujeita aos termos e condições do respectivo fornecedor.',
+  },
+  'zh-CN': {
+    s2Body: '旅行信息（包括价格、营业时间、天气状况和可订情况）经常发生变化。我们努力保持内容准确并保持更新，但无法保证您访问时所有信息都是最新的。在预订前，请始终直接向相关服务提供方核实关键信息。',
+    s3P2: '联盟合作伙伴包括但不限于：Sembo、Trip.com、EconomyBookings、GetYourGuide，以及通过 Adtraction、Travelpayouts 等联盟网络接入的其他旅游服务提供方。每一笔预订均受相应服务提供方的条款与条件约束。',
+  },
+  ko: {
+    s2Body: '여행 정보(가격, 영업시간, 기상 조건, 이용 가능 여부 등)는 자주 변경됩니다. 콘텐츠를 정확하고 최신으로 유지하고자 노력하지만, 귀하의 방문 시점에 모든 정보가 최신임을 보장할 수는 없습니다. 예약 전에는 반드시 해당 서비스 제공자에게 중요한 세부 사항을 직접 확인하시기 바랍니다.',
+    s3P2: '제휴 파트너에는 Sembo, Trip.com, EconomyBookings, GetYourGuide 및 Adtraction, Travelpayouts 등 제휴 네트워크를 통한 기타 여행 서비스 제공자가 포함됩니다. 각 예약은 해당 서비스 제공자의 약관 및 조건에 따릅니다.',
+  },
+  fr: {
+    s2Body: 'Les informations de voyage (prix, horaires d\'ouverture, conditions météorologiques, disponibilité) changent fréquemment. Nous nous efforçons de tenir le contenu à jour, mais nous ne pouvons garantir que toutes les informations sont actuelles au moment de votre visite. Vérifiez toujours les détails critiques directement auprès des prestataires avant de réserver.',
+    s3P2: 'Les partenaires d\'affiliation incluent notamment : Sembo, Trip.com, EconomyBookings, GetYourGuide et d\'autres prestataires de services de voyage via des réseaux d\'affiliation tels qu\'Adtraction et Travelpayouts. Chaque réservation est soumise aux conditions générales du prestataire concerné.',
+  },
+  it: {
+    s2Body: 'Le informazioni di viaggio, inclusi prezzi, orari di apertura, condizioni meteo e disponibilità, cambiano di frequente. Ci impegniamo a mantenere il contenuto accurato e aggiornato, ma non possiamo garantire che tutte le informazioni siano attuali al momento della Sua visita. Verifichi sempre i dettagli critici direttamente con i fornitori di servizi prima di prenotare.',
+    s3P2: 'I partner di affiliazione includono, a titolo esemplificativo: Sembo, Trip.com, EconomyBookings, GetYourGuide e altri fornitori di servizi di viaggio tramite reti di affiliazione come Adtraction e Travelpayouts. Ogni prenotazione è soggetta ai termini e alle condizioni del rispettivo fornitore.',
+  },
+  nl: {
+    s2Body: 'Reisinformatie, waaronder prijzen, openingstijden, weersomstandigheden en beschikbaarheid, verandert regelmatig. Wij streven ernaar de inhoud accuraat en actueel te houden, maar kunnen niet garanderen dat alle informatie actueel is op het moment van uw bezoek. Verifieer kritieke details altijd rechtstreeks bij dienstverleners voordat u boekt.',
+    s3P2: 'Affiliate-partners omvatten onder meer: Sembo, Trip.com, EconomyBookings, GetYourGuide en andere aanbieders van reisdiensten via affiliatenetwerken zoals Adtraction en Travelpayouts. Elke boeking is onderworpen aan de algemene voorwaarden van de betreffende dienstverlener.',
+  },
+  sv: {
+    s2Body: 'Reseinformation, inklusive priser, öppettider, väderförhållanden och tillgänglighet, ändras ofta. Vi strävar efter att hålla innehållet korrekt och uppdaterat, men kan inte garantera att all information är aktuell vid tidpunkten för ditt besök. Kontrollera alltid viktiga uppgifter direkt hos tjänsteleverantören innan du bokar.',
+    s3P2: 'Affiliatepartner omfattar men är inte begränsade till: Sembo, Trip.com, EconomyBookings, GetYourGuide och andra resetjänsteleverantörer via affiliatenätverk som Adtraction och Travelpayouts. Varje bokning omfattas av respektive tjänsteleverantörs egna villkor.',
+  },
+};
 /**
  * Shop-variant overrides (`variant="shop"`).
  *
@@ -1492,7 +1526,7 @@ export default function TermsContent({
   lang = 'en',
   variant = 'travel',
 }: TermsContentProps = {}) {
-  const base = COPY[lang] ?? COPY.en;
+  const base: TermsCopy = { ...(COPY[lang] ?? COPY.en), ...(TRAVEL_TERMS[lang] ?? TRAVEL_TERMS.en) };
   const t =
     variant === 'shop'
       ? { ...base, ...(SHOP_OVERRIDES[lang] ?? SHOP_OVERRIDES.en) }
