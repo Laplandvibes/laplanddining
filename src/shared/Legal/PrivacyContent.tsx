@@ -32,6 +32,12 @@ interface PrivacyContentProps {
    * other sites' policies do not claim a recording tool they do not run. Same prop as CookieContent.
    */
   sessionRecording?: boolean;
+  /**
+   * `shop` = laplandstore.fi ja laplandgifts.com: lahjaoppaita, joiden kumppanit ovat suomalaisia kauppoja Adtractionin ja
+   * Daisyconin kautta, ei matkavarauksia. Valitsee kohtien 3, 7, 8 ja 8a kumppanirivit (SHOP_PRIVACY / TRAVEL_PRIVACY
+   * haravointimerkin alla tiedoston lopussa). Sama prop kuin TermsContentissa. Oletus (travel) on matkailusivustojen ennallaan oleva teksti.
+   */
+  variant?: 'travel' | 'shop';
 }
 
 const COPY: Record<Lang, {
@@ -50,7 +56,7 @@ const COPY: Record<Lang, {
   s3Tail: (cookieLink: React.ReactNode) => React.ReactNode;
   s4Title: string;
   s4Body: string;
-  /** Umami Cloud: evästeetön kävijätilasto, joka sivustolla (lisätty 6.10.2026). */
+  /** Umami Cloud: evästeetön kävijätilasto, joka sivustolla (lisätty 6.10.2026; klikkaukset ja työkalut samana päivänä, Vesan hyväksymä). */
   s4Umami: string;
   s5Title: string;
   s5Body: (unsubscribeLink: React.ReactNode) => React.ReactNode;
@@ -61,7 +67,6 @@ const COPY: Record<Lang, {
   s7Items: string[];
   s8Title: string;
   s8Body1: (siteName: string) => string;
-  s8Body2: string;
   s8aTitle: string;
   s8aIntro: string;
   s8aItems: { strong: string; body: string }[];
@@ -100,12 +105,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Essential cookies', body: 'required for the website to function properly (consent preferences, session data).' },
       { strong: 'Analytics cookies', body: 'used by Google Analytics 4 to understand how visitors interact with our site. Collected pseudonymously.' },
-      { strong: 'Affiliate cookies', body: 'placed when you click affiliate links (e.g. Adtraction, Daisycon or Travelpayouts tracking). These help us attribute referral commissions.' },
     ],
     s3Tail: (cookieLink) => <>Analytics cookies are only placed after you give consent via the cookie banner. Umami visitor statistics (section 4) use no cookies. See our {cookieLink} for full details.</>,
     s4Title: '4. Google Analytics and Umami',
     s4Body: 'We use Google Analytics 4 with Consent Mode v2. If you decline cookies, no analytics data is collected. If you accept, usage data (pages viewed, time on site, device type, and location at country and city level) is sent to Google. The data is pseudonymous: we do not send your name, email address or other directly identifying information, but the random cookie ID and your IP address are personal data under the GDPR.',
-    s4Umami: 'We also use Umami Cloud to count page views and the steps of our forms, for example when a newsletter form is shown, started or submitted. Umami uses no cookies and stores nothing on your device, so it runs whether or not you accept cookies. It records the page address and title, the site you came from, your browser, operating system, device type, screen size, language and approximate location (country, region and city). Your IP address is used only to work out that location and an anonymous visit identifier, and it is never stored. The identifier is a hash that changes at the start of every month. Form events record only which form and step it was and, if a form stops you, the name of the field (for example "email"), never what you typed.',
+    s4Umami: 'We also use Umami Cloud to count page views, clicks on some of our links and buttons (for example to our sister sites or our app) and the steps of our forms and tools, for example when a newsletter form is shown, started or submitted. Umami uses no cookies and stores nothing on your device, so it runs whether or not you accept cookies. It records the page address and title, the site you came from, your browser, operating system, device type, screen size, language and approximate location (country, region and city). Your IP address is used only to work out that location and an anonymous visit identifier, and it is never stored. The identifier is a hash that changes at the start of every month. These events record only what was clicked or chosen and which step it was (for example the sister site you opened) and, if a form stops you, the name of the field (for example "email"), never what you typed.',
     s5Title: '5. Newsletter',
     s5Body: (unsub) => <>If you subscribe to our newsletter, your email address is stored securely via Resend and Supabase. You can unsubscribe at any time using the link in every email or via our {unsub}.</>,
     s6Title: '6. Data Retention',
@@ -115,14 +119,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: pseudonymous usage analytics',
       'Umami: cookieless visitor statistics and form step counts',
-      'Adtraction, Daisycon, Travelpayouts and Trip.com: affiliate link tracking when you click booking or partner links',
       'Resend: newsletter email delivery',
       'Supabase: backend database services',
       'Cloudflare: hosting and CDN',
     ],
     s8Title: '8. Advertising',
     s8Body1: (siteName) => `This site displays sponsored content from third-party advertisers. Sponsored content is clearly labeled with a "Sponsored" marker. Clicking sponsored links may redirect you to external websites with their own privacy policies. ${siteName} is not responsible for the data practices of external advertisers.`,
-    s8Body2: 'We participate in affiliate programmes through the Adtraction, Daisycon and Travelpayouts networks and in the Trip.com partner programme; partners include Sembo, Lomarengas, Trip.com and EconomyBookings. When you click an affiliate link and make a purchase or booking, we may receive a commission at no additional cost to you.',
     s8aTitle: '8a. International Data Transfers',
     s8aIntro: 'Several of the third-party services we use are based in or transfer data to countries outside the European Economic Area (EEA), most commonly the United States:',
     s8aItems: [
@@ -131,7 +133,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., USA): covered by the EU–US Data Privacy Framework and Standard Contractual Clauses (SCCs).' },
       { strong: 'Resend', body: '(Resend Inc., USA): covered by Standard Contractual Clauses.' },
       { strong: 'Supabase', body: '(Supabase Inc., USA, with EU region hosting available): covered by Standard Contractual Clauses.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Sweden, EU; Daisycon B.V., the Netherlands, EU; Travelpayouts and Trip.com, international): transfers outside the EU/EEA are covered by Standard Contractual Clauses.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Germany): within the EEA.' },
     ],
     s8aTail: 'In each case the transfer is protected by an adequacy decision, the EU–US Data Privacy Framework, or Standard Contractual Clauses approved by the European Commission. You can request a copy of the relevant safeguards by contacting us.',
@@ -178,12 +179,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Välttämättömät evästeet', body: 'tarvitaan sivuston toiminnan kannalta (suostumusvalinta, istuntotiedot).' },
       { strong: 'Analytiikkaevästeet', body: 'Google Analytics 4 käyttää näitä ymmärtääkseen, miten kävijät käyttävät sivustoa. Kerätään pseudonyymisti.' },
-      { strong: 'Kumppanievästeet', body: 'asetetaan, kun klikkaat kumppanilinkkiä (esim. Adtraction-, Daisycon- tai Travelpayouts-seuranta). Näiden avulla varauspalvelut kohdistavat komission oikealle lähteelle.' },
     ],
     s3Tail: (cookieLink) => <>Analytiikkaevästeet asetetaan vasta sen jälkeen, kun olet antanut suostumuksesi evästebannerista. Umamin kävijätilastot (kohta 4) eivät käytä evästeitä. Katso täydelliset tiedot {cookieLink}.</>,
     s4Title: '4. Google Analytics ja Umami',
     s4Body: 'Käytämme Google Analytics 4:ää Consent Mode v2 ‑tilassa. Jos hylkäät evästeet, analytiikkatietoa ei kerätä. Jos hyväksyt, käyttötietoja (katsotut sivut, kävijän viipymä, laitetyyppi sekä sijainti maan ja kaupungin tarkkuudella) lähetetään Googlelle. Tiedot ovat pseudonyymejä: emme lähetä nimeä, sähköpostiosoitetta tai muuta suoraan tunnistavaa tietoa, mutta evästeen satunnainen tunniste ja IP-osoite ovat tietosuoja-asetuksen tarkoittamaa henkilötietoa.',
-    s4Umami: 'Käytämme lisäksi Umami Cloud -palvelua sivujen katselukertojen ja lomakkeidemme vaiheiden laskemiseen, esimerkiksi kun uutiskirjelomake näytetään, sen täyttäminen aloitetaan tai se lähetetään. Umami ei käytä evästeitä eikä tallenna laitteellesi mitään, joten se toimii riippumatta siitä, hyväksytkö evästeet. Se tallentaa sivun osoitteen ja otsikon, sivuston, jolta tulit, selaimen, käyttöjärjestelmän, laitetyypin, näytön koon, kielen ja likimääräisen sijainnin (maa, alue ja kaupunki). IP-osoitettasi käytetään vain tämän sijainnin ja nimettömän käyntitunnisteen laskemiseen, eikä sitä tallenneta koskaan. Tunniste on tiiviste, joka vaihtuu jokaisen kuukauden alussa. Lomaketapahtumiin tallentuu vain se, mikä lomake ja vaihe oli kyseessä, ja jos lomake pysäyttää sinut, kentän nimi (esimerkiksi "email"), ei koskaan kirjoittamaasi tekstiä.',
+    s4Umami: 'Käytämme lisäksi Umami Cloud -palvelua sivujen katselukertojen, joidenkin linkkiemme ja painikkeidemme klikkausten (esimerkiksi sisarsivustoillemme tai sovellukseemme) sekä lomakkeidemme ja työkalujemme vaiheiden laskemiseen, esimerkiksi kun uutiskirjelomake näytetään, sen täyttäminen aloitetaan tai se lähetetään. Umami ei käytä evästeitä eikä tallenna laitteellesi mitään, joten se toimii riippumatta siitä, hyväksytkö evästeet. Se tallentaa sivun osoitteen ja otsikon, sivuston, jolta tulit, selaimen, käyttöjärjestelmän, laitetyypin, näytön koon, kielen ja likimääräisen sijainnin (maa, alue ja kaupunki). IP-osoitettasi käytetään vain tämän sijainnin ja nimettömän käyntitunnisteen laskemiseen, eikä sitä tallenneta koskaan. Tunniste on tiiviste, joka vaihtuu jokaisen kuukauden alussa. Näihin tapahtumiin tallentuu vain se, mitä klikattiin tai valittiin ja mikä vaihe oli kyseessä (esimerkiksi sisarsivusto, jolle siirryit), ja jos lomake pysäyttää sinut, kentän nimi (esimerkiksi "email"), ei koskaan kirjoittamaasi tekstiä.',
     s5Title: '5. Uutiskirje',
     s5Body: (unsub) => <>Kun tilaat uutiskirjeemme, sähköpostiosoitteesi tallennetaan turvallisesti Resendin ja Supabasen kautta. Voit perua tilauksesi milloin tahansa jokaisesta viestistä löytyvällä linkillä tai {unsub}.</>,
     s6Title: '6. Tietojen säilytys',
@@ -193,14 +193,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: pseudonyymi käyttöanalytiikka',
       'Umami: evästeettömät kävijätilastot ja lomakkeiden vaiheiden laskenta',
-      'Adtraction, Daisycon, Travelpayouts ja Trip.com: varaus- ja kumppanilinkkien klikkausten seuranta',
       'Resend: uutiskirjeiden lähetys',
       'Supabase: taustatietokantapalvelut',
       'Cloudflare: sivuston ylläpito ja CDN',
     ],
     s8Title: '8. Mainonta',
     s8Body1: (siteName) => `Sivustolla näytetään kolmansien osapuolten sponsoroitua sisältöä. Sponsoroitu sisältö on merkitty selkeästi "Sponsoroitu"-tunnisteella. Sponsoroidun linkin klikkaaminen voi ohjata sinut ulkoiselle sivustolle, jolla on oma tietosuojakäytäntönsä. ${siteName} ei vastaa ulkoisten mainostajien tietosuojakäytännöistä.`,
-    s8Body2: 'Osallistumme kumppaniohjelmiin Adtraction-, Daisycon- ja Travelpayouts-verkostojen sekä Trip.comin kumppaniohjelman kautta; kumppaneitamme ovat mm. Sembo, Lomarengas, Trip.com ja EconomyBookings. Kun klikkaat kumppanilinkkiä ja teet ostoksen tai varauksen, voimme saada pienen komission ilman lisäkustannuksia sinulle.',
     s8aTitle: '8a. Kansainväliset tiedonsiirrot',
     s8aIntro: 'Useat käyttämämme palveluntarjoajat sijaitsevat ETA-alueen ulkopuolella tai siirtävät tietoja sen ulkopuolelle, useimmiten Yhdysvaltoihin:',
     s8aItems: [
@@ -209,7 +207,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., Yhdysvallat): kuuluu EU–US Data Privacy Framework -järjestelyyn ja hyödyntää vakiosopimuslausekkeita (SCC).' },
       { strong: 'Resend', body: '(Resend Inc., Yhdysvallat): hyödyntää vakiosopimuslausekkeita (SCC).' },
       { strong: 'Supabase', body: '(Supabase Inc., Yhdysvallat, EU-alueen palvelinvaihtoehto saatavilla): hyödyntää vakiosopimuslausekkeita (SCC).' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Ruotsi, EU; Daisycon B.V., Alankomaat, EU; Travelpayouts ja Trip.com, kansainväliset): EU/ETA-alueen ulkopuoliset siirrot on katettu vakiosopimuslausekkein (SCC).' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Saksa): ETA-alueen sisäpuolella.' },
     ],
     s8aTail: 'Jokaisessa tapauksessa siirto on suojattu joko komission riittävyyspäätöksellä, EU–US Data Privacy Framework -järjestelyllä tai Euroopan komission hyväksymillä vakiosopimuslausekkeilla. Voit pyytää meiltä kopion sovellettavista suojatoimista.',
@@ -256,12 +253,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Essenzielle Cookies', body: 'für die Funktion der Website erforderlich (Einwilligungswahl, Sitzungsdaten).' },
       { strong: 'Analyse-Cookies', body: 'werden von Google Analytics 4 verwendet, um zu verstehen, wie Besucher die Website nutzen. Pseudonyme Erfassung.' },
-      { strong: 'Partner-Cookies', body: 'werden gesetzt, wenn Sie auf Partnerlinks klicken (z. B. Adtraction-, Daisycon- oder Travelpayouts-Tracking). So lassen sich Provisionen korrekt zuordnen.' },
     ],
     s3Tail: (cookieLink) => <>Analyse-Cookies werden erst nach Ihrer Einwilligung über das Cookie-Banner gesetzt. Die Besucherstatistik von Umami (Abschnitt 4) verwendet keine Cookies. Vollständige Angaben finden Sie in {cookieLink}.</>,
     s4Title: '4. Google Analytics und Umami',
     s4Body: 'Wir verwenden Google Analytics 4 mit Consent Mode v2. Wenn Sie Cookies ablehnen, werden keine Analysedaten erhoben. Wenn Sie zustimmen, werden Nutzungsdaten (aufgerufene Seiten, Verweildauer, Gerätetyp und Standort auf Land- und Stadtebene) an Google gesendet. Die Daten sind pseudonym: Wir übermitteln weder Namen noch E-Mail-Adresse oder andere direkt identifizierende Angaben, aber die zufällige Cookie-Kennung und Ihre IP-Adresse sind personenbezogene Daten im Sinne der DSGVO.',
-    s4Umami: 'Zusätzlich nutzen wir Umami Cloud, um Seitenaufrufe und die Schritte unserer Formulare zu zählen, etwa wenn ein Newsletter-Formular angezeigt, begonnen oder abgeschickt wird. Umami verwendet keine Cookies und speichert nichts auf Ihrem Gerät; es läuft daher unabhängig davon, ob Sie Cookies akzeptieren. Erfasst werden Adresse und Titel der Seite, die Website, von der Sie kommen, Ihr Browser, Betriebssystem, Gerätetyp, Bildschirmgröße, Sprache und ungefährer Standort (Land, Region und Stadt). Ihre IP-Adresse wird nur verwendet, um diesen Standort und eine anonyme Besuchskennung zu berechnen, und nie gespeichert. Die Kennung ist ein Hashwert, der sich zu Beginn jedes Monats ändert. Formularereignisse erfassen nur, um welches Formular und welchen Schritt es sich handelt, und, falls ein Formular Sie aufhält, den Namen des Feldes (zum Beispiel „email“), nie Ihre Eingaben.',
+    s4Umami: 'Zusätzlich nutzen wir Umami Cloud, um Seitenaufrufe, Klicks auf einige unserer Links und Schaltflächen (zum Beispiel zu unseren Schwesterseiten oder unserer App) und die Schritte unserer Formulare und Tools zu zählen, etwa wenn ein Newsletter-Formular angezeigt, begonnen oder abgeschickt wird. Umami verwendet keine Cookies und speichert nichts auf Ihrem Gerät; es läuft daher unabhängig davon, ob Sie Cookies akzeptieren. Erfasst werden Adresse und Titel der Seite, die Website, von der Sie kommen, Ihr Browser, Betriebssystem, Gerätetyp, Bildschirmgröße, Sprache und ungefährer Standort (Land, Region und Stadt). Ihre IP-Adresse wird nur verwendet, um diesen Standort und eine anonyme Besuchskennung zu berechnen, und nie gespeichert. Die Kennung ist ein Hashwert, der sich zu Beginn jedes Monats ändert. Diese Ereignisse erfassen nur, was angeklickt oder ausgewählt wurde und um welchen Schritt es sich handelt (zum Beispiel die Schwesterseite, die Sie geöffnet haben), und, falls ein Formular Sie aufhält, den Namen des Feldes (zum Beispiel „email“), nie Ihre Eingaben.',
     s5Title: '5. Newsletter',
     s5Body: (unsub) => <>Wenn Sie unseren Newsletter abonnieren, wird Ihre E-Mail-Adresse über Resend und Supabase sicher gespeichert. Sie können sich jederzeit über den Link in jeder E-Mail oder auf {unsub} abmelden.</>,
     s6Title: '6. Speicherdauer',
@@ -271,14 +267,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: pseudonyme Nutzungsanalyse',
       'Umami: cookielose Besucherstatistik und Zählung von Formularschritten',
-      'Adtraction, Daisycon, Travelpayouts und Trip.com: Tracking von Klicks auf Buchungs- und Partnerlinks',
       'Resend: Newsletter-Versand',
       'Supabase: Backend- und Datenbankdienste',
       'Cloudflare: Hosting und CDN',
     ],
     s8Title: '8. Werbung',
     s8Body1: (siteName) => `Diese Website zeigt gesponserte Inhalte Dritter. Gesponserte Inhalte sind eindeutig mit „Gesponsert“ gekennzeichnet. Beim Klicken auf gesponserte Links werden Sie ggf. auf externe Websites mit eigenen Datenschutzrichtlinien weitergeleitet. ${siteName} ist nicht für die Datenpraxis externer Werbetreibender verantwortlich.`,
-    s8Body2: 'Wir nehmen über die Netzwerke Adtraction, Daisycon und Travelpayouts sowie am Partnerprogramm von Trip.com an Partnerprogrammen teil; zu unseren Partnern zählen Sembo, Lomarengas, Trip.com und EconomyBookings. Wenn Sie über einen Partnerlink eine Buchung oder einen Kauf tätigen, erhalten wir ggf. eine kleine Provision, für Sie ohne zusätzliche Kosten.',
     s8aTitle: '8a. Internationale Datenübermittlungen',
     s8aIntro: 'Einige der von uns genutzten Dienste haben ihren Sitz außerhalb des Europäischen Wirtschaftsraums (EWR) oder übermitteln Daten dorthin, meist in die USA:',
     s8aItems: [
@@ -287,7 +281,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., USA): abgedeckt durch das EU-US Data Privacy Framework und Standardvertragsklauseln (SCC).' },
       { strong: 'Resend', body: '(Resend Inc., USA): abgedeckt durch Standardvertragsklauseln.' },
       { strong: 'Supabase', body: '(Supabase Inc., USA, EU-Region verfügbar): abgedeckt durch Standardvertragsklauseln.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Schweden, EU; Daisycon B.V., die Niederlande, EU; Travelpayouts und Trip.com, international): Übermittlungen außerhalb der EU/des EWR sind durch Standardvertragsklauseln abgedeckt.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Deutschland): innerhalb des EWR.' },
     ],
     s8aTail: 'In jedem Fall ist die Übermittlung durch einen Angemessenheitsbeschluss, das EU-US Data Privacy Framework oder von der Europäischen Kommission genehmigte Standardvertragsklauseln abgesichert. Eine Kopie der relevanten Schutzmaßnahmen erhalten Sie auf Anfrage.',
@@ -334,12 +327,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: '必須クッキー', body: 'ウェブサイトの正常な動作に必要（同意設定、セッションデータ）。' },
       { strong: '解析クッキー', body: 'Google Analytics 4 がサイトの利用状況を把握するために使用。仮名化された形で収集。' },
-      { strong: 'アフィリエイトクッキー', body: 'アフィリエイトリンク（例：Adtraction / Daisycon / Travelpayouts のトラッキング）をクリックしたときに設定されます。紹介料の帰属に役立ちます。' },
     ],
     s3Tail: (cookieLink) => <>解析クッキーは、クッキーバナーで同意をいただいた後にのみ設定されます。Umami の訪問者統計（第4項）はクッキーを使用しません。詳細は{cookieLink}をご覧ください。</>,
     s4Title: '4. Google Analytics と Umami',
     s4Body: '当サイトでは Consent Mode v2 を有効にした Google Analytics 4 を使用しています。クッキーを拒否した場合、アナリティクスデータは収集されません。同意された場合、閲覧ページ、滞在時間、デバイスの種類、国および都市レベルの所在地といった利用データが Google に送信されます。これらは仮名化されたデータです：氏名やメールアドレスなど直接個人を特定できる情報は送信しませんが、クッキーのランダムな識別子と IP アドレスは GDPR 上の個人データに当たります。',
-    s4Umami: 'また、Umami Cloud を使って、ページの閲覧数とフォームの各段階（ニュースレターのフォームが表示された、入力が始まった、送信された など）を数えています。Umami はクッキーを使用せず、お客様の端末に何も保存しないため、クッキーに同意されたかどうかにかかわらず動作します。記録されるのは、ページのアドレスとタイトル、参照元のサイト、ブラウザ、OS、端末の種類、画面サイズ、言語、おおよその所在地（国・地域・都市）です。IP アドレスはこの所在地と匿名の訪問識別子を算出するためだけに使われ、保存されることはありません。識別子はハッシュ値で、毎月初めに変わります。フォームのイベントに記録されるのは、どのフォームのどの段階かと、フォームで先に進めなかった場合の項目名（例：「email」）だけで、入力した内容が記録されることはありません。',
+    s4Umami: 'また、Umami Cloud を使って、ページの閲覧数、一部のリンクやボタンのクリック（姉妹サイトやアプリへのリンクなど）、フォームやツールの各段階（ニュースレターのフォームが表示された、入力が始まった、送信された など）を数えています。Umami はクッキーを使用せず、お客様の端末に何も保存しないため、クッキーに同意されたかどうかにかかわらず動作します。記録されるのは、ページのアドレスとタイトル、参照元のサイト、ブラウザ、OS、端末の種類、画面サイズ、言語、おおよその所在地（国・地域・都市）です。IP アドレスはこの所在地と匿名の訪問識別子を算出するためだけに使われ、保存されることはありません。識別子はハッシュ値で、毎月初めに変わります。これらのイベントに記録されるのは、何がクリック・選択されたか、どの段階か（例：開いた姉妹サイト）と、フォームで先に進めなかった場合の項目名（例：「email」）だけで、入力した内容が記録されることはありません。',
     s5Title: '5. ニュースレター',
     s5Body: (unsub) => <>ニュースレターにご登録いただくと、メールアドレスは Resend と Supabase を通じて安全に保管されます。配信停止は、各メール内のリンクまたは{unsub}からいつでも可能です。</>,
     s6Title: '6. データの保管期間',
@@ -349,14 +341,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics：仮名化された利用分析',
       'Umami：クッキーを使用しない訪問者統計とフォームの段階の集計',
-      'Adtraction、Daisycon、Travelpayouts、Trip.com：予約・パートナーリンクのクリック追跡',
       'Resend：ニュースレターの配信',
       'Supabase：バックエンド・データベースサービス',
       'Cloudflare：ホスティングと CDN',
     ],
     s8Title: '8. 広告',
     s8Body1: (siteName) => `本サイトには第三者によるスポンサーコンテンツが表示されることがあります。スポンサーコンテンツは「PR」マークで明確に識別されます。スポンサーリンクをクリックすると、独自のプライバシーポリシーを持つ外部サイトに移動する場合があります。${siteName} は外部広告主のデータ取り扱いについて責任を負いません。`,
-    s8Body2: 'Adtraction、Daisycon、Travelpayouts の各ネットワーク、および Trip.com のパートナープログラムを通じてアフィリエイトプログラムに参加しています（パートナー例：Sembo、Lomarengas、Trip.com、EconomyBookings）。アフィリエイトリンクからご予約・ご購入された場合、お客様には追加費用なしで当社が手数料を受け取ることがあります。',
     s8aTitle: '8a. 国際的なデータ移転',
     s8aIntro: '当方が利用している第三者サービスの一部は、欧州経済領域（EEA）外、特に米国を拠点としているか、データを移転しています：',
     s8aItems: [
@@ -365,7 +355,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '（Cloudflare Inc.、米国）：EU–米国データプライバシーフレームワークと標準契約条項（SCC）の対象。' },
       { strong: 'Resend', body: '（Resend Inc.、米国）：標準契約条項（SCC）の対象。' },
       { strong: 'Supabase', body: '（Supabase Inc.、米国、EU リージョン利用可能）：標準契約条項（SCC）の対象。' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB（スウェーデン、EU）、Daisycon B.V.（オランダ、EU）、Travelpayouts と Trip.com（国際））：EU/EEA 域外への移転は標準契約条項（SCC）の対象です。' },
       { strong: 'GetYourGuide', body: '（GetYourGuide GmbH、ドイツ）：EEA 内。' },
     ],
     s8aTail: 'いずれの場合も、移転は欧州委員会の十分性決定、EU–米国データプライバシーフレームワーク、または欧州委員会承認の標準契約条項によって保護されています。関連する保護措置のコピーは、お問い合わせにより提供可能です。',
@@ -412,12 +401,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Cookies esenciales', body: 'necesarias para el funcionamiento correcto del sitio (preferencias de consentimiento, datos de sesión).' },
       { strong: 'Cookies analíticas', body: 'utilizadas por Google Analytics 4 para entender cómo interactúan los visitantes con nuestro sitio. Se recogen de forma seudonimizada.' },
-      { strong: 'Cookies de afiliados', body: 'se establecen cuando hace clic en enlaces de afiliados (por ejemplo, seguimiento de Adtraction, Daisycon o Travelpayouts). Permiten atribuir las comisiones por referencia.' },
     ],
     s3Tail: (cookieLink) => <>Las cookies analíticas solo se establecen tras su consentimiento mediante el banner de cookies. Las estadísticas de visitas de Umami (apartado 4) no utilizan cookies. Consulte nuestra {cookieLink} para más detalles.</>,
     s4Title: '4. Google Analytics y Umami',
     s4Body: 'Utilizamos Google Analytics 4 con Consent Mode v2. Si rechaza las cookies, no se recoge ningún dato analítico. Si acepta, se envían a Google datos de uso (páginas vistas, tiempo en el sitio, tipo de dispositivo y ubicación a nivel de país y ciudad). Los datos son seudonimizados: no enviamos su nombre, dirección de correo electrónico ni otros datos que le identifiquen directamente, pero el identificador aleatorio de la cookie y su dirección IP son datos personales conforme al RGPD.',
-    s4Umami: 'Además, utilizamos Umami Cloud para contar las visitas a páginas y los pasos de nuestros formularios, por ejemplo cuando se muestra, se empieza a rellenar o se envía un formulario del boletín. Umami no utiliza cookies ni guarda nada en su dispositivo, por lo que funciona tanto si acepta las cookies como si no. Registra la dirección y el título de la página, el sitio del que procede, su navegador, sistema operativo, tipo de dispositivo, tamaño de pantalla, idioma y ubicación aproximada (país, región y ciudad). Su dirección IP solo se utiliza para calcular esa ubicación y un identificador anónimo de la visita, y nunca se almacena. El identificador es un hash que cambia al comienzo de cada mes. Los eventos de los formularios registran solo de qué formulario y paso se trata y, si un formulario le impide continuar, el nombre del campo (por ejemplo, «email»), nunca lo que usted ha escrito.',
+    s4Umami: 'Además, utilizamos Umami Cloud para contar las visitas a páginas, los clics en algunos de nuestros enlaces y botones (por ejemplo, hacia nuestros sitios hermanos o nuestra app) y los pasos de nuestros formularios y herramientas, por ejemplo cuando se muestra, se empieza a rellenar o se envía un formulario del boletín. Umami no utiliza cookies ni guarda nada en su dispositivo, por lo que funciona tanto si acepta las cookies como si no. Registra la dirección y el título de la página, el sitio del que procede, su navegador, sistema operativo, tipo de dispositivo, tamaño de pantalla, idioma y ubicación aproximada (país, región y ciudad). Su dirección IP solo se utiliza para calcular esa ubicación y un identificador anónimo de la visita, y nunca se almacena. El identificador es un hash que cambia al comienzo de cada mes. Estos eventos registran solo en qué se hizo clic o qué se eligió y de qué paso se trata (por ejemplo, el sitio hermano que abrió) y, si un formulario le impide continuar, el nombre del campo (por ejemplo, «email»), nunca lo que usted ha escrito.',
     s5Title: '5. Boletín',
     s5Body: (unsub) => <>Si se suscribe a nuestro boletín, su dirección de correo electrónico se almacena de forma segura a través de Resend y Supabase. Puede darse de baja en cualquier momento mediante el enlace de cada correo o a través de nuestra {unsub}.</>,
     s6Title: '6. Conservación de los datos',
@@ -427,14 +415,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: analítica de uso seudonimizada',
       'Umami: estadísticas de visitas sin cookies y recuento de los pasos de los formularios',
-      'Adtraction, Daisycon, Travelpayouts y Trip.com: seguimiento de clics en enlaces de reserva y de afiliados',
       'Resend: envío de boletines por correo electrónico',
       'Supabase: servicios de base de datos en el backend',
       'Cloudflare: alojamiento y CDN',
     ],
     s8Title: '8. Publicidad',
     s8Body1: (siteName) => `Este sitio muestra contenido patrocinado de terceros anunciantes. El contenido patrocinado está claramente identificado con la etiqueta "Patrocinado". Al hacer clic en enlaces patrocinados puede ser redirigido a sitios externos con sus propias políticas de privacidad. ${siteName} no es responsable de las prácticas de tratamiento de datos de los anunciantes externos.`,
-    s8Body2: 'Participamos en programas de afiliación a través de las redes Adtraction, Daisycon y Travelpayouts y del programa de socios de Trip.com; entre nuestros socios están Sembo, Lomarengas, Trip.com y EconomyBookings. Cuando hace clic en un enlace de afiliado y realiza una compra o reserva, podemos recibir una comisión sin costo adicional para usted.',
     s8aTitle: '8a. Transferencias internacionales de datos',
     s8aIntro: 'Varios de los servicios externos que utilizamos tienen su sede o transfieren datos a países fuera del Espacio Económico Europeo (EEE), normalmente Estados Unidos:',
     s8aItems: [
@@ -443,7 +429,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., EE. UU.): amparado por el Marco de Privacidad de Datos UE–EE. UU. y por Cláusulas Contractuales Tipo (CCT).' },
       { strong: 'Resend', body: '(Resend Inc., EE. UU.): amparado por Cláusulas Contractuales Tipo.' },
       { strong: 'Supabase', body: '(Supabase Inc., EE. UU., con alojamiento disponible en región UE): amparado por Cláusulas Contractuales Tipo.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Suecia, UE; Daisycon B.V., Países Bajos, UE; Travelpayouts y Trip.com, internacionales): las transferencias fuera de la UE/EEE están amparadas por Cláusulas Contractuales Tipo.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Alemania): dentro del EEE.' },
     ],
     s8aTail: 'En cada caso, la transferencia está protegida por una decisión de adecuación, el Marco de Privacidad de Datos UE–EE. UU. o Cláusulas Contractuales Tipo aprobadas por la Comisión Europea. Puede solicitar una copia de las garantías aplicables poniéndose en contacto con nosotros.',
@@ -490,12 +475,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Cookies essenciais', body: 'necessários para o funcionamento adequado do site (preferências de consentimento, dados de sessão).' },
       { strong: 'Cookies analíticos', body: 'usados pelo Google Analytics 4 para entender como os visitantes interagem com nosso site. Coletados de forma pseudonimizada.' },
-      { strong: 'Cookies de afiliados', body: 'definidos quando você clica em links de afiliados (por exemplo, rastreamento da Adtraction, da Daisycon ou da Travelpayouts). Ajudam a atribuir as comissões de indicação.' },
     ],
     s3Tail: (cookieLink) => <>Os cookies analíticos só são definidos após você consentir pelo banner. As estatísticas de visitas do Umami (seção 4) não usam cookies. Veja nossa {cookieLink} para mais detalhes.</>,
     s4Title: '4. Google Analytics e Umami',
     s4Body: 'Usamos o Google Analytics 4 com o Consent Mode v2. Se você recusar os cookies, nenhum dado analítico é coletado. Se aceitar, dados de uso (páginas visitadas, tempo no site, tipo de dispositivo e localização a nível de país e cidade) são enviados ao Google. Os dados são pseudonimizados: não enviamos seu nome, endereço de e-mail nem outros dados que o identifiquem diretamente, mas o identificador aleatório do cookie e o seu endereço IP são dados pessoais segundo o GDPR.',
-    s4Umami: 'Também usamos o Umami Cloud para contar as visualizações de página e as etapas dos nossos formulários, por exemplo quando um formulário do boletim é exibido, começa a ser preenchido ou é enviado. O Umami não usa cookies nem armazena nada no seu dispositivo, por isso funciona quer você aceite os cookies, quer não. Ele registra o endereço e o título da página, o site de onde você veio, seu navegador, sistema operacional, tipo de dispositivo, tamanho da tela, idioma e localização aproximada (país, região e cidade). Seu endereço IP é usado apenas para calcular essa localização e um identificador anônimo da visita, e nunca é armazenado. O identificador é um hash que muda no início de cada mês. Os eventos dos formulários registram apenas o formulário e a etapa e, se um formulário impedir você de continuar, o nome do campo (por exemplo, "email"), nunca o que você digitou.',
+    s4Umami: 'Também usamos o Umami Cloud para contar as visualizações de página, os cliques em alguns dos nossos links e botões (por exemplo, para os nossos sites irmãos ou o nosso app) e as etapas dos nossos formulários e ferramentas, por exemplo quando um formulário do boletim é exibido, começa a ser preenchido ou é enviado. O Umami não usa cookies nem armazena nada no seu dispositivo, por isso funciona quer você aceite os cookies, quer não. Ele registra o endereço e o título da página, o site de onde você veio, seu navegador, sistema operacional, tipo de dispositivo, tamanho da tela, idioma e localização aproximada (país, região e cidade). Seu endereço IP é usado apenas para calcular essa localização e um identificador anônimo da visita, e nunca é armazenado. O identificador é um hash que muda no início de cada mês. Esses eventos registram apenas o que foi clicado ou escolhido e a etapa (por exemplo, o site irmão que você abriu) e, se um formulário impedir você de continuar, o nome do campo (por exemplo, "email"), nunca o que você digitou.',
     s5Title: '5. Boletim',
     s5Body: (unsub) => <>Ao se inscrever no nosso boletim, seu endereço de e-mail é armazenado com segurança pela Resend e pela Supabase. Você pode cancelar a qualquer momento pelo link em cada e-mail ou pela nossa {unsub}.</>,
     s6Title: '6. Retenção de dados',
@@ -505,14 +489,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: analítica de uso pseudonimizada',
       'Umami: estatísticas de visitas sem cookies e contagem das etapas dos formulários',
-      'Adtraction, Daisycon, Travelpayouts e Trip.com: rastreamento de cliques em links de reserva e afiliados',
       'Resend: envio de boletins por e-mail',
       'Supabase: serviços de banco de dados no backend',
       'Cloudflare: hospedagem e CDN',
     ],
     s8Title: '8. Publicidade',
     s8Body1: (siteName) => `Este site exibe conteúdo patrocinado de anunciantes terceiros. O conteúdo patrocinado é claramente identificado com a marcação "Patrocinado". Clicar em links patrocinados pode redirecioná-lo a sites externos com suas próprias políticas de privacidade. O ${siteName} não é responsável pelas práticas de dados de anunciantes externos.`,
-    s8Body2: 'Participamos de programas de afiliados por meio das redes Adtraction, Daisycon e Travelpayouts e do programa de parceiros da Trip.com; entre os parceiros estão Sembo, Lomarengas, Trip.com e EconomyBookings. Quando você clica em um link de afiliado e faz uma compra ou reserva, podemos receber uma comissão sem custo adicional para você.',
     s8aTitle: '8a. Transferências internacionais de dados',
     s8aIntro: 'Vários dos serviços externos que utilizamos estão sediados ou transferem dados para países fora do Espaço Econômico Europeu (EEE), mais comumente os Estados Unidos:',
     s8aItems: [
@@ -521,7 +503,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., EUA): coberto pelo Quadro de Privacidade de Dados UE–EUA e pelas Cláusulas Contratuais Padrão (CCP).' },
       { strong: 'Resend', body: '(Resend Inc., EUA): coberto pelas Cláusulas Contratuais Padrão.' },
       { strong: 'Supabase', body: '(Supabase Inc., EUA, com hospedagem disponível na região UE): coberto pelas Cláusulas Contratuais Padrão.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Suécia, UE; Daisycon B.V., Países Baixos, UE; Travelpayouts e Trip.com, internacionais): transferências para fora da UE/EEE são cobertas pelas Cláusulas Contratuais Padrão.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Alemanha): dentro do EEE.' },
     ],
     s8aTail: 'Em cada caso, a transferência está protegida por uma decisão de adequação, pelo Quadro de Privacidade de Dados UE–EUA ou pelas Cláusulas Contratuais Padrão aprovadas pela Comissão Europeia. Você pode solicitar uma cópia das garantias aplicáveis entrando em contato conosco.',
@@ -568,12 +549,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: '必要 cookie', body: '网站正常运行所必需（同意偏好、会话数据）。' },
       { strong: '分析 cookie', body: 'Google Analytics 4 用于了解访客如何与本网站互动。以假名化方式收集。' },
-      { strong: '联盟 cookie', body: '当您点击联盟链接（例如 Adtraction、Daisycon 或 Travelpayouts 追踪）时设置，用于归因推荐佣金。' },
     ],
     s3Tail: (cookieLink) => <>分析 cookie 仅在您通过 cookie 横幅同意后才会设置。Umami 的访客统计（第4节）不使用 cookie。详情请参阅我们的{cookieLink}。</>,
     s4Title: '4. Google Analytics 与 Umami',
     s4Body: '我们使用启用了 Consent Mode v2 的 Google Analytics 4。如果您拒绝 Cookie，则不会收集任何分析数据。如果您同意，使用数据（浏览的页面、停留时间、设备类型，以及国家和城市级别的位置）会发送给 Google。这些数据是假名化的：我们不会发送您的姓名、电子邮箱等可直接识别身份的信息，但 Cookie 中的随机标识符和您的 IP 地址属于 GDPR 所称的个人数据。',
-    s4Umami: '我们还使用 Umami Cloud 统计页面浏览量和表单的各个步骤，例如电子简报表单何时显示、何时开始填写、何时提交。Umami 不使用 cookie，也不会在您的设备上存储任何内容，因此无论您是否接受 cookie，它都会运行。它记录页面地址和标题、您来自的网站、浏览器、操作系统、设备类型、屏幕尺寸、语言以及大致位置（国家、地区和城市）。您的 IP 地址仅用于计算该位置和一个匿名访问标识符，绝不会被存储。该标识符是一个哈希值，每月初更换。表单事件只记录是哪个表单、哪个步骤，以及在表单让您无法继续时对应的字段名称（例如“email”），绝不记录您输入的内容。',
+    s4Umami: '我们还使用 Umami Cloud 统计页面浏览量、部分链接和按钮的点击（例如前往我们的姊妹网站或应用的链接）以及表单和工具的各个步骤，例如电子简报表单何时显示、何时开始填写、何时提交。Umami 不使用 cookie，也不会在您的设备上存储任何内容，因此无论您是否接受 cookie，它都会运行。它记录页面地址和标题、您来自的网站、浏览器、操作系统、设备类型、屏幕尺寸、语言以及大致位置（国家、地区和城市）。您的 IP 地址仅用于计算该位置和一个匿名访问标识符，绝不会被存储。该标识符是一个哈希值，每月初更换。这些事件只记录点击或选择了什么、是哪个步骤（例如您打开的姊妹网站），以及在表单让您无法继续时对应的字段名称（例如“email”），绝不记录您输入的内容。',
     s5Title: '5. 电子简报',
     s5Body: (unsub) => <>如果您订阅了我们的电子简报，您的电子邮件地址将通过 Resend 和 Supabase 安全存储。您可以随时通过每封邮件中的链接或通过我们的{unsub}取消订阅。</>,
     s6Title: '6. 数据保留',
@@ -583,14 +563,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics：假名化使用分析',
       'Umami：不使用 cookie 的访客统计和表单步骤计数',
-      'Adtraction、Daisycon、Travelpayouts 与 Trip.com：点击预订与合作伙伴链接的追踪',
       'Resend：电子简报邮件发送',
       'Supabase：后端数据库服务',
       'Cloudflare：托管与 CDN',
     ],
     s8Title: '8. 广告',
     s8Body1: (siteName) => `本网站会展示第三方广告主的赞助内容。赞助内容会清晰标注“赞助”标识。点击赞助链接可能将您重定向到拥有自身隐私政策的外部网站。${siteName} 不对外部广告主的数据处理做法负责。`,
-    s8Body2: '我们通过 Adtraction、Daisycon 和 Travelpayouts 网络以及 Trip.com 合作伙伴计划参与联盟计划，合作伙伴包括 Sembo、Lomarengas、Trip.com 和 EconomyBookings。当您点击联盟链接并完成购买或预订时，我们可能获得佣金，而您无需承担任何额外费用。',
     s8aTitle: '8a. 跨境数据传输',
     s8aIntro: '我们使用的若干第三方服务的总部或数据传输目的地位于欧洲经济区（EEA）以外，最常见的是美国：',
     s8aItems: [
@@ -599,7 +577,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '（Cloudflare Inc.，美国）：受欧盟–美国数据隐私框架及标准合同条款（SCC）保护。' },
       { strong: 'Resend', body: '（Resend Inc.，美国）：受标准合同条款（SCC）保护。' },
       { strong: 'Supabase', body: '（Supabase Inc.，美国，亦可使用欧盟区域托管）：受标准合同条款（SCC）保护。' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB，瑞典，欧盟；Daisycon B.V.，荷兰，欧盟；Travelpayouts 与 Trip.com，国际）：欧盟/欧洲经济区以外的传输受标准合同条款（SCC）保护。' },
       { strong: 'GetYourGuide', body: '（GetYourGuide GmbH，德国）：位于欧洲经济区内。' },
     ],
     s8aTail: '在任何情形下，数据传输均通过欧盟委员会的充分性决定、欧盟–美国数据隐私框架或经欧盟委员会批准的标准合同条款进行保护。您可联系我们索取相应保护措施的副本。',
@@ -646,12 +623,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: '필수 쿠키', body: '웹사이트의 정상 작동에 필요(동의 설정, 세션 데이터).' },
       { strong: '분석 쿠키', body: 'Google Analytics 4가 방문자의 사이트 이용 방식을 이해하는 데 사용. 가명 처리되어 수집됩니다.' },
-      { strong: '제휴 쿠키', body: '제휴 링크 클릭 시 설정(예: Adtraction, Daisycon, Travelpayouts 추적). 추천 수수료 귀속에 사용됩니다.' },
     ],
     s3Tail: (cookieLink) => <>분석 쿠키는 쿠키 배너를 통한 동의 후에만 설정됩니다. Umami 방문자 통계(제4항)는 쿠키를 사용하지 않습니다. 자세한 내용은 당사의 {cookieLink}을 참조하세요.</>,
     s4Title: '4. Google Analytics 및 Umami',
     s4Body: '당사는 Consent Mode v2를 적용한 Google Analytics 4를 사용합니다. 쿠키를 거부하시면 분석 데이터는 수집되지 않습니다. 동의하시면 이용 데이터(조회한 페이지, 체류 시간, 기기 유형, 국가 및 도시 단위의 위치)가 Google로 전송됩니다. 이 데이터는 가명 처리된 정보입니다. 이름이나 이메일 주소처럼 직접 신원을 알 수 있는 정보는 전송하지 않지만, 쿠키의 임의 식별자와 IP 주소는 GDPR상 개인정보에 해당합니다.',
-    s4Umami: '또한 당사는 Umami Cloud를 사용해 페이지 조회수와 양식의 각 단계(예: 뉴스레터 양식이 표시되거나, 작성이 시작되거나, 제출된 경우)를 집계합니다. Umami는 쿠키를 사용하지 않고 귀하의 기기에 아무것도 저장하지 않으므로, 쿠키 동의 여부와 관계없이 작동합니다. 페이지 주소와 제목, 유입 사이트, 브라우저, 운영체제, 기기 유형, 화면 크기, 언어, 대략적인 위치(국가, 지역, 도시)를 기록합니다. IP 주소는 이 위치와 익명 방문 식별자를 계산하는 데에만 사용되며 저장되지 않습니다. 이 식별자는 매월 초에 바뀌는 해시값입니다. 양식 이벤트에는 어떤 양식의 어떤 단계인지, 그리고 양식에서 더 진행할 수 없었을 경우 해당 항목 이름(예: "email")만 기록되며, 입력한 내용은 기록되지 않습니다.',
+    s4Umami: '또한 당사는 Umami Cloud를 사용해 페이지 조회수, 일부 링크와 버튼의 클릭(예: 자매 사이트나 앱으로 연결되는 링크), 양식과 도구의 각 단계(예: 뉴스레터 양식이 표시되거나, 작성이 시작되거나, 제출된 경우)를 집계합니다. Umami는 쿠키를 사용하지 않고 귀하의 기기에 아무것도 저장하지 않으므로, 쿠키 동의 여부와 관계없이 작동합니다. 페이지 주소와 제목, 유입 사이트, 브라우저, 운영체제, 기기 유형, 화면 크기, 언어, 대략적인 위치(국가, 지역, 도시)를 기록합니다. IP 주소는 이 위치와 익명 방문 식별자를 계산하는 데에만 사용되며 저장되지 않습니다. 이 식별자는 매월 초에 바뀌는 해시값입니다. 이러한 이벤트에는 무엇을 클릭하거나 선택했는지와 어떤 단계인지(예: 열어 본 자매 사이트), 그리고 양식에서 더 진행할 수 없었을 경우 해당 항목 이름(예: "email")만 기록되며, 입력한 내용은 기록되지 않습니다.',
     s5Title: '5. 뉴스레터',
     s5Body: (unsub) => <>뉴스레터를 구독하시면 귀하의 이메일 주소는 Resend와 Supabase를 통해 안전하게 보관됩니다. 각 이메일의 링크 또는 당사의 {unsub}를 통해 언제든지 구독을 해지하실 수 있습니다.</>,
     s6Title: '6. 데이터 보관',
@@ -661,14 +637,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: 가명 처리된 이용 분석',
       'Umami: 쿠키를 사용하지 않는 방문자 통계 및 양식 단계 집계',
-      'Adtraction, Daisycon, Travelpayouts, Trip.com: 예약·파트너 링크 클릭 추적',
       'Resend: 뉴스레터 이메일 발송',
       'Supabase: 백엔드 데이터베이스 서비스',
       'Cloudflare: 호스팅 및 CDN',
     ],
     s8Title: '8. 광고',
     s8Body1: (siteName) => `본 사이트는 제3자 광고주의 후원 콘텐츠를 표시합니다. 후원 콘텐츠는 "후원" 표시로 명확히 식별됩니다. 후원 링크를 클릭하시면 자체 개인정보 처리방침을 가진 외부 사이트로 이동할 수 있습니다. ${siteName} 사이트는 외부 광고주의 데이터 처리 관행에 대해 책임지지 않습니다.`,
-    s8Body2: '당사는 Adtraction, Daisycon, Travelpayouts 네트워크와 Trip.com 파트너 프로그램을 통해 제휴 프로그램에 참여합니다. 파트너로는 Sembo, Lomarengas, Trip.com, EconomyBookings 등이 있습니다. 제휴 링크를 통해 구매 또는 예약을 하시면 귀하에게 추가 비용이 발생하지 않으며, 당사가 수수료를 받습니다.',
     s8aTitle: '8a. 국제 데이터 이전',
     s8aIntro: '당사가 이용하는 일부 제3자 서비스는 유럽경제지역(EEA) 외부, 주로 미국에 소재하거나 데이터를 이전합니다:',
     s8aItems: [
@@ -677,7 +651,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., 미국): EU–미국 데이터 프라이버시 프레임워크 및 표준계약조항(SCC) 적용.' },
       { strong: 'Resend', body: '(Resend Inc., 미국): 표준계약조항(SCC) 적용.' },
       { strong: 'Supabase', body: '(Supabase Inc., 미국, EU 지역 호스팅 가능): 표준계약조항(SCC) 적용.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, 스웨덴, EU; Daisycon B.V., 네덜란드, EU; Travelpayouts 및 Trip.com, 국제): EU/EEA 역외 이전에는 표준계약조항(SCC)이 적용됩니다.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, 독일): EEA 내.' },
     ],
     s8aTail: '각 경우에 이전은 적정성 결정, EU–미국 데이터 프라이버시 프레임워크 또는 유럽연합 집행위원회 승인 표준계약조항에 의해 보호됩니다. 해당 보호 조치의 사본은 당사에 문의하여 요청하실 수 있습니다.',
@@ -724,12 +697,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Cookies essentiels', body: 'nécessaires au bon fonctionnement du site (préférences de consentement, données de session).' },
       { strong: 'Cookies analytiques', body: 'utilisés par Google Analytics 4 pour comprendre l\'usage du site par les visiteurs. Collectés de manière pseudonyme.' },
-      { strong: 'Cookies d\'affiliation', body: 'déposés lorsque vous cliquez sur un lien d\'affiliation (par exemple suivi Adtraction, Daisycon ou Travelpayouts). Ils permettent d\'attribuer les commissions de référencement.' },
     ],
     s3Tail: (cookieLink) => <>Les cookies analytiques ne sont déposés qu'après votre consentement via le bandeau. Les statistiques de visite d'Umami (section 4) n'utilisent pas de cookies. Voir notre {cookieLink} pour plus de détails.</>,
     s4Title: '4. Google Analytics et Umami',
     s4Body: 'Nous utilisons Google Analytics 4 avec le Consent Mode v2. Si vous refusez les cookies, aucune donnée analytique n’est collectée. Si vous acceptez, des données d’usage (pages consultées, temps passé sur le site, type d’appareil et localisation au niveau du pays et de la ville) sont envoyées à Google. Ces données sont pseudonymes : nous n’envoyons ni nom, ni adresse e-mail, ni aucune autre donnée vous identifiant directement, mais l’identifiant aléatoire du cookie et votre adresse IP sont des données personnelles au sens du RGPD.',
-    s4Umami: 'Nous utilisons aussi Umami Cloud pour compter les pages vues et les étapes de nos formulaires, par exemple lorsqu\'un formulaire de newsletter s\'affiche, est commencé ou est envoyé. Umami n\'utilise pas de cookies et n\'enregistre rien sur votre appareil ; il fonctionne donc que vous acceptiez les cookies ou non. Il enregistre l\'adresse et le titre de la page, le site d\'où vous venez, votre navigateur, votre système d\'exploitation, le type d\'appareil, la taille de l\'écran, la langue et la localisation approximative (pays, région et ville). Votre adresse IP sert uniquement à déterminer cette localisation et un identifiant de visite anonyme, et elle n\'est jamais conservée. L\'identifiant est un hachage qui change au début de chaque mois. Les événements de formulaire enregistrent seulement de quel formulaire et de quelle étape il s\'agit et, si un formulaire vous bloque, le nom du champ (par exemple « email »), jamais ce que vous avez saisi.',
+    s4Umami: 'Nous utilisons aussi Umami Cloud pour compter les pages vues, les clics sur certains de nos liens et boutons (par exemple vers les autres sites de notre réseau ou notre application) et les étapes de nos formulaires et outils, par exemple lorsqu\'un formulaire de newsletter s\'affiche, est commencé ou est envoyé. Umami n\'utilise pas de cookies et n\'enregistre rien sur votre appareil ; il fonctionne donc que vous acceptiez les cookies ou non. Il enregistre l\'adresse et le titre de la page, le site d\'où vous venez, votre navigateur, votre système d\'exploitation, le type d\'appareil, la taille de l\'écran, la langue et la localisation approximative (pays, région et ville). Votre adresse IP sert uniquement à déterminer cette localisation et un identifiant de visite anonyme, et elle n\'est jamais conservée. L\'identifiant est un hachage qui change au début de chaque mois. Ces événements enregistrent seulement ce qui a été cliqué ou choisi et de quelle étape il s\'agit (par exemple le site du réseau que vous avez ouvert) et, si un formulaire vous bloque, le nom du champ (par exemple « email »), jamais ce que vous avez saisi.',
     s5Title: '5. Newsletter',
     s5Body: (unsub) => <>Si vous vous inscrivez à notre newsletter, votre adresse e-mail est stockée en toute sécurité via Resend et Supabase. Vous pouvez vous désinscrire à tout moment via le lien dans chaque e-mail ou via notre {unsub}.</>,
     s6Title: '6. Conservation des données',
@@ -739,14 +711,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics : analyse d\'usage pseudonyme',
       'Umami : statistiques de visite sans cookies et comptage des étapes des formulaires',
-      'Adtraction, Daisycon, Travelpayouts et Trip.com : suivi des clics sur les liens de réservation et d\'affiliation',
       'Resend : envoi de la newsletter par e-mail',
       'Supabase : services de base de données back-end',
       'Cloudflare : hébergement et CDN',
     ],
     s8Title: '8. Publicité',
     s8Body1: (siteName) => `Ce site affiche du contenu sponsorisé d'annonceurs tiers. Le contenu sponsorisé est clairement identifié par la mention « Sponsorisé ». Cliquer sur des liens sponsorisés peut vous rediriger vers des sites externes ayant leur propre politique de confidentialité. ${siteName} n'est pas responsable des pratiques en matière de données des annonceurs externes.`,
-    s8Body2: 'Nous participons à des programmes d\'affiliation via les réseaux Adtraction, Daisycon et Travelpayouts ainsi qu\'au programme partenaire de Trip.com ; nos partenaires incluent Sembo, Lomarengas, Trip.com et EconomyBookings. Lorsque vous cliquez sur un lien d\'affiliation et effectuez un achat ou une réservation, nous pouvons percevoir une commission sans coût supplémentaire pour vous.',
     s8aTitle: '8a. Transferts internationaux de données',
     s8aIntro: 'Plusieurs services tiers que nous utilisons sont établis hors de l\'Espace économique européen (EEE) ou y transfèrent des données, le plus souvent vers les États-Unis :',
     s8aItems: [
@@ -755,7 +725,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., États-Unis) : couvert par le cadre de protection des données UE–États-Unis et les clauses contractuelles types (CCT).' },
       { strong: 'Resend', body: '(Resend Inc., États-Unis) : couvert par les clauses contractuelles types.' },
       { strong: 'Supabase', body: '(Supabase Inc., États-Unis, hébergement région UE disponible) : couvert par les clauses contractuelles types.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Suède, UE ; Daisycon B.V., Pays-Bas, UE ; Travelpayouts et Trip.com, internationaux) : les transferts hors UE/EEE sont couverts par les clauses contractuelles types.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Allemagne) : au sein de l\'EEE.' },
     ],
     s8aTail: 'Dans chaque cas, le transfert est protégé par une décision d\'adéquation, le cadre de protection des données UE–États-Unis ou les clauses contractuelles types approuvées par la Commission européenne. Vous pouvez nous demander une copie des garanties applicables.',
@@ -802,12 +771,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Cookie essenziali', body: 'necessari al corretto funzionamento del sito (preferenze di consenso, dati di sessione).' },
       { strong: 'Cookie analitici', body: 'utilizzati da Google Analytics 4 per comprendere come i visitatori interagiscono con il sito. Raccolti in forma pseudonima.' },
-      { strong: 'Cookie di affiliazione', body: 'impostati quando Lei clicca su link di affiliazione (ad esempio tracciamento Adtraction, Daisycon o Travelpayouts). Permettono di attribuire le commissioni di affiliazione.' },
     ],
     s3Tail: (cookieLink) => <>I cookie analitici vengono impostati solo dopo il Suo consenso tramite il banner. Le statistiche di visita di Umami (sezione 4) non usano cookie. Per dettagli completi, consulti la nostra {cookieLink}.</>,
     s4Title: '4. Google Analytics e Umami',
     s4Body: 'Utilizziamo Google Analytics 4 con Consent Mode v2. Se Lei rifiuta i cookie, non viene raccolto alcun dato analitico. Se accetta, a Google vengono inviati dati di utilizzo (pagine visitate, tempo di permanenza, tipo di dispositivo e posizione a livello di paese e città). I dati sono pseudonimi: non inviamo il Suo nome, l’indirizzo e-mail né altri dati che La identifichino direttamente, ma l’identificatore casuale del cookie e il Suo indirizzo IP sono dati personali ai sensi del GDPR.',
-    s4Umami: 'Utilizziamo inoltre Umami Cloud per contare le visualizzazioni di pagina e i passaggi dei nostri moduli, ad esempio quando un modulo della newsletter viene mostrato, iniziato o inviato. Umami non usa cookie e non salva nulla sul Suo dispositivo, quindi funziona sia che Lei accetti i cookie sia che non li accetti. Registra indirizzo e titolo della pagina, il sito da cui proviene, il browser, il sistema operativo, il tipo di dispositivo, le dimensioni dello schermo, la lingua e la posizione approssimativa (paese, regione e città). Il Suo indirizzo IP viene usato solo per ricavare tale posizione e un identificativo anonimo della visita, e non viene mai memorizzato. L\'identificativo è un hash che cambia all\'inizio di ogni mese. Gli eventi dei moduli registrano solo di quale modulo e passaggio si tratta e, se un modulo La blocca, il nome del campo (ad esempio «email»), mai ciò che ha scritto.',
+    s4Umami: 'Utilizziamo inoltre Umami Cloud per contare le visualizzazioni di pagina, i clic su alcuni dei nostri link e pulsanti (ad esempio verso i nostri siti gemelli o la nostra app) e i passaggi dei nostri moduli e strumenti, ad esempio quando un modulo della newsletter viene mostrato, iniziato o inviato. Umami non usa cookie e non salva nulla sul Suo dispositivo, quindi funziona sia che Lei accetti i cookie sia che non li accetti. Registra indirizzo e titolo della pagina, il sito da cui proviene, il browser, il sistema operativo, il tipo di dispositivo, le dimensioni dello schermo, la lingua e la posizione approssimativa (paese, regione e città). Il Suo indirizzo IP viene usato solo per ricavare tale posizione e un identificativo anonimo della visita, e non viene mai memorizzato. L\'identificativo è un hash che cambia all\'inizio di ogni mese. Questi eventi registrano solo che cosa è stato cliccato o scelto e di quale passaggio si tratta (ad esempio il sito gemello che ha aperto) e, se un modulo La blocca, il nome del campo (ad esempio «email»), mai ciò che ha scritto.',
     s5Title: '5. Newsletter',
     s5Body: (unsub) => <>Se Lei si iscrive alla nostra newsletter, il Suo indirizzo email viene conservato in modo sicuro tramite Resend e Supabase. Può disiscriversi in qualsiasi momento tramite il link presente in ogni email o tramite la nostra {unsub}.</>,
     s6Title: '6. Conservazione dei dati',
@@ -817,14 +785,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: analisi pseudonima dell\'utilizzo',
       'Umami: statistiche di visita senza cookie e conteggio dei passaggi dei moduli',
-      'Adtraction, Daisycon, Travelpayouts e Trip.com: tracciamento dei clic su link di prenotazione e affiliazione',
       'Resend: invio della newsletter via email',
       'Supabase: servizi di database back-end',
       'Cloudflare: hosting e CDN',
     ],
     s8Title: '8. Pubblicità',
     s8Body1: (siteName) => `Questo sito mostra contenuti sponsorizzati da inserzionisti terzi. I contenuti sponsorizzati sono chiaramente identificati con l'etichetta "Sponsorizzato". Cliccare su link sponsorizzati può reindirizzare a siti esterni con proprie informative sulla privacy. ${siteName} non è responsabile delle pratiche sui dati degli inserzionisti esterni.`,
-    s8Body2: 'Partecipiamo a programmi di affiliazione tramite le reti Adtraction, Daisycon e Travelpayouts e il programma partner di Trip.com; tra i nostri partner figurano Sembo, Lomarengas, Trip.com ed EconomyBookings. Quando Lei clicca su un link di affiliazione ed effettua un acquisto o una prenotazione, potremmo ricevere una commissione senza costi aggiuntivi per Lei.',
     s8aTitle: '8a. Trasferimenti internazionali di dati',
     s8aIntro: 'Diversi servizi terzi che utilizziamo hanno sede o trasferiscono dati fuori dallo Spazio Economico Europeo (SEE), per lo più negli Stati Uniti:',
     s8aItems: [
@@ -833,7 +799,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., USA): coperto dall\'EU–US Data Privacy Framework e dalle clausole contrattuali tipo (SCC).' },
       { strong: 'Resend', body: '(Resend Inc., USA): coperto dalle clausole contrattuali tipo.' },
       { strong: 'Supabase', body: '(Supabase Inc., USA, con hosting in regione UE disponibile): coperto dalle clausole contrattuali tipo.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Svezia, UE; Daisycon B.V., Paesi Bassi, UE; Travelpayouts e Trip.com, internazionali): i trasferimenti al di fuori dell\'UE/SEE sono coperti dalle clausole contrattuali tipo.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Germania): all\'interno del SEE.' },
     ],
     s8aTail: 'In ogni caso, il trasferimento è protetto da una decisione di adeguatezza, dall\'EU–US Data Privacy Framework o da clausole contrattuali tipo approvate dalla Commissione europea. Può richiedere una copia delle garanzie applicabili contattandoci.',
@@ -880,12 +845,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Essentiële cookies', body: 'vereist voor de juiste werking van de website (toestemmingsvoorkeuren, sessiegegevens).' },
       { strong: 'Analysecookies', body: 'gebruikt door Google Analytics 4 om te begrijpen hoe bezoekers onze site gebruiken. Gepseudonimiseerd verzameld.' },
-      { strong: 'Affiliatecookies', body: 'geplaatst wanneer u op affiliatelinks klikt (bijv. Adtraction-, Daisycon- of Travelpayouts-tracking). Deze helpen ons verwijzingscommissies toe te wijzen.' },
     ],
     s3Tail: (cookieLink) => <>Analysecookies worden pas geplaatst nadat u toestemming heeft gegeven via de cookiebanner. De bezoekersstatistieken van Umami (sectie 4) gebruiken geen cookies. Zie ons {cookieLink} voor volledige details.</>,
     s4Title: '4. Google Analytics en Umami',
     s4Body: 'We gebruiken Google Analytics 4 met Consent Mode v2. Als u cookies weigert, worden er geen analysegegevens verzameld. Als u accepteert, worden gebruiksgegevens (bekeken pagina’s, tijd op de site, apparaattype en locatie op land- en stadsniveau) naar Google gestuurd. De gegevens zijn gepseudonimiseerd: we sturen geen naam, e-mailadres of andere direct identificerende gegevens, maar de willekeurige cookie-identificatie en uw IP-adres zijn persoonsgegevens volgens de AVG.',
-    s4Umami: 'Daarnaast gebruiken wij Umami Cloud om paginaweergaven en de stappen van onze formulieren te tellen, bijvoorbeeld wanneer een nieuwsbriefformulier wordt getoond, ingevuld of verzonden. Umami gebruikt geen cookies en slaat niets op uw apparaat op, dus het werkt ongeacht of u cookies accepteert. Het registreert het adres en de titel van de pagina, de site waar u vandaan komt, uw browser, besturingssysteem, apparaattype, schermformaat, taal en globale locatie (land, regio en stad). Uw IP-adres wordt alleen gebruikt om die locatie en een anonieme bezoek-ID te berekenen en wordt nooit opgeslagen. De ID is een hash die aan het begin van elke maand verandert. Formuliergebeurtenissen registreren alleen om welk formulier en welke stap het gaat en, als een formulier u tegenhoudt, de naam van het veld (bijvoorbeeld "email"), nooit wat u hebt ingevuld.',
+    s4Umami: 'Daarnaast gebruiken wij Umami Cloud om paginaweergaven, klikken op sommige van onze links en knoppen (bijvoorbeeld naar onze zustersites of onze app) en de stappen van onze formulieren en hulpmiddelen te tellen, bijvoorbeeld wanneer een nieuwsbriefformulier wordt getoond, ingevuld of verzonden. Umami gebruikt geen cookies en slaat niets op uw apparaat op, dus het werkt ongeacht of u cookies accepteert. Het registreert het adres en de titel van de pagina, de site waar u vandaan komt, uw browser, besturingssysteem, apparaattype, schermformaat, taal en globale locatie (land, regio en stad). Uw IP-adres wordt alleen gebruikt om die locatie en een anonieme bezoek-ID te berekenen en wordt nooit opgeslagen. De ID is een hash die aan het begin van elke maand verandert. Deze gebeurtenissen registreren alleen waarop is geklikt of wat is gekozen en om welke stap het gaat (bijvoorbeeld de zustersite die u hebt geopend) en, als een formulier u tegenhoudt, de naam van het veld (bijvoorbeeld "email"), nooit wat u hebt ingevuld.',
     s5Title: '5. Nieuwsbrief',
     s5Body: (unsub) => <>Als u zich abonneert op onze nieuwsbrief, wordt uw e-mailadres veilig opgeslagen via Resend en Supabase. U kunt zich op elk moment afmelden via de link in elke e-mail of via onze {unsub}.</>,
     s6Title: '6. Bewaartermijn',
@@ -895,14 +859,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: gepseudonimiseerde gebruiksanalyse',
       'Umami: bezoekersstatistieken zonder cookies en telling van formulierstappen',
-      'Adtraction, Daisycon, Travelpayouts en Trip.com: tracking van klikken op boekings- en affiliatelinks',
       'Resend: verzending van de nieuwsbrief via e-mail',
       'Supabase: back-end databasediensten',
       'Cloudflare: hosting en CDN',
     ],
     s8Title: '8. Advertenties',
     s8Body1: (siteName) => `Deze site toont gesponsorde inhoud van externe adverteerders. Gesponsorde inhoud wordt duidelijk aangeduid met de markering "Gesponsord". Klikken op gesponsorde links kan u doorverwijzen naar externe websites met hun eigen privacybeleid. ${siteName} is niet verantwoordelijk voor de gegevenspraktijken van externe adverteerders.`,
-    s8Body2: 'Wij nemen deel aan affiliateprogramma\'s via de netwerken Adtraction, Daisycon en Travelpayouts en via het partnerprogramma van Trip.com; tot onze partners behoren Sembo, Lomarengas, Trip.com en EconomyBookings. Wanneer u op een affiliatelink klikt en een aankoop of boeking doet, kunnen wij een commissie ontvangen zonder extra kosten voor u.',
     s8aTitle: '8a. Internationale gegevensoverdrachten',
     s8aIntro: 'Verschillende externe diensten die wij gebruiken zijn gevestigd in of dragen gegevens over naar landen buiten de Europese Economische Ruimte (EER), meestal de Verenigde Staten:',
     s8aItems: [
@@ -911,7 +873,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., VS): gedekt door het EU–US Data Privacy Framework en de standaardcontractbepalingen (SCC).' },
       { strong: 'Resend', body: '(Resend Inc., VS): gedekt door de standaardcontractbepalingen.' },
       { strong: 'Supabase', body: '(Supabase Inc., VS, met EU-regio-hosting beschikbaar): gedekt door de standaardcontractbepalingen.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Zweden, EU; Daisycon B.V., Nederland, EU; Travelpayouts en Trip.com, internationaal): doorgiften buiten de EU/EER worden gedekt door de standaardcontractbepalingen.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Duitsland): binnen de EER.' },
     ],
     s8aTail: 'In elk geval wordt de overdracht beschermd door een adequaatheidsbesluit, het EU–US Data Privacy Framework of door de Europese Commissie goedgekeurde standaardcontractbepalingen. U kunt een kopie van de relevante waarborgen opvragen door contact met ons op te nemen.',
@@ -958,12 +919,11 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: 'Nödvändiga cookies', body: 'krävs för att webbplatsen ska fungera korrekt (samtyckesinställningar, sessionsdata).' },
       { strong: 'Statistik-/analyscookies', body: 'används av Google Analytics 4 för att förstå hur besökare interagerar med vår webbplats. Samlas in pseudonymt.' },
-      { strong: 'Affiliatecookies', body: 'placeras när du klickar på affiliatelänkar (t.ex. Adtraction-, Daisycon- eller Travelpayouts-spårning). De hjälper oss att attribuera hänvisningsprovisioner.' },
     ],
     s3Tail: (cookieLink) => <>Analyscookies placeras endast efter att du gett samtycke via cookiebannern. Umamis besöksstatistik (avsnitt 4) använder inga cookies. Se vår {cookieLink} för fullständig information.</>,
     s4Title: '4. Google Analytics och Umami',
     s4Body: 'Vi använder Google Analytics 4 med Consent Mode v2. Om du avböjer cookies samlas ingen analysdata in. Om du accepterar skickas användningsdata (besökta sidor, tid på webbplatsen, enhetstyp och plats på land- och stadsnivå) till Google. Uppgifterna är pseudonyma: vi skickar inte namn, e-postadress eller andra direkt identifierande uppgifter, men cookiens slumpmässiga identifierare och din IP-adress är personuppgifter enligt GDPR.',
-    s4Umami: 'Vi använder också Umami Cloud för att räkna sidvisningar och stegen i våra formulär, till exempel när ett nyhetsbrevsformulär visas, påbörjas eller skickas. Umami använder inga cookies och sparar ingenting på din enhet, så det fungerar oavsett om du godkänner cookies eller inte. Det registrerar sidans adress och titel, webbplatsen du kom från, din webbläsare, ditt operativsystem, enhetstyp, skärmstorlek, språk och ungefärlig plats (land, region och stad). Din IP-adress används bara för att räkna fram platsen och en anonym besöksidentifierare och sparas aldrig. Identifieraren är en hash som byts i början av varje månad. Formulärhändelser registrerar bara vilket formulär och steg det gäller och, om ett formulär stoppar dig, fältets namn (till exempel "email"), aldrig det du har skrivit.',
+    s4Umami: 'Vi använder också Umami Cloud för att räkna sidvisningar, klick på vissa av våra länkar och knappar (till exempel till våra systersajter eller vår app) och stegen i våra formulär och verktyg, till exempel när ett nyhetsbrevsformulär visas, påbörjas eller skickas. Umami använder inga cookies och sparar ingenting på din enhet, så det fungerar oavsett om du godkänner cookies eller inte. Det registrerar sidans adress och titel, webbplatsen du kom från, din webbläsare, ditt operativsystem, enhetstyp, skärmstorlek, språk och ungefärlig plats (land, region och stad). Din IP-adress används bara för att räkna fram platsen och en anonym besöksidentifierare och sparas aldrig. Identifieraren är en hash som byts i början av varje månad. Dessa händelser registrerar bara vad som klickades på eller valdes och vilket steg det gäller (till exempel systersajten du öppnade) och, om ett formulär stoppar dig, fältets namn (till exempel "email"), aldrig det du har skrivit.',
     s5Title: '5. Nyhetsbrev',
     s5Body: (unsub) => <>Om du prenumererar på vårt nyhetsbrev lagras din e-postadress säkert via Resend och Supabase. Du kan avregistrera dig när som helst med länken i varje e-postmeddelande eller via vår {unsub}.</>,
     s6Title: '6. Lagringstid',
@@ -973,14 +933,12 @@ const COPY: Record<Lang, {
     s7Items: [
       'Google Analytics: pseudonym användningsanalys',
       'Umami: besöksstatistik utan cookies och räkning av formulärsteg',
-      'Adtraction, Daisycon, Travelpayouts och Trip.com: spårning av affiliatelänkar när du klickar på boknings- eller partnerlänkar',
       'Resend: utskick av nyhetsbrev',
       'Supabase: databastjänster i backend',
       'Cloudflare: hosting och CDN',
     ],
     s8Title: '8. Annonsering',
     s8Body1: (siteName) => `Den här webbplatsen visar sponsrat innehåll från tredjepartsannonsörer. Sponsrat innehåll märks tydligt med etiketten "Sponsrad". Att klicka på sponsrade länkar kan omdirigera dig till externa webbplatser med egna integritetspolicyer. ${siteName} ansvarar inte för externa annonsörers hantering av uppgifter.`,
-    s8Body2: 'Vi deltar i affiliateprogram via nätverken Adtraction, Daisycon och Travelpayouts samt i Trip.coms partnerprogram; bland våra partner finns Sembo, Lomarengas, Trip.com och EconomyBookings. När du klickar på en affiliatelänk och gör ett köp eller en bokning kan vi få en provision utan extra kostnad för dig.',
     s8aTitle: '8a. Internationella dataöverföringar',
     s8aIntro: 'Flera av de tredjepartstjänster vi använder har sitt säte i, eller överför uppgifter till, länder utanför Europeiska ekonomiska samarbetsområdet (EES), oftast USA:',
     s8aItems: [
@@ -989,7 +947,6 @@ const COPY: Record<Lang, {
       { strong: 'Cloudflare', body: '(Cloudflare Inc., USA): omfattas av EU–US Data Privacy Framework och standardavtalsklausuler (SCC).' },
       { strong: 'Resend', body: '(Resend Inc., USA): omfattas av standardavtalsklausuler.' },
       { strong: 'Supabase', body: '(Supabase Inc., USA, med EU-regionshosting tillgänglig): omfattas av standardavtalsklausuler.' },
-      { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Sverige, EU; Daisycon B.V., Nederländerna, EU; Travelpayouts och Trip.com, internationella): överföringar utanför EU/EES omfattas av standardavtalsklausuler.' },
       { strong: 'GetYourGuide', body: '(GetYourGuide GmbH, Tyskland): inom EES.' },
     ],
     s8aTail: 'I varje enskilt fall skyddas överföringen av ett beslut om adekvat skyddsnivå, EU–US Data Privacy Framework eller standardavtalsklausuler godkända av Europeiska kommissionen. Du kan begära en kopia av de relevanta skyddsåtgärderna genom att kontakta oss.',
@@ -1022,8 +979,21 @@ export default function PrivacyContent({
   siteName = 'LaplandVibes',
   lang = 'en',
   sessionRecording = false,
+  variant = 'travel',
 }: PrivacyContentProps = {}) {
-  const t = COPY[lang] ?? COPY.en;
+  const base = COPY[lang] ?? COPY.en;
+  const kumppanit = variant === 'shop' ? SHOP_PRIVACY : TRAVEL_PRIVACY;
+  const k = kumppanit[lang] ?? kumppanit.en;
+  /* Kumppanirivit ovat haravointimerkin alla tiedoston lopussa, koska ne riippuvat variantista: COPYssa ne päätyivät jokaisen sivuston
+     staattiseen HTML:ään (storen tietosuojasivu nimesi matkailukumppanit, mitattu 6.10.2026). Ne palaavat tässä
+     alkuperäisille paikoilleen, joten matkailusivuston valmis sivu on sama kuin ennen siirtoa. */
+  const t = {
+    ...base,
+    s3Items: [...base.s3Items.slice(0, 2), k.s3Affiliate, ...base.s3Items.slice(2)],
+    s7Items: [...base.s7Items.slice(0, 2), k.s7Affiliate, ...base.s7Items.slice(2)],
+    s8Body2: k.s8Body2,
+    s8aItems: [...base.s8aItems.slice(0, 5), k.s8aAffiliate, ...base.s8aItems.slice(5)],
+  };
   const rec = SESSION_RECORDING[lang] ?? SESSION_RECORDING.en;
   /* Label/description separator. ja + zh-CN take the fullwidth colon with no space; fr puts a no-break
      space before the colon, as every fr string in this file does ("Durée : 1 an"); ko uses the halfwidth one. */
@@ -1367,5 +1337,171 @@ const SESSION_RECORDING: Record<Lang, SessionRecordingCopy> = {
     s7Intro: 'Vi säljer inte dina personuppgifter. Följande tredjepartstjänster behandlar uppgifter som en del av vår verksamhet:',
     s7Item: 'Microsoft Clarity: sessionsinspelningar och värmekartor (Microsoft är självständigt personuppgiftsansvarig, se avsnitt 4a)',
     s8aItem: { strong: 'Microsoft Clarity', body: '(Microsoft Ireland Operations Limited, Irland, EU; Microsoft Corporation, USA): överföringar från Microsofts irländska bolag till Microsoft Corporation omfattas av standardavtalsklausuler, och Microsoft Corporation är certifierat enligt EU–US Data Privacy Framework.' },
+  },
+};
+
+/**
+ * Kumppanirivit kohtiin 3, 7, 8 ja 8a, varianttikohtaisesti (6.10.2026). Ne ovat @harvest-stop-merkin alla, koska
+ * esirenderöinti haravoi kaiken merkin yläpuolisen jokaisen sivuston staattiseen HTML:ään. Hinta: myös matkailusivustojen
+ * staattisesta tietosuojasivusta puuttuvat nämä neljä riviä; selaimessa piirtyvä sivu on ennallaan.
+ */
+interface PartnerPrivacyCopy {
+  s3Affiliate: { strong: string; body: string };
+  s7Affiliate: string;
+  s8Body2: string;
+  s8aAffiliate: { strong: string; body: string };
+}
+/** Matkailusivustot (oletus): siirretty sanasta sanaan COPYsta. */
+const TRAVEL_PRIVACY: Record<Lang, PartnerPrivacyCopy> = {
+  en: {
+    s3Affiliate: { strong: 'Affiliate cookies', body: 'placed when you click affiliate links (e.g. Adtraction, Daisycon or Travelpayouts tracking). These help us attribute referral commissions.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts and Trip.com: affiliate link tracking when you click booking or partner links',
+    s8Body2: 'We participate in affiliate programmes through the Adtraction, Daisycon and Travelpayouts networks and in the Trip.com partner programme; partners include Sembo, Lomarengas, Trip.com and EconomyBookings. When you click an affiliate link and make a purchase or booking, we may receive a commission at no additional cost to you.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Sweden, EU; Daisycon B.V., the Netherlands, EU; Travelpayouts and Trip.com, international): transfers outside the EU/EEA are covered by Standard Contractual Clauses.' },
+  },
+  fi: {
+    s3Affiliate: { strong: 'Kumppanievästeet', body: 'asetetaan, kun klikkaat kumppanilinkkiä (esim. Adtraction-, Daisycon- tai Travelpayouts-seuranta). Näiden avulla varauspalvelut kohdistavat komission oikealle lähteelle.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts ja Trip.com: varaus- ja kumppanilinkkien klikkausten seuranta',
+    s8Body2: 'Osallistumme kumppaniohjelmiin Adtraction-, Daisycon- ja Travelpayouts-verkostojen sekä Trip.comin kumppaniohjelman kautta; kumppaneitamme ovat mm. Sembo, Lomarengas, Trip.com ja EconomyBookings. Kun klikkaat kumppanilinkkiä ja teet ostoksen tai varauksen, voimme saada pienen komission ilman lisäkustannuksia sinulle.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Ruotsi, EU; Daisycon B.V., Alankomaat, EU; Travelpayouts ja Trip.com, kansainväliset): EU/ETA-alueen ulkopuoliset siirrot on katettu vakiosopimuslausekkein (SCC).' },
+  },
+  de: {
+    s3Affiliate: { strong: 'Partner-Cookies', body: 'werden gesetzt, wenn Sie auf Partnerlinks klicken (z. B. Adtraction-, Daisycon- oder Travelpayouts-Tracking). So lassen sich Provisionen korrekt zuordnen.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts und Trip.com: Tracking von Klicks auf Buchungs- und Partnerlinks',
+    s8Body2: 'Wir nehmen über die Netzwerke Adtraction, Daisycon und Travelpayouts sowie am Partnerprogramm von Trip.com an Partnerprogrammen teil; zu unseren Partnern zählen Sembo, Lomarengas, Trip.com und EconomyBookings. Wenn Sie über einen Partnerlink eine Buchung oder einen Kauf tätigen, erhalten wir ggf. eine kleine Provision, für Sie ohne zusätzliche Kosten.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Schweden, EU; Daisycon B.V., die Niederlande, EU; Travelpayouts und Trip.com, international): Übermittlungen außerhalb der EU/des EWR sind durch Standardvertragsklauseln abgedeckt.' },
+  },
+  ja: {
+    s3Affiliate: { strong: 'アフィリエイトクッキー', body: 'アフィリエイトリンク（例：Adtraction / Daisycon / Travelpayouts のトラッキング）をクリックしたときに設定されます。紹介料の帰属に役立ちます。' },
+    s7Affiliate: 'Adtraction、Daisycon、Travelpayouts、Trip.com：予約・パートナーリンクのクリック追跡',
+    s8Body2: 'Adtraction、Daisycon、Travelpayouts の各ネットワーク、および Trip.com のパートナープログラムを通じてアフィリエイトプログラムに参加しています（パートナー例：Sembo、Lomarengas、Trip.com、EconomyBookings）。アフィリエイトリンクからご予約・ご購入された場合、お客様には追加費用なしで当社が手数料を受け取ることがあります。',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB（スウェーデン、EU）、Daisycon B.V.（オランダ、EU）、Travelpayouts と Trip.com（国際））：EU/EEA 域外への移転は標準契約条項（SCC）の対象です。' },
+  },
+  es: {
+    s3Affiliate: { strong: 'Cookies de afiliados', body: 'se establecen cuando hace clic en enlaces de afiliados (por ejemplo, seguimiento de Adtraction, Daisycon o Travelpayouts). Permiten atribuir las comisiones por referencia.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts y Trip.com: seguimiento de clics en enlaces de reserva y de afiliados',
+    s8Body2: 'Participamos en programas de afiliación a través de las redes Adtraction, Daisycon y Travelpayouts y del programa de socios de Trip.com; entre nuestros socios están Sembo, Lomarengas, Trip.com y EconomyBookings. Cuando hace clic en un enlace de afiliado y realiza una compra o reserva, podemos recibir una comisión sin costo adicional para usted.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Suecia, UE; Daisycon B.V., Países Bajos, UE; Travelpayouts y Trip.com, internacionales): las transferencias fuera de la UE/EEE están amparadas por Cláusulas Contractuales Tipo.' },
+  },
+  'pt-BR': {
+    s3Affiliate: { strong: 'Cookies de afiliados', body: 'definidos quando você clica em links de afiliados (por exemplo, rastreamento da Adtraction, da Daisycon ou da Travelpayouts). Ajudam a atribuir as comissões de indicação.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts e Trip.com: rastreamento de cliques em links de reserva e afiliados',
+    s8Body2: 'Participamos de programas de afiliados por meio das redes Adtraction, Daisycon e Travelpayouts e do programa de parceiros da Trip.com; entre os parceiros estão Sembo, Lomarengas, Trip.com e EconomyBookings. Quando você clica em um link de afiliado e faz uma compra ou reserva, podemos receber uma comissão sem custo adicional para você.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Suécia, UE; Daisycon B.V., Países Baixos, UE; Travelpayouts e Trip.com, internacionais): transferências para fora da UE/EEE são cobertas pelas Cláusulas Contratuais Padrão.' },
+  },
+  'zh-CN': {
+    s3Affiliate: { strong: '联盟 cookie', body: '当您点击联盟链接（例如 Adtraction、Daisycon 或 Travelpayouts 追踪）时设置，用于归因推荐佣金。' },
+    s7Affiliate: 'Adtraction、Daisycon、Travelpayouts 与 Trip.com：点击预订与合作伙伴链接的追踪',
+    s8Body2: '我们通过 Adtraction、Daisycon 和 Travelpayouts 网络以及 Trip.com 合作伙伴计划参与联盟计划，合作伙伴包括 Sembo、Lomarengas、Trip.com 和 EconomyBookings。当您点击联盟链接并完成购买或预订时，我们可能获得佣金，而您无需承担任何额外费用。',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '（Adtraction AB，瑞典，欧盟；Daisycon B.V.，荷兰，欧盟；Travelpayouts 与 Trip.com，国际）：欧盟/欧洲经济区以外的传输受标准合同条款（SCC）保护。' },
+  },
+  ko: {
+    s3Affiliate: { strong: '제휴 쿠키', body: '제휴 링크 클릭 시 설정(예: Adtraction, Daisycon, Travelpayouts 추적). 추천 수수료 귀속에 사용됩니다.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts, Trip.com: 예약·파트너 링크 클릭 추적',
+    s8Body2: '당사는 Adtraction, Daisycon, Travelpayouts 네트워크와 Trip.com 파트너 프로그램을 통해 제휴 프로그램에 참여합니다. 파트너로는 Sembo, Lomarengas, Trip.com, EconomyBookings 등이 있습니다. 제휴 링크를 통해 구매 또는 예약을 하시면 귀하에게 추가 비용이 발생하지 않으며, 당사가 수수료를 받습니다.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, 스웨덴, EU; Daisycon B.V., 네덜란드, EU; Travelpayouts 및 Trip.com, 국제): EU/EEA 역외 이전에는 표준계약조항(SCC)이 적용됩니다.' },
+  },
+  fr: {
+    s3Affiliate: { strong: 'Cookies d\'affiliation', body: 'déposés lorsque vous cliquez sur un lien d\'affiliation (par exemple suivi Adtraction, Daisycon ou Travelpayouts). Ils permettent d\'attribuer les commissions de référencement.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts et Trip.com : suivi des clics sur les liens de réservation et d\'affiliation',
+    s8Body2: 'Nous participons à des programmes d\'affiliation via les réseaux Adtraction, Daisycon et Travelpayouts ainsi qu\'au programme partenaire de Trip.com ; nos partenaires incluent Sembo, Lomarengas, Trip.com et EconomyBookings. Lorsque vous cliquez sur un lien d\'affiliation et effectuez un achat ou une réservation, nous pouvons percevoir une commission sans coût supplémentaire pour vous.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Suède, UE ; Daisycon B.V., Pays-Bas, UE ; Travelpayouts et Trip.com, internationaux) : les transferts hors UE/EEE sont couverts par les clauses contractuelles types.' },
+  },
+  it: {
+    s3Affiliate: { strong: 'Cookie di affiliazione', body: 'impostati quando Lei clicca su link di affiliazione (ad esempio tracciamento Adtraction, Daisycon o Travelpayouts). Permettono di attribuire le commissioni di affiliazione.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts e Trip.com: tracciamento dei clic su link di prenotazione e affiliazione',
+    s8Body2: 'Partecipiamo a programmi di affiliazione tramite le reti Adtraction, Daisycon e Travelpayouts e il programma partner di Trip.com; tra i nostri partner figurano Sembo, Lomarengas, Trip.com ed EconomyBookings. Quando Lei clicca su un link di affiliazione ed effettua un acquisto o una prenotazione, potremmo ricevere una commissione senza costi aggiuntivi per Lei.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Svezia, UE; Daisycon B.V., Paesi Bassi, UE; Travelpayouts e Trip.com, internazionali): i trasferimenti al di fuori dell\'UE/SEE sono coperti dalle clausole contrattuali tipo.' },
+  },
+  nl: {
+    s3Affiliate: { strong: 'Affiliatecookies', body: 'geplaatst wanneer u op affiliatelinks klikt (bijv. Adtraction-, Daisycon- of Travelpayouts-tracking). Deze helpen ons verwijzingscommissies toe te wijzen.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts en Trip.com: tracking van klikken op boekings- en affiliatelinks',
+    s8Body2: 'Wij nemen deel aan affiliateprogramma\'s via de netwerken Adtraction, Daisycon en Travelpayouts en via het partnerprogramma van Trip.com; tot onze partners behoren Sembo, Lomarengas, Trip.com en EconomyBookings. Wanneer u op een affiliatelink klikt en een aankoop of boeking doet, kunnen wij een commissie ontvangen zonder extra kosten voor u.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Zweden, EU; Daisycon B.V., Nederland, EU; Travelpayouts en Trip.com, internationaal): doorgiften buiten de EU/EER worden gedekt door de standaardcontractbepalingen.' },
+  },
+  sv: {
+    s3Affiliate: { strong: 'Affiliatecookies', body: 'placeras när du klickar på affiliatelänkar (t.ex. Adtraction-, Daisycon- eller Travelpayouts-spårning). De hjälper oss att attribuera hänvisningsprovisioner.' },
+    s7Affiliate: 'Adtraction, Daisycon, Travelpayouts och Trip.com: spårning av affiliatelänkar när du klickar på boknings- eller partnerlänkar',
+    s8Body2: 'Vi deltar i affiliateprogram via nätverken Adtraction, Daisycon och Travelpayouts samt i Trip.coms partnerprogram; bland våra partner finns Sembo, Lomarengas, Trip.com och EconomyBookings. När du klickar på en affiliatelänk och gör ett köp eller en bokning kan vi få en provision utan extra kostnad för dig.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon / Travelpayouts / Trip.com', body: '(Adtraction AB, Sverige, EU; Daisycon B.V., Nederländerna, EU; Travelpayouts och Trip.com, internationella): överföringar utanför EU/EES omfattas av standardavtalsklausuler.' },
+  },
+};
+/**
+ * Kauppaversio (`variant="shop"`): laplandstore.fi ja laplandgifts.com. Kaupat linkittävät suomalaisiin kauppoihin Adtractionin
+ * (Kulta-Center, Scandinavian Outdoor, Halti, Finlayson, Ivalo.com, Sukkamestarit) ja Daisyconin (Suomikauppa, Nordicbuddies)
+ * kautta (redirect-workerin PARTNERS 6.10.2026); kumppanilista sama kuin TermsContentin kauppaversiossa. Vesan hyväksymä 6.10.2026.
+ */
+const SHOP_PRIVACY: Record<Lang, PartnerPrivacyCopy> = {
+  en: {
+    s3Affiliate: { strong: 'Affiliate cookies', body: 'placed when you click affiliate links (e.g. Adtraction or Daisycon tracking). These help us attribute referral commissions.' },
+    s7Affiliate: 'Adtraction and Daisycon: affiliate link tracking when you click shop or partner links',
+    s8Body2: 'We participate in affiliate programmes through the Adtraction and Daisycon networks; partners include Finnish shops and brands such as Suomikauppa, Nordicbuddies, Finlayson and Scandinavian Outdoor. We also link to shops that pay us nothing. When you click an affiliate link and make a purchase, we may receive a commission at no additional cost to you.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Sweden, EU; Daisycon B.V., the Netherlands, EU): within the EEA.' },
+  },
+  fi: {
+    s3Affiliate: { strong: 'Kumppanievästeet', body: 'asetetaan, kun klikkaat kumppanilinkkiä (esim. Adtraction- tai Daisycon-seuranta). Näiden avulla kaupat kohdistavat komission oikealle lähteelle.' },
+    s7Affiliate: 'Adtraction ja Daisycon: kauppa- ja kumppanilinkkien klikkausten seuranta',
+    s8Body2: 'Osallistumme kumppaniohjelmiin Adtraction- ja Daisycon-verkostojen kautta; kumppaneitamme ovat muun muassa suomalaiset kaupat ja brändit Suomikauppa, Nordicbuddies, Finlayson ja Scandinavian Outdoor. Linkitämme myös kauppoihin, joista emme saa mitään. Kun klikkaat kumppanilinkkiä ja teet ostoksen, voimme saada pienen komission ilman lisäkustannuksia sinulle.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Ruotsi, EU; Daisycon B.V., Alankomaat, EU): ETA-alueen sisäpuolella.' },
+  },
+  de: {
+    s3Affiliate: { strong: 'Partner-Cookies', body: 'werden gesetzt, wenn Sie auf Partnerlinks klicken (z. B. Adtraction- oder Daisycon-Tracking). So lassen sich Provisionen korrekt zuordnen.' },
+    s7Affiliate: 'Adtraction und Daisycon: Tracking von Klicks auf Shop- und Partnerlinks',
+    s8Body2: 'Wir nehmen über die Netzwerke Adtraction und Daisycon an Partnerprogrammen teil; zu unseren Partnern zählen finnische Shops und Marken wie Suomikauppa, Nordicbuddies, Finlayson und Scandinavian Outdoor. Wir verlinken auch Shops, die uns nichts zahlen. Wenn Sie über einen Partnerlink einen Kauf tätigen, erhalten wir ggf. eine kleine Provision, für Sie ohne zusätzliche Kosten.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Schweden, EU; Daisycon B.V., die Niederlande, EU): innerhalb des EWR.' },
+  },
+  ja: {
+    s3Affiliate: { strong: 'アフィリエイトクッキー', body: 'アフィリエイトリンク（例：Adtraction / Daisycon のトラッキング）をクリックしたときに設定されます。紹介料の帰属に役立ちます。' },
+    s7Affiliate: 'Adtraction、Daisycon：ショップ・パートナーリンクのクリック追跡',
+    s8Body2: 'Adtraction と Daisycon の各ネットワークを通じてアフィリエイトプログラムに参加しています（パートナー例：Suomikauppa、Nordicbuddies、Finlayson、Scandinavian Outdoor などのフィンランドの店舗やブランド）。報酬の発生しない店舗にもリンクしています。アフィリエイトリンクからご購入された場合、お客様には追加費用なしで当社が手数料を受け取ることがあります。',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '（Adtraction AB（スウェーデン、EU）、Daisycon B.V.（オランダ、EU））：EEA 内。' },
+  },
+  es: {
+    s3Affiliate: { strong: 'Cookies de afiliados', body: 'se establecen cuando hace clic en enlaces de afiliados (por ejemplo, seguimiento de Adtraction o Daisycon). Permiten atribuir las comisiones por referencia.' },
+    s7Affiliate: 'Adtraction y Daisycon: seguimiento de clics en enlaces de tiendas y de afiliados',
+    s8Body2: 'Participamos en programas de afiliación a través de las redes Adtraction y Daisycon; entre nuestros socios están tiendas y marcas finlandesas como Suomikauppa, Nordicbuddies, Finlayson y Scandinavian Outdoor. También enlazamos a tiendas que no nos pagan nada. Cuando hace clic en un enlace de afiliado y realiza una compra, podemos recibir una comisión sin costo adicional para usted.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Suecia, UE; Daisycon B.V., Países Bajos, UE): dentro del EEE.' },
+  },
+  'pt-BR': {
+    s3Affiliate: { strong: 'Cookies de afiliados', body: 'definidos quando você clica em links de afiliados (por exemplo, rastreamento da Adtraction ou da Daisycon). Ajudam a atribuir as comissões de indicação.' },
+    s7Affiliate: 'Adtraction e Daisycon: rastreamento de cliques em links de lojas e afiliados',
+    s8Body2: 'Participamos de programas de afiliados por meio das redes Adtraction e Daisycon; entre os parceiros estão lojas e marcas finlandesas como Suomikauppa, Nordicbuddies, Finlayson e Scandinavian Outdoor. Também direcionamos a lojas que não nos pagam nada. Quando você clica em um link de afiliado e faz uma compra, podemos receber uma comissão sem custo adicional para você.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Suécia, UE; Daisycon B.V., Países Baixos, UE): dentro do EEE.' },
+  },
+  'zh-CN': {
+    s3Affiliate: { strong: '联盟 cookie', body: '当您点击联盟链接（例如 Adtraction 或 Daisycon 追踪）时设置，用于归因推荐佣金。' },
+    s7Affiliate: 'Adtraction 与 Daisycon：点击商店与合作伙伴链接的追踪',
+    s8Body2: '我们通过 Adtraction 和 Daisycon 网络参与联盟计划，合作伙伴包括 Suomikauppa、Nordicbuddies、Finlayson、Scandinavian Outdoor 等芬兰商店和品牌。我们也会链接到不向我们付费的商店。当您点击联盟链接并完成购买时，我们可能获得佣金，而您无需承担任何额外费用。',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '（Adtraction AB，瑞典，欧盟；Daisycon B.V.，荷兰，欧盟）：位于欧洲经济区内。' },
+  },
+  ko: {
+    s3Affiliate: { strong: '제휴 쿠키', body: '제휴 링크 클릭 시 설정(예: Adtraction, Daisycon 추적). 추천 수수료 귀속에 사용됩니다.' },
+    s7Affiliate: 'Adtraction, Daisycon: 상점·파트너 링크 클릭 추적',
+    s8Body2: '당사는 Adtraction과 Daisycon 네트워크를 통해 제휴 프로그램에 참여합니다. 파트너로는 Suomikauppa, Nordicbuddies, Finlayson, Scandinavian Outdoor 등 핀란드 상점과 브랜드가 있습니다. 당사에 아무런 대가를 지급하지 않는 상점으로도 연결합니다. 제휴 링크를 통해 구매를 하시면 귀하에게 추가 비용이 발생하지 않으며, 당사가 수수료를 받을 수 있습니다.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, 스웨덴, EU; Daisycon B.V., 네덜란드, EU): EEA 내.' },
+  },
+  fr: {
+    s3Affiliate: { strong: 'Cookies d\'affiliation', body: 'déposés lorsque vous cliquez sur un lien d\'affiliation (par exemple suivi Adtraction ou Daisycon). Ils permettent d\'attribuer les commissions de référencement.' },
+    s7Affiliate: 'Adtraction et Daisycon : suivi des clics sur les liens de boutique et d\'affiliation',
+    s8Body2: 'Nous participons à des programmes d\'affiliation via les réseaux Adtraction et Daisycon ; nos partenaires incluent des boutiques et marques finlandaises telles que Suomikauppa, Nordicbuddies, Finlayson et Scandinavian Outdoor. Nous renvoyons également vers des boutiques qui ne nous versent rien. Lorsque vous cliquez sur un lien d\'affiliation et effectuez un achat, nous pouvons percevoir une commission sans coût supplémentaire pour vous.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Suède, UE ; Daisycon B.V., Pays-Bas, UE) : au sein de l\'EEE.' },
+  },
+  it: {
+    s3Affiliate: { strong: 'Cookie di affiliazione', body: 'impostati quando Lei clicca su link di affiliazione (ad esempio tracciamento Adtraction o Daisycon). Permettono di attribuire le commissioni di affiliazione.' },
+    s7Affiliate: 'Adtraction e Daisycon: tracciamento dei clic su link di negozi e affiliazione',
+    s8Body2: 'Partecipiamo a programmi di affiliazione tramite le reti Adtraction e Daisycon; tra i nostri partner figurano negozi e marchi finlandesi come Suomikauppa, Nordicbuddies, Finlayson e Scandinavian Outdoor. Rimandiamo anche a negozi che non ci corrispondono nulla. Quando Lei clicca su un link di affiliazione ed effettua un acquisto, potremmo ricevere una commissione senza costi aggiuntivi per Lei.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Svezia, UE; Daisycon B.V., Paesi Bassi, UE): all\'interno del SEE.' },
+  },
+  nl: {
+    s3Affiliate: { strong: 'Affiliatecookies', body: 'geplaatst wanneer u op affiliatelinks klikt (bijv. Adtraction- of Daisycon-tracking). Deze helpen ons verwijzingscommissies toe te wijzen.' },
+    s7Affiliate: 'Adtraction en Daisycon: tracking van klikken op winkel- en affiliatelinks',
+    s8Body2: 'Wij nemen deel aan affiliateprogramma\'s via de netwerken Adtraction en Daisycon; tot onze partners behoren Finse winkels en merken zoals Suomikauppa, Nordicbuddies, Finlayson en Scandinavian Outdoor. Wij verwijzen ook naar winkels die ons niets betalen. Wanneer u op een affiliatelink klikt en een aankoop doet, kunnen wij een commissie ontvangen zonder extra kosten voor u.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Zweden, EU; Daisycon B.V., Nederland, EU): binnen de EER.' },
+  },
+  sv: {
+    s3Affiliate: { strong: 'Affiliatecookies', body: 'placeras när du klickar på affiliatelänkar (t.ex. Adtraction- eller Daisycon-spårning). De hjälper oss att attribuera hänvisningsprovisioner.' },
+    s7Affiliate: 'Adtraction och Daisycon: spårning av affiliatelänkar när du klickar på butiks- eller partnerlänkar',
+    s8Body2: 'Vi deltar i affiliateprogram via nätverken Adtraction och Daisycon; bland våra partner finns finländska butiker och varumärken som Suomikauppa, Nordicbuddies, Finlayson och Scandinavian Outdoor. Vi länkar även till butiker som inte betalar oss något. När du klickar på en affiliatelänk och gör ett köp kan vi få en provision utan extra kostnad för dig.',
+    s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Sverige, EU; Daisycon B.V., Nederländerna, EU): inom EES.' },
   },
 };
