@@ -345,7 +345,6 @@
     "description": "Die bestbewerteten unserer Lappland-Auswahl, sortiert nach Google-Bewertung: Speisesäle, Wildnisküchen und Kota-Tische, mit Gästezitaten und Menülinks.",
     "heroH1": "Fine Dining in und um Lappland",
     "heroLeadTemplate": "Die bestbewerteten Tische Lapplands, ausgewählt aus {{count}} Restaurants: Speisesäle, Wildnisküchen und Kota-Feuer.",
-    "metaDescriptionTemplate": "Die bestbewerteten unserer Auswahl, sortiert nach Google-Bewertung: {{count}} Restaurants in und um Finnisch-Lappland, mit Gästezitaten und Menülinks.",
     "websiteLabel": "Webseite",
     "mapsLabel": "Maps",
     "stayInTemplate": "In {{city}} übernachten",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Datenschutz",
-    "description": "Wie LaplandDining mit Ihren Daten umgeht."
+    "description": "Wie LaplandDining mit Ihren Daten umgeht. Wir erheben pseudonyme Analysedaten über Google Analytics 4."
   },
   "terms": {
     "title": "Nutzungsbedingungen",
-    "description": "Nutzungsbedingungen für LaplandDining."
+    "description": "Nutzungsbedingungen für LaplandDining. Mit dem Zugriff auf bzw. der Nutzung dieser Website erklären Sie sich mit diesen Bedingungen einverstanden."
   },
   "cookie": {
     "title": "Cookie-Richtlinie",
-    "description": "Wie LaplandDining Cookies verwendet."
+    "description": "Wie LaplandDining Cookies verwendet. Cookies sind kleine Textdateien, die beim Besuch einer Website auf Ihrem Gerät gespeichert werden."
   },
   "common": {
     "cityTopPicksKicker": "Eine Empfehlung pro Stadt · {{count}} Reiseziele",

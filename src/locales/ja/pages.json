@@ -216,7 +216,7 @@
     "inari": {
       "name": "イナリ",
       "title": "イナリのレストラン：どこで食べるか",
-      "description": "4軒のイナリ自治体のレストラン。湖畔の評価4.8のファインダイニングと、互いに大きく離れた3軒。",
+      "description": "4軒のイナリ自治体のレストラン。湖畔の評価4.8のファインダイニングと、互いに大きく離れた3軒。フィンランド最大の自治体。",
       "h1": "イナリのレストラン",
       "tagline": "フィンランド最大の自治体。4つの厨房と、その間に横たわる長い道。",
       "intro": "イナリはヨーロッパのいくつかの国より広く、このページはそれをそのまま映します。店は集落の中心ではなく、数十キロにわたって散らばっています。サーリコスケン通りの水辺にあるRestaurant Aanaarがファインダイニングで、評価4.8と最高です。Kultahippuは35km南のイヴァロ、Muotkan Ruoktuはカリガスニエミへ向かう道を39km、Arctic River Resortはその中間にあります。どの店も、他店から歩いて行ける距離ではありません。",
@@ -345,7 +345,6 @@
     "description": "編集部が選んだ高評価店をGoogle評価順に紹介。ダイニングからコタレストランまで、レビュー引用とメニューリンク付き。",
     "heroH1": "ラップランドと近郊のファインダイニング",
     "heroLeadTemplate": "{{count}} 軒から選んだ、ラップランドで最も評価の高いテーブル。ダイニング、原野の厨房、コタの焚き火。",
-    "metaDescriptionTemplate": "編集部が選んだ高評価店をGoogle評価順に紹介。ラップランドと近郊の{{count}}軒、レビュー引用とメニューリンク付き。",
     "websiteLabel": "ウェブサイト",
     "mapsLabel": "地図",
     "stayInTemplate": "宿泊： {{city}}",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "プライバシーポリシー",
-    "description": "LaplandDiningにおけるお客様の個人情報の取り扱いについて。"
+    "description": "LaplandDiningにおけるお客様の個人情報の取り扱いについて。Google Analytics 4 を通じて仮名化されたアクセス解析データを収集しています。"
   },
   "terms": {
     "title": "利用規約",
-    "description": "LaplandDiningの利用規約。"
+    "description": "LaplandDiningの利用規約。本ウェブサイトをご利用いただくには、本規約に同意していただく必要があります。"
   },
   "cookie": {
     "title": "クッキーポリシー",
-    "description": "LaplandDiningのクッキー使用方針について。"
+    "description": "LaplandDiningのクッキー使用方針について。クッキーとは、ウェブサイトを訪問した際にお客様のデバイスに保存される小さなテキストファイルです。"
   },
   "common": {
     "cityTopPicksKicker": "都市ごとに1軒・{{count}}の目的地",

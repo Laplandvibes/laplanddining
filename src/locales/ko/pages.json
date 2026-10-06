@@ -345,7 +345,6 @@
     "description": "편집부가 고른 최고 평점 레스토랑을 구글 평점순으로: 다이닝 룸부터 코타 레스토랑까지, 리뷰 인용과 메뉴 링크 포함.",
     "heroH1": "라플란드와 인근 지역의 파인 다이닝",
     "heroLeadTemplate": "{{count}}곳 가운데 고른 라플란드에서 가장 높은 평점의 식탁. 다이닝룸, 야생의 주방, 코타의 불.",
-    "metaDescriptionTemplate": "편집부가 고른 최고 평점 레스토랑을 구글 평점순으로: 라플란드와 인근의 {{count}}곳, 리뷰 인용과 메뉴 링크 포함.",
     "websiteLabel": "웹사이트",
     "mapsLabel": "지도",
     "stayInTemplate": "{{city}} 숙박",

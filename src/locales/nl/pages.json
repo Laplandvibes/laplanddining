@@ -345,7 +345,6 @@
     "description": "De hoogst beoordeelde van onze Lapland-selectie, gesorteerd op Google-rating: eetzalen, wilderniskeukens en kotatafels, met citaten en menulinks.",
     "heroH1": "Fine dining in en rond Lapland",
     "heroLeadTemplate": "De best beoordeelde tafels van Lapland, gekozen uit {{count}} restaurants: eetzalen, wildernis­keukens en kotavuren.",
-    "metaDescriptionTemplate": "De hoogst beoordeelde van onze selectie, gesorteerd op Google-rating: {{count}} restaurants in en rond Fins Lapland, met citaten en menulinks.",
     "websiteLabel": "Website",
     "mapsLabel": "Kaart",
     "stayInTemplate": "Verblijf in {{city}}",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Privacybeleid",
-    "description": "Hoe LaplandDining met uw gegevens omgaat."
+    "description": "Hoe LaplandDining met uw gegevens omgaat. Wij verzamelen gepseudonimiseerde analysegegevens via Google Analytics 4."
   },
   "terms": {
     "title": "Gebruiksvoorwaarden",
-    "description": "Gebruiksvoorwaarden van LaplandDining."
+    "description": "Gebruiksvoorwaarden van LaplandDining. Door deze website te bezoeken of te gebruiken, gaat u akkoord met deze voorwaarden."
   },
   "cookie": {
     "title": "Cookiebeleid",
-    "description": "Hoe LaplandDining cookies gebruikt."
+    "description": "Hoe LaplandDining cookies gebruikt. Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen wanneer u een website bezoekt."
   },
   "common": {
     "cityTopPicksKicker": "Eén keuze per stad · {{count}} bestemmingen",

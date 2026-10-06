@@ -345,7 +345,6 @@
     "description": "De högst rankade i vårt Lapplandsurval, sorterade efter Google-betyg: matsalar, vildmarkskök och kåtabord, med gästcitat och menylänkar.",
     "heroH1": "Fine dining i och kring Lappland",
     "heroLeadTemplate": "Lapplands högst betygsatta bord, valda ur {{count}} restauranger: matsalar, vildmarkskök och kåtaeldar.",
-    "metaDescriptionTemplate": "De högst rankade i vårt urval, sorterade efter Google-betyg: {{count}} restauranger i och kring finska Lappland, med gästcitat och menylänkar.",
     "websiteLabel": "Webbplats",
     "mapsLabel": "Maps",
     "stayInTemplate": "Bo i {{city}}",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Integritetspolicy",
-    "description": "Hur LaplandDining hanterar dina uppgifter."
+    "description": "Hur LaplandDining hanterar dina uppgifter. Vi samlar in pseudonym analysdata via Google Analytics 4."
   },
   "terms": {
     "title": "Användarvillkor",
-    "description": "Användarvillkor för LaplandDining."
+    "description": "Användarvillkor för LaplandDining. Genom att öppna eller använda denna webbplats godkänner du dessa villkor."
   },
   "cookie": {
     "title": "Cookiepolicy",
-    "description": "Hur LaplandDining använder cookies."
+    "description": "Hur LaplandDining använder cookies. Cookies är små textfiler som lagras på din enhet när du besöker en webbplats."
   },
   "common": {
     "cityTopPicksKicker": "Ett val per stad · {{count}} destinationer",

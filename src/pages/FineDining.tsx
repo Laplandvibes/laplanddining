@@ -35,10 +35,9 @@ export default function FineDining() {
   return (
     <>
       <title>{t('fineDining.title')}</title>
-      <meta
-        name="description"
-        content={t('fineDining.metaDescriptionTemplate', { count: fineDining.length })}
-      />
+      {/* Sama kenttä kuin esirenderöinnillä (routes.json jsonKey "fineDining"), jotta hakutulos ja
+          selain näyttävät saman kuvauksen. Lukumäärää ei upoteta: esirenderöity HTML ei tunne sitä. */}
+      <meta name="description" content={t('fineDining.description')} />
       <Hreflang path="/fine-dining" />
       <meta name="robots" content="index, follow" />
       <script type="application/ld+json">

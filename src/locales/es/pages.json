@@ -345,7 +345,6 @@
     "description": "Los mejor valorados de nuestra selección en Laponia, ordenados por nota de Google: comedores, cocinas remotas y mesas de kota, con citas y enlaces a menús.",
     "heroH1": "Alta cocina en Laponia y alrededores",
     "heroLeadTemplate": "Las mesas mejor valoradas de Laponia, elegidas entre {{count}} restaurantes: comedores, cocinas de naturaleza y fuegos de kota.",
-    "metaDescriptionTemplate": "Los mejor valorados de nuestra selección, ordenados por nota de Google: {{count}} restaurantes en la Laponia finlandesa y alrededores, con citas y menús.",
     "websiteLabel": "Sitio web",
     "mapsLabel": "Maps",
     "stayInTemplate": "Alójese en {{city}}",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Política de privacidad",
-    "description": "Cómo trata LaplandDining sus datos."
+    "description": "Cómo trata LaplandDining sus datos. Recopilamos datos analíticos seudonimizados a través de Google Analytics 4."
   },
   "terms": {
     "title": "Términos de servicio",
-    "description": "Términos de servicio de LaplandDining."
+    "description": "Términos de servicio de LaplandDining. Al acceder o utilizar este sitio web, usted acepta estos términos."
   },
   "cookie": {
     "title": "Política de cookies y consentimiento",
-    "description": "Cómo utiliza LaplandDining las cookies."
+    "description": "Cómo utiliza LaplandDining las cookies. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web."
   },
   "common": {
     "cityTopPicksKicker": "Una selección por ciudad · {{count}} destinos",

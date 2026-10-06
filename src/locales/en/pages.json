@@ -300,7 +300,7 @@
     "luosto": {
       "name": "Luosto",
       "title": "Restaurants at Luosto: Where to Eat",
-      "description": "Four places to eat at Luosto, the quieter half of Pyhä-Luosto National Park: a hotel kelo restaurant, a manor kitchen and the slope-side stop. Ratings and menu links.",
+      "description": "Four places to eat at Luosto, the quieter half of Pyhä-Luosto National Park: a hotel kelo restaurant, a manor kitchen and the slope-side stop.",
       "h1": "Restaurants at Luosto",
       "tagline": "The quieter half of the national park — four kitchens, no queue.",
       "intro": "Luosto is the smaller and quieter of the two Pyhä-Luosto resorts, and the list is short enough to read in a minute. Restaurant Punakettu on Luostontie has six times the reviews of anything else here, which makes it the default. Keloravintola Lapland Hotels Luostotunturi and Luoston Hovi both sit at 4.4, and Skiknööli is the slope-side stop. Luosto is in Sodankylä municipality, so several addresses say Sodankylä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restaurants in Kuusamo & Ruka",
-      "description": "Six restaurants split between Ruka resort and Kuusamo town, 22 km apart: the busiest pizzeria on this site, a gastropub and a trekking café. Ratings and menu links.",
+      "description": "Six restaurants split between Ruka resort and Kuusamo town, 22 km apart: the busiest pizzeria on this site, a gastropub and a trekking café.",
       "h1": "Restaurants in Kuusamo and Ruka",
       "tagline": "Two centres, 22 km apart — check which one your table is in.",
       "intro": "Kuusamo splits cleanly in two. Up at the resort, Pizzeria Ruka has more reviews than any other restaurant on this site outside Rovaniemi, with Restaurant Burger Cafe & Bar Ruka on the same road and Ruka Trek's Gasthaus & Hard Trek Café — rated 4.8 — a short way off. Down in the town, 22 km south, Ravintola Talonpöytä and Restaurant Wanha Mestari serve a different crowd entirely.",
@@ -345,7 +345,6 @@
     "description": "The highest-rated of our Lapland picks, sorted by Google rating: dining rooms, wilderness kitchens and kota tables, with review quotes and menu links.",
     "heroH1": "Fine Dining in and around Lapland",
     "heroLeadTemplate": "The highest-rated tables in Lapland, picked from {{count}} restaurants: dining rooms, wilderness kitchens and kota fires.",
-    "metaDescriptionTemplate": "The highest-rated of our Lapland picks, sorted by Google rating: {{count}} restaurants across Lapland and nearby, with review quotes and menu links.",
     "websiteLabel": "Website",
     "mapsLabel": "Maps",
     "stayInTemplate": "Stay in {{city}}",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "description": "How LaplandDining handles your data."
+    "description": "How LaplandDining handles your data. We collect pseudonymous analytics data via Google Analytics 4."
   },
   "terms": {
     "title": "Terms of Use",
-    "description": "Terms of use for LaplandDining."
+    "description": "Terms of use for LaplandDining. By accessing or using this website, you agree to these terms."
   },
   "cookie": {
     "title": "Cookie Policy",
-    "description": "How LaplandDining uses cookies."
+    "description": "How LaplandDining uses cookies. Cookies are small text files stored on your device when you visit a website."
   },
   "common": {
     "cityTopPicksKicker": "One pick per city · {{count}} destinations",

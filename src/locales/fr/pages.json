@@ -345,7 +345,6 @@
     "description": "Les mieux notés de notre sélection en Laponie, classés par note Google : salles à manger, auberges et tables de kota, avec avis et liens vers les menus.",
     "heroH1": "Haute gastronomie en Laponie et alentours",
     "heroLeadTemplate": "Les meilleures tables de Laponie, choisies parmi {{count}} restaurants : salles à manger, cuisines de nature et feux de kota.",
-    "metaDescriptionTemplate": "Les mieux notés de notre sélection, classés par note Google : {{count}} restaurants en Laponie finlandaise et alentours, avec avis et menus.",
     "websiteLabel": "Site web",
     "mapsLabel": "Carte",
     "stayInTemplate": "Dormir à {{city}}",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Politique de confidentialité",
-    "description": "Comment LaplandDining traite vos données."
+    "description": "Comment LaplandDining traite vos données. Nous collectons des données analytiques pseudonymes via Google Analytics 4."
   },
   "terms": {
     "title": "Conditions d'utilisation",
-    "description": "Conditions d'utilisation de LaplandDining."
+    "description": "Conditions d'utilisation de LaplandDining. En accédant à ce site ou en l'utilisant, vous acceptez ces conditions."
   },
   "cookie": {
     "title": "Politique des cookies",
-    "description": "Comment LaplandDining utilise les cookies."
+    "description": "Comment LaplandDining utilise les cookies. Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez un site web."
   },
   "common": {
     "cityTopPicksKicker": "Un choix par ville · {{count}} destinations",

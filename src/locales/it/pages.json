@@ -345,7 +345,6 @@
     "description": "I più votati della nostra selezione in Lapponia, in ordine di valutazione Google: sale da pranzo, locande e tavoli nella kota, con citazioni e link ai menù.",
     "heroH1": "Alta cucina in Lapponia e dintorni",
     "heroLeadTemplate": "I tavoli più votati della Lapponia, scelti tra {{count}} ristoranti: sale da pranzo, cucine di natura e fuochi di kota.",
-    "metaDescriptionTemplate": "I più votati della nostra selezione, in ordine di valutazione Google: {{count}} ristoranti nella Lapponia finlandese e dintorni, con citazioni e menù.",
     "websiteLabel": "Sito web",
     "mapsLabel": "Mappa",
     "stayInTemplate": "Dormire a {{city}}",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Informativa sulla privacy",
-    "description": "Come LaplandDining tratta i Suoi dati."
+    "description": "Come LaplandDining tratta i Suoi dati. Raccogliamo dati analitici pseudonimi tramite Google Analytics 4."
   },
   "terms": {
     "title": "Termini di servizio",
-    "description": "Termini di servizio di LaplandDining."
+    "description": "Termini di servizio di LaplandDining. Accedendo o utilizzando il presente sito web, Lei accetta i presenti termini."
   },
   "cookie": {
     "title": "Informativa sui cookie",
-    "description": "Come LaplandDining utilizza i cookie."
+    "description": "Come LaplandDining utilizza i cookie. I cookie sono piccoli file di testo memorizzati sul Suo dispositivo quando visita un sito web."
   },
   "common": {
     "cityTopPicksKicker": "Una scelta per città · {{count}} destinazioni",

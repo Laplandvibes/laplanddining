@@ -345,7 +345,6 @@
     "description": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: ruokasaleja, erämaakeittiöitä ja kotaravintoloita. Arviositaatit ja menulinkit.",
     "heroH1": "Fine dining Lapissa ja lähialueilla",
     "heroLeadTemplate": "Lapin korkeimmin arvioidut pöydät {{count}} ravintolan joukosta: ruokasaleja, erämaakeittiöitä ja kotanuotioita.",
-    "metaDescriptionTemplate": "Valintojemme korkeimmin arvioidut paikat Google-arvion mukaan: {{count}} ravintolaa Lapissa ja lähialueilla. Arviositaatit ja menulinkit.",
     "websiteLabel": "Nettisivut",
     "mapsLabel": "Kartta",
     "stayInTemplate": "Yövy {{city}}ssä",
@@ -619,15 +618,15 @@
   },
   "privacy": {
     "title": "Tietosuojaseloste",
-    "description": "Miten LaplandDining käsittelee tietojasi."
+    "description": "Miten LaplandDining käsittelee tietojasi. Keräämme pseudonyymejä kävijäanalytiikkatietoja Google Analytics 4:n kautta."
   },
   "terms": {
     "title": "Käyttöehdot",
-    "description": "LaplandDiningin käyttöehdot."
+    "description": "LaplandDiningin käyttöehdot. Käyttämällä tätä sivustoa hyväksyt nämä käyttöehdot."
   },
   "cookie": {
     "title": "Evästekäytäntö",
-    "description": "Miten LaplandDining käyttää evästeitä."
+    "description": "Miten LaplandDining käyttää evästeitä. Evästeet ovat pieniä tekstitiedostoja, jotka tallentuvat laitteellesi vieraillessasi verkkosivustolla."
   },
   "common": {
     "cityTopPicksKicker": "Yksi valinta per kaupunki · {{count}} kohdetta",
