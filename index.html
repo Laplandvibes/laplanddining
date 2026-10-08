@@ -92,8 +92,24 @@
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="LaplandVibes editorial team" />
 
-    <!-- Preload home hero image (local WebP — matches DINING.heroInterior rendered in Home.tsx) -->
-    <link rel="preload" as="image" href="/images/drive/heroInterior.webp" fetchpriority="high" />
+    <!-- Home hero preload by season: Home.tsx picks the hero in the browser by month
+         (images.ts seasonal(): summer May to September, winter otherwise), so the preload follows
+         the same rule, runs only on the home pages and carries the same srcset. Plain path strings,
+         so scripts/version-images.mjs stamps the same ?v= as on the image itself. -->
+    <script>
+      (function () {
+        if (!/^\/([a-z]{2}\/?)?$/.test(location.pathname)) return;
+        var m = new Date().getMonth() + 1;
+        var summer = m >= 5 && m <= 9;
+        var l = document.createElement("link");
+        l.rel = "preload"; l.as = "image"; l.setAttribute("fetchpriority", "high");
+        l.setAttribute("imagesizes", "100vw");
+        l.setAttribute("imagesrcset", summer
+          ? "/images/commons/kemi-meripuisto-pavilion-summer-1280.webp 1280w, /images/commons/kemi-meripuisto-pavilion-summer-1920.webp 1920w, /images/commons/kemi-meripuisto-pavilion-summer-2560.webp 2560w"
+          : "/images/commons/kemi-meripuisto-pavilion-winter-1280.webp 1280w, /images/commons/kemi-meripuisto-pavilion-winter-1920.webp 1920w, /images/commons/kemi-meripuisto-pavilion-winter-2560.webp 2560w");
+        document.head.appendChild(l);
+      })();
+    </script>
 
     <!-- DNS warmup for hot third parties -->
     <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin />

@@ -5,7 +5,8 @@ import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
 import { localePrefix } from '../i18n/config';
 import PageBreadcrumb from '../components/PageBreadcrumb';
-import { DINING, seasonal } from '../data/images';
+import { DINING, PHOTO, photoSrcSet, seasonal, isSummerSeason } from '../data/images';
+import PhotoCredit, { CreditRow } from '../components/PhotoCredit';
 import { DINING_CITIES, restaurantsForCity } from '../data/diningCities';
 
 const ORIGIN = 'https://laplanddining.com';
@@ -71,14 +72,17 @@ export default function Cities() {
 
       <section className="relative min-h-[46svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={seasonal(DINING.restaurantsHeroWinter, DINING.heroSummer)}
+          src={seasonal(PHOTO.kemiLumikkiWinter, DINING.heroSummer)}
+          srcSet={photoSrcSet(seasonal(PHOTO.kemiLumikkiWinter, DINING.heroSummer))}
+          sizes="100vw"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/75 via-night/65 to-night" />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/80 via-night/72 to-night" />
+        {!isSummerSeason() && <PhotoCredit src={PHOTO.kemiLumikkiWinter} locale={locale} />}
         <div className="relative z-10 max-w-4xl mx-auto px-5 py-20 text-center">
           <p className="inline-flex items-center gap-2 text-amber text-[11px] font-bold uppercase tracking-[0.25em] mb-4">
             <MapPin size={13} /> {t('cities.shared.kicker', { defaultValue: 'Where to eat' })}
@@ -109,6 +113,8 @@ export default function Cities() {
               >
                 <img
                   src={city.photo ?? city.img}
+                  srcSet={city.photo ? undefined : photoSrcSet(city.img)}
+                  sizes="(min-width: 1024px) 368px, (min-width: 640px) 50vw, 100vw"
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -140,6 +146,14 @@ export default function Cities() {
               </Link>
             ))}
           </div>
+
+          {/* Korttien Commons-kuvien tekijät ja lisenssit ruudukon alle: kortti on linkki, joten
+              linkkejä ei saa sisäkkäistää kuvan päälle (sama malli kuin GridPhotoCredits). */}
+          <CreditRow
+            items={rows.map(({ city }) => ({ label: t(`cities.${city.slug}.name`, { defaultValue: city.name }), src: city.photo ? undefined : city.img }))}
+            locale={locale}
+            className="mt-8"
+          />
 
           <p className="mt-10 text-center text-cream/60 text-sm leading-relaxed max-w-2xl mx-auto">
             {t('cities.moreLead', {

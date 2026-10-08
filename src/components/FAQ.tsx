@@ -4,6 +4,8 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLocale } from '../i18n/useLocale';
 import { DINING } from '../data/images';
+import PhotoCredit from './PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
 
 interface FAQItem {
   question: string;
@@ -36,10 +38,10 @@ const FAQ_LINKS: (keyof typeof FAQ_ROUTE)[][] = [
  */
 const FAQ_SHOTS: { src: string; alt: string }[] = [
   { src: DINING.featAanaar, alt: 'Plated Arctic fish with lingonberries at a Lapland fine dining table' },
-  { src: DINING.foodCloseup, alt: 'Sautéed reindeer with berry sauce and chanterelles on a dark plate' },
-  { src: DINING.kotaInside, alt: 'Traditional Sami kota dining around an open fire in Lapland' },
-  { src: DINING.midnightSunBand, alt: 'An outdoor table in Lapland under the midnight sun' },
-  { src: DINING.ingredients, alt: 'Wild berries, mushrooms and herbs foraged from the Lapland forest floor' },
+  { src: DINING.foodCloseup, alt: 'A fish-of-the-day plate at a restaurant in Inari, Lapland' },
+  { src: DINING.kotaInside, alt: 'A traditional log goahti (kota) by the road in Sonkamuotka, Enontekiö, Lapland' },
+  { src: DINING.midnightSunBand, alt: 'Wooden tables on a summer terrace at Ruka in July' },
+  { src: DINING.ingredients, alt: 'A ripe cloudberry and bilberries on a bog in Suomussalmi, northern Finland' },
 ];
 const FAQ_SHOT_CLOSED = FAQ_SHOTS[2];
 
@@ -48,7 +50,7 @@ export default function FAQ() {
   const activeShot = (openIndex !== null && FAQ_SHOTS[openIndex]) || FAQ_SHOT_CLOSED;
   const { t } = useTranslation('pages');
   const { t: tNav } = useTranslation('nav');
-  const { to } = useLocale();
+  const { to, locale } = useLocale();
   const items = t('home.faq.items', { returnObjects: true }) as FAQItem[];
 
   return (
@@ -78,7 +80,7 @@ export default function FAQ() {
               <img
                 key={activeShot.src}
                 src={activeShot.src}
-                alt={activeShot.alt}
+                alt={imageAlt(activeShot.src, locale) || activeShot.alt}
                 className="w-full h-64 sm:h-80 object-cover faq-shot"
                 loading="lazy"
                 decoding="async"
@@ -86,6 +88,7 @@ export default function FAQ() {
                 height="600"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-transparent pointer-events-none" />
+              <PhotoCredit src={activeShot.src} locale={locale} />
             </div>
 
             <div className="rounded-xl p-4 bg-white/[0.03] border border-white/10">

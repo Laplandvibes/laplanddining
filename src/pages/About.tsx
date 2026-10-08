@@ -2,11 +2,15 @@
 import { useTranslation, Trans } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { Info, Globe, ExternalLink } from 'lucide-react';
-import { DINING } from '../data/images';
+import { PHOTO, photoSrcSet } from '../data/images';
+import PhotoCredit from '../components/PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
+import { useLocale } from '../i18n/useLocale';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 
 export default function About() {
   const { t } = useTranslation('pages');
+  const { locale } = useLocale();
   return (
     <>
       <title>{t('about.title')}</title>
@@ -17,14 +21,17 @@ export default function About() {
       {/* Hero */}
       <section className="relative min-h-[56svh] flex items-center justify-center px-4 sm:px-6 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={DINING.ingredientsAlt}
-          alt="Arctic ingredients"
+          src={PHOTO.cloudberryNorth}
+          srcSet={photoSrcSet(PHOTO.cloudberryNorth)}
+          sizes="100vw"
+          alt={imageAlt(PHOTO.cloudberryNorth, locale)}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/45 to-night" />
+        <PhotoCredit src={PHOTO.cloudberryNorth} locale={locale} />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/58 to-night" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="font-heading text-5xl sm:text-6xl text-white tracking-wide mb-4 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('about.heroH1')}

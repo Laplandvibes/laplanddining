@@ -6,7 +6,9 @@ import { Leaf, Droplets, Mountain, Award, Fish, Bird, Quote, ArrowRight } from '
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygSearchLink } from '../lib/gyg';
-import { DINING } from '../data/images';
+import { DINING, PHOTO, photoSrcSet } from '../data/images';
+import PhotoCredit from '../components/PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
 import { restaurants } from '../data/restaurants';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
@@ -62,10 +64,10 @@ const citySlug = (city: string) => city.toLowerCase().replace(/[^a-z]/g, '');
 // Cinematic Arctic-nature band per section — forest floor, a clear stream,
 // a reindeer in the birch forest, a silent fell lake. One image, one theme.
 const sectionImages: { src: string; alt: string }[] = [
-  { src: DINING.localFoodForest,   alt: 'Lingonberries, bilberries and chanterelles on a Lapland forest floor at first light' },
-  { src: DINING.localFoodRiver,    alt: 'A clear Arctic stream running over frosted stones through a Lapland forest' },
-  { src: DINING.localFoodReindeer, alt: 'A reindeer standing in a misty birch forest in autumn ruska colours' },
-  { src: DINING.localFoodLakes,    alt: 'A mirror-still Lapland lake at dawn reflecting distant fells and low mist' },
+  { src: DINING.localFoodForest,   alt: 'A bucket of hand-picked cloudberries on a Finnish bog in July' },
+  { src: DINING.localFoodRiver,    alt: 'A clear river running through spruce forest in western Lapland in July' },
+  { src: DINING.localFoodReindeer, alt: 'Reindeer grazing free on a snowy birch slope in Utsjoki, Lapland, in May' },
+  { src: DINING.localFoodLakes,    alt: 'Hanhijärvi bog lake below the Pallastunturi fells in Muonio, Lapland' },
 ];
 
 export default function LocalFood() {
@@ -105,14 +107,17 @@ export default function LocalFood() {
       {/* Hero */}
       <section className="relative min-h-[52svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={DINING.heroLocalFood}
-          alt="Local Arctic ingredients on plate"
+          src={PHOTO.cloudberryKuusamo}
+          srcSet={photoSrcSet(PHOTO.cloudberryKuusamo)}
+          sizes="100vw"
+          alt={imageAlt(PHOTO.cloudberryKuusamo, locale)}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/50 to-night" />
+        <PhotoCredit src={PHOTO.cloudberryKuusamo} locale={locale} />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/62 to-night" />
         <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('localFood.heroH1')}
@@ -184,12 +189,15 @@ export default function LocalFood() {
                     >
                       <img
                         src={img.src}
-                        alt={img.alt}
+                        srcSet={photoSrcSet(img.src)}
+                        sizes="(min-width: 1024px) 1024px, 100vw"
+                        alt={imageAlt(img.src, locale) || img.alt}
                         loading="lazy"
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-night/55 via-transparent to-transparent" />
+                      <PhotoCredit src={img.src} locale={locale} />
                     </figure>
                   )}
 
@@ -285,13 +293,14 @@ export default function LocalFood() {
                         />
                         <img
                           src={`${LOCAL_FOOD_IMG}/${photo}-800.webp`}
-                          alt={t('localFood.imageAlt', { name: item.name })}
+                          alt={item.name}
                           loading="lazy"
                           decoding="async"
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                         />
                       </picture>
                       <div className="absolute inset-0 bg-gradient-to-t from-night/45 via-transparent to-transparent" />
+                      <PhotoCredit src={`${LOCAL_FOOD_IMG}/${photo}-800.webp`} locale={locale} />
                     </div>
                   ) : (
                     /* 🔴 Paikanpitäjä, ei puuttuva kuva. Riekosta ei ole omaa

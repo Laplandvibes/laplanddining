@@ -6,7 +6,9 @@ import { Sun, Sunset, MapPin, Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygSearchLink } from '../lib/gyg';
-import { DINING } from '../data/images';
+import { DINING, PHOTO, photoSrcSet } from '../data/images';
+import PhotoCredit from '../components/PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
@@ -21,9 +23,10 @@ interface SummerCityI18n { name: string; angle: string; body: string }
 
 // Image tops reuse EXISTING site images (no new generations) — one per city card.
 const summerCitiesMeta = [
-  { hotelsQuery: 'Rovaniemi, Finland', hotelsSid: 'midnight_sun_rovaniemi', image: DINING.rovaniemiCenter, alt: 'Restaurant terraces in central Rovaniemi' },
-  { hotelsQuery: 'Levi, Finland', hotelsSid: 'midnight_sun_levi', image: DINING.kotaInside, alt: 'Kota dining around an open fire in Levi' },
-  { hotelsQuery: 'Inari, Finland', hotelsSid: 'midnight_sun_inari', image: DINING.foodMoody, alt: 'Local dishes plated in Inari' },
+  { hotelsQuery: 'Rovaniemi, Finland', hotelsSid: 'midnight_sun_rovaniemi', image: PHOTO.rovaniemiSummer, alt: 'The Ounaskoski beach on the Kemijoki river in central Rovaniemi in June' },
+  // Oma valokuva Levin keskustasta 20.7.2026 (sama kuin kaupunkisivun hero).
+  { hotelsQuery: 'Levi, Finland', hotelsSid: 'midnight_sun_levi', image: '/images/cities/levi.webp', alt: 'Levi village centre on a July evening' },
+  { hotelsQuery: 'Inari, Finland', hotelsSid: 'midnight_sun_inari', image: PHOTO.inariSummer, alt: 'The Juutuanjoki river rapids in Inari in July' },
   { hotelsQuery: 'Saariselkä, Finland', hotelsSid: 'midnight_sun_saariselka', image: DINING.saariselkaSummer, alt: 'Summer lodge terrace in Saariselkä' },
 ];
 
@@ -63,19 +66,24 @@ export default function MidnightSunDining() {
 
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <img
-          src="/images/midnight-sun-hero.jpg"
-          alt="Wooden lakeside terrace dinner during the Lapland midnight sun, candles lit and reindeer fur on the chairs"
+          src={PHOTO.midnightSunOunasvaara1953}
+          srcSet={photoSrcSet(PHOTO.midnightSunOunasvaara1953)}
+          sizes="100vw"
+          alt={imageAlt(PHOTO.midnightSunOunasvaara1953, locale)}
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
+        <PhotoCredit src={PHOTO.midnightSunOunasvaara1953} locale={locale} />
+        {/* Aito keskiyön aurinko on kirkkaampi kuin entinen kuvitus: oma tummennus ennen sävykerroksia. */}
+        <div className="absolute inset-0 bg-night/45" />
         <div className="absolute inset-0 bg-gradient-to-b from-orange-900/75 via-amber-900/40 to-night/80" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,rgba(8,10,22,0.5)_0%,transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(253,224,71,0.15)_0%,transparent_55%)]" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-300/15 border border-yellow-300/30 backdrop-blur-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-night/60 border border-yellow-300/30 backdrop-blur-sm mb-6">
             <Sun size={14} className="text-yellow-300" />
             <span className="text-yellow-200 text-xs font-semibold tracking-[0.25em] uppercase">
               {t('midnightSunDining.heroBadge')}
@@ -148,7 +156,9 @@ export default function MidnightSunDining() {
                   <div className="relative h-36 sm:h-40 overflow-hidden">
                     <img
                       src={meta.image}
-                      alt={meta.alt}
+                      srcSet={photoSrcSet(meta.image)}
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      alt={imageAlt(meta.image, locale) || meta.alt}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                       decoding="async"
@@ -157,6 +167,7 @@ export default function MidnightSunDining() {
                       className="absolute inset-0"
                       style={{ background: 'linear-gradient(to top, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.12) 60%)' }}
                     />
+                    <PhotoCredit src={meta.image} locale={locale} />
                   </div>
                   <div className="p-6 sm:p-7">
                   <div className="flex items-start gap-3 mb-3">
@@ -202,8 +213,12 @@ export default function MidnightSunDining() {
       <section className="relative py-20 overflow-hidden">
         <img
           src={DINING.midnightSunBand}
-          alt="Lapland summer terrace dining"
+          srcSet={photoSrcSet(DINING.midnightSunBand)}
+          sizes="100vw"
+          alt={imageAlt(DINING.midnightSunBand, locale)}
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-night/85" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(253,224,71,0.08)_0%,transparent_60%)]" />

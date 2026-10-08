@@ -14,6 +14,8 @@ import {
   DINING_CITIES, cityBySlug, restaurantsForCity,
 } from '../data/diningCities';
 import { ownPhotoCredit, OTHER_PHOTO_PLACES } from '../data/photoCredit';
+import { photoSrcSet } from '../data/images';
+import PhotoCredit from '../components/PhotoCredit';
 
 const ORIGIN = 'https://laplanddining.com';
 
@@ -171,6 +173,8 @@ export default function CityPage() {
       <section className="relative min-h-[46svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
           src={city.photo ?? city.img}
+          srcSet={city.photo ? undefined : photoSrcSet(city.img)}
+          sizes="100vw"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
@@ -186,12 +190,14 @@ export default function CityPage() {
           className={
             city.photo
               ? 'absolute inset-0 bg-gradient-to-b from-night/72 via-night/62 to-night'
-              : 'absolute inset-0 bg-gradient-to-b from-night/75 via-night/65 to-night'
+              : 'absolute inset-0 bg-gradient-to-b from-night/80 via-night/72 to-night'
           }
         />
         {/* Kuvateksti vain omalle valokuvalle. Se nimeaa TARKAN paikan eika
             kaupunkisivun otsikkoa: Kuusamon sivu kattaa myos Rukan 22 km:n
             paassa (Vesa 7.9.: "riistaravintola on rukalla, ei kuusamossa"). */}
+        {/* Wikimedia Commons -kuvan tekijä + lisenssi (4.10.2026). Vain kun oma kuva puuttuu. */}
+        {!city.photo && <PhotoCredit src={city.img} locale={locale as Locale} />}
         {photoCaption && (
           <p className="absolute bottom-3 right-4 z-10 rounded bg-black/55 px-1.5 py-px text-[11px] text-white/90 tracking-wide">
             {photoCaption}
@@ -221,12 +227,14 @@ export default function CityPage() {
               {tagline}
             </p>
           )}
-          <p className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-cream/70 text-sm">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 font-semibold">
+          {/* 4.10.2026: sirut tummalla pohjalla. Valkoinen /10-pohja vaalensi kirkkaan valokuvan (lumi, valkoinen
+              lumilinna) päällä ja teksti jäi alle 4,5:1:n (heroteksti-portti). */}
+          <p className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-cream/90 text-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-night/60 px-3 py-1.5 font-semibold">
               {countLabel}
             </span>
             {best !== null && (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 font-semibold">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-night/60 px-3 py-1.5 font-semibold">
                 <Star size={12} className="text-amber fill-amber" />
                 {t('cities.shared.bestRated', {
                   rating: best.toFixed(1),

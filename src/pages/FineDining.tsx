@@ -7,7 +7,9 @@ import GridPhotoCredits from '../components/GridPhotoCredits';
 import MenuLink from '../components/MenuLink';
 import { Star, MapPin, ExternalLink, Award, Quote, UtensilsCrossed } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
-import { DINING } from '../data/images';
+import { PHOTO, photoSrcSet } from '../data/images';
+import PhotoCredit from '../components/PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
 import { restaurants, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, localizedStr } from '../data/restaurants';
 import { withReferral } from '../lib/outbound';
 import PageBreadcrumb from '../components/PageBreadcrumb';
@@ -65,14 +67,19 @@ export default function FineDining() {
       {/* Hero */}
       <section className="relative min-h-[52svh] flex items-center justify-center px-4 sm:px-6 pb-20 md:pb-24 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={DINING.fineDining}
-          alt="Fine dining in Lapland"
+          src={PHOTO.inariRestaurantInterior}
+          srcSet={photoSrcSet(PHOTO.inariRestaurantInterior)}
+          sizes="100vw"
+          alt={imageAlt(PHOTO.inariRestaurantInterior, locale)}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/50 to-night" />
+        {/* Tilastolaatat nousevat heron alareunan päälle (-mt-14/-mt-16) ja ovat alle lg:n koko levyisiä,
+            joten merkintä nostetaan niiden yläpuolelle; lg+ laatat ovat keskellä ja oikea alakulma on vapaa. */}
+        <PhotoCredit src={PHOTO.inariRestaurantInterior} locale={locale} className="bottom-[4.5rem] lg:bottom-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/72 via-night/64 to-night" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="w-16 h-16 bg-amber/20 rounded-3xl flex items-center justify-center mx-auto mb-6">
             <Star size={32} className="text-amber" />

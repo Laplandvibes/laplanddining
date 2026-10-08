@@ -5,7 +5,9 @@ import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
 import { Flame, Snowflake, TreePine, Fish, UtensilsCrossed, Quote, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { DINING } from '../data/images';
+import { DINING, PHOTO, photoSrcSet } from '../data/images';
+import PhotoCredit from '../components/PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
@@ -57,41 +59,46 @@ interface SectionI18n {
  *
  * 🔴 localFoodReindeer on 16:9, muut viisi 2,36:1. Kaista on työpöydällä 21:9,
  * joten sille annetaan objectPosition, ettei sarvien kärki leikkaudu.
+ *
+ * ✅ 4.10.2026 kuvavaihto (tekoäly → aidot kuvat): luku 2 on nyt arkistokuva (Samuli Paulaharju,
+ * Sodankylä 1938) ja luku 5 päivän kala Inarissa, joten yllä kuvattu päällekkäisyys poistui.
+ * Kuvien lähteet: data/photoCredits.ts, altit lukijan kielellä: data/imageAlts.ts.
  */
 const CHAPTERS: { icon: typeof Snowflake; img: { src: string; alt: string; focus?: string } }[] = [
   {
     icon: Snowflake,
-    img: { src: DINING.snowVillage, alt: 'Snow-covered village restaurant in the Lapland winter' },
+    img: { src: PHOTO.kaylankoskiWinter, alt: 'Käylänkoski rapids in Kuusamo at sunrise in February, open water between snowy banks' },
   },
   {
     icon: Flame,
     img: {
-      src: DINING.localFoodReindeer,
-      alt: 'A reindeer standing in a misty birch forest in autumn ruska colours',
-      focus: '50% 42%',
+      // Arkistokuva: Samuli Paulaharju, Sodankylä 1938 (Museovirasto, CC BY 4.0).
+      src: PHOTO.reindeerSled1938,
+      alt: 'A boy with a draught reindeer and sledge setting off across the snow in Sodankylä, 1938',
+      focus: '50% 55%',
     },
   },
   {
     icon: Fish,
     img: {
       src: DINING.featKammi,
-      alt: 'Salmon grilled on a wooden board beside the open fire inside a Sámi kota',
+      alt: 'Salmon fillets fixed to wooden boards cooking beside an open fire (loimulohi)',
     },
   },
   {
     icon: TreePine,
     img: {
       src: DINING.ingredients,
-      alt: 'Wild berries, mushrooms and herbs foraged from the Lapland forest floor',
+      alt: 'A ripe cloudberry and bilberries on a bog in Suomussalmi, northern Finland',
     },
   },
   {
     icon: UtensilsCrossed,
-    img: { src: DINING.foodCloseup, alt: 'Plated Lapland game with berry sauce and chanterelles' },
+    img: { src: DINING.foodCloseup, alt: 'A fish-of-the-day plate at a restaurant in Inari, Lapland' },
   },
   {
     icon: Flame,
-    img: { src: DINING.kotaInside, alt: 'Guests sharing a meal around the fire inside a traditional kota' },
+    img: { src: DINING.kotaInside, alt: 'A traditional log goahti (kota) in Sonkamuotka, Enontekiö, Lapland' },
   },
 ];
 
@@ -101,7 +108,7 @@ const CARD_SHADOW =
 
 export default function FoodHistory() {
   const { t } = useTranslation('pages');
-  const { to } = useLocale();
+  const { to, locale } = useLocale();
   const sections = (t('foodHistory.sections', { returnObjects: true }) as SectionI18n[]) || [];
 
   return (
@@ -134,15 +141,22 @@ export default function FoodHistory() {
 
       {/* Hero */}
       <section className="relative min-h-[60svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+        {/* 4.10.2026: tekoälykuvituksen tilalle arkistokuva — Hotelli Pohjanhovin kokit ja
+            noutopöydän vadit Rovaniemellä 1936, ennen kuin kaupunki tuhoutui 1944
+            (Heinrich Iffland / Helsingin kaupunginmuseo, CC BY 4.0, rajattu: negatiivin
+            vaurioitunut alareuna pois). */}
         <img
-          src={DINING.heroFoodStory}
-          alt="Traditional Lapland kota cooking"
-          className="absolute inset-0 w-full h-full object-cover"
+          src={PHOTO.pohjanhoviCooks1936}
+          srcSet={photoSrcSet(PHOTO.pohjanhoviCooks1936)}
+          sizes="100vw"
+          alt={imageAlt(PHOTO.pohjanhoviCooks1936, locale)}
+          className="absolute inset-0 w-full h-full object-cover object-[50%_70%]"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/60 via-night/50 to-night" />
+        <PhotoCredit src={PHOTO.pohjanhoviCooks1936} locale={locale} />
+        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/62 to-night" />
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('foodHistory.heroH1')}
@@ -215,13 +229,16 @@ export default function FoodHistory() {
                   >
                     <img
                       src={img.src}
-                      alt={img.alt}
+                      srcSet={photoSrcSet(img.src)}
+                      sizes="(min-width: 1024px) 1024px, 100vw"
+                      alt={imageAlt(img.src, locale) || img.alt}
                       loading="lazy"
                       decoding="async"
                       style={img.focus ? { objectPosition: img.focus } : undefined}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-night/55 via-transparent to-transparent" />
+                    <PhotoCredit src={img.src} locale={locale} />
                   </figure>
 
                   <div className="max-w-3xl mx-auto">

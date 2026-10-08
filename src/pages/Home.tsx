@@ -12,7 +12,9 @@ import AffiliateCTA from '../components/AffiliateCTA';
 import EditorsPicks from '../components/EditorsPicks';
 import NewsletterInline from '../shared/NewsletterInline';
 import FAQ from '../components/FAQ';
-import { DINING } from '../data/images';
+import { DINING, PHOTO, photoSrcSet, seasonal } from '../data/images';
+import PhotoCredit, { CreditRow } from '../components/PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
 import { restaurants, cities } from '../data/restaurants';
 import HomeAdSlots from '../shared/HomeAdSlots';
 import { AD_SLOTS } from '../data/partners';
@@ -32,7 +34,8 @@ interface FAQItemI18n { question: string; answer: string }
 
 // Each experience card routes to the pillar page that goes deep on it.
 const cuisineCardsMeta = [
-  { image: DINING.fineDining, icon: Star, href: '/fine-dining' },
+  // Pexels 5395184 (Pexels License, ladattu 2020): paikaton annoskuva, alt = kortin otsikko.
+  { image: PHOTO.platedFish, icon: Star, href: '/fine-dining' },
   { image: DINING.kotaFire, icon: Flame, href: '/food-history' },
   { image: DINING.ingredients, icon: UtensilsCrossed, href: '/local-food' },
 ];
@@ -72,19 +75,25 @@ export default function Home() {
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+        {/* 4.10.2026: tekoälykuvituksen tilalle aito ravintolasali (Kemin Meripuiston paviljonki,
+            Estormiz, CC0), talvella lumiset puut ikkunoissa ja kesällä vihreät. Esilataus samalla
+            kausisäännöllä index.html:ssä. */}
         <img
-          src={DINING.heroInterior}
+          src={seasonal(PHOTO.pavilionWinter, PHOTO.pavilionSummer)}
+          srcSet={photoSrcSet(seasonal(PHOTO.pavilionWinter, PHOTO.pavilionSummer))}
+          sizes="100vw"
           alt={t('home.heroAlt')}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
+        <PhotoCredit src={seasonal(PHOTO.pavilionWinter, PHOTO.pavilionSummer)} locale={locale} />
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, rgba(15,23,42,0.86) 0%, rgba(15,23,42,0.62) 50%, rgba(15,23,42,0.38) 100%)',
+              'linear-gradient(to top, rgba(15,23,42,0.86) 0%, rgba(15,23,42,0.66) 50%, rgba(15,23,42,0.48) 100%)',
           }}
         />
 
@@ -180,6 +189,8 @@ export default function Home() {
                 >
                   <img
                     src={card.image}
+                    srcSet={photoSrcSet(card.image)}
+                    sizes="(min-width: 768px) 33vw, 100vw"
                     alt={title}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
@@ -199,6 +210,12 @@ export default function Home() {
               );
             })}
           </div>
+          {/* Korttien avoimen lisenssin kuvien tekijät ruudukon alle (kortti on linkki). */}
+          <CreditRow
+            items={cuisineCardsMeta.map((card, i) => ({ label: cuisineCardsCopy[i]?.title ?? '', src: card.image }))}
+            locale={locale}
+            className="mt-6"
+          />
         </div>
       </section>
 
@@ -218,14 +235,17 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 lg:gap-12 items-center">
             <div className="md:col-span-2 relative aspect-[4/5] md:aspect-auto md:h-96 rounded-3xl overflow-hidden shadow-2xl shadow-amber/15">
               <img
-                src={DINING.midnightSunCard}
-                alt="Midnight sun terrace dinner in Lapland"
+                src={PHOTO.midnightSunOunasvaara1953}
+                srcSet={photoSrcSet(PHOTO.midnightSunOunasvaara1953)}
+                sizes="(min-width: 768px) 40vw, 100vw"
+                alt={imageAlt(PHOTO.midnightSunOunasvaara1953, locale)}
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-night/60 via-transparent to-yellow-900/30" />
-              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-300/20 backdrop-blur-md border border-yellow-300/40">
+              <PhotoCredit src={PHOTO.midnightSunOunasvaara1953} locale={locale} />
+              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-night/70 backdrop-blur-md border border-yellow-300/40">
                 <Sun size={12} className="text-yellow-200" />
                 <span className="text-yellow-100 text-[10px] font-bold tracking-[0.2em] uppercase">
                   {t('home.midnightBadge')}

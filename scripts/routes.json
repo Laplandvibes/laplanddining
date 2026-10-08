@@ -9,7 +9,7 @@
     "ogImage": "/og/restaurants.jpg",
     "ogCard": {
       "heroKesa": "/images/drive/pyhaSummer.webp",
-      "heroTalvi": "/images/drive/restaurantsHeroWinter.webp",
+      "heroTalvi": "/images/commons/kemi-lumikki-winter-1920.webp",
       "line": "Ratings, review quotes and menu links"
     }
   },
@@ -19,7 +19,7 @@
     "ogImage": "/og/cities.jpg",
     "ogCard": {
       "heroKesa": "/images/cities/pyhatunturi.webp",
-      "heroTalvi": "/images/drive/restaurantsHeroWinter.webp",
+      "heroTalvi": "/images/commons/kemi-lumikki-winter-1920.webp",
       "line": "Lapland restaurants, town by town"
     }
   },

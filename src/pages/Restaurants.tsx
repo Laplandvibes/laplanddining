@@ -14,25 +14,26 @@ import PremiumSpotGrid from '../shared/PremiumSpotGrid';
 import { adLocaleEnabled } from '../shared/adSlotsCopy';
 import { PARTNERS, AD_SLOTS } from '../data/partners';
 import { restaurants, cities, cuisineLabel } from '../data/restaurants';
-import { slugForCity as citySlug } from '../data/diningCities';
+import { slugForCity as citySlug, DINING_CITIES } from '../data/diningCities';
 import { localePrefix } from '../i18n/config';
-import { DINING, seasonal, isSummerSeason } from '../data/images';
+import { DINING, PHOTO, photoSrcSet, seasonal, isSummerSeason } from '../data/images';
+import PhotoCredit from '../components/PhotoCredit';
+import { imageAlt } from '../data/imageAlts';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
+/**
+ * Kaupunkikaistan kuva. 4.10.2026: kaupungit, joilla on oma kaupunkisivu, käyttävät
+ * SAMAA kuvaa kuin sivunsa (`DINING_CITIES`: LV:n oma valokuva tai Commons-kuva
+ * kausikytkimellä) — ennen kaista näytti tekoälykuvituksen, vaikka kaupunkisivulla oli
+ * aito kuva. Tämä taulu jää vain kaupungeille, joilla sivua ei ole.
+ */
+const cityPageImage = (city: string): string | undefined => {
+  const c = DINING_CITIES.find((d) => d.city === city);
+  return c ? (c.photo ?? c.img) : undefined;
+};
 const cityImages: Record<string, string> = {
-  Rovaniemi: DINING.rovaniemiCenter,
-  Levi: DINING.kotaInside,
-  Inari: DINING.foodMoody,
-  'Saariselkä': seasonal(DINING.auroraRestaurant, DINING.saariselkaSummer),
-  Kemi: seasonal(DINING.iceRestaurant, DINING.kemiSummer),
-  'Ylläs': DINING.ingredientsAlt,
-  Tornio: DINING.ingredients,
-  Haparanda: DINING.fineDining,
   Kittilä: DINING.kittilaDining,
-  'Sodankylä': DINING.sodankylaDining,
-  Pyhätunturi: seasonal(DINING.snowVillage, DINING.pyhaSummer),
-  Luosto: seasonal(DINING.luostoWinter, DINING.luostoSummer),
   Muonio: DINING.muonioDining,
   Hetta: DINING.hettaDining,
   Kuusamo: DINING.exterior,
@@ -225,18 +226,21 @@ export default function Restaurants() {
 
       <section className="relative min-h-[56svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img
-          src={seasonal(DINING.restaurantsHeroWinter, DINING.heroSummer)}
-          alt="Dining in Finnish Lapland"
+          src={seasonal(PHOTO.kemiLumikkiWinter, DINING.heroSummer)}
+          srcSet={photoSrcSet(seasonal(PHOTO.kemiLumikkiWinter, DINING.heroSummer))}
+          sizes="100vw"
+          alt={imageAlt(seasonal(PHOTO.kemiLumikkiWinter, DINING.heroSummer), locale)}
           className="absolute inset-0 w-full h-full object-cover scale-105"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
+        <PhotoCredit src={seasonal(PHOTO.kemiLumikkiWinter, DINING.heroSummer)} locale={locale} />
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, rgba(15,23,42,0.80) 0%, rgba(15,23,42,0.42) 50%, rgba(15,23,42,0.30) 100%)',
+              'linear-gradient(to top, rgba(15,23,42,0.90) 0%, rgba(15,23,42,0.74) 50%, rgba(15,23,42,0.62) 100%)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-amber/8 via-transparent to-transparent" />
@@ -244,7 +248,10 @@ export default function Restaurants() {
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
           <div className="flex items-center justify-center gap-3 mb-6">
             <SeasonIcon size={16} className="text-amber/60" />
-            <span className="text-amber/80 text-xs font-semibold uppercase tracking-[0.25em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            {/* 8.10.2026: talvihero (Kemin Lumikki, lumi) on kirkas juuri yläotsikon kohdalta: heroteksti-portti
+                mittasi 375 px:ssä 3,13:1 (raja 4,5:1). Tumma laatta ja täysi meripihka, sama ratkaisu kuin
+                laplandvisitin ja laplandstoren heroissa (bg-black/45). */}
+            <span className="inline-block rounded-full bg-black/45 backdrop-blur-sm px-3 py-1 text-amber text-xs font-semibold uppercase tracking-[0.25em]">
               {t('restaurants.heroKicker')}
             </span>
             <SeasonIcon size={16} className="text-amber/60" />
@@ -421,14 +428,18 @@ export default function Restaurants() {
                 <div className="relative mb-8 rounded-3xl overflow-hidden group">
                   <div className="relative h-48 sm:h-56">
                     <img
-                      src={cityImages[city] || DINING.heroInterior}
-                      alt={`Dining in ${city}`}
+                      src={cityPageImage(city) ?? cityImages[city] ?? PHOTO.pavilionWinter}
+                      srcSet={photoSrcSet(cityPageImage(city) ?? cityImages[city])}
+                      sizes="(min-width: 1280px) 1216px, 100vw"
+                      alt=""
+                      aria-hidden="true"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                       decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/20" />
                     <div className="absolute inset-0 bg-gradient-to-r from-night/40 to-transparent" />
+                    <PhotoCredit src={cityPageImage(city) ?? cityImages[city]} locale={locale} className="z-20" />
                   </div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -559,12 +570,15 @@ export default function Restaurants() {
       <section className="relative py-20 overflow-hidden">
         <img
           src={DINING.kotaFire}
-          alt="Kota fire cooking"
+          srcSet={photoSrcSet(DINING.kotaFire)}
+          sizes="100vw"
+          alt={imageAlt(DINING.kotaFire, locale)}
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
           decoding="async"
         />
         <div className="absolute inset-0 bg-night/85" />
+        <PhotoCredit src={DINING.kotaFire} locale={locale} />
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4 sm:px-6">
           <Flame size={32} className="text-amber/60 mx-auto mb-4" />
           <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide mb-4">

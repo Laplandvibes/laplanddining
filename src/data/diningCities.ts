@@ -1,4 +1,4 @@
-import { DINING, seasonal } from './images';
+import { DINING, PHOTO, seasonal } from './images';
 import { restaurants } from './restaurants';
 
 /**
@@ -37,7 +37,13 @@ export interface DiningCity {
   city: string;
   /** Näyttönimi otsikossa (EN-perusta; lokalisoidaan pages.json:issa). */
   name: string;
-  /** Kortin ja sivun kuva. */
+  /**
+   * Kortin ja sivun kuva. Talvi/kesä `seasonal()`-kytkimellä (1.10.–30.4. talvi), jotta
+   * talvella ei näy kesäkuvaa (4.10.2026: Sodankylän sivulla oli lokakuussa ruskakuva).
+   * Wikimedia Commons -kuvan tekijä ja lisenssi piirtyvät kuvan päälle polun perusteella
+   * (photoCredits.ts `creditFor`). Luoston talvikuva on yhä tekoälykuvitus: Commonsissa
+   * ei ole yhtään talvikuvaa Luostosta (haettu 4.10.2026).
+   */
   img: string;
   /**
    * LV:n oma valokuva paikan päältä. Kun tämä on asetettu, se AJAA `img`:n yli
@@ -61,15 +67,15 @@ export interface DiningCity {
 }
 
 export const DINING_CITIES: DiningCity[] = [
-  { slug: 'rovaniemi',   city: 'Rovaniemi',   name: 'Rovaniemi',   img: DINING.rovaniemiCenter, priority: 0.8 },
+  { slug: 'rovaniemi',   city: 'Rovaniemi',   name: 'Rovaniemi',   img: seasonal(PHOTO.rovaniemiWinter, PHOTO.rovaniemiSummer), priority: 0.8 },
   { slug: 'levi',        city: 'Levi',        name: 'Levi',        img: DINING.kotaInside,      photo: '/images/cities/levi.webp', photoCredit: { place: 'levi', month: '2026-07' }, priority: 0.8 },
   { slug: 'yllas',       city: 'Ylläs',       name: 'Ylläs',       img: DINING.ingredientsAlt,  photo: '/images/cities/yllas.webp', photoCredit: { place: 'yllas', month: '2026-07' }, priority: 0.8 },
-  { slug: 'saariselka',  city: 'Saariselkä',  name: 'Saariselkä',  img: seasonal(DINING.auroraRestaurant, DINING.saariselkaSummer), priority: 0.8 },
-  { slug: 'inari',       city: 'Inari',       name: 'Inari',       img: DINING.foodMoody,       priority: 0.7 },
-  { slug: 'kemi',        city: 'Kemi',        name: 'Kemi',        img: seasonal(DINING.iceRestaurant, DINING.kemiSummer), priority: 0.7 },
+  { slug: 'saariselka',  city: 'Saariselkä',  name: 'Saariselkä',  img: seasonal(PHOTO.saariselkaWinter, DINING.saariselkaSummer), priority: 0.8 },
+  { slug: 'inari',       city: 'Inari',       name: 'Inari',       img: seasonal(PHOTO.inariWinter, PHOTO.inariSummer), priority: 0.7 },
+  { slug: 'kemi',        city: 'Kemi',        name: 'Kemi',        img: seasonal(PHOTO.kemiWinter, DINING.kemiSummer), priority: 0.7 },
   { slug: 'tornio',      city: 'Tornio',      name: 'Tornio',      img: DINING.ingredients,     photo: '/images/cities/tornio.webp', photoCredit: { place: 'tornio', month: '2026-07' }, priority: 0.7 },
-  { slug: 'haparanda',   city: 'Haparanda',   name: 'Haparanda',   img: DINING.fineDining,      priority: 0.6 },
-  { slug: 'sodankyla',   city: 'Sodankylä',   name: 'Sodankylä',   img: DINING.sodankylaDining, priority: 0.6 },
+  { slug: 'haparanda',   city: 'Haparanda',   name: 'Haparanda',   img: seasonal(PHOTO.haparandaWinter, PHOTO.haparandaSummer), priority: 0.6 },
+  { slug: 'sodankyla',   city: 'Sodankylä',   name: 'Sodankylä',   img: seasonal(PHOTO.sodankylaWinter, PHOTO.sodankylaSummer), priority: 0.6 },
   { slug: 'pyhatunturi', city: 'Pyhätunturi', name: 'Pyhätunturi', img: seasonal(DINING.snowVillage, DINING.pyhaSummer), photo: '/images/cities/pyhatunturi.webp', photoCredit: { place: 'pyhatunturi', month: '2026-07' }, priority: 0.6 },
   { slug: 'luosto',      city: 'Luosto',      name: 'Luosto',      img: seasonal(DINING.luostoWinter, DINING.luostoSummer), priority: 0.6 },
   { slug: 'kuusamo',     city: 'Kuusamo',     name: 'Kuusamo',     img: DINING.exterior,        photo: '/images/cities/kuusamo.webp', photoCredit: { place: 'ruka', month: '2026-07' }, priority: 0.7 },

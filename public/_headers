@@ -11,13 +11,8 @@ https://laplanddining.pages.dev/*
   X-Robots-Tag: noindex, nofollow
 # <<< LV-PAGESDEV-NOINDEX
 
-# >>> LV-LINK-PRELOAD (managed by apply_link_preload_headers.py)
-/
-  Link: </images/drive/heroInterior.webp>; rel=preload; as=image; fetchpriority=high
-
-/index.html
-  Link: </images/drive/heroInterior.webp>; rel=preload; as=image; fetchpriority=high
-# <<< LV-LINK-PRELOAD
+# LV-LINK-PRELOAD poistettu 4.10.2026: etusivun hero vaihtuu kauden mukaan selaimessa
+# (talvi 1.10.–30.4. / kesä) ja on srcset-kuva; esilataus tulee index.html:n kausiskriptistä.
 
 # >>> LV-SECURITY (managed)
 /*
