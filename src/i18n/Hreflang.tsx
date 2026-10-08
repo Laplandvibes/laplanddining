@@ -51,9 +51,8 @@ export default function Hreflang({
       ))}
       <link rel="alternate" hrefLang="x-default" href={enUrl} />
       <meta property="og:locale" content={OG_LOCALE[locale]} />
-      {SUPPORTED_LOCALES.filter((l) => l !== locale).map((l) => (
-        <meta key={l} property="og:locale:alternate" content={OG_LOCALE[l]} />
-      ))}
+      {/* og:locale:alternate EI täällä (8.10.2026): esirenderöity HTML ei kirjoita sitä, ja Facebook lukee vain
+          staattisen HTML:n, joten JS:n lisäämällä tagilla ei ollut lukijaa (gate:og-js "vain-js" joka sivulla). */}
     </>
   );
 }

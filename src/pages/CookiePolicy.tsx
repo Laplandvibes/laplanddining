@@ -11,7 +11,6 @@ export default function CookiePolicy() {
       <title>{t('cookie.title')}</title>
       <meta name="description" content={t('cookie.description')} />
       <Hreflang path="/cookie-policy" />
-      <meta name="robots" content="index, follow" />
       <CookieContent siteId="laplanddining" siteName="LaplandDining" lang={locale} />
     </>
   );

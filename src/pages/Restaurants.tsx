@@ -173,7 +173,6 @@ export default function Restaurants() {
       <title>{t('restaurants.title')}</title>
       <meta name="description" content={t('restaurants.description')} />
       <Hreflang path="/restaurants" />
-      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

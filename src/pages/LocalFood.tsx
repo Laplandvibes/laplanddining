@@ -81,7 +81,6 @@ export default function LocalFood() {
       <title>{t('localFood.title')}</title>
       <meta name="description" content={t('localFood.description')} />
       <Hreflang path="/local-food" />
-      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

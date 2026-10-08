@@ -116,7 +116,6 @@ export default function FoodHistory() {
       <title>{t('foodHistory.title')}</title>
       <meta name="description" content={t('foodHistory.description')} />
       <Hreflang path="/food-history" />
-      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

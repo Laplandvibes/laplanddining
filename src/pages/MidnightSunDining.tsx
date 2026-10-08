@@ -41,7 +41,6 @@ export default function MidnightSunDining() {
       <title>{t('midnightSunDining.title')}</title>
       <meta name="description" content={t('midnightSunDining.description')} />
       <Hreflang path="/midnight-sun-dining" />
-      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

@@ -11,7 +11,6 @@ export default function PrivacyPolicy() {
       <title>{t('privacy.title')}</title>
       <meta name="description" content={t('privacy.description')} />
       <Hreflang path="/privacy" />
-      <meta name="robots" content="index, follow" />
       <PrivacyContent siteName="LaplandDining" lang={locale} />
     </>
   );

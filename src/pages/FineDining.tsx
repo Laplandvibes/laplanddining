@@ -41,7 +41,6 @@ export default function FineDining() {
           selain näyttävät saman kuvauksen. Lukumäärää ei upoteta: esirenderöity HTML ei tunne sitä. */}
       <meta name="description" content={t('fineDining.description')} />
       <Hreflang path="/fine-dining" />
-      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

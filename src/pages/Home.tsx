@@ -58,7 +58,6 @@ export default function Home() {
       <title>{t('home.title')}</title>
       <meta name="description" content={t('home.description')} />
       <Hreflang path="/" />
-      <meta name="robots" content="index, follow" />
       {faqItems.length > 0 && (
         <script type="application/ld+json">
           {JSON.stringify({

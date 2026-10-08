@@ -90,7 +90,6 @@ export function useNewsHead(m: {
     <>
       <title>{m.title}</title>
       <meta name="description" content={m.description} />
-      <meta name="robots" content="index, follow" />
       <Hreflang path={m.path} />
       {(m.jsonLd ?? []).map((j, i) => (
         <script key={i} type="application/ld+json">{JSON.stringify(j)}</script>

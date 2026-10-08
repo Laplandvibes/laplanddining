@@ -11,7 +11,6 @@ export default function Terms() {
       <title>{t('terms.title')}</title>
       <meta name="description" content={t('terms.description')} />
       <Hreflang path="/terms" />
-      <meta name="robots" content="index, follow" />
       <TermsContent siteName="LaplandDining" siteUrl="laplanddining.com" lang={locale} />
     </>
   );
