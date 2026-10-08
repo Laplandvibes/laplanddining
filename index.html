@@ -101,13 +101,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://go.laplandvibes.com" />
-    <link rel="preconnect" href="https://widget.getyourguide.com" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
 
-    <!-- GetYourGuide Integration Analyzer (required for affiliate attribution) -->
-    <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="VRMKD7N"></script>
+    <!-- GetYourGuide Integration Analyzer (partner ID VRMKD7N). Piirtaa GYG-widgetit ja kohdistaa
+         varaukset sivustolle, mutta asettaa GetYourGuiden evasteet (visitor_id, session_id), joten se
+         ladataan vasta kun lukija on hyvaksynyt evasteet. Ilman suostumusta widgetit nayttavat oman
+         varapaneelinsa ja aktiviteettilinkit toimivat Workerin kautta. -->
+    <script>
+      (function () {
+        var KEY = 'laplanddining_cookie_consent';
+        var loaded = false;
+        window.lvLoadGyg = function () {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://widget.getyourguide.com/dist/pa.umd.production.min.js';
+          s.setAttribute('data-gyg-partner-id', 'VRMKD7N');
+          document.head.appendChild(s);
+        };
+        function choice() {
+          try { return localStorage.getItem(KEY); } catch (e) { return null; }
+        }
+        var first = choice();
+        if (first === 'accepted') { window.lvLoadGyg(); return; }
+        if (first) return;
+        /* Evastebanneri ei kerro valinnasta tapahtumalla, joten valintaa odotetaan
+           kevyella kyselylla. Kysely loppuu heti kun lukija on valinnut. */
+        var t = setInterval(function () {
+          var v = choice();
+          if (!v) return;
+          clearInterval(t);
+          if (v === 'accepted') window.lvLoadGyg();
+          try { window.dispatchEvent(new Event('lv-consent-change')); } catch (e) { /* vanha selain */ }
+        }, 500);
+      })();
+    </script>
+
 
     <!-- Open Graph / WhatsApp / Social -->
     <meta property="og:type" content="website" />
