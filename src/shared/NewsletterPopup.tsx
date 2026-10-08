@@ -671,6 +671,25 @@ const FOUNDER_STYLES = `
   border-color: var(--lv-nl-focus-border);
   box-shadow: 0 0 0 2px var(--lv-nl-focus-ring);
 }
+@media (max-height: 600px) and (min-width: 560px) {
+  .lv-nl-overlay.lv-nl-overlay { padding: 12px 16px; align-items: center; }
+  .lv-nl-card.lv-nl-card { max-width: 44rem; }
+  .lv-nl-body.lv-nl-body { padding: 20px 24px 16px; }
+  .lv-nl-body--media.lv-nl-body--media { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); column-gap: 24px; align-items: center; text-align: left; }
+  .lv-nl-media.lv-nl-media { text-align: center; }
+  .lv-nl-card .lv-founder-avatar { width: 104px !important; height: 104px !important; margin-bottom: 10px; }
+  .lv-nl-wm.lv-nl-wm { font-size: 1.25rem; margin-bottom: 0; }
+  .lv-nl-thanks.lv-nl-thanks { height: 156px !important; margin-bottom: 0; }
+  .lv-nl-title.lv-nl-title { font-size: 1.5rem; line-height: 1.15; margin-bottom: 6px; padding-right: 36px; }
+  .lv-nl-desc.lv-nl-desc { font-size: 0.875rem; line-height: 1.45; margin-bottom: 10px; text-align: left; }
+  .lv-nl-form.lv-nl-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 10px; }
+  .lv-nl-form .lv-nl-email { grid-column: 1; grid-row: 1; }
+  .lv-nl-form .lv-nl-submit { grid-column: 2; grid-row: 1; width: auto; padding-left: 20px; padding-right: 20px; }
+  .lv-nl-form .lv-nl-consent { grid-column: 1 / -1; grid-row: 2; }
+  .lv-nl-later.lv-nl-later { margin-top: 6px; text-align: left; }
+  .lv-nl-trust.lv-nl-trust { margin-top: 4px; text-align: left; }
+  .lv-nl-body--media .lv-nl-social { justify-content: flex-start !important; }
+}
 `;
 
 /**
@@ -914,6 +933,14 @@ export default function NewsletterPopup({
   if (status === 'hidden') return null;
 
   const isSuccess = status === 'success' || status === 'already';
+  // LV-NL-VAAKA (8.10.2026, Vesa: "kun uutiskirje popup tuli puhelin sivuttain, se oli aivan liian iso ja ei saanut
+  // mitään selvää"). Pinottu kortti on ~680 px korkea; vaakapuhelimessa näkyvää korkeutta on 320–380 px, joten
+  // kerralla näkyi 42–51 % kortista eikä lähetysnappi näkynyt (mitattu livestä 5 laitteella). FOUNDER_STYLESin
+  // @media (max-height: 600px) and (min-width: 560px) vie kuvan ja sanamerkin vasempaan palstaan ja tekstin +
+  // lomakkeen oikeaan. Kaksinkertainen luokka voittaa Tailwindin apuluokat myös v3-sivustoilla; !important vain
+  // inline-tyylin (kuvan koko) ohitukseen. 🔴 Ei kommenttia CSS-merkkijonoon: se päätyy julkiseen bundleen
+  // (gate:kommentit). Vasen palsta on olemassa, kun siinä on jotain näytettävää (sanamerkki on lomakkeessa aina).
+  const hasMedia = isSuccess ? !thanksBroken : true;
 
   const socialButtonStyle: React.CSSProperties = {
     display: 'inline-flex',
@@ -933,7 +960,7 @@ export default function NewsletterPopup({
     // the close button is always reachable. Without this the centred card pushed
     // the ✕ off-screen and — body scroll being locked — trapped mobile users
     // under a dark overlay (Vesa 2026-07-10). Desktop stays centred.
-    <div className="fixed inset-0 z-[9990] flex items-start sm:items-center justify-center px-4 py-8 overflow-y-auto overscroll-contain">
+    <div className="lv-nl-overlay fixed inset-0 z-[9990] flex items-start sm:items-center justify-center px-4 py-8 overflow-y-auto overscroll-contain">
       <style>{FOUNDER_STYLES}</style>
       {/* Backdrop */}
       <button
@@ -948,7 +975,7 @@ export default function NewsletterPopup({
         role="dialog"
         aria-modal="true"
         aria-labelledby="lv-newsletter-popup-title"
-        className="relative my-auto max-w-md w-full rounded-2xl shadow-2xl"
+        className="lv-nl-card relative my-auto max-w-md w-full rounded-2xl shadow-2xl"
         style={cardStyle}
       >
         {/* Accent strip: the site's own colours, network pink by default */}
@@ -967,32 +994,35 @@ export default function NewsletterPopup({
           <X className="w-4 h-4" />
         </button>
 
-        <div className="p-6 sm:p-8 text-center">
+        <div className={`lv-nl-body${hasMedia ? ' lv-nl-body--media' : ''} p-6 sm:p-8 text-center`}>
           {isSuccess ? (
             <>
               {/* Trip photo — the Suomi-helmet shot. Playful counterpart to the
                   trust-face avatar: email captured first, personality after. */}
               {!thanksBroken && (
-                <img
-                  src={thanksImage}
-                  alt={D.founderAlt}
-                  onError={() => setThanksBroken(true)}
-                  className="w-full rounded-xl mb-4 object-cover"
-                  style={{ height: '132px', objectPosition: 'center 32%' }}
-                />
+                <div className="lv-nl-media">
+                  <img
+                    src={thanksImage}
+                    alt={D.founderAlt}
+                    onError={() => setThanksBroken(true)}
+                    className="lv-nl-thanks w-full rounded-xl mb-4 object-cover"
+                    style={{ height: '132px', objectPosition: 'center 32%' }}
+                  />
+                </div>
               )}
+              <div className="lv-nl-main">
               <h2
                 id="lv-newsletter-popup-title"
-                className="font-heading text-2xl sm:text-3xl text-snow tracking-wide leading-tight mb-2"
+                className="lv-nl-title font-heading text-2xl sm:text-3xl text-snow tracking-wide leading-tight mb-2"
               >
                 {status === 'success' ? D.successHeadline : D.alreadyHeadline}
               </h2>
-              <p className="text-snow/75 text-sm sm:text-base leading-relaxed mb-5">
+              <p className="lv-nl-desc text-snow/75 text-sm sm:text-base leading-relaxed mb-5">
                 {status === 'success' ? D.successBody : D.alreadyBody}
               </p>
 
               <p className="text-snow/85 text-sm font-medium mb-3">{D.socialLead}</p>
-              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginBottom: '20px' }}>
+              <div className="lv-nl-social" style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginBottom: '20px' }}>
                 <a
                   href={SOCIAL_LINKS.tiktok}
                   target="_blank"
@@ -1035,9 +1065,11 @@ export default function NewsletterPopup({
               >
                 {D.closeLabel}
               </button>
+              </div>
             </>
           ) : (
             <>
+              <div className="lv-nl-media">
               {/* Founder avatar — spirals in once, then holds still. */}
               {!avatarBroken && (
                 <div
@@ -1061,19 +1093,21 @@ export default function NewsletterPopup({
 
               {/* Brand mark, adapts to current site. The wordmark is ALWAYS Bebas
                   Neue, never the host site's heading font: see WORDMARK_FONT. */}
-              <p className="font-heading tracking-wide text-xl sm:text-2xl mb-3 leading-none" style={{ fontFamily: WORDMARK_FONT }}>
+              <p className="lv-nl-wm font-heading tracking-wide text-xl sm:text-2xl mb-3 leading-none" style={{ fontFamily: WORDMARK_FONT }}>
                 <span className="text-vibe-pink">#</span>
                 <span className="text-snow">LAPLAND</span>
                 <span className="text-vibe-pink">{brandWord}</span>
               </p>
+              </div>
 
+              <div className="lv-nl-main">
               <h2
                 id="lv-newsletter-popup-title"
-                className="font-heading text-2xl sm:text-3xl text-snow tracking-wide leading-tight mb-3"
+                className="lv-nl-title font-heading text-2xl sm:text-3xl text-snow tracking-wide leading-tight mb-3"
               >
                 {resolvedHeadline}
               </h2>
-              <p className="text-snow/75 text-sm sm:text-base leading-relaxed mb-5 text-left sm:text-center">
+              <p className="lv-nl-desc text-snow/75 text-sm sm:text-base leading-relaxed mb-5 text-left sm:text-center">
                 {resolvedDescription}
               </p>
 
@@ -1088,7 +1122,7 @@ export default function NewsletterPopup({
                   const t = e.target as HTMLInputElement;
                   track('nl_blocked', { ...funnelData, reason: t.type === 'checkbox' ? 'consent' : 'email' });
                 }}
-                className="flex flex-col gap-3"
+                className="lv-nl-form flex flex-col gap-3"
               >
                 {/* Honeypot: off-screen, not focusable, hidden from a11y tree. Bots fill it; humans never see it. */}
                 <input
@@ -1123,7 +1157,7 @@ export default function NewsletterPopup({
                 />
                 {/* [LV-CONSENT-V2 2026-08-14] Pakollinen suostumus + ikävahvistus.
                     Esivalitsematon: GDPR:n mukaan esivalittu ruutu ei ole suostumus. */}
-                <label className="flex items-start gap-2.5 text-left cursor-pointer">
+                <label className="lv-nl-consent flex items-start gap-2.5 text-left cursor-pointer">
                   <input
                     type="checkbox"
                     checked={consented}
@@ -1149,7 +1183,7 @@ export default function NewsletterPopup({
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full px-6 py-3 rounded-full font-semibold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                  className="lv-nl-submit w-full px-6 py-3 rounded-full font-semibold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                   style={{
                     backgroundColor: T.cta,
                     color: T.onCta,
@@ -1177,14 +1211,15 @@ export default function NewsletterPopup({
               <button
                 type="button"
                 onClick={dismiss}
-                className="mt-4 w-full text-center text-snow/60 hover:text-snow/75 text-xs transition-colors cursor-pointer"
+                className="lv-nl-later mt-4 w-full text-center text-snow/60 hover:text-snow/75 text-xs transition-colors cursor-pointer"
               >
                 {D.later}
               </button>
 
-              <p className="mt-4 text-[11px] text-snow/60 text-center leading-relaxed">
+              <p className="lv-nl-trust mt-4 text-[11px] text-snow/60 text-center leading-relaxed">
                 {D.trust}
               </p>
+              </div>
             </>
           )}
         </div>
