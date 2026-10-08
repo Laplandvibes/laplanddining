@@ -974,6 +974,41 @@ function ContactModal({ kind, title, c, lang, onClose }: { kind: ContactKind; ti
   );
 }
 
+/**
+ * Lakitekstin päivitysilmoitus. Tietosuojaselosteen kohta 12 lupaa, että olennaisista muutoksista
+ * ilmoitetaan etusivulla vähintään 14 päivää; alatunniste on jokaisen sivuston etusivulla. Rivi
+ * piirretään vain ilmoitusjakson ajan (päättyy Suomen aikaa) ja poistuu sen jälkeen itsestään.
+ * Uusi päivitys: vaihda date, until ja teksti, älä lisää toista riviä.
+ */
+const POLICY_NOTICE = { date: '2026-10-08T12:00:00Z', until: Date.parse('2026-10-23T00:00:00+03:00') };
+const POLICY_NOTICE_LOCALE: Record<string, string> = {
+  en: 'en-GB', fi: 'fi-FI', de: 'de-DE', ja: 'ja-JP', es: 'es-ES', 'pt-BR': 'pt-BR', 'zh-CN': 'zh-CN',
+  ko: 'ko-KR', fr: 'fr-FR', it: 'it-IT', nl: 'nl-NL', sv: 'sv-SE',
+};
+const POLICY_NOTICE_TEXT: Record<string, string> = {
+  en: 'Updated {{date}}: our partners’ scripts now load only after you accept cookies, and you can change your choice on the cookie policy page.',
+  fi: 'Päivitetty {{date}}: kumppaniemme skriptit latautuvat nyt vasta, kun hyväksyt evästeet, ja voit muuttaa valintaasi evästekäytännön sivulla.',
+  de: 'Aktualisiert am {{date}}: Die Skripte unserer Partner werden jetzt erst geladen, wenn Sie Cookies akzeptieren, und Sie können Ihre Wahl auf der Seite der Cookie-Richtlinie ändern.',
+  ja: '{{date}}更新：パートナーのスクリプトは、クッキーに同意した後にのみ読み込まれるようになりました。選択はクッキーポリシーのページで変更できます。',
+  es: 'Actualizado el {{date}}: los scripts de nuestros socios ahora solo se cargan cuando acepta las cookies, y puede cambiar su elección en la página de la política de cookies.',
+  'pt-BR': 'Atualizado em {{date}}: os scripts dos nossos parceiros agora só carregam depois que você aceita os cookies, e você pode mudar sua escolha na página da política de cookies.',
+  'zh-CN': '{{date}}更新：合作伙伴的脚本现在只会在您接受 Cookie 后加载，您可以在 Cookie 政策页面更改选择。',
+  ko: '{{date}} 업데이트: 파트너 스크립트는 이제 쿠키에 동의하신 후에만 로드되며, 쿠키 정책 페이지에서 선택을 변경하실 수 있습니다.',
+  fr: 'Mis à jour le {{date}} : les scripts de nos partenaires ne se chargent désormais qu’après votre acceptation des cookies, et vous pouvez modifier votre choix sur la page de la politique des cookies.',
+  it: 'Aggiornato il {{date}}: gli script dei nostri partner ora si caricano solo dopo che ha accettato i cookie, e può modificare la Sua scelta nella pagina dell’informativa sui cookie.',
+  nl: 'Bijgewerkt op {{date}}: de scripts van onze partners laden nu pas nadat u cookies accepteert, en u kunt uw keuze wijzigen op de pagina van het cookiebeleid.',
+  sv: 'Uppdaterad {{date}}: våra partners skript laddas nu först när du godkänner cookies, och du kan ändra ditt val på sidan om cookiepolicyn.',
+};
+function policyNoticeText(lang: string): string | null {
+  if (Date.now() >= POLICY_NOTICE.until) return null;
+  const tmpl = POLICY_NOTICE_TEXT[lang] ?? POLICY_NOTICE_TEXT.en;
+  let date = POLICY_NOTICE.date.slice(0, 10);
+  try {
+    date = new Intl.DateTimeFormat(POLICY_NOTICE_LOCALE[lang] ?? 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Helsinki' }).format(new Date(POLICY_NOTICE.date));
+  } catch { /* Intl puuttuu: ISO-päivä */ }
+  return tmpl.replace('{{date}}', date);
+}
+
 export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPillarClick, editorialNote, extraLegalLinks = [], legalPaths, dict, websiteByHref = 'https://yrityspaketit.fi' }: SharedFooterProps) {
   const d = mergeDict(dict);
   const siteGroups = buildSiteGroups(d);
@@ -983,6 +1018,7 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
   // Same locale detection the labels use, keeps legal links inside /fi /de /ja
   // /es /br /cn /kr /fr /it /nl instead of dropping the visitor back to EN.
   const localePrefix = LOCALE_PATH_PREFIX[lang] ?? '';
+  const policyNotice = policyNoticeText(lang);
   const contactTitle: Record<ContactKind, string> = { error: d.spottedError.title, partner: d.partner.title, press: d.press.title, general: d.legal.contact };
 
   // ─── [LV-W-PARAM 2026-08-13] Sivustotagi affiliate-klikkeihin ──────────────
@@ -1411,6 +1447,14 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
               <span aria-hidden="true">ⓘ </span>
               {d.affiliate}
             </p>
+            {policyNotice && (
+              <p className="max-w-3xl text-[12px] sm:text-[11px] leading-relaxed text-left font-medium" style={{ color: BLUE }}>
+                {policyNotice}{' '}
+                <Link to={localeHref(`${localePrefix}${legalPaths?.privacy ?? '/privacy'}/`, localePrefix)} className="underline underline-offset-2" style={{ color: BLUE }}>{d.legal.privacy}</Link>
+                <span aria-hidden="true"> · </span>
+                <Link to={localeHref(`${localePrefix}${legalPaths?.cookie ?? '/cookie-policy'}/`, localePrefix)} className="underline underline-offset-2" style={{ color: BLUE }}>{d.legal.cookie}</Link>
+              </p>
+            )}
 
             {/* Bottom strip: ALL legal links on one full-width centred row so
                 nothing orphans onto its own line, with © + credit centred below.

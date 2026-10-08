@@ -38,6 +38,11 @@ interface PrivacyContentProps {
    * haravointimerkin alla tiedoston lopussa). Sama prop kuin TermsContentissa. Oletus (travel) on matkailusivustojen ennallaan oleva teksti.
    */
   variant?: 'travel' | 'shop';
+  /**
+   * Travelpayouts-lentohaku kohtiin 3 ja 7 (vain laplandflights.fi, jonka haku latautuu vasta suostumuksesta).
+   * Sama prop kuin CookieContentissa. Oletus false. Teksti haravointimerkin alla (FLIGHT_SEARCH_PRIVACY).
+   */
+  flightSearch?: boolean;
 }
 
 const COPY: Record<Lang, {
@@ -94,19 +99,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Legal Basis for Processing (GDPR Art. 6)',
     s2aIntro: 'We rely on the following legal bases for each processing activity:',
     s2aItems: [
-      { strong: 'Consent (Art. 6(1)(a))', body: 'for analytics cookies (Google Analytics 4) and any non-essential cookies. You give consent via the cookie banner and can withdraw it at any time.' },
+      { strong: 'Consent (Art. 6(1)(a))', body: 'for analytics cookies (Google Analytics 4), GetYourGuide\'s partner script and any other non-essential cookies. You give consent via the cookie banner and can withdraw it at any time.' },
       { strong: 'Consent (Art. 6(1)(a))', body: 'for newsletter subscription. You give consent by submitting the signup form; you can withdraw at any time via the unsubscribe link.' },
-      { strong: 'Legitimate interest (Art. 6(1)(f))', body: 'for essential cookies (storing your consent preference) and for fraud-prevention / security logs. Our interest is operating a functioning website; this is balanced against your reasonable expectations.' },
+      { strong: 'Legitimate interest (Art. 6(1)(f))', body: 'for storing your consent choice in your browser\'s localStorage and for fraud-prevention / security logs. Our interest is operating a functioning website; this is balanced against your reasonable expectations.' },
       { strong: 'Legitimate interest (Art. 6(1)(f))', body: 'for affiliate-link click attribution. Our interest is being paid the commission we have earned editorially; the data collected is minimal (referral source) and you can decline by not clicking affiliate links.' },
       { strong: 'Legitimate interest (Art. 6(1)(f))', body: 'for cookieless visitor statistics with Umami (section 4). Our interest is knowing which pages and forms work; Umami stores nothing on your device and does not keep your IP address.' },
     ],
     s3Title: '3. Cookies',
     s3Intro: 'Our website uses cookies to improve your browsing experience and to collect pseudonymous analytics data. These include:',
     s3Items: [
-      { strong: 'Essential cookies', body: 'required for the website to function properly (consent preferences, session data).' },
+      { strong: 'Essential storage', body: "required for the website to function properly (your consent choice, kept in your browser's localStorage, not in a cookie). The site itself places no cookies before you accept them." },
       { strong: 'Analytics cookies', body: 'used by Google Analytics 4 to understand how visitors interact with our site. Collected pseudonymously.' },
+      { strong: 'GetYourGuide cookies', body: "placed by GetYourGuide's partner script, which loads only after you accept cookies. They count activity widget views and clicks and attribute bookings to the site." },
     ],
-    s3Tail: (cookieLink) => <>Analytics cookies are only placed after you give consent via the cookie banner. Umami visitor statistics (section 4) use no cookies. See our {cookieLink} for full details.</>,
+    s3Tail: (cookieLink) => <>Analytics and GetYourGuide cookies are only placed after you give consent via the cookie banner. Umami visitor statistics (section 4) use no cookies. See our {cookieLink} for full details.</>,
     s4Title: '4. Google Analytics and Umami',
     s4Body: 'We use Google Analytics 4 with Consent Mode v2. If you decline cookies, no analytics data is collected. If you accept, usage data (pages viewed, time on site, device type, and location at country and city level) is sent to Google. The data is pseudonymous: we do not send your name, email address or other directly identifying information, but the random cookie ID and your IP address are personal data under the GDPR.',
     s4Umami: 'We also use Umami Cloud to count page views, clicks on some of our links and buttons (for example to our sister sites or our app) and the steps of our forms and tools, for example when a newsletter form is shown, started or submitted. Umami uses no cookies and stores nothing on your device, so it runs whether or not you accept cookies. It records the page address and title, the site you came from, your browser, operating system, device type, screen size, language and approximate location (country, region and city). Your IP address is used only to work out that location and a pseudonymous visit identifier, and it is never stored. The identifier is a hash that changes at the start of every month. These events record only what was clicked or chosen and which step it was (for example the sister site you opened) and, if a form stops you, the name of the field (for example "email"), never what you typed.',
@@ -115,16 +121,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Data Retention',
     s6Body: 'Analytics data is retained for 14 months in Google Analytics and for up to 2 years in Umami. Newsletter emails are retained until you unsubscribe.',
     s7Title: '7. Third Parties',
-    s7Intro: 'We do not sell or share your personal data with third parties. However, the following third-party services process data as part of our operations:',
+    s7Intro: 'We do not sell your personal data. The following third-party services process data as part of our operations:',
     s7Items: [
       'Google Analytics: pseudonymous usage analytics',
       'Umami: cookieless visitor statistics and form step counts',
+      'GetYourGuide: activity widgets and booking attribution, only after you accept cookies',
       'Resend: newsletter email delivery',
       'Supabase: backend database services',
       'Cloudflare: hosting and CDN',
     ],
     s8Title: '8. Advertising',
-    s8Body1: (siteName) => `This site displays sponsored content from third-party advertisers. Sponsored content is clearly labeled with a "Sponsored" marker. Clicking sponsored links may redirect you to external websites with their own privacy policies. ${siteName} is not responsible for the data practices of external advertisers.`,
+    s8Body1: (siteName) => `This site shows advertisements and paid partner placements from third parties. They are clearly marked, for example with an "Ad" or "Partner" label. Clicking them may take you to external websites with their own privacy policies. ${siteName} is not responsible for the data practices of external advertisers.`,
     s8aTitle: '8a. International Data Transfers',
     s8aIntro: 'Several of the third-party services we use are based in or transfer data to countries outside the European Economic Area (EEA), most commonly the United States:',
     s8aItems: [
@@ -168,19 +175,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Käsittelyn oikeusperuste (GDPR 6 artikla)',
     s2aIntro: 'Käsittelemme henkilötietoja seuraavilla oikeusperusteilla:',
     s2aItems: [
-      { strong: 'Suostumus (6 art. 1 kohta a)', body: 'analytiikkaevästeitä (Google Analytics 4) ja muita ei-välttämättömiä evästeitä varten. Annat suostumuksen evästebannerista ja voit perua sen milloin tahansa.' },
+      { strong: 'Suostumus (6 art. 1 kohta a)', body: 'analytiikkaevästeitä (Google Analytics 4), GetYourGuiden kumppaniskriptiä ja muita ei-välttämättömiä evästeitä varten. Annat suostumuksen evästebannerista ja voit perua sen milloin tahansa.' },
       { strong: 'Suostumus (6 art. 1 kohta a)', body: 'uutiskirjeen tilaamista varten. Annat suostumuksen lähettämällä tilauslomakkeen ja voit perua sen milloin tahansa peruutuslinkin kautta.' },
-      { strong: 'Oikeutettu etu (6 art. 1 kohta f)', body: 'välttämättömien evästeiden (suostumusvalintasi tallentaminen) ja petostentorjunnan / lokien osalta. Oikeutettu etumme on toimivan verkkosivuston ylläpito, ja se on tasapainotettu suhteessa kohtuullisiin odotuksiisi.' },
+      { strong: 'Oikeutettu etu (6 art. 1 kohta f)', body: 'suostumusvalintasi tallentamisen selaimesi localStorage-tallenteeseen sekä petostentorjunnan / lokien osalta. Oikeutettu etumme on toimivan verkkosivuston ylläpito, ja se on tasapainotettu suhteessa kohtuullisiin odotuksiisi.' },
       { strong: 'Oikeutettu etu (6 art. 1 kohta f)', body: 'kumppanilinkkien klikkausten kohdentamiseen. Oikeutettu etumme on saada toimituksellisesti ansaitsemamme komissio; kerättävät tiedot ovat vähäisiä (viittaava sivusto) ja voit halutessasi olla klikkaamatta kumppanilinkkejä.' },
       { strong: 'Oikeutettu etu (6 art. 1 kohta f)', body: 'evästeettömiä kävijätilastoja varten (Umami, kohta 4). Oikeutettu etumme on tietää, mitkä sivut ja lomakkeet toimivat; Umami ei tallenna laitteellesi mitään eikä säilytä IP-osoitettasi.' },
     ],
     s3Title: '3. Evästeet',
     s3Intro: 'Sivustomme käyttää evästeitä parantaakseen selailukokemustasi ja kerätäkseen pseudonyymejä analytiikkatietoja. Käytämme seuraavia evästeitä:',
     s3Items: [
-      { strong: 'Välttämättömät evästeet', body: 'tarvitaan sivuston toiminnan kannalta (suostumusvalinta, istuntotiedot).' },
+      { strong: 'Välttämätön tallennus', body: 'tarvitaan sivuston toiminnan kannalta (suostumusvalintasi, joka tallennetaan selaimesi localStorage-tallenteeseen eikä evästeeseen). Sivusto ei itse aseta evästeitä ennen kuin hyväksyt ne.' },
       { strong: 'Analytiikkaevästeet', body: 'Google Analytics 4 käyttää näitä ymmärtääkseen, miten kävijät käyttävät sivustoa. Kerätään pseudonyymisti.' },
+      { strong: 'GetYourGuide-evästeet', body: 'GetYourGuiden kumppaniskripti asettaa ne vasta, kun olet hyväksynyt evästeet. Niiden avulla lasketaan aktiviteettiwidgettien näytöt ja klikkaukset ja kohdistetaan varaukset sivustolle.' },
     ],
-    s3Tail: (cookieLink) => <>Analytiikkaevästeet asetetaan vasta sen jälkeen, kun olet antanut suostumuksesi evästebannerista. Umamin kävijätilastot (kohta 4) eivät käytä evästeitä. Katso täydelliset tiedot {cookieLink}.</>,
+    s3Tail: (cookieLink) => <>Analytiikka- ja GetYourGuide-evästeet asetetaan vasta sen jälkeen, kun olet antanut suostumuksesi evästebannerista. Umamin kävijätilastot (kohta 4) eivät käytä evästeitä. Katso täydelliset tiedot {cookieLink}.</>,
     s4Title: '4. Google Analytics ja Umami',
     s4Body: 'Käytämme Google Analytics 4:ää Consent Mode v2 ‑tilassa. Jos hylkäät evästeet, analytiikkatietoa ei kerätä. Jos hyväksyt, käyttötietoja (katsotut sivut, kävijän viipymä, laitetyyppi sekä sijainti maan ja kaupungin tarkkuudella) lähetetään Googlelle. Tiedot ovat pseudonyymejä: emme lähetä nimeä, sähköpostiosoitetta tai muuta suoraan tunnistavaa tietoa, mutta evästeen satunnainen tunniste ja IP-osoite ovat tietosuoja-asetuksen tarkoittamaa henkilötietoa.',
     s4Umami: 'Käytämme lisäksi Umami Cloud -palvelua sivujen katselukertojen, joidenkin linkkiemme ja painikkeidemme klikkausten (esimerkiksi sisarsivustoillemme tai sovellukseemme) sekä lomakkeidemme ja työkalujemme vaiheiden laskemiseen, esimerkiksi kun uutiskirjelomake näytetään, sen täyttäminen aloitetaan tai se lähetetään. Umami ei käytä evästeitä eikä tallenna laitteellesi mitään, joten se toimii riippumatta siitä, hyväksytkö evästeet. Se tallentaa sivun osoitteen ja otsikon, sivuston, jolta tulit, selaimen, käyttöjärjestelmän, laitetyypin, näytön koon, kielen ja likimääräisen sijainnin (maa, alue ja kaupunki). IP-osoitettasi käytetään vain tämän sijainnin ja pseudonyymin käyntitunnisteen laskemiseen, eikä sitä tallenneta koskaan. Tunniste on tiiviste, joka vaihtuu jokaisen kuukauden alussa. Näihin tapahtumiin tallentuu vain se, mitä klikattiin tai valittiin ja mikä vaihe oli kyseessä (esimerkiksi sisarsivusto, jolle siirryit), ja jos lomake pysäyttää sinut, kentän nimi (esimerkiksi "email"), ei koskaan kirjoittamaasi tekstiä.',
@@ -189,16 +197,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Tietojen säilytys',
     s6Body: 'Analytiikkatietoja säilytetään Google Analyticsissä 14 kuukautta ja Umamissa enintään 2 vuotta. Uutiskirjeen sähköpostiosoitteet säilytetään, kunnes perut tilauksen.',
     s7Title: '7. Kolmannet osapuolet',
-    s7Intro: 'Emme myy tai jaa henkilötietojasi kolmansille osapuolille. Seuraavat palveluntarjoajat kuitenkin käsittelevät tietoja toimintamme yhteydessä:',
+    s7Intro: 'Emme myy henkilötietojasi. Seuraavat palveluntarjoajat käsittelevät tietoja toimintamme yhteydessä:',
     s7Items: [
       'Google Analytics: pseudonyymi käyttöanalytiikka',
       'Umami: evästeettömät kävijätilastot ja lomakkeiden vaiheiden laskenta',
+      'GetYourGuide: aktiviteettiwidgetit ja varausten kohdistus, vasta kun hyväksyt evästeet',
       'Resend: uutiskirjeiden lähetys',
       'Supabase: taustatietokantapalvelut',
       'Cloudflare: sivuston ylläpito ja CDN',
     ],
     s8Title: '8. Mainonta',
-    s8Body1: (siteName) => `Sivustolla näytetään kolmansien osapuolten sponsoroitua sisältöä. Sponsoroitu sisältö on merkitty selkeästi "Sponsoroitu"-tunnisteella. Sponsoroidun linkin klikkaaminen voi ohjata sinut ulkoiselle sivustolle, jolla on oma tietosuojakäytäntönsä. ${siteName} ei vastaa ulkoisten mainostajien tietosuojakäytännöistä.`,
+    s8Body1: (siteName) => `Sivustolla näytetään kolmansien osapuolten mainoksia ja maksettuja kumppanipaikkoja. Ne on merkitty selkeästi, esimerkiksi tunnisteella "Mainos" tai "Kumppani". Niiden klikkaaminen voi ohjata sinut ulkoiselle sivustolle, jolla on oma tietosuojakäytäntönsä. ${siteName} ei vastaa ulkoisten mainostajien tietosuojakäytännöistä.`,
     s8aTitle: '8a. Kansainväliset tiedonsiirrot',
     s8aIntro: 'Useat käyttämämme palveluntarjoajat sijaitsevat ETA-alueen ulkopuolella tai siirtävät tietoja sen ulkopuolelle, useimmiten Yhdysvaltoihin:',
     s8aItems: [
@@ -242,19 +251,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Rechtsgrundlage der Verarbeitung (Art. 6 DSGVO)',
     s2aIntro: 'Wir stützen uns auf folgende Rechtsgrundlagen:',
     s2aItems: [
-      { strong: 'Einwilligung (Art. 6 Abs. 1 lit. a)', body: 'für Analyse-Cookies (Google Analytics 4) und sonstige nicht erforderliche Cookies. Sie erteilen die Einwilligung über das Cookie-Banner und können sie jederzeit widerrufen.' },
+      { strong: 'Einwilligung (Art. 6 Abs. 1 lit. a)', body: 'für Analyse-Cookies (Google Analytics 4), das Partnerskript von GetYourGuide und sonstige nicht erforderliche Cookies. Sie erteilen die Einwilligung über das Cookie-Banner und können sie jederzeit widerrufen.' },
       { strong: 'Einwilligung (Art. 6 Abs. 1 lit. a)', body: 'für das Newsletter-Abonnement. Sie erteilen die Einwilligung durch das Absenden des Anmeldeformulars und können sie jederzeit über den Abmeldelink widerrufen.' },
-      { strong: 'Berechtigtes Interesse (Art. 6 Abs. 1 lit. f)', body: 'für essenzielle Cookies (Speicherung Ihrer Einwilligungswahl) sowie Betrugs- und Sicherheitsprotokolle. Unser Interesse ist der Betrieb einer funktionsfähigen Website; dieses Interesse wird gegen Ihre vernünftigen Erwartungen abgewogen.' },
+      { strong: 'Berechtigtes Interesse (Art. 6 Abs. 1 lit. f)', body: 'für die Speicherung Ihrer Einwilligungswahl im localStorage Ihres Browsers sowie für Betrugs- und Sicherheitsprotokolle. Unser Interesse ist der Betrieb einer funktionsfähigen Website; dieses Interesse wird gegen Ihre vernünftigen Erwartungen abgewogen.' },
       { strong: 'Berechtigtes Interesse (Art. 6 Abs. 1 lit. f)', body: 'für die Zuordnung von Klicks auf Partnerlinks. Unser Interesse besteht darin, die redaktionell verdiente Provision zu erhalten; die erhobenen Daten sind minimal (Referrer) und Sie können auf das Anklicken der Partnerlinks verzichten.' },
       { strong: 'Berechtigtes Interesse (Art. 6 Abs. 1 lit. f)', body: 'für cookielose Besucherstatistiken mit Umami (Abschnitt 4). Unser Interesse ist zu wissen, welche Seiten und Formulare funktionieren; Umami speichert nichts auf Ihrem Gerät und bewahrt Ihre IP-Adresse nicht auf.' },
     ],
     s3Title: '3. Cookies',
     s3Intro: 'Unsere Website verwendet Cookies, um Ihr Surferlebnis zu verbessern und pseudonyme Analysedaten zu erheben. Dazu zählen:',
     s3Items: [
-      { strong: 'Essenzielle Cookies', body: 'für die Funktion der Website erforderlich (Einwilligungswahl, Sitzungsdaten).' },
+      { strong: 'Essenzielle Speicherung', body: 'für die Funktion der Website erforderlich (Ihre Einwilligungswahl, die im localStorage Ihres Browsers gespeichert wird, nicht in einem Cookie). Die Website selbst setzt keine Cookies, bevor Sie sie akzeptieren.' },
       { strong: 'Analyse-Cookies', body: 'werden von Google Analytics 4 verwendet, um zu verstehen, wie Besucher die Website nutzen. Pseudonyme Erfassung.' },
+      { strong: 'GetYourGuide-Cookies', body: 'werden vom Partnerskript von GetYourGuide gesetzt, das erst geladen wird, wenn Sie Cookies akzeptieren. Mit ihnen werden Aufrufe und Klicks der Aktivitäten-Widgets gezählt und Buchungen der Website zugeordnet.' },
     ],
-    s3Tail: (cookieLink) => <>Analyse-Cookies werden erst nach Ihrer Einwilligung über das Cookie-Banner gesetzt. Die Besucherstatistik von Umami (Abschnitt 4) verwendet keine Cookies. Vollständige Angaben finden Sie in {cookieLink}.</>,
+    s3Tail: (cookieLink) => <>Analyse- und GetYourGuide-Cookies werden erst nach Ihrer Einwilligung über das Cookie-Banner gesetzt. Die Besucherstatistik von Umami (Abschnitt 4) verwendet keine Cookies. Vollständige Angaben finden Sie in {cookieLink}.</>,
     s4Title: '4. Google Analytics und Umami',
     s4Body: 'Wir verwenden Google Analytics 4 mit Consent Mode v2. Wenn Sie Cookies ablehnen, werden keine Analysedaten erhoben. Wenn Sie zustimmen, werden Nutzungsdaten (aufgerufene Seiten, Verweildauer, Gerätetyp und Standort auf Land- und Stadtebene) an Google gesendet. Die Daten sind pseudonym: Wir übermitteln weder Namen noch E-Mail-Adresse oder andere direkt identifizierende Angaben, aber die zufällige Cookie-Kennung und Ihre IP-Adresse sind personenbezogene Daten im Sinne der DSGVO.',
     s4Umami: 'Zusätzlich nutzen wir Umami Cloud, um Seitenaufrufe, Klicks auf einige unserer Links und Schaltflächen (zum Beispiel zu unseren Schwesterseiten oder unserer App) und die Schritte unserer Formulare und Tools zu zählen, etwa wenn ein Newsletter-Formular angezeigt, begonnen oder abgeschickt wird. Umami verwendet keine Cookies und speichert nichts auf Ihrem Gerät; es läuft daher unabhängig davon, ob Sie Cookies akzeptieren. Erfasst werden Adresse und Titel der Seite, die Website, von der Sie kommen, Ihr Browser, Betriebssystem, Gerätetyp, Bildschirmgröße, Sprache und ungefährer Standort (Land, Region und Stadt). Ihre IP-Adresse wird nur verwendet, um diesen Standort und eine pseudonyme Besuchskennung zu berechnen, und nie gespeichert. Die Kennung ist ein Hashwert, der sich zu Beginn jedes Monats ändert. Diese Ereignisse erfassen nur, was angeklickt oder ausgewählt wurde und um welchen Schritt es sich handelt (zum Beispiel die Schwesterseite, die Sie geöffnet haben), und, falls ein Formular Sie aufhält, den Namen des Feldes (zum Beispiel „email“), nie Ihre Eingaben.',
@@ -263,16 +273,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Speicherdauer',
     s6Body: 'Analysedaten werden in Google Analytics 14 Monate und in Umami höchstens 2 Jahre gespeichert. Newsletter-E-Mail-Adressen werden bis zur Abmeldung gespeichert.',
     s7Title: '7. Dritte',
-    s7Intro: 'Wir verkaufen oder geben Ihre personenbezogenen Daten nicht an Dritte weiter. Folgende Dienste verarbeiten im Rahmen unseres Betriebs Daten:',
+    s7Intro: 'Wir verkaufen Ihre personenbezogenen Daten nicht. Folgende Dienste verarbeiten im Rahmen unseres Betriebs Daten:',
     s7Items: [
       'Google Analytics: pseudonyme Nutzungsanalyse',
       'Umami: cookielose Besucherstatistik und Zählung von Formularschritten',
+      'GetYourGuide: Aktivitäten-Widgets und Zuordnung von Buchungen, erst wenn Sie Cookies akzeptieren',
       'Resend: Newsletter-Versand',
       'Supabase: Backend- und Datenbankdienste',
       'Cloudflare: Hosting und CDN',
     ],
     s8Title: '8. Werbung',
-    s8Body1: (siteName) => `Diese Website zeigt gesponserte Inhalte Dritter. Gesponserte Inhalte sind eindeutig mit „Gesponsert“ gekennzeichnet. Beim Klicken auf gesponserte Links werden Sie ggf. auf externe Websites mit eigenen Datenschutzrichtlinien weitergeleitet. ${siteName} ist nicht für die Datenpraxis externer Werbetreibender verantwortlich.`,
+    s8Body1: (siteName) => `Diese Website zeigt Anzeigen und bezahlte Partnerplatzierungen Dritter. Diese sind eindeutig gekennzeichnet, etwa mit „Anzeige“ oder „Partner“. Wenn Sie darauf klicken, werden Sie ggf. auf externe Websites mit eigenen Datenschutzrichtlinien weitergeleitet. ${siteName} ist nicht für die Datenpraxis externer Werbetreibender verantwortlich.`,
     s8aTitle: '8a. Internationale Datenübermittlungen',
     s8aIntro: 'Einige der von uns genutzten Dienste haben ihren Sitz außerhalb des Europäischen Wirtschaftsraums (EWR) oder übermitteln Daten dorthin, meist in die USA:',
     s8aItems: [
@@ -316,19 +327,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. 処理の法的根拠（GDPR 第6条）',
     s2aIntro: '各処理活動について、以下の法的根拠に基づいて処理しています：',
     s2aItems: [
-      { strong: '同意（第6条第1項(a)）', body: '解析クッキー（Google Analytics 4）および非必須クッキーについて。クッキーバナーで同意していただき、いつでも撤回できます。' },
+      { strong: '同意（第6条第1項(a)）', body: '解析クッキー（Google Analytics 4）、GetYourGuide のパートナースクリプト、およびその他の非必須クッキーについて。クッキーバナーで同意していただき、いつでも撤回できます。' },
       { strong: '同意（第6条第1項(a)）', body: 'ニュースレターの登録について。登録フォームの送信で同意となり、配信停止リンクからいつでも撤回できます。' },
-      { strong: '正当な利益（第6条第1項(f)）', body: '必須クッキー（同意設定の保存）および不正防止・セキュリティログについて。当方の利益は機能するウェブサイトの運営であり、お客様の合理的な期待とバランスが取れています。' },
+      { strong: '正当な利益（第6条第1項(f)）', body: 'ブラウザの localStorage への同意設定の保存、および不正防止・セキュリティログについて。当方の利益は機能するウェブサイトの運営であり、お客様の合理的な期待とバランスが取れています。' },
       { strong: '正当な利益（第6条第1項(f)）', body: 'アフィリエイトリンクのクリック帰属について。当方の利益は編集上獲得した紹介料を受け取ることです。収集されるデータは最小限（参照元）で、アフィリエイトリンクをクリックしないことで回避できます。' },
       { strong: '正当な利益（第6条第1項(f)）', body: 'Umami によるクッキーを使用しない訪問者統計について（第4項）。当方の利益は、どのページやフォームが機能しているかを知ることです。Umami はお客様の端末に何も保存せず、IP アドレスも保持しません。' },
     ],
     s3Title: '3. クッキー',
     s3Intro: 'ブラウジング体験の向上と仮名化されたアクセス解析のため、当サイトではクッキーを使用しています。以下が含まれます：',
     s3Items: [
-      { strong: '必須クッキー', body: 'ウェブサイトの正常な動作に必要（同意設定、セッションデータ）。' },
+      { strong: '必須の保存データ', body: 'ウェブサイトの正常な動作に必要（クッキーではなくブラウザの localStorage に保存される同意設定）。本サイト自体は、同意をいただくまでクッキーを設定しません。' },
       { strong: '解析クッキー', body: 'Google Analytics 4 がサイトの利用状況を把握するために使用。仮名化された形で収集。' },
+      { strong: 'GetYourGuide のクッキー', body: 'GetYourGuide のパートナースクリプトが設定します。このスクリプトはクッキーに同意した後にのみ読み込まれます。アクティビティのウィジェットの表示回数とクリック数を数え、予約をサイトに帰属させます。' },
     ],
-    s3Tail: (cookieLink) => <>解析クッキーは、クッキーバナーで同意をいただいた後にのみ設定されます。Umami の訪問者統計（第4項）はクッキーを使用しません。詳細は{cookieLink}をご覧ください。</>,
+    s3Tail: (cookieLink) => <>解析クッキーと GetYourGuide のクッキーは、クッキーバナーで同意をいただいた後にのみ設定されます。Umami の訪問者統計（第4項）はクッキーを使用しません。詳細は{cookieLink}をご覧ください。</>,
     s4Title: '4. Google Analytics と Umami',
     s4Body: '当サイトでは Consent Mode v2 を有効にした Google Analytics 4 を使用しています。クッキーを拒否した場合、アナリティクスデータは収集されません。同意された場合、閲覧ページ、滞在時間、デバイスの種類、国および都市レベルの所在地といった利用データが Google に送信されます。これらは仮名化されたデータです：氏名やメールアドレスなど直接個人を特定できる情報は送信しませんが、クッキーのランダムな識別子と IP アドレスは GDPR 上の個人データに当たります。',
     s4Umami: 'また、Umami Cloud を使って、ページの閲覧数、一部のリンクやボタンのクリック（姉妹サイトやアプリへのリンクなど）、フォームやツールの各段階（ニュースレターのフォームが表示された、入力が始まった、送信された など）を数えています。Umami はクッキーを使用せず、お客様の端末に何も保存しないため、クッキーに同意されたかどうかにかかわらず動作します。記録されるのは、ページのアドレスとタイトル、参照元のサイト、ブラウザ、OS、端末の種類、画面サイズ、言語、おおよその所在地（国・地域・都市）です。IP アドレスはこの所在地と仮名化された訪問識別子を算出するためだけに使われ、保存されることはありません。識別子はハッシュ値で、毎月初めに変わります。これらのイベントに記録されるのは、何がクリック・選択されたか、どの段階か（例：開いた姉妹サイト）と、フォームで先に進めなかった場合の項目名（例：「email」）だけで、入力した内容が記録されることはありません。',
@@ -337,16 +349,17 @@ const COPY: Record<Lang, {
     s6Title: '6. データの保管期間',
     s6Body: '解析データは Google Analytics 内で14ヶ月間、Umami 内で最長2年間保管されます。ニュースレターのメールアドレスは、配信停止までの間保管されます。',
     s7Title: '7. 第三者',
-    s7Intro: '個人情報を第三者に販売・共有することはありません。ただし、運営の一環として以下の第三者サービスがデータを処理しています：',
+    s7Intro: '個人情報を販売することはありません。運営の一環として、以下の第三者サービスがデータを処理しています：',
     s7Items: [
       'Google Analytics：仮名化された利用分析',
       'Umami：クッキーを使用しない訪問者統計とフォームの段階の集計',
+      'GetYourGuide：アクティビティのウィジェットと予約の帰属（クッキーへの同意後のみ）',
       'Resend：ニュースレターの配信',
       'Supabase：バックエンド・データベースサービス',
       'Cloudflare：ホスティングと CDN',
     ],
     s8Title: '8. 広告',
-    s8Body1: (siteName) => `本サイトには第三者によるスポンサーコンテンツが表示されることがあります。スポンサーコンテンツは「PR」マークで明確に識別されます。スポンサーリンクをクリックすると、独自のプライバシーポリシーを持つ外部サイトに移動する場合があります。${siteName} は外部広告主のデータ取り扱いについて責任を負いません。`,
+    s8Body1: (siteName) => `本サイトには第三者の広告と有料のパートナー掲載が表示されます。これらには「広告」などのラベルを付けて明確に区別しています。クリックすると、独自のプライバシーポリシーを持つ外部サイトに移動する場合があります。${siteName} は外部広告主のデータ取り扱いについて責任を負いません。`,
     s8aTitle: '8a. 国際的なデータ移転',
     s8aIntro: '当方が利用している第三者サービスの一部は、欧州経済領域（EEA）外、特に米国を拠点としているか、データを移転しています：',
     s8aItems: [
@@ -390,19 +403,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Base jurídica del tratamiento (Art. 6 RGPD)',
     s2aIntro: 'Nos basamos en las siguientes bases jurídicas para cada actividad de tratamiento:',
     s2aItems: [
-      { strong: 'Consentimiento (Art. 6(1)(a))', body: 'para las cookies analíticas (Google Analytics 4) y demás cookies no esenciales. Usted otorga su consentimiento a través del banner de cookies y puede retirarlo en cualquier momento.' },
+      { strong: 'Consentimiento (Art. 6(1)(a))', body: 'para las cookies analíticas (Google Analytics 4), el script de afiliado de GetYourGuide y demás cookies no esenciales. Usted otorga su consentimiento a través del banner de cookies y puede retirarlo en cualquier momento.' },
       { strong: 'Consentimiento (Art. 6(1)(a))', body: 'para la suscripción al boletín. Usted otorga su consentimiento al enviar el formulario de alta y puede retirarlo en cualquier momento mediante el enlace para darse de baja.' },
-      { strong: 'Interés legítimo (Art. 6(1)(f))', body: 'para las cookies esenciales (almacenamiento de su preferencia de consentimiento) y los registros de prevención de fraude y seguridad. Nuestro interés es operar un sitio web funcional; este interés se pondera frente a sus expectativas razonables.' },
+      { strong: 'Interés legítimo (Art. 6(1)(f))', body: 'para guardar su elección de consentimiento en el localStorage de su navegador y para los registros de prevención de fraude y seguridad. Nuestro interés es operar un sitio web funcional; este interés se pondera frente a sus expectativas razonables.' },
       { strong: 'Interés legítimo (Art. 6(1)(f))', body: 'para la atribución de clics en enlaces de afiliados. Nuestro interés es cobrar la comisión editorial que hemos ganado; los datos recogidos son mínimos (fuente de referencia) y usted puede optar por no hacer clic en los enlaces de afiliados.' },
       { strong: 'Interés legítimo (Art. 6(1)(f))', body: 'para las estadísticas de visitas sin cookies con Umami (apartado 4). Nuestro interés es saber qué páginas y formularios funcionan; Umami no guarda nada en su dispositivo ni conserva su dirección IP.' },
     ],
     s3Title: '3. Cookies',
     s3Intro: 'Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación y recopilar datos analíticos seudonimizados. Estas incluyen:',
     s3Items: [
-      { strong: 'Cookies esenciales', body: 'necesarias para el funcionamiento correcto del sitio (preferencias de consentimiento, datos de sesión).' },
+      { strong: 'Almacenamiento esencial', body: 'necesario para el funcionamiento correcto del sitio (su elección de consentimiento, guardada en el localStorage de su navegador, no en una cookie). El propio sitio no establece ninguna cookie antes de que usted las acepte.' },
       { strong: 'Cookies analíticas', body: 'utilizadas por Google Analytics 4 para entender cómo interactúan los visitantes con nuestro sitio. Se recogen de forma seudonimizada.' },
+      { strong: 'Cookies de GetYourGuide', body: 'las establece el script de afiliado de GetYourGuide, que solo se carga cuando usted acepta las cookies. Cuentan las visualizaciones y los clics de los widgets de actividades y atribuyen las reservas al sitio.' },
     ],
-    s3Tail: (cookieLink) => <>Las cookies analíticas solo se establecen tras su consentimiento mediante el banner de cookies. Las estadísticas de visitas de Umami (apartado 4) no utilizan cookies. Consulte nuestra {cookieLink} para más detalles.</>,
+    s3Tail: (cookieLink) => <>Las cookies analíticas y las de GetYourGuide solo se establecen tras su consentimiento mediante el banner de cookies. Las estadísticas de visitas de Umami (apartado 4) no utilizan cookies. Consulte nuestra {cookieLink} para más detalles.</>,
     s4Title: '4. Google Analytics y Umami',
     s4Body: 'Utilizamos Google Analytics 4 con Consent Mode v2. Si rechaza las cookies, no se recoge ningún dato analítico. Si acepta, se envían a Google datos de uso (páginas vistas, tiempo en el sitio, tipo de dispositivo y ubicación a nivel de país y ciudad). Los datos son seudonimizados: no enviamos su nombre, dirección de correo electrónico ni otros datos que le identifiquen directamente, pero el identificador aleatorio de la cookie y su dirección IP son datos personales conforme al RGPD.',
     s4Umami: 'Además, utilizamos Umami Cloud para contar las visitas a páginas, los clics en algunos de nuestros enlaces y botones (por ejemplo, hacia nuestros sitios hermanos o nuestra app) y los pasos de nuestros formularios y herramientas, por ejemplo cuando se muestra, se empieza a rellenar o se envía un formulario del boletín. Umami no utiliza cookies ni guarda nada en su dispositivo, por lo que funciona tanto si acepta las cookies como si no. Registra la dirección y el título de la página, el sitio del que procede, su navegador, sistema operativo, tipo de dispositivo, tamaño de pantalla, idioma y ubicación aproximada (país, región y ciudad). Su dirección IP solo se utiliza para calcular esa ubicación y un identificador seudonimizado de la visita, y nunca se almacena. El identificador es un hash que cambia al comienzo de cada mes. Estos eventos registran solo en qué se hizo clic o qué se eligió y de qué paso se trata (por ejemplo, el sitio hermano que abrió) y, si un formulario le impide continuar, el nombre del campo (por ejemplo, «email»), nunca lo que usted ha escrito.',
@@ -411,16 +425,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Conservación de los datos',
     s6Body: 'Los datos analíticos se conservan durante 14 meses en Google Analytics y hasta 2 años en Umami. Las direcciones de correo del boletín se conservan hasta que usted se da de baja.',
     s7Title: '7. Terceros',
-    s7Intro: 'No vendemos ni compartimos sus datos personales con terceros. No obstante, los siguientes servicios externos procesan datos como parte de nuestras operaciones:',
+    s7Intro: 'No vendemos sus datos personales. Los siguientes servicios externos procesan datos como parte de nuestras operaciones:',
     s7Items: [
       'Google Analytics: analítica de uso seudonimizada',
       'Umami: estadísticas de visitas sin cookies y recuento de los pasos de los formularios',
+      'GetYourGuide: widgets de actividades y atribución de reservas, solo si usted acepta las cookies',
       'Resend: envío de boletines por correo electrónico',
       'Supabase: servicios de base de datos en el backend',
       'Cloudflare: alojamiento y CDN',
     ],
     s8Title: '8. Publicidad',
-    s8Body1: (siteName) => `Este sitio muestra contenido patrocinado de terceros anunciantes. El contenido patrocinado está claramente identificado con la etiqueta "Patrocinado". Al hacer clic en enlaces patrocinados puede ser redirigido a sitios externos con sus propias políticas de privacidad. ${siteName} no es responsable de las prácticas de tratamiento de datos de los anunciantes externos.`,
+    s8Body1: (siteName) => `Este sitio muestra anuncios de terceros y espacios pagados de colaboradores. Están claramente identificados, por ejemplo con la etiqueta "Anuncio" o "Colaborador". Al hacer clic en ellos puede ser redirigido a sitios externos con sus propias políticas de privacidad. ${siteName} no es responsable de las prácticas de tratamiento de datos de los anunciantes externos.`,
     s8aTitle: '8a. Transferencias internacionales de datos',
     s8aIntro: 'Varios de los servicios externos que utilizamos tienen su sede o transfieren datos a países fuera del Espacio Económico Europeo (EEE), normalmente Estados Unidos:',
     s8aItems: [
@@ -461,22 +476,23 @@ const COPY: Record<Lang, {
     s1Body: () => <>LaPeso Oy (registro 3309136-7), Finlândia. E-mail: <a href="mailto:info@laplandvibes.com" className="text-vibe-pink">info@laplandvibes.com</a></>,
     s2Title: '2. Dados que coletamos',
     s2Body: 'Coletamos dados analíticos pseudonimizados por meio do Google Analytics 4 e estatísticas de visitas sem cookies por meio do Umami. Se você se inscrever em nosso boletim, armazenamos seu endereço de e-mail com segurança. Não coletamos nenhuma outra informação pessoal identificável, a menos que você entre em contato conosco diretamente.',
-    s2aTitle: '2a. Base legal para o tratamento (Art. 6º do GDPR / LGPD)',
+    s2aTitle: '2a. Base legal para o tratamento (Art. 6º do GDPR / Art. 7º da LGPD)',
     s2aIntro: 'Apoiamo-nos nas seguintes bases legais para cada atividade de tratamento (GDPR europeu e LGPD brasileira):',
     s2aItems: [
-      { strong: 'Consentimento (Art. 6(1)(a) GDPR / Art. 7º, I LGPD)', body: 'para cookies analíticos (Google Analytics 4) e demais cookies não essenciais. Você concede o consentimento pelo banner de cookies e pode retirá-lo a qualquer momento.' },
+      { strong: 'Consentimento (Art. 6(1)(a) GDPR / Art. 7º, I LGPD)', body: 'para cookies analíticos (Google Analytics 4), o script de parceiro do GetYourGuide e demais cookies não essenciais. Você concede o consentimento pelo banner de cookies e pode retirá-lo a qualquer momento.' },
       { strong: 'Consentimento (Art. 6(1)(a) GDPR / Art. 7º, I LGPD)', body: 'para a inscrição no boletim. Você concede o consentimento ao enviar o formulário e pode retirá-lo a qualquer momento pelo link de cancelamento.' },
-      { strong: 'Interesse legítimo (Art. 6(1)(f) GDPR / Art. 7º, IX LGPD)', body: 'para cookies essenciais (armazenamento da sua preferência de consentimento) e registros de prevenção a fraudes e segurança. Nosso interesse é manter um site funcional; esse interesse é ponderado em relação às suas expectativas razoáveis.' },
+      { strong: 'Interesse legítimo (Art. 6(1)(f) GDPR / Art. 7º, IX LGPD)', body: 'para salvar sua escolha de consentimento no localStorage do seu navegador e para registros de prevenção a fraudes e segurança. Nosso interesse é manter um site funcional; esse interesse é ponderado em relação às suas expectativas razoáveis.' },
       { strong: 'Interesse legítimo (Art. 6(1)(f) GDPR / Art. 7º, IX LGPD)', body: 'para atribuição de cliques em links de afiliados. Nosso interesse é receber a comissão editorial conquistada; os dados coletados são mínimos (origem) e você pode optar por não clicar nos links de afiliados.' },
       { strong: 'Interesse legítimo (Art. 6(1)(f) GDPR / Art. 7º, IX LGPD)', body: 'para as estatísticas de visitas sem cookies com o Umami (seção 4). Nosso interesse é saber quais páginas e formulários funcionam; o Umami não armazena nada no seu dispositivo nem guarda o seu endereço IP.' },
     ],
     s3Title: '3. Cookies',
     s3Intro: 'Nosso site usa cookies para melhorar sua experiência de navegação e coletar dados analíticos pseudonimizados. Incluem:',
     s3Items: [
-      { strong: 'Cookies essenciais', body: 'necessários para o funcionamento adequado do site (preferências de consentimento, dados de sessão).' },
+      { strong: 'Armazenamento essencial', body: 'necessário para o funcionamento adequado do site (sua escolha de consentimento, salva no localStorage do seu navegador, não em um cookie). O próprio site não define nenhum cookie antes de você aceitá-los.' },
       { strong: 'Cookies analíticos', body: 'usados pelo Google Analytics 4 para entender como os visitantes interagem com nosso site. Coletados de forma pseudonimizada.' },
+      { strong: 'Cookies do GetYourGuide', body: 'definidos pelo script de parceiro do GetYourGuide, que só carrega depois que você aceita os cookies. Contam as exibições e os cliques dos widgets de atividades e atribuem as reservas ao site.' },
     ],
-    s3Tail: (cookieLink) => <>Os cookies analíticos só são definidos após você consentir pelo banner. As estatísticas de visitas do Umami (seção 4) não usam cookies. Veja nossa {cookieLink} para mais detalhes.</>,
+    s3Tail: (cookieLink) => <>Os cookies analíticos e os do GetYourGuide só são definidos após você consentir pelo banner. As estatísticas de visitas do Umami (seção 4) não usam cookies. Veja nossa {cookieLink} para mais detalhes.</>,
     s4Title: '4. Google Analytics e Umami',
     s4Body: 'Usamos o Google Analytics 4 com o Consent Mode v2. Se você recusar os cookies, nenhum dado analítico é coletado. Se aceitar, dados de uso (páginas visitadas, tempo no site, tipo de dispositivo e localização a nível de país e cidade) são enviados ao Google. Os dados são pseudonimizados: não enviamos seu nome, endereço de e-mail nem outros dados que o identifiquem diretamente, mas o identificador aleatório do cookie e o seu endereço IP são dados pessoais segundo o GDPR.',
     s4Umami: 'Também usamos o Umami Cloud para contar as visualizações de página, os cliques em alguns dos nossos links e botões (por exemplo, para os nossos sites irmãos ou o nosso app) e as etapas dos nossos formulários e ferramentas, por exemplo quando um formulário do boletim é exibido, começa a ser preenchido ou é enviado. O Umami não usa cookies nem armazena nada no seu dispositivo, por isso funciona quer você aceite os cookies, quer não. Ele registra o endereço e o título da página, o site de onde você veio, seu navegador, sistema operacional, tipo de dispositivo, tamanho da tela, idioma e localização aproximada (país, região e cidade). Seu endereço IP é usado apenas para calcular essa localização e um identificador pseudonimizado da visita, e nunca é armazenado. O identificador é um hash que muda no início de cada mês. Esses eventos registram apenas o que foi clicado ou escolhido e a etapa (por exemplo, o site irmão que você abriu) e, se um formulário impedir você de continuar, o nome do campo (por exemplo, "email"), nunca o que você digitou.',
@@ -485,16 +501,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Retenção de dados',
     s6Body: 'Os dados analíticos são retidos por 14 meses no Google Analytics e por até 2 anos no Umami. Os e-mails do boletim ficam armazenados até você cancelar a inscrição.',
     s7Title: '7. Terceiros',
-    s7Intro: 'Não vendemos nem compartilhamos seus dados pessoais com terceiros. Contudo, os seguintes serviços externos processam dados como parte de nossas operações:',
+    s7Intro: 'Não vendemos seus dados pessoais. Os seguintes serviços externos processam dados como parte de nossas operações:',
     s7Items: [
       'Google Analytics: analítica de uso pseudonimizada',
       'Umami: estatísticas de visitas sem cookies e contagem das etapas dos formulários',
+      'GetYourGuide: widgets de atividades e atribuição de reservas, só depois que você aceita os cookies',
       'Resend: envio de boletins por e-mail',
       'Supabase: serviços de banco de dados no backend',
       'Cloudflare: hospedagem e CDN',
     ],
     s8Title: '8. Publicidade',
-    s8Body1: (siteName) => `Este site exibe conteúdo patrocinado de anunciantes terceiros. O conteúdo patrocinado é claramente identificado com a marcação "Patrocinado". Clicar em links patrocinados pode redirecioná-lo a sites externos com suas próprias políticas de privacidade. O ${siteName} não é responsável pelas práticas de dados de anunciantes externos.`,
+    s8Body1: (siteName) => `Este site exibe anúncios de terceiros e espaços pagos de parceiros. Eles são claramente identificados, por exemplo com a marcação "Anúncio", "Publicidade" ou "Parceiro". Clicar neles pode redirecioná-lo a sites externos com suas próprias políticas de privacidade. O ${siteName} não é responsável pelas práticas de dados de anunciantes externos.`,
     s8aTitle: '8a. Transferências internacionais de dados',
     s8aIntro: 'Vários dos serviços externos que utilizamos estão sediados ou transferem dados para países fora do Espaço Econômico Europeu (EEE), mais comumente os Estados Unidos:',
     s8aItems: [
@@ -515,14 +532,14 @@ const COPY: Record<Lang, {
       { strong: 'Direito à limitação do tratamento (Art. 18 GDPR)', body: 'solicitar a pausa do tratamento enquanto uma questão é resolvida.' },
       { strong: 'Direito à portabilidade dos dados (Art. 20 GDPR / Art. 18, V LGPD)', body: 'receber seus dados em formato estruturado e legível por máquina.' },
       { strong: 'Direito de oposição (Art. 21 GDPR)', body: 'opor-se ao tratamento baseado em interesse legítimo, inclusive marketing direto.' },
-      { strong: 'Direito de retirar o consentimento (Art. 8º, §5º LGPD)', body: 'a qualquer momento, com efeito a partir da retirada.' },
-      { strong: 'Direito de apresentar reclamação (Art. 77 GDPR / Art. 18, IV LGPD)', body: 'à Autoridade Finlandesa de Proteção de Dados (Tietosuojavaltuutettu) em tietosuoja.fi, à autoridade do seu país de residência habitual na UE, ou à ANPD no Brasil (anpd.gov.br).' },
+      { strong: 'Direito de retirar o consentimento (Art. 8º, § 5º LGPD)', body: 'a qualquer momento, com efeito a partir da retirada.' },
+      { strong: 'Direito de apresentar reclamação (Art. 77 GDPR / Art. 18, § 1º LGPD)', body: 'à Autoridade Finlandesa de Proteção de Dados (Tietosuojavaltuutettu) em tietosuoja.fi, à autoridade do seu país de residência habitual na UE, ou à ANPD no Brasil (anpd.gov.br).' },
     ],
     s9Tail: (email) => <>Para exercer qualquer um desses direitos, entre em contato em {email}. Responderemos no prazo de um mês.</>,
     s10Title: '10. Decisões automatizadas',
     s10Body: 'Não realizamos decisões automatizadas, criação de perfis nem qualquer outro tratamento que produza efeitos jurídicos ou de relevância similar sobre você, nos termos do Art. 22 do GDPR e do Art. 20 da LGPD.',
     s11Title: '11. Crianças',
-    s11Body: 'Este site e nosso boletim são destinados a adultos. Não coletamos intencionalmente dados de crianças menores de 13 anos (idade mínima para serviços digitais segundo a lei finlandesa, o GDPR e a LGPD). Se você acredita que uma criança nos forneceu dados pessoais, entre em contato e os excluiremos.',
+    s11Body: 'Este site e nosso boletim são destinados a adultos. Não coletamos intencionalmente dados de crianças menores de 13 anos (idade mínima para serviços digitais segundo a lei finlandesa e o GDPR). Se você acredita que uma criança nos forneceu dados pessoais, entre em contato e os excluiremos.',
     s12Title: '12. Alterações nesta política',
     s12Body: 'Podemos atualizar esta Política de Privacidade periodicamente. A data de "Última atualização" no topo reflete a revisão mais recente. Mudanças relevantes serão sinalizadas na página inicial por pelo menos 14 dias.',
     backToHome: '← Voltar para a página inicial',
@@ -538,19 +555,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. 处理的法律依据（通用数据保护条例第6条）',
     s2aIntro: '我们针对每一项处理活动依据以下法律依据进行处理：',
     s2aItems: [
-      { strong: '同意（第6(1)(a)条）', body: '用于分析 cookie（Google Analytics 4）及其他非必要 cookie。您通过 cookie 横幅给予同意，并可随时撤回。' },
+      { strong: '同意（第6(1)(a)条）', body: '用于分析 cookie（Google Analytics 4）、GetYourGuide 合作伙伴脚本及其他非必要 cookie。您通过 cookie 横幅给予同意，并可随时撤回。' },
       { strong: '同意（第6(1)(a)条）', body: '用于电子简报订阅。您通过提交订阅表单给予同意，可随时通过取消订阅链接撤回。' },
-      { strong: '合法利益（第6(1)(f)条）', body: '用于必要 cookie（存储您的同意偏好）以及防欺诈和安全日志。我们的利益是运营一个可正常使用的网站，并已与您的合理期望相平衡。' },
+      { strong: '合法利益（第6(1)(f)条）', body: '用于将您的同意选择保存在浏览器的 localStorage 中，以及用于防欺诈和安全日志。我们的利益是运营一个可正常使用的网站，并已与您的合理期望相平衡。' },
       { strong: '合法利益（第6(1)(f)条）', body: '用于联盟链接点击归因。我们的利益是获得编辑工作所应得的佣金；收集的数据极少（来源），您也可以选择不点击联盟链接。' },
       { strong: '合法利益（第6(1)(f)条）', body: '用于通过 Umami 进行不使用 cookie 的访客统计（第4节）。我们的利益在于了解哪些页面和表单有效；Umami 不会在您的设备上存储任何内容，也不会保留您的 IP 地址。' },
     ],
     s3Title: '3. Cookie',
     s3Intro: '我们的网站使用 cookie 以提升您的浏览体验并收集假名化分析数据。这些包括：',
     s3Items: [
-      { strong: '必要 cookie', body: '网站正常运行所必需（同意偏好、会话数据）。' },
+      { strong: '必要存储', body: '网站正常运行所必需（您的同意选择，保存在浏览器的 localStorage 中，而非 cookie 中）。在您接受之前，本网站自身不会设置任何 cookie。' },
       { strong: '分析 cookie', body: 'Google Analytics 4 用于了解访客如何与本网站互动。以假名化方式收集。' },
+      { strong: 'GetYourGuide cookie', body: '由 GetYourGuide 合作伙伴脚本设置，该脚本只有在您接受 cookie 后才会加载。用于统计活动小组件的展示和点击次数，并将预订归因于本网站。' },
     ],
-    s3Tail: (cookieLink) => <>分析 cookie 仅在您通过 cookie 横幅同意后才会设置。Umami 的访客统计（第4节）不使用 cookie。详情请参阅我们的{cookieLink}。</>,
+    s3Tail: (cookieLink) => <>分析 cookie 和 GetYourGuide cookie 仅在您通过 cookie 横幅同意后才会设置。Umami 的访客统计（第4节）不使用 cookie。详情请参阅我们的 {cookieLink}。</>,
     s4Title: '4. Google Analytics 与 Umami',
     s4Body: '我们使用启用了 Consent Mode v2 的 Google Analytics 4。如果您拒绝 Cookie，则不会收集任何分析数据。如果您同意，使用数据（浏览的页面、停留时间、设备类型，以及国家和城市级别的位置）会发送给 Google。这些数据是假名化的：我们不会发送您的姓名、电子邮箱等可直接识别身份的信息，但 Cookie 中的随机标识符和您的 IP 地址属于 GDPR 所称的个人数据。',
     s4Umami: '我们还使用 Umami Cloud 统计页面浏览量、部分链接和按钮的点击（例如前往我们的姊妹网站或应用的链接）以及表单和工具的各个步骤，例如电子简报表单何时显示、何时开始填写、何时提交。Umami 不使用 cookie，也不会在您的设备上存储任何内容，因此无论您是否接受 cookie，它都会运行。它记录页面地址和标题、您来自的网站、浏览器、操作系统、设备类型、屏幕尺寸、语言以及大致位置（国家、地区和城市）。您的 IP 地址仅用于计算该位置和一个假名化的访问标识符，绝不会被存储。该标识符是一个哈希值，每月初更换。这些事件只记录点击或选择了什么、是哪个步骤（例如您打开的姊妹网站），以及在表单让您无法继续时对应的字段名称（例如“email”），绝不记录您输入的内容。',
@@ -559,16 +577,17 @@ const COPY: Record<Lang, {
     s6Title: '6. 数据保留',
     s6Body: '分析数据在 Google Analytics 中保留14个月，在 Umami 中最多保留2年。电子简报的电子邮件地址在您取消订阅前一直保留。',
     s7Title: '7. 第三方',
-    s7Intro: '我们不会向第三方出售或共享您的个人数据。但作为运营的一部分，以下第三方服务会处理数据：',
+    s7Intro: '我们不会出售您的个人数据。作为运营的一部分，以下第三方服务会处理数据：',
     s7Items: [
       'Google Analytics：假名化使用分析',
       'Umami：不使用 cookie 的访客统计和表单步骤计数',
+      'GetYourGuide：活动小组件与预订归因（仅在您接受 cookie 后）',
       'Resend：电子简报邮件发送',
       'Supabase：后端数据库服务',
       'Cloudflare：托管与 CDN',
     ],
     s8Title: '8. 广告',
-    s8Body1: (siteName) => `本网站会展示第三方广告主的赞助内容。赞助内容会清晰标注“赞助”标识。点击赞助链接可能将您重定向到拥有自身隐私政策的外部网站。${siteName} 不对外部广告主的数据处理做法负责。`,
+    s8Body1: (siteName) => `本网站会展示第三方的广告和付费合作伙伴展示位。它们均有清晰标注，例如标有“广告”字样。点击后可能会将您重定向到拥有自身隐私政策的外部网站。${siteName} 不对外部广告主的数据处理做法负责。`,
     s8aTitle: '8a. 跨境数据传输',
     s8aIntro: '我们使用的若干第三方服务的总部或数据传输目的地位于欧洲经济区（EEA）以外，最常见的是美国：',
     s8aItems: [
@@ -612,19 +631,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. 처리의 법적 근거(GDPR 제6조)',
     s2aIntro: '당사는 각 처리 활동에 대해 다음 법적 근거에 의존합니다:',
     s2aItems: [
-      { strong: '동의(제6조 제1항 (a))', body: '분석 쿠키(Google Analytics 4) 및 비필수 쿠키. 쿠키 배너를 통해 동의하시며 언제든지 철회하실 수 있습니다.' },
+      { strong: '동의(제6조 제1항 (a))', body: '분석 쿠키(Google Analytics 4), GetYourGuide 파트너 스크립트 및 기타 비필수 쿠키. 쿠키 배너를 통해 동의하시며 언제든지 철회하실 수 있습니다.' },
       { strong: '동의(제6조 제1항 (a))', body: '뉴스레터 구독. 신청 양식 제출로 동의하시며 구독 해지 링크를 통해 언제든지 철회하실 수 있습니다.' },
-      { strong: '정당한 이익(제6조 제1항 (f))', body: '필수 쿠키(귀하의 동의 설정 저장) 및 사기 방지·보안 로그. 당사의 이익은 정상적으로 작동하는 웹사이트 운영이며, 귀하의 합리적 기대와 균형을 이룹니다.' },
+      { strong: '정당한 이익(제6조 제1항 (f))', body: '브라우저의 localStorage에 귀하의 동의 선택 저장 및 사기 방지·보안 로그. 당사의 이익은 정상적으로 작동하는 웹사이트 운영이며, 귀하의 합리적 기대와 균형을 이룹니다.' },
       { strong: '정당한 이익(제6조 제1항 (f))', body: '제휴 링크 클릭 귀속. 당사의 이익은 콘텐츠를 통해 발생한 제휴 수수료를 받는 것이며 수집되는 데이터는 최소한(추천 출처)이고 제휴 링크를 클릭하지 않으시면 회피하실 수 있습니다.' },
       { strong: '정당한 이익(제6조 제1항 (f))', body: 'Umami를 이용한 쿠키 없는 방문자 통계(제4항). 당사의 이익은 어떤 페이지와 양식이 제대로 작동하는지 아는 것이며, Umami는 귀하의 기기에 아무것도 저장하지 않고 IP 주소도 보관하지 않습니다.' },
     ],
     s3Title: '3. 쿠키',
     s3Intro: '당사 웹사이트는 브라우징 경험 향상과 가명 처리된 분석 데이터 수집을 위해 쿠키를 사용합니다. 다음을 포함합니다:',
     s3Items: [
-      { strong: '필수 쿠키', body: '웹사이트의 정상 작동에 필요(동의 설정, 세션 데이터).' },
+      { strong: '필수 저장 항목', body: '웹사이트의 정상 작동에 필요(쿠키가 아닌 브라우저의 localStorage에 저장되는 귀하의 동의 선택). 본 사이트는 귀하가 동의하시기 전에는 자체적으로 쿠키를 설정하지 않습니다.' },
       { strong: '분석 쿠키', body: 'Google Analytics 4가 방문자의 사이트 이용 방식을 이해하는 데 사용. 가명 처리되어 수집됩니다.' },
+      { strong: 'GetYourGuide 쿠키', body: 'GetYourGuide 파트너 스크립트가 설정하며, 이 스크립트는 쿠키에 동의하신 후에만 불러옵니다. 액티비티 위젯의 노출 수와 클릭 수를 집계하고 예약을 사이트에 귀속시킵니다.' },
     ],
-    s3Tail: (cookieLink) => <>분석 쿠키는 쿠키 배너를 통한 동의 후에만 설정됩니다. Umami 방문자 통계(제4항)는 쿠키를 사용하지 않습니다. 자세한 내용은 당사의 {cookieLink}을 참조하세요.</>,
+    s3Tail: (cookieLink) => <>분석 쿠키와 GetYourGuide 쿠키는 쿠키 배너를 통한 동의 후에만 설정됩니다. Umami 방문자 통계(제4항)는 쿠키를 사용하지 않습니다. 자세한 내용은 당사의 {cookieLink}을 참조하십시오.</>,
     s4Title: '4. Google Analytics 및 Umami',
     s4Body: '당사는 Consent Mode v2를 적용한 Google Analytics 4를 사용합니다. 쿠키를 거부하시면 분석 데이터는 수집되지 않습니다. 동의하시면 이용 데이터(조회한 페이지, 체류 시간, 기기 유형, 국가 및 도시 단위의 위치)가 Google로 전송됩니다. 이 데이터는 가명 처리된 정보입니다. 이름이나 이메일 주소처럼 직접 신원을 알 수 있는 정보는 전송하지 않지만, 쿠키의 임의 식별자와 IP 주소는 GDPR상 개인정보에 해당합니다.',
     s4Umami: '또한 당사는 Umami Cloud를 사용해 페이지 조회수, 일부 링크와 버튼의 클릭(예: 자매 사이트나 앱으로 연결되는 링크), 양식과 도구의 각 단계(예: 뉴스레터 양식이 표시되거나, 작성이 시작되거나, 제출된 경우)를 집계합니다. Umami는 쿠키를 사용하지 않고 귀하의 기기에 아무것도 저장하지 않으므로, 쿠키 동의 여부와 관계없이 작동합니다. 페이지 주소와 제목, 유입 사이트, 브라우저, 운영체제, 기기 유형, 화면 크기, 언어, 대략적인 위치(국가, 지역, 도시)를 기록합니다. IP 주소는 이 위치와 가명 처리된 방문 식별자를 계산하는 데에만 사용되며 저장되지 않습니다. 이 식별자는 매월 초에 바뀌는 해시값입니다. 이러한 이벤트에는 무엇을 클릭하거나 선택했는지와 어떤 단계인지(예: 열어 본 자매 사이트), 그리고 양식에서 더 진행할 수 없었을 경우 해당 항목 이름(예: "email")만 기록되며, 입력한 내용은 기록되지 않습니다.',
@@ -633,16 +653,17 @@ const COPY: Record<Lang, {
     s6Title: '6. 데이터 보관',
     s6Body: '분석 데이터는 Google Analytics에서 14개월간, Umami에서 최대 2년간 보관됩니다. 뉴스레터 이메일은 구독 해지 시까지 보관됩니다.',
     s7Title: '7. 제3자',
-    s7Intro: '당사는 귀하의 개인정보를 제3자에게 판매하거나 공유하지 않습니다. 다만, 운영의 일환으로 다음 제3자 서비스가 데이터를 처리합니다:',
+    s7Intro: '당사는 귀하의 개인정보를 판매하지 않습니다. 운영의 일환으로 다음 제3자 서비스가 데이터를 처리합니다:',
     s7Items: [
       'Google Analytics: 가명 처리된 이용 분석',
       'Umami: 쿠키를 사용하지 않는 방문자 통계 및 양식 단계 집계',
+      'GetYourGuide: 액티비티 위젯 및 예약 귀속(쿠키 동의 후에만)',
       'Resend: 뉴스레터 이메일 발송',
       'Supabase: 백엔드 데이터베이스 서비스',
       'Cloudflare: 호스팅 및 CDN',
     ],
     s8Title: '8. 광고',
-    s8Body1: (siteName) => `본 사이트는 제3자 광고주의 후원 콘텐츠를 표시합니다. 후원 콘텐츠는 "후원" 표시로 명확히 식별됩니다. 후원 링크를 클릭하시면 자체 개인정보 처리방침을 가진 외부 사이트로 이동할 수 있습니다. ${siteName} 사이트는 외부 광고주의 데이터 처리 관행에 대해 책임지지 않습니다.`,
+    s8Body1: (siteName) => `본 사이트는 제3자의 광고와 유료 파트너 게재를 표시합니다. 이는 "광고" 등의 라벨로 명확히 구분됩니다. 클릭하시면 자체 개인정보 처리방침을 가진 외부 사이트로 이동할 수 있습니다. ${siteName} 사이트는 외부 광고주의 데이터 처리 관행에 대해 책임지지 않습니다.`,
     s8aTitle: '8a. 국제 데이터 이전',
     s8aIntro: '당사가 이용하는 일부 제3자 서비스는 유럽경제지역(EEA) 외부, 주로 미국에 소재하거나 데이터를 이전합니다:',
     s8aItems: [
@@ -686,19 +707,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Base légale du traitement (Art. 6 RGPD)',
     s2aIntro: 'Nous nous appuyons sur les bases légales suivantes pour chaque activité de traitement :',
     s2aItems: [
-      { strong: 'Consentement (Art. 6(1)(a))', body: 'pour les cookies analytiques (Google Analytics 4) et autres cookies non essentiels. Vous donnez votre consentement via le bandeau de cookies et pouvez le retirer à tout moment.' },
+      { strong: 'Consentement (Art. 6(1)(a))', body: 'pour les cookies analytiques (Google Analytics 4), le script partenaire de GetYourGuide et autres cookies non essentiels. Vous donnez votre consentement via le bandeau de cookies et pouvez le retirer à tout moment.' },
       { strong: 'Consentement (Art. 6(1)(a))', body: 'pour l\'abonnement à la newsletter. Vous donnez votre consentement en soumettant le formulaire et pouvez le retirer à tout moment via le lien de désinscription.' },
-      { strong: 'Intérêt légitime (Art. 6(1)(f))', body: 'pour les cookies essentiels (stockage de votre préférence de consentement) et les journaux de prévention de la fraude/sécurité. Notre intérêt est l\'exploitation d\'un site web fonctionnel ; cet intérêt est mis en balance avec vos attentes raisonnables.' },
+      { strong: 'Intérêt légitime (Art. 6(1)(f))', body: 'pour l\'enregistrement de votre choix de consentement dans le localStorage de votre navigateur et pour les journaux de prévention de la fraude/sécurité. Notre intérêt est l\'exploitation d\'un site web fonctionnel ; cet intérêt est mis en balance avec vos attentes raisonnables.' },
       { strong: 'Intérêt légitime (Art. 6(1)(f))', body: 'pour l\'attribution des clics sur les liens d\'affiliation. Notre intérêt est de percevoir la commission éditoriale que nous avons gagnée ; les données collectées sont minimales (source de référence) et vous pouvez choisir de ne pas cliquer sur les liens d\'affiliation.' },
       { strong: 'Intérêt légitime (Art. 6(1)(f))', body: 'pour les statistiques de visite sans cookies avec Umami (section 4). Notre intérêt est de savoir quelles pages et quels formulaires fonctionnent ; Umami n\'enregistre rien sur votre appareil et ne conserve pas votre adresse IP.' },
     ],
     s3Title: '3. Cookies',
     s3Intro: 'Notre site utilise des cookies pour améliorer votre expérience de navigation et collecter des données analytiques pseudonymes. Cela comprend :',
     s3Items: [
-      { strong: 'Cookies essentiels', body: 'nécessaires au bon fonctionnement du site (préférences de consentement, données de session).' },
+      { strong: 'Stockage essentiel', body: 'nécessaire au bon fonctionnement du site (votre choix de consentement, enregistré dans le localStorage de votre navigateur et non dans un cookie). Le site lui-même ne dépose aucun cookie avant que vous les acceptiez.' },
       { strong: 'Cookies analytiques', body: 'utilisés par Google Analytics 4 pour comprendre l\'usage du site par les visiteurs. Collectés de manière pseudonyme.' },
+      { strong: 'Cookies GetYourGuide', body: "déposés par le script partenaire de GetYourGuide, qui ne se charge qu'après votre acceptation des cookies. Ils comptent les affichages et les clics des widgets d'activités et attribuent les réservations au site." },
     ],
-    s3Tail: (cookieLink) => <>Les cookies analytiques ne sont déposés qu'après votre consentement via le bandeau. Les statistiques de visite d'Umami (section 4) n'utilisent pas de cookies. Voir notre {cookieLink} pour plus de détails.</>,
+    s3Tail: (cookieLink) => <>Les cookies analytiques et les cookies GetYourGuide ne sont déposés qu'après votre consentement via le bandeau. Les statistiques de visite d'Umami (section 4) n'utilisent pas de cookies. Voir notre {cookieLink} pour plus de détails.</>,
     s4Title: '4. Google Analytics et Umami',
     s4Body: 'Nous utilisons Google Analytics 4 avec le Consent Mode v2. Si vous refusez les cookies, aucune donnée analytique n’est collectée. Si vous acceptez, des données d’usage (pages consultées, temps passé sur le site, type d’appareil et localisation au niveau du pays et de la ville) sont envoyées à Google. Ces données sont pseudonymes : nous n’envoyons ni nom, ni adresse e-mail, ni aucune autre donnée vous identifiant directement, mais l’identifiant aléatoire du cookie et votre adresse IP sont des données personnelles au sens du RGPD.',
     s4Umami: 'Nous utilisons aussi Umami Cloud pour compter les pages vues, les clics sur certains de nos liens et boutons (par exemple vers les autres sites de notre réseau ou notre application) et les étapes de nos formulaires et outils, par exemple lorsqu\'un formulaire de newsletter s\'affiche, est commencé ou est envoyé. Umami n\'utilise pas de cookies et n\'enregistre rien sur votre appareil ; il fonctionne donc que vous acceptiez les cookies ou non. Il enregistre l\'adresse et le titre de la page, le site d\'où vous venez, votre navigateur, votre système d\'exploitation, le type d\'appareil, la taille de l\'écran, la langue et la localisation approximative (pays, région et ville). Votre adresse IP sert uniquement à déterminer cette localisation et un identifiant de visite pseudonyme, et elle n\'est jamais conservée. L\'identifiant est un hachage qui change au début de chaque mois. Ces événements enregistrent seulement ce qui a été cliqué ou choisi et de quelle étape il s\'agit (par exemple le site du réseau que vous avez ouvert) et, si un formulaire vous bloque, le nom du champ (par exemple « email »), jamais ce que vous avez saisi.',
@@ -707,16 +729,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Conservation des données',
     s6Body: 'Les données analytiques sont conservées 14 mois dans Google Analytics et jusqu\'à 2 ans dans Umami. Les adresses e-mail de la newsletter sont conservées jusqu\'à votre désinscription.',
     s7Title: '7. Tiers',
-    s7Intro: 'Nous ne vendons ni ne partageons vos données personnelles avec des tiers. Toutefois, les services tiers suivants traitent des données dans le cadre de notre activité :',
+    s7Intro: 'Nous ne vendons pas vos données personnelles. Les services tiers suivants traitent des données dans le cadre de notre activité :',
     s7Items: [
       'Google Analytics : analyse d\'usage pseudonyme',
       'Umami : statistiques de visite sans cookies et comptage des étapes des formulaires',
+      "GetYourGuide : widgets d'activités et attribution des réservations, uniquement après votre acceptation des cookies",
       'Resend : envoi de la newsletter par e-mail',
       'Supabase : services de base de données back-end',
       'Cloudflare : hébergement et CDN',
     ],
     s8Title: '8. Publicité',
-    s8Body1: (siteName) => `Ce site affiche du contenu sponsorisé d'annonceurs tiers. Le contenu sponsorisé est clairement identifié par la mention « Sponsorisé ». Cliquer sur des liens sponsorisés peut vous rediriger vers des sites externes ayant leur propre politique de confidentialité. ${siteName} n'est pas responsable des pratiques en matière de données des annonceurs externes.`,
+    s8Body1: (siteName) => `Ce site affiche des publicités et des emplacements partenaires payants de tiers. Ils sont clairement identifiés, par exemple par la mention « Annonce », « Publicité » ou « Partenaire ». Cliquer dessus peut vous rediriger vers des sites externes ayant leur propre politique de confidentialité. ${siteName} n'est pas responsable des pratiques en matière de données des annonceurs externes.`,
     s8aTitle: '8a. Transferts internationaux de données',
     s8aIntro: 'Plusieurs services tiers que nous utilisons sont établis hors de l\'Espace économique européen (EEE) ou y transfèrent des données, le plus souvent vers les États-Unis :',
     s8aItems: [
@@ -760,19 +783,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Base giuridica del trattamento (Art. 6 GDPR)',
     s2aIntro: 'Ci basiamo sulle seguenti basi giuridiche per ciascuna attività di trattamento:',
     s2aItems: [
-      { strong: 'Consenso (Art. 6(1)(a))', body: 'per i cookie analitici (Google Analytics 4) e altri cookie non essenziali. Lei presta il consenso tramite il banner dei cookie e può ritirarlo in qualsiasi momento.' },
+      { strong: 'Consenso (Art. 6(1)(a))', body: 'per i cookie analitici (Google Analytics 4), lo script partner di GetYourGuide e altri cookie non essenziali. Lei presta il consenso tramite il banner dei cookie e può ritirarlo in qualsiasi momento.' },
       { strong: 'Consenso (Art. 6(1)(a))', body: 'per l\'iscrizione alla newsletter. Lei presta il consenso inviando il modulo di iscrizione e può ritirarlo in qualsiasi momento tramite il link di disiscrizione.' },
-      { strong: 'Legittimo interesse (Art. 6(1)(f))', body: 'per i cookie essenziali (memorizzazione della Sua preferenza di consenso) e i registri di prevenzione frodi/sicurezza. Il nostro interesse è l\'esercizio di un sito web funzionante; tale interesse è bilanciato con le Sue ragionevoli aspettative.' },
+      { strong: 'Legittimo interesse (Art. 6(1)(f))', body: 'per la memorizzazione della Sua scelta di consenso nel localStorage del Suo browser e per i registri di prevenzione frodi/sicurezza. Il nostro interesse è l\'esercizio di un sito web funzionante; tale interesse è bilanciato con le Sue ragionevoli aspettative.' },
       { strong: 'Legittimo interesse (Art. 6(1)(f))', body: 'per l\'attribuzione dei clic sui link di affiliazione. Il nostro interesse è ricevere la commissione editoriale guadagnata; i dati raccolti sono minimi (fonte di riferimento) e Lei può scegliere di non cliccare sui link di affiliazione.' },
       { strong: 'Legittimo interesse (Art. 6(1)(f))', body: 'per le statistiche di visita senza cookie con Umami (sezione 4). Il nostro interesse è sapere quali pagine e moduli funzionano; Umami non salva nulla sul Suo dispositivo e non conserva il Suo indirizzo IP.' },
     ],
     s3Title: '3. Cookie',
     s3Intro: 'Il nostro sito utilizza cookie per migliorare la Sua esperienza di navigazione e raccogliere dati analitici pseudonimi. Tra questi:',
     s3Items: [
-      { strong: 'Cookie essenziali', body: 'necessari al corretto funzionamento del sito (preferenze di consenso, dati di sessione).' },
+      { strong: 'Archiviazione essenziale', body: 'necessaria al corretto funzionamento del sito (la Sua scelta di consenso, salvata nel localStorage del Suo browser e non in un cookie). Il sito stesso non imposta alcun cookie prima che Lei li accetti.' },
       { strong: 'Cookie analitici', body: 'utilizzati da Google Analytics 4 per comprendere come i visitatori interagiscono con il sito. Raccolti in forma pseudonima.' },
+      { strong: 'Cookie di GetYourGuide', body: 'impostati dallo script partner di GetYourGuide, che si carica solo dopo che Lei ha accettato i cookie. Contano le visualizzazioni e i clic dei widget delle attività e attribuiscono le prenotazioni al sito.' },
     ],
-    s3Tail: (cookieLink) => <>I cookie analitici vengono impostati solo dopo il Suo consenso tramite il banner. Le statistiche di visita di Umami (sezione 4) non usano cookie. Per dettagli completi, consulti la nostra {cookieLink}.</>,
+    s3Tail: (cookieLink) => <>I cookie analitici e quelli di GetYourGuide vengono impostati solo dopo il Suo consenso tramite il banner. Le statistiche di visita di Umami (sezione 4) non usano cookie. Per dettagli completi, consulti la nostra {cookieLink}.</>,
     s4Title: '4. Google Analytics e Umami',
     s4Body: 'Utilizziamo Google Analytics 4 con Consent Mode v2. Se Lei rifiuta i cookie, non viene raccolto alcun dato analitico. Se accetta, a Google vengono inviati dati di utilizzo (pagine visitate, tempo di permanenza, tipo di dispositivo e posizione a livello di paese e città). I dati sono pseudonimi: non inviamo il Suo nome, l’indirizzo e-mail né altri dati che La identifichino direttamente, ma l’identificatore casuale del cookie e il Suo indirizzo IP sono dati personali ai sensi del GDPR.',
     s4Umami: 'Utilizziamo inoltre Umami Cloud per contare le visualizzazioni di pagina, i clic su alcuni dei nostri link e pulsanti (ad esempio verso i nostri siti gemelli o la nostra app) e i passaggi dei nostri moduli e strumenti, ad esempio quando un modulo della newsletter viene mostrato, iniziato o inviato. Umami non usa cookie e non salva nulla sul Suo dispositivo, quindi funziona sia che Lei accetti i cookie sia che non li accetti. Registra indirizzo e titolo della pagina, il sito da cui proviene, il browser, il sistema operativo, il tipo di dispositivo, le dimensioni dello schermo, la lingua e la posizione approssimativa (paese, regione e città). Il Suo indirizzo IP viene usato solo per ricavare tale posizione e un identificativo pseudonimo della visita, e non viene mai memorizzato. L\'identificativo è un hash che cambia all\'inizio di ogni mese. Questi eventi registrano solo che cosa è stato cliccato o scelto e di quale passaggio si tratta (ad esempio il sito gemello che ha aperto) e, se un modulo La blocca, il nome del campo (ad esempio «email»), mai ciò che ha scritto.',
@@ -781,16 +805,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Conservazione dei dati',
     s6Body: 'I dati analitici sono conservati per 14 mesi in Google Analytics e fino a 2 anni in Umami. Gli indirizzi email della newsletter sono conservati fino alla disiscrizione.',
     s7Title: '7. Terzi',
-    s7Intro: 'Non vendiamo né condividiamo i Suoi dati personali con terzi. Tuttavia, i seguenti servizi di terze parti trattano dati nell\'ambito delle nostre operazioni:',
+    s7Intro: 'Non vendiamo i Suoi dati personali. I seguenti servizi di terze parti trattano dati nell’ambito delle nostre operazioni:',
     s7Items: [
       'Google Analytics: analisi pseudonima dell\'utilizzo',
       'Umami: statistiche di visita senza cookie e conteggio dei passaggi dei moduli',
+      'GetYourGuide: widget delle attività e attribuzione delle prenotazioni, solo dopo che Lei ha accettato i cookie',
       'Resend: invio della newsletter via email',
       'Supabase: servizi di database back-end',
       'Cloudflare: hosting e CDN',
     ],
     s8Title: '8. Pubblicità',
-    s8Body1: (siteName) => `Questo sito mostra contenuti sponsorizzati da inserzionisti terzi. I contenuti sponsorizzati sono chiaramente identificati con l'etichetta "Sponsorizzato". Cliccare su link sponsorizzati può reindirizzare a siti esterni con proprie informative sulla privacy. ${siteName} non è responsabile delle pratiche sui dati degli inserzionisti esterni.`,
+    s8Body1: (siteName) => `Questo sito mostra annunci di terze parti e spazi a pagamento dei partner. Sono chiaramente contrassegnati, ad esempio con l'etichetta "Annuncio", "Pubblicità" o "Partner". Facendo clic su di essi, Lei può essere reindirizzato a siti esterni con proprie informative sulla privacy. ${siteName} non è responsabile delle pratiche sui dati degli inserzionisti esterni.`,
     s8aTitle: '8a. Trasferimenti internazionali di dati',
     s8aIntro: 'Diversi servizi terzi che utilizziamo hanno sede o trasferiscono dati fuori dallo Spazio Economico Europeo (SEE), per lo più negli Stati Uniti:',
     s8aItems: [
@@ -803,7 +828,7 @@ const COPY: Record<Lang, {
     ],
     s8aTail: 'In ogni caso, il trasferimento è protetto da una decisione di adeguatezza, dall\'EU–US Data Privacy Framework o da clausole contrattuali tipo approvate dalla Commissione europea. Può richiedere una copia delle garanzie applicabili contattandoci.',
     s9Title: '9. I Suoi diritti ai sensi del GDPR',
-    s9Intro: 'Poiché operiamo dalla Finlandia e serviamo visitatori dell\'Unione europea, il GDPR si applica integralmente. Per gli utenti in Italia si applicano anche le disposizioni del Garante per la protezione dei dati personali. Lei ha i seguenti diritti:',
+    s9Intro: 'Poiché operiamo dalla Finlandia e serviamo visitatori dell\'Unione europea, il GDPR si applica integralmente. Lei ha i seguenti diritti:',
     s9Items: [
       { strong: 'Diritto di accesso (Art. 15)', body: 'richiedere una copia dei dati personali che La riguardano.' },
       { strong: 'Diritto di rettifica (Art. 16)', body: 'chiedere la correzione di dati inesatti o incompleti.' },
@@ -834,19 +859,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Rechtsgrondslag voor verwerking (Art. 6 AVG)',
     s2aIntro: 'Wij baseren ons op de volgende rechtsgrondslagen voor elke verwerkingsactiviteit:',
     s2aItems: [
-      { strong: 'Toestemming (Art. 6(1)(a))', body: 'voor analysecookies (Google Analytics 4) en andere niet-essentiële cookies. U geeft toestemming via de cookiebanner en kunt deze op elk moment intrekken.' },
+      { strong: 'Toestemming (Art. 6(1)(a))', body: 'voor analysecookies (Google Analytics 4), het partnerscript van GetYourGuide en andere niet-essentiële cookies. U geeft toestemming via de cookiebanner en kunt deze op elk moment intrekken.' },
       { strong: 'Toestemming (Art. 6(1)(a))', body: 'voor het abonnement op de nieuwsbrief. U geeft toestemming door het inschrijfformulier in te dienen en kunt deze op elk moment intrekken via de afmeldlink.' },
-      { strong: 'Gerechtvaardigd belang (Art. 6(1)(f))', body: 'voor essentiële cookies (opslag van uw toestemmingsvoorkeur) en fraudepreventie/beveiligingslogs. Ons belang is het exploiteren van een werkende website; dit belang is afgewogen tegen uw redelijke verwachtingen.' },
+      { strong: 'Gerechtvaardigd belang (Art. 6(1)(f))', body: 'voor de opslag van uw toestemmingskeuze in de localStorage van uw browser en voor fraudepreventie/beveiligingslogs. Ons belang is het exploiteren van een werkende website; dit belang is afgewogen tegen uw redelijke verwachtingen.' },
       { strong: 'Gerechtvaardigd belang (Art. 6(1)(f))', body: 'voor de toewijzing van klikken op affiliatelinks. Ons belang is het ontvangen van de redactioneel verdiende commissie; de verzamelde gegevens zijn minimaal (verwijzingsbron) en u kunt ervoor kiezen geen affiliatelinks aan te klikken.' },
       { strong: 'Gerechtvaardigd belang (Art. 6(1)(f))', body: 'voor bezoekersstatistieken zonder cookies met Umami (sectie 4). Ons belang is weten welke pagina\'s en formulieren werken; Umami slaat niets op uw apparaat op en bewaart uw IP-adres niet.' },
     ],
     s3Title: '3. Cookies',
     s3Intro: 'Onze website gebruikt cookies om uw surfervaring te verbeteren en gepseudonimiseerde analysegegevens te verzamelen. Deze omvatten:',
     s3Items: [
-      { strong: 'Essentiële cookies', body: 'vereist voor de juiste werking van de website (toestemmingsvoorkeuren, sessiegegevens).' },
+      { strong: 'Essentiële opslag', body: 'vereist voor de juiste werking van de website (uw toestemmingskeuze, opgeslagen in de localStorage van uw browser en niet in een cookie). De site zelf plaatst geen cookies voordat u ze accepteert.' },
       { strong: 'Analysecookies', body: 'gebruikt door Google Analytics 4 om te begrijpen hoe bezoekers onze site gebruiken. Gepseudonimiseerd verzameld.' },
+      { strong: 'GetYourGuide-cookies', body: 'geplaatst door het partnerscript van GetYourGuide, dat pas wordt geladen nadat u cookies heeft geaccepteerd. Ze tellen weergaven van en klikken op de activiteitenwidgets en wijzen boekingen toe aan de site.' },
     ],
-    s3Tail: (cookieLink) => <>Analysecookies worden pas geplaatst nadat u toestemming heeft gegeven via de cookiebanner. De bezoekersstatistieken van Umami (sectie 4) gebruiken geen cookies. Zie ons {cookieLink} voor volledige details.</>,
+    s3Tail: (cookieLink) => <>Analysecookies en GetYourGuide-cookies worden pas geplaatst nadat u toestemming heeft gegeven via de cookiebanner. De bezoekersstatistieken van Umami (sectie 4) gebruiken geen cookies. Zie ons {cookieLink} voor volledige details.</>,
     s4Title: '4. Google Analytics en Umami',
     s4Body: 'We gebruiken Google Analytics 4 met Consent Mode v2. Als u cookies weigert, worden er geen analysegegevens verzameld. Als u accepteert, worden gebruiksgegevens (bekeken pagina’s, tijd op de site, apparaattype en locatie op land- en stadsniveau) naar Google gestuurd. De gegevens zijn gepseudonimiseerd: we sturen geen naam, e-mailadres of andere direct identificerende gegevens, maar de willekeurige cookie-identificatie en uw IP-adres zijn persoonsgegevens volgens de AVG.',
     s4Umami: 'Daarnaast gebruiken wij Umami Cloud om paginaweergaven, klikken op sommige van onze links en knoppen (bijvoorbeeld naar onze zustersites of onze app) en de stappen van onze formulieren en hulpmiddelen te tellen, bijvoorbeeld wanneer een nieuwsbriefformulier wordt getoond, ingevuld of verzonden. Umami gebruikt geen cookies en slaat niets op uw apparaat op, dus het werkt ongeacht of u cookies accepteert. Het registreert het adres en de titel van de pagina, de site waar u vandaan komt, uw browser, besturingssysteem, apparaattype, schermformaat, taal en globale locatie (land, regio en stad). Uw IP-adres wordt alleen gebruikt om die locatie en een gepseudonimiseerde bezoek-ID te berekenen en wordt nooit opgeslagen. De ID is een hash die aan het begin van elke maand verandert. Deze gebeurtenissen registreren alleen waarop is geklikt of wat is gekozen en om welke stap het gaat (bijvoorbeeld de zustersite die u hebt geopend) en, als een formulier u tegenhoudt, de naam van het veld (bijvoorbeeld "email"), nooit wat u hebt ingevuld.',
@@ -855,16 +881,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Bewaartermijn',
     s6Body: 'Analysegegevens worden 14 maanden bewaard in Google Analytics en maximaal 2 jaar in Umami. Nieuwsbrief-e-mailadressen worden bewaard totdat u zich afmeldt.',
     s7Title: '7. Derden',
-    s7Intro: 'Wij verkopen of delen uw persoonsgegevens niet met derden. De volgende externe diensten verwerken echter gegevens als onderdeel van onze activiteiten:',
+    s7Intro: 'Wij verkopen uw persoonsgegevens niet. De volgende externe diensten verwerken gegevens als onderdeel van onze activiteiten:',
     s7Items: [
       'Google Analytics: gepseudonimiseerde gebruiksanalyse',
       'Umami: bezoekersstatistieken zonder cookies en telling van formulierstappen',
+      'GetYourGuide: activiteitenwidgets en toewijzing van boekingen, pas nadat u cookies heeft geaccepteerd',
       'Resend: verzending van de nieuwsbrief via e-mail',
       'Supabase: back-end databasediensten',
       'Cloudflare: hosting en CDN',
     ],
     s8Title: '8. Advertenties',
-    s8Body1: (siteName) => `Deze site toont gesponsorde inhoud van externe adverteerders. Gesponsorde inhoud wordt duidelijk aangeduid met de markering "Gesponsord". Klikken op gesponsorde links kan u doorverwijzen naar externe websites met hun eigen privacybeleid. ${siteName} is niet verantwoordelijk voor de gegevenspraktijken van externe adverteerders.`,
+    s8Body1: (siteName) => `Deze site toont advertenties en betaalde partnerplaatsingen van derden. Ze zijn duidelijk aangeduid, bijvoorbeeld met de markering "Advertentie" of "Partner". Als u erop klikt, kunt u worden doorverwezen naar externe websites met hun eigen privacybeleid. ${siteName} is niet verantwoordelijk voor de gegevenspraktijken van externe adverteerders.`,
     s8aTitle: '8a. Internationale gegevensoverdrachten',
     s8aIntro: 'Verschillende externe diensten die wij gebruiken zijn gevestigd in of dragen gegevens over naar landen buiten de Europese Economische Ruimte (EER), meestal de Verenigde Staten:',
     s8aItems: [
@@ -877,7 +904,7 @@ const COPY: Record<Lang, {
     ],
     s8aTail: 'In elk geval wordt de overdracht beschermd door een adequaatheidsbesluit, het EU–US Data Privacy Framework of door de Europese Commissie goedgekeurde standaardcontractbepalingen. U kunt een kopie van de relevante waarborgen opvragen door contact met ons op te nemen.',
     s9Title: '9. Uw rechten onder de AVG',
-    s9Intro: 'Omdat wij vanuit Finland opereren en bezoekers uit de Europese Unie bedienen, is de AVG (GDPR) volledig van toepassing. Voor gebruikers in Nederland is de Autoriteit Persoonsgegevens (AP) de toezichthouder. U heeft de volgende rechten:',
+    s9Intro: 'Omdat wij vanuit Finland opereren en bezoekers uit de Europese Unie bedienen, is de AVG (GDPR) volledig van toepassing. U heeft de volgende rechten:',
     s9Items: [
       { strong: 'Recht op inzage (Art. 15)', body: 'een kopie opvragen van de persoonsgegevens die wij over u bewaren.' },
       { strong: 'Recht op rectificatie (Art. 16)', body: 'ons vragen onjuiste of onvolledige gegevens te corrigeren.' },
@@ -908,19 +935,20 @@ const COPY: Record<Lang, {
     s2aTitle: '2a. Rättslig grund för behandling (GDPR artikel 6)',
     s2aIntro: 'Vi grundar varje behandlingsaktivitet på följande rättsliga grunder:',
     s2aItems: [
-      { strong: 'Samtycke (artikel 6.1 a)', body: 'för analyscookies (Google Analytics 4) och andra icke nödvändiga cookies. Du lämnar samtycke via cookiebannern och kan när som helst återkalla det.' },
+      { strong: 'Samtycke (artikel 6.1 a)', body: 'för analyscookies (Google Analytics 4), GetYourGuides partnerskript och andra icke nödvändiga cookies. Du lämnar samtycke via cookiebannern och kan när som helst återkalla det.' },
       { strong: 'Samtycke (artikel 6.1 a)', body: 'för prenumeration på nyhetsbrevet. Du lämnar samtycke genom att skicka in anmälningsformuläret och kan när som helst återkalla det via avregistreringslänken.' },
-      { strong: 'Berättigat intresse (artikel 6.1 f)', body: 'för nödvändiga cookies (lagring av ditt samtyckesval) samt bedrägeriförebyggande och säkerhetsloggar. Vårt intresse är att driva en fungerande webbplats, avvägt mot dina rimliga förväntningar.' },
+      { strong: 'Berättigat intresse (artikel 6.1 f)', body: 'för lagring av ditt samtyckesval i webbläsarens localStorage samt för bedrägeriförebyggande och säkerhetsloggar. Vårt intresse är att driva en fungerande webbplats, avvägt mot dina rimliga förväntningar.' },
       { strong: 'Berättigat intresse (artikel 6.1 f)', body: 'för attribution av klick på affiliatelänkar. Vårt intresse är att få den provision vi redaktionellt har tjänat in; uppgifterna som samlas in är minimala (hänvisningskälla) och du kan avstå genom att låta bli att klicka på affiliatelänkar.' },
       { strong: 'Berättigat intresse (artikel 6.1 f)', body: 'för besöksstatistik utan cookies med Umami (avsnitt 4). Vårt intresse är att veta vilka sidor och formulär som fungerar; Umami sparar ingenting på din enhet och behåller inte din IP-adress.' },
     ],
     s3Title: '3. Cookies',
     s3Intro: 'Vår webbplats använder cookies för att förbättra din surfupplevelse och samla in pseudonym analysdata. Dessa omfattar:',
     s3Items: [
-      { strong: 'Nödvändiga cookies', body: 'krävs för att webbplatsen ska fungera korrekt (samtyckesinställningar, sessionsdata).' },
+      { strong: 'Nödvändig lagring', body: 'krävs för att webbplatsen ska fungera korrekt (ditt samtyckesval, som sparas i webbläsarens localStorage och inte i en cookie). Webbplatsen själv placerar inga cookies innan du har accepterat dem.' },
       { strong: 'Statistik-/analyscookies', body: 'används av Google Analytics 4 för att förstå hur besökare interagerar med vår webbplats. Samlas in pseudonymt.' },
+      { strong: 'GetYourGuide-cookies', body: 'placeras av GetYourGuides partnerskript, som laddas först när du accepterar cookies. De räknar visningar av och klick på aktivitetswidgetarna och kopplar bokningar till webbplatsen.' },
     ],
-    s3Tail: (cookieLink) => <>Analyscookies placeras endast efter att du gett samtycke via cookiebannern. Umamis besöksstatistik (avsnitt 4) använder inga cookies. Se vår {cookieLink} för fullständig information.</>,
+    s3Tail: (cookieLink) => <>Analyscookies och GetYourGuide-cookies placeras endast efter att du gett samtycke via cookiebannern. Umamis besöksstatistik (avsnitt 4) använder inga cookies. Se vår {cookieLink} för fullständig information.</>,
     s4Title: '4. Google Analytics och Umami',
     s4Body: 'Vi använder Google Analytics 4 med Consent Mode v2. Om du avböjer cookies samlas ingen analysdata in. Om du accepterar skickas användningsdata (besökta sidor, tid på webbplatsen, enhetstyp och plats på land- och stadsnivå) till Google. Uppgifterna är pseudonyma: vi skickar inte namn, e-postadress eller andra direkt identifierande uppgifter, men cookiens slumpmässiga identifierare och din IP-adress är personuppgifter enligt GDPR.',
     s4Umami: 'Vi använder också Umami Cloud för att räkna sidvisningar, klick på vissa av våra länkar och knappar (till exempel till våra systersajter eller vår app) och stegen i våra formulär och verktyg, till exempel när ett nyhetsbrevsformulär visas, påbörjas eller skickas. Umami använder inga cookies och sparar ingenting på din enhet, så det fungerar oavsett om du godkänner cookies eller inte. Det registrerar sidans adress och titel, webbplatsen du kom från, din webbläsare, ditt operativsystem, enhetstyp, skärmstorlek, språk och ungefärlig plats (land, region och stad). Din IP-adress används bara för att räkna fram platsen och en pseudonym besöksidentifierare och sparas aldrig. Identifieraren är en hash som byts i början av varje månad. Dessa händelser registrerar bara vad som klickades på eller valdes och vilket steg det gäller (till exempel systersajten du öppnade) och, om ett formulär stoppar dig, fältets namn (till exempel "email"), aldrig det du har skrivit.',
@@ -929,16 +957,17 @@ const COPY: Record<Lang, {
     s6Title: '6. Lagringstid',
     s6Body: 'Analysdata sparas i 14 månader i Google Analytics och i högst 2 år i Umami. E-postadresser till nyhetsbrevet sparas tills du avregistrerar dig.',
     s7Title: '7. Tredje part',
-    s7Intro: 'Vi säljer eller delar inte dina personuppgifter med tredje part. Följande tredjepartstjänster behandlar dock uppgifter som en del av vår verksamhet:',
+    s7Intro: 'Vi säljer inte dina personuppgifter. Följande tredjepartstjänster behandlar uppgifter som en del av vår verksamhet:',
     s7Items: [
       'Google Analytics: pseudonym användningsanalys',
       'Umami: besöksstatistik utan cookies och räkning av formulärsteg',
+      'GetYourGuide: aktivitetswidgetar och koppling av bokningar, först när du accepterar cookies',
       'Resend: utskick av nyhetsbrev',
       'Supabase: databastjänster i backend',
       'Cloudflare: hosting och CDN',
     ],
     s8Title: '8. Annonsering',
-    s8Body1: (siteName) => `Den här webbplatsen visar sponsrat innehåll från tredjepartsannonsörer. Sponsrat innehåll märks tydligt med etiketten "Sponsrad". Att klicka på sponsrade länkar kan omdirigera dig till externa webbplatser med egna integritetspolicyer. ${siteName} ansvarar inte för externa annonsörers hantering av uppgifter.`,
+    s8Body1: (siteName) => `Den här webbplatsen visar annonser och betalda partnerplaceringar från tredje part. De är tydligt märkta, till exempel med etiketten "Annons" eller "Partner". Om du klickar på dem kan du hamna på externa webbplatser med egna integritetspolicyer. ${siteName} ansvarar inte för externa annonsörers hantering av uppgifter.`,
     s8aTitle: '8a. Internationella dataöverföringar',
     s8aIntro: 'Flera av de tredjepartstjänster vi använder har sitt säte i, eller överför uppgifter till, länder utanför Europeiska ekonomiska samarbetsområdet (EES), oftast USA:',
     s8aItems: [
@@ -980,6 +1009,7 @@ export default function PrivacyContent({
   lang = 'en',
   sessionRecording = false,
   variant = 'travel',
+  flightSearch = false,
 }: PrivacyContentProps = {}) {
   const base = COPY[lang] ?? COPY.en;
   const kumppanit = variant === 'shop' ? SHOP_PRIVACY : TRAVEL_PRIVACY;
@@ -1031,8 +1061,13 @@ export default function PrivacyContent({
   }</a>;
   // Microsoft redirects this address to the reader's own language version.
   const msLink = <a href="https://www.microsoft.com/privacy/privacystatement" target="_blank" rel="noopener" className="text-vibe-pink">{rec.msPrivacy}</a>;
+  /* Lentohaku (vain flightSearch) kohdan 3 loppuun ja kohdassa 7 heti GetYourGuide-rivin jälkeen
+     (GA, Umami, kumppaniverkostot, GetYourGuide, Travelpayouts-haku, Resend, …). */
+  const fl = flightSearch ? (FLIGHT_SEARCH_PRIVACY[lang] ?? FLIGHT_SEARCH_PRIVACY.en) : null;
+  const s3Items = fl ? [...t.s3Items, fl.s3Flight] : t.s3Items;
+  const s7Base = fl ? [...t.s7Items.slice(0, 4), fl.s7Flight, ...t.s7Items.slice(4)] : t.s7Items;
   /* Clarity rows go right after Google Analytics, the other analytics service, in both lists. */
-  const s7Items = sessionRecording ? [t.s7Items[0], rec.s7Item, ...t.s7Items.slice(1)] : t.s7Items;
+  const s7Items = sessionRecording ? [s7Base[0], rec.s7Item, ...s7Base.slice(1)] : s7Base;
   const s8aItems = sessionRecording ? [t.s8aItems[0], rec.s8aItem, ...t.s8aItems.slice(1)] : t.s8aItems;
 
   return (
@@ -1067,7 +1102,7 @@ export default function PrivacyContent({
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s3Title}</h2>
             <p>{t.s3Intro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
-              {t.s3Items.map((it, i) => (
+              {s3Items.map((it, i) => (
                 // Item 1 is the analytics-cookie row in every language.
                 <li key={i}><strong className="text-snow/80">{it.strong}{sep}</strong>{gap}{sessionRecording && i === 1 ? rec.s3Analytics : it.body}</li>
               ))}
@@ -1163,8 +1198,9 @@ export default function PrivacyContent({
 /**
  * @harvest-stop — esirenderöinnin haravointi loppuu tähän.
  *
- * Kaikki tämän alapuolella oleva on `sessionRecording`-tekstiä (Microsoft Clarity), jota näyttää vain
- * sivusto, joka oikeasti lataa Clarityn (hubi). Crawlable-body-haravoija lukee tiedostosta JOKAISEN
+ * Kaikki tämän alapuolella oleva on ehdollista tekstiä: `sessionRecording` (Microsoft Clarity), jota näyttää vain
+ * sivusto, joka oikeasti lataa Clarityn (hubi), varianttikohtaiset kumppanirivit ja `flightSearch` (laplandflights.fi).
+ * Crawlable-body-haravoija lukee tiedostosta JOKAISEN
  * kielilohkon ja leikkaa tämän merkin kohdalta. Kun nämä tekstit olivat COPY-kielilohkoissa, ne
  * päätyivät myös muiden sivustojen staattiseen tietosuojasivuun, vaikka sivusto ei käytä Claritya
  * (mitattu tuotannosta 5.10.2026: evästesivu 21 sivustolla, tietosuojasivu nightlife ja tours).
@@ -1503,5 +1539,65 @@ const SHOP_PRIVACY: Record<Lang, PartnerPrivacyCopy> = {
     s7Affiliate: 'Adtraction och Daisycon: spårning av affiliatelänkar när du klickar på butiks- eller partnerlänkar',
     s8Body2: 'Vi deltar i affiliateprogram via nätverken Adtraction och Daisycon; bland våra partner finns finländska butiker och varumärken som Suomikauppa, Nordicbuddies, Finlayson och Scandinavian Outdoor. Vi länkar även till butiker som inte betalar oss något. När du klickar på en affiliatelänk och gör ett köp kan vi få en provision utan extra kostnad för dig.',
     s8aAffiliate: { strong: 'Adtraction / Daisycon', body: '(Adtraction AB, Sverige, EU; Daisycon B.V., Nederländerna, EU): inom EES.' },
+  },
+};
+
+/**
+ * Lentohaku (Travelpayouts), vain `flightSearch`-propilla (laplandflights.fi): rivi kohtaan 3 ja kohtaan 7.
+ * Haravointimerkin alla samasta syystä kuin kumppanirivit: muut sivustot eivät lataa hakua.
+ */
+interface FlightSearchPrivacyCopy {
+  s3Flight: { strong: string; body: string };
+  s7Flight: string;
+}
+
+const FLIGHT_SEARCH_PRIVACY: Record<Lang, FlightSearchPrivacyCopy> = {
+  en: {
+    s3Flight: { strong: 'Flight search cookies', body: 'placed by the Travelpayouts flight search, which loads only after you accept cookies. Our Cookie Policy lists their names and durations.' },
+    s7Flight: 'Travelpayouts: flight search, only after you accept cookies (results from Aviasales and its partners)',
+  },
+  fi: {
+    s3Flight: { strong: 'Lentohaun evästeet', body: 'Travelpayoutsin lentohaku asettaa ne vasta, kun olet hyväksynyt evästeet. Evästekäytännössämme luetellaan niiden nimet ja kestot.' },
+    s7Flight: 'Travelpayouts: lentohaku, vasta kun hyväksyt evästeet (tulokset Aviasalesilta ja sen kumppaneilta)',
+  },
+  de: {
+    s3Flight: { strong: 'Cookies der Flugsuche', body: 'werden von der Flugsuche von Travelpayouts gesetzt, die erst geladen wird, wenn Sie Cookies akzeptieren. Namen und Speicherdauer stehen in unserer Cookie-Richtlinie.' },
+    s7Flight: 'Travelpayouts: Flugsuche, erst wenn Sie Cookies akzeptieren (Ergebnisse von Aviasales und dessen Partnern)',
+  },
+  ja: {
+    s3Flight: { strong: 'フライト検索のクッキー', body: 'Travelpayouts のフライト検索が設定します。この検索はクッキーに同意した後にのみ読み込まれます。名称と保存期間はクッキーポリシーに記載しています。' },
+    s7Flight: 'Travelpayouts：フライト検索（クッキーへの同意後のみ、検索結果は Aviasales とそのパートナーが提供）',
+  },
+  es: {
+    s3Flight: { strong: 'Cookies del buscador de vuelos', body: 'las establece el buscador de vuelos de Travelpayouts, que solo se carga cuando usted acepta las cookies. Nuestra Política de Cookies indica sus nombres y su duración.' },
+    s7Flight: 'Travelpayouts: buscador de vuelos, solo si usted acepta las cookies (resultados de Aviasales y sus socios)',
+  },
+  'pt-BR': {
+    s3Flight: { strong: 'Cookies da busca de voos', body: 'definidos pela busca de voos da Travelpayouts, que só carrega depois que você aceita os cookies. Nossa Política de Cookies lista os nomes e a duração deles.' },
+    s7Flight: 'Travelpayouts: busca de voos, só depois que você aceita os cookies (resultados da Aviasales e de seus parceiros)',
+  },
+  'zh-CN': {
+    s3Flight: { strong: '机票搜索 cookie', body: '由 Travelpayouts 机票搜索设置，该搜索只有在您接受 cookie 后才会加载。其名称和保留期限列于我们的 Cookie 政策中。' },
+    s7Flight: 'Travelpayouts：机票搜索（仅在您接受 cookie 后；结果来自 Aviasales 及其合作伙伴）',
+  },
+  ko: {
+    s3Flight: { strong: '항공권 검색 쿠키', body: 'Travelpayouts 항공권 검색이 설정하며, 이 검색은 쿠키에 동의하신 후에만 불러옵니다. 이름과 보관 기간은 쿠키 정책에 나와 있습니다.' },
+    s7Flight: 'Travelpayouts: 항공권 검색(쿠키 동의 후에만, 검색 결과는 Aviasales와 그 파트너 제공)',
+  },
+  fr: {
+    s3Flight: { strong: 'Cookies de la recherche de vols', body: "déposés par la recherche de vols de Travelpayouts, qui ne se charge qu'après votre acceptation des cookies. Notre politique de cookies indique leurs noms et leurs durées." },
+    s7Flight: "Travelpayouts : recherche de vols, uniquement après votre acceptation des cookies (résultats d'Aviasales et de ses partenaires)",
+  },
+  it: {
+    s3Flight: { strong: 'Cookie della ricerca voli', body: 'impostati dalla ricerca voli di Travelpayouts, che si carica solo dopo che Lei ha accettato i cookie. La nostra Informativa sui Cookie ne indica i nomi e la durata.' },
+    s7Flight: 'Travelpayouts: ricerca voli, solo dopo che Lei ha accettato i cookie (risultati di Aviasales e dei suoi partner)',
+  },
+  nl: {
+    s3Flight: { strong: 'Cookies van de vluchtzoeker', body: 'geplaatst door de vluchtzoeker van Travelpayouts, die pas wordt geladen nadat u cookies heeft geaccepteerd. Ons Cookiebeleid vermeldt hun namen en bewaartermijnen.' },
+    s7Flight: 'Travelpayouts: vluchtzoeker, pas nadat u cookies heeft geaccepteerd (resultaten van Aviasales en zijn partners)',
+  },
+  sv: {
+    s3Flight: { strong: 'Cookies för flygsökningen', body: 'placeras av Travelpayouts flygsök, som laddas först när du accepterar cookies. Namn och varaktighet finns i vår cookiepolicy.' },
+    s7Flight: 'Travelpayouts: flygsök, först när du accepterar cookies (resultat från Aviasales och dess partner)',
   },
 };

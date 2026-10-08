@@ -71,7 +71,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   en: {
     kicker: 'Legal',
     h1: 'Terms of Use',
-    lastUpdated: 'Last updated: September 2026 · Operated by LaPeso Oy',
+    lastUpdated: 'Last updated: October 2026 · Operated by LaPeso Oy',
     s1Title: '1. About This Site',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -84,13 +84,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Information Accuracy',
     s3Title: '3. Affiliate Links & Partnerships',
     s3P1: (siteName) => `Some links on ${siteName} are affiliate links. When you click these links and make a booking or purchase, we may receive a small commission at no additional cost to you. Affiliate relationships do not influence our editorial recommendations. We only link to services we believe provide genuine value.`,
-    s4Title: '4. Sponsored Content',
+    s4Title: '4. Ads and Partner Placements',
     s4Body: (siteName) => (
       <>
-        This site displays sponsored advertisements from third-party businesses. Sponsored content is clearly marked
-        with a <strong className="text-snow/90">"Sponsored"</strong> label wherever it appears. {siteName} is not
-        responsible for the products, services, or claims made by advertisers. Clicking sponsored links will take you
-        to external websites governed by their own terms and privacy policies.
+        This site displays advertisements and paid partner placements from third-party businesses. They are clearly marked wherever they appear, for example with an <strong className="text-snow/90">"Ad"</strong> or <strong className="text-snow/90">"Partner"</strong> label. {siteName} is not responsible for the products, services, or claims made by advertisers. Clicking these links will take you to external websites governed by their own terms and privacy policies.
       </>
     ),
     s5Title: '5. Third-Party Services: We Are Not a Merchant',
@@ -144,7 +141,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   fi: {
     kicker: 'Lakitiedot',
     h1: 'Käyttöehdot',
-    lastUpdated: 'Viimeksi päivitetty: syyskuu 2026 · Ylläpitäjä LaPeso Oy',
+    lastUpdated: 'Viimeksi päivitetty: lokakuu 2026 · Ylläpitäjä LaPeso Oy',
     s1Title: '1. Tietoa sivustosta',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -157,13 +154,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Tietojen ajantasaisuus',
     s3Title: '3. Kumppanilinkit ja yhteistyökumppanit',
     s3P1: (siteName) => `Osa ${siteName}-sivuston linkeistä on kumppanilinkkejä. Kun klikkaat näitä linkkejä ja teet varauksen tai ostoksen, saatamme saada pienen komission ilman lisäkustannuksia sinulle. Kumppanuussuhteet eivät vaikuta toimituksellisiin suosituksiimme. Linkitämme vain palveluihin, joiden uskomme tuottavan aitoa arvoa.`,
-    s4Title: '4. Sponsoroitu sisältö',
+    s4Title: '4. Mainokset ja kumppanipaikat',
     s4Body: (siteName) => (
       <>
-        Sivustolla näytetään kolmansien osapuolten sponsoroituja mainoksia. Sponsoroitu sisältö on merkitty selkeästi{' '}
-        <strong className="text-snow/90">"Sponsoroitu"</strong>-tunnisteella kaikkialla, missä se esiintyy. {siteName} ei vastaa
-        mainostajien tuotteista, palveluista tai väitteistä. Sponsoroitujen linkkien klikkaaminen ohjaa sinut ulkoisille sivustoille,
-        joilla on omat käyttöehtonsa ja tietosuojakäytäntönsä.
+        Sivustolla näytetään kolmansien osapuolten mainoksia ja maksettuja kumppanipaikkoja. Ne on merkitty selkeästi kaikkialla, missä ne esiintyvät, esimerkiksi tunnisteella <strong className="text-snow/90">"Mainos"</strong> tai <strong className="text-snow/90">"Kumppani"</strong>. {siteName} ei vastaa mainostajien tuotteista, palveluista tai väitteistä. Niiden klikkaaminen ohjaa sinut ulkoisille sivustoille, joilla on omat käyttöehtonsa ja tietosuojakäytäntönsä.
       </>
     ),
     s5Title: '5. Kolmannen osapuolen palvelut: emme ole myyjä',
@@ -215,7 +209,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   de: {
     kicker: 'Rechtliches',
     h1: 'Nutzungsbedingungen',
-    lastUpdated: 'Zuletzt aktualisiert: September 2026 · Betrieben von LaPeso Oy',
+    lastUpdated: 'Zuletzt aktualisiert: Oktober 2026 · Betrieben von LaPeso Oy',
     s1Title: '1. Über diese Website',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -228,13 +222,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Richtigkeit der Informationen',
     s3Title: '3. Partnerlinks und Kooperationen',
     s3P1: (siteName) => `Einige Links auf ${siteName} sind Partnerlinks. Wenn Sie über diese Links eine Buchung oder einen Kauf tätigen, erhalten wir ggf. eine kleine Provision, für Sie ohne zusätzliche Kosten. Partnerschaften beeinflussen unsere redaktionellen Empfehlungen nicht. Wir verlinken ausschließlich Dienste, die wir für sinnvoll halten.`,
-    s4Title: '4. Gesponserte Inhalte',
+    s4Title: '4. Anzeigen und Partnerplatzierungen',
     s4Body: (siteName) => (
       <>
-        Diese Website zeigt gesponserte Anzeigen Dritter. Gesponserte Inhalte sind durch das Label{' '}
-        <strong className="text-snow/90">„Gesponsert“</strong> eindeutig gekennzeichnet. {siteName} ist nicht verantwortlich für die
-        Produkte, Dienste oder Aussagen der Werbetreibenden. Beim Klicken auf gesponserte Links gelangen Sie auf externe Websites mit
-        eigenen Bedingungen und Datenschutzrichtlinien.
+        Diese Website zeigt Anzeigen und bezahlte Partnerplatzierungen von Drittunternehmen. Diese sind überall, wo sie erscheinen, eindeutig gekennzeichnet, etwa mit dem Label <strong className="text-snow/90">„Anzeige“</strong> oder <strong className="text-snow/90">„Partner“</strong>. {siteName} ist nicht verantwortlich für die Produkte, Dienste oder Aussagen der Werbetreibenden. Beim Klicken auf diese Links gelangen Sie auf externe Websites mit eigenen Bedingungen und Datenschutzrichtlinien.
       </>
     ),
     s5Title: '5. Dienste Dritter: Wir sind kein Händler',
@@ -285,7 +276,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   ja: {
     kicker: '法的情報',
     h1: '利用規約',
-    lastUpdated: '最終更新：2026年9月 · 運営：LaPeso Oy',
+    lastUpdated: '最終更新：2026年10月 · 運営：LaPeso Oy',
     s1Title: '1. 本サイトについて',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -297,11 +288,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. 情報の正確性',
     s3Title: '3. アフィリエイトリンクとパートナーシップ',
     s3P1: (siteName) => `${siteName} のリンクの一部はアフィリエイトリンクです。これらのリンクからご予約・ご購入された場合、お客様には追加費用なく、当サイトが少額の紹介料を受け取ることがあります。アフィリエイト関係は編集上の推奨に影響しません。本当に価値があると判断したサービスのみご紹介しています。`,
-    s4Title: '4. スポンサーコンテンツ',
+    s4Title: '4. 広告とパートナー掲載',
     s4Body: (siteName) => (
       <>
-        本サイトには第三者によるスポンサー広告が表示されることがあります。スポンサーコンテンツは表示箇所に必ず
-        <strong className="text-snow/90">「PR」</strong>のラベルで明示されます。{siteName} は広告主の製品・サービス・主張については責任を負いません。スポンサーリンクをクリックすると、独自の規約とプライバシーポリシーを持つ外部サイトに移動します。
+        本サイトには第三者企業の広告と有料のパートナー掲載が表示されます。これらは表示箇所に必ず<strong className="text-snow/90">「広告」</strong>などのラベルで明示されます。{siteName} は広告主の製品・サービス・主張については責任を負いません。これらのリンクをクリックすると、独自の規約とプライバシーポリシーを持つ外部サイトに移動します。
       </>
     ),
     s5Title: '5. 第三者サービス：当サイトは販売業者ではありません',
@@ -347,7 +337,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   es: {
     kicker: 'Legal',
     h1: 'Términos de Uso',
-    lastUpdated: 'Última actualización: septiembre de 2026 · Operado por LaPeso Oy',
+    lastUpdated: 'Última actualización: octubre de 2026 · Operado por LaPeso Oy',
     s1Title: '1. Sobre este sitio',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -360,13 +350,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Exactitud de la información',
     s3Title: '3. Enlaces de afiliados y colaboraciones',
     s3P1: (siteName) => `Algunos enlaces de ${siteName} son enlaces de afiliados. Cuando hace clic en estos enlaces y realiza una reserva o compra, podemos recibir una pequeña comisión sin costo adicional para usted. Las relaciones de afiliación no influyen en nuestras recomendaciones editoriales. Solo enlazamos a servicios que consideramos que aportan valor real.`,
-    s4Title: '4. Contenido patrocinado',
+    s4Title: '4. Anuncios y espacios de colaboradores',
     s4Body: (siteName) => (
       <>
-        Este sitio muestra anuncios patrocinados de empresas terceras. El contenido patrocinado está claramente identificado
-        con la etiqueta <strong className="text-snow/90">"Patrocinado"</strong> allí donde aparece. {siteName} no es
-        responsable de los productos, servicios o afirmaciones de los anunciantes. Al hacer clic en enlaces patrocinados
-        será dirigido a sitios externos sujetos a sus propios términos y políticas de privacidad.
+        Este sitio muestra anuncios de empresas terceras y espacios pagados de colaboradores. Están claramente identificados allí donde aparecen, por ejemplo con la etiqueta <strong className="text-snow/90">"Anuncio"</strong> o <strong className="text-snow/90">"Colaborador"</strong>. {siteName} no es responsable de los productos, servicios o afirmaciones de los anunciantes. Al hacer clic en estos enlaces será dirigido a sitios externos sujetos a sus propios términos y políticas de privacidad.
       </>
     ),
     s5Title: '5. Servicios de terceros: no somos comerciantes',
@@ -420,7 +407,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   'pt-BR': {
     kicker: 'Aspectos legais',
     h1: 'Termos de Uso',
-    lastUpdated: 'Última atualização: setembro de 2026 · Operado pela LaPeso Oy',
+    lastUpdated: 'Última atualização: outubro de 2026 · Operado pela LaPeso Oy',
     s1Title: '1. Sobre este site',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -433,13 +420,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Precisão das informações',
     s3Title: '3. Links de afiliados e parcerias',
     s3P1: (siteName) => `Alguns links em ${siteName} são links de afiliados. Quando você clica nesses links e faz uma reserva ou compra, podemos receber uma pequena comissão, sem custo adicional para você. As relações de afiliação não influenciam nossas recomendações editoriais. Só indicamos serviços que acreditamos oferecer valor genuíno.`,
-    s4Title: '4. Conteúdo patrocinado',
+    s4Title: '4. Anúncios e espaços de parceiros',
     s4Body: (siteName) => (
       <>
-        Este site exibe anúncios patrocinados de empresas terceiras. O conteúdo patrocinado é claramente identificado
-        com o rótulo <strong className="text-snow/90">"Patrocinado"</strong> onde quer que apareça. O {siteName} não
-        se responsabiliza pelos produtos, serviços ou alegações dos anunciantes. Clicar em links patrocinados levará
-        você a sites externos regidos por seus próprios termos e políticas de privacidade.
+        Este site exibe anúncios de empresas terceiras e espaços pagos de parceiros. Eles são claramente identificados onde quer que apareçam, por exemplo com o rótulo <strong className="text-snow/90">"Anúncio"</strong>, <strong className="text-snow/90">"Publicidade"</strong> ou <strong className="text-snow/90">"Parceiro"</strong>. O {siteName} não se responsabiliza pelos produtos, serviços ou alegações dos anunciantes. Clicar nesses links levará você a sites externos regidos por seus próprios termos e políticas de privacidade.
       </>
     ),
     s5Title: '5. Serviços de terceiros: não somos comerciantes',
@@ -493,7 +477,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   'zh-CN': {
     kicker: '法律信息',
     h1: '服务条款',
-    lastUpdated: '最后更新：2026年9月 · 运营方：LaPeso Oy',
+    lastUpdated: '最后更新：2026年10月 · 运营方：LaPeso Oy',
     s1Title: '1. 关于本网站',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -505,11 +489,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. 信息准确性',
     s3Title: '3. 联盟链接与合作',
     s3P1: (siteName) => `${siteName} 上的某些链接是联盟链接。当您点击这些链接并完成预订或购买时，我们可能会获得一笔少量佣金，而您无需承担额外费用。联盟合作不会影响我们的编辑推荐。我们只链接我们认为真正具有价值的服务。`,
-    s4Title: '4. 赞助内容',
+    s4Title: '4. 广告与合作伙伴展示位',
     s4Body: (siteName) => (
       <>
-        本网站会展示来自第三方企业的赞助广告。赞助内容会清晰地标注<strong className="text-snow/90">“赞助”</strong>字样。
-        {siteName} 不对广告主的产品、服务或主张负责。点击赞助链接将带您前往拥有自身条款与隐私政策的外部网站。
+        本网站会展示来自第三方企业的广告和付费合作伙伴展示位。它们在出现之处均会清晰标注，例如标有<strong className="text-snow/90">“广告”</strong>字样。{siteName} 不对广告主的产品、服务或主张负责。点击这些链接将带您前往拥有自身条款与隐私政策的外部网站。
       </>
     ),
     s5Title: '5. 第三方服务：我们不是销售方',
@@ -555,7 +538,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   ko: {
     kicker: '법적 고지',
     h1: '이용약관',
-    lastUpdated: '최종 업데이트: 2026년 9월 · LaPeso Oy 운영',
+    lastUpdated: '최종 업데이트: 2026년 10월 · LaPeso Oy 운영',
     s1Title: '1. 본 사이트 소개',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -568,13 +551,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. 정보의 정확성',
     s3Title: '3. 제휴 링크 및 파트너십',
     s3P1: (siteName) => `${siteName}의 일부 링크는 제휴 링크입니다. 이러한 링크를 클릭하시고 예약 또는 구매를 하시면 귀하께 추가 비용 없이 당사가 소액의 수수료를 받을 수 있습니다. 제휴 관계는 당사의 편집 추천에 영향을 미치지 않습니다. 당사는 진정한 가치를 제공한다고 믿는 서비스에만 링크합니다.`,
-    s4Title: '4. 후원 콘텐츠',
+    s4Title: '4. 광고 및 파트너 게재',
     s4Body: (siteName) => (
       <>
-        본 사이트는 제3자 사업자의 후원 광고를 표시합니다. 후원 콘텐츠는 표시되는 모든 곳에서{' '}
-        <strong className="text-snow/90">"후원"</strong> 라벨로 명확하게 식별됩니다. {siteName} 사이트는 광고주의 제품,
-        서비스 또는 주장에 대해 책임지지 않습니다. 후원 링크를 클릭하시면 자체 약관 및 개인정보 처리방침을 가진
-        외부 웹사이트로 이동합니다.
+        본 사이트는 제3자 사업자의 광고와 유료 파트너 게재를 표시합니다. 이는 표시되는 모든 곳에서 <strong className="text-snow/90">"광고"</strong> 등의 라벨로 명확하게 구분됩니다. {siteName} 사이트는 광고주의 제품, 서비스 또는 주장에 대해 책임지지 않습니다. 이러한 링크를 클릭하시면 자체 약관 및 개인정보 처리방침을 가진 외부 웹사이트로 이동합니다.
       </>
     ),
     s5Title: '5. 제3자 서비스: 당사는 판매자가 아닙니다',
@@ -627,7 +607,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   fr: {
     kicker: 'Mentions légales',
     h1: 'Conditions d\'Utilisation',
-    lastUpdated: 'Dernière mise à jour : septembre 2026 · Exploité par LaPeso Oy',
+    lastUpdated: 'Dernière mise à jour : octobre 2026 · Exploité par LaPeso Oy',
     s1Title: '1. À propos de ce site',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -641,13 +621,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Exactitude des informations',
     s3Title: '3. Liens d\'affiliation et partenariats',
     s3P1: (siteName) => `Certains liens sur ${siteName} sont des liens d'affiliation. Lorsque vous cliquez sur ces liens et effectuez une réservation ou un achat, nous pouvons percevoir une petite commission sans coût supplémentaire pour vous. Les relations d'affiliation n'influencent pas nos recommandations éditoriales. Nous ne créons des liens que vers des services dont nous estimons qu'ils apportent une réelle valeur.`,
-    s4Title: '4. Contenu sponsorisé',
+    s4Title: '4. Publicités et emplacements partenaires',
     s4Body: (siteName) => (
       <>
-        Ce site affiche des publicités sponsorisées d'entreprises tierces. Le contenu sponsorisé est clairement
-        identifié par la mention <strong className="text-snow/90">« Sponsorisé »</strong> partout où il apparaît.{' '}
-        {siteName} n'est pas responsable des produits, services ou allégations des annonceurs. Cliquer sur un
-        lien sponsorisé vous amènera sur des sites externes régis par leurs propres conditions et politiques de confidentialité.
+        Ce site affiche des publicités et des emplacements partenaires payants d'entreprises tierces. Ils sont clairement identifiés, par exemple par la mention <strong className="text-snow/90">« Annonce »</strong>, <strong className="text-snow/90">« Publicité »</strong> ou <strong className="text-snow/90">« Partenaire »</strong>, partout où ils apparaissent. {siteName} n'est pas responsable des produits, services ou allégations des annonceurs. Cliquer sur ces liens vous amènera sur des sites externes régis par leurs propres conditions et politiques de confidentialité.
       </>
     ),
     s5Title: '5. Services tiers : nous ne sommes pas un commerçant',
@@ -701,7 +678,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   it: {
     kicker: 'Note legali',
     h1: 'Termini di Utilizzo',
-    lastUpdated: 'Ultimo aggiornamento: settembre 2026 · Gestito da LaPeso Oy',
+    lastUpdated: 'Ultimo aggiornamento: ottobre 2026 · Gestito da LaPeso Oy',
     s1Title: '1. Informazioni su questo sito',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -714,13 +691,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Accuratezza delle informazioni',
     s3Title: '3. Link di affiliazione e partnership',
     s3P1: (siteName) => `Alcuni link su ${siteName} sono link di affiliazione. Quando Lei clicca su questi link ed effettua una prenotazione o un acquisto, potremmo ricevere una piccola commissione senza costi aggiuntivi. I rapporti di affiliazione non influenzano le nostre raccomandazioni editoriali. Inseriamo link solo verso servizi che riteniamo offrano un valore reale.`,
-    s4Title: '4. Contenuti sponsorizzati',
+    s4Title: '4. Annunci e spazi dei partner',
     s4Body: (siteName) => (
       <>
-        Questo sito mostra annunci sponsorizzati di aziende terze. I contenuti sponsorizzati sono chiaramente
-        contrassegnati con l'etichetta <strong className="text-snow/90">"Sponsorizzato"</strong> ovunque appaiano.{' '}
-        {siteName} non è responsabile dei prodotti, servizi o affermazioni degli inserzionisti. Cliccando sui
-        link sponsorizzati verrà reindirizzato a siti esterni regolati da propri termini e politiche sulla privacy.
+        Questo sito mostra annunci di aziende terze e spazi a pagamento dei partner. Sono chiaramente contrassegnati, ad esempio con l'etichetta <strong className="text-snow/90">"Annuncio"</strong>, <strong className="text-snow/90">"Pubblicità"</strong> o <strong className="text-snow/90">"Partner"</strong>, ovunque appaiano. {siteName} non è responsabile dei prodotti, servizi o affermazioni degli inserzionisti. Cliccando su questi link verrà reindirizzato a siti esterni regolati da propri termini e politiche sulla privacy.
       </>
     ),
     s5Title: '5. Servizi di terzi: non siamo un commerciante',
@@ -774,7 +748,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   nl: {
     kicker: 'Juridisch',
     h1: 'Gebruiksvoorwaarden',
-    lastUpdated: 'Laatst bijgewerkt: september 2026 · Beheerd door LaPeso Oy',
+    lastUpdated: 'Laatst bijgewerkt: oktober 2026 · Beheerd door LaPeso Oy',
     s1Title: '1. Over deze site',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -787,13 +761,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Juistheid van informatie',
     s3Title: '3. Affiliatelinks en partnerschappen',
     s3P1: (siteName) => `Sommige links op ${siteName} zijn affiliatelinks. Wanneer u op deze links klikt en een boeking of aankoop doet, kunnen wij een kleine commissie ontvangen zonder extra kosten voor u. Affiliaterelaties beïnvloeden onze redactionele aanbevelingen niet. Wij linken alleen naar diensten waarvan wij denken dat zij echte waarde bieden.`,
-    s4Title: '4. Gesponsorde inhoud',
+    s4Title: '4. Advertenties en partnerplaatsingen',
     s4Body: (siteName) => (
       <>
-        Deze site toont gesponsorde advertenties van externe bedrijven. Gesponsorde inhoud wordt overal duidelijk
-        aangeduid met het label <strong className="text-snow/90">"Gesponsord"</strong>. {siteName} is niet
-        verantwoordelijk voor de producten, diensten of beweringen van adverteerders. Klikken op gesponsorde links
-        brengt u naar externe websites die zijn onderworpen aan hun eigen voorwaarden en privacybeleid.
+        Deze site toont advertenties en betaalde partnerplaatsingen van externe bedrijven. Ze worden overal duidelijk aangeduid, bijvoorbeeld met het label <strong className="text-snow/90">"Advertentie"</strong> of <strong className="text-snow/90">"Partner"</strong>. {siteName} is niet verantwoordelijk voor de producten, diensten of beweringen van adverteerders. Klikken op deze links brengt u naar externe websites die zijn onderworpen aan hun eigen voorwaarden en privacybeleid.
       </>
     ),
     s5Title: '5. Diensten van derden: wij zijn geen handelaar',
@@ -847,7 +818,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
   sv: {
     kicker: 'Juridik',
     h1: 'Användarvillkor',
-    lastUpdated: 'Senast uppdaterad: september 2026 · Drivs av LaPeso Oy',
+    lastUpdated: 'Senast uppdaterad: oktober 2026 · Drivs av LaPeso Oy',
     s1Title: '1. Om denna webbplats',
     s1P1: (siteName, siteUrl) => (
       <>
@@ -860,13 +831,10 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     s2Title: '2. Informationens korrekthet',
     s3Title: '3. Affiliatelänkar och samarbeten',
     s3P1: (siteName) => `Vissa länkar på ${siteName} är affiliatelänkar. När du klickar på dessa länkar och gör en bokning eller ett köp kan vi få en liten provision utan extra kostnad för dig. Affiliaterelationer påverkar inte våra redaktionella rekommendationer. Vi länkar endast till tjänster vi tror ger genuint värde.`,
-    s4Title: '4. Sponsrat innehåll',
+    s4Title: '4. Annonser och partnerplaceringar',
     s4Body: (siteName) => (
       <>
-        Den här webbplatsen visar sponsrade annonser från tredjepartsföretag. Sponsrat innehåll är tydligt märkt
-        med etiketten <strong className="text-snow/90">"Sponsrad"</strong> överallt där det förekommer. {siteName} ansvarar
-        inte för produkter, tjänster eller påståenden från annonsörer. Att klicka på sponsrade länkar tar dig
-        till externa webbplatser som styrs av sina egna villkor och integritetspolicyer.
+        Den här webbplatsen visar annonser och betalda partnerplaceringar från tredjepartsföretag. De är tydligt märkta överallt där de förekommer, till exempel med etiketten <strong className="text-snow/90">"Annons"</strong> eller <strong className="text-snow/90">"Partner"</strong>. {siteName} ansvarar inte för produkter, tjänster eller påståenden från annonsörer. Att klicka på dessa länkar tar dig till externa webbplatser som styrs av sina egna villkor och integritetspolicyer.
       </>
     ),
     s5Title: '5. Tjänster från tredje part: vi är ingen återförsäljare',

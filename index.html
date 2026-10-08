@@ -170,7 +170,35 @@
         gtag('consent', 'update', { analytics_storage: 'granted' });
       }
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBTJJJDJTV"></script>
+    <!-- Google Analytics (gtag.js) ladataan vasta kun lukija on hyvaksynyt evasteet. Ilman lupaa
+         skripti ei lataudu lainkaan, joten Googlelle ei lahde evasteettomiakaan signaaleja. gtag()-kutsut
+         jonoutuvat dataLayeriin ja kontti toistaa ne saapuessaan. -->
+    <script>
+      (function () {
+        var KEY = 'laplanddining_cookie_consent';
+        var loaded = false;
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YBTJJJDJTV';
+          document.head.appendChild(s);
+        }
+        function choice() {
+          try { return localStorage.getItem(KEY); } catch (e) { return null; }
+        }
+        var first = choice();
+        if (first === 'accepted') { load(); return; }
+        if (first) return;
+        var t = setInterval(function () {
+          var v = choice();
+          if (!v) return;
+          clearInterval(t);
+          if (v === 'accepted') load();
+        }, 500);
+      })();
+    </script>
     <script>
       gtag('js', new Date());
       /* Kehityskone (localhost) ja Cloudflaren esikatselubuildit (*.pages.dev) eivat
