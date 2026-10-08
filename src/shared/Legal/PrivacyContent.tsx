@@ -642,7 +642,7 @@ const COPY: Record<Lang, {
     s3Items: [
       { strong: '필수 저장 항목', body: '웹사이트의 정상 작동에 필요(쿠키가 아닌 브라우저의 localStorage에 저장되는 귀하의 동의 선택). 본 사이트는 귀하가 동의하시기 전에는 자체적으로 쿠키를 설정하지 않습니다.' },
       { strong: '분석 쿠키', body: 'Google Analytics 4가 방문자의 사이트 이용 방식을 이해하는 데 사용. 가명 처리되어 수집됩니다.' },
-      { strong: 'GetYourGuide 쿠키', body: 'GetYourGuide 파트너 스크립트가 설정하며, 이 스크립트는 쿠키에 동의하신 후에만 불러옵니다. 액티비티 위젯의 노출 수와 클릭 수를 집계하고 예약을 사이트에 귀속시킵니다.' },
+      { strong: 'GetYourGuide 쿠키', body: 'GetYourGuide 파트너 스크립트가 설정하며, 이 스크립트는 쿠키에 동의하신 후에만 불러옵니다. 액티비티 위젯의 노출 수와 클릭 수 집계 및 예약의 사이트 귀속에 사용됩니다.' },
     ],
     s3Tail: (cookieLink) => <>분석 쿠키와 GetYourGuide 쿠키는 쿠키 배너를 통한 동의 후에만 설정됩니다. Umami 방문자 통계(제4항)는 쿠키를 사용하지 않습니다. 자세한 내용은 당사의 {cookieLink}을 참조하십시오.</>,
     s4Title: '4. Google Analytics 및 Umami',
