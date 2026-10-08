@@ -1,18 +1,18 @@
 {
-  "version": "b8fc3615",
+  "version": "53ec9477",
   "domain": "laplanddining.com",
   "brand": "DINING",
   "tagline": "Where to eat in Finnish Lapland",
-  "generated": "2026-09-21T11:35:29.439Z",
-  "staticFallbackSeason": "summer",
+  "generated": "2026-10-08T18:02:22.163Z",
+  "staticFallbackSeason": "winter",
   "seasons": {
     "summer": {
       "tagline": "Where to eat in Finnish Lapland",
-      "heroUrl": "https://laplanddining.com/images/drive/heroInterior.webp?v=e0d5a179",
+      "heroUrl": "https://laplanddining.com/images/commons/kemi-meripuisto-pavilion-summer-2560.webp?v=ff183fcd",
       "heroAlt": "Lapland restaurant interior",
-      "heroSha": "e0d5a179e5fef97d",
-      "bytes": 161985,
-      "sha256": "a9bf98937bc116791dcfd954ba34a1b4598ae5285626c5a9a727d726ff769b56",
+      "heroSha": "ff183fcd6cd35a3f",
+      "bytes": 182411,
+      "sha256": "ad6d424a1a952944cede51e5cab6a83f1a15bdf8feac029264d2078ce15d7d39",
       "bandH": 168,
       "photoPct": 73.3,
       "ink": 16330,
@@ -27,10 +27,10 @@
       "accentMed": 5.06,
       "whiteP10": 17.08,
       "whiteMed": 17.08,
-      "mean": 73.6,
-      "centerSq": 84.3,
-      "photoRegion": 86.9,
-      "photoRegionRef": 86.9,
+      "mean": 90.7,
+      "centerSq": 91.9,
+      "photoRegion": 110.2,
+      "photoRegionRef": 110.2,
       "overlayPixels": 0,
       "maxDiff": 0,
       "fit": {
@@ -47,11 +47,11 @@
     },
     "winter": {
       "tagline": "Where to eat in Finnish Lapland",
-      "heroUrl": "https://laplanddining.com/images/drive/heroInterior.webp?v=e0d5a179",
+      "heroUrl": "https://laplanddining.com/images/commons/kemi-meripuisto-pavilion-winter-2560.webp?v=0c4de070",
       "heroAlt": "Lapland restaurant interior",
-      "heroSha": "e0d5a179e5fef97d",
-      "bytes": 161985,
-      "sha256": "a9bf98937bc116791dcfd954ba34a1b4598ae5285626c5a9a727d726ff769b56",
+      "heroSha": "0c4de070c95eec42",
+      "bytes": 176667,
+      "sha256": "108310b5bd9691691aaf0ca3d70ba54edf6534bfecb44da93bdd376f2e8cd434",
       "bandH": 168,
       "photoPct": 73.3,
       "ink": 16330,
@@ -66,10 +66,10 @@
       "accentMed": 5.06,
       "whiteP10": 17.08,
       "whiteMed": 17.08,
-      "mean": 73.6,
-      "centerSq": 84.3,
-      "photoRegion": 86.9,
-      "photoRegionRef": 86.9,
+      "mean": 117.8,
+      "centerSq": 118.5,
+      "photoRegion": 147.1,
+      "photoRegionRef": 147.1,
       "overlayPixels": 0,
       "maxDiff": 0,
       "fit": {
@@ -82,8 +82,7 @@
       },
       "contrastOk": true,
       "zeroOverlay": true,
-      "errors": [],
-      "sameAsSummer": true
+      "errors": []
     }
   }
 }
