@@ -1172,8 +1172,11 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
             </div>
           </div>
 
-          {/* Site network grid, 5 columns on desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-7 sm:gap-x-10 sm:gap-y-8">
+          {/* Site network grid, 5 columns from tablet (md) up. 16.10.2026: below lg it was 3 columns, so the fifth
+              group fell to a second row next to an empty slot and the footer was 2 409 px tall on a tablet
+              (1 554 px at 1024 px). At 768 px five columns with a 20 px gap leave ~128 px each: long names wrap
+              to two lines, nothing overflows (measured de, the longest). */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-6 gap-y-7 sm:gap-x-10 md:gap-x-5 lg:gap-x-10 sm:gap-y-8">
             {siteGroups.map((group) => (
               <div key={group.title}>
                 <h3
@@ -1327,7 +1330,10 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
               leveyttä varten: Tailwind v3:lla (laplandvisit) `@md` ei käänny →
               nappi jää `w-full` — turvallinen fallback; `lg:grid-cols-3` kääntyy
               myös v3:lla. */}
-          <div className="@container grid grid-cols-1 lg:grid-cols-3 gap-4 mb-9">
+          {/* 16.10.2026: three across from md (768 px), not lg. Stacked full-width on a tablet each card was
+              ~200 px tall with three lines of text in a 720 px box (Vesa flagged the tablet footer 16.10.2026).
+              At 768 px a card is ~229 px wide, ~28 characters a line: readable. */}
+          <div className="@container grid grid-cols-1 md:grid-cols-3 gap-4 mb-9">
 
               {/* Spotted an Error */}
               <div
