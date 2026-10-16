@@ -39,7 +39,7 @@ export default function NewsCard({ meta, text, ui, surface, wide = false, level 
         <p className="nw-card-meta">
           <time dateTime={meta.date}>{formatDate(meta.date, lang)}</time>
           <span aria-hidden="true"> · </span>
-          <span>{ui.ui.source}: {meta.sources[0]?.publisher}</span>
+          <span>{ui.ui.source}: <span lang={meta.sources[0]?.lang}>{meta.sources[0]?.publisher}</span></span>
         </p>
         <H className="serif nw-card-title"><Link to={href} {...track}>{text.title}</Link></H>
         <p className="nw-card-dek">{text.dek}</p>
