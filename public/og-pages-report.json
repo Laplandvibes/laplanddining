@@ -401,5 +401,86 @@
         "samaKuinKesa": true
       }
     }
+  },
+  "city-rovaniemi": {
+    "route": "/city/rovaniemi",
+    "line": "Where to eat in Rovaniemi",
+    "kaudet": {
+      "summer": {
+        "hero": "/images/cities/rovaniemi.webp",
+        "bytes": 155075,
+        "sha256": "bb0427ffda6f00904abb62f56843bcc762aa4c724c5c640ef9ec2225ac35f146",
+        "heroSha": "b316d87959ff815e",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 15655,
+        "inkBox": [
+          402,
+          493,
+          795,
+          597
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 77,
+        "centerSq": 83.5,
+        "photoRegion": 91.7,
+        "photoRegionRef": 91.7,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 364,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      },
+      "winter": {
+        "hero": "/images/cities/rovaniemi.webp",
+        "bytes": 155075,
+        "sha256": "bb0427ffda6f00904abb62f56843bcc762aa4c724c5c640ef9ec2225ac35f146",
+        "heroSha": "b316d87959ff815e",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 15655,
+        "inkBox": [
+          402,
+          493,
+          795,
+          597
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 77,
+        "centerSq": 83.5,
+        "photoRegion": 91.7,
+        "photoRegionRef": 91.7,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 364,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": [],
+        "samaKuinKesa": true
+      }
+    }
   }
 }

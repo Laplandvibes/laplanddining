@@ -25,7 +25,13 @@
   },
   {
     "path": "/city/rovaniemi",
-    "jsonKey": "cities.rovaniemi"
+    "jsonKey": "cities.rovaniemi",
+    "ogImage": "/og/city-rovaniemi.jpg",
+    "ogCard": {
+      "hero": "/images/cities/rovaniemi.webp",
+      "line": "Where to eat in Rovaniemi",
+      "focus": "50% 15%"
+    }
   },
   {
     "path": "/city/levi",

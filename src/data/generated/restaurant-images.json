@@ -31,11 +31,12 @@
   },
   "rovaniemi-cafe-bar-21": {
     "src": "/images/restaurants/rovaniemi-cafe-bar-21.webp",
-    "kind": "illustration",
-    "model": "gpt-image-2",
+    "kind": "photo",
+    "credit": "LaplandVibes",
+    "note": "Oma valokuva paikan päältä 15.10.2026 klo 18.30 (21 CAFE BAR -kyltti ja ikkunapiirrokset, Rovakatu 21; master 20261015_183009, rajaus 0,640–2252,1907). Korvasi gpt-image-2-kuvituksen.",
     "width": 800,
     "height": 449,
-    "generatedAt": "2026-08-10"
+    "shotAt": "2026-10-15"
   },
   "levi-ravintola-wanha-hullu-poro": {
     "src": "/images/restaurants/levi-ravintola-wanha-hullu-poro.webp",

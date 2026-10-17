@@ -178,6 +178,7 @@ export default function CityPage() {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
+          style={city.photo && city.photoPosition ? { objectPosition: city.photoPosition } : undefined}
           fetchPriority="high"
           decoding="async"
         />
