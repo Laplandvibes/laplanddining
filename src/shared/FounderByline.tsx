@@ -76,13 +76,18 @@ export default function FounderByline({ tone = 'pink', lang, image = '/vesa-foun
   // with glow, on a pill-shaped plate that separates it from the band
   // (Vesa 9.8.: "ympyrä liian pieni ja taustaakaan ei ollenkaan").
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
+    // Sizes scale with the viewport (clamp) instead of breakpoints: inline styles cannot hold
+    // media queries, and these must stay purge-immune. At 360 px the fixed 96 px photo + padding
+    // left ~200 px for the name, which broke "Vesa, LaplandVibesin perustaja" onto three lines in
+    // a 136 px pill (Vesa 17.10.2026: "eikä tämä uutiskirje osio ole kyllä mobiilioptimoitu?").
+    // From ~565 px up every value is at its old maximum, so desktop is unchanged.
+    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'clamp(20px, 6vw, 28px)' }}>
       <div
         style={{
           display: 'inline-flex',
           alignItems: 'center',
-          gap: '18px',
-          padding: '14px 26px 14px 16px',
+          gap: 'clamp(12px, 3.5vw, 18px)',
+          padding: 'clamp(10px, 2.8vw, 14px) clamp(18px, 5vw, 26px) clamp(10px, 2.8vw, 14px) clamp(10px, 3vw, 16px)',
           borderRadius: '9999px',
           background: t.plate,
           border: `1px solid ${t.plateBorder}`,
@@ -96,8 +101,8 @@ export default function FounderByline({ tone = 'pink', lang, image = '/vesa-foun
           width={96}
           height={96}
           style={{
-            width: '96px',
-            height: '96px',
+            width: 'clamp(60px, 17vw, 96px)',
+            height: 'clamp(60px, 17vw, 96px)',
             borderRadius: '9999px',
             objectFit: 'cover',
             flexShrink: 0,
