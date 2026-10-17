@@ -687,8 +687,46 @@ const FOUNDER_STYLES = `
   .lv-nl-form .lv-nl-submit { grid-column: 2; grid-row: 1; width: auto; padding-left: 20px; padding-right: 20px; }
   .lv-nl-form .lv-nl-consent { grid-column: 1 / -1; grid-row: 2; }
   .lv-nl-later.lv-nl-later { margin-top: 6px; text-align: left; }
+  .lv-nl-body--form .lv-nl-later { display: none; }
   .lv-nl-trust.lv-nl-trust { margin-top: 4px; text-align: left; }
   .lv-nl-body--media .lv-nl-social { justify-content: flex-start !important; }
+}
+@media not all and (max-height: 600px) and (min-width: 560px) {
+  .lv-nl-body--form.lv-nl-body--form { display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 16px; text-align: left; }
+  .lv-nl-body--form .lv-nl-media, .lv-nl-body--form .lv-nl-main { display: contents; }
+  .lv-nl-body--form > *, .lv-nl-body--form .lv-nl-main > * { grid-column: 1 / -1; }
+  .lv-nl-body--form .lv-founder-avatar { grid-column: 1; grid-row: 1 / span 2; align-self: center; width: 72px !important; height: 72px !important; margin: 0; box-shadow: 0 0 0 2px var(--lv-nl-accent, #EC4899) !important; }
+  .lv-nl-body--form .lv-nl-wm.lv-nl-wm { grid-column: 2; grid-row: 1; align-self: end; font-size: 1.125rem; margin: 0; padding-right: 36px; text-align: left; }
+  .lv-nl-body--form .lv-nl-title.lv-nl-title { grid-column: 2; grid-row: 2; align-self: start; font-size: 1.875rem; line-height: 1.05; margin: 4px 0 0; padding-right: 36px; text-align: left; }
+  .lv-nl-body--form .lv-nl-desc.lv-nl-desc { margin: 18px 0 20px; font-size: 1rem; line-height: 1.55; text-align: left; }
+  .lv-nl-body--form .lv-nl-consent span { font-size: 0.8125rem; line-height: 1.45; }
+  .lv-nl-body--form .lv-nl-consent input { width: 20px; height: 20px; margin-top: 0; }
+  .lv-nl-body--form .lv-nl-email, .lv-nl-body--form .lv-nl-submit { min-height: 48px; }
+  .lv-nl-body--form .lv-nl-error { justify-content: flex-start; }
+  .lv-nl-body--form .lv-nl-later { display: none; }
+  .lv-nl-body--form .lv-nl-trust.lv-nl-trust { margin-top: 14px; font-size: 0.75rem; line-height: 1.5; text-align: left; }
+}
+@keyframes lv-nl-sheet-in {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@media (max-width: 559px) {
+  .lv-nl-overlay.lv-nl-overlay { padding: 0; align-items: flex-end; overflow: hidden; }
+  .lv-nl-overlay .lv-nl-backdrop { background: rgba(15, 23, 42, 0.62); }
+  .lv-nl-card.lv-nl-card { max-width: none; margin: 0; border-radius: 20px 20px 0 0; border-bottom: 0; max-height: calc(100vh - 16px); overflow-y: auto; overscroll-behavior: contain; animation: lv-nl-sheet-in 0.36s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  @supports (height: 100dvh) { .lv-nl-card.lv-nl-card { max-height: calc(100dvh - 16px); } }
+  .lv-nl-card .lv-nl-strip { border-radius: 0; }
+  .lv-nl-card .lv-nl-close { top: 6px; right: 6px; }
+  .lv-nl-body.lv-nl-body { padding: 20px 20px calc(16px + env(safe-area-inset-bottom)); }
+  .lv-nl-body--form.lv-nl-body--form { grid-template-columns: 64px minmax(0, 1fr); column-gap: 14px; }
+  .lv-nl-body--form .lv-founder-avatar { width: 64px !important; height: 64px !important; }
+  .lv-nl-body--form .lv-nl-wm.lv-nl-wm { font-size: 1.0625rem; }
+  .lv-nl-body--form .lv-nl-title.lv-nl-title { font-size: 1.625rem; }
+  .lv-nl-body--form .lv-nl-desc.lv-nl-desc { margin: 14px 0 16px; font-size: 0.9375rem; line-height: 1.5; }
+  .lv-nl-body--form .lv-nl-trust.lv-nl-trust { margin-top: 12px; }
+}
+@media (max-width: 559px) and (prefers-reduced-motion: reduce) {
+  .lv-nl-card.lv-nl-card { animation: lv-founder-fade 0.2s ease-out both; }
 }
 `;
 
@@ -751,6 +789,7 @@ export default function NewsletterPopup({
     border: `1px solid ${withAlpha(T.accent, 0.4)}`,
     '--lv-nl-focus-border': withAlpha(T.accent, 0.6),
     '--lv-nl-focus-ring': withAlpha(T.accent, 0.25),
+    '--lv-nl-accent': T.accent,
   } as React.CSSProperties;
   const D = { ...LOCALE_DICTS[safeLang], ...(dict ?? {}) };
   const storageKey = `${siteId}_newsletter_popup`;
@@ -940,6 +979,14 @@ export default function NewsletterPopup({
   // lomakkeen oikeaan. Kaksinkertainen luokka voittaa Tailwindin apuluokat myös v3-sivustoilla; !important vain
   // inline-tyylin (kuvan koko) ohitukseen. 🔴 Ei kommenttia CSS-merkkijonoon: se päätyy julkiseen bundleen
   // (gate:kommentit). Vasen palsta on olemassa, kun siinä on jotain näytettävää (sanamerkki on lomakkeessa aina).
+  // LV-NL-ARKKI (17.10.2026, Vesa laplandstaysissa puhelimella: "eikö tuo uutiskirje ole mobiilissa turhan iso?"
+  // ja "balanssissa vaan vasemmalla, muutenkin onko tuo huippufirman tekemän näköinen?"). Mitattu livestä ennen:
+  // kortti 81–126 % puhelimen näkyvästä korkeudesta (iPhone SE:llä lähetysnappi ruudun alla), tietokoneella 95 %
+  // 720 px ruudusta; esittely ja suostumus vasemmalla kun kuva, otsikko ja napit keskellä; pienet tekstit 11 px.
+  // Lomaketilassa (lv-nl-body--form) kuva on otsikon vieressä ja kaikki teksti samassa vasemmassa reunassa, ja
+  // puhelimen pystyasennossa (< 560 px) kortti on alhaalta nouseva arkki. "Ehkä myöhemmin" on piilossa: ruksi,
+  // tausta ja Esc kutsuvat samaa dismiss()-funktiota, joten nl_dismiss ei muutu. Vaakapuhelimen LV-NL-VAAKA
+  // jää voimaan: siellä lomakeruudukko on rajattu pois mediaehdolla. Jakelu: scripts/rollout_popup_arkki.mjs.
   const hasMedia = isSuccess ? !thanksBroken : true;
 
   const socialButtonStyle: React.CSSProperties = {
@@ -967,7 +1014,7 @@ export default function NewsletterPopup({
         type="button"
         aria-label={D.closeAria}
         onClick={dismiss}
-        className="fixed inset-0 bg-deep-night/85 backdrop-blur-sm cursor-default"
+        className="lv-nl-backdrop fixed inset-0 bg-deep-night/85 backdrop-blur-sm cursor-default"
       />
 
       {/* Card */}
@@ -980,7 +1027,7 @@ export default function NewsletterPopup({
       >
         {/* Accent strip: the site's own colours, network pink by default */}
         <div
-          className="h-1 w-full rounded-t-2xl"
+          className="lv-nl-strip h-1 w-full rounded-t-2xl"
           style={{ background: stripBg }}
           aria-hidden="true"
         />
@@ -989,12 +1036,12 @@ export default function NewsletterPopup({
           type="button"
           onClick={dismiss}
           aria-label={D.closeAria}
-          className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center rounded-full text-snow/60 hover:text-snow hover:bg-white/10 transition-colors cursor-pointer"
+          className="lv-nl-close absolute top-3 right-3 w-11 h-11 flex items-center justify-center rounded-full text-snow/60 hover:text-snow hover:bg-white/10 transition-colors cursor-pointer"
         >
           <X className="w-4 h-4" />
         </button>
 
-        <div className={`lv-nl-body${hasMedia ? ' lv-nl-body--media' : ''} p-6 sm:p-8 text-center`}>
+        <div className={`lv-nl-body${hasMedia ? ' lv-nl-body--media' : ''}${isSuccess ? '' : ' lv-nl-body--form'} p-6 sm:p-8 text-center`}>
           {isSuccess ? (
             <>
               {/* Trip photo — the Suomi-helmet shot. Playful counterpart to the
@@ -1167,7 +1214,7 @@ export default function NewsletterPopup({
                     className="mt-0.5 w-4 h-4 shrink-0 cursor-pointer"
                     style={{ accentColor: T.accent }}
                   />
-                  <span className="text-white/70 text-[11px] leading-relaxed">
+                  <span className="text-white/70 text-xs leading-relaxed">
                     {D.consent}{' '}
                     <a
                       href={withSlash(localizedPrivacyHref(privacyHref, location.pathname))}
@@ -1203,7 +1250,7 @@ export default function NewsletterPopup({
               </form>
 
               {status === 'error' && (
-                <p className="mt-3 text-xs flex items-center justify-center gap-1.5 text-rose-400">
+                <p className="lv-nl-error mt-3 text-xs flex items-center justify-center gap-1.5 text-rose-400">
                   <AlertCircle className="w-3.5 h-3.5" /> {errorMsg}
                 </p>
               )}
@@ -1216,7 +1263,7 @@ export default function NewsletterPopup({
                 {D.later}
               </button>
 
-              <p className="lv-nl-trust mt-4 text-[11px] text-snow/60 text-center leading-relaxed">
+              <p className="lv-nl-trust mt-4 text-xs text-snow/60 text-center leading-relaxed">
                 {D.trust}
               </p>
               </div>
