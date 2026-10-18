@@ -482,5 +482,86 @@
         "samaKuinKesa": true
       }
     }
+  },
+  "midnight-sun-dining": {
+    "route": "/midnight-sun-dining",
+    "line": "Eating out under the midnight sun",
+    "kaudet": {
+      "summer": {
+        "hero": "/images/commons/inari-midnight-sun-lake-1920.webp",
+        "bytes": 90221,
+        "sha256": "7122a080a3f0c6f597b8bcb0473b7ac4b96a1d9e2c66fa03cf2457523195f712",
+        "heroSha": "a8d01a23a12802f4",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 16762,
+        "inkBox": [
+          363,
+          493,
+          836,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 58.3,
+        "centerSq": 74.8,
+        "photoRegion": 65.9,
+        "photoRegionRef": 65.9,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 476,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      },
+      "winter": {
+        "hero": "/images/commons/inari-midnight-sun-lake-1920.webp",
+        "bytes": 90221,
+        "sha256": "7122a080a3f0c6f597b8bcb0473b7ac4b96a1d9e2c66fa03cf2457523195f712",
+        "heroSha": "a8d01a23a12802f4",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 16762,
+        "inkBox": [
+          363,
+          493,
+          836,
+          603
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 58.3,
+        "centerSq": 74.8,
+        "photoRegion": 65.9,
+        "photoRegionRef": 65.9,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 476,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": [],
+        "samaKuinKesa": true
+      }
+    }
   }
 }

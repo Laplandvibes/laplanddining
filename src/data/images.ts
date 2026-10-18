@@ -104,6 +104,9 @@ const COMMONS_SRCSET: Record<string, string> = {
   'cloudberry-picking-bog': '/images/commons/cloudberry-picking-bog-1280.webp 1280w, /images/commons/cloudberry-picking-bog-1920.webp 1920w',
   'muonio-pallas-hanhijarvi': '/images/commons/muonio-pallas-hanhijarvi-1280.webp 1280w, /images/commons/muonio-pallas-hanhijarvi-1920.webp 1920w',
   'loimulohi-fire': '/images/commons/loimulohi-fire-1280.webp 1280w, /images/commons/loimulohi-fire-1920.webp 1920w',
+  // 18.10.2026 /midnight-sun-dining: hero (Inarijärvi 13.6.2013) ja Saariselän kortti (Kaunispää 18.7.2016, rajattu).
+  'inari-midnight-sun-lake': '/images/commons/inari-midnight-sun-lake-1280.webp 1280w, /images/commons/inari-midnight-sun-lake-1920.webp 1920w, /images/commons/inari-midnight-sun-lake-2560.webp 2560w',
+  'saariselka-kaunispaa-summer': '/images/commons/saariselka-kaunispaa-summer-1280.webp 1272w',
   'inari-fish-of-the-day': '/images/commons/inari-fish-of-the-day-1280.webp 1280w, /images/commons/inari-fish-of-the-day-1920.webp 1920w',
   'enontekio-reindeer-autumn': '/images/commons/enontekio-reindeer-autumn-1280.webp 1280w, /images/commons/enontekio-reindeer-autumn-1920.webp 1920w',
   // 18.10.2026: Ylläksen kaupunkikuva (oma heinäkuun pubikuva näytti Jack Daniel's -viskikyltin).
@@ -131,6 +134,10 @@ export const PHOTO = {
   inariSummer: commons('inari-juutua-river-summer'),
   /** Arkistokuva: keskiyön aurinko Ounasvaaralta juhannuksena 1953 (Eero Sauri, CC BY 4.0). */
   midnightSunOunasvaara1953: commons('rovaniemi-ounasvaara-midnight-sun-1953'),
+  /** Keskiyön aurinko Inarijärvellä 13.6.2013 (Tevfik Teker, CC BY 3.0). */
+  midnightSunInari: commons('inari-midnight-sun-lake'),
+  /** Kaunispään tunturimaisema heinäkuussa 2016 (Htm, CC BY 4.0, rajattu). */
+  saariselkaKaunispaaSummer: commons('saariselka-kaunispaa-summer'),
   inariRestaurantInterior: commons('inari-wilderness-hotel-restaurant'),
   saariselkaWinter: commons('saariselka-huippu-winter'),
   kemiWinter: commons('kemi-lumilinna-entrance-winter'),
