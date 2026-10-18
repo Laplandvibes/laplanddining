@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Restaurants à Saariselkä : où manger",
-      "description": "Sept restaurants à Saariselkä, tous accessibles à pied : une cuisine notée 4,8, un gastropub, un lávvu et le burger du village.",
+      "description": "Huit restaurants à Saariselkä, tous accessibles à pied : une cuisine notée 4,8, un gastropub, un lávvu et le burger du village.",
       "h1": "Restaurants à Saariselkä",
       "tagline": "Un petit village de fjeld avec le plus large éventail de notes du site.",
       "intro": "Saariselkä est assez compact pour que le choix soit une promenade et non un trajet — deux d'entre eux sont dans la même rue. Ce qui est inhabituel, c'est l'écart : Fieno tient 4,8 sur 529 avis et Gáldu un 5,0 net, tandis que ScanBurger, Lieggâ Láávu et Bistro & Cafe Kuukkeli se situent entre 4,1 et 4,2. Gastropub Giitu, à 4,7, est celui que Google classe sous Inari — il est à Saariselkä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restaurants à Kuusamo et Ruka",
-      "description": "Six restaurants à la station de Ruka et dans la ville de Kuusamo, à 22 km : la pizzeria la plus fréquentée du site, un gastropub et un café de randonnée.",
+      "description": "Sept restaurants à la station de Ruka et dans la ville de Kuusamo, à 22 km : la pizzeria la plus fréquentée du site, un gastropub et un café de randonnée.",
       "h1": "Restaurants à Kuusamo et Ruka",
       "tagline": "Deux centres, 22 km d'écart — vérifiez dans lequel se trouve votre table.",
       "intro": "Kuusamo se divise nettement en deux. En haut, à la station, Pizzeria Ruka compte plus d'avis que tout autre restaurant du site hors de Rovaniemi, avec Restaurant Burger Cafe & Bar Ruka sur la même route et, un peu à l'écart, le Gasthaus & Hard Trek Café de Ruka Trek, noté 4,8. En bas, en ville, 22 km au sud, Ravintola Talonpöytä et Restaurant Wanha Mestari servent un tout autre public.",
@@ -350,9 +350,9 @@
     "stayInTemplate": "Dormir à {{city}}",
     "readAllReviews": "Lire les {{count}} avis sur Google →",
     "statsAvgRating": "Note moyenne sur Google",
-    "introTitle": "Le classement est une note Google, pas une place payée",
-    "introP1": "Chaque note vient de Google et renvoie aux avis d'origine : vous voyez le score et son ancienneté. Une même note peut pourtant désigner deux soirées très différentes — un menu dégustation et une salle d'hôtel soignée ne se ressemblent pas.",
-    "introP2": "Les cartes suivent la saison : la même cuisine ne se lit pas pareil en février et en août. Les salles sont petites et l'hiver se remplit tôt — réservez à l'avance."
+    "introTitle": "Avant de réserver une table",
+    "introP1": "Le badge étoilé de chaque carte ouvre les avis Google d'origine : vous voyez d'où vient la note et si elle est récente. Une même note peut pourtant désigner deux soirées très différentes : un menu dégustation et une salle d'hôtel soignée ne se ressemblent pas.",
+    "introP2": "Les cartes suivent la saison : la même cuisine ne se lit pas pareil en février et en août. Les salles sont petites et l'hiver se remplit tôt : réservez à l'avance."
   },
   "midnightSunDining": {
     "title": "Dîner sous le soleil de minuit en Laponie",

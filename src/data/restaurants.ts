@@ -106,6 +106,12 @@ export interface Restaurant {
   // Maps-sourced (auto)
   name: string;
   city: string;
+  /**
+   * Tarkka paikka kortin paikkamerkissä, kun se ei ole kaupunkisivun nimi. Kuusamon sivu kattaa
+   * Rukan 22 km:n päässä, ja Vesa 7.9.2026: *"riistaravintola on rukalla, ei kuusamossa, ettei
+   * sekoitu"*. `city` pysyy kaupunkisivun avaimena (ryhmittely, majoitushaku).
+   */
+  locality?: string;
   country: string;
   rating?: number;
   reviewCount?: number;
@@ -379,27 +385,6 @@ export interface CardBody {
   isQuote: boolean;
 }
 
-const NUMBER_LOCALES: Record<Locale, string> = {
-  en: 'en',
-  fi: 'fi-FI',
-  de: 'de-DE',
-  ja: 'ja-JP',
-  es: 'es-ES',
-  'pt-BR': 'pt-BR',
-  'zh-CN': 'zh-CN',
-  ko: 'ko-KR',
-  fr: 'fr-FR',
-  it: 'it-IT',
-  nl: 'nl-NL',
-  sv: 'sv-SE',
-};
-
-/**
- * Synthesised factual line, per locale:
- *   EN: "4.6 stars from 627 reviews · finnish."
- *   FI: "4.6 tähden arvio • 627 arvostelua • suomalainen"
- *   DE: "4.6 Sterne • 627 Bewertungen • finnisch"
- */
 /**
  * Kortin varateksti, kun kuratoitua kuvausta ei ole.
  *
@@ -407,9 +392,9 @@ const NUMBER_LOCALES: Record<Locale, string> = {
  * kohdassa"* — suomenkielisellä sivulla kortissa luki vain "4.6 tähden arvio •
  * 2 394 arvostelua • kahvila". Kaksi vikaa yhdessä rivissä:
  *
- * 1. Se ei kertonut paikasta mitään. Nyt rivi alkaa OSOITTEELLA, joka on
- *    datassa kaikilla 81 ravintolalla (`shortAddress`). "Rovakatu 21,
- *    Rovaniemi. 4,6 tähteä 2 394 arvostelusta." kertoo mikä ja missä.
+ * 1. Se ei kertonut paikasta mitään. Nyt rivi on OSOITE, joka on datassa
+ *    kaikilla 81 ravintolalla (`shortAddress`): "Rovakatu 21, Rovaniemi."
+ *    (Arvio poistettiin rivistä 18.10.2026, ks. alla.)
  * 2. Keittiö toistui: se renderöidään jo omalla rivillään kortin otsikon alla.
  *    Poistettu tästä.
  *
@@ -422,36 +407,15 @@ const NUMBER_LOCALES: Record<Locale, string> = {
  * (englanniksi Googlen arviositaatti täyttää paikan). Aitojen esittelyjen
  * kirjoittaminen on oma sisältötyönsä eikä sitä saa keksiä tästä datasta.
  */
+// 🔴 Vesa 2026-10-18 (Ylläskammi, Salla, Posio): *"googlen arvio … miksi se on tekstissä?"* Rivissä oli
+// osoitteen perässä "4,4 tähteä 850 arvostelusta.", vaikka sama luku on jo kortin kulmamerkissä. Toisto ei
+// kerro lukijalle mitään uutta, ja tekstiin jäädytetty luku vanhenee Googlen arvion muuttuessa. Arvio näkyy
+// nyt vain merkissä (linkki Googleen); varateksti on pelkkä osoite.
 function factualLine(r: Restaurant, locale: Locale): string | null {
-  if (!r.rating || !r.reviewCount) return null;
-  const numLocale = NUMBER_LOCALES[locale];
-  const rating = r.rating.toLocaleString(numLocale, {
-    minimumFractionDigits: 1,
-    maximumFractionDigits: 1,
-  });
-  const count = r.reviewCount.toLocaleString(numLocale);
   const place = r.shortAddress?.trim();
-
-  const stars: Record<Locale, string> = {
-    en: `${rating} stars from ${count} reviews.`,
-    fi: `${rating} tähteä ${count} arvostelusta.`,
-    sv: `${rating} stjärnor av ${count} recensioner.`,
-    de: `${rating} Sterne aus ${count} Bewertungen.`,
-    fr: `${rating} étoiles sur ${count} avis.`,
-    es: `${rating} estrellas de ${count} reseñas.`,
-    it: `${rating} stelle su ${count} recensioni.`,
-    nl: `${rating} sterren uit ${count} beoordelingen.`,
-    'pt-BR': `${rating} estrelas de ${count} avaliações.`,
-    ja: `評価${rating}、レビュー${count}件。`,
-    ko: `평점 ${rating}, 리뷰 ${count}개.`,
-    'zh-CN': `${rating} 星，${count} 条评论。`,
-  };
-
-  const line = stars[locale] ?? stars.en;
-  if (!place) return line;
-  // CJK: piste kuuluu täysleveänä, ja väliä ei tarvita.
-  const sep = locale === 'ja' || locale === 'zh-CN' ? '。' : '. ';
-  return `${place}${sep}${line}`;
+  if (!place) return null;
+  // CJK: piste kuuluu täysleveänä.
+  return `${place}${locale === 'ja' || locale === 'zh-CN' ? '。' : '.'}`;
 }
 
 export function composeCardBody(r: Restaurant, locale: Locale = 'en'): CardBody | null {

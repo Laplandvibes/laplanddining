@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Restaurants in Saariselkä: wo man isst",
-      "description": "Sieben Restaurants in Saariselkä, alle zu Fuß erreichbar: eine mit 4,8 bewertete Küche, ein Gastropub, ein Lávvu und der Burgerladen des Dorfes.",
+      "description": "Acht Restaurants in Saariselkä, alle zu Fuß erreichbar: eine mit 4,8 bewertete Küche, ein Gastropub, ein Lávvu und der Burgerladen des Dorfes.",
       "h1": "Restaurants in Saariselkä",
       "tagline": "Ein kleines Fjelldorf mit der größten Bewertungsspanne dieser Seite.",
       "intro": "Saariselkä ist kompakt genug, dass die Wahl ein Spaziergang ist und keine Fahrt — zwei davon stehen an derselben Straße. Ungewöhnlich ist die Spanne: Fieno hält 4,8 bei 529 Bewertungen und Gáldu glatte 5,0, während ScanBurger, Lieggâ Láávu und Bistro & Cafe Kuukkeli zwischen 4,1 und 4,2 liegen. Gastropub Giitu mit 4,7 ist das, was Google unter Inari führt — es liegt in Saariselkä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restaurants in Kuusamo und Ruka",
-      "description": "Sechs Restaurants, verteilt auf den Ort Ruka und die Stadt Kuusamo, 22 km auseinander: die belebteste Pizzeria dieser Seite, ein Gastropub und ein Wandercafé.",
+      "description": "Sieben Restaurants, verteilt auf den Ort Ruka und die Stadt Kuusamo, 22 km auseinander: die belebteste Pizzeria dieser Seite, ein Gastropub und ein Wandercafé.",
       "h1": "Restaurants in Kuusamo und Ruka",
       "tagline": "Zwei Zentren, 22 km auseinander — prüfen Sie, in welchem Ihr Tisch steht.",
       "intro": "Kuusamo teilt sich klar in zwei Hälften. Oben im Skiort hat Pizzeria Ruka mehr Bewertungen als jedes andere Restaurant dieser Seite außerhalb von Rovaniemi, an derselben Straße Restaurant Burger Cafe & Bar Ruka und etwas abseits das Gasthaus & Hard Trek Café von Ruka Trek mit 4,8. Unten in der Stadt, 22 km südlich, bedienen Ravintola Talonpöytä und Restaurant Wanha Mestari ein ganz anderes Publikum.",
@@ -350,9 +350,9 @@
     "stayInTemplate": "In {{city}} übernachten",
     "readAllReviews": "Alle {{count}} Bewertungen auf Google lesen →",
     "statsAvgRating": "Durchschnittliche Google-Bewertung",
-    "introTitle": "Die Reihenfolge ist eine Google-Bewertung, kein bezahlter Platz",
-    "introP1": "Jede Bewertung stammt von Google und führt zu den Rezensionen dahinter, Sie sehen also die Punktzahl und ihr Alter. Dieselbe Zahl kann trotzdem zwei sehr verschiedene Abende bedeuten: ein Degustationsmenü und ein gediegener Hotelsaal sind nicht dasselbe.",
-    "introP2": "Die Karten folgen der Saison, im Februar liest sich dieselbe Küche anders als im August. Die Säle sind klein und der Winter füllt sich früh — reservieren Sie rechtzeitig."
+    "introTitle": "Bevor Sie einen Tisch reservieren",
+    "introP1": "Das Sternsymbol auf jeder Karte öffnet die Google-Rezensionen dahinter, so sehen Sie, woher die Punktzahl kommt und wie aktuell sie ist. Dieselbe Zahl kann trotzdem zwei sehr verschiedene Abende bedeuten: ein Degustationsmenü und ein gediegener Hotelsaal sind nicht dasselbe.",
+    "introP2": "Die Karten folgen der Saison, im Februar liest sich dieselbe Küche anders als im August. Die Säle sind klein und der Winter füllt sich früh, reservieren Sie also rechtzeitig."
   },
   "midnightSunDining": {
     "title": "Essen unter der Mitternachtssonne in Lappland",

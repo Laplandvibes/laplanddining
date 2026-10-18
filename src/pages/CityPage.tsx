@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { MapPin, Star, Info } from 'lucide-react';
 import Hreflang from '../i18n/Hreflang';
 import { useLocale } from '../i18n/useLocale';
@@ -37,6 +38,16 @@ export default function CityPage() {
   const { t, i18n } = useTranslation('pages');
   const { locale } = useLocale();
   const { slug } = useParams<{ slug: string }>();
+  const { hash } = useLocation();
+
+  // Etusivun kota-kortti vie suoraan ravintolaan (/city/levi#kittila-saamen-kammi, 18.10.2026).
+  // React Router ei vieritä ankkuriin itse, ja ScrollToTop jättää hashilliset rauhaan.
+  useEffect(() => {
+    if (!hash) return;
+    const id = decodeURIComponent(hash.slice(1));
+    const timer = window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ block: 'start' }), 60);
+    return () => window.clearTimeout(timer);
+  }, [hash, slug]);
 
   const city = cityBySlug(slug);
   // Tuntematon slug saa verkoston 404:n, ei tyhjää runkoa. Tämä on myös se

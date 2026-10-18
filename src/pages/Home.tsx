@@ -36,7 +36,10 @@ interface FAQItemI18n { question: string; answer: string }
 const cuisineCardsMeta = [
   // Pexels 5395184 (Pexels License, ladattu 2020): paikaton annoskuva, alt = kortin otsikko.
   { image: PHOTO.platedFish, icon: Star, href: '/fine-dining' },
-  { image: DINING.kotaFire, icon: Flame, href: '/food-history' },
+  // Vesa 18.10.2026: "jos menen kota illallinen miksi se menee food historiaan?" Kortti lupaa kota-illallisen,
+  // joten se vie paikkaan jossa sen saa: Saamen Kammi (Levi) on maan alle rakennettu turvekammi, jossa syödään
+  // avotulen äärellä (kammi.fi). Kotahovi on vain nimetty kodan mukaan, eikä Ylläskodan sivu mainitse kotaa.
+  { image: DINING.kotaFire, icon: Flame, href: '/city/levi#kittila-saamen-kammi' },
   { image: DINING.ingredients, icon: UtensilsCrossed, href: '/local-food' },
 ];
 

@@ -111,6 +111,9 @@ const COMMONS_SRCSET: Record<string, string> = {
 const OWN_SRCSET: Record<string, string> = {
   'lapland-river-july': '/images/own/lapland-river-july-1280.webp 1280w, /images/own/lapland-river-july-1920.webp 1920w',
   'ruka-terrace-july': '/images/own/ruka-terrace-july-1280.webp 1280w, /images/own/ruka-terrace-july-1920.webp 1920w',
+  // Lokakuun 2026 reissu (18.10.): /about ja /local-food -herot, koko ruutu ilman suurennusta.
+  'vesa-kultahippu-ivalo': '/images/own/vesa-kultahippu-ivalo-1280.webp 1280w, /images/own/vesa-kultahippu-ivalo-1920.webp 1920w, /images/own/vesa-kultahippu-ivalo-2560.webp 2560w',
+  'kieppi-lappish-plate': '/images/own/kieppi-lappish-plate-1280.webp 1280w, /images/own/kieppi-lappish-plate-1920.webp 1920w, /images/own/kieppi-lappish-plate-2560.webp 2560w',
 };
 /** Oletustiedosto `src`:ksi: 1920 px tai suurin pienempi. */
 const commons = (name: string): string => {
@@ -138,6 +141,10 @@ export const PHOTO = {
   pohjanhoviCooks1936: commons('rovaniemi-pohjanhovi-cooks-1936'),
   cloudberryKuusamo: commons('kuusamo-cloudberry'),
   cloudberryNorth: commons('north-finland-cloudberry'),
+  /** Oma kuva 12.10.2026: Vesa Hotelli Ravintola Kultahipun edessä Ivalossa (/about-hero). */
+  vesaKultahippu: commons('vesa-kultahippu-ivalo'),
+  /** Oma kuva 11.10.2026: Kiepin Lapin herkkulautanen, Saariselkä (/local-food-hero). */
+  kieppiLappishPlate: commons('kieppi-lappish-plate'),
   kaylankoskiWinter: commons('kuusamo-kaylankoski-winter'),
   reindeerSled1938: commons('sodankyla-reindeer-sled-1938'),
   /** Pexels 5395184 (Pexels License, ladattu 2020, paikaton — alt ei väitä paikkaa). */

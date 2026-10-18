@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Ristoranti a Saariselkä: dove mangiare",
-      "description": "Sette ristoranti a Saariselkä, tutti raggiungibili a piedi: una cucina da 4,8, un gastropub, un lávvu e l'hamburgeria del paese.",
+      "description": "Otto ristoranti a Saariselkä, tutti raggiungibili a piedi: una cucina da 4,8, un gastropub, un lávvu e l'hamburgeria del paese.",
       "h1": "Ristoranti a Saariselkä",
       "tagline": "Un piccolo paese di fjeld con la forbice di valutazioni più ampia del sito.",
       "intro": "Saariselkä è abbastanza compatto da rendere la scelta una passeggiata e non un viaggio: due di essi stanno sulla stessa via. L'insolito è la forbice: Fieno tiene 4,8 su 529 recensioni e Gáldu un 5,0 pieno, mentre ScanBurger, Lieggâ Láávu e Bistro & Cafe Kuukkeli si assestano tra 4,1 e 4,2. Gastropub Giitu, a 4,7, è quello che Google archivia sotto Inari: si trova a Saariselkä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Ristoranti a Kuusamo e Ruka",
-      "description": "Sei ristoranti divisi tra la stazione di Ruka e il paese di Kuusamo, a 22 km: la pizzeria più frequentata del sito, un gastropub e un caffè da trekking.",
+      "description": "Sette ristoranti divisi tra la stazione di Ruka e il paese di Kuusamo, a 22 km: la pizzeria più frequentata del sito, un gastropub e un caffè da trekking.",
       "h1": "Ristoranti a Kuusamo e Ruka",
       "tagline": "Due centri a 22 km: controlla in quale sta il tuo tavolo.",
       "intro": "Kuusamo si divide nettamente in due. Su, alla stazione, Pizzeria Ruka ha più recensioni di qualsiasi altro ristorante del sito fuori da Rovaniemi, con Restaurant Burger Cafe & Bar Ruka sulla stessa strada e, poco discosto, il Gasthaus & Hard Trek Café di Ruka Trek, valutato 4,8. Giù in paese, 22 km più a sud, Ravintola Talonpöytä e Restaurant Wanha Mestari servono un pubblico del tutto diverso.",
@@ -350,8 +350,8 @@
     "stayInTemplate": "Dormire a {{city}}",
     "readAllReviews": "Leggi tutte le {{count}} recensioni su Google →",
     "statsAvgRating": "Valutazione media su Google",
-    "introTitle": "L'ordine è un voto Google, non un posto a pagamento",
-    "introP1": "Ogni voto è di Google e rimanda alle recensioni da cui arriva, così vedi sia il punteggio sia quanto è vecchio. Lo stesso voto può però indicare due serate molto diverse: un menù degustazione e una curata sala d'albergo non sono la stessa cosa.",
+    "introTitle": "Prima di prenotare un tavolo",
+    "introP1": "Il badge con la stella su ogni scheda apre le recensioni Google da cui arriva il voto, così vedi da dove viene il punteggio e quanto è recente. Lo stesso voto può però indicare due serate molto diverse: un menù degustazione e una curata sala d'albergo non sono la stessa cosa.",
     "introP2": "I menù seguono la stagione, e la stessa cucina si legge diversamente a febbraio e ad agosto. Le sale sono piccole e l'inverno si riempie presto: prenota per tempo."
   },
   "midnightSunDining": {

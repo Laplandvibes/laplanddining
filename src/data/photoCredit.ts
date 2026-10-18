@@ -67,4 +67,9 @@ export const OTHER_PHOTO_PLACES: Record<string, Record<Locale, string>> = {
     en: 'Ruka', fi: 'Ruka', de: 'Ruka', ja: 'ルカ', es: 'Ruka', 'pt-BR': 'Ruka',
     'zh-CN': '鲁卡', ko: '루카', fr: 'Ruka', it: 'Ruka', nl: 'Ruka', sv: 'Ruka',
   },
+  // /about-hero 18.10.2026: Hotelli Ravintola Kultahippu on Ivalossa, ~30 km Saariselästä pohjoiseen.
+  ivalo: {
+    en: 'Ivalo', fi: 'Ivalo', de: 'Ivalo', ja: 'イヴァロ', es: 'Ivalo', 'pt-BR': 'Ivalo',
+    'zh-CN': '伊瓦洛', ko: '이발로', fr: 'Ivalo', it: 'Ivalo', nl: 'Ivalo', sv: 'Ivalo',
+  },
 };

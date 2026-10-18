@@ -36,7 +36,7 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
        hyvaksyi): kolmikerroksinen varjo + ohut reunus, isompi pyoristys.
        Jamakkyys syntyy TERAVASTA lahivarjosta — yksi pehmea varjo lukee
        sumeana. Tama komponentti kattaa /restaurants ja /city/{slug}. */
-    <article className={`group relative rounded-3xl overflow-hidden bg-cream ring-1 ring-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.45),0_14px_28px_-10px_rgba(0,0,0,0.6),0_40px_72px_-32px_rgba(0,0,0,0.7)] hover:shadow-[0_2px_4px_rgba(0,0,0,0.5),0_20px_38px_-12px_rgba(0,0,0,0.68),0_56px_96px_-36px_rgba(0,0,0,0.78)] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full${editorsPick ? ' !ring-amber/45' : ''}`}>
+    <article id={r.slug} className={`scroll-mt-32 group relative rounded-3xl overflow-hidden bg-cream ring-1 ring-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.45),0_14px_28px_-10px_rgba(0,0,0,0.6),0_40px_72px_-32px_rgba(0,0,0,0.7)] hover:shadow-[0_2px_4px_rgba(0,0,0,0.5),0_20px_38px_-12px_rgba(0,0,0,0.68),0_56px_96px_-36px_rgba(0,0,0,0.78)] hover:-translate-y-1 transition-all duration-500 flex flex-col h-full${editorsPick ? ' !ring-amber/45' : ''}`}>
       <div className="relative h-48 sm:h-56 overflow-hidden shrink-0">
         {r.photo ? (
           <img

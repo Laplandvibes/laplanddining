@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Ravintolat Saariselällä: missä syödä",
-      "description": "Seitsemän ravintolaa Saariselällä, kaikki kävelymatkan päässä: 4,8:n keittiö, gastropub, lávvu ja kylän burgeripaikka. Arviot ja ruokalistalinkit.",
+      "description": "Kahdeksan ravintolaa Saariselällä, kaikki kävelymatkan päässä: 4,8:n keittiö, gastropub, lávvu ja kylän burgeripaikka. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Saariselällä",
       "tagline": "Pieni tunturikylä, jossa on sivuston laajin arviohaitari.",
       "intro": "Saariselkä on niin kompakti, että valinta on kävelymatka eikä ajomatka — kaksi niistä on samalla kadulla. Poikkeuksellista on kirjo: Fieno pitää 4,8:aa 529 arviolla ja Gáldu puhdasta 5,0:aa, kun taas ScanBurger, Lieggâ Láávu ja Bistro & Cafe Kuukkeli asettuvat välille 4,1–4,2. Gastropub Giitu, 4,7, on se jonka Google kirjaa Inariin — se on Saariselällä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Ravintolat Kuusamossa ja Rukalla",
-      "description": "Kuusi ravintolaa jaettuna Rukan keskuksen ja Kuusamon kirkonkylän kesken, 22 km toisistaan: sivuston vilkkain pizzeria, gastropub ja vaelluskahvila.",
+      "description": "Seitsemän ravintolaa jaettuna Rukan keskuksen ja Kuusamon kirkonkylän kesken, 22 km toisistaan: sivuston vilkkain pizzeria, gastropub ja vaelluskahvila.",
       "h1": "Ravintolat Kuusamossa ja Rukalla",
       "tagline": "Kaksi keskusta, 22 km välissä — tarkista kummassa pöytäsi on.",
       "intro": "Kuusamo jakautuu selvästi kahtia. Ylhäällä keskuksessa Pizzeria Rukalla on enemmän arvioita kuin millään muulla sivuston ravintolalla Rovaniemen ulkopuolella, samalla tiellä Restaurant Burger Cafe & Bar Ruka ja vähän sivummalla Ruka Trekin Gasthaus & Hard Trek Café, arvio 4,8. Alhaalla kirkonkylässä, 22 km etelässä, Ravintola Talonpöytä ja Restaurant Wanha Mestari palvelevat aivan eri väkeä.",
@@ -350,9 +350,9 @@
     "stayInTemplate": "Yövy {{city}}ssä",
     "readAllReviews": "Lue kaikki {{count}} arvostelua Googlessa →",
     "statsAvgRating": "Google-arvioiden keskiarvo",
-    "introTitle": "Järjestys on Googlen arvio, ei maksettu paikka",
-    "introP1": "Jokainen arvio on Googlen oma ja vie arvosteluihin, joten näet sekä pisteet että niiden iän. Sama pistemäärä voi silti tarkoittaa kahta hyvin eri iltaa: maistelumenu ja hiottu hotellin sali eivät ole sama juttu.",
-    "introP2": "Menut elävät kauden mukaan, joten sama keittiö on helmikuussa toinen kuin elokuussa. Salit ovat pieniä ja talvi täyttyy aikaisin — varaa ajoissa."
+    "introTitle": "Ennen kuin varaat pöydän",
+    "introP1": "Kortin tähtimerkki avaa Googlen arvostelut, joten näet itse, mistä pisteet tulevat ja kuinka tuoreita ne ovat. Sama pistemäärä voi silti tarkoittaa kahta hyvin eri iltaa: maistelumenu ja hiottu hotellin sali eivät ole sama juttu.",
+    "introP2": "Menut elävät kauden mukaan, joten sama keittiö on helmikuussa toinen kuin elokuussa. Salit ovat pieniä ja talvi täyttyy aikaisin, joten varaa ajoissa."
   },
   "midnightSunDining": {
     "title": "Illallinen yöttömän yön aikaan Lapissa",

@@ -32,6 +32,7 @@ const cityPageImage = (city: string): string | undefined => {
   const c = DINING_CITIES.find((d) => d.city === city);
   return c ? (c.photo ?? c.img) : undefined;
 };
+const cityPageFocus = (city: string): string | undefined => DINING_CITIES.find((d) => d.city === city)?.focus;
 const cityImages: Record<string, string> = {
   Kittilä: DINING.kittilaDining,
   Muonio: DINING.muonioDining,
@@ -425,7 +426,10 @@ export default function Restaurants() {
             return (
               <div key={city} id={slug} className="mb-20 last:mb-0 scroll-mt-36">
                 <div className="relative mb-8 rounded-3xl overflow-hidden group">
-                  <div className="relative h-48 sm:h-56">
+                  {/* 18.10.2026 (Vesa: "pääkuvat … vähän kapeita kun kuvat näyttää huonoilta"): 192/224 px korkea kaista
+                      1216 px leveänä oli 5,4:1 ja koko kuva himmennettiin kahdella kerroksella (/60 + /40). Nyt korkeampi
+                      kaista ja tummennus vain tekstin taakse (alareuna + vasen laita), jotta kuva näkyy kirkkaana. */}
+                  <div className="relative h-56 sm:h-72 lg:h-80">
                     <img
                       src={cityPageImage(city) ?? cityImages[city] ?? PHOTO.pavilionWinter}
                       srcSet={photoSrcSet(cityPageImage(city) ?? cityImages[city])}
@@ -433,11 +437,12 @@ export default function Restaurants() {
                       alt=""
                       aria-hidden="true"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      style={cityPageFocus(city) ? { objectPosition: cityPageFocus(city) } : undefined}
                       loading="lazy"
                       decoding="async"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-night/20" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-night/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/25 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-night/55 via-night/10 to-transparent" />
                     <PhotoCredit src={cityPageImage(city) ?? cityImages[city]} locale={locale} className="z-20" />
                   </div>
 

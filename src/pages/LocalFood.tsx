@@ -9,7 +9,8 @@ import { gygSearchLink } from '../lib/gyg';
 import { DINING, PHOTO, photoSrcSet } from '../data/images';
 import PhotoCredit from '../components/PhotoCredit';
 import { imageAlt } from '../data/imageAlts';
-import { restaurants } from '../data/restaurants';
+import { restaurants, PHOTO_BY } from '../data/restaurants';
+import { ownPhotoCredit } from '../data/photoCredit';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
@@ -105,18 +106,25 @@ export default function LocalFood() {
 
       {/* Hero */}
       <section className="relative min-h-[52svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
+        {/* 18.10.2026 (Vesa: hillankukka "ei kerro mitään"): oma kuva Kiepin Lapin herkkulautasesta
+            Saariselällä 11.10.2026, graavilohi, riista ja puolukka samalla lautasella. Tummennus on tekstin
+            kohdalla (keskellä) ja kevenee reunoille, jotta ruoka näkyy otsikon ympärillä: tasainen /50 jätti
+            ingressin vaalean lautasen päälle 3,2:1:een (heroteksti, raja 4,5:1). */}
         <img
-          src={PHOTO.cloudberryKuusamo}
-          srcSet={photoSrcSet(PHOTO.cloudberryKuusamo)}
+          src={PHOTO.kieppiLappishPlate}
+          srcSet={photoSrcSet(PHOTO.kieppiLappishPlate)}
           sizes="100vw"
-          alt={imageAlt(PHOTO.cloudberryKuusamo, locale)}
+          alt={imageAlt(PHOTO.kieppiLappishPlate, locale)}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           decoding="async"
           fetchPriority="high"
         />
-        <PhotoCredit src={PHOTO.cloudberryKuusamo} locale={locale} />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/62 to-night" />
+        <p className="absolute bottom-3 right-4 z-10 rounded bg-black/55 px-1.5 py-px text-[11px] text-white/90 tracking-wide">
+          {ownPhotoCredit(PHOTO_BY[locale], t('cities.saariselka.name'), '2026-10', locale)}
+        </p>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_48%,rgba(15,23,42,0.8)_0%,rgba(15,23,42,0.6)_55%,rgba(15,23,42,0.3)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-night" />
         <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('localFood.heroH1')}

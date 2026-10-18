@@ -16,8 +16,11 @@ import GridPhotoCredits from './GridPhotoCredits';
 const PICK_SLUGS = [
   'rovaniemi-nili-restaurant',         // 4.5 · 3 027 — the Lappish classic
   'inari-restaurant-aanaar',           // 4.8 · 464 — Sámi fine dining
-  'saariselka-fieno',                  // 4.8 · 529
-  'kittila-saamen-kammi',              // 4.5 · 248 — kota dining
+  // 18.10.2026 (Vesa: "kuvituskuvia edelleen"): Fieno ja Saamen Kammi näkyivät tekoälykuvalla, koska
+  // Fienon sivu torjuu haun (403) eikä kammi.fi:ssä ole kuvaa. Tilalle kaksi paikkaa, joissa söimme
+  // itse lokakuussa 2026 ja joista on oma valokuva. Saamen Kammi löytyy etusivun kota-kortista.
+  'saariselka-kieppi-kitchen-bar',     // oma kuva 11.10.2026
+  'kuusamo-riipisen-riistaravintola',  // Ruka, oma kuva 9.10.2026
   'levi-grill-it-levi',                // 4.6 · 406
   'posio-lapland-restaurant-kotahovi', // 4.5 · 471
 ];

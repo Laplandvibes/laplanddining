@@ -3,7 +3,8 @@ import { useTranslation, Trans } from 'react-i18next';
 import Hreflang from '../i18n/Hreflang';
 import { Info, Globe, ExternalLink } from 'lucide-react';
 import { PHOTO, photoSrcSet } from '../data/images';
-import PhotoCredit from '../components/PhotoCredit';
+import { PHOTO_BY } from '../data/restaurants';
+import { ownPhotoCredit, OTHER_PHOTO_PLACES } from '../data/photoCredit';
 import { imageAlt } from '../data/imageAlts';
 import { useLocale } from '../i18n/useLocale';
 import PageBreadcrumb from '../components/PageBreadcrumb';
@@ -17,25 +18,33 @@ export default function About() {
       <meta name="description" content={t('about.description')} />
       <Hreflang path="/about" />
 
-      {/* Hero */}
-      <section className="relative min-h-[56svh] flex items-center justify-center px-4 sm:px-6 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
-        <img
-          src={PHOTO.cloudberryNorth}
-          srcSet={photoSrcSet(PHOTO.cloudberryNorth)}
-          sizes="100vw"
-          alt={imageAlt(PHOTO.cloudberryNorth, locale)}
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
-        <PhotoCredit src={PHOTO.cloudberryNorth} locale={locale} />
-        <div className="absolute inset-0 bg-gradient-to-b from-night/70 via-night/58 to-night" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+      {/* Hero, 18.10.2026 (Vesa: "eikö se voi olla jokin missä olen ravintolan edessä kuva"): oma kuva
+          Hotelli Ravintola Kultahipun edestä Ivalossa 12.10.2026. Kasvot ovat kuvan vasemmalla puoliskolla
+          (x 26–46 %, y 58–96 %), joten otsikko ei saa olla keskellä kuvaa: puhelimella se on kuvan alla,
+          lg:llä oikealla oven kohdalla. Kuva näytetään koko ruutuna (2,16:1), ei 56svh-kaistana. */}
+      <section className="relative bg-night">
+        <div className="relative w-full overflow-hidden aspect-[4/3] sm:aspect-video lg:aspect-[216/100] lg:max-h-[88svh]">
+          <img
+            src={PHOTO.vesaKultahippu}
+            srcSet={photoSrcSet(PHOTO.vesaKultahippu)}
+            sizes="100vw"
+            alt={imageAlt(PHOTO.vesaKultahippu, locale)}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: '30% 60%' }}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-transparent via-30% to-transparent lg:bg-gradient-to-l lg:from-night/90 lg:via-night/40 lg:via-45%" />
+          <p className="absolute bottom-3 right-4 z-10 rounded bg-black/55 px-1.5 py-px text-[11px] text-white/90 tracking-wide">
+            {ownPhotoCredit(PHOTO_BY[locale], OTHER_PHOTO_PLACES.ivalo[locale], '2026-10', locale)}
+          </p>
+        </div>
+        <div className="relative z-10 px-4 sm:px-6 pt-6 pb-10 text-center lg:absolute lg:inset-y-0 lg:right-0 lg:w-[46%] lg:flex lg:flex-col lg:justify-center lg:items-start lg:text-left lg:pl-6 lg:pr-12 lg:py-0 xl:pr-20">
           <h1 className="font-heading text-5xl sm:text-6xl text-white tracking-wide mb-4 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('about.heroH1')}
           </h1>
-          <p className="text-gray-200 text-lg max-w-2xl mx-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto lg:mx-0 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             {t('about.heroLead')}
           </p>
         </div>

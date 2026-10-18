@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Restauranger i Saariselkä: var man äter",
-      "description": "Sju restauranger i Saariselkä, alla inom gångavstånd: ett kök med 4,8, en gastropub, en lávvu och byns hamburgerställe.",
+      "description": "Åtta restauranger i Saariselkä, alla inom gångavstånd: ett kök med 4,8, en gastropub, en lávvu och byns hamburgerställe.",
       "h1": "Restauranger i Saariselkä",
       "tagline": "En liten fjällby med sajtens bredaste betygsspann.",
       "intro": "Saariselkä är kompakt nog att valet blir en promenad och inte en bilresa — två av dem ligger på samma gata. Det ovanliga är spannet: Fieno håller 4,8 på 529 recensioner och Gáldu rena 5,0, medan ScanBurger, Lieggâ Láávu och Bistro & Cafe Kuukkeli lägger sig mellan 4,1 och 4,2. Gastropub Giitu, 4,7, är den som Google för under Enare — den ligger i Saariselkä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restauranger i Kuusamo & Ruka",
-      "description": "Sex restauranger fördelade mellan skidorten Ruka och Kuusamo stad, 22 km isär: sajtens mest trafikerade pizzeria, en gastropub och ett vandringskafé.",
+      "description": "Sju restauranger fördelade mellan skidorten Ruka och Kuusamo stad, 22 km isär: sajtens mest trafikerade pizzeria, en gastropub och ett vandringskafé.",
       "h1": "Restauranger i Kuusamo och Ruka",
       "tagline": "Två centrum, 22 km isär — kolla i vilket ditt bord står.",
       "intro": "Kuusamo delar sig tydligt i två. Uppe på skidorten har Pizzeria Ruka fler recensioner än någon annan restaurang på sajten utanför Rovaniemi, på samma väg Restaurant Burger Cafe & Bar Ruka och en bit därifrån Ruka Treks Gasthaus & Hard Trek Café med 4,8. Nere i staden, 22 km söderut, betjänar Ravintola Talonpöytä och Restaurant Wanha Mestari en helt annan publik.",
@@ -350,9 +350,9 @@
     "stayInTemplate": "Bo i {{city}}",
     "readAllReviews": "Läs alla {{count}} recensioner på Google →",
     "statsAvgRating": "Genomsnittligt Google-betyg",
-    "introTitle": "Ordningen är ett Google-betyg, inte en betald plats",
-    "introP1": "Varje betyg är Googles eget och leder till recensionerna bakom, så du ser både poängen och hur gammal den är. Samma poäng kan ändå betyda två helt olika kvällar: en avsmakningsmeny och en slipad hotellmatsal är inte samma sak.",
-    "introP2": "Menyerna följer säsongen, så samma kök läses olika i februari och i augusti. Salarna är små och vintern fylls tidigt — boka i tid."
+    "introTitle": "Innan du bokar bord",
+    "introP1": "Stjärnmärket på varje kort öppnar Googles recensioner, så du ser själv var poängen kommer ifrån och hur färsk den är. Samma poäng kan ändå betyda två helt olika kvällar: en avsmakningsmeny och en slipad hotellmatsal är inte samma sak.",
+    "introP2": "Menyerna följer säsongen, så samma kök läses olika i februari och i augusti. Salarna är små och vintern fylls tidigt, så boka i tid."
   },
   "midnightSunDining": {
     "title": "Middag i midnattssol i Lappland",

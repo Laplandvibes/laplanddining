@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Restaurants in Saariselkä: waar u eet",
-      "description": "Zeven restaurants in Saariselkä, allemaal te voet: een keuken met 4,8, een gastropub, een lávvu en de burgerzaak van het dorp.",
+      "description": "Acht restaurants in Saariselkä, allemaal te voet: een keuken met 4,8, een gastropub, een lávvu en de burgerzaak van het dorp.",
       "h1": "Restaurants in Saariselkä",
       "tagline": "Een klein fjelddorp met de breedste spreiding aan beoordelingen op deze site.",
       "intro": "Saariselkä is compact genoeg om de keuze een wandeling te maken en geen rit — twee ervan staan in dezelfde straat. Ongewoon is de spreiding: Fieno houdt 4,8 op 529 beoordelingen en Gáldu een schone 5,0, terwijl ScanBurger, Lieggâ Láávu en Bistro & Cafe Kuukkeli tussen 4,1 en 4,2 blijven. Gastropub Giitu, met 4,7, is degene die Google onder Inari zet — het ligt in Saariselkä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restaurants in Kuusamo en Ruka",
-      "description": "Zes restaurants verdeeld over het skigebied Ruka en de stad Kuusamo, 22 km uit elkaar: de drukste pizzeria van de site, een gastropub en een trekkerscafé.",
+      "description": "Zeven restaurants verdeeld over het skigebied Ruka en de stad Kuusamo, 22 km uit elkaar: de drukste pizzeria van de site, een gastropub en een trekkerscafé.",
       "h1": "Restaurants in Kuusamo en Ruka",
       "tagline": "Twee centra, 22 km uit elkaar — kijk in welk van de twee uw tafel staat.",
       "intro": "Kuusamo valt duidelijk in tweeën uiteen. Boven in het skigebied heeft Pizzeria Ruka meer beoordelingen dan welk ander restaurant op deze site buiten Rovaniemi ook, met Restaurant Burger Cafe & Bar Ruka aan dezelfde weg en, iets terzijde, het Gasthaus & Hard Trek Café van Ruka Trek met 4,8. Beneden in de stad, 22 km zuidelijker, bedienen Ravintola Talonpöytä en Restaurant Wanha Mestari een heel ander publiek.",
@@ -350,9 +350,9 @@
     "stayInTemplate": "Verblijf in {{city}}",
     "readAllReviews": "Lees alle {{count}} reviews op Google →",
     "statsAvgRating": "Gemiddelde Google-score",
-    "introTitle": "De volgorde is een Google-beoordeling, geen betaalde plek",
-    "introP1": "Elke beoordeling komt van Google en verwijst naar de recensies erachter, dus u ziet zowel het cijfer als hoe oud het is. Hetzelfde cijfer kan toch twee heel verschillende avonden betekenen: een proefmenu en een verzorgde hotelzaal zijn niet hetzelfde.",
-    "introP2": "De kaarten volgen het seizoen, dus dezelfde keuken leest anders in februari dan in augustus. De zalen zijn klein en de winter loopt vroeg vol — reserveer op tijd."
+    "introTitle": "Voordat u een tafel reserveert",
+    "introP1": "Het sterlabel op elke kaart opent de Google-recensies erachter, zodat u ziet waar het cijfer vandaan komt en hoe recent het is. Hetzelfde cijfer kan toch twee heel verschillende avonden betekenen: een proefmenu en een verzorgde hotelzaal zijn niet hetzelfde.",
+    "introP2": "De kaarten volgen het seizoen, dus dezelfde keuken leest anders in februari dan in augustus. De zalen zijn klein en de winter loopt vroeg vol, dus reserveer op tijd."
   },
   "midnightSunDining": {
     "title": "Dineren onder de middernachtzon in Lapland",

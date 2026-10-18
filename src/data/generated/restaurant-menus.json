@@ -201,6 +201,15 @@
     "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
     "checkedAt": "2026-08-10"
   },
+  "kuusamo-riipisen-riistaravintola": {
+    "url": "https://www.riistaravintola.fi/menu/",
+    "kind": "page",
+    "title": "Menu | Riipisen Riistaravintola",
+    "evidence": 1,
+    "checkedAt": "2026-10-18",
+    "urlEn": "https://www.riistaravintola.fi/en/menu/",
+    "kindEn": "page"
+  },
   "kuusamo-ruka-trek-gasthaus-hard-trek-cafe": {
     "url": "https://rukatrek.fi/en/food-drink/",
     "kind": "page",
@@ -432,6 +441,15 @@
     "status": "none",
     "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
     "checkedAt": "2026-08-10"
+  },
+  "saariselka-kieppi-kitchen-bar": {
+    "url": "https://wildernesshotels.fi/wilderness-hotel-kieppi/fi/kieppi-kitchen-bar-a-la-carte",
+    "kind": "page",
+    "title": "Kieppi Kitchen & Bar à la carte",
+    "evidence": 1,
+    "checkedAt": "2026-10-18",
+    "urlEn": "https://wildernesshotels.fi/wilderness-hotel-kieppi/kieppi-kitchen-bar-a-la-carte",
+    "kindEn": "page"
   },
   "saariselka-laanilan-kievari": {
     "url": "https://www.laanilankievari.fi/en/menu",

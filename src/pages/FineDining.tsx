@@ -172,7 +172,7 @@ export default function FineDining() {
                     )}
                     <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-ink/85 backdrop-blur-sm">
                       <MapPin size={11} className="text-amber" />
-                      <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.city}</span>
+                      <span className="text-cream text-[10px] font-bold uppercase tracking-[0.15em]">{r.locality ?? r.city}</span>
                     </div>
                     {/* Kosketusalue 48 px, pilleri edelleen 28 px -- sama kuvio
                         ja samat perustelut kuin RestaurantCard.tsx:ssa (lue

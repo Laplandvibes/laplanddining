@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Restaurantes em Saariselkä: onde comer",
-      "description": "Sete restaurantes em Saariselkä, todos a pé: uma cozinha com 4,8, um gastropub, um lávvu e a hamburgueria da vila.",
+      "description": "Oito restaurantes em Saariselkä, todos a pé: uma cozinha com 4,8, um gastropub, um lávvu e a hamburgueria da vila.",
       "h1": "Restaurantes em Saariselkä",
       "tagline": "Uma pequena vila de fjeld com a maior amplitude de notas do site.",
       "intro": "Saariselkä é compacta o bastante para a escolha ser uma caminhada, não um trajeto — dois deles ficam na mesma rua. O incomum é a amplitude: o Fieno mantém 4,8 sobre 529 avaliações e o Gáldu um 5,0 redondo, enquanto ScanBurger, Lieggâ Láávu e Bistro & Cafe Kuukkeli ficam entre 4,1 e 4,2. O Gastropub Giitu, com 4,7, é o que o Google arquiva sob Inari — fica em Saariselkä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restaurantes em Kuusamo e Ruka",
-      "description": "Seis restaurantes divididos entre a estação de Ruka e a cidade de Kuusamo, a 22 km: a pizzaria mais movimentada do site, um gastropub e um café de trilha.",
+      "description": "Sete restaurantes divididos entre a estação de Ruka e a cidade de Kuusamo, a 22 km: a pizzaria mais movimentada do site, um gastropub e um café de trilha.",
       "h1": "Restaurantes em Kuusamo e Ruka",
       "tagline": "Dois centros a 22 km — confira em qual está a sua mesa.",
       "intro": "Kuusamo se divide claramente em dois. Lá em cima, na estação, a Pizzeria Ruka tem mais avaliações que qualquer outro restaurante do site fora de Rovaniemi, com o Restaurant Burger Cafe & Bar Ruka na mesma via e, um pouco afastado, o Gasthaus & Hard Trek Café do Ruka Trek, avaliado em 4,8. Lá embaixo, na cidade, 22 km ao sul, Ravintola Talonpöytä e Restaurant Wanha Mestari atendem um público completamente diferente.",
@@ -350,9 +350,9 @@
     "stayInTemplate": "Hospede-se em {{city}}",
     "readAllReviews": "Ler todas as {{count}} avaliações no Google →",
     "statsAvgRating": "Nota média no Google",
-    "introTitle": "A ordem é uma nota do Google, não um lugar pago",
-    "introP1": "Cada nota é do próprio Google e leva às avaliações de origem, então você vê a pontuação e a idade dela. A mesma nota pode significar duas noites bem diferentes: um menu degustação e um salão de hotel caprichado não são a mesma coisa.",
-    "introP2": "Os cardápios seguem a estação, e a mesma cozinha se lê de um jeito em fevereiro e de outro em agosto. Os salões são pequenos e o inverno lota cedo — reserve com antecedência."
+    "introTitle": "Antes de reservar uma mesa",
+    "introP1": "O selo de estrela em cada card abre as avaliações do Google, então você vê de onde vem a nota e o quanto ela é recente. A mesma nota pode significar duas noites bem diferentes: um menu degustação e um salão de hotel caprichado não são a mesma coisa.",
+    "introP2": "Os cardápios seguem a estação, e a mesma cozinha se lê de um jeito em fevereiro e de outro em agosto. Os salões são pequenos e o inverno lota cedo, então reserve com antecedência."
   },
   "midnightSunDining": {
     "title": "Jantar sob o sol da meia-noite na Lapônia",

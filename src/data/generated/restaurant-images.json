@@ -859,5 +859,23 @@
     "height": 449,
     "fetchedAt": "2026-10-04",
     "note": "Ravintolan oma kuva omalta sivustoltaan (2400×1350), rajattu korttikehykseen. Korvasi gpt-image-2-kuvituksen 4.10.2026."
+  },
+  "saariselka-kieppi-kitchen-bar": {
+    "src": "/images/restaurants/saariselka-kieppi-kitchen-bar.webp",
+    "kind": "photo",
+    "credit": "LaplandVibes",
+    "note": "Oma valokuva paikan päältä 11.10.2026 illalla (sali, KIEPPI-kyltti seinällä; master 20261011_193840, koko ruutu 16:9 pienennettynä). Lapin herkkulautanen 195057 on /local-food-herossa, siksi kortissa sali.",
+    "width": 800,
+    "height": 450,
+    "shotAt": "2026-10-11"
+  },
+  "kuusamo-riipisen-riistaravintola": {
+    "src": "/images/restaurants/kuusamo-riipisen-riistaravintola.webp",
+    "kind": "photo",
+    "credit": "LaplandVibes",
+    "note": "Oma valokuva paikan päältä 9.10.2026 illalla (poronfilee kahdella kastikkeella; master 20261009_201006, koko ruutu 16:9 pienennettynä). Ruka, ei Kuusamon keskusta.",
+    "width": 800,
+    "height": 450,
+    "shotAt": "2026-10-09"
   }
 }

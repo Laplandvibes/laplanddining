@@ -118,10 +118,12 @@ export default function Cities() {
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={city.focus ? { objectPosition: city.focus } : undefined}
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-night via-night/55 to-transparent" />
+                {/* 18.10.2026: tummennus vain tekstin alueelle; ennen /55 ulottui kortin puoliväliin ja himmensi kuvan. */}
+                <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/20 via-45% to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
                   <h2 className="font-heading text-2xl tracking-wide text-white leading-tight">
                     {t(`cities.${city.slug}.name`, { defaultValue: city.name })}

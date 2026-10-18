@@ -202,7 +202,7 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Restaurants in Saariselkä: Where to Eat",
-      "description": "Seven restaurants in Saariselkä, all walkable: a 4.8-rated kitchen, a gastropub, a Sámi-style lávvu and the village burger place. Ratings and menu links.",
+      "description": "Eight restaurants in Saariselkä, all walkable: a 4.8-rated kitchen, a gastropub, a Sámi-style lávvu and the village burger place. Ratings and menu links.",
       "h1": "Restaurants in Saariselkä",
       "tagline": "A small fell village with the widest spread of ratings on this site.",
       "intro": "Saariselkä is compact enough that the choice is a walk, not a drive — two of them are on the same street. What is unusual here is the range: Fieno holds 4.8 across 529 reviews and Gáldu a clean 5.0, while ScanBurger, Lieggâ Láávu and Bistro & Cafe Kuukkeli sit between 4.1 and 4.2. Gastropub Giitu, at 4.7, is the one Google files under Inari — it is in Saariselkä.",
@@ -314,7 +314,7 @@
     "kuusamo": {
       "name": "Kuusamo",
       "title": "Restaurants in Kuusamo & Ruka",
-      "description": "Six restaurants split between Ruka resort and Kuusamo town, 22 km apart: the busiest pizzeria on this site, a gastropub and a trekking café.",
+      "description": "Seven restaurants split between Ruka resort and Kuusamo town, 22 km apart: the busiest pizzeria on this site, a gastropub and a trekking café.",
       "h1": "Restaurants in Kuusamo and Ruka",
       "tagline": "Two centres, 22 km apart — check which one your table is in.",
       "intro": "Kuusamo splits cleanly in two. Up at the resort, Pizzeria Ruka has more reviews than any other restaurant on this site outside Rovaniemi, with Restaurant Burger Cafe & Bar Ruka on the same road and Ruka Trek's Gasthaus & Hard Trek Café — rated 4.8 — a short way off. Down in the town, 22 km south, Ravintola Talonpöytä and Restaurant Wanha Mestari serve a different crowd entirely.",
@@ -350,9 +350,9 @@
     "stayInTemplate": "Stay in {{city}}",
     "readAllReviews": "Read all {{count}} reviews on Google →",
     "statsAvgRating": "Average Google rating",
-    "introTitle": "The order is a Google rating, not a paid slot",
-    "introP1": "Every rating here is Google's own and links to the reviews behind it, so you can check the score and how old it is. The same score can still mean two very different evenings: a tasting menu and a polished hotel dining room are not the same night out.",
-    "introP2": "Menus follow the season, so a kitchen reads differently in February and in August. The rooms are small and winter fills early — book ahead."
+    "introTitle": "Before you book a table",
+    "introP1": "The star badge on each card opens the Google reviews behind it, so you can see where the score comes from and how recent it is. The same score can still mean two very different evenings: a tasting menu and a polished hotel dining room are not the same night out.",
+    "introP2": "Menus follow the season, so a kitchen reads differently in February and in August. The rooms are small and winter fills early, so book ahead."
   },
   "midnightSunDining": {
     "title": "Midnight Sun Dining in Lapland",
