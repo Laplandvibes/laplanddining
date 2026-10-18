@@ -64,7 +64,7 @@
       "items": [
         {
           "question": "Qual è il ristorante più famoso della Lapponia?",
-          "answer": "Il Restaurant Aanaar di Inari è una delle sale di alta cucina meglio valutate della Lapponia, 4,8 su Google con oltre 460 recensioni. Celebra l'eredità gastronomica sami con menù degustazione costruiti attorno al pesce tirato su dal lago Inari la mattina stessa, erbe selvatiche raccolte a mano e renna dei pastori locali."
+          "answer": "Il Restaurant Aanaar di Inari è una delle sale di alta cucina più conosciute della Lapponia. Celebra l'eredità gastronomica sami con menù degustazione costruiti attorno al pesce tirato su dal lago Inari la mattina stessa, erbe selvatiche raccolte a mano e renna dei pastori locali."
         },
         {
           "question": "Che cos'è il poronkäristys?",
@@ -160,14 +160,14 @@
     "rovaniemi": {
       "name": "Rovaniemi",
       "title": "Ristoranti a Rovaniemi: dove mangiare",
-      "description": "Otto ristoranti a Rovaniemi, dal filetto di renna in Valtakatu alla cucina meglio valutata di tutto il sito. Valutazioni, citazioni e link ai menù.",
+      "description": "Otto ristoranti a Rovaniemi, dal filetto di renna in Valtakatu a una cucina coreana in Korkalonkatu. Valutazioni, citazioni e link ai menù.",
       "h1": "Ristoranti a Rovaniemi",
       "tagline": "La concentrazione di tavoli più fitta della Lapponia: cinque stanno in quattro strade.",
-      "intro": "Rovaniemi è l'unica città della Lapponia in cui il ristorante si sceglie a piedi. Nili e Arctic Restaurant sono quasi uno di fronte all'altro in Valtakatu e coprono renna e camemoro. Duecento metri più in là, Roka Street Bistro in Ainonkatu e Cafe & Bar 21 in Rovakatu sono le sale in cui vanno i residenti un martedì qualunque. La valutazione più alta non va alla cucina della Lapponia: Hanki, cucina coreana in Korkalonkatu, tiene 4,9 su oltre mille recensioni.",
+      "intro": "Rovaniemi è l'unica città della Lapponia in cui il ristorante si sceglie a piedi. Nili e Arctic Restaurant sono quasi uno di fronte all'altro in Valtakatu e coprono renna e camemoro. Duecento metri più in là, Roka Street Bistro in Ainonkatu e Cafe & Bar 21 in Rovakatu sono le sale in cui vanno i residenti un martedì qualunque. E quando si vuole una pausa dalla renna, Hanki, in Korkalonkatu, cucina coreano.",
       "know": [
         "I cinque ristoranti del centro distano meno di 500 m l'uno dall'altro: tutta la scelta è una passeggiata.",
         "Tre sono fuori centro: Sky Kitchen & View a 2,4 km, Kotahovi a 6,8 km sulla strada del villaggio di Babbo Natale, e All About Salmon nel villaggio stesso.",
-        "Hanki, con 4,9, è il ristorante meglio valutato dell'intero sito: e la sua cucina è coreana, non della Lapponia."
+        "Hanki, in Korkalonkatu, fa cucina coreana e non della Lapponia, nello stesso centro compatto degli altri."
       ],
       "at": "Rovaniemi"
     },
@@ -176,12 +176,12 @@
       "title": "Ristoranti a Levi: dove mangiare",
       "description": "Nove ristoranti a Levi, la maggiore stazione sciistica della Finlandia: la sala panoramica, l'italiano accanto alle piste e le sale del paese di Sirkka.",
       "h1": "Ristoranti a Levi",
-      "tagline": "La più grande stazione della Finlandia mangia di conseguenza: volumi, terrazze e lunghe liste di recensioni.",
-      "intro": "Il paese ai piedi della fjeld si chiama ufficialmente Sirkka, e quasi ogni indirizzo lo dice. Panoramic Restaurant TUIKKU raccoglie di gran lunga il maggior numero di recensioni. Ämmilä e Wanha Hullu Poro sono vicini in Rakkavaarantie, Ristorante Renna fa italiano una via più in là, e Saamen Kammi, Riihi, Boneless e Kekäle completano il centro. Le valutazioni qui stanno un po' sotto il resto della Lapponia — da 4,1 a 4,6 — su numeri di recensioni molte volte più alti, che è l'aspetto tipico di una stazione che sfama migliaia di persone a settimana.",
+      "tagline": "La più grande stazione della Finlandia mangia di conseguenza: sale piene, terrazze e un tavolo in cima alla fjeld.",
+      "intro": "Il paese ai piedi della fjeld si chiama ufficialmente Sirkka, e quasi ogni indirizzo lo dice. Panoramic Restaurant TUIKKU sta in cima alla fjeld, a 2,4 km dal centro. Ämmilä e Wanha Hullu Poro sono vicini in Rakkavaarantie, Ristorante Renna fa italiano una via più in là, e Saamen Kammi, Riihi, Boneless e Kekäle completano il centro.",
       "know": [
         "Negli indirizzi postali di Levi compare Sirkka o Kittilä. È la stessa stazione: il paese è Sirkka, il comune Kittilä.",
         "Il capoluogo di Kittilä dista 17 km e non ha nemmeno un ristorante su questo sito.",
-        "Panoramic Restaurant TUIKKU dista 2,4 km dal centro del paese e ha più recensioni di qualsiasi altro tavolo a Levi."
+        "Panoramic Restaurant TUIKKU dista 2,4 km dal centro del paese, in cima alla fjeld: meglio pianificare andata e ritorno."
       ],
       "at": "Levi"
     },
@@ -191,7 +191,7 @@
       "description": "Sette ristoranti a Ylläs, divisi tra Äkäslompolo e Ylläsjärvi sui due versanti della fjeld, più uno in vetta. Valutazioni e link ai menù.",
       "h1": "Ristoranti a Ylläs",
       "tagline": "Due paesi, una fjeld e circa 11 km tra il tuo tavolo e l'altro.",
-      "intro": "Ylläs non è un paese ma due, sui versanti opposti della fjeld. A nord, ad Äkäslompolo, ci sono Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub e Los Lompolo's; a sud, a Ylläsjärvi, Ravintola Otso e Restaurant Ylläskota. In mezzo, l'indirizzo di Ylläskammi è la vetta stessa. Rouhe raccoglie qui nettamente più recensioni di tutti; la valutazione più alta è di Los Lompolo's, 4,7, su numeri molto più bassi.",
+      "intro": "Ylläs non è un paese ma due, sui versanti opposti della fjeld. A nord, ad Äkäslompolo, ci sono Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub e Los Lompolo's; a sud, a Ylläsjärvi, Ravintola Otso e Restaurant Ylläskota. In mezzo, l'indirizzo di Ylläskammi è la vetta stessa.",
       "know": [
         "Äkäslompolo e Ylläsjärvi distano circa 11 km, girando attorno alla fjeld. Controlla in quale paese si trova il tuo ristorante prima di partire.",
         "Ylläskammi sta in cima alla fjeld, in nessuno dei due paesi.",
@@ -202,12 +202,12 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Ristoranti a Saariselkä: dove mangiare",
-      "description": "Otto ristoranti a Saariselkä, tutti raggiungibili a piedi: una cucina da 4,8, un gastropub, un lávvu e l'hamburgeria del paese.",
+      "description": "Otto ristoranti a Saariselkä, tutti raggiungibili a piedi: una cucina d'albergo, un gastropub, un lávvu e l'hamburgeria del paese.",
       "h1": "Ristoranti a Saariselkä",
-      "tagline": "Un piccolo paese di fjeld con la forbice di valutazioni più ampia del sito.",
-      "intro": "Saariselkä è abbastanza compatto da rendere la scelta una passeggiata e non un viaggio: due di essi stanno sulla stessa via. L'insolito è la forbice: Fieno tiene 4,8 su 529 recensioni e Gáldu un 5,0 pieno, mentre ScanBurger, Lieggâ Láávu e Bistro & Cafe Kuukkeli si assestano tra 4,1 e 4,2. Gastropub Giitu, a 4,7, è quello che Google archivia sotto Inari: si trova a Saariselkä.",
+      "tagline": "Un piccolo paese di fjeld dove ogni tavolo si raggiunge a piedi.",
+      "intro": "Saariselkä è abbastanza compatto da rendere la scelta una passeggiata e non un viaggio, e due dei locali stanno sulla stessa via. La forbice è ampia: Fieno e Gáldu servono al tavolo, Kieppi Kitchen & Bar è il ristorante del Wilderness Hotel Kieppi, e ScanBurger, Lieggâ Láávu e Bistro & Cafe Kuukkeli coprono il lato veloce. Google archivia Gastropub Giitu sotto Inari, ma si trova a Saariselkä.",
       "know": [
-        "Il 5,0 di Gáldu viene da 30 recensioni. Il 4,8 di Fieno viene da 529: un numero assai più solido.",
+        "Kieppi Kitchen & Bar è il ristorante del Wilderness Hotel Kieppi, in Raitopolku.",
         "Tutto ciò che è in questa pagina sta dentro il paese. L'aeroporto più vicino è Ivalo, a circa 25 minuti.",
         "Saariselkä appartiene al comune di Inari, perciò altrove viene spesso archiviato sotto Inari."
       ],
@@ -216,10 +216,10 @@
     "inari": {
       "name": "Inari",
       "title": "Ristoranti a Inari: dove mangiare",
-      "description": "Quattro ristoranti nel comune di Inari, tra cui una sala di alta cucina sull'acqua con 4,8, e tre separati da lunghe distanze.",
+      "description": "Quattro ristoranti nel comune di Inari, tra cui una sala di alta cucina di ispirazione sami sull'acqua, e tre separati da lunghe distanze.",
       "h1": "Ristoranti a Inari",
       "tagline": "Il comune più grande della Finlandia. Quattro cucine, e molta strada in mezzo.",
-      "intro": "Inari è più esteso di parecchi paesi europei, e questa pagina lo mostra: i ristoranti sono sparsi su decine di chilometri anziché in un centro abitato. Restaurant Aanaar, sull'acqua in Saarikoskentie, è la sala di alta cucina e la meglio valutata con 4,8. Kultahippu sta 35 km più a sud, a Ivalo; Muotkan Ruoktu a 39 km sulla strada per Karigasniemi, e Arctic River Resort in mezzo ai due. Nessuno è raggiungibile a piedi da un altro.",
+      "intro": "Inari è più esteso di parecchi paesi europei, e questa pagina lo mostra: i ristoranti sono sparsi su decine di chilometri anziché in un centro abitato. Restaurant Aanaar, sull'acqua in Saarikoskentie, è la sala di alta cucina. Kultahippu sta 35 km più a sud, a Ivalo; Muotkan Ruoktu a 39 km sulla strada per Karigasniemi, e Arctic River Resort in mezzo ai due. Nessuno è raggiungibile a piedi da un altro.",
       "know": [
         "Aanaar è l'unico nel paese di Inari vero e proprio. Per gli altri serve l'auto.",
         "Kultahippu è a Ivalo, 35 km a sud: il paese dell'aeroporto.",
@@ -233,7 +233,7 @@
       "description": "Cinque ristoranti a Kemi, sul golfo di Botnia: il padiglione sul mare, due in Valtakatu e una cucina al porto. Valutazioni e link ai menù.",
       "h1": "Ristoranti a Kemi",
       "tagline": "Una città di mare, e i tavoli seguono l'acqua.",
-      "intro": "Kemi mangia lungo due linee: la riva e la via principale. Kemin Puistopaviljonki e Pizzeria San Milano condividono lo stesso indirizzo sul mare in Meripuistonpolku, e Sataman Krouwi ja Perämeren Jähti sta giù al porto. In centro, Pieni Lohikäärme e Ravintola Mori si fronteggiano ai due lati di Valtakatu. Puistopaviljonki ha qui di gran lunga più recensioni; San Milano la valutazione più alta.",
+      "intro": "Kemi mangia lungo due linee: la riva e la via principale. Kemin Puistopaviljonki e Pizzeria San Milano condividono lo stesso indirizzo sul mare in Meripuistonpolku, e Sataman Krouwi ja Perämeren Jähti sta giù al porto. In centro, Pieni Lohikäärme e Ravintola Mori si fronteggiano ai due lati di Valtakatu.",
       "know": [
         "Due di essi condividono un indirizzo sul mare: Puistopaviljonki e San Milano.",
         "Kemi è sulla linea ferroviaria principale da Helsinki, quindi è una delle poche città della Lapponia raggiungibili senza auto.",
@@ -247,7 +247,7 @@
       "description": "Cinque ristoranti a Tornio, al confine svedese, tre dei quali sulla stessa via. Valutazioni, citazioni e link ai loro menù.",
       "h1": "Ristoranti a Tornio",
       "tagline": "Una città di confine dove tre su cinque condividono una via.",
-      "intro": "L'offerta di Tornio è insolitamente compatta: Ravintola Umpitunneli, Mustaparran Päämaja e Tmi Hevi Pizza stanno tutti in Hallituskatu, a un paio di minuti l'uno dall'altro. Ravintola Golden Flower, in Eliaksenkatu, raccoglie qui più recensioni di tutti, e Amico completa l'elenco in Torikatu. La valutazione più alta è di Hevi Pizza, 4,7. Dall'altra parte del fiume c'è Haparanda, che è Svezia e ha una pagina propria.",
+      "intro": "L'offerta di Tornio è insolitamente compatta: Ravintola Umpitunneli, Mustaparran Päämaja e Tmi Hevi Pizza stanno tutti in Hallituskatu, a un paio di minuti l'uno dall'altro. Ravintola Golden Flower sta in Eliaksenkatu, e Amico completa l'elenco in Torikatu. Dall'altra parte del fiume c'è Haparanda, che è Svezia e ha una pagina propria.",
       "know": [
         "Tre di essi sono in Hallituskatu: i tre menù si leggono in una sola passeggiata.",
         "Haparanda è oltre il ponte e in Svezia: valuta diversa, e l'orologio torna indietro di un'ora.",
@@ -261,7 +261,7 @@
       "description": "Cinque ristoranti a Haparanda, di fronte a Tornio: l'hotel sulla piazza, un classico 15 km a monte, sushi e thai. Valutazioni e link ai menù.",
       "h1": "Ristoranti a Haparanda",
       "tagline": "Oltre il ponte da Tornio: in pratica la stessa città, sulla carta un altro paese.",
-      "intro": "Haparanda è in Svezia, e questo cambia tre cose concrete: i prezzi sono in corone, l'orologio va un'ora indietro rispetto alla Finlandia, e il centro resta comunque condiviso con Tornio. Haparanda Stadshotell affaccia sulla piazza, Leilani e Haparanda Sushi & Indiskt sono a un paio di vie, e Cape East sta fuori, a Sundholmen. Kukkolaforsen, il più recensito di tutti, è 15 km a monte: una gita decisa più che una passeggiata.",
+      "intro": "Haparanda è in Svezia, e questo cambia tre cose concrete: i prezzi sono in corone, l'orologio va un'ora indietro rispetto alla Finlandia, e il centro resta comunque condiviso con Tornio. Haparanda Stadshotell affaccia sulla piazza, Leilani e Haparanda Sushi & Indiskt sono a un paio di vie, e Cape East sta fuori, a Sundholmen. Kukkolaforsen è 15 km a monte: una gita decisa più che una passeggiata.",
       "know": [
         "Svezia, non Finlandia: prezzi in SEK, e l'ora locale è un'ora indietro rispetto a Tornio.",
         "Kukkolaforsen è 15 km a nord lungo il fiume: metti in conto l'auto.",
@@ -275,7 +275,7 @@
       "description": "Cinque ristoranti a Sodankylä, tre dei quali sulla strada dell'oceano Artico. Valutazioni, citazioni e link ai loro menù.",
       "h1": "Ristoranti a Sodankylä",
       "tagline": "Una sosta sulla strada per l'Artico, e quasi tutto si trova lungo di essa.",
-      "intro": "Sodankylä è la metà del lungo viaggio verso nord, e i ristoranti si dispongono di conseguenza: Sodankylän turkinpippuri, Ravintola RuusuSuola e Sodankylän Olohuone Tähti stanno tutti su Jäämerentie, la strada che alla fine raggiunge l'oceano Artico. Turkinpippuri raccoglie qui nettamente più recensioni di tutti. Olohuone Tähti ha la valutazione più alta, 4,8, su numeri molto più bassi. Tori-Kioski Mikkola e Piitsi Pubi completano fuori dall'asse principale.",
+      "intro": "Sodankylä è la metà del lungo viaggio verso nord, e i ristoranti si dispongono di conseguenza: Sodankylän turkinpippuri, Ravintola RuusuSuola e Sodankylän Olohuone Tähti stanno tutti su Jäämerentie, la strada che alla fine raggiunge l'oceano Artico. Tori-Kioski Mikkola e Piitsi Pubi completano fuori dall'asse principale.",
       "know": [
         "Tre di essi sono su Jäämerentie, la strada principale che attraversa il paese: facile da abbinare a una sosta.",
         "Il paese si riempie a metà giugno per il Festival del cinema del sole di mezzanotte; quella settimana i tavoli scarseggiano.",
@@ -286,10 +286,10 @@
     "pyhatunturi": {
       "name": "Pyhätunturi",
       "title": "Ristoranti a Pyhätunturi",
-      "description": "Sei indirizzi dove mangiare a Pyhätunturi e attorno a Pelkosenniemi: un caffè alla porta del parco nazionale, una cucina d'albergo e un bistrot da 5,0.",
+      "description": "Sei indirizzi dove mangiare a Pyhätunturi e attorno a Pelkosenniemi: un caffè alla porta del parco nazionale, una cucina d'albergo e un bistrot nella vecchia canonica.",
       "h1": "Ristoranti a Pyhätunturi",
-      "tagline": "Un paese di parco nazionale dove il tavolo meglio valutato è la vecchia canonica.",
-      "intro": "Pyhä è una piccola stazione al margine del parco nazionale di Pyhä-Luosto, nel comune di Pelkosenniemi. Café Loimu sta in Luontotie, alla porta del parco; Ravintola Popolo e Restaurant CAMP Kitchen & Bar condividono l'indirizzo dell'hotel in Kultakeronkatu, in centro. Le due valutazioni più alte sono qui fuori dalla stazione: Bistro Vanha Pappila in Kirkkotie con un 5,0 pieno e Sunday Morning Resort con 4,8, entrambi su numeri di recensioni contenuti.",
+      "tagline": "Un paese di parco nazionale dove uno dei tavoli è nella vecchia canonica.",
+      "intro": "Pyhä è una piccola stazione al margine del parco nazionale di Pyhä-Luosto, nel comune di Pelkosenniemi. Café Loimu sta in Luontotie, alla porta del parco; Ravintola Popolo e Restaurant CAMP Kitchen & Bar condividono l'indirizzo dell'hotel in Kultakeronkatu, in centro. Altri due stanno fuori dalla stazione: Bistro Vanha Pappila in Kirkkotie e Sunday Morning Resort.",
       "know": [
         "Pyhä appartiene al comune di Pelkosenniemi, perciò in alcuni indirizzi compare Pelkosenniemi anziché Pyhätunturi.",
         "Vanha Pappila e Sunday Morning Resort stanno giù nei villaggi, non su nella stazione.",
@@ -303,9 +303,9 @@
       "description": "Quattro indirizzi dove mangiare a Luosto, la metà più tranquilla di Pyhä-Luosto: il ristorante kelo dell'hotel, la cucina della locanda e la sosta sulle piste.",
       "h1": "Ristoranti a Luosto",
       "tagline": "La metà tranquilla del parco nazionale: quattro cucine, nessuna coda.",
-      "intro": "Luosto è la più piccola e tranquilla delle due stazioni di Pyhä-Luosto, e l'elenco è abbastanza breve da leggersi in un minuto. Restaurant Punakettu, in Luostontie, ha sei volte le recensioni di qualsiasi altro qui, il che ne fa la scelta predefinita. Keloravintola Lapland Hotels Luostotunturi e Luoston Hovi stanno entrambi a 4,4, e Skiknööli è la sosta a bordo pista. Luosto appartiene al comune di Sodankylä, da cui il Sodankylä che compare in diversi indirizzi.",
+      "intro": "Luosto è la più piccola e tranquilla delle due stazioni di Pyhä-Luosto, e l'elenco è abbastanza breve da leggersi in un minuto. Restaurant Punakettu sta in Luostontie, Keloravintola Lapland Hotels Luostotunturi in Luppokeino e Luoston Hovi in Ellitsantie, e Skiknööli è la sosta a bordo pista. Luosto appartiene al comune di Sodankylä, da cui il Sodankylä che compare in diversi indirizzi.",
       "know": [
-        "Punakettu ha di gran lunga più recensioni a Luosto: le altre tre sono piccole sale locali.",
+        "Con solo quattro indirizzi in elenco, nelle settimane di sci più piene conviene prenotare in anticipo.",
         "Negli indirizzi postali compare spesso Sodankylä. Il paese vero e proprio dista circa 32 km.",
         "Pyhä è a 21 km attraverso il parco e ha una pagina propria."
       ],
@@ -317,10 +317,10 @@
       "description": "Sette ristoranti divisi tra la stazione di Ruka e il paese di Kuusamo, a 22 km: la pizzeria più frequentata del sito, un gastropub e un caffè da trekking.",
       "h1": "Ristoranti a Kuusamo e Ruka",
       "tagline": "Due centri a 22 km: controlla in quale sta il tuo tavolo.",
-      "intro": "Kuusamo si divide nettamente in due. Su, alla stazione, Pizzeria Ruka ha più recensioni di qualsiasi altro ristorante del sito fuori da Rovaniemi, con Restaurant Burger Cafe & Bar Ruka sulla stessa strada e, poco discosto, il Gasthaus & Hard Trek Café di Ruka Trek, valutato 4,8. Giù in paese, 22 km più a sud, Ravintola Talonpöytä e Restaurant Wanha Mestari servono un pubblico del tutto diverso.",
+      "intro": "Kuusamo si divide nettamente in due. Su, alla stazione, Pizzeria Ruka, Restaurant Burger Cafe & Bar Ruka e il ristorante di selvaggina Riipisen Riistaravintola stanno tutti sulla stessa strada, e poco discosto c'è il Gasthaus & Hard Trek Café di Ruka Trek. Giù in paese, 22 km più a sud, Ravintola Talonpöytä e Restaurant Wanha Mestari servono un pubblico del tutto diverso.",
       "know": [
         "Ruka e il paese di Kuusamo distano 22 km. L'indirizzo lo dice: Rukatunturintie e Vuosselintie sono la stazione.",
-        "Pizzeria Ruka è qui la cucina più frequentata per numero di recensioni, di parecchie volte.",
+        "Riipisen Riistaravintola, a Ruka, è la cucina della selvaggina: filetto di renna, renna saltata e coregoni fritti.",
         "Kuusamo appartiene all'Ostrobotnia settentrionale e non alla Lapponia vera e propria, ma è la porta del parco nazionale di Oulanka."
       ],
       "at": "Kuusamo"
@@ -331,7 +331,7 @@
       "description": "Cinque ristoranti a Kemijärvi, tutti entro 800 m l'uno dall'altro in centro. Valutazioni, citazioni e link ai loro menù.",
       "h1": "Ristoranti a Kemijärvi",
       "tagline": "Tutta la scelta sta in 800 metri.",
-      "intro": "Kemijärvi è la città più pedonabile del sito: ogni ristorante dista meno di 800 metri dagli altri, in centro, e due sono vicini in Vapaudenkatu. Mestarin Kievari, in Kirkkokatu, raccoglie più recensioni di tutti. I due meglio valutati sono i più piccoli — Jauri Resort con 4,8 e Restaurant Susa's Bistro con 4,7 — e in mezzo Rosa Pizza Kebab e Pizza Mestarit coprono il quotidiano.",
+      "intro": "Kemijärvi è la città più pedonabile del sito: ogni ristorante dista meno di 800 metri dagli altri, in centro, e due sono vicini in Vapaudenkatu. Mestarin Kievari sta in Kirkkokatu, Jauri Resort e Restaurant Susa's Bistro a pochi minuti, e Rosa Pizza Kebab e Pizza Mestarit coprono il quotidiano.",
       "know": [
         "Sono tutti entro 800 m: si può guardare ogni menù in una sola passeggiata.",
         "Susa's Bistro e Rosa Pizza Kebab sono vicini in Vapaudenkatu.",

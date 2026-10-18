@@ -428,24 +428,24 @@ export const restaurantOverrides: Record<string, Override> = {
   },
 
   // Ruka Trek | Gasthaus & Hard Trek Café — Kuusamo (top pick 3.8.2026 alkaen).
-  // 4,8 / 235 on koko oppaan Kuusamon-alueen korkein keskiarvo, ja gasthaus-
-  // malli (keittiö + vierashuoneet) istuu sivuston "yövy siellä missä syöt"
-  // -teemaan. Kuvaus omista faktoista, ei keksittyjä ruokalajeja.
+  // Gasthaus-malli (keittiö + vierashuoneet) istuu sivuston "yövy siellä missä
+  // syöt" -teemaan. 18.10.2026: Google-arvio pois kuvauksesta (Vesa: "arvio
+  // muuttuu, miksi se on tekstissä?"). Kuvaus omista faktoista, ei keksittyjä ruokalajeja.
   'ChIJi34WdzpVKUQRcWqhDjVPY4E': {
     topPick: true,
     curatedDescription: {
-      en: 'A gasthaus in Ruka village that pairs its kitchen with guest rooms, so dinner and a bed can be under the same roof. Its 4.8-star average is the highest in our Kuusamo catalogue.',
-      fi: 'Gasthaus Rukan kylässä: keittiö ja vierashuoneet saman katon alla, joten illallinen ja yöpaikka löytyvät samasta talosta. 4,8 tähden keskiarvo on koko oppaamme Kuusamon-alueen korkein.',
-      de: 'Ein Gasthaus im Dorf Ruka, das Küche und Gästezimmer unter einem Dach vereint: Abendessen und Bett im selben Haus. Der 4,8-Sterne-Schnitt ist der höchste in unserem Kuusamo-Katalog.',
-      ja: 'ルカの村にあるガストハウス。キッチンと客室がひとつ屋根の下にあり、夕食とベッドが同じ家で完結します。平均4.8の評価は、当ガイドのクーサモ地区でいちばん高い数字です。',
-      es: 'Una casa de huéspedes en el pueblo de Ruka que une cocina y habitaciones bajo el mismo techo: cena y cama en la misma casa. Su media de 4,8 estrellas es la más alta de nuestro catálogo de Kuusamo.',
-      'pt-BR': 'Uma gasthaus na vila de Ruka que reúne cozinha e quartos sob o mesmo teto: jantar e cama na mesma casa. Sua média de 4,8 estrelas é a mais alta do nosso catálogo de Kuusamo.',
-      'zh-CN': '鲁卡村里的一家家庭旅馆餐厅，厨房与客房同在一个屋檐下，晚餐和床铺都在同一栋房子里。4.8 星的平均分是本指南库萨莫地区的最高分。',
-      ko: '루카 마을의 가스트하우스. 주방과 객실이 한 지붕 아래 있어 저녁 식사와 잠자리를 같은 집에서 해결할 수 있습니다. 평점 4.8은 저희 쿠사모 카탈로그에서 가장 높은 수치입니다.',
-      fr: 'Une maison d\'hôtes du village de Ruka qui réunit cuisine et chambres sous le même toit: dîner et lit dans la même maison. Sa moyenne de 4,8 étoiles est la plus haute de notre catalogue de Kuusamo.',
-      it: 'Una gasthaus nel villaggio di Ruka che unisce cucina e camere sotto lo stesso tetto: cena e letto nella stessa casa. La media di 4,8 stelle è la più alta del nostro catalogo di Kuusamo.',
-      nl: 'Een gasthaus in het dorp Ruka met keuken en gastenkamers onder één dak: diner en bed in hetzelfde huis. Het gemiddelde van 4,8 sterren is het hoogste in onze Kuusamo-catalogus.',
-      sv: 'Ett gästhus i byn Ruka där köket hör ihop med gästrummen, så middag och säng kan finnas under samma tak. Snittbetyget 4,8 stjärnor är det högsta bland våra ställen i Kuusamo.',
+      en: 'A gasthaus in Ruka village that pairs its kitchen with guest rooms, so dinner and a bed can be under the same roof. Book the room and the table together and nobody has to drive after dinner.',
+      fi: 'Gasthaus Rukan kylässä: keittiö ja vierashuoneet saman katon alla, joten illallinen ja yöpaikka löytyvät samasta talosta. Varaa huone ja pöytä yhdessä, niin illallisen jälkeen kenenkään ei tarvitse ajaa.',
+      de: 'Ein Gasthaus im Dorf Ruka, das Küche und Gästezimmer unter einem Dach vereint: Abendessen und Bett im selben Haus. Zimmer und Tisch zusammen buchen, dann muss nach dem Essen niemand mehr fahren.',
+      ja: 'ルカの村にあるガストハウス。キッチンと客室がひとつ屋根の下にあり、夕食とベッドが同じ家で完結します。部屋とテーブルを一緒に予約すれば、夕食のあとに誰も運転せずに済みます。',
+      es: 'Una casa de huéspedes en el pueblo de Ruka que une cocina y habitaciones bajo el mismo techo: cena y cama en la misma casa. Si se reservan juntas la habitación y la mesa, después de cenar nadie tiene que conducir.',
+      'pt-BR': 'Uma gasthaus na vila de Ruka que reúne cozinha e quartos sob o mesmo teto: jantar e cama na mesma casa. Reservando quarto e mesa juntos, ninguém precisa dirigir depois do jantar.',
+      'zh-CN': '鲁卡村里的一家家庭旅馆餐厅，厨房与客房同在一个屋檐下，晚餐和床铺都在同一栋房子里。把房间和餐位一起订好，晚饭后就不用再开车。',
+      ko: '루카 마을의 가스트하우스. 주방과 객실이 한 지붕 아래 있어 저녁 식사와 잠자리를 같은 집에서 해결할 수 있습니다. 객실과 식탁을 함께 예약하면 저녁 식사 후 아무도 운전할 필요가 없습니다.',
+      fr: 'Une maison d\'hôtes du village de Ruka qui réunit cuisine et chambres sous le même toit: dîner et lit dans la même maison. En réservant la chambre et la table ensemble, personne n\'a à conduire après le dîner.',
+      it: 'Una gasthaus nel villaggio di Ruka che unisce cucina e camere sotto lo stesso tetto: cena e letto nella stessa casa. Prenotando insieme camera e tavolo, dopo cena nessuno deve guidare.',
+      nl: 'Een gasthaus in het dorp Ruka met keuken en gastenkamers onder één dak: diner en bed in hetzelfde huis. Boek kamer en tafel samen, dan hoeft na het diner niemand meer te rijden.',
+      sv: 'Ett gästhus i byn Ruka där köket hör ihop med gästrummen, så middag och säng kan finnas under samma tak. Boka rum och bord tillsammans, så behöver ingen köra efter middagen.',
     },
   },
 
@@ -535,18 +535,18 @@ export const restaurantOverrides: Record<string, Override> = {
   // Kekäle — Levin keskusta. Leville 0,0 km, Kittilään 17,2 km.
   'ChIJ15wJlt1N0kUR0NXQXtWz7qE': {
     curatedDescription: {
-      en: 'A small Levi kitchen that keeps the menu short. Its 4.6 is among the highest ratings on our Levi list.',
-      fi: 'Pieni levillinen keittiö, joka pitää ruokalistan lyhyenä. 4,6 on Levin listamme korkeimpia arvioita.',
-      de: 'Eine kleine Küche in Levi, die die Karte kurz hält. Die 4,6 gehört zu den höchsten Bewertungen unserer Levi-Liste.',
-      ja: 'メニューを絞ったレヴィの小さな厨房。4.6 は当サイトのレヴィ一覧でも上位の評価です。',
-      es: 'Una cocina pequeña de Levi que mantiene la carta corta. Su 4,6 está entre las notas más altas de nuestra lista de Levi.',
-      'pt-BR': 'Uma cozinha pequena em Levi que mantém o cardápio curto. Seu 4,6 está entre as melhores notas da nossa lista de Levi.',
-      'zh-CN': '莱维的一家小厨房，菜单刻意做得简短。4.6 分在我们的莱维名单里名列前茅。',
-      ko: '메뉴를 짧게 유지하는 레비의 작은 주방. 4.6은 저희 레비 목록에서 가장 높은 평점에 속합니다.',
-      fr: 'Une petite cuisine de Levi qui garde une carte courte. Son 4,6 compte parmi les meilleures notes de notre liste Levi.',
-      it: 'Una piccola cucina di Levi che tiene il menù corto. Il suo 4,6 è tra i voti più alti della nostra lista di Levi.',
-      nl: 'Een kleine keuken in Levi die de kaart kort houdt. De 4,6 hoort bij de hoogste beoordelingen op onze Levi-lijst.',
-      sv: 'Ett litet kök i Levi som håller menyn kort. Betyget 4,6 är bland de högsta på vår Levi-lista.',
+      en: 'A small kitchen in the centre of Levi that keeps the menu short.',
+      fi: 'Pieni keittiö Levin keskustassa. Ruokalista on pidetty lyhyenä.',
+      de: 'Eine kleine Küche im Zentrum von Levi, die die Karte kurz hält.',
+      ja: 'レヴィ中心部にある、メニューを絞った小さな厨房。',
+      es: 'Una cocina pequeña en el centro de Levi que mantiene la carta corta.',
+      'pt-BR': 'Uma cozinha pequena no centro de Levi que mantém o cardápio curto.',
+      'zh-CN': '莱维中心区的一家小厨房，菜单刻意做得简短。',
+      ko: '메뉴를 짧게 유지하는 레비 중심가의 작은 주방.',
+      fr: 'Une petite cuisine au centre de Levi qui garde une carte courte.',
+      it: 'Una piccola cucina nel centro di Levi che tiene il menù corto.',
+      nl: 'Een kleine keuken in het centrum van Levi die de kaart kort houdt.',
+      sv: 'Ett litet kök i Levis centrum som håller menyn kort.',
     }, city: 'Levi' },
 
   // Ravintola RuusuSuola — Jäämerentie 28, Sodankylä. Luostolle 35 km,
@@ -653,18 +653,18 @@ export const restaurantOverrides: Record<string, Override> = {
   // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'the fish... wasn't quite what I had expected'
   'ChIJqRi5sfpPKUQRrStja_VqJPE': {
     curatedDescription: {
-      en: 'A kitchen in Kuusamo town serving reindeer and local fish: the most-reviewed table away from the Ruka slopes.',
-      fi: 'Kuusamon kirkonkylän keittiö, jossa on poroa ja paikallista kalaa: kirkonkylän eniten arvioitu pöytä Rukan rinteiden ulkopuolella.',
-      de: 'Eine Küche im Ort Kuusamo mit Rentier und heimischem Fisch: der meistbewertete Tisch abseits der Pisten von Ruka.',
-      ja: 'クーサモ市街の厨房で、トナカイと地元の魚を出します。ルカのゲレンデを離れた場所では最もレビューの多い一軒です。',
-      es: 'Una cocina en el pueblo de Kuusamo con reno y pescado local: la mesa más reseñada fuera de las pistas de Ruka.',
-      'pt-BR': 'Uma cozinha na cidade de Kuusamo com rena e peixe local: a mesa mais avaliada fora das pistas de Ruka.',
-      'zh-CN': '库萨莫镇上的厨房，供应驯鹿与本地鱼，鲁卡雪道之外评论最多的一桌。',
-      ko: '쿠사모 시내의 주방으로 순록과 지역 생선을 냅니다. 루카 슬로프를 벗어난 곳에서는 리뷰가 가장 많은 곳입니다.',
-      fr: 'Une cuisine au bourg de Kuusamo, renne et poisson local : la table la plus commentée en dehors des pistes de Ruka.',
-      it: 'Una cucina nel paese di Kuusamo con renna e pesce locale: il tavolo più recensito fuori dalle piste di Ruka.',
-      nl: 'Een keuken in het dorp Kuusamo met rendier en lokale vis: de meest beoordeelde tafel buiten de pistes van Ruka.',
-      sv: 'Ett kök i Kuusamo tätort med ren och lokal fisk: det mest recenserade bordet utanför Rukas backar.',
+      en: 'A kitchen in Kuusamo town serving reindeer and local fish, 22 km south of the Ruka slopes.',
+      fi: 'Kuusamon kirkonkylän keittiö, jossa on poroa ja paikallista kalaa, 22 km Rukan rinteistä etelään.',
+      de: 'Eine Küche im Ort Kuusamo mit Rentier und heimischem Fisch, 22 km südlich der Pisten von Ruka.',
+      ja: 'クーサモ市街の厨房で、トナカイと地元の魚を出します。ルカのゲレンデから22km南にあります。',
+      es: 'Una cocina en el pueblo de Kuusamo con reno y pescado local, 22 km al sur de las pistas de Ruka.',
+      'pt-BR': 'Uma cozinha na cidade de Kuusamo com rena e peixe local, 22 km ao sul das pistas de Ruka.',
+      'zh-CN': '库萨莫镇上的厨房，供应驯鹿与本地鱼，在鲁卡雪道以南22公里。',
+      ko: '쿠사모 시내의 주방으로 순록과 지역 생선을 냅니다. 루카 슬로프에서 남쪽으로 22km 떨어져 있습니다.',
+      fr: 'Une cuisine au bourg de Kuusamo, renne et poisson local, à 22 km au sud des pistes de Ruka.',
+      it: 'Una cucina nel paese di Kuusamo con renna e pesce locale, 22 km a sud delle piste di Ruka.',
+      nl: 'Een keuken in het dorp Kuusamo met rendier en lokale vis, 22 km ten zuiden van de pistes van Ruka.',
+      sv: 'Ett kök i Kuusamo tätort med ren och lokal fisk, 22 km söder om Rukas backar.',
     },
   },
 

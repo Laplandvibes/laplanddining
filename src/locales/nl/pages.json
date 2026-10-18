@@ -64,7 +64,7 @@
       "items": [
         {
           "question": "Wat is het beroemdste restaurant van Lapland?",
-          "answer": "Restaurant Aanaar in Inari is een van de best beoordeelde fine-diningrestaurants van Lapland, 4,8 op Google met ruim 460 reviews. Het eert het Samische culinaire erfgoed met proefmenu's rond vis die diezelfde ochtend uit het Inarimeer is gehaald, handgeplukte wilde kruiden en rendier van lokale rendierhouders."
+          "answer": "Restaurant Aanaar in Inari is een van de bekendste fine-diningrestaurants van Lapland. Het eert het Samische culinaire erfgoed met proefmenu's rond vis die diezelfde ochtend uit het Inarimeer is gehaald, handgeplukte wilde kruiden en rendier van lokale rendierhouders."
         },
         {
           "question": "Wat is poronkäristys?",
@@ -160,14 +160,14 @@
     "rovaniemi": {
       "name": "Rovaniemi",
       "title": "Restaurants in Rovaniemi: waar u eet",
-      "description": "Acht restaurants in Rovaniemi, van rendierhaas aan de Valtakatu tot de best beoordeelde keuken van de hele site. Beoordelingen, citaten en menulinks.",
+      "description": "Acht restaurants in Rovaniemi, van rendierhaas aan de Valtakatu tot een Koreaanse keuken aan de Korkalonkatu. Beoordelingen, citaten en menulinks.",
       "h1": "Restaurants in Rovaniemi",
       "tagline": "De dichtste verzameling tafels van Lapland — vijf ervan passen in vier straten.",
-      "intro": "Rovaniemi is de enige stad in Lapland waar u uw restaurant te voet uitkiest. Nili en Arctic Restaurant liggen bijna tegenover elkaar aan de Valtakatu en dekken rendier en kruipbraam af. Tweehonderd meter verderop zijn Roka Street Bistro aan de Ainonkatu en Cafe & Bar 21 aan de Rovakatu de zalen waar bewoners op een gewone dinsdag naartoe gaan. De hoogste beoordeling gaat niet eens naar een Laplands restaurant: Hanki, een Koreaanse keuken aan de Korkalonkatu, houdt 4,9 op ruim duizend beoordelingen.",
+      "intro": "Rovaniemi is de enige stad in Lapland waar u uw restaurant te voet uitkiest. Nili en Arctic Restaurant liggen bijna tegenover elkaar aan de Valtakatu en dekken rendier en kruipbraam af. Tweehonderd meter verderop zijn Roka Street Bistro aan de Ainonkatu en Cafe & Bar 21 aan de Rovakatu de zalen waar bewoners op een gewone dinsdag naartoe gaan. En wie even genoeg heeft van rendier, vindt aan de Korkalonkatu Hanki, dat Koreaans kookt.",
       "know": [
         "De vijf restaurants in het centrum liggen binnen 500 m van elkaar — de hele keuze is één wandeling.",
         "Drie liggen buiten het centrum: Sky Kitchen & View op 2,4 km, Kotahovi op 6,8 km aan de weg naar het kerstmandorp, en All About Salmon in het dorp zelf.",
-        "Hanki is met 4,9 het best beoordeelde restaurant van de hele site, en de keuken is Koreaans, niet Laplands."
+        "Hanki aan de Korkalonkatu is Koreaans, niet Laplands, en ligt in hetzelfde compacte centrum als de rest."
       ],
       "at": "Rovaniemi"
     },
@@ -176,12 +176,12 @@
       "title": "Restaurants in Levi: waar u eet",
       "description": "Negen restaurants in Levi, het grootste skigebied van Finland: de panoramazaal, Italiaans bij de pistes en de zalen van het dorp Sirkka.",
       "h1": "Restaurants in Levi",
-      "tagline": "Het grootste skigebied van Finland eet daarnaar — volume, terrassen en lange beoordelingslijsten.",
-      "intro": "Het dorp aan de voet van de fjeld heet officieel Sirkka, en bijna elk adres zegt dat ook. Panoramic Restaurant TUIKKU verzamelt veruit de meeste beoordelingen. Ämmilä en Wanha Hullu Poro zijn buren aan de Rakkavaarantie, Ristorante Renna doet Italiaans een straat verderop, en Saamen Kammi, Riihi, Boneless en Kekäle vullen het centrum. De beoordelingen liggen hier iets lager dan in de rest van Lapland — 4,1 tot 4,6 — bij een veelvoud aan beoordelingen, wat een gebied dat duizenden mensen per week te eten geeft nu eenmaal oplevert.",
+      "tagline": "Het grootste skigebied van Finland eet daarnaar: volle eetzalen, terrassen en een tafel boven op de fjeld.",
+      "intro": "Het dorp aan de voet van de fjeld heet officieel Sirkka, en bijna elk adres zegt dat ook. Panoramic Restaurant TUIKKU ligt boven op de fjeld, 2,4 km van het centrum. Ämmilä en Wanha Hullu Poro zijn buren aan de Rakkavaarantie, Ristorante Renna doet Italiaans een straat verderop, en Saamen Kammi, Riihi, Boneless en Kekäle vullen het centrum.",
       "know": [
         "Op de postadressen van Levi staat Sirkka of Kittilä. Het is hetzelfde gebied: het dorp is Sirkka, de gemeente Kittilä.",
         "Het dorp Kittilä zelf ligt 17 km verderop en heeft geen enkel restaurant op deze site.",
-        "Panoramic Restaurant TUIKKU ligt 2,4 km van het dorpscentrum en heeft meer beoordelingen dan welke andere tafel in Levi ook."
+        "Panoramic Restaurant TUIKKU ligt 2,4 km van het dorpscentrum, boven op de fjeld: plan vooraf hoe u er komt en weer terug."
       ],
       "at": "Levi"
     },
@@ -191,7 +191,7 @@
       "description": "Zeven restaurants in Ylläs, verdeeld over Äkäslompolo en Ylläsjärvi aan weerszijden van de fjeld, en één op de top. Beoordelingen en menulinks.",
       "h1": "Restaurants in Ylläs",
       "tagline": "Twee dorpen, één fjeld en zo'n 11 km tussen uw tafel en die andere.",
-      "intro": "Ylläs is niet één dorp maar twee, aan weerszijden van de fjeld. In het noordelijke Äkäslompolo zitten Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub en Los Lompolo's; in het zuidelijke Ylläsjärvi Ravintola Otso en Restaurant Ylläskota. Daartussen is het adres van Ylläskammi de top zelf. Rouhe verzamelt hier duidelijk de meeste beoordelingen; de hoogste score is van Los Lompolo's, 4,7, op een veel kleiner aantal.",
+      "intro": "Ylläs is niet één dorp maar twee, aan weerszijden van de fjeld. In het noordelijke Äkäslompolo zitten Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub en Los Lompolo's; in het zuidelijke Ylläsjärvi Ravintola Otso en Restaurant Ylläskota. Daartussen is het adres van Ylläskammi de top zelf.",
       "know": [
         "Äkäslompolo en Ylläsjärvi liggen ongeveer 11 km uit elkaar, rond de fjeld. Kijk in welk dorp uw restaurant ligt voordat u vertrekt.",
         "Ylläskammi staat boven op de fjeld, in geen van beide dorpen.",
@@ -202,12 +202,12 @@
     "saariselka": {
       "name": "Saariselkä",
       "title": "Restaurants in Saariselkä: waar u eet",
-      "description": "Acht restaurants in Saariselkä, allemaal te voet: een keuken met 4,8, een gastropub, een lávvu en de burgerzaak van het dorp.",
+      "description": "Acht restaurants in Saariselkä, allemaal te voet: een hotelkeuken, een gastropub, een lávvu en de burgerzaak van het dorp.",
       "h1": "Restaurants in Saariselkä",
-      "tagline": "Een klein fjelddorp met de breedste spreiding aan beoordelingen op deze site.",
-      "intro": "Saariselkä is compact genoeg om de keuze een wandeling te maken en geen rit — twee ervan staan in dezelfde straat. Ongewoon is de spreiding: Fieno houdt 4,8 op 529 beoordelingen en Gáldu een schone 5,0, terwijl ScanBurger, Lieggâ Láávu en Bistro & Cafe Kuukkeli tussen 4,1 en 4,2 blijven. Gastropub Giitu, met 4,7, is degene die Google onder Inari zet — het ligt in Saariselkä.",
+      "tagline": "Een klein fjelddorp waar elke tafel op loopafstand ligt.",
+      "intro": "Saariselkä is compact genoeg om de keuze een wandeling te maken en geen rit, en twee van de zaken staan in dezelfde straat. De spreiding is groot: Fieno en Gáldu serveren aan tafel, Kieppi Kitchen & Bar is het restaurant van Wilderness Hotel Kieppi, en ScanBurger, Lieggâ Láávu en Bistro & Cafe Kuukkeli dekken de snelle kant af. Google zet Gastropub Giitu onder Inari, maar het ligt in Saariselkä.",
       "know": [
-        "De 5,0 van Gáldu komt uit 30 beoordelingen. De 4,8 van Fieno uit 529 — een een stuk steviger getal.",
+        "Kieppi Kitchen & Bar is het restaurant in Wilderness Hotel Kieppi aan de Raitopolku.",
         "Alles op deze pagina ligt binnen het dorp. De dichtstbijzijnde luchthaven is Ivalo, ongeveer 25 minuten.",
         "Saariselkä hoort bij de gemeente Inari, daarom staat het elders vaak onder Inari."
       ],
@@ -216,10 +216,10 @@
     "inari": {
       "name": "Inari",
       "title": "Restaurants in Inari: waar u eet",
-      "description": "Vier restaurants in de gemeente Inari: een fine-diningzaal aan het water met een 4,8 en drie andere die ver uit elkaar liggen.",
+      "description": "Vier restaurants in de gemeente Inari: een Samisch geïnspireerde fine-diningzaal aan het water en drie andere die ver uit elkaar liggen.",
       "h1": "Restaurants in Inari",
       "tagline": "De grootste gemeente van Finland. Vier keukens, en veel weg ertussen.",
-      "intro": "Inari is groter dan menig Europees land, en deze pagina laat dat zien: de restaurants liggen verspreid over tientallen kilometers in plaats van in een dorpskern. Restaurant Aanaar, aan het water aan de Saarikoskentie, is de fine-dining zaal en met 4,8 de best beoordeelde. Kultahippu ligt 35 km zuidelijker in Ivalo, Muotkan Ruoktu 39 km aan de weg naar Karigasniemi, en Arctic River Resort daartussen. Geen ervan is te voet vanaf een andere te bereiken.",
+      "intro": "Inari is groter dan menig Europees land, en deze pagina laat dat zien: de restaurants liggen verspreid over tientallen kilometers in plaats van in een dorpskern. Restaurant Aanaar, aan het water aan de Saarikoskentie, is de fine-dining zaal. Kultahippu ligt 35 km zuidelijker in Ivalo, Muotkan Ruoktu 39 km aan de weg naar Karigasniemi, en Arctic River Resort daartussen. Geen ervan is te voet vanaf een andere te bereiken.",
       "know": [
         "Aanaar is de enige in het dorp Inari zelf. Voor de rest hebt u een auto nodig.",
         "Kultahippu ligt in Ivalo, 35 km zuidelijker — het dorp met de luchthaven.",
@@ -233,7 +233,7 @@
       "description": "Vijf restaurants in Kemi aan de Botnische Golf: het paviljoen aan zee, twee aan de Valtakatu en een keuken in de haven. Beoordelingen en menulinks.",
       "h1": "Restaurants in Kemi",
       "tagline": "Een stad aan zee, en de tafels volgen het water.",
-      "intro": "Kemi eet langs twee lijnen: de kust en de hoofdstraat. Kemin Puistopaviljonki en Pizzeria San Milano delen hetzelfde adres aan zee aan de Meripuistonpolku, en Sataman Krouwi ja Perämeren Jähti ligt beneden in de haven. In het centrum staan Pieni Lohikäärme en Ravintola Mori tegenover elkaar aan de Valtakatu. Puistopaviljonki heeft hier veruit de meeste beoordelingen; San Milano de hoogste score.",
+      "intro": "Kemi eet langs twee lijnen: de kust en de hoofdstraat. Kemin Puistopaviljonki en Pizzeria San Milano delen hetzelfde adres aan zee aan de Meripuistonpolku, en Sataman Krouwi ja Perämeren Jähti ligt beneden in de haven. In het centrum staan Pieni Lohikäärme en Ravintola Mori tegenover elkaar aan de Valtakatu.",
       "know": [
         "Twee ervan delen één adres aan zee — Puistopaviljonki en San Milano.",
         "Kemi ligt aan de hoofdspoorlijn vanuit Helsinki en is dus een van de weinige Laplandse steden die u zonder auto bereikt.",
@@ -247,7 +247,7 @@
       "description": "Vijf restaurants in Tornio aan de Zweedse grens, waarvan drie in dezelfde straat. Beoordelingen, citaten en links naar hun eigen menu's.",
       "h1": "Restaurants in Tornio",
       "tagline": "Een grensstad waar drie van de vijf één straat delen.",
-      "intro": "Het aanbod van Tornio is ongewoon compact: Ravintola Umpitunneli, Mustaparran Päämaja en Tmi Hevi Pizza liggen alle drie aan de Hallituskatu, een paar minuten van elkaar. Ravintola Golden Flower aan de Eliaksenkatu heeft hier de meeste beoordelingen, en Amico maakt de lijst compleet aan de Torikatu. De hoogste score is van Hevi Pizza, 4,7. Aan de overkant van de rivier ligt Haparanda, dat Zweden is en een eigen pagina heeft.",
+      "intro": "Het aanbod van Tornio is ongewoon compact: Ravintola Umpitunneli, Mustaparran Päämaja en Tmi Hevi Pizza liggen alle drie aan de Hallituskatu, een paar minuten van elkaar. Ravintola Golden Flower ligt aan de Eliaksenkatu, en Amico maakt de lijst compleet aan de Torikatu. Aan de overkant van de rivier ligt Haparanda, dat Zweden is en een eigen pagina heeft.",
       "know": [
         "Drie ervan liggen aan de Hallituskatu — alle drie de menu's leest u in één wandeling.",
         "Haparanda ligt over de brug en in Zweden: andere munt, en de klok gaat een uur terug.",
@@ -261,7 +261,7 @@
       "description": "Vijf restaurants in Haparanda tegenover Tornio: het hotel aan het plein, een klassieker 15 km stroomopwaarts, sushi en Thais. Beoordelingen en menulinks.",
       "h1": "Restaurants in Haparanda",
       "tagline": "Over de brug vanuit Tornio — in de praktijk dezelfde stad, op papier een ander land.",
-      "intro": "Haparanda ligt in Zweden, en dat verandert drie praktische dingen: de prijzen zijn in kronen, de klok loopt een uur achter op Finland, en het centrum wordt toch met Tornio gedeeld. Haparanda Stadshotell staat aan het plein, Leilani en Haparanda Sushi & Indiskt liggen een paar straten verder, en Cape East zit buiten op Sundholmen. Kukkolaforsen, de meest beoordeelde van het stel, ligt 15 km stroomopwaarts en is een bewuste uitstap in plaats van een wandeling.",
+      "intro": "Haparanda ligt in Zweden, en dat verandert drie praktische dingen: de prijzen zijn in kronen, de klok loopt een uur achter op Finland, en het centrum wordt toch met Tornio gedeeld. Haparanda Stadshotell staat aan het plein, Leilani en Haparanda Sushi & Indiskt liggen een paar straten verder, en Cape East zit buiten op Sundholmen. Kukkolaforsen ligt 15 km stroomopwaarts en is een bewuste uitstap in plaats van een wandeling.",
       "know": [
         "Zweden, niet Finland: prijzen in SEK, en de lokale tijd loopt een uur achter op Tornio.",
         "Kukkolaforsen ligt 15 km noordelijker langs de rivier — reken op een auto.",
@@ -275,7 +275,7 @@
       "description": "Vijf restaurants in Sodankylä, drie ervan aan de weg naar de Noordelijke IJszee. Beoordelingen, citaten en links naar hun eigen menu's.",
       "h1": "Restaurants in Sodankylä",
       "tagline": "Een stop aan de IJszeeweg, en het meeste staat eraan.",
-      "intro": "Sodankylä is de helft van de lange rit naar het noorden, en de restaurants stellen zich daarnaar op: Sodankylän turkinpippuri, Ravintola RuusuSuola en Sodankylän Olohuone Tähti liggen alle drie aan de Jäämerentie, de weg die uiteindelijk de Noordelijke IJszee bereikt. Turkinpippuri heeft hier duidelijk de meeste beoordelingen. Olohuone Tähti heeft de hoogste score, 4,8, op een veel kleiner aantal. Tori-Kioski Mikkola en Piitsi Pubi vullen aan naast de hoofdweg.",
+      "intro": "Sodankylä is de helft van de lange rit naar het noorden, en de restaurants stellen zich daarnaar op: Sodankylän turkinpippuri, Ravintola RuusuSuola en Sodankylän Olohuone Tähti liggen alle drie aan de Jäämerentie, de weg die uiteindelijk de Noordelijke IJszee bereikt. Tori-Kioski Mikkola en Piitsi Pubi vullen aan naast de hoofdweg.",
       "know": [
         "Drie ervan liggen aan de Jäämerentie, de hoofdweg door het dorp — makkelijk te combineren met een rijpauze.",
         "Half juni loopt het dorp vol voor het filmfestival van de middernachtzon; die week zijn tafels schaars.",
@@ -286,10 +286,10 @@
     "pyhatunturi": {
       "name": "Pyhätunturi",
       "title": "Restaurants bij Pyhätunturi",
-      "description": "Zes adressen om te eten bij Pyhätunturi en rond Pelkosenniemi: een café bij de poort van het nationaal park, een hotelkeuken en een bistro met 5,0.",
+      "description": "Zes adressen om te eten bij Pyhätunturi en rond Pelkosenniemi: een café bij de poort van het nationaal park, een hotelkeuken en een bistro in de oude pastorie.",
       "h1": "Restaurants bij Pyhätunturi",
-      "tagline": "Een nationaalparkdorp waar de best beoordeelde tafel in de oude pastorie staat.",
-      "intro": "Pyhä is een klein gebied aan de rand van nationaal park Pyhä-Luosto, in de gemeente Pelkosenniemi. Café Loimu ligt aan de Luontotie bij de parkpoort; Ravintola Popolo en Restaurant CAMP Kitchen & Bar delen het hoteladres aan de Kultakeronkatu in het centrum. De twee hoogste scores liggen hier buiten het gebied: Bistro Vanha Pappila aan de Kirkkotie met een schone 5,0 en Sunday Morning Resort met 4,8, beide op bescheiden aantallen beoordelingen.",
+      "tagline": "Een nationaalparkdorp waar een van de tafels in de oude pastorie staat.",
+      "intro": "Pyhä is een klein gebied aan de rand van nationaal park Pyhä-Luosto, in de gemeente Pelkosenniemi. Café Loimu ligt aan de Luontotie bij de parkpoort; Ravintola Popolo en Restaurant CAMP Kitchen & Bar delen het hoteladres aan de Kultakeronkatu in het centrum. Nog twee liggen buiten het gebied: Bistro Vanha Pappila aan de Kirkkotie en Sunday Morning Resort.",
       "know": [
         "Pyhä hoort bij de gemeente Pelkosenniemi, dus op sommige adressen staat Pelkosenniemi in plaats van Pyhätunturi.",
         "Vanha Pappila en Sunday Morning Resort liggen beneden in de dorpen, niet boven in het skigebied.",
@@ -303,9 +303,9 @@
       "description": "Vier adressen om te eten in Luosto, de rustigere helft van Pyhä-Luosto: het kelo-restaurant van het hotel, de keuken van de herberg en de stop bij de piste.",
       "h1": "Restaurants in Luosto",
       "tagline": "De rustige helft van het nationaal park — vier keukens, geen rij.",
-      "intro": "Luosto is het kleinere en rustigere van de twee gebieden van Pyhä-Luosto, en de lijst is kort genoeg om in een minuut te lezen. Restaurant Punakettu aan de Luostontie heeft zes keer zoveel beoordelingen als al het andere hier, wat het de standaardkeuze maakt. Keloravintola Lapland Hotels Luostotunturi en Luoston Hovi staan allebei op 4,4, en Skiknööli is de stop naast de piste. Luosto hoort bij de gemeente Sodankylä, vandaar dat op meerdere adressen Sodankylä staat.",
+      "intro": "Luosto is het kleinere en rustigere van de twee gebieden van Pyhä-Luosto, en de lijst is kort genoeg om in een minuut te lezen. Restaurant Punakettu ligt aan de Luostontie, Keloravintola Lapland Hotels Luostotunturi aan de Luppokeino en Luoston Hovi aan de Ellitsantie, en Skiknööli is de stop naast de piste. Luosto hoort bij de gemeente Sodankylä, vandaar dat op meerdere adressen Sodankylä staat.",
       "know": [
-        "Punakettu heeft veruit de meeste beoordelingen in Luosto — de andere drie zijn kleine, lokale zalen.",
+        "Met maar vier adressen op de lijst loont het om in de drukke skiweken vooraf te reserveren.",
         "Op de postadressen staat hier vaak Sodankylä. Het dorp zelf ligt ongeveer 32 km verderop.",
         "Pyhä ligt 21 km dwars door het park en heeft een eigen pagina."
       ],
@@ -317,10 +317,10 @@
       "description": "Zeven restaurants verdeeld over het skigebied Ruka en de stad Kuusamo, 22 km uit elkaar: de drukste pizzeria van de site, een gastropub en een trekkerscafé.",
       "h1": "Restaurants in Kuusamo en Ruka",
       "tagline": "Twee centra, 22 km uit elkaar — kijk in welk van de twee uw tafel staat.",
-      "intro": "Kuusamo valt duidelijk in tweeën uiteen. Boven in het skigebied heeft Pizzeria Ruka meer beoordelingen dan welk ander restaurant op deze site buiten Rovaniemi ook, met Restaurant Burger Cafe & Bar Ruka aan dezelfde weg en, iets terzijde, het Gasthaus & Hard Trek Café van Ruka Trek met 4,8. Beneden in de stad, 22 km zuidelijker, bedienen Ravintola Talonpöytä en Restaurant Wanha Mestari een heel ander publiek.",
+      "intro": "Kuusamo valt duidelijk in tweeën uiteen. Boven in het skigebied liggen Pizzeria Ruka, Restaurant Burger Cafe & Bar Ruka en het wildrestaurant Riipisen Riistaravintola allemaal aan dezelfde weg, met iets terzijde het Gasthaus & Hard Trek Café van Ruka Trek. Beneden in de stad, 22 km zuidelijker, bedienen Ravintola Talonpöytä en Restaurant Wanha Mestari een heel ander publiek.",
       "know": [
         "Ruka en de stad Kuusamo liggen 22 km uit elkaar. Het adres verraadt het: Rukatunturintie en Vuosselintie zijn het skigebied.",
-        "Pizzeria Ruka is hier de drukste keuken naar aantal beoordelingen, en met ruime marge.",
+        "Riipisen Riistaravintola in Ruka is de wildkeuken: rendierfilet, gesauteerd rendier en gefrituurde marenen.",
         "Kuusamo hoort bij Noord-Ostrobotnië en niet bij Lapland in strikte zin, maar het is de poort naar nationaal park Oulanka."
       ],
       "at": "Kuusamo"
@@ -331,7 +331,7 @@
       "description": "Vijf restaurants in Kemijärvi, allemaal binnen 800 m van elkaar in het centrum. Beoordelingen, citaten en links naar hun eigen menu's.",
       "h1": "Restaurants in Kemijärvi",
       "tagline": "De hele keuze past in 800 meter.",
-      "intro": "Kemijärvi is de meest beloopbare stad op deze site: elk restaurant ligt binnen 800 meter van de andere in het centrum, twee ervan als buren aan de Vapaudenkatu. Mestarin Kievari aan de Kirkkokatu heeft de meeste beoordelingen. De twee best beoordeelde zijn de kleinste — Jauri Resort met 4,8 en Restaurant Susa's Bistro met 4,7 — en daartussen dekken Rosa Pizza Kebab en Pizza Mestarit het alledaagse af.",
+      "intro": "Kemijärvi is de meest beloopbare stad op deze site: elk restaurant ligt binnen 800 meter van de andere in het centrum, twee ervan als buren aan de Vapaudenkatu. Mestarin Kievari ligt aan de Kirkkokatu, Jauri Resort en Restaurant Susa's Bistro op een paar minuten, en Rosa Pizza Kebab en Pizza Mestarit dekken het alledaagse af.",
       "know": [
         "Ze liggen allemaal binnen 800 m — u bekijkt elk menu in één wandeling.",
         "Susa's Bistro en Rosa Pizza Kebab zijn buren aan de Vapaudenkatu.",
