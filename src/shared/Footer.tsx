@@ -1074,6 +1074,171 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
     };
   }, []);
 
+  // ─── [LV-PARTNER-EVENTS 2026-10-18] Mainosnäytöt, klikit ja nopeus ─────────
+  //
+  // Vesa 18.10.: "SEURANTA ON KAIKEN A JA O" ja "MAINOSPAIKAT PITÄÄ OLLA 100% …
+  // JA KUINKA NOPEASTI". Ennen tätä mainoksesta näkyi vain /go/-klikki, ja
+  // kumppaniartikkelien suorat follow-linkit eivät näkyneet omassa datassa lainkaan.
+  //
+  // Jokaisesta seurattavasta linkistä lähetetään Workerille (POST /_ev):
+  //   view  = ≥ 50 % linkistä näkyvissä yhtäjaksoisesti ≥ 1 s (IAB-näkyvyys)
+  //   click = klikkaus tai keskiklikki, enintään kerran per linkki per sivulataus
+  //   tp = ms sivun latauksesta · tv = ms ensinäytöstä klikkiin · vis = ms näkyvissä
+  // Seurattavat: go.laplandvibes.com/go/<avain> sekä ulkoiset linkit verkoston
+  // ulkopuolelle (isännässä ei "lapland"). WORKER päättää mikä on kumppani ja
+  // hylkää muut, joten uusi kumppani ei vaadi tämän tiedoston muutosta.
+  // Ei evästeitä, ei tallennusta laitteelle, ei IP:tä. Lähetys sendBeaconilla
+  // klikillä ja kun sivu piiloutuu — ei jatkuvaa liikennettä.
+  // 🔴 Pysyy Footerin SISÄLLÄ samasta syystä kuin w-kuuntelija yllä.
+  // 🔴 Mittaus ei saa koskaan rikkoa sivua: kaikki try/catchissa, ei poikkeuksia ulos.
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    if (!('IntersectionObserver' in window) || !('MutationObserver' in window)) return;
+    const ENDPOINT = 'https://go.laplandvibes.com/_ev';
+    const WORKER_HOST = 'go.laplandvibes.com';
+    const site = window.location.hostname.replace(/^www\./, '');
+    const pv = Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+    type Slot = {
+      k?: string; h?: string; pl: string; pt: string;
+      first: number | null; since: number | null; vis: number; timer: number | null; clicked: boolean;
+    };
+    const slots = new Map<HTMLAnchorElement, Slot>();
+    const now = () => performance.now();
+
+    const describe = (a: HTMLAnchorElement): { k?: string; h?: string; pl: string } | null => {
+      let u: URL;
+      try { u = new URL(a.href, window.location.href); } catch { return null; }
+      if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
+      const host = u.hostname.replace(/^www\./, '');
+      if (host === WORKER_HOST) {
+        const seg = u.pathname.split('/').filter(Boolean);
+        if (seg[0] !== 'go' || !seg[1]) return null;
+        return { k: seg[1], pl: u.searchParams.get('sid') || a.dataset.lvSlot || '' };
+      }
+      if (host === site || host.includes('lapland')) return null;
+      return { h: host, pl: a.dataset.lvSlot || u.searchParams.get('utm_content') || '' };
+    };
+
+    // Mainos- ja /go/-paikat ensin, sitten muut ulkoiset linkit; 50 tapahtumaa per
+    // lähetys. Mitattu 18.10. hubin etusivulla: kuvalähdelinkit (Wikimedia ym.)
+    // täyttivät yhden 60 tapahtuman lähetyksen, ja mainosnäyttöjä olisi pudonnut pois.
+    const send = (events: Record<string, unknown>[]) => {
+      if (!events.length) return;
+      try {
+        const url = ENDPOINT + '?pv=' + pv + '&w=' + encodeURIComponent(site);
+        const ordered = events.slice().sort((a, b) => (a.k ? 0 : 1) - (b.k ? 0 : 1));
+        for (let i = 0; i < ordered.length; i += 50) {
+          const body = JSON.stringify(ordered.slice(i, i + 50));
+          if (typeof navigator.sendBeacon === 'function' && navigator.sendBeacon(url, body)) continue;
+          void fetch(url, { method: 'POST', body, keepalive: true, mode: 'no-cors' }).catch(() => {});
+        }
+      } catch { /* mittaus ei saa rikkoa sivua */ }
+    };
+
+    let lastFlush = -Infinity;
+    const flush = () => {
+      const t = now();
+      if (t - lastFlush < 500) return; // visibilitychange + pagehide tulevat usein peräkkäin
+      lastFlush = t;
+      const events: Record<string, unknown>[] = [];
+      slots.forEach((s) => {
+        if (s.first === null) return;
+        const vis = s.vis + (s.since !== null ? t - s.since : 0);
+        events.push({ e: 'view', k: s.k, h: s.h, pl: s.pl, pt: s.pt, tp: Math.round(s.first), vis: Math.round(vis) });
+      });
+      send(events);
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      const t = now();
+      for (const en of entries) {
+        const s = slots.get(en.target as HTMLAnchorElement);
+        if (!s) continue;
+        const visible = en.isIntersecting && en.intersectionRatio >= 0.5 && document.visibilityState === 'visible';
+        if (visible && s.since === null) {
+          s.since = t;
+          if (s.first === null && s.timer === null) {
+            const start = t;
+            s.timer = window.setTimeout(() => {
+              s.timer = null;
+              if (s.first === null && s.since === start) s.first = start;
+            }, 1000);
+          }
+        } else if (!visible && s.since !== null) {
+          s.vis += t - s.since;
+          s.since = null;
+          if (s.timer !== null) { window.clearTimeout(s.timer); s.timer = null; }
+        }
+      }
+    }, { threshold: [0, 0.5, 1] });
+
+    const track = (a: HTMLAnchorElement) => {
+      if (slots.has(a)) return;
+      const d = describe(a);
+      if (!d) return;
+      slots.set(a, { ...d, pt: window.location.pathname, first: null, since: null, vis: 0, timer: null, clicked: false });
+      io.observe(a);
+    };
+    const scan = () => {
+      try { document.querySelectorAll('a[href]').forEach((el) => track(el as HTMLAnchorElement)); } catch { /* */ }
+    };
+    scan();
+    let pending = false;
+    const mo = new MutationObserver(() => {
+      if (pending) return;
+      pending = true;
+      window.setTimeout(() => { pending = false; scan(); }, 300);
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    const onClick = (ev: MouseEvent) => {
+      if (ev.type === 'auxclick' && ev.button !== 1) return;
+      const el = ev.target as Element | null;
+      const a = el && typeof el.closest === 'function' ? (el.closest('a[href]') as HTMLAnchorElement | null) : null;
+      if (!a) return;
+      track(a);
+      const s = slots.get(a);
+      if (!s || s.clicked) return;
+      s.clicked = true;
+      const t = now();
+      // Klikattu mainos on nähty: jos sekunnin näkyvyysraja ei ehtinyt täyttyä (nopea
+      // klikki, raskas sivu), näyttö kirjataan klikin yhteydessä, ettei klikkejä ole
+      // koskaan enemmän kuin näyttöjä.
+      if (s.first === null) s.first = s.since !== null ? s.since : t;
+      if (s.timer !== null) { window.clearTimeout(s.timer); s.timer = null; }
+      send([{ e: 'click', k: s.k, h: s.h, pl: s.pl, pt: s.pt, tp: Math.round(t), tv: Math.round(t - s.first) }]);
+      lastFlush = -Infinity;
+      flush();
+    };
+    const onVisibility = () => {
+      const t = now();
+      if (document.visibilityState === 'hidden') {
+        slots.forEach((s) => {
+          if (s.since !== null) { s.vis += t - s.since; s.since = null; }
+          if (s.timer !== null) { window.clearTimeout(s.timer); s.timer = null; }
+        });
+        flush();
+      } else {
+        // Palatessa IntersectionObserver ei kutsu itsestään jo näkyvillä olevista:
+        // havainnoidaan uudelleen, niin näkyvyys jatkuu.
+        slots.forEach((_s, a) => { io.unobserve(a); io.observe(a); });
+      }
+    };
+    document.addEventListener('click', onClick, true);
+    document.addEventListener('auxclick', onClick, true);
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pagehide', flush);
+    return () => {
+      flush();
+      io.disconnect();
+      mo.disconnect();
+      document.removeEventListener('click', onClick, true);
+      document.removeEventListener('auxclick', onClick, true);
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pagehide', flush);
+    };
+  }, []);
+
   // data-fv: footer build version. Bump when a footer fix must bypass a stale
   // Cloudflare edge-cached chunk that rebuilt to the same hashed name.
   return (
