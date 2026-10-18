@@ -53,7 +53,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Checked in? The area around you, in your pocket.',
       move: 'On the move in Lapland? Roads and help in your pocket.',
       outdoors: 'Heading outdoors? Take the trails with you.',
-      do: 'What to do in Lapland? Tours and events in your pocket.',
+      do: 'What to do in Lapland? Tours\u00A0and\u00A0events in\u00A0your\u00A0pocket.',
       eat: 'Hungry on arrival? The nearest places in your pocket.',
     },
     screens: {
@@ -84,7 +84,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Perillä majapaikassa? Lähiseutu taskussa.',
       move: 'Liikkeellä Lapissa? Keli ja apu taskussa.',
       outdoors: 'Retkelle luontoon? Ota reitit mukaan.',
-      do: 'Tekemistä Lapissa? Retket ja tapahtumat taskussa.',
+      do: 'Tekemistä Lapissa? Retket\u00A0ja\u00A0tapahtumat taskussa.',
       eat: 'Nälkä perillä? Lähimmät ravintolat taskussa.',
     },
     screens: {
@@ -115,7 +115,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Framme vid boendet? Närområdet i fickan.',
       move: 'På vägarna i Lappland? Väglag och hjälp i fickan.',
       outdoors: 'Ut i naturen? Ta med lederna.',
-      do: 'Vad gör man i Lappland? Turer och evenemang i fickan.',
+      do: 'Vad gör man i Lappland? Turer\u00A0och\u00A0evenemang i\u00A0fickan.',
       eat: 'Hungrig efter resan? Närmaste matställena i fickan.',
     },
     screens: {
@@ -146,7 +146,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Angekommen? Die Umgebung in der Tasche.',
       move: 'Unterwegs in Lappland? Straßenzustand und Pannenhilfe.',
       outdoors: 'Raus in die Natur? Die Wanderwege immer dabei.',
-      do: 'Was tun in Lappland? Touren und Events in der Tasche.',
+      do: 'Was tun in Lappland? Touren\u00A0und\u00A0Events in\u00A0der\u00A0Tasche.',
       eat: 'Hungrig angekommen? Lokale in der Nähe.',
     },
     screens: {
@@ -177,7 +177,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Sur place ? Les alentours dans votre poche.',
       move: 'Au volant en Laponie ? Routes et dépannage en poche.',
       outdoors: 'Envie de nature ? Emportez les sentiers.',
-      do: 'Que faire en Laponie ? Sorties et événements en poche.',
+      do: 'Que faire en Laponie\u00A0? Sorties\u00A0et\u00A0événements en\u00A0poche.',
       eat: 'Une petite faim ? Les adresses proches en poche.',
     },
     screens: {
@@ -208,7 +208,7 @@ export const COPY: Record<string, Copy> = {
       stay: '¿Ya en su alojamiento? Los alrededores en su bolsillo.',
       move: '¿Recorre Laponia? Carreteras y ayuda en su bolsillo.',
       outdoors: '¿Sale a la naturaleza? Lleve los senderos consigo.',
-      do: '¿Qué hacer en Laponia? Excursiones y eventos a mano.',
+      do: '¿Qué hacer en Laponia? Excursiones\u00A0y\u00A0eventos a\u00A0mano.',
       eat: '¿Llega con hambre? Restaurantes cercanos a mano.',
     },
     screens: {
@@ -239,7 +239,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Già sul posto? I dintorni in tasca.',
       move: 'In viaggio in Lapponia? Strade e assistenza in tasca.',
       outdoors: 'Voglia di natura? Porti con sé i sentieri.',
-      do: 'Cosa fare in Lapponia? Escursioni ed eventi in tasca.',
+      do: 'Cosa fare in Lapponia? Escursioni\u00A0ed\u00A0eventi in\u00A0tasca.',
       eat: 'Fame all’arrivo? I locali più vicini in tasca.',
     },
     screens: {
@@ -270,7 +270,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Ingecheckt? De omgeving op zak.',
       move: 'Onderweg in Lapland? Wegdek en hulp op zak.',
       outdoors: 'De natuur in? Neem de routes mee.',
-      do: 'Wat te doen in Lapland? Tochten en evenementen op zak.',
+      do: 'Wat te doen in Lapland? Tochten\u00A0en\u00A0evenementen op\u00A0zak.',
       eat: 'Trek bij aankomst? Restaurants in de buurt op zak.',
     },
     screens: {
@@ -301,7 +301,7 @@ export const COPY: Record<string, Copy> = {
       stay: 'Já se instalou? Os arredores no seu bolso.',
       move: 'Rodando pela Lapônia? Estradas e ajuda no seu bolso.',
       outdoors: 'Rumo à natureza? Leve as trilhas com você.',
-      do: 'O que fazer na Lapônia? Passeios e eventos no bolso.',
+      do: 'O que fazer na Lapônia? Passeios\u00A0e\u00A0eventos no\u00A0bolso.',
       eat: 'Chegou com fome? Restaurantes por perto no seu bolso.',
     },
     screens: {
