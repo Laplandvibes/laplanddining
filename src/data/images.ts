@@ -106,6 +106,9 @@ const COMMONS_SRCSET: Record<string, string> = {
   'loimulohi-fire': '/images/commons/loimulohi-fire-1280.webp 1280w, /images/commons/loimulohi-fire-1920.webp 1920w',
   'inari-fish-of-the-day': '/images/commons/inari-fish-of-the-day-1280.webp 1280w, /images/commons/inari-fish-of-the-day-1920.webp 1920w',
   'enontekio-reindeer-autumn': '/images/commons/enontekio-reindeer-autumn-1280.webp 1280w, /images/commons/enontekio-reindeer-autumn-1920.webp 1920w',
+  // 18.10.2026: Ylläksen kaupunkikuva (oma heinäkuun pubikuva näytti Jack Daniel's -viskikyltin).
+  'yllas-ski-lodge-winter': '/images/commons/yllas-ski-lodge-winter-1280.webp 1280w, /images/commons/yllas-ski-lodge-winter-1920.webp 1920w',
+  'yllas-fell-lake-summer': '/images/commons/yllas-fell-lake-summer-1280.webp 1280w, /images/commons/yllas-fell-lake-summer-1920.webp 1920w',
   // LV:n omat valokuvat (heinäkuun 2026 reissu), sama srcset-malli
 };
 const OWN_SRCSET: Record<string, string> = {
@@ -146,6 +149,10 @@ export const PHOTO = {
   /** Oma kuva 11.10.2026: Kiepin Lapin herkkulautanen, Saariselkä (/local-food-hero). */
   kieppiLappishPlate: commons('kieppi-lappish-plate'),
   kaylankoskiWinter: commons('kuusamo-kaylankoski-winter'),
+  /** Ylläksen hiihtokeskuksen ala-asema lumessa, RESTAURANTS-kyltti (karel291, CC BY 3.0, rajattu). */
+  yllasWinter: commons('yllas-ski-lodge-winter'),
+  /** Yllästunturi Äkäslompolon järven takaa heinäkuussa (dr.eros, CC BY 3.0, rajattu). */
+  yllasSummer: commons('yllas-fell-lake-summer'),
   reindeerSled1938: commons('sodankyla-reindeer-sled-1938'),
   /** Pexels 5395184 (Pexels License, ladattu 2020, paikaton — alt ei väitä paikkaa). */
   platedFish: '/images/stock/pexels-5395184-plated-fish-1280.webp',

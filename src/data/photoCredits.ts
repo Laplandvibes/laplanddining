@@ -46,7 +46,7 @@ export type PhotoCreditEntry = {
   /** Rajattu tai muokattu CC BY -kuva: merkintä "rajattu" näkyy krediitissä (CC BY 4.0 §3(a)(1)(B)). */
   modified?: true;
   /** Hakupäivä: 4.10.2026 yön kuvavaihto, 8.10.2026 viimeistelyn korvaukset (sisarruututuplat). */
-  fetched: '2026-10-04' | '2026-10-08';
+  fetched: '2026-10-04' | '2026-10-08' | '2026-10-18';
   cost: '0 €';
 };
 
@@ -162,6 +162,34 @@ export const PHOTO_CREDITS: Record<string, PhotoCreditEntry> = {
     changes: "Vain pienennys, ei rajausta (BY-SA), WebP 1280/1920/2560 px.",
     sha1: "8a395093b2e42fa37dc9c34712b0e47cbcc945f4",
     fetched: '2026-10-04',
+    cost: '0 €',
+  },
+  // 18.10.2026: Ylläksen kaupunkikuva. Oma pubikuva (20260721_122656) näytti Jack Daniel's -viskikyltin
+  // ja -pullohyllyn; muut omat Ylläs-kuvat olivat jo muilla sivustoilla, sisarruutuja tai digizoomattuja.
+  '/images/commons/yllas-ski-lodge-winter': {
+    author: "karel291",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D1%80%D0%BD%D0%BE%D0%BB%D1%8B%D0%B6%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_-_panoramio.jpg",
+    title: "Горнолыжный комплекс - panoramio.jpg",
+    taken: "2009-04-05",
+    changes: "Rajattu (x 0–2860, y 1318–2430: auto rekisterikilpineen ja istuva ihminen pois), pienennetty, WebP 1280/1920 px.",
+    sha1: "d132f526e582cc3125d71c546d07f2b272ba1732",
+    modified: true,
+    fetched: '2026-10-18',
+    cost: '0 €',
+  },
+  '/images/commons/yllas-fell-lake-summer': {
+    author: "dr.eros",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Yll%C3%A4stunturi_-_panoramio.jpg",
+    title: "Yllästunturi - panoramio.jpg",
+    taken: "2005-07-29",
+    changes: "Rajattu (y 300–1308: tunturi, kylä ja järvi kaistan keskelle), pienennetty, WebP 1280/1920 px.",
+    sha1: "d103ee488d73575aef5c1f3b5dc7aeeda533f761",
+    modified: true,
+    fetched: '2026-10-18',
     cost: '0 €',
   },
   '/images/commons/saariselka-huippu-winter': {

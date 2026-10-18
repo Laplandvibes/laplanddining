@@ -189,7 +189,9 @@ export default function CityPage() {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
-          style={city.photo && city.photoPosition ? { objectPosition: city.photoPosition } : undefined}
+          // Oma kuva: photoPosition. Commons-kuva: sama focus kuin /restaurants-kaistassa ja /cities-kortissa
+          // (Ylläs 18.10.2026: talvella ala-aseman kyltit, kesällä tunturi ja kylä).
+          style={city.photo ? (city.photoPosition ? { objectPosition: city.photoPosition } : undefined) : (city.focus ? { objectPosition: city.focus } : undefined)}
           fetchPriority="high"
           decoding="async"
         />
