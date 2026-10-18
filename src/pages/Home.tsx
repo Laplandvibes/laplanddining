@@ -21,6 +21,7 @@ import { AD_SLOTS } from '../data/partners';
 import GygPicks from '../components/GygPicks';
 import { AppPromoHero } from '../components/AppPromo';
 import { lazy, Suspense } from 'react';
+import { midsummerStay } from '../lib/midnightSun';
 
 /**
  * Uutisnosto (src/news/): laiskasti ladattuna, jotta etusivun nippu ei kanna
@@ -277,7 +278,7 @@ export default function Home() {
                   partner="hotels-seasonal"
                   sid="home_midnight_sun_hotels"
                   destination="Lapland, Finland"
-                  query={{ checkin: '2026-06-15', checkout: '2026-06-18' }}
+                  query={midsummerStay()}
                   className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 no-underline"
                 >
                   {t('home.midnightCtaStays')}

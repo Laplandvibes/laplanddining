@@ -457,6 +457,35 @@ export const PHOTO_CREDITS: Record<string, PhotoCreditEntry> = {
     fetched: '2026-10-04',
     cost: '0 €',
   },
+  // 18.10.2026 (Vesa /midnight-sun-dining: "kuvatkaan ei näy juuri ollenkaan tietokoneella"):
+  // hero oli vuoden 1953 arkistokuva oranssin peitteen alla. Aito keskiyön aurinko Inarissa.
+  '/images/commons/inari-midnight-sun-lake': {
+    author: "Tevfik Teker",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Midnight_Sun_in_Inari_-_panoramio_(3).jpg",
+    title: "Midnight Sun in Inari - panoramio (3).jpg",
+    taken: "2013-06-13",
+    changes: "Vain pienennys 3888×2592 → WebP 1280/1920/2560 px, ei rajausta.",
+    sha1: "ef749c534790b986b1ee35025d39d9a7af135f6e",
+    fetched: '2026-10-18',
+    cost: '0 €',
+  },
+  // Saariselän kortissa oli tekoälykuva (drive/saariselkaSummer), joka esitti "kesämajan terassia".
+  // Rajattu kuvan vasen maisemaosa: oikealla on kolmiomittaustorni ja sen portailla ihmisiä.
+  '/images/commons/saariselka-kaunispaa-summer': {
+    author: "Htm",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kaunisp%C3%A4%C3%A4_triangulation_tower_1.jpg",
+    title: "Kaunispää triangulation tower 1.jpg",
+    taken: "2016-07-18",
+    changes: "Rajattu vasen maisemaosa 0,1388–1272,2183 (3686×2457 → 1272×795), WebP; ei muita muutoksia.",
+    sha1: "ca0edb5dc2ddedb9b17ebc33c036b6c769f74bde",
+    modified: true,
+    fetched: '2026-10-18',
+    cost: '0 €',
+  },
   '/images/commons/loimulohi-fire': {
     author: "Trogain",
     license: "CC BY-SA 4.0",

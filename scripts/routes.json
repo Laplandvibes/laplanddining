@@ -92,7 +92,13 @@
   },
   {
     "path": "/midnight-sun-dining",
-    "jsonKey": "midnightSunDining"
+    "jsonKey": "midnightSunDining",
+    "ogImage": "/og/midnight-sun-dining.jpg",
+    "ogCard": {
+      "hero": "/images/commons/inari-midnight-sun-lake-1920.webp",
+      "line": "Eating out under the midnight sun",
+      "focus": "50% 30%"
+    }
   },
   {
     "path": "/food-history",
