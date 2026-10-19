@@ -1,4 +1,5 @@
-import { Fragment, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
+import { fraasiLapset } from '../shared/cjk/otsikko';
 
 /* ── Otsikon rivit tietokoneella (Vesa 3.10.2026: "tehdään turhaan kolmirivisiä") ──────────────────────────────
  * Mitattu livenä 3.10. (scripts/audit_otsikkorivit.mjs, 12 kieltä × 1280/1536/1920): otsikon koko kasvaa näytön
@@ -59,17 +60,13 @@ export function fraasit(text: string, lang: string): string[] {
   return osat;
 }
 
-/** ja/zh: fraasien väliin <wbr>. Käytetään yhdessä `word-break: keep-all`:n kanssa, jolloin rivi katkeaa vain
- *  näistä kohdista eikä kesken sanan ("ラップ / ランド"). Muilla kielillä teksti sellaisenaan. */
+/** ja/zh: fraasien väliin <wbr> verkoston yhteisellä jaolla (src/shared/cjk, sama kuin muissa otsikoissa: paikannimet
+ *  ehjinä, partikkelit ja okurigana edelliseen, pitkä katakanasana inline-blockina). CJK_CSS antaa keep-allin, jolloin
+ *  rivi katkeaa vain näistä kohdista eikä kesken sanan ("ラップ / ランド"). Tämän tiedoston oma jako (fraasit()) pilkkoi
+ *  translitteroidut paikannimet merkeittäin, eikä JSX-välikappale näe valmiita <wbr>-elementtejä (19.10.2026).
+ *  Muilla kielillä teksti sellaisenaan. */
 export function Fraasit({ text, lang }: { text: string; lang: string }): ReactNode {
-  const osat = fraasit(text, lang);
-  if (osat.length < 2) return text;
-  return osat.map((o, i) => (
-    <Fragment key={i}>
-      {i > 0 && <wbr />}
-      {o}
-    </Fragment>
-  ));
+  return ilmanValeja(lang) ? fraasiLapset(text) : text;
 }
 
 /** Yksirivinen otsikko jakautuu kahdelle riville vasta kun se on tätä pidempi (em). Lyhyt otsikko ("Lapin parhaat

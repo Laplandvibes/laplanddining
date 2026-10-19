@@ -5,8 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 import compression from 'vite-plugin-compression2'
 
 import { trailingSlashLinks } from "./src/shared/router/trailingSlashPlugin";
+import { cjkOtsikot } from "./src/shared/cjk/cjkOtsikotPlugin";
 export default defineConfig({
-  plugins: [trailingSlashLinks(), react(), tailwindcss(), compression({ algorithms: ['brotliCompress'], threshold: 1024 })],
+  plugins: [cjkOtsikot(), trailingSlashLinks(), react(), tailwindcss(), compression({ algorithms: ['brotliCompress'], threshold: 1024 })],
   // CRITICAL: required because we import from ../../shared/. Without this,
   // two React instances ship in the bundle and useContext returns null —
   // production renders a blank deep-night page. See lv_critical_react_dedupe.md.
