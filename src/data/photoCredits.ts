@@ -45,8 +45,8 @@ export type PhotoCreditEntry = {
   sha1: string;
   /** Rajattu tai muokattu CC BY -kuva: merkintä "rajattu" näkyy krediitissä (CC BY 4.0 §3(a)(1)(B)). */
   modified?: true;
-  /** Hakupäivä: 4.10.2026 yön kuvavaihto, 8.10.2026 viimeistelyn korvaukset (sisarruututuplat). */
-  fetched: '2026-10-04' | '2026-10-08' | '2026-10-18';
+  /** Hakupäivä: 4.10.2026 yön kuvavaihto, 8.10.2026 viimeistelyn korvaukset (sisarruututuplat), 20.10.2026 Kuusamon kaupunkikuva. */
+  fetched: '2026-10-04' | '2026-10-08' | '2026-10-18' | '2026-10-20';
   cost: '0 €';
 };
 
@@ -166,6 +166,30 @@ export const PHOTO_CREDITS: Record<string, PhotoCreditEntry> = {
   },
   // 18.10.2026: Ylläksen kaupunkikuva. Oma pubikuva (20260721_122656) näytti Jack Daniel's -viskikyltin
   // ja -pullohyllyn; muut omat Ylläs-kuvat olivat jo muilla sivustoilla, sisarruutuja tai digizoomattuja.
+  '/images/commons/kuusamo-church-winter': {
+    author: "Heather Sunderland",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kuusamo_Church.jpg",
+    title: "Kuusamo Church.jpg",
+    taken: "2010-03-25",
+    changes: "Vain pienennys, ei rajausta, WebP 1280/1920 px.",
+    sha1: "787f71966b95db298cd6d694e672f513bfe242d0",
+    fetched: '2026-10-20',
+    cost: '0 €',
+  },
+  '/images/commons/kuusamo-keskusta-summer': {
+    author: "BishkekRocks",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kuusamo_keskusta.JPG",
+    title: "Kuusamo keskusta.JPG",
+    taken: "2007-08-28",
+    changes: "Vain pienennys, ei rajausta (BY-SA), WebP 1280/1920 px.",
+    sha1: "57f30402df09266cd470e906bcdce978ec9d3ac0",
+    fetched: '2026-10-20',
+    cost: '0 €',
+  },
   '/images/commons/yllas-ski-lodge-winter': {
     author: "karel291",
     license: "CC BY 3.0",

@@ -131,7 +131,10 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
               </a>
             </div>
           ) : (
-            <p className="text-[14px] text-warm-text leading-relaxed mb-3 line-clamp-5 flex-1">{body.text}</p>
+            /* Koko kuvaus, ei line-clampia (Vesa 19.10.2026: teksti ei katkea "…" ilman lukulinkkiä).
+               Ravintolalla ei ole omaa sivua, jolle "lue lisää" veisi, ja lauseittain lyhentäminen
+               pudotti juuri ruokatiedot (ensimmäinen lause kertoo yleensä sijainnin). */
+            <p className="text-[14px] text-warm-text leading-relaxed mb-3 flex-1">{body.text}</p>
           )
         )}
 

@@ -89,7 +89,11 @@ export const DINING_CITIES: DiningCity[] = [
   { slug: 'sodankyla',   city: 'Sodankylä',   name: 'Sodankylä',   img: seasonal(PHOTO.sodankylaWinter, PHOTO.sodankylaSummer), priority: 0.6 },
   { slug: 'pyhatunturi', city: 'Pyhätunturi', name: 'Pyhätunturi', img: seasonal(DINING.snowVillage, DINING.pyhaSummer), photo: '/images/cities/pyhatunturi.webp', photoCredit: { place: 'pyhatunturi', month: '2026-07' }, priority: 0.6 },
   { slug: 'luosto',      city: 'Luosto',      name: 'Luosto',      img: seasonal(DINING.luostoWinter, DINING.luostoSummer), priority: 0.6 },
-  { slug: 'kuusamo',     city: 'Kuusamo',     name: 'Kuusamo',     img: DINING.exterior,        photo: '/images/cities/kuusamo.webp', photoCredit: { place: 'ruka', month: '2026-07' }, priority: 0.7 },
+  // 20.10.2026: Ruka omaksi sivuksi. Haku *ravintolat ruka* 1 300/kk vs *ravintolat kuusamo* 720/kk (OpenSEO 19.10.),
+  // ja yhteinen sivu sai Ruka-haut vain sijoille 30–70 kun Kuusamo-haut olivat 11–25 (GSC 16.7.–16.10.).
+  // Ruka ja Kuusamon keskusta ovat 22 km:n päässä toisistaan; kortti kuuluu sille sivulle, jonka kylässä se on.
+  { slug: 'ruka',        city: 'Ruka',        name: 'Ruka',        img: '/images/cities/ruka.webp', photo: '/images/cities/ruka.webp', photoCredit: { place: 'ruka', month: '2026-10' }, priority: 0.8 },
+  { slug: 'kuusamo',     city: 'Kuusamo',     name: 'Kuusamo',     img: seasonal(PHOTO.kuusamoWinter, PHOTO.kuusamoSummer), priority: 0.7 },
   { slug: 'kemijarvi',   city: 'Kemijärvi',   name: 'Kemijärvi',   img: DINING.exteriorAlt,     photo: '/images/cities/kemijarvi.webp', photoCredit: { place: 'kemijarvi', month: '2026-10' }, photoPosition: 'center 58%', focus: 'center 58%', priority: 0.6 },
 ];
 

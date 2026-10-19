@@ -104,7 +104,7 @@ export default function Cities() {
 
       <section className="relative bg-gradient-to-b from-night via-night-light/55 to-night py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-5">
-          <div className="grid gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3 lv-grid-3c">
             {rows.map(({ city, count, best }) => (
               <Link
                 key={city.slug}

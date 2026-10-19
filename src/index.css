@@ -187,6 +187,14 @@ h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span {
   }
 }
 
+/* Tabletti (640–1023 px, sm:grid-cols-2): pariton viimeinen kortti keskelle saman levyisenä kuin muut,
+   ei vasempaan reunaan yksin (Vesa 25.9.2026: "tabletin orpokortti keskitetään, ei venytetä").
+   Sama kuin laplandfoodin .lv-grid-3c, mutta diningin ruudukko vaihtaa kahteen sarakkeeseen jo
+   sm-rajalla ja väli on gap-8 (2rem). Käyttö: kaupunkisivun ja /cities-sivun ruudukot 20.10.2026. */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .lv-grid-3c > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc((100% - 2rem) / 2); }
+}
+
 /* LV-NAV-SANAMERKKI:alku
    Puhelin- ja tablettinavi (hampurilainen näkyy): sanamerkki keskellä vasemman napin ja oikeiden
    ohjainten välissä, koko --lv-wm-max (24 px; 768 px:stä --lv-wm-max-md) tai pienempi vain sen

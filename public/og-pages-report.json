@@ -563,5 +563,86 @@
         "samaKuinKesa": true
       }
     }
+  },
+  "city-ruka": {
+    "route": "/city/ruka",
+    "line": "Where to eat in Ruka",
+    "kaudet": {
+      "summer": {
+        "hero": "/images/cities/ruka.webp",
+        "bytes": 178291,
+        "sha256": "e112e2498986fc41e19bbced6f8f5eb06e8b7dff4f75aac4fd55c5d3fee56035",
+        "heroSha": "9150e08d43d5f515",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 14929,
+        "inkBox": [
+          402,
+          493,
+          795,
+          597
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 77.3,
+        "centerSq": 82.8,
+        "photoRegion": 92.3,
+        "photoRegionRef": 92.3,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 289,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": []
+      },
+      "winter": {
+        "hero": "/images/cities/ruka.webp",
+        "bytes": 178291,
+        "sha256": "e112e2498986fc41e19bbced6f8f5eb06e8b7dff4f75aac4fd55c5d3fee56035",
+        "heroSha": "9150e08d43d5f515",
+        "bandH": 168,
+        "photoPct": 73.3,
+        "ink": 14929,
+        "inkBox": [
+          402,
+          493,
+          795,
+          597
+        ],
+        "safe": true,
+        "accentP10": 5.06,
+        "accentMed": 5.06,
+        "whiteP10": 17.08,
+        "whiteMed": 17.08,
+        "mean": 77.3,
+        "centerSq": 82.8,
+        "photoRegion": 92.3,
+        "photoRegionRef": 92.3,
+        "overlayPixels": 0,
+        "maxDiff": 0,
+        "fit": {
+          "size": 74,
+          "lines": 1,
+          "ts": 30,
+          "tagW": 289,
+          "fits": true,
+          "bandH": 168
+        },
+        "contrastOk": true,
+        "zeroOverlay": true,
+        "errors": [],
+        "samaKuinKesa": true
+      }
+    }
   }
 }

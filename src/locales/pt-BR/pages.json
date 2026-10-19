@@ -127,7 +127,8 @@
       "Luosto": "Vilarejo da montanha de ametista com restaurantes de troncos de kelo",
       "Muonio": "Planaltos do cinturão das auroras, acima do limite das árvores",
       "Hetta": "Polo de Enontekiö no encontro de três fronteiras",
-      "Kuusamo": "Estação de Ruka, logo ao sul da Lapônia",
+      "Ruka": "Vila de esqui ao pé do monte Rukatunturi",
+      "Kuusamo": "O centro da cidade, 22 km ao sul das pistas de Ruka",
       "Kemijärvi": "A cidade ferroviária mais ao norte, com mesas à beira-rio",
       "Salla": "Passagem selvagem e o vilarejo de esqui mais oriental da Finlândia",
       "Posio": "Coração de lagos e artesanato na região de Riisitunturi"
@@ -140,9 +141,9 @@
   },
   "cities": {
     "title": "Onde comer na Lapônia, cidade por cidade",
-    "description": "Restaurantes em Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi e mais sete localidades da Lapônia finlandesa, cada uma com página própria. Notas e cardápios.",
+    "description": "Restaurantes em Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi e mais oito localidades da Lapônia finlandesa, cada uma com página própria. Notas e cardápios.",
     "h1": "A Lapônia, cidade por cidade",
-    "lead": "76 restaurantes em 13 destinos, cada localidade com página própria.",
+    "lead": "{{count}} restaurantes em {{cities}} destinos, cada localidade com página própria.",
     "moreLead": "Muonio, Hetta, Salla e Posio somam mesas de menos para uma página própria. Ainda assim estão na lista completa.",
     "shared": {
       "kicker": "Onde comer",
@@ -286,7 +287,7 @@
     "pyhatunturi": {
       "name": "Pyhätunturi",
       "title": "Restaurantes em Pyhätunturi",
-      "description": "Seis endereços para comer em Pyhätunturi e arredores de Pelkosenniemi: um café na porta do parque nacional, uma cozinha de hotel e um bistrô na antiga casa paroquial.",
+      "description": "Seis endereços em Pyhätunturi e arredores de Pelkosenniemi: um café na porta do parque nacional, uma cozinha de hotel e um bistrô na antiga casa paroquial.",
       "h1": "Restaurantes em Pyhätunturi",
       "tagline": "Uma vila de parque nacional em que uma das mesas fica na antiga casa paroquial.",
       "intro": "Pyhä é uma pequena estação na borda do parque nacional de Pyhä-Luosto, no município de Pelkosenniemi. O Café Loimu fica na Luontotie, junto à porta do parque; Ravintola Popolo e Restaurant CAMP Kitchen & Bar dividem o endereço do hotel na Kultakeronkatu, no centro. Outros dois ficam fora da estação: Bistro Vanha Pappila, na Kirkkotie, e Sunday Morning Resort.",
@@ -311,17 +312,31 @@
       ],
       "at": "Luosto"
     },
+    "ruka": {
+      "name": "Ruka",
+      "title": "Restaurantes em Ruka, Finlândia: onde comer",
+      "description": "Doze restaurantes na vila de Ruka e ao redor do monte: restaurante de caça, massa fresca, chalé de pista, cozinhas de hotel e casa à beira do lago.",
+      "h1": "Restaurantes em Ruka",
+      "tagline": "A vila ao pé do monte e as mesas logo além dela.",
+      "intro": "A maior parte das mesas de Ruka fica a poucos passos entre si, na vila ao pé das pistas frontais. Na Rukatunturintie estão Restaurant Burger Cafe & Bar Ruka, Pizzeria Ruka, Riipisen Riistaravintola, Ravintola Vespino e o café Talonpöytä, no centro comercial Kumpare; na Rukankyläntie, Colorado Bar & Grill Ruka, Ravintola Kaltiokivi (no Scandic Rukahovi) e Rinneravintola Piste. Mais afastados ficam o Royal Ruka, no lado sul do monte, o café do Ruka Trek, na Vuosselintie, o CAMP Kitchen & Bar, em Ruka Valley, e o Iisakin Talo, à beira do lago Rukajärvi.",
+      "know": [
+        "Ruka pertence a Kuusamo, por isso os endereços dizem Kuusamo ou Rukatunturi, embora a cidade de Kuusamo fique 22 km ao sul.",
+        "Algumas cozinhas fecham por parte do outono e reabrem em novembro para a temporada de esqui, então confira o site do restaurante antes de ir.",
+        "A cidade de Kuusamo tem página própria, com os restaurantes 22 km ao sul das pistas."
+      ],
+      "at": "Ruka"
+    },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Restaurantes em Kuusamo e Ruka",
-      "description": "Sete restaurantes divididos entre a estação de Ruka e a cidade de Kuusamo, a 22 km: a pizzaria mais movimentada do site, um gastropub e um café de trilha.",
-      "h1": "Restaurantes em Kuusamo e Ruka",
-      "tagline": "Dois centros a 22 km — confira em qual está a sua mesa.",
-      "intro": "Kuusamo se divide claramente em dois. Lá em cima, na estação, a Pizzeria Ruka, o Restaurant Burger Cafe & Bar Ruka e o restaurante de caça Riipisen Riistaravintola ficam todos na mesma via, e um pouco afastado fica o Gasthaus & Hard Trek Café do Ruka Trek. Lá embaixo, na cidade, 22 km ao sul, Ravintola Talonpöytä e Restaurant Wanha Mestari atendem um público completamente diferente.",
+      "title": "Restaurantes em Kuusamo: onde comer na cidade",
+      "description": "Cinco lugares para comer na cidade de Kuusamo, 22 km ao sul de Ruka: dois bufês de almoço, café francês, pub-restaurante e bar esportivo no hotel-spa.",
+      "h1": "Restaurantes em Kuusamo",
+      "tagline": "O centro da cidade, 22 km ao sul das pistas de Ruka.",
+      "intro": "A cidade de Kuusamo fica 22 km ao sul das pistas de Ruka, e suas mesas seguem horários diferentes dos da estação. O Talonpöytä, na Kirkkotie, e o Torin Vintti, no andar de cima do prédio Torikeskus, servem bufê de almoço nos dias úteis; o The French Café, na Kitkantie, assa doces e todo mês faz brunch de domingo; e o Wanha Mestari, na Ouluntaival, é o pub-restaurante. O bar O'Learys fica no hotel-spa Holiday Club Kuusamon Tropiikki, a cerca de 4 km ao norte do centro.",
       "know": [
-        "Ruka e a cidade de Kuusamo ficam a 22 km. O endereço entrega: Rukatunturintie e Vuosselintie são a estação.",
-        "O Riipisen Riistaravintola, em Ruka, é a cozinha de caça: filé de rena, rena salteada e peixinho de lago frito.",
-        "Kuusamo pertence à Ostrobótnia do Norte e não à Lapônia propriamente dita, mas é a porta do parque nacional de Oulanka."
+        "Ruka fica 22 km ao norte da cidade e tem página própria.",
+        "A maioria dos lugares do centro funciona de dia: os bufês de almoço só servem nos dias úteis, então planeje o jantar com antecedência.",
+        "Kuusamo pertence à Ostrobótnia do Norte, e não à Lapônia propriamente dita."
       ],
       "at": "Kuusamo"
     },

@@ -127,7 +127,8 @@
       "Luosto": "Amethyst-mountain village with kelo log restaurants",
       "Muonio": "Aurora-belt highlands above the tree line",
       "Hetta": "Enontekiö, where three countries meet",
-      "Kuusamo": "Ruka resort hub, just south of the Lapland border",
+      "Ruka": "Ski village at the foot of Rukatunturi fell",
+      "Kuusamo": "The town centre, 22 km south of the Ruka slopes",
       "Kemijärvi": "Northernmost rail town with riverside tables",
       "Salla": "Wilderness pass + Finland's easternmost ski village",
       "Posio": "Lake-and-craft heart of Riisitunturi country"
@@ -140,9 +141,9 @@
   },
   "cities": {
     "title": "Where to Eat in Lapland, Town by Town",
-    "description": "Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi and seven more towns in Finnish Lapland. One page per town, with Google ratings and menu links.",
+    "description": "Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi and eight more towns in Finnish Lapland. One page per town, with Google ratings and menu links.",
     "h1": "Lapland, town by town",
-    "lead": "76 restaurants across 13 destinations, each town on its own page.",
+    "lead": "{{count}} restaurants across {{cities}} destinations, each town on its own page.",
     "moreLead": "Muonio, Hetta, Salla and Posio have too few tables between them for a page of their own. They are still on the full list.",
     "shared": {
       "kicker": "Where to eat",
@@ -286,7 +287,7 @@
     "pyhatunturi": {
       "name": "Pyhätunturi",
       "title": "Restaurants at Pyhä (Pyhätunturi)",
-      "description": "Six places to eat at Pyhätunturi and around Pelkosenniemi: a café at the national park gate, a hotel kitchen and a bistro in the old parsonage. Ratings and menu links.",
+      "description": "Six places to eat at Pyhätunturi and around Pelkosenniemi: a café at the national park gate, a hotel kitchen and a bistro in the old parsonage.",
       "h1": "Restaurants at Pyhätunturi",
       "tagline": "A national-park village where one of the tables is in the old parsonage.",
       "intro": "Pyhä is a small resort at the edge of Pyhä-Luosto National Park, in Pelkosenniemi municipality. Café Loimu sits on Luontotie by the park gate; Ravintola Popolo and Restaurant CAMP Kitchen & Bar share the Kultakeronkatu hotel address in the resort centre. Two more are outside the resort: Bistro Vanha Pappila on Kirkkotie and Sunday Morning Resort.",
@@ -311,17 +312,31 @@
       ],
       "at": "Luosto"
     },
+    "ruka": {
+      "name": "Ruka",
+      "title": "Ruka Restaurants: Where to Eat in Ruka, Finland",
+      "description": "Twelve restaurants in Ruka village and around the fell: a game restaurant, fresh pasta, a slope-side lodge, hotel kitchens and a lakeside house.",
+      "h1": "Restaurants in Ruka",
+      "tagline": "The village at the foot of the fell, and the tables just beyond it.",
+      "intro": "Most of Ruka's tables are a short walk from each other in the village at the foot of the front slopes. On Rukatunturintie are Restaurant Burger Cafe & Bar Ruka, Pizzeria Ruka, Riipisen Riistaravintola, Ravintola Vespino and the Talonpöytä café in the Kumpare shopping centre; on Rukankyläntie are Colorado Bar & Grill Ruka, Ravintola Kaltiokivi at Scandic Rukahovi and Rinneravintola Piste. Further out are Royal Ruka on the south side of the fell, Ruka Trek's café on Vuosselintie, CAMP Kitchen & Bar in Ruka Valley and Iisakin Talo by Lake Rukajärvi.",
+      "know": [
+        "Ruka belongs to Kuusamo, so addresses say Kuusamo or Rukatunturi even though Kuusamo town is 22 km to the south.",
+        "Some kitchens close for part of the autumn and reopen in November for the ski season, so check the restaurant's own site before you go.",
+        "Kuusamo town has its own page, with the restaurants 22 km south of the slopes."
+      ],
+      "at": "Ruka"
+    },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Restaurants in Kuusamo & Ruka",
-      "description": "Seven restaurants split between Ruka resort and Kuusamo town, 22 km apart: the busiest pizzeria on this site, a gastropub and a trekking café.",
-      "h1": "Restaurants in Kuusamo and Ruka",
-      "tagline": "Two centres, 22 km apart — check which one your table is in.",
-      "intro": "Kuusamo splits cleanly in two. Up at the resort, Pizzeria Ruka, Restaurant Burger Cafe & Bar Ruka and Riipisen Riistaravintola, the game restaurant, are all on the same road, with Ruka Trek's Gasthaus & Hard Trek Café a short way off. Down in the town, 22 km south, Ravintola Talonpöytä and Restaurant Wanha Mestari serve a different crowd entirely.",
+      "title": "Restaurants in Kuusamo: Where to Eat in Town",
+      "description": "Five places to eat in Kuusamo town, 22 km south of Ruka: two lunch buffets, a French café, a pub-restaurant and a sports bar at the spa hotel.",
+      "h1": "Restaurants in Kuusamo",
+      "tagline": "The town centre, 22 km south of the Ruka slopes.",
+      "intro": "Kuusamo town is 22 km south of the Ruka slopes, and its tables keep different hours from the resort's. Talonpöytä on Kirkkotie and Torin Vintti upstairs in the Torikeskus building both serve a weekday lunch buffet, The French Café on Kitkantie bakes pastries and holds a Sunday brunch once a month, and Wanha Mestari on Ouluntaival is the pub-restaurant. O'Learys is in the Holiday Club Kuusamon Tropiikki spa hotel, about 4 km north of the centre.",
       "know": [
-        "Ruka and Kuusamo town are 22 km apart. The addresses tell you which: Rukatunturintie and Vuosselintie are the resort.",
-        "Riipisen Riistaravintola in Ruka is the game kitchen: reindeer fillet, sautéed reindeer and fried vendace.",
-        "Kuusamo is in North Ostrobothnia rather than Lapland proper, but it is the gateway to Oulanka National Park."
+        "Ruka is 22 km north of the town and has its own page.",
+        "Most places in the centre are daytime places: the lunch buffets serve on weekdays only, so plan dinner ahead.",
+        "Kuusamo belongs to North Ostrobothnia rather than Lapland proper."
       ],
       "at": "Kuusamo"
     },

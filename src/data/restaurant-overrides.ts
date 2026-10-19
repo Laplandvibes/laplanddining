@@ -58,10 +58,10 @@ export const restaurantOverrides: Record<string, Override> = {
   // domainin juuri vastaa ja on oikean ravintolan sivu.
   'ChIJ4bE7F8Ir00URltDAnU0CI5Q': { website: 'https://torikioski.fi/' },
 
-  // CAMP Kitchen & Bar — Pyhätunturi. campkitchen.fi/pyha/ on 404 ja koko
-  // sivusto on nykyään pelkkä CAMP RUKA: nolla mainintaa Pyhästä. Ruka-sivulle
-  // linkittäminen Pyhätunturin kortista olisi väärä tieto, joten linkki pois.
-  'ChIJudCrtkbrLEQRQCnerLesTPM': { website: undefined },
+  // CAMP Kitchen & Bar — Pyhätunturi. campkitchen.fi/pyha/ on 404 ja campkitchen.fi on
+  // nykyään CAMP Ruka (Rukan sivulla 20.10.2026 alkaen). Pyhän oma sivusto camppyha.fi
+  // (Kultakeronkatu 21, Pyhätunturi), tarkistettu 20.10.2026.
+  'ChIJudCrtkbrLEQRQCnerLesTPM': { website: 'https://www.camppyha.fi/en' },
 
   // Luoston Hovi — Luosto. Koko luosto.fi ei vastaa nimipalvelussa,
   // eikä luostonhovi.fi tai ravintolaluostonhovi.fi ole olemassa.
@@ -142,7 +142,7 @@ export const restaurantOverrides: Record<string, Override> = {
       'zh-CN': '一座藏在罗瓦涅米市中心的荒野木屋。二十多年来，Nili 一直端出拉普兰的味道：香煎驯鹿肉、北极红点鲑、云莓甜点。四道菜的惊喜套餐是最好的入门方式。',
       ko: '로바니에미 한복판에 자리한 오두막. Nili는 이십 년 넘게 라플란드의 맛을 내어 왔습니다. 순록 볶음, 북극 곤들매기, 클라우드베리 디저트. 네 코스의 셰프 추천 메뉴가 가장 좋은 시작입니다.',
       fr: 'Une cabane au cœur de la nature, en plein Rovaniemi. Depuis plus de vingt ans, Nili sert les saveurs de Laponie: renne sauté, omble arctique, desserts à la mûre arctique. Le menu surprise en quatre services est la meilleure porte d\'entrée.',
-      it: 'Una baita immersa nella natura, nel cuore di Rovaniemi. Da oltre vent\'anni Nili porta in tavola i sapori della Lapponia: renna saltata, salmerino artico, dolci al lampone artico. Il menù a sorpresa di quattro portate è il modo migliore per cominciare.',
+      it: 'Una baita immersa nella natura, nel cuore di Rovaniemi. Da oltre vent\'anni Nili porta in tavola i sapori della Lapponia: renna saltata, salmerino artico, dolci alla mora artica. Il menù a sorpresa di quattro portate è il modo migliore per cominciare.',
       nl: 'Een wildernishut midden in Rovaniemi. Al meer dan twintig jaar serveert Nili Laplandse smaken: gebakken rendier, beekridder en desserts van kruipbraam. Het verrassingsmenu van vier gangen is de beste manier om kennis te maken.',
       sv: 'Kliv in i en vildmarksstuga mitt i Rovaniemi. Nili har serverat lappländska smaker i över två decennier: renskav, röding och hjortrondesserter. Överraskningsmenyn i fyra rätter är den bästa vägen in.',
     },
@@ -362,6 +362,8 @@ export const restaurantOverrides: Record<string, Override> = {
   // Pizzeria Ruka — Kuusamo. EI enää top pick (Vesa 3.8.2026: pizzeria ei voi
   // olla "Kuusamon paras pöytä" ruokasivustolla) — kortti säilyy katalogissa.
   'ChIJP39o0c5UKUQR-WqaWDdvYM0': {
+    // 20.10.2026 Rukan omalle sivulle (Rukatunturintie 4: Rukan kylään 0,9 km, Kuusamon keskustaan 22 km).
+    city: 'Ruka',
     topPick: false,
     curatedDescription: {
       en: 'The kind of pizzeria you stumble into and walk out of saying wow. A simple, reliable favourite at the foot of Ruka.',
@@ -371,7 +373,7 @@ export const restaurantOverrides: Record<string, Override> = {
       es: 'De esas pizzerías en las que entra de casualidad y sale diciendo guau. Un favorito sencillo y de fiar al pie de Ruka.',
       'pt-BR': 'Daquelas pizzarias em que você entra por acaso e sai dizendo uau. Um favorito simples e confiável ao pé de Ruka.',
       'zh-CN': '那种你偶然撞进去、出来时只想说一声“哇”的披萨店。鲁卡山脚下一家朴实又靠谱的心头好。',
-      ko: '우연히 들어갔다가 나오면서 절로 “와” 하게 되는 그런 피자집. 루카 기슭의 소박하고 믿음직한 단골입니다.',
+      ko: '우연히 들어갔다가 나오면서 절로 “와” 하게 되는 그런 피자집. 루카 기슭의 소박하고 믿음직한 단골집입니다.',
       fr: 'Le genre de pizzeria où l\'on entre par hasard et d\'où l\'on ressort en disant waouh. Une valeur sûre et sans chichis au pied de Ruka.',
       it: 'Quel tipo di pizzeria in cui entri per caso e da cui esci dicendo wow. Un punto fermo semplice e affidabile ai piedi di Ruka.',
       nl: 'Zo\'n pizzeria waar u per toeval binnenloopt en met een wauw weer naar buiten komt. Een eenvoudige, betrouwbare favoriet aan de voet van Ruka.',
@@ -432,12 +434,14 @@ export const restaurantOverrides: Record<string, Override> = {
   // syöt" -teemaan. 18.10.2026: Google-arvio pois kuvauksesta (Vesa: "arvio
   // muuttuu, miksi se on tekstissä?"). Kuvaus omista faktoista, ei keksittyjä ruokalajeja.
   'ChIJi34WdzpVKUQRcWqhDjVPY4E': {
+    // 20.10.2026 Rukan omalle sivulle (Vuosselintie 8: Rukan kylään 2,6 km, Kuusamon keskustaan 21 km).
+    city: 'Ruka',
     topPick: true,
     curatedDescription: {
       en: 'A gasthaus in Ruka village that pairs its kitchen with guest rooms, so dinner and a bed can be under the same roof. Book the room and the table together and nobody has to drive after dinner.',
       fi: 'Gasthaus Rukan kylässä: keittiö ja vierashuoneet saman katon alla, joten illallinen ja yöpaikka löytyvät samasta talosta. Varaa huone ja pöytä yhdessä, niin illallisen jälkeen kenenkään ei tarvitse ajaa.',
       de: 'Ein Gasthaus im Dorf Ruka, das Küche und Gästezimmer unter einem Dach vereint: Abendessen und Bett im selben Haus. Zimmer und Tisch zusammen buchen, dann muss nach dem Essen niemand mehr fahren.',
-      ja: 'ルカの村にあるガストハウス。キッチンと客室がひとつ屋根の下にあり、夕食とベッドが同じ家で完結します。部屋とテーブルを一緒に予約すれば、夕食のあとに誰も運転せずに済みます。',
+      ja: 'ルカ村にあるガストハウス。キッチンと客室がひとつ屋根の下にあり、夕食とベッドが同じ家で完結します。部屋とテーブルを一緒に予約すれば、夕食のあとに誰も運転せずに済みます。',
       es: 'Una casa de huéspedes en el pueblo de Ruka que une cocina y habitaciones bajo el mismo techo: cena y cama en la misma casa. Si se reservan juntas la habitación y la mesa, después de cenar nadie tiene que conducir.',
       'pt-BR': 'Uma gasthaus na vila de Ruka que reúne cozinha e quartos sob o mesmo teto: jantar e cama na mesma casa. Reservando quarto e mesa juntos, ninguém precisa dirigir depois do jantar.',
       'zh-CN': '鲁卡村里的一家家庭旅馆餐厅，厨房与客房同在一个屋檐下，晚餐和床铺都在同一栋房子里。把房间和餐位一起订好，晚饭后就不用再开车。',
@@ -528,6 +532,10 @@ export const restaurantOverrides: Record<string, Override> = {
 
   // Riihi Restaurant — Tuomikuruntie 136. Leville 1,7 km, Kittilään 16,0 km.
   'ChIJqRNr4LGy00URZOb6pM88YDo': { city: 'Levi' },
+
+  // Restaurant Burger Cafe & Bar Ruka — Rukatunturintie 1. Rukan kylään 0,7 km, Kuusamon
+  // keskustaan 22 km. Toiminnassa 20.10.2026 (rukaburger.fi, ma–su 11–21); eri paikka kuin RUOK Burger.
+  'ChIJ-XlpPqhVKUQR4sL2P0mP3W0': { city: 'Ruka' },
 
   // Boneless Levi Center — Hissitie 3. Leville 0,1 km, Kittilään 17,2 km.
   'ChIJI6moDwBN0kURREHahNWYqmg': { city: 'Levi' },
@@ -663,8 +671,8 @@ export const restaurantOverrides: Record<string, Override> = {
       ko: '쿠사모 시내의 주방으로 순록과 지역 생선을 냅니다. 루카 슬로프에서 남쪽으로 22km 떨어져 있습니다.',
       fr: 'Une cuisine au bourg de Kuusamo, renne et poisson local, à 22 km au sud des pistes de Ruka.',
       it: 'Una cucina nel paese di Kuusamo con renna e pesce locale, 22 km a sud delle piste di Ruka.',
-      nl: 'Een keuken in het dorp Kuusamo met rendier en lokale vis, 22 km ten zuiden van de pistes van Ruka.',
-      sv: 'Ett kök i Kuusamo tätort med ren och lokal fisk, 22 km söder om Rukas backar.',
+      nl: 'Een keuken in de stad Kuusamo met rendier en lokale vis, 22 km ten zuiden van de pistes van Ruka.',
+      sv: 'Ett kök i Kuusamo stad med ren och lokal fisk, 22 km söder om Rukas backar.',
     },
   },
 

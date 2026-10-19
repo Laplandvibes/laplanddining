@@ -127,7 +127,8 @@
       "Luosto": "紫水晶之山的小镇，有 kelo 原木餐厅",
       "Muonio": "树线之上、极光带中的高地",
       "Hetta": "三国交界处的埃农泰基厄小镇",
-      "Kuusamo": "鲁卡度假区，拉普兰以南不远",
+      "Ruka": "鲁卡山脚下的滑雪村",
+      "Kuusamo": "库萨莫镇中心，在鲁卡雪道以南22公里",
       "Kemijärvi": "最北端的铁路小镇，餐桌临河而设",
       "Salla": "荒野隘口 + 芬兰最东端的滑雪村",
       "Posio": "里西通图里一带的湖泊与手工艺中心"
@@ -140,9 +141,9 @@
   },
   "cities": {
     "title": "拉普兰吃什么，按城镇分",
-    "description": "罗瓦涅米、莱维、于拉斯、萨里塞尔卡、伊纳里、凯米等芬兰拉普兰13个城镇的餐厅，每镇一页，附评分与菜单链接。",
+    "description": "罗瓦涅米、莱维、于拉斯、萨里塞尔卡、伊纳里、凯米等芬兰拉普兰14个城镇的餐厅，每镇一页，附评分与菜单链接。",
     "h1": "拉普兰，按城镇看",
-    "lead": "13个目的地共76家餐厅，每个城镇各有一页。",
+    "lead": "{{cities}}个目的地共{{count}}家餐厅，每个城镇各有一页。",
     "moreLead": "穆奥尼奥、赫塔、萨拉和波西奥的餐厅太少，没有单独页面，但仍在完整名单里。",
     "shared": {
       "kicker": "去哪儿吃",
@@ -311,17 +312,31 @@
       ],
       "at": "卢奥斯托"
     },
+    "ruka": {
+      "name": "鲁卡",
+      "title": "鲁卡餐厅：芬兰鲁卡去哪儿吃",
+      "description": "在鲁卡找地方吃饭？鲁卡村及山丘周边共有12家餐厅：一家野味餐厅、现做意面、雪道旁的小屋餐厅、几家酒店厨房，还有一座湖畔老屋。",
+      "h1": "鲁卡的餐厅",
+      "tagline": "山丘脚下的村子，和村外不远处的餐桌。",
+      "intro": "鲁卡的大部分餐桌都在前山雪道脚下的村子里，彼此相隔不远，步行即到。Rukatunturintie 路上有 Restaurant Burger Cafe & Bar Ruka、Pizzeria Ruka、Riipisen Riistaravintola、Ravintola Vespino，以及 Kumpare 购物中心里的 Talonpöytä 咖啡馆；Rukankyläntie 路上有 Colorado Bar & Grill Ruka、Scandic Rukahovi 酒店的 Ravintola Kaltiokivi 和 Rinneravintola Piste。稍远一些的有山丘南侧的 Royal Ruka、Vuosselintie 路上 Ruka Trek 的咖啡馆、鲁卡谷（Ruka Valley）的 CAMP Kitchen & Bar，以及鲁卡湖（Rukajärvi）畔的 Iisakin Talo。",
+      "know": [
+        "鲁卡属于库萨莫市镇，所以地址上写的是 Kuusamo 或 Rukatunturi，尽管库萨莫镇在南边22公里处。",
+        "有些餐厅秋季会歇业一段时间，到十一月滑雪季再重新开门，出发前请先查看餐厅自己的网站。",
+        "库萨莫镇另有专页，介绍雪道以南22公里处的餐厅。"
+      ],
+      "at": "鲁卡"
+    },
     "kuusamo": {
       "name": "库萨莫",
-      "title": "库萨莫与鲁卡的餐厅",
-      "description": "7家餐厅分处相距22公里的鲁卡度假区与库萨莫镇：本站最忙的比萨店、一间美食酒馆和一家徒步咖啡馆。订位前先确认你那桌在哪一边。",
-      "h1": "库萨莫与鲁卡的餐厅",
-      "tagline": "两个中心相距22公里，请先确认你那桌在哪一边。",
-      "intro": "库萨莫清楚地分成两半。上面度假区这边，Pizzeria Ruka、Restaurant Burger Cafe & Bar Ruka和野味餐厅Riipisen Riistaravintola都在同一条路上，稍远处是Ruka Trek旅舍及Hard Trek Café。下面镇上，往南22公里，Ravintola Talonpöytä和Restaurant Wanha Mestari面对的是完全不同的客人。",
+      "title": "库萨莫餐厅：库萨莫镇上去哪儿吃",
+      "description": "库萨莫镇上的5处吃饭去处，位于鲁卡以南22公里：两家午餐自助餐厅、一家法式咖啡馆、一家酒馆餐厅，以及水疗酒店里的一家体育酒吧。",
+      "h1": "库萨莫镇的餐厅",
+      "tagline": "库萨莫镇中心，在鲁卡雪道以南22公里。",
+      "intro": "库萨莫镇在鲁卡雪道以南22公里，这里餐厅的营业时间和度假区不一样。Kirkkotie 路上的 Talonpöytä 和 Torikeskus 大楼楼上的 Torin Vintti 都在工作日供应午餐自助；Kitkantie 路上的 The French Café 烘焙糕点，每月举办一次周日早午餐；Ouluntaival 路上的 Wanha Mestari 则是酒馆餐厅。O'Learys 在 Holiday Club Kuusamon Tropiikki 水疗酒店里，位于镇中心以北约4公里。",
       "know": [
-        "鲁卡与库萨莫镇相距22公里。地址会告诉你：鲁卡通图林蒂路和武塞林蒂路属于度假区。",
-        "鲁卡的Riipisen Riistaravintola是吃野味的地方：驯鹿里脊、炒驯鹿肉和炸欧白鲑小鱼。",
-        "库萨莫属北波的尼亚省而非拉普兰本身，但它是奥兰卡国家公园的门户。"
+        "鲁卡在镇北22公里处，另有专页。",
+        "镇中心大多是白天营业的地方：午餐自助只在工作日供应，晚餐最好提前安排。",
+        "库萨莫属于北博滕区，而不属于严格意义上的拉普兰。"
       ],
       "at": "库萨莫"
     },

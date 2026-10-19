@@ -284,7 +284,7 @@ export const restaurants: Restaurant[] = [...merged, ...gemsWithImages];
 export const cities: string[] = [
   'Rovaniemi', 'Levi', 'Kittilä', 'Inari', 'Saariselkä', 'Kemi',
   'Ylläs', 'Tornio', 'Haparanda', 'Sodankylä', 'Pyhätunturi', 'Luosto',
-  'Muonio', 'Hetta', 'Kuusamo', 'Kemijärvi', 'Salla', 'Posio',
+  'Muonio', 'Hetta', 'Ruka', 'Kuusamo', 'Kemijärvi', 'Salla', 'Posio',
 ].filter((c) => restaurants.some((r) => r.city === c));
 
 /** One restaurant per city, ordered as `cities` above. */

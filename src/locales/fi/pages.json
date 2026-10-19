@@ -127,7 +127,8 @@
       "Luosto": "Ametistitunturin kylä ja kelohirsiravintoloita",
       "Muonio": "Revontulivyöhykkeen ylätasankoja puurajan yläpuolella",
       "Hetta": "Enontekiö kolmen valtakunnan rajan tuntumassa",
-      "Kuusamo": "Rukan tunturikeskus, aivan Lapin rajan eteläpuolella",
+      "Ruka": "Hiihtokylä Rukatunturin juurella",
+      "Kuusamo": "Kuusamon keskusta, 22 km Rukan rinteistä etelään",
       "Kemijärvi": "Pohjoisin rautatiekaupunki ja jokirannan pöydät",
       "Salla": "Erämaasola ja Suomen itäisin hiihtokylä",
       "Posio": "Järvien ja käsityön sydän Riisitunturin maisemissa"
@@ -140,9 +141,9 @@
   },
   "cities": {
     "title": "Missä syödä Lapissa: ravintolat paikkakunnittain",
-    "description": "Ravintolat Rovaniemellä, Levillä, Ylläksellä, Saariselällä, Inarissa, Kemissä ja seitsemällä muulla paikkakunnalla, arvioineen ja ruokalistalinkkeineen.",
+    "description": "Ravintolat Rovaniemellä, Levillä, Ylläksellä, Saariselällä, Inarissa, Kemissä ja kahdeksalla muulla paikkakunnalla, arvioineen ja ruokalistalinkkeineen.",
     "h1": "Lappi paikkakunnittain",
-    "lead": "76 ravintolaa 13 kohteessa, jokainen paikkakunta omalla sivullaan.",
+    "lead": "{{count}} ravintolaa {{cities}} kohteessa, jokainen paikkakunta omalla sivullaan.",
     "moreLead": "Muoniossa, Hetassa, Sallassa ja Posiolla on liian vähän pöytiä omaan sivuun. Ne löytyvät silti koko listalta.",
     "shared": {
       "kicker": "Missä syödä",
@@ -216,7 +217,7 @@
     "inari": {
       "name": "Inari",
       "title": "Ravintolat Inarissa: missä syödä",
-      "description": "Neljä ravintolaa Inarin kunnassa: saamelaisvaikutteinen fine dining -sali rannalla ja kolme muuta pitkän ajomatkan päässä toisistaan. Arviot ja ruokalistalinkit.",
+      "description": "Neljä ravintolaa Inarin kunnassa: saamelaisvaikutteinen fine dining -sali rannalla ja kolme muuta pitkän ajomatkan päässä toisistaan.",
       "h1": "Ravintolat Inarissa",
       "tagline": "Suomen suurin kunta. Neljä keittiötä, ja paljon tietä niiden välissä.",
       "intro": "Inari on suurempi kuin moni Euroopan valtio, ja tämä sivu näyttää sen: ravintolat ovat hajallaan kymmenien kilometrien päässä toisistaan, eivät kylän keskustassa. Restaurant Aanaar veden äärellä Saarikoskentiellä on fine dining -sali. Kultahippu on 35 km etelässä Ivalossa, Muotkan Ruoktu 39 km Karigasniementietä, ja Arctic River Resort niiden välissä. Yksikään ei ole kävelymatkan päässä toisesta.",
@@ -286,7 +287,7 @@
     "pyhatunturi": {
       "name": "Pyhätunturi",
       "title": "Ravintolat Pyhätunturilla",
-      "description": "Kuusi ruokapaikkaa Pyhätunturilla ja Pelkosenniemen seudulla: kahvila kansallispuiston portilla, hotellin keittiö ja bistro vanhassa pappilassa. Arviot ja ruokalistalinkit.",
+      "description": "Kuusi ruokapaikkaa Pyhätunturilla ja Pelkosenniemen seudulla: kahvila kansallispuiston portilla, hotellin keittiö ja bistro vanhassa pappilassa.",
       "h1": "Ravintolat Pyhätunturilla",
       "tagline": "Kansallispuiston kylä, jossa yksi pöydistä on vanhassa pappilassa.",
       "intro": "Pyhä on pieni keskus Pyhä-Luoston kansallispuiston reunalla, Pelkosenniemen kunnassa. Café Loimu on Luontotiellä puiston portilla; Ravintola Popolo ja Restaurant CAMP Kitchen & Bar jakavat Kultakeronkadun hotelliosoitteen keskuksessa. Kaksi muuta on keskuksen ulkopuolella: Bistro Vanha Pappila Kirkkotiellä ja Sunday Morning Resort.",
@@ -311,17 +312,31 @@
       ],
       "at": "Luostolla"
     },
+    "ruka": {
+      "name": "Ruka",
+      "title": "Ravintolat Rukalla: missä syödä Rukan kylässä",
+      "description": "Kaksitoista ravintolaa Rukan kylässä ja tunturin ympärillä: riistaravintola, tuorepastaa, rinneravintola, hotellien keittiöt ja talo järven rannalla.",
+      "h1": "Ravintolat Rukalla",
+      "tagline": "Kylä tunturin juurella ja pöydät aivan sen takana.",
+      "intro": "Suurin osa Rukan pöydistä on lyhyen kävelymatkan päässä toisistaan eturinteiden juurella olevassa kylässä. Rukatunturintiellä ovat Restaurant Burger Cafe & Bar Ruka, Pizzeria Ruka, Riipisen Riistaravintola, Ravintola Vespino ja Talonpöydän kahvila Kauppakeskus Kumpareessa; Rukankyläntiellä Colorado Bar & Grill Ruka, Scandic Rukahovin Ravintola Kaltiokivi ja Rinneravintola Piste. Kauempana ovat Royal Ruka tunturin eteläpuolella, Ruka Trekin kahvila Vuosselintiellä, CAMP Kitchen & Bar Ruka Valleyssa ja Iisakin Talo Rukajärven rannalla.",
+      "know": [
+        "Ruka kuuluu Kuusamoon, joten osoitteissa lukee Kuusamo tai Rukatunturi, vaikka Kuusamon keskusta on 22 km etelässä.",
+        "Osa keittiöistä on syksyllä hetken kiinni ja avaa marraskuussa hiihtokaudeksi, joten tarkista tilanne ravintolan omalta sivulta ennen lähtöä.",
+        "Kuusamon keskustalla on oma sivunsa: sen ravintolat ovat 22 km rinteistä etelään."
+      ],
+      "at": "Rukalla"
+    },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Ravintolat Kuusamossa ja Rukalla",
-      "description": "Seitsemän ravintolaa jaettuna Rukan keskuksen ja Kuusamon kirkonkylän kesken, 22 km toisistaan: sivuston vilkkain pizzeria, gastropub ja vaelluskahvila.",
-      "h1": "Ravintolat Kuusamossa ja Rukalla",
-      "tagline": "Kaksi keskusta, 22 km välissä — tarkista kummassa pöytäsi on.",
-      "intro": "Kuusamo jakautuu selvästi kahtia. Ylhäällä keskuksessa Pizzeria Ruka, Restaurant Burger Cafe & Bar Ruka ja Riipisen Riistaravintola ovat kaikki samalla tiellä, ja Ruka Trekin Gasthaus & Hard Trek Café on vähän sivummalla. Alhaalla kirkonkylässä, 22 km etelässä, Ravintola Talonpöytä ja Restaurant Wanha Mestari palvelevat aivan eri väkeä.",
+      "title": "Ravintolat Kuusamossa: missä syödä keskustassa",
+      "description": "Viisi ruokapaikkaa Kuusamon keskustassa, 22 km Rukalta etelään: kaksi lounasbuffetia, ranskalainen kahvila, pubiravintola ja kylpylähotellin urheilubaari.",
+      "h1": "Ravintolat Kuusamossa",
+      "tagline": "Kuusamon keskusta, 22 km Rukan rinteistä etelään.",
+      "intro": "Kuusamon keskusta on 22 km Rukan rinteistä etelään, ja sen pöydät elävät eri rytmissä kuin tunturikeskuksen. Talonpöytä Kirkkotiellä ja Torin Vintti Torikeskuksen yläkerrassa tarjoavat arkisin lounasbuffetin, The French Café Kitkantiellä leipoo leivonnaiset ja järjestää kerran kuussa sunnuntaibrunssin, ja Wanha Mestari Ouluntaipaleella on pubiravintola. O'Learys on Holiday Club Kuusamon Tropiikin kylpylähotellissa noin 4 km keskustasta pohjoiseen.",
       "know": [
-        "Ruka ja Kuusamon kirkonkylä ovat 22 km päässä toisistaan. Osoite kertoo kumpi: Rukatunturintie ja Vuosselintie ovat keskusta.",
-        "Rukan Riipisen Riistaravintola on riistan paikka: poronfilee, poronkäristys ja friteeratut muikut.",
-        "Kuusamo kuuluu Pohjois-Pohjanmaahan eikä varsinaiseen Lappiin, mutta se on portti Oulangan kansallispuistoon."
+        "Ruka on 22 km pohjoisessa, ja sillä on oma sivunsa.",
+        "Suurin osa keskustan paikoista on päiväpaikkoja: lounasbuffetit ovat auki vain arkisin, joten illallinen kannattaa suunnitella etukäteen.",
+        "Kuusamo kuuluu Pohjois-Pohjanmaahan eikä varsinaiseen Lappiin."
       ],
       "at": "Kuusamossa"
     },

@@ -127,7 +127,8 @@
       "Luosto": "Amethist-bergdorp met restaurants van kelo-hout",
       "Muonio": "Hooglanden in de noorderlichtgordel, boven de boomgrens",
       "Hetta": "Het centrum van Enontekiö, waar drie landsgrenzen samenkomen",
-      "Kuusamo": "Resort Ruka, net ten zuiden van Lapland",
+      "Ruka": "Skidorp aan de voet van de Rukatunturi",
+      "Kuusamo": "Het stadscentrum, 22 km ten zuiden van de pistes van Ruka",
       "Kemijärvi": "Noordelijkste spoorwegstad met tafels aan de rivier",
       "Salla": "Poort naar de wildernis + Finlands oostelijkste skidorp",
       "Posio": "Hart van meren en ambacht in Riisitunturi"
@@ -140,9 +141,9 @@
   },
   "cities": {
     "title": "Waar u eet in Lapland, plaats voor plaats",
-    "description": "Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi en zeven andere plaatsen in Fins Lapland, elk op een eigen pagina. Met beoordelingen en menu's.",
+    "description": "Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi en acht andere plaatsen in Fins Lapland, elk op een eigen pagina. Met beoordelingen en menu's.",
     "h1": "Lapland, plaats voor plaats",
-    "lead": "76 restaurants in 13 bestemmingen, elke plaats op een eigen pagina.",
+    "lead": "{{count}} restaurants in {{cities}} bestemmingen, elke plaats op een eigen pagina.",
     "moreLead": "Muonio, Hetta, Salla en Posio hebben samen te weinig tafels voor een eigen pagina. Ze staan wel op de volledige lijst.",
     "shared": {
       "kicker": "Waar u eet",
@@ -311,17 +312,31 @@
       ],
       "at": "Luosto"
     },
+    "ruka": {
+      "name": "Ruka",
+      "title": "Restaurants in Ruka: waar u eet",
+      "description": "Twaalf restaurants in Ruka, in het dorp en rond de fjäll: een wildrestaurant, verse pasta, een pisterestaurant, hotelkeukens en een huis aan het meer.",
+      "h1": "Restaurants in Ruka",
+      "tagline": "Het dorp aan de voet van de fjäll en de tafels net daarbuiten.",
+      "intro": "De meeste tafels van Ruka liggen op korte loopafstand van elkaar, in het dorp aan de voet van de pistes aan de voorkant. Aan de Rukatunturintie zitten Restaurant Burger Cafe & Bar Ruka, Pizzeria Ruka, Riipisen Riistaravintola, Ravintola Vespino en het café van Talonpöytä in winkelcentrum Kumpare; aan de Rukankyläntie Colorado Bar & Grill Ruka, Ravintola Kaltiokivi in Scandic Rukahovi en Rinneravintola Piste. Verder weg liggen Royal Ruka aan de zuidkant van de fjäll, het café van Ruka Trek aan de Vuosselintie, CAMP Kitchen & Bar in Ruka Valley en Iisakin Talo aan het meer Rukajärvi.",
+      "know": [
+        "Ruka hoort bij Kuusamo, dus op de adressen staat Kuusamo of Rukatunturi, ook al ligt de stad Kuusamo 22 km zuidelijker.",
+        "Sommige keukens sluiten een deel van de herfst en gaan in november weer open voor het skiseizoen. Kijk daarom op de eigen pagina van het restaurant voordat u gaat.",
+        "De stad Kuusamo heeft een eigen pagina, met de restaurants 22 km ten zuiden van de pistes."
+      ],
+      "at": "Ruka"
+    },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Restaurants in Kuusamo en Ruka",
-      "description": "Zeven restaurants verdeeld over het skigebied Ruka en de stad Kuusamo, 22 km uit elkaar: de drukste pizzeria van de site, een gastropub en een trekkerscafé.",
-      "h1": "Restaurants in Kuusamo en Ruka",
-      "tagline": "Twee centra, 22 km uit elkaar — kijk in welk van de twee uw tafel staat.",
-      "intro": "Kuusamo valt duidelijk in tweeën uiteen. Boven in het skigebied liggen Pizzeria Ruka, Restaurant Burger Cafe & Bar Ruka en het wildrestaurant Riipisen Riistaravintola allemaal aan dezelfde weg, met iets terzijde het Gasthaus & Hard Trek Café van Ruka Trek. Beneden in de stad, 22 km zuidelijker, bedienen Ravintola Talonpöytä en Restaurant Wanha Mestari een heel ander publiek.",
+      "title": "Restaurants in Kuusamo: waar u eet in de stad",
+      "description": "Vijf eetadressen in de stad Kuusamo, 22 km ten zuiden van Ruka: twee lunchbuffetten, een Frans café, een pubrestaurant en de sportbar van het spahotel.",
+      "h1": "Restaurants in Kuusamo",
+      "tagline": "Het stadscentrum, 22 km ten zuiden van de pistes van Ruka.",
+      "intro": "De stad Kuusamo ligt 22 km ten zuiden van de pistes van Ruka, en de tafels hier hebben andere openingstijden dan die in het skigebied. Talonpöytä aan de Kirkkotie en Torin Vintti boven in het Torikeskus serveren allebei doordeweeks een lunchbuffet, The French Café aan de Kitkantie bakt gebakjes en houdt eens per maand een zondagsbrunch, en Wanha Mestari aan de Ouluntaival is het pubrestaurant. O'Learys zit in het spahotel Holiday Club Kuusamon Tropiikki, ongeveer 4 km ten noorden van het centrum.",
       "know": [
-        "Ruka en de stad Kuusamo liggen 22 km uit elkaar. Het adres verraadt het: Rukatunturintie en Vuosselintie zijn het skigebied.",
-        "Riipisen Riistaravintola in Ruka is de wildkeuken: rendierfilet, gesauteerd rendier en gefrituurde marenen.",
-        "Kuusamo hoort bij Noord-Ostrobotnië en niet bij Lapland in strikte zin, maar het is de poort naar nationaal park Oulanka."
+        "Ruka ligt 22 km ten noorden van de stad en heeft een eigen pagina.",
+        "De meeste adressen in het centrum zijn overdag open: de lunchbuffetten serveren alleen doordeweeks, dus plan uw diner vooraf.",
+        "Kuusamo hoort bij Noord-Österbotten en niet bij het eigenlijke Lapland."
       ],
       "at": "Kuusamo"
     },

@@ -127,7 +127,8 @@
       "Luosto": "켈로 통나무 레스토랑이 있는 자수정 산자락 마을",
       "Muonio": "수목한계선 위 오로라 벨트 고지대",
       "Hetta": "세 국경이 만나는 에논테키외의 거점",
-      "Kuusamo": "루카 리조트, 라플란드 바로 남쪽",
+      "Ruka": "루카툰투리 펠 기슭의 스키 마을",
+      "Kuusamo": "루카 슬로프에서 남쪽으로 22km 떨어진 시내",
       "Kemijärvi": "최북단 철도 도시의 강변 테이블",
       "Salla": "황야의 고갯길과 핀란드 최동단 스키 마을",
       "Posio": "리시툰투리 일대의 호수와 공예의 중심"
@@ -140,9 +141,9 @@
   },
   "cities": {
     "title": "라플란드에서 어디서 먹을까, 마을별로",
-    "description": "로바니에미, 레비, 윌래스, 사리셀카, 이나리, 케미를 비롯한 핀란드 라플란드 13개 마을의 레스토랑. 마을마다 전용 페이지, 평점과 메뉴 링크 제공.",
+    "description": "로바니에미, 레비, 윌래스, 사리셀카, 이나리, 케미를 비롯한 핀란드 라플란드 14개 마을의 레스토랑. 마을마다 전용 페이지, 평점과 메뉴 링크 제공.",
     "h1": "라플란드, 마을별로",
-    "lead": "13개 목적지에 76곳. 마을마다 전용 페이지가 있습니다.",
+    "lead": "{{cities}}개 목적지에 {{count}}곳. 마을마다 전용 페이지가 있습니다.",
     "moreLead": "무오니오, 헤타, 살라, 포시오는 식당 수가 적어 전용 페이지가 없습니다. 전체 목록에는 그대로 실려 있습니다.",
     "shared": {
       "kicker": "어디서 먹을까",
@@ -311,17 +312,31 @@
       ],
       "at": "루오스토"
     },
+    "ruka": {
+      "name": "루카",
+      "title": "핀란드 루카 레스토랑: 어디서 먹을까",
+      "description": "12곳의 루카 레스토랑. 루카 마을과 펠(구릉) 주변에 야생고기 레스토랑, 생면 파스타, 슬로프 옆 로지, 호텔 주방, 호숫가의 집이 있습니다.",
+      "h1": "루카 레스토랑",
+      "tagline": "펠 기슭의 마을, 그리고 그 바로 너머의 식탁들.",
+      "intro": "루카의 식당 대부분은 정면 슬로프 아래 마을 안에 있어 서로 걸어서 금방입니다. Rukatunturintie에는 Restaurant Burger Cafe & Bar Ruka, Pizzeria Ruka, Riipisen Riistaravintola, Ravintola Vespino, 그리고 Kumpare 쇼핑센터의 Talonpöytä 카페가 있고, Rukankyläntie에는 Colorado Bar & Grill Ruka, Scandic Rukahovi의 Ravintola Kaltiokivi, Rinneravintola Piste가 있습니다. 조금 떨어진 곳으로는 펠 남쪽의 Royal Ruka, Vuosselintie의 Ruka Trek 카페, 루카 밸리(Ruka Valley)의 CAMP Kitchen & Bar, 루카야르비 호숫가의 Iisakin Talo가 있습니다.",
+      "know": [
+        "루카는 쿠사모에 속하기 때문에, 쿠사모 시내가 남쪽으로 22km 떨어져 있어도 주소에는 Kuusamo 또는 Rukatunturi라고 적혀 있습니다.",
+        "일부 주방은 가을에 한동안 문을 닫았다가 스키 시즌에 맞춰 11월에 다시 엽니다. 가기 전에 식당 자체 페이지를 확인하세요.",
+        "슬로프에서 남쪽으로 22km 떨어진 쿠사모 시내의 식당은 별도 페이지에서 소개합니다."
+      ],
+      "at": "루카"
+    },
     "kuusamo": {
       "name": "쿠사모",
-      "title": "쿠사모와 루카 레스토랑",
-      "description": "7곳의 레스토랑이 22km 떨어진 루카 리조트와 쿠사모 시내에 나뉘어 있습니다. 사이트에서 가장 붐비는 피체리아, 가스트로펍, 트레킹 카페.",
-      "h1": "쿠사모와 루카 레스토랑",
-      "tagline": "22km 떨어진 두 중심 — 당신의 식탁이 어느 쪽인지 확인하세요.",
-      "intro": "쿠사모는 뚜렷하게 둘로 나뉩니다. 위쪽 리조트에서는 Pizzeria Ruka, Restaurant Burger Cafe & Bar Ruka, 야생고기 레스토랑 Riipisen Riistaravintola가 모두 같은 길에 있고, 조금 떨어져 Ruka Trek 게스트하우스 겸 Hard Trek Café가 있습니다. 아래쪽 시내, 남쪽으로 22km 지점에서는 Ravintola Talonpöytä와 Restaurant Wanha Mestari가 전혀 다른 손님을 맞습니다.",
+      "title": "쿠사모 시내 레스토랑: 어디서 먹을까",
+      "description": "5곳의 쿠사모 시내 레스토랑. 루카에서 남쪽으로 22km 떨어져 있으며, 점심 뷔페 두 곳, 프랑스식 카페, 펍 레스토랑, 스파 호텔의 스포츠 바가 있습니다.",
+      "h1": "쿠사모 레스토랑",
+      "tagline": "루카 슬로프에서 남쪽으로 22km 떨어진 시내 중심가.",
+      "intro": "쿠사모 시내는 루카 슬로프에서 남쪽으로 22km 떨어져 있고, 식당들의 영업 시간도 리조트와 다릅니다. Kirkkotie의 Talonpöytä와 Torikeskus 건물 위층의 Torin Vintti는 평일 점심 뷔페를 내고, Kitkantie의 The French Café는 페이스트리를 구우며 한 달에 한 번 일요일 브런치를 엽니다. Ouluntaival의 Wanha Mestari는 펍 레스토랑입니다. O'Learys는 시내 중심에서 북쪽으로 약 4km 떨어진 Holiday Club Kuusamon Tropiikki 스파 호텔 안에 있습니다.",
       "know": [
-        "루카와 쿠사모 시내는 22km 떨어져 있습니다. 주소로 구분됩니다. 루카툰투린티에와 부오셀린티에가 리조트 쪽입니다.",
-        "루카의 Riipisen Riistaravintola는 야생고기 전문으로, 순록 안심, 순록 볶음, 호수 작은 생선 튀김을 냅니다.",
-        "쿠사모는 본래의 라플란드가 아니라 북오스트로보트니아에 속하지만, 오울란카 국립공원의 관문입니다."
+        "루카는 시내에서 북쪽으로 22km 떨어져 있으며 별도 페이지가 있습니다.",
+        "시내 중심의 식당은 대부분 낮에 영업합니다. 점심 뷔페는 평일에만 열리니 저녁 식사는 미리 계획하세요.",
+        "쿠사모는 엄밀히 말하면 라플란드가 아니라 북포흐얀마에 속합니다."
       ],
       "at": "쿠사모"
     },

@@ -80,7 +80,7 @@
         },
         {
           "question": "Su quali ingredienti locali si fonda la cucina della Lapponia?",
-          "answer": "Renne allo stato brado, salmerino artico e coregone da laghi come l'Inari, mirtilli e mirtilli rossi selvatici, funghi ed erbe raccolti a mano, e il lampone artico, l'\"oro dell'Artico\", che matura nelle torbiere subartiche solo poche settimane a luglio."
+          "answer": "Renne allo stato brado, salmerino artico e coregone da laghi come l'Inari, mirtilli e mirtilli rossi selvatici, funghi ed erbe raccolti a mano, e la mora artica, l'\"oro dell'Artico\", che matura nelle torbiere subartiche solo poche settimane a luglio."
         }
       ]
     }
@@ -127,7 +127,8 @@
       "Luosto": "Villaggio della montagna d'ametista con ristoranti in tronchi di kelo",
       "Muonio": "Altopiani della fascia aurorale sopra il limite degli alberi",
       "Hetta": "Snodo di Enontekiö al confine di tre Stati",
-      "Kuusamo": "Resort di Ruka, appena a sud della Lapponia",
+      "Ruka": "Villaggio sciistico ai piedi del Rukatunturi",
+      "Kuusamo": "Il centro del paese, 22 km a sud delle piste di Ruka",
       "Kemijärvi": "Città ferroviaria più a nord con tavoli sul fiume",
       "Salla": "Passo selvaggio + villaggio sciistico più a est della Finlandia",
       "Posio": "Cuore di laghi e artigianato della regione di Riisitunturi"
@@ -140,20 +141,20 @@
   },
   "cities": {
     "title": "Dove mangiare in Lapponia, paese per paese",
-    "description": "Ristoranti a Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi e in altre sette località della Lapponia finlandese, ognuna con la sua pagina. Valutazioni e menù.",
+    "description": "Ristoranti a Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi e in altre otto località della Lapponia finlandese, ognuna con la sua pagina. Valutazioni e menù.",
     "h1": "La Lapponia, paese per paese",
-    "lead": "76 ristoranti in 13 destinazioni, ogni località con la propria pagina.",
+    "lead": "{{count}} ristoranti in {{cities}} destinazioni, ogni località con la propria pagina.",
     "moreLead": "Muonio, Hetta, Salla e Posio hanno insieme troppo pochi tavoli per una pagina dedicata. Restano comunque nell'elenco completo.",
     "shared": {
       "kicker": "Dove mangiare",
       "countLabel": "{{count}} ristoranti a {{at}}",
       "countLabel_one": "Un ristorante a {{at}}",
       "bestRated": "Meglio valutato {{rating}}",
-      "hoursNote": "Gli orari cambiano con la stagione. Controlla la pagina del ristorante prima di metterti in strada.",
-      "stayHeadline": "Dormi a {{at}}?",
-      "stayLead": "Prenota una camera vicino ai tavoli qui sopra.",
+      "hoursNote": "Gli orari cambiano con la stagione. Verifichi la pagina del ristorante prima di mettersi in strada.",
+      "stayHeadline": "Dove dormire a {{at}}?",
+      "stayLead": "Prenoti una camera vicino ai tavoli qui sopra.",
       "stayCta": "Alloggi a {{at}}",
-      "otherCities": "Mangia altrove in Lapponia",
+      "otherCities": "Mangiare altrove in Lapponia",
       "allRestaurants": "Tutti i ristoranti →",
       "cityPageCta": "{{at}}: guida ai ristoranti →"
     },
@@ -286,7 +287,7 @@
     "pyhatunturi": {
       "name": "Pyhätunturi",
       "title": "Ristoranti a Pyhätunturi",
-      "description": "Sei indirizzi dove mangiare a Pyhätunturi e attorno a Pelkosenniemi: un caffè alla porta del parco nazionale, una cucina d'albergo e un bistrot nella vecchia canonica.",
+      "description": "Sei indirizzi a Pyhätunturi e attorno a Pelkosenniemi: un caffè alla porta del parco nazionale, una cucina d'albergo e un bistrot nella vecchia canonica.",
       "h1": "Ristoranti a Pyhätunturi",
       "tagline": "Un paese di parco nazionale dove uno dei tavoli è nella vecchia canonica.",
       "intro": "Pyhä è una piccola stazione al margine del parco nazionale di Pyhä-Luosto, nel comune di Pelkosenniemi. Café Loimu sta in Luontotie, alla porta del parco; Ravintola Popolo e Restaurant CAMP Kitchen & Bar condividono l'indirizzo dell'hotel in Kultakeronkatu, in centro. Altri due stanno fuori dalla stazione: Bistro Vanha Pappila in Kirkkotie e Sunday Morning Resort.",
@@ -311,17 +312,31 @@
       ],
       "at": "Luosto"
     },
+    "ruka": {
+      "name": "Ruka",
+      "title": "Ristoranti a Ruka, Finlandia: dove mangiare",
+      "description": "Dodici ristoranti nel villaggio di Ruka e attorno al fjäll: selvaggina, pasta fresca, un locale a bordo pista, cucine d'albergo e una casa sul lago.",
+      "h1": "Ristoranti a Ruka",
+      "tagline": "Il villaggio ai piedi del fjäll e i tavoli appena più in là.",
+      "intro": "Quasi tutti i tavoli di Ruka sono a pochi passi tra loro, nel villaggio ai piedi delle piste frontali. In Rukatunturintie ci sono Restaurant Burger Cafe & Bar Ruka, Pizzeria Ruka, Riipisen Riistaravintola, Ravintola Vespino e il caffè Talonpöytä nel centro commerciale Kumpare; in Rukankyläntie Colorado Bar & Grill Ruka, Ravintola Kaltiokivi allo Scandic Rukahovi e Rinneravintola Piste. Più lontano si trovano Royal Ruka, sul versante sud del fjäll, il caffè di Ruka Trek in Vuosselintie, CAMP Kitchen & Bar a Ruka Valley e Iisakin Talo in riva al lago Rukajärvi.",
+      "know": [
+        "Ruka appartiene al comune di Kuusamo, perciò negli indirizzi compare Kuusamo o Rukatunturi, anche se il paese di Kuusamo è 22 km più a sud.",
+        "Alcune cucine chiudono per parte dell'autunno e riaprono a novembre per la stagione sciistica: prima di partire, verifichi sul sito del ristorante.",
+        "Il paese di Kuusamo ha la sua pagina, con i ristoranti 22 km a sud delle piste."
+      ],
+      "at": "Ruka"
+    },
     "kuusamo": {
       "name": "Kuusamo",
-      "title": "Ristoranti a Kuusamo e Ruka",
-      "description": "Sette ristoranti divisi tra la stazione di Ruka e il paese di Kuusamo, a 22 km: la pizzeria più frequentata del sito, un gastropub e un caffè da trekking.",
-      "h1": "Ristoranti a Kuusamo e Ruka",
-      "tagline": "Due centri a 22 km: controlla in quale sta il tuo tavolo.",
-      "intro": "Kuusamo si divide nettamente in due. Su, alla stazione, Pizzeria Ruka, Restaurant Burger Cafe & Bar Ruka e il ristorante di selvaggina Riipisen Riistaravintola stanno tutti sulla stessa strada, e poco discosto c'è il Gasthaus & Hard Trek Café di Ruka Trek. Giù in paese, 22 km più a sud, Ravintola Talonpöytä e Restaurant Wanha Mestari servono un pubblico del tutto diverso.",
+      "title": "Ristoranti a Kuusamo: dove mangiare in centro",
+      "description": "Cinque ristoranti nel paese di Kuusamo, 22 km a sud di Ruka: due buffet a pranzo, un caffè francese, un pub-ristorante e lo sport bar dell'hotel con spa.",
+      "h1": "Ristoranti a Kuusamo",
+      "tagline": "Il centro del paese, 22 km a sud delle piste di Ruka.",
+      "intro": "Il paese di Kuusamo si trova 22 km a sud delle piste di Ruka, e i suoi tavoli seguono orari diversi da quelli della stazione. Talonpöytä in Kirkkotie e Torin Vintti, al piano superiore dell'edificio Torikeskus, servono un buffet a pranzo nei giorni feriali; The French Café in Kitkantie sforna dolci e ogni mese organizza un brunch domenicale, e Wanha Mestari in Ouluntaival è il pub-ristorante. O'Learys si trova nell'hotel con spa Holiday Club Kuusamon Tropiikki, a circa 4 km a nord del centro.",
       "know": [
-        "Ruka e il paese di Kuusamo distano 22 km. L'indirizzo lo dice: Rukatunturintie e Vuosselintie sono la stazione.",
-        "Riipisen Riistaravintola, a Ruka, è la cucina della selvaggina: filetto di renna, renna saltata e coregoni fritti.",
-        "Kuusamo appartiene all'Ostrobotnia settentrionale e non alla Lapponia vera e propria, ma è la porta del parco nazionale di Oulanka."
+        "Ruka è 22 km a nord del paese e ha la sua pagina.",
+        "In centro quasi tutti i locali lavorano di giorno: i buffet del pranzo sono aperti solo nei giorni feriali, quindi pianifichi la cena in anticipo.",
+        "Kuusamo appartiene all'Ostrobotnia settentrionale e non alla Lapponia vera e propria."
       ],
       "at": "Kuusamo"
     },
@@ -368,7 +383,7 @@
     "whyParagraphs": [
       "Aurora, neve e renne nel buio: così è la Lapponia per nove mesi all'anno. Gli altri tre mesi sono qualcosa di completamente diverso e la cultura del cibo si solleva per incontrarli.",
       "Dall'inizio di giugno all'inizio di luglio, il sole sopra il Circolo Polare non tramonta. Anche a sud della linea, a Rovaniemi, il crepuscolo sostituisce l'oscurità, all'una di notte si può leggere un menù all'aperto senza torcia. Terrazze che in inverno chiudono alle 21 restano aperte fino a mezzanotte. Le tende-kota organizzano turni di cena estivi a orari che sembrano impossibili.",
-      "Cambiano anche gli ingredienti. Le erbe selvatiche fanno fotosintesi ventiquattr'ore su ventiquattro. I pesci di lago si nutrono in acque basse e tiepide. I funghi del bosco non sono ancora iniziati, ma i lamponi artici maturano nelle torbiere alla fine della finestra. I ristoranti che hanno costruito la loro fama sulla selvaggina invernale si spostano, in silenzio, verso una tavolozza più leggera di lago e fiume."
+      "Cambiano anche gli ingredienti. Le erbe selvatiche fanno fotosintesi ventiquattr'ore su ventiquattro. I pesci di lago si nutrono in acque basse e tiepide. I funghi del bosco non sono ancora iniziati, ma le more artiche maturano nelle torbiere alla fine della finestra. I ristoranti che hanno costruito la loro fama sulla selvaggina invernale si spostano, in silenzio, verso una tavolozza più leggera di lago e fiume."
     ],
     "citiesHeadline": "Quattro città, quattro modi di mangiare il sole",
     "citiesLead": "Ognuna offre un'angolazione diversa sulla cena sotto il sole di mezzanotte. Abbini il pasto a un soggiorno a distanza di passeggiata, sono le finestre in cui l'hotel giusto conta quanto il tavolo giusto.",
@@ -474,8 +489,8 @@
       {
         "title": "L'oro dell'Artico matura un paio di settimane all'anno",
         "paragraphs": [
-          "Mirtilli, mirtilli rossi, lamponi artici e olivello spinoso crescono spontanei. Galletti, porcini e il prezioso matsutake spuntano tra il muschio. Le erbe selvatiche, angelica, olmaria, timo artico, profumano l'aria.",
-          "Il lampone artico occupa un posto speciale. Chiamato <strong>lakka</strong> in finlandese, cresce solo nelle torbiere artiche e subartiche, matura per un paio di settimane a luglio e non può essere coltivato commercialmente. Il colore ambrato, la dolcezza di miele e la rarità ne fanno l'\"oro dell'Artico\". Lo si trova in dessert, liquori e come guarnizione in quasi tutti i ristoranti di alta cucina della Lapponia.",
+          "Mirtilli, mirtilli rossi, more artiche e olivello spinoso crescono spontanei. Galletti, porcini e il prezioso matsutake spuntano tra il muschio. Le erbe selvatiche, angelica, olmaria, timo artico, profumano l'aria.",
+          "La mora artica occupa un posto speciale. Chiamata <strong>lakka</strong> in finlandese, cresce solo nelle torbiere artiche e subartiche, matura per un paio di settimane a luglio e non può essere coltivata commercialmente. Il colore ambrato, la dolcezza di miele e la rarità ne fanno l'\"oro dell'Artico\". La si trova in dessert, liquori e come guarnizione in quasi tutti i ristoranti di alta cucina della Lapponia.",
           "Ciò che rende straordinari questi ingredienti non è solo il loro gusto, è il loro ambiente. Le condizioni artiche, la luce estiva di 24 ore, l'aria pura e alcune delle acque più pulite della Terra producono bacche con concentrazioni di vitamine, antiossidanti e flavonoidi superiori a quelle delle loro cugine meridionali."
         ],
         "quote": "Camminare in una foresta della Lapponia a fine estate è come camminare in un supermercato."
@@ -504,7 +519,7 @@
   },
   "localFood": {
     "title": "Cibo locale della Lapponia: renna, bacche, pesce",
-    "description": "Cosa significa 'locale' su un menù in Lapponia: renne allo stato brado, salmerino artico, lamponi artici, mirtilli rossi, funghi ed erbe raccolte in stagione.",
+    "description": "Cosa significa 'locale' su un menù in Lapponia: renne allo stato brado, salmerino artico, more artiche, mirtilli rossi, funghi ed erbe raccolte in stagione.",
     "heroH1": "Cibo locale e ingredienti",
     "heroLead": "Perché la Lapponia produce alcuni dei cibi più puliti e densi di nutrienti della Terra e come la produzione alimentare finlandese fissa lo standard di purezza.",
     "intro": "Un pescatore tira fuori un salmerino artico dal Lago Inari prima dell'alba. Lo chef del villaggio accanto lo sa nel giro di venti minuti. La filiera del cibo in Lapponia è così corta, ed è per questo che il cibo ha quel sapore.",
@@ -541,7 +556,7 @@
         "paragraphs": [
           "L'uso di antibiotici negli allevamenti è tra i più bassi d'Europa. Gli inverni freddi fanno da controllo naturale dei parassiti, gli insetti che affliggono i climi più caldi semplicemente non sopravvivono al gelo artico. Il risultato è meno intervento chimico e prodotti più puliti.",
           "L'acqua del rubinetto è potabile ovunque nel paese. In Lapponia arriva direttamente da alcune delle sorgenti sotterranee più pure del continente, spesso la stessa acqua caduta come neve su un pascolo di pastori due giorni prima.",
-          "Le piante che crescono in condizioni rigide sviluppano più composti protettivi. Un mirtillo finlandese selvatico contiene 3–4 volte più antociani di un mirtillo coltivato. I lamponi artici sono ricchi di vitamina C, vitamina E e acidi grassi omega. L'olivello spinoso porta più vitamina C al grammo delle arance. Non è marketing, è botanica."
+          "Le piante che crescono in condizioni rigide sviluppano più composti protettivi. Un mirtillo finlandese selvatico contiene 3–4 volte più antociani di un mirtillo coltivato. Le more artiche sono ricche di vitamina C, vitamina E e acidi grassi omega. L'olivello spinoso porta più vitamina C al grammo delle arance. Non è marketing, è botanica."
         ],
         "quote": "L'agricoltura finlandese usa meno pesticidi per ettaro di quasi qualsiasi altro paese dell'UE."
       }
@@ -561,8 +576,8 @@
         "season": "Estate & autunno"
       },
       {
-        "name": "Lampone artico (lakka)",
-        "fact": "L'ambrato 'oro dell'Artico' cresce solo nelle torbiere subartiche, matura per due o tre settimane a luglio e resiste alla coltivazione commerciale, così quasi ogni bacca si raccoglie a mano. Il servizio classico è il lampone artico tiepido adagiato sul leipäjuusto, il formaggio di pane finlandese.",
+        "name": "Mora artica (lakka)",
+        "fact": "L'ambrato 'oro dell'Artico' cresce solo nelle torbiere subartiche, matura per due o tre settimane a luglio e resiste alla coltivazione commerciale, così quasi ogni bacca si raccoglie a mano. Il servizio classico è la mora artica tiepida adagiata sul leipäjuusto, il formaggio di pane finlandese.",
         "season": "Luglio–agosto"
       },
       {

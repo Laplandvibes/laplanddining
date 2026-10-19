@@ -48,6 +48,7 @@ const TOWNS = {
   Luosto:        [67.1408, 26.9539],
   Muonio:        [67.9576, 23.6789],
   Hetta:         [68.3839, 23.6247],
+  Ruka:          [66.1703, 29.1311], // OSM place=village Ruka (93825), 20.10.2026; Kuusamon keskustaan 22 km
   Kuusamo:       [65.9640, 29.1889],
   Kemijärvi:     [66.7133, 27.4297],
   Salla:         [66.8333, 28.6667],

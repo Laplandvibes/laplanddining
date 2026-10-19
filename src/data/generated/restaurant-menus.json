@@ -591,5 +591,85 @@
     "status": "none",
     "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
     "checkedAt": "2026-08-10"
+  },
+  "ruka-royal-ruka": {
+    "url": "https://royalruka.fi/fi/ravintola/a-la-carte-ruokalista",
+    "kind": "page",
+    "title": "Syksyn 2026 ruokalista | Royal Ruka",
+    "evidence": 1,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://royalruka.fi/en/restaurant/a-la-carte-menu",
+    "kindEn": "page"
+  },
+  "ruka-rinneravintola-piste": {
+    "url": "https://www.ravintolapiste.fi/menu/",
+    "kind": "page",
+    "title": "Menu | Rinneravintola Piste",
+    "evidence": 1,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://www.ravintolapiste.fi/en/menus/",
+    "kindEn": "page"
+  },
+  "ruka-ravintola-vespino": {
+    "url": "https://www.vespino.fi/menu",
+    "kind": "page",
+    "title": "Menu | Ravintola Vespino",
+    "evidence": 1,
+    "checkedAt": "2026-10-20"
+  },
+  "ruka-colorado-bar-grill": {
+    "url": "https://www.ravintolacolorado.fi/menu-ruka/",
+    "kind": "page",
+    "title": "Menu Ruka | Ravintola Colorado Bar & Grill",
+    "evidence": 1,
+    "checkedAt": "2026-10-20"
+  },
+  "ruka-ravintola-kaltiokivi": {
+    "url": "https://menu.scandichotels.com/RestaurantMenuService/GetMenufile?hotelId=691&restId=rest0&fileId=94722",
+    "kind": "pdf",
+    "title": "Menu talvi 26-27 | Ravintola Kaltiokivi",
+    "evidence": 1,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://menu.scandichotels.com/RestaurantMenuService/GetMenufile?hotelId=691&restId=rest0&fileId=94723",
+    "kindEn": "pdf"
+  },
+  "ruka-talonpoyta-cafe-pinseria": {
+    "url": "https://talonpoyta.fi/ruka/ruokalista/",
+    "kind": "page",
+    "title": "Ruokalista | Talonpöytä Café & Pinseria Ruka",
+    "evidence": 1,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://talonpoyta.fi/en/ruka/menu/",
+    "kindEn": "page"
+  },
+  "ruka-camp-kitchen-bar": {
+    "url": "https://www.campkitchen.fi/menu",
+    "kind": "page",
+    "title": "Menu | CAMP Kitchen & Bar",
+    "evidence": 1,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://www.campkitchen.fi/en/menu",
+    "kindEn": "page"
+  },
+  "ruka-ravintola-iisakin-talo": {
+    "url": "https://rukasafaris.fi/ravintola-iisakin-talo/",
+    "kind": "page",
+    "title": "Ravintola Iisakin Talo | Ruka Safaris",
+    "evidence": 1,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://rukasafaris.fi/en/restaurant-iisakin-talo/",
+    "kindEn": "page"
+  },
+  "kuusamo-torin-vintti": {
+    "url": "https://www.torinvintti.fi/menu/",
+    "kind": "page",
+    "title": "Lounaslista | Torin Vintti",
+    "evidence": 1,
+    "checkedAt": "2026-10-20"
+  },
+  "kuusamo-olearys": {
+    "status": "none",
+    "reason": "olearys.fi torjuu automaattiset haut (HTTP 429), ruokalistaa ei voitu tarkistaa 20.10.2026",
+    "checkedAt": "2026-10-20"
   }
 }

@@ -289,7 +289,7 @@ export default function CityPage() {
           <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-white mb-8">
             {countLabel}
           </h2>
-          <div className="grid gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3 lv-grid-3c">
             {list.map((r) => (
               <RestaurantCard
                 key={r.slug}

@@ -79,6 +79,15 @@
     "jsonKey": "cities.luosto"
   },
   {
+    "path": "/city/ruka",
+    "jsonKey": "cities.ruka",
+    "ogImage": "/og/city-ruka.jpg",
+    "ogCard": {
+      "hero": "/images/cities/ruka.webp",
+      "line": "Where to eat in Ruka"
+    }
+  },
+  {
     "path": "/city/kuusamo",
     "jsonKey": "cities.kuusamo"
   },
