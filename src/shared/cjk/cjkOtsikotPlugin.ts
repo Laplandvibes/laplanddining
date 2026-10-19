@@ -48,11 +48,17 @@ import type { Plugin } from 'vite';
  * (laplandvisit, laplandskiresorts, laplandstays 19.10.2026). 36 px:llä riville mahtuu 8,9 merkkiä. Latinan
  * Bebas on kondensoitu (≈ 0,4 em), joten muihin kieliin ei kosketa; kiinan fraasit ovat 2–4 merkkiä eivätkä
  * tarvinneet tätä (mitattu /cn/).
+ *
+ * min-width: 0: keep-all kasvattaa elementin vähimmäisleveyden pisimmän fraasin mittaiseksi, ja flex- tai grid-itemin
+ * oletus min-width: auto venytti otsikon vanhempansa yli (laplandgifts /ja/ 768 px: <h3> ikonin vieressä flex-rivissä,
+ * ラップランド製の 246 px 139 px:n kortissa, 75 px yli). Ilman keep-alliä otsikko kutistui; min-width: 0 palauttaa sen,
+ * ja riviä pidempi fraasi katkeaa break-wordilla kortin sisällä. Tavalliseen lohko-otsikkoon tällä ei ole vaikutusta.
  */
 export const CJK_CSS = `
 :is(h1, h2, h3, h4, h5, h6, :is(h1, h2, h3, h4, h5, h6) *):has(> wbr) {
   word-break: keep-all;
   overflow-wrap: break-word;
+  min-width: 0;
 }
 @media (max-width: 359.98px) {
   :is(h1, h2, h3, h4, h5, h6, :is(h1, h2, h3, h4, h5, h6) *):has(> wbr) {
