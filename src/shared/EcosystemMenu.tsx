@@ -90,7 +90,7 @@ const APP_URL = 'https://app.laplandvibes.com/?install=1&utm_source=web&utm_medi
 // ?v= = appimainoksen kuvien tiiviste (shared/appPromo/screens.ts SHOTS_V). Kirjaimellinen rivi eikä tuonti: prebuild-sync
 // päivittää tämän tiedoston myös sivustoille, joilla src/shared/appPromo/ ei vielä ole (christmas 2.10.2026). lv-opsin
 // app_promo_shots.mjs ja rollout_apppromo.mjs pitävät rivin samana, gate:apppromo-kopiot vertaa.
-const APP_SHOT_V = '6aa1e051';
+const APP_SHOT_V = 'de2464f6';
 const APP_SHOT_LANGS = new Set(['en', 'fi', 'sv', 'de', 'fr', 'es', 'it', 'nl', 'pt-BR', 'ja', 'ko', 'zh-CN']);
 const appShot = (L: string) => `/images/app-promo/now-${APP_SHOT_LANGS.has(L) ? L : 'en'}.webp?v=${APP_SHOT_V}`;
 
