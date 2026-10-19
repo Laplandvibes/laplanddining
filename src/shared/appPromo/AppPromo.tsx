@@ -448,6 +448,9 @@ export function AppPromoNudge({ focus }: Props) {
     const modalUp = () => Boolean(document.querySelector('[role="dialog"][aria-modal="true"]'));
     const fire = () => {
       if (done) return;
+      // Sivulla on jo kiinteä lohko (revontuli- tai hätäyksikkö): sama sääntö kuin etusivulla, yksi pyyntö per ruutu.
+      // Laukaisijat jäävät kuuntelemaan, joten kortti voi tulla, kun lukija siirtyy sivulle jolla lohkoa ei ole.
+      if (document.querySelector('.lvap')) return;
       if (modalUp()) {
         if (retry++ > 20) return cleanup();
         window.setTimeout(fire, 6_000);

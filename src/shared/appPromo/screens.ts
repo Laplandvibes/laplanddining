@@ -19,7 +19,11 @@ export type Screen =
 export type Focus =
   | 'general' | 'snowmobile' | 'ski' | 'stay' | 'move' | 'outdoors' | 'do' | 'eat' | 'aurora' | 'emergency';
 
-/** Appin ?tab= jokaiselle näkymälle (tyhjä = etusivu). */
+/**
+ * Appin ?tab= jokaiselle näkymälle (tyhjä = etusivu).
+ * 🔴 aurora oli '' 1.–19.10.2026: tämä taulu tehtiin 1.10. ja appin revontulinäkymä syntyi 2.10. (app c5c43ee), joten
+ * revontuliyksikön nappi vei appin etusivulle, vaikka yksikkö lupaa revontuliennusteen (mitattu livenä laplandvisit /fi/weather/).
+ */
 export const SCREEN_TAB: Record<Screen, string> = {
   now: '',
   near: 'near',
@@ -32,13 +36,14 @@ export const SCREEN_TAB: Record<Screen, string> = {
   outdoors: 'outdoors',
   activities: 'activities',
   events: 'events',
-  aurora: '',
+  aurora: 'near&view=aurora',
 };
 
 /**
  * Kolmen näkymän aiheet: puhelimessa ensimmäinen näkymä isona ja kolme hyötyä sen vieressä, tabletista ylöspäin kaikki
- * kolme näkymää rinnakkain (Vesa 1.10.2026). Yhden näkymän aiheet (aurora, emergency = laplandvisitin sää- ja
- * hätäsivujen yksiköt) näyttävät yhden näkymän joka leveydellä ja hyödyt tekstinä.
+ * kolme näkymää rinnakkain (Vesa 1.10.2026). Yhden näkymän aiheet (aurora = revontulisivujen yksikkö, emergency =
+ * laplandvisitin hätäsivu) näyttävät yhden näkymän joka leveydellä ja hyödyt tekstinä. Mitkä sivustot kantavat yksiköitä:
+ * lv-opsin scripts/sivustot.json appiYksikot.
  */
 export const FOCUS_SCREENS: Record<Focus, readonly Screen[]> = {
   general: ['now', 'near', 'sos'],
