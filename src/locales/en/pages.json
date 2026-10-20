@@ -43,7 +43,7 @@
     "stayKicker": "Stay where you eat",
     "stayHeadline": "Book a hotel near tonight's table",
     "stayLead": "Lapland dinners often run late and end far from town. The smartest plan is a stay within walking distance of the restaurant, and Sembo gives you the cleanest view of what's actually available next to each kota, fell hotel and ice restaurant.",
-    "stayAffiliateNote": "Affiliate links — we may earn a commission at no extra cost to you.",
+    "stayAffiliateNote": "Affiliate links: we may earn a commission at no extra cost to you.",
     "stayAffiliateLink": "Why we link this way",
     "toursKicker": "Eat with a guide",
     "toursHeadline": "Food tours, cooking classes & brewery visits",
@@ -68,7 +68,7 @@
         },
         {
           "question": "What is poronkäristys?",
-          "answer": "Poronkäristys is the most iconic Lappish dish, thin-shaved reindeer sautéed in butter, served with mashed potatoes and lingonberry jam. Simple, honest and deeply satisfying — you'll find it everywhere from roadside cafés to fine-dining rooms."
+          "answer": "Poronkäristys is the most iconic Lappish dish, thin-shaved reindeer sautéed in butter, served with mashed potatoes and lingonberry jam. Simple, honest and deeply satisfying. You'll find it everywhere from roadside cafés to fine-dining rooms."
         },
         {
           "question": "What is kota dining?",
@@ -118,7 +118,7 @@
       "Kittilä": "Fell village beyond the Levi resort sprawl",
       "Inari": "Sámi heritage and the purest Arctic ingredients",
       "Saariselkä": "Wilderness dining under the Northern Lights",
-      "Kemi": "Where ice meets fire — unique seasonal experiences",
+      "Kemi": "Where ice meets fire: unique seasonal experiences",
       "Ylläs": "Fell village charm with authentic Lappish flavours",
       "Tornio": "Border town character and Finnish soul food",
       "Haparanda": "Cross the border for Swedish-Nordic fusion",
@@ -163,10 +163,10 @@
       "title": "Restaurants in Rovaniemi: Where to Eat",
       "description": "Eight restaurants in Rovaniemi, from reindeer fillet on Valtakatu to a Korean kitchen on Korkalonkatu. Ratings, review quotes and menu links.",
       "h1": "Restaurants in Rovaniemi",
-      "tagline": "The densest cluster of tables in Lapland — and five of them share four streets.",
+      "tagline": "The densest cluster of tables in Lapland: five of them share four streets.",
       "intro": "Rovaniemi is the one town in Lapland where you can choose a restaurant on foot. Nili and Arctic Restaurant sit almost opposite each other on Valtakatu and cover the reindeer-and-cloudberry end of the menu. A few hundred metres away, Roka Street Bistro on Ainonkatu and Cafe & Bar 21 on Rovakatu are the rooms locals use on an ordinary Tuesday. And when you want a break from reindeer, Hanki on Korkalonkatu cooks Korean.",
       "know": [
-        "The five city-centre restaurants are within 500 m of each other — the whole choice is one walk.",
+        "The five city-centre restaurants are within 500 m of each other: the whole choice is one walk.",
         "Three are outside the centre: Sky Kitchen & View 2.4 km out, Kotahovi 6.8 km out on the Santa Claus Village road, and All About Salmon at the village itself.",
         "Hanki on Korkalonkatu is Korean, not Lappish, and sits in the same compact centre as the rest."
       ],
@@ -180,7 +180,7 @@
       "tagline": "Finland's biggest ski resort eats like one: busy dining rooms, terraces and a table up on the fell.",
       "intro": "The village at the foot of the fell is officially Sirkka, and almost every address here says so. Panoramic Restaurant TUIKKU is up on the fell, 2.4 km from the centre. Ämmilä and Wanha Hullu Poro are next door to each other on Rakkavaarantie, Ristorante Renna does Italian a street away, and Saamen Kammi, Riihi, Boneless and Kekäle fill in around the centre.",
       "know": [
-        "Levi's postal addresses say Sirkka or Kittilä. It is the same resort — the village is Sirkka, the municipality is Kittilä.",
+        "Levi's postal addresses say Sirkka or Kittilä. It is the same resort: the village is Sirkka and the municipality is Kittilä.",
         "Kittilä village itself is 17 km away and has no restaurant on this site.",
         "Panoramic Restaurant TUIKKU is 2.4 km from the village centre, up on the fell: plan how you get there and back."
       ],
@@ -196,7 +196,7 @@
       "know": [
         "Äkäslompolo and Ylläsjärvi are about 11 km apart around the fell. Check which village your restaurant is in before you set off.",
         "Ylläskammi is on the fell top, not in either village.",
-        "Ylläs means Äkäslompolo on this site when no village is named — Ylläsjärvi is always named."
+        "Ylläs means Äkäslompolo on this site when no village is named; Ylläsjärvi is always named."
       ],
       "at": "Ylläs"
     },
@@ -223,8 +223,8 @@
       "intro": "Inari is bigger than several European countries, and this page reflects it: its restaurants are spread across tens of kilometres rather than a village centre. Restaurant Aanaar, by the water on Saarikoskentie, is the fine-dining room. Kultahippu is 35 km south in Ivalo, Muotkan Ruoktu 39 km out along the Karigasniemi road, and Arctic River Resort sits between them. None of these is a walk from another.",
       "know": [
         "Aanaar is the only one in Inari village itself. Plan a car for the rest.",
-        "Kultahippu is in Ivalo, 35 km south — the airport town.",
-        "Muotkan Ruoktu is 39 km out along the Karigasniemi road — a deliberate drive, not a detour."
+        "Kultahippu is in Ivalo, the airport town, 35 km south.",
+        "Muotkan Ruoktu is 39 km out along the Karigasniemi road: a deliberate drive, not a detour."
       ],
       "at": "Inari"
     },
@@ -236,9 +236,9 @@
       "tagline": "A sea town, and the tables follow the water.",
       "intro": "Kemi eats along two lines: the shore and the main street. Kemin Puistopaviljonki and Pizzeria San Milano share the same seafront address on Meripuistonpolku, and Sataman Krouwi ja Perämeren Jähti is down at the harbour. In the centre, Pieni Lohikäärme and Ravintola Mori face each other across Valtakatu.",
       "know": [
-        "Two of them share one address on the seafront — Puistopaviljonki and San Milano.",
+        "Two of them share one address on the seafront: Puistopaviljonki and San Milano.",
         "Kemi is on the main railway line from Helsinki, so this is one of the few Lapland towns you can reach without a car.",
-        "The harbour restaurant is a different season from the centre ones — the SnowCastle winter draws the crowd."
+        "The harbour restaurant is a different season from the centre ones: the SnowCastle winter draws the crowd."
       ],
       "at": "Kemi"
     },
@@ -250,7 +250,7 @@
       "tagline": "A border town where three of the five share one street.",
       "intro": "Tornio's choice is unusually concentrated: Ravintola Umpitunneli, Mustaparran Päämaja and Tmi Hevi Pizza are all on Hallituskatu, within a couple of minutes of each other. Ravintola Golden Flower is on Eliaksenkatu, and Amico rounds it out on Torikatu. Across the river is Haparanda, which is Sweden and has its own page.",
       "know": [
-        "Three of them are on Hallituskatu — you can read all three menus in one walk.",
+        "Three of them are on Hallituskatu, so you can read all three menus in one walk.",
         "Haparanda is across the bridge and in Sweden: different currency, and the clock goes back an hour.",
         "Tornio and Haparanda run as one town in practice, so a table on the other side is a short walk, not a trip."
       ],
@@ -261,11 +261,11 @@
       "title": "Restaurants in Haparanda, Sweden",
       "description": "Five restaurants in Haparanda across the border from Tornio: the town square hotel, a riverside classic 15 km upstream, sushi and Thai. Ratings and menu links.",
       "h1": "Restaurants in Haparanda",
-      "tagline": "Across the bridge from Tornio — same town in practice, different country on paper.",
+      "tagline": "Across the bridge from Tornio: same town in practice, different country on paper.",
       "intro": "Haparanda is in Sweden, which changes three practical things: the prices are in kronor, the clock is an hour behind Finland, and the town shares a centre with Tornio anyway. Haparanda Stadshotell sits on the square, Leilani and Haparanda Sushi & Indiskt are a couple of streets away, and Cape East is out on Sundholmen. Kukkolaforsen is 15 km upriver and a deliberate trip rather than a walk.",
       "know": [
         "Sweden, not Finland: prices in SEK, and local time is one hour behind Tornio.",
-        "Kukkolaforsen is 15 km north along the river — plan a car.",
+        "Kukkolaforsen is 15 km north along the river. Plan a car.",
         "Finland and Sweden are both in Schengen; crossing from Tornio on foot takes minutes."
       ],
       "at": "Haparanda"
@@ -278,7 +278,7 @@
       "tagline": "A stop on the Arctic Ocean road, and most of the choice is on it.",
       "intro": "Sodankylä is the halfway town on the long drive north, and its restaurants line up accordingly: Sodankylän turkinpippuri, Ravintola RuusuSuola and Sodankylän Olohuone Tähti all sit on Jäämerentie, the road that eventually reaches the Arctic Ocean. Tori-Kioski Mikkola and Piitsi Pubi fill in off the main road.",
       "know": [
-        "Three of them are on Jäämerentie, the main road through town — easy to combine with a driving break.",
+        "Three of them are on Jäämerentie, the main road through town, so they are easy to combine with a driving break.",
         "The town fills up in mid-June for the Midnight Sun Film Festival; tables get scarce that week.",
         "Luosto is about 32 km away and has its own page."
       ],
@@ -303,7 +303,7 @@
       "title": "Restaurants at Luosto: Where to Eat",
       "description": "Four places to eat at Luosto, the quieter half of Pyhä-Luosto National Park: a hotel kelo restaurant, a manor kitchen and the slope-side stop.",
       "h1": "Restaurants at Luosto",
-      "tagline": "The quieter half of the national park — four kitchens, no queue.",
+      "tagline": "The quieter half of the national park: four kitchens, no queue.",
       "intro": "Luosto is the smaller and quieter of the two Pyhä-Luosto resorts, and the list is short enough to read in a minute. Restaurant Punakettu is on Luostontie, Keloravintola Lapland Hotels Luostotunturi on Luppokeino and Luoston Hovi on Ellitsantie, and Skiknööli is the slope-side stop. Luosto is in Sodankylä municipality, so several addresses say Sodankylä.",
       "know": [
         "With only four places on the list, it pays to book ahead in the busy ski weeks.",
@@ -348,7 +348,7 @@
       "tagline": "The whole choice fits inside 800 metres.",
       "intro": "Kemijärvi is the most walkable town on this site: every restaurant here sits within 800 metres of each other in the centre, two of them next door on Vapaudenkatu. Mestarin Kievari is on Kirkkokatu, Jauri Resort and Restaurant Susa's Bistro are a few minutes away, and Rosa Pizza Kebab and Pizza Mestarit cover the everyday end.",
       "know": [
-        "All of them are within 800 m — you can look at every menu on one walk.",
+        "All of them are within 800 m: you can look at every menu on one walk.",
         "Susa's Bistro and Rosa Pizza Kebab are next door to each other on Vapaudenkatu.",
         "Kemijärvi is on the rail line, so it is reachable without a car."
       ],

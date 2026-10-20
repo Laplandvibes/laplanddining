@@ -42,7 +42,7 @@
     "statsYear": "Dieses Jahr aktualisiert",
     "stayKicker": "Übernachten, wo Sie essen",
     "stayHeadline": "Buchen Sie für heute Abend ein Hotel in der Nähe Ihres Tisches",
-    "stayLead": "Das Abendessen zieht sich in Lappland oft in die Länge und endet weit außerhalb der Stadt. Am klügsten ist eine Unterkunft in Gehweite des Restaurants, und Sembo zeigt am übersichtlichsten, was tatsächlich neben jeder Kota, jedem Fjell-Hotel und jedem Eisrestaurant verfügbar ist.",
+    "stayLead": "Das Abendessen zieht sich in Lappland oft in die Länge und endet weit außerhalb der Stadt. Am klügsten ist eine Unterkunft in Gehweite des Restaurants, und Sembo zeigt am übersichtlichsten, was tatsächlich neben jeder Kota, jedem Fjällhotel und jedem Eisrestaurant verfügbar ist.",
     "stayAffiliateNote": "Affiliate-Links, wir erhalten ggf. eine Provision, ohne Mehrkosten für Sie.",
     "stayAffiliateLink": "Warum wir so verlinken",
     "toursKicker": "Mit Guide schlemmen",
@@ -115,15 +115,15 @@
     "cityVibes": {
       "Rovaniemi": "Hauptstadt Lapplands, wo arktische Kultur auf kulinarischen Anspruch trifft",
       "Levi": "Speisen am Feuer nach einem Tag auf dem Fjäll",
-      "Kittilä": "Fjell-Dorf jenseits des Resort-Trubels von Levi",
+      "Kittilä": "Fjälldorf jenseits des Resort-Trubels von Levi",
       "Inari": "Samisches Erbe und reinste arktische Zutaten",
       "Saariselkä": "Wildnis-Dining unter dem Nordlicht",
       "Kemi": "Wo Eis auf Feuer trifft, einzigartige saisonale Erlebnisse",
-      "Ylläs": "Charme eines Fjell-Dorfes mit authentisch lappländischen Aromen",
+      "Ylläs": "Charme eines Fjälldorfes mit authentisch lappländischen Aromen",
       "Tornio": "Charakter einer Grenzstadt und finnische Hausmannskost",
       "Haparanda": "Über die Grenze zur schwedisch-nordischen Fusionsküche",
       "Sodankylä": "Flussstadt-Traditionen und das Publikum des Midnight Sun Film Festivals",
-      "Pyhätunturi": "Speisen auf dem Fjell-Gipfel am südlichen Tor zur Wildnis",
+      "Pyhätunturi": "Speisen auf dem Fjällgipfel am südlichen Tor zur Wildnis",
       "Luosto": "Amethyst-Bergdorf mit Restaurants aus Kelo-Blockholz",
       "Muonio": "Polarlicht-Hochland oberhalb der Baumgrenze",
       "Hetta": "Zentrum von Enontekiö nahe drei Landesgrenzen",
@@ -163,10 +163,10 @@
       "title": "Restaurants in Rovaniemi: wo man isst",
       "description": "Acht Restaurants in Rovaniemi, vom Rentierfilet an der Valtakatu bis zur koreanischen Küche an der Korkalonkatu. Bewertungen, Zitate und Speisekarten.",
       "h1": "Restaurants in Rovaniemi",
-      "tagline": "Die dichteste Ansammlung von Tischen in Lappland — fünf davon in vier Straßen.",
+      "tagline": "Die dichteste Ansammlung von Tischen in Lappland: fünf davon in vier Straßen.",
       "intro": "Rovaniemi ist die einzige Stadt Lapplands, in der man das Restaurant zu Fuß aussucht. Nili und Arctic Restaurant liegen sich an der Valtakatu fast gegenüber und decken Rentier und Moltebeere ab. Ein paar hundert Meter weiter sind das Roka Street Bistro an der Ainonkatu und das Cafe & Bar 21 an der Rovakatu die Räume, in die Einheimische an einem gewöhnlichen Dienstag gehen. Und wer eine Pause vom Rentier braucht: Hanki an der Korkalonkatu kocht koreanisch.",
       "know": [
-        "Die fünf Restaurants im Zentrum liegen keine 500 m auseinander — die ganze Auswahl ist ein Spaziergang.",
+        "Die fünf Restaurants im Zentrum liegen keine 500 m auseinander: Die ganze Auswahl ist ein Spaziergang.",
         "Drei liegen außerhalb: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km an der Straße zum Weihnachtsmanndorf und All About Salmon im Dorf selbst.",
         "Hanki an der Korkalonkatu ist koreanisch, nicht lappländisch, und liegt im selben kompakten Zentrum wie die anderen."
       ],
@@ -177,26 +177,26 @@
       "title": "Restaurants in Levi: wo man isst",
       "description": "Neun Restaurants in Levi, Finnlands größtem Skiort: der Panoramasaal, Italienisch an den Pisten und die Stuben des Dorfes Sirkka.",
       "h1": "Restaurants in Levi",
-      "tagline": "Finnlands größter Skiort isst entsprechend: volle Gasträume, Terrassen und ein Tisch oben am Fjell.",
-      "intro": "Das Dorf am Fuß des Fjells heißt offiziell Sirkka, und fast jede Adresse sagt das auch. Panoramic Restaurant TUIKKU liegt oben am Fjell, 2,4 km vom Zentrum. Ämmilä und Wanha Hullu Poro sind Nachbarn an der Rakkavaarantie, Ristorante Renna macht eine Straße weiter Italienisch, und Saamen Kammi, Riihi, Boneless und Kekäle füllen das Zentrum.",
+      "tagline": "Finnlands größter Skiort isst entsprechend: volle Gasträume, Terrassen und ein Tisch oben am Fjäll.",
+      "intro": "Das Dorf am Fuß des Fjälls heißt offiziell Sirkka, und fast jede Adresse sagt das auch. Panoramic Restaurant TUIKKU liegt oben am Fjäll, 2,4 km vom Zentrum. Ämmilä und Wanha Hullu Poro sind Nachbarn an der Rakkavaarantie, Ristorante Renna macht eine Straße weiter Italienisch, und Saamen Kammi, Riihi, Boneless und Kekäle füllen das Zentrum.",
       "know": [
         "In den Postadressen von Levi steht Sirkka oder Kittilä. Es ist derselbe Ort: das Dorf heißt Sirkka, die Gemeinde Kittilä.",
         "Das Kirchdorf Kittilä liegt 17 km entfernt und hat auf dieser Seite kein einziges Restaurant.",
-        "Panoramic Restaurant TUIKKU liegt 2,4 km vom Dorfzentrum, oben am Fjell: Hin- und Rückweg vorher planen."
+        "Panoramic Restaurant TUIKKU liegt 2,4 km vom Dorfzentrum, oben am Fjäll: Hin- und Rückweg vorher planen."
       ],
       "at": "Levi"
     },
     "yllas": {
       "name": "Ylläs",
       "title": "Restaurants in Ylläs: wo man isst",
-      "description": "Sieben Restaurants in Ylläs, verteilt auf Äkäslompolo und Ylläsjärvi zu beiden Seiten des Fjells, dazu eines auf dem Gipfel. Bewertungen und Speisekarten.",
+      "description": "Sieben Restaurants in Ylläs, verteilt auf Äkäslompolo und Ylläsjärvi zu beiden Seiten des Fjälls, dazu eines auf dem Gipfel. Bewertungen und Speisekarten.",
       "h1": "Restaurants in Ylläs",
-      "tagline": "Zwei Dörfer, ein Fjell und rund 11 km zwischen Ihrem Tisch und dem anderen.",
-      "intro": "Ylläs ist nicht ein Dorf, sondern zwei, auf gegenüberliegenden Seiten des Fjells. Im nördlichen Äkäslompolo liegen Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub und Los Lompolo's; im südlichen Ylläsjärvi Ravintola Otso und Restaurant Ylläskota. Dazwischen ist die Adresse von Ylläskammi der Gipfel selbst.",
+      "tagline": "Zwei Dörfer, ein Fjäll und rund 11 km zwischen Ihrem Tisch und dem anderen.",
+      "intro": "Ylläs ist nicht ein Dorf, sondern zwei, auf gegenüberliegenden Seiten des Fjälls. Im nördlichen Äkäslompolo liegen Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub und Los Lompolo's; im südlichen Ylläsjärvi Ravintola Otso und Restaurant Ylläskota. Dazwischen ist die Adresse von Ylläskammi der Gipfel selbst.",
       "know": [
-        "Äkäslompolo und Ylläsjärvi liegen rund 11 km auseinander, um das Fjell herum. Prüfen Sie vorher, in welchem Dorf Ihr Restaurant liegt.",
-        "Ylläskammi steht oben auf dem Fjell, in keinem der beiden Dörfer.",
-        "Ylläs bedeutet auf dieser Seite Äkäslompolo, wenn kein Dorf genannt wird — Ylläsjärvi wird immer genannt."
+        "Äkäslompolo und Ylläsjärvi liegen rund 11 km auseinander, um das Fjäll herum. Prüfen Sie vorher, in welchem Dorf Ihr Restaurant liegt.",
+        "Ylläskammi steht oben auf dem Fjäll, in keinem der beiden Dörfer.",
+        "Ylläs bedeutet auf dieser Seite Äkäslompolo, wenn kein Dorf genannt wird. Ylläsjärvi wird immer genannt."
       ],
       "at": "Ylläs"
     },
@@ -205,7 +205,7 @@
       "title": "Restaurants in Saariselkä: wo man isst",
       "description": "Acht Restaurants in Saariselkä, alle zu Fuß erreichbar: eine Hotelküche, ein Gastropub, ein Lávvu und der Burgerladen des Dorfes.",
       "h1": "Restaurants in Saariselkä",
-      "tagline": "Ein kleines Fjelldorf, in dem jeder Tisch zu Fuß erreichbar ist.",
+      "tagline": "Ein kleines Fjälldorf, in dem jeder Tisch zu Fuß erreichbar ist.",
       "intro": "Saariselkä ist kompakt genug, dass die Wahl ein Spaziergang ist und keine Fahrt, und zwei der Lokale liegen an derselben Straße. Die Spanne ist groß: Fieno und Gáldu servieren am Tisch, Kieppi Kitchen & Bar ist das Restaurant des Wilderness Hotel Kieppi, und ScanBurger, Lieggâ Láávu und Bistro & Cafe Kuukkeli decken das schnelle Ende ab. Gastropub Giitu führt Google unter Inari, es liegt aber in Saariselkä.",
       "know": [
         "Kieppi Kitchen & Bar ist das Restaurant im Wilderness Hotel Kieppi am Raitopolku.",
@@ -223,8 +223,8 @@
       "intro": "Inari ist größer als manches europäische Land, und diese Seite zeigt das: die Restaurants verteilen sich über Dutzende Kilometer statt über ein Dorfzentrum. Restaurant Aanaar am Wasser an der Saarikoskentie ist der Fine-Dining-Saal. Kultahippu liegt 35 km südlich in Ivalo, Muotkan Ruoktu 39 km an der Straße nach Karigasniemi, und Arctic River Resort dazwischen. Keines davon ist von einem anderen zu Fuß erreichbar.",
       "know": [
         "Aanaar ist das einzige im Dorf Inari selbst. Für die übrigen brauchen Sie ein Auto.",
-        "Kultahippu liegt in Ivalo, 35 km südlich — im Ort mit dem Flughafen.",
-        "Muotkan Ruoktu liegt 39 km an der Straße nach Karigasniemi — eine bewusste Fahrt, kein Abstecher."
+        "Kultahippu liegt 35 km südlich in Ivalo, dem Ort mit dem Flughafen.",
+        "Muotkan Ruoktu liegt 39 km an der Straße nach Karigasniemi: eine bewusste Fahrt, kein Abstecher."
       ],
       "at": "Inari"
     },
@@ -236,9 +236,9 @@
       "tagline": "Eine Stadt am Meer, und die Tische folgen dem Wasser.",
       "intro": "Kemi isst entlang zweier Linien: dem Ufer und der Hauptstraße. Kemin Puistopaviljonki und Pizzeria San Milano teilen sich dieselbe Adresse am Meer an der Meripuistonpolku, und Sataman Krouwi ja Perämeren Jähti liegt unten am Hafen. Im Zentrum stehen sich Pieni Lohikäärme und Ravintola Mori über die Valtakatu hinweg gegenüber.",
       "know": [
-        "Zwei davon teilen sich eine Adresse am Meer — Puistopaviljonki und San Milano.",
+        "Zwei davon teilen sich eine Adresse am Meer: Puistopaviljonki und San Milano.",
         "Kemi liegt an der Hauptbahnstrecke aus Helsinki und ist damit eine der wenigen Städte Lapplands, die man ohne Auto erreicht.",
-        "Das Hafenrestaurant lebt von einer anderen Saison als die im Zentrum — im Winter zieht das SnowCastle."
+        "Das Hafenrestaurant lebt von einer anderen Saison als die im Zentrum: Im Winter zieht das SnowCastle."
       ],
       "at": "Kemi"
     },
@@ -248,9 +248,9 @@
       "description": "Fünf Restaurants in Tornio an der schwedischen Grenze, drei davon in derselben Straße. Bewertungen, Zitate und Links zu den eigenen Speisekarten.",
       "h1": "Restaurants in Tornio",
       "tagline": "Eine Grenzstadt, in der sich drei von fünf eine Straße teilen.",
-      "intro": "Die Auswahl in Tornio ist ungewöhnlich dicht: Ravintola Umpitunneli, Mustaparran Päämaja und Tmi Hevi Pizza liegen alle an der Hallituskatu, wenige Minuten voneinander entfernt. Ravintola Golden Flower liegt an der Eliaksenkatu, und Amico ergänzt die Liste an der Torikatu. Auf der anderen Flussseite liegt Haparanda — das ist Schweden und hat eine eigene Seite.",
+      "intro": "Die Auswahl in Tornio ist ungewöhnlich dicht: Ravintola Umpitunneli, Mustaparran Päämaja und Tmi Hevi Pizza liegen alle an der Hallituskatu, wenige Minuten voneinander entfernt. Ravintola Golden Flower liegt an der Eliaksenkatu, und Amico ergänzt die Liste an der Torikatu. Auf der anderen Flussseite liegt Haparanda, das zu Schweden gehört und eine eigene Seite hat.",
       "know": [
-        "Drei davon liegen an der Hallituskatu — alle drei Speisekarten schafft man in einem Spaziergang.",
+        "Drei davon liegen an der Hallituskatu: Alle drei Speisekarten schafft man in einem Spaziergang.",
         "Haparanda liegt über die Brücke und in Schweden: andere Währung, und die Uhr geht eine Stunde zurück.",
         "Tornio und Haparanda funktionieren praktisch als eine Stadt; ein Tisch drüben ist ein Spaziergang, keine Reise."
       ],
@@ -261,11 +261,11 @@
       "title": "Restaurants in Haparanda, Schweden",
       "description": "Fünf Restaurants in Haparanda gegenüber von Tornio: das Hotel am Marktplatz, ein Klassiker 15 km flussaufwärts, Sushi und Thai. Bewertungen und Speisekarten.",
       "h1": "Restaurants in Haparanda",
-      "tagline": "Über die Brücke von Tornio — praktisch dieselbe Stadt, auf dem Papier ein anderes Land.",
+      "tagline": "Über die Brücke von Tornio: praktisch dieselbe Stadt, auf dem Papier ein anderes Land.",
       "intro": "Haparanda liegt in Schweden, was drei praktische Dinge ändert: die Preise sind in Kronen, die Uhr geht eine Stunde hinter Finnland, und das Zentrum teilt sich die Stadt trotzdem mit Tornio. Haparanda Stadshotell steht am Marktplatz, Leilani und Haparanda Sushi & Indiskt ein paar Straßen weiter, Cape East draußen auf Sundholmen. Kukkolaforsen liegt 15 km flussaufwärts und ist ein bewusster Ausflug, kein Spaziergang.",
       "know": [
         "Schweden, nicht Finnland: Preise in SEK, und die Ortszeit liegt eine Stunde hinter Tornio.",
-        "Kukkolaforsen liegt 15 km nördlich am Fluss — planen Sie ein Auto ein.",
+        "Kukkolaforsen liegt 15 km nördlich am Fluss: Planen Sie ein Auto ein.",
         "Finnland und Schweden gehören beide zum Schengen-Raum; von Tornio hinüberzugehen dauert Minuten."
       ],
       "at": "Haparanda"
@@ -275,10 +275,10 @@
       "title": "Restaurants in Sodankylä: wo man isst",
       "description": "Fünf Restaurants in Sodankylä, drei davon an der Straße zum Nordmeer. Bewertungen, Zitate und Links zu den eigenen Speisekarten.",
       "h1": "Restaurants in Sodankylä",
-      "tagline": "Ein Halt an der Nordmeerstraße — und das meiste steht direkt daran.",
+      "tagline": "Ein Halt an der Nordmeerstraße, und das meiste steht direkt daran.",
       "intro": "Sodankylä ist die Hälfte der langen Fahrt nach Norden, und die Restaurants ordnen sich entsprechend: Sodankylän turkinpippuri, Ravintola RuusuSuola und Sodankylän Olohuone Tähti liegen alle an der Jäämerentie, jener Straße, die irgendwann das Nordmeer erreicht. Tori-Kioski Mikkola und Piitsi Pubi ergänzen abseits der Hauptstraße.",
       "know": [
-        "Drei davon liegen an der Jäämerentie, der Hauptstraße durch den Ort — gut mit einer Fahrpause zu verbinden.",
+        "Drei davon liegen an der Jäämerentie, der Hauptstraße durch den Ort, und lassen sich gut mit einer Fahrpause verbinden.",
         "Mitte Juni füllt sich der Ort zum Filmfestival der Mittsommernacht; Tische werden in dieser Woche knapp.",
         "Luosto liegt rund 32 km entfernt und hat eine eigene Seite."
       ],
@@ -303,7 +303,7 @@
       "title": "Restaurants in Luosto: wo man isst",
       "description": "Vier Adressen in Luosto, der ruhigeren Hälfte von Pyhä-Luosto: das Kelo-Restaurant des Hotels, die Küche des Hofs und der Halt an der Piste.",
       "h1": "Restaurants in Luosto",
-      "tagline": "Die ruhigere Hälfte des Nationalparks — vier Küchen, keine Schlange.",
+      "tagline": "Die ruhigere Hälfte des Nationalparks: vier Küchen, keine Schlange.",
       "intro": "Luosto ist der kleinere und ruhigere der beiden Orte von Pyhä-Luosto, und die Liste ist kurz genug, um sie in einer Minute zu lesen. Restaurant Punakettu liegt an der Luostontie, Keloravintola Lapland Hotels Luostotunturi am Luppokeino und Luoston Hovi an der Ellitsantie, und Skiknööli ist der Halt an der Piste. Luosto gehört zur Gemeinde Sodankylä, weshalb in mehreren Adressen Sodankylä steht.",
       "know": [
         "Mit nur vier Adressen auf der Liste lohnt es sich, in den vollen Skiwochen vorab zu reservieren.",
@@ -348,7 +348,7 @@
       "tagline": "Die ganze Auswahl passt in 800 Meter.",
       "intro": "Kemijärvi ist die fußgängerfreundlichste Stadt dieser Seite: jedes Restaurant hier liegt keine 800 Meter vom nächsten entfernt im Zentrum, zwei davon als Nachbarn an der Vapaudenkatu. Mestarin Kievari liegt an der Kirkkokatu, Jauri Resort und Restaurant Susa's Bistro wenige Minuten entfernt, und Rosa Pizza Kebab und Pizza Mestarit decken den Alltag ab.",
       "know": [
-        "Alle liegen innerhalb von 800 m — jede Speisekarte lässt sich in einem Spaziergang ansehen.",
+        "Alle liegen innerhalb von 800 m: Jede Speisekarte lässt sich in einem Spaziergang ansehen.",
         "Susa's Bistro und Rosa Pizza Kebab sind Nachbarn an der Vapaudenkatu.",
         "Kemijärvi liegt an der Bahnstrecke und ist ohne Auto erreichbar."
       ],
@@ -395,8 +395,8 @@
       },
       {
         "name": "Levi",
-        "angle": "Dinner auf dem Fjell-Gipfel",
-        "body": "Die Terrasse von Hullu Poro und Levis sommerlicher Gondelbetrieb servieren lappländische Kleingerichte mit 360°-Fjellblick. Nehmen Sie eine Jacke mit, auch um 2 Uhr nachts kann es auf 8 °C abkühlen."
+        "angle": "Dinner auf dem Fjällgipfel",
+        "body": "Die Terrasse von Hullu Poro und Levis sommerlicher Gondelbetrieb servieren lappländische Kleingerichte mit 360°-Fjällblick. Nehmen Sie eine Jacke mit, auch um 2 Uhr nachts kann es auf 8 °C abkühlen."
       },
       {
         "name": "Inari",
@@ -412,7 +412,7 @@
     "stayInTemplate": "In {{city}} übernachten",
     "summerFoodTours": "Sommerliche kulinarische Touren",
     "bottomHeadline": "Stellen Sie Ihre Mitternachtssonne-Reise zusammen",
-    "bottomLead": "Verbinden Sie diese Tische mit dem breiteren lappländischen Sommer, Fjell-Wanderungen, Seenbaden um 23 Uhr und der seltenen Stille eines arktischen Hochsommers. Beginnen Sie mit den gewünschten Restaurants und buchen Sie den Rest darum herum.",
+    "bottomLead": "Verbinden Sie diese Tische mit dem breiteren lappländischen Sommer, Fjällwanderungen, Seenbaden um 23 Uhr und der seltenen Stille eines arktischen Hochsommers. Beginnen Sie mit den gewünschten Restaurants und buchen Sie den Rest darum herum.",
     "bottomCtaBrowse": "Alle Restaurants ansehen",
     "bottomCtaArctic": "Über arktische Zutaten lesen"
   },
@@ -529,7 +529,7 @@
         "paragraphs": [
           "Spätsommer in einem lappländischen Wald ist praktisch Lebensmitteleinkauf. Das <strong>Jedermannsrecht</strong> (jokamiehenoikeus) macht das möglich: Jede Person, ob Einheimische oder Gast, darf sich in der Natur bewegen, sammeln und pflücken, unabhängig davon, wem das Land gehört.",
           "Das ist keine bloße Geste. Es prägt die gesamte Esskultur. Finnlands Wälder bringen schätzungsweise 500 Millionen Kilogramm wilde Heidelbeeren pro Jahr hervor, doch nur 5–10 % werden gepflückt. Der Rest ernährt das Wild und erneuert das Ökosystem.",
-          "Viele der besten Restaurants Lapplands beschäftigen professionelle Sammler, die den Sommer auf den Fjell-Wiesen und an den Rändern der Urwälder verbringen. „Farm-to-Table“ trifft das nicht. Hier ist es Wald-zu-Tisch und der Wald beginnt hinter der Küchentür."
+          "Viele der besten Restaurants Lapplands beschäftigen professionelle Sammler, die den Sommer auf den Fjällwiesen und an den Rändern der Urwälder verbringen. „Farm-to-Table“ trifft das nicht. Hier ist es Wald-zu-Tisch und der Wald beginnt hinter der Küchentür."
         ],
         "quote": "Heidelbeeren, Preiselbeeren, Walderdbeeren, Pilze und Wildkräuter wachsen in solchen Mengen, dass jeder Finne pflücken lernt, bevor er Auto fahren lernt."
       },
@@ -546,7 +546,7 @@
         "title": "Kein getreidegefüttertes Tier kommt da heran",
         "paragraphs": [
           "Es gibt keine klassischen Rentierfarmen, die Tiere ziehen über rund 123.000 km² Wildnis und ernähren sich von Flechten, Moos, Wildgräsern und Birkenlaub. Sie sind halbdomestiziert: Hirten verfolgen und betreuen sie, doch die Bewegung gehört dem Tier.",
-          "Das schmeckt man im Fleisch. Ein frei lebendes Rentier, das sein Leben über Fjell-Landschaften wandernd und Wildpflanzen fressend verbracht hat, liefert Fleisch, das mager ist, reich an Omega-3-Fettsäuren und tief im Geschmack. Kein getreidegefüttertes Stalltier kommt da heran.",
+          "Das schmeckt man im Fleisch. Ein frei lebendes Rentier, das sein Leben über Fjäll-Landschaften wandernd und Wildpflanzen fressend verbracht hat, liefert Fleisch, das mager ist, reich an Omega-3-Fettsäuren und tief im Geschmack. Kein getreidegefüttertes Stalltier kommt da heran.",
           "Finnlands Rentierwirtschaft wird über 54 Hege-Genossenschaften geführt, mit gesetzlich gedeckelten Herdengrößen. Herbst-Zusammentriebe entscheiden, wie viele geschlachtet werden, um Herden gesund und die Landschaft im Gleichgewicht zu halten. Die Jahresproduktion liegt bei rund 2 Millionen Kilogramm Fleisch."
         ],
         "quote": "Jedes Rentier in Finnisch-Lappland lebt in Freiheit."
@@ -602,7 +602,7 @@
       },
       {
         "name": "Wildkräuter",
-        "fact": "Arktische Engelwurz, Mädesüß, Weidenröschen und arktischer Thymian, von Hand von Fjellwiesen und Waldrändern gesammelt. Unter einer Mitternachtssonne, die wochenlang nicht untergeht, bilden sie konzentrierte Aromaöle, sodass schon eine kleine Prise weit reicht.",
+        "fact": "Arktische Engelwurz, Mädesüß, Weidenröschen und arktischer Thymian, von Hand von Fjällwiesen und Waldrändern gesammelt. Unter einer Mitternachtssonne, die wochenlang nicht untergeht, bilden sie konzentrierte Aromaöle, sodass schon eine kleine Prise weit reicht.",
         "season": "Juni–August"
       }
     ],

@@ -9,7 +9,7 @@
     "heroCtaStay": "Soggiorna accanto alla tavola",
     "heroCtaFine": "Alta cucina in Lapponia",
     "picksKicker": "Scelti dalla redazione",
-    "picksHeadline": "Inizia da questi sei",
+    "picksHeadline": "Inizi da questi sei",
     "picksLead": "Alta cucina sami, fuochi di kota e cucine in cima ai fjäll. Sei posti che prenoteremmo per primi.",
     "picksCtaAll": "Vedi tutti i {{count}} ristoranti",
     "midnightKicker": "L'estate in Lapponia",
@@ -40,7 +40,7 @@
     "statsVerified": "Ristoranti selezionati",
     "statsDestinations": "Destinazioni",
     "statsYear": "Aggiornati quest'anno",
-    "stayKicker": "Dormi dove mangi",
+    "stayKicker": "Dorma dove mangia",
     "stayHeadline": "Prenoti un hotel vicino al ristorante di stasera",
     "stayLead": "Le cene in Lapponia spesso si protraggono tardi e finiscono lontano dal centro. La scelta più saggia è alloggiare a due passi dal ristorante e Trip.com offre il quadro più chiaro di ciò che è davvero disponibile accanto a ogni kota, hotel di fjäll e ristorante di ghiaccio.",
     "stayAffiliateNote": "Link di affiliazione, possiamo ricevere una commissione senza costi aggiuntivi per Lei.",
@@ -59,7 +59,7 @@
       "headline": "FAQ: a tavola in Lapponia",
       "lead": "Le domande che i viaggiatori fanno più spesso prima di prenotare un tavolo in Lapponia, le sale famose, il piatto simbolo, i fuochi di kota e le cene sotto il sole di mezzanotte.",
       "stillWonderingKicker": "Ancora dubbi?",
-      "stillWonderingBodyPrefix": "Scrivi a ",
+      "stillWonderingBodyPrefix": "Scriva a ",
       "stillWonderingBodySuffix": ", di solito rispondiamo in giornata.",
       "items": [
         {
@@ -72,7 +72,7 @@
         },
         {
           "question": "Che cos'è la cena nella kota?",
-          "answer": "La kota è la tenda tradizionale sami con un fuoco aperto al centro. Ristoranti kota come il Kammi dell'Hullu Poro a Levi La fanno sedere su pelli di renna attorno alle fiamme mentre salmone affumicato, salsicce di renna e selvaggina alla griglia vengono preparati davanti a te, il menù costa circa 64 € a persona."
+          "answer": "La kota è la tenda tradizionale sami con un fuoco aperto al centro. Ristoranti kota come il Kammi dell'Hullu Poro a Levi La fanno sedere su pelli di renna attorno alle fiamme mentre salmone affumicato, salsicce di renna e selvaggina alla griglia vengono preparati davanti a Lei, il menù costa circa 64 € a persona."
         },
         {
           "question": "Qual è il periodo migliore per mangiare all'aperto in Lapponia?",
@@ -104,7 +104,7 @@
     "readReviews": "Leggi tutte le {{count}} recensioni su Google →",
     "googleReview": "Recensione Google →",
     "stayKicker": "Soggiorna accanto a queste tavole",
-    "stayHeadlineTemplate": "Prenota hotel a {{city}}, a piedi fino alla cena",
+    "stayHeadlineTemplate": "Prenoti hotel a {{city}}, a piedi fino alla cena",
     "stayBtnTemplate": "Vedi alloggi a {{city}}",
     "foodToursBtnTemplate": "Tour gastronomici a {{city}}",
     "stayNearby": "Soggiorna nei dintorni",
@@ -177,25 +177,25 @@
       "title": "Ristoranti a Levi: dove mangiare",
       "description": "Nove ristoranti a Levi, la maggiore stazione sciistica della Finlandia: la sala panoramica, l'italiano accanto alle piste e le sale del paese di Sirkka.",
       "h1": "Ristoranti a Levi",
-      "tagline": "La più grande stazione della Finlandia mangia di conseguenza: sale piene, terrazze e un tavolo in cima alla fjeld.",
-      "intro": "Il paese ai piedi della fjeld si chiama ufficialmente Sirkka, e quasi ogni indirizzo lo dice. Panoramic Restaurant TUIKKU sta in cima alla fjeld, a 2,4 km dal centro. Ämmilä e Wanha Hullu Poro sono vicini in Rakkavaarantie, Ristorante Renna fa italiano una via più in là, e Saamen Kammi, Riihi, Boneless e Kekäle completano il centro.",
+      "tagline": "La più grande stazione della Finlandia mangia di conseguenza: sale piene, terrazze e un tavolo in cima al fjäll.",
+      "intro": "Il paese ai piedi del fjäll si chiama ufficialmente Sirkka, e quasi ogni indirizzo lo dice. Panoramic Restaurant TUIKKU sta in cima al fjäll, a 2,4 km dal centro. Ämmilä e Wanha Hullu Poro sono vicini in Rakkavaarantie, Ristorante Renna fa italiano una via più in là, e Saamen Kammi, Riihi, Boneless e Kekäle completano il centro.",
       "know": [
         "Negli indirizzi postali di Levi compare Sirkka o Kittilä. È la stessa stazione: il paese è Sirkka, il comune Kittilä.",
         "Il capoluogo di Kittilä dista 17 km e non ha nemmeno un ristorante su questo sito.",
-        "Panoramic Restaurant TUIKKU dista 2,4 km dal centro del paese, in cima alla fjeld: meglio pianificare andata e ritorno."
+        "Panoramic Restaurant TUIKKU dista 2,4 km dal centro del paese, in cima al fjäll: meglio pianificare andata e ritorno."
       ],
       "at": "Levi"
     },
     "yllas": {
       "name": "Ylläs",
       "title": "Ristoranti a Ylläs: dove mangiare",
-      "description": "Sette ristoranti a Ylläs, divisi tra Äkäslompolo e Ylläsjärvi sui due versanti della fjeld, più uno in vetta. Valutazioni e link ai menù.",
+      "description": "Sette ristoranti a Ylläs, divisi tra Äkäslompolo e Ylläsjärvi sui due versanti del fjäll, più uno in vetta. Valutazioni e link ai menù.",
       "h1": "Ristoranti a Ylläs",
-      "tagline": "Due paesi, una fjeld e circa 11 km tra il tuo tavolo e l'altro.",
-      "intro": "Ylläs non è un paese ma due, sui versanti opposti della fjeld. A nord, ad Äkäslompolo, ci sono Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub e Los Lompolo's; a sud, a Ylläsjärvi, Ravintola Otso e Restaurant Ylläskota. In mezzo, l'indirizzo di Ylläskammi è la vetta stessa.",
+      "tagline": "Due paesi, un fjäll e circa 11 km tra il Suo tavolo e l'altro.",
+      "intro": "Ylläs non è un paese ma due, sui versanti opposti del fjäll. A nord, ad Äkäslompolo, ci sono Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub e Los Lompolo's; a sud, a Ylläsjärvi, Ravintola Otso e Restaurant Ylläskota. In mezzo, l'indirizzo di Ylläskammi è la vetta stessa.",
       "know": [
-        "Äkäslompolo e Ylläsjärvi distano circa 11 km, girando attorno alla fjeld. Controlla in quale paese si trova il tuo ristorante prima di partire.",
-        "Ylläskammi sta in cima alla fjeld, in nessuno dei due paesi.",
+        "Äkäslompolo e Ylläsjärvi distano circa 11 km, girando attorno al fjäll. Controlli in quale paese si trova il Suo ristorante prima di partire.",
+        "Ylläskammi sta in cima al fjäll, in nessuno dei due paesi.",
         "Su questo sito Ylläs significa Äkäslompolo quando non viene nominato il paese: Ylläsjärvi è sempre nominato."
       ],
       "at": "Ylläs"
@@ -205,7 +205,7 @@
       "title": "Ristoranti a Saariselkä: dove mangiare",
       "description": "Otto ristoranti a Saariselkä, tutti raggiungibili a piedi: una cucina d'albergo, un gastropub, un lávvu e l'hamburgeria del paese.",
       "h1": "Ristoranti a Saariselkä",
-      "tagline": "Un piccolo paese di fjeld dove ogni tavolo si raggiunge a piedi.",
+      "tagline": "Un piccolo paese di fjäll dove ogni tavolo si raggiunge a piedi.",
       "intro": "Saariselkä è abbastanza compatto da rendere la scelta una passeggiata e non un viaggio, e due dei locali stanno sulla stessa via. La forbice è ampia: Fieno e Gáldu servono al tavolo, Kieppi Kitchen & Bar è il ristorante del Wilderness Hotel Kieppi, e ScanBurger, Lieggâ Láávu e Bistro & Cafe Kuukkeli coprono il lato veloce. Google archivia Gastropub Giitu sotto Inari, ma si trova a Saariselkä.",
       "know": [
         "Kieppi Kitchen & Bar è il ristorante del Wilderness Hotel Kieppi, in Raitopolku.",
@@ -265,7 +265,7 @@
       "intro": "Haparanda è in Svezia, e questo cambia tre cose concrete: i prezzi sono in corone, l'orologio va un'ora indietro rispetto alla Finlandia, e il centro resta comunque condiviso con Tornio. Haparanda Stadshotell affaccia sulla piazza, Leilani e Haparanda Sushi & Indiskt sono a un paio di vie, e Cape East sta fuori, a Sundholmen. Kukkolaforsen è 15 km a monte: una gita decisa più che una passeggiata.",
       "know": [
         "Svezia, non Finlandia: prezzi in SEK, e l'ora locale è un'ora indietro rispetto a Tornio.",
-        "Kukkolaforsen è 15 km a nord lungo il fiume: metti in conto l'auto.",
+        "Kukkolaforsen è 15 km a nord lungo il fiume: metta in conto l'auto.",
         "Finlandia e Svezia sono entrambe in Schengen; passare a piedi da Tornio richiede pochi minuti."
       ],
       "at": "Haparanda"
@@ -366,8 +366,8 @@
     "readAllReviews": "Leggi tutte le {{count}} recensioni su Google →",
     "statsAvgRating": "Valutazione media su Google",
     "introTitle": "Prima di prenotare un tavolo",
-    "introP1": "Il badge con la stella su ogni scheda apre le recensioni Google da cui arriva il voto, così vedi da dove viene il punteggio e quanto è recente. Lo stesso voto può però indicare due serate molto diverse: un menù degustazione e una curata sala d'albergo non sono la stessa cosa.",
-    "introP2": "I menù seguono la stagione, e la stessa cucina si legge diversamente a febbraio e ad agosto. Le sale sono piccole e l'inverno si riempie presto: prenota per tempo."
+    "introP1": "Il badge con la stella su ogni scheda apre le recensioni Google da cui arriva il voto, così Lei vede da dove viene il punteggio e quanto è recente. Lo stesso voto può però indicare due serate molto diverse: un menù degustazione e una curata sala d'albergo non sono la stessa cosa.",
+    "introP2": "I menù seguono la stagione, e la stessa cucina si legge diversamente a febbraio e ad agosto. Le sale sono piccole e l'inverno si riempie presto: prenoti per tempo."
   },
   "midnightSunDining": {
     "title": "Cena sotto il sole di mezzanotte in Lapponia",
@@ -401,7 +401,7 @@
       {
         "name": "Inari",
         "angle": "Grigliate di mezzanotte sul Lago Inari",
-        "body": "Aanaar serve un menù degustazione estivo costruito attorno ai pesci di lago tirati su la mattina stessa. Cena all'aperto di fronte al lago mentre il sole sfiora l'orizzonte senza mai scendere sotto."
+        "body": "Aanaar serve un menù degustazione estivo costruito attorno ai pesci di lago tirati su la mattina stessa. Ceni all'aperto di fronte al lago mentre il sole sfiora l'orizzonte senza mai scendere sotto."
       },
       {
         "name": "Saariselkä",
@@ -582,7 +582,7 @@
       },
       {
         "name": "Mirtillo selvatico",
-        "fact": "I mirtilli selvatici finlandesi contengono da tre a quattro volte più antociani di quelli coltivati, e tingono le dita di viola intenso appena li raccogli. I boschi ne producono circa 500 milioni di kg l'anno, di cui solo il 5-10 per cento viene effettivamente raccolto.",
+        "fact": "I mirtilli selvatici finlandesi contengono da tre a quattro volte più antociani di quelli coltivati, e tingono le dita di viola intenso appena li si raccoglie. I boschi ne producono circa 500 milioni di kg l'anno, di cui solo il 5-10 per cento viene effettivamente raccolto.",
         "season": "Luglio–settembre"
       },
       {
@@ -656,8 +656,8 @@
     "stayNearby": "Soggiorna nei dintorni"
   },
   "relatedLinks": {
-    "kicker": "Continua a esplorare",
+    "kicker": "Continui a esplorare",
     "headline": "Dove andare adesso",
-    "lead": "Completa il viaggio: accomodati nei <bars>cocktail bar e ice bar della Lapponia</bars>, scopri <nightlife>dove andare dopo cena</nightlife> e risolvi <stays>dove dormire vicino a questi ristoranti</stays>."
+    "lead": "Completi il viaggio: si accomodi nei <bars>cocktail bar e ice bar della Lapponia</bars>, scopra <nightlife>dove andare dopo cena</nightlife> e scelga <stays>dove dormire vicino a questi ristoranti</stays>."
   }
 }

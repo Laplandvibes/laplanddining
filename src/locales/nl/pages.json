@@ -42,7 +42,7 @@
     "statsYear": "Dit jaar bijgewerkt",
     "stayKicker": "Slaap waar u eet",
     "stayHeadline": "Boek een hotel dicht bij de tafel van vanavond",
-    "stayLead": "Diners in Lapland lopen vaak uit en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het duidelijkste overzicht van wat er echt beschikbaar is naast elke kota, elk fjäll-hotel en elk ijsrestaurant.",
+    "stayLead": "Diners in Lapland lopen vaak uit en eindigen ver van het centrum. De slimste keuze is een verblijf op loopafstand van het restaurant en Trip.com geeft u het duidelijkste overzicht van wat er echt beschikbaar is naast elke kota, elk fjällhotel en elk ijsrestaurant.",
     "stayAffiliateNote": "Affiliate-links, we kunnen een commissie verdienen zonder extra kosten voor u.",
     "stayAffiliateLink": "Waarom we het zo doen",
     "toursKicker": "Eet met een gids",
@@ -114,12 +114,12 @@
     "bottomPartner": "Bent u restauranteigenaar? Vermeldingen van uitgelichte partners krijgen redactionele tekst, menuhoogtepunten en een opgewaardeerde kaart.",
     "cityVibes": {
       "Rovaniemi": "Hoofdstad van Lapland, waar Arctische cultuur culinaire ambitie ontmoet",
-      "Levi": "Diner aan het vuur na een dag op de fjällen",
-      "Kittilä": "Fjäll-dorp voorbij de resortzone van Levi",
+      "Levi": "Diner aan het vuur na een dag op de fjälls",
+      "Kittilä": "Fjälldorp voorbij de resortzone van Levi",
       "Inari": "Samisch erfgoed en de zuiverste Arctische ingrediënten",
       "Saariselkä": "Wildernisdineren onder het noorderlicht",
       "Kemi": "Waar ijs vuur ontmoet, unieke seizoenservaringen",
-      "Ylläs": "Fjäll-dorpscharme met authentieke Laplandse smaken",
+      "Ylläs": "Fjälldorpscharme met authentieke Laplandse smaken",
       "Tornio": "Karakter van een grensstad en Finse huiskost",
       "Haparanda": "Steek de grens over voor Zweeds-Noordse fusion",
       "Sodankylä": "Riviertraditie en het publiek van het Midnight Sun Film Festival",
@@ -163,10 +163,10 @@
       "title": "Restaurants in Rovaniemi: waar u eet",
       "description": "Acht restaurants in Rovaniemi, van rendierhaas aan de Valtakatu tot een Koreaanse keuken aan de Korkalonkatu. Beoordelingen, citaten en menulinks.",
       "h1": "Restaurants in Rovaniemi",
-      "tagline": "De dichtste verzameling tafels van Lapland — vijf ervan passen in vier straten.",
+      "tagline": "De dichtste verzameling tafels van Lapland: vijf ervan passen in vier straten.",
       "intro": "Rovaniemi is de enige stad in Lapland waar u uw restaurant te voet uitkiest. Nili en Arctic Restaurant liggen bijna tegenover elkaar aan de Valtakatu en dekken rendier en kruipbraam af. Tweehonderd meter verderop zijn Roka Street Bistro aan de Ainonkatu en Cafe & Bar 21 aan de Rovakatu de zalen waar bewoners op een gewone dinsdag naartoe gaan. En wie even genoeg heeft van rendier, vindt aan de Korkalonkatu Hanki, dat Koreaans kookt.",
       "know": [
-        "De vijf restaurants in het centrum liggen binnen 500 m van elkaar — de hele keuze is één wandeling.",
+        "De vijf restaurants in het centrum liggen binnen 500 m van elkaar: de hele keuze is één wandeling.",
         "Drie liggen buiten het centrum: Sky Kitchen & View op 2,4 km, Kotahovi op 6,8 km aan de weg naar het kerstmandorp, en All About Salmon in het dorp zelf.",
         "Hanki aan de Korkalonkatu is Koreaans, niet Laplands, en ligt in hetzelfde compacte centrum als de rest."
       ],
@@ -177,26 +177,26 @@
       "title": "Restaurants in Levi: waar u eet",
       "description": "Negen restaurants in Levi, het grootste skigebied van Finland: de panoramazaal, Italiaans bij de pistes en de zalen van het dorp Sirkka.",
       "h1": "Restaurants in Levi",
-      "tagline": "Het grootste skigebied van Finland eet daarnaar: volle eetzalen, terrassen en een tafel boven op de fjeld.",
-      "intro": "Het dorp aan de voet van de fjeld heet officieel Sirkka, en bijna elk adres zegt dat ook. Panoramic Restaurant TUIKKU ligt boven op de fjeld, 2,4 km van het centrum. Ämmilä en Wanha Hullu Poro zijn buren aan de Rakkavaarantie, Ristorante Renna doet Italiaans een straat verderop, en Saamen Kammi, Riihi, Boneless en Kekäle vullen het centrum.",
+      "tagline": "Het grootste skigebied van Finland eet daarnaar: volle eetzalen, terrassen en een tafel boven op de fjäll.",
+      "intro": "Het dorp aan de voet van de fjäll heet officieel Sirkka, en bijna elk adres zegt dat ook. Panoramic Restaurant TUIKKU ligt boven op de fjäll, 2,4 km van het centrum. Ämmilä en Wanha Hullu Poro zijn buren aan de Rakkavaarantie, Ristorante Renna doet Italiaans een straat verderop, en Saamen Kammi, Riihi, Boneless en Kekäle vullen het centrum.",
       "know": [
         "Op de postadressen van Levi staat Sirkka of Kittilä. Het is hetzelfde gebied: het dorp is Sirkka, de gemeente Kittilä.",
         "Het dorp Kittilä zelf ligt 17 km verderop en heeft geen enkel restaurant op deze site.",
-        "Panoramic Restaurant TUIKKU ligt 2,4 km van het dorpscentrum, boven op de fjeld: plan vooraf hoe u er komt en weer terug."
+        "Panoramic Restaurant TUIKKU ligt 2,4 km van het dorpscentrum, boven op de fjäll: plan vooraf hoe u er komt en weer terug."
       ],
       "at": "Levi"
     },
     "yllas": {
       "name": "Ylläs",
       "title": "Restaurants in Ylläs: waar u eet",
-      "description": "Zeven restaurants in Ylläs, verdeeld over Äkäslompolo en Ylläsjärvi aan weerszijden van de fjeld, en één op de top. Beoordelingen en menulinks.",
+      "description": "Zeven restaurants in Ylläs, verdeeld over Äkäslompolo en Ylläsjärvi aan weerszijden van de fjäll, en één op de top. Beoordelingen en menulinks.",
       "h1": "Restaurants in Ylläs",
-      "tagline": "Twee dorpen, één fjeld en zo'n 11 km tussen uw tafel en die andere.",
-      "intro": "Ylläs is niet één dorp maar twee, aan weerszijden van de fjeld. In het noordelijke Äkäslompolo zitten Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub en Los Lompolo's; in het zuidelijke Ylläsjärvi Ravintola Otso en Restaurant Ylläskota. Daartussen is het adres van Ylläskammi de top zelf.",
+      "tagline": "Twee dorpen, één fjäll en zo'n 11 km tussen uw tafel en die andere.",
+      "intro": "Ylläs is niet één dorp maar twee, aan weerszijden van de fjäll. In het noordelijke Äkäslompolo zitten Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub en Los Lompolo's; in het zuidelijke Ylläsjärvi Ravintola Otso en Restaurant Ylläskota. Daartussen is het adres van Ylläskammi de top zelf.",
       "know": [
-        "Äkäslompolo en Ylläsjärvi liggen ongeveer 11 km uit elkaar, rond de fjeld. Kijk in welk dorp uw restaurant ligt voordat u vertrekt.",
-        "Ylläskammi staat boven op de fjeld, in geen van beide dorpen.",
-        "Op deze site betekent Ylläs Äkäslompolo wanneer er geen dorp genoemd wordt — Ylläsjärvi wordt altijd genoemd."
+        "Äkäslompolo en Ylläsjärvi liggen ongeveer 11 km uit elkaar, rond de fjäll. Kijk in welk dorp uw restaurant ligt voordat u vertrekt.",
+        "Ylläskammi staat boven op de fjäll, in geen van beide dorpen.",
+        "Op deze site betekent Ylläs Äkäslompolo wanneer er geen dorp genoemd wordt. Ylläsjärvi wordt altijd genoemd."
       ],
       "at": "Ylläs"
     },
@@ -205,7 +205,7 @@
       "title": "Restaurants in Saariselkä: waar u eet",
       "description": "Acht restaurants in Saariselkä, allemaal te voet: een hotelkeuken, een gastropub, een lávvu en de burgerzaak van het dorp.",
       "h1": "Restaurants in Saariselkä",
-      "tagline": "Een klein fjelddorp waar elke tafel op loopafstand ligt.",
+      "tagline": "Een klein fjälldorp waar elke tafel op loopafstand ligt.",
       "intro": "Saariselkä is compact genoeg om de keuze een wandeling te maken en geen rit, en twee van de zaken staan in dezelfde straat. De spreiding is groot: Fieno en Gáldu serveren aan tafel, Kieppi Kitchen & Bar is het restaurant van Wilderness Hotel Kieppi, en ScanBurger, Lieggâ Láávu en Bistro & Cafe Kuukkeli dekken de snelle kant af. Google zet Gastropub Giitu onder Inari, maar het ligt in Saariselkä.",
       "know": [
         "Kieppi Kitchen & Bar is het restaurant in Wilderness Hotel Kieppi aan de Raitopolku.",
@@ -223,8 +223,8 @@
       "intro": "Inari is groter dan menig Europees land, en deze pagina laat dat zien: de restaurants liggen verspreid over tientallen kilometers in plaats van in een dorpskern. Restaurant Aanaar, aan het water aan de Saarikoskentie, is de fine-dining zaal. Kultahippu ligt 35 km zuidelijker in Ivalo, Muotkan Ruoktu 39 km aan de weg naar Karigasniemi, en Arctic River Resort daartussen. Geen ervan is te voet vanaf een andere te bereiken.",
       "know": [
         "Aanaar is de enige in het dorp Inari zelf. Voor de rest hebt u een auto nodig.",
-        "Kultahippu ligt in Ivalo, 35 km zuidelijker — het dorp met de luchthaven.",
-        "Muotkan Ruoktu ligt 39 km aan de weg naar Karigasniemi — een bewuste rit, geen omweg."
+        "Kultahippu ligt 35 km zuidelijker in Ivalo, het dorp met de luchthaven.",
+        "Muotkan Ruoktu ligt 39 km aan de weg naar Karigasniemi. Dat is een bewuste rit, geen omweg."
       ],
       "at": "Inari"
     },
@@ -236,9 +236,9 @@
       "tagline": "Een stad aan zee, en de tafels volgen het water.",
       "intro": "Kemi eet langs twee lijnen: de kust en de hoofdstraat. Kemin Puistopaviljonki en Pizzeria San Milano delen hetzelfde adres aan zee aan de Meripuistonpolku, en Sataman Krouwi ja Perämeren Jähti ligt beneden in de haven. In het centrum staan Pieni Lohikäärme en Ravintola Mori tegenover elkaar aan de Valtakatu.",
       "know": [
-        "Twee ervan delen één adres aan zee — Puistopaviljonki en San Milano.",
+        "Twee ervan delen één adres aan zee: Puistopaviljonki en San Milano.",
         "Kemi ligt aan de hoofdspoorlijn vanuit Helsinki en is dus een van de weinige Laplandse steden die u zonder auto bereikt.",
-        "Het havenrestaurant leeft van een ander seizoen dan die in het centrum — in de winter trekt het SnowCastle."
+        "Het havenrestaurant leeft van een ander seizoen dan die in het centrum: in de winter trekt het SnowCastle."
       ],
       "at": "Kemi"
     },
@@ -250,7 +250,7 @@
       "tagline": "Een grensstad waar drie van de vijf één straat delen.",
       "intro": "Het aanbod van Tornio is ongewoon compact: Ravintola Umpitunneli, Mustaparran Päämaja en Tmi Hevi Pizza liggen alle drie aan de Hallituskatu, een paar minuten van elkaar. Ravintola Golden Flower ligt aan de Eliaksenkatu, en Amico maakt de lijst compleet aan de Torikatu. Aan de overkant van de rivier ligt Haparanda, dat Zweden is en een eigen pagina heeft.",
       "know": [
-        "Drie ervan liggen aan de Hallituskatu — alle drie de menu's leest u in één wandeling.",
+        "Drie ervan liggen aan de Hallituskatu: alle drie de menu's leest u in één wandeling.",
         "Haparanda ligt over de brug en in Zweden: andere munt, en de klok gaat een uur terug.",
         "Tornio en Haparanda functioneren in de praktijk als één stad, dus een tafel aan de overkant is een wandeling, geen reis."
       ],
@@ -261,11 +261,11 @@
       "title": "Restaurants in Haparanda, Zweden",
       "description": "Vijf restaurants in Haparanda tegenover Tornio: het hotel aan het plein, een klassieker 15 km stroomopwaarts, sushi en Thais. Beoordelingen en menulinks.",
       "h1": "Restaurants in Haparanda",
-      "tagline": "Over de brug vanuit Tornio — in de praktijk dezelfde stad, op papier een ander land.",
+      "tagline": "Over de brug vanuit Tornio: in de praktijk dezelfde stad, op papier een ander land.",
       "intro": "Haparanda ligt in Zweden, en dat verandert drie praktische dingen: de prijzen zijn in kronen, de klok loopt een uur achter op Finland, en het centrum wordt toch met Tornio gedeeld. Haparanda Stadshotell staat aan het plein, Leilani en Haparanda Sushi & Indiskt liggen een paar straten verder, en Cape East zit buiten op Sundholmen. Kukkolaforsen ligt 15 km stroomopwaarts en is een bewuste uitstap in plaats van een wandeling.",
       "know": [
         "Zweden, niet Finland: prijzen in SEK, en de lokale tijd loopt een uur achter op Tornio.",
-        "Kukkolaforsen ligt 15 km noordelijker langs de rivier — reken op een auto.",
+        "Kukkolaforsen ligt 15 km noordelijker langs de rivier. Reken op een auto.",
         "Finland en Zweden zitten allebei in Schengen; te voet oversteken vanuit Tornio duurt minuten."
       ],
       "at": "Haparanda"
@@ -278,7 +278,7 @@
       "tagline": "Een stop aan de IJszeeweg, en het meeste staat eraan.",
       "intro": "Sodankylä is de helft van de lange rit naar het noorden, en de restaurants stellen zich daarnaar op: Sodankylän turkinpippuri, Ravintola RuusuSuola en Sodankylän Olohuone Tähti liggen alle drie aan de Jäämerentie, de weg die uiteindelijk de Noordelijke IJszee bereikt. Tori-Kioski Mikkola en Piitsi Pubi vullen aan naast de hoofdweg.",
       "know": [
-        "Drie ervan liggen aan de Jäämerentie, de hoofdweg door het dorp — makkelijk te combineren met een rijpauze.",
+        "Drie ervan liggen aan de Jäämerentie, de hoofdweg door het dorp. Dat is makkelijk te combineren met een rijpauze.",
         "Half juni loopt het dorp vol voor het filmfestival van de middernachtzon; die week zijn tafels schaars.",
         "Luosto ligt ongeveer 32 km verderop en heeft een eigen pagina."
       ],
@@ -303,7 +303,7 @@
       "title": "Restaurants in Luosto: waar u eet",
       "description": "Vier adressen om te eten in Luosto, de rustigere helft van Pyhä-Luosto: het kelo-restaurant van het hotel, de keuken van de herberg en de stop bij de piste.",
       "h1": "Restaurants in Luosto",
-      "tagline": "De rustige helft van het nationaal park — vier keukens, geen rij.",
+      "tagline": "De rustige helft van het nationaal park: vier keukens, geen rij.",
       "intro": "Luosto is het kleinere en rustigere van de twee gebieden van Pyhä-Luosto, en de lijst is kort genoeg om in een minuut te lezen. Restaurant Punakettu ligt aan de Luostontie, Keloravintola Lapland Hotels Luostotunturi aan de Luppokeino en Luoston Hovi aan de Ellitsantie, en Skiknööli is de stop naast de piste. Luosto hoort bij de gemeente Sodankylä, vandaar dat op meerdere adressen Sodankylä staat.",
       "know": [
         "Met maar vier adressen op de lijst loont het om in de drukke skiweken vooraf te reserveren.",
@@ -348,7 +348,7 @@
       "tagline": "De hele keuze past in 800 meter.",
       "intro": "Kemijärvi is de meest beloopbare stad op deze site: elk restaurant ligt binnen 800 meter van de andere in het centrum, twee ervan als buren aan de Vapaudenkatu. Mestarin Kievari ligt aan de Kirkkokatu, Jauri Resort en Restaurant Susa's Bistro op een paar minuten, en Rosa Pizza Kebab en Pizza Mestarit dekken het alledaagse af.",
       "know": [
-        "Ze liggen allemaal binnen 800 m — u bekijkt elk menu in één wandeling.",
+        "Ze liggen allemaal binnen 800 m: u bekijkt elk menu in één wandeling.",
         "Susa's Bistro en Rosa Pizza Kebab zijn buren aan de Vapaudenkatu.",
         "Kemijärvi ligt aan de spoorlijn, dus u komt er zonder auto."
       ],
@@ -395,7 +395,7 @@
       },
       {
         "name": "Levi",
-        "angle": "Diners op de fjäll-top",
+        "angle": "Diners op de fjälltop",
         "body": "Het terras van Hullu Poro + de zomerdienst van de Levi-gondel geven u 360°-uitzicht over de fjälls met Laplandse kleine gerechten. Neem een extra laag kleding mee, zelfs om 2 uur 's nachts kan het 8 °C zijn."
       },
       {
@@ -412,7 +412,7 @@
     "stayInTemplate": "Verblijf in {{city}}",
     "summerFoodTours": "Zomer-foodtours",
     "bottomHeadline": "Bouw uw middernachtzon-reis",
-    "bottomLead": "Combineer deze tafels met de bredere Laplandse zomer, fjäll-wandelingen, meerzwemmen om 23.00 uur en de zeldzame stilte van een Arctische midzomer. Begin met de restaurants die u wilt en boek de rest eromheen.",
+    "bottomLead": "Combineer deze tafels met de bredere Laplandse zomer, fjällwandelingen, meerzwemmen om 23.00 uur en de zeldzame stilte van een Arctische midzomer. Begin met de restaurants die u wilt en boek de rest eromheen.",
     "bottomCtaBrowse": "Bekijk alle restaurants",
     "bottomCtaArctic": "Lees over Arctische ingrediënten"
   },

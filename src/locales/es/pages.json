@@ -9,8 +9,8 @@
     "heroCtaStay": "Alojarse cerca de la cocina",
     "heroCtaFine": "Alta cocina en Laponia",
     "picksKicker": "Selección del equipo",
-    "picksHeadline": "Empieza por estos seis",
-    "picksLead": "Alta cocina sami, fuegos de kota y cocinas en lo alto del fjäll. Seis lugares que nosotros reservaríamos primero.",
+    "picksHeadline": "Empiece por estos seis",
+    "picksLead": "Alta cocina sami, fuegos de kota y cocinas en lo alto del fell. Seis lugares que nosotros reservaríamos primero.",
     "picksCtaAll": "Ver los {{count}} restaurantes",
     "midnightKicker": "El verano de Laponia",
     "midnightHeadline1": "Cena a la 1 de la madrugada.",
@@ -114,7 +114,7 @@
     "bottomPartner": "¿Es propietario de un restaurante? Las fichas de Socio Destacado incluyen textos redactados a mano, lo más destacado del menú y una tarjeta mejorada.",
     "cityVibes": {
       "Rovaniemi": "Capital de Laponia, donde la cultura ártica se encuentra con la ambición culinaria",
-      "Levi": "Cenar junto al fuego tras una jornada en los fjälls",
+      "Levi": "Cenar junto al fuego tras una jornada en los fells",
       "Kittilä": "Pueblo de montaña más allá del bullicio de la estación de Levi",
       "Inari": "Herencia sami y los ingredientes árticos más puros",
       "Saariselkä": "Cenar en plena naturaleza bajo la aurora boreal",
@@ -123,7 +123,7 @@
       "Tornio": "Carácter de ciudad fronteriza y cocina casera finlandesa",
       "Haparanda": "Cruce la frontera para una fusión sueco-nórdica",
       "Sodankylä": "Tradiciones de pueblo ribereño y el público del Festival de Cine del Sol de Medianoche",
-      "Pyhätunturi": "Cenar en lo alto del fjäll, en la puerta sur a la naturaleza salvaje",
+      "Pyhätunturi": "Cenar en lo alto del fell, en la puerta sur a la naturaleza salvaje",
       "Luosto": "Pueblo de la montaña de amatista con restaurantes de troncos de kelo",
       "Muonio": "Tierras altas del cinturón de auroras, por encima del límite del bosque",
       "Hetta": "Centro de Enontekiö en el cruce de tres fronteras",
@@ -191,10 +191,10 @@
       "title": "Restaurantes en Ylläs: dónde comer",
       "description": "Siete restaurantes en Ylläs, repartidos entre Äkäslompolo y Ylläsjärvi a ambos lados del fell, más uno en la cumbre. Valoraciones y cartas.",
       "h1": "Restaurantes en Ylläs",
-      "tagline": "Dos pueblos, un fell y unos 11 km entre tu mesa y la otra.",
+      "tagline": "Dos pueblos, un fell y unos 11 km entre su mesa y la otra.",
       "intro": "Ylläs no es un pueblo sino dos, a ambos lados del fell. En Äkäslompolo, al norte, están Ravintola Rouhe, Ylläksen Eväskori & Joiku Pub y Los Lompolo's; en Ylläsjärvi, al sur, Ravintola Otso y Restaurant Ylläskota. Entre ambos, la dirección de Ylläskammi es la cumbre misma.",
       "know": [
-        "Äkäslompolo y Ylläsjärvi están a unos 11 km, rodeando el fell. Comprueba en qué pueblo está tu restaurante antes de salir.",
+        "Äkäslompolo y Ylläsjärvi están a unos 11 km, rodeando el fell. Compruebe en qué pueblo está su restaurante antes de salir.",
         "Ylläskammi está arriba en el fell, no en ninguno de los dos pueblos.",
         "En este sitio Ylläs significa Äkäslompolo cuando no se nombra el pueblo; Ylläsjärvi siempre se nombra."
       ],
@@ -222,7 +222,7 @@
       "tagline": "El municipio más grande de Finlandia. Cuatro cocinas y mucha carretera entre ellas.",
       "intro": "Inari es más grande que varios países europeos, y esta página lo refleja: los restaurantes se reparten por decenas de kilómetros en lugar de por un centro. Restaurant Aanaar, junto al agua en Saarikoskentie, es la sala de alta cocina. Kultahippu está 35 km al sur, en Ivalo; Muotkan Ruoktu, a 39 km por la carretera de Karigasniemi, y Arctic River Resort entre los dos. Ninguno está a distancia de paseo de otro.",
       "know": [
-        "Aanaar es el único en el pueblo de Inari propiamente dicho. Para el resto, cuenta con coche.",
+        "Aanaar es el único en el pueblo de Inari propiamente dicho. Para el resto, cuente con coche.",
         "Kultahippu está en Ivalo, 35 km al sur: la localidad del aeropuerto.",
         "Muotkan Ruoktu está a 39 km por la carretera de Karigasniemi: un trayecto decidido, no un desvío."
       ],
@@ -265,7 +265,7 @@
       "intro": "Haparanda está en Suecia, y eso cambia tres cosas prácticas: los precios van en coronas, el reloj atrasa una hora respecto a Finlandia, y el centro se comparte igualmente con Tornio. Haparanda Stadshotell da a la plaza, Leilani y Haparanda Sushi & Indiskt quedan a un par de calles, y Cape East está en Sundholmen. Kukkolaforsen está 15 km río arriba: una excursión decidida más que un paseo.",
       "know": [
         "Suecia, no Finlandia: precios en SEK, y la hora local va una hora por detrás de Tornio.",
-        "Kukkolaforsen está 15 km al norte siguiendo el río: cuenta con coche.",
+        "Kukkolaforsen está 15 km al norte siguiendo el río: cuente con coche.",
         "Finlandia y Suecia están ambas en Schengen; cruzar a pie desde Tornio lleva minutos."
       ],
       "at": "Haparanda"
@@ -348,7 +348,7 @@
       "tagline": "Toda la elección cabe en 800 metros.",
       "intro": "Kemijärvi es la ciudad más caminable del sitio: cada restaurante está a menos de 800 metros de los demás, en el centro, y dos son vecinos en Vapaudenkatu. Mestarin Kievari está en Kirkkokatu, Jauri Resort y Restaurant Susa's Bistro a pocos minutos, y Rosa Pizza Kebab y Pizza Mestarit cubren el día a día.",
       "know": [
-        "Todos están a menos de 800 m: puedes mirar cada carta en un solo paseo.",
+        "Todos están a menos de 800 m: puede mirar cada carta en un solo paseo.",
         "Susa's Bistro y Rosa Pizza Kebab son vecinos en Vapaudenkatu.",
         "Kemijärvi está en la línea de tren, así que se llega sin coche."
       ],
@@ -366,8 +366,8 @@
     "readAllReviews": "Leer las {{count}} opiniones en Google →",
     "statsAvgRating": "Nota media en Google",
     "introTitle": "Antes de reservar mesa",
-    "introP1": "La insignia de estrella de cada ficha abre las reseñas de Google que la sustentan, así que ves de dónde sale la nota y lo reciente que es. La misma nota puede significar dos veladas muy distintas: un menú degustación y un comedor de hotel cuidado no son lo mismo.",
-    "introP2": "Las cartas siguen la temporada, y una misma cocina se lee distinta en febrero que en agosto. Los comedores son pequeños y el invierno se llena pronto: reserva con antelación."
+    "introP1": "La insignia de estrella de cada ficha abre las reseñas de Google que la sustentan, así que usted puede ver de dónde sale la nota y lo reciente que es. La misma nota puede significar dos veladas muy distintas: un menú degustación y un comedor de hotel cuidado no son lo mismo.",
+    "introP2": "Las cartas siguen la temporada, y una misma cocina se lee distinta en febrero que en agosto. Los comedores son pequeños y el invierno se llena pronto: reserve con antelación."
   },
   "midnightSunDining": {
     "title": "Cenas bajo el sol de medianoche en Laponia",
@@ -382,7 +382,7 @@
     "whyHeadline": "Cuando el sol nunca se pone",
     "whyParagraphs": [
       "Aurora, nieve y renos en la oscuridad: así es Laponia nueve meses al año. Los otros tres son algo completamente distinto y la cultura gastronómica está a la altura.",
-      "De principios de junio a principios de julio, el sol sobre el Círculo Polar Ártico no se pone. Incluso al sur de la línea, en Rovaniemi, el crepúsculo sustituye a la noche, a la 1 de la madrugada puede leer un menú al aire libre sin linterna. Las terrazas que en invierno cierran a las 9 de la noche siguen abiertas hasta medianoche. Las tiendas kota sirven cenas de verano a horas que parecen imposibles.",
+      "De principios de junio a principios de julio, el sol sobre el Círculo Polar Ártico no se pone. Incluso al sur de la línea, en Rovaniemi, el crepúsculo sustituye a la noche: a la 1 de la madrugada usted puede leer un menú al aire libre sin linterna. Las terrazas que en invierno cierran a las 9 de la noche siguen abiertas hasta medianoche. Las tiendas kota sirven cenas de verano a horas que parecen imposibles.",
       "Los ingredientes también cambian. Las hierbas silvestres hacen la fotosíntesis las 24 horas. Los peces de lago se alimentan en aguas someras y templadas. Las setas del bosque aún no han salido, pero las moras de los pantanos maduran al final de la ventana. Los restaurantes que se hicieron un nombre con la caza de invierno pasan, discretamente, a una paleta más ligera de lago y río."
     ],
     "citiesHeadline": "Cuatro ciudades, cuatro maneras de comerse el sol",
@@ -395,8 +395,8 @@
       },
       {
         "name": "Levi",
-        "angle": "Cenas en lo alto del fjäll",
-        "body": "La terraza de Hullu Poro y el servicio estival del telecabina de Levi le dan vistas de 360° sobre los fjälls con platillos típicos de Laponia. Lleve una capa de abrigo, incluso a las 2 de la madrugada puede bajar a 8 °C."
+        "angle": "Cenas en lo alto del fell",
+        "body": "La terraza de Hullu Poro y el servicio estival del telecabina de Levi le dan vistas de 360° sobre los fells con platillos típicos de Laponia. Lleve una capa de abrigo, incluso a las 2 de la madrugada puede bajar a 8 °C."
       },
       {
         "name": "Inari",
@@ -412,7 +412,7 @@
     "stayInTemplate": "Alójese en {{city}}",
     "summerFoodTours": "Rutas gastronómicas de verano",
     "bottomHeadline": "Diseñe su viaje bajo el sol de medianoche",
-    "bottomLead": "Combine estas mesas con el resto del verano en Laponia, caminatas por los fjälls, baños en el lago a las 11 de la noche y la rara calma de un pleno verano ártico. Empiece por los restaurantes que quiere y reserve lo demás a su alrededor.",
+    "bottomLead": "Combine estas mesas con el resto del verano en Laponia, caminatas por los fells, baños en el lago a las 11 de la noche y la rara calma de un pleno verano ártico. Empiece por los restaurantes que quiere y reserve lo demás a su alrededor.",
     "bottomCtaBrowse": "Ver todos los restaurantes",
     "bottomCtaArctic": "Lea sobre los ingredientes árticos"
   },
@@ -508,7 +508,7 @@
         "title": "Durante siglos el kota fue hogar, cocina y lugar de reunión",
         "paragraphs": [
           "Es el <strong>kota</strong>, una tienda sami tradicional, de forma cónica, con un fogón en el centro. Durante siglos, el kota fue hogar, cocina y lugar de reunión. La comida se cocinaba sobre la llama abierta, se contaban historias, el humo llevaba las plegarias al cielo.",
-          "Hoy, restaurantes kota como Kammi, en Hullu Poro (Levi), mantienen viva la tradición. Se sienta sobre pieles de reno alrededor de un fuego crepitante mientras le preparan delante salmón ahumado, salchichas de reno y caza a la parrilla. La comida ronda los 64 € por persona, pero el momento es difícil de poner en precio.",
+          "Hoy, restaurantes kota como Kammi, en Hullu Poro (Levi), mantienen viva la tradición. Usted se sienta sobre pieles de reno alrededor de un fuego crepitante mientras le preparan delante salmón ahumado, salchichas de reno y caza a la parrilla. La comida ronda los 64 € por persona, pero el momento es difícil de poner en precio.",
           "Esto es lo que hace distinta a la cocina de Laponia. No es solo lo que hay en el plato, es el fuego, el humo, la nieve fuera, la aurora boreal en lo alto y los miles de años de ingenio humano que hicieron posible la comida."
         ],
         "quote": "Quizá la experiencia gastronómica más singular de Laponia no sea un restaurante en absoluto."
@@ -529,7 +529,7 @@
         "paragraphs": [
           "El final del verano en un bosque de Laponia es, en la práctica, ir a la compra. El derecho de todos, <strong>jokamiehenoikeus</strong>, lo hace posible: cualquiera, residente o de visita, puede caminar, recolectar y recoger por toda la naturaleza, sea de quien sea la tierra.",
           "No es un gesto simbólico. Da forma a toda la cultura gastronómica. Los bosques de Finlandia producen unos 500 millones de kilogramos de arándanos azules silvestres al año, pero solo se recoge entre el 5 y el 10 %. El resto alimenta a la fauna y repone el ecosistema.",
-          "Muchos de los mejores restaurantes de Laponia tienen recolectores profesionales en nómina, que pasan el verano en los fjälls y en los lindes del bosque maduro. \"De la granja a la mesa\" no lo describe. Esto es del bosque a la mesa y el bosque empieza detrás de la puerta de la cocina."
+          "Muchos de los mejores restaurantes de Laponia tienen recolectores profesionales en nómina, que pasan el verano en los fells y en los lindes del bosque maduro. \"De la granja a la mesa\" no lo describe. Esto es del bosque a la mesa y el bosque empieza detrás de la puerta de la cocina."
         ],
         "quote": "El arándano azul, el arándano rojo, la frambuesa silvestre, las setas y las hierbas silvestres crecen en tal cantidad que todo finlandés aprende a recolectar antes que a conducir."
       },
@@ -546,7 +546,7 @@
         "title": "Ningún animal alimentado con grano se le acerca",
         "paragraphs": [
           "No hay granjas de renos convencionales, los animales recorren unos 123.000 km² de naturaleza salvaje, pastando líquenes, musgo, hierbas silvestres y hojas de abedul. Están semidomesticados: los pastores los rastrean y gestionan, pero el movimiento es del propio animal.",
-          "Se nota en la carne. Un reno en libertad que ha pasado la vida recorriendo los fjälls y comiendo plantas silvestres da una carne magra, rica en ácidos grasos omega-3 y de sabor profundo. Ningún animal de granja alimentado con grano se le acerca.",
+          "Se nota en la carne. Un reno en libertad que ha pasado la vida recorriendo los fells y comiendo plantas silvestres da una carne magra, rica en ácidos grasos omega-3 y de sabor profundo. Ningún animal de granja alimentado con grano se le acerca.",
           "El sector finlandés del reno se gestiona a través de 54 cooperativas de pastoreo con tamaños máximos de rebaño limitados por ley. Los rodeos de otoño deciden cuántos pueden sacrificarse para mantener los rebaños sanos y el paisaje en equilibrio. La producción anual ronda los 2 millones de kilogramos de carne."
         ],
         "quote": "Todos los renos de la Laponia finlandesa viven en libertad."
@@ -602,7 +602,7 @@
       },
       {
         "name": "Hierbas silvestres",
-        "fact": "Angélica ártica, reina de los prados, epilobio y tomillo ártico, recogidos a mano en los prados de los fjälls y las lindes del bosque. Al crecer bajo semanas de sol de medianoche que no se pone, concentran aceites aromáticos, y por eso una pizca pequeña rinde mucho.",
+        "fact": "Angélica ártica, reina de los prados, epilobio y tomillo ártico, recogidos a mano en los prados de los fells y las lindes del bosque. Al crecer bajo semanas de sol de medianoche que no se pone, concentran aceites aromáticos, y por eso una pizca pequeña rinde mucho.",
         "season": "Junio–agosto"
       }
     ],
@@ -656,8 +656,8 @@
     "stayNearby": "Alójese cerca"
   },
   "relatedLinks": {
-    "kicker": "Sigue explorando",
+    "kicker": "Siga explorando",
     "headline": "Adónde ir después",
-    "lead": "Completa el viaje: acércate a los <bars>bares de cócteles y de hielo de Laponia</bars>, descubre <nightlife>adónde ir después de cenar</nightlife> y resuelve <stays>dónde alojarte cerca de estos restaurantes</stays>."
+    "lead": "Complete el viaje: acérquese a los <bars>bares de cócteles y de hielo de Laponia</bars>, descubra <nightlife>adónde ir después de cenar</nightlife> y resuelva <stays>dónde alojarse cerca de estos restaurantes</stays>."
   }
 }

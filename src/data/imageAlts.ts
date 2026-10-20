@@ -46,7 +46,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
   '/images/commons/saariselka-kaunispaa-summer': {
     en: 'Fell landscape below Kaunispää in Saariselkä on a July day, with a faint rainbow',
     fi: 'Tunturimaisemaa Kaunispään rinteiltä Saariselällä heinäkuun päivänä, taivaalla haalea sateenkaari',
-    de: 'Fjelllandschaft unterhalb des Kaunispää in Saariselkä an einem Julitag, mit einem schwachen Regenbogen',
+    de: 'Fjäll-Landschaft unterhalb des Kaunispää in Saariselkä an einem Julitag, mit einem schwachen Regenbogen',
     ja: '7月のサーリセルカ、カウニスパーのふもとに広がる丘陵とかすかな虹',
     es: 'Paisaje de colinas al pie del Kaunispää, en Saariselkä, un día de julio, con un arcoíris tenue',
     'pt-BR': 'Paisagem de colinas ao pé do Kaunispää, em Saariselkä, num dia de julho, com um arco-íris tênue',
@@ -54,7 +54,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
     ko: '7월 사리셀카 카우니스파 아래로 펼쳐진 구릉 풍경과 희미한 무지개',
     fr: "Paysage de collines au pied du Kaunispää, à Saariselkä, un jour de juillet, avec un léger arc-en-ciel",
     it: 'Paesaggio di colline ai piedi del Kaunispää, a Saariselkä, in un giorno di luglio, con un tenue arcobaleno',
-    nl: 'Fjelllandschap onder de Kaunispää in Saariselkä op een julidag, met een vage regenboog',
+    nl: 'Fjäll-landschap onder de Kaunispää in Saariselkä op een julidag, met een vage regenboog',
     sv: 'Fjällandskap nedanför Kaunispää i Saariselkä en julidag, med en svag regnbåge',
   },
   '/images/commons/north-finland-cloudberry': {
@@ -242,7 +242,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
   '/images/commons/muonio-pallas-hanhijarvi': {
     en: 'Hanhijärvi bog lake below the Pallastunturi fells in Muonio, seen from the air in September',
     fi: 'Hanhijärvi ja Pallastunturit Muoniossa ilmasta syyskuussa',
-    de: 'Der Moorsee Hanhijärvi unter den Pallastunturi-Fjells in Muonio, aus der Luft im September',
+    de: 'Der Moorsee Hanhijärvi unter den Pallastunturi-Fjälls in Muonio, aus der Luft im September',
     ja: '9月に上空から見たムオニオのパッラストゥントゥリの丘陵とハンヒヤルヴィ湿原湖',
     es: 'El lago de turbera Hanhijärvi bajo los montes Pallastunturi en Muonio, visto desde el aire en septiembre',
     'pt-BR': 'O lago de turfeira Hanhijärvi abaixo dos montes Pallastunturi, em Muonio, visto do alto em setembro',
@@ -250,7 +250,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
     ko: '9월 하늘에서 본 무오니오 팔라스툰투리 산 아래의 한히야르비 습지 호수',
     fr: 'Le lac de tourbière Hanhijärvi au pied des monts Pallastunturi à Muonio, vu du ciel en septembre',
     it: "Il lago di torbiera Hanhijärvi ai piedi dei monti Pallastunturi a Muonio, visto dall'alto a settembre",
-    nl: 'Het veenmeer Hanhijärvi onder de fjells van Pallastunturi in Muonio, vanuit de lucht in september',
+    nl: 'Het veenmeer Hanhijärvi onder de fjälls van Pallastunturi in Muonio, vanuit de lucht in september',
     sv: 'Myrsjön Hanhijärvi nedanför Pallastunturi-fjällen i Muonio, sedd från luften i september',
   },
   '/images/commons/rovaniemi-summer-beach': {
@@ -298,7 +298,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
   '/images/drive/saariselkaSummer': {
     en: 'Tables on a wooden terrace looking out over forested fells in summer',
     fi: 'Pöytiä puuterassilla, näkymä metsäisille tuntureille kesällä',
-    de: 'Tische auf einer Holzterrasse mit Blick über bewaldete Fjells im Sommer',
+    de: 'Tische auf einer Holzterrasse mit Blick über bewaldete Fjälls im Sommer',
     ja: '夏の森の丘陵を見渡す木のテラスに並ぶテーブル',
     es: 'Mesas en una terraza de madera con vistas a montes boscosos en verano',
     'pt-BR': 'Mesas em um terraço de madeira com vista para montes cobertos de floresta no verão',
@@ -306,7 +306,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
     ko: '여름 숲이 우거진 언덕을 내려다보는 나무 테라스의 테이블',
     fr: "Tables sur une terrasse en bois donnant sur des collines boisées en été",
     it: "Tavoli su una terrazza di legno con vista su colline boscose d'estate",
-    nl: "Tafels op een houten terras met uitzicht over beboste fjells in de zomer",
+    nl: "Tafels op een houten terras met uitzicht over beboste fjälls in de zomer",
     sv: 'Bord på en träterrass med utsikt över skogklädda fjäll på sommaren',
   },
   '/images/own/vesa-kultahippu-ivalo': {
@@ -315,7 +315,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
     de: 'Vesa von LaplandVibes mit LaplandVibes-Mütze vor dem Hotelrestaurant Kultahippu in Ivalo im Oktober',
     ja: '10月、イヴァロのホテルレストラン「クルタヒップ」の前に立つ、LaplandVibesのニット帽をかぶったLaplandVibesのヴェサ',
     es: 'Vesa, de LaplandVibes, con un gorro de LaplandVibes frente al hotel restaurante Kultahippu en Ivalo en octubre',
-    'pt-BR': 'Vesa, da LaplandVibes, com um gorro da LaplandVibes em frente ao hotel restaurante Kultahippu em Ivalo, em outubro',
+    'pt-BR': 'Vesa, do LaplandVibes, com um gorro do LaplandVibes em frente ao hotel restaurante Kultahippu em Ivalo, em outubro',
     'zh-CN': '十月，LaplandVibes 的 Vesa 戴着 LaplandVibes 毛线帽，站在伊瓦洛 Kultahippu 酒店餐厅门前',
     ko: '10월 이발로의 쿨타히푸 호텔 레스토랑 앞에서 LaplandVibes 비니를 쓴 LaplandVibes의 베사',
     fr: "Vesa, de LaplandVibes, avec un bonnet LaplandVibes devant l'hôtel-restaurant Kultahippu à Ivalo en octobre",
@@ -329,7 +329,7 @@ const IMAGE_ALTS: Record<string, Alt> = {
     de: 'Lappländischer Delikatessenteller im Kieppi Kitchen & Bar in Saariselkä: gebeizter Lachs, angebratenes Wild, Preiselbeeren und eingelegte Gurke',
     ja: 'サーリセルカのキエッピ・キッチン＆バーのラップランド前菜盛り合わせ。グラブラックス、焼いたジビエ、コケモモ、ピクルス',
     es: 'Plato de delicias de Laponia en Kieppi Kitchen & Bar, en Saariselkä: salmón curado, caza sellada, arándanos rojos y pepino encurtido',
-    'pt-BR': 'Prato de delícias lapônicas no Kieppi Kitchen & Bar, em Saariselkä: salmão curado, caça selada, lingonberries e pepino em conserva',
+    'pt-BR': 'Prato de delícias da Lapônia no Kieppi Kitchen & Bar, em Saariselkä: salmão curado, caça selada, airelas-vermelhas e pepino em conserva',
     'zh-CN': '萨里塞尔卡 Kieppi Kitchen & Bar 的拉普兰美味拼盘：腌三文鱼、香煎野味、越橘和腌黄瓜',
     ko: '사리셀카 키에피 키친 & 바의 라플란드 전채 플레이트: 염장 연어, 구운 야생고기, 링곤베리, 피클',
     fr: 'Assiette de spécialités de Laponie au Kieppi Kitchen & Bar à Saariselkä, avec saumon gravlax, gibier saisi, airelles et concombre mariné',

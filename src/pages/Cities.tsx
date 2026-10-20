@@ -39,7 +39,7 @@ export default function Cities() {
         name="description"
         content={t('cities.description', {
           defaultValue:
-            'Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi and nine more towns across Finnish Lapland — grouped by destination, with Google ratings and menu links.',
+            'Restaurants in Rovaniemi, Levi, Ylläs, Saariselkä, Inari, Kemi and eight more towns in Finnish Lapland. One page per town, with Google ratings and menu links.',
         })}
       />
       <Hreflang path="/cities" />
@@ -160,7 +160,7 @@ export default function Cities() {
           <p className="mt-10 text-center text-cream/60 text-sm leading-relaxed max-w-2xl mx-auto">
             {t('cities.moreLead', {
               defaultValue:
-                'Smaller places — Muonio, Hetta, Salla and Posio — have too few tables for a page of their own. They are on the full list.',
+                'Muonio, Hetta, Salla and Posio have too few tables between them for a page of their own. They are still on the full list.',
             })}{' '}
             <Link to={`${prefix}/restaurants`} className="text-amber font-bold no-underline hover:underline">
               {t('cities.shared.allRestaurants', { defaultValue: 'All restaurants →' })}

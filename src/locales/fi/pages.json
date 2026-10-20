@@ -163,10 +163,10 @@
       "title": "Ravintolat Rovaniemellä: missä syödä",
       "description": "Kahdeksan ravintolaa Rovaniemellä, Valtakadun poronfileestä Korkalonkadun korealaiseen keittiöön. Arviot, arvositaatit ja ruokalistalinkit.",
       "h1": "Ravintolat Rovaniemellä",
-      "tagline": "Lapin tihein pöytien rypäs — ja viisi niistä mahtuu neljälle kadulle.",
+      "tagline": "Lapin tihein pöytien rypäs: viisi niistä mahtuu neljälle kadulle.",
       "intro": "Rovaniemi on ainoa Lapin kaupunki, jossa ravintolan voi valita kävellen. Nili ja Arctic Restaurant ovat lähes vastakkain Valtakadulla ja hoitavat poron ja lakan. Parinsadan metrin päässä Roka Street Bistro Ainonkadulla ja Cafe & Bar 21 Rovakadulla ovat niitä paikkoja, joihin paikalliset menevät tavallisena tiistaina. Ja kun poro alkaa riittää, Korkalonkadun Hanki tekee korealaista.",
       "know": [
-        "Keskustan viisi ravintolaa ovat 500 metrin säteellä toisistaan — koko valinta on yksi kävelymatka.",
+        "Keskustan viisi ravintolaa ovat 500 metrin säteellä toisistaan: koko valinta on yksi kävelymatka.",
         "Kolme on keskustan ulkopuolella: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km Joulupukin pajakylän tiellä ja All About Salmon itse kylässä.",
         "Korkalonkadun Hanki on korealainen, ei lappilainen, ja on samassa tiiviissä keskustassa kuin muutkin."
       ],
@@ -196,7 +196,7 @@
       "know": [
         "Äkäslompolon ja Ylläsjärven väli on noin 11 km tunturin ympäri. Tarkista kumpaan kylään olet menossa ennen kuin lähdet.",
         "Ylläskammi on tunturin päällä, ei kummassakaan kylässä.",
-        "Ylläs tarkoittaa tällä sivustolla Äkäslompoloa silloin kun kylää ei erikseen mainita — Ylläsjärvi mainitaan aina."
+        "Ylläs tarkoittaa tällä sivustolla Äkäslompoloa silloin kun kylää ei erikseen mainita. Ylläsjärvi mainitaan aina."
       ],
       "at": "Ylläksellä"
     },
@@ -223,8 +223,8 @@
       "intro": "Inari on suurempi kuin moni Euroopan valtio, ja tämä sivu näyttää sen: ravintolat ovat hajallaan kymmenien kilometrien päässä toisistaan, eivät kylän keskustassa. Restaurant Aanaar veden äärellä Saarikoskentiellä on fine dining -sali. Kultahippu on 35 km etelässä Ivalossa, Muotkan Ruoktu 39 km Karigasniementietä, ja Arctic River Resort niiden välissä. Yksikään ei ole kävelymatkan päässä toisesta.",
       "know": [
         "Aanaar on ainoa itse Inarin kylässä. Muihin tarvitset auton.",
-        "Kultahippu on Ivalossa, 35 km etelässä — lentoaseman kylässä.",
-        "Muotkan Ruoktu on 39 km Karigasniementietä — harkittu ajomatka, ei poikkeama."
+        "Kultahippu on 35 km etelässä Ivalossa, lentoaseman kylässä.",
+        "Muotkan Ruoktu on 39 km Karigasniementietä: harkittu ajomatka, ei poikkeama."
       ],
       "at": "Inarissa"
     },
@@ -236,9 +236,9 @@
       "tagline": "Merikaupunki, ja pöydät seuraavat vettä.",
       "intro": "Kemi syö kahta linjaa pitkin: rantaa ja pääkatua. Kemin Puistopaviljonki ja Pizzeria San Milano jakavat saman merenranta-osoitteen Meripuistonpolulla, ja Sataman Krouwi ja Perämeren Jähti on satamassa. Keskustassa Pieni Lohikäärme ja Ravintola Mori ovat vastakkain Valtakadun yli.",
       "know": [
-        "Kaksi niistä jakaa yhden osoitteen merenrannalla — Puistopaviljonki ja San Milano.",
+        "Kaksi niistä jakaa yhden osoitteen merenrannalla: Puistopaviljonki ja San Milano.",
         "Kemi on Helsingin päärataverkossa, joten se on yksi harvoista Lapin kaupungeista jonne pääsee ilman autoa.",
-        "Sataman ravintola elää eri kautta kuin keskustan paikat — LumiLinna vetää talvella väen."
+        "Sataman ravintola elää eri kautta kuin keskustan paikat: LumiLinna vetää talvella väen."
       ],
       "at": "Kemissä"
     },
@@ -250,7 +250,7 @@
       "tagline": "Rajakaupunki, jossa kolme viidestä jakaa yhden kadun.",
       "intro": "Tornion valikoima on poikkeuksellisen tiivis: Ravintola Umpitunneli, Mustaparran Päämaja ja Tmi Hevi Pizza ovat kaikki Hallituskadulla, parin minuutin päässä toisistaan. Ravintola Golden Flower on Eliaksenkadulla, ja Amico täydentää listan Torikadulla. Joen toisella puolella on Haparanda, joka on Ruotsia ja jolla on oma sivunsa.",
       "know": [
-        "Kolme niistä on Hallituskadulla — kaikkien kolmen ruokalistat ehtii lukea yhdellä kävelyllä.",
+        "Kolme niistä on Hallituskadulla, joten kaikkien kolmen ruokalistat ehtii lukea yhdellä kävelyllä.",
         "Haparanda on sillan yli ja Ruotsissa: eri valuutta, ja kello siirtyy tunnin taaksepäin.",
         "Tornio ja Haparanda toimivat käytännössä yhtenä kaupunkina, joten pöytä toisella puolella on kävelymatka, ei matka."
       ],
@@ -261,11 +261,11 @@
       "title": "Ravintolat Haaparannalla, Ruotsissa",
       "description": "Viisi ravintolaa Haaparannalla Tornion rajan takana: torin hotelli, jokivarren klassikko 15 km ylävirtaan, sushia ja thaita. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Haaparannalla",
-      "tagline": "Sillan yli Torniosta — käytännössä sama kaupunki, paperilla eri maa.",
+      "tagline": "Sillan yli Torniosta: käytännössä sama kaupunki, paperilla eri maa.",
       "intro": "Haaparanta on Ruotsissa, mikä muuttaa kolme käytännön asiaa: hinnat ovat kruunuissa, kello on tunnin Suomea jäljessä, ja keskusta on silti yhteinen Tornion kanssa. Haparanda Stadshotell on torilla, Leilani ja Haparanda Sushi & Indiskt parin kadun päässä, ja Cape East Sundholmenilla. Kukkolaforsen on 15 km ylävirtaan ja harkittu retki eikä kävelymatka.",
       "know": [
         "Ruotsi, ei Suomi: hinnat kruunuissa, ja paikallinen aika on tunnin Torniota jäljessä.",
-        "Kukkolaforsen on 15 km pohjoiseen jokivartta — varaa auto.",
+        "Kukkolaforsen on 15 km pohjoiseen jokivartta. Varaa auto.",
         "Suomi ja Ruotsi ovat molemmat Schengenissä; Torniosta kävelee yli minuuteissa."
       ],
       "at": "Haaparannalla"
@@ -278,7 +278,7 @@
       "tagline": "Pysähdys Jäämerentiellä, ja suurin osa valikoimasta on sen varrella.",
       "intro": "Sodankylä on pitkän pohjoisen ajomatkan puoliväli, ja ravintolat asettuvat sen mukaan: Sodankylän turkinpippuri, Ravintola RuusuSuola ja Sodankylän Olohuone Tähti ovat kaikki Jäämerentiellä, sillä tiellä joka lopulta päätyy Jäämerelle. Tori-Kioski Mikkola ja Piitsi Pubi täydentävät listan päätien ulkopuolelta.",
       "know": [
-        "Kolme niistä on Jäämerentiellä, kaupungin läpi kulkevalla päätiellä — helppo yhdistää ajotaukoon.",
+        "Kolme niistä on Jäämerentiellä, kaupungin läpi kulkevalla päätiellä. Ne on helppo yhdistää ajotaukoon.",
         "Kaupunki täyttyy kesäkuun puolivälissä Sodankylän elokuvajuhlien aikaan; pöydistä on silloin pulaa.",
         "Luosto on noin 32 km päässä ja sillä on oma sivunsa."
       ],
@@ -303,7 +303,7 @@
       "title": "Ravintolat Luostolla: missä syödä",
       "description": "Neljä ruokapaikkaa Luostolla, Pyhä-Luoston hiljaisemmalla puoliskolla: hotellin keloravintola, hovin keittiö ja rinteen pysähdys. Arviot ja ruokalistalinkit.",
       "h1": "Ravintolat Luostolla",
-      "tagline": "Kansallispuiston hiljaisempi puolisko — neljä keittiötä, ei jonoa.",
+      "tagline": "Kansallispuiston hiljaisempi puolisko: neljä keittiötä, ei jonoa.",
       "intro": "Luosto on Pyhä-Luoston kahdesta keskuksesta pienempi ja hiljaisempi, ja lista on niin lyhyt että sen lukee minuutissa. Restaurant Punakettu on Luostontiellä, Keloravintola Lapland Hotels Luostotunturi Luppokeinolla ja Luoston Hovi Ellitsantiellä, ja Skiknööli on rinteen pysähdys. Luosto kuuluu Sodankylän kuntaan, joten useassa osoitteessa lukee Sodankylä.",
       "know": [
         "Listalla on vain neljä paikkaa, joten vilkkaina hiihtoviikkoina kannattaa varata ajoissa.",
@@ -348,7 +348,7 @@
       "tagline": "Koko valikoima mahtuu 800 metriin.",
       "intro": "Kemijärvi on sivuston kävelyystävällisin kaupunki: jokainen täkäläinen ravintola on 800 metrin säteellä toisistaan keskustassa, kaksi niistä naapureina Vapaudenkadulla. Mestarin Kievari on Kirkkokadulla, Jauri Resort ja Restaurant Susa's Bistro muutaman minuutin päässä, ja Rosa Pizza Kebab ja Pizza Mestarit hoitavat arjen.",
       "know": [
-        "Kaikki ovat 800 metrin säteellä — jokaisen ruokalistan ehtii katsoa yhdellä kävelyllä.",
+        "Kaikki ovat 800 metrin säteellä: jokaisen ruokalistan ehtii katsoa yhdellä kävelyllä.",
         "Susa's Bistro ja Rosa Pizza Kebab ovat naapureita Vapaudenkadulla.",
         "Kemijärvi on radan varrella, joten sinne pääsee ilman autoa."
       ],

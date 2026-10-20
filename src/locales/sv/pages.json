@@ -163,10 +163,10 @@
       "title": "Restauranger i Rovaniemi: var man äter",
       "description": "Åtta restauranger i Rovaniemi, från renfilé på Valtakatu till ett koreanskt kök på Korkalonkatu. Betyg, recensionscitat och menylänkar.",
       "h1": "Restauranger i Rovaniemi",
-      "tagline": "Lapplands tätaste klunga av bord — fem av dem ryms på fyra gator.",
+      "tagline": "Lapplands tätaste klunga av bord: fem av dem ryms på fyra gator.",
       "intro": "Rovaniemi är den enda staden i Lappland där man väljer restaurang till fots. Nili och Arctic Restaurant ligger nästan mitt emot varandra på Valtakatu och sköter ren och hjortron. Ett par hundra meter bort är Roka Street Bistro på Ainonkatu och Cafe & Bar 21 på Rovakatu de rum dit lokalborna går en vanlig tisdag. Och när det har blivit nog med ren lagar Hanki på Korkalonkatu koreanskt.",
       "know": [
-        "De fem restaurangerna i centrum ligger inom 500 m från varandra — hela urvalet är en promenad.",
+        "De fem restaurangerna i centrum ligger inom 500 m från varandra, så hela urvalet är en promenad.",
         "Tre ligger utanför centrum: Sky Kitchen & View 2,4 km, Kotahovi 6,8 km längs vägen till Tomtens by och All About Salmon i själva byn.",
         "Hanki på Korkalonkatu är koreansk, inte lappländsk, och ligger i samma täta centrum som de andra."
       ],
@@ -196,7 +196,7 @@
       "know": [
         "Äkäslompolo och Ylläsjärvi ligger ungefär 11 km isär runt fjället. Kolla vilken by din restaurang ligger i innan du åker.",
         "Ylläskammi ligger uppe på fjället, inte i någon av byarna.",
-        "Ylläs betyder Äkäslompolo på den här sajten när ingen by nämns — Ylläsjärvi nämns alltid."
+        "Ylläs betyder Äkäslompolo på den här sajten när ingen by nämns, men Ylläsjärvi nämns alltid."
       ],
       "at": "Ylläs"
     },
@@ -223,8 +223,8 @@
       "intro": "Enare är större än flera europeiska länder, och den här sidan visar det: restaurangerna ligger utspridda över tiotals kilometer i stället för i ett bycentrum. Restaurant Aanaar vid vattnet på Saarikoskentie är fine dining-salen. Kultahippu ligger 35 km söderut i Ivalo, Muotkan Ruoktu 39 km längs vägen mot Karigasniemi, och Arctic River Resort däremellan. Ingen av dem ligger inom gångavstånd från en annan.",
       "know": [
         "Aanaar är den enda i själva Enare by. För de övriga behöver du bil.",
-        "Kultahippu ligger i Ivalo, 35 km söderut — orten med flygplatsen.",
-        "Muotkan Ruoktu ligger 39 km längs vägen mot Karigasniemi — en medveten körning, ingen avstickare."
+        "Kultahippu ligger 35 km söderut i Ivalo, orten med flygplatsen.",
+        "Muotkan Ruoktu ligger 39 km längs vägen mot Karigasniemi: en medveten körning, ingen avstickare."
       ],
       "at": "Enare"
     },
@@ -236,9 +236,9 @@
       "tagline": "En stad vid havet, och borden följer vattnet.",
       "intro": "Kemi äter längs två linjer: stranden och huvudgatan. Kemin Puistopaviljonki och Pizzeria San Milano delar samma adress vid havet på Meripuistonpolku, och Sataman Krouwi ja Perämeren Jähti ligger nere i hamnen. I centrum står Pieni Lohikäärme och Ravintola Mori mitt emot varandra över Valtakatu.",
       "know": [
-        "Två av dem delar en adress vid havet — Puistopaviljonki och San Milano.",
+        "Två av dem delar en adress vid havet: Puistopaviljonki och San Milano.",
         "Kemi ligger vid huvudbanan från Helsingfors, så det är en av få lappländska städer man når utan bil.",
-        "Hamnrestaurangen lever på en annan säsong än de i centrum — på vintern drar SnowCastle folket."
+        "Hamnrestaurangen lever på en annan säsong än de i centrum: på vintern drar SnowCastle folket."
       ],
       "at": "Kemi"
     },
@@ -250,7 +250,7 @@
       "tagline": "En gränsstad där tre av fem delar en gata.",
       "intro": "Utbudet i Torneå är ovanligt tätt: Ravintola Umpitunneli, Mustaparran Päämaja och Tmi Hevi Pizza ligger alla på Hallituskatu, ett par minuter från varandra. Ravintola Golden Flower ligger på Eliaksenkatu, och Amico fyller ut listan på Torikatu. På andra sidan älven ligger Haparanda, som är Sverige och har en egen sida.",
       "know": [
-        "Tre av dem ligger på Hallituskatu — alla tre menyerna hinner du läsa på en promenad.",
+        "Tre av dem ligger på Hallituskatu, så du hinner läsa alla tre menyerna på en promenad.",
         "Haparanda ligger över bron och i Sverige: annan valuta, och klockan går tillbaka en timme.",
         "Torneå och Haparanda fungerar i praktiken som en stad, så ett bord på andra sidan är en promenad, inte en resa."
       ],
@@ -261,11 +261,11 @@
       "title": "Restauranger i Haparanda",
       "description": "Fem restauranger i Haparanda mitt emot Torneå: hotellet vid torget, en klassiker 15 km uppströms, sushi och thai. Betyg och menylänkar.",
       "h1": "Restauranger i Haparanda",
-      "tagline": "Över bron från Torneå — i praktiken samma stad, på papperet ett annat land.",
+      "tagline": "Över bron från Torneå: i praktiken samma stad, på papperet ett annat land.",
       "intro": "Haparanda ligger i Sverige, vilket ändrar tre praktiska saker: priserna är i kronor, klockan går en timme efter Finland, och centrum delas ändå med Torneå. Haparanda Stadshotell ligger vid torget, Leilani och Haparanda Sushi & Indiskt ett par gator bort, och Cape East ute på Sundholmen. Kukkolaforsen ligger 15 km uppströms och är en medveten utflykt snarare än en promenad.",
       "know": [
         "Sverige, inte Finland: priser i SEK, och lokal tid ligger en timme efter Torneå.",
-        "Kukkolaforsen ligger 15 km norrut längs älven — planera för bil.",
+        "Kukkolaforsen ligger 15 km norrut längs älven. Planera för bil.",
         "Finland och Sverige är båda med i Schengen; att gå över från Torneå tar minuter."
       ],
       "at": "Haparanda"
@@ -278,7 +278,7 @@
       "tagline": "Ett stopp vid Ishavsvägen, och det mesta ligger längs den.",
       "intro": "Sodankylä är halvvägs på den långa körningen norrut, och restaurangerna ställer upp sig därefter: Sodankylän turkinpippuri, Ravintola RuusuSuola och Sodankylän Olohuone Tähti ligger alla vid Jäämerentie, vägen som till slut når Ishavet. Tori-Kioski Mikkola och Piitsi Pubi fyller ut vid sidan av huvudvägen.",
       "know": [
-        "Tre av dem ligger vid Jäämerentie, huvudvägen genom orten — lätt att kombinera med en körpaus.",
+        "Tre av dem ligger vid Jäämerentie, huvudvägen genom orten, så det är lätt att kombinera med en körpaus.",
         "Orten fylls i mitten av juni under Midnattssolens filmfestival; bord blir knappa den veckan.",
         "Luosto ligger ungefär 32 km bort och har en egen sida."
       ],
@@ -303,7 +303,7 @@
       "title": "Restauranger i Luosto: var man äter",
       "description": "Fyra ställen att äta på i Luosto, den lugnare halvan av Pyhä-Luosto: hotellets kelorestaurang, gårdens kök och stoppet vid backen.",
       "h1": "Restauranger i Luosto",
-      "tagline": "Nationalparkens lugnare halva — fyra kök, ingen kö.",
+      "tagline": "Nationalparkens lugnare halva: fyra kök, ingen kö.",
       "intro": "Luosto är den mindre och lugnare av Pyhä-Luostos två orter, och listan är kort nog att läsas på en minut. Restaurant Punakettu ligger vid Luostontie, Keloravintola Lapland Hotels Luostotunturi vid Luppokeino och Luoston Hovi vid Ellitsantie, och Skiknööli är stoppet vid backen. Luosto hör till Sodankylä kommun, så flera adresser säger Sodankylä.",
       "know": [
         "Med bara fyra ställen på listan lönar det sig att boka i förväg under de fulla skidveckorna.",
@@ -348,7 +348,7 @@
       "tagline": "Hela urvalet ryms på 800 meter.",
       "intro": "Kemijärvi är sajtens mest gångvänliga stad: varje restaurang här ligger inom 800 meter från de andra i centrum, två av dem som grannar på Vapaudenkatu. Mestarin Kievari ligger på Kirkkokatu, Jauri Resort och Restaurant Susa's Bistro några minuter bort, och Rosa Pizza Kebab och Pizza Mestarit täcker vardagen.",
       "know": [
-        "Alla ligger inom 800 m — varje meny hinner du titta på under en promenad.",
+        "Alla ligger inom 800 m, så du hinner titta på varje meny under en promenad.",
         "Susa's Bistro och Rosa Pizza Kebab är grannar på Vapaudenkatu.",
         "Kemijärvi ligger vid järnvägen, så det går att ta sig dit utan bil."
       ],
