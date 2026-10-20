@@ -1,0 +1,41 @@
+{
+  "_ohje": "Osoitteet jotka estavat koneen (429, Cloudflare 52x, katkaistu TLS) mutta on avattu selaimessa ja todettu toimiviksi. Vahdit (check-menu-links.mjs, check-website-links.mjs) hyvaksyvat bottieston vain tasmalleen tassa olevalle osoitteelle ja vain 92 paivaa tarkistuspaivasta. Uusi tarkistus = avaa osoite selaimessa, lue etta sivu on oikean ravintolan oikea sivu, paivita checked ja note.",
+  "urls": {
+    "https://raflaamo.fi/fi/ravintola/kittila/grill-it-levi": {
+      "checked": "2026-10-20",
+      "note": "Grill it! Levin sivu (Break Sokos Hotel Levi, Tahtitie 5), avoinna, ohjautuu www.raflaamo.fi:hin. Koneelle 429."
+    },
+    "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi/menu/14987/ruokalista": {
+      "checked": "2026-10-20",
+      "note": "A la carte -ruokalista, 60 hintaa. Koneelle 429."
+    },
+    "https://www.raflaamo.fi/en/restaurant/kittila/grill-it-levi/menu/14987/a-la-carte": {
+      "checked": "2026-10-20",
+      "note": "A la carte -lista englanniksi hintoineen. Koneelle 429."
+    },
+    "https://fieno.fi/": {
+      "checked": "2026-10-20",
+      "note": "Fienon etusivu, avoinna ke-la klo 14-21. Kone saa TLS-katkon (UND_ERR_SOCKET)."
+    },
+    "https://fieno.fi/ruokalistat/": {
+      "checked": "2026-10-20",
+      "note": "Lokakuun pizzalista hintoineen. Kone saa TLS-katkon."
+    },
+    "https://fieno.fi/en/menus/": {
+      "checked": "2026-10-20",
+      "note": "Sama lista englanniksi. Kone saa TLS-katkon."
+    },
+    "https://skisaariselka.com/fi/ravintola/": {
+      "checked": "2026-10-20",
+      "note": "Lieggâ Láávun sivu: kesakausi paattyi 20.9.2026, talvikauden tavoiteaukiolo 21.11.2026-2.5.2027. Kone saa TLS-katkon."
+    },
+    "https://muotkanruoktu.fi/": {
+      "checked": "2026-10-20",
+      "note": "Muotkan Ruoktun etusivu (majoitus, ravintola, keittio auki paivittain 12-15 ja 18-21). Koneelle Cloudflaren 520."
+    },
+    "https://www.laplandhotels.com/fi/hotellit-ja-kohteet/luosto/lapland-hotels-luostotunturi/ravintolat": {
+      "checked": "2026-10-20",
+      "note": "Lapland Hotels Luostotunturin ravintolasivu: Keloravintola (tilauksesta), a la carte Bistro. Koneelle 429."
+    }
+  }
+}

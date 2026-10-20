@@ -907,5 +907,101 @@
   "site": "https://www.facebook.com/share/1bqZrHSGsv/?mibextid=wwXIfr",
   "verdict": "nosite",
   "reason": "vain Facebook- tai Instagram-sivu"
+ },
+ {
+  "slug": "kuusamo-riipisen-riistaravintola",
+  "name": "Riipisen Riistaravintola",
+  "city": "Ruka",
+  "site": "https://www.riistaravintola.fi/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "saariselka-kieppi-kitchen-bar",
+  "name": "Kieppi Kitchen & Bar",
+  "city": "Saariselkä",
+  "site": "https://wildernesshotels.fi/wilderness-hotel-kieppi/restaurant",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-royal-ruka",
+  "name": "Royal Ruka",
+  "city": "Ruka",
+  "site": "https://royalruka.fi/en/restaurant/wild-food-restaurant",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-rinneravintola-piste",
+  "name": "Rinneravintola Piste",
+  "city": "Ruka",
+  "site": "https://www.ravintolapiste.fi/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-ravintola-vespino",
+  "name": "Ravintola Vespino",
+  "city": "Ruka",
+  "site": "https://www.vespino.fi/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-colorado-bar-grill",
+  "name": "Colorado Bar & Grill Ruka",
+  "city": "Ruka",
+  "site": "https://www.ravintolacolorado.fi/en/colorado-ruka/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-ravintola-kaltiokivi",
+  "name": "Ravintola Kaltiokivi",
+  "city": "Ruka",
+  "site": "https://www.scandichotels.com/en/hotels/scandic-rukahovi",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-talonpoyta-cafe-pinseria",
+  "name": "Talonpöytä Café & Pinseria Ruka",
+  "city": "Ruka",
+  "site": "https://talonpoyta.fi/ruka/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-camp-kitchen-bar",
+  "name": "CAMP Kitchen & Bar Ruka",
+  "city": "Ruka",
+  "site": "https://www.campkitchen.fi/en",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "ruka-ravintola-iisakin-talo",
+  "name": "Ravintola Iisakin Talo",
+  "city": "Ruka",
+  "site": "https://rukasafaris.fi/en/restaurant-iisakin-talo/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "kuusamo-torin-vintti",
+  "name": "Torin Vintti",
+  "city": "Kuusamo",
+  "site": "https://www.torinvintti.fi/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
+ },
+ {
+  "slug": "kuusamo-olearys",
+  "name": "O'Learys Kuusamo",
+  "city": "Kuusamo",
+  "site": "https://www.holidayclubresorts.com/en/hotels-resorts/kuusamon-tropiikki/restaurants-and-services/",
+  "verdict": "manual",
+  "note": "kasin kuratoitu gemsi (restaurant-gems.ts); ruokalista tarkistettu kasin, ks. restaurant-menus.json"
  }
 ]

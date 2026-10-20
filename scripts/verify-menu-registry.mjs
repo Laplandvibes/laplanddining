@@ -20,6 +20,27 @@ const slugs = cands.map((c) => c.slug);
 const siteBySlug = Object.fromEntries(cands.map((c) => [c.slug, c.site]));
 
 const errors = [];
+
+const bare = (u) => { try { return new URL(u).hostname.replace(/^www\./i, '').toLowerCase(); } catch { return ''; } };
+
+/**
+ * Sama sivusto = sama domain tai sen alidomain. Scandicin ruokalistat tulevat
+ * menu.scandichotels.com:sta, joka on hotelliketjun oma palvelu (Kaltiokivi,
+ * 20.10.2026). Vieras domain (ruokalistasivut.fi) ei kelpaa edelleenkaan.
+ */
+const sameSite = (u, site) => {
+  const a = bare(u);
+  const b = bare(site);
+  return a !== '' && (a === b || a.endsWith('.' + b));
+};
+
+/**
+ * Tiedostotyyppi osoitteesta, paitsi kun rivi kertoo sen: palvelu joka antaa
+ * PDF:n ilman .pdf-paatetta (GetMenufile?fileId=…) kirjataan
+ * `contentType: 'application/pdf'`, ja kuukausivahti tarkistaa otsakkeen.
+ */
+const kindOf = (u, contentType) =>
+  (classifyKind(u) === 'page' && /pdf/i.test(contentType ?? '') ? 'pdf' : classifyKind(u));
 const seenUrls = new Map();
 
 for (const slug of slugs) {
@@ -36,17 +57,26 @@ for (const slug of slugs) {
   if (!e.url) { errors.push(`${slug}: ei urlia eika status: none`); continue; }
   if (!/^https?:\/\//i.test(e.url)) errors.push(`${slug}: url ei ole http(s)`);
   if (classifyKind(e.url) === 'image') errors.push(`${slug}: url on kuvatiedosto (${e.url})`);
-  if (e.kind !== classifyKind(e.url)) errors.push(`${slug}: kind=${e.kind} ei vastaa urlia ${e.url}`);
+  if (e.kind !== kindOf(e.url, e.contentType)) errors.push(`${slug}: kind=${e.kind} ei vastaa urlia ${e.url}`);
   if (isFrontPage(e.url)) errors.push(`${slug}: url on sivuston etusivu (${e.url})`);
   if (!e.title) errors.push(`${slug}: title puuttuu`);
   if (typeof e.evidence !== 'number') errors.push(`${slug}: evidence puuttuu`);
+  // validUntil = viimeinen voimassaolopaiva (kuukauden lista, kampanjamenu).
+  // Sivusto piilottaa linkin sen jalkeen, joten muodon on oltava tasmallinen.
+  if (e.validUntil !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(e.validUntil)) {
+    errors.push(`${slug}: validUntil ei ole muotoa YYYY-MM-DD (${e.validUntil})`);
+  }
+  // Rivikohtainen hintaraja vain perusteltuna: muuten vahdin portti loystyy hiljaa.
+  if (e.evidenceMin !== undefined) {
+    if (typeof e.evidenceMin !== 'number' || e.evidenceMin < 1) errors.push(`${slug}: evidenceMin on oltava luku >= 1`);
+    if (!e.note) errors.push(`${slug}: evidenceMin ilman note-perustetta`);
+  }
   // Sama URL kahdelle ravintolalle tarkoittaa etta toinen sai naapurin listan.
   if (seenUrls.has(e.url)) errors.push(`${slug}: sama url kuin ${seenUrls.get(e.url)} (${e.url})`);
   seenUrls.set(e.url, slug);
   // Ruokalistan pitaa olla ravintolan omalla sivustolla.
   const site = siteBySlug[slug];
-  const bare = (u) => { try { return new URL(u).hostname.replace(/^www\./i, '').toLowerCase(); } catch { return ''; } };
-  if (site && bare(e.url) !== bare(site)) {
+  if (site && !sameSite(e.url, site)) {
     errors.push(`${slug}: url on eri domainilla kuin verkkosivu (${bare(e.url)} vs ${bare(site)})`);
   }
 
@@ -54,10 +84,10 @@ for (const slug of slugs) {
   if (e.urlEn) {
     if (!/^https?:\/\//i.test(e.urlEn)) errors.push(`${slug}: urlEn ei ole http(s)`);
     if (classifyKind(e.urlEn) === 'image') errors.push(`${slug}: urlEn on kuvatiedosto`);
-    if (e.kindEn !== classifyKind(e.urlEn)) errors.push(`${slug}: kindEn ei vastaa urlEn:aa`);
+    if (e.kindEn !== kindOf(e.urlEn, e.contentType)) errors.push(`${slug}: kindEn ei vastaa urlEn:aa`);
     if (isFrontPage(e.urlEn)) errors.push(`${slug}: urlEn on sivuston etusivu (${e.urlEn})`);
     if (e.urlEn === e.url) errors.push(`${slug}: urlEn on sama kuin url`);
-    if (site && bare(e.urlEn) !== bare(site)) {
+    if (site && !sameSite(e.urlEn, site)) {
       errors.push(`${slug}: urlEn on eri domainilla kuin verkkosivu (${bare(e.urlEn)} vs ${bare(site)})`);
     }
   }

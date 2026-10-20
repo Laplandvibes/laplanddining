@@ -52,16 +52,18 @@
     "note": "paivatty PDF-polku, vaihtuu kaudessa, kuukausivahti seuraa"
   },
   "inari-gastropub-giitu": {
-    "url": "https://gastropubgiitu.fi/ruokalista",
+    "url": "https://gastropubgiitu.fi/lokakuu",
     "kind": "page",
     "title": "Ruokalista",
-    "evidence": 36,
-    "checkedAt": "2026-08-10"
+    "evidence": 30,
+    "checkedAt": "2026-10-20",
+    "validUntil": "2026-10-31",
+    "note": "Navin Ruokalista-linkki vie kuukauden mukaan nimetylle sivulle (/lokakuu); /ruokalista, /syyskuu ja /elokuu ovat 404. Linkki piiloutuu 1.11. ja vahti pyytaa uuden osoitteen."
   },
   "inari-muotkan-ruoktu-tunturikyla": {
     "status": "none",
-    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-10-20",
+    "reason": "ravintolasivu muotkanruoktu.fi/fi/ravintola/ linkittaa ruokalistat kuvina tallennettuina PDF-tiedostoina (lisatty 2024/10); ajantasaisuutta ei voi lukea, sivu kehottaa soittamaan paivan ruoista"
   },
   "inari-restaurant-aanaar": {
     "url": "https://www.restaurantaanaar.fi/a-la-carte/",
@@ -121,8 +123,10 @@
     "url": "https://www.mestarinkievari.fi/ravintola",
     "kind": "page",
     "title": "Ravintola | Mestarinkievari",
-    "evidence": 3,
-    "checkedAt": "2026-08-10"
+    "evidence": 1,
+    "evidenceMin": 1,
+    "checkedAt": "2026-10-20",
+    "note": "Ravintolasivulla viikon lounaslista (ma-la, yksi buffet-hinta). A la carte -otsikon alla ei 20.10.2026 ollut listaa, siksi hintaraja 1."
   },
   "kemijarvi-pizza-mestarit": {
     "status": "none",
@@ -156,15 +160,9 @@
     "evidenceEn": 8
   },
   "kittila-riihi-restaurant": {
-    "url": "https://immelkartano.fi/ravintola-riihi/",
-    "kind": "page",
-    "title": "Ravintola Riihi - Immelkartano Levi Lapland Finland",
-    "evidence": 6,
-    "checkedAt": "2026-08-10",
-    "urlEn": "https://immelkartano.fi/riihi-restaurant/?lang=en",
-    "kindEn": "page",
-    "titleEn": "Riihi Restaurant - Immelkartano Levi Lapland Finland",
-    "evidenceEn": 6
+    "status": "none",
+    "checkedAt": "2026-10-20",
+    "reason": "ravintola lopettanut: Immelkartano ilmoittaa sivullaan etta Ravintola Riihi siirtyi uudelle omistajalle, joka ei jatka matkailutoimintaa; listaus piilotettu 2026-10-20"
   },
   "kittila-saamen-kammi": {
     "url": "https://www.kammi.fi/menu2",
@@ -223,15 +221,16 @@
     "checkedAt": "2026-08-10"
   },
   "levi-grill-it-levi": {
-    "url": "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi/menu/13419/ruokalista",
+    "url": "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi/menu/14987/ruokalista",
     "kind": "page",
     "title": "Ruokalista | Grill it! Levi | Raflaamo.fi",
-    "evidence": 70,
-    "checkedAt": "2026-08-10",
-    "urlEn": "https://www.raflaamo.fi/en/restaurant/kittila/grill-it-levi/menu/13419/a-la-carte",
+    "evidence": 60,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://www.raflaamo.fi/en/restaurant/kittila/grill-it-levi/menu/14987/a-la-carte",
     "kindEn": "page",
     "titleEn": "À la Carte | Grill it! Levi | Raflaamo.fi",
-    "evidenceEn": 70
+    "evidenceEn": 60,
+    "note": "Vanha /menu/13419/ ohjautuu juhlakauden setteihin; a la carte on nyt /menu/14987/. raflaamo.fi vastaa koneelle 429, tarkistettu selaimella."
   },
   "levi-panoramic-restaurant-tuikku": {
     "status": "none",
@@ -262,8 +261,8 @@
   },
   "luosto-keloravintola-lapland-hotels-luostotunturi": {
     "status": "none",
-    "reason": "sivustolta ei loytynyt ruokalistaa etusivulta, navista eika yleisista poluista",
-    "checkedAt": "2026-08-10"
+    "checkedAt": "2026-10-20",
+    "reason": "tilausravintola (hotellin sivu: \"Keloravintola (tilauksesta)\", teemaillat ja tanssit), ei omaa ruokalistaa; hotellin a la carte -listat ovat Bistron"
   },
   "luosto-luoston-hovi-ravintola": {
     "status": "none",
@@ -404,11 +403,17 @@
     "checkedAt": "2026-08-10"
   },
   "rovaniemi-nili-restaurant": {
-    "url": "https://nili.fi/menu/",
+    "url": "https://nili.fi/synttarimenu-11-9-31-10/",
     "kind": "page",
-    "title": "Menu - Ravintola Nili",
-    "evidence": 0,
-    "checkedAt": "2026-08-10"
+    "title": "Synttärimenu 11.9.-31.10. - Ravintola Nili",
+    "evidence": 3,
+    "checkedAt": "2026-10-20",
+    "urlEn": "https://nili.fi/en/anniversary-menu-11-9-31-10/",
+    "kindEn": "page",
+    "titleEn": "Anniversary menu 11.9.-31.10. - Restaurant Nili",
+    "evidenceEn": 3,
+    "validUntil": "2026-10-31",
+    "note": "Nilin 20-vuotismenu on sivun mukaan ainoa lista 11.9.-31.10.2026 (ei a la cartea). /menu/ ohjautuu etusivulle ja etusivun \"Katso menu\" (-1-11) myos. Linkki piiloutuu 1.11."
   },
   "rovaniemi-restaurant-roka-street-bistro": {
     "url": "https://ravintolaroka.fi/menu/",
@@ -431,11 +436,12 @@
     "kind": "page",
     "title": "Ruokalistat - Fieno Saariselkä",
     "evidence": 40,
-    "checkedAt": "2026-08-10",
+    "checkedAt": "2026-10-20",
     "urlEn": "https://fieno.fi/en/menus/",
     "kindEn": "page",
     "titleEn": "Menus - Fieno Saariselkä",
-    "evidenceEn": 40
+    "evidenceEn": 40,
+    "note": "fieno.fi katkaisee koneen TLS-yhteyden; selaimessa lokakuun pizzalista hintoineen 20.10.2026."
   },
   "saariselka-galdu-restaurant": {
     "status": "none",
@@ -530,12 +536,12 @@
     "checkedAt": "2026-08-10"
   },
   "tornio-ravintola-umpitunneli": {
-    "url": "http://umpitunneli.fi/wp-content/uploads/2026/06/Umpitunneli-Menu-2026.pdf",
+    "url": "http://umpitunneli.fi/wp-content/uploads/2026/09/Umpitunneli-menu-2026-2027-syksy-talvi.pdf",
     "kind": "pdf",
-    "title": "Ravintola Umpitunneli (PDF)",
+    "title": "Ravintola Umpitunneli, menu syksy-talvi 2026-2027 (PDF)",
     "evidence": 0,
-    "checkedAt": "2026-08-10",
-    "note": "paivatty PDF-polku, vaihtuu kaudessa, kuukausivahti seuraa"
+    "checkedAt": "2026-10-20",
+    "note": "kausi-PDF (syksy-talvi 2026-2027), linkki etusivun \"Tasta voit ladata ruokalistan\"; polku vaihtuu kaudessa, kuukausivahti seuraa"
   },
   "tornio-tmi-hevi-pizza": {
     "status": "none",
@@ -581,11 +587,9 @@
     "checkedAt": "2026-08-10"
   },
   "yllas-yllaksen-evaskori-joiku-pub": {
-    "url": "https://www.evaskori.fi/ruokalista.html",
-    "kind": "page",
-    "title": "Ruokalista - YLL&Auml;KSEN EV&Auml;SKORI & JOIKU PUB",
-    "evidence": 0,
-    "checkedAt": "2026-08-10"
+    "status": "none",
+    "checkedAt": "2026-10-20",
+    "reason": "ruokalista on nyt etusivulla (evaskori.fi, pizzat ja muut herkut hintoineen) ilman omaa osoitetta tai ankkuria; Nettisivut-linkki vie suoraan listaan. /ruokalista.html on 404."
   },
   "yllas-yllaskammi": {
     "status": "none",
@@ -631,7 +635,9 @@
     "evidence": 1,
     "checkedAt": "2026-10-20",
     "urlEn": "https://menu.scandichotels.com/RestaurantMenuService/GetMenufile?hotelId=691&restId=rest0&fileId=94723",
-    "kindEn": "pdf"
+    "kindEn": "pdf",
+    "contentType": "application/pdf",
+    "note": "Scandicin ruokalistapalvelu antaa PDF:n ilman .pdf-paatetta (Content-Type application/pdf); fileId vaihtuu kun lista vaihtuu, kuukausivahti seuraa."
   },
   "ruka-talonpoyta-cafe-pinseria": {
     "url": "https://talonpoyta.fi/ruka/ruokalista/",

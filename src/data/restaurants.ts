@@ -31,8 +31,17 @@ type MenuEntry = {
   url?: string; kind?: string; title?: string; evidence?: number;
   urlEn?: string; kindEn?: string; titleEn?: string; evidenceEn?: number;
   status?: string; reason?: string; note?: string; checkedAt: string;
+  /** Viimeinen voimassaolopäivä (YYYY-MM-DD): kuukauden lista, kampanjamenu. */
+  validUntil?: string; evidenceMin?: number;
 };
 const menuRegistry = restaurantMenus as Record<string, MenuEntry>;
+
+/** Kävijän paikallinen päivä muodossa YYYY-MM-DD, vertailuun validUntil-kenttään. */
+function localToday(): string {
+  const d = new Date();
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
 
 type MenuFields = {
   menuUrl?: string; menuKind?: 'page' | 'pdf';
@@ -49,10 +58,17 @@ type MenuFields = {
  * `menuUrlEn` on ravintolan oma englanninkielinen lista silloin kun sellainen
  * on olemassa ja se lapaisi todisteportin. MenuLink valitsee sen kaikille
  * muille kuin suomenkielisille kavijoille.
+ *
+ * `validUntil` piilottaa linkin seuraavasta päivästä alkaen. Osa ravintoloista
+ * julkaisee listan kuukauden tai kampanjan mukaan nimetyllä sivulla (Giitu
+ * /lokakuu, Nilin synttärimenu 11.9.–31.10.), ja vanha sivu poistetaan kun uusi
+ * tulee. Ilman päivää nappi veisi virhesivulle siihen asti, että kuukausivahti
+ * huomaa sen. Tarkistus tehdään selaimessa, koska kortit renderöidään siellä.
  */
 function menuFor(slug: string): MenuFields {
   const m = menuRegistry[slug];
   if (!m?.url || (m.kind !== 'page' && m.kind !== 'pdf')) return {};
+  if (m.validUntil && localToday() > m.validUntil) return {};
   const out: MenuFields = { menuUrl: m.url, menuKind: m.kind };
   if (m.urlEn && (m.kindEn === 'page' || m.kindEn === 'pdf')) {
     out.menuUrlEn = m.urlEn;

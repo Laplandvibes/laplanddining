@@ -77,7 +77,11 @@ export const restaurantOverrides: Record<string, Override> = {
   // eikä avaamisajankohtaa mainita. Maps näyttää sen yhä avoimena, mutta
   // ruokaopas ei voi lähettää ihmistä suljettuun ravintolaan. Tarkistettu
   // 2026-08-10. Jos ravintola avaa uudelleen, poista tämä rivi.
+  // 2026-10-20: tunturikettu.fi vastaa HTTP 410 Gone, eli sivusto on poistettu.
   'ChIJST3thVW900URZ7CT6hKOiqY': { permanentlyClosed: true },
+
+  // Riihi Restaurant (Levi) on piilotettu alempana Kittilä → Levi -lohkossa,
+  // koska sillä oli jo merkintä siellä.
 
   // Sataman Krouwi ja Perämeren Jähti — Kemi. Sivuston JUURI on 404 (sekä
   // www että apex), mutta /lounaslista/ vastaa ja on oikean ravintolan sivu.
@@ -233,6 +237,9 @@ export const restaurantOverrides: Record<string, Override> = {
 
   // Muotkan Ruoktu Tunturikylä — Inari (top pick)
   'ChIJTV_WZOkVzUURy3OSF3ioobg': {
+    // Maps-osoite http://www.muotkanruoktu.fi/ ohjautuu tänne. Kone saa
+    // Cloudflaren 520, selain sivun (tarkistettu 2026-10-20).
+    website: 'https://muotkanruoktu.fi/',
     curatedDescription: {
       en: 'Nature hikes, plenty of activities such as snow mobile and local Sami culture of traditional salmon cooking on an open fire, delicious.',
       fi: 'Vaelluksia, moottorikelkkailua ja saamelaista perinneruokaa: lohta paistetaan avotulella, ja maku jää mieleen koko illaksi.',
@@ -508,7 +515,29 @@ export const restaurantOverrides: Record<string, Override> = {
   'ChIJ28sX2mBDzUUR-RdjF-N22Do': { city: 'Saariselkä' },
 
   // Restaurant Punakettu — Luostontie 4, Luosto. Sodankylään 32 km, Luostolle 2 km.
-  'ChIJma4ZRPLFLEQRydyDo4y0Rm8': { city: 'Luosto' },
+  // Luoston toimituksen valinta 2026-10-20 alkaen (oli Keloravintola, joka on
+  // tilausravintola). Kuvaus ravintolan omalta sivulta punakettu.fi 20.10.2026:
+  // à la carte ympäri vuoden, lähialueen poroa, Kemijärven vesien villikalaa,
+  // pizzapohjat Kemijärven leipomosta, briossisämpylät rovaniemeläiseltä
+  // Choco Deliltä.
+  'ChIJma4ZRPLFLEQRydyDo4y0Rm8': {
+    city: 'Luosto',
+    topPick: true,
+    curatedDescription: {
+      en: 'An à la carte restaurant on Luostontie, open all year. The menu runs on local reindeer, wild fish from the Kemijärvi waters, and pizzas and burgers on bases and buns baked for the kitchen in Kemijärvi and Rovaniemi.',
+      fi: 'Ympäri vuoden avoinna oleva à la carte -ravintola Luostontiellä. Listalla on lähialueen poroa, Kemijärven vesien villikalaa sekä pizzoja ja burgereita, joiden pohjat ja sämpylät leivotaan keittiölle Kemijärvellä ja Rovaniemellä.',
+      de: 'Ein ganzjährig geöffnetes À-la-carte-Restaurant an der Luostontie. Auf der Karte stehen Rentier aus der Umgebung, Wildfisch aus den Gewässern von Kemijärvi sowie Pizzen und Burger, deren Böden und Brötchen in Kemijärvi und Rovaniemi für die Küche gebacken werden.',
+      ja: 'ルオストンティエにある通年営業のアラカルトレストラン。地元のトナカイ、ケミヤルヴィの湖で獲れた天然魚、そしてケミヤルヴィとロヴァニエミで店のために焼かれる生地とバンズを使ったピザやバーガーが並びます。',
+      es: 'Un restaurante a la carta en Luostontie, abierto todo el año. La carta se basa en reno de la zona, pescado salvaje de las aguas de Kemijärvi y pizzas y hamburguesas con masas y panes horneados para la cocina en Kemijärvi y Rovaniemi.',
+      'pt-BR': 'Um restaurante à la carte na Luostontie, aberto o ano todo. O cardápio tem rena da região, peixe selvagem das águas de Kemijärvi e pizzas e hambúrgueres com massas e pães assados para a cozinha em Kemijärvi e Rovaniemi.',
+      'zh-CN': '位于卢奥斯托蒂路、全年营业的点菜餐厅。菜单以本地驯鹿肉、凯米耶尔维水域的野生鱼为主，还有披萨和汉堡，饼底和面包由凯米耶尔维和罗瓦涅米的烘焙坊专门为厨房烤制。',
+      ko: '루오스톤티에에 있는, 일 년 내내 문을 여는 알라카르트 레스토랑입니다. 메뉴는 이 지역 순록, 케미야르비 물에서 잡은 자연산 생선, 그리고 케미야르비와 로바니에미에서 주방을 위해 구운 도우와 번으로 만드는 피자와 버거로 꾸려집니다.',
+      fr: 'Un restaurant à la carte sur Luostontie, ouvert toute l\'année. La carte repose sur le renne des environs, le poisson sauvage des eaux de Kemijärvi, et des pizzas et burgers dont les pâtes et les pains sont cuits pour la cuisine à Kemijärvi et à Rovaniemi.',
+      it: 'Un ristorante à la carte su Luostontie, aperto tutto l\'anno. Il menù punta sulla renna della zona, sul pesce selvatico delle acque di Kemijärvi e su pizze e burger con impasti e panini sfornati per la cucina a Kemijärvi e a Rovaniemi.',
+      nl: 'Een à-la-carterestaurant aan de Luostontie, het hele jaar open. Op de kaart staan rendier uit de buurt, wilde vis uit de wateren van Kemijärvi en pizza\'s en burgers met bodems en broodjes die voor de keuken in Kemijärvi en Rovaniemi worden gebakken.',
+      sv: 'En à la carte-restaurang vid Luostontie med öppet året runt. På menyn finns ren från trakten, vildfisk från Kemijärvis vatten samt pizzor och burgare vars bottnar och bröd bakas åt köket i Kemijärvi och Rovaniemi.',
+    },
+  },
 
   // Los Lompolo's — Sivulantie 5 E, Äkäslompolo. Muonioon 44 km, Ylläkselle 1 km.
   // Äkäslompolo = Ylläs koko verkostossa (CLAUDE.md).
@@ -531,7 +560,12 @@ export const restaurantOverrides: Record<string, Override> = {
   // kohteista. Kittilällä ei ole omaa kaupunkisivua; nämä kuuluvat Leville.
 
   // Riihi Restaurant — Tuomikuruntie 136. Leville 1,7 km, Kittilään 16,0 km.
-  'ChIJqRNr4LGy00URZOb6pM88YDo': { city: 'Levi' },
+  // Lopettanut. Immelkartanon oma sivu (immelkartano.fi, tarkistettu 2026-10-20):
+  // "Saunojen, Ravintola Riihen, Riihen kokoustilojen ja Kartanon majoituksen
+  // toiminnot ovat siirtyneet uudelle omistajalle. Ymmärtääksemme uudet omistajat
+  // eivät jatka nykyisen kaltaista matkailutoimintaa." Ravintolasivu on 404.
+  // Jos uusi omistaja avaa ravintolan, poista permanentlyClosed.
+  'ChIJqRNr4LGy00URZOb6pM88YDo': { permanentlyClosed: true, city: 'Levi' },
 
   // Restaurant Burger Cafe & Bar Ruka — Rukatunturintie 1. Rukan kylään 0,7 km, Kuusamon
   // keskustaan 22 km. Toiminnassa 20.10.2026 (rukaburger.fi, ma–su 11–21); eri paikka kuin RUOK Burger.
@@ -621,20 +655,31 @@ export const restaurantOverrides: Record<string, Override> = {
 
   // Keloravintola Lapland Hotels Luostotunturi — Luosto
   // Korvaa Google-sitaatin, joka oli kielteinen: sitaatti: 'The dissatisfaction comes from the staff, they were super slow... didn't care'
+  // Tilausravintola. Hotellin oma ravintolasivu (tarkistettu 2026-10-20) listaa
+  // "Keloravintola (tilauksesta)" ja kertoo että siellä "järjestetään teemailtoja
+  // ja tansseja"; hotellin à la carte on Bistro vastaanoton vieressä. Aiempi
+  // kuvaus lupasi lappilaisia annoksia kuin à la carte -ravintolassa. Korttia ei
+  // piiloteta: Luostolla on neljä paikkaa, ja kolmen paikan kaupunki putoaa
+  // kaupunkisivun alarajan alle (diningCities.ts). Vanha laplandhotels.com/FI/
+  // -osoite ohjautuu uuteen, joten linkki osoittaa suoraan uuteen.
+  // Ei Luoston toimituksen valinta: tilausravintola ei ole paikka, jonne
+  // lukija voi mennä syömään. Valinta on Restaurant Punakettulla.
   'ChIJPx28EWHPLEQRiwFudZhTkdw': {
+    topPick: false,
+    website: 'https://www.laplandhotels.com/fi/hotellit-ja-kohteet/luosto/lapland-hotels-luostotunturi/ravintolat',
     curatedDescription: {
-      en: 'The kelo-timber dining room of the Luosto hotel, serving Lappish plates under a log roof at the foot of the fell.',
-      fi: 'Luoston hotellin keloravintola, jossa lappilaiset annokset tarjoillaan hirsikaton alla tunturin juurella.',
-      de: 'Der Kelo-Speisesaal des Hotels in Luosto, wo lappländische Teller unter einem Blockdach am Fuß des Fjälls serviert werden.',
-      ja: 'ルオストのホテルにあるケロ材の食堂。丸太の屋根の下、フェルのふもとでラップランドの皿が供されます。',
-      es: 'El comedor de madera de kelo del hotel de Luosto, donde los platos típicos de Laponia se sirven bajo un techo de troncos al pie del fell.',
-      'pt-BR': 'O salão de madeira kelo do hotel de Luosto, onde pratos típicos da Lapônia são servidos sob um teto de troncos ao pé do monte.',
-      'zh-CN': '卢奥斯托酒店的枯木餐厅，在原木屋顶下、山脚旁端上拉普兰菜式。',
-      ko: '루오스토 호텔의 켈로 목재 식당. 통나무 지붕 아래, 산기슭에서 라플란드식 요리를 냅니다.',
-      fr: 'La salle en bois de kelo de l\'hôtel de Luosto, où les plats typiques de Laponie sont servis sous un toit de rondins, au pied du fjäll.',
-      it: 'La sala in legno di kelo dell\'hotel di Luosto, dove i piatti tipici della Lapponia arrivano sotto un tetto di tronchi ai piedi del fjäll.',
-      nl: 'De kelohouten eetzaal van het hotel in Luosto, waar Laplandse gerechten onder een blokhutdak aan de voet van de fjäll worden geserveerd.',
-      sv: 'Kelorestaurangen på hotellet i Luosto, där lappländska rätter serveras under timmertak vid fjällets fot.',
+      en: 'The kelo-log restaurant of Lapland Hotels Luostotunturi stands about 300 m from the hotel and opens by booking for theme nights and dances, not for a walk-in dinner. For à la carte, go to the hotel\'s Bistro next to reception.',
+      fi: 'Lapland Hotels Luostotunturin keloravintola on noin 300 metrin päässä hotellista, ja se avataan tilauksesta teemailtoihin ja tansseihin, ei tavalliselle illalliselle. À la carte -ruokaa saa hotellin Bistrosta vastaanoton vierestä.',
+      de: 'Das Kelo-Restaurant des Lapland Hotels Luostotunturi liegt etwa 300 m vom Hotel entfernt und öffnet auf Anfrage für Themen- und Tanzabende, nicht für ein spontanes Abendessen. À la carte essen Sie im Bistro des Hotels neben der Rezeption.',
+      ja: 'Lapland Hotels Luostotunturiのケロ材のレストランは、ホテルから約300 m。予約制でテーマナイトやダンスの夜に開く会場で、ふらりと夕食に立ち寄れる店ではありません。アラカルトはフロント横のホテル内ビストロへ。',
+      es: 'El restaurante de madera de kelo del Lapland Hotels Luostotunturi está a unos 300 m del hotel y abre por encargo para noches temáticas y bailes, no para cenar sin reserva. Para comer a la carta, vaya al Bistro del hotel, junto a la recepción.',
+      'pt-BR': 'O restaurante de madeira kelo do Lapland Hotels Luostotunturi fica a cerca de 300 m do hotel e abre sob encomenda para noites temáticas e bailes, não para um jantar sem reserva. Para comer à la carte, vá ao Bistro do hotel, ao lado da recepção.',
+      'zh-CN': 'Lapland Hotels Luostotunturi 的枯木餐厅距酒店约 300 米，只在预订后为主题之夜和舞会开放，平时不接待临时前来用餐的客人。想点菜用餐，请去酒店前台旁的 Bistro。',
+      ko: 'Lapland Hotels Luostotunturi의 켈로 목재 레스토랑은 호텔에서 약 300 m 떨어져 있으며, 예약을 받아 테마 나이트와 댄스 행사 때만 문을 엽니다. 예약 없이 저녁을 먹으러 들르는 곳은 아닙니다. 알라카르트는 프런트 옆 호텔 비스트로에서 즐길 수 있습니다.',
+      fr: 'Le restaurant en bois de kelo du Lapland Hotels Luostotunturi se trouve à environ 300 m de l\'hôtel et n\'ouvre que sur réservation, pour des soirées à thème et des bals, pas pour un dîner sans réservation. Pour manger à la carte, rendez-vous au Bistro de l\'hôtel, à côté de la réception.',
+      it: 'Il ristorante in legno di kelo del Lapland Hotels Luostotunturi si trova a circa 300 m dall\'hotel e apre su prenotazione per serate a tema e balli, non per una cena senza prenotare. Per mangiare alla carta, si rechi al Bistro dell\'hotel, accanto alla reception.',
+      nl: 'Het restaurant van kelohout van Lapland Hotels Luostotunturi ligt zo\'n 300 m van het hotel en gaat alleen op reservering open, voor themavonden en dansavonden, niet voor een gewoon diner. À la carte eet u in de Bistro van het hotel, naast de receptie.',
+      sv: 'Kelorestaurangen hos Lapland Hotels Luostotunturi ligger cirka 300 m från hotellet och öppnar på beställning för temakvällar och danser, inte för en vanlig middag. À la carte serveras i hotellets Bistro bredvid receptionen.',
     },
   },
 
