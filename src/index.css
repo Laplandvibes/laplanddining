@@ -54,6 +54,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Korea katkeaa vain sanojen välistä (20.10.2026, sama kuin appin 19.10. sääntö). Korean sanat
+   erotetaan välilyönnein, mutta selaimen oletus katkaisee minkä tahansa kahden tavun välistä:
+   /kr/city/ruka iskulause "식 / 탁들" ja ingressi "있 / 고". break-word: riviä pidempi sana katkeaa
+   silti eikä leikkaudu (ei anywhere: se kutistaa vähimmäisleveyden). Periytyvä arvo, joten
+   elementin omat break-*-luokat voittavat. Kieli tulee html langista (ko-KR). */
+html:lang(ko) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 body {
   font-family: var(--font-body);
   color: #ffffff;
