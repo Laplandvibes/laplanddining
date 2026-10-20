@@ -68,6 +68,22 @@ function bannerLang(): string {
   return map[seg] ?? 'en';
 }
 
+/**
+ * [LV-BANNERI-OHJATTU 20.10.2026] Ohjelman ohjaama selain (Playwright, Puppeteer, WebDriver: navigator.webdriver)
+ * tai oma kone / esikatselu ei hae banneria. 20.10. mitattuna ~27 400 / 30 000 bannerihakua tuli omista
+ * testeistä, ja ne kuluttivat Supabasen Disk IO -budjetin. Ihmiskävijälle mikään ei muutu.
+ */
+function ohjattuSelain(): boolean {
+  if (typeof window === "undefined") return true;
+  try {
+    if (navigator.webdriver) return true;
+    const h = window.location.hostname;
+    return h === "localhost" || h === "127.0.0.1" || h === "[::1]" || h.endsWith(".localhost") || h.endsWith(".pages.dev");
+  } catch {
+    return false;
+  }
+}
+
 export default function JobNetworkBanner({
   siteId,
   maxItems = 3,
@@ -78,6 +94,7 @@ export default function JobNetworkBanner({
 
   useEffect(() => {
     let cancelled = false;
+    if (ohjattuSelain()) return; // LV-BANNERI-OHJATTU: ei hakua testeiltä eikä botilta, banneri jää piirtämättä
     const params = new URLSearchParams({
       select: "id,job_title,company_name,location,is_remote,slug",
       network_sites: `cs.{${siteId}}`,
