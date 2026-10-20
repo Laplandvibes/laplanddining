@@ -524,7 +524,7 @@ const BUILT_IN_FULL_DICT: Record<string, Partial<typeof DEFAULT_DICT>> = {
     spottedError: { title: 'Notato un errore?', body: 'C\'è qualcosa da correggere? Ce lo dica: correggeremo subito.', cta: 'Segnala un errore →' },
     partner: { title: 'Collabora con noi', body: 'Pubblicità o collaborazione su oltre 25 siti dedicati alla Lapponia.', cta: 'Mettersi in contatto →' },
     press: { title: 'Stampa e media', body: 'Collaborazioni editoriali e kit stampa.', cta: 'Richieste stampa →' },
-    affiliate: 'Questo sito contiene link di affiliazione. Se prenoti tramite questi link, LaplandVibes può ricevere una commissione senza alcun costo aggiuntivo per Lei.',
+    affiliate: 'Questo sito contiene link di affiliazione. Se Lei prenota tramite questi link, LaplandVibes può ricevere una commissione senza alcun costo aggiuntivo per Lei.',
     legal: { privacy: 'Informativa sulla privacy', cookie: 'Informativa sui cookie', terms: 'Termini di servizio', contact: 'Contatti' },
   },
   nl: {

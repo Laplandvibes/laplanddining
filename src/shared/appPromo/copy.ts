@@ -230,7 +230,7 @@ export const COPY: Record<string, Copy> = {
     note: 'L\'installazione è gratuita e non serve un account dello store.',
     lead: 'Una volta installata l\'app funziona anche offline: luoghi, itinerari e numeri di emergenza restano sul telefono.',
     scan: 'Inquadri il codice per aprirla sul telefono',
-    dismiss: 'Chiuda',
+    dismiss: 'Chiudi',
     alt: 'Schermata dell’app LaplandVibes',
     title: {
       general: 'In Lapponia? L’essenziale in tasca.',
