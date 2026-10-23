@@ -1,13 +1,29 @@
 import PartnerSlot, { type Partner } from '../shared/PartnerSlot';
-import { adLocaleEnabled } from '../shared/adSlotsCopy';
+import { adLocaleEnabled, normalizeAdLocale, type AdLocale } from '../shared/adSlotsCopy';
 import { AD_SLOTS } from '../data/partners';
 
-/** fi/en/sv copy for the sellable per-city featured partner slot (KKV: ad-marked). */
+/**
+ * Mainosmerkintä (KKV) jokaisella sivuston kielellä. Myyty kumppanikortti näkyy kaikilla 12 kielellä
+ * (Partner.i18n kantaa käännökset, kuten HomeAdSlotsin myydyt kortit); vain tyhjä house-ad on fi/en/sv
+ * (Vesa 2026-07-13). 23.10.2026: tämä komponentti piilotti myös myydyn kortin 9 kieleltä.
+ */
+const MARKER: Record<AdLocale, { ad: string; featured: string }> = {
+  fi: { ad: 'Mainos', featured: 'Esittelykumppani' },
+  en: { ad: 'Advertisement', featured: 'Featured partner' },
+  sv: { ad: 'Annons', featured: 'Utvald partner' },
+  de: { ad: 'Anzeige', featured: 'Vorgestellter Partner' },
+  fr: { ad: 'Publicité', featured: 'Partenaire à la une' },
+  it: { ad: 'Pubblicità', featured: 'Partner in evidenza' },
+  es: { ad: 'Anuncio', featured: 'Socio destacado' },
+  nl: { ad: 'Advertentie', featured: 'Uitgelichte partner' },
+  pt: { ad: 'Anúncio', featured: 'Parceiro em destaque' },
+  ja: { ad: '広告', featured: '注目のパートナー' },
+  ko: { ad: '광고', featured: '추천 파트너' },
+  zh: { ad: '广告', featured: '精选合作伙伴' },
+}
+
 function featuredCopy(locale: string) {
-  const l = (locale || 'en').toLowerCase();
-  if (l.startsWith('fi')) return { ad: 'Mainos', featured: 'Esittelykumppani' };
-  if (l.startsWith('sv')) return { ad: 'Annons', featured: 'Utvald partner' };
-  return { ad: 'Advertisement', featured: 'Featured partner' };
+  return MARKER[normalizeAdLocale(locale)];
 }
 
 /**
@@ -15,10 +31,11 @@ function featuredCopy(locale: string) {
  * of each city's section on /restaurants and, when sold, on that city's own /city/:slug page
  * (23.10.2026, Visit Inari: the slot was promised on the Inari page). When empty it renders the
  * canonical LIGHT house-ad from shared/PartnerSlot ("Varaa mainospaikka →"). fi/en/sv-gated like
- * every other LV Media ad unit. Never auto-promotes a real restaurant.
+ * every other LV Media house-ad; a SOLD card renders on all 12 locales. Never auto-promotes a real restaurant.
  */
 export default function CityFeaturedSlot({ city, slug, partner, locale }: { city: string; slug: string; partner: Partner | null; locale: string }) {
-  if (!adLocaleEnabled(locale)) return null;
+  // Myyty kortti kaikilla 12 kielellä, tyhjä house-ad vain fi/en/sv (Vesa 2026-07-13).
+  if (!partner && !adLocaleEnabled(locale)) return null;
   const fc = featuredCopy(locale);
   if (partner) {
     return (
