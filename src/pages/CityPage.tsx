@@ -17,6 +17,8 @@ import {
 import { ownPhotoCredit, OTHER_PHOTO_PLACES } from '../data/photoCredit';
 import { photoSrcSet } from '../data/images';
 import PhotoCredit from '../components/PhotoCredit';
+import CityFeaturedSlot from '../components/CityFeaturedSlot';
+import { PARTNERS } from '../data/partners';
 
 const ORIGIN = 'https://laplanddining.com';
 
@@ -289,6 +291,11 @@ export default function CityPage() {
           <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-white mb-8">
             {countLabel}
           </h2>
+          {/* Myyty kaupungin esittelykumppani (sama paikka kuin /restaurants-sivun kaupunkiosiossa).
+              Vain myyty renderöityy täällä: tyhjää house-adia ei lisätä kaupunkisivuille. */}
+          {PARTNERS.cityFeatured[city.name] && (
+            <CityFeaturedSlot city={name} slug={city.slug} partner={PARTNERS.cityFeatured[city.name] ?? null} locale={locale} />
+          )}
           <div className="grid gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3 lv-grid-3c">
             {list.map((r) => (
               <RestaurantCard

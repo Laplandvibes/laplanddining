@@ -6,13 +6,13 @@ import { useLocale } from '../i18n/useLocale';
 import { MapPin, Flame, Snowflake, Sun, UtensilsCrossed, TreePine } from 'lucide-react';
 import AffiliateCTA from '../components/AffiliateCTA';
 import { gygCategoryLink } from '../lib/gyg';
-import PartnerSlot, { type Partner } from '../shared/PartnerSlot';
+import PartnerSlot from '../shared/PartnerSlot';
 import RestaurantCard, { type CardI18n } from '../components/RestaurantCard';
 import GridPhotoCredits from '../components/GridPhotoCredits';
 import SubpageAd from '../shared/SubpageAd';
 import PremiumSpotGrid from '../shared/PremiumSpotGrid';
-import { adLocaleEnabled } from '../shared/adSlotsCopy';
 import { PARTNERS, AD_SLOTS } from '../data/partners';
+import CityFeaturedSlot from '../components/CityFeaturedSlot';
 import { restaurants, cities, cuisineLabel } from '../data/restaurants';
 import { slugForCity as citySlug, DINING_CITIES } from '../data/diningCities';
 import { localePrefix } from '../i18n/config';
@@ -61,49 +61,6 @@ const FEATURED_SLOT_CITIES = new Set(['Rovaniemi', 'Levi', 'Ylläs', 'Saariselk�
 
 function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
-}
-
-/** fi/en/sv copy for the sellable per-city featured partner slot (KKV: ad-marked). */
-function featuredCopy(locale: string) {
-  const l = (locale || 'en').toLowerCase();
-  if (l.startsWith('fi')) return { ad: 'Mainos', featured: 'Esittelykumppani' };
-  if (l.startsWith('sv')) return { ad: 'Annons', featured: 'Utvald partner' };
-  return { ad: 'Advertisement', featured: 'Featured partner' };
-}
-
-/**
- * Sellable per-city "featured partner" surface at the top of each city's
- * restaurant section (replaces the old free hero-size top-pick card). Same model
- * as the hub resort partner slots: one AdSpec + one optional data row
- * (PARTNERS.cityFeatured[city]). When empty it renders the canonical LIGHT
- * house-ad from shared/PartnerSlot ("Varaa mainospaikka →"). fi/en/sv-gated like
- * every other LV Media ad unit. Never auto-promotes a real restaurant.
- */
-function CityFeaturedSlot({ city, slug, partner, locale }: { city: string; slug: string; partner: Partner | null; locale: string }) {
-  if (!adLocaleEnabled(locale)) return null;
-  const fc = featuredCopy(locale);
-  if (partner) {
-    return (
-      <div className="mb-8" data-city-featured={slug}>
-        <p className="flex flex-wrap items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/45 mb-2">
-          <span className="inline-flex items-center rounded-full bg-vibe-pink/90 px-2 py-0.5 text-white">{fc.ad}</span>
-          <span>{fc.featured} · {city}</span>
-        </p>
-        <PartnerSlot variant="banner" partner={partner} locale={locale} surface="dark" />
-      </div>
-    );
-  }
-  return (
-    <div className="mb-8" data-city-featured={slug}>
-      <PartnerSlot
-        variant="banner"
-        partner={null}
-        locale={locale}
-        surface="dark"
-        placeholder={{ siteSlug: AD_SLOTS.siteSlug, slotId: `restaurants_featured_${slug}`, level: 'premium', label: `${fc.featured} · ${city}` }}
-      />
-    </div>
-  );
 }
 
 export default function Restaurants() {
