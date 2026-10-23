@@ -63,7 +63,7 @@ export const FOCUS_SCREENS: Record<Focus, readonly Screen[]> = {
  * päivittää tämän rivin; gate:apppromo-kopiot tarkistaa että se vastaa shots/-kansiota. Uusi kaappaus samalla tiedostonimellä
  * ⇒ uusi ?v= ⇒ CDN ja selain hakevat uuden kuvan (version-images.mjs versioi vain kirjaimelliset polut, ei tätä).
  */
-export const SHOTS_V = 'c1182a5a';
+export const SHOTS_V = '98aa9d04';
 
 /** Kuvan polku sivustolla. Kieli = sivun lokaali (fi, de, pt-BR, zh-CN …). */
 export const shotSrc = (screen: Screen, lang: string): string => `/images/app-promo/${screen}-${lang}.webp?v=${SHOTS_V}`;
