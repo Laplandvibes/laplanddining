@@ -29,7 +29,8 @@ export default function CityFeaturedSlot({ city, slug, partner, locale }: { city
         </p>
         {/* Myyty paikka isona korttina (kuva, kuvaus, CTA, juttulinkki). Banneri näytti maksavasta
             kumppanista vain pikkukuvan ja otsikon (23.10.2026, Visit Inari). Tyhjä pysyy bannerina. */}
-        <PartnerSlot variant="card" layout="wide" partner={partner} locale={locale} surface="dark" />
+        {/* Vaalea kortti tummalla sivulla (Vesa 23.10.: tumma tausta "tunkkasen näköinen"). */}
+        <PartnerSlot variant="card" layout="wide" partner={partner} locale={locale} surface="light" />
       </div>
     );
   }
