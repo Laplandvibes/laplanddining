@@ -296,7 +296,7 @@ export const COPY: Record<string, Copy> = {
     alt: 'Tela do app LaplandVibes',
     title: {
       general: 'Chegou à Lapônia? O essencial no seu bolso.',
-      snowmobile: 'De motoneve pelas montanhas? Leve as rotas com você.',
+      snowmobile: 'De moto de neve pelas montanhas? Leve as rotas com você.',
       ski: 'Vai esquiar na Lapônia? Estações e clima no seu bolso.',
       stay: 'Já se instalou? Os arredores no seu bolso.',
       move: 'Rodando pela Lapônia? Estradas e ajuda no seu bolso.',
@@ -358,7 +358,7 @@ export const COPY: Record<string, Copy> = {
     alt: 'LaplandVibes 앱 화면',
     title: {
       general: '라플란드에 도착하셨나요? 필요한 정보는 휴대폰에.',
-      snowmobile: '스노모빌로 산에 가시나요? 루트를 챙겨 가세요.',
+      snowmobile: '스노우모빌로 산에 가시나요? 루트를 챙겨 가세요.',
       ski: '라플란드에서 스키 타시나요? 스키장과 날씨를 휴대폰에.',
       stay: '숙소에 도착하셨나요? 주변 정보를 휴대폰에.',
       move: '라플란드에서 이동 중이신가요? 노면과 차량 도움을 휴대폰에.',
