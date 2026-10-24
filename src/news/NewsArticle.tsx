@@ -2,7 +2,7 @@ import { use } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useLang, useLocalePath } from '../i18n/useLang';
 import { ARTICLE_BY_SLUG, ARTICLES, loadAllTexts, loadText, loadUi } from './registry';
-import { formatDate } from './format';
+import { formatDate, joinList, labelPrefix } from './format';
 import Prose from './Prose';
 import NewsCard from './NewsCard';
 import { NewsAds, NewsChrome, NotFoundPage, SITE, useNewsHead } from './site';
@@ -101,12 +101,12 @@ function ArticleView({ meta }: { meta: NewsMeta }) {
             </>
           )}
           <span aria-hidden="true"> · </span>
-          <span>{ui.ui.sources}: {publishers.join(', ')}</span>
+          <span>{labelPrefix(ui.ui.sources, lang)}{joinList(publishers, lang)}</span>
         </p>
         <p className="nw-art-cap">
           {text.heroCaption && <span>{text.heroCaption} </span>}
           <span className="nw-credit">
-            {ui.ui.photo}: <a href={credit.sourceUrl} target="_blank" rel="noopener">{credit.author} / {credit.sourceName}</a>,{' '}
+            {labelPrefix(ui.ui.photo, lang)}<a href={credit.sourceUrl} target="_blank" rel="noopener">{credit.author} / {credit.sourceName}</a>,{' '}
             <a href={credit.licenseUrl} target="_blank" rel="noopener license">{credit.license}</a>
           </span>
         </p>

@@ -19,3 +19,20 @@ export function formatDate(iso: string, lang: NewsLang): string {
     return iso;
   }
 }
+
+/**
+ * Nimilapun etuliite ("Kuva:", "Lähde:", "Lähteet:") lukijan kielen välimerkein (08-natiivikaannos sääntö 15):
+ * ja/zh täysleveä kaksoispiste ilman väliä, fr sitova väli (U+00A0) ennen kaksoispistettä, muut "Sana: ".
+ * Kielitiedostojen välimerkit tarkistaa news-prerender.mjs, mutta tämä kaksoispiste syntyy vasta koodissa.
+ * laplandtransportin kopiosta (2.10.2026), tuotu tähän 24.10.2026 — kaikki yhdeksän uutismoduulin kopiota nyt samoin.
+ */
+export function labelPrefix(word: string, lang: NewsLang): string {
+  if (lang === 'ja' || lang === 'zh-CN') return `${word}：`;
+  if (lang === 'fr') return `${word}\u00a0: `;
+  return `${word}: `;
+}
+
+/** Luettelo lukijan kielen erottimella: ja/zh 、 (samanlaisten luettelo), muut ", ". 08-natiivikaannos sääntö 19. */
+export function joinList(items: string[], lang: NewsLang): string {
+  return items.join(lang === 'ja' || lang === 'zh-CN' ? '、' : ', ');
+}
