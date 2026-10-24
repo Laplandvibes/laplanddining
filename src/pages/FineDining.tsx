@@ -12,6 +12,7 @@ import PhotoCredit from '../components/PhotoCredit';
 import { imageAlt } from '../data/imageAlts';
 import { restaurants, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, localizedStr } from '../data/restaurants';
 import { withReferral } from '../lib/outbound';
+import { reviewsAria } from '../lib/a11yNimet';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 
@@ -158,6 +159,7 @@ export default function FineDining() {
                       <img
                         src={r.photo}
                         alt={r.name}
+                        translate="no"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"
                         decoding="async"
@@ -183,7 +185,7 @@ export default function FineDining() {
                         target="_blank"
                         rel="nofollow noopener"
                         className="group/rating absolute top-0.5 right-0.5 inline-flex p-2.5 rounded-full no-underline"
-                        aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews: ${r.name}`}
+                        aria-label={reviewsAria(r.reviewCount, r.name, locale)}
                       >
                         <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber">
                           <Star size={11} className="text-amber fill-amber" />
@@ -205,7 +207,7 @@ export default function FineDining() {
                   {/* Kuvituskuva kuvan alle, ei päälle (Vesa 28.9.2026); lähteet ruudukon alla. */}
                   <IllustrationNote r={r} locale={locale} className="px-7 sm:px-8 pt-2" />
                   <div className="px-7 sm:px-8 pt-1.5 sm:pt-2.5 pb-7 sm:pb-8">
-                    <h3 className="font-heading text-2xl sm:text-[1.7rem] tracking-wide text-warm-ink leading-tight mb-1.5">{r.name}</h3>
+                    <h3 translate="no" className="font-heading text-2xl sm:text-[1.7rem] tracking-wide text-warm-ink leading-tight mb-1.5">{r.name}</h3>
                     {/* Ei hintaluokkaa keittiön perään — ks. RestaurantCard.tsx
                         (Vesa 7.9.2026). priceRange ohjaa yhä sitä, mikä ravintola
                         päätyy tälle sivulle (suodatin yllä), mutta ei näy. */}

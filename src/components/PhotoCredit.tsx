@@ -1,5 +1,6 @@
 import { creditFor, type PhotoCreditEntry } from '../data/photoCredits';
 import { creditPrefix } from '../data/photoCredit';
+import { licenseLabel } from '../lib/a11yNimet';
 import { PHOTO_BY, PHOTOS_BY, type Locale } from '../data/restaurants';
 
 /**
@@ -19,7 +20,7 @@ function CreditLinks({ c, linkClass, locale }: { c: PhotoCreditEntry; linkClass:
     <>
       {c.author},{' '}
       <a href={c.licenseUrl} target="_blank" rel="license noopener" className={`lv-tap whitespace-nowrap ${linkClass}`}>
-        {c.license}
+        {licenseLabel(c.license, locale)}
       </a>
       ,{' '}
       <a href={c.sourceUrl} target="_blank" rel="noopener" className={`lv-tap whitespace-nowrap ${linkClass}`}>

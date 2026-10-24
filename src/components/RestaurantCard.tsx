@@ -2,6 +2,7 @@ import { UtensilsCrossed, Star, Award, Quote } from 'lucide-react';
 import IllustrationNote from './IllustrationNote';
 import MenuLink from './MenuLink';
 import { withReferral } from '../lib/outbound';
+import { reviewsAria } from '../lib/a11yNimet';
 import {
   composeCardBody, cuisineLabel, googleReviewsUrl,
   type Restaurant, type Locale,
@@ -42,6 +43,7 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
           <img
             src={r.photo}
             alt={r.name}
+            translate="no"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
             decoding="async"
@@ -73,7 +75,7 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
             href={googleReviewsUrl(r.googlePlaceId)}
             target="_blank"
             rel="nofollow noopener"
-            aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews: ${r.name}`}
+            aria-label={reviewsAria(r.reviewCount, r.name, locale)}
             className="group/rating absolute top-0.5 right-0.5 inline-flex p-2.5 rounded-full no-underline"
           >
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber">
@@ -105,7 +107,7 @@ export default function RestaurantCard({ r, i18n, locale, editorsPick }: { r: Re
           alla (GridPhotoCredits, kutsupaikassa). */}
       <IllustrationNote r={r} locale={locale} className="px-6 sm:px-7 pt-1.5" />
       <div className="px-6 sm:px-7 pt-1.5 sm:pt-2.5 pb-6 sm:pb-7 flex flex-col flex-1">
-        <h3 className="font-heading text-xl tracking-wide text-warm-ink leading-tight mb-1">
+        <h3 translate="no" className="font-heading text-xl tracking-wide text-warm-ink leading-tight mb-1">
           {r.name}
         </h3>
         {cuisine && (

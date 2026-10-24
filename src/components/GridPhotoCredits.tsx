@@ -1,4 +1,5 @@
 import { creditPrefix } from '../data/photoCredit';
+import { licenseLabel } from '../lib/a11yNimet';
 import { PHOTOS_BY, photoSource, type CommonsCredit, type Restaurant, type Locale } from '../data/restaurants';
 
 /** Sulkeet: ja ja zh täysleveinä verkoston kanonin mukaan, muissa välilyönti eteen. */
@@ -49,12 +50,12 @@ export default function GridPhotoCredits({ list, locale, className = '' }: { lis
       {items.map((it, i) => (
         <span key={it.slug}>
           {i > 0 && <>&nbsp;· </>}
-          {it.name}
+          <span translate="no">{it.name}</span>
           {it.commons ? (
             <>
               {open}{it.commons.author},{' '}
               <a href={it.commons.licenseUrl} target="_blank" rel="license noopener" className="lv-tap whitespace-nowrap underline decoration-cream/40 underline-offset-2 hover:text-cream">
-                {it.commons.license}
+                {licenseLabel(it.commons.license, locale)}
               </a>
               ,{' '}
               <a href={it.commons.sourceUrl} target="_blank" rel="noopener" className="lv-tap whitespace-nowrap underline decoration-cream/40 underline-offset-2 hover:text-cream">

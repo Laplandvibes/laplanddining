@@ -8,6 +8,7 @@ import GridPhotoCredits from './GridPhotoCredits';
 import MenuLink from './MenuLink';
 import { getTopPicksByCity, partnershipBadgeLocalized, composeCardBody, cuisineLabel, googleReviewsUrl, type Restaurant, type Locale } from '../data/restaurants';
 import { withReferral } from '../lib/outbound';
+import { reviewsAria, placeAlt } from '../lib/a11yNimet';
 
 function tierClass(tier: Restaurant['partnership']) {
   switch (tier) {
@@ -51,7 +52,7 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
           {r.photo ? (
             <img
               src={r.photo}
-              alt={`${r.name} in ${r.city}`}
+              alt={placeAlt(r.name, r.city, locale)}
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
               decoding="async"
@@ -78,7 +79,7 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
             href={googleReviewsUrl(r.googlePlaceId)}
             target="_blank"
             rel="nofollow noopener"
-            aria-label={`${r.reviewCount?.toLocaleString('en') ?? ''} Google reviews: ${r.name}`}
+            aria-label={reviewsAria(r.reviewCount, r.name, locale)}
             className="group/rating absolute top-0.5 right-0.5 z-10 inline-flex p-2.5 rounded-full no-underline"
           >
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber-warm">
@@ -104,7 +105,7 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
       <div className="px-5 sm:px-6 pt-1 sm:pt-2 pb-5 sm:pb-6 flex flex-col flex-1">
         {/* Ei hintaluokkaa nimen perään — ks. RestaurantCard.tsx (Vesa 7.9.2026). */}
         <div className="mb-1">
-          <h3 className="font-heading text-xl sm:text-2xl tracking-wide text-warm-ink leading-tight">
+          <h3 translate="no" className="font-heading text-xl sm:text-2xl tracking-wide text-warm-ink leading-tight">
             {r.name}
           </h3>
         </div>

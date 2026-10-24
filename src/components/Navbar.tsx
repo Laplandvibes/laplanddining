@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 import LanguageSwitcher from '../i18n/LanguageSwitcher';
 import { useLocale } from '../i18n/useLocale';
+import { homeAria } from '../lib/a11yNimet';
 import EcosystemMenu from '../shared/EcosystemMenu';
 
 const NAV_KEYS = [
@@ -61,7 +62,7 @@ export default function Navbar() {
           <div className="lv-navvasen flex items-center gap-3 sm:gap-5 shrink-0">
             <EcosystemMenu lang={locale} currentDomain="laplanddining.com" />
             <div className="lv-wm-paikka">
-              <Link to={to('/')} className="no-underline inline-flex items-center min-h-11" aria-label="LaplandDining home">
+              <Link to={to('/')} className="no-underline inline-flex items-center min-h-11" aria-label={homeAria(locale)}>
                 <Logo className="text-2xl sm:text-3xl" nav />
               </Link>
             </div>

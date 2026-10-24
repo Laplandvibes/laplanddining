@@ -296,6 +296,7 @@ export default function ProductRail({
                     <img
                       src={p.image}
                       alt={label}
+                      translate="no"
                       loading="lazy"
                       decoding="async"
                       width={640}
