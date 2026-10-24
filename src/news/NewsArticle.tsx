@@ -4,6 +4,7 @@ import { useLang, useLocalePath } from '../i18n/useLang';
 import { ARTICLE_BY_SLUG, ARTICLES, loadAllTexts, loadText, loadUi } from './registry';
 import { formatDate, joinList, labelPrefix } from './format';
 import Prose from './Prose';
+import ShareBar, { ShareButton } from '../shared/ShareBar/ShareBar';
 import NewsCard from './NewsCard';
 import { NewsAds, NewsChrome, NotFoundPage, SITE, useNewsHead } from './site';
 import type { NewsMeta } from './types';
@@ -110,10 +111,14 @@ function ArticleView({ meta }: { meta: NewsMeta }) {
             <a href={credit.licenseUrl} target="_blank" rel="noopener license">{credit.license}</a>
           </span>
         </p>
+        {/* Jakonappi tekijärivin alle omalle rivilleen (Vesa 24.10.2026: "Tuo sama jakonappi ylös ja loppuun"). */}
+        <ShareButton lang={lang} title={text.title} excerpt={text.dek} tone="dark" className="mt-4" />
       </div>
 
       <article className="nw-sheet">
         <Prose blocks={text.body} meta={meta} />
+        {/* Jutun loppu: jakorivi aina näkyvissä (shared/ShareBar, 12 kieltä). */}
+        <ShareBar lang={lang} title={text.title} tone="light" />
         <section className="nw-sources" aria-labelledby="nw-sources-h">
           <h2 id="nw-sources-h" className="nw-sources-h">{ui.ui.sources}</h2>
           <ol>
