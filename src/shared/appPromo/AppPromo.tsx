@@ -85,6 +85,14 @@ const CJK = new Set(['ja', 'ko', 'zh-CN']);
  *  sovellusta, joten tämä on lyhin rehellinen polku napista appiin (Vesa 1.8.2026). */
 const appUrl = (tab: string, content: string): string =>
   `https://app.laplandvibes.com/?install=1${tab ? `&tab=${tab}` : ''}&utm_source=web&utm_medium=promo&utm_content=${content}`;
+/** Hubin artikkeli, joka käy appin kaikki näkymät läpi kuvakaappauksin lukijan kielellä (Vesa 24.10.2026: "linkki siihen
+ *  appimainoksiin"). Hubin blogin kielipolut: en ilman etuliitettä, pt-BR = br, zh-CN = cn, ko = kr. */
+const ARTICLE_PREFIX: Record<string, string> = {
+  en: '', fi: 'fi/', sv: 'sv/', de: 'de/', fr: 'fr/', it: 'it/', nl: 'nl/',
+  es: 'es/', 'pt-BR': 'br/', ja: 'ja/', ko: 'kr/', 'zh-CN': 'cn/',
+};
+const articleUrl = (locale: string): string =>
+  `https://laplandvibes.com/${ARTICLE_PREFIX[locale] ?? ''}blog/laplandvibes-app-features/`;
 const QR_SRC = '/images/app-qr.svg';
 const SEEN_KEY = 'lv_app_promo_seen';
 
@@ -173,6 +181,9 @@ const CSS = `
 .lvap-cta:active{transform:scale(.98)}
 .lvap-cta svg{width:20px;height:20px;flex-shrink:0}
 .lvap-note{margin:10px 0 0;font-size:12px;line-height:1.45;color:rgba(249,250,251,.6);text-wrap:pretty}
+.lvap-more{display:inline-flex;align-items:center;gap:4px;margin:10px 0 0;min-height:44px;font-size:14px;font-weight:600;line-height:1.3;color:#F9A8D4;text-decoration:underline;text-decoration-color:rgba(249,168,212,.45);text-underline-offset:3px}
+.lvap-more:hover{color:#FBCFE8;text-decoration-color:rgba(251,207,232,.8)}
+.lvap-more svg{width:16px;height:16px;flex-shrink:0}
 .lvap-qr{display:none;align-items:center;gap:16px;flex-shrink:0;padding:12px 20px 12px 12px;border-radius:22px;border:1px solid rgba(255,255,255,.14);background:rgba(15,23,42,.4)}
 .lvap-qr img{display:block;flex-shrink:0;width:120px;height:120px;border-radius:14px;background:#fff;padding:9px;box-shadow:0 12px 24px -8px rgba(0,0,0,.5);margin:0}
 .lvap-qr span{max-width:156px;font-size:14px;font-weight:600;line-height:1.4;color:rgba(249,250,251,.88);text-wrap:pretty}
@@ -183,6 +194,7 @@ const CSS = `
  .lvap-lockup{justify-content:center}
  .lvap-lead{margin-left:auto;margin-right:auto;text-align:left}
  .lvap-note{text-align:center}
+ .lvap-more{display:flex;justify-content:center;text-align:center}
  .lvap-a{flex-direction:column;align-items:stretch;gap:16px}
  .lvap-a .lvap-phone{align-self:center;width:clamp(132px,44cqi,176px)}
  .lvap-list{width:100%}
@@ -342,6 +354,10 @@ export function AppPromoHero({ focus, placement = 'hero' }: Props) {
         {c.cta}
       </a>
       <p className="lvap-note">{note}</p>
+      <a href={articleUrl(lang)} data-umami-event="app_article" data-umami-event-surface={surface} className="lvap-more">
+        {c.more}
+        <ChevronRight aria-hidden />
+      </a>
     </div>
   );
 

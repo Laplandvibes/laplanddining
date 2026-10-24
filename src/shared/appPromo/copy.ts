@@ -3,9 +3,10 @@
  * src/shared/appPromo/copy.ts (gate:apppromo-kopiot vertaa tavuilleen; laplandstaysillä zh-CN muunnettu zh-hant.mjs:llä).
  *
  * MISTÄ TEKSTIT TULEVAT (1.10.2026):
- *  - screens[<näkymä>][0] = appin oma välilehden nimi (zh events = appin 节庆赛事 2.10.2026, ennen 活动 kahdesti) (appin käännöstiedostot: surface.near, surface.view.weather,
- *    nav.taxi, nav.snowmobileRoutes, nav.outdoors, nav.activities, nav.events, outdoors.modes.ski, carHelp.title), jotta
- *    lukija tunnistaa sen appissa. Rivit [1] appin nav.sub-tekstistä, paitsi now, sos, routes, ski, carhelp, activities.
+ *  - screens[<näkymä>][0] = appin oma välilehden nimi (zh events = appin 节庆赛事 2.10.2026, ennen 活动 kahdesti) (appin käännöstiedostot: surface.tab.places,
+ *    surface.tab.weather, surface.tab.routes, surface.tab.carhelp (appin uudet välilehtinimet 24.10.2026, 1610002),
+ *    nav.taxi, nav.outdoors, nav.activities, nav.events, outdoors.modes.ski), jotta lukija tunnistaa sen appissa.
+ *    now ja sos ovat mainoksen omat (appin nav.sos = lyhyt "SOS"). Rivit [1] appin nav.sub-tekstistä, paitsi now, sos, routes, ski, carhelp, activities.
  *  - note + lead = appin oma asennuslause (install.installingIsFreeAnd) kahtia jaettuna: "ilmainen, ei kauppatiliä" ja
  *    "toimii ilman verkkoa: paikat, reitit ja hätänumerot ovat tallessa puhelimessa". Lupaus on appin, ei mainoksen.
  *  - cta, scan, dismiss = 28 sivustokopion käännöskorjaukset koottuna (it Lei-muodot, es teléfono, nl Download …).
@@ -30,6 +31,8 @@ export type Copy = {
   lead: string;
   scan: string;
   dismiss: string;
+  /** Napin alle: linkki hubin artikkeliin, joka käy kaikki näkymät läpi kuvin (Vesa 24.10.2026). */
+  more: string;
   /** Kuvan alt-etuliite: "<alt>: <näkymän nimi>". */
   alt: string;
   title: Record<TextFocus, string>;
@@ -45,6 +48,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Once installed the app works offline too: places, trails and emergency numbers stay on the phone.',
     scan: 'Scan to open on your phone',
     dismiss: 'Close',
+    more: 'See every feature in the app',
     alt: 'LaplandVibes app screen',
     title: {
       general: 'In Lapland? Keep the essentials in your pocket.',
@@ -58,10 +62,10 @@ export const COPY: Record<string, Copy> = {
     },
     screens: {
       now: ['Right now', 'Weather, aurora chance and wind at your destination'],
-      near: ['Nearby', 'Restaurants, saunas, shops'],
-      weather: ['Weather & roads', 'Hour by hour, official Finnish forecast'],
+      near: ['Near you', 'Restaurants, saunas, shops'],
+      weather: ['Weather', 'Hour by hour, official Finnish forecast'],
       sos: ['Emergency numbers', '112 and other helplines as call buttons'],
-      routes: ['Snowmobile routes', 'Every marked trail, by municipality'],
+      routes: ['Snowmobiling', 'Every marked trail, by municipality'],
       ski: ['Ski resorts', '{slopes} slopes and {lifts} lifts at {resorts} resorts'],
       taxi: ['Taxi', 'Local numbers, per destination'],
       carhelp: ['Car help', 'Towing, tyres and repairs, nearest first'],
@@ -76,6 +80,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Asennettuna appi toimii myös ilman verkkoa: paikat, reitit ja hätänumerot ovat tallessa puhelimessa.',
     scan: 'Skannaa ja avaa puhelimessa',
     dismiss: 'Sulje',
+    more: 'Katso kaikki appin ominaisuudet',
     alt: 'LaplandVibes-sovelluksen näkymä',
     title: {
       general: 'Perillä Lapissa? Kaikki tarpeellinen taskussa.',
@@ -95,7 +100,7 @@ export const COPY: Record<string, Copy> = {
       routes: ['Kelkkareitit', 'Kaikki merkityt urat kunnittain'],
       ski: ['Hiihtokeskukset', '{slopes} rinnettä ja {lifts} hissiä, {resorts} keskusta'],
       taxi: ['Taksi', 'Paikalliset numerot kohteittain'],
-      carhelp: ['Apua autolle', 'Hinaus, renkaat ja korjaamot, lähin ensin'],
+      carhelp: ['Autoapu', 'Hinaus, renkaat ja korjaamot, lähin ensin'],
       outdoors: ['Ulkoilu', 'Reitit, leirintä, laavut'],
       activities: ['Aktiviteetit', 'Varattavat retket kohteittain'],
       events: ['Tapahtumat', 'Festarit ja kisat'],
@@ -107,6 +112,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Installerad fungerar appen även utan nät: platser, leder och nödnummer finns i telefonen.',
     scan: 'Skanna för att öppna i telefonen',
     dismiss: 'Stäng',
+    more: 'Se alla funktioner i appen',
     alt: 'Vy i LaplandVibes-appen',
     title: {
       general: 'Framme i Lappland? Det viktigaste i fickan.',
@@ -120,8 +126,8 @@ export const COPY: Record<string, Copy> = {
     },
     screens: {
       now: ['Just nu', 'Väder, norrskenschans och vind på resmålet'],
-      near: ['Nära', 'Restauranger, bastur, butiker'],
-      weather: ['Väder och väglag', 'Timme för timme, finska prognosen'],
+      near: ['Nära dig', 'Restauranger, bastur, butiker'],
+      weather: ['Väder', 'Timme för timme, finska prognosen'],
       sos: ['Nödnummer', '112 och andra nummer som ringknappar'],
       routes: ['Skoterleder', 'Alla markerade leder, kommun för kommun'],
       ski: ['Skidorter', '{slopes} backar och {lifts} liftar i {resorts} skidorter'],
@@ -138,6 +144,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Einmal installiert läuft die App auch offline: Orte, Routen und Notrufnummern bleiben auf dem Handy.',
     scan: 'Mit dem Handy scannen und öffnen',
     dismiss: 'Schließen',
+    more: 'Alle Funktionen der App ansehen',
     alt: 'Ansicht der LaplandVibes-App',
     title: {
       general: 'In Lappland angekommen? Das Wichtigste in der Tasche.',
@@ -152,9 +159,9 @@ export const COPY: Record<string, Copy> = {
     screens: {
       now: ['Jetzt vor Ort', 'Wetter, Polarlicht-Chance und Wind am Reiseziel'],
       near: ['In der Nähe', 'Restaurants, Saunen, Läden'],
-      weather: ['Wetter & Straße', 'Stunde für Stunde, offizielle Vorhersage'],
+      weather: ['Wetter', 'Stunde für Stunde, offizielle Vorhersage'],
       sos: ['Notrufnummern', '112 und weitere Nummern direkt anrufen'],
-      routes: ['Schneemobil-Routen', 'Alle markierten Strecken, nach Gemeinden'],
+      routes: ['Schneemobil', 'Alle markierten Strecken, nach Gemeinden'],
       ski: ['Skigebiete', '{slopes} Pisten und {lifts} Lifte in {resorts} Skigebieten'],
       taxi: ['Taxi', 'Lokale Nummern je Ort'],
       carhelp: ['Auto-Hilfe', 'Abschleppdienst, Reifen und Werkstätten, nächstgelegene zuerst'],
@@ -169,6 +176,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Une fois installée, l\'application fonctionne aussi hors ligne : les lieux, les itinéraires et les numéros d\'urgence restent sur le téléphone.',
     scan: 'Scannez pour ouvrir sur votre téléphone',
     dismiss: 'Fermer',
+    more: 'Voir toutes les fonctionnalités de l’appli',
     alt: 'Écran de l’appli LaplandVibes',
     title: {
       general: 'En Laponie ? L’essentiel dans votre poche.',
@@ -182,13 +190,13 @@ export const COPY: Record<string, Copy> = {
     },
     screens: {
       now: ['En ce moment', 'Météo, chances d’aurores et vent à destination'],
-      near: ['À proximité', 'Restaurants, saunas, magasins'],
-      weather: ['Météo et routes', 'Heure par heure, prévisions officielles'],
+      near: ['Près d’ici', 'Restaurants, saunas, magasins'],
+      weather: ['Météo', 'Heure par heure, prévisions officielles'],
       sos: ['Numéros d’urgence', 'Le 112 et d’autres numéros à appeler en un geste'],
-      routes: ['Pistes motoneige', 'Tous les itinéraires balisés, par commune'],
+      routes: ['Motoneige', 'Tous les itinéraires balisés, par commune'],
       ski: ['Stations de ski', '{slopes} pistes et {lifts} remontées dans {resorts} stations'],
       taxi: ['Taxi', 'Numéros locaux par destination'],
-      carhelp: ['Assistance auto', 'Remorquage, pneus et garages, classés par distance'],
+      carhelp: ['Dépannage', 'Remorquage, pneus et garages, classés par distance'],
       outdoors: ['Plein air', 'Sentiers, camping, abris'],
       activities: ['Activités', 'Sorties à réserver à destination'],
       events: ['Événements', 'Festivals et compétitions'],
@@ -200,6 +208,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Una vez instalada la app funciona también sin conexión: los sitios, las rutas y los números de emergencia se quedan en el móvil.',
     scan: 'Escanee para abrirla en su teléfono',
     dismiss: 'Cerrar',
+    more: 'Ver todas las funciones de la app',
     alt: 'Pantalla de la app LaplandVibes',
     title: {
       general: '¿Ya en Laponia? Lo esencial en su bolsillo.',
@@ -213,13 +222,13 @@ export const COPY: Record<string, Copy> = {
     },
     screens: {
       now: ['Ahora mismo', 'Clima, probabilidad de auroras y viento en su destino'],
-      near: ['Cerca', 'Restaurantes, saunas, tiendas'],
-      weather: ['Tiempo y carreteras', 'Hora a hora, previsión oficial'],
+      near: ['Aquí cerca', 'Restaurantes, saunas, tiendas'],
+      weather: ['Clima', 'Hora a hora, previsión oficial'],
       sos: ['Números de emergencia', 'El 112 y otros números para llamar con un toque'],
-      routes: ['Rutas en moto de nieve', 'Todas las rutas señalizadas, por municipio'],
+      routes: ['Moto de nieve', 'Todas las rutas señalizadas, por municipio'],
       ski: ['Estaciones de esquí', '{slopes} pistas y {lifts} remontes en {resorts} estaciones'],
       taxi: ['Taxi', 'Números locales por destino'],
-      carhelp: ['Ayuda en carretera', 'Grúa, neumáticos y talleres, por cercanía'],
+      carhelp: ['Auxilio vial', 'Grúa, neumáticos y talleres, por cercanía'],
       outdoors: ['Al aire libre', 'Rutas, camping, refugios'],
       activities: ['Actividades', 'Excursiones para reservar en su destino'],
       events: ['Eventos', 'Festivales y carreras'],
@@ -231,6 +240,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Una volta installata l\'app funziona anche offline: luoghi, itinerari e numeri di emergenza restano sul telefono.',
     scan: 'Inquadri il codice per aprirla sul telefono',
     dismiss: 'Chiudi',
+    more: 'Scopri tutte le funzioni dell’app',
     alt: 'Schermata dell’app LaplandVibes',
     title: {
       general: 'In Lapponia? L’essenziale in tasca.',
@@ -244,13 +254,13 @@ export const COPY: Record<string, Copy> = {
     },
     screens: {
       now: ['Adesso', 'Meteo, probabilità di aurore e vento a destinazione'],
-      near: ['Vicino', 'Ristoranti, saune, negozi'],
-      weather: ['Meteo e strade', 'Ora per ora, previsioni ufficiali'],
+      near: ['Qui vicino', 'Ristoranti, saune, negozi'],
+      weather: ['Meteo', 'Ora per ora, previsioni ufficiali'],
       sos: ['Numeri di emergenza', 'Il 112 e altri numeri da chiamare con un tocco'],
-      routes: ['Piste per motoslitta', 'Tutti i percorsi segnalati, per comune'],
+      routes: ['Motoslitta', 'Tutti i percorsi segnalati, per comune'],
       ski: ['Comprensori sciistici', '{slopes} piste e {lifts} impianti in {resorts} comprensori'],
       taxi: ['Taxi', 'Numeri locali per destinazione'],
-      carhelp: ['Assistenza auto', 'Carro attrezzi, gomme e officine, dal più vicino'],
+      carhelp: ['Assistenza', 'Carro attrezzi, gomme e officine, dal più vicino'],
       outdoors: ['All\'aperto', 'Sentieri, campeggio, ripari'],
       activities: ['Attività', 'Escursioni da prenotare a destinazione'],
       events: ['Eventi', 'Festival e gare'],
@@ -262,6 +272,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Eenmaal geïnstalleerd werkt de app ook offline: plekken, routes en alarmnummers blijven op de telefoon staan.',
     scan: 'Scan om op uw telefoon te openen',
     dismiss: 'Sluiten',
+    more: 'Bekijk alle functies van de app',
     alt: 'Scherm van de LaplandVibes-app',
     title: {
       general: 'In Lapland aangekomen? Het belangrijkste op zak.',
@@ -276,9 +287,9 @@ export const COPY: Record<string, Copy> = {
     screens: {
       now: ['Nu ter plaatse', 'Weer, kans op noorderlicht en wind op uw bestemming'],
       near: ['Dichtbij', 'Restaurants, sauna\'s, winkels'],
-      weather: ['Weer & wegdek', 'Uur voor uur, officiële verwachting'],
+      weather: ['Weer', 'Uur voor uur, officiële verwachting'],
       sos: ['Alarmnummers', '112 en andere nummers als belknoppen'],
-      routes: ['Sneeuwscooterroutes', 'Alle gemarkeerde routes, per gemeente'],
+      routes: ['Sneeuwscooter', 'Alle gemarkeerde routes, per gemeente'],
       ski: ['Skigebieden', '{slopes} pistes en {lifts} liften in {resorts} skigebieden'],
       taxi: ['Taxi', 'Lokale nummers per plaats'],
       carhelp: ['Autohulp', 'Sleepdienst, banden en garages, dichtstbijzijnde eerst'],
@@ -293,6 +304,7 @@ export const COPY: Record<string, Copy> = {
     lead: 'Depois de instalado, o aplicativo funciona offline também: lugares, trilhas e telefones de emergência ficam no celular.',
     scan: 'Escaneie para abrir no celular',
     dismiss: 'Fechar',
+    more: 'Ver todos os recursos do app',
     alt: 'Tela do app LaplandVibes',
     title: {
       general: 'Chegou à Lapônia? O essencial no seu bolso.',
@@ -307,12 +319,12 @@ export const COPY: Record<string, Copy> = {
     screens: {
       now: ['Agora', 'Clima, chance de aurora e vento no seu destino'],
       near: ['Por perto', 'Restaurantes, saunas, lojas'],
-      weather: ['Clima e estradas', 'Hora a hora, previsão oficial'],
+      weather: ['Clima', 'Hora a hora, previsão oficial'],
       sos: ['Números de emergência', 'O 112 e outros números para ligar com um toque'],
-      routes: ['Rotas de motoneve', 'Todas as rotas sinalizadas, por município'],
+      routes: ['Motoneve', 'Todas as rotas sinalizadas, por município'],
       ski: ['Estações de esqui', '{slopes} pistas e {lifts} teleféricos em {resorts} estações'],
       taxi: ['Táxi', 'Números locais por destino'],
-      carhelp: ['Ajuda no carro', 'Guincho, pneus e oficinas, por proximidade'],
+      carhelp: ['Guincho', 'Guincho, pneus e oficinas, por proximidade'],
       outdoors: ['Ao ar livre', 'Trilhas, camping, abrigos'],
       activities: ['Atividades', 'Passeios para reservar no seu destino'],
       events: ['Eventos', 'Festivais e competições'],
@@ -324,6 +336,7 @@ export const COPY: Record<string, Copy> = {
     lead: '入れてしまえばオフラインでも使えます。スポット、ルート、緊急番号は端末に残ります。',
     scan: 'スキャンしてスマホで開く',
     dismiss: '閉じる',
+    more: 'アプリの全機能を見る',
     alt: 'LaplandVibesアプリの画面',
     title: {
       general: 'ラップランドに|着いたら、|必要な|情報は|スマホに。',
@@ -337,7 +350,7 @@ export const COPY: Record<string, Copy> = {
     },
     screens: {
       now: ['現地の|今', '天気、オーロラ出現確率、風'],
-      near: ['近く', 'レストラン・サウナ・店'],
+      near: ['近くのスポット', 'レストラン・サウナ・店'],
       weather: ['天気と|路面', '1時間ごとの公式予報'],
       sos: ['緊急|番号', '112などの番号をワンタップで発信'],
       routes: ['スノーモービル|ルート', '標識のあるルートを自治体別に'],
@@ -355,6 +368,7 @@ export const COPY: Record<string, Copy> = {
     lead: '설치하면 오프라인에서도 쓸 수 있습니다. 장소와 코스, 긴급 번호는 휴대폰에 남습니다.',
     scan: '스캔해서 휴대폰에서 열기',
     dismiss: '닫기',
+    more: '앱의 모든 기능 보기',
     alt: 'LaplandVibes 앱 화면',
     title: {
       general: '라플란드에 도착하셨나요? 필요한 정보는 휴대폰에.',
@@ -368,7 +382,7 @@ export const COPY: Record<string, Copy> = {
     },
     screens: {
       now: ['지금 현지', '날씨, 오로라 확률, 바람'],
-      near: ['주변', '식당·사우나·상점'],
+      near: ['내 주변', '식당·사우나·상점'],
       weather: ['날씨와 노면', '시간별 공식 예보'],
       sos: ['긴급 전화번호', '112 등 주요 번호를 터치 한 번으로 연결'],
       routes: ['스노우모빌 루트', '표시된 모든 루트를 지자체별로'],
@@ -386,6 +400,7 @@ export const COPY: Record<string, Copy> = {
     lead: '装好之后离线也能用：地点、路线和急救电话都留在手机里。',
     scan: '扫码在手机上打开',
     dismiss: '关闭',
+    more: '查看应用的全部功能',
     alt: 'LaplandVibes 应用界面',
     title: {
       general: '到了|拉普兰？|要用的|信息|都在|手机里。',
