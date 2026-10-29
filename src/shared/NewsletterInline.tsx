@@ -1,3 +1,13 @@
+function newsletterEmailLabel(): string {
+  const lang = typeof document === 'undefined' ? 'en' : document.documentElement.lang.toLowerCase().split('-')[0];
+  return ({fi:'Sähköpostiosoite',en:'Email address',de:'E-Mail-Adresse',es:'Correo electrónico',fr:'Adresse e-mail',it:'Indirizzo email',nl:'E-mailadres',sv:'E-postadress',ja:'メールアドレス',ko:'이메일 주소',pt:'Endereço de e-mail',zh:'电子邮箱'} as Record<string,string>)[lang] || 'Email address';
+}
+
+function newsletterLanguageNotice(): string {
+  const lang = typeof document === 'undefined' ? 'en' : document.documentElement.lang.toLowerCase().split('-')[0];
+  const notes: Record<string, string> = {"fi":"Uutiskirjeet ovat suomeksi.","en":"Newsletters are in English.","de":"Die Newsletter werden auf Englisch versendet.","ja":"ニュースレターは英語でお届けします。","ko":"뉴스레터는 영어로 발송됩니다.","fr":"Les newsletters sont envoyées en anglais.","it":"Le newsletter sono inviate in inglese.","nl":"De nieuwsbrieven zijn in het Engels.","sv":"Nyhetsbreven skickas på engelska.","es":"Los boletines se envían en inglés.","pt":"As newsletters são enviadas em inglês.","zh":"订阅邮件以英语发送。"};
+  return notes[lang] || notes.en;
+}
 import { useEffect, useRef, useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import FounderByline from './FounderByline';
@@ -203,8 +213,7 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
           </div>
         ) : (
           <>
-            <form
-              onSubmit={handleSubmit}
+            <form style={{ background: '#0F172A', color: '#F9FAFB', padding: 16, borderRadius: 16 }} onSubmit={handleSubmit}
               onInvalidCapture={(e) => {
                 if (blockedTracked.current) return;
                 blockedTracked.current = true;
@@ -226,7 +235,7 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                 aria-hidden="true"
                 style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
               />
-              <input
+              <label style={{display:'flex',flexDirection:'column',gap:8,flex:'1 1 0%',minWidth:0,textAlign:'left',fontSize:14,color:'#F9FAFB'}}><span>{newsletterEmailLabel()}</span><span style={{fontSize:13,lineHeight:1.5}}>{newsletterLanguageNotice()}</span><input
                 type="email"
                 value={email}
                 onFocus={trackStart}
@@ -237,18 +246,13 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                 disabled={status === 'loading'}
                 autoComplete="email"
                 className="flex-1 px-6 py-4 rounded-full text-base focus:outline-none disabled:opacity-50"
-                style={{
-                  background: 'rgba(255,255,255,0.15)',
-                  border: '1px solid rgba(255,255,255,0.35)',
-                  color: '#FFFFFF',
-                  WebkitTextFillColor: '#FFFFFF',
-                }}
-              />
+                style={{ background: '#FFFFFF', color: '#1F2937', WebkitTextFillColor: '#1F2937', border: '1px solid #64748B' }}
+              /></label>
               <button
                 type="submit"
                 disabled={status === 'loading'}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition-transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
-                style={{ background: '#FFFFFF', color: '#DB2777' }}
+                style={{ background: '#FFFFFF', color: '#9D174D' }}
               >
                 {status === 'loading' ? (
                   <>
@@ -268,7 +272,7 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                   väitti suostumusta jota kukaan ei ollut antanut.
                   Ruutu on esivalitsematon (GDPR: esivalittu ruutu ei ole
                   suostumus) ja lähetysnappi on estetty kunnes se on rastitettu. */}
-              <label className="flex items-start gap-3 text-left cursor-pointer">
+              <label style={{color:"#F9FAFB"}} className="flex items-start gap-3 text-left cursor-pointer">
                 <input
                   type="checkbox"
                   checked={consented}
@@ -277,10 +281,9 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                   disabled={status === 'loading'}
                   className="mt-1 w-4 h-4 shrink-0 accent-white cursor-pointer"
                 />
-                <span className="text-white/85 text-xs leading-relaxed">
+                <span style={{color:"#F9FAFB"}} className="text-white/85 text-xs leading-relaxed">
                   {s.consent}{' '}
-                  <a
-                    href={withSlash(privacyHref)}
+                  <a style={{color:"#BAE6FD",textDecoration:"underline"}}                     href={withSlash(privacyHref)}
                     target="_blank"
                     rel="noopener"
                     onClick={(e) => e.stopPropagation()}

@@ -1,3 +1,13 @@
+function newsletterEmailLabel(): string {
+  const lang = typeof document === 'undefined' ? 'en' : document.documentElement.lang.toLowerCase().split('-')[0];
+  return ({fi:'Sähköpostiosoite',en:'Email address',de:'E-Mail-Adresse',es:'Correo electrónico',fr:'Adresse e-mail',it:'Indirizzo email',nl:'E-mailadres',sv:'E-postadress',ja:'メールアドレス',ko:'이메일 주소',pt:'Endereço de e-mail',zh:'电子邮箱'} as Record<string,string>)[lang] || 'Email address';
+}
+
+function newsletterLanguageNotice(): string {
+  const lang = typeof document === 'undefined' ? 'en' : document.documentElement.lang.toLowerCase().split('-')[0];
+  const notes: Record<string, string> = {"fi":"Uutiskirjeet ovat suomeksi.","en":"Newsletters are in English.","de":"Die Newsletter werden auf Englisch versendet.","ja":"ニュースレターは英語でお届けします。","ko":"뉴스레터는 영어로 발송됩니다.","fr":"Les newsletters sont envoyées en anglais.","it":"Le newsletter sono inviate in inglese.","nl":"De nieuwsbrieven zijn in het Engels.","sv":"Nyhetsbreven skickas på engelska.","es":"Los boletines se envían en inglés.","pt":"As newsletters são enviadas em inglês.","zh":"订阅邮件以英语发送。"};
+  return notes[lang] || notes.en;
+}
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Send, AlertCircle, Loader2, X } from 'lucide-react';
@@ -683,7 +693,7 @@ const FOUNDER_STYLES = `
   .lv-nl-title.lv-nl-title { font-size: 1.5rem; line-height: 1.15; margin-bottom: 6px; padding-right: 36px; }
   .lv-nl-desc.lv-nl-desc { font-size: 0.875rem; line-height: 1.45; margin-bottom: 10px; text-align: left; }
   .lv-nl-form.lv-nl-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 10px; }
-  .lv-nl-form .lv-nl-email { grid-column: 1; grid-row: 1; }
+  .lv-nl-form > label:not(.lv-nl-consent) { grid-column: 1; grid-row: 1; }
   .lv-nl-form .lv-nl-submit { grid-column: 2; grid-row: 1; width: auto; padding-left: 20px; padding-right: 20px; }
   .lv-nl-form .lv-nl-consent { grid-column: 1 / -1; grid-row: 2; }
   .lv-nl-later.lv-nl-later { margin-top: 6px; text-align: left; }
@@ -851,8 +861,15 @@ export default function NewsletterPopup({
     try { if (sessionStorage.getItem(sessionShownKey)) return; } catch { /* private mode */ }
 
     let fired = false;
+    let pending = false;
+    const cookieObserver = new MutationObserver(() => {
+      if (pending && !document.querySelector('[data-lv-cookie-prompt]')) trigger();
+    });
+    cookieObserver.observe(document.body, { childList: true, subtree: true });
     const trigger = () => {
       if (fired) return;
+      // A newsletter prompt must not cover an unanswered cookie choice.
+      if (document.querySelector('[data-lv-cookie-prompt]')) { pending = true; return; }
       fired = true;
       try { sessionStorage.setItem(sessionShownKey, '1'); } catch { /* private mode */ }
       setStatus('visible');
@@ -874,6 +891,7 @@ export default function NewsletterPopup({
     }
 
     return () => {
+      cookieObserver.disconnect();
       if (timer) window.clearTimeout(timer);
       if (scrollPercent > 0) window.removeEventListener('scroll', onScroll);
     };
@@ -1158,8 +1176,7 @@ export default function NewsletterPopup({
                 {resolvedDescription}
               </p>
 
-              <form
-                onSubmit={handleSubmit}
+              <form style={{ background: '#0F172A', color: '#F9FAFB', padding: 16, borderRadius: 16 }} onSubmit={handleSubmit}
                 // [LV-FUNNEL] required-kentät estävät submitin natiivisti ennen
                 // handleSubmitia — invalid-capture kertoo MIKÄ kenttä pysäytti.
                 onInvalidCapture={(e) => {
@@ -1182,7 +1199,7 @@ export default function NewsletterPopup({
                   aria-hidden="true"
                   style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
                 />
-                <input
+                <label style={{display:'flex',flexDirection:'column',gap:8,flex:'1 1 0%',minWidth:0,textAlign:'left',fontSize:14,color:'#F9FAFB'}}><span>{newsletterEmailLabel()}</span><span style={{fontSize:13,lineHeight:1.5}}>{newsletterLanguageNotice()}</span><input
                   type="email"
                   value={email}
                   onFocus={trackStart}
@@ -1195,16 +1212,12 @@ export default function NewsletterPopup({
                   // explicit inline style, not every LV site (e.g. laplandvisit)
                   // defines the `snow` colour token in tailwind.config, which
                   // made the input render as pure white-on-white and invisible.
-                  style={{
-                    background: 'rgba(255,255,255,0.08)',
-                    color: '#F8FAFC',
-                    WebkitTextFillColor: '#F8FAFC',
-                  }}
-                  className="lv-nl-email w-full px-5 py-3 rounded-full border border-white/15 disabled:opacity-50 placeholder:text-white/40"
-                />
+                  style={{ background: '#FFFFFF', color: '#1F2937', WebkitTextFillColor: '#1F2937', border: '1px solid #64748B' }}
+                  className="lv-nl-email w-full px-5 py-3 rounded-full border border-white/15 disabled:opacity-50 placeholder:text-slate-600"
+                /></label>
                 {/* [LV-CONSENT-V2 2026-08-14] Pakollinen suostumus + ikävahvistus.
                     Esivalitsematon: GDPR:n mukaan esivalittu ruutu ei ole suostumus. */}
-                <label className="lv-nl-consent flex items-start gap-2.5 text-left cursor-pointer">
+                <label style={{color:"#F9FAFB"}} className="lv-nl-consent flex items-start gap-2.5 text-left cursor-pointer">
                   <input
                     type="checkbox"
                     checked={consented}
@@ -1214,10 +1227,9 @@ export default function NewsletterPopup({
                     className="mt-0.5 w-4 h-4 shrink-0 cursor-pointer"
                     style={{ accentColor: T.accent }}
                   />
-                  <span className="text-white/70 text-xs leading-relaxed">
+                  <span style={{color:"#F9FAFB"}} className="text-white/70 text-xs leading-relaxed">
                     {D.consent}{' '}
-                    <a
-                      href={withSlash(localizedPrivacyHref(privacyHref, location.pathname))}
+                    <a style={{color:"#BAE6FD",textDecoration:"underline"}}                       href={withSlash(localizedPrivacyHref(privacyHref, location.pathname))}
                       target="_blank"
                       rel="noopener"
                       onClick={(e) => e.stopPropagation()}
