@@ -1,16 +1,25 @@
-function newsletterEmailLabel(): string {
-  const lang = typeof document === 'undefined' ? 'en' : document.documentElement.lang.toLowerCase().split('-')[0];
-  return ({fi:'Sähköpostiosoite',en:'Email address',de:'E-Mail-Adresse',es:'Correo electrónico',fr:'Adresse e-mail',it:'Indirizzo email',nl:'E-mailadres',sv:'E-postadress',ja:'メールアドレス',ko:'이메일 주소',pt:'Endereço de e-mail',zh:'电子邮箱'} as Record<string,string>)[lang] || 'Email address';
-}
-
-function newsletterLanguageNotice(): string {
-  const lang = typeof document === 'undefined' ? 'en' : document.documentElement.lang.toLowerCase().split('-')[0];
-  const notes: Record<string, string> = {"fi":"Uutiskirjeet ovat suomeksi.","en":"Newsletters are in English.","de":"Die Newsletter werden auf Englisch versendet.","ja":"ニュースレターは英語でお届けします。","ko":"뉴스레터는 영어로 발송됩니다.","fr":"Les newsletters sont envoyées en anglais.","it":"Le newsletter sono inviate in inglese.","nl":"De nieuwsbrieven zijn in het Engels.","sv":"Nyhetsbreven skickas på engelska.","es":"Los boletines se envían en inglés.","pt":"As newsletters são enviadas em inglês.","zh":"订阅邮件以英语发送。"};
-  return notes[lang] || notes.en;
-}
 import { useEffect, useRef, useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import FounderByline from './FounderByline';
+
+// Uutiskirjeen kieliohje sivun kielestä (ei <html lang>:sta, joka on esirenderöinnissä aina 'en').
+// Kirjeitä lähtee vain suomeksi ja englanniksi, joten fi/en-sivulla ohje toistaisi itsestäänselvää
+// eikä näy. Vesa 1.11.2026: "kuinka monta kertaa lukee sähköpostiosoite" (sama kuin skiresorts 92e9878).
+const NL_LANG_NOTICE: Record<string, string> = {
+  de: 'Die Newsletter werden auf Englisch versendet.', ja: 'ニュースレターは英語でお届けします。',
+  es: 'Los boletines se envían en inglés.', pt: 'As newsletters são enviadas em inglês.', zh: '订阅邮件以英语发送。',
+  ko: '뉴스레터는 영어로 발송됩니다.', fr: 'Les newsletters sont envoyées en anglais.', it: 'Le newsletter sono inviate in inglese.',
+  nl: 'De nieuwsbrieven zijn in het Engels.', sv: 'Nyhetsbreven skickas på engelska.',
+};
+const NL_EMAIL_LABEL: Record<string, string> = {
+  en: 'Email address', fi: 'Sähköpostiosoite', de: 'E-Mail-Adresse', ja: 'メールアドレス',
+  es: 'Correo electrónico', pt: 'E-mail', zh: '电子邮箱', ko: '이메일 주소',
+  fr: 'Adresse e-mail', it: 'Indirizzo e-mail', nl: 'E-mailadres', sv: 'E-postadress',
+};
+const nlLang = (l?: string): string => {
+  const x = (l || 'en').toLowerCase();
+  return x === 'br' ? 'pt' : x === 'cn' ? 'zh' : x === 'kr' ? 'ko' : x === 'jp' ? 'ja' : x.split('-')[0];
+};
 
 /** `/privacy` → `/privacy/`: Cloudflare vastaa kauttaviivattomaan osoitteeseen 308:lla,
  *  ja Google kirjaa jokaisen sellaisen linkin uudelleenohjaukseksi (18.9.2026). */
@@ -235,19 +244,19 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                 aria-hidden="true"
                 style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
               />
-              <label style={{display:'flex',flexDirection:'column',gap:8,flex:'1 1 0%',minWidth:0,textAlign:'left',fontSize:14,color:'#F9FAFB'}}><span>{newsletterEmailLabel()}</span><span style={{fontSize:13,lineHeight:1.5}}>{newsletterLanguageNotice()}</span><input
+              <div style={{display:'flex',flexDirection:'column',gap:8,flex:'1 1 0%',minWidth:0,textAlign:'left',fontSize:14,color:'#F9FAFB'}}><label htmlFor="lv-nl-inline-email">{NL_EMAIL_LABEL[nlLang(resolved)] ?? NL_EMAIL_LABEL.en}</label>{NL_LANG_NOTICE[nlLang(resolved)] && <span id="lv-nl-inline-email-lang" style={{fontSize:13,lineHeight:1.5}}>{NL_LANG_NOTICE[nlLang(resolved)]}</span>}<input
+                id="lv-nl-inline-email"
+                aria-describedby={NL_LANG_NOTICE[nlLang(resolved)] ? 'lv-nl-inline-email-lang' : undefined}
                 type="email"
                 value={email}
                 onFocus={trackStart}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder={s.placeholder}
-                aria-label={s.placeholder}
                 required
                 disabled={status === 'loading'}
                 autoComplete="email"
                 className="flex-1 px-6 py-4 rounded-full text-base focus:outline-none disabled:opacity-50"
                 style={{ background: '#FFFFFF', color: '#1F2937', WebkitTextFillColor: '#1F2937', border: '1px solid #64748B' }}
-              /></label>
+              /></div>
               <button
                 type="submit"
                 disabled={status === 'loading'}
