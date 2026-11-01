@@ -566,7 +566,7 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
           data-umami-event-site={HUB}
         >
           <span className="lv-eco-brand-txt">
-            <span className="lv-eco-mark"><i>#</i>LAPLAND<i>VIBES</i></span>
+            <span translate="no" className="lv-eco-mark notranslate"><i>#</i>LAPLAND<i>VIBES</i></span>
             <span className="lv-eco-sub">{hubName} · {HUB}</span>
           </span>
           {onHub ? null : <ArrowUpRight className="lv-eco-arrow" size={16} strokeWidth={2.2} aria-hidden="true" />}

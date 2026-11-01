@@ -5,7 +5,7 @@
  * kaikkien sivustojen artikkeli- ja uutissivuille 12 kielellä." Sääntö: muistin feedback_artikkelissa_jakonappi.
  *
  * Käyttö artikkelisivulla (kaksi paikkaa, molemmat pakollisia):
- *   <ShareButton lang={lang} title={title} excerpt={dek} />          otsikon / tekijärivin alle, omalle rivilleen
+ *   <ShareButton lang={lang} title={title} />                        otsikon / tekijärivin alle, omalle rivilleen
  *   <ShareBar lang={lang} title={title} tone="dark" />               jutun loppuun (vaalealla pohjalla tone="light")
  *
  * Puhelimella (kosketusnäyttö + navigator.share) nappi avaa laitteen oman jakovalikon. Tietokoneella se avaa
@@ -13,6 +13,11 @@
  * Ei riippuvuuksia sivuston i18n:ään eikä analytiikkaan: tekstit copy.ts, mittaus data-umami-event="share"
  * (+ share_open), verkko ja pinta (top/end) datassa — _jobs/06-mittaus.md: linkki-CTA attribuutilla.
  * Jaettava osoite = sivun oma kieliversio ilman kyselyä ja ankkuria.
+ *
+ * Jaetaan vain linkki (Vesa 1.11.2026, WhatsApp-kuvakaappaus: "jaetessa on noi tekstit kahteen kertaan").
+ * WhatsApp, Facebook ja LinkedIn piirtävät linkistä itse kortin sivun og-tiedoista: kuva, otsikko ja kuvaus.
+ * Jakonapin oma johdanto toisti saman kuvauksen kortin alla. X:ssä otsikko on twiitin esitäytetty teksti ja
+ * sähköpostissa aihe; viestin runkoon tulee pelkkä osoite. Sama kuin hubin src/blog/share.ts.
  */
 import { useState, type ReactElement } from 'react';
 import { SHARE_COPY, shareLang } from './copy';
@@ -48,11 +53,11 @@ const href = (net: Net, url: string, title: string) => {
   const u = encodeURIComponent(url);
   const t = encodeURIComponent(title);
   switch (net) {
-    case 'whatsapp': return `https://api.whatsapp.com/send?text=${encodeURIComponent(`${title}\n${url}`)}`;
+    case 'whatsapp': return `https://api.whatsapp.com/send?text=${u}`;
     case 'facebook': return `https://www.facebook.com/sharer/sharer.php?u=${u}`;
     case 'linkedin': return `https://www.linkedin.com/sharing/share-offsite/?url=${u}`;
     case 'x': return `https://twitter.com/intent/tweet?url=${u}&text=${t}`;
-    case 'email': return `mailto:?subject=${t}&body=${encodeURIComponent(`${title}\n\n${url}`)}`;
+    case 'email': return `mailto:?subject=${t}&body=${u}`;
   }
 };
 
@@ -117,15 +122,20 @@ function Targets({ lang, title, surface, tone }: { lang?: string; title: string;
   );
 }
 
-/** "Jaa ›" otsikon / tekijärivin alla. Puhelimella laitteen jakovalikko, tietokoneella kohteet napin alle. */
-export function ShareButton({ lang, title, excerpt, tone = 'dark', className = '' }: {
-  lang?: string; title: string; excerpt?: string; tone?: Tone; className?: string;
+/** "Jaa ›" otsikon / tekijärivin alla. Puhelimella laitteen jakovalikko, tietokoneella kohteet napin alle.
+ *  `excerpt` jää tyyppiin vanhojen kutsupaikkojen takia, mutta sitä ei jaeta. */
+export function ShareButton({ lang, title, tone = 'dark', className = '' }: {
+  lang?: string; title: string;
+  /** @deprecated ei käytössä 1.11.2026 alkaen: kuvaus toistui WhatsAppissa kortin alla. */
+  excerpt?: string;
+  tone?: Tone; className?: string;
 }) {
   const c = SHARE_COPY[shareLang(lang)];
   const [open, setOpen] = useState(false);
   const click = async () => {
     if (nativeShare()) {
-      try { await navigator.share({ title, text: excerpt, url: pageUrl() }); } catch { /* peruttu */ }
+      // Ei text-kenttää: Android liittää sen viestiin osoitteen eteen, ja kortti näyttää saman kuvauksen.
+      try { await navigator.share({ title, url: pageUrl() }); } catch { /* peruttu */ }
       return;
     }
     setOpen((o) => !o);

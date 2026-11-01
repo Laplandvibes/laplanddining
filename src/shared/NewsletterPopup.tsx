@@ -1167,7 +1167,7 @@ export default function NewsletterPopup({
 
               {/* Brand mark, adapts to current site. The wordmark is ALWAYS Bebas
                   Neue, never the host site's heading font: see WORDMARK_FONT. */}
-              <p className="lv-nl-wm font-heading tracking-wide text-xl sm:text-2xl mb-3 leading-none" style={{ fontFamily: WORDMARK_FONT }}>
+              <p translate="no" className="lv-nl-wm notranslate font-heading tracking-wide text-xl sm:text-2xl mb-3 leading-none" style={{ fontFamily: WORDMARK_FONT }}>
                 <span className="text-vibe-pink">#</span>
                 <span className="text-snow">LAPLAND</span>
                 <span className="text-vibe-pink">{brandWord}</span>

@@ -306,7 +306,7 @@ const CSS = `
 function Lockup() {
   return (
     <p className="lvap-lockup">
-      <span className="lvap-wm"><b>#</b>LAPLAND<b>VIBES</b> APP</span>
+      <span translate="no" className="lvap-wm notranslate"><b>#</b>LAPLAND<b>VIBES</b> APP</span>
       <span lang="en" className="lvap-slogan">Everything Lapland.</span>
     </p>
   );

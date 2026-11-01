@@ -31,7 +31,7 @@ export default function Logo({
     >
       {/* Navissa alle xl:n kuvake ja väli em-yksiköissä: koko sanamerkki skaalautuu samassa suhteessa (k sisältää ne). */}
       {showIcon && <UtensilsCrossed size={18} className={`text-amber shrink-0 ${nav ? ' max-xl:w-[0.75em] max-xl:h-[0.75em]' : ''}`} />}
-      <span>
+      <span className="notranslate" translate="no">
         <span className="text-vibe-pink">#</span>
         <span className="text-snow">LAPLAND</span>
         <span className="text-amber">DINING</span>
