@@ -16,6 +16,12 @@ const NL_EMAIL_LABEL: Record<string, string> = {
   es: 'Correo electrónico', pt: 'E-mail', zh: '电子邮箱', ko: '이메일 주소',
   fr: 'Adresse e-mail', it: 'Indirizzo e-mail', nl: 'E-mailadres', sv: 'E-postadress',
 };
+// Esimerkkiosoite kentän taustalle (4.11.2026): näyttää muodon, ei toista otsikkoa (1.11. poistettu toisto).
+const NL_EMAIL_EXAMPLE: Record<string, string> = {
+  en: 'name@example.com', fi: 'nimi@esimerkki.fi', de: 'name@beispiel.de', ja: 'name@example.com',
+  es: 'nombre@ejemplo.es', pt: 'nome@exemplo.com.br', zh: 'name@example.com', ko: 'name@example.com',
+  fr: 'nom@exemple.fr', it: 'nome@esempio.it', nl: 'naam@voorbeeld.nl', sv: 'namn@exempel.se',
+};
 const nlLang = (l?: string): string => {
   const x = (l || 'en').toLowerCase();
   return x === 'br' ? 'pt' : x === 'cn' ? 'zh' : x === 'kr' ? 'ko' : x === 'jp' ? 'ja' : x.split('-')[0];
@@ -1185,7 +1191,10 @@ export default function NewsletterPopup({
                 {resolvedDescription}
               </p>
 
-              <form style={{ background: '#0F172A', color: '#F9FAFB', padding: 16, borderRadius: 16 }} onSubmit={handleSubmit}
+              {/* 4.11.2026 (Vesa laplandworkissa: kenttä "leijuu" eikä "anna esimerkkiä taustalle"): Codexin 28.10.
+                  kontrastipaikan tumma laatikko pois. Kortin pohja on joka teemassa tumma (mitattu 31 sivustoa:
+                  #001233 … #1F1612), joten valkoinen otsikko riittää ilman laatikkoa. Kenttään esimerkkiosoite. */}
+              <form onSubmit={handleSubmit}
                 // [LV-FUNNEL] required-kentät estävät submitin natiivisti ennen
                 // handleSubmitia — invalid-capture kertoo MIKÄ kenttä pysäytti.
                 onInvalidCapture={(e) => {
@@ -1218,12 +1227,13 @@ export default function NewsletterPopup({
                   required
                   disabled={status === 'loading'}
                   autoComplete="email"
+                  placeholder={NL_EMAIL_EXAMPLE[nlLang(safeLang)] ?? NL_EMAIL_EXAMPLE.en}
                   // 2026-05-12: switched from Tailwind `bg-white/8 text-snow` to
                   // explicit inline style, not every LV site (e.g. laplandvisit)
                   // defines the `snow` colour token in tailwind.config, which
                   // made the input render as pure white-on-white and invisible.
                   style={{ background: '#FFFFFF', color: '#1F2937', WebkitTextFillColor: '#1F2937', border: '1px solid #64748B' }}
-                  className="lv-nl-email w-full px-5 py-3 rounded-full border border-white/15 disabled:opacity-50 placeholder:text-slate-600"
+                  className="lv-nl-email w-full px-5 py-3 rounded-full border border-white/15 disabled:opacity-50 placeholder:text-slate-500"
                 /></div>
                 {/* [LV-CONSENT-V2 2026-08-14] Pakollinen suostumus + ikävahvistus.
                     Esivalitsematon: GDPR:n mukaan esivalittu ruutu ei ole suostumus. */}

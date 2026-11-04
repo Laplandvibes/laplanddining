@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, Mail } from 'lucide-react';
 import FounderByline from './FounderByline';
 
 // Uutiskirjeen kieliohje sivun kielestä (ei <html lang>:sta, joka on esirenderöinnissä aina 'en').
@@ -15,6 +15,12 @@ const NL_EMAIL_LABEL: Record<string, string> = {
   en: 'Email address', fi: 'Sähköpostiosoite', de: 'E-Mail-Adresse', ja: 'メールアドレス',
   es: 'Correo electrónico', pt: 'E-mail', zh: '电子邮箱', ko: '이메일 주소',
   fr: 'Adresse e-mail', it: 'Indirizzo e-mail', nl: 'E-mailadres', sv: 'E-postadress',
+};
+// Esimerkkiosoite kentän taustalle (4.11.2026): näyttää muodon, ei toista otsikkoa (1.11. poistettu toisto).
+const NL_EMAIL_EXAMPLE: Record<string, string> = {
+  en: 'name@example.com', fi: 'nimi@esimerkki.fi', de: 'name@beispiel.de', ja: 'name@example.com',
+  es: 'nombre@ejemplo.es', pt: 'nome@exemplo.com.br', zh: 'name@example.com', ko: 'name@example.com',
+  fr: 'nom@exemple.fr', it: 'nome@esempio.it', nl: 'naam@voorbeeld.nl', sv: 'namn@exempel.se',
 };
 const nlLang = (l?: string): string => {
   const x = (l || 'en').toLowerCase();
@@ -222,7 +228,11 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
           </div>
         ) : (
           <>
-            <form style={{ background: '#0F172A', color: '#F9FAFB', padding: 16, borderRadius: 16 }} onSubmit={handleSubmit}
+            {/* 4.11.2026 (Vesa laplandworkissa: kenttä "leijuu" eikä "anna esimerkkiä taustalle"): Codexin 28.10.
+                kontrastipaikan tumma laatikko pois. Otsikko kentän yllä, kenttä ja nappi samalla rivillä samankorkuisina,
+                esimerkkiosoite kentässä (EI otsikon toistoa, poistettu 1.11.), teksti umpivalkoista. Valkoinen
+                liukuvärin tummimmassa kohdassa on yli 4,5:1. Tilaa-nappi tumma: valkoinen nappi pinkillä oli ainoa vaalea esine. */}
+            <form onSubmit={handleSubmit}
               onInvalidCapture={(e) => {
                 if (blockedTracked.current) return;
                 blockedTracked.current = true;
@@ -230,9 +240,8 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                 const t = e.target as HTMLInputElement;
                 track('nl_blocked', { ...funnelData, reason: t.type === 'checkbox' ? 'consent' : 'email' });
               }}
-              className="flex flex-col gap-4 max-w-lg mx-auto"
+              className="flex flex-col gap-4 max-w-lg mx-auto text-left"
             >
-              <div className="flex flex-col sm:flex-row gap-3">
               {/* Honeypot: off-screen, hidden from a11y tree. Bots fill it. */}
               <input
                 type="text"
@@ -244,35 +253,50 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                 aria-hidden="true"
                 style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
               />
-              <div style={{display:'flex',flexDirection:'column',gap:8,flex:'1 1 0%',minWidth:0,textAlign:'left',fontSize:14,color:'#F9FAFB'}}><label htmlFor="lv-nl-inline-email">{NL_EMAIL_LABEL[nlLang(resolved)] ?? NL_EMAIL_LABEL.en}</label>{NL_LANG_NOTICE[nlLang(resolved)] && <span id="lv-nl-inline-email-lang" style={{fontSize:13,lineHeight:1.5}}>{NL_LANG_NOTICE[nlLang(resolved)]}</span>}<input
-                id="lv-nl-inline-email"
-                aria-describedby={NL_LANG_NOTICE[nlLang(resolved)] ? 'lv-nl-inline-email-lang' : undefined}
-                type="email"
-                value={email}
-                onFocus={trackStart}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={status === 'loading'}
-                autoComplete="email"
-                className="flex-1 px-6 py-4 rounded-full text-base focus:outline-none disabled:opacity-50"
-                style={{ background: '#FFFFFF', color: '#1F2937', WebkitTextFillColor: '#1F2937', border: '1px solid #64748B' }}
-              /></div>
-              <button
-                type="submit"
-                disabled={status === 'loading'}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition-transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
-                style={{ background: '#FFFFFF', color: '#9D174D' }}
-              >
-                {status === 'loading' ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" /> {s.loading}
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" /> {s.submit}
-                  </>
-                )}
+              <div>
+              <label htmlFor="lv-nl-inline-email" className="block font-semibold text-sm mb-2" style={{ color: '#FFFFFF' }}>
+                {NL_EMAIL_LABEL[nlLang(resolved)] ?? NL_EMAIL_LABEL.en}
+              </label>
+              {NL_LANG_NOTICE[nlLang(resolved)] && (
+                <p id="lv-nl-inline-email-lang" className="text-[13px] leading-relaxed -mt-1 mb-2" style={{ color: '#FFFFFF' }}>
+                  {NL_LANG_NOTICE[nlLang(resolved)]}
+                </p>
+              )}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <div className="relative flex-1 min-w-0">
+                  <Mail aria-hidden className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style={{ color: '#64748B' }} />
+                  <input
+                    id="lv-nl-inline-email"
+                    aria-describedby={NL_LANG_NOTICE[nlLang(resolved)] ? 'lv-nl-inline-email-lang' : undefined}
+                    type="email"
+                    value={email}
+                    onFocus={trackStart}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    disabled={status === 'loading'}
+                    autoComplete="email"
+                    placeholder={NL_EMAIL_EXAMPLE[nlLang(resolved)] ?? NL_EMAIL_EXAMPLE.en}
+                    className="w-full h-14 pl-11 pr-4 rounded-full text-base placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-white/40 disabled:opacity-50"
+                    style={{ background: '#FFFFFF', color: '#1F2937', WebkitTextFillColor: '#1F2937', border: '1px solid #FFFFFF' }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="h-14 shrink-0 inline-flex items-center justify-center gap-2 px-7 rounded-full font-bold whitespace-nowrap shadow-lg transition-colors disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                  style={{ background: '#0F172A', color: '#FFFFFF' }}
+                >
+                  {status === 'loading' ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" /> {s.loading}
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" /> {s.submit}
+                    </>
+                  )}
                 </button>
+              </div>
               </div>
 
               {/* [LV-CONSENT-V2 2026-08-14] Pakollinen suostumus + ikävahvistus.
@@ -290,9 +314,10 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                   disabled={status === 'loading'}
                   className="mt-1 w-4 h-4 shrink-0 accent-white cursor-pointer"
                 />
-                <span style={{color:"#F9FAFB"}} className="text-white/85 text-xs leading-relaxed">
+                <span style={{color:"#FFFFFF"}} className="text-xs leading-relaxed">
                   {s.consent}{' '}
-                  <a style={{color:"#BAE6FD",textDecoration:"underline"}}                     href={withSlash(privacyHref)}
+                  <a style={{color:"#FFFFFF",textDecoration:"underline"}}
+                    href={withSlash(privacyHref)}
                     target="_blank"
                     rel="noopener"
                     onClick={(e) => e.stopPropagation()}
