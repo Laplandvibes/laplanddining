@@ -202,7 +202,7 @@ export interface NewsletterPopupTheme {
  * language falls back to the built-in network note in THAT language, never to
  * English, so a partial map cannot put English on /fi.
  */
-export type NewsletterPopupCopy = Partial<Record<SupportedLang, { headline?: string; description: string }>>;
+export type NewsletterPopupCopy = Partial<Record<SupportedLang, { headline?: string; description: string; /** Button label; default the network's own. */ submit?: string }>>;
 
 const DEFAULT_THEME: Required<NewsletterPopupTheme> = {
   surface: '#0F172A',
@@ -717,12 +717,13 @@ const FOUNDER_STYLES = `
   .lv-nl-body--media .lv-nl-social { justify-content: flex-start !important; }
 }
 @media not all and (max-height: 600px) and (min-width: 560px) {
-  .lv-nl-body--form.lv-nl-body--form { display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 16px; text-align: left; }
+  .lv-nl-body--form.lv-nl-body--form { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 16px; text-align: left; }
   .lv-nl-body--form .lv-nl-media, .lv-nl-body--form .lv-nl-main { display: contents; }
   .lv-nl-body--form > *, .lv-nl-body--form .lv-nl-main > * { grid-column: 1 / -1; }
-  .lv-nl-body--form .lv-founder-avatar { grid-column: 1; grid-row: 1 / span 2; align-self: center; width: 72px !important; height: 72px !important; margin: 0; box-shadow: 0 0 0 2px var(--lv-nl-accent, #EC4899) !important; }
-  .lv-nl-body--form .lv-nl-wm.lv-nl-wm { grid-column: 2; grid-row: 1; align-self: end; font-size: 1.125rem; margin: 0; padding-right: 36px; text-align: left; }
-  .lv-nl-body--form .lv-nl-title.lv-nl-title { grid-column: 2; grid-row: 2; align-self: start; font-size: 1.875rem; line-height: 1.05; margin: 4px 0 0; padding-right: 36px; text-align: left; }
+  .lv-nl-body--form .lv-founder-avatar { grid-column: 1; grid-row: 1; align-self: center; width: 64px !important; height: 64px !important; margin: 0; box-shadow: 0 0 0 2px var(--lv-nl-accent, #EC4899) !important; }
+  .lv-nl-body--form .lv-nl-wm.lv-nl-wm { grid-column: 2; grid-row: 1; align-self: center; font-size: 1.125rem; margin: 0; padding-right: 36px; text-align: left; }
+  .lv-nl-body--form .lv-nl-title.lv-nl-title { grid-column: 1 / -1; grid-row: 2; align-self: start; font-size: 1.875rem; line-height: 1.1; margin: 16px 0 0; padding-right: 0; text-align: left; }
+  .lv-nl-body--form .lv-nl-title.lv-nl-title:lang(ja) { font-size: 1.625rem; }
   .lv-nl-body--form .lv-nl-desc.lv-nl-desc { margin: 18px 0 20px; font-size: 1rem; line-height: 1.55; text-align: left; }
   .lv-nl-body--form .lv-nl-consent span { font-size: 0.8125rem; line-height: 1.45; }
   .lv-nl-body--form .lv-nl-consent input { width: 20px; height: 20px; margin-top: 0; }
@@ -743,10 +744,11 @@ const FOUNDER_STYLES = `
   .lv-nl-card .lv-nl-strip { border-radius: 0; }
   .lv-nl-card .lv-nl-close { top: 6px; right: 6px; }
   .lv-nl-body.lv-nl-body { padding: 20px 20px calc(16px + env(safe-area-inset-bottom)); }
-  .lv-nl-body--form.lv-nl-body--form { grid-template-columns: 64px minmax(0, 1fr); column-gap: 14px; }
-  .lv-nl-body--form .lv-founder-avatar { width: 64px !important; height: 64px !important; }
+  .lv-nl-body--form.lv-nl-body--form { grid-template-columns: 56px minmax(0, 1fr); column-gap: 14px; }
+  .lv-nl-body--form .lv-founder-avatar { width: 56px !important; height: 56px !important; }
   .lv-nl-body--form .lv-nl-wm.lv-nl-wm { font-size: 1.0625rem; }
   .lv-nl-body--form .lv-nl-title.lv-nl-title { font-size: 1.625rem; }
+  .lv-nl-body--form .lv-nl-title.lv-nl-title:lang(ja) { font-size: 1.375rem; }
   .lv-nl-body--form .lv-nl-desc.lv-nl-desc { margin: 14px 0 16px; font-size: 0.9375rem; line-height: 1.5; }
   .lv-nl-body--form .lv-nl-trust.lv-nl-trust { margin-top: 12px; }
 }
@@ -1275,7 +1277,7 @@ export default function NewsletterPopup({
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" /> {D.submit}
+                      <Send className="w-4 h-4" /> {siteCopy?.submit ?? D.submit}
                     </>
                   )}
                 </button>
