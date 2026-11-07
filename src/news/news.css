@@ -185,3 +185,7 @@
   .nw .nw-sheet{margin-top:22px;border-radius:16px;margin-left:12px;margin-right:12px}
   .nw .nw-card-body{padding:20px 20px 22px}
 }
+
+/* Tabletti ja puhelin (gate:tabletti 7.11.2026, Vesan sääntö 18.10.): osio-otsikko keskelle alle 1024 px,
+   kuten sivun muut osiot; tietokoneella vasen reuna ennallaan (malli laplandnature 3d3869e). */
+@media (max-width:1023.98px){.nw .nw-teaser .sechead{text-align:center}}

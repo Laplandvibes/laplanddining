@@ -68,7 +68,7 @@ export function CreditRow({ items, locale, className = '' }: { items: { label: s
   if (rows.length === 0) return null;
   const [open, close] = PARENS[locale] ?? [' (', ')'];
   return (
-    <p data-lv-kuvalahteet="" className={`text-center text-base leading-snug text-cream/75 ${className}`}>
+    <p data-lv-kuvalahteet="" className={`text-center max-lg:mx-auto max-lg:w-fit max-lg:text-left text-base leading-snug text-cream/75 ${className}`}>
       {creditPrefix(PHOTOS_BY[locale], locale)}
       {rows.map((r, i) => (
         <span key={r.label + i}>

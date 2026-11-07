@@ -234,7 +234,7 @@ export default function CityPage() {
           {tagline && (
             <p
               className={
-                'mt-4 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto' +
+                'mt-4 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto max-lg:w-fit max-lg:text-left' +
                 (city.photo
                   ? ' text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.9)]'
                   : ' text-cream/85')
@@ -288,7 +288,7 @@ export default function CityPage() {
       {/* Ravintolat */}
       <section className="relative bg-gradient-to-b from-night via-night-light/55 to-night pb-20">
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-white mb-8">
+          <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-white mb-8 text-center lg:text-left">
             {countLabel}
           </h2>
           {/* Myyty kaupungin esittelykumppani (sama paikka kuin /restaurants-sivun kaupunkiosiossa).
@@ -321,7 +321,7 @@ export default function CityPage() {
               defaultValue: `Staying in ${at}?`,
             })}
           </h2>
-          <p className="text-cream/70 text-[15px] leading-relaxed mb-6">
+          <p className="text-cream/70 text-[15px] leading-relaxed mb-6 max-lg:mx-auto max-lg:w-fit max-lg:text-left">
             {t('cities.shared.stayLead', {
               defaultValue: 'Book a room within walking distance of the tables above.',
             })}
@@ -344,10 +344,10 @@ export default function CityPage() {
           verkoston eikä 14 saarta. */}
       <section className="bg-night pb-20">
         <div className="max-w-6xl mx-auto px-5">
-          <h2 className="font-heading text-2xl sm:text-3xl tracking-wide text-white mb-6">
+          <h2 className="font-heading text-2xl sm:text-3xl tracking-wide text-white mb-6 text-center lg:text-left">
             {t('cities.shared.otherCities', { defaultValue: 'Eat somewhere else in Lapland' })}
           </h2>
-          <div className="flex flex-wrap gap-2.5">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
             {others.map((c) => (
               <Link
                 key={c.slug}

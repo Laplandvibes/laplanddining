@@ -116,7 +116,7 @@ export default function Home() {
               </span>
             ))}
           </h1>
-          <p className="text-lg sm:text-xl text-white max-w-2xl xl:max-w-4xl mx-auto mb-10 font-body leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] xl:text-2xl">
+          <p className="text-lg sm:text-xl text-white max-w-2xl xl:max-w-4xl mx-auto max-lg:w-fit max-lg:text-left mb-10 font-body leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] xl:text-2xl">
             {t('home.heroLead')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -360,7 +360,7 @@ export default function Home() {
           <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-5">
             {t('home.stayHeadline')}
           </h2>
-          <p className="text-white/80 text-base max-w-2xl mx-auto mb-9 leading-relaxed">
+          <p className="text-white/80 text-base max-w-2xl mx-auto max-lg:w-fit max-lg:text-left mb-9 leading-relaxed">
             {t('home.stayLead')}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">

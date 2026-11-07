@@ -90,7 +90,7 @@ export default function Cities() {
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl tracking-wide text-white leading-[1.05]">
             {t('cities.h1', { defaultValue: 'Lapland, town by town' })}
           </h1>
-          <p className="mt-4 text-lg text-cream/85 leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-cream/85 leading-relaxed max-w-2xl mx-auto max-lg:w-fit max-lg:text-left">
             {t('cities.lead', {
               count: total,
               cities: DINING_CITIES.length,
@@ -157,7 +157,7 @@ export default function Cities() {
             className="mt-8"
           />
 
-          <p className="mt-10 text-center text-cream/60 text-sm leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-10 text-center max-lg:w-fit max-lg:text-left text-cream/60 text-sm leading-relaxed max-w-2xl mx-auto">
             {t('cities.moreLead', {
               defaultValue:
                 'Muonio, Hetta, Salla and Posio have too few tables between them for a page of their own. They are still on the full list.',

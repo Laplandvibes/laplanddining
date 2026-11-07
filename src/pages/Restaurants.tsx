@@ -218,7 +218,7 @@ export default function Restaurants() {
             {t('restaurants.heroH1')}
           </h1>
 
-          <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto max-lg:w-fit max-lg:text-left leading-relaxed mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             {t('restaurants.heroLeadTemplate', { restaurantCount: restaurants.length, cityCount: cities.length })}
           </p>
 
@@ -401,12 +401,19 @@ export default function Restaurants() {
                     <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/25 to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-r from-night/55 via-night/10 to-transparent" />
                     <PhotoCredit src={cityPageImage(city) ?? cityImages[city]} locale={locale} className="z-20" />
+                    {/* Alle lg otsikko on keskellä, joten lukumäärä siirtyy kuvan oikeaan yläkulmaan
+                        (gate:tabletti 7.11.2026); lg+ se pysyy otsikkorivin oikeassa päässä. */}
+                    <span className="lg:hidden absolute top-4 right-4 z-10 bg-night/55 backdrop-blur-sm border border-white/10 text-white/80 text-sm font-medium px-4 py-2 rounded-full">
+                      {count} {countLabel}
+                    </span>
                   </div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-end justify-between gap-4">
-                      <div>
-                        <div className="flex items-center gap-3 mb-2">
+                    {/* Alle lg keskiakselilla kuten sivun muut osio-otsikot (Vesan sääntö 18.10.); vasen tummennus
+                        ei ole keskellä, joten tekstille varjo. Työpöytä ennallaan. */}
+                    <div className="flex flex-col items-center text-center lg:flex-row lg:items-end lg:justify-between lg:text-left gap-4 max-lg:[text-shadow:0_2px_14px_rgba(0,0,0,0.9)]">
+                      <div className="min-w-0 max-w-full">
+                        <div className="flex items-center justify-center lg:justify-start gap-3 mb-2">
                           <MapPin size={20} className="text-amber" />
                           {/* Kaupungin otsikko on linkki omalle sivulleen silloin kun
                               sivu on olemassa (13/17 kaupungista). Tama on se sisainen
@@ -424,7 +431,7 @@ export default function Restaurants() {
                             ) : city}
                           </h2>
                         </div>
-                        <p className="text-white/75 text-sm max-w-lg">{cityVibes[city]}</p>
+                        <p className="text-white/75 text-sm max-w-lg max-lg:mx-auto max-lg:w-fit max-lg:text-left">{cityVibes[city]}</p>
                         {citySlug(city) && (
                           <Link
                             to={`${cityLinkPrefix}/city/${citySlug(city)}`}
@@ -437,7 +444,7 @@ export default function Restaurants() {
                           </Link>
                         )}
                       </div>
-                      <span className="bg-white/10 backdrop-blur-sm border border-white/10 text-white/70 text-sm font-medium px-4 py-2 rounded-full shrink-0">
+                      <span className="hidden lg:inline bg-white/10 backdrop-blur-sm border border-white/10 text-white/70 text-sm font-medium px-4 py-2 rounded-full shrink-0">
                         {count} {countLabel}
                       </span>
                     </div>
@@ -545,7 +552,7 @@ export default function Restaurants() {
           <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide mb-4">
             {t('restaurants.bottomHeadlineTemplate', { count: restaurants.length })}
           </h2>
-          <p className="text-white/75 leading-relaxed mb-4">
+          <p className="text-white/75 leading-relaxed mb-4 max-lg:mx-auto max-lg:w-fit max-lg:text-left">
             {t('restaurants.bottomLead', { date: restaurants[0]?.lastVerified || '' })}
           </p>
           <p className="text-white/55 text-sm">
