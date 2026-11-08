@@ -193,7 +193,7 @@ const CSS = `
  .lvap-txt0{text-align:center}
  .lvap-lockup{justify-content:center}
  .lvap-lead{margin-left:auto;margin-right:auto;text-align:left}
- .lvap-note{text-align:center}
+ .lvap-note{margin:10px auto 0;width:fit-content;max-width:100%;text-align:left}
  .lvap-more{display:flex;justify-content:center;text-align:center}
  .lvap-a{flex-direction:column;align-items:stretch;gap:16px}
  .lvap-a .lvap-phone{align-self:center;width:clamp(132px,44cqi,176px)}
@@ -281,7 +281,7 @@ const CSS = `
 .lvap-ncta{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 0;min-height:44px;border-radius:9999px;background:#DB2777;padding:11px 16px;font-size:14px;font-weight:700;line-height:1.25;text-align:center;color:#fff;text-decoration:none;box-shadow:0 12px 28px -10px rgba(236,72,153,.9)}
 .lvap-ncta:hover{background:#BE185D;color:#fff}
 .lvap-ncta svg{width:16px;height:16px;flex-shrink:0}
-.lvap-nnote{position:relative;margin:6px 0 0;text-align:center;font-size:11px;line-height:1.35;color:rgba(249,250,251,.6);text-wrap:pretty}
+.lvap-nnote{position:relative;margin:6px auto 0;width:fit-content;max-width:100%;text-align:left;font-size:11px;line-height:1.35;color:rgba(249,250,251,.6);text-wrap:pretty}
 @media (max-width:359px){
  .lvap-nrow{gap:10px;padding:12px}
  .lvap-nudge .lvap-phone{width:64px}
