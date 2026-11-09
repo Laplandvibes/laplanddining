@@ -1,0 +1,32 @@
+/* EROTINRIVI (9.11.2026, Vesa: "piste ihan irallaan"). Canonical copy of the hub's index.css block, imported by
+   shared/Erotin.tsx so shared components do not depend on a site's own stylesheet.
+   Short items in a left-aligned row with a dot between them, drawn by CSS: every item after the first carries its
+   dot in the gap before it. A line breaks only between items (flex), and an item that wraps to the start of a new
+   line has its dot outside the row's box, where overflow:clip cuts it off. So the dot shows only between two items
+   on the same line. The row must have no left padding (the dot would sit in the padding and stay visible), and the
+   gap is set with --lv-erotin-vali, not gap-x-* (the dot is centred in that gap). */
+.lv-erotin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--lv-erotin-vali, 1.1em);
+  row-gap: 0.15em;
+  overflow: clip;
+  overflow-clip-margin: 3px;
+}
+.lv-erotin > * { position: relative; min-width: 0; }
+.lv-erotin > * + *::before {
+  content: "·";
+  content: "·" / "";
+  position: absolute;
+  inset-inline-start: calc(var(--lv-erotin-vali, 1.1em) / -2);
+  transform: translateX(-50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+/* A centred row (text-center below lg, left from lg): below 1024 px the items stack, centred, with no dots
+   (a centred line's first item is not at the box edge, so its dot would show); from 1024 px the row above. */
+@media (max-width: 1023.98px) {
+  .lv-erotin.lv-erotin-pino { flex-direction: column; align-items: center; }
+  .lv-erotin.lv-erotin-pino > *::before { content: none; }
+}

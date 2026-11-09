@@ -2,6 +2,7 @@ import { creditFor, type PhotoCreditEntry } from '../data/photoCredits';
 import { creditPrefix } from '../data/photoCredit';
 import { licenseLabel } from '../lib/a11yNimet';
 import { PHOTO_BY, PHOTOS_BY, type Locale } from '../data/restaurants';
+import { Erotinrivi } from '../shared/Erotin';
 
 /**
  * "rajattu" lukijan kielellä: CC BY 4.0 §3(a)(1)(B) vaatii kertomaan muokkauksesta
@@ -68,17 +69,16 @@ export function CreditRow({ items, locale, className = '' }: { items: { label: s
   if (rows.length === 0) return null;
   const [open, close] = PARENS[locale] ?? [' (', ')'];
   return (
-    <p data-lv-kuvalahteet="" className={`text-center max-lg:mx-auto max-lg:w-fit max-lg:text-left text-base leading-snug text-cream/75 ${className}`}>
-      {creditPrefix(PHOTOS_BY[locale], locale)}
-      {rows.map((r, i) => (
-        <span key={r.label + i}>
-          {i > 0 && <>&nbsp;· </>}
+    <p data-lv-kuvalahteet="" className={`mx-auto w-fit max-w-full text-left text-base leading-snug text-cream/75 ${className}`}>
+      <Erotinrivi as="span" osat={rows.map((r, i) => (
+        <>
+          {i === 0 && creditPrefix(PHOTOS_BY[locale], locale)}
           {r.label}
           {open}
           <CreditLinks c={r.c} locale={locale} linkClass="underline decoration-cream/40 underline-offset-2 hover:text-cream" />
           {close}
-        </span>
-      ))}
+        </>
+      ))} />
     </p>
   );
 }

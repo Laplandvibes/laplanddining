@@ -10,6 +10,7 @@
  * so the prose accurately names the publisher the visitor is reading.
  */
 import { hubUnsubscribeUrl, localePath } from './localePath';
+import { Erotinrivi, erotinOsat } from '../Erotin';
 
 type Lang = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko' | 'fr' | 'it' | 'nl' | 'sv';
 
@@ -1544,7 +1545,7 @@ export default function TermsContent({
       <div className="max-w-3xl mx-auto px-4 py-20 sm:py-28">
         <p className="text-vibe-pink text-sm font-semibold tracking-[0.2em] uppercase mb-4">{t.kicker}</p>
         <h1 className="font-heading font-semibold text-4xl sm:text-5xl text-snow tracking-wide leading-tight mb-6">{t.h1}</h1>
-        <p className="text-snow/75 text-sm mb-12">{lastUpdatedOverride ?? t.lastUpdated}</p>
+        <Erotinrivi className="text-snow/75 text-sm mb-12" osat={erotinOsat(lastUpdatedOverride ?? t.lastUpdated)} />
 
         <div className="space-y-10 text-snow/70 leading-relaxed">
 

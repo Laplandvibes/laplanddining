@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { AlertCircle, Briefcase, Newspaper, X } from 'lucide-react';
+import { Erotinrivi, erotinOsat } from './Erotin';
 
 /**
  * [LV-FUNNEL 2026-08-21] Lomakesuppilon eventit Umamiin (contact_view/-start/
@@ -1477,7 +1478,7 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
               style={{ background: 'rgba(16,185,129,0.10)', border: '1px solid rgba(16,185,129,0.25)', color: '#047857' }}
             >
               <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#10b981' }} />
-              {d.about.badge}
+              <Erotinrivi as="span" className="min-w-0" osat={erotinOsat(d.about.badge)} />
             </div>
           </div>
 

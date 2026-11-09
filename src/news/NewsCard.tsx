@@ -3,6 +3,7 @@ import { useLang, useLocalePath } from '../i18n/useLang';
 import { formatDate, labelPrefix } from './format';
 import { SITE } from './site';
 import type { NewsMeta, NewsText, NewsUi } from './types';
+import { Erotinrivi } from '../shared/Erotin';
 
 /**
  * Juttukortti: kuva 16:9, päivä + päälähde, otsikko, ingressi.
@@ -36,11 +37,10 @@ export default function NewsCard({ meta, text, ui, surface, wide = false, level 
         />
       </Link>
       <div className="nw-card-body">
-        <p className="nw-card-meta">
-          <time dateTime={meta.date}>{formatDate(meta.date, lang)}</time>
-          <span aria-hidden="true"> · </span>
-          <span>{labelPrefix(ui.ui.source, lang)}<span lang={meta.sources[0]?.lang}>{meta.sources[0]?.publisher}</span></span>
-        </p>
+        <Erotinrivi className="nw-card-meta" osat={[
+          <time dateTime={meta.date}>{formatDate(meta.date, lang)}</time>,
+          <>{labelPrefix(ui.ui.source, lang)}<span lang={meta.sources[0]?.lang}>{meta.sources[0]?.publisher}</span></>,
+        ]} />
         <H className="serif nw-card-title"><Link to={href} {...track}>{text.title}</Link></H>
         <p className="nw-card-dek">{text.dek}</p>
         <Link to={href} className="nw-card-more" tabIndex={-1} aria-hidden="true" {...track}>{ui.ui.readMore} →</Link>
