@@ -58,10 +58,12 @@ export default function FAQ() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-12">
           <div className="md:col-span-5 md:sticky md:top-24 md:self-start">
-            <p className="text-amber text-sm font-semibold tracking-[0.2em] uppercase mb-3">
+            {/* Alle 768 px palsta on yksin: yläotsikko ja otsikko keskiakselille, johdanto vasemmalle
+                (gate:tabletti laaja 9.11.2026). 768 px+ kysymykset ovat vieressä ja otsikko pysyy vasemmalla. */}
+            <p className="text-amber text-sm font-semibold tracking-[0.2em] uppercase mb-3 max-md:text-center">
               {t('home.faq.eyebrow')}
             </p>
-            <h2 className="font-heading tracking-wide text-4xl sm:text-5xl md:text-6xl text-white mb-5 leading-[0.95]">
+            <h2 className="font-heading tracking-wide text-4xl sm:text-5xl md:text-6xl text-white mb-5 leading-[0.95] max-md:text-center">
               {t('home.faq.headline')}
             </h2>
             <p className="text-white/65 text-base sm:text-lg leading-relaxed mb-7">

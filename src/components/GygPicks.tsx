@@ -230,7 +230,7 @@ const catName = (path: string, lang: string): string => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-[#F9FAFB]">
             {t(L.headingCategory)}
           </h2>
-          <p className="max-w-2xl mx-auto text-white/70">{t(L.ledeCategory)}</p>
+          <p className="max-w-2xl mx-auto max-lg:w-fit max-lg:text-left text-white/70">{t(L.ledeCategory)}</p>
         </div>
 
         <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">

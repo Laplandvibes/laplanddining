@@ -470,7 +470,9 @@ export default function Restaurants() {
                   const hiddenCount = ordered.length - visible.length;
                   return (
                     <>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+                      {/* Kahdessa sarakkeessa (768–1023 px) pariton viimeinen kortti (3 näkyvää) keskelle muiden
+                          levyisenä, ei venytetä (gate:tabletti laaja 9.11.2026, hubin DestinationGrid-malli). */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch md:max-lg:[&>*:last-child:nth-child(odd)]:col-span-2 md:max-lg:[&>*:last-child:nth-child(odd)]:justify-self-center md:max-lg:[&>*:last-child:nth-child(odd)]:w-[calc(50%_-_10px)]">
                         {visible.map((r) => (
                           <RestaurantCard
                             key={r.googlePlaceId}
@@ -507,12 +509,13 @@ export default function Restaurants() {
                         {t('restaurants.stayHeadlineTemplate', { city })}
                       </p>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    {/* Puhelimella (alle 640 px) napit pinossa saman levyisinä (gate:tabletti laaja 9.11.2026). */}
+                    <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                       <AffiliateCTA
                         partner="hotels"
                         sid={hotelsSid(city)}
                         destination={`${city === 'Ylläs' ? 'Äkäslompolo' : city}, Finland`}
-                        className="inline-flex items-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
+                        className="inline-flex items-center justify-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
                       >
                         {t('restaurants.stayBtnTemplate', { city })}
                       </AffiliateCTA>
@@ -521,7 +524,7 @@ export default function Restaurants() {
                           href={gygCategoryLink(gyg.citySlug, 'food-and-drink', gyg.sid, locale)}
                           target="_blank"
                           rel="sponsored nofollow noopener"
-                          className="inline-flex items-center gap-1.5 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 no-underline min-h-[44px]"
+                          className="inline-flex items-center justify-center gap-1.5 bg-arctic-cyan/15 hover:bg-arctic-cyan/25 border border-arctic-cyan/40 text-arctic-cyan hover:text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 no-underline min-h-[44px]"
                         >
                           {t('restaurants.foodToursBtnTemplate', { city })}
                         </a>
@@ -555,7 +558,7 @@ export default function Restaurants() {
           <p className="text-white/75 leading-relaxed mb-4 max-lg:mx-auto max-lg:w-fit max-lg:text-left">
             {t('restaurants.bottomLead', { date: restaurants[0]?.lastVerified || '' })}
           </p>
-          <p className="text-white/55 text-sm">
+          <p className="text-white/55 text-sm max-lg:mx-auto max-lg:w-fit max-lg:text-left">
             {t('restaurants.bottomPartner')}{' '}
             <a href="mailto:info@laplandvibes.com" className="text-amber/70 hover:text-amber underline">
               info@laplandvibes.com

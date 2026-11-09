@@ -44,7 +44,7 @@ export default function About() {
           <h1 className="font-heading text-5xl sm:text-6xl text-white tracking-wide mb-4 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('about.heroH1')}
           </h1>
-          <p className="text-gray-200 text-lg max-w-2xl mx-auto lg:mx-0 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto lg:mx-0 max-lg:w-fit max-lg:text-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             {t('about.heroLead')}
           </p>
         </div>
@@ -107,7 +107,8 @@ export default function About() {
               />
             </p>
             <p className="text-gray-400 leading-relaxed">
-              {t('about.operatorBodyB')}&nbsp;
+              {/* Tavallinen väli: &nbsp; liimasi viimeisen sanan osoitteeseen, ja sv 360 px vieritti sivua 6 px (9.11.2026). */}
+              {t('about.operatorBodyB')}{' '}
               <a
                 href="mailto:info@laplandvibes.com"
                 className="text-amber hover:text-white transition-colors no-underline"

@@ -228,7 +228,7 @@ export default function CityTopPicksGrid() {
           <h2 className="font-heading text-4xl sm:text-5xl text-snow tracking-wide mb-4">
             {t('common.cityTopPicksHeadline')}
           </h2>
-          <p className="text-snow/65 text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-snow/65 text-base max-w-2xl mx-auto max-lg:w-fit max-lg:text-left leading-relaxed">
             {t('common.cityTopPicksLead')}
           </p>
         </div>

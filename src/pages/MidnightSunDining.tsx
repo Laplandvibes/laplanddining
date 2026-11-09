@@ -94,20 +94,23 @@ export default function MidnightSunDining() {
           style={{ background: 'linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.82) 34%, rgba(15,23,42,0.55) 55%, rgba(15,23,42,0.12) 76%, rgba(15,23,42,0) 90%)' }}
         />
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 sm:pb-20 pt-40">
+        {/* Alle 1024 px keskiakselilla kuten verkoston muut herot: merkki, otsikko ja napit keskelle, johdanto
+            keskitetyssä palstassa vasemmalle, napit puhelimella pinossa saman levyisinä (gate:tabletti laaja
+            9.11.2026). Työpöytä ennallaan (vasen reuna). */}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 sm:pb-20 pt-40 max-lg:text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-night/70 border border-yellow-300/35 backdrop-blur-sm mb-5">
             <Sun size={14} className="text-yellow-300" />
             <span className="text-yellow-200 text-xs font-semibold tracking-[0.25em] uppercase">
               {t('midnightSunDining.heroBadge')}
             </span>
           </div>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-[0.95] mb-5 max-w-4xl drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-[0.95] mb-5 max-w-4xl max-lg:mx-auto drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('midnightSunDining.heroH1Line1')}<br />{t('midnightSunDining.heroH1Line2')}
           </h1>
-          <p className="text-white/90 text-lg sm:text-xl max-w-2xl mb-8 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-white/90 text-lg sm:text-xl max-w-2xl max-lg:mx-auto max-lg:w-fit max-lg:text-left mb-8 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             {t('midnightSunDining.heroLead')}
           </p>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex flex-col items-stretch gap-3 max-w-sm mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center lg:mx-0 lg:justify-start">
             <a
               href="#cities"
               className="inline-flex items-center justify-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-night px-7 py-3.5 rounded-full font-bold text-base transition-colors duration-300 shadow-lg shadow-yellow-400/30 no-underline"
@@ -133,11 +136,11 @@ export default function MidnightSunDining() {
       {/* Kaupungit ensin: lukija tuli etsimään, missä syödä. Kuvat 16:10, tummennus vain alareunaan. */}
       <section id="cities" className="scroll-mt-20 pt-14 pb-20 px-4 sm:px-6 lg:px-8 bg-night">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mb-10">
+          <div className="max-w-3xl mb-10 max-lg:mx-auto max-lg:text-center">
             <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
               {t('midnightSunDining.citiesHeadline')}
             </h2>
-            <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed max-lg:mx-auto max-lg:w-fit max-lg:text-left">
               {t('midnightSunDining.citiesLead')}
             </p>
           </div>
@@ -177,13 +180,14 @@ export default function MidnightSunDining() {
                       </div>
                     </div>
                     <p className="text-[15px] text-white/85 leading-relaxed mb-6">{c.body}</p>
-                    <div className="mt-auto flex flex-wrap gap-2">
+                    {/* Puhelimella (alle 640 px) napit pinossa saman levyisinä. */}
+                    <div className="mt-auto flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                       <AffiliateCTA
                         partner="hotels-seasonal"
                         sid={meta.hotelsSid}
                         destination={meta.hotelsQuery}
                         query={stay}
-                        className="inline-flex items-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-sm font-bold px-5 py-2.5 min-h-[44px] rounded-full transition-colors duration-200 no-underline shadow-md shadow-amber/20"
+                        className="inline-flex items-center justify-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-sm font-bold px-5 py-2.5 min-h-[44px] rounded-full transition-colors duration-200 no-underline shadow-md shadow-amber/20"
                       >
                         {t('midnightSunDining.stayInTemplate', { city: c.name })}
                       </AffiliateCTA>
@@ -191,7 +195,7 @@ export default function MidnightSunDining() {
                         href={gygSearchLink(`${meta.hotelsQuery.split(',')[0]} food tour summer`, `midnight_sun_${meta.hotelsSid.replace('midnight_sun_', '')}`, locale)}
                         target="_blank"
                         rel="sponsored nofollow noopener"
-                        className="inline-flex items-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/20 text-white text-sm font-semibold px-5 py-2.5 min-h-[44px] rounded-full transition-colors duration-200 no-underline"
+                        className="inline-flex items-center justify-center gap-1.5 bg-white/8 hover:bg-white/15 border border-white/20 text-white text-sm font-semibold px-5 py-2.5 min-h-[44px] rounded-full transition-colors duration-200 no-underline"
                       >
                         {t('midnightSunDining.summerFoodTours')}
                       </a>
@@ -209,11 +213,11 @@ export default function MidnightSunDining() {
           on katsottu keskiyön aurinkoa ennenkin. */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-night via-night-light/45 to-night">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] gap-10 lg:gap-16 items-start">
-          <div className="max-w-[62ch]">
-            <p className="text-yellow-300 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
+          <div className="max-w-[62ch] max-lg:mx-auto">
+            <p className="text-yellow-300 text-xs font-semibold tracking-[0.25em] uppercase mb-3 max-lg:text-center">
               {t('midnightSunDining.whyKicker')}
             </p>
-            <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-6">
+            <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-6 max-lg:text-center">
               {t('midnightSunDining.whyHeadline')}
             </h2>
             <div className="space-y-5 text-[17px] text-white/80 leading-[1.7]">
@@ -243,7 +247,7 @@ export default function MidnightSunDining() {
           <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide mb-4">
             {t('midnightSunDining.bottomHeadline')}
           </h2>
-          <p className="text-white/80 mb-8 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-white/80 mb-8 leading-relaxed max-w-2xl mx-auto max-lg:w-fit max-lg:text-left">
             {t('midnightSunDining.bottomLead')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

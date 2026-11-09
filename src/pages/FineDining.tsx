@@ -87,7 +87,7 @@ export default function FineDining() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-4 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('fineDining.heroH1')}
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto max-lg:w-fit max-lg:text-left leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             {t('fineDining.heroLeadTemplate', { count: restaurants.length })}
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function FineDining() {
           this route's jsonKey, so reader and crawler get one text in one language. */}
       <section className="px-4 sm:px-6 lg:px-8 pt-12 pb-4 bg-gradient-to-b from-night via-night-light/40 to-night">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-cream mb-4">{t('fineDining.introTitle')}</h2>
+          <h2 className="font-heading text-3xl sm:text-4xl tracking-wide text-cream mb-4 text-center lg:text-left">{t('fineDining.introTitle')}</h2>
           <p className="text-cream/75 text-sm sm:text-base leading-relaxed mb-4">{t('fineDining.introP1')}</p>
           <p className="text-cream/75 text-sm sm:text-base leading-relaxed">{t('fineDining.introP2')}</p>
         </div>
@@ -141,7 +141,8 @@ export default function FineDining() {
           className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(60%_45%_at_50%_0%,rgba(245,158,11,0.10),transparent_70%)]"
         />
         <div className="relative max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
+          {/* Kahdessa sarakkeessa (768–1023 px) pariton viimeinen kortti keskelle muiden levyisenä (gate:tabletti laaja 9.11.2026). */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 md:max-lg:[&>*:last-child:nth-child(odd)]:col-span-2 md:max-lg:[&>*:last-child:nth-child(odd)]:justify-self-center md:max-lg:[&>*:last-child:nth-child(odd)]:w-[calc(50%_-_20px)]">
             {fineDining.map((r) => {
               const body = composeCardBody(r, locale);
               const cuisine = cuisineLabel(r, locale);

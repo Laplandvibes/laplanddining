@@ -119,17 +119,18 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-white max-w-2xl xl:max-w-4xl mx-auto max-lg:w-fit max-lg:text-left mb-10 font-body leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] xl:text-2xl">
             {t('home.heroLead')}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          {/* Puhelimella (alle 640 px) napit pinossa saman levyisinä (gate:tabletti laaja 9.11.2026). */}
+          <div className="flex flex-col items-stretch gap-3 max-w-sm mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
             <Link
               to={to('/restaurants')}
-              className="inline-flex items-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
+              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
             >
               {t('home.heroCtaExplore')}
               <ChevronDown size={20} />
             </Link>
             <Link
               to={to('/fine-dining')}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:border-amber/60 hover:bg-white/15 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 no-underline"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:border-amber/60 hover:bg-white/15 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 no-underline"
             >
               {t('home.heroCtaFine')}
             </Link>
@@ -173,7 +174,7 @@ export default function Home() {
             <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
               {t('home.cuisineHeadline')}
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto max-lg:w-fit max-lg:text-left">
               {t('home.cuisineLead')}
             </p>
           </div>
@@ -255,7 +256,10 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div className="md:col-span-3">
+            {/* Alle 768 px kuva on tekstin yläpuolella, joten yläotsikko, otsikko ja napit keskiakselille ja
+                leipäteksti keskitetyssä palstassa vasemmalle (gate:tabletti laaja 9.11.2026). 768 px+ teksti
+                on kuvan vieressä ja pysyy vasemmalla (vaakarivi). */}
+            <div className="md:col-span-3 max-md:text-center">
               <p className="text-yellow-300/90 text-xs font-semibold tracking-[0.25em] uppercase mb-3">
                 {t('home.midnightKicker')}
               </p>
@@ -263,13 +267,13 @@ export default function Home() {
                 {t('home.midnightHeadline1')}<br />
                 <span className="text-yellow-200">{t('home.midnightHeadline2')}</span>
               </h2>
-              <p className="text-white/65 text-base sm:text-lg leading-relaxed mb-7 max-w-xl">
+              <p className="text-white/65 text-base sm:text-lg leading-relaxed mb-7 max-w-xl max-md:mx-auto max-md:w-fit max-md:text-left">
                 {t('home.midnightBody')}
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col items-stretch gap-3 max-w-sm mx-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center md:mx-0 md:justify-start">
                 <Link
                   to={to('/midnight-sun-dining')}
-                  className="inline-flex items-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-night px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 no-underline shadow-lg shadow-yellow-400/30"
+                  className="inline-flex items-center justify-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-night px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 no-underline shadow-lg shadow-yellow-400/30"
                 >
                   {t('home.midnightCtaGuide')}
                   <Sun size={16} />
@@ -279,7 +283,7 @@ export default function Home() {
                   sid="home_midnight_sun_hotels"
                   destination="Lapland, Finland"
                   query={midsummerStay()}
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 no-underline"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 no-underline"
                 >
                   {t('home.midnightCtaStays')}
                 </AffiliateCTA>
@@ -308,7 +312,7 @@ export default function Home() {
           <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
             {t('home.destinationsHeadline')}
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto max-lg:w-fit max-lg:text-left mb-12">
             {t('home.destinationsLead')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">

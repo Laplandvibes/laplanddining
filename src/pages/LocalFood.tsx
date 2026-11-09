@@ -129,7 +129,7 @@ export default function LocalFood() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide mb-5 drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
             {t('localFood.heroH1')}
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto max-lg:w-fit max-lg:text-left leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             {t('localFood.heroLead')}
           </p>
         </div>
@@ -266,7 +266,7 @@ export default function LocalFood() {
             <h2 className="font-heading text-4xl sm:text-5xl text-white tracking-wide mb-4">
               {t('localFood.ingredientsHeadline')}
             </h2>
-            <p className="text-white/75 text-lg max-w-2xl mx-auto">
+            <p className="text-white/75 text-lg max-w-2xl mx-auto max-lg:w-fit max-lg:text-left">
               {t('localFood.ingredientsLead')}
             </p>
           </div>
@@ -369,7 +369,7 @@ export default function LocalFood() {
           <h2 className="font-heading text-3xl text-white tracking-wide mb-4">
             {t('localFood.ctaHeadline')}
           </h2>
-          <p className="text-white/75 mb-8 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-white/75 mb-8 leading-relaxed max-w-2xl mx-auto max-lg:w-fit max-lg:text-left">
             {t('localFood.ctaLead')}
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center mb-6">
