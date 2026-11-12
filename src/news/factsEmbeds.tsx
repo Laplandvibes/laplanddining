@@ -26,6 +26,15 @@ function splitLabel(s: string): [string, string] | null {
   return m ? [m[1], m[2]] : null
 }
 
+/** Arvon alku korostettuna, kun siinä on luku: "285 lajia, enemmän kuin…" → ["285 lajia", ", enemmän kuin…"].
+ *  Pilkku ja piste katkaisevat vain välilyönnin edellä (2,5 km ei katkea). */
+function splitHead(v: string): [string, string] {
+  const m = /^(.{1,30}?)((?:[,.;]\s|[、。，；]).+)$/su.exec(v)
+  if (m && /\d/u.test(m[1])) return [m[1], m[2]]
+  if (v.length <= 30 && /\d/u.test(v)) return [v, '']
+  return ['', v]
+}
+
 function Bars({ pair, max, unit }: { pair: [number, number]; max: number; unit: string }) {
   return (
     <div className="nw-bars" aria-hidden="true">
@@ -44,13 +53,16 @@ function Facts({ block, cfg }: { block: EmbedBlock; cfg: Record<string, unknown>
   const items = block.items ?? []
   if (items.length === 0) return null
   const bars = cfg.kind === 'bars'
+  // Lyhyet arvot (kaikilla nimi, arvo enintään 48 merkkiä) piirretään ruutuina vierekkäin, pitkät riveinä.
+  const kvs = items.map(splitLabel)
+  const tiles = !bars && items.length >= 3 && kvs.every((kv) => kv !== null && kv[1].length <= 48)
   const values = bars && Array.isArray(cfg.values) ? (cfg.values as unknown[]) : []
   const max = typeof cfg.max === 'number' && cfg.max > 0 ? cfg.max : 100
   const unit = typeof cfg.unit === 'string' ? cfg.unit : ''
   const legendAll = (cfg.legend ?? {}) as Record<string, unknown>
   const legend = Array.isArray(legendAll[lang]) ? (legendAll[lang] as string[]) : null
   return (
-    <aside className={`nw-facts${bars ? ' nw-facts-bars' : ''}`}>
+    <aside className={`nw-facts${bars ? ' nw-facts-bars' : ''}${tiles ? ' nw-facts-tiles' : ''}`}>
       {block.title && <p className="nw-facts-title">{block.title}</p>}
       {bars && legend && legend.length === 2 && (
         <p className="nw-bars-legend">
@@ -60,13 +72,14 @@ function Facts({ block, cfg }: { block: EmbedBlock; cfg: Record<string, unknown>
       )}
       <dl className="nw-facts-rows">
         {items.map((it, i) => {
-          const kv = splitLabel(it)
+          const kv = kvs[i]
+          const [head, rest] = tiles || !kv ? ['', kv ? kv[1] : it] : splitHead(kv[1])
           const v = values[i]
           const pair = Array.isArray(v) && v.length === 2 && v.every((n) => typeof n === 'number') ? (v as [number, number]) : null
           return (
             <div key={i} className="nw-fact">
               {kv && <dt>{kv[0]}</dt>}
-              <dd>{kv ? kv[1] : it}</dd>
+              <dd>{head && <strong className="nw-fact-head">{head}</strong>}{rest}</dd>
               {pair && <Bars pair={pair} max={max} unit={unit} />}
             </div>
           )

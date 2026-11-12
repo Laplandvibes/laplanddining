@@ -260,3 +260,49 @@
 }
 /* kapein-puhelin-20261112: alle 375 px otsikko enintään kolmella rivillä 12 kielellä. */
 @media(max-width:374.98px){.nw .nw-art .nw-h1{font-size:32px}}
+
+/* ── Jutun ilme 12.11.2026 b ───────────────────────────────────────────────
+   Vesa 12.11.2026 (SkyView- ja Syöte-jutut tietokoneella): "miksi jaa artikkeli osio on edelleen ilman värejä …
+   jokin eri taustakin voisi olla", "kylpylä ja ravintola lyhyesti on jotenkin irrallaan, ei viimeisen päälle tehty",
+   "lyhyesti osio tarvitsee lisää visuaalisuutta samoin mitä löytyi" ja "itse artikkelin alkuun … isolla
+   alkukirjaimella alkamaan tai jotain eloa". Kaikki teksti vähintään 16 px, kontrasti vähintään 4,5:1. */
+/* Iso alkukirjain jutun ensimmäiseen kappaleeseen. Ei kiinaan, japaniin eikä koreaan (merkki on jo kokonainen sana). */
+.nw .nw-prose > p:first-child:not(:lang(ja)):not(:lang(zh)):not(:lang(ko))::first-letter{float:left;font-family:var(--lv-cap-font);font-weight:var(--lv-cap-weight,400);font-size:72px;line-height:.8;padding:4px 7px 0 0;color:var(--lv-cap-color,var(--lv-acc-ink))}
+.nw .nw-prose > p:first-child{font-size:20px;line-height:1.62}
+
+/* Tietokortti: sävytetty pohja, otsikko sivuston otsikkofontilla, rivit valkoisina ruutuina. */
+.nw .nw-facts{background:var(--lv-soft);border:1px solid var(--lv-soft-line);border-left:6px solid var(--lv-acc);border-radius:18px;padding:18px 16px 16px;margin:8px 0 26px;box-shadow:none}
+.nw .nw-facts-title{font-family:var(--lv-cap-font);font-weight:var(--lv-cap-weight,400);font-size:28px;line-height:1.05;letter-spacing:.01em;color:var(--lv-acc-ink);margin:0 0 12px;text-wrap:balance}
+.nw .nw-facts-title:lang(ja),.nw .nw-facts-title:lang(zh),.nw .nw-facts-title:lang(ko){font:700 20px/1.35 var(--font-body),system-ui,sans-serif;letter-spacing:0}
+.nw .nw-facts-rows{display:grid;gap:8px;margin:0}
+.nw .nw-fact{background:var(--lv-tile);border:1px solid var(--lv-soft-line);border-radius:12px;padding:12px 14px;margin:0;min-width:0}
+.nw .nw-fact + .nw-fact{border-top:1px solid var(--lv-soft-line)}
+.nw .nw-fact dt{font:700 16px/1.3 var(--font-body),"DM Sans",system-ui,sans-serif;color:var(--lv-acc-ink);margin:0 0 4px}
+.nw .nw-fact dd{margin:0;font-size:17px;line-height:1.5;color:#0F172A;overflow-wrap:anywhere;hyphens:auto}
+.nw .nw-fact .nw-fact-head{font-weight:800;font-size:20px;line-height:1.25;color:#0F172A;font-variant-numeric:tabular-nums}
+.nw .nw-facts-tiles .nw-fact dd{font-weight:800;font-size:20px;line-height:1.28;font-variant-numeric:tabular-nums}
+.nw .nw-facts-note{margin:12px 2px 0}
+@media(min-width:560px){
+  .nw .nw-facts-tiles .nw-facts-rows{display:flex;flex-wrap:wrap;gap:10px}
+  .nw .nw-facts-tiles .nw-fact{flex:1 1 240px}
+}
+@media(min-width:760px){
+  .nw .nw-facts{padding:22px 22px 20px}
+  .nw .nw-facts-title{font-size:32px}
+  .nw .nw-facts.nw-facts-tiles:not(.nw-facts-bars) .nw-fact{display:block;padding:14px 16px}
+  .nw .nw-facts.nw-facts-tiles:not(.nw-facts-bars) .nw-fact dt{margin:0 0 4px}
+  .nw .nw-facts:not(.nw-facts-bars):not(.nw-facts-tiles) .nw-fact{grid-template-columns:minmax(140px,26%) 1fr;padding:14px 16px}
+}
+
+/* Jutun lopun jakonapit: oma sävytetty pohja ja palvelujen omat värit (valkoinen teksti, kontrasti ≥ 4,5:1). */
+.nw .nw-sheet section:has(> ul[role="list"]){background:var(--lv-share-bg);border:1px solid var(--lv-share-line);border-radius:18px;padding:20px 18px 18px;margin-top:40px}
+.nw .nw-sheet section > ul[role="list"] a{color:#fff;border-color:transparent}
+.nw .nw-sheet section > ul[role="list"] a:hover,.nw .nw-sheet section > ul[role="list"] a:focus-visible{color:#fff;border-color:transparent;filter:brightness(1.12)}
+.nw .nw-sheet section > ul[role="list"] a[href*="whatsapp"]{background:#0E7A5F}
+.nw .nw-sheet section > ul[role="list"] a[href*="facebook"]{background:#1464CC}
+.nw .nw-sheet section > ul[role="list"] a[href*="linkedin"]{background:#0A66C2}
+.nw .nw-sheet section > ul[role="list"] a[href*="twitter"]{background:#0F172A}
+.nw .nw-sheet section > ul[role="list"] a[href^="mailto"]{background:var(--lv-acc-ink)}
+.nw .nw-sheet section > ul[role="list"] button{background:#fff;color:#0F172A;border-color:rgba(15,23,42,.28)}
+@media(min-width:760px){.nw .nw-sheet section:has(> ul[role="list"]){padding:24px 26px 24px}}
+.nw{--lv-soft:#FFF7ED;--lv-soft-line:#FED7AA;--lv-tile:#FFFFFF;--lv-share-bg:#EEF3FA;--lv-share-line:#C9D8EC;--lv-cap-font:var(--font-heading),"Bebas Neue",system-ui,sans-serif}

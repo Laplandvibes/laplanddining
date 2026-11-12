@@ -15,11 +15,12 @@
       "id": "facts-lyhyesti",
       "title": "Gallis ja Bon Bistro lyhyesti",
       "items": [
-        "Gallis: Joulupukin Pajakylässä Rovaniemellä, avoin muillekin kuin hotellin vieraille",
-        "Galliksen menu: neljä ruokalajia 79 euroa, pääruoat alkaen 28 eurosta",
-        "Bon Bistro: Levinraitti 1 Levin keskustassa, avautuu marraskuussa 2026, päivä vahvistamatta",
-        "Pöytävaraus: kalenteri avautuu TableOnlinessa 28.9. alkavalla viikolla, pöytiä joulukuusta alkaen",
-        "Levin maailmancup: 14.–15. marraskuuta 2026"
+        "Ravintola Gallis: Joulupukin Pajakylässä Rovaniemellä, avoin muillekin kuin hotellin vieraille",
+        "Galliksen hinnat: 4 ruokalajin menu 79 euroa, pääruoat alkaen 28 eurosta",
+        "Bon Bistron osoite: Levinraitti 1, Levin keskusta",
+        "Bon Bistro avautuu: marraskuussa 2026, päivä vahvistamatta",
+        "Bon Bistron pöytävaraus: TableOnline-varauspalvelussa, kalenterin oli määrä avautua 28.9. alkavalla viikolla, pöytiä joulukuusta alkaen",
+        "Pujottelun maailmancup Levillä: 14.–15. marraskuuta 2026"
       ]
     },
     {
@@ -48,7 +49,7 @@
     },
     {
       "t": "p",
-      "text": "Levin pujottelun maailmancup ajetaan 14.–15. marraskuuta 2026. Kisoihin matkustavan ei kannata laskea Bon Bistron varaan, sillä avaaminen kisojen aikaan on tavoite eikä vahvistettu päivä. Varauskalenteri avautuu TableOnlinessa 28.9. alkavalla viikolla, ja pöytiä voi varata joulukuusta alkaen."
+      "text": "Levin pujottelun maailmancup ajetaan 14.–15. marraskuuta 2026. Kisoihin matkustavan ei kannata laskea Bon Bistron varaan, sillä avaaminen kisojen aikaan on tavoite eikä vahvistettu päivä. Varauskalenterin oli määrä avautua TableOnlinessa 28.9. alkavalla viikolla, ja pöytiä voi varata joulukuusta alkaen."
     },
     {
       "t": "p",
