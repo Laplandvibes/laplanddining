@@ -49,5 +49,10 @@
   ],
   "ogCard": {
     "line": "Two openings, two different stages"
+  },
+  "embeds": {
+    "facts-lyhyesti": {
+      "kind": "facts"
+    }
   }
 }

@@ -97,7 +97,6 @@
    Vesa löysi blogista 23.9. Sama koskee alla olevaa lähdelistaa. */
 .nw .nw-byline{color:var(--onNightMuted);font-size:16px;line-height:1.6;margin:0}
 .nw .nw-art-cap{font-size:16px;line-height:1.55;color:var(--onNightMuted);margin-top:8px}
-.nw .nw-credit a{color:var(--onNight);text-decoration:underline;text-underline-offset:2px}
 @media(max-width:640px){.nw .nw-art{min-height:520px;padding:40px 0 32px}.nw .nw-head{padding:44px 0 44px}}
 
 /* ── Arkki: jutun runko kermalla tummalla sivulla ────────────────────────── */
@@ -189,3 +188,75 @@
 /* Tabletti ja puhelin (gate:tabletti 7.11.2026, Vesan sääntö 18.10.): osio-otsikko keskelle alle 1024 px,
    kuten sivun muut osiot; tietokoneella vasen reuna ennallaan (malli laplandnature 3d3869e). */
 @media (max-width:1023.98px){.nw .nw-teaser .sechead{text-align:center}}
+
+/* ── Jutun elävöitys 11.11.2026 (tuotu tälle sivustolle 12.11.2026) ─────────
+   Vesa 11.11.2026 (opasjutut puhelimella): "artikkelikohdassa voisi olla väriä, vähän eloa",
+   "voisi olla oma laatikko, visualisoitu näitä" ja jakonapeista "miten sattuu".
+   Sama malli kuin laplandskiresortsissa; korostusväri --lv-acc on tämän sivuston oma.
+   🔴 Tämän sivuston arkki on KERMA (#FAF7F2) tummalla sivulla, ja uutisosion korostus on jo
+   meripihka #B45309 (linkit, huomautusviiva), ei pinkki. Sama väri kortin reunaan ja nimiriveihin:
+   valkoisella kortilla 5,02:1, kermalla 4,71:1. Kortti on valkoinen (#fff) kerma-arkilla, viivat
+   arkin omaa --line-sävyä. Teksti väripohjalla vähintään 16 px ja kontrasti vähintään 4,5:1. */
+.nw{--lv-acc:#B45309;--lv-acc-ink:#B45309;--lv-tint:#FFFFFF;--lv-tint-line:#E7DFD3}
+.nw .nw-prose > p:first-child{font-size:19px;line-height:1.66}
+.nw .nw-prose > h2{position:relative;padding-top:16px}
+.nw .nw-prose > h2::before{content:"";position:absolute;left:0;top:0;width:44px;height:4px;border-radius:2px;background:var(--lv-acc)}
+.nw .nw-prose > ul:not([class]){list-style:none;padding-left:0}
+.nw .nw-prose > ul:not([class]) > li{position:relative;padding-left:26px;margin:10px 0}
+.nw .nw-prose > ul:not([class]) > li::before{content:"";position:absolute;left:4px;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--lv-acc)}
+.nw .nw-prose > .nw-linkp{background:var(--lv-tint);border:1px solid var(--lv-tint-line);border-radius:16px;padding:16px 18px;margin:0 0 12px;line-height:1.6}
+.nw .nw-prose > .nw-linkp .nw-inlink{display:inline-block;margin-top:6px}
+
+/* Tietokortti: "nimi: tieto" -rivit. Nimi värillä omalla rivillään, tieto alla. */
+.nw .nw-facts{background:#fff;border:1px solid var(--lv-tint-line);border-left:6px solid var(--lv-acc);border-radius:16px;padding:6px 16px;margin:6px 0 22px;box-shadow:0 14px 34px -26px rgba(28,20,16,.45)}
+.nw .nw-facts-title{font:700 17px/1.4 var(--font-body),"DM Sans",system-ui,sans-serif;color:var(--ink);margin:12px 0 2px}
+.nw .nw-facts-rows{margin:0}
+.nw .nw-fact{padding:12px 0;margin:0}
+.nw .nw-fact + .nw-fact{border-top:1px solid var(--line)}
+.nw .nw-fact dt{font:700 16px/1.35 var(--font-body),"DM Sans",system-ui,sans-serif;color:var(--lv-acc-ink);margin:0 0 3px}
+.nw .nw-fact dd{margin:0;font-size:17px;line-height:1.55;color:var(--ink)}
+.nw .nw-fact dt + dd::first-letter{text-transform:uppercase}
+.nw .nw-facts-note{font-size:16px;line-height:1.5;color:var(--ink2);margin:4px 0 12px}
+@media(min-width:760px){
+  .nw .nw-facts{padding:8px 22px}
+  .nw .nw-facts:not(.nw-facts-bars) .nw-fact{display:grid;grid-template-columns:minmax(150px,30%) 1fr;gap:18px;align-items:baseline}
+  .nw .nw-facts:not(.nw-facts-bars) .nw-fact dt{margin:0}
+  .nw .nw-facts:not(.nw-facts-bars) .nw-fact > dd:only-child{grid-column:1 / -1}
+}
+
+/* Pylväät: kaksi sarjaa rivin alla, sama asteikko joka rivillä. */
+.nw .nw-bars-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font:700 16px/1.3 var(--font-body),"DM Sans",system-ui,sans-serif;color:var(--ink);margin:12px 0 2px}
+.nw .nw-key{display:inline-flex;align-items:center;gap:8px}
+.nw .nw-key::before{content:"";width:14px;height:14px;border-radius:4px;background:#0F4C81}
+.nw .nw-key-2::before{background:#5FB3D9}
+.nw .nw-bars{display:grid;gap:6px;margin:10px 0 2px}
+.nw .nw-bar{display:flex;align-items:center;gap:10px}
+.nw .nw-bar i{display:block;height:14px;border-radius:7px;background:#0F4C81;flex:none;max-width:calc(100% - 64px)}
+.nw .nw-bar-2 i{background:#5FB3D9}
+.nw .nw-bar span{font:700 16px/1 var(--font-body),"DM Sans",system-ui,sans-serif;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* Jakonapit puhelimella tasaisena ruudukkona (kuusi nappia = kolme riviä kahta), ei eripituisina riveinä. */
+@media(max-width:640px){
+  .nw .nw-sheet section > ul[role="list"]{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .nw .nw-sheet section > ul[role="list"] a,.nw .nw-sheet section > ul[role="list"] button{width:100%;justify-content:center}
+}
+/* Kuvaaja ja lisenssi kuvatekstin perässä (tällä sivustolla ne olivat jo kuvan alla tummalla sivulla, eivät kuvan
+   päällä; luokka nimettiin mallin mukaan 12.11.2026). Linkin väri on sivuston aiempi --onNight, koska rivi on
+   tummalla pohjalla eikä arkilla. */
+.nw .nw-art-credit-line{white-space:normal}
+.nw .nw-art-credit-line a{color:var(--onNight);text-decoration:underline;text-underline-offset:2px}
+
+/* Jutun hero alle 1024 px (11.11.2026, Vesa: "miksi ne ei ole keskitetty ja rajattu oikein"): otsikko, yläotsake ja
+   murupolku keskellä; ingressi enintään 36 merkin palstana keskellä, rivit vasemmalta (kolmen rivin keskitetty
+   kappale hyppii reunoiltaan, gate:tabletti). 1024 px:stä ylöspäin teksti on kuvan päällä vasemmalla kuten ennen. */
+@media(max-width:1023.98px){
+  .nw .nw-art .nw-art-body{text-align:center}
+  .nw .nw-art .crumbs{justify-content:center}
+  .nw .nw-art .nw-kicker{justify-content:center}
+  /* Ei leveysrajaa: 20ch rivitti otsikon 375 px:llä neljälle riville seitsemällä kielellä (otsikot-mittaus 11.11.2026). */
+  .nw .nw-art .nw-h1{margin-left:auto;margin-right:auto;max-width:none}
+  .nw .nw-art .nw-h1:lang(ja),.nw .nw-art .nw-h1:lang(zh),.nw .nw-art .nw-h1:lang(ko){max-width:none}
+  .nw .nw-art .nw-dek{width:fit-content;max-width:min(36ch,100%);margin-left:auto;margin-right:auto;text-align:left}
+}
+/* kapein-puhelin-20261112: alle 375 px otsikko enintään kolmella rivillä 12 kielellä. */
+@media(max-width:374.98px){.nw .nw-art .nw-h1{font-size:32px}}

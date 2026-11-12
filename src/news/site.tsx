@@ -28,6 +28,7 @@ import { useTranslation } from 'react-i18next'
 import Hreflang from '../i18n/Hreflang'
 import { useLocalePath } from '../i18n/useLang'
 import type { NewsBlock, NewsMeta } from './types'
+import { renderFactsEmbed } from './factsEmbeds'
 import './news.css'
 
 export const SITE = {
@@ -98,8 +99,10 @@ export function useNewsHead(m: {
   )
 }
 
-/** Tällä sivustolla ei ole vielä jutun omia upotuksia. */
-export function renderEmbed(_block: Extract<NewsBlock, { t: 'embed' }>, _meta: NewsMeta): ReactNode {
+/** Tietokortit ja pylväät (factsEmbeds.tsx, 12.11.2026). Muita jutun omia upotuksia tällä sivustolla ei ole. */
+export function renderEmbed(block: Extract<NewsBlock, { t: 'embed' }>, meta: NewsMeta): ReactNode {
+  const facts = renderFactsEmbed(block, meta)
+  if (facts) return facts
   return null
 }
 

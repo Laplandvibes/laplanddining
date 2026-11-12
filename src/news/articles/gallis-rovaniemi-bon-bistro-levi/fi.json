@@ -11,6 +11,18 @@
       "text": "Rovaniemellä Glass Resortin ravintola Gallis haluaa asiakkaikseen myös muita kuin hotellin vieraita, ja Leville Bon Group avaa marraskuussa Bon Bistron. Molemmat uutiset julkaistiin 23.9.2026."
     },
     {
+      "t": "embed",
+      "id": "facts-lyhyesti",
+      "title": "Gallis ja Bon Bistro lyhyesti",
+      "items": [
+        "Gallis: Joulupukin Pajakylässä Rovaniemellä, avoin muillekin kuin hotellin vieraille",
+        "Galliksen menu: neljä ruokalajia 79 euroa, pääruoat alkaen 28 eurosta",
+        "Bon Bistro: Levinraitti 1 Levin keskustassa, avautuu marraskuussa 2026, päivä vahvistamatta",
+        "Pöytävaraus: kalenteri avautuu TableOnlinessa 28.9. alkavalla viikolla, pöytiä joulukuusta alkaen",
+        "Levin maailmancup: 14.–15. marraskuuta 2026"
+      ]
+    },
+    {
       "t": "h2",
       "text": "Gallis aloittaa neljännen sesonkinsa"
     },
@@ -28,7 +40,7 @@
     },
     {
       "t": "h2",
-      "text": "Bon Bistro avautuu Levinraitti 1:een marraskuussa"
+      "text": "Bon Bistro avautuu Levin keskustaan"
     },
     {
       "t": "p",
@@ -40,7 +52,11 @@
     },
     {
       "t": "p",
-      "text": "Ravintolan takana on Bon Levi Oy, kuopiolaislähtöisen Bon Groupin ja North Pole Cateringin yhteinen yhtiö. North Pole Cateringia vetävät ravintoloitsijat Arto Rastas ja Teemu Korkalainen. Yhtiö avasi syyskuussa saman rakennuksen yläkertaan irlantilaisen pubin, Oliver’s Corner Levin. Yrityksen mukaan keittiö nojaa ranskalaisiin tekniikoihin ja laadukkaisiin raaka-aineisiin, ja pohjoisen maut tulevat mukaan sesongin ja saatavuuden mukaan. Konseptin iskulause on ”French Soul. Arctic Spirit.”"
+      "text": "Ravintolan takana on Bon Levi Oy, kuopiolaislähtöisen Bon Groupin ja North Pole Cateringin yhteinen yhtiö. North Pole Cateringia vetävät ravintoloitsijat Arto Rastas ja Teemu Korkalainen. Yhtiö avasi syyskuussa saman rakennuksen yläkertaan irlantilaisen pubin, Oliver’s Corner Levin."
+    },
+    {
+      "t": "p",
+      "text": "Yrityksen mukaan keittiö nojaa ranskalaisiin tekniikoihin ja laadukkaisiin raaka-aineisiin, ja pohjoisen maut tulevat mukaan sesongin ja saatavuuden mukaan. Konseptin iskulause on ”French Soul. Arctic Spirit.”"
     },
     {
       "t": "h2",

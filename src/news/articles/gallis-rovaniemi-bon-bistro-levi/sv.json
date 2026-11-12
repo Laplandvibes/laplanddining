@@ -11,6 +11,18 @@
       "text": "Gallis, restaurangen på Glass Resort i Rovaniemi, vill ha gäster som inte bor på hotellet, och i Levi öppnar Bon Group Bon Bistro i november. Båda nyheterna kom den 23 september 2026."
     },
     {
+      "t": "embed",
+      "id": "facts-lyhyesti",
+      "title": "Gallis och Bon Bistro i korthet",
+      "items": [
+        "Gallis: i Tomtens by i Rovaniemi, öppen även för gäster som inte bor på hotellet",
+        "Gallis meny: fyra rätter för 79 euro, huvudrätter à la carte från 28 euro",
+        "Bon Bistro: Levinraitti 1 i centrala Levi, öppnar i november 2026, dagen är inte bekräftad",
+        "Bordsbokning: kalendern öppnar i TableOnline veckan som börjar den 28 september, bord från december",
+        "Världscupen i Levi: den 14 och 15 november 2026"
+      ]
+    },
+    {
       "t": "h2",
       "text": "Gallis inleder sin fjärde säsong"
     },
@@ -28,7 +40,7 @@
     },
     {
       "t": "h2",
-      "text": "Bon Bistro flyttar in på Levinraitti 1 i november"
+      "text": "Bon Bistro öppnar i centrala Levi"
     },
     {
       "t": "p",
@@ -40,7 +52,11 @@
     },
     {
       "t": "p",
-      "text": "Bakom restaurangen står Bon Levi Oy, ett gemensamt bolag för Bon Group från Kuopio och North Pole Catering, som drivs av krögarna Arto Rastas och Teemu Korkalainen. Samma bolag öppnade i september den irländska puben Oliver’s Corner Levi en våning upp i samma hus. Enligt företaget bygger köket på fransk teknik och goda råvaror, och nordiska smaker kommer in efter säsong och tillgång. Konceptets motto är ”French Soul. Arctic Spirit.”"
+      "text": "Bakom restaurangen står Bon Levi Oy, ett gemensamt bolag för Bon Group från Kuopio och North Pole Catering, som drivs av krögarna Arto Rastas och Teemu Korkalainen. Samma bolag öppnade i september den irländska puben Oliver’s Corner Levi en våning upp i samma hus."
+    },
+    {
+      "t": "p",
+      "text": "Enligt företaget bygger köket på fransk teknik och goda råvaror, och nordiska smaker kommer in efter säsong och tillgång. Konceptets motto är ”French Soul. Arctic Spirit.”"
     },
     {
       "t": "h2",

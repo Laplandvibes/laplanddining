@@ -362,7 +362,7 @@ rmSync(CACHE, { recursive: true, force: true });
 for (const a of articles) {
   for (const lang of LANGS) {
     const t = a.texts[lang];
-    const parts = [t.dek, ...(t.body || []).flatMap((b) => (b.t === 'embed' ? [b.title, b.text] : blockStrings(b).filter((s) => !s.startsWith('/')))).filter(Boolean)];
+    const parts = [t.dek, ...(t.body || []).flatMap((b) => (b.t === 'embed' ? [b.title, (b.items || []).join('; '), b.text] : blockStrings(b).filter((s) => !s.startsWith('/')))).filter(Boolean)];
     const dir = join(CACHE, a.slug);
     mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, `${lang}.json`), JSON.stringify(parts, null, 1), 'utf-8');

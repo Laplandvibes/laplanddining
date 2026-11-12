@@ -11,6 +11,18 @@
       "text": "Gallis, the restaurant at Glass Resort in Rovaniemi, wants diners who are not staying at the hotel, and in Levi, Bon Group is opening Bon Bistro in November. Both announcements came on 23 September 2026."
     },
     {
+      "t": "embed",
+      "id": "facts-lyhyesti",
+      "title": "Gallis and Bon Bistro in brief",
+      "items": [
+        "Gallis: at Santa Claus Village in Rovaniemi, open to diners who are not staying at the hotel",
+        "Gallis menu: four courses for 79 euros, à la carte main courses from 28 euros",
+        "Bon Bistro: Levinraitti 1 in central Levi, opening in November 2026, day not yet confirmed",
+        "Booking: the calendar opens on TableOnline in the week of 28 September, tables from December",
+        "Levi World Cup: 14 and 15 November 2026"
+      ]
+    },
+    {
       "t": "h2",
       "text": "Gallis begins its fourth season"
     },
@@ -28,7 +40,7 @@
     },
     {
       "t": "h2",
-      "text": "Bon Bistro takes over Levinraitti 1 in November"
+      "text": "Bon Bistro opens in central Levi"
     },
     {
       "t": "p",
@@ -40,7 +52,11 @@
     },
     {
       "t": "p",
-      "text": "Behind the restaurant is Bon Levi Oy, a joint company of Bon Group, which started in Kuopio, and North Pole Catering, which is run by restaurateurs Arto Rastas and Teemu Korkalainen. The same company opened the Irish pub Oliver’s Corner Levi upstairs in the same building in September. According to the company, the kitchen is built on French technique and good ingredients, with northern flavours added by season and availability. The concept’s motto is “French Soul. Arctic Spirit.”"
+      "text": "Behind the restaurant is Bon Levi Oy, a joint company of Bon Group, which started in Kuopio, and North Pole Catering, which is run by restaurateurs Arto Rastas and Teemu Korkalainen. The same company opened the Irish pub Oliver’s Corner Levi upstairs in the same building in September."
+    },
+    {
+      "t": "p",
+      "text": "According to the company, the kitchen is built on French technique and good ingredients, with northern flavours added by season and availability. The concept’s motto is “French Soul. Arctic Spirit.”"
     },
     {
       "t": "h2",

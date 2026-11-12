@@ -11,6 +11,18 @@
       "text": "Gallis, das Restaurant des Glass Resort in Rovaniemi, will auch Gäste, die nicht im Hotel wohnen, und in Levi eröffnet Bon Group im November das Bon Bistro. Beide Nachrichten kamen am 23. September 2026."
     },
     {
+      "t": "embed",
+      "id": "facts-lyhyesti",
+      "title": "Gallis und Bon Bistro in Kürze",
+      "items": [
+        "Gallis: im Weihnachtsmanndorf in Rovaniemi, offen auch für Gäste, die nicht im Hotel wohnen",
+        "Menü im Gallis: vier Gänge für 79 Euro, Hauptgerichte à la carte ab 28 Euro",
+        "Bon Bistro: Levinraitti 1 im Zentrum von Levi, Eröffnung im November 2026, Tag noch nicht bestätigt",
+        "Reservierung: Der Kalender öffnet auf TableOnline in der Woche ab dem 28. September, Tische ab Dezember",
+        "Weltcup in Levi: 14. und 15. November 2026"
+      ]
+    },
+    {
       "t": "h2",
       "text": "Gallis beginnt seine vierte Saison"
     },
@@ -28,7 +40,7 @@
     },
     {
       "t": "h2",
-      "text": "Bon Bistro zieht im November in die Levinraitti 1"
+      "text": "Bon Bistro eröffnet im Zentrum von Levi"
     },
     {
       "t": "p",
@@ -40,7 +52,11 @@
     },
     {
       "t": "p",
-      "text": "Hinter dem Restaurant steht Bon Levi Oy, ein Gemeinschaftsunternehmen der aus Kuopio stammenden Bon Group und von North Pole Catering, das die Gastronomen Arto Rastas und Teemu Korkalainen führen. Dasselbe Unternehmen hat im September eine Etage höher im selben Haus den Irish Pub Oliver’s Corner Levi eröffnet. Laut Unternehmen beruht die Küche auf französischer Technik und guten Zutaten, nordische Aromen kommen je nach Saison und Verfügbarkeit dazu. Das Motto des Konzepts lautet „French Soul. Arctic Spirit.“"
+      "text": "Hinter dem Restaurant steht Bon Levi Oy, ein Gemeinschaftsunternehmen der aus Kuopio stammenden Bon Group und von North Pole Catering, das die Gastronomen Arto Rastas und Teemu Korkalainen führen. Dasselbe Unternehmen hat im September eine Etage höher im selben Haus den Irish Pub Oliver’s Corner Levi eröffnet."
+    },
+    {
+      "t": "p",
+      "text": "Laut Unternehmen beruht die Küche auf französischer Technik und guten Zutaten, nordische Aromen kommen je nach Saison und Verfügbarkeit dazu. Das Motto des Konzepts lautet „French Soul. Arctic Spirit.“"
     },
     {
       "t": "h2",

@@ -11,6 +11,18 @@
       "text": "Gallis, le restaurant du Glass Resort à Rovaniemi, veut aussi des clients qui ne logent pas à l’hôtel, et à Levi, Bon Group ouvre Bon Bistro en novembre. Les deux annonces sont tombées le 23 septembre 2026."
     },
     {
+      "t": "embed",
+      "id": "facts-lyhyesti",
+      "title": "Gallis et Bon Bistro en bref",
+      "items": [
+        "Gallis : au village du père Noël à Rovaniemi, ouvert aussi aux clients qui ne logent pas à l’hôtel",
+        "Menu du Gallis : quatre plats pour 79 euros, plats principaux à la carte à partir de 28 euros",
+        "Bon Bistro : Levinraitti 1, au centre de Levi, ouverture en novembre 2026, jour non confirmé",
+        "Réservation : le calendrier ouvre sur TableOnline la semaine du 28 septembre, tables à partir de décembre",
+        "Coupe du monde : à Levi les 14 et 15 novembre 2026"
+      ]
+    },
+    {
       "t": "h2",
       "text": "Gallis entame sa quatrième saison"
     },
@@ -28,7 +40,7 @@
     },
     {
       "t": "h2",
-      "text": "Bon Bistro s’installe au Levinraitti 1 en novembre"
+      "text": "Bon Bistro s’installe au centre de Levi"
     },
     {
       "t": "p",
@@ -40,7 +52,11 @@
     },
     {
       "t": "p",
-      "text": "Derrière le restaurant se trouve Bon Levi Oy, une société commune de Bon Group, né à Kuopio, et de North Pole Catering, dirigée par les restaurateurs Arto Rastas et Teemu Korkalainen. La même société a ouvert en septembre le pub irlandais Oliver’s Corner Levi à l’étage du même bâtiment. Selon l’entreprise, la cuisine repose sur la technique française et de bons produits, les saveurs du Nord arrivant selon la saison et la disponibilité. La devise du concept est « French Soul. Arctic Spirit. »"
+      "text": "Derrière le restaurant se trouve Bon Levi Oy, une société commune de Bon Group, né à Kuopio, et de North Pole Catering, dirigée par les restaurateurs Arto Rastas et Teemu Korkalainen. La même société a ouvert en septembre le pub irlandais Oliver’s Corner Levi à l’étage du même bâtiment."
+    },
+    {
+      "t": "p",
+      "text": "Selon l’entreprise, la cuisine repose sur la technique française et de bons produits, les saveurs du Nord arrivant selon la saison et la disponibilité. La devise du concept est « French Soul. Arctic Spirit. »"
     },
     {
       "t": "h2",

@@ -11,6 +11,18 @@
       "text": "Gallis, el restaurante del Glass Resort en Rovaniemi, quiere también clientes que no se alojan en el hotel, y en Levi Bon Group abre Bon Bistro en noviembre. Ambas noticias llegaron el 23 de septiembre de 2026."
     },
     {
+      "t": "embed",
+      "id": "facts-lyhyesti",
+      "title": "Gallis y Bon Bistro en breve",
+      "items": [
+        "Gallis: en la aldea de Papá Noel de Rovaniemi, abierto también a quien no se aloja en el hotel",
+        "Menú de Gallis: cuatro platos por 79 euros, principales de la carta desde 28 euros",
+        "Bon Bistro: Levinraitti 1, en el centro de Levi, abre en noviembre de 2026, día sin confirmar",
+        "Reservas: el calendario abre en TableOnline la semana del 28 de septiembre, mesas a partir de diciembre",
+        "Copa del Mundo: en Levi el 14 y el 15 de noviembre de 2026"
+      ]
+    },
+    {
       "t": "h2",
       "text": "Gallis empieza su cuarta temporada"
     },
@@ -28,7 +40,7 @@
     },
     {
       "t": "h2",
-      "text": "Bon Bistro ocupa Levinraitti 1 en noviembre"
+      "text": "Bon Bistro abre en el centro de Levi"
     },
     {
       "t": "p",
@@ -40,7 +52,11 @@
     },
     {
       "t": "p",
-      "text": "Detrás del restaurante está Bon Levi Oy, sociedad conjunta de Bon Group, nacida en Kuopio, y de North Pole Catering, que dirigen los restauradores Arto Rastas y Teemu Korkalainen. La misma sociedad abrió en septiembre el pub irlandés Oliver’s Corner Levi en el piso de arriba del mismo edificio. Según la empresa, la cocina se basa en la técnica francesa y en buenos productos, con los sabores del norte según temporada y disponibilidad. El lema del concepto es «French Soul. Arctic Spirit.»"
+      "text": "Detrás del restaurante está Bon Levi Oy, sociedad conjunta de Bon Group, nacida en Kuopio, y de North Pole Catering, que dirigen los restauradores Arto Rastas y Teemu Korkalainen. La misma sociedad abrió en septiembre el pub irlandés Oliver’s Corner Levi en el piso de arriba del mismo edificio."
+    },
+    {
+      "t": "p",
+      "text": "Según la empresa, la cocina se basa en la técnica francesa y en buenos productos, con los sabores del norte según temporada y disponibilidad. El lema del concepto es «French Soul. Arctic Spirit.»"
     },
     {
       "t": "h2",
