@@ -1,9 +1,9 @@
 {
-  "version": "53ec9477",
+  "version": "7847a2d6",
   "domain": "laplanddining.com",
   "brand": "DINING",
   "tagline": "Where to eat in Finnish Lapland",
-  "generated": "2026-10-08T18:02:22.163Z",
+  "generated": "2026-11-12T10:31:20.488Z",
   "staticFallbackSeason": "winter",
   "seasons": {
     "summer": {
@@ -11,18 +11,20 @@
       "heroUrl": "https://laplanddining.com/images/commons/kemi-meripuisto-pavilion-summer-2560.webp?v=ff183fcd",
       "heroAlt": "Lapland restaurant interior",
       "heroSha": "ff183fcd6cd35a3f",
-      "bytes": 182411,
-      "sha256": "ad6d424a1a952944cede51e5cab6a83f1a15bdf8feac029264d2078ce15d7d39",
+      "bytes": 179191,
+      "sha256": "f257c7f67500cfaec012c7b073c72fa24080bc85501d75237a5b1fcdf159ceb0",
       "bandH": 168,
       "photoPct": 73.3,
       "ink": 16330,
       "inkBox": [
         381,
-        493,
+        26,
         818,
-        603
+        136
       ],
       "safe": true,
+      "palkki": "yla",
+      "xVapaa": true,
       "accentP10": 5.06,
       "accentMed": 5.06,
       "whiteP10": 17.08,
@@ -50,18 +52,20 @@
       "heroUrl": "https://laplanddining.com/images/commons/kemi-meripuisto-pavilion-winter-2560.webp?v=0c4de070",
       "heroAlt": "Lapland restaurant interior",
       "heroSha": "0c4de070c95eec42",
-      "bytes": 176667,
-      "sha256": "108310b5bd9691691aaf0ca3d70ba54edf6534bfecb44da93bdd376f2e8cd434",
+      "bytes": 174329,
+      "sha256": "15c52923b158d7a6be457e3834b5668669025b921878672cda798e3227c4e056",
       "bandH": 168,
       "photoPct": 73.3,
       "ink": 16330,
       "inkBox": [
         381,
-        493,
+        26,
         818,
-        603
+        136
       ],
       "safe": true,
+      "palkki": "yla",
+      "xVapaa": true,
       "accentP10": 5.06,
       "accentMed": 5.06,
       "whiteP10": 17.08,

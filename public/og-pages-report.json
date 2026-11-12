@@ -5,19 +5,21 @@
     "kaudet": {
       "summer": {
         "hero": "/images/drive/pyhaSummer.webp",
-        "bytes": 205599,
-        "sha256": "50a7fc530afa94d420f32045f60f8229a0388f6636534b40e778f44dca06b3cf",
+        "bytes": 203212,
+        "sha256": "321e6a735d2dbd850b19c1f1855a6d87ebce8265710db3d844e974c486e13d94",
         "heroSha": "372d932b6b477129",
         "bandH": 168,
         "photoPct": 73.3,
-        "ink": 17145,
+        "ink": 17274,
         "inkBox": [
-          347,
-          493,
-          853,
-          603
+          337,
+          26,
+          863,
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -32,7 +34,7 @@
           "size": 74,
           "lines": 1,
           "ts": 30,
-          "tagW": 507,
+          "tagW": 529,
           "fits": true,
           "bandH": 168
         },
@@ -42,19 +44,21 @@
       },
       "winter": {
         "hero": "/images/commons/kemi-lumikki-winter-1920.webp",
-        "bytes": 157465,
-        "sha256": "9891d4f6b8036d19e4602c8d7d1df06a57831ca373ed807163daf41cc6982fa4",
+        "bytes": 154879,
+        "sha256": "d61f27353279ef81b654e6548e55ff06b7e56a674b2c87775d7ca74cc42170cb",
         "heroSha": "398257806dcd1bfe",
         "bandH": 168,
         "photoPct": 73.3,
-        "ink": 17145,
+        "ink": 17274,
         "inkBox": [
-          347,
-          493,
-          853,
-          603
+          337,
+          26,
+          863,
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -69,7 +73,7 @@
           "size": 74,
           "lines": 1,
           "ts": 30,
-          "tagW": 507,
+          "tagW": 529,
           "fits": true,
           "bandH": 168
         },
@@ -85,24 +89,26 @@
     "kaudet": {
       "summer": {
         "hero": "/images/cities/pyhatunturi.webp",
-        "bytes": 223930,
-        "sha256": "f1be1d017aca83bf06b93713df6fd7e241e8515eb531c4fdce8d6480d37091cc",
+        "bytes": 221569,
+        "sha256": "bc5603fec90ae9d48affc5d940f695bc3bedc6d706d32fc9f0047438c2de87ed",
         "heroSha": "a50303a52f3401bd",
         "bandH": 168,
         "photoPct": 73.3,
-        "ink": 16675,
+        "ink": 16666,
         "inkBox": [
-          370,
-          493,
-          829,
-          603
+          360,
+          26,
+          839,
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
         "whiteMed": 17.08,
-        "mean": 98.5,
+        "mean": 98.6,
         "centerSq": 107.5,
         "photoRegion": 120.8,
         "photoRegionRef": 120.8,
@@ -112,7 +118,7 @@
           "size": 74,
           "lines": 1,
           "ts": 30,
-          "tagW": 462,
+          "tagW": 482,
           "fits": true,
           "bandH": 168
         },
@@ -122,25 +128,27 @@
       },
       "winter": {
         "hero": "/images/commons/kemi-lumikki-winter-1920.webp",
-        "bytes": 156315,
-        "sha256": "d50221281df3f6f05cc7895e5386b395c579ece850caba1bdeef6439d801cf37",
+        "bytes": 153841,
+        "sha256": "e2d63d9ffec7e4d8d1f7566a30af487f97f7f25018184cba1ade7fe9d2078ea2",
         "heroSha": "398257806dcd1bfe",
         "bandH": 168,
         "photoPct": 73.3,
-        "ink": 16675,
+        "ink": 16666,
         "inkBox": [
-          370,
-          493,
-          829,
-          603
+          360,
+          26,
+          839,
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
         "whiteMed": 17.08,
         "mean": 106.2,
-        "centerSq": 111.1,
+        "centerSq": 111.2,
         "photoRegion": 131.2,
         "photoRegionRef": 131.2,
         "overlayPixels": 0,
@@ -149,7 +157,7 @@
           "size": 74,
           "lines": 1,
           "ts": 30,
-          "tagW": 462,
+          "tagW": 482,
           "fits": true,
           "bandH": 168
         },
@@ -165,19 +173,21 @@
     "kaudet": {
       "summer": {
         "hero": "/images/cities/levi.webp",
-        "bytes": 135080,
-        "sha256": "cbef5e38a241de33a5cf3490ed648687e2f99c64fbb886ad1c371b94749db9a1",
+        "bytes": 132547,
+        "sha256": "26a8604bf0b765e0bcc858ac19eb4de7080c79066aee5878699fda697d803bbb",
         "heroSha": "4eb2281a58e6db52",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 14689,
         "inkBox": [
           402,
-          493,
+          26,
           795,
-          597
+          130
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -202,19 +212,21 @@
       },
       "winter": {
         "hero": "/images/cities/levi.webp",
-        "bytes": 135080,
-        "sha256": "cbef5e38a241de33a5cf3490ed648687e2f99c64fbb886ad1c371b94749db9a1",
+        "bytes": 132547,
+        "sha256": "26a8604bf0b765e0bcc858ac19eb4de7080c79066aee5878699fda697d803bbb",
         "heroSha": "4eb2281a58e6db52",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 14689,
         "inkBox": [
           402,
-          493,
+          26,
           795,
-          597
+          130
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -246,19 +258,21 @@
     "kaudet": {
       "summer": {
         "hero": "/images/news/levi-village-centre-2026.webp",
-        "bytes": 176435,
-        "sha256": "7bf2e9b8930dd480901bf32b763708cfe6f0ed0ca22d877a21a7b39f4696b64e",
+        "bytes": 173926,
+        "sha256": "fb3875447767873d7841e8c56ac34ccba987637a7a7ac45af15d3fb4bf3ba290",
         "heroSha": "535efe38594e7b92",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 16927,
         "inkBox": [
           357,
-          493,
+          26,
           841,
-          603
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -283,19 +297,21 @@
       },
       "winter": {
         "hero": "/images/news/levi-village-centre-2026.webp",
-        "bytes": 176435,
-        "sha256": "7bf2e9b8930dd480901bf32b763708cfe6f0ed0ca22d877a21a7b39f4696b64e",
+        "bytes": 173926,
+        "sha256": "fb3875447767873d7841e8c56ac34ccba987637a7a7ac45af15d3fb4bf3ba290",
         "heroSha": "535efe38594e7b92",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 16927,
         "inkBox": [
           357,
-          493,
+          26,
           841,
-          603
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -327,19 +343,21 @@
     "kaudet": {
       "summer": {
         "hero": "/images/news/levi-village-centre-2026.webp",
-        "bytes": 176435,
-        "sha256": "7bf2e9b8930dd480901bf32b763708cfe6f0ed0ca22d877a21a7b39f4696b64e",
+        "bytes": 173926,
+        "sha256": "fb3875447767873d7841e8c56ac34ccba987637a7a7ac45af15d3fb4bf3ba290",
         "heroSha": "535efe38594e7b92",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 16927,
         "inkBox": [
           357,
-          493,
+          26,
           841,
-          603
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -364,19 +382,21 @@
       },
       "winter": {
         "hero": "/images/news/levi-village-centre-2026.webp",
-        "bytes": 176435,
-        "sha256": "7bf2e9b8930dd480901bf32b763708cfe6f0ed0ca22d877a21a7b39f4696b64e",
+        "bytes": 173926,
+        "sha256": "fb3875447767873d7841e8c56ac34ccba987637a7a7ac45af15d3fb4bf3ba290",
         "heroSha": "535efe38594e7b92",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 16927,
         "inkBox": [
           357,
-          493,
+          26,
           841,
-          603
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -408,19 +428,21 @@
     "kaudet": {
       "summer": {
         "hero": "/images/cities/rovaniemi.webp",
-        "bytes": 155075,
-        "sha256": "bb0427ffda6f00904abb62f56843bcc762aa4c724c5c640ef9ec2225ac35f146",
+        "bytes": 152000,
+        "sha256": "652e024bb9d158e6e21d867dd3a78416a9a88620edaac65e876629d0f9c439bc",
         "heroSha": "b316d87959ff815e",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 15655,
         "inkBox": [
           402,
-          493,
+          26,
           795,
-          597
+          130
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -445,19 +467,21 @@
       },
       "winter": {
         "hero": "/images/cities/rovaniemi.webp",
-        "bytes": 155075,
-        "sha256": "bb0427ffda6f00904abb62f56843bcc762aa4c724c5c640ef9ec2225ac35f146",
+        "bytes": 152000,
+        "sha256": "652e024bb9d158e6e21d867dd3a78416a9a88620edaac65e876629d0f9c439bc",
         "heroSha": "b316d87959ff815e",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 15655,
         "inkBox": [
           402,
-          493,
+          26,
           795,
-          597
+          130
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -489,19 +513,21 @@
     "kaudet": {
       "summer": {
         "hero": "/images/commons/inari-midnight-sun-lake-1920.webp",
-        "bytes": 90221,
-        "sha256": "7122a080a3f0c6f597b8bcb0473b7ac4b96a1d9e2c66fa03cf2457523195f712",
+        "bytes": 87006,
+        "sha256": "d7a014d7133a93628bead8fa40e8e8a4f4c4a3dcb4e88b48e84256324d5e6504",
         "heroSha": "a8d01a23a12802f4",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 16762,
         "inkBox": [
           363,
-          493,
+          26,
           836,
-          603
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -526,19 +552,21 @@
       },
       "winter": {
         "hero": "/images/commons/inari-midnight-sun-lake-1920.webp",
-        "bytes": 90221,
-        "sha256": "7122a080a3f0c6f597b8bcb0473b7ac4b96a1d9e2c66fa03cf2457523195f712",
+        "bytes": 87006,
+        "sha256": "d7a014d7133a93628bead8fa40e8e8a4f4c4a3dcb4e88b48e84256324d5e6504",
         "heroSha": "a8d01a23a12802f4",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 16762,
         "inkBox": [
           363,
-          493,
+          26,
           836,
-          603
+          136
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -570,19 +598,21 @@
     "kaudet": {
       "summer": {
         "hero": "/images/cities/ruka.webp",
-        "bytes": 178291,
-        "sha256": "e112e2498986fc41e19bbced6f8f5eb06e8b7dff4f75aac4fd55c5d3fee56035",
+        "bytes": 175853,
+        "sha256": "c563f2832393312f89b6e548dbd60b10d90ca99c276080ca319b3efe15fb4d9d",
         "heroSha": "9150e08d43d5f515",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 14929,
         "inkBox": [
           402,
-          493,
+          26,
           795,
-          597
+          130
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
@@ -607,19 +637,21 @@
       },
       "winter": {
         "hero": "/images/cities/ruka.webp",
-        "bytes": 178291,
-        "sha256": "e112e2498986fc41e19bbced6f8f5eb06e8b7dff4f75aac4fd55c5d3fee56035",
+        "bytes": 175853,
+        "sha256": "c563f2832393312f89b6e548dbd60b10d90ca99c276080ca319b3efe15fb4d9d",
         "heroSha": "9150e08d43d5f515",
         "bandH": 168,
         "photoPct": 73.3,
         "ink": 14929,
         "inkBox": [
           402,
-          493,
+          26,
           795,
-          597
+          130
         ],
         "safe": true,
+        "palkki": "yla",
+        "xVapaa": true,
         "accentP10": 5.06,
         "accentMed": 5.06,
         "whiteP10": 17.08,
