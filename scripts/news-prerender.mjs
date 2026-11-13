@@ -115,6 +115,15 @@ MONTH_RULES.fi = [
 function numbers(text, lang) {
   let t = String(text);
   for (const [re, m] of MONTH_RULES[lang] ?? []) t = t.replace(re, ` ${m} `);
+  // ja/ko/zh laskevat kymmenissätuhansissa: "450万" = 4,5 miljoonaa (万/萬/만 = 10 000, 億/억/亿 = 100 000 000).
+  // Muunnetaan miljooniksi, jotta se vertautuu englannin "4.5 million" -muotoon. Ilman tätä kääntäjät kirjoittivat
+  // portin takia "4.5百万", jota natiivilukijat pitivät virheenä (8 juttua × 3 kieltä, 12.11.2026).
+  if (lang === 'ja' || lang === 'ko' || lang === 'zh-CN') {
+    t = t.replace(/(\d[\d,]*(?:\.\d+)?)\s?(万|萬|만|億|억|亿)/g, (_, n, u) => {
+      const v = Number(n.replace(/,/g, '')) * (/[億억亿]/.test(u) ? 100 : 0.01);
+      return ` ${Number(v.toFixed(4))} `;
+    });
+  }
   // Kausi "2026–27" = "2026–2027" (ei päivämääräväliä "2026–14.3." — piste perässä).
   t = t.replace(/(\d{2})(\d{2})\s*[–\-/〜~]\s*(\d{2})(?![\d.])/g, '$1$2–$1$3');
   // Tuhaterottimet: "8 000", "8,000", "8.000" = 8000 (kolme numeroa perässä, ei neljättä).
