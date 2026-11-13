@@ -32,6 +32,52 @@ jobs:
 
       - run: npm run build
 
+      # ─── LV-PORTIT-CI (13.11.2026) ──────────────────────────────────────────────────────
+      # lv-opsin dist-portit ennen julkaisua, sama ajuri ja samat portit kuin deploy-safe.sh:ssa
+      # (node scripts/portti.mjs --site <sivusto> --taso dist). lv-ops on yksityinen ja luetaan vain luku
+      # -avaimella (lv-opsin deploy key, salaisuus LV_OPS_DEPLOY_KEY). Kaatunut portti PYSÄYTTÄÄ julkaisun.
+      # Jos lv-opsia ei saada (avain puuttuu, GitHub-katko), julkaisu jatkuu varoituksella.
+      # Hätäohitus: Actions-muuttuja LV_PORTIT_POIS=1 (repo tai organisaatio); kirjaa syy.
+      - name: LV-portit — lv-ops (vain luku)
+        id: lvops
+        if: ${{ vars.LV_PORTIT_POIS != '1' }}
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: Laplandvibes/lv-ops
+          ssh-key: ${{ secrets.LV_OPS_DEPLOY_KEY }}
+          path: _lv-ops
+
+      - name: LV-portit — Node 24 (sama kuin deploy-safe.sh)
+        if: ${{ vars.LV_PORTIT_POIS != '1' && steps.lvops.outcome == 'success' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: LV-portit — dist
+        if: ${{ vars.LV_PORTIT_POIS != '1' && steps.lvops.outcome == 'success' }}
+        env:
+          SIVUSTO_DIR: laplanddining-new
+        run: |
+          # Portit etsivät sivuston lv-opsin juuresta (<lv-ops>/<sivusto>), kuten Vesan koneella.
+          mv _lv-ops "$RUNNER_TEMP/lv-ops"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/lv-ops/$SIVUSTO_DIR"
+          cd "$RUNNER_TEMP/lv-ops"
+          npm ci --no-audit --no-fund
+          node scripts/portti.mjs --site "$SIVUSTO_DIR" --taso dist
+
+      # Julkaisuvaihe ajetaan sivuston omalla Node-versiolla, kuten ennen tätä lohkoa.
+      - name: LV-portit — sivuston oma Node takaisin
+        if: ${{ vars.LV_PORTIT_POIS != '1' && steps.lvops.outcome == 'success' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: LV-portit — ohitettu
+        if: ${{ vars.LV_PORTIT_POIS == '1' || steps.lvops.outcome != 'success' }}
+        run: echo "::warning::LV-portit ohitettu (LV_PORTIT_POIS='${{ vars.LV_PORTIT_POIS }}', lv-ops-haku='${{ steps.lvops.outcome }}')"
+      # ─── /LV-PORTIT-CI ───────────────────────────────────────────────────────────────────
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
