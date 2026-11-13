@@ -41,6 +41,23 @@ export type Partner = {
    */
   urlFi?: string;
   imageSrc?: string;
+  /**
+   * Kokovaihtoehdot kortin kuvalle: `srcset` ja `sizes` sellaisenaan.
+   *
+   * 🔴 MIKSI SIVUSTO ANTAA NAMA, EI KOMPONENTTI: kapeat kopiot generoidaan
+   * sivustokohtaisesti (`scripts/gen_responsive_images.mjs`) ja niiden lista on
+   * sivuston omassa datassa. Jaettu komponentti ei voi tietaa mille kuville
+   * kopioita on olemassa, ja arvaus tuottaisi srcset-rivin tiedostoon jota ei
+   * ole — se nakyisi lukijalle rikkinaisena kuvana.
+   *
+   * 🔴 `sizes` on pakko antaa `srcSet`:n kanssa. Ilman sita selain olettaa kuvan
+   * olevan koko ikkunan levyinen ja valitsee kortillekin suurimman tiedoston,
+   * eli mitaan ei saasty. Mitattu laplandactivitiesissa 20.9.2026.
+   *
+   * Jos naita ei anneta, kortti toimii tasmalleen kuten ennen.
+   */
+  imageSrcSet?: string;
+  imageSizes?: string;
   /** Lifestyle/mood photo for ad units that show both a photo and the logo. */
   photoSrc?: string;
   /**
@@ -60,7 +77,7 @@ export type Partner = {
    * versiota (se katoaisi chippiin).
    */
   logoSrc?: string;
-  /** Logon alt-teksti. Oletus: "{name} logo". Anna jos brändinimi eroaa. */
+  /** Logon alt-teksti. Oletus: kumppanin nimi (logo kertoo nimen; "{name} logo" oli englantia kaikilla 12 kielellä, gate:a11y-nimet 24.10.2026). Anna jos brändinimi eroaa. */
   logoAlt?: string;
   badgeLabel?: string;
   /**
@@ -337,7 +354,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
   /** Pieni badge-pilleri, aina näkyvissä kuluttajansuojalain edellyttämänä */
   function Badge() {
     return (
-      <span className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-full bg-pink-600/90 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm">
+      <span className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-full bg-[#BE185D] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm">
         {badge}
       </span>
     );
@@ -392,7 +409,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
           aria-label={`${badge}: ${partner.name}`}
           className={[
             'block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vibe-pink',
-            layout === 'wide' ? 'md:w-5/12 md:shrink-0' : '',
+            layout === 'wide' ? 'md:w-1/2 md:shrink-0' : '',
           ].filter(Boolean).join(' ')}
         >
         {/* KUVA + TEKSTI KUVAN PÄÄLLÄ.
@@ -403,10 +420,12 @@ export default function PartnerSlot({ partner, variant, locale, className, place
             vammalta kuin maksava asiakas. Maksetun paikan pitää viestiä että
             tuon voi varata: teksti kuvan päälle scrimin kanssa + oma CTA-nappi,
             samalla logiikalla kuin alasivujen AdUnit. */}
-        <div className={['relative aspect-[16/10] overflow-hidden', layout === 'wide' ? 'md:aspect-auto md:h-full md:min-h-[22rem]' : ''].filter(Boolean).join(' ')}>
+        <div className={['relative aspect-[16/10] overflow-hidden', layout === 'wide' ? 'md:aspect-auto md:h-full md:min-h-[20rem]' : ''].filter(Boolean).join(' ')}>
           {partner.imageSrc ? (
             <img
               src={partner.imageSrc}
+              srcSet={partner.imageSrcSet}
+              sizes={partner.imageSrcSet ? partner.imageSizes : undefined}
               alt={partner.name}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             />
@@ -440,14 +459,14 @@ export default function PartnerSlot({ partner, variant, locale, className, place
             >
               <img
                 src={partner.logoSrc}
-                alt={partner.logoAlt ?? `${partner.name} logo`}
+                alt={partner.logoAlt ?? partner.name}
                 // 🔴 EI `loading="lazy"`: kortin oma valokuva latautuu eagerinä,
                 // joten lazy logo saapuisi sen jälkeen ja maksaneen kumppanin
                 // brändimerkki "poksahtaisi" paikalleen viiveellä. Logo on
                 // ~30 kt, eli säästö ei ole sen arvoinen.
                 decoding="async"
-                className="block w-auto object-contain"
-                style={{ height: 'clamp(26px, 5.5vw, 40px)', maxWidth: '160px' }}
+                className="block h-14 xl:h-10 w-auto object-contain"
+                style={{ maxWidth: '160px' }}
               />
             </div>
           )}
@@ -482,7 +501,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
         </a>
 
         {(cta || description || (articleUrl && articleLabel)) && (
-          <div className={['p-5 sm:p-6 flex flex-col gap-3 sm:gap-4', layout === 'wide' ? 'md:flex-1 md:justify-center md:p-8 lg:p-10' : ''].filter(Boolean).join(' ')}>
+          <div className={['p-5 sm:p-6 flex flex-1 flex-col gap-3 sm:gap-4', layout === 'wide' ? 'md:flex-1 md:justify-center md:p-8 lg:p-10' : ''].filter(Boolean).join(' ')}>
             {/* Pidempi kuvaus vain sm+: desktopissa on tilaa, mobiilissa ei. */}
             {description && (
               <p
@@ -494,7 +513,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
                 {description}
               </p>
             )}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+            <div className={[layout === 'wide' ? 'flex flex-wrap items-center gap-x-5 gap-y-3' : 'mt-auto flex flex-col items-start gap-3'].join(' ')}>
               {/* CTA. Renderöityy vain kun kumppanille on annettu ctaLabel —
                   vanhat kumppanit ilman sitä säilyttävät entisen ulkoasunsa. */}
               {cta && (
@@ -546,49 +565,134 @@ export default function PartnerSlot({ partner, variant, locale, className, place
         target="_blank"
         rel="sponsored nofollow noopener"
         className={[
-          'group relative flex items-center gap-4 overflow-hidden rounded-2xl border',
-          'border-white/15 bg-white/5 backdrop-blur-sm px-5 py-4 sm:px-8 sm:py-5',
-          'hover:border-vibe-pink/40 transition-all duration-300 w-full',
+          'group relative flex flex-wrap xl:flex-nowrap items-center gap-4 sm:gap-5 overflow-hidden rounded-2xl w-full',
+          'px-4 py-3.5 sm:px-5 sm:py-4 transition-all duration-300',
           className,
         ]
           .filter(Boolean)
           .join(' ')}
+        /* 🔴 Ilme uusiksi 6.9.2026 (Vesa: "onhan tällainen mainos ihan kamalan
+           näköinen"). Vanha versio oli 5 %:n valkoinen lasi + 56 px:n peukalonkuva
+           + paljas nuoli: vaalealla sivustolla se katosi taustaan ja luki
+           jäänteeltä, ei maksetulta paikalta. Nyt: umpinainen kortti, kumppanin
+           oma väri pystyviivana, iso kuva, logo ja oikea CTA-nappi.
+           Mitat ja pinnat INLINE-tyyleinä, koska Tailwind v4:n source-skannaus ei
+           emitoi shared/-kansion arbitrary-luokkia kaikissa repoissa (sama ansa
+           kuin logo-chipissä yllä, todettu 2026-07-26). */
+        style={{
+          background: lightCard ? '#FFFFFF' : 'rgba(255,255,255,0.05)',
+          border: `1px solid ${lightCard ? 'rgba(15,23,42,0.10)' : 'rgba(255,255,255,0.14)'}`,
+          boxShadow: lightCard
+            ? '0 1px 2px rgba(15,23,42,0.05), 0 18px 40px -28px rgba(15,23,42,0.45)'
+            : '0 18px 44px -30px rgba(0,0,0,0.85)',
+        }}
         aria-label={`${badge}: ${partner.name}`}
       >
-        {/* Pieni kuva/thumbnail tai väripilkku */}
+        {/* Kumppanin oma väri pystyviivana: antaa paikalle identiteetin ilman
+            että brändiväri joutuu tekstin taakse (kontrasti ei ole makuasia). */}
+        <span
+          aria-hidden="true"
+          style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: partner.accent ?? '#EC4899' }}
+        />
+        {/* Kuva: 64 → 88 px. Peukalonkuva ei myy kumppanin työtä. */}
         {partner.imageSrc ? (
-          <div className="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden">
+          <div
+            className="shrink-0 overflow-hidden rounded-xl"
+            style={{ width: 'clamp(64px, 9vw, 88px)', height: 'clamp(64px, 9vw, 88px)' }}
+          >
             <img
               src={partner.imageSrc}
               alt={partner.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
             />
           </div>
         ) : (
-          <div className={`shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${gradientBg}`} />
+          <div
+            className={`shrink-0 rounded-xl ${gradientBg}`}
+            style={{ width: 'clamp(64px, 9vw, 88px)', height: 'clamp(64px, 9vw, 88px)' }}
+          />
         )}
 
         {/* Teksti */}
-        <div className="flex flex-col gap-0.5 min-w-0">
+        <div className="flex flex-1 flex-col gap-0.5 min-w-0">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center rounded-full bg-pink-600/90 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm">
+            <span className="inline-flex items-center rounded-full bg-[#BE185D] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-white shadow-sm">
               {badge}
             </span>
           </div>
-          <p className="font-heading text-lg sm:text-xl text-snow tracking-wide leading-tight group-hover:text-pink-400 transition-colors truncate">
+          {/* 🔴 Musteet PINNAN mukaan. Nämä kaksi riviä olivat kovakoodatut
+              `text-snow` / `text-snow/65`, eli valkoista — ja vaalealla sivustolla
+              (surface="light") maksavan kumppanin nimi ja iskulause renderöityivät
+              VALKOISENA VALKOISELLA. Mitattu laplandstoren dististä 6.9.2026:
+              rgb(255,255,255) taustalla rgb(255,255,255). Vika näkyi vasta nyt,
+              koska tämä oli ensimmäinen kerta kun vaalean sivuston pääkumppani-
+              paikkaan tuli oikea kumppani — aiemmin siinä oli house-ad, jolla on
+              omat värinsä. Sama ansa kuin logojen polariteetissa (CLAUDE.md). */}
+          <p
+            className={`font-heading text-lg sm:text-xl tracking-wide leading-tight transition-colors truncate ${
+              lightCard ? 'text-[#0F172A] group-hover:text-[#BE185D]' : 'text-snow group-hover:text-pink-400'
+            }`}
+          >
             {partner.name}
           </p>
           {tagline && (
-            <p className="text-snow/65 text-xs sm:text-sm leading-snug truncate">{tagline}</p>
+            /* Puhelimessa kaksi riviä, ei yhtä katkaistua: 390 px:llä `truncate`
+               leikkasi kesken sanan ("Käsintehdyt silmälasit tuohe…"), jolloin
+               kumppanin oma iskulause jäi kertomatta. Leveämmällä yksi rivi riittää.
+               Inline-tyyli, koska shared/:n arbitrary-luokat eivät emitoidu joka repossa. */
+            <p
+              className={`text-xs sm:text-sm leading-snug sm:truncate ${lightCard ? 'text-[#0F172A]/70' : 'text-snow/65'}`}
+              style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+            >
+              {tagline}
+            </p>
           )}
         </div>
 
-        {/* Nuoli */}
-        <span
-          aria-hidden="true"
-          className="ml-auto shrink-0 text-vibe-pink opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-xl"
-        >
-          →
+        {/* Oikea reuna: kumppanin logo + oikea CTA-nappi. Paljas nuoli ei kerro
+            mihin klikkaus vie eikä anna maksaneelle kumppanille brändinäkyvyyttä.
+            Logo istuu aina valkoisella chipillä (sama sääntö kuin korttivariantissa:
+            merkin kontrastia ei jätetä sivuston pinnan varaan). Alle xl:n logo
+            ja toimintolinkki saavat oman rivin; logo säilyy myös puhelimessa. */}
+        <span className="ml-auto flex w-full xl:w-auto shrink-0 flex-wrap items-center justify-between gap-3 sm:gap-4">
+          {partner.logoSrc && (
+            <span
+              className="inline-flex items-center justify-center"
+              style={{
+                background: 'rgba(255,255,255,0.96)',
+                borderRadius: '0.625rem',
+                padding: '0.3rem 0.55rem',
+                boxShadow: '0 2px 10px rgba(15,23,42,0.16)',
+              }}
+            >
+              <img
+                src={partner.logoSrc}
+                alt={partner.logoAlt ?? partner.name}
+                decoding="async"
+                className="block h-12 xl:h-[26px] w-auto object-contain"
+                style={{ maxWidth: '116px' }}
+              />
+            </span>
+          )}
+          {cta ? (
+            <span
+              className="hidden sm:inline-flex items-center gap-2 rounded-full font-heading tracking-wide text-white transition-colors"
+              /* Talon pinkki #DB2777, ei kumppanin aksenttia: valkoinen teksti
+                 kumppanin omalla värillä ei ole taattu luettavaksi (Keloan
+                 metsänvihreä oli sivupalstan kortissa 1,83:1). */
+              style={{ background: '#DB2777', padding: '0.6rem 1.15rem', fontSize: '0.95rem' }}
+            >
+              {cta}
+              <span aria-hidden="true">→</span>
+            </span>
+          ) : null}
+          <span
+            aria-hidden="true"
+            className={`shrink-0 text-xl transition-transform duration-200 group-hover:translate-x-1 ${cta ? 'sm:hidden' : ''}`}
+            style={{ color: lightCard ? '#BE185D' : '#EC4899' }}
+          >
+            →
+          </span>
         </span>
       </a>
     );
@@ -630,7 +734,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
       {/* Teksti */}
       <div className="flex flex-col gap-0.5 min-w-0">
         <div className="flex items-center gap-1.5">
-          <span className="inline-flex items-center rounded-full bg-pink-600/90 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white shadow-sm">
+          <span className="inline-flex items-center rounded-full bg-pink-600 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white shadow-sm">
             {badge}
           </span>
           <p className="font-body font-semibold text-sm text-snow group-hover:text-pink-400 transition-colors truncate">

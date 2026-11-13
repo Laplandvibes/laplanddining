@@ -106,7 +106,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
         Any contract for travel services (such as accommodation, flights, car rental, or tours) is concluded directly
         between you and the relevant third-party provider, on their terms and under their privacy policy.
         Their cancellation rules, refund policies, and consumer-protection rights apply, not ours. The Finnish
-        consumer right of withdrawal under <em>kuluttajansuojalaki 6 luku</em> is exercised against the
+        consumer right of withdrawal under <em lang="fi">kuluttajansuojalaki 6 luku</em> is exercised against the
         merchant; {siteName} has no role in that process.
       </>
     ),
@@ -242,7 +242,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
       <>
         Verträge über Reiseleistungen (z. B. Unterkunft, Flüge, Mietwagen oder Touren) kommen direkt zwischen Ihnen und dem jeweiligen Drittanbieter
         nach dessen Bedingungen und Datenschutzrichtlinie zustande. Es gelten dessen Stornierungs-, Rückerstattungs- und Verbraucherrechtsregeln, nicht unsere.
-        Das finnische Widerrufsrecht nach <em>kuluttajansuojalaki 6 luku</em> richtet sich gegen den Händler; {siteName} ist hieran nicht beteiligt.
+        Das finnische Widerrufsrecht nach <em lang="fi">kuluttajansuojalaki 6 luku</em> richtet sich gegen den Händler; {siteName} ist hieran nicht beteiligt.
       </>
     ),
     s6Title: '6. Newsletter',
@@ -305,7 +305,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     ),
     s5P2: (siteName) => (
       <>
-        旅行サービス（宿泊、航空券、レンタカー、ツアーなど）の契約は、お客様と当該の第三者提供者との間で、その規約とプライバシーポリシーに基づいて直接成立します。キャンセル、返金、消費者保護のルールはその事業者のものが適用され、当サイトのものではありません。フィンランドの <em>kuluttajansuojalaki 6 luku</em> による消費者撤回権は販売業者に対して行使するものであり、{siteName} はそのプロセスに関与しません。
+        旅行サービス（宿泊、航空券、レンタカー、ツアーなど）の契約は、お客様と当該の第三者提供者との間で、その規約とプライバシーポリシーに基づいて直接成立します。キャンセル、返金、消費者保護のルールはその事業者のものが適用され、当サイトのものではありません。フィンランドの <em lang="fi">kuluttajansuojalaki 6 luku</em> による消費者撤回権は販売業者に対して行使するものであり、{siteName} はそのプロセスに関与しません。
       </>
     ),
     s6Title: '6. ニュースレター',
@@ -372,7 +372,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
         Todo contrato de servicios de viaje (como alojamiento, vuelos, alquiler de coches o tours) se celebra directamente
         entre usted y el proveedor externo correspondiente, según sus términos y su política de privacidad.
         Se aplican sus reglas de cancelación, reembolso y derechos del consumidor, no las nuestras. El derecho de
-        desistimiento finlandés conforme al <em>kuluttajansuojalaki 6 luku</em> se ejerce frente al comerciante;{' '}
+        desistimiento finlandés conforme al <em lang="fi">kuluttajansuojalaki 6 luku</em> se ejerce frente al comerciante;{' '}
         {siteName} no interviene en ese proceso.
       </>
     ),
@@ -442,7 +442,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
         Qualquer contrato relativo a serviços de viagem (como hospedagem, voos, aluguel de carros ou passeios) é celebrado
         diretamente entre você e o respectivo fornecedor terceiro, sob os termos e a política de privacidade dele.
         São aplicáveis as regras de cancelamento, reembolso e defesa do consumidor desse fornecedor, e não as nossas.
-        O direito de arrependimento finlandês previsto no <em>kuluttajansuojalaki 6 luku</em> é exercido contra o
+        O direito de arrependimento finlandês previsto no <em lang="fi">kuluttajansuojalaki 6 luku</em> é exercido contra o
         comerciante; o {siteName} não participa desse processo.
       </>
     ),
@@ -506,7 +506,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
     ),
     s5P2: (siteName) => (
       <>
-        任何旅游服务合同（住宿、机票、租车、行程等）均由您与相应的第三方提供方直接签订，适用其条款与隐私政策。适用的是其取消、退款及消费者保护规则，而非我们的规则。芬兰《消费者保护法》第6章（<em>kuluttajansuojalaki 6 luku</em>）规定的撤回权由您向商家主张；{siteName} 不参与该过程。
+        任何旅游服务合同（住宿、机票、租车、行程等）均由您与相应的第三方提供方直接签订，适用其条款与隐私政策。适用的是其取消、退款及消费者保护规则，而非我们的规则。芬兰《消费者保护法》第6章（<em lang="fi">kuluttajansuojalaki 6 luku</em>）规定的撤回权由您向商家主张；{siteName} 不参与该过程。
       </>
     ),
     s6Title: '6. 电子简报',
@@ -572,7 +572,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
       <>
         여행 서비스(숙박, 항공, 렌터카, 투어 등)에 대한 모든 계약은 귀하와 해당 제3자 제공자 간에 직접 체결되며,
         해당 제공자의 약관 및 개인정보 처리방침이 적용됩니다. 해당 제공자의 취소 규정, 환불 정책, 소비자 보호 권리가
-        적용됩니다. 핀란드 소비자 보호법 제6장(<em>kuluttajansuojalaki 6 luku</em>)에 따른 철회권은 판매자에 대해
+        적용됩니다. 핀란드 소비자 보호법 제6장(<em lang="fi">kuluttajansuojalaki 6 luku</em>)에 따른 철회권은 판매자에 대해
         행사되며, {siteName} 사이트는 그 과정에 참여하지 않습니다.
       </>
     ),
@@ -644,7 +644,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
         est conclu directement entre vous et le prestataire tiers concerné, selon ses conditions et sa politique
         de confidentialité. Ses règles d'annulation, de remboursement et ses droits de protection des
         consommateurs s'appliquent, pas les nôtres. Le droit de rétractation finlandais prévu par{' '}
-        <em>kuluttajansuojalaki 6 luku</em> s'exerce à l'encontre du commerçant ; {siteName} n'intervient pas dans ce processus.
+        <em lang="fi">kuluttajansuojalaki 6 luku</em> s'exerce à l'encontre du commerçant ; {siteName} n'intervient pas dans ce processus.
       </>
     ),
     s6Title: '6. Newsletter',
@@ -713,7 +713,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
         Qualsiasi contratto per servizi di viaggio (ad esempio alloggio, voli, autonoleggio o tour) è concluso direttamente
         tra Lei e il relativo fornitore terzo, secondo i suoi termini e la sua informativa sulla privacy.
         Si applicano le sue regole di cancellazione, rimborso e tutela del consumatore, non le nostre. Il diritto
-        di recesso finlandese previsto dal <em>kuluttajansuojalaki 6 luku</em> si esercita nei confronti del
+        di recesso finlandese previsto dal <em lang="fi">kuluttajansuojalaki 6 luku</em> si esercita nei confronti del
         commerciante; {siteName} non interviene in tale processo.
       </>
     ),
@@ -783,7 +783,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
         Elk contract voor reisdiensten (zoals accommodatie, vluchten, autoverhuur of tours) wordt rechtstreeks gesloten
         tussen u en de betreffende externe aanbieder, op diens voorwaarden en onder diens privacybeleid. Hun
         annulerings-, terugbetalings- en consumentenbeschermingsregels zijn van toepassing, niet de onze. Het
-        Finse herroepingsrecht onder <em>kuluttajansuojalaki 6 luku</em> wordt uitgeoefend jegens de handelaar;{' '}
+        Finse herroepingsrecht onder <em lang="fi">kuluttajansuojalaki 6 luku</em> wordt uitgeoefend jegens de handelaar;{' '}
         {siteName} speelt daarin geen rol.
       </>
     ),
@@ -853,7 +853,7 @@ const COPY: Record<Lang, Omit<TermsCopy, 's2Body' | 's3P2'>> = {
         Alla avtal om resetjänster (t.ex. boende, flyg, hyrbil eller turer) ingås direkt mellan dig och den relevanta
         tredjepartsleverantören, enligt dennes villkor och integritetspolicy. Deras regler för avbokning,
         återbetalning och konsumentskydd gäller, inte våra. Den finska konsumentens ångerrätt enligt{' '}
-        <em>kuluttajansuojalaki 6 luku</em> (konsumentskyddslagen kapitel 6) utövas gentemot handlaren; {siteName} har ingen roll i den processen.
+        <em lang="fi">kuluttajansuojalaki 6 luku</em> (konsumentskyddslagen kapitel 6) utövas gentemot handlaren; {siteName} har ingen roll i den processen.
       </>
     ),
     s6Title: '6. Nyhetsbrev',
@@ -997,7 +997,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         The purchase contract is concluded directly between you and that shop, on their terms and under
         their privacy policy. Delivery times, shipping costs, any VAT or customs charges on orders leaving
         the EU, returns, refunds and warranty are theirs, not ours. A statutory right of withdrawal in
-        distance selling, in Finland under <em>kuluttajansuojalaki 6 luku</em>, is exercised against the
+        distance selling, in Finland under <em lang="fi">kuluttajansuojalaki 6 luku</em>, is exercised against the
         shop that sold the item.
       </>
     ),
@@ -1058,7 +1058,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         und Datenschutzerklärung. Lieferzeiten, Versandkosten, Umsatzsteuer und Zollgebühren bei
         Bestellungen außerhalb der EU, Rückgaben, Erstattungen und Gewährleistung liegen bei dem Shop,
         nicht bei uns. Ein gesetzliches Widerrufsrecht im Fernabsatz, in Finnland nach{' '}
-        <em>kuluttajansuojalaki 6 luku</em>, wird gegenüber dem verkaufenden Shop ausgeübt.
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>, wird gegenüber dem verkaufenden Shop ausgeübt.
       </>
     ),
     s8Body: (siteName) => `${siteName} und LaPeso Oy haften nicht für Verluste oder Schäden, die aus dem Vertrauen auf die Produktangaben dieser Website, aus der Nutzung der verlinkten Shops oder aus einem darüber getätigten Kauf entstehen. Ansprüche wegen eines Produkts, seiner Lieferung oder seines Zustands richten sich gegen den Shop, der es verkauft hat. Lesen Sie bei Lebensmitteln und Nahrungsergänzungsmitteln stets die Zutaten-, Allergen- und Dosierungsangaben auf der Verpackung und auf der Seite des Verkäufers.`,
@@ -1082,7 +1082,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5P2: () => (
       <>
         売買契約は、お客様とその店舗との間で直接成立し、店舗の規約およびプライバシーポリシーが適用されます。配送日数、送料、EU域外への注文にかかる付加価値税や関税、返品、返金、保証はいずれも当該店舗の責任であり、当サイトの責任ではありません。通信販売における法定の解除権（フィンランドでは{' '}
-        <em>kuluttajansuojalaki 6 luku</em>）は、その商品を販売した店舗に対して行使します。
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>）は、その商品を販売した店舗に対して行使します。
       </>
     ),
     s8Body: (siteName) => `${siteName} および LaPeso Oy は、当サイトの商品情報に依拠したこと、リンク先店舗を利用したこと、またはそこで購入したことにより生じた損失または損害について責任を負いません。商品、その配送または状態に関する請求は、販売した店舗に対して行ってください。食品および健康補助食品については、原材料、アレルゲン、摂取量の表示を必ずパッケージと販売店のページでご確認ください。`,
@@ -1112,7 +1112,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         a su política de privacidad. Los plazos de entrega, los gastos de envío, el IVA y los aranceles
         de los pedidos fuera de la UE, las devoluciones, los reembolsos y la garantía son responsabilidad
         suya, no nuestra. El derecho legal de desistimiento en la venta a distancia, en Finlandia según{' '}
-        <em>kuluttajansuojalaki 6 luku</em>, se ejerce frente a la tienda que vendió el artículo.
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>, se ejerce frente a la tienda que vendió el artículo.
       </>
     ),
     s8Body: (siteName) => `${siteName} y LaPeso Oy no se responsabilizan de pérdidas o daños derivados de confiar en la información de producto de este sitio, del uso de las tiendas enlazadas o de una compra realizada a través de ellas. Cualquier reclamación sobre un producto, su entrega o su estado se dirige a la tienda que lo vendió. En alimentos y complementos alimenticios, lea siempre la información de ingredientes, alérgenos y dosis en el envase y en la página del vendedor.`,
@@ -1142,7 +1142,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         de privacidade dela. Prazos de entrega, frete, impostos e taxas alfandegárias em pedidos para fora
         da UE, devoluções, reembolsos e garantia são responsabilidade da loja, não nossa. O direito legal
         de arrependimento na venda a distância, na Finlândia conforme{' '}
-        <em>kuluttajansuojalaki 6 luku</em>, é exercido contra a loja que vendeu o item.
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>, é exercido contra a loja que vendeu o item.
       </>
     ),
     s8Body: (siteName) => `O ${siteName} e a LaPeso Oy não se responsabilizam por perdas ou danos decorrentes da confiança nas informações de produto deste site, do uso das lojas indicadas ou de uma compra feita por meio delas. Qualquer reclamação sobre um produto, sua entrega ou seu estado deve ser dirigida à loja que o vendeu. Em alimentos e suplementos alimentares, leia sempre as informações de ingredientes, alérgenos e dosagem na embalagem e na página do vendedor.`,
@@ -1166,7 +1166,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
     s5P2: () => (
       <>
         买卖合同直接在您与该商店之间成立，适用该商店的条款和隐私政策。配送时间、运费、寄往欧盟以外订单的增值税和关税、退货、退款以及保修均由该商店负责，而非本站。远程销售中的法定撤销权（在芬兰依据{' '}
-        <em>kuluttajansuojalaki 6 luku</em>）应向销售该商品的商店行使。
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>）应向销售该商品的商店行使。
       </>
     ),
     s8Body: (siteName) => `${siteName} 与 LaPeso Oy 对因信赖本站商品信息、使用所链接的商店或通过其完成购买而产生的任何损失或损害不承担责任。有关商品、其配送或状况的任何主张，应向销售该商品的商店提出。对于食品和膳食补充剂，请务必阅读包装及卖家页面上的成分、过敏原和用量信息。`,
@@ -1193,7 +1193,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         매매 계약은 고객과 해당 상점 사이에 직접 성립하며, 그 상점의 약관과 개인정보 처리방침이
         적용됩니다. 배송 기간, 배송비, EU 밖으로 나가는 주문의 부가가치세와 관세, 반품, 환불, 보증은
         모두 그 상점의 책임이며 저희 책임이 아닙니다. 통신판매에서의 법정 청약철회권은, 핀란드에서는{' '}
-        <em>kuluttajansuojalaki 6 luku</em>에 따라, 상품을 판매한 상점을 상대로 행사합니다.
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>에 따라, 상품을 판매한 상점을 상대로 행사합니다.
       </>
     ),
     s8Body: (siteName) => `${siteName} 및 LaPeso Oy는 이 사이트의 상품 정보를 신뢰한 결과, 연결된 상점을 이용한 결과, 또는 이를 통한 구매로 인해 발생한 손실이나 손해에 대해 책임지지 않습니다. 상품이나 배송, 상태에 관한 청구는 해당 상품을 판매한 상점에 제기합니다. 식품과 건강기능식품은 포장과 판매자 페이지에서 성분, 알레르기 유발 물질, 섭취량 정보를 반드시 확인하십시오.`,
@@ -1223,7 +1223,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         sa politique de confidentialité. Les délais de livraison, les frais de port, la TVA et les droits
         de douane sur les commandes hors UE, les retours, les remboursements et la garantie relèvent de
         la boutique, et non de nous. Le droit légal de rétractation en vente à distance, en Finlande au
-        titre de <em>kuluttajansuojalaki 6 luku</em>, s’exerce auprès de la boutique qui a vendu
+        titre de <em lang="fi">kuluttajansuojalaki 6 luku</em>, s’exerce auprès de la boutique qui a vendu
         l’article.
       </>
     ),
@@ -1254,7 +1254,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         secondo la sua informativa sulla privacy. Tempi di consegna, spese di spedizione, IVA e dazi
         doganali sugli ordini diretti fuori dall’UE, resi, rimborsi e garanzia competono al negozio,
         non a noi. Il diritto legale di recesso nelle vendite a distanza, in Finlandia ai sensi della{' '}
-        <em>kuluttajansuojalaki 6 luku</em>, si esercita nei confronti del negozio che ha venduto
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>, si esercita nei confronti del negozio che ha venduto
         l’articolo.
       </>
     ),
@@ -1285,7 +1285,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         hun privacybeleid. Levertijden, verzendkosten, btw en douanerechten bij bestellingen buiten de EU,
         retouren, terugbetalingen en garantie liggen bij die winkel, niet bij ons. Een wettelijk
         herroepingsrecht bij verkoop op afstand, in Finland op grond van{' '}
-        <em>kuluttajansuojalaki 6 luku</em>, wordt uitgeoefend jegens de winkel die het artikel heeft
+        <em lang="fi">kuluttajansuojalaki 6 luku</em>, wordt uitgeoefend jegens de winkel die het artikel heeft
         verkocht.
       </>
     ),
@@ -1315,7 +1315,7 @@ const SHOP_OVERRIDES: Record<Lang, Partial<TermsCopy>> = {
         Köpeavtalet ingås direkt mellan dig och den butiken, på deras villkor och enligt deras
         integritetspolicy. Leveranstider, fraktkostnader, moms och tullavgifter för beställningar utanför
         EU, returer, återbetalningar och garanti ligger hos butiken, inte hos oss. En lagstadgad ångerrätt
-        vid distansförsäljning, i Finland enligt <em>kuluttajansuojalaki 6 luku</em>, utövas mot den butik
+        vid distansförsäljning, i Finland enligt <em lang="fi">kuluttajansuojalaki 6 luku</em>, utövas mot den butik
         som sålde varan.
       </>
     ),

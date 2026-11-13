@@ -85,10 +85,17 @@ export function MainPartnerBanner({ config, locale, surface = 'dark', houseAdTon
           light-themed sites in the network get the same separation inverted. */}
       <div
         className={[
-          'max-w-6xl mx-auto rounded-2xl border p-3 sm:p-4',
-          houseAdTone === 'subtle' && !partner
-            ? 'bg-white/[0.02] border-white/10'
-            : surface === 'light' ? 'bg-vibe-pink/[0.05] border-vibe-pink/20' : 'bg-vibe-pink/[0.07] border-vibe-pink/25',
+          'max-w-6xl mx-auto rounded-2xl p-3 sm:p-4',
+          // 🔴 Pinkki kehys on MYYNTIKEHYS: se kertoo että paikka on ostettavissa.
+          // Maksaneen kumppanin alla se teki päinvastaista työtä — haalensi kortin
+          // taustaan (Vesa 6.9.: "onhan tällainen mainos ihan kamalan näköinen").
+          // Kun paikka on myyty, kortti itse kantaa erottelun (umpinainen pinta,
+          // kumppanin väriviiva, varjo) eikä kehystä tarvita.
+          partner
+            ? ''
+            : houseAdTone === 'subtle'
+              ? 'border bg-white/[0.02] border-white/10'
+              : surface === 'light' ? 'border bg-vibe-pink/[0.05] border-vibe-pink/20' : 'border bg-vibe-pink/[0.07] border-vibe-pink/25',
         ].join(' ')}
       >
         <PartnerSlot
@@ -189,7 +196,7 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
 
         <div className={[
           'grid grid-cols-1 gap-4 sm:gap-5 items-stretch',
-          bothEmpty || single ? '' : 'sm:grid-cols-2',
+          bothEmpty || single ? '' : 'md:grid-cols-2',
           // 62rem = sama sisäleveys kuin tuoteriveillä (max-w-5xl − px-4).
           single ? 'max-w-[62rem] mx-auto' : '',
         ].filter(Boolean).join(' ')}>

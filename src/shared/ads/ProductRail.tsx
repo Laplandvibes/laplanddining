@@ -170,7 +170,8 @@ export default function ProductRail({
   const allHref = linkFor(categoryUrl, `${sid}_all`)
   const ink = dark ? 'text-snow' : 'text-[#141413]'
   const muted = dark ? 'text-white/60' : 'text-black/55'
-  const faint = dark ? 'text-white/40' : 'text-black/40'
+  // Hintarivi on täysi virke ⇒ leipätekstiä: ≥ 16 px ja muste ≥ /75 (§33, gate:kuvateksti, 18.10.2026; oli 11 px /40).
+  const faint = dark ? 'text-white/75' : 'text-black/75'
 
   return (
     <section
@@ -195,7 +196,7 @@ export default function ProductRail({
             // The advertiser's own mark, untouched apart from trim + scale. On a
             // dark surface a black logotype needs a plate, like any real ad slot.
             <span
-              className={`inline-flex h-11 items-center rounded-xl px-3 ${
+              className={`inline-flex h-16 xl:h-11 max-w-full items-center rounded-xl px-3 ${
                 // Tumma logo tummalla pohjalla saa valkoisen laatan; vaalea logo
                 // vaalealla pohjalla tumman (Nordicbuddies). Muuten ei laattaa.
                 dark && brand.logoTone !== 'light'
@@ -212,7 +213,7 @@ export default function ProductRail({
                 height={brand.logoH}
                 loading="eager"
                 decoding="async"
-                className="h-7 w-auto max-w-[9.5rem] object-contain"
+                className="h-12 xl:h-7 w-auto max-w-[9.5rem] object-contain"
               />
             </span>
           ) : (
@@ -312,7 +313,7 @@ export default function ProductRail({
                       KalevalaRailissa, jotta rivit näyttävät samalta kun ne
                       ovat samalla sivulla (gifts, store). */}
                   <div className="flex flex-1 flex-col gap-1.5 border-t border-black/[0.06] px-3.5 pb-3.5 pt-2.5">
-                    <span className="line-clamp-2 text-[12.5px] font-semibold leading-snug text-[#141413]">
+                    <span className="line-clamp-2 text-[12.5px] font-semibold leading-snug text-[#141413]" translate="no">
                       {label}
                     </span>
                     <span className="mt-auto flex items-baseline gap-1">
@@ -350,7 +351,7 @@ export default function ProductRail({
         </a>
 
         <div className="mt-2 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
-          <p className={`max-w-xl text-[11px] leading-snug ${faint}`}>
+          <p className={`max-w-xl text-base leading-snug ${faint}`}>
             {c.note.replace('{date}', snapshot.fetchedAt)}
           </p>
           <span
