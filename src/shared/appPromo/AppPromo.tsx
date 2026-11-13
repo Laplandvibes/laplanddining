@@ -134,6 +134,12 @@ function track(placement: string) {
  * sen alle koko kortin levyisenä. Vieressä listalle jäi ~170 px, ja kuvaukset ("Varattavat retket kohteittain",
  * "Tunneittain, Ilmatieteen laitos") katkesivat kahdelle riville. Ingressi vasemmalle tasattuna (Vesa 18.10.: pitkä
  * teksti vasemmalle, otsikot ja napit keskelle), otsikko ja logo keskellä.
+ * 13.11.2026 JUTUN ARKKI (.blog-sheet blogissa, .nw-sheet uutisissa): kun yksikkö on jutun rungossa, johdanto ja
+ * asennushuomautus ovat jutun leipätekstin kokoisia, vähintään 16 px, ja huomautuksen muste /85 (lv_permanent_rules §33:
+ * täysi virke on leipätekstiä). Portti blogiarkki mittaa arkin jokaisen yli 80 merkin kappaleen ja kaatui carrentalin
+ * revontulijutussa (johdanto 15 px, huomautus 12 px); staysin revontuliuutisessa sama 15/12 px, jota portti ei näe
+ * (mittaa vain /blog/). Hubilla sääntö oli sivuston omassa index.css:ssä; nyt se kulkee komponentin mukana jokaiselle
+ * sivustolle, joka upottaa yksikön juttuun. Johdannon sääntö vain alle 900 px:n kortissa: leveämmässä se on jo 16–18 px.
  * 🔴 Selitykset tänne, EI CSS-merkkijonon sisään: CSS-kommentti merkkijonossa päätyy sellaisenaan JS-pakettiin ja
  * selaimelle (gate:kommentit, hubi 6.10.2026). JS-kommentin minifioija poistaa.
  */
@@ -260,6 +266,8 @@ const CSS = `
  .lvap-qr img{width:152px;height:152px}
  .lvap-qr span{font-size:15px}
 }
+@container (max-width:899.98px){.blog-sheet .lvap-lead,.nw-sheet .lvap-lead{font-size:16px}}
+.blog-sheet .lvap-note,.nw-sheet .lvap-note{font-size:16px;color:rgba(249,250,251,.85)}
 @media (prefers-reduced-motion:reduce){.lvap-chev,.lvap-cta{transition:none}}
 .lvap-nudge{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom));animation:lvSlideUp .45s cubic-bezier(.22,1,.36,1);font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB}
 .lvap-nudge *{box-sizing:border-box}
