@@ -1,0 +1,88 @@
+name: Portit (raportti)
+
+# LV:n julkaisuportit tälle sivustolle GitHubin koneella (SUUNNITELMA-PORTTIPAKETTI-20260918.md §3.4).
+# Vaihe 1 (13.11.2026): VAIN RAPORTTI. Tämä työnkulku ei julkaise eikä estä julkaisua; se mittaa,
+# mitkä portit menevät läpi GitHubin koneella ennen kuin portit kytketään deploy.yml:n eteen.
+# lv-ops on yksityinen: luku tapahtuu vain luku -avaimella (lv-opsin deploy key, salaisuus
+# LV_OPS_DEPLOY_KEY). Sivusto haetaan lv-opsin sisään samaan kansioon kuin Vesan koneella,
+# jotta portit löytävät sen ilman erillistä polkuasetusta.
+
+on:
+  workflow_dispatch:
+    inputs:
+      selain:
+        description: "Aja myös selainportit (Playwright, 20–60 min; lataa sivuja jotka kutsuvat Cloudflaren funktioita)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: portit-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SIVUSTO_DIR: laplanddining-new
+
+jobs:
+  portit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - name: lv-ops (vain luku)
+        uses: actions/checkout@v4
+        with:
+          repository: Laplandvibes/lv-ops
+          ssh-key: ${{ secrets.LV_OPS_DEPLOY_KEY }}
+          path: lv-ops
+
+      - name: Sivusto lv-opsin sisään
+        uses: actions/checkout@v4
+        with:
+          path: lv-ops/${{ env.SIVUSTO_DIR }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: lv-opsin riippuvuudet
+        working-directory: lv-ops
+        run: npm ci
+
+      - name: Sivuston build
+        working-directory: lv-ops/${{ env.SIVUSTO_DIR }}
+        run: |
+          npm ci
+          npm run --if-present check:editorial
+          npm run build
+
+      - name: Dist-portit
+        id: dist
+        continue-on-error: true
+        working-directory: lv-ops
+        run: node scripts/portti.mjs --site "$SIVUSTO_DIR" --taso dist --json _portit/raportit/ci-dist.json
+
+      - name: Selain (Playwright)
+        if: inputs.selain
+        working-directory: lv-ops
+        run: npx playwright install --with-deps chromium
+
+      - name: Selainportit
+        id: selain
+        if: inputs.selain
+        continue-on-error: true
+        working-directory: lv-ops
+        run: node scripts/portti.mjs --site "$SIVUSTO_DIR" --taso selain --json _portit/raportit/ci-selain.json
+
+      - name: Raportit talteen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portit-raportit
+          path: lv-ops/_portit/raportit/
+          retention-days: 14
+
+      - name: Yhteenveto
+        if: always()
+        run: |
+          echo "dist: ${{ steps.dist.outcome }} · selain: ${{ steps.selain.outcome }}" >> "$GITHUB_STEP_SUMMARY"
