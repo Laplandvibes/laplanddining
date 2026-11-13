@@ -59,6 +59,14 @@ const partnerBrand: Record<string, PartnerBrand> = {
     "accent": "#bf3a71",
     "accentDark": "#e24585"
   },
+  "luckydiscs": {
+    "logo": "/images/partners/luckydiscs/logo.png",
+    "logoW": 242,
+    "logoH": 88,
+    "logoTone": "dark",
+    "accent": "#1e8549",
+    "accentDark": "#3af500"
+  },
   "makia": {
     "logo": "/images/partners/makia/logo.png",
     "logoW": 560,

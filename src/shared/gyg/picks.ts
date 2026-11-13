@@ -92,6 +92,34 @@ export interface GygPick {
  */
 export const GYG_PRICE_AS_OF = "2026-07-29";
 
+/**
+ * How long a price may be shown after it was read (Vesa 4.10.2026: hide prices
+ * older than seven days). GetYourGuide moves its prices, and we cannot read them
+ * automatically: every automated client gets a Cloudflare challenge, which the
+ * network does not bypass, and no partner API key has been requested. So an
+ * older price is not printed at all; the card falls back to "via GetYourGuide".
+ * Checked when the page renders in the browser, so an old build cannot keep
+ * showing an expired price. Refresh: scripts/gyg-add-prices.mjs after a new read.
+ */
+export const GYG_PRICE_MAX_AGE_DAYS = 7;
+
+/** The day this row's price was read: its own priceAsOf, else GYG_PRICE_AS_OF. */
+export function gygPriceAsOf(pick: { priceAsOf?: string }): string {
+  return pick.priceAsOf ?? GYG_PRICE_AS_OF;
+}
+
+/** Whether a price read on `asOf` (YYYY-MM-DD) may still be shown at `now`. */
+export function isGygPriceFresh(asOf: string, now: number = Date.now()): boolean {
+  const read = Date.parse(asOf + "T00:00:00Z");
+  if (Number.isNaN(read)) return false;
+  return now - read <= GYG_PRICE_MAX_AGE_DAYS * 86400000;
+}
+
+/** The row's price while it is fresh, otherwise undefined: render without a price. */
+export function gygFreshPrice(pick: { price?: string; priceAsOf?: string }, now?: number): string | undefined {
+  return pick.price && isGygPriceFresh(gygPriceAsOf(pick), now) ? pick.price : undefined;
+}
+
 const GO = "https://go.laplandvibes.com/go/activities";
 
 /**
@@ -161,7 +189,10 @@ export function gygHref(pick: GygPick, lang?: string, sidOverride?: string): str
  * `<prefix>/-t<id>/` → 301 to that locale's own product slug for 48 ids, 0 to
  * search. The other 2 (t449218, t1005215) redirect to their location page in
  * every locale, bare id included, and so does their full English slug through
- * the Worker: the products are gone, not mis-linked by this function.
+ * the Worker: GetYourGuide itself sends them there right now, not this function.
+ * Not proof of deletion — a parallel re-measurement the same day saw t1130814
+ * come back from that state, and t449218 is a winter tour. Re-measure in late
+ * November before replacing them (gyg_tuotepolut_uudelleenmittaus_20260926).
  *
  * Location and category paths (no `-t<id>` at the end; `-tc146` is a
  * category) are returned unchanged: the Worker prefixes those itself.
@@ -300,6 +331,99 @@ export function gygDuration(pick: GygPick, lang?: string): string | undefined {
   return `${value}${f.space ? " " : ""}${f.unit(unit, one)}`;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Availability, measured (2026-10-18).
+//
+// Vesa 18.10.2026 on laplandluxuryvillas: "miksi edelleen nämä ei mene suoraan
+// varaukseen?" Every product id in this file and in luxury.ts was fetched on
+// getyourguide.com in the in-app browser (same-origin fetch, the page's own
+// cookies; it reproduces a full navigation exactly). Two failure modes, and
+// they need opposite handling:
+//
+//   all  The product redirects to its LOCATION page in every locale, and the
+//        redirect drops partner_id and cmp: no booking would be ours. All five
+//        are seasonal (winter snowshoeing and Santa, summer lake cruises, gold
+//        panning), so this is most likely off-season deactivation, not
+//        deletion: 26.9. a parallel measurement saw t1130814 come back.
+//   en   The product page renders EMPTY (header and footer, no h1, generic
+//        title "Book Things To Do…") at the bare English URL that English
+//        pages link (the full English slug, no prefix), and renders normally
+//        under every prefix the other locales use (fi-fi, de-de, ja-jp …).
+//        Deterministic (measured twice), independent of currency. Not dead:
+//        removing the row would also take it off eleven working locales.
+//        t727384 is empty under en-gb too, so en-gb is not a general fix.
+//
+// localizePick() returns null for an unavailable (product, locale) pair, so a
+// GygPicks-style consumer drops the card on its own. Rows stay where they are:
+// a product that comes back needs one line deleted here, not a row restored.
+// Consumers that read the lists directly must call gygAvailable() themselves.
+// Re-measure (both modes) before December: winter products should return.
+//
+// 🔴 19.10.2026: the Worker now handles the `en` mode for every site
+// (affiliate-redirect-worker LV-GYG-AVAILABILITY, measured on all 195 product
+// ids the network links). An English link to an id that is empty at the bare
+// URL but renders under `en-gb/` is sent there, so those cards WORK in English
+// and are no longer listed below (t853272, t790865, t462526, t693623, t786889,
+// t1205230, t885747). Listed `en` now means: empty under en-gb too, the Worker
+// sends the reader to the location page. `all` stays hidden: the Worker keeps
+// partner_id on the location page, but the card still promises a product that
+// cannot be booked right now. Re-measure: node scripts/gyg_saatavuus_mittaus.mjs.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface GygUnavailable {
+  /** Day of the browser measurement. */
+  measured: string;
+  /** "all" = every locale; otherwise the site locales (`en`, `fi`, …) it fails in. */
+  locales: "all" | readonly string[];
+  /** What was seen. */
+  why: string;
+}
+
+export const GYG_UNAVAILABLE: Readonly<Record<string, GygUnavailable>> = {
+  "449218": { measured: "2026-10-18", locales: "all", why: "Levi snowshoeing: location redirect (also 26.9.), winter tour" },
+  "1005215": { measured: "2026-10-18", locales: "all", why: "Inari cultural day + lake cruise: location redirect (also 26.9.), summer" },
+  "1243827": { measured: "2026-10-18", locales: "all", why: "Ivalo gold panning: location redirect, summer" },
+  "1073872": { measured: "2026-10-18", locales: "all", why: "Lake Inari boat tour (luxury.ts, removed): location redirect, summer" },
+  "889294": { measured: "2026-10-18", locales: "all", why: "Levi Santa visit at the villa (luxury.ts, removed): location redirect, winter" },
+  "727384": { measured: "2026-10-19", locales: ["en"], why: "Kemi icebreaker Arktis: empty in English, en-gb included" },
+  "810536": { measured: "2026-10-19", locales: ["en"], why: "Saariselkä horse riding: empty in English, en-gb included" },
+  "1092773": { measured: "2026-10-19", locales: ["en"], why: "Ylläs aurora snowmobile + transfers: empty in English, en-gb included" },
+  "988932": { measured: "2026-10-19", locales: "all", why: "Levi fell summit + Samiland: location redirect (en, en-gb, fi)" },
+  "1376037": { measured: "2026-10-19", locales: "all", why: "Levi lake ferry cruise + sauna: location redirect (en, en-gb, fi), summer" },
+  "478022": { measured: "2026-10-19", locales: "all", why: "Saariselkä e-MTB rental: location redirect (en, en-gb), summer" },
+  "478940": { measured: "2026-10-19", locales: "all", why: "Saariselkä MTB rental: location redirect (en, en-gb), summer" },
+  // t504004 (Sampo) English slug: empty at the bare URL, product under en-gb/ —
+  // the Worker sends it there since 19.10., so it is no longer listed.
+};
+
+/**
+ * Same failure keyed by the exact path, for an id whose other slug works
+ * (t504004: English slug empty at the bare URL, Finnish slug fine).
+ */
+export const GYG_UNAVAILABLE_PATHS: Readonly<Record<string, GygUnavailable>> = {
+  // 19.10.2026: the Sampo English slug (t504004) left this table — the Worker
+  // sends it to en-gb/, where it renders (LV-GYG-AVAILABILITY).
+};
+
+/** The GetYourGuide product id of a path, or null for a location/category path. */
+export function gygIdOf(path: string): string | null {
+  const m = path.match(/-t(\d+)\/?$/);
+  return m ? m[1] : null;
+}
+
+/** False when the browser measurement above saw this product fail in `lang` (default en). */
+export function gygAvailable(path: string, lang?: string): boolean {
+  const clean = path.replace(/^\/+|\/+$/g, "");
+  const id = gygIdOf(clean);
+  if (!id) return true;
+  const loc = !lang ? "en" : lang;
+  for (const u of [GYG_UNAVAILABLE[id], GYG_UNAVAILABLE_PATHS[clean]]) {
+    if (!u) continue;
+    if (u.locales === "all" || u.locales.includes(loc)) return false;
+  }
+  return true;
+}
+
 /** A row ready to render in one locale. `source` is the row as written above. */
 export interface LocalizedGygPick extends GygPick {
   /** The untouched row: English title for title-keyed lookups such as pickIcon(). */
@@ -312,14 +436,16 @@ export interface LocalizedGygPick extends GygPick {
  * Null means: render nothing for this row. Never fall back to English.
  */
 export function localizePick(pick: GygPick, lang?: string): LocalizedGygPick | null {
+  // Measured unavailable in this locale (GYG_UNAVAILABLE): no card, not a dead link.
+  if (!gygAvailable(pick.path, lang)) return null;
   if (!lang || lang === "en") {
-    return { ...pick, duration: gygDuration(pick, "en"), source: pick };
+    return { ...pick, price: gygFreshPrice(pick), duration: gygDuration(pick, "en"), source: pick };
   }
   if (!isGygLocale(lang)) return null;
   const title = pick.titles?.[lang];
   const place = PLACE_NAMES[pick.place]?.[lang];
   if (!title || !place) return null;
-  return { ...pick, title, place, duration: gygDuration(pick, lang), source: pick };
+  return { ...pick, title, place, price: gygFreshPrice(pick), duration: gygDuration(pick, lang), source: pick };
 }
 
 /** Every row that can be shown in `lang`, in order. */
@@ -428,13 +554,13 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
       fi: "Aja uusilla vuoden 2025 moottorikelkoilla arktisella safarilla",
       sv: "Kör nya snöskotrar av 2025 års modell på arktisk safari",
       de: "Fahren Sie neue Schneemobile, Modell 2025, auf einer arktischen Safari",
-      es: "Conduzca motonieves nuevas, modelo 2025, en un safari ártico",
+      es: "Conduzca motos de nieve nuevas, modelo 2025, en un safari ártico",
       fr: "Pilotez des motoneiges neuves, modèle 2025, lors d’un safari arctique",
       it: "Guidi motoslitte nuove, modello 2025, in un safari artico",
       nl: "Rijd op nieuwe sneeuwscooters van bouwjaar 2025 tijdens een arctische safari",
       "pt-BR": "Pilote motos de neve novas, modelo 2025, em um safári ártico",
       ja: "2025年モデルの新型スノーモービルを運転する北極圏サファリ",
-      ko: "2025년형 신형 스노모빌을 운전하는 북극 사파리",
+      ko: "2025년형 신형 스노우모빌을 운전하는 북극 사파리",
       "zh-CN": "驾驶 2025 款全新雪地摩托的北极探险之旅",
     },
     place: "Rovaniemi",
@@ -449,13 +575,13 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
       fi: "Helppo moottorikelkkasafari luontoon",
       sv: "Enkel snöskotersafari ut i naturen",
       de: "Einfache Schneemobil-Safari in die Natur",
-      es: "Safari fácil en motonieve por la naturaleza",
+      es: "Safari fácil en moto de nieve por la naturaleza",
       fr: "Safari facile en motoneige en pleine nature",
       it: "Safari facile in motoslitta nella natura",
       nl: "Eenvoudige sneeuwscootersafari de natuur in",
       "pt-BR": "Safári fácil de moto de neve pela natureza",
       ja: "気軽なスノーモービル・サファリで大自然へ",
-      ko: "자연 속으로 떠나는 쉬운 스노모빌 사파리",
+      ko: "자연 속으로 떠나는 쉬운 스노우모빌 사파리",
       "zh-CN": "轻松的雪地摩托自然之旅",
     },
     place: "Levi",
@@ -470,13 +596,13 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
       fi: "Moottorikelkkasafari tundralla",
       sv: "Snöskotersafari på tundran",
       de: "Schneemobil-Safari über die Tundra",
-      es: "Safari en motonieve por la tundra",
+      es: "Safari en moto de nieve por la tundra",
       fr: "Safari en motoneige sur la toundra",
       it: "Safari in motoslitta sulla tundra",
       nl: "Sneeuwscootersafari over de toendra",
       "pt-BR": "Safári de moto de neve pela tundra",
       ja: "ツンドラを走るスノーモービル・サファリ",
-      ko: "툰드라 스노모빌 사파리",
+      ko: "툰드라 스노우모빌 사파리",
       "zh-CN": "苔原雪地摩托之旅",
     },
     place: "Saariselkä",
@@ -491,13 +617,13 @@ export const SNOWMOBILE_PICKS: GygPick[] = [
       fi: "Moottorikelkkasafari kolmen valtakunnan rajalle",
       sv: "Snöskotersafari till treriksgränsen",
       de: "Schneemobil-Safari zum Dreiländereck",
-      es: "Safari en motonieve a la frontera de los tres países",
+      es: "Safari en moto de nieve a la frontera de los tres países",
       fr: "Safari en motoneige jusqu’à la frontière des trois pays",
       it: "Safari in motoslitta al confine dei tre Paesi",
       nl: "Sneeuwscootersafari naar het drielandenpunt",
       "pt-BR": "Safári de moto de neve até a fronteira dos três países",
       ja: "三国国境へのスノーモービル・サファリ",
-      ko: "세 나라 국경으로 가는 스노모빌 사파리",
+      ko: "세 나라 국경으로 가는 스노우모빌 사파리",
       "zh-CN": "三国交界处雪地摩托之旅",
     },
     place: "Kilpisjärvi",

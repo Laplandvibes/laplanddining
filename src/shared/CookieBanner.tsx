@@ -241,6 +241,12 @@ export default function CookieBanner({
   const accept = () => {
     dismiss('accepted');
     (window as any).gtag?.('consent', 'update', { analytics_storage: 'granted' });
+    /* Istuntotallennus (Microsoft Clarity) ladataan vasta tassa, jos sivusto on
+       maaritellyt portin index.html:ssaan. Optional chaining tekee tasta no-opin
+       kaikilla sivustoilla joilla Clarityta ei ole - vain hubi maarittelee taman.
+       Tarvitaan koska index.html:n portti ajautuu vain kokonaisessa
+       sivunlatauksessa, eika React Router tee sellaista navigoinnissa. */
+    (window as any).lvLoadClarity?.();
   };
   const decline = () => dismiss('declined');
 

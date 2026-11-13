@@ -103,7 +103,7 @@ export default function Breadcrumbs({
             {c.current ? (
               <span aria-current="page" className="font-semibold truncate">{c.name}</span>
             ) : (
-              <Link to={c.href} className={`opacity-70 transition-all ${accentClassName}`}>{c.name}</Link>
+              <Link to={c.href} className={`inline-flex items-center min-h-[44px] opacity-70 transition-all ${accentClassName}`}>{c.name}</Link>
             )}
           </li>
         ))}

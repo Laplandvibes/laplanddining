@@ -43,6 +43,18 @@ interface PrivacyContentProps {
    * Sama prop kuin CookieContentissa. Oletus false. Teksti haravointimerkin alla (FLIGHT_SEARCH_PRIVACY).
    */
   flightSearch?: boolean;
+  /**
+   * Upotetut YouTube-videot (klikkisuostumus, youtube-nocookie.com) kohtiin 2a, 3, 4a/4b, 7 ja 8a. Vain sivustolle, jolla
+   * upotuksia oikeasti on (lapland.blog /finnish-bands/, 25.10.2026). Sama prop kuin CookieContentissa. Oletus false.
+   * Teksti haravointimerkin alla (YOUTUBE_PRIVACY).
+   */
+  youtubeEmbeds?: boolean;
+  /**
+   * Meta-pikseli (Facebook- ja Instagram-mainosten mittaus) kohtiin 2, 2a, 3, oma osio 4a/4b/4c, 6, 7, 8a ja 10. Vain
+   * laplandvibes.com ja app.laplandvibes.com, joilla pikseli latautuu vasta evästebannerin hyväksynnästä (7.11.2026).
+   * Sama prop kuin CookieContentissa. Oletus false. Teksti haravointimerkin alla (META_PIXEL_PRIVACY).
+   */
+  metaPixel?: boolean;
 }
 
 const COPY: Record<Lang, {
@@ -1023,6 +1035,8 @@ export default function PrivacyContent({
   sessionRecording = false,
   variant = 'travel',
   flightSearch = false,
+  youtubeEmbeds = false,
+  metaPixel = false,
 }: PrivacyContentProps = {}) {
   const base = COPY[lang] ?? COPY.en;
   const kumppanit = variant === 'shop' ? SHOP_PRIVACY : TRAVEL_PRIVACY;
@@ -1077,11 +1091,33 @@ export default function PrivacyContent({
   /* Lentohaku (vain flightSearch) kohdan 3 loppuun ja kohdassa 7 heti GetYourGuide-rivin jälkeen
      (GA, Umami, kumppaniverkostot, GetYourGuide, Travelpayouts-haku, Resend, …). */
   const fl = flightSearch ? (FLIGHT_SEARCH_PRIVACY[lang] ?? FLIGHT_SEARCH_PRIVACY.en) : null;
-  const s3Items = fl ? [...t.s3Items, fl.s3Flight] : t.s3Items;
-  const s7Base = fl ? [...t.s7Items.slice(0, 4), fl.s7Flight, ...t.s7Items.slice(4)] : t.s7Items;
+  /* YouTube (vain youtubeEmbeds): oma osio kohdan 4 (ja Clarityn 4a:n) jälkeen, rivit kohtiin 2a, 3, 7 (GetYourGuiden ja
+     lentohaun jälkeen) ja 8a (Google Analyticsin ja Clarityn jälkeen, sama Google-konserni). */
+  const yt = youtubeEmbeds ? (YOUTUBE_PRIVACY[lang] ?? YOUTUBE_PRIVACY.en) : null;
+  const ytNo = sessionRecording ? '4b' : '4a';
+  const googleLink = yt ? <a href={`https://policies.google.com/privacy?hl=${lang}`} target="_blank" rel="noopener" className="text-vibe-pink">{yt.googlePrivacy}</a> : null;
+  const s2aItems = yt ? [...t.s2aItems, yt.s2aItem(ytNo)] : t.s2aItems;
+  const s3Base = fl ? [...t.s3Items, fl.s3Flight] : t.s3Items;
+  const s3Items = yt ? [...s3Base, yt.s3Item(ytNo)] : s3Base;
+  const s7Flight = fl ? [...t.s7Items.slice(0, 4), fl.s7Flight, ...t.s7Items.slice(4)] : t.s7Items;
+  const s7Base = yt ? [...s7Flight.slice(0, fl ? 5 : 4), yt.s7Item, ...s7Flight.slice(fl ? 5 : 4)] : s7Flight;
   /* Clarity rows go right after Google Analytics, the other analytics service, in both lists. */
   const s7Items = sessionRecording ? [s7Base[0], rec.s7Item, ...s7Base.slice(1)] : s7Base;
-  const s8aItems = sessionRecording ? [t.s8aItems[0], rec.s8aItem, ...t.s8aItems.slice(1)] : t.s8aItems;
+  const s8aClarity = sessionRecording ? [t.s8aItems[0], rec.s8aItem, ...t.s8aItems.slice(1)] : t.s8aItems;
+  const s8aGoogle = sessionRecording ? 2 : 1;
+  const s8aYoutube = yt ? [...s8aClarity.slice(0, s8aGoogle), yt.s8aItem, ...s8aClarity.slice(s8aGoogle)] : s8aClarity;
+  /* Meta-pikseli (vain metaPixel): oma osio Clarityn ja YouTuben jälkeen (hubissa 4b, appissa 4a), suostumusrivi kohdan 2a
+     ensimmäisen suostumusrivin perään, evästerivi kohdan 3 loppuun, kohtaan 7 ennen Resendiä, Supabasea ja Cloudflarea
+     (kolme viimeistä joka kielellä) ja kohtaan 8a Googlen ja Microsoftin rivien perään. */
+  const mp = metaPixel ? (META_PIXEL_PRIVACY[lang] ?? META_PIXEL_PRIVACY.en) : null;
+  const mpNo = `4${'abc'[(sessionRecording ? 1 : 0) + (yt ? 1 : 0)]}`;
+  const metaLink = mp ? <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener" className="text-vibe-pink">{mp.metaPrivacy}</a> : null;
+  const adPrefsLink = mp ? <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener" className="text-vibe-pink">{mp.adPrefs}</a> : null;
+  const s2aAll = mp ? [s2aItems[0], mp.s2aItem(mpNo), ...s2aItems.slice(1)] : s2aItems;
+  const s3All = mp ? [...s3Items, mp.s3Item(mpNo)] : s3Items;
+  const s7All = mp ? [...s7Items.slice(0, -3), mp.s7Item(mpNo), ...s7Items.slice(-3)] : s7Items;
+  const s8aMeta = s8aGoogle + (yt ? 1 : 0);
+  const s8aItems = mp ? [...s8aYoutube.slice(0, s8aMeta), mp.s8aItem, ...s8aYoutube.slice(s8aMeta)] : s8aYoutube;
 
   return (
     <div className="min-h-screen bg-deep-night pt-24 pb-20">
@@ -1099,13 +1135,14 @@ export default function PrivacyContent({
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s2Title}</h2>
             <p>{t.s2Body}</p>
             {sessionRecording && <p className="mt-3">{rec.s2}</p>}
+            {mp && <p className="mt-3">{mp.s2(mpNo)}</p>}
           </section>
 
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s2aTitle}</h2>
             <p>{t.s2aIntro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
-              {t.s2aItems.map((it, i) => (
+              {s2aAll.map((it, i) => (
                 <li key={i}><strong className="text-snow/80">{it.strong}{sep}</strong>{gap}{it.body}</li>
               ))}
             </ul>
@@ -1115,7 +1152,7 @@ export default function PrivacyContent({
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s3Title}</h2>
             <p>{t.s3Intro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
-              {s3Items.map((it, i) => (
+              {s3All.map((it, i) => (
                 // Item 1 is the analytics-cookie row in every language.
                 <li key={i}><strong className="text-snow/80">{it.strong}{sep}</strong>{gap}{sessionRecording && i === 1 ? rec.s3Analytics : it.body}</li>
               ))}
@@ -1138,6 +1175,21 @@ export default function PrivacyContent({
             </section>
           )}
 
+          {yt && (
+            <section>
+              <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{ytNo}. {yt.title}</h2>
+              <p>{yt.body(ytNo, googleLink)}</p>
+            </section>
+          )}
+
+          {mp && (
+            <section>
+              <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{mpNo}. {mp.title}</h2>
+              <p>{mp.body1}</p>
+              <p className="mt-3">{mp.body2(metaLink, adPrefsLink)}</p>
+            </section>
+          )}
+
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s5Title}</h2>
             <p>{t.s5Body(unsubLink)}</p>
@@ -1145,14 +1197,14 @@ export default function PrivacyContent({
 
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s6Title}</h2>
-            <p>{t.s6Body}{sessionRecording && <>{gap}{rec.s6}</>}</p>
+            <p>{t.s6Body}{sessionRecording && <>{gap}{rec.s6}</>}{mp && <>{gap}{mp.s6}</>}</p>
           </section>
 
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s7Title}</h2>
             <p>{sessionRecording ? rec.s7Intro : t.s7Intro}</p>
             <ul className="list-disc pl-5 mt-3 space-y-1">
-              {s7Items.map((it, i) => <li key={i}>{it}</li>)}
+              {s7All.map((it, i) => <li key={i}>{it}</li>)}
             </ul>
           </section>
 
@@ -1186,7 +1238,7 @@ export default function PrivacyContent({
 
           <section>
             <h2 className="font-heading font-semibold text-xl text-snow tracking-wide mb-3">{t.s10Title}</h2>
-            <p>{t.s10Body}</p>
+            <p>{mp ? mp.s10(mpNo) : t.s10Body}</p>
           </section>
 
           <section>
@@ -1213,7 +1265,8 @@ export default function PrivacyContent({
  * @harvest-stop — esirenderöinnin haravointi loppuu tähän.
  *
  * Kaikki tämän alapuolella oleva on ehdollista tekstiä: `sessionRecording` (Microsoft Clarity), jota näyttää vain
- * sivusto, joka oikeasti lataa Clarityn (hubi), varianttikohtaiset kumppanirivit ja `flightSearch` (laplandflights.fi).
+ * sivusto, joka oikeasti lataa Clarityn (hubi), varianttikohtaiset kumppanirivit, `flightSearch` (laplandflights.fi), `youtubeEmbeds` (lapland.blog)
+ * ja `metaPixel` (Meta-pikseli, vain hubi ja appi).
  * Crawlable-body-haravoija lukee tiedostosta JOKAISEN
  * kielilohkon ja leikkaa tämän merkin kohdalta. Kun nämä tekstit olivat COPY-kielilohkoissa, ne
  * päätyivät myös muiden sivustojen staattiseen tietosuojasivuun, vaikka sivusto ei käytä Claritya
@@ -1613,5 +1666,339 @@ const FLIGHT_SEARCH_PRIVACY: Record<Lang, FlightSearchPrivacyCopy> = {
   sv: {
     s3Flight: { strong: 'Cookies för flygsökningen', body: 'placeras av Travelpayouts flygsök, som laddas först när du accepterar cookies. Namn och varaktighet finns i vår cookiepolicy.' },
     s7Flight: 'Travelpayouts: flygsök, först när du accepterar cookies (resultat från Aviasales och dess partner)',
+  },
+};
+
+/**
+ * Upotetut YouTube-videot, vain `youtubeEmbeds`-propilla (lapland.blog /finnish-bands/, Vesa hyväksyi 25.10.2026).
+ * Kohdat 2a, 3, 4a/4b (oma osio heti kohdan 4 ja Clarityn 4a:n jälkeen), 7 ja 8a. Haravointimerkin alla samasta
+ * syystä kuin lentohaku: muut sivustot eivät upota YouTubea, joten teksti ei saa päätyä niiden staattiseen sivuun.
+ * Väitteet mitattu livesivulta 25.10.2026 (Playwright, Chrome-UA): ennen painallusta 0 pyyntöä Googlen/YouTuben
+ * palvelimiin ja 0 evästettä; painalluksen jälkeen pyynnöt youtube-nocookie.com, google.com, googlevideo.com,
+ * ytimg.com, gstatic.com ja googleapis.com, ja youtube-nocookie.com-kehykseen localStorage-merkintöjä (yt-…,
+ * ytidb::…). Evästeitä ei syntynyt mittauksessa, mutta Google ei lupaa, ettei niitä synny ⇒ "voi asettaa".
+ * Rekisterinpitäjä EU:ssa: Google Ireland Limited (policies.google.com/privacy, luettu 25.10.2026).
+ */
+interface YoutubePrivacyCopy {
+  /** Osion otsikko ilman numeroa; numero (4a tai 4b) lisätään piirrossa. */
+  title: string;
+  /** Linkkiteksti Googlen tietosuojakäytäntöön. */
+  googlePrivacy: string;
+  body: (n: string, googleLink: React.ReactNode) => React.ReactNode;
+  s2aItem: (n: string) => { strong: string; body: string };
+  s3Item: (n: string) => { strong: string; body: string };
+  s7Item: string;
+  s8aItem: { strong: string; body: string };
+}
+
+const YOUTUBE_PRIVACY: Record<Lang, YoutubePrivacyCopy> = {
+  en: {
+    title: 'Embedded YouTube videos',
+    googlePrivacy: 'Google Privacy Policy',
+    body: (_n, g) => <>Some of our pages contain videos from YouTube, a service provided in the EU by Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Ireland). Before you press play, the page shows our own photo in place of the video and loads nothing from YouTube or Google. Only when you press play on a video does your browser load the YouTube player from youtube-nocookie.com, YouTube's privacy-enhanced mode. From then on, Google receives your IP address, details of your browser and device, and the address of our site. YouTube may also place cookies or store similar information in your browser (for example in localStorage) on its own domains. How Google uses this information is described in the {g}. The legal basis is your consent (Art. 6(1)(a)), which you give by pressing play. If you do not press play, nothing is sent to YouTube, and the rest of the page works without the video. You can delete what YouTube has stored through your browser settings. We count presses of the play button with Umami (section 4), without cookies.</>,
+    s2aItem: (n) => ({ strong: 'Consent (Art. 6(1)(a))', body: `for playing embedded YouTube videos (section ${n}). You give consent by pressing play on a video; until then, nothing is loaded from YouTube.` }),
+    s3Item: (n) => ({ strong: 'YouTube cookies', body: `may be placed by YouTube only after you press play on an embedded video (section ${n}).` }),
+    s7Item: 'YouTube (Google): embedded videos, only after you press play',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Ireland; Google LLC, USA): Google LLC is covered by the EU–US Data Privacy Framework (DPF).' },
+  },
+  fi: {
+    title: 'Upotetut YouTube-videot',
+    googlePrivacy: 'Googlen tietosuojakäytännössä',
+    body: (_n, g) => <>Osalla sivuistamme on YouTube-videoita. YouTube on palvelu, jota EU:ssa tarjoaa Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlanti). Ennen kuin painat toistopainiketta, sivulla näkyy videon paikalla oma valokuvamme, eikä sivu lataa mitään YouTubesta tai Googlesta. Vasta kun painat videon toistopainiketta, selaimesi lataa YouTube-soittimen osoitteesta youtube-nocookie.com, joka on YouTuben tehostetun yksityisyyden tila. Siitä lähtien Google saa IP-osoitteesi, tietoja selaimestasi ja laitteestasi sekä sivustomme osoitteen, ja YouTube voi asettaa selaimeesi evästeitä tai tallentaa sinne muuta vastaavaa tietoa (esimerkiksi localStorage-tallenteeseen) omissa verkkotunnuksissaan. Tietojen käytöstä kerrotaan {g}. Käsittelyn oikeusperuste on suostumuksesi (6 art. 1 kohta a), jonka annat painamalla toistopainiketta. Jos et paina sitä, YouTubeen ei lähetetä mitään, ja sivun muu sisältö toimii ilman videota. Voit poistaa YouTuben tallentamat tiedot selaimesi asetuksista. Laskemme toistopainikkeen painallukset Umamilla (kohta 4) ilman evästeitä.</>,
+    s2aItem: (n) => ({ strong: 'Suostumus (6 art. 1 kohta a)', body: `upotettujen YouTube-videoiden toistamista varten (kohta ${n}). Annat suostumuksen painamalla videon toistopainiketta; sitä ennen YouTubesta ei ladata mitään.` }),
+    s3Item: (n) => ({ strong: 'YouTuben evästeet', body: `YouTube voi asettaa niitä vasta, kun painat upotetun videon toistopainiketta (kohta ${n}).` }),
+    s7Item: 'YouTube (Google): upotetut videot, vasta kun painat toistopainiketta',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Irlanti; Google LLC, Yhdysvallat): Google LLC kuuluu EU–US Data Privacy Framework (DPF) -järjestelyyn.' },
+  },
+  de: {
+    title: 'Eingebettete YouTube-Videos',
+    googlePrivacy: 'Datenschutzerklärung von Google',
+    body: (_n, g) => <>Einige unserer Seiten enthalten Videos von YouTube, einem Dienst, der in der EU von Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland) angeboten wird. Bevor Sie auf die Wiedergabeschaltfläche klicken, zeigt die Seite anstelle des Videos ein Foto von uns und lädt nichts von YouTube oder Google. Erst wenn Sie bei einem Video auf die Wiedergabeschaltfläche klicken, lädt Ihr Browser den YouTube-Player im erweiterten Datenschutzmodus von YouTube (youtube-nocookie.com). Ab dann erhält Google Ihre IP-Adresse, Angaben zu Ihrem Browser und Gerät sowie die Adresse unserer Website, und YouTube kann auf seinen eigenen Domains Cookies setzen oder ähnliche Informationen in Ihrem Browser speichern (zum Beispiel im localStorage). Wie Google diese Informationen verwendet, steht in der {g}. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie mit dem Klick auf die Wiedergabeschaltfläche erteilen. Wenn Sie nicht auf die Wiedergabeschaltfläche klicken, wird nichts an YouTube übermittelt, und die übrige Seite funktioniert ohne das Video. Was YouTube gespeichert hat, können Sie in Ihren Browsereinstellungen löschen. Klicks auf die Wiedergabeschaltfläche zählen wir mit Umami (Abschnitt 4), ohne Cookies.</>,
+    s2aItem: (n) => ({ strong: 'Einwilligung (Art. 6 Abs. 1 lit. a)', body: `für die Wiedergabe eingebetteter YouTube-Videos (Abschnitt ${n}). Sie erteilen die Einwilligung mit dem Klick auf die Wiedergabeschaltfläche; bis dahin wird nichts von YouTube geladen.` }),
+    s3Item: (n) => ({ strong: 'YouTube-Cookies', body: `kann YouTube erst setzen, nachdem Sie bei einem eingebetteten Video auf die Wiedergabeschaltfläche geklickt haben (Abschnitt ${n}).` }),
+    s7Item: 'YouTube (Google): eingebettete Videos, erst nach Ihrem Klick auf die Wiedergabeschaltfläche',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Irland; Google LLC, USA): Google LLC ist durch das EU-US Data Privacy Framework (DPF) abgedeckt.' },
+  },
+  ja: {
+    title: '埋め込み YouTube 動画',
+    googlePrivacy: 'Google プライバシー ポリシー',
+    body: (_n, g) => <>当サイトの一部のページには YouTube の動画を掲載しています。YouTube は、EU では Google Ireland Limited（Gordon House, Barrow Street, Dublin 4, Ireland）が提供するサービスです。再生ボタンを押すまでは、動画の代わりに当方の写真を表示し、YouTube や Google からは何も読み込みません。動画の再生ボタンを押したときに初めて、お使いのブラウザが YouTube のプライバシー強化モードである youtube-nocookie.com からプレーヤーを読み込みます。それ以降、Google はお客様の IP アドレス、ブラウザと端末に関する情報、および当サイトのアドレスを受け取ります。また、YouTube は自社のドメイン上で、お客様のブラウザにクッキーを設定したり、同様の情報（localStorage など）を保存したりすることがあります。Google がこれらの情報をどのように利用するかは、{g}に記載されています。法的根拠はお客様の同意（第6条第1項(a)）で、再生ボタンを押すことで、お客様が同意を与えることになります。再生ボタンを押さなければ YouTube には何も送信されず、動画以外のページ内容はそのままご利用いただけます。YouTube が保存した情報は、ブラウザの設定から削除できます。再生ボタンが押された回数は、クッキーを使用せずに Umami で数えています（第4項）。</>,
+    s2aItem: (n) => ({ strong: '同意（第6条第1項(a)）', body: `埋め込み YouTube 動画の再生について（第${n}項）。動画の再生ボタンを押すことで、お客様が同意を与えることになります。それまでは YouTube から何も読み込みません。` }),
+    s3Item: (n) => ({ strong: 'YouTube のクッキー', body: `埋め込み動画の再生ボタンを押した後にのみ、YouTube が設定することがあります（第${n}項）。` }),
+    s7Item: 'YouTube（Google）：埋め込み動画（再生ボタンを押した後のみ）',
+    s8aItem: { strong: 'YouTube', body: '（Google Ireland Limited、アイルランド。Google LLC、米国）：Google LLC は EU–米国データプライバシーフレームワーク（DPF）の対象。' },
+  },
+  es: {
+    title: 'Videos de YouTube insertados',
+    googlePrivacy: 'Política de Privacidad de Google',
+    body: (_n, g) => <>Algunas de nuestras páginas contienen videos de YouTube, un servicio que en la UE presta Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlanda). Antes de que usted haga clic en el botón de reproducción, la página muestra una foto nuestra en lugar del video y no carga nada de YouTube ni de Google. Solo cuando usted hace clic en el botón de reproducción de un video, su navegador carga el reproductor de YouTube desde youtube-nocookie.com, el modo de privacidad mejorada de YouTube. A partir de ese momento, Google recibe su dirección IP, datos de su navegador y dispositivo y la dirección de nuestro sitio, y YouTube puede establecer cookies o guardar información similar en su navegador (por ejemplo, en localStorage) en sus propios dominios. La forma en que Google utiliza esta información se describe en la {g}. La base jurídica es su consentimiento (Art. 6(1)(a)), que usted otorga al hacer clic en el botón de reproducción. Si no hace clic en él, no se envía nada a YouTube y el resto de la página funciona sin el video. Puede borrar lo que YouTube haya guardado desde la configuración de su navegador. Contamos los clics en el botón de reproducción con Umami (apartado 4), sin cookies.</>,
+    s2aItem: (n) => ({ strong: 'Consentimiento (Art. 6(1)(a))', body: `para reproducir videos de YouTube insertados (apartado ${n}). Usted otorga su consentimiento al hacer clic en el botón de reproducción de un video; hasta entonces no se carga nada de YouTube.` }),
+    s3Item: (n) => ({ strong: 'Cookies de YouTube', body: `YouTube solo puede establecerlas después de que usted haga clic en el botón de reproducción de un video insertado (apartado ${n}).` }),
+    s7Item: 'YouTube (Google): videos insertados, solo después de que usted haga clic en el botón de reproducción',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Irlanda; Google LLC, EE. UU.): Google LLC está amparada por el Marco de Privacidad de Datos UE–EE. UU. (DPF).' },
+  },
+  'pt-BR': {
+    title: 'Vídeos do YouTube incorporados',
+    googlePrivacy: 'Política de Privacidade do Google',
+    body: (_n, g) => <>Algumas das nossas páginas contêm vídeos do YouTube, um serviço oferecido na UE pela Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlanda). Antes de você clicar em reproduzir, a página mostra uma foto nossa no lugar do vídeo e não carrega nada do YouTube nem do Google. Só quando você clica em reproduzir em um vídeo é que o seu navegador carrega o player do YouTube a partir de youtube-nocookie.com, o modo de privacidade avançada do YouTube. A partir daí, o Google recebe o seu endereço IP, informações sobre o seu navegador e dispositivo e o endereço do nosso site, e o YouTube pode definir cookies ou guardar informações semelhantes no seu navegador (por exemplo, no localStorage) nos domínios do próprio YouTube. A forma como o Google usa essas informações está descrita na {g}. A base legal é o seu consentimento (Art. 6(1)(a) GDPR / Art. 7º, I LGPD), que você dá ao clicar em reproduzir. Se você não clicar em reproduzir, nada é enviado ao YouTube, e o restante da página funciona sem o vídeo. Você pode apagar o que o YouTube guardou nas configurações do seu navegador. Contamos os cliques no botão de reprodução com o Umami (seção 4), sem cookies.</>,
+    s2aItem: (n) => ({ strong: 'Consentimento (Art. 6(1)(a) GDPR / Art. 7º, I LGPD)', body: `para reproduzir vídeos do YouTube incorporados (seção ${n}). Você dá o consentimento ao clicar em reproduzir em um vídeo; até lá, nada é carregado do YouTube.` }),
+    s3Item: (n) => ({ strong: 'Cookies do YouTube', body: `podem ser definidos pelo YouTube somente depois que você clica em reproduzir em um vídeo incorporado (seção ${n}).` }),
+    s7Item: 'YouTube (Google): vídeos incorporados, só depois que você clica em reproduzir',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Irlanda; Google LLC, EUA): a Google LLC é coberta pelo Quadro de Privacidade de Dados UE–EUA (DPF).' },
+  },
+  'zh-CN': {
+    title: '嵌入的 YouTube 视频',
+    googlePrivacy: 'Google 隐私权政策',
+    body: (_n, g) => <>我们的部分页面包含 YouTube 视频。YouTube 在欧盟由 Google Ireland Limited（Gordon House, Barrow Street, Dublin 4, Ireland）提供。在您点击播放按钮之前，页面会在视频位置显示我们自己的照片，不会从 YouTube 或 Google 加载任何内容。只有当您点击某个视频的播放按钮时，您的浏览器才会从 youtube-nocookie.com（YouTube 的隐私权保护增强模式）加载 YouTube 播放器。此后，Google 会收到您的 IP 地址、有关您的浏览器和设备的信息以及我们网站的地址，YouTube 也可能在其自有域名下向您的浏览器设置 cookie 或存储类似信息（例如在 localStorage 中）。Google 如何使用这些信息，请参阅 {g}。法律依据是您的同意（第6(1)(a)条），您点击播放按钮即表示同意。如果您不点击播放按钮，则不会向 YouTube 发送任何内容，页面的其余部分在没有视频的情况下也能正常使用。您可以在浏览器设置中删除 YouTube 存储的信息。我们使用 Umami 统计播放按钮的点击次数（第4节），不使用 cookie。</>,
+    s2aItem: (n) => ({ strong: '同意（第6(1)(a)条）', body: `用于播放嵌入的 YouTube 视频（第${n}节）。您点击视频的播放按钮即表示同意；在此之前，不会从 YouTube 加载任何内容。` }),
+    s3Item: (n) => ({ strong: 'YouTube cookie', body: `仅在您点击嵌入视频的播放按钮后，YouTube 才可能设置（第${n}节）。` }),
+    s7Item: 'YouTube（Google）：嵌入的视频（仅在您点击播放按钮后）',
+    s8aItem: { strong: 'YouTube', body: '（Google Ireland Limited，爱尔兰；Google LLC，美国）：Google LLC 受欧盟–美国数据隐私框架（DPF）保护。' },
+  },
+  ko: {
+    title: '삽입된 YouTube 동영상',
+    googlePrivacy: 'Google 개인정보처리방침',
+    body: (_n, g) => <>당사의 일부 페이지에는 YouTube 동영상이 있습니다. YouTube는 EU에서 Google Ireland Limited(Gordon House, Barrow Street, Dublin 4, Ireland)가 제공하는 서비스입니다. 재생 버튼을 누르기 전에는 동영상 자리에 당사의 사진이 표시되며, YouTube나 Google에서 아무것도 불러오지 않습니다. 동영상의 재생 버튼을 누를 때에만 브라우저가 YouTube의 개인 정보 보호 강화 모드인 youtube-nocookie.com에서 YouTube 플레이어를 불러옵니다. 그때부터 Google은 귀하의 IP 주소, 브라우저와 기기에 관한 정보, 당사 사이트의 주소를 받으며, YouTube는 자체 도메인에서 귀하의 브라우저에 쿠키를 설정하거나 이와 유사한 정보(예: localStorage)를 저장할 수 있습니다. Google이 이 정보를 어떻게 사용하는지는 {g}에 설명되어 있습니다. 법적 근거는 귀하의 동의(제6조 제1항 (a))이며, 재생 버튼을 누르시면 동의하신 것으로 봅니다. 재생 버튼을 누르지 않으면 YouTube로 아무것도 전송되지 않으며, 동영상 외의 페이지 내용은 그대로 이용하실 수 있습니다. YouTube가 저장한 정보는 브라우저 설정에서 삭제하실 수 있습니다. 당사는 재생 버튼을 누른 횟수를 쿠키 없이 Umami로 집계합니다(제4항).</>,
+    s2aItem: (n) => ({ strong: '동의(제6조 제1항 (a))', body: `삽입된 YouTube 동영상 재생(제${n}항). 동영상의 재생 버튼을 누르시면 동의하신 것으로 보며, 그 전에는 YouTube에서 아무것도 불러오지 않습니다.` }),
+    s3Item: (n) => ({ strong: 'YouTube 쿠키', body: `삽입된 동영상의 재생 버튼을 누르신 후에만 YouTube가 설정할 수 있습니다(제${n}항).` }),
+    s7Item: 'YouTube(Google): 삽입된 동영상(재생 버튼을 누르신 후에만)',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, 아일랜드; Google LLC, 미국): Google LLC는 EU–미국 데이터 프라이버시 프레임워크(DPF) 적용.' },
+  },
+  fr: {
+    title: 'Vidéos YouTube intégrées',
+    googlePrivacy: 'Règles de confidentialité de Google',
+    body: (_n, g) => <>Certaines de nos pages contiennent des vidéos YouTube, un service fourni dans l'UE par Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlande). Avant que vous n'appuyiez sur le bouton de lecture, la page affiche l'une de nos propres photos à la place de la vidéo et ne charge rien depuis YouTube ni Google. C'est seulement lorsque vous appuyez sur le bouton de lecture d'une vidéo que votre navigateur charge le lecteur YouTube depuis youtube-nocookie.com, le mode de confidentialité avancé de YouTube. À partir de ce moment, Google reçoit votre adresse IP, des informations sur votre navigateur et votre appareil ainsi que l'adresse de notre site, et YouTube peut déposer des cookies ou enregistrer des informations similaires dans votre navigateur (par exemple dans le localStorage) sur ses propres domaines. L'usage que Google fait de ces informations est décrit dans les {g}. La base juridique est votre consentement (Art. 6(1)(a)), que vous donnez en appuyant sur le bouton de lecture. Si vous n'appuyez pas sur ce bouton, rien n'est envoyé à YouTube, et le reste de la page fonctionne sans la vidéo. Vous pouvez supprimer, dans les paramètres de votre navigateur, ce que YouTube a enregistré. Nous comptons les clics sur le bouton de lecture avec Umami (section 4), sans cookies.</>,
+    s2aItem: (n) => ({ strong: 'Consentement (Art. 6(1)(a))', body: `pour la lecture des vidéos YouTube intégrées (section ${n}). Vous donnez votre consentement en appuyant sur le bouton de lecture d'une vidéo ; jusque-là, rien n'est chargé depuis YouTube.` }),
+    s3Item: (n) => ({ strong: 'Cookies YouTube', body: `YouTube ne peut les déposer qu'après que vous avez appuyé sur le bouton de lecture d'une vidéo intégrée (section ${n}).` }),
+    s7Item: 'YouTube (Google) : vidéos intégrées, uniquement après que vous avez appuyé sur le bouton de lecture',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Irlande ; Google LLC, États-Unis) : Google LLC est couverte par le cadre de protection des données UE–États-Unis (DPF).' },
+  },
+  it: {
+    title: 'Video di YouTube incorporati',
+    googlePrivacy: 'Norme sulla privacy di Google',
+    body: (_n, g) => <>Alcune nostre pagine contengono video di YouTube, un servizio fornito nell'UE da Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlanda). Prima che Lei prema il pulsante di riproduzione, la pagina mostra al posto del video una foto nostra e non carica nulla da YouTube né da Google. Solo quando Lei preme il pulsante di riproduzione di un video, il Suo browser carica il player di YouTube da youtube-nocookie.com, la modalità di privacy avanzata di YouTube. Da quel momento Google riceve il Suo indirizzo IP, informazioni sul Suo browser e sul Suo dispositivo e l'indirizzo del nostro sito, e YouTube può impostare cookie o salvare informazioni simili nel Suo browser (per esempio nel localStorage) sui propri domini. Il modo in cui Google utilizza queste informazioni è descritto nelle {g}. La base giuridica è il Suo consenso (Art. 6(1)(a)), che Lei presta premendo il pulsante di riproduzione. Se non lo preme, a YouTube non viene inviato nulla e il resto della pagina funziona senza il video. Può cancellare ciò che YouTube ha salvato dalle impostazioni del Suo browser. Con Umami (sezione 4), senza cookie, conteggiamo quante volte viene premuto il pulsante di riproduzione.</>,
+    s2aItem: (n) => ({ strong: 'Consenso (Art. 6(1)(a))', body: `per la riproduzione dei video di YouTube incorporati (sezione ${n}). Lei presta il consenso premendo il pulsante di riproduzione di un video; fino ad allora non viene caricato nulla da YouTube.` }),
+    s3Item: (n) => ({ strong: 'Cookie di YouTube', body: `YouTube può impostarli solo dopo che Lei ha premuto il pulsante di riproduzione di un video incorporato (sezione ${n}).` }),
+    s7Item: 'YouTube (Google): video incorporati, solo dopo che Lei ha premuto il pulsante di riproduzione',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Irlanda; Google LLC, USA): Google LLC è coperta dall\'EU–US Data Privacy Framework (DPF).' },
+  },
+  nl: {
+    title: "Ingesloten YouTube-video's",
+    googlePrivacy: 'privacybeleid van Google',
+    body: (_n, g) => <>Sommige van onze pagina's bevatten video's van YouTube, een dienst die in de EU wordt aangeboden door Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Ierland). Voordat u op de afspeelknop drukt, toont de pagina op de plaats van de video een eigen foto en laadt ze niets van YouTube of Google. Pas wanneer u op de afspeelknop van een video drukt, laadt uw browser de YouTube-speler van youtube-nocookie.com, de privacymodus van YouTube. Vanaf dat moment ontvangt Google uw IP-adres, gegevens over uw browser en apparaat en het adres van onze website, en kan YouTube op zijn eigen domeinen cookies plaatsen of vergelijkbare informatie in uw browser opslaan (bijvoorbeeld in localStorage). Hoe Google deze informatie gebruikt, staat in het {g}. De rechtsgrond is uw toestemming (Art. 6(1)(a)), die u geeft door op de afspeelknop te drukken. Als u niet op de afspeelknop drukt, wordt er niets naar YouTube verzonden en werkt de rest van de pagina zonder de video. Wat YouTube heeft opgeslagen, kunt u verwijderen via de instellingen van uw browser. Wij tellen het aantal keren dat op de afspeelknop wordt gedrukt met Umami (sectie 4), zonder cookies.</>,
+    s2aItem: (n) => ({ strong: 'Toestemming (Art. 6(1)(a))', body: `voor het afspelen van ingesloten YouTube-video's (sectie ${n}). U geeft toestemming door op de afspeelknop van een video te drukken; tot dan wordt er niets van YouTube geladen.` }),
+    s3Item: (n) => ({ strong: 'YouTube-cookies', body: `kunnen door YouTube pas worden geplaatst nadat u op de afspeelknop van een ingesloten video heeft gedrukt (sectie ${n}).` }),
+    s7Item: "YouTube (Google): ingesloten video's, pas nadat u op de afspeelknop heeft gedrukt",
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Ierland; Google LLC, VS): Google LLC is gedekt door het EU–US Data Privacy Framework (DPF).' },
+  },
+  sv: {
+    title: 'Inbäddade YouTube-videor',
+    googlePrivacy: 'Googles integritetspolicy',
+    body: (_n, g) => <>Några av våra sidor innehåller videor från YouTube, en tjänst som i EU tillhandahålls av Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland). Innan du trycker på uppspelningsknappen visar sidan ett eget foto i stället för videon och laddar ingenting från YouTube eller Google. Först när du trycker på uppspelningsknappen för en video laddar din webbläsare YouTube-spelaren från youtube-nocookie.com, YouTubes avancerade integritetsläge. Från och med då tar Google emot din IP-adress, uppgifter om din webbläsare och enhet och adressen till vår webbplats, och YouTube kan placera cookies eller spara liknande information i din webbläsare (till exempel i localStorage) på sina egna domäner. Hur Google använder informationen beskrivs i {g}. Den rättsliga grunden är ditt samtycke (artikel 6.1 a), som du lämnar genom att trycka på uppspelningsknappen. Om du inte trycker på den skickas ingenting till YouTube, och resten av sidan fungerar utan videon. Du kan radera det som YouTube har sparat via webbläsarens inställningar. Vi räknar tryck på uppspelningsknappen med Umami (avsnitt 4), utan cookies.</>,
+    s2aItem: (n) => ({ strong: 'Samtycke (artikel 6.1 a)', body: `för uppspelning av inbäddade YouTube-videor (avsnitt ${n}). Du lämnar samtycke genom att trycka på uppspelningsknappen för en video; innan dess laddas ingenting från YouTube.` }),
+    s3Item: (n) => ({ strong: 'YouTube-cookies', body: `kan placeras av YouTube först när du har tryckt på uppspelningsknappen för en inbäddad video (avsnitt ${n}).` }),
+    s7Item: 'YouTube (Google): inbäddade videor, först när du trycker på uppspelningsknappen',
+    s8aItem: { strong: 'YouTube', body: '(Google Ireland Limited, Irland; Google LLC, USA): Google LLC omfattas av EU–US Data Privacy Framework (DPF).' },
+  },
+};
+
+/**
+ * Meta-pikseli, vain `metaPixel`-propilla (laplandvibes.com ja app.laplandvibes.com, Vesa 7.11.2026). Kohdat 2, 2a, 3,
+ * oma osio (4a/4b/4c Clarityn ja YouTuben jälkeen), 6, 7, 8a ja 10. Haravointimerkin alla, koska muut sivustot eivät lataa
+ * pikseliä. Väitteet: lataaja (hubin index.html, appin src/lib/metaPixel.ts) vasta suostumuksesta, autoConfig pois, ei
+ * advanced matchingia, tapahtuma PageView; yhteisrekisterinpitäjyys keruusta ja siirrosta (GDPR 26 art., Metan Controller
+ * Addendum), sen jälkeen Meta itsenäisenä rekisterinpitäjänä; siirrot Yhdysvaltoihin DPF:n varassa. Metan omaa
+ * säilytysaikaa ei tiedetä, joten kohta 6 kertoo vain evästeiden keston. Kohta 10
+ * (s10) korvaa "emme profiloi" -lauseen: emme itse profiloi, mutta Meta voi kohdentaa mainoksia omana rekisterinpitäjänään.
+ */
+interface MetaPixelPrivacyCopy {
+  /** Kappale kohdan 2 perään; n = osion numero. */
+  s2: (n: string) => string;
+  s2aItem: (n: string) => { strong: string; body: string };
+  s3Item: (n: string) => { strong: string; body: string };
+  /** Osion otsikko ilman numeroa; numero lisätään piirrossa. */
+  title: string;
+  body1: string;
+  body2: (metaLink: React.ReactNode, adPrefsLink: React.ReactNode) => React.ReactNode;
+  /** Linkkiteksti Metan tietosuojakäytäntöön, body2:n tarvitsemassa muodossa. */
+  metaPrivacy: string;
+  /** Linkkiteksti Facebookin mainosasetuksiin, body2:n tarvitsemassa muodossa. */
+  adPrefs: string;
+  /** Kohdan 6 perään. */
+  s6: string;
+  s7Item: (n: string) => string;
+  s8aItem: { strong: string; body: string };
+  /** Kohdan 10 teksti pikselin kanssa: emme itse profiloi, Meta voi kohdentaa mainoksia (n = Meta-osion numero). */
+  s10: (n: string) => string;
+}
+
+const META_PIXEL_PRIVACY: Record<Lang, MetaPixelPrivacyCopy> = {
+  en: {
+    s2: (n) => `If you accept cookies, the Meta pixel also sends Meta information about your visit so that we can measure our Facebook and Instagram ads. Section ${n} explains how it works.`,
+    s2aItem: (n) => ({ strong: 'Consent (Art. 6(1)(a))', body: `for the Meta pixel (section ${n}). You give consent by accepting cookies in the cookie banner and can withdraw it at any time with the "Change cookie choice" button in our Cookie Policy.` }),
+    s3Item: (n) => ({ strong: 'Meta pixel cookies', body: `_fbp on this site's own domain, _fbc on the same domain if you arrive from a Facebook or Instagram link with the click ID fbclid in its address (such as our ad) and, if your browser allows Facebook cookies, Meta's fr cookie on facebook.com. They are placed only after you accept cookies, and each lasts 90 days (section ${n}).` }),
+    title: 'Meta pixel (Facebook and Instagram ads)',
+    body1: 'If you accept cookies, this site loads the Meta pixel (ID 1492705142722059) from connect.facebook.net. Only laplandvibes.com and app.laplandvibes.com use it. We use it to measure how well our Facebook and Instagram ads work, that is, whether an ad brought a visitor to the site, and to help Meta show our ads to people who are more likely to be interested in them. The pixel sends Meta the address of the page and of the previous page (referrer), a page view event, details of your browser and device, your IP address, a timestamp, the ID in the _fbp cookie and, if you arrive from a Facebook or Instagram link with the click ID fbclid in its address (such as our ad), the click ID in the _fbc cookie. It sends no form content, no name and no email address (we do not use "advanced matching"), and the automatic collection of buttons and page metadata is switched off. If you are logged in to Facebook in the same browser, Meta can link this information to your account. If you decline cookies, the pixel script is not loaded and nothing is sent to Meta.',
+    body2: (meta, ads) => <>LaPeso Oy and Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland) are joint controllers for collecting this data and transmitting it to Meta (Art. 26 GDPR and Meta's "Controller Addendum"). After that, Meta processes the data as an independent controller under its own {meta}. Meta may transfer data to the United States; Meta Platforms, Inc. is certified under the EU–US Data Privacy Framework. The legal basis is your consent (Art. 6(1)(a)). You can withdraw it at any time with the "Change cookie choice" button in our Cookie Policy, which also deletes the _fbp and _fbc cookies. You can manage your ad settings on Facebook in {ads}.</>,
+    metaPrivacy: 'Privacy Policy',
+    adPrefs: 'Ad preferences',
+    s6: "The Meta pixel's cookies _fbp, _fbc and fr last 90 days. How long Meta keeps the data it has received is decided by Meta under its own privacy policy.",
+    s7Item: (n) => `Meta (Facebook, Instagram): measuring our ads, only after you accept cookies (joint controller, see section ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Ireland, EU; Meta Platforms, Inc., USA): Meta may transfer data to the United States; Meta Platforms, Inc. is certified under the EU–US Data Privacy Framework (DPF).' },
+    s10: (n) => `We do not profile anyone ourselves, and we do not carry out automated decision-making or any other processing that produces legal or similarly significant effects for you within the meaning of GDPR Article 22. If you have accepted cookies, however, Meta may use the data from the Meta pixel to target ads, as an independent controller (section ${n}).`,
+  },
+  fi: {
+    s2: (n) => `Jos hyväksyt evästeet, Meta-pikseli lähettää lisäksi Metalle tietoja käynnistäsi, jotta voimme mitata Facebook- ja Instagram-mainostemme toimivuutta. Kohdassa ${n} kerrotaan, miten se toimii.`,
+    s2aItem: (n) => ({ strong: 'Suostumus (6 art. 1 kohta a)', body: `Meta-pikseliä varten (kohta ${n}). Annat suostumuksen hyväksymällä evästeet evästebannerissa ja voit perua sen milloin tahansa evästekäytäntömme Muuta evästevalintaa -painikkeella.` }),
+    s3Item: (n) => ({ strong: 'Meta-pikselin evästeet', body: `_fbp tämän sivuston omassa domainissa, _fbc samassa domainissa, jos tulet sivustolle Facebookin tai Instagramin linkistä, jonka osoitteessa on klikkaustunniste fbclid (esimerkiksi mainoksestamme), ja Metan fr-eväste facebook.com-domainissa, jos selaimesi sallii Facebookin evästeet. Ne asetetaan vasta, kun hyväksyt evästeet, ja kukin säilyy 90 päivää (kohta ${n}).` }),
+    title: 'Meta-pikseli (Facebook- ja Instagram-mainokset)',
+    body1: 'Jos hyväksyt evästeet, sivusto lataa Meta-pikselin (tunnus 1492705142722059) osoitteesta connect.facebook.net. Pikseli on käytössä vain sivustoilla laplandvibes.com ja app.laplandvibes.com. Mittaamme sillä Facebook- ja Instagram-mainostemme toimivuutta eli sitä, toiko mainos kävijän sivustolle, ja autamme Metaa näyttämään mainoksiamme ihmisille, joita ne todennäköisemmin kiinnostavat. Pikseli lähettää Metalle sivun osoitteen ja sen sivun osoitteen, jolta tulit, sivunäyttötapahtuman, selaimesi ja laitteesi tiedot, IP-osoitteesi, aikaleiman sekä _fbp-evästeen ja mahdollisen _fbc-evästeen tunnisteet (_fbc syntyy vain, jos tulet sivustolle Facebookin tai Instagramin linkistä, jonka osoitteessa on klikkaustunniste fbclid, esimerkiksi mainoksestamme). Lomakkeiden sisältöä, nimeäsi tai sähköpostiosoitettasi se ei lähetä (emme käytä Metan edistynyttä vastaavuuksien hakua), ja painikkeiden ja sivun metatietojen automaattinen keruu on poistettu käytöstä. Jos olet kirjautuneena Facebookiin samassa selaimessa, Meta voi yhdistää tiedot tiliisi. Jos hylkäät evästeet, pikselin skriptiä ei ladata eikä Metalle lähetetä mitään.',
+    body2: (meta, ads) => <>LaPeso Oy ja Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlanti) ovat yhteisrekisterinpitäjiä näiden tietojen keräämisessä ja siirtämisessä Metalle (tietosuoja-asetuksen 26 artikla ja Metan ”Controller Addendum”). Siitä eteenpäin Meta käsittelee tietoja omana rekisterinpitäjänään oman {meta} mukaisesti. Meta voi siirtää tietoja Yhdysvaltoihin; Meta Platforms, Inc. kuuluu EU–US Data Privacy Framework -järjestelyyn. Käsittelyn oikeusperuste on suostumuksesi (6 art. 1 kohta a). Voit perua sen milloin tahansa evästekäytäntömme Muuta evästevalintaa -painikkeella, joka poistaa myös _fbp- ja _fbc-evästeet. Facebookin mainosasetuksesi löydät sivulta {ads}.</>,
+    metaPrivacy: 'tietosuojakäytäntönsä',
+    adPrefs: 'Mainosasetukset',
+    s6: 'Meta-pikselin evästeet _fbp, _fbc ja fr säilyvät 90 päivää. Kuinka kauan Meta säilyttää saamansa tiedot, päättää Meta oman tietosuojakäytäntönsä mukaisesti.',
+    s7Item: (n) => `Meta (Facebook, Instagram): mainostemme mittaus, vasta kun hyväksyt evästeet (yhteisrekisterinpitäjä, ks. kohta ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Irlanti, EU; Meta Platforms, Inc., Yhdysvallat): Meta voi siirtää tietoja Yhdysvaltoihin; Meta Platforms, Inc. kuuluu EU–US Data Privacy Framework (DPF) -järjestelyyn.' },
+    s10: (n) => `Emme itse profiloi ketään emmekä tee automatisoitua päätöksentekoa tai muuta GDPR:n 22 artiklan tarkoittamaa käsittelyä, jolla olisi oikeudellisia tai muuten merkittäviä vaikutuksia sinuun. Jos olet hyväksynyt evästeet, Meta voi kuitenkin käyttää Meta-pikselin tietoja mainosten kohdentamiseen omana rekisterinpitäjänään (kohta ${n}).`,
+  },
+  de: {
+    s2: (n) => `Wenn Sie Cookies akzeptieren, sendet das Meta-Pixel außerdem Angaben zu Ihrem Besuch an Meta, damit wir unsere Anzeigen auf Facebook und Instagram messen können. Wie das funktioniert, erklärt Abschnitt ${n}.`,
+    s2aItem: (n) => ({ strong: 'Einwilligung (Art. 6 Abs. 1 lit. a)', body: `für das Meta-Pixel (Abschnitt ${n}). Sie erteilen die Einwilligung, indem Sie im Cookie-Banner Cookies akzeptieren, und können sie jederzeit über die Schaltfläche „Cookie-Auswahl ändern“ in unserer Cookie-Richtlinie widerrufen.` }),
+    s3Item: (n) => ({ strong: 'Cookies des Meta-Pixels', body: `_fbp auf der eigenen Domain dieser Website, _fbc auf derselben Domain, wenn Sie über einen Link von Facebook oder Instagram mit der Klick-ID fbclid in der Adresse kommen (etwa über unsere Anzeige), und, wenn Ihr Browser Facebook-Cookies zulässt, das Cookie fr von Meta auf facebook.com. Sie werden erst gesetzt, wenn Sie Cookies akzeptieren, und bleiben jeweils 90 Tage gespeichert (Abschnitt ${n}).` }),
+    title: 'Meta-Pixel (Werbung auf Facebook und Instagram)',
+    body1: 'Wenn Sie Cookies akzeptieren, lädt diese Website das Meta-Pixel (ID 1492705142722059) von connect.facebook.net. Es wird nur auf laplandvibes.com und app.laplandvibes.com eingesetzt. Damit messen wir, wie unsere Anzeigen auf Facebook und Instagram wirken, also ob eine Anzeige einen Besucher auf die Website gebracht hat, und helfen Meta, unsere Anzeigen Menschen zu zeigen, die sich eher dafür interessieren. Das Pixel sendet an Meta die Adresse der Seite und die der zuvor besuchten Seite (Referrer), das Ereignis „Seitenaufruf“, Angaben zu Ihrem Browser und Gerät, Ihre IP-Adresse, einen Zeitstempel, die Kennung aus dem Cookie _fbp und, wenn Sie über einen Link von Facebook oder Instagram mit der Klick-ID fbclid in der Adresse kommen (etwa über unsere Anzeige), die Klick-ID aus dem Cookie _fbc. Formularinhalte, Ihren Namen und Ihre E-Mail-Adresse sendet es nicht (den „erweiterten Abgleich“ von Meta nutzen wir nicht), und die automatische Erfassung von Schaltflächen und Seitenmetadaten ist abgeschaltet. Sind Sie im selben Browser bei Facebook angemeldet, kann Meta diese Angaben Ihrem Konto zuordnen. Wenn Sie Cookies ablehnen, wird das Pixel-Skript nicht geladen und nichts an Meta gesendet.',
+    body2: (meta, ads) => <>Für die Erhebung dieser Daten und ihre Übermittlung an Meta sind LaPeso Oy und Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland) gemeinsam Verantwortliche (Art. 26 DSGVO und das „Controller Addendum“ von Meta). Danach verarbeitet Meta die Daten als eigenständiger Verantwortlicher nach seiner eigenen {meta}. Meta kann Daten in die USA übermitteln; die Meta Platforms, Inc. ist nach dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit über die Schaltfläche „Cookie-Auswahl ändern“ in unserer Cookie-Richtlinie widerrufen; dabei werden auch die Cookies _fbp und _fbc gelöscht. Ihre Werbeeinstellungen bei Facebook verwalten Sie unter {ads}.</>,
+    metaPrivacy: 'Datenschutzrichtlinie',
+    adPrefs: 'Werbepräferenzen',
+    s6: 'Die Cookies _fbp, _fbc und fr des Meta-Pixels bleiben 90 Tage gespeichert. Wie lange Meta die erhaltenen Daten aufbewahrt, legt Meta nach seiner eigenen Datenschutzrichtlinie fest.',
+    s7Item: (n) => `Meta (Facebook, Instagram): Messung unserer Anzeigen, erst nachdem Sie Cookies akzeptiert haben (gemeinsam Verantwortlicher, siehe Abschnitt ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Irland, EU; Meta Platforms, Inc., USA): Meta kann Daten in die USA übermitteln; die Meta Platforms, Inc. ist nach dem EU-US Data Privacy Framework (DPF) zertifiziert.' },
+    s10: (n) => `Wir selbst betreiben kein Profiling und führen keine automatisierten Entscheidungen oder sonstige Verarbeitung im Sinne von Art. 22 DSGVO durch, die Sie rechtlich oder vergleichbar erheblich beeinträchtigt. Wenn Sie Cookies akzeptiert haben, kann Meta die Daten des Meta-Pixels jedoch als eigenständiger Verantwortlicher für zielgerichtete Werbung nutzen (Abschnitt ${n}).`,
+  },
+  ja: {
+    s2: (n) => `クッキーに同意された場合は、当方が Facebook 広告と Instagram 広告の効果を測定できるよう、Meta ピクセルが訪問に関する情報を Meta にも送信します。仕組みについては第${n}項で説明しています。`,
+    s2aItem: (n) => ({ strong: '同意（第6条第1項(a)）', body: `Meta ピクセルについて（第${n}項）。クッキーバナーで同意していただき、クッキーポリシーの「クッキーの選択を変更」ボタンからいつでも撤回できます。` }),
+    s3Item: (n) => ({ strong: 'Meta ピクセルのクッキー', body: `クッキーに同意された後にのみ設定されます。当サイト自身のドメインの _fbp、当方の広告などアドレスにクリック ID「fbclid」が付いた Facebook または Instagram のリンクからアクセスされた場合は同じドメインの _fbc、ブラウザが Facebook のクッキーを許可している場合は facebook.com 上の Meta のクッキー fr です。いずれも保存期間は90日です（第${n}項）。` }),
+    title: 'Meta ピクセル（Facebook 広告・Instagram 広告）',
+    body1: 'クッキーに同意された場合、当サイトは connect.facebook.net から Meta ピクセル（ID 1492705142722059）を読み込みます。使用しているのは laplandvibes.com と app.laplandvibes.com のみです。当方はこれを、Facebook 広告と Instagram 広告の効果、つまり広告をきっかけにサイトへの訪問があったかどうかの測定に使用し、また広告に関心を持つ可能性が高い人に当方の広告を表示できるよう Meta を支援するために使用します。ピクセルは、ページのアドレスと直前のページのアドレス（リファラー）、「ページビュー」イベント、ブラウザと端末に関する情報、IP アドレス、タイムスタンプ、および _fbp クッキーの識別子を Meta に送信します。当方の広告など、アドレスにクリック ID「fbclid」が付いた Facebook または Instagram のリンクからアクセスされた場合は、_fbc クッキーのクリック ID も送信します。フォームの入力内容、氏名、メールアドレスは送信しません（「詳細マッチング」は使用していません）。また、ボタンやページのメタデータの自動収集は無効にしています。同じブラウザで Facebook にログインしている場合、Meta はこれらの情報をお客様のアカウントと関連付けることがあります。クッキーを拒否された場合、ピクセルのスクリプトは読み込まれず、Meta には何も送信されません。',
+    body2: (meta, ads) => <>これらのデータの収集と Meta への送信については、LaPeso Oy と Meta Platforms Ireland Ltd（4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland）が共同管理者となります（GDPR 第26条および Meta の「Controller Addendum」）。その後、Meta は独立した管理者として、自社の{meta}に従ってデータを処理します。Meta はデータを米国に移転することがあり、Meta Platforms, Inc. は EU–米国データプライバシーフレームワークの認証を受けています。法的根拠はお客様の同意（第6条第1項(a)）です。同意は、クッキーポリシーの「クッキーの選択を変更」ボタンからいつでも撤回でき、その際 _fbp と _fbc のクッキーも削除されます。Facebook の{ads}で、表示される広告を管理できます。</>,
+    metaPrivacy: 'プライバシーポリシー',
+    adPrefs: '広告表示の設定',
+    s6: 'Meta ピクセルのクッキー _fbp、_fbc、fr の保存期間は90日です。Meta が受け取ったデータをどのくらいの期間保管するかは、Meta が自社のプライバシーポリシーに従って決定します。',
+    s7Item: (n) => `Meta（Facebook、Instagram）：広告の測定（クッキーに同意された後のみ。共同管理者、第${n}項を参照）`,
+    s8aItem: { strong: 'Meta', body: '（Meta Platforms Ireland Ltd（アイルランド、EU）、Meta Platforms, Inc.（米国））：Meta はデータを米国に移転することがあり、Meta Platforms, Inc. は EU–米国データプライバシーフレームワーク（DPF）の認証を受けています。' },
+    s10: (n) => `当方自身がプロファイリングを行うことはなく、GDPR 第22条の意味における、お客様に法的または同等に重要な影響を与える自動意思決定やその他の処理も行っていません。ただし、クッキーに同意された場合、Meta は独立した管理者として、Meta ピクセルのデータを広告のターゲティングに使用することがあります（第${n}項）。`,
+  },
+  es: {
+    s2: (n) => `Si acepta las cookies, el píxel de Meta también envía a Meta información sobre su visita para que podamos medir nuestros anuncios en Facebook e Instagram. La sección ${n} explica cómo funciona.`,
+    s2aItem: (n) => ({ strong: 'Consentimiento (Art. 6(1)(a))', body: `para el píxel de Meta (sección ${n}). Usted otorga su consentimiento al aceptar las cookies en el banner de cookies y puede retirarlo en cualquier momento con el botón "Cambiar la elección de cookies" de nuestra Política de Cookies.` }),
+    s3Item: (n) => ({ strong: 'Cookies del píxel de Meta', body: `_fbp en el dominio propio de este sitio; _fbc en el mismo dominio, si usted llega desde un enlace de Facebook o Instagram con el identificador de clic fbclid en la dirección (por ejemplo, desde nuestro anuncio), y, si su navegador admite las cookies de Facebook, la cookie fr de Meta en facebook.com. Se establecen solo después de que usted acepte las cookies y cada una dura 90 días (sección ${n}).` }),
+    title: 'Píxel de Meta (anuncios en Facebook e Instagram)',
+    body1: 'Si usted acepta las cookies, este sitio carga el píxel de Meta (ID 1492705142722059) desde connect.facebook.net. Solo lo usan laplandvibes.com y app.laplandvibes.com. Lo usamos para medir cómo funcionan nuestros anuncios en Facebook e Instagram, es decir, si un anuncio trajo a un visitante al sitio, y para ayudar a Meta a mostrar nuestros anuncios a las personas con más probabilidades de interesarse por ellos. El píxel envía a Meta la dirección de la página y la de la página anterior (URL de referencia), el evento "vista de página", datos de su navegador y dispositivo, su dirección IP, una marca de tiempo, el identificador de la cookie _fbp y, si usted llega desde un enlace de Facebook o Instagram con el identificador de clic fbclid en la dirección (por ejemplo, desde nuestro anuncio), el identificador de clic de la cookie _fbc. No envía el contenido de los formularios, su nombre ni su dirección de correo electrónico (no usamos las "coincidencias avanzadas" de Meta), y la recopilación automática de botones y metadatos de la página está desactivada. Si usted tiene una sesión iniciada en Facebook en el mismo navegador, Meta puede vincular esta información con su cuenta. Si rechaza las cookies, el script del píxel no se carga y no se envía nada a Meta.',
+    body2: (meta, ads) => <>LaPeso Oy y Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlanda) son corresponsables del tratamiento en la recopilación de estos datos y su transmisión a Meta (artículo 26 del RGPD y el "Controller Addendum" de Meta). A partir de ahí, Meta trata los datos como responsable independiente del tratamiento, conforme a su propia {meta}. Meta puede transferir datos a los Estados Unidos; Meta Platforms, Inc. está certificada en el Marco de Privacidad de Datos UE–EE. UU. La base jurídica es su consentimiento (Art. 6(1)(a)). Puede retirarlo en cualquier momento con el botón "Cambiar la elección de cookies" de nuestra Política de Cookies, que también borra las cookies _fbp y _fbc. Puede administrar su configuración de anuncios de Facebook en {ads}.</>,
+    metaPrivacy: 'Política de privacidad',
+    adPrefs: 'Preferencias de anuncios',
+    s6: 'Las cookies _fbp, _fbc y fr del píxel de Meta duran 90 días. Cuánto tiempo conserva Meta los datos recibidos lo decide Meta conforme a su propia política de privacidad.',
+    s7Item: (n) => `Meta (Facebook, Instagram): medición de nuestros anuncios, solo después de que usted acepte las cookies (corresponsable del tratamiento; véase la sección ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Irlanda, UE; Meta Platforms, Inc., EE. UU.): Meta puede transferir datos a los Estados Unidos; Meta Platforms, Inc. está certificada en el Marco de Privacidad de Datos UE–EE. UU. (DPF).' },
+    s10: (n) => `Nosotros no elaboramos perfiles de nadie ni tomamos decisiones automatizadas, ni realizamos ningún otro tratamiento que produzca efectos jurídicos o de relevancia similar sobre usted en el sentido del artículo 22 del RGPD. Sin embargo, si usted ha aceptado las cookies, Meta puede usar los datos del píxel de Meta para segmentar anuncios, como responsable independiente del tratamiento (sección ${n}).`,
+  },
+  'pt-BR': {
+    s2: (n) => `Se você aceitar os cookies, o pixel da Meta também envia à Meta informações sobre a sua visita, para que possamos medir nossos anúncios no Facebook e no Instagram. A seção ${n} explica como funciona.`,
+    s2aItem: (n) => ({ strong: 'Consentimento (Art. 6(1)(a) GDPR / Art. 7º, I LGPD)', body: `para o pixel da Meta (seção ${n}). Você dá o consentimento ao aceitar os cookies no banner de cookies e pode retirá-lo a qualquer momento pelo botão "Alterar escolha de cookies" da nossa Política de Cookies.` }),
+    s3Item: (n) => ({ strong: 'Cookies do pixel da Meta', body: `_fbp no domínio do próprio site; _fbc no mesmo domínio, se você chegar por um link do Facebook ou do Instagram com o identificador de clique fbclid no endereço (por exemplo, pelo nosso anúncio); e, se o seu navegador permitir cookies do Facebook, o cookie fr da Meta em facebook.com. São definidos só depois que você aceita os cookies, e cada um dura 90 dias (seção ${n}).` }),
+    title: 'Pixel da Meta (anúncios no Facebook e no Instagram)',
+    body1: 'Se você aceitar os cookies, este site carrega o pixel da Meta (ID 1492705142722059) a partir de connect.facebook.net. Só laplandvibes.com e app.laplandvibes.com o utilizam. Nós o usamos para medir como funcionam nossos anúncios no Facebook e no Instagram, ou seja, se um anúncio trouxe um visitante ao site, e para ajudar a Meta a mostrar nossos anúncios a pessoas com mais chance de se interessar por eles. O pixel envia à Meta o endereço da página e o da página anterior (URL de referência), o evento "visualização de página", informações sobre o seu navegador e dispositivo, o seu endereço IP, um registro de data e hora, o identificador do cookie _fbp e, se você chegar por um link do Facebook ou do Instagram com o identificador de clique fbclid no endereço (por exemplo, pelo nosso anúncio), o identificador de clique do cookie _fbc. Ele não envia o conteúdo de formulários, o seu nome nem o seu endereço de e-mail (não usamos a "correspondência avançada" da Meta), e a coleta automática de botões e metadados da página está desativada. Se você tiver uma sessão do Facebook aberta no mesmo navegador, a Meta pode vincular essas informações à sua conta. Se você recusar os cookies, o script do pixel não é carregado e nada é enviado à Meta.',
+    body2: (meta, ads) => <>A LaPeso Oy e a Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlanda) são controladoras conjuntas na coleta desses dados e na sua transmissão à Meta (art. 26 do GDPR e o "Controller Addendum" da Meta). Depois disso, a Meta trata os dados como controladora independente, de acordo com a própria {meta}. A Meta pode transferir dados para os Estados Unidos; a Meta Platforms, Inc. é certificada no Quadro de Privacidade de Dados UE–EUA. A base legal é o seu consentimento (Art. 6(1)(a) GDPR / Art. 7º, I LGPD). Você pode retirá-lo a qualquer momento pelo botão "Alterar escolha de cookies" da nossa Política de Cookies, que também apaga os cookies _fbp e _fbc. Você pode gerenciar as suas configurações de anúncios do Facebook em {ads}.</>,
+    metaPrivacy: 'Política de Privacidade',
+    adPrefs: 'Preferências de anúncios',
+    s6: 'Os cookies _fbp, _fbc e fr do pixel da Meta duram 90 dias. Por quanto tempo a Meta guarda os dados recebidos é decidido pela Meta de acordo com a própria política de privacidade.',
+    s7Item: (n) => `Meta (Facebook, Instagram): medição dos nossos anúncios, só depois que você aceita os cookies (controladora conjunta; veja a seção ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Irlanda, UE; Meta Platforms, Inc., EUA): a Meta pode transferir dados para os Estados Unidos; a Meta Platforms, Inc. é certificada no Quadro de Privacidade de Dados UE–EUA (DPF).' },
+    s10: (n) => `Nós mesmos não criamos perfis de ninguém nem tomamos decisões automatizadas, nem realizamos qualquer outro tratamento que produza efeitos jurídicos ou de relevância similar sobre você, nos termos do Art. 22 do GDPR e do Art. 20 da LGPD. Porém, se você aceitou os cookies, a Meta pode usar os dados do pixel da Meta para direcionar anúncios, como controladora independente (seção ${n}).`,
+  },
+  'zh-CN': {
+    s2: (n) => `如果您同意使用 Cookie，Meta 像素还会向 Meta 发送有关您访问的信息，以便我们衡量 Facebook 和 Instagram 广告的效果。其工作方式详见第${n}节。`,
+    s2aItem: (n) => ({ strong: '同意（第6(1)(a)条）', body: `用于 Meta 像素（第${n}节）。您通过 Cookie 横幅给予同意，并可随时通过我们 Cookie 政策中的“更改 Cookie 选择”按钮撤回。` }),
+    s3Item: (n) => ({ strong: 'Meta 像素 Cookie', body: `本网站自身域名下的 _fbp；当您通过网址中带有点击标识符 fbclid 的 Facebook 或 Instagram 链接（例如我们的广告）访问时，同一域名下的 _fbc；以及在您的浏览器允许 Facebook Cookie 时 Meta 在 facebook.com 上的 Cookie fr。这些 Cookie 仅在您同意使用 Cookie 后设置，均保留90天（第${n}节）。` }),
+    title: 'Meta 像素（Facebook 和 Instagram 广告）',
+    body1: '如果您同意使用 Cookie，本网站会从 connect.facebook.net 加载 Meta 像素（ID 1492705142722059）。只有 laplandvibes.com 和 app.laplandvibes.com 使用该像素。我们用它衡量我们在 Facebook 和 Instagram 上的广告效果，即广告是否为网站带来了访客，并帮助 Meta 将我们的广告展示给更可能感兴趣的人。像素会向 Meta 发送页面地址和上一个页面的地址（引荐来源）、“页面浏览”事件、您的浏览器和设备信息、IP 地址、时间戳以及 _fbp Cookie 中的标识符；如果您是通过网址中带有点击标识符 fbclid 的 Facebook 或 Instagram 链接（例如我们的广告）访问的，还会发送 _fbc Cookie 中的点击标识符。它不会发送表单内容、您的姓名或电子邮件地址（我们不使用“高级匹配”），并且已关闭对按钮和页面元数据的自动收集。如果您在同一浏览器中登录了 Facebook，Meta 可能会将这些信息与您的账户关联。如果您拒绝 Cookie，则不会加载像素脚本，也不会向 Meta 发送任何内容。',
+    body2: (meta, ads) => <>就收集这些数据并将其传输给 Meta 而言，LaPeso Oy 与 Meta Platforms Ireland Ltd（4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland）为共同数据控制者（GDPR 第26条及 Meta 的“Controller Addendum”）。此后，Meta 作为独立数据控制者，依据其自身的{meta}处理这些数据。Meta 可能将数据传输至美国；Meta Platforms, Inc. 已通过欧盟–美国数据隐私框架认证。法律依据是您的同意（第6(1)(a)条）。您可随时通过我们 Cookie 政策中的“更改 Cookie 选择”按钮撤回同意，该按钮也会删除 _fbp 和 _fbc Cookie。您可以在{ads}中管理您的 Facebook 广告设置。</>,
+    metaPrivacy: '隐私政策',
+    adPrefs: '广告偏好',
+    s6: 'Meta 像素的 Cookie _fbp、_fbc 和 fr 保留90天。Meta 将其收到的数据保存多久，由 Meta 依据其自身的隐私政策决定。',
+    s7Item: (n) => `Meta（Facebook、Instagram）：衡量我们的广告（仅在您同意使用 Cookie 后；共同数据控制者，详见第${n}节）`,
+    s8aItem: { strong: 'Meta', body: '（Meta Platforms Ireland Ltd，爱尔兰，欧盟；Meta Platforms, Inc.，美国）：Meta 可能将数据传输至美国；Meta Platforms, Inc. 已通过欧盟–美国数据隐私框架（DPF）认证。' },
+    s10: (n) => `我们自己不会对任何人进行用户画像，也不会进行 GDPR 第22条所述的、对您产生法律或类似重大影响的自动化决策或其他相关处理。但如果您同意使用 Cookie，Meta 可能会作为独立数据控制者，将 Meta 像素的数据用于广告定向（第${n}节）。`,
+  },
+  ko: {
+    s2: (n) => `쿠키에 동의하시면 당사가 Facebook과 Instagram 광고를 측정할 수 있도록 Meta 픽셀이 방문에 관한 정보를 Meta에도 전송합니다. 작동 방식은 제${n}항에서 설명합니다.`,
+    s2aItem: (n) => ({ strong: '동의(제6조 제1항 (a))', body: `Meta 픽셀(제${n}항). 쿠키 배너를 통해 동의하시며, 쿠키 정책의 "쿠키 선택 변경" 버튼으로 언제든지 철회하실 수 있습니다.` }),
+    s3Item: (n) => ({ strong: 'Meta 픽셀 쿠키', body: `쿠키에 동의하신 후에만 설정됩니다. 이 사이트 자체 도메인의 _fbp, 당사 광고처럼 주소에 클릭 식별자 fbclid가 붙은 Facebook 또는 Instagram 링크로 방문하신 경우 같은 도메인의 _fbc, 브라우저가 Facebook 쿠키를 허용하는 경우 facebook.com의 Meta 쿠키 fr입니다. 모두 90일간 보관됩니다(제${n}항).` }),
+    title: 'Meta 픽셀(Facebook·Instagram 광고)',
+    body1: '쿠키에 동의하시면 이 사이트는 connect.facebook.net에서 Meta 픽셀(ID 1492705142722059)을 불러옵니다. 이 픽셀은 laplandvibes.com과 app.laplandvibes.com에서만 사용됩니다. 당사는 이를 통해 Facebook과 Instagram 광고의 효과, 즉 광고를 통해 사이트를 방문한 사람이 있었는지를 측정하고, 광고에 관심을 가질 가능성이 높은 사람들에게 당사 광고를 보여 줄 수 있도록 Meta를 돕습니다. 픽셀은 페이지 주소와 이전 페이지 주소(리퍼러), "페이지 조회" 이벤트, 브라우저와 기기에 관한 정보, IP 주소, 타임스탬프, _fbp 쿠키의 식별자를 Meta로 전송하며, 당사 광고처럼 주소에 클릭 식별자 fbclid가 붙은 Facebook 또는 Instagram 링크로 방문하신 경우에는 _fbc 쿠키의 클릭 식별자도 전송합니다. 양식에 입력하신 내용, 성명, 이메일 주소는 전송하지 않으며("고급 매칭"을 사용하지 않음), 버튼과 페이지 메타데이터의 자동 수집은 꺼져 있습니다. 같은 브라우저에서 Facebook에 로그인되어 있으면 Meta가 이 정보를 귀하의 계정과 연결할 수 있습니다. 쿠키를 거부하시면 픽셀 스크립트를 불러오지 않으며 Meta로 아무것도 전송하지 않습니다.',
+    body2: (meta, ads) => <>이러한 데이터의 수집과 Meta로의 전송에 대해서는 LaPeso Oy와 Meta Platforms Ireland Ltd(4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland)가 공동 관리자입니다(GDPR 제26조 및 Meta의 "Controller Addendum"). 그 이후에는 Meta가 독립적인 관리자로서 자체 {meta}에 따라 데이터를 처리합니다. Meta는 데이터를 미국으로 이전할 수 있으며, Meta Platforms, Inc.는 EU–미국 데이터 프라이버시 프레임워크 인증을 받았습니다. 법적 근거는 귀하의 동의(제6조 제1항 (a))입니다. 쿠키 정책의 "쿠키 선택 변경" 버튼으로 언제든지 동의를 철회하실 수 있으며, 이때 _fbp 및 _fbc 쿠키도 삭제됩니다. Facebook 광고 설정은 {ads}에서 관리하실 수 있습니다.</>,
+    metaPrivacy: '개인정보처리방침',
+    adPrefs: '광고 기본 설정',
+    s6: 'Meta 픽셀의 쿠키 _fbp, _fbc, fr은 90일간 보관됩니다. Meta가 받은 데이터를 얼마 동안 보관할지는 Meta가 자체 개인정보처리방침에 따라 결정합니다.',
+    s7Item: (n) => `Meta(Facebook, Instagram): 광고 측정(쿠키에 동의하신 후에만, 공동 관리자, 제${n}항 참조)`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, 아일랜드, EU; Meta Platforms, Inc., 미국): Meta는 데이터를 미국으로 이전할 수 있으며, Meta Platforms, Inc.는 EU–미국 데이터 프라이버시 프레임워크(DPF) 인증을 받았습니다.' },
+    s10: (n) => `당사는 직접 프로파일링을 하지 않으며, GDPR 제22조의 의미에서 귀하에게 법적 또는 그에 준하는 중대한 영향을 미치는 자동화된 의사결정이나 기타 처리도 수행하지 않습니다. 다만 쿠키에 동의하신 경우 Meta가 독립적인 관리자로서 Meta 픽셀의 데이터를 광고 타기팅에 사용할 수 있습니다(제${n}항).`,
+  },
+  fr: {
+    s2: (n) => `Si vous acceptez les cookies, le pixel Meta envoie aussi à Meta des informations sur votre visite, afin que nous puissions mesurer nos publicités Facebook et Instagram. La section ${n} en explique le fonctionnement.`,
+    s2aItem: (n) => ({ strong: 'Consentement (Art. 6(1)(a))', body: `pour le pixel Meta (section ${n}). Vous donnez votre consentement en acceptant les cookies dans le bandeau cookies et pouvez le retirer à tout moment avec le bouton « Modifier le choix des cookies » de notre politique de cookies.` }),
+    s3Item: (n) => ({ strong: 'Cookies du pixel Meta', body: `_fbp sur le domaine de ce site, _fbc sur le même domaine si vous arrivez par un lien Facebook ou Instagram dont l'adresse contient l'identifiant de clic fbclid (par exemple depuis notre publicité) et, si votre navigateur accepte les cookies de Facebook, le cookie fr de Meta sur facebook.com. Ils ne sont déposés qu'après que vous avez accepté les cookies et durent chacun 90 jours (section ${n}).` }),
+    title: 'Pixel Meta (publicités Facebook et Instagram)',
+    body1: "Si vous acceptez les cookies, ce site charge le pixel Meta (identifiant 1492705142722059) depuis connect.facebook.net. Seuls laplandvibes.com et app.laplandvibes.com l'utilisent. Il nous sert à mesurer l'efficacité de nos publicités Facebook et Instagram, c'est-à-dire à savoir si une publicité a amené un visiteur sur le site, et à aider Meta à montrer nos publicités aux personnes les plus susceptibles de s'y intéresser. Le pixel envoie à Meta l'adresse de la page et celle de la page précédente (référent), l'événement « page vue », des informations sur votre navigateur et votre appareil, votre adresse IP, un horodatage, l'identifiant du cookie _fbp et, si vous arrivez par un lien Facebook ou Instagram dont l'adresse contient l'identifiant de clic fbclid (par exemple depuis notre publicité), l'identifiant de clic du cookie _fbc. Il n'envoie ni le contenu des formulaires, ni votre nom, ni votre adresse e-mail (nous n'utilisons pas la « correspondance avancée » de Meta), et la collecte automatique des boutons et des métadonnées de la page est désactivée. Si vous avez une session Facebook ouverte dans le même navigateur, Meta peut rattacher ces informations à votre compte. Si vous refusez les cookies, le script du pixel n'est pas chargé et rien n'est envoyé à Meta.",
+    body2: (meta, ads) => <>LaPeso Oy et Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlande) sont responsables conjoints de la collecte de ces données et de leur transmission à Meta (article 26 du RGPD et le « Controller Addendum » de Meta). Ensuite, Meta traite les données en tant que responsable du traitement indépendant, selon sa propre {meta}. Meta peut transférer des données vers les États-Unis ; Meta Platforms, Inc. est certifiée au titre du cadre de protection des données UE–États-Unis. La base juridique est votre consentement (Art. 6(1)(a)). Vous pouvez le retirer à tout moment avec le bouton « Modifier le choix des cookies » de notre politique de cookies, qui supprime aussi les cookies _fbp et _fbc. Vous pouvez gérer vos paramètres publicitaires sur Facebook dans les {ads}.</>,
+    metaPrivacy: 'politique de confidentialité',
+    adPrefs: 'Préférences publicitaires',
+    s6: 'Les cookies _fbp, _fbc et fr du pixel Meta durent 90 jours. La durée pendant laquelle Meta conserve les données reçues est fixée par Meta selon sa propre politique de confidentialité.',
+    s7Item: (n) => `Meta (Facebook, Instagram) : mesure de nos publicités, uniquement après que vous avez accepté les cookies (responsable conjoint, voir la section ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Irlande, UE ; Meta Platforms, Inc., États-Unis) : Meta peut transférer des données vers les États-Unis ; Meta Platforms, Inc. est certifiée au titre du cadre de protection des données UE–États-Unis (DPF).' },
+    s10: (n) => `Nous ne procédons nous-mêmes à aucun profilage, à aucune décision automatisée ni à aucun autre traitement produisant des effets juridiques ou similaires importants à votre égard au sens de l'article 22 du RGPD. Toutefois, si vous avez accepté les cookies, Meta peut utiliser les données du pixel Meta pour cibler des publicités, en tant que responsable du traitement indépendant (section ${n}).`,
+  },
+  it: {
+    s2: (n) => `Se Lei accetta i cookie, il pixel di Meta invia inoltre a Meta informazioni sulla Sua visita, per consentirci di misurare i nostri annunci su Facebook e Instagram. La sezione ${n} ne spiega il funzionamento.`,
+    s2aItem: (n) => ({ strong: 'Consenso (Art. 6(1)(a))', body: `per il pixel di Meta (sezione ${n}). Lei presta il consenso accettando i cookie nel banner dei cookie e può revocarlo in qualsiasi momento con il pulsante «Modifica la scelta sui cookie» della nostra informativa sui cookie.` }),
+    s3Item: (n) => ({ strong: 'Cookie del pixel di Meta', body: `_fbp sul dominio di questo sito, _fbc sullo stesso dominio se Lei arriva da un link di Facebook o Instagram con l'identificativo di clic fbclid nell'indirizzo (ad esempio dal nostro annuncio) e, se il Suo browser accetta i cookie di Facebook, il cookie fr di Meta su facebook.com. Vengono impostati solo dopo che Lei ha accettato i cookie e durano ciascuno 90 giorni (sezione ${n}).` }),
+    title: 'Pixel di Meta (annunci su Facebook e Instagram)',
+    body1: "Se Lei accetta i cookie, questo sito carica il pixel di Meta (ID 1492705142722059) da connect.facebook.net. Lo usano solo laplandvibes.com e app.laplandvibes.com. Lo utilizziamo per misurare il rendimento dei nostri annunci su Facebook e Instagram, cioè se un annuncio ha portato un visitatore sul sito, e per aiutare Meta a mostrare i nostri annunci alle persone che hanno più probabilità di esserne interessate. Il pixel invia a Meta l'indirizzo della pagina e quello della pagina precedente (referrer), l'evento «visualizzazione di pagina», informazioni sul Suo browser e sul Suo dispositivo, il Suo indirizzo IP, una marca temporale, l'identificativo contenuto nel cookie _fbp e, se Lei arriva da un link di Facebook o Instagram con l'identificativo di clic fbclid nell'indirizzo (ad esempio dal nostro annuncio), l'identificativo di clic contenuto nel cookie _fbc. Non invia il contenuto dei moduli, il Suo nome né il Suo indirizzo e-mail (non utilizziamo l'«associazione avanzata» di Meta) e la raccolta automatica dei pulsanti e dei metadati della pagina è disattivata. Se ha effettuato l'accesso a Facebook nello stesso browser, Meta può collegare queste informazioni al Suo account. Se Lei rifiuta i cookie, lo script del pixel non viene caricato e a Meta non viene inviato nulla.",
+    body2: (meta, ads) => <>LaPeso Oy e Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlanda) sono contitolari del trattamento per la raccolta di questi dati e la loro trasmissione a Meta (art. 26 del GDPR e il «Controller Addendum» di Meta). Successivamente Meta tratta i dati come titolare autonomo del trattamento secondo la propria {meta}. Meta può trasferire dati negli Stati Uniti; Meta Platforms, Inc. è certificata nell'ambito dell'EU–US Data Privacy Framework. La base giuridica è il Suo consenso (Art. 6(1)(a)). Può revocarlo in qualsiasi momento con il pulsante «Modifica la scelta sui cookie» della nostra informativa sui cookie, che elimina anche i cookie _fbp e _fbc. Può gestire le Sue impostazioni pubblicitarie su Facebook nelle {ads}.</>,
+    metaPrivacy: 'Informativa sulla privacy',
+    adPrefs: 'Preferenze relative alle inserzioni',
+    s6: 'I cookie _fbp, _fbc e fr del pixel di Meta durano 90 giorni. Per quanto tempo Meta conserva i dati ricevuti lo decide Meta secondo la propria informativa sulla privacy.',
+    s7Item: (n) => `Meta (Facebook, Instagram): misurazione dei nostri annunci, solo dopo che Lei ha accettato i cookie (contitolare del trattamento, si veda la sezione ${n})`,
+    s8aItem: { strong: 'Meta', body: "(Meta Platforms Ireland Ltd, Irlanda, UE; Meta Platforms, Inc., USA): Meta può trasferire dati negli Stati Uniti; Meta Platforms, Inc. è certificata nell'ambito dell'EU–US Data Privacy Framework (DPF)." },
+    s10: (n) => `Noi stessi non effettuiamo profilazione né decisioni automatizzate o altri trattamenti che producano effetti giuridici o similmente significativi nei Suoi confronti, ai sensi dell'art. 22 GDPR. Tuttavia, se Lei ha accettato i cookie, Meta può utilizzare i dati del pixel di Meta per indirizzare gli annunci, come titolare autonomo del trattamento (sezione ${n}).`,
+  },
+  nl: {
+    s2: (n) => `Als u cookies accepteert, stuurt de Meta-pixel ook gegevens over uw bezoek naar Meta, zodat wij onze advertenties op Facebook en Instagram kunnen meten. In paragraaf ${n} leest u hoe dat werkt.`,
+    s2aItem: (n) => ({ strong: 'Toestemming (Art. 6(1)(a))', body: `voor de Meta-pixel (paragraaf ${n}). U geeft toestemming door in de cookiebanner cookies te accepteren en kunt die op elk moment intrekken met de knop "Cookiekeuze wijzigen" in ons cookiebeleid.` }),
+    s3Item: (n) => ({ strong: 'Cookies van de Meta-pixel', body: `_fbp op het eigen domein van deze site, _fbc op hetzelfde domein als u via een link van Facebook of Instagram met de klik-ID fbclid in het adres komt (bijvoorbeeld via onze advertentie) en, als uw browser cookies van Facebook toestaat, de cookie fr van Meta op facebook.com. Ze worden pas geplaatst nadat u cookies heeft geaccepteerd en blijven elk 90 dagen bewaard (paragraaf ${n}).` }),
+    title: 'Meta-pixel (advertenties op Facebook en Instagram)',
+    body1: 'Als u cookies accepteert, laadt deze site de Meta-pixel (ID 1492705142722059) vanaf connect.facebook.net. Alleen laplandvibes.com en app.laplandvibes.com gebruiken hem. Daarmee meten wij hoe goed onze advertenties op Facebook en Instagram werken, dus of een advertentie een bezoeker naar de site heeft gebracht, en helpen wij Meta onze advertenties te tonen aan mensen die er waarschijnlijk meer in geïnteresseerd zijn. De pixel stuurt Meta het adres van de pagina en dat van de vorige pagina (referrer), de gebeurtenis "paginaweergave", gegevens over uw browser en apparaat, uw IP-adres, een tijdstempel, de code uit de cookie _fbp en, als u via een link van Facebook of Instagram met de klik-ID fbclid in het adres komt (bijvoorbeeld via onze advertentie), de klik-ID uit de cookie _fbc. Formulierinhoud, uw naam en uw e-mailadres stuurt hij niet door (wij gebruiken de functie "Geavanceerd overeenkomsten zoeken" van Meta niet), en het automatisch verzamelen van knoppen en metagegevens van de pagina staat uit. Bent u in dezelfde browser bij Facebook ingelogd, dan kan Meta deze gegevens aan uw account koppelen. Als u cookies weigert, wordt het pixelscript niet geladen en wordt er niets naar Meta verzonden.',
+    body2: (meta, ads) => <>LaPeso Oy en Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ierland) zijn gezamenlijk verwerkingsverantwoordelijk voor het verzamelen van deze gegevens en het doorgeven ervan aan Meta (artikel 26 AVG en het "Controller Addendum" van Meta). Daarna verwerkt Meta de gegevens als zelfstandig verwerkingsverantwoordelijke volgens zijn eigen {meta}. Meta kan gegevens doorgeven aan de Verenigde Staten; Meta Platforms, Inc. is gecertificeerd onder het EU–US Data Privacy Framework. De rechtsgrond is uw toestemming (Art. 6(1)(a)). U kunt die op elk moment intrekken met de knop "Cookiekeuze wijzigen" in ons cookiebeleid; daarmee worden ook de cookies _fbp en _fbc verwijderd. Uw advertentie-instellingen bij Facebook beheert u via {ads}.</>,
+    metaPrivacy: 'privacybeleid',
+    adPrefs: 'Advertentievoorkeuren',
+    s6: 'De cookies _fbp, _fbc en fr van de Meta-pixel blijven 90 dagen bewaard. Hoe lang Meta de ontvangen gegevens bewaart, bepaalt Meta volgens zijn eigen privacybeleid.',
+    s7Item: (n) => `Meta (Facebook, Instagram): meten van onze advertenties, pas nadat u cookies heeft geaccepteerd (gezamenlijk verwerkingsverantwoordelijke, zie paragraaf ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Ierland, EU; Meta Platforms, Inc., VS): Meta kan gegevens doorgeven aan de Verenigde Staten; Meta Platforms, Inc. is gecertificeerd onder het EU–US Data Privacy Framework (DPF).' },
+    s10: (n) => `Wij doen zelf niet aan profilering en verrichten geen geautomatiseerde besluitvorming of enige andere verwerking die rechtsgevolgen of soortgelijk significante gevolgen voor u heeft in de zin van artikel 22 AVG. Als u cookies heeft geaccepteerd, kan Meta de gegevens van de Meta-pixel echter als zelfstandig verwerkingsverantwoordelijke gebruiken voor gerichte advertenties (paragraaf ${n}).`,
+  },
+  sv: {
+    s2: (n) => `Om du godkänner cookies skickar Meta-pixeln också uppgifter om ditt besök till Meta, så att vi kan mäta våra annonser på Facebook och Instagram. I avsnitt ${n} förklarar vi hur det fungerar.`,
+    s2aItem: (n) => ({ strong: 'Samtycke (artikel 6.1 a)', body: `för Meta-pixeln (avsnitt ${n}). Du lämnar samtycke genom att godkänna cookies i cookiebannern och kan när som helst återkalla det med knappen ”Ändra cookieval” i vår cookiepolicy.` }),
+    s3Item: (n) => ({ strong: 'Meta-pixelns cookies', body: `_fbp på webbplatsens egen domän, _fbc på samma domän om du kommer via en länk från Facebook eller Instagram med klick-id:t fbclid i adressen (till exempel från vår annons) och, om din webbläsare tillåter cookies från Facebook, Metas cookie fr på facebook.com. De placeras först när du godkänner cookies, och var och en finns kvar i 90 dagar (avsnitt ${n}).` }),
+    title: 'Meta-pixeln (annonser på Facebook och Instagram)',
+    body1: 'Om du godkänner cookies laddar webbplatsen Meta-pixeln (id 1492705142722059) från connect.facebook.net. Den används bara på laplandvibes.com och app.laplandvibes.com. Med den mäter vi hur väl våra annonser på Facebook och Instagram fungerar, alltså om en annons ledde en besökare till webbplatsen, och hjälper Meta att visa våra annonser för personer som sannolikt är mer intresserade av dem. Pixeln skickar till Meta sidans adress och adressen till föregående sida (referrer), händelsen sidvisning, uppgifter om din webbläsare och enhet, din IP-adress, en tidsstämpel, identifieraren i cookien _fbp och, om du kommer via en länk från Facebook eller Instagram med klick-id:t fbclid i adressen (till exempel från vår annons), klick-id:t i cookien _fbc. Den skickar inte formulärinnehåll, ditt namn eller din e-postadress (vi använder inte Metas ”avancerad matchning”), och den automatiska insamlingen av knappar och sidans metadata är avstängd. Om du är inloggad på Facebook i samma webbläsare kan Meta koppla uppgifterna till ditt konto. Om du avböjer cookies laddas pixelns skript inte och ingenting skickas till Meta.',
+    body2: (meta, ads) => <>LaPeso Oy och Meta Platforms Ireland Ltd (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland) är gemensamt personuppgiftsansvariga för insamlingen av uppgifterna och överföringen av dem till Meta (artikel 26 i GDPR och Metas ”Controller Addendum”). Därefter behandlar Meta uppgifterna som självständigt personuppgiftsansvarig enligt sin egen {meta}. Meta kan föra över uppgifter till USA; Meta Platforms, Inc. är certifierat enligt EU–US Data Privacy Framework. Den rättsliga grunden är ditt samtycke (artikel 6.1 a). Du kan när som helst återkalla det med knappen ”Ändra cookieval” i vår cookiepolicy, som också raderar _fbp och _fbc. Dina annonsinställningar på Facebook hanterar du under {ads}.</>,
+    metaPrivacy: 'integritetspolicy',
+    adPrefs: 'Annonsinställningar',
+    s6: 'Meta-pixelns cookies _fbp, _fbc och fr finns kvar i 90 dagar. Hur länge Meta sparar de uppgifter företaget har fått bestämmer Meta enligt sin egen integritetspolicy.',
+    s7Item: (n) => `Meta (Facebook, Instagram): mätning av våra annonser, först när du godkänner cookies (gemensamt personuppgiftsansvarig, se avsnitt ${n})`,
+    s8aItem: { strong: 'Meta', body: '(Meta Platforms Ireland Ltd, Irland, EU; Meta Platforms, Inc., USA): Meta kan föra över uppgifter till USA; Meta Platforms, Inc. är certifierat enligt EU–US Data Privacy Framework (DPF).' },
+    s10: (n) => `Vi gör själva ingen profilering och utför inte automatiserat beslutsfattande eller någon annan behandling som ger rättsliga eller liknande betydande effekter för dig i den mening som avses i artikel 22 i GDPR. Om du har godkänt cookies kan Meta dock använda uppgifterna från Meta-pixeln för att rikta annonser, som självständigt personuppgiftsansvarig (avsnitt ${n}).`,
   },
 };
