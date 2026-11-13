@@ -19,6 +19,7 @@ import { photoSrcSet } from '../data/images';
 import PhotoCredit from '../components/PhotoCredit';
 import CityFeaturedSlot from '../components/CityFeaturedSlot';
 import { PARTNERS } from '../data/partners';
+import JsonLd from '../components/JsonLd';
 
 const ORIGIN = 'https://laplanddining.com';
 
@@ -128,8 +129,7 @@ export default function CityPage() {
       <meta property="og:title" content={tx(`${cityKey}.title`, `Restaurants in ${name}`)} />
       <meta property="og:url" content={`${ORIGIN}${prefix}${path}/`} />
 
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
@@ -137,10 +137,8 @@ export default function CityPage() {
             { '@type': 'ListItem', position: 2, name: 'Restaurants', item: `${ORIGIN}/restaurants` },
             { '@type': 'ListItem', position: 3, name: city.name, item: `${ORIGIN}${path}` },
           ],
-        })}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify({
+        }} />
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: `Restaurants in ${city.name}`,
@@ -178,8 +176,7 @@ export default function CityPage() {
               ...(r.googleMapsUrl ? { hasMap: r.googleMapsUrl } : {}),
             },
           })),
-        })}
-      </script>
+        }} />
 
       {/* Hero — sama svh-mitta ja md+-pakoluukku kuin muilla sivuilla, jotta
           otsikko ei jää kiinteän navin alle matalilla ruuduilla. */}

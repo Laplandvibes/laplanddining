@@ -13,6 +13,7 @@ import { restaurants, PHOTO_BY } from '../data/restaurants';
 import { ownPhotoCredit } from '../data/photoCredit';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
+import JsonLd from '../components/JsonLd';
 
 interface SectionI18n { title: string; paragraphs: string[]; quote?: string }
 
@@ -82,8 +83,7 @@ export default function LocalFood() {
       <title>{t('localFood.title')}</title>
       <meta name="description" content={t('localFood.description')} />
       <Hreflang path="/local-food" />
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'Article',
           mainEntityOfPage: 'https://laplanddining.com/local-food',
@@ -101,8 +101,7 @@ export default function LocalFood() {
           author: { "@type": "Organization", name: "LaplandDining", url: "https://laplanddining.com" },
           dateModified: "2026-05-16T00:00:00+02:00",
           image: "https://laplanddining.com/og/local-food-1200x630.jpg",
-        })}
-      </script>
+        }} />
 
       {/* Hero */}
       <section className="relative min-h-[52svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">

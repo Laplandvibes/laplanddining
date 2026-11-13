@@ -8,6 +8,7 @@ import PageBreadcrumb from '../components/PageBreadcrumb';
 import { DINING, PHOTO, photoSrcSet, seasonal, isSummerSeason } from '../data/images';
 import PhotoCredit, { CreditRow } from '../components/PhotoCredit';
 import { DINING_CITIES, restaurantsForCity } from '../data/diningCities';
+import JsonLd from '../components/JsonLd';
 
 const ORIGIN = 'https://laplanddining.com';
 
@@ -45,18 +46,15 @@ export default function Cities() {
       <Hreflang path="/cities" />
       <meta name="robots" content="index, follow, max-image-preview:large" />
 
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
             { '@type': 'ListItem', position: 2, name: 'Cities', item: `${ORIGIN}/cities` },
           ],
-        })}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify({
+        }} />
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: 'Lapland dining destinations',
@@ -67,8 +65,7 @@ export default function Cities() {
             name: c.name,
             url: `${ORIGIN}/city/${c.slug}`,
           })),
-        })}
-      </script>
+        }} />
 
       <section className="relative min-h-[46svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img

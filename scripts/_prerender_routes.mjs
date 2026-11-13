@@ -1457,6 +1457,37 @@ function clampDescription(d, max = 160) {
   const cut = head.lastIndexOf(' ');
   return (cut > 60 ? head.slice(0, cut) : head).replace(/[\s,;:–—\-(]+$/u, '').trim();
 }
+// [LV-BC-VALITASO 2026-10-20] A breadcrumb's intermediate step is a real page of this site in the
+// same locale, named by that page's own title. It used to be the URL segment capitalised ("Route",
+// "City", "Destination") pointing at a path that is not a page: measured live 2026-10-20,
+// /fi/route/, /fi/city/, /fi/destination/ and /fi/destinations/ all answered 404, and Google showed
+// a Finnish searcher "laplandtransport.com › LaplandTransport › City" above a Finnish result.
+// The step is left out when routes.json has no such page for this locale, when the page
+// canonicalises to another locale (canonicalLocale / nativeLocales), or when this locale only has
+// the English fallback title. Built once, on the first breadcrumb, from the same meta cascade the
+// pages themselves use (resolveLocaleMeta is safe to call twice).
+let CRUMB_PAGES = null;
+function crumbPageName(lang, logicalPath) {
+  if (!CRUMB_PAGES) {
+    CRUMB_PAGES = new Map();
+    const enLoc = LOCALE_LIST.find((l) => l.lang === 'en') || LOCALE_LIST[0];
+    for (const r of routes) {
+      if (!r.path || r.path === '/') continue;
+      const enMeta = resolveRouteMeta(enLoc, r) || fallbackMeta(r.path, r);
+      const locs = Array.isArray(r.locales) ? LOCALE_LIST.filter((l) => r.locales.includes(l.lang)) : LOCALE_LIST;
+      for (const loc of locs) {
+        if (r.canonicalLocale && r.canonicalLocale !== loc.lang) continue;
+        if (Array.isArray(r.nativeLocales) && !r.nativeLocales.includes(loc.lang)) continue;
+        const { meta, localizedTitle } = resolveLocaleMeta(r, loc, enMeta);
+        if (loc.lang !== 'en' && !localizedTitle) continue;
+        const name = String(meta.title || '').replace(/\s*[|—–]\s.*$/, '').trim();
+        if (name) CRUMB_PAGES.set(`${loc.lang} ${r.path.replace(/\/+$/, '')}`, name);
+      }
+    }
+  }
+  return CRUMB_PAGES.get(`${lang} ${logicalPath}`) || null;
+}
+
 function injectShell({ shell, bcp47, og, canonical, title, description, hreflangs, ogImage, faq, lang, internalLinks, paragraphs }) {
   description = clampDescription(description);
   let html = shell;
@@ -1518,15 +1549,18 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
     const localeRoot = hasLoc ? `${SITE}/${segs[0]}` : SITE;
     const pathSegs = hasLoc ? segs.slice(1) : segs;
     if (pathSegs.length > 0) {
+      const crumbLang = (LOCALE_LIST.find((l) => l.prefix === (hasLoc ? `/${segs[0]}` : '')) || {}).lang || 'en';
       const items = [{ name: SITE_NAME, url: `${localeRoot}/` }];
       let acc = localeRoot;
       pathSegs.forEach((seg, i) => {
         acc += `/${seg}`;
-        const last = i === pathSegs.length - 1;
-        const name = last
-          ? title.replace(/\s*[|—–]\s.*$/, '').trim()
-          : seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-        items.push({ name, url: `${acc}/` });
+        if (i === pathSegs.length - 1) {
+          items.push({ name: title.replace(/\s*[|—–]\s.*$/, '').trim(), url: `${acc}/` });
+          return;
+        }
+        // [LV-BC-VALITASO] Intermediate crumb only for a real page in this locale, see crumbPageName.
+        const name = crumbPageName(crumbLang, `/${pathSegs.slice(0, i + 1).join('/')}`);
+        if (name) items.push({ name, url: `${acc}/` });
       });
       const breadcrumb = {
         '@context': 'https://schema.org',

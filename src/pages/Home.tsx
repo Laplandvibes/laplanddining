@@ -22,6 +22,7 @@ import GygPicks from '../components/GygPicks';
 import { AppPromoHero } from '../components/AppPromo';
 import { lazy, Suspense } from 'react';
 import { midsummerStay } from '../lib/midnightSun';
+import JsonLd from '../components/JsonLd';
 
 /**
  * Uutisnosto (src/news/): laiskasti ladattuna, jotta etusivun nippu ei kanna
@@ -63,8 +64,7 @@ export default function Home() {
       <meta name="description" content={t('home.description')} />
       <Hreflang path="/" />
       {faqItems.length > 0 && (
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <JsonLd data={{
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: faqItems.map((f) => ({
@@ -72,8 +72,7 @@ export default function Home() {
               name: f.question,
               acceptedAnswer: { '@type': 'Answer', text: f.answer },
             })),
-          })}
-        </script>
+          }} />
       )}
 
       {/* ── Hero ─────────────────────────────────────────────────── */}

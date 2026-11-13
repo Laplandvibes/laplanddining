@@ -10,6 +10,7 @@ import PhotoCredit from '../components/PhotoCredit';
 import { imageAlt } from '../data/imageAlts';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
+import JsonLd from '../components/JsonLd';
 
 interface SectionFigure { value: string; label: string }
 interface SectionI18n {
@@ -116,8 +117,7 @@ export default function FoodHistory() {
       <title>{t('foodHistory.title')}</title>
       <meta name="description" content={t('foodHistory.description')} />
       <Hreflang path="/food-history" />
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'Article',
           mainEntityOfPage: 'https://laplanddining.com/food-history',
@@ -135,8 +135,7 @@ export default function FoodHistory() {
 
           author: { "@type": "Organization", name: "LaplandDining", url: "https://laplanddining.com" },
           dateModified: "2026-05-16T00:00:00+02:00",
-        })}
-      </script>
+        }} />
 
       {/* Hero */}
       <section className="relative min-h-[60svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">

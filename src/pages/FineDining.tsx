@@ -15,6 +15,7 @@ import { withReferral } from '../lib/outbound';
 import { reviewsAria } from '../lib/a11yNimet';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
+import JsonLd from '../components/JsonLd';
 
 /**
  * Fine Dining = the top-pick restaurant for each city, sorted by Google rating.
@@ -42,8 +43,7 @@ export default function FineDining() {
           selain näyttävät saman kuvauksen. Lukumäärää ei upoteta: esirenderöity HTML ei tunne sitä. */}
       <meta name="description" content={t('fineDining.description')} />
       <Hreflang path="/fine-dining" />
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'Article',
           mainEntityOfPage: 'https://laplanddining.com/fine-dining',
@@ -61,8 +61,7 @@ export default function FineDining() {
           author: { "@type": "Organization", name: "LaplandDining", url: "https://laplanddining.com" },
           dateModified: "2026-05-16T00:00:00+02:00",
           image: "https://laplanddining.com/og/fine-dining-1200x630.jpg",
-        })}
-      </script>
+        }} />
 
       {/* Hero */}
       <section className="relative min-h-[52svh] flex items-center justify-center px-4 sm:px-6 pb-20 md:pb-24 [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">

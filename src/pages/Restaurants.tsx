@@ -21,6 +21,7 @@ import PhotoCredit from '../components/PhotoCredit';
 import { imageAlt } from '../data/imageAlts';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
+import JsonLd from '../components/JsonLd';
 
 /**
  * Kaupunkikaistan kuva. 4.10.2026: kaupungit, joilla on oma kaupunkisivu, käyttävät
@@ -131,18 +132,15 @@ export default function Restaurants() {
       <title>{t('restaurants.title')}</title>
       <meta name="description" content={t('restaurants.description')} />
       <Hreflang path="/restaurants" />
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://laplanddining.com/' },
             { '@type': 'ListItem', position: 2, name: 'Restaurants', item: 'https://laplanddining.com/restaurants' },
           ],
-        })}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify({
+        }} />
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: 'Hand-picked restaurants in and around Finnish Lapland',
@@ -178,8 +176,7 @@ export default function Restaurants() {
               ...(r.googleMapsUrl ? { hasMap: r.googleMapsUrl } : {}),
             },
           })),
-        })}
-      </script>
+        }} />
 
       <section className="relative min-h-[56svh] flex items-center justify-center overflow-hidden [@media(max-height:900px)_and_(min-width:768px)]:!items-start [@media(max-height:900px)_and_(min-width:768px)]:pt-24">
         <img

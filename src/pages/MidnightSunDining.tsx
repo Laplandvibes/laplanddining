@@ -12,6 +12,7 @@ import { imageAlt } from '../data/imageAlts';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import WhereToNext from '../components/WhereToNext';
 import { midsummerStay } from '../lib/midnightSun';
+import JsonLd from '../components/JsonLd';
 
 /**
  * Midnight Sun Dining — the 32-day window June 6 → July 7 when the sun
@@ -45,8 +46,7 @@ export default function MidnightSunDining() {
       <title>{t('midnightSunDining.title')}</title>
       <meta name="description" content={t('midnightSunDining.description')} />
       <Hreflang path="/midnight-sun-dining" />
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <JsonLd data={{
           '@context': 'https://schema.org',
           '@type': 'Article',
           mainEntityOfPage: 'https://laplanddining.com/midnight-sun-dining',
@@ -64,8 +64,7 @@ export default function MidnightSunDining() {
           author: { "@type": "Organization", name: "LaplandDining", url: "https://laplanddining.com" },
           dateModified: "2026-05-16T00:00:00+02:00",
           image: "https://laplanddining.com/og/midnight-sun-dining-1200x630.jpg",
-        })}
-      </script>
+        }} />
 
       {/* Vesa 18.10.2026: *"toteutus tällä sivulla on todella poor. kuvatkaan ei näy juuri ollenkaan
           tietokoneella. sivun järjestys ja alku on aivan kamala. yhtäkkiä alhaalla sivua on kuin toinen

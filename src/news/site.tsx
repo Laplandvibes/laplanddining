@@ -30,6 +30,7 @@ import { useLocalePath } from '../i18n/useLang'
 import type { NewsBlock, NewsMeta } from './types'
 import { renderFactsEmbed } from './factsEmbeds'
 import './news.css'
+import JsonLd from '../components/JsonLd'
 
 export const SITE = {
   name: 'LaplandDining',
@@ -93,7 +94,7 @@ export function useNewsHead(m: {
       <meta name="description" content={m.description} />
       <Hreflang path={m.path} />
       {(m.jsonLd ?? []).map((j, i) => (
-        <script key={i} type="application/ld+json">{JSON.stringify(j)}</script>
+        <JsonLd key={i} data={j} />
       ))}
     </>
   )
