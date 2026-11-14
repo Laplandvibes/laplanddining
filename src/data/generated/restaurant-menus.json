@@ -44,21 +44,28 @@
     "checkedAt": "2026-08-10"
   },
   "inari-arctic-river-resort": {
-    "url": "https://www.arcticriverresort.fi/wp-content/uploads/2026/05/Menu-FI.pdf",
+    "url": "https://www.arcticriverresort.fi/wp-content/uploads/2026/11/A-la-carte-ruokalista-FI.pdf",
     "kind": "pdf",
     "title": "Arctic River Resort (PDF)",
     "evidence": 0,
-    "checkedAt": "2026-08-10",
-    "note": "paivatty PDF-polku, vaihtuu kaudessa, kuukausivahti seuraa"
+    "checkedAt": "2026-11-14",
+    "urlEn": "https://www.arcticriverresort.fi/wp-content/uploads/2026/11/A-la-Carte-Menu-ENG.pdf",
+    "kindEn": "pdf",
+    "titleEn": "Arctic River Resort menu (PDF)",
+    "evidenceEn": 0,
+    "note": "paivatty PDF-polku, vaihtuu kaudessa, kuukausivahti seuraa. 14.11.2026: 2026/05/Menu-FI.pdf oli 404; uudet osoitteet ravintolasivun linkeista Ruokalista (/ivalo-ravintola/) ja Menu (/en/restaurant-ivalo/)."
   },
   "inari-gastropub-giitu": {
     "url": "https://gastropubgiitu.fi/lokakuu",
     "kind": "page",
     "title": "Ruokalista",
     "evidence": 30,
-    "checkedAt": "2026-10-20",
-    "validUntil": "2026-10-31",
-    "note": "Navin Ruokalista-linkki vie kuukauden mukaan nimetylle sivulle (/lokakuu); /ruokalista, /syyskuu ja /elokuu ovat 404. Linkki piiloutuu 1.11. ja vahti pyytaa uuden osoitteen."
+    "checkedAt": "2026-11-14",
+    "urlEn": "https://gastropubgiitu.fi/en/menu1",
+    "kindEn": "page",
+    "titleEn": "Menu",
+    "evidenceEn": 30,
+    "note": "14.11.2026: ravintolan oma valikko vie yha tahan osoitteeseen (fi Ruokalista -> /lokakuu, en Menu -> /en/menu1); /marraskuu ja /ruokalista ovat 404. Sivu on pysyva lista ilman paivamaaria (kuukauden burgeri: lisatietoa ravintolasta), joten validUntil poistettu: 31.10. asetettu paiva piilotti toimivan linkin 1.-14.11. Jos osoite nimetaan uudelleen, kuukausivahti nayttaa 404:n."
   },
   "inari-muotkan-ruoktu-tunturikyla": {
     "status": "none",
@@ -403,17 +410,16 @@
     "checkedAt": "2026-08-10"
   },
   "rovaniemi-nili-restaurant": {
-    "url": "https://nili.fi/synttarimenu-11-9-31-10/",
+    "url": "https://nili.fi/menu/",
     "kind": "page",
-    "title": "Synttärimenu 11.9.-31.10. - Ravintola Nili",
-    "evidence": 3,
-    "checkedAt": "2026-10-20",
-    "urlEn": "https://nili.fi/en/anniversary-menu-11-9-31-10/",
+    "title": "Menu - Ravintola Nili",
+    "evidence": 0,
+    "checkedAt": "2026-11-14",
+    "urlEn": "https://nili.fi/en/menu-english/",
     "kindEn": "page",
-    "titleEn": "Anniversary menu 11.9.-31.10. - Restaurant Nili",
-    "evidenceEn": 3,
-    "validUntil": "2026-10-31",
-    "note": "Nilin 20-vuotismenu on sivun mukaan ainoa lista 11.9.-31.10.2026 (ei a la cartea). /menu/ ohjautuu etusivulle ja etusivun \"Katso menu\" (-1-11) myos. Linkki piiloutuu 1.11."
+    "titleEn": "Menu English - Restaurant Nili",
+    "evidenceEn": 0,
+    "note": "14.11.2026: a la carte on palannut valikkoon (fi Menu -> /menu/, en Menu English -> /en/menu-english/), hinnat sivulla ilman euromerkkia (hintalaskuri 0, otsikko kelpaa). Rinnalla joulumenu 4.11.-25.12.2026 omalla sivullaan (/joulumenu-4-11-25-12-2/). Synttarimenun aikana 11.9.-31.10. /menu/ ohjautui etusivulle: jos niin kay uudelleen, vahti nayttaa sen."
   },
   "rovaniemi-restaurant-roka-street-bistro": {
     "url": "https://ravintolaroka.fi/menu/",

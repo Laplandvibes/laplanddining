@@ -59,11 +59,15 @@ type MenuFields = {
  * on olemassa ja se lapaisi todisteportin. MenuLink valitsee sen kaikille
  * muille kuin suomenkielisille kavijoille.
  *
- * `validUntil` piilottaa linkin seuraavasta päivästä alkaen. Osa ravintoloista
- * julkaisee listan kuukauden tai kampanjan mukaan nimetyllä sivulla (Giitu
- * /lokakuu, Nilin synttärimenu 11.9.–31.10.), ja vanha sivu poistetaan kun uusi
- * tulee. Ilman päivää nappi veisi virhesivulle siihen asti, että kuukausivahti
- * huomaa sen. Tarkistus tehdään selaimessa, koska kortit renderöidään siellä.
+ * `validUntil` piilottaa linkin seuraavasta päivästä alkaen. Se on tarkoitettu
+ * listalle, jonka päättymispäivän ravintola on itse julkaissut (Nilin
+ * synttärimenu 11.9.–31.10.2026): vanha sivu poistetaan kun kampanja loppuu, ja
+ * ilman päivää nappi veisi virhesivulle siihen asti, että kuukausivahti huomaa
+ * sen. Tarkistus tehdään selaimessa, koska kortit renderöidään siellä.
+ *
+ * Älä aseta päivää arvaamalla osoitteen nimestä. Giitun /lokakuu sai
+ * päivän 31.10.2026, mutta sivu on ravintolan pysyvä lista ja sen oma valikko
+ * linkitti siihen yhä 14.11.: toimiva linkki oli piilossa kaksi viikkoa.
  */
 function menuFor(slug: string): MenuFields {
   const m = menuRegistry[slug];
