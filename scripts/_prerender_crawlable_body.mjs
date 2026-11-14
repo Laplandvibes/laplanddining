@@ -244,6 +244,81 @@ export function readFooterNetwork(cwd) {
 }
 
 /**
+ * <h1> ilman brändihäntää. Erillinen ja vietynä, jotta portti
+ * (lapland.blogin scripts/assert-h1-crawlable.mjs, joka tuo tämän funktion)
+ * ja lv-opsin testi (scripts/prerender_h1_brandihanta.test.mjs, portti
+ * prerender-h1) mittaavat täsmälleen samaa sääntöä kuin
+ * rakentaja — kopioitu sääntö ajautuisi erilleen ensimmäisellä korjauksella.
+ *
+ * 🔴🔴 Mitattu 13.9.2026 livenä: ryömittävän lohkon <h1> oli KOKO title-tagi
+ * brändihäntineen — laplandvibes.com/fi/destination/kokkola näytti
+ * `<h1>Kokkola: matkaopas | LaplandVibes</h1>`. Googlen oma ohje
+ * otsikkolinkeistä (developers.google.com/search/docs/appearance/title-link)
+ * listaa <h1>:n yhdeksi niistä lähteistä, joista se muodostaa hakutuloksen
+ * otsikkorivin, joten brändin toistaminen siinä on hukkaan heitetty paikka —
+ * ja sama brändi on jo <title>-tagissa ja sivuston sanamerkissä.
+ *
+ * Sama tiedosto osasi tämän jo: sisäisten linkkien ankkuriteksti riisutaan
+ * (_prerender_routes.mjs "the brand repeated 20× in one list is noise").
+ * H1 vain jäi tekemättä.
+ *
+ * 🔴 Yleinen `split(/\s[|—]\s/)` katkaisisi otsikot joissa ajatusviiva on
+ * keskellä ("Aja Lappiin itäreittiä: Helsinki — Saariselkä"), ja niitä on
+ * verkostossa. Siksi katsotaan vain VIIMEISEN erottimen jälkeinen pala.
+ */
+export function stripBrandTail(title, siteName) {
+  const brandTail = String(siteName || '').trim();
+  const h1Text = String(title || '');
+  if (!brandTail) return h1Text;
+
+  // Otetaan VIIMEISEN erottimen jälkeinen pala ja pudotetaan se vain jos se
+  // ON sivuston nimi. Näin lähtee sekä " | LaplandVibes" että
+  // " · Lapland.blog", mutta otsikon keskellä oleva ajatusviiva säilyy:
+  // "Helsinki — Saariselkä" -hännän pala on "Saariselkä", joka ei ole brändi.
+  //
+  // 🔴🔴 Erotinlistasta puuttui keskipiste `·` (U+00B7) JA vertailu oli
+  // merkkijonovertailu sellaisenaan — molemmat mitattu lapland.blogissa
+  // 16.9.2026: 331/433 rakennetun sivun H1 oli yhä koko title
+  // ("Kohteet · Lapland.blog"), koska (1) `·` ei ollut erotin ja
+  // (2) "lapland.blog" ei ala merkkijonolla "laplandblog", jonka
+  // --siteName=LaplandBlog antaa. Vain toisen korjaaminen ei olisi muuttanut
+  // yhtään sivua: sivusto jäi ulos verkoston 13.9. korjauksesta kahdesta
+  // syystä yhtä aikaa.
+  const m = /^([\s\S]*?)\s*[|\u00B7\u2022\u2013\u2014]\s*([^|\u00B7\u2022\u2013\u2014]+)$/.exec(h1Text);
+  if (!m || !m[1].trim()) return h1Text;
+
+  // Vertailu normalisoidusta muodosta: pisteet, risuaita ja välit pois
+  // molemmilta puolilta. Näin "Lapland.blog" = "LaplandBlog" ja verkoston
+  // sanamerkki "#LaplandTours" = --siteName "LaplandTours" (mitattu
+  // laplandtours.online 13.9.: "Privacy Policy | #LaplandTours" jäi
+  // leikkaamatta ilman risuaidan poistoa).
+  const norm = (s) => String(s).toLowerCase().replace(/[#.\u00A0\s]+/g, '');
+  const brand = norm(brandTail);
+  const tail = norm(m[2]);
+  if (!brand || !tail.startsWith(brand)) return h1Text;
+
+  // 🔴 Pelkkä `startsWith` söisi sisältöä: lapland.blogin cn/ja/kr-otsikoissa
+  // häntä on "Lapland.blog 入门" / "Lapland.blogの最初の一歩" /
+  // "Lapland.blog 첫걸음" — brändi JA sisältösana. Siksi brändin jälkeen saa
+  // jäädä vain tyhjä tai yleinen brändisana/TLD; muuten häntä on sisältöä ja
+  // se jää. Näin " | LaplandVibes Blog" lähtee yhä (85 blogisivua mitattu
+  // 13.9.), mutta kolmen kielen "ensiaskeleet"-häntä säilyy niin kuin se
+  // säilyy englannissa: "Start Here · Your First Steps on Lapland.blog" ei
+  // ala brändillä eikä ole koskaan leikkautunut.
+  //
+  // 🔴 `media` on listassa mitatusta syystä (14.11.2026, kun sääntö tuotiin
+  // lapland.blogin kopiosta kanoniseen): hubin /fi/media/thanks/ on
+  // "Maksu vastaanotettu | LaplandVibes Media", ja vanha `startsWith` riisui
+  // sen. Ilman tätä sanaa häntä olisi palannut sille sivulle. Vertailu
+  // 28 sivuston 13 820 valmiista sivusta: se oli ainoa ero. Uusi
+  // alabrändi otsikon hännässä ("| LaplandVibes Shop") ⇒ lisää sana tähän JA
+  // testiin; tuntematon jatke jää tarkoituksella H1:een, koska väärin leikattu
+  // sisältösana on pahempi kuin kerran toistuva brändi.
+  const rest = tail.slice(brand.length);
+  return rest === '' || /^(blog|media|com|fi|online|net|org)$/.test(rest) ? m[1].trim() : h1Text;
+}
+
+/**
  * Build the injectable block, or null if `network` is falsy.
  * `siteOrigin` is compared EXACTLY — a startsWith test would wrongly drop a
  * domain that happens to be a prefix of this site's own.
@@ -294,39 +369,8 @@ export function buildCrawlableBody(
     ? paragraphs.filter((t) => typeof t === 'string' && t.trim())
     : [];
 
-  // ── H1 ilman brändihäntää ────────────────────────────────────────────────
-  // 🔴🔴 Mitattu 13.9.2026 livenä: ryömittävän lohkon <h1> oli KOKO title-tagi
-  // brändihäntineen — laplandvibes.com/fi/destination/kokkola näytti
-  // `<h1>Kokkola: matkaopas | LaplandVibes</h1>`. Googlen oma ohje
-  // otsikkolinkeistä (developers.google.com/search/docs/appearance/title-link)
-  // listaa <h1>:n yhdeksi niistä lähteistä, joista se muodostaa hakutuloksen
-  // otsikkorivin, joten brändin toistaminen siinä on hukkaan heitetty paikka —
-  // ja sama brändi on jo <title>-tagissa ja sivuston sanamerkissä.
-  //
-  // Sama tiedosto osasi tämän jo: sisäisten linkkien ankkuriteksti riisutaan
-  // (_prerender_routes.mjs "the brand repeated 20× in one list is noise").
-  // H1 vain jäi tekemättä.
-  //
-  // 🔴 Yleinen `split(/\s[|—]\s/)` katkaisisi otsikot joissa ajatusviiva on
-  // keskellä ("Aja Lappiin itäreittiä: Helsinki — Saariselkä"), ja niitä on
-  // verkostossa. Siksi katsotaan vain VIIMEISEN erottimen jälkeinen pala.
-  const brandTail = String(siteName || '').trim();
-  let h1Text = String(title || '');
-  if (brandTail) {
-    // Otetaan VIIMEISEN erottimen jalkeinen pala ja pudotetaan se vain jos se
-    // ALKAA sivuston nimella. Nain lahtee seka " | LaplandVibes" etta
-    // " | LaplandVibes Blog" (85 blogisivua mitattu 13.9.), mutta otsikon
-    // keskella oleva ajatusviiva sailyy: "Helsinki — Saariselka" -hannan pala
-    // on "Saariselka", joka ei ala brandilla.
-    const m = /^([\s\S]*?)\s*[|\u2013\u2014]\s*([^|\u2013\u2014]+)$/.exec(h1Text);
-    // Risuaita pois ennen vertailua: verkoston sanamerkki on "#LaplandTours",
-    // mutta --siteName on "LaplandTours" (mitattu laplandtours.online 13.9.:
-    // "Privacy Policy | #LaplandTours" jai leikkaamatta ilman tata).
-    const tail = m ? m[2].trim().replace(/^[#\s]+/, '') : '';
-    if (m && m[1].trim() && tail.toLowerCase().startsWith(brandTail.toLowerCase())) {
-      h1Text = m[1].trim();
-    }
-  }
+  // ── H1 ilman brändihäntää (sääntö: stripBrandTail yllä, portti: prerender-h1)
+  const h1Text = stripBrandTail(title, siteName);
 
   const wrap = 'max-width:52rem;margin:0 auto;padding:12vh 1.5rem 4rem;color:inherit';
   // 🔴 font-weight MUST stay 400. Bebas Neue ships a single 400 face on every site
