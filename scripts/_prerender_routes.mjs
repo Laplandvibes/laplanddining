@@ -976,9 +976,20 @@ function harvestMinLenOf(v) {
   return cjk > v.length * 0.3 ? Math.min(HARVEST_CJK_MIN_LEN, harvestMinLen) : harvestMinLen;
 }
 
+// [LV-HARVEST-TRANS 2026-11-14] react-i18next <Trans> placeholders (<0>…</0>, <1/>) are not HTML:
+// the crawlable block escaped them, so crawlers read the tag as TEXT. Measured 14.11.2026 from the
+// built dists of all 27 sites: laplandbars /about in 12 languages shipped
+// "part of the &lt;1&gt;LaplandVibes&lt;/1&gt; ecosystem"; no other site, no meta description.
+// Only the NUMBERED placeholders are removed (the text inside stays). <strong>/<em>/<b>/<i> and
+// <a href> are deliberately kept: _prerender_crawlable_body.mjs (escInline) turns them back into real
+// tags, and the links of the legal pages live there. laplandchristmas' forked copy strips EVERY tag
+// (its LV-HARVEST-MARKUP, 23.9.2026); taken as-is that rule would have removed those links and the
+// emphasis on 170 pages of four other sites, so it was not adopted.
+const stripTransTags = (s) => s.replace(/<\d+\s*\/>/g, ' ').replace(/<\/?\d+>/g, '');
+
 function harvestKeep(value, meta, seen) {
   if (typeof value !== 'string') return null;
-  const v = value.replace(/\s+/g, ' ').trim();
+  const v = stripTransTags(value).replace(/\s+/g, ' ').trim();
   if (!v || seen.has(v)) return null;
   if (v.includes('{') || v.includes('}')) return null; // runtime placeholders would render raw
   if (/^(https?:)?\//.test(v) || /^[\w.+-]+@[\w.-]+$/.test(v)) return null; // paths, URLs, emails
@@ -1017,7 +1028,7 @@ function harvestFromObject(node, out, meta, seen, budget) {
     for (const hk of ['name', 'title', 'question', 'q', 'headline', 'heading']) {
       const hv = node[hk];
       if (typeof hv !== 'string') continue;
-      const h = hv.replace(/\s+/g, ' ').trim();
+      const h = stripTransTags(hv).replace(/\s+/g, ' ').trim();
       if (!h || seen.has(h) || h.includes('{') || h.includes('}')) continue;
       if (meta && (h === meta.title || h === meta.description)) continue;
       if (h.length >= harvestMinLenOf(h)) continue;
