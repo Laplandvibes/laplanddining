@@ -18,8 +18,13 @@
  *   kelpaa jos se on tarkistettu selaimella 92 paivan sisalla
  *   (selaintarkistukset.json), muuten vahti pyytaa selaintarkistusta.
  *
- * Kadenssi: kuukausittain, samaan aikaan sync-restaurants.mjs:n kanssa.
- * Aja: node scripts/check-menu-links.mjs
+ * 14.11.2026: `--json <tiedosto>` kirjoittaa saman tuloksen koneluettavana
+ * (loydokset lajeittain + bottiestot, joilla on voimassa oleva selaintarkistus).
+ * Ajastettu ajo (scripts/linkkivahti-ajo.mjs) lukee sen; tuloste ja paluukoodi
+ * eivat muutu.
+ *
+ * Kadenssi: paivittain ajastettuna (linkkivahti-ajo.mjs), kasin milloin vain.
+ * Aja: node scripts/check-menu-links.mjs [--json <tiedosto>]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,6 +37,8 @@ const ROOT = path.join(HERE, '..');
 const TODAY = todayIso();
 const reg = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/generated/restaurant-menus.json'), 'utf8'));
 const browserChecks = readBrowserChecks(path.join(HERE, 'selaintarkistukset.json'));
+const jsonIdx = process.argv.indexOf('--json');
+const JSON_OUT = jsonIdx > -1 ? process.argv[jsonIdx + 1] : null;
 
 const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ')
   .replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ');
@@ -40,15 +47,19 @@ const titleOf = (h) => (h.match(/<title[^>]*>([\s\S]{0,200}?)<\/title>/i)?.[1] ?
 // Yksi tarkistettava osoite per kieli: { slug, label, url, entry }.
 const checks = [];
 for (const [slug, e] of Object.entries(reg)) {
-  if (e.url) checks.push({ slug, label: slug, url: e.url, kind: e.kind, entry: e });
-  if (e.urlEn) checks.push({ slug, label: `${slug} (en)`, url: e.urlEn, kind: e.kindEn, entry: e });
+  if (e.url) checks.push({ slug, kieli: 'fi', label: slug, url: e.url, kind: e.kind, entry: e });
+  if (e.urlEn) checks.push({ slug, kieli: 'en', label: `${slug} (en)`, url: e.urlEn, kind: e.kindEn, entry: e });
 }
 
 const rot = [];
 const browserNeeded = [];
 const browserOk = [];
+// Sama tulos koneluettavana (--json): yksi rivi per loydos, laji kertoo mita tapahtui.
+const loydokset = [];
+const estetytOk = [];
 for (const [slug, e] of Object.entries(reg)) {
   if (e.url && isExpired(e.validUntil, TODAY)) {
+    loydokset.push({ laji: 'voimassaolo', slug, kieli: 'fi', url: e.url, validUntil: e.validUntil });
     rot.push(`${slug}: voimassaolo paattyi ${e.validUntil} (sivusto piilottaa linkin) — etsi uusi osoite: ${e.url}`);
   }
 }
@@ -56,7 +67,7 @@ for (const [slug, e] of Object.entries(reg)) {
 let i = 0;
 await Promise.all(Array.from({ length: 4 }, async () => {
   while (i < checks.length) {
-    const { label, url, kind, entry: e } = checks[i++];
+    const { slug, kieli, label, url, kind, entry: e } = checks[i++];
     process.stdout.write('.');
     if (isExpired(e.validUntil, TODAY)) continue; // raportoitu jo yllä
     const p = await probe(url);
@@ -64,15 +75,22 @@ await Promise.all(Array.from({ length: 4 }, async () => {
       const what = p.status ? `HTTP ${p.status}` : p.errorCode;
       if (isBotBlock(p)) {
         const ok = validBrowserCheck(browserChecks, url, TODAY);
-        if (ok) browserOk.push(`${label}: ${what} (bottiesto), selaimella tarkistettu ${ok} — ${url}`);
-        else browserNeeded.push(`${label}: ${what} (bottiesto) — ${url}`);
+        if (ok) {
+          estetytOk.push({ slug, kieli, url, tila: what, tarkistettu: ok });
+          browserOk.push(`${label}: ${what} (bottiesto), selaimella tarkistettu ${ok} — ${url}`);
+        } else {
+          loydokset.push({ laji: 'selaintarkistus', slug, kieli, url, tila: what });
+          browserNeeded.push(`${label}: ${what} (bottiesto) — ${url}`);
+        }
       } else {
+        loydokset.push({ laji: 'kuollut', slug, kieli, url, tila: what });
         rot.push(`${label}: ${what} — ${url}`);
       }
       continue;
     }
     // Moni sivusto ohjaa poistetun sivun etusivulle 200-koodilla.
     if (redirectedToFrontPage(url, p.finalUrl)) {
+      loydokset.push({ laji: 'etusivulle', slug, kieli, url, finalUrl: p.finalUrl });
       rot.push(`${label}: ohjautuu nyt etusivulle — ${url} -> ${p.finalUrl}`);
       continue;
     }
@@ -83,6 +101,7 @@ await Promise.all(Array.from({ length: 4 }, async () => {
       const ct = p.res.headers.get('content-type') ?? '';
       await p.res.body?.cancel();
       if (classifyKind(url) !== 'pdf' && !/pdf/i.test(ct)) {
+        loydokset.push({ laji: 'ei-pdf', slug, kieli, url, tila: ct || 'content-type puuttuu' });
         rot.push(`${label}: ei enaa PDF (content-type ${ct || 'puuttuu'}) — ${url}`);
       }
       continue;
@@ -93,11 +112,16 @@ await Promise.all(Array.from({ length: 4 }, async () => {
     // Sivu kelpaa jos hinnat loytyvat TAI otsikko yha sanoo ruokalista
     // (JS-renderoidyt sivut eivat koskaan naytaneet hintoja staattisesti).
     if (ev < min && !titleLooksLikeMenu(titleOf(body)) && !titleLooksLikeMenu(p.finalUrl)) {
+      loydokset.push({ laji: 'ei-ruokalista', slug, kieli, url, finalUrl: p.finalUrl, hintoja: ev, raja: min });
       rot.push(`${label}: ei enaa ruokalista (${ev} hintaa, raja ${min}, oli ${e.evidence}) — ${p.finalUrl}`);
     }
   }
 }));
 process.stdout.write('\n');
+
+if (JSON_OUT) {
+  fs.writeFileSync(JSON_OUT, JSON.stringify({ vahti: 'ruokalistat', paiva: TODAY, tarkistettu: checks.length, loydokset, estetytOk }, null, 1));
+}
 
 console.log(`Tarkistettu ${checks.length} ruokalistaosoitetta (${Object.values(reg).filter((e) => e.url).length} ravintolaa, englanninkieliset mukaan lukien).`);
 if (browserOk.length) {

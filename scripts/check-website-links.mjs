@@ -13,7 +13,11 @@
  * tarkistettu selaimella viimeisen 92 paivan aikana (selaintarkistukset.json);
  * muuten vahti pyytaa selaintarkistusta eika julista linkkia kunnossa olevaksi.
  *
- * Aja: node scripts/check-website-links.mjs
+ * 14.11.2026: `--json <tiedosto>` kirjoittaa saman tuloksen koneluettavana
+ * ajastettua ajoa varten (scripts/linkkivahti-ajo.mjs). Tuloste ja paluukoodi
+ * eivat muutu.
+ *
+ * Aja: node scripts/check-website-links.mjs [--json <tiedosto>]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,6 +36,8 @@ const list = Array.isArray(maps) ? maps : Object.values(maps).flat();
 const overrides = parseOverrides(fs.readFileSync(path.join(ROOT, 'src/data/restaurant-overrides.ts'), 'utf8'));
 const gems = parseGems(fs.readFileSync(path.join(ROOT, 'src/data/restaurant-gems.ts'), 'utf8'));
 const browserChecks = readBrowserChecks(path.join(HERE, 'selaintarkistukset.json'));
+const jsonIdx = process.argv.indexOf('--json');
+const JSON_OUT = jsonIdx > -1 ? process.argv[jsonIdx + 1] : null;
 
 let closed = 0;
 let removed = 0;
@@ -51,6 +57,9 @@ console.log(`Tarkistetaan ${checked.length} verkkosivulinkkia (${list.length} Ma
 const bad = [];
 const browserNeeded = [];
 const browserOk = [];
+// Sama tulos koneluettavana (--json).
+const loydokset = [];
+const estetytOk = [];
 let i = 0;
 await Promise.all(Array.from({ length: 4 }, async () => {
   while (i < checked.length) {
@@ -60,9 +69,15 @@ await Promise.all(Array.from({ length: 4 }, async () => {
       const what = p.status ? `HTTP ${p.status}` : p.errorCode;
       if (isBotBlock(p)) {
         const ok = validBrowserCheck(browserChecks, r.url, TODAY);
-        if (ok) browserOk.push(`${r.slug}: ${what} (bottiesto), selaimella tarkistettu ${ok} — ${r.url}`);
-        else browserNeeded.push(`${r.slug}: ${what} (bottiesto) — ${r.url}`);
+        if (ok) {
+          estetytOk.push({ slug: r.slug, kieli: null, url: r.url, tila: what, tarkistettu: ok });
+          browserOk.push(`${r.slug}: ${what} (bottiesto), selaimella tarkistettu ${ok} — ${r.url}`);
+        } else {
+          loydokset.push({ laji: 'selaintarkistus', slug: r.slug, kieli: null, url: r.url, tila: what });
+          browserNeeded.push(`${r.slug}: ${what} (bottiesto) — ${r.url}`);
+        }
       } else {
+        loydokset.push({ laji: 'kuollut', slug: r.slug, kieli: null, url: r.url, tila: what });
         bad.push(`${r.slug}: ${what} — ${r.url}`);
       }
     }
@@ -70,6 +85,10 @@ await Promise.all(Array.from({ length: 4 }, async () => {
   }
 }));
 process.stdout.write('\n');
+
+if (JSON_OUT) {
+  fs.writeFileSync(JSON_OUT, JSON.stringify({ vahti: 'verkkosivut', paiva: TODAY, tarkistettu: checked.length, loydokset, estetytOk }, null, 1));
+}
 
 if (browserOk.length) {
   console.log(`\n${browserOk.length} estaa koneen, mutta toimi selaimessa (kirjaus vanhenee ${BROWSER_CHECK_MAX_DAYS} paivassa):`);
