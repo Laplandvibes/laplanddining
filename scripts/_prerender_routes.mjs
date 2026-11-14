@@ -17,6 +17,13 @@
  *   --locales=en,fi,de                      (optional) override locale list,
  *                                           comma-separated — for single-locale
  *                                           or 3-locale sites (ski, default 11)
+ *   --localeOverrides=zh-CN:bcp47=zh-Hant,og=zh_TW,hreflang=zh-Hant+zh
+ *                                           (optional) per-locale OUTPUT codes.
+ *                                           Blocks split by '/', fields by ',',
+ *                                           the hreflang list by '+'. Only
+ *                                           bcp47 / og / hreflang; a locale not
+ *                                           named keeps its defaults.
+ *                                           See [LV-LOCALE-OVERRIDES] below.
  *   --source=auto|meta|per-lang|nested|json|page-inline
  *                                           (optional) force a specific reader.
  *                                           Default "auto" tries readers in
@@ -29,6 +36,11 @@
  *                                           computed by its own generator (e.g. transport's
  *                                           scripts/generate-prerender-meta.mjs). Missing
  *                                           file/route/lang falls through to other readers.
+ *   --ogAlt=scripts/og-alt.json             (optional, this path is the default) site
+ *                                           card alt text per language:
+ *                                           { "<shell's English og:image:alt>": { "fi": "…", … } }
+ *                                           Used on pages that show the site card.
+ *                                           See [LV-OG-KORTTI-ALT-KIELI] below.
  *
  * routes.json schema:
  *   [
@@ -53,6 +65,12 @@
  *     { "path": "/privacy",          "copyKey": null,
  *       "fallbackTitle": "Privacy | LaplandHoteldeals" }
  *     // ↑ no per-route copy — use fallbackTitle (and optional fallbackDescription)
+ *
+ *     { "path": "/resorts", "copyKey": "resorts", "ogImage": "/og/resorts.jpg",
+ *       "ogCard": { "hero": "/images/…", "line": "…" } }
+ *     // ↑ page share card (scripts/og/gen_page_cards.mjs). Write the PATH only:
+ *     //   this script appends ?v=<sha256 of the card files, 8 hex> to og:image,
+ *     //   og:image:secure_url and twitter:image — [LV-OG-SIVUKORTTI-VERSIO].
  *   ]
  *
  * Idempotent. Safe to re-run after vite build.
@@ -241,6 +259,60 @@ if (existsSync(OG_ALT_TIEDOSTO)) {
 } else if (typeof args.ogAlt === 'string') {
   console.warn(`[prerender] WARN: --ogAlt ${OG_ALT_TIEDOSTO} puuttuu — sivustokortin alt jää englanniksi`);
 }
+// [LV-OG-MITAT 2026-09-23, canonical 2026-11-14] Kuoren og:image:width / height / type kuvaavat sivustokorttia
+// (1200×630 JPEG). Sivulla, jonka jakokuva on jokin muu tiedosto, ne pitävät paikkansa vain, jos tiedosto on
+// samankokoinen ja samaa tyyppiä; muuten kolme tagia kuvaavat väärää kuvaa ja ne poistetaan.
+//
+// 🔴 Miksi mitataan eikä päätellä polusta: laplandflights korjasi tämän omaan kopioonsa 23.9.2026 säännöllä
+// "muu kuin /og/-polku ⇒ pois" (uutisten CC BY-SA -valokuvat, joita ei saa muokata kortiksi). Sama sääntö olisi
+// 14.11.2026 kanoniseen vietynä poistanut OIKEAT mitat hubin /partners-sivulta 12 kielellä: sen jakokuva
+// /images/og-partners.jpg on aito 1200×630 JPEG -kortti toisessa kansiossa (mitattu ajamalla molemmat versiot hubin
+// syötteillä, scripts/vertaa_prerender_routes.mjs). Siksi:
+//   - sivustokortti (--defaultOg) ja generoitu /og/-sivukortti: mitat pitävät (kausifunktio tarjoilee saman muodon)
+//   - muu oman sivuston tiedosto: luetaan dist/<polku> ja verrataan JPEG-otsakkeen kokoa kuoren arvoihin
+//   - toisen sivuston osoite, muu tiedostotyyppi, puuttuva tai lukukelvoton tiedosto: ei voida todeta ⇒ pois
+// Testi: scripts/prerender_sivustojen_lisaykset.test.mjs.
+const KUOREN_OG_MITAT = {
+  leveys: kuorenMeta('property', 'og:image:width'),
+  korkeus: kuorenMeta('property', 'og:image:height'),
+  tyyppi: kuorenMeta('property', 'og:image:type'),
+};
+/** JPEG-tiedoston koko SOF-lohkosta; null jos tiedosto ei ole luettava JPEG. */
+function jpegKoko(tiedosto) {
+  let b;
+  try { b = readFileSync(tiedosto); } catch { return null; }
+  if (b.length < 4 || b[0] !== 0xff || b[1] !== 0xd8) return null;
+  let i = 2;
+  while (i + 9 < b.length) {
+    if (b[i] !== 0xff) return null;
+    const m = b[i + 1];
+    if (m === 0xff) { i++; continue; }                                   // täytetavu
+    if (m === 0x01 || (m >= 0xd0 && m <= 0xd8)) { i += 2; continue; }    // lohkot ilman pituutta
+    if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) {
+      return { korkeus: b.readUInt16BE(i + 5), leveys: b.readUInt16BE(i + 7) };
+    }
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  return null;
+}
+const OG_MITAT_PITAVAT = new Map();
+/** true = kuoren og:image:width/height/type ovat totta tälle jakokuvalle. */
+function kuorenMitatPitavat(img) {
+  if (img === DEFAULT_OG) return true;
+  let p = String(img || '');
+  if (/^https?:/i.test(p)) {
+    if (!p.startsWith(`${SITE}/`)) return false;
+    p = p.slice(SITE.length);
+  }
+  p = p.replace(/[?#].*$/, '');
+  if (/^\/og\//.test(p)) return true;
+  if (!OG_MITAT_PITAVAT.has(p)) {
+    const jpegKuori = KUOREN_OG_MITAT.tyyppi == null || /^image\/jpe?g$/i.test(KUOREN_OG_MITAT.tyyppi);
+    const koko = /\.jpe?g$/i.test(p) && jpegKuori ? jpegKoko(resolve(DIST, `.${p}`)) : null;
+    OG_MITAT_PITAVAT.set(p, !!koko && String(koko.leveys) === KUOREN_OG_MITAT.leveys && String(koko.korkeus) === KUOREN_OG_MITAT.korkeus);
+  }
+  return OG_MITAT_PITAVAT.get(p);
+}
 /** Sivustokortin alt kielellä lang; null = kuoren englanninkielinen alt jää. */
 function korttiAltKielella(lang) {
   if (!KORTTI_ALT_KIELET || lang === 'en') return null;
@@ -291,6 +363,64 @@ if (args.addLocales) {
   for (const key of args.addLocales.split(',').map((s) => s.trim())) {
     if (EXTRA_LOCALES[key] && !FULL_LOCALE_LIST.some((l) => l.lang === key)) {
       FULL_LOCALE_LIST.push(EXTRA_LOCALES[key]);
+    }
+  }
+}
+
+// [LV-LOCALE-OVERRIDES 2026-09-24] Opt-in per-locale output codes:
+//   --localeOverrides=zh-CN:bcp47=zh-Hant,og=zh_TW,hreflang=zh-Hant+zh
+// Locale blocks are separated by '/', fields by ',', and the hreflang list by
+// '+' — characters that need no quoting in sh or cmd, because the flag is
+// written on a site's package.json build line.
+//
+// Only the three OUTPUT fields can be overridden: bcp47 (<html lang>, JSON-LD
+// inLanguage), og (og:locale) and hreflang (rel=alternate codes; a locale may
+// publish SEVERAL). prefix/file/ident/jsonDir are deliberately NOT overridable:
+// they decide which files are read and which URLs are written, so overriding
+// them from the command line would move pages silently.
+//
+// 🔴🔴 Why this lives here: laplandstays translated its /cn/ copy into Taiwan
+// Traditional Chinese on 2026-09-17 (scripts/zh-hant.mjs) and had to patch its
+// VENDORED copy of this file (b6fd594) because the canonical had no such
+// concept. The next re-vendor would have dropped it — the same defect class as
+// the harvest limits on 2026-09-13, where routes.json keys went dead without a
+// single error (see [LV-HARVEST-LIMITS]). A locale that is not named here keeps
+// exactly its FULL_LOCALE_LIST codes; scripts/prerender_locale_overrides.test.mjs
+// runs this file against a fixture site and measures both halves.
+const LOCALE_OVERRIDE_FIELDS = new Set(['bcp47', 'og', 'hreflang']);
+if (args.localeOverrides && typeof args.localeOverrides === 'string') {
+  const warn = (msg) => console.warn(`[prerender] WARN: --localeOverrides ${msg}`);
+  for (const block of args.localeOverrides.split('/').map((s) => s.trim()).filter(Boolean)) {
+    const at = block.indexOf(':');
+    const lang = at < 0 ? '' : block.slice(0, at).trim();
+    const loc = FULL_LOCALE_LIST.find((l) => l.lang === lang);
+    if (!loc) {
+      warn(`unknown locale ${JSON.stringify(lang || block)} — block ignored`);
+      continue;
+    }
+    for (const pair of block.slice(at + 1).split(',').map((s) => s.trim()).filter(Boolean)) {
+      const eq = pair.indexOf('=');
+      const field = (eq < 0 ? pair : pair.slice(0, eq)).trim();
+      const value = eq < 0 ? '' : pair.slice(eq + 1).trim();
+      if (!LOCALE_OVERRIDE_FIELDS.has(field)) {
+        warn(`${lang}: unknown field ${JSON.stringify(field)} — ignored`);
+        continue;
+      }
+      // A silently-dropped value is how the harvest keys died on 2026-09-13.
+      if (!value) {
+        warn(`${lang}: empty value for ${field} — keeping the default ${JSON.stringify(loc[field] ?? loc.lang)}`);
+        continue;
+      }
+      if (field === 'hreflang') {
+        const codes = value.split('+').map((s) => s.trim()).filter(Boolean);
+        if (!codes.length) {
+          warn(`${lang}: empty value for hreflang — keeping the default ${JSON.stringify(loc.lang)}`);
+          continue;
+        }
+        loc.hreflang = codes;
+      } else {
+        loc[field] = value;
+      }
     }
   }
 }
@@ -657,6 +787,12 @@ function resolveRouteMeta(loc, route) {
 // that is already long enough, or a page with nothing harvested, is untouched.
 function ensureDescriptionLength(desc, paragraphs, lang) {
   const cjk = /^(ja|ko|zh|kr|cn)/.test(String(lang || ''));
+  // [LV-KO-SENTENCES 2026-09-19] Korean is CJK for the length floor but NOT for the
+  // splitting rules: it spaces words and ends sentences with ASCII . ! ? — the 。！？-only
+  // split glued 2–3 sentences into one block and the mid-word slice cut '…VR' / '…당사의'
+  // on ~15 laplandtransport /kr/ pages (ko native review 19.9.2026). ja/zh keep the CJK rules.
+  const ko = /^(ko|kr)/.test(String(lang || ''));
+  const noSpaces = cjk && !ko;
   // CJK floor raised 40 → 70 on 2026-09-07: OpenSEO measures characters regardless of script,
   // and the extension text is the page's own same-locale copy, so a 70-char ja/ko/zh
   // description is two sentences of real content, not padding.
@@ -695,11 +831,19 @@ function ensureDescriptionLength(desc, paragraphs, lang) {
     const head = sliceW(d.slice(0, MAX), MAXW);
     const lastEnd = Math.max(head.lastIndexOf('. '), head.lastIndexOf('! '), head.lastIndexOf('? '), head.lastIndexOf('。'));
     if (lastEnd >= 90 || (lastEnd > 0 && riittava(head.slice(0, lastEnd + 1)))) return head.slice(0, lastEnd + 1).trim();
-    return (cjk ? head : head.replace(/\s+\S*$/, '')).replace(/[,;:\s]+$/, '');
+    return (noSpaces ? head : head.replace(/\s+\S*$/, '')).replace(/[,;:\s]+$/, '');
   }
   if (riittava(d) || !Array.isArray(paragraphs) || !paragraphs.length) return desc;
-  const text = paragraphs.map((t) => String(t).replace(/\s+/g, ' ').trim()).filter(Boolean).join(' ');
-  const sentences = (cjk ? text.split(/(?<=[。！？])/) : text.split(/(?<=[.!?])\s+/))
+  // [LV-DESC-KOROSTUS 2026-09-21, canonical 2026-11-14] Strip [[…]] accent markers BEFORE the text
+  // extends a description. laplandflights marks the highlighted word of its hero H1 as [[word]]
+  // (renderAccent unwraps it in the browser); a short description was extended with the H1 as
+  // written, and the Japanese home page shipped "[[ラップランド]]行きの格安航空券。" in its meta
+  // description (measured live 21.9.2026; only ja leaked because its H1 STARTS with the marker).
+  // Fixed in that site's vendored copy and unknown here until 14.11.2026.
+  const text = paragraphs
+    .map((t) => String(t).replace(/\[\[(.+?)\]\]/g, '$1').replace(/\s+/g, ' ').trim())
+    .filter(Boolean).join(' ');
+  const sentences = (noSpaces ? text.split(/(?<=[。！？])/) : text.split(/(?<=[.!?。！？])\s+/))
     .map((s) => s.trim())
     .filter((s) => s && s.length > 3);
   let out = d;
@@ -708,11 +852,11 @@ function ensureDescriptionLength(desc, paragraphs, lang) {
     // [LV-CJK-JOIN 2026-09-25] ja/zh write sentences back to back: no space after 。！？.
     // The Latin rule glued "…季节建议。 我们对比了…" into /cn/ descriptions (laplandsnowmobile,
     // laplandwellness, measured live 25.9.2026). Korean spaces its sentences, so it keeps ' '.
-    const joiner = !out ? '' : (/^(ja|zh|cn)/.test(String(lang || '')) && /[。！？]$/.test(out) ? '' : (/[.!?。！？]$/.test(out) ? ' ' : '. '));
+    const joiner = !out ? '' : (noSpaces && /[。！？]$/.test(out) ? '' : (/[.!?。！？]$/.test(out) ? ' ' : '. '));
     const candidate = out + joiner + s;
     if (candidate.length > MAX || leveys(candidate) > MAXW) {
       if (riittava(out)) break;
-      const cut = cjk ? sliceW(candidate, MAXW) : sliceW(candidate.slice(0, MAX), MAXW).replace(/\s+\S*$/, '');
+      const cut = noSpaces ? sliceW(candidate, MAXW) : sliceW(candidate.slice(0, MAX), MAXW).replace(/\s+\S*$/, '');
       if (riittava(cut)) out = cut.replace(/[,;:\s]+$/, '');
       break;
     }
@@ -786,6 +930,52 @@ function routeUrl(route, loc) {
 // "harvestKeys": ["hero", "intro"] when their own copy block is meta-only.
 const HARVEST_SKIP_KEY_RE = /(pre$|post$|suffix|prefix|aria|alt$|alt[A-Z]|cta|button|label|placeholder|img|image|icon|logo|photo|src|href|url|link|badge|eyebrow|kicker|watching|scroll|consent|cookie[A-Z]|menu|^nav$|nav[A-Z]|search|lang|switch|toggle|price|amount|date|meta[A-Z]|seo)/i;
 
+// [LV-HARVEST-LIMITS 2026-09-18] Per-route harvest limits, opt-in via routes.json:
+//   "harvestBudget": 3000   words      (default 700)
+//   "harvestMaxParas": 200  paragraphs (default 40) — a SEPARATE cap: raising the
+//                           budget alone still cut laplandwork's terms off in the
+//                           middle of A7 (measured 2026-09-09)
+//   "harvestMinLen": 12     characters (default 40; CJK min(18, value)) — without it
+//                           short headings like "A9. Hakijaprofiilit (työnhakijat)"
+//                           (33 chars) drop out and the text loses its numbering
+// The defaults are sized for a marketing page: clear the thin-content line, not
+// reprint the page. A legal or reference page whose own text runs longer loses
+// its tail from the static HTML, so JS-less bots never read it and
+// sitemap-lastmod (which hashes this HTML) never sees the tail change. A route
+// that names none of the keys gets exactly the defaults.
+// 🔴🔴 laplandwork added these to its vendored copy on 2026-09-09 (ca85524). The
+// 2026-09-13 re-vendor (6055472) replaced that copy with this file, which did not
+// have them, and the routes.json values went dead without a single error:
+// /privacy's applicant-pool section was 0–1/27 fields in the static HTML in every
+// language for five days. They live HERE now; scripts/prerender_harvest_limits.test.mjs
+// runs this file against a fixture site, and laplandwork's own
+// scripts/assert-crawlable-copy.mjs fails its build if they vanish again.
+const HARVEST_DEFAULTS = { harvestBudget: 700, harvestMaxParas: 40, harvestMinLen: 40 };
+const HARVEST_CJK_MIN_LEN = 18;
+// The route being harvested sets this (harvestRouteText) and harvestKeep and the
+// LV-HEAD-PAIR check read it. Routes are harvested one at a time, and
+// harvestRouteText restores the default on the way out.
+let harvestMinLen = HARVEST_DEFAULTS.harvestMinLen;
+const harvestLimitWarned = new Set();
+function routeHarvestLimit(route, key) {
+  const v = route[key];
+  if (v == null) return HARVEST_DEFAULTS[key];
+  if (Number.isFinite(v) && v > 0) return v;
+  // A quoted "3000" or a 0 would otherwise be ignored as silently as the keys were
+  // on 2026-09-13. Warn once per route, not once per locale.
+  const id = `${route.path} ${key}`;
+  if (!harvestLimitWarned.has(id)) {
+    harvestLimitWarned.add(id);
+    console.warn(`[prerender] WARN: ${route.path}: ${key} must be a positive number, got ${JSON.stringify(v)} — using the default ${HARVEST_DEFAULTS[key]}`);
+  }
+  return HARVEST_DEFAULTS[key];
+}
+/** Shortest string the harvest keeps on the current route. */
+function harvestMinLenOf(v) {
+  const cjk = (v.match(/[぀-ヿ㐀-䶿一-鿿가-힯]/g) || []).length;
+  return cjk > v.length * 0.3 ? Math.min(HARVEST_CJK_MIN_LEN, harvestMinLen) : harvestMinLen;
+}
+
 function harvestKeep(value, meta, seen) {
   if (typeof value !== 'string') return null;
   const v = value.replace(/\s+/g, ' ').trim();
@@ -793,9 +983,7 @@ function harvestKeep(value, meta, seen) {
   if (v.includes('{') || v.includes('}')) return null; // runtime placeholders would render raw
   if (/^(https?:)?\//.test(v) || /^[\w.+-]+@[\w.-]+$/.test(v)) return null; // paths, URLs, emails
   if (/^[\d\s€$£%+.,;:–—-]+$/.test(v)) return null; // bare numbers/prices
-  const cjk = (v.match(/[぀-ヿ㐀-䶿一-鿿가-힯]/g) || []).length;
-  const minLen = cjk > v.length * 0.3 ? 18 : 40;
-  if (v.length < minLen) return null;
+  if (v.length < harvestMinLenOf(v)) return null;
   if (meta && (v === meta.title || v === meta.description)) return null; // already in the block
   seen.add(v);
   return v;
@@ -814,12 +1002,43 @@ function harvestFromObject(node, out, meta, seen, budget) {
     return;
   }
   if (typeof node === 'object') {
+    // [LV-HEAD-PAIR 2026-09-17] A short heading ("Palace", "Ravintola Nili",
+    // "Villi, ei viljelty") falls under harvestKeep's minimum length, so the
+    // crawlable body carried the paragraph WITHOUT the thing it is about: the
+    // laplandfood Michelin list prerendered as 8 descriptions and 0 restaurant
+    // names (measured 17.9.2026, dist/fi/michelin-dining). Same defect class as
+    // the faqNQ+faqNA pairing in harvestFromTsBlock. Pair a too-short heading
+    // with the object's first kept paragraph as ONE string; a heading long
+    // enough to survive on its own is left to the normal loop below.
+    // "Long enough" is harvestKeep's own threshold, so it follows the route's
+    // harvestMinLen (LV-HARVEST-LIMITS): a second hard-coded 40 here would glue
+    // a heading to its paragraph on a route that keeps it standalone.
+    let head = null;
+    for (const hk of ['name', 'title', 'question', 'q', 'headline', 'heading']) {
+      const hv = node[hk];
+      if (typeof hv !== 'string') continue;
+      const h = hv.replace(/\s+/g, ' ').trim();
+      if (!h || seen.has(h) || h.includes('{') || h.includes('}')) continue;
+      if (meta && (h === meta.title || h === meta.description)) continue;
+      if (h.length >= harvestMinLenOf(h)) continue;
+      head = { key: hk, text: h };
+      break;
+    }
     for (const [k, v] of Object.entries(node)) {
       if (budget.words <= 0) return;
       if (HARVEST_SKIP_KEY_RE.test(k)) continue;
       if (typeof v === 'string') {
+        if (head && k === head.key) continue;
         const kept = harvestKeep(v, meta, seen);
-        if (kept) { out.push(kept); budget.words -= kept.split(/\s+/).length; }
+        if (kept) {
+          let line = kept;
+          if (head) {
+            line = /[.!?:]$/.test(head.text) ? `${head.text} ${kept}` : `${head.text}: ${kept}`;
+            seen.add(head.text);
+            head = null;
+          }
+          out.push(line); budget.words -= line.split(/\s+/).length;
+        }
       } else harvestFromObject(v, out, meta, seen, budget);
     }
   }
@@ -1063,7 +1282,9 @@ function readJsonSubtree(loc, jsonKey) {
 function harvestRouteText(loc, route, meta) {
   const out = [];
   const seen = new Set();
-  const budget = { words: 700 };
+  // Per-route limits (LV-HARVEST-LIMITS); a route without the keys gets 700 / 40 / 40.
+  const budget = { words: routeHarvestLimit(route, 'harvestBudget') };
+  harvestMinLen = routeHarvestLimit(route, 'harvestMinLen');
   try {
     // Curated FAQ first (same locale ONLY — the JSON-LD EN fallback is fine for
     // structured data, but visible EN text on a non-EN URL is not).
@@ -1362,7 +1583,8 @@ function harvestRouteText(loc, route, meta) {
       if (budget.words > 0) harvestFromObject(readJsonSubtree(loc, key), out, meta, seen, budget);
     }
   } catch { /* fail open — fewer paragraphs, never a broken build */ }
-  return out.slice(0, 40);
+  finally { harvestMinLen = HARVEST_DEFAULTS.harvestMinLen; }
+  return out.slice(0, routeHarvestLimit(route, 'harvestMaxParas'));
 }
 
 // ---------- crawlable pre-hydration block (--crawlableBody) ----------
@@ -1457,6 +1679,7 @@ function clampDescription(d, max = 160) {
   const cut = head.lastIndexOf(' ');
   return (cut > 60 ? head.slice(0, cut) : head).replace(/[\s,;:–—\-(]+$/u, '').trim();
 }
+
 // [LV-BC-VALITASO 2026-10-20] A breadcrumb's intermediate step is a real page of this site in the
 // same locale, named by that page's own title. It used to be the URL segment capitalised ("Route",
 // "City", "Destination") pointing at a path that is not a page: measured live 2026-10-20,
@@ -1488,7 +1711,7 @@ function crumbPageName(lang, logicalPath) {
   return CRUMB_PAGES.get(`${lang} ${logicalPath}`) || null;
 }
 
-function injectShell({ shell, bcp47, og, canonical, title, description, hreflangs, ogImage, faq, lang, internalLinks, paragraphs }) {
+function injectShell({ shell, bcp47, og, canonical, title, description, hreflangs, ogImage, faq, article, lang, internalLinks, paragraphs }) {
   description = clampDescription(description);
   let html = shell;
   title = shortenTitle(title);
@@ -1596,6 +1819,34 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
     }
   } catch { /* never block the build on FAQ derivation */ }
 
+  // [LV-ARTICLE 2026-11-04] Server-rendered Article JSON-LD, opt-in per route in routes.json:
+  //   { "path": "/x", "article": { "datePublished": "2025-01-15", "dateModified": "2026-11-04" } }
+  // laplandvisit kept its Article schema in React (StructuredData via react-helmet-async) and it never
+  // reached the page: measured live 4.11.2026, /when-to-visit/ carried only the shell's Organization +
+  // WebSite and this script's BreadcrumbList. Here the date sits in the first byte, where crawlers that
+  // run no JavaScript read it too. Headline, description and language are the page's own locale.
+  try {
+    if (article && article.dateModified) {
+      const lv = { '@type': 'Organization', name: 'LaplandVibes', url: 'https://laplandvibes.com' };
+      const art = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: String(title || '').replace(/\s*[|—–]\s.*$/, '').trim(),
+        description,
+        url: canonical,
+        mainEntityOfPage: canonical,
+        inLanguage: bcp47,
+        datePublished: article.datePublished || article.dateModified,
+        dateModified: article.dateModified,
+        author: article.author || lv,
+        publisher: article.publisher || lv,
+      };
+      if (ogImage) art.image = /^https?:/.test(ogImage) ? ogImage : `${SITE}${sivukorttiVersio(ogImage)}`;
+      const artScript = `    <script type="application/ld+json">${JSON.stringify(art).replace(/</g, '\u003c')}</script>`;
+      html = html.replace(/<\/head>/i, `${artScript}\n  </head>`);
+    }
+  } catch { /* never block the build on Article derivation */ }
+
   // Poistaa metan kokonaan. Avaimet ovat tassa tiedostossa kirjoitettuja
   // vakioita (`og:image:alt`), joten sailytetaan vain sanamerkit, kaksoispiste
   // ja viiva — silloin regexiin ei voi paasta erikoismerkkeja lainkaan.
@@ -1627,11 +1878,12 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
   // 🔴🔴 Sivukohtainen jakokuva ei nay Facebookissa, jos `og:image:secure_url`
   // jaa osoittamaan sivustokorttiin: kun molemmat ovat, Facebook kayttaa
   // https-osoitetta eli secure_urlia. Se on kirjoitettu kasin jokaisen sivuston
-  // `index.html`-kuoreen, eika prerenderoija koskenut siihen ennen 21.9.2026.
-  // Portattu kanonisesta (monorepo ca110a3) 23.9.2026.
+  // `index.html`-kuoreen, eika prerenderoija koskenut siihen ennen 21.9.2026 —
+  // mitattu hubin 57 sivukortilla, jotka olisi jaettu vaaralla kuvalla.
   setMeta('property', 'og:image:secure_url', ogImageAbs);
   // Kuoren `og:image:alt` kuvailee SIVUSTOKORTTIA. Kun sivulla on oma kortti,
-  // se kuvaus on vaara — ja vaara vaihtoehtoteksti on huonompi kuin ei mitaan.
+  // se kuvaus on vaara — ja vaara vaihtoehtoteksti on huonompi kuin ei mitaan,
+  // koska ruudunlukija ja hakukone lukevat sen kuvan sisallon kuvauksena.
   // [LV-OG-SIVUKORTTI-ALT 2026-09-26] twitter:image:alt kuvailee samaa sivustokorttia (install.mjs
   // kirjoittaa molemmat kuoreen), ja 21.9. korjaus poisti vain og:image:alt:n — skiresortsin
   // sivukorttisivut kertoivat X:lle Ylläksen ankkurihissistä (mitattu dististä 26.9.2026).
@@ -1646,6 +1898,13 @@ function injectShell({ shell, bcp47, og, canonical, title, description, hreflang
     } else if (lang !== 'en' && KUOREN_KORTTI_ALT) {
       korttiAltTila.englanniksi++;
     }
+  }
+  // [LV-OG-MITAT] The shell's og:image:width / height / type are removed when they are not true
+  // for this page's share image; see kuorenMitatPitavat() above.
+  if (!kuorenMitatPitavat(ogImage)) {
+    poistaMeta('property', 'og:image:width');
+    poistaMeta('property', 'og:image:height');
+    poistaMeta('property', 'og:image:type');
   }
   setMeta('name', 'twitter:card', 'summary_large_image');
   setMeta('name', 'twitter:title', title);
@@ -1788,12 +2047,33 @@ for (const route of routes) {
     const hreflangLocales = nativeSet
       ? routeLocales.filter((l) => nativeSet.has(l.lang))
       : routeLocales
+    // hreflang codes per locale: the default is the locale's own lang, but a
+    // locale may publish SEVERAL (zh-CN → zh-Hant + zh, see LV-LOCALE-OVERRIDES).
+    const hreflangCodes = (l) => (Array.isArray(l.hreflang) ? l.hreflang : [l.lang])
+    // [LV-HREFLANG-KLUSTERI 2026-10-18, canonical 2026-11-14] A page whose language versions live
+    // at DIFFERENT paths (laplandstays: fi /fi/iglumajoitus ↔ en/de/ja /glass-igloos). Routes
+    // sharing a "hreflangCluster" key in routes.json list each other's locales as alternates, each
+    // at its own path, in LOCALE_LIST order; every such route names its "locales". Without the
+    // key nothing changes. Written in laplandstays' vendored copy on 18.10.2026 and unknown here
+    // until 14.11.2026: re-vendoring would have dropped the cluster without a single error.
+    const clusterAlts = route.hreflangCluster
+      ? LOCALE_LIST.flatMap((l) => {
+          const r = routes.find((x) => x.hreflangCluster === route.hreflangCluster && Array.isArray(x.locales) && x.locales.includes(l.lang))
+          return r ? [{ l, path: r.path === '/' ? '' : r.path }] : []
+        })
+      : null
     const hreflangs = consolidateTo
-      ? [{ hreflang: canonicalLoc.lang === 'en' ? 'en' : canonicalLoc.lang, url: canonical }]
-      : hreflangLocales.map((l) => ({
-          hreflang: l.lang === 'en' ? 'en' : l.lang,
-          url: `${SITE}${l.prefix}${cleanPath}`.replace(SLASH_END, '/'),
-        }))
+      ? hreflangCodes(canonicalLoc).map((code) => ({ hreflang: code, url: canonical }))
+      : clusterAlts
+        ? clusterAlts.flatMap(({ l, path }) =>
+            hreflangCodes(l).map((code) => ({ hreflang: code, url: `${SITE}${l.prefix}${path}`.replace(SLASH_END, '/') })),
+          )
+        : hreflangLocales.flatMap((l) =>
+          hreflangCodes(l).map((code) => ({
+            hreflang: code,
+            url: `${SITE}${l.prefix}${cleanPath}`.replace(SLASH_END, '/'),
+          })),
+        )
 
     const outPath =
       loc.prefix === '' && cleanPath === ''
@@ -1826,6 +2106,7 @@ for (const route of routes) {
       hreflangs,
       ogImage,
       faq,
+      article: route.article || null,
       internalLinks: INTERNAL_BY_LANG[loc.lang],
       paragraphs,
     });
