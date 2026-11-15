@@ -305,7 +305,9 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                   väitti suostumusta jota kukaan ei ollut antanut.
                   Ruutu on esivalitsematon (GDPR: esivalittu ruutu ei ole
                   suostumus) ja lähetysnappi on estetty kunnes se on rastitettu. */}
-              <label style={{color:"#F9FAFB"}} className="flex items-start gap-3 text-left cursor-pointer">
+              {/* 15.11.2026: kääre #FFFFFF (oli #F9FAFB). Piirretty teksti on jo valkoisessa spanissa, mutta rastiruutu
+                  perii kääreen värin ja lomakeportti mittaa sen: #F9FAFB pinkillä 4,4:1, valkoinen 4,6:1. */}
+              <label style={{color:"#FFFFFF"}} className="flex items-start gap-3 text-left cursor-pointer">
                 <input
                   type="checkbox"
                   checked={consented}
@@ -336,7 +338,9 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
               </div>
             )}
 
-            <p className="text-white/70 text-xs mt-4">{s.trust}</p>
+            {/* 15.11.2026 piirretystä sivusta mitattu: /70 + 12 px jäi liukuvärillä 3,6–4,0:1 (raja 4,5).
+                /90 + 14 px (laplandflightsin kopiosta, Codex 28.10.) = 5,3–5,7:1. */}
+            <p className="text-white/90 text-sm mt-4">{s.trust}</p>
           </>
         )}
       </div>
