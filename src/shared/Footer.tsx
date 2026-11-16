@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { AlertCircle, Briefcase, Newspaper, X } from 'lucide-react';
 import { Erotinrivi, erotinOsat } from './Erotin';
@@ -735,20 +736,28 @@ function buildSiteGroups(d: typeof DEFAULT_DICT) {
   ];
 }
 
-const socials = [
+// Somenapit palvelujen omissa väreissä (Vesa 16.11.2026: "miksi ei ole värejä instagram ja muissa logoissa
+// heidän sivuston mukaansa"). `bg` = napin pohja, `fg` = kuvakkeen väri. Mustat napit (TikTok, X) erottuvat
+// Suomen-sinisestä pohjasta vaalean reunaviivan ansiosta. Pinterestin kuvake on koko napin kokoinen punainen
+// kiekko, jossa P on valkoinen (valkoinen pohja näkyy P:n läpi) = palvelun oma merkki.
+const socials: { label: string; href: string; bg: string; fg: string; icon: ReactNode }[] = [
   {
     label: 'YouTube',
     href: 'https://youtube.com/@laplandvibes',
+    bg: '#FF0000',
+    fg: '#FFFFFF',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
-        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff" opacity="0.9" />
+        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#FF0000" />
       </svg>
     ),
   },
   {
     label: 'Facebook',
     href: 'https://facebook.com/laplandvibes',
+    bg: '#1877F2',
+    fg: '#FFFFFF',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -758,6 +767,8 @@ const socials = [
   {
     label: 'Instagram',
     href: 'https://instagram.com/laplandvibesofficial',
+    bg: 'radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%)',
+    fg: '#FFFFFF',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 sm:w-5 sm:h-5">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -769,8 +780,10 @@ const socials = [
   {
     label: 'TikTok',
     href: 'https://tiktok.com/@laplandvibes',
+    bg: '#010101',
+    fg: '#FFFFFF',
     icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5" style={{ filter: 'drop-shadow(1px 1px 0 #FE2C55) drop-shadow(-1px -1px 0 #25F4EE)' }}>
         <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.84 1.56V6.79a4.85 4.85 0 0 1-1.07-.1z" />
       </svg>
     ),
@@ -778,8 +791,10 @@ const socials = [
   {
     label: 'Pinterest',
     href: 'https://pinterest.com/laplandvibes',
+    bg: '#FFFFFF',
+    fg: '#E60023',
     icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
         <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
       </svg>
     ),
@@ -787,6 +802,8 @@ const socials = [
   {
     label: 'X / Twitter',
     href: 'https://x.com/laplandvibes',
+    bg: '#000000',
+    fg: '#FFFFFF',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -1278,9 +1295,12 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
             <div className="flex-1 h-px" style={{ background: 'rgba(248,250,252,0.25)' }} />
           </div>
 
-          {/* Logo + tagline + socials */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8 mb-7 sm:mb-8">
-            <div>
+          {/* Logo + somenapit SAMALLA rivillä, iskulause ja sovellusnappi niiden alla (Vesa 16.11.2026: "miksi
+              footerin logo ja sosiaalisen median linkit ei ole samalla rivillä"). Ennen napit keskitettiin koko
+              vasemman lohkon (logo + iskulause + nappi) korkeuteen, joten ne osuivat iskulauseen kohdalle.
+              Ruudukko: tabletista ylöspäin rivi 1 = logo | napit, rivi 2 = iskulause, rivi 3 = sovellusnappi.
+              Puhelimella järjestys on DOM-järjestys: logo, iskulause, sovellusnappi, napit. */}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] md:items-center gap-x-8 mb-7 sm:mb-8">
               {/* Koko 16.11.2026 (Vesa: "miten footerin logo on noin iso että hajottaa muut osiot").
                   15.11. vaihdettu virallinen tekstilogo (1392 × 182) on tiukemmin rajattu ja paksumpi kuin
                   edeltäjänsä, joten vanhalla korkeudella (56 px) se oli 428 px leveä: 51 % tabletin
@@ -1291,12 +1311,12 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                 alt="#LaplandVibes"
                 width={1392}
                 height={182}
-                className="h-7 sm:h-8 md:h-9 w-auto max-w-full"
+                className="h-7 sm:h-8 md:h-9 w-auto max-w-full justify-self-start md:col-start-1 md:row-start-1"
                 loading="lazy"
                 decoding="async"
               />
               <p
-                className="text-[13px] sm:text-sm font-normal mt-2 tracking-wide"
+                className="text-[13px] sm:text-sm font-normal mt-2 tracking-wide md:col-span-2 md:row-start-2"
                 style={{ color: 'rgba(248,250,252,0.75)' }}
               >
                 {d.tagline}
@@ -1309,7 +1329,7 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                 rel="noopener"
                 data-umami-event="app_cta"
                 data-umami-event-surface="footer"
-                className="inline-flex items-center gap-1.5 mt-3 px-3.5 py-2 rounded-full text-[13px] font-semibold transition-colors duration-200 min-h-[44px] lg:min-h-0"
+                className="inline-flex items-center gap-1.5 mt-3 px-3.5 py-2 rounded-full text-[13px] font-semibold transition-colors duration-200 min-h-[44px] lg:min-h-0 justify-self-start md:col-start-1 md:row-start-3"
                 // #FFFFFF, ei #F9FAFB: lumenvalkoinen jaa 4,40:1 -- juuri alle rajan.
                 style={{ background: PINK_FILL, color: '#FFFFFF' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = PINK_FILL_HOVER; }}
@@ -1318,11 +1338,10 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
                 {d.getApp}
               </a>
-            </div>
 
             {/* gap-2 puhelimella: kuusi 44 px:n nappia + 10 px välit = 314 px ei mahtunut 360 px:n
                 puhelimen 312 px:iin ja X putosi yksin toiselle riville. md+ ei rivity koskaan. */}
-            <div className="flex items-center gap-2 sm:gap-3 flex-wrap md:flex-nowrap md:shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap md:flex-nowrap mt-6 md:mt-0 md:col-start-2 md:row-start-1 md:justify-self-end">
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -1330,16 +1349,8 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-11 h-11 lg:w-10 lg:h-10 flex items-center justify-center rounded-full transition-all duration-200"
-                  style={{ background: 'rgba(248,250,252,0.12)', border: '1px solid rgba(248,250,252,0.3)', color: WHITE }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.background = '#EC4899';
-                    (e.currentTarget as HTMLElement).style.borderColor = '#EC4899';
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLElement).style.background = 'rgba(248,250,252,0.12)';
-                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(248,250,252,0.3)';
-                  }}
+                  className="w-11 h-11 lg:w-10 lg:h-10 flex items-center justify-center overflow-hidden rounded-full transition-transform duration-200 hover:scale-110 focus-visible:scale-110 motion-reduce:transition-none motion-reduce:hover:scale-100"
+                  style={{ background: s.bg, border: '1px solid rgba(248,250,252,0.4)', color: s.fg }}
                 >
                   {s.icon}
                 </a>
@@ -1385,7 +1396,11 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
                            pillerit 38 px ja "Lataa sovellus" 36 px. Hiiri alkaa vasta
                            lg:sta (1024 px), joten kosketuskoon saa purkaa vasta siina.
                            Verkoston saanto: mittaa 360/390/412/768/1280, kosketus <1024. */
-                        className="text-[13px] sm:text-sm font-normal leading-snug transition-colors duration-200 inline-flex items-center min-h-[44px] min-w-[44px] lg:inline lg:min-h-0 lg:min-w-0"
+                        /* 16.11.2026: items-start + py-3, ei items-center. Keskitettynä yksirivinen linkki alkoi 13 px ja
+                           kaksirivinen 4 px laatikkonsa yläreunasta: palstojen ensimmäiset rivit olivat tabletilla ja
+                           puhelimella 9 px eri tasolla ja rivivälit vaihtelivat (mitattu 820 ja 375 px). Nyt teksti alkaa
+                           aina 12 px laatikon yläreunasta ja tekstien väli on sama; kosketuskorkeus yhä vähintään 44 px. */
+                        className="text-[13px] sm:text-sm font-normal leading-snug transition-colors duration-200 inline-flex items-start py-3 min-h-[44px] min-w-[44px] lg:inline lg:py-0 lg:min-h-0 lg:min-w-0"
                         style={{ color: 'rgba(248,250,252,0.85)' }}
                         onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#EC4899')}
                         onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(248,250,252,0.85)')}
