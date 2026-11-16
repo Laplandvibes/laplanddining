@@ -1281,10 +1281,17 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
           {/* Logo + tagline + socials */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8 mb-7 sm:mb-8">
             <div>
+              {/* Koko 16.11.2026 (Vesa: "miten footerin logo on noin iso että hajottaa muut osiot").
+                  15.11. vaihdettu virallinen tekstilogo (1392 × 182) on tiukemmin rajattu ja paksumpi kuin
+                  edeltäjänsä, joten vanhalla korkeudella (56 px) se oli 428 px leveä: 51 % tabletin
+                  näytöstä, ja kuusi somenappia rivittyi kahdelle riville sen vieressä. Korkeus 28/32/36 px
+                  = leveys 214/245/275 px. width/height varaavat tilan ennen kuvan latautumista. */}
               <img
                 src="/lv-footer-logo.webp"
                 alt="#LaplandVibes"
-                className="h-9 sm:h-11 md:h-14 w-auto max-w-full"
+                width={1392}
+                height={182}
+                className="h-7 sm:h-8 md:h-9 w-auto max-w-full"
                 loading="lazy"
                 decoding="async"
               />
@@ -1313,7 +1320,9 @@ export default function SharedFooter({ pillarLinks = defaultPillarLinks, onPilla
               </a>
             </div>
 
-            <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+            {/* gap-2 puhelimella: kuusi 44 px:n nappia + 10 px välit = 314 px ei mahtunut 360 px:n
+                puhelimen 312 px:iin ja X putosi yksin toiselle riville. md+ ei rivity koskaan. */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap md:flex-nowrap md:shrink-0">
               {socials.map((s) => (
                 <a
                   key={s.label}
