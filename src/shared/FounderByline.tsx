@@ -47,11 +47,12 @@ export type FounderBylineTone = 'pink' | 'dark' | 'light';
 
 const TONES: Record<FounderBylineTone, { role: string; note: string; ring: string; glow: string; plate: string; plateBorder: string }> = {
   // On the pink Newsletter band (the network default section background).
-  pink: { role: '#FFFFFF', note: 'rgba(255,255,255,0.85)', ring: '#FFFFFF', glow: 'rgba(255,255,255,0.35)', plate: 'rgba(0,0,0,0.18)', plateBorder: 'rgba(255,255,255,0.30)' },
+  // 16.11.2026 rauhallinen värilinja: "glow" on jokaisessa sävyssä tumma varjo, ei värihehku.
+  pink: { role: '#FFFFFF', note: 'rgba(255,255,255,0.85)', ring: '#FFFFFF', glow: 'rgba(0,0,0,0.28)', plate: 'rgba(0,0,0,0.18)', plateBorder: 'rgba(255,255,255,0.30)' },
   // On deep-night / dark editorial surfaces.
-  dark: { role: '#F9FAFB', note: 'rgba(249,250,251,0.78)', ring: '#EC4899', glow: 'rgba(236,72,153,0.40)', plate: 'rgba(255,255,255,0.07)', plateBorder: 'rgba(236,72,153,0.35)' },
+  dark: { role: '#F9FAFB', note: 'rgba(249,250,251,0.78)', ring: '#F9FAFB', glow: 'rgba(2,6,23,0.55)', plate: 'rgba(255,255,255,0.07)', plateBorder: 'rgba(255,255,255,0.16)' },
   // On cream / white surfaces (laplandstays).
-  light: { role: '#0F172A', note: 'rgba(15,23,42,0.75)', ring: '#EC4899', glow: 'rgba(236,72,153,0.30)', plate: 'rgba(15,23,42,0.05)', plateBorder: 'rgba(15,23,42,0.14)' },
+  light: { role: '#0F172A', note: 'rgba(15,23,42,0.75)', ring: '#FFFFFF', glow: 'rgba(15,23,42,0.22)', plate: 'rgba(15,23,42,0.05)', plateBorder: 'rgba(15,23,42,0.14)' },
 };
 
 interface FounderBylineProps {

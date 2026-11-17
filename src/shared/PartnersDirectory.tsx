@@ -62,7 +62,7 @@ export default function PartnersDirectory({ items, siteSlug, locale, surface = '
             <a
               href={mediaSiteUrl(siteSlug, locale)}
               onClick={() => fireAdvertiseHereClick(siteSlug, 'partners_directory')}
-              className="inline-flex items-center gap-2 rounded-full bg-[#DB2777] hover:bg-[#EC4899]/90 text-white font-semibold px-7 py-3.5 text-sm transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-[#DB2777] hover:bg-[#BE185D] text-white font-semibold px-7 py-3.5 text-sm transition-colors"
             >
               {t.bookCta}
             </a>
@@ -77,8 +77,8 @@ export default function PartnersDirectory({ items, siteSlug, locale, surface = '
                   className={[
                     'group flex items-center gap-4 rounded-2xl border p-4 sm:p-5 transition-colors',
                     light
-                      ? 'border-black/10 bg-black/[0.02] hover:border-[#EC4899]/40'
-                      : 'border-white/12 bg-white/5 hover:border-[#EC4899]/40',
+                      ? 'border-black/10 bg-black/[0.02] hover:border-black/30'
+                      : 'border-white/12 bg-white/5 hover:border-white/35',
                   ].join(' ')}
                 >
                   <div className={['shrink-0 w-14 h-14 rounded-xl overflow-hidden', light ? 'bg-black/5' : 'bg-white/10'].join(' ')}>
@@ -90,13 +90,13 @@ export default function PartnersDirectory({ items, siteSlug, locale, surface = '
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="shrink-0 inline-flex items-center rounded-full bg-[#EC4899]/90 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white">
+                      <span className="shrink-0 inline-flex items-center rounded-full bg-[#1E293B] border border-white/20 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white">
                         {t.badge}
                       </span>
                       <p
                         className={[
-                          'font-heading text-lg tracking-wide truncate group-hover:text-[#EC4899] transition-colors',
-                          light ? 'text-gray-900' : 'text-[#F9FAFB]',
+                          'font-heading text-lg tracking-wide truncate transition-colors',
+                          light ? 'text-gray-900 group-hover:text-[#BE185D]' : 'text-[#F9FAFB] group-hover:text-[#BAE6FD]',
                         ].join(' ')}
                       >
                         {it.name}

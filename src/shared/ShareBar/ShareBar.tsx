@@ -67,7 +67,7 @@ const nativeShare = () =>
   typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
 const CHIP: Record<Tone, string> = {
-  dark: 'border-white/15 bg-white/[0.05] text-white hover:border-[#EC4899] hover:text-[#F472B6]',
+  dark: 'border-white/15 bg-white/[0.05] text-white hover:border-white/50 hover:text-[#BAE6FD]',
   light: 'border-[#0F172A]/15 bg-white text-[#0F172A] hover:border-[#DB2777] hover:text-[#BE185D]',
 };
 const BASE = 'inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold no-underline transition-colors';

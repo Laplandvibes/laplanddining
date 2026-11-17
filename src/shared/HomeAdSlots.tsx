@@ -95,7 +95,7 @@ export function MainPartnerBanner({ config, locale, surface = 'dark', houseAdTon
             ? ''
             : houseAdTone === 'subtle'
               ? 'border bg-white/[0.02] border-white/10'
-              : surface === 'light' ? 'border bg-vibe-pink/[0.05] border-vibe-pink/20' : 'border bg-vibe-pink/[0.07] border-vibe-pink/25',
+              : surface === 'light' ? 'border bg-black/[0.03] border-black/10' : 'border bg-white/[0.04] border-white/12',
         ].join(' ')}
       >
         <PartnerSlot

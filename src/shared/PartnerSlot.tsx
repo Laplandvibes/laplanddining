@@ -232,21 +232,25 @@ export default function PartnerSlot({ partner, variant, locale, className, place
     //
     // Tummilla pinnoilla mikään ei muutu.
     const subtle = houseAdTone === 'subtle';
+    // Rauhallinen värilinja 16.11.2026: tyhjä mainospaikka on neutraali (harmaa katkoviiva, tumma varjo,
+    // tumma tai vaalea nappi). Pinkki kuuluu sivun varausnappiin, eikä tyhjä paikka saa kilpailla sen kanssa.
     const houseFill = subtle
-      ? 'bg-white/[0.04] border-white/20 hover:border-[#EC4899]/60'
+      ? 'bg-white/[0.04] border-white/20 hover:border-white/45'
       : light
-      ? 'bg-[#0F172A] border-[#EC4899]/55 hover:border-[#EC4899]'
-      : 'bg-[#F9FAFB] border-[#EC4899]/45 hover:border-[#EC4899]';
+      ? 'bg-[#0F172A] border-white/35 hover:border-white/60'
+      : 'bg-[#F9FAFB] border-[#64748B]/55 hover:border-[#0F172A]/60';
     const houseTitle = subtle ? 'text-[#F9FAFB]/90' : light ? 'text-[#F9FAFB]' : 'text-[#0F172A]';
-    const houseLabel = subtle ? 'text-[#F9FAFB]/60' : light ? 'text-[#F9FAFB]/70' : 'text-[#0F172A]/55';
+    const houseLabel = subtle ? 'text-[#F9FAFB]/60' : light ? 'text-[#F9FAFB]/70' : 'text-[#0F172A]/70';
     const houseSub = subtle ? 'text-[#F9FAFB]/65' : light ? 'text-[#F9FAFB]/75' : 'text-[#0F172A]/65';
     const houseBorderW = subtle ? 'border border-dashed' : 'border-2 border-dashed';
     const houseGlow = subtle
       ? undefined
-      : { boxShadow: light ? '0 8px 24px rgba(236,72,153,0.14)' : '0 12px 40px rgba(236,72,153,0.22)' };
+      : { boxShadow: light ? '0 8px 24px rgba(15,23,42,0.14)' : '0 12px 40px rgba(2,6,23,0.45)' };
     const houseCta = subtle
-      ? 'border border-[#DB2777]/50 text-[#F9A8D4] bg-transparent group-hover:bg-[#DB2777] group-hover:text-white'
-      : 'bg-[#DB2777] text-white shadow-sm group-hover:bg-[#BE185D]';
+      ? 'border border-white/35 text-[#F9FAFB] bg-transparent group-hover:bg-white/10 group-hover:text-white'
+      : light
+      ? 'bg-[#F9FAFB] text-[#0F172A] shadow-sm group-hover:bg-white'
+      : 'bg-[#0F172A] text-white shadow-sm group-hover:bg-[#1E293B]';
 
     // BANNER-variantin house-ad: kompakti vaakarivi (heron alle, ei työnnä sisältöä)
     if (variant === 'banner') {
@@ -284,7 +288,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
               ~20 px korkeampana. */}
           <span className="min-w-0 flex-1 basis-60">
             <span className="flex items-center gap-2 mb-1">
-              <span aria-hidden="true" className="shrink-0 inline-block w-2 h-2 rounded-full bg-[#EC4899]" />
+              <span aria-hidden="true" className="shrink-0 inline-block w-2 h-2 rounded-full bg-[#94A3B8]" />
               <span className={`text-xs font-semibold leading-snug ${houseLabel}`}>
                 {topLabel}
               </span>
@@ -320,7 +324,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
         aria-label={t.wantYourAd}
       >
         <span className={`inline-flex items-center gap-1.5 text-xs font-semibold leading-snug ${houseLabel}`}>
-          <span aria-hidden="true" className="inline-block w-2 h-2 rounded-full bg-[#EC4899]" />
+          <span aria-hidden="true" className="inline-block w-2 h-2 rounded-full bg-[#94A3B8]" />
           {topLabel}
         </span>
         <p className={`font-heading text-2xl sm:text-3xl tracking-wide leading-tight ${houseTitle}`}>
@@ -540,7 +544,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
                     'inline-flex items-center gap-1.5 text-sm sm:text-base font-semibold underline underline-offset-4 transition-colors',
                     lightCard
                       ? 'text-[#0F172A]/75 decoration-[#0F172A]/25 hover:text-pink-700 hover:decoration-pink-700'
-                      : 'text-snow/80 decoration-snow/30 hover:text-pink-400 hover:decoration-pink-400',
+                      : 'text-snow/80 decoration-snow/30 hover:text-[#BAE6FD] hover:decoration-[#BAE6FD]',
                   ].join(' ')}
                 >
                   {articleLabel}
@@ -592,7 +596,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
             että brändiväri joutuu tekstin taakse (kontrasti ei ole makuasia). */}
         <span
           aria-hidden="true"
-          style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: partner.accent ?? '#EC4899' }}
+          style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: partner.accent ?? '#94A3B8' }}
         />
         {/* Kuva: 64 → 88 px. Peukalonkuva ei myy kumppanin työtä. */}
         {partner.imageSrc ? (
@@ -630,7 +634,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
               omat värinsä. Sama ansa kuin logojen polariteetissa (CLAUDE.md). */}
           <p
             className={`font-heading text-lg sm:text-xl tracking-wide leading-tight transition-colors truncate ${
-              lightCard ? 'text-[#0F172A] group-hover:text-[#BE185D]' : 'text-snow group-hover:text-pink-400'
+              lightCard ? 'text-[#0F172A] group-hover:text-[#BE185D]' : 'text-snow group-hover:text-[#BAE6FD]'
             }`}
           >
             {partner.name}
@@ -689,7 +693,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
           <span
             aria-hidden="true"
             className={`shrink-0 text-xl transition-transform duration-200 group-hover:translate-x-1 ${cta ? 'sm:hidden' : ''}`}
-            style={{ color: lightCard ? '#BE185D' : '#EC4899' }}
+            style={{ color: lightCard ? '#BE185D' : '#BAE6FD' }}
           >
             →
           </span>
@@ -710,8 +714,8 @@ export default function PartnerSlot({ partner, variant, locale, className, place
       rel="sponsored nofollow noopener"
       className={[
         'group relative flex items-center gap-3 overflow-hidden rounded-xl border',
-        'border-vibe-pink/30 bg-vibe-pink/5 px-4 py-3',
-        'hover:bg-vibe-pink/10 hover:border-vibe-pink/50 transition-all duration-200 w-full',
+        'border-white/15 bg-white/[0.04] px-4 py-3',
+        'hover:bg-white/[0.08] hover:border-white/30 transition-all duration-200 w-full',
         className,
       ]
         .filter(Boolean)
@@ -734,10 +738,10 @@ export default function PartnerSlot({ partner, variant, locale, className, place
       {/* Teksti */}
       <div className="flex flex-col gap-0.5 min-w-0">
         <div className="flex items-center gap-1.5">
-          <span className="inline-flex items-center rounded-full bg-pink-600 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white shadow-sm">
+          <span className="inline-flex items-center rounded-full bg-[#1E293B] border border-white/20 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white">
             {badge}
           </span>
-          <p className="font-body font-semibold text-sm text-snow group-hover:text-pink-400 transition-colors truncate">
+          <p className="font-body font-semibold text-sm text-snow group-hover:text-[#BAE6FD] transition-colors truncate">
             {partner.name}
           </p>
         </div>
@@ -748,7 +752,7 @@ export default function PartnerSlot({ partner, variant, locale, className, place
 
       <span
         aria-hidden="true"
-        className="ml-auto shrink-0 text-vibe-pink/60 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-all duration-200 text-sm"
+        className="ml-auto shrink-0 text-[#BAE6FD]/70 group-hover:text-[#BAE6FD] group-hover:translate-x-0.5 transition-all duration-200 text-sm"
       >
         →
       </span>

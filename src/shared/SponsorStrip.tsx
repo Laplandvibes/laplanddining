@@ -67,7 +67,7 @@ export default function SponsorStrip({ partner, siteSlug, locale, surface = 'dar
         ) : (
           <span className="font-semibold whitespace-nowrap">{partner.name}</span>
         )}
-        <span className="shrink-0 inline-flex items-center rounded-full bg-[#EC4899]/90 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white">
+        <span className="shrink-0 inline-flex items-center rounded-full bg-[#1E293B] border border-white/20 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white">
           {t.badge}
         </span>
       </a>
@@ -83,11 +83,11 @@ export default function SponsorStrip({ partner, siteSlug, locale, surface = 'dar
       className={base + ' hover:opacity-90 transition-opacity'}
       aria-label={t.wantYourAd}
     >
-      <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-[#EC4899]/70" />
+      <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-[#94A3B8]" />
       <span className={['text-[10px] font-semibold uppercase tracking-widest whitespace-nowrap', light ? 'text-gray-500' : 'text-[#F9FAFB]/50'].join(' ')}>
         {t.mainPartnerOne} · {t.slotOpen}
       </span>
-      <span className="text-[#EC4899] text-xs font-semibold whitespace-nowrap">{t.bookShort}</span>
+      <span className={['text-xs font-semibold whitespace-nowrap', light ? 'text-[#BE185D]' : 'text-[#BAE6FD]'].join(' ')}>{t.bookShort}</span>
     </a>
   );
 }

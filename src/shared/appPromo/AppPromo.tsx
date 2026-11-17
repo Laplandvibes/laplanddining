@@ -146,8 +146,9 @@ function track(placement: string) {
 const CSS = `
 .lvap{width:100%;margin:32px 0;font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB;container-type:inline-size}
 .lvap *{box-sizing:border-box}
-.lvap-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(236,72,153,.4);background:linear-gradient(to bottom right,#4a1236,#241a3f,#123152);padding:20px}
-.lvap-glow{pointer-events:none;position:absolute;top:-96px;right:-64px;width:224px;height:224px;border-radius:9999px;background:rgba(236,72,153,.25);filter:blur(64px)}
+.lvap-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(to bottom right,#4a1236,#241a3f,#123152);padding:20px}
+/* Rauhallinen värilinja 16.11.2026: ei sumeita väripalloja. Elementti jää DOMiin, jotta rakenne ei muutu. */
+.lvap-glow{display:none}
 .lvap-in{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .lvap-title,.lvap-lead,.lvap-lab,.lvap-line,.lvap-feat{overflow-wrap:break-word}
 .lvap-lockup{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;row-gap:2px}
@@ -174,7 +175,7 @@ const CSS = `
 .lvap-lab{display:block;font-family:'Bebas Neue','Arial Narrow',sans-serif;font-size:20px;line-height:1;letter-spacing:.025em;color:#F9FAFB}
 .lvap-line{display:block;margin-top:4px;font-size:13px;line-height:1.4;color:rgba(249,250,251,.75);text-wrap:pretty}
 .lvap-feat{display:block;padding:12px 0;font-size:14px;line-height:1.45;color:rgba(249,250,251,.85)}
-.lvap-chev{flex-shrink:0;width:16px;height:16px;margin-top:2px;color:#EC4899;transition:transform .2s cubic-bezier(.22,1,.36,1)}
+.lvap-chev{flex-shrink:0;width:16px;height:16px;margin-top:2px;color:#BAE6FD;transition:transform .2s cubic-bezier(.22,1,.36,1)}
 .lvap-b{display:none;margin:0;padding:0;list-style:none}
 .lvap-b li{margin:0;padding:0;min-width:0}
 .lvap-b a{display:block;color:#F9FAFB;text-decoration:none}
@@ -182,19 +183,19 @@ const CSS = `
 .lvap-b .lvap-lab{margin-top:14px;display:flex;align-items:center;gap:4px}
 .lvap-side{display:none}
 .lvap-act{display:grid;gap:16px}
-.lvap-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:9999px;background:#DB2777;padding:14px 28px;font-family:'DM Sans',system-ui,sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:#fff;text-decoration:none;box-shadow:0 10px 30px -8px rgba(219,39,119,.7);transition:transform .15s ease,background-color .15s ease}
+.lvap-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border-radius:9999px;background:#DB2777;padding:14px 28px;font-family:'DM Sans',system-ui,sans-serif;font-size:16px;font-weight:700;line-height:1.2;color:#fff;text-decoration:none;box-shadow:0 10px 30px -12px rgba(2,6,23,.6);transition:transform .15s ease,background-color .15s ease}
 .lvap-cta:hover{background:#BE185D;color:#fff}
 .lvap-cta:active{transform:scale(.98)}
 .lvap-cta svg{width:20px;height:20px;flex-shrink:0}
 .lvap-note{margin:10px 0 0;font-size:12px;line-height:1.45;color:rgba(249,250,251,.6);text-wrap:pretty}
-.lvap-more{display:inline-flex;align-items:center;gap:4px;margin:10px 0 0;min-height:44px;font-size:14px;font-weight:600;line-height:1.3;color:#F9A8D4;text-decoration:underline;text-decoration-color:rgba(249,168,212,.45);text-underline-offset:3px}
+.lvap-more{display:inline-flex;align-items:center;gap:4px;margin:10px 0 0;min-height:44px;font-size:14px;font-weight:600;line-height:1.3;color:#BAE6FD;text-decoration:underline;text-decoration-color:rgba(186,230,253,.45);text-underline-offset:3px}
 .lvap-more:hover{color:#FBCFE8;text-decoration-color:rgba(251,207,232,.8)}
 .lvap-more svg{width:16px;height:16px;flex-shrink:0}
 .lvap-qr{display:none;align-items:center;gap:16px;flex-shrink:0;padding:12px 20px 12px 12px;border-radius:22px;border:1px solid rgba(255,255,255,.14);background:rgba(15,23,42,.4)}
 .lvap-qr img{display:block;flex-shrink:0;width:120px;height:120px;border-radius:14px;background:#fff;padding:9px;box-shadow:0 12px 24px -8px rgba(0,0,0,.5);margin:0}
 .lvap-qr span{max-width:156px;font-size:14px;font-weight:600;line-height:1.4;color:rgba(249,250,251,.88);text-wrap:pretty}
 .lvap-wide{display:none}
-.lvap a:focus-visible{outline:2px solid #F9A8D4;outline-offset:3px;border-radius:12px}
+.lvap a:focus-visible{outline:2px solid #BAE6FD;outline-offset:3px;border-radius:12px}
 @container (max-width:559.98px){
  .lvap-txt0{text-align:center}
  .lvap-lockup{justify-content:center}
@@ -271,8 +272,8 @@ const CSS = `
 @media (prefers-reduced-motion:reduce){.lvap-chev,.lvap-cta{transition:none}}
 .lvap-nudge{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom));animation:lvSlideUp .45s cubic-bezier(.22,1,.36,1);font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB}
 .lvap-nudge *{box-sizing:border-box}
-.lvap-ncard{position:relative;margin:0 auto;max-width:672px;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.15);background:#0F172A;box-shadow:0 24px 60px -16px rgba(0,0,0,.75),0 0 0 1px rgba(236,72,153,.28)}
-.lvap-naur{pointer-events:none;position:absolute;inset:0;background:radial-gradient(80% 120% at 100% 0%,rgba(236,72,153,.32),transparent 60%),radial-gradient(70% 100% at 0% 100%,rgba(34,211,238,.2),transparent 60%)}
+.lvap-ncard{position:relative;margin:0 auto;max-width:672px;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.15);background:#0F172A;box-shadow:0 24px 60px -16px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.10)}
+.lvap-naur{pointer-events:none;position:absolute;inset:0;background:radial-gradient(80% 120% at 100% 0%,rgba(74,18,54,.6),transparent 60%),radial-gradient(70% 100% at 0% 100%,rgba(18,49,82,.65),transparent 60%)}
 .lvap-nrow{position:relative;display:flex;align-items:center;gap:14px;padding:14px}
 .lvap-nudge .lvap-phone{width:84px;padding:3px}
 .lvap-ntxt{min-width:0;flex:1}
@@ -286,7 +287,7 @@ const CSS = `
 .lvap-nclose{position:absolute;top:6px;right:6px;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;border:1px solid rgba(255,255,255,.4);background:rgba(15,23,42,.6);color:#fff;cursor:pointer;padding:0}
 .lvap-nclose:hover{background:rgba(255,255,255,.3)}
 .lvap-nclose svg{width:20px;height:20px}
-.lvap-ncta{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 0;min-height:44px;border-radius:9999px;background:#DB2777;padding:11px 16px;font-size:14px;font-weight:700;line-height:1.25;text-align:center;color:#fff;text-decoration:none;box-shadow:0 12px 28px -10px rgba(236,72,153,.9)}
+.lvap-ncta{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 0;min-height:44px;border-radius:9999px;background:#DB2777;padding:11px 16px;font-size:14px;font-weight:700;line-height:1.25;text-align:center;color:#fff;text-decoration:none;box-shadow:0 12px 28px -12px rgba(2,6,23,.7)}
 .lvap-ncta:hover{background:#BE185D;color:#fff}
 .lvap-ncta svg{width:16px;height:16px;flex-shrink:0}
 .lvap-nnote{position:relative;margin:6px auto 0;width:fit-content;max-width:100%;text-align:left;font-size:11px;line-height:1.35;color:rgba(249,250,251,.6);text-wrap:pretty}

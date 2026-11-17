@@ -95,21 +95,21 @@ export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'da
                 'group relative flex flex-col gap-1 rounded-xl border p-3.5 sm:p-4 min-h-[6.25rem]',
                 'transition-colors duration-300',
                 light
-                  ? 'border-black/10 bg-black/[0.03] hover:border-[#EC4899]/40'
-                  : 'border-white/12 bg-white/5 hover:border-[#EC4899]/40',
+                  ? 'border-black/10 bg-black/[0.03] hover:border-black/30'
+                  : 'border-white/12 bg-white/5 hover:border-white/35',
               ].join(' ')}
               aria-label={`${t.badge}: ${p.name}: ${spot.label}`}
             >
               <div className="flex items-center justify-between gap-2">
                 {chip}
-                <span className="shrink-0 inline-flex items-center rounded-full bg-[#EC4899]/90 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white shadow-sm">
+                <span className="shrink-0 inline-flex items-center rounded-full bg-[#1E293B] border border-white/20 px-1.5 py-px text-[9px] font-semibold uppercase tracking-widest text-white">
                   {p.badgeLabel || t.badge}
                 </span>
               </div>
               <p
                 className={[
                   'font-heading text-base sm:text-lg tracking-wide leading-tight truncate transition-colors',
-                  light ? 'text-gray-900 group-hover:text-[#EC4899]' : 'text-[#F9FAFB] group-hover:text-[#EC4899]',
+                  light ? 'text-gray-900 group-hover:text-[#BE185D]' : 'text-[#F9FAFB] group-hover:text-[#BAE6FD]',
                 ].join(' ')}
               >
                 {p.name}
@@ -139,8 +139,8 @@ export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'da
               'group relative flex flex-col justify-between gap-2 rounded-xl border border-dashed p-3.5 sm:p-4 min-h-[6.25rem]',
               'transition-colors duration-300',
               light
-                ? 'border-black/15 hover:border-[#EC4899]/40'
-                : 'border-white/15 hover:border-[#EC4899]/40',
+                ? 'border-black/15 hover:border-black/35'
+                : 'border-white/15 hover:border-white/40',
             ].join(' ')}
             aria-label={`${t.premiumOpen}: ${spot.label}`}
           >
@@ -155,7 +155,7 @@ export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'da
               <span className={['text-xs leading-snug', light ? 'text-gray-500' : 'text-[#F9FAFB]/50'].join(' ')}>
                 {t.premiumOpen}
               </span>
-              <span className="shrink-0 text-xs font-semibold text-[#EC4899] group-hover:translate-x-0.5 transition-transform duration-200">
+              <span className={['shrink-0 text-xs font-semibold group-hover:translate-x-0.5 transition-transform duration-200', light ? 'text-[#BE185D]' : 'text-[#BAE6FD]'].join(' ')}>
                 {t.bookShort}
               </span>
             </div>

@@ -125,7 +125,7 @@ export interface NotFoundProps {
   links?: NotFoundLink[]
   /** 'dark' = deep-night sites (default) · 'light' = cream/paper design variants. */
   variant?: 'dark' | 'light'
-  /** CTA/accent colour override for design-variant sites (default vibe-pink). */
+  /** CTA colour override for design-variant sites (default the network's filled pink #DB2777: white text 4.6:1). */
   accentHex?: string
   className?: string
   /**
@@ -147,7 +147,7 @@ export default function NotFound({
   homeHref = '/',
   links = [],
   variant = 'dark',
-  accentHex = '#EC4899',
+  accentHex = '#DB2777',
   className = '',
   landmark = true,
 }: NotFoundProps) {
@@ -200,7 +200,8 @@ export default function NotFound({
       <div className="max-w-xl text-center py-24">
         <p
           className="font-heading text-[7rem] sm:text-[9rem] leading-none tracking-wide select-none"
-          style={{ color: accentHex, opacity: 0.3, textShadow: `0 0 60px ${accentHex}66` }}
+          /* Rauhallinen värilinja 16.11.2026: numero on himmeä sivun oma muste, ei korostusväri eikä hehku. */
+          style={{ color: dark ? '#F9FAFB' : '#0F172A', opacity: dark ? 0.16 : 0.12 }}
           aria-hidden="true"
         >
           404

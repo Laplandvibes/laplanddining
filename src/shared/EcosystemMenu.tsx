@@ -76,8 +76,9 @@ const PINK = '#EC4899';
  *   white on #EC4899 (brand pink) = 3.53:1  ✗
  *   white on #DB2777 (pink-600)   = 4.63:1  ✓
  *
- * PINK is unchanged and still correct for hairlines, gradients, icons and
- * borders — non-text UI, where the floor is 3:1 and #EC4899 clears it.
+ * 🔴 Rauhallinen värilinja (Vesa 16.11.2026, "neon … vähentää radikaalisti"): PINK kuuluu vain
+ * sanamerkkiin (.lv-eco-mark i) ja PINK_FILL appin asennusnappiin. Reunat, hehkut, vinkkikupla,
+ * "olet täällä" -merkki ja ryhmäotsikot ovat neutraaleja; kuvakkeet ja nuolet jäänsinisiä (#BAE6FD).
  */
 const PINK_FILL = '#DB2777';
 const SNOW = '#F9FAFB';
@@ -107,15 +108,16 @@ const BODY_FONT = "'DM Sans', var(--font-body, system-ui), sans-serif";
 
 export type Cat = 'stay' | 'activity' | 'food' | 'transport' | 'season' | 'shopping' | 'guide' | 'hub';
 
+// Pastellit (16.11.2026): ryhmän väri näkyy vain otsikon pienessä kuvakkeessa, ei tekstissä, reunassa eikä hehkussa.
 const CAT_RGB: Record<Cat, string> = {
-  stay: '236, 72, 153',       // vibe pink
-  activity: '6, 182, 212',    // arctic cyan
-  food: '249, 115, 22',       // orange
-  transport: '147, 197, 253', // sky blue
-  season: '52, 211, 153',     // aurora green
-  shopping: '167, 139, 250',  // violet
-  guide: '251, 191, 36',      // amber (v2.1: was cyan-bright, indistinguishable from activity's cyan on tinted cards)
-  hub: '236, 72, 153',        // pink
+  stay: '249, 168, 212',      // pink-300
+  activity: '165, 243, 252',  // cyan-200
+  food: '254, 215, 170',      // orange-200
+  transport: '186, 230, 253', // sky-200
+  season: '167, 243, 208',    // emerald-200
+  shopping: '221, 214, 254',  // violet-200
+  guide: '253, 230, 138',     // amber-200
+  hub: '249, 168, 212',       // pink-300
 };
 
 export interface Site { domain: string; cat: Cat; fi: string; en: string }
@@ -244,17 +246,17 @@ const CSS = `
 .lv-eco-wrap{position:relative;flex-shrink:0;font-family:${BODY_FONT}}
 .lv-eco-btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.10);color:${SNOW};cursor:pointer;font-family:${WORDMARK_FONT};font-size:14px;letter-spacing:.14em;text-transform:uppercase;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .2s,border-color .2s,color .2s;white-space:nowrap;margin:0}
 .lv-eco-btn svg{flex:none}
-.lv-eco-btn .lv-eco-grid{color:${PINK}}
-/* Finland-sininen navipohja (variant="blue"): vaaleampi pinkki, jotta ikoni erottuu vähintään 3:1. */
-.lv-eco-btn--blue .lv-eco-grid{color:#F9A8D4}
+.lv-eco-btn .lv-eco-grid{color:#BAE6FD}
 .lv-eco-btn .lv-eco-lbl{text-shadow:0 1px 6px rgba(0,0,0,.6);line-height:1;transform:translateY(1px)}
 .lv-eco-btn .lv-eco-chev{transition:transform .2s}
 .lv-eco-btn[aria-expanded="true"] .lv-eco-chev{transform:rotate(180deg)}
-.lv-eco-btn:hover,.lv-eco-btn[aria-expanded="true"]{background:rgba(236,72,153,.14);border-color:rgba(236,72,153,.55)}
-.lv-eco-btn:focus-visible{outline:2px solid #06B6D4;outline-offset:2px}
+.lv-eco-btn:hover,.lv-eco-btn[aria-expanded="true"]{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.5)}
+.lv-eco-btn:focus-visible{outline:2px solid #BAE6FD;outline-offset:2px}
 .lv-eco-btn--light{background:rgba(15,23,42,.05);border-color:rgba(15,23,42,.22);color:rgba(15,23,42,.78)}
 .lv-eco-btn--light .lv-eco-lbl{text-shadow:none}
-.lv-eco-btn--light:hover,.lv-eco-btn--light[aria-expanded="true"]{background:rgba(236,72,153,.08);border-color:rgba(236,72,153,.55);color:${PINK}}
+.lv-eco-btn--light .lv-eco-grid{color:#BE185D}
+.lv-eco-btn--light:hover,.lv-eco-btn--light[aria-expanded="true"]{background:rgba(15,23,42,.10);border-color:rgba(15,23,42,.45);color:#0F172A}
+.lv-eco-btn--light:focus-visible{outline-color:#0F172A}
 /* 1023, ei 767: 768 px on tabletti eli yha sormi. */
 @media(max-width:1023px){.lv-eco-btn{height:44px;min-width:44px}}
 @media(max-width:639px){.lv-eco-btn{padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
@@ -262,43 +264,43 @@ const CSS = `
    jatkuva ylos-alas-liike nayttaa kellunnalta. Kiinnitys 8 px napin alle. */
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoIn .26s ease-out both}
 @media(min-width:768px){.lv-eco-hint{display:block}}
-/* Nuoli on samaa pinkkia kuin pilleri eika silla ole omaa hohtoa, jotta se luetaan
-   pillerin osaksi eika erilliseksi palaksi. */
-.lv-eco-hint-arrow{position:absolute;top:-5px;left:18px;width:11px;height:11px;transform:rotate(45deg);border-radius:2px;background:${PINK_FILL}}
-.lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:${PINK_FILL};color:#fff;box-shadow:0 3px 10px -3px rgba(15,23,42,.55),0 0 0 1px rgba(255,255,255,.16) inset}
-.lv-eco-hint-x{display:flex;position:relative;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(0,0,0,.22);font:inherit;line-height:1}
+/* Nuoli on samaa tummaa laattaa kuin pilleri, jotta se luetaan pillerin osaksi eika erilliseksi palaksi.
+   Vinkki on opaste, ei varausnappi: neutraali laatta, ei pinkkia (16.11.2026). */
+.lv-eco-hint-arrow{position:absolute;top:-5px;left:18px;width:11px;height:11px;transform:rotate(45deg);border-radius:2px;background:#1E293B;box-shadow:inset 1px 1px 0 rgba(255,255,255,.18)}
+.lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:#1E293B;color:#fff;box-shadow:0 3px 10px -3px rgba(15,23,42,.55),inset 0 0 0 1px rgba(255,255,255,.18)}
+.lv-eco-hint-x{display:flex;position:relative;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(255,255,255,.12);font:inherit;line-height:1}
 .lv-eco-hint-x:hover{color:#fff}
 /* Nakyva merkki pysyy 20 px:na (pillerin mitta); sormelle annetaan 44x44. */
 .lv-eco-hint-x::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
-.lv-eco-panel{position:fixed;z-index:9990;top:var(--lv-eco-t,72px);left:var(--lv-eco-l,16px);width:var(--lv-eco-w,min(1160px,calc(100vw - 32px)));max-height:calc(100vh - var(--lv-eco-t,72px) - 16px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:rgba(15,23,42,.97);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -24px rgba(0,0,0,.85),0 0 60px -30px rgba(236,72,153,.5);color:${SNOW};padding:16px 22px 18px;font-family:${BODY_FONT};animation:lvEcoPop .16s ease-out;transform-origin:top left;text-align:left;line-height:1.4}
+.lv-eco-panel{position:fixed;z-index:9990;top:var(--lv-eco-t,72px);left:var(--lv-eco-l,16px);width:var(--lv-eco-w,min(1160px,calc(100vw - 32px)));max-height:calc(100vh - var(--lv-eco-t,72px) - 16px);overflow:auto;overscroll-behavior:contain;box-sizing:border-box;background:rgba(15,23,42,.97);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.12);border-radius:20px;box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 30px 70px -24px rgba(0,0,0,.85);color:${SNOW};padding:16px 22px 18px;font-family:${BODY_FONT};animation:lvEcoPop .16s ease-out;transform-origin:top left;text-align:left;line-height:1.4}
 .lv-eco-panel:focus{outline:0}
 .lv-eco-panel *,.lv-eco-panel *::before,.lv-eco-panel *::after{box-sizing:border-box}
 .lv-eco-top{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap}
-.lv-eco-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:${SNOW};flex:none;padding:9px 13px;border-radius:12px;background:rgba(236,72,153,.10);border:1px solid rgba(236,72,153,.40);transition:background .15s,border-color .15s}
+.lv-eco-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:${SNOW};flex:none;padding:9px 13px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);transition:background .15s,border-color .15s}
 .lv-eco-brand-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
-.lv-eco-brand:hover{background:rgba(236,72,153,.18);border-color:rgba(236,72,153,.75)}
-.lv-eco-brand:focus-visible{outline:2px solid #06B6D4;outline-offset:2px}
+.lv-eco-brand:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.34)}
+.lv-eco-brand:focus-visible{outline:2px solid #BAE6FD;outline-offset:2px}
 .lv-eco-brand .lv-eco-arrow{width:16px;height:16px;color:rgba(249,250,251,.55)}
-.lv-eco-brand:hover .lv-eco-arrow,.lv-eco-brand:focus-visible .lv-eco-arrow{color:${PINK}}
-.lv-eco-brand.is-current{background:rgba(236,72,153,.2);border-color:rgba(236,72,153,.65)}
+.lv-eco-brand:hover .lv-eco-arrow,.lv-eco-brand:focus-visible .lv-eco-arrow{color:#BAE6FD}
+.lv-eco-brand.is-current{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
 .lv-eco-mark{font-family:${WORDMARK_FONT};font-size:24px;letter-spacing:.04em;line-height:1;white-space:nowrap;font-weight:400}
 .lv-eco-mark i{font-style:normal;color:${PINK}}
-.lv-eco-brand:hover .lv-eco-mark{color:#fff;text-shadow:0 0 18px rgba(236,72,153,.45)}
+.lv-eco-brand:hover .lv-eco-mark{color:#fff}
 /* Content, not a label: tracked uppercase would read as the panel title. */
 .lv-eco-sub{font-size:11.5px;color:rgba(249,250,251,.72);font-weight:500;white-space:nowrap;line-height:1.25}
 .lv-eco-search{flex:1 1 240px;max-width:420px;display:flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(249,250,251,.55);cursor:text;margin:0}
-.lv-eco-search:focus-within{border-color:rgba(6,182,212,.7);box-shadow:0 0 0 3px rgba(6,182,212,.18);color:${SNOW}}
+.lv-eco-search:focus-within{border-color:rgba(186,230,253,.7);box-shadow:0 0 0 3px rgba(186,230,253,.16);color:${SNOW}}
 .lv-eco-search svg{flex:none}
 .lv-eco-search input{flex:1;min-width:0;background:none;border:0;outline:0;color:${SNOW};font:inherit;font-size:14px;padding:0;margin:0;box-shadow:none;border-radius:0;-webkit-appearance:none;appearance:none}
 .lv-eco-search input::placeholder{color:rgba(249,250,251,.45);opacity:1}
 .lv-eco-search input::-webkit-search-cancel-button,.lv-eco-search input::-webkit-search-decoration{-webkit-appearance:none;appearance:none}
 .lv-eco-close{display:none}
-.lv-eco-rule{height:1px;margin:14px 0 16px;background:linear-gradient(to right,rgba(236,72,153,.45),rgba(255,255,255,.1),transparent)}
+.lv-eco-rule{height:1px;margin:14px 0 16px;background:linear-gradient(to right,rgba(255,255,255,.28),rgba(255,255,255,.1),transparent)}
 .lv-eco-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
 @media(min-width:768px) and (max-width:1023px){.lv-eco-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.lv-eco-group{display:flex;flex-direction:column;min-width:0;height:100%;box-sizing:border-box;margin:0;padding:9px 9px 6px;border-radius:14px;background:linear-gradient(180deg,rgba(var(--c),.15),rgba(var(--c),.05));border:1px solid rgba(var(--c),.32);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.lv-eco-group{display:flex;flex-direction:column;min-width:0;height:100%;box-sizing:border-box;margin:0;padding:9px 9px 6px;border-radius:14px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
 .lv-eco-group--app{background:none;border:0;padding:0;box-shadow:none}
-.lv-eco-group--app .lv-eco-app{position:relative;overflow:hidden;height:100%;display:flex;align-items:stretch;justify-content:space-between;gap:12px;padding:14px;border-radius:14px;background:linear-gradient(150deg,rgba(236,72,153,.32),rgba(15,23,42,.3) 58%,rgba(6,182,212,.18));border:1px solid rgba(236,72,153,.5);text-decoration:none;color:${SNOW}}
+.lv-eco-group--app .lv-eco-app{position:relative;overflow:hidden;height:100%;display:flex;align-items:stretch;justify-content:space-between;gap:12px;padding:14px;border-radius:14px;background:linear-gradient(150deg,#4a1236,#241a3f 58%,#123152);border:1px solid rgba(255,255,255,.16);text-decoration:none;color:${SNOW}}
 .lv-eco-app-txt{display:flex;flex-direction:column;gap:9px;min-width:0;flex:1;justify-content:center}
 .lv-eco-app-title{font-family:${WORDMARK_FONT};font-weight:400;font-size:22px;letter-spacing:.04em;line-height:1;color:${SNOW};text-transform:none}
 .lv-eco-app-stats{font-size:11.5px;line-height:1.35;color:rgba(249,250,251,.72)}
@@ -308,29 +310,29 @@ const CSS = `
 .lv-eco-app-shot{flex:none;align-self:center;height:160px;width:auto;max-width:40%;margin:0;border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.22);box-shadow:0 8px 24px -10px rgba(0,0,0,.8);background:#0F172A;transition:transform .2s}
 .lv-eco-app:hover .lv-eco-app-shot{transform:translateY(-2px)}
 .lv-eco-app-shot img{display:block;height:100%;width:auto;object-fit:cover;object-position:top}
-.lv-eco-h{display:flex;align-items:center;gap:8px;font-family:${WORDMARK_FONT};font-weight:400;font-size:19px;letter-spacing:.06em;line-height:1.1;color:rgb(var(--c));margin:0 0 5px 3px;padding-bottom:6px;border-bottom:1px solid rgba(var(--c),.22);text-transform:none}
-.lv-eco-h svg{flex:none;filter:drop-shadow(0 0 6px rgba(var(--c),.55))}
+.lv-eco-h{display:flex;align-items:center;gap:8px;font-family:${WORDMARK_FONT};font-weight:400;font-size:19px;letter-spacing:.06em;line-height:1.1;color:${SNOW};margin:0 0 5px 3px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.12);text-transform:none}
+.lv-eco-h svg{flex:none;color:rgb(var(--c))}
 .lv-eco-h .lv-eco-here{margin-left:auto}
-.lv-eco-h .lv-eco-here svg{filter:none}
+.lv-eco-h .lv-eco-here svg{color:inherit}
 .lv-eco-group ul{list-style:none;margin:0;padding:0}
 .lv-eco-group li{margin:0;padding:0}
 .lv-eco-row{display:flex;align-items:center;gap:10px;padding:6px 7px;border-radius:9px;text-decoration:none;color:${SNOW};transition:background .15s}
-.lv-eco-row:hover{background:rgba(var(--c),.2);color:${SNOW}}
-.lv-eco-row:focus-visible{outline:0;background:rgba(var(--c),.2);box-shadow:inset 0 0 0 2px rgba(6,182,212,.7)}
+.lv-eco-row:hover{background:rgba(255,255,255,.09);color:${SNOW}}
+.lv-eco-row:focus-visible{outline:0;background:rgba(255,255,255,.09);box-shadow:inset 0 0 0 2px rgba(186,230,253,.8)}
 .lv-eco-txt{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
 .lv-eco-name{font-size:14px;font-weight:600;line-height:1.25;color:${SNOW}}
-.lv-eco-dom{font-size:11.5px;color:rgba(249,250,251,.5);line-height:1.2;overflow-wrap:anywhere}
+.lv-eco-dom{font-size:11.5px;color:rgba(249,250,251,.72);line-height:1.2;overflow-wrap:anywhere}
 .lv-eco-arrow{width:14px;height:14px;flex:none;color:rgba(249,250,251,.3);transition:color .15s}
-.lv-eco-row:hover .lv-eco-arrow,.lv-eco-row:focus-visible .lv-eco-arrow{color:${PINK}}
-.lv-eco-row.is-current{background:rgba(236,72,153,.2);box-shadow:inset 0 0 0 1px rgba(236,72,153,.6)}
-.lv-eco-here{flex:none;display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;background:${PINK_FILL};color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1;white-space:nowrap}
-.lv-eco-app:hover,.lv-eco-app:focus-visible{border-color:rgba(236,72,153,.85);outline:0;color:${SNOW}}
-.lv-eco-app:focus-visible{box-shadow:0 0 0 2px rgba(6,182,212,.7)}
+.lv-eco-row:hover .lv-eco-arrow,.lv-eco-row:focus-visible .lv-eco-arrow{color:#BAE6FD}
+.lv-eco-row.is-current{background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+.lv-eco-here{flex:none;display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;background:#F9FAFB;color:#0F172A;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1;white-space:nowrap}
+.lv-eco-app:hover,.lv-eco-app:focus-visible{border-color:rgba(255,255,255,.5);outline:0;color:${SNOW}}
+.lv-eco-app:focus-visible{box-shadow:0 0 0 2px rgba(186,230,253,.8)}
 .lv-eco-empty{margin:18px 8px 6px;color:rgba(249,250,251,.6);font-size:14px}
 @keyframes lvEcoPop{from{opacity:0;transform:translateY(-6px) scale(.985)}to{opacity:1;transform:none}}
 @keyframes lvEcoSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes lvEcoIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-@keyframes lvEcoRing{0%{box-shadow:0 0 0 0 rgba(236,72,153,.55)}70%{box-shadow:0 0 0 9px rgba(236,72,153,0)}100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}}
+@keyframes lvEcoRing{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}70%{box-shadow:0 0 0 9px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 .lv-eco-ring{animation:lvEcoRing 1.8s ease-out infinite}
 @media(prefers-reduced-motion:reduce){.lv-eco-panel,.lv-eco-hint,.lv-eco-ring{animation:none}.lv-eco-btn .lv-eco-chev{transition:none}}
 @media(max-width:767px){
@@ -340,7 +342,7 @@ const CSS = `
 .lv-eco-sub{white-space:normal;font-size:10.5px;overflow-wrap:anywhere}
 .lv-eco-top>.lv-eco-here{order:1}
 .lv-eco-close{order:2;display:inline-flex;flex:none;width:44px;height:44px;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:${SNOW};cursor:pointer;padding:0;margin:0}
-.lv-eco-close:focus-visible{outline:2px solid #06B6D4;outline-offset:2px}
+.lv-eco-close:focus-visible{outline:2px solid #BAE6FD;outline-offset:2px}
 .lv-eco-search{order:3;flex:1 1 100%;max-width:none;height:46px}
 .lv-eco-search input{font-size:16px}
 .lv-eco-rule{display:none}

@@ -197,7 +197,7 @@ type SupportedLang = 'en' | 'fi' | 'de' | 'ja' | 'es' | 'pt-BR' | 'zh-CN' | 'ko'
 export interface NewsletterPopupTheme {
   /** Card background. Network default: deep-night #0F172A. */
   surface?: string;
-  /** Photo ring, top strip start, focus ring, checkbox. Default #EC4899. */
+  /** Photo ring, top strip start, focus ring, checkbox. Default ice #BAE6FD (rauhallinen värilinja 16.11.2026: pinkki vain sanamerkissä ja tilausnapissa). */
   accent?: string;
   /** CTA fill and top strip end. Default #DB2777. */
   cta?: string;
@@ -214,7 +214,7 @@ export type NewsletterPopupCopy = Partial<Record<SupportedLang, { headline?: str
 
 const DEFAULT_THEME: Required<NewsletterPopupTheme> = {
   surface: '#0F172A',
-  accent: '#EC4899',
+  accent: '#BAE6FD',
   cta: '#DB2777',
   onCta: '#FFFFFF',
 };
@@ -746,7 +746,7 @@ const FOUNDER_STYLES = `
   .lv-nl-body--form.lv-nl-body--form { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 16px; text-align: left; }
   .lv-nl-body--form .lv-nl-media, .lv-nl-body--form .lv-nl-main { display: contents; }
   .lv-nl-body--form > *, .lv-nl-body--form .lv-nl-main > * { grid-column: 1 / -1; }
-  .lv-nl-body--form .lv-founder-avatar { grid-column: 1; grid-row: 1; align-self: center; width: 64px !important; height: 64px !important; margin: 0; box-shadow: 0 0 0 2px var(--lv-nl-accent, #EC4899) !important; }
+  .lv-nl-body--form .lv-founder-avatar { grid-column: 1; grid-row: 1; align-self: center; width: 64px !important; height: 64px !important; margin: 0; box-shadow: 0 0 0 2px var(--lv-nl-accent, #BAE6FD) !important; }
   .lv-nl-body--form .lv-nl-wm.lv-nl-wm { grid-column: 2; grid-row: 1; align-self: center; font-size: 1.125rem; margin: 0; padding-right: 36px; text-align: left; }
   .lv-nl-body--form .lv-nl-title.lv-nl-title { grid-column: 1 / -1; grid-row: 2; align-self: start; font-size: 1.875rem; line-height: 1.1; margin: 16px 0 0; padding-right: 0; text-align: left; }
   .lv-nl-body--form .lv-nl-title.lv-nl-title:lang(ja) { font-size: 1.625rem; }
@@ -829,15 +829,16 @@ export default function NewsletterPopup({
   const siteCopy = copy?.[safeLang];
   const resolvedHeadline = headline ?? siteCopy?.headline ?? localized.headline;
   const resolvedDescription = description ?? siteCopy?.description ?? localized.description;
-  // Per-site dress (2026-09-23). Without `theme` every value below equals the
-  // old pink literal, so a site that passes no theme renders as before.
+  // Per-site dress (2026-09-23). Without `theme` the card is the network's calm default (16.11.2026):
+  // neutral strip, ice ring and focus, pink only in the wordmark and the subscribe button. No coloured glows
+  // in any theme: the photo ring and the button cast a dark shadow.
   const T = { ...DEFAULT_THEME, ...(theme ?? {}) };
   const stripBg = theme
     ? `linear-gradient(90deg, ${T.accent} 0%, ${T.cta} 100%)`
-    : 'linear-gradient(90deg, #EC4899 0%, #DB2777 50%, #BE185D 100%)';
-  const socialHoverBg = theme ? T.cta : '#EC4899';
-  const socialHoverFg = theme ? T.onCta : '#F9FAFB';
-  const ctaShadow = withAlpha(theme ? T.cta : T.accent, 0.25);
+    : 'linear-gradient(90deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.14) 100%)';
+  const socialHoverBg = theme ? T.cta : '#F9FAFB';
+  const socialHoverFg = theme ? T.onCta : '#0F172A';
+  const ctaShadow = 'rgba(2,6,23,0.45)';
   const cardStyle = {
     background: T.surface,
     border: `1px solid ${withAlpha(T.accent, 0.4)}`,
@@ -1091,7 +1092,7 @@ export default function NewsletterPopup({
         className="lv-nl-card relative my-auto max-w-md w-full rounded-2xl shadow-2xl"
         style={cardStyle}
       >
-        {/* Accent strip: the site's own colours, network pink by default */}
+        {/* Accent strip: the site's own colours, a neutral hairline by default */}
         <div
           className="lv-nl-strip h-1 w-full rounded-t-2xl"
           style={{ background: stripBg }}
@@ -1192,7 +1193,7 @@ export default function NewsletterPopup({
                     height: '128px',
                     borderRadius: '9999px',
                     overflow: 'hidden',
-                    boxShadow: `0 0 0 3px ${T.accent}, 0 0 40px ${withAlpha(T.accent, 0.55)}`,
+                    boxShadow: `0 0 0 3px ${T.accent}, 0 14px 34px rgba(2,6,23,0.55)`,
                   }}
                 >
                   <img

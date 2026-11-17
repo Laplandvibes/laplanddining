@@ -46,9 +46,10 @@ function track(event: string, data?: Record<string, unknown>) {
  * Standard bottom-of-page newsletter section (founder edition 2026-08-09) for
  * sites that had no inline signup at all (laplanddining, laplandtours,
  * laplandvisit — every ecosystem site must offer bottom-of-page signup, see
- * CLAUDE.md "Pakolliset elementit"). Visual grammar follows the hub band:
- * the ONE intentional pink section (vibe-pink → pink-600 gradient), white
- * pill CTA. Strings are founder-voiced, no cadence promises, all 12 locales.
+ * CLAUDE.md "Pakolliset elementit"). Visual grammar follows the network band
+ * (Vesa 16.11.2026 "Sinisellä kaistalla"): Finland blue #002F6C → #001B40 with a
+ * hairline above and below, white field, pink subscribe pill #DB2777 with white
+ * text. Strings are founder-voiced, no cadence promises, all 12 locales.
  *
  * Locale comes from <html lang> via FounderByline's convention: pass `lang`
  * explicitly where the site has a hook, else it falls back to <html lang>.
@@ -199,7 +200,7 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
       id="newsletter"
       ref={sectionRef}
       className="relative overflow-hidden px-4 py-16 sm:py-20"
-      style={{ background: 'linear-gradient(160deg, #DB2777 0%, #BE185D 58%, #9D174D 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #002F6C 0%, #001B40 100%)', borderTop: '1px solid rgba(255,255,255,0.10)', borderBottom: '1px solid rgba(255,255,255,0.16)' }}
     >
       <div
         aria-hidden="true"
@@ -284,7 +285,7 @@ export default function NewsletterInline({ siteId, lang, supabaseUrl, supabaseAn
                   type="submit"
                   disabled={status === 'loading'}
                   className="h-14 shrink-0 inline-flex items-center justify-center gap-2 px-7 rounded-full font-bold whitespace-nowrap shadow-lg transition-colors disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
-                  style={{ background: '#0F172A', color: '#FFFFFF' }}
+                  style={{ background: '#DB2777', color: '#FFFFFF' }}
                 >
                   {status === 'loading' ? (
                     <>
