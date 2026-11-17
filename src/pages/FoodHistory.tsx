@@ -208,7 +208,7 @@ export default function FoodHistory() {
       <section className="relative py-12 sm:py-16 bg-gradient-to-b from-night via-night-light/55 to-night">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(60%_45%_at_50%_0%,rgba(245,158,11,0.10),transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(60%_45%_at_50%_0%,rgba(148,163,184,0.06),transparent_70%)]"
         />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="max-w-3xl mx-auto text-white/75 text-lg sm:text-xl leading-relaxed border-l-2 border-amber/60 pl-5 italic">
@@ -246,7 +246,7 @@ export default function FoodHistory() {
                       <span className="font-heading text-amber text-2xl leading-none">
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <span className="h-px flex-1 bg-gradient-to-r from-amber/45 to-transparent" />
+                      <span className="h-px flex-1 bg-gradient-to-r from-white/25 to-transparent" />
                       <Icon size={16} className="text-amber/70 shrink-0" aria-hidden="true" />
                     </div>
 
@@ -332,7 +332,7 @@ export default function FoodHistory() {
           <div className="text-center pt-16 sm:pt-20">
             <Link
               to={to('/restaurants')}
-              className="inline-flex items-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
+              className="inline-flex items-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-black/30 no-underline"
             >
               {t('foodHistory.ctaExplore')}
               <ArrowRight size={18} aria-hidden="true" />

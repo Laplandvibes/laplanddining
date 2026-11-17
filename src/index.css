@@ -44,6 +44,109 @@
   --color-aurora-green: #10B981;
 }
 
+/* ── RAUHALLINEN VÄRILINJA ───────────────────────────────────────────────────
+   Kirkas väri tummalla pohjalla ei ole tekstin väri. Meripihka jää varausnappiin
+   (täyttö, tumma teksti), arvosanatähtiin ja logoon, pinkki logoon ja majoitusnappiin.
+   Muu korostus on lämmin vaalea sävy tai valkoinen, reunat neutraaleja, hehkuja ei ole.
+
+   Miten: luokat (text-amber, border-amber/30, bg-amber/10 …) pysyvät koodissa, mutta
+   teksti, reuna ja täyttö saavat kukin oman arvonsa. Arvo on muuttuja, jonka lähin
+   pinta tai rooli asettaa (alla @layer base). inline on pakollinen: ilman sitä
+   muuttuja ratkeaisi :rootissa eikä elementissä, jossa sitä käytetään. */
+@theme inline {
+  --text-color-amber:        var(--lv-ink-amber);
+  --text-color-amber-300:    var(--lv-ink-amber);
+  --text-color-yellow-300:   var(--lv-ink-amber);
+  --text-color-yellow-200:   var(--lv-ink-amber);
+  --text-color-vibe-pink:    var(--lv-ink-pink);
+  --text-color-pink-300:     var(--lv-ink-pink);
+  --text-color-arctic-cyan:  var(--lv-ink-cyan);
+  --text-color-aurora-green: var(--lv-ink-green);
+  --text-color-emerald-300:  var(--lv-ink-green);
+
+  --border-color-amber:        var(--lv-line);
+  --border-color-amber-500:    var(--lv-line);
+  --border-color-vibe-pink:    var(--lv-line);
+  --border-color-arctic-cyan:  var(--lv-line);
+  --border-color-aurora-green: var(--lv-line);
+  --border-color-emerald-500:  var(--lv-line);
+
+  --ring-color-amber:       var(--lv-line);
+  --ring-color-vibe-pink:   var(--lv-line);
+  --ring-color-arctic-cyan: var(--lv-line);
+  --ring-color-yellow-300:  var(--lv-line);
+  --border-color-yellow-300: var(--lv-line);
+
+  --background-color-amber:       var(--lv-fill-amber);
+  --background-color-emerald-500: var(--lv-fill-lasi);
+  --background-color-arctic-cyan: var(--lv-fill-lasi);
+  --background-color-vibe-pink:   var(--lv-fill-pink);
+}
+
+@layer base {
+  /* RAUHALLINEN VÄRILINJA: oletus = tumma pohja. */
+  :root {
+    --lv-ink-amber: #F8E3B0;   /* linkki, kuvake, korostus: lämmin vaalea */
+    --lv-ink-pink:  #F8E3B0;   /* jaettujen osien linkit samaa sävyä kuin sivuston omat */
+    --lv-ink-cyan:  #BAE6FD;
+    --lv-ink-green: #A7F3D0;   /* tilaväri pastellina */
+    --lv-line:      #94A3B8;   /* korostusreuna neutraalina; läpikuultavuus tulee luokasta (/30) */
+    --lv-fill-amber: #F59E0B;  /* varausnappi ja arvosanamerkki: sivun kirkas täyttö */
+    --lv-fill-lasi:  #CBD5E1;  /* sävytetty merkki tai laatta: neutraali lasi */
+    --lv-fill-pink:  #DB2777;
+  }
+  /* Sävytetty lasi (bg-amber/10 …) on neutraali. Vain umpinainen bg-amber on meripihkaa. */
+  :where([class~="bg-amber/5"], [class~="bg-amber/10"], [class~="bg-amber/15"], [class~="bg-amber/20"],
+         [class~="hover:bg-amber/10"], [class~="hover:bg-amber/20"]) {
+    --lv-fill-amber: #CBD5E1;
+  }
+  :where([class~="bg-vibe-pink/12"], [class~="hover:bg-vibe-pink/10"], [class~="bg-vibe-pink/10"], [class~="bg-vibe-pink/20"]) {
+    --lv-fill-pink: #CBD5E1;
+  }
+  /* Pieni versaaliyläotsikko: himmennetty versio ympäröivästä tekstiväristä, joten sama
+     sääntö käy tummalle ja vaalealle pinnalle. Linkissä ja napissa vahvempi. */
+  :where(.uppercase) {
+    --lv-ink-amber: color-mix(in oklab, currentColor 66%, transparent);
+    --lv-ink-pink:  color-mix(in oklab, currentColor 66%, transparent);
+    --lv-ink-cyan:  color-mix(in oklab, currentColor 66%, transparent);
+  }
+  :where(a.uppercase, button.uppercase, a .uppercase, button .uppercase) {
+    --lv-ink-amber: color-mix(in oklab, currentColor 86%, transparent);
+    --lv-ink-pink:  color-mix(in oklab, currentColor 86%, transparent);
+    --lv-ink-cyan:  color-mix(in oklab, currentColor 86%, transparent);
+  }
+  /* Otsikon korostussana ja otsikkofontilla ladottu iso luku ovat ympäröivän tekstin väriä:
+     ei kaksivärisiä otsikoita eikä värillisiä lukuja.
+     Tämän pitää olla versaalisäännön JÄLKEEN (versaaliotsikko on otsikko). */
+  :where(h1, h2, h3, h4, h5, h6, .font-heading) {
+    --lv-ink-amber: currentColor;
+    --lv-ink-pink:  currentColor;
+    --lv-ink-cyan:  currentColor;
+  }
+  /* Vaalea pinta (kermakortit, valkoiset laatat): korostus on syvä sävy. */
+  :where(.bg-white, .bg-snow, .bg-cream, .bg-cream-warm, .lv-vaalea) {
+    --lv-ink-amber: #92400E;
+    --lv-ink-pink:  #BE185D;
+    --lv-ink-cyan:  #0E7490;
+    --lv-ink-green: #047857;
+    --lv-line:      #64748B;
+    --lv-fill-lasi: #64748B;
+  }
+  /* Tumma esine vaalean pinnan sisällä palauttaa tumman oletuksen. */
+  :where(.bg-deep-night, .bg-night, .bg-night-light, .bg-gray-dark, .bg-warm-ink, [class*="bg-night/"], [class*="bg-warm-ink/"], .lv-yo) {
+    --lv-ink-amber: #F8E3B0;
+    --lv-ink-pink:  #F8E3B0;
+    --lv-ink-cyan:  #BAE6FD;
+    --lv-ink-green: #A7F3D0;
+    --lv-line:      #94A3B8;
+    --lv-fill-lasi: #CBD5E1;
+  }
+  /* Logo pitää värinsä (yläpalkin piirros, heron ja tekstin sanamerkit). */
+  [data-lv-sanamerkki], .notranslate {
+    --lv-ink-pink: #EC4899; --lv-ink-amber: #F59E0B;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -110,8 +213,8 @@ h1, h2, h3, h4, h5, h6 {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(ellipse at 30% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
-              radial-gradient(ellipse at 70% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 30% 50%, rgba(148, 163, 184, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 50%, rgba(148, 163, 184, 0.03) 0%, transparent 50%);
   animation: aurora-drift 12s ease-in-out infinite;
   pointer-events: none;
 }

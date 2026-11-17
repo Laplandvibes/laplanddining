@@ -13,9 +13,9 @@ import { reviewsAria, placeAlt } from '../lib/a11yNimet';
 function tierClass(tier: Restaurant['partnership']) {
   switch (tier) {
     case 'gold':
-      return 'ring-2 ring-amber/70 shadow-[0_30px_60px_-20px_rgba(245,158,11,0.45)]';
+      return 'ring-2 ring-amber/70 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]';
     case 'premium':
-      return 'ring-1 ring-amber/50 shadow-[0_20px_40px_-15px_rgba(245,158,11,0.25)]';
+      return 'ring-1 ring-amber/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]';
     case 'verified':
       return 'ring-1 ring-amber/25';
     default:
@@ -82,17 +82,17 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
             aria-label={reviewsAria(r.reviewCount, r.name, locale)}
             className="group/rating absolute top-0.5 right-0.5 z-10 inline-flex p-2.5 rounded-full no-underline"
           >
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-amber text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber-warm">
-              <Star size={10} className="fill-warm-ink" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-cream text-warm-ink text-xs font-bold shadow-md transition-colors group-hover/rating:bg-amber">
+              <Star size={10} className="text-amber fill-amber" />
               <span>{r.rating.toFixed(1)}</span>
               {r.reviewCount && (
-                <span className="font-semibold opacity-75">·&nbsp;{r.reviewCount.toLocaleString('en')}</span>
+                <span className="text-warm-muted font-semibold ml-0.5 transition-colors group-hover/rating:text-warm-ink">·&nbsp;{r.reviewCount.toLocaleString('en')}</span>
               )}
             </span>
           </a>
         )}
         {badge && (
-          <div className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider shadow-md pointer-events-none">
+          <div className="absolute bottom-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[rgba(15,23,42,0.82)] border border-white/20 text-white text-[10px] font-bold uppercase tracking-wider shadow-md pointer-events-none">
             <Award size={10} />
             {badge}
           </div>
@@ -190,7 +190,7 @@ export function CityCard({ r, labels, to, locale }: { r: Restaurant; labels: Car
             destination={`${r.city === 'Ylläs' ? 'Äkäslompolo' : r.city}, ${r.country}`}
             className="group/stay shrink-0 -my-2 py-2 inline-flex items-center rounded-full no-underline"
           >
-            <span className="inline-flex items-center gap-1 bg-[#DB2777] group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-vibe-pink/30">
+            <span className="inline-flex items-center gap-1 bg-[#DB2777] group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-black/30">
               {labels.stayNearby}
             </span>
           </AffiliateCTA>
@@ -217,8 +217,8 @@ export default function CityTopPicksGrid() {
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(245,158,11,0.05)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(148,163,184,0.06)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(148,163,184,0.06)_0%,transparent_60%)]" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-12">

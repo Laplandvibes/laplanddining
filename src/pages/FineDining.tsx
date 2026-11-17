@@ -137,7 +137,7 @@ export default function FineDining() {
       <section className="relative py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-night via-night-light/55 to-night">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(60%_45%_at_50%_0%,rgba(245,158,11,0.10),transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(60%_45%_at_50%_0%,rgba(148,163,184,0.06),transparent_70%)]"
         />
         <div className="relative max-w-7xl mx-auto">
           {/* Kahdessa sarakkeessa (768–1023 px) pariton viimeinen kortti keskelle muiden levyisenä (gate:tabletti laaja 9.11.2026). */}
@@ -198,7 +198,7 @@ export default function FineDining() {
                       </a>
                     )}
                     {badge && (
-                      <div className="absolute bottom-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber text-warm-ink text-[10px] font-bold uppercase tracking-wider shadow-md">
+                      <div className="absolute bottom-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[rgba(15,23,42,0.82)] border border-white/20 text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
                         <Award size={10} /> {badge}
                       </div>
                     )}
@@ -289,7 +289,7 @@ export default function FineDining() {
                         destination={`${r.city === 'Ylläs' ? 'Äkäslompolo' : r.city}, ${r.country}`}
                         className="group/stay ml-auto -my-2 py-2 inline-flex items-center rounded-full no-underline"
                       >
-                        <span className="inline-flex items-center gap-1 bg-[#DB2777] group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-vibe-pink/30">
+                        <span className="inline-flex items-center gap-1 bg-[#DB2777] group-hover/stay:bg-pink-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full transition-all shadow-sm shadow-black/30">
                           {t('fineDining.stayInTemplate', { city: r.city })}
                         </span>
                       </AffiliateCTA>

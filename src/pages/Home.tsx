@@ -122,7 +122,7 @@ export default function Home() {
           <div className="flex flex-col items-stretch gap-3 max-w-sm mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
             <Link
               to={to('/restaurants')}
-              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
+              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-black/30 no-underline"
             >
               {t('home.heroCtaExplore')}
               <ChevronDown size={20} />
@@ -232,7 +232,7 @@ export default function Home() {
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-900/30 via-night to-night" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,rgba(253,224,71,0.10)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_70%,rgba(245,158,11,0.08)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_70%,rgba(148,163,184,0.06)_0%,transparent_50%)]" />
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 lg:gap-12 items-center">
@@ -272,7 +272,7 @@ export default function Home() {
               <div className="flex flex-col items-stretch gap-3 max-w-sm mx-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center md:mx-0 md:justify-start">
                 <Link
                   to={to('/midnight-sun-dining')}
-                  className="inline-flex items-center justify-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-night px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 no-underline shadow-lg shadow-yellow-400/30"
+                  className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-warm text-night px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 no-underline shadow-lg shadow-black/30"
                 >
                   {t('home.midnightCtaGuide')}
                   <Sun size={16} />
@@ -319,7 +319,7 @@ export default function Home() {
               <Link
                 key={city}
                 to={to(`/restaurants#${city.toLowerCase().replace(/[^a-z]/g, '')}`)}
-                className="group px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white hover:bg-amber/10 hover:border-amber/40 hover:text-amber hover:shadow-[0_0_20px_-5px_rgba(245,158,11,0.2)] hover:scale-105 transition-all duration-300 font-medium no-underline"
+                className="group px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white hover:bg-amber/10 hover:border-amber/40 hover:text-amber hover:shadow-[0_0_20px_-5px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300 font-medium no-underline"
                 style={{ animationDelay: `${i * 50}ms` }}
               >
                 <MapPin size={14} className="inline mr-2 -mt-0.5 group-hover:text-amber transition-colors" />
@@ -355,7 +355,7 @@ export default function Home() {
 
       {/* ── Stay & Eat — hotel booking band (worker-routed partners) ── */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-night via-night-light to-night">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(236,72,153,0.06)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(148,163,184,0.05)_0%,transparent_60%)]" />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <p className="text-vibe-pink text-xs font-semibold tracking-[0.25em] uppercase mb-3">
             {t('home.stayKicker')}
@@ -378,7 +378,7 @@ export default function Home() {
                 partner="hotels"
                 sid={c.sid}
                 destination={`${c.city}, Finland`}
-                className="inline-flex items-center justify-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white px-4 py-3 rounded-full font-bold text-sm transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white px-4 py-3 rounded-full font-bold text-sm transition-all duration-200 no-underline shadow-md shadow-black/30 min-h-[44px]"
               >
                 {c.city}
               </AffiliateCTA>

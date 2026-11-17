@@ -125,7 +125,7 @@ export default function Cities() {
                   <h2 className="font-heading text-2xl tracking-wide text-white leading-tight">
                     {t(`cities.${city.slug}.name`, { defaultValue: city.name })}
                   </h2>
-                  <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-cream/75 text-[13px] font-semibold">
+                  <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-cream/95 text-[13px] font-semibold">
                     <span>
                       {t('cities.shared.countLabel', {
                         count,

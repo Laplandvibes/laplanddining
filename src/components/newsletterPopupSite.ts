@@ -14,7 +14,7 @@ import type { NewsletterPopupCopy, NewsletterPopupTheme } from '../shared/Newsle
  */
 export const POPUP_THEME: NewsletterPopupTheme = {
   surface: '#0F172A',
-  accent: '#F59E0B',
+  accent: '#F8E3B0',
   cta: '#B45309',
   onCta: '#FFFFFF',
 };

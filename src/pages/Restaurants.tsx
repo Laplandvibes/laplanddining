@@ -305,7 +305,7 @@ export default function Restaurants() {
               onClick={() => selectCity(null)}
               className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[36px] ${
                 !activeCity
-                  ? 'bg-amber text-night shadow-lg shadow-amber/20'
+                  ? 'bg-[#F9FAFB] text-night shadow-lg shadow-black/30'
                   : 'bg-white/5 text-white/75 hover:text-white hover:bg-white/10 border border-white/[0.06]'
               }`}
             >
@@ -317,7 +317,7 @@ export default function Restaurants() {
                 onClick={() => selectCity(activeCity === city ? null : city)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[36px] ${
                   activeCity === city
-                    ? 'bg-amber text-night shadow-lg shadow-amber/20'
+                    ? 'bg-[#F9FAFB] text-night shadow-lg shadow-black/30'
                     : 'bg-white/5 text-white/75 hover:text-white hover:bg-white/10 border border-white/[0.06]'
                 }`}
               >
@@ -339,7 +339,7 @@ export default function Restaurants() {
         ref={listRef}
         className="relative py-16 bg-night min-h-screen overflow-hidden scroll-mt-36"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.06)_0%,transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(148,163,184,0.06)_0%,transparent_50%)] pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Premium-listanosto: maksaneet ravintolat nousevat listan kärkeen
               kohteittain (Rovaniemi, Levi, Ylläs…). Tyhjänä house-ad. */}
@@ -395,12 +395,12 @@ export default function Restaurants() {
                       loading="lazy"
                       decoding="async"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/25 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/25 max-lg:from-night/95 max-lg:via-night/70 to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-r from-night/55 via-night/10 to-transparent" />
                     <PhotoCredit src={cityPageImage(city) ?? cityImages[city]} locale={locale} className="z-20" />
                     {/* Alle lg otsikko on keskellä, joten lukumäärä siirtyy kuvan oikeaan yläkulmaan
                         (gate:tabletti 7.11.2026); lg+ se pysyy otsikkorivin oikeassa päässä. */}
-                    <span className="lg:hidden absolute top-4 right-4 z-10 bg-night/55 backdrop-blur-sm border border-white/10 text-white/80 text-sm font-medium px-4 py-2 rounded-full">
+                    <span className="lg:hidden absolute top-4 right-4 z-10 bg-[rgba(15,23,42,0.82)] border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
                       {count} {countLabel}
                     </span>
                   </div>
@@ -421,14 +421,14 @@ export default function Restaurants() {
                             {citySlug(city) ? (
                               <Link
                                 to={`${cityLinkPrefix}/city/${citySlug(city)}`}
-                                className="text-white hover:text-amber transition-colors no-underline"
+                                className="text-white hover:text-amber transition-colors no-underline drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]"
                               >
                                 {city}
                               </Link>
                             ) : city}
                           </h2>
                         </div>
-                        <p className="text-white/75 text-sm max-w-lg max-lg:mx-auto max-lg:w-fit max-lg:text-left">{cityVibes[city]}</p>
+                        <p className="text-white/90 text-sm max-w-lg max-lg:mx-auto max-lg:w-fit max-lg:text-left drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">{cityVibes[city]}</p>
                         {citySlug(city) && (
                           <Link
                             to={`${cityLinkPrefix}/city/${citySlug(city)}`}
@@ -441,7 +441,7 @@ export default function Restaurants() {
                           </Link>
                         )}
                       </div>
-                      <span className="hidden lg:inline bg-white/10 backdrop-blur-sm border border-white/10 text-white/70 text-sm font-medium px-4 py-2 rounded-full shrink-0">
+                      <span className="hidden lg:inline bg-[rgba(15,23,42,0.82)] border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full shrink-0">
                         {count} {countLabel}
                       </span>
                     </div>
@@ -512,7 +512,7 @@ export default function Restaurants() {
                         partner="hotels"
                         sid={hotelsSid(city)}
                         destination={`${city === 'Ylläs' ? 'Äkäslompolo' : city}, Finland`}
-                        className="inline-flex items-center justify-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-vibe-pink/20 min-h-[44px]"
+                        className="inline-flex items-center justify-center gap-1.5 bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-md shadow-black/30 min-h-[44px]"
                       >
                         {t('restaurants.stayBtnTemplate', { city })}
                       </AffiliateCTA>

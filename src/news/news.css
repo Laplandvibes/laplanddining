@@ -37,7 +37,7 @@
   --link:#B45309;
   --onNight:#F4F7FB;       /* muste tummalla  */
   --onNightMuted:#B8C2D0;
-  --gold:#FCD34D;          /* korostus tummalla */
+  --gold:#F8E3B0;          /* korostus tummalla */
   --lineNight:rgba(255,255,255,.14);
   background:var(--night);
   color:var(--onNight);
@@ -54,11 +54,11 @@
 
 /* ── Osion etusivun yläpalkki ────────────────────────────────────────────── */
 .nw .nw-head{position:relative;color:#fff;padding:64px 0 56px;overflow:hidden;
-  background:radial-gradient(70% 90% at 86% -10%,rgba(245,158,11,.26) 0%,rgba(245,158,11,0) 62%),
+  background:radial-gradient(70% 90% at 86% -10%,rgba(148,163,184,.14) 0%,rgba(148,163,184,0) 62%),
              radial-gradient(60% 70% at 0% 110%,rgba(0,47,108,.34) 0%,rgba(0,47,108,0) 60%),
              linear-gradient(180deg,#0F172A 0%,#16213B 100%)}
 .nw .nw-head .wrap{position:relative}
-.nw .nw-head .eyebrow{color:var(--gold);display:block}
+.nw .nw-head .eyebrow{color:rgba(255,255,255,.72);display:block}
 .nw .nw-head .crumbs{color:var(--onNightMuted)}
 .nw .nw-head .crumbs a{color:#fff}
 .nw .nw-h1{font-size:clamp(42px,6.4vw,76px);line-height:.98;margin-top:10px;max-width:24ch;text-wrap:balance}
@@ -81,7 +81,7 @@
 .nw .nw-art .nw-dek{color:#EDF1F7;max-width:58ch}
 .nw .nw-art .crumbs{color:var(--onNightMuted)}
 .nw .nw-art .crumbs a{color:#fff}
-.nw .nw-kicker{font:600 12px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0}
+.nw .nw-kicker{font:600 12px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);margin:0}
 /* 5.10.2026 (heroteksti-portti): yläotsikko oli valokuvan päällä 1,3–4,3:1 (vaalea taivas, lumi, terminaalin valot).
    Osio ja päivä omille tummille pohjilleen: sama tumma kuin laplandworkissa, messinki- ja pinkkitekstilläkin ≥ 5:1
    kirkasta taivasta vasten. Kaksi erillistä pohjaa rivittyvät kokonaisina; yksi yhteinen pohja katkesi pitkillä
@@ -159,20 +159,20 @@
 /* ── Osion etusivun "näin raportoimme" (tummalla) ────────────────────────── */
 .nw .nw-about{padding:26px 0 56px}
 .nw .nw-about-in{max-width:800px;border-top:1px solid var(--lineNight);padding-top:26px}
-.nw .nw-about-h{font:700 12.5px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0}
+.nw .nw-about-h{font:700 12.5px var(--font-body),'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);margin:0}
 .nw .nw-about p{color:var(--onNightMuted);font-size:16px;line-height:1.6;margin:8px 0 6px;max-width:66ch}
-.nw .nw-about .nw-inlink{color:var(--gold);border-bottom-color:rgba(252,211,77,.4)}
+.nw .nw-about .nw-inlink{color:var(--gold);border-bottom-color:rgba(248,227,176,.4)}
 
 /* ── Juttusivun "muita uutisia", etusivun nosto, sivulinkit (tummalla) ───── */
 .nw .nw-related{padding:52px 0 10px}
 .nw .nw-related-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;margin-bottom:18px}
 .nw .nw-related-head h2{font-size:clamp(30px,4vw,44px);color:var(--onNight);margin:0}
-.nw .nw-related .nw-inlink{color:var(--gold);border-bottom-color:rgba(252,211,77,.4)}
+.nw .nw-related .nw-inlink{color:var(--gold);border-bottom-color:rgba(248,227,176,.4)}
 .nw .nw-teaser{padding:64px 0 20px}
-.nw .nw-teaser .sechead .eyebrow{display:block;color:var(--gold)}
+.nw .nw-teaser .sechead .eyebrow{display:block;color:rgba(255,255,255,.72)}
 .nw .nw-teaser .sechead h2{font-size:clamp(30px,4vw,44px);line-height:1.02;color:var(--onNight);margin:8px 0 0}
 .nw .nw-more{text-align:center;margin-top:24px}
-.nw .nw-more .nw-inlink{color:var(--gold);border-bottom-color:rgba(252,211,77,.4)}
+.nw .nw-more .nw-inlink{color:var(--gold);border-bottom-color:rgba(248,227,176,.4)}
 .nw .nw-morepages{padding:36px 0 56px}
 .nw .nw-morepages ul{display:flex;flex-wrap:wrap;gap:10px 12px;list-style:none;margin:0;padding:24px 0 0;border-top:1px solid var(--lineNight)}
 /* 🔴 Pilleri ei saa olla `white-space:nowrap` — verkoston alatunnisteessa se valui naapurin

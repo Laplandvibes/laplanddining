@@ -44,7 +44,7 @@ export default function EditorsPicks() {
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-night overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(245,158,11,0.08)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(148,163,184,0.06)_0%,transparent_60%)]" />
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-amber text-xs font-semibold tracking-[0.25em] uppercase mb-3">
@@ -69,7 +69,7 @@ export default function EditorsPicks() {
         <div className="text-center mt-10">
           <Link
             to={to('/restaurants')}
-            className="inline-flex items-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg shadow-amber/25 no-underline"
+            className="inline-flex items-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg shadow-black/30 no-underline"
           >
             {t('home.picksCtaAll', { count: restaurants.length, cities: cities.length })}
             <ArrowRight size={18} />

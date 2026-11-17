@@ -226,7 +226,7 @@ const catName = (path: string, lang: string): string => {
           joten regen ei palauta ongelmaa — vain keskitys on dining-kohtainen. */}
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 sm:mb-12 text-center">
-          <p className="font-bold tracking-[0.18em] uppercase text-sm mb-3 text-[#22D3EE]">{t(L.kicker)}</p>
+          <p className="font-bold tracking-[0.18em] uppercase text-sm mb-3 text-white/70">{t(L.kicker)}</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-[#F9FAFB]">
             {t(L.headingCategory)}
           </h2>
@@ -240,7 +240,7 @@ const catName = (path: string, lang: string): string => {
             href={gygCategoryHref(c, lang)}
             target="_blank"
             rel="sponsored nofollow noopener"
-            className="group flex flex-col items-center rounded-2xl border bg-white/5 border-white/10 px-6 py-8 text-center no-underline transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#22D3EE]/50"
+            className="group flex flex-col items-center rounded-2xl border bg-white/5 border-white/10 px-6 py-8 text-center no-underline transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-white/40"
           >
             <h3 className="text-xl font-bold leading-snug text-[#F9FAFB]">{catName(c.path, lang)}</h3>
 

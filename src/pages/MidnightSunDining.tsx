@@ -112,7 +112,7 @@ export default function MidnightSunDining() {
           <div className="flex flex-col items-stretch gap-3 max-w-sm mx-auto sm:max-w-none sm:flex-row sm:items-center sm:justify-center lg:mx-0 lg:justify-start">
             <a
               href="#cities"
-              className="inline-flex items-center justify-center gap-2 bg-yellow-300 hover:bg-yellow-200 text-night px-7 py-3.5 rounded-full font-bold text-base transition-colors duration-300 shadow-lg shadow-yellow-400/30 no-underline"
+              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-warm text-night px-7 py-3.5 rounded-full font-bold text-base transition-colors duration-300 shadow-lg shadow-black/30 no-underline"
             >
               {t('midnightSunDining.heroCtaWhere')}
               <Sunset size={18} />
@@ -186,7 +186,7 @@ export default function MidnightSunDining() {
                         sid={meta.hotelsSid}
                         destination={meta.hotelsQuery}
                         query={stay}
-                        className="inline-flex items-center justify-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-sm font-bold px-5 py-2.5 min-h-[44px] rounded-full transition-colors duration-200 no-underline shadow-md shadow-amber/20"
+                        className="inline-flex items-center justify-center gap-1.5 bg-amber hover:bg-amber-warm text-night text-sm font-bold px-5 py-2.5 min-h-[44px] rounded-full transition-colors duration-200 no-underline shadow-md shadow-black/30"
                       >
                         {t('midnightSunDining.stayInTemplate', { city: c.name })}
                       </AffiliateCTA>
@@ -252,7 +252,7 @@ export default function MidnightSunDining() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               to={to('/restaurants')}
-              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-bold text-base transition-colors duration-300 shadow-lg shadow-amber/25 no-underline"
+              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-warm text-night px-8 py-4 rounded-full font-bold text-base transition-colors duration-300 shadow-lg shadow-black/30 no-underline"
             >
               {t('midnightSunDining.bottomCtaBrowse')}
             </Link>
