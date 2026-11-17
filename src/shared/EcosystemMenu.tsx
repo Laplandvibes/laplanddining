@@ -265,7 +265,7 @@ const CSS = `
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoIn .26s ease-out both}
 @media(min-width:768px){.lv-eco-hint{display:block}}
 /* Nuoli on samaa tummaa laattaa kuin pilleri, jotta se luetaan pillerin osaksi eika erilliseksi palaksi.
-   Vinkki on opaste, ei varausnappi: neutraali laatta, ei pinkkia (16.11.2026). */
+   Vinkki on opaste, ei varausnappi: neutraali laatta, ei pinkkia. */
 .lv-eco-hint-arrow{position:absolute;top:-5px;left:18px;width:11px;height:11px;transform:rotate(45deg);border-radius:2px;background:#1E293B;box-shadow:inset 1px 1px 0 rgba(255,255,255,.18)}
 .lv-eco-hint-pill{position:relative;display:flex;align-items:center;gap:8px;border-radius:999px;padding:6px 6px 6px 14px;font-size:12px;font-weight:600;background:#1E293B;color:#fff;box-shadow:0 3px 10px -3px rgba(15,23,42,.55),inset 0 0 0 1px rgba(255,255,255,.18)}
 .lv-eco-hint-x{display:flex;position:relative;width:20px;height:20px;align-items:center;justify-content:center;border-radius:999px;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.85);background:rgba(255,255,255,.12);font:inherit;line-height:1}

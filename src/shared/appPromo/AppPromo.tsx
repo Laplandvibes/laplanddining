@@ -147,7 +147,7 @@ const CSS = `
 .lvap{width:100%;margin:32px 0;font-family:'DM Sans',system-ui,sans-serif;color:#F9FAFB;container-type:inline-size}
 .lvap *{box-sizing:border-box}
 .lvap-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(to bottom right,#4a1236,#241a3f,#123152);padding:20px}
-/* Rauhallinen värilinja 16.11.2026: ei sumeita väripalloja. Elementti jää DOMiin, jotta rakenne ei muutu. */
+/* Ei sumeita väripalloja. Elementti jää DOMiin, jotta rakenne ei muutu. */
 .lvap-glow{display:none}
 .lvap-in{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .lvap-title,.lvap-lead,.lvap-lab,.lvap-line,.lvap-feat{overflow-wrap:break-word}
