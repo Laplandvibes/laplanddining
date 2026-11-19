@@ -120,10 +120,15 @@ const uusittavat = mitatut.filter(vastaamaton);
 if (uusittavat.length) {
   console.log(`${uusittavat.length} osoitetta ei vastannut: uusi yritys ${UUSINTA_MIN} minuutin päästä.`);
   await new Promise((r) => setTimeout(r, Math.max(0, UUSINTA_MIN) * 60000));
+  // Rinnakkain: ajo pysyy ajo.sh:n 20 minuutin rajan alla, vaikka vastaamattomia olisi monta
+  // (yksi haku enintään 2 × 20 s + 3 s).
   const vastasi = new Set();
-  for (const l of uusittavat) {
+  const haut = await Promise.all(uusittavat.map(async (l) => {
     const p = await probe(l.url);
     await p.res?.body?.cancel();
+    return [l, p];
+  }));
+  for (const [l, p] of haut) {
     if (p.ok) {
       vastasi.add(l);
       console.log(`  vastasi uusintakierroksella, ei kirjata: ${l.url}`);
