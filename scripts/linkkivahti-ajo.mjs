@@ -10,6 +10,7 @@
  *   node scripts/linkkivahti-ajo.mjs --tila <kansio> --kuittaa  viesti lähti: kirjaa ilmoitetuksi
  *   … --kuiva                tila luetaan mutta ei kirjoiteta, viesti tulostetaan
  *   … --tanaan YYYY-MM-DD    päivä käsin (kokeisiin; vahdit itse käyttävät oikeaa päivää)
+ *   … --uusinta-min N        vastaamattomien uusintakierroksen odotus minuutteina (oletus 10, kokeissa 0)
  *
  * Paluukoodit: 0 = ajo ok, ei viestiä · 10 = ajo ok, viesti odottaa tilakansiossa
  * (viesti.txt, otsikko.txt, odottaa.json) · 2 = vahti kaatui tai ei tuottanut
@@ -23,9 +24,9 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { todayIso } from './lib/link-watch.mjs';
+import { todayIso, probe } from './lib/link-watch.mjs';
 import {
-  ennakot, ajoEpaluotettava, tyhjaTila, paivitaTila, ilmoituksenSyy, kuittaa, nimikartta, viesti, selitys,
+  ennakot, ajoEpaluotettava, tyhjaTila, paivitaTila, ilmoituksenSyy, kuittaa, nimikartta, viesti, selitys, vastaamaton,
 } from './lib/linkkivahti-raportti.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -103,12 +104,34 @@ for (const [nimi, skripti] of [['ruokalistat', 'check-menu-links.mjs'], ['verkko
 fs.rmSync(tmp, { recursive: true, force: true });
 
 const tarkistettu = { ruokalistat: tulokset.ruokalistat.tarkistettu, verkkosivut: tulokset.verkkosivut.tarkistettu };
-const mitatut = Object.entries(tulokset).flatMap(([vahti, t]) => t.loydokset.map((l) => ({ vahti, ...l })));
+let mitatut = Object.entries(tulokset).flatMap(([vahti, t]) => t.loydokset.map((l) => ({ vahti, ...l })));
 
 if (ajoEpaluotettava({ loydokset: mitatut, tarkistettu: tarkistettu.ruokalistat + tarkistettu.verkkosivut })) {
   const n = mitatut.filter((l) => l.laji === 'kuollut').length;
   console.error(`${n} osoitetta ei vastaa: vika on todennäköisemmin tämän koneen verkossa kuin ravintoloissa. Ajoa ei kirjata.`);
   process.exit(3);
+}
+
+// ── 2b. Uusintakierros: sivu, joka ei vastannut lainkaan, haetaan uudelleen myöhemmin ──────────
+// Peruste: lib/linkkivahti-raportti.mjs `vastaamaton` (18.–19.11.2026). Vain kun tällaisia on,
+// muuten ajo ei odota. --uusinta-min 0 = heti (kokeet).
+const UUSINTA_MIN = Number(arg('--uusinta-min') ?? 10);
+const uusittavat = mitatut.filter(vastaamaton);
+if (uusittavat.length) {
+  console.log(`${uusittavat.length} osoitetta ei vastannut: uusi yritys ${UUSINTA_MIN} minuutin päästä.`);
+  await new Promise((r) => setTimeout(r, Math.max(0, UUSINTA_MIN) * 60000));
+  const vastasi = new Set();
+  for (const l of uusittavat) {
+    const p = await probe(l.url);
+    await p.res?.body?.cancel();
+    if (p.ok) {
+      vastasi.add(l);
+      console.log(`  vastasi uusintakierroksella, ei kirjata: ${l.url}`);
+    } else {
+      console.log(`  ei vastannut uusintakierroksellakaan (${p.status ? `HTTP ${p.status}` : p.errorCode}): ${l.url}`);
+    }
+  }
+  mitatut = mitatut.filter((l) => !vastasi.has(l));
 }
 
 // ── 3. Ennakot: voimassaolo päättyy, selaintarkistus vanhenee ───────────────────────────────

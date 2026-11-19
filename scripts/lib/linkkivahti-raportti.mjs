@@ -11,7 +11,8 @@
  * Säännöt:
  * - Verkosta mitattu vika (404, etusivulle ohjaus, ei enää ruokalista) pitää
  *   nähdä KAHTENA eri päivänä ennen ilmoitusta. Ravintolan sivu voi olla yhden
- *   yön alhaalla; se ei ole Vesan asia.
+ *   yön alhaalla; se ei ole Vesan asia. Sivu, joka ei vastannut lainkaan,
+ *   haetaan lisäksi uudelleen samassa ajossa 10 minuutin päästä (vastaamaton).
  * - Päivämäärästä johtuva löydös (voimassaolo päättyi tai päättyy, selaimella
  *   tehty tarkistus vanhenee) ilmoitetaan heti: se ei korjaannu itsestään.
  * - Ennakko: voimassaolon päättyminen 7 päivää ja selaintarkistuksen
@@ -84,6 +85,22 @@ export function ennakot({ rekisteri, estetyt, tanaan, maxDays = BROWSER_CHECK_MA
 export function ajoEpaluotettava({ loydokset, tarkistettu, osuus = 0.2, vahintaan = 8 }) {
   const kuolleet = loydokset.filter((l) => l.laji === 'kuollut').length;
   return kuolleet >= vahintaan && kuolleet / Math.max(1, tarkistettu) >= osuus;
+}
+
+/**
+ * Sivu ei vastannut lainkaan (aikakatkaisu tai yhteys ei auennut). Ajo hakee
+ * tällaisen osoitteen uudelleen ennen kuin se kirjataan viaksi, koska
+ * kahden päivän sääntö ei riitä katkoon, joka osuu ajon kellonaikaan:
+ * 18.–19.11.2026 saman kotisivupalvelun viisi osoitetta (Saamen Kammi,
+ * Puistopaviljonki) ei vastannut klo 12.20 kumpanakaan päivänä, mutta vastasi
+ * 13.07 alle sekunnissa, ja Vesa sai viestin viidestä toimivasta linkistä.
+ *
+ * Ei uusintaa: HTTP-koodi (404, 5xx: probe uusii jo kerran), nimipalvelu
+ * (osoitetta ei ole) ja varmennevika. Ne kertovat sivusta, eivät hetkestä.
+ */
+export function vastaamaton(l) {
+  if (l?.laji !== 'kuollut') return false;
+  return /Timeout|ETIMEDOUT|ECONNREFUSED|EHOSTUNREACH|ENETUNREACH|UND_ERR_CONNECT/i.test(String(l.tila ?? ''));
 }
 
 export function tyhjaTila() {

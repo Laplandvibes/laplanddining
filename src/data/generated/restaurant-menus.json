@@ -118,13 +118,14 @@
   "kemijarvi-jauri-resort": {
     "url": "https://www.jauriresort.com/fi/ravintola/ravintola-menu/",
     "kind": "page",
-    "title": "Ravintola menu | Jauri Resort",
-    "evidence": 19,
-    "checkedAt": "2026-08-10",
-    "urlEn": "https://www.jauriresort.com/restaurant/restaurant-menu/",
+    "title": "Talvi-illalliset | Jauri Resort",
+    "evidence": 8,
+    "checkedAt": "2026-11-19",
+    "urlEn": "https://www.jauriresort.com/restaurant/menu-winter/",
     "kindEn": "page",
-    "titleEn": "Restaurant menu | Jauri Resort",
-    "evidenceEn": 19
+    "titleEn": "Winter Menu | Jauri Resort",
+    "evidenceEn": 8,
+    "note": "19.11.2026: vanha englanninkielinen osoite /restaurant/restaurant-menu/ oli 404 (linkkivahti 17.-19.11.). Suomenkielinen lista on samassa osoitteessa nimella Talvi-illalliset, ja sen kieliversiolinkki (hreflang en) vie osoitteeseen /restaurant/menu-winter/ (Winter Menu, buffet + a la carte, 8 hintaa). Osoite on kauden nimella: jos ravintola nimeaa sen kesalla uudelleen, vahti nayttaa 404:n."
   },
   "kemijarvi-mestarin-kievari": {
     "url": "https://www.mestarinkievari.fi/ravintola",
@@ -292,11 +293,9 @@
     "checkedAt": "2026-08-10"
   },
   "muonio-jeris-lakeside-resort": {
-    "url": "https://harriniva.fi/en/3-wilderness-resorts/jeris-lakeside-resort/restaurant/",
-    "kind": "page",
-    "title": "Restaurant at Jeris Lakeside Resort - Harriniva Hotels &amp; Safaris",
-    "evidence": 9,
-    "checkedAt": "2026-08-10"
+    "status": "none",
+    "reason": "19.11.2026: Harrinivan Jeris-ravintolasivulla (https://harriniva.fi/en/3-wilderness-resorts/jeris-lakeside-resort/restaurant/, fi samoin) on enaa kahden virkkeen esittely, ei ruokalistaa eika hintoja (elokuussa 9 hintaa). Sivukartassa ei ole muuta Jerisin lista- tai ravintolasivua. Ruokalistanappi piilotetaan; kortin Nettisivut-linkki jaa. Kun Harriniva julkaisee listan, lisaa se takaisin.",
+    "checkedAt": "2026-11-19"
   },
   "muonio-los-lompolo-s": {
     "status": "none",
@@ -673,11 +672,12 @@
     "kindEn": "page"
   },
   "kuusamo-torin-vintti": {
-    "url": "https://www.torinvintti.fi/menu/",
+    "url": "https://www.torinvintti.fi/lounaslista/",
     "kind": "page",
-    "title": "Lounaslista | Torin Vintti",
-    "evidence": 1,
-    "checkedAt": "2026-10-20"
+    "title": "Lounaslista",
+    "evidence": 5,
+    "checkedAt": "2026-11-19",
+    "note": "19.11.2026: /menu/ oli 404 (linkkivahti 18.-19.11.), vaikka Hinnasto-sivun Lounaslista-nappi linkittaa siihen yha. Ravintolan oma valikko vie osoitteeseen /lounaslista/ (viikon lounaslista paivittain, 12,50 EUR)."
   },
   "kuusamo-olearys": {
     "status": "none",

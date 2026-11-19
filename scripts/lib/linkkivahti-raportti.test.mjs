@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   avain, ennakot, ajoEpaluotettava, tyhjaTila, paivitaTila, ilmoituksenSyy, kuittaa, nimikartta, viesti, selitys,
-  lisaaPaivia, fiPvm,
+  lisaaPaivia, fiPvm, vastaamaton,
 } from './linkkivahti-raportti.mjs';
 
 const kuollut = { vahti: 'ruokalistat', laji: 'kuollut', slug: 'rovaniemi-arctic-river-resort', kieli: 'fi', url: 'https://arr.example/menu.pdf', tila: 'HTTP 404' };
@@ -95,6 +95,22 @@ test('epäluotettava ajo: iso osa osoitteista ei vastaa', () => {
   assert.equal(ajoEpaluotettava({ loydokset: monta, tarkistettu: 155 }), true);
   assert.equal(ajoEpaluotettava({ loydokset: monta.slice(0, 7), tarkistettu: 155 }), false);
   assert.equal(ajoEpaluotettava({ loydokset: [vanhentunut, vanhentunut], tarkistettu: 4 }), false);
+});
+
+test('uusintakierros: vain sivu joka ei vastannut lainkaan haetaan uudelleen', () => {
+  // 18.–19.11.2026: kotisivupalvelun viisi osoitetta aikakatkaisi klo 12.20 kahtena päivänä, vastasi 13.07.
+  assert.equal(vastaamaton({ ...kuollut, tila: 'TimeoutError' }), true);
+  assert.equal(vastaamaton({ ...kuollut, tila: 'ETIMEDOUT' }), true);
+  assert.equal(vastaamaton({ ...kuollut, tila: 'ECONNREFUSED' }), true);
+  assert.equal(vastaamaton({ ...kuollut, tila: 'UND_ERR_CONNECT_TIMEOUT' }), true);
+  // Sivusta kertova vastaus ei ole hetkellinen: 404, nimipalvelu, varmenne.
+  assert.equal(vastaamaton(kuollut), false);
+  assert.equal(vastaamaton({ ...kuollut, tila: 'HTTP 503' }), false);
+  assert.equal(vastaamaton({ ...kuollut, tila: 'ENOTFOUND' }), false);
+  assert.equal(vastaamaton({ ...kuollut, tila: 'ERR_TLS_CERT_ALTNAME_INVALID' }), false);
+  // Muut lajit eivät ole verkkovikoja.
+  assert.equal(vastaamaton({ ...kuollut, laji: 'ei-ruokalista', tila: undefined }), false);
+  assert.equal(vastaamaton(vanhentunut), false);
 });
 
 test('nimikartta lukee Maps-datan ja gemsit, myös heittomerkin nimessä ja locality-kentän', () => {
