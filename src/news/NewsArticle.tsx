@@ -89,29 +89,30 @@ function ArticleView({ meta }: { meta: NewsMeta }) {
           <p className="nw-dek">{text.dek}</p>
         </div>
       </header>
+      {/* Vesa 19.11.2026 tabletilta: "näin paljon kaikkea paskaa ennen kuin juttu edes alkaa". Tekijä ja jakonappi
+          samassa kohdassa; julkaisupäivä näkyy jo otsikon yläpuolella, joten sitä ei toisteta; kuvateksti ja
+          kuvaajatieto jutun loppuun lähteiden yläpuolelle. Jakonappi pysyy ylhäällä ja lopussa (Vesa 24.10.2026). */}
       <div className="wrap nw-narrow nw-art-meta">
-        {/* Vesa 6.11.2026: "miksi lähteet pitää olla ekana eikä artikkelin lopussa": lähdeluettelo on vain jutun
-            lopussa (nw-sources); alussa kirjoittaja, päivät, kuvateksti ja jakonappi. */}
-        <Erotinrivi className="nw-byline" osat={[
-          ui.ui.byline,
-          <>{ui.ui.published} <time dateTime={meta.date}>{formatDate(meta.date, lang)}</time></>,
-          meta.updated ? <>{ui.ui.updated} <time dateTime={meta.updated}>{formatDate(meta.updated, lang)}</time></> : null,
-        ]} />
-        <p className="nw-art-cap">
-          {text.heroCaption && <span>{text.heroCaption} </span>}
-          <span className="nw-art-credit-line">
-            {labelPrefix(ui.ui.photo, lang)}<a href={credit.sourceUrl} target="_blank" rel="noopener">{credit.author} / {credit.sourceName}</a>,{' '}
-            <a href={credit.licenseUrl} target="_blank" rel="noopener license">{credit.license}</a>
-          </span>
-        </p>
-        {/* Jakonappi tekijärivin alle omalle rivilleen (Vesa 24.10.2026: "Tuo sama jakonappi ylös ja loppuun"). */}
-        <ShareButton lang={lang} title={text.title} excerpt={text.dek} tone="dark" className="mt-4" />
+        <div className="nw-meta-row">
+          <Erotinrivi className="nw-byline" osat={[
+            ui.ui.byline,
+            meta.updated ? <>{ui.ui.updated} <time dateTime={meta.updated}>{formatDate(meta.updated, lang)}</time></> : null,
+          ]} />
+          <ShareButton lang={lang} title={text.title} excerpt={text.dek} tone="dark" />
+        </div>
       </div>
 
       <article className="nw-sheet">
         <Prose blocks={text.body} meta={meta} />
         {/* Jutun loppu: jakorivi aina näkyvissä (shared/ShareBar, 12 kieltä). */}
         <ShareBar lang={lang} title={text.title} tone="light" />
+        <p className="nw-art-cap nw-art-cap-end">
+          {text.heroCaption && <span>{text.heroCaption} </span>}
+          <span className="nw-art-credit-line">
+            {labelPrefix(ui.ui.photo, lang)}<a href={credit.sourceUrl} target="_blank" rel="noopener">{credit.author} / {credit.sourceName}</a>,{' '}
+            <a href={credit.licenseUrl} target="_blank" rel="noopener license">{credit.license}</a>
+          </span>
+        </p>
         <section className="nw-sources" aria-labelledby="nw-sources-h">
           <h2 id="nw-sources-h" className="nw-sources-h">{ui.ui.sources}</h2>
           <ol>

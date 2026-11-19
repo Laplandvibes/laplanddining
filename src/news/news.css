@@ -307,3 +307,26 @@
 .nw .nw-sheet section > ul[role="list"] button{background:#fff;color:#0F172A;border-color:rgba(15,23,42,.28)}
 @media(min-width:760px){.nw .nw-sheet section:has(> ul[role="list"]){padding:24px 26px 24px}}
 .nw{--lv-soft:#FFF7ED;--lv-soft-line:#FED7AA;--lv-tile:#FFFFFF;--lv-share-bg:#EEF3FA;--lv-share-line:#C9D8EC;--lv-cap-font:var(--font-heading),"Bebas Neue",system-ui,sans-serif}
+
+/* Uutisjutun alku tabletilla ja puhelimella (19.11.2026, Vesa tabletilta: "näin paljon kaikkea paskaa ennen kuin juttu
+   edes alkaa"): tekijä ja jakonappi samassa kohdassa, kuvateksti jutun loppuun, tabletilla johdanto jutun tekstin
+   levyinen eikä kapea vasen palsta. Alle 1024 px rivi allekkain keskelle (gate:tabletti: nappi palstan keskellä). */
+.nw .nw-meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.nw .nw-meta-row > *{margin-top:0;margin-bottom:0}
+.nw .nw-art-cap-end{margin-top:28px;padding-top:16px;border-top:1px solid var(--line)}
+@media(max-width:1023.98px){
+  .nw .nw-meta-row{flex-direction:column;justify-content:center;align-items:center;gap:8px;text-align:center}
+  .nw .nw-meta-row .nw-byline{justify-content:center}
+  .nw .nw-related-head{flex-direction:column;align-items:center;text-align:center}
+}
+@media(min-width:640px) and (max-width:1023.98px){
+  .nw .nw-art .nw-dek{width:auto;max-width:min(44.75rem,100%);margin-left:auto;margin-right:auto;text-align:left}
+}
+
+/* Uutisosion etusivun otsikkoalue alle 1024 px: murupolku, yläotsake ja otsikko keskelle, johdanto keskitetty
+   palsta jonka rivit alkavat vasemmalta (gate:tabletti, 19.11.2026). */
+@media(max-width:1023.98px){
+  .nw .nw-head{text-align:center}
+  .nw .nw-head .crumbs{justify-content:center}
+  .nw .nw-head .nw-lead{margin-left:auto;margin-right:auto;max-width:min(44.75rem,100%);text-align:left}
+}
