@@ -119,6 +119,9 @@ export function MainPartnerBanner({ config, locale, surface = 'dark', houseAdTon
 export type HomeAdSlotsProps = SurfaceProps & {
   /** Korttien lisäluokat (vaaleiden sivujen pinnat, kun myyty) */
   cardClassName?: string;
+  /** Sivun levyinen: sama sisäleveys kuin max-w-7xl px-4 -osioilla (laplandgifts-etusivu, Vesa 20.11.2026:
+   *  "eri levyisin laatikoita"). Oletus ennallaan: kapea kortti tuoterivien levyisenä. */
+  wide?: boolean;
 };
 
 /**
@@ -126,7 +129,7 @@ export type HomeAdSlotsProps = SurfaceProps & {
  * Mobiili: pinottuna, ykköspaikka vuorottelee päivittäin (deterministinen,
  * ei arvontaa — parillinen päivä A ylin, pariton B ylin → tasan 50/50).
  */
-export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdTone = 'loud', className, cardClassName }: HomeAdSlotsProps) {
+export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdTone = 'loud', className, cardClassName, wide = false }: HomeAdSlotsProps) {
   // Kaksijakoinen kielisääntö (Vesa 2026-07-30, Bear-palaute):
   //   MYYTY kortti näkyy KAIKILLA 12 kielellä — kumppani maksoi näkyvyydestä,
   //   ja Partner.i18n kantaa käännetyt tekstit (PartnerSlot).
@@ -178,9 +181,9 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
   return (
     <section
       data-lv-ad-slots
-      className={['py-12 sm:py-16 px-6 md:px-12 lg:px-20', className].filter(Boolean).join(' ')}
+      className={[wide ? 'py-6 md:py-8' : 'py-12 sm:py-16 px-6 md:px-12 lg:px-20', className].filter(Boolean).join(' ')}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className={wide ? 'mx-auto max-w-7xl px-4' : 'max-w-6xl mx-auto'}>
         {/* Kävijälle vain neutraali "Kumppanit" — tier-nimet ovat myyntikieltä
             (elävät vain house-adien pitchissä + LV Media -portaalissa). */}
         {!single && (
@@ -198,7 +201,7 @@ export default function HomeAdSlots({ config, locale, surface = 'dark', houseAdT
           'grid grid-cols-1 gap-4 sm:gap-5 items-stretch',
           bothEmpty || single ? '' : 'md:grid-cols-2',
           // 62rem = sama sisäleveys kuin tuoteriveillä (max-w-5xl − px-4).
-          single ? 'max-w-[62rem] mx-auto' : '',
+          single && !wide ? 'max-w-[62rem] mx-auto' : '',
         ].filter(Boolean).join(' ')}>
           {/* Kortti A (vasen desktopissa). House-ad-placeholder vain
               myyntikielillä — muilla lokaaleilla tyhjä paikka ei renderöidy. */}

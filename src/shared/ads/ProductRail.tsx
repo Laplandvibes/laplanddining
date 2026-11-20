@@ -112,6 +112,45 @@ const INK = '#141413'
 const SNOW = '#F9FAFB'
 const EASE = 'cubic-bezier(0.23, 1, 0.32, 1)'
 
+/**
+ * Hinta näytetään vain, jos se on luettu kaupasta enintään HINTA_TUORE_PV päivää
+ * sitten (sama raja kuin GYG-hinnoissa, lv_permanent_rules §40). Rivien tilannekuvat
+ * luettiin syyskuussa 2026 eikä mikään päivitä niitä itsestään; Vesa 20.11.2026:
+ * "jos ei nämä hinnat päivity automaattisesti viikottain niin tämä pitää ottaa pois
+ * kokonaan". Vanha hinta ei näy, ja lukupäivän lause poistuu pienestä tekstistä.
+ * Kun tilannekuva luetaan uudelleen (scripts/sync_partner_feeds.mjs --refresh),
+ * hinnat palaavat viikoksi ilman koodimuutosta.
+ */
+export const HINTA_TUORE_PV = 7
+
+export function hintaTuore(fetchedAt: string, now: number = Date.now()): boolean {
+  const t = Date.parse(`${fetchedAt}T00:00:00Z`)
+  return Number.isFinite(t) && now - t <= HINTA_TUORE_PV * 86_400_000
+}
+
+/** Poistaa pienestä tekstistä lauseen, jossa on {date} ("Hinnat tarkistettu {date}."). */
+export function ilmanPaivaa(note: string): string {
+  const i = note.indexOf('{date}')
+  if (i < 0) return note
+  let start = 0
+  for (let k = i - 1; k >= 0; k--) {
+    if (note[k] === '。' || (note[k] === '.' && /\s/.test(note[k + 1] ?? ''))) { start = k + 1; break }
+  }
+  const rest = note.slice(i)
+  const m = rest.match(/。|\.(?=\s|$)/)
+  const end = m && m.index !== undefined ? i + m.index + 1 : note.length
+  return (note.slice(0, start) + note.slice(end)).replace(/\s+/g, ' ').trim()
+}
+
+/** Lukupäivä lukijan kielellä: fi ja de numeroina (5.9.2026), muut kuukauden nimellä. */
+export function lukupaiva(fetchedAt: string, lang: RailLang): string {
+  const d = new Date(`${fetchedAt}T00:00:00Z`)
+  if (Number.isNaN(d.getTime())) return fetchedAt
+  if (lang === 'fi' || lang === 'de') return `${d.getUTCDate()}.${d.getUTCMonth() + 1}.${d.getUTCFullYear()}`
+  const loc = lang === 'en' ? 'en-GB' : lang
+  return new Intl.DateTimeFormat(loc, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(d)
+}
+
 /** WCAG relative luminance → pick ink or snow for text on a filled pill. */
 function textOn(hex: string): string {
   const f = (c: number) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4 }
@@ -166,6 +205,8 @@ export default function ProductRail({
     new Intl.NumberFormat(lang === 'pt-BR' ? 'pt-BR' : lang, {
       style: 'currency', currency: 'EUR', maximumFractionDigits: n % 1 === 0 ? 0 : 2,
     }).format(n)
+  const tuore = hintaTuore(snapshot.fetchedAt)
+  const note = tuore ? c.note.replace('{date}', lukupaiva(snapshot.fetchedAt, lang)) : ilmanPaivaa(c.note)
 
   const allHref = linkFor(categoryUrl, `${sid}_all`)
   const ink = dark ? 'text-snow' : 'text-[#141413]'
@@ -316,17 +357,19 @@ export default function ProductRail({
                     <span className="line-clamp-2 text-[12.5px] font-semibold leading-snug text-[#141413]" translate="no">
                       {label}
                     </span>
-                    <span className="mt-auto flex items-baseline gap-1">
-                      {c.from && !c.fromAfter ? (
-                        <span className="text-[10.5px] text-black/45">{c.from}</span>
-                      ) : null}
-                      <span className="text-[14px] font-bold" style={{ color: brand?.accent ?? (brand ? INK : partner.accent) }}>
-                        {fmtPrice(p.price)}
+                    {tuore ? (
+                      <span className="mt-auto flex items-baseline gap-1">
+                        {c.from && !c.fromAfter ? (
+                          <span className="text-[10.5px] text-black/45">{c.from}</span>
+                        ) : null}
+                        <span className="text-[14px] font-bold" style={{ color: brand?.accent ?? (brand ? INK : partner.accent) }}>
+                          {fmtPrice(p.price)}
+                        </span>
+                        {c.from && c.fromAfter ? (
+                          <span className="text-[10.5px] text-black/45">{c.from}</span>
+                        ) : null}
                       </span>
-                      {c.from && c.fromAfter ? (
-                        <span className="text-[10.5px] text-black/45">{c.from}</span>
-                      ) : null}
-                    </span>
+                    ) : null}
                   </div>
                 </a>
               </li>
@@ -351,9 +394,7 @@ export default function ProductRail({
         </a>
 
         <div className="mt-2 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
-          <p className={`max-w-xl text-base leading-snug ${faint}`}>
-            {c.note.replace('{date}', snapshot.fetchedAt)}
-          </p>
+          {note ? <p className={`max-w-xl text-base leading-snug ${faint}`}>{note}</p> : <span />}
           <span
             className={`inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] ${
               dark ? 'bg-white/10 text-white/60' : 'bg-black/[0.05] text-black/50'
