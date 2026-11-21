@@ -328,7 +328,7 @@ const NETWORK_HOSTS = new Set([
   'stayinlapland.com', 'laplandkids.com', 'laplandfood.com', 'laplanddining.com',
   'laplandbars.com', 'laplandactivities.fi', 'laplandtours.online', 'laplandhuskysafaris.com',
   'laplandskiresorts.com', 'laplandsnowmobile.com', 'laplandwellness.com', 'laplandnightlife.com',
-  'laplandnature.com', 'laplandvisit.com', 'laplandchristmas.com', 'laplandweddings.online',
+  'laplandnature.com', 'laplandvisit.com', 'laplandchristmas.com', 'laplandweddings.fi',
   'laplandgifts.com', 'laplandstore.fi', 'lapland.blog', 'laplanddeals.com',
   'laplandtransport.com', 'laplandcarrental.com', 'laplandflights.fi', 'laplandwork.com',
 ]);
@@ -717,7 +717,7 @@ function buildSiteGroups(d: typeof DEFAULT_DICT) {
         { name: s.natureParks, url: 'https://laplandnature.com' },
         { name: s.travelGuide, url: 'https://laplandvisit.com' },
         { name: s.christmas, url: 'https://laplandchristmas.com' },
-        { name: s.weddings, url: 'https://laplandweddings.online' },
+        { name: s.weddings, url: 'https://laplandweddings.fi' },
         { name: s.giftsSouvenirs, url: 'https://laplandgifts.com' },
         { name: s.store, url: 'https://laplandstore.fi' },
         { name: s.travelBlog, url: 'https://lapland.blog' },
