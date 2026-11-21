@@ -47,6 +47,12 @@ jobs:
           repository: Laplandvibes/lv-ops
           ssh-key: ${{ secrets.LV_OPS_DEPLOY_KEY }}
           path: _lv-ops
+          # Ilman heinäkuun reissukuvia (21.11.2026): ne olivat 444 Mt lv-opsin 540 Mt:stä, eikä yksikään portti lue
+          # niitä (vain kansion nimeä). Mitattu: samat 9 dist-porttia, samat luetut määrät, ajo 13–19 s → 3–5 s.
+          sparse-checkout: |
+            /*
+            !/_reissu-*/
+          sparse-checkout-cone-mode: false
 
       - name: LV-portit — Node 24 (sama kuin deploy-safe.sh)
         if: ${{ vars.LV_PORTIT_POIS != '1' && steps.lvops.outcome == 'success' }}
