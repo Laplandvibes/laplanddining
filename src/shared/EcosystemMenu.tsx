@@ -235,6 +235,19 @@ type IconCmp = typeof LayoutGrid;
 const CAT_ICON: Record<Cat, IconCmp> = { hub: LayoutGrid, stay: BedDouble, activity: Compass, food: UtensilsCrossed, transport: Car, season: Sparkles, shopping: ShoppingBag, guide: BookOpen };
 
 const MOBILE_QUERY = '(max-width: 767px)';
+// Discovery hint timing. The bubble hangs under a fixed header, so it floats
+// over whatever the reader scrolls beneath it: it is shown only at the top of
+// a page and retires on its own.
+const HINT_KEY = 'lv_eco_hint_seen';
+const HINT_WIDE_QUERY = '(min-width: 768px)'; // same breakpoint as .lv-eco-hint in CSS
+const HINT_DELAY_MS = 1400;  // after mount, before the hint appears
+const HINT_LIFE_MS = 8000;   // the bubble closes itself after this
+const HINT_READ_MS = 1500;   // on screen at least this long = counted as seen
+const HINT_HOLD_MS = 2000;   // re-check interval while hovered, focused or tab hidden
+const HINT_OUT_MS = 180;     // matches lvEcoOut
+const HINT_TOP_PX = 8;       // "at the top of the page"
+const HINT_SCROLL_PX = 24;   // scrolling further than this closes the bubble
+function storeHintSeen() { try { window.localStorage.setItem(HINT_KEY, '1'); } catch { /* private mode */ } }
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 /**
@@ -264,6 +277,8 @@ const CSS = `
    jatkuva ylos-alas-liike nayttaa kellunnalta. Kiinnitys 8 px napin alle. */
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoIn .26s ease-out both}
 @media(min-width:768px){.lv-eco-hint{display:block}}
+/* Vinkki poistuu itse: lyhyt haivytys ylos, eika sita voi enaa napauttaa kesken poistumisen. */
+.lv-eco-hint--out{animation:lvEcoOut .18s ease-in both;pointer-events:none}
 /* Nuoli on samaa tummaa laattaa kuin pilleri, jotta se luetaan pillerin osaksi eika erilliseksi palaksi.
    Vinkki on opaste, ei varausnappi: neutraali laatta, ei pinkkia. */
 .lv-eco-hint-arrow{position:absolute;top:-5px;left:18px;width:11px;height:11px;transform:rotate(45deg);border-radius:2px;background:#1E293B;box-shadow:inset 1px 1px 0 rgba(255,255,255,.18)}
@@ -332,9 +347,10 @@ const CSS = `
 @keyframes lvEcoPop{from{opacity:0;transform:translateY(-6px) scale(.985)}to{opacity:1;transform:none}}
 @keyframes lvEcoSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes lvEcoIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes lvEcoOut{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-4px)}}
 @keyframes lvEcoRing{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}70%{box-shadow:0 0 0 9px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 .lv-eco-ring{animation:lvEcoRing 1.8s ease-out infinite}
-@media(prefers-reduced-motion:reduce){.lv-eco-panel,.lv-eco-hint,.lv-eco-ring{animation:none}.lv-eco-btn .lv-eco-chev{transition:none}}
+@media(prefers-reduced-motion:reduce){.lv-eco-panel,.lv-eco-hint,.lv-eco-ring{animation:none}.lv-eco-hint--out{opacity:0}.lv-eco-btn .lv-eco-chev{transition:none}}
 @media(max-width:767px){
 .lv-eco-panel{inset:0;top:0;left:0;width:auto;max-width:none;max-height:none;border-radius:0;border:0;padding:0 0 24px;animation:lvEcoSlide .2s ease-out;transform-origin:center top}
 .lv-eco-top{position:sticky;top:0;z-index:1;gap:10px 12px;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 12px;background:#0F172A;border-bottom:1px solid rgba(255,255,255,.1)}
@@ -380,7 +396,15 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   // the menu is opened or the bubble dismissed. Desktop bubble only; on narrow
   // screens the bubble covered page content (Vesa 21.8.2026), the pulse ring
   // on the button is enough there.
+  //
+  // `hint` = the cue is active (pulse ring). `bubble` = the text bubble itself.
+  // The bubble is anchored under a fixed header, so anything scrolled beneath
+  // it is covered. It therefore appears only at the top of a page, closes
+  // itself after HINT_LIFE_MS or on the first scroll, and never takes focus.
   const [hint, setHint] = useState(false);
+  const [bubble, setBubble] = useState<'off' | 'in' | 'out'>('off');
+  const hintRef = useRef<HTMLDivElement>(null);
+  const hintHeld = useRef(false);
   const btnRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -405,17 +429,79 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
   // sivulle, mutta se on kyllä tässä todella epäselvä."
   const hubName = siteName(SITES.find((s) => s.domain === HUB) as Site);
 
+  // Arm the hint once per browser, and only while the tab is on screen: a page
+  // opened in a background tab would otherwise show and retire it unseen.
   useEffect(() => {
     try {
-      if (typeof window === 'undefined' || window.localStorage.getItem('lv_eco_hint_seen') === '1') return;
+      if (typeof window === 'undefined' || window.localStorage.getItem(HINT_KEY) === '1') return;
     } catch { return; }
-    const id = window.setTimeout(() => setHint(true), 1400);
-    return () => window.clearTimeout(id);
+    let id = 0;
+    function show() {
+      if (document.visibilityState === 'hidden') { document.addEventListener('visibilitychange', onVisible); return; }
+      // The reader already has the menu open: found without the hint.
+      if (btnRef.current?.getAttribute('aria-expanded') === 'true') { storeHintSeen(); return; }
+      setHint(true);
+      // Narrow screens keep the pulse ring only (CSS hides the bubble there).
+      // A reader who has already scrolled gets the ring now and the bubble at
+      // the top of a later page: it must not pop up over what they are reading.
+      if (window.matchMedia?.(HINT_WIDE_QUERY).matches && window.scrollY <= HINT_TOP_PX) setBubble('in');
+    }
+    function onVisible() {
+      if (document.visibilityState === 'hidden') return;
+      document.removeEventListener('visibilitychange', onVisible);
+      id = window.setTimeout(show, HINT_DELAY_MS);
+    }
+    id = window.setTimeout(show, HINT_DELAY_MS);
+    return () => { window.clearTimeout(id); document.removeEventListener('visibilitychange', onVisible); };
   }, []);
+  // Focus must not vanish together with the bubble (its close button can hold it).
+  const keepFocus = useCallback(() => {
+    if (hintRef.current?.contains(document.activeElement)) btnRef.current?.focus({ preventScroll: true });
+  }, []);
+  // The reader closed it (× or opening the menu): ring and bubble end for good.
   const dismissHint = () => {
+    keepFocus();
     setHint(false);
-    try { window.localStorage.setItem('lv_eco_hint_seen', '1'); } catch { /* private mode */ }
+    setBubble('off');
+    storeHintSeen();
   };
+  // The bubble leaves on its own. `seen` = it was on screen long enough to read;
+  // if not (scrolled away at once), it is offered again at the top of the next page.
+  const retireBubble = useCallback((seen: boolean) => {
+    keepFocus();
+    setBubble('out');
+    if (seen) { setHint(false); storeHintSeen(); }
+  }, [keepFocus]);
+  useEffect(() => {
+    if (bubble !== 'in') return;
+    // Not actually drawn (a site may hide the bubble in its own CSS): nothing
+    // was shown, so nothing is timed or counted as seen. The ring stays.
+    if (!hintRef.current || hintRef.current.getClientRects().length === 0) return;
+    const since = Date.now();
+    const startY = window.scrollY;
+    let id = 0;
+    let done = false;
+    function expire() {
+      if (done) return;
+      // Not while the reader is on it (pointer or keyboard) or the tab is in the background.
+      if (hintHeld.current || document.visibilityState === 'hidden') { id = window.setTimeout(expire, HINT_HOLD_MS); return; }
+      done = true;
+      retireBubble(true);
+    }
+    function onScroll() {
+      if (done || Math.abs(window.scrollY - startY) < HINT_SCROLL_PX) return;
+      done = true;
+      retireBubble(Date.now() - since >= HINT_READ_MS);
+    }
+    id = window.setTimeout(expire, HINT_LIFE_MS);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => { window.clearTimeout(id); window.removeEventListener('scroll', onScroll); };
+  }, [bubble, retireBubble]);
+  useEffect(() => {
+    if (bubble !== 'out') return;
+    const id = window.setTimeout(() => setBubble('off'), HINT_OUT_MS);
+    return () => window.clearTimeout(id);
+  }, [bubble]);
 
   useEffect(() => {
     if (typeof window === 'undefined' || !window.matchMedia) return;
@@ -660,8 +746,16 @@ export default function EcosystemMenu({ currentDomain = HUB, lang, variant = 'da
         <ChevronDown className="lv-eco-chev" size={13} strokeWidth={2.4} aria-hidden="true" />
       </button>
 
-      {hint && !open && (
-        <div className="lv-eco-hint" role="status">
+      {bubble !== 'off' && !open && (
+        <div
+          ref={hintRef}
+          className={`lv-eco-hint${bubble === 'out' ? ' lv-eco-hint--out' : ''}`}
+          role="status"
+          onMouseEnter={() => { hintHeld.current = true; }}
+          onMouseLeave={() => { hintHeld.current = false; }}
+          onFocus={() => { hintHeld.current = true; }}
+          onBlur={() => { hintHeld.current = false; }}
+        >
           <span aria-hidden="true" className="lv-eco-hint-arrow" />
           <span className="lv-eco-hint-pill">
             {chrome('hint', 'Kaikki verkoston sivut täältä!', 'Every site in the network: in here!')}
