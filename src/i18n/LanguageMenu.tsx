@@ -213,7 +213,7 @@ export default function LanguageMenu({
   // koska sm: kohteli tablettia tyopoytana. Hiiri alkaa vasta lg:sta.
   const trigger =
     variant === 'pill'
-      ? `inline-flex h-11 lg:h-9 items-center gap-2 rounded-full border px-2.5 transition-colors duration-200 ${
+      ? `inline-flex h-11 lg:h-9 w-11 sm:w-auto items-center justify-center gap-2 rounded-full border px-0 sm:px-2.5 transition-colors duration-200 ${
           dark
             ? 'border-white/30 bg-white/5 text-snow hover:border-vibe-pink hover:bg-white/10'
             : 'border-black/15 bg-black/[0.04] text-deep-night hover:border-vibe-pink hover:bg-black/[0.07]'
@@ -241,9 +241,11 @@ export default function LanguageMenu({
             muuten ruman näköinen"*. Lippu on tunniste, ja "JA" sen vieressä oli
             sama asia kahdesti. Kieli on silti ruudunlukijalle aria-labelissa. */}
         <Flag code={locale} className="w-6 h-[17px]" />
+        {/* Puhelimella (alle 640 px) pillerinapissa on vain lippu: nappi on 44 × 44 px, ja nuolelta
+            säästyvä leveys menee yläpalkin sanamerkille. Nuoli palaa 640 px:stä. */}
         <ChevronDown
           aria-hidden="true"
-          className={`w-3.5 h-3.5 shrink-0 opacity-70 transition-transform duration-200 motion-reduce:transition-none ${
+          className={`${variant === 'pill' ? 'hidden sm:block ' : ''}w-3.5 h-3.5 shrink-0 opacity-70 transition-transform duration-200 motion-reduce:transition-none ${
             open ? 'rotate-180' : ''
           }`}
         />
