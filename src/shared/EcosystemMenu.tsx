@@ -272,7 +272,7 @@ const CSS = `
 .lv-eco-btn--light:focus-visible{outline-color:#0F172A}
 /* 1023, ei 767: 768 px on tabletti eli yha sormi. */
 @media(max-width:1023px){.lv-eco-btn{height:44px;min-width:44px}}
-@media(max-width:639px){.lv-eco-btn{padding:0 11px;gap:4px}.lv-eco-btn .lv-eco-lbl{display:none}}
+@media(max-width:639px){.lv-eco-btn{padding:0;width:44px;justify-content:center}.lv-eco-btn .lv-eco-lbl,.lv-eco-btn .lv-eco-chev{display:none}}
 /* Vinkki tulee nakyviin yhdella lyhyella sisaantulolla ja pysyy sitten paikallaan:
    jatkuva ylos-alas-liike nayttaa kellunnalta. Kiinnitys 8 px napin alle. */
 .lv-eco-hint{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:40;width:max-content;max-width:78vw;animation:lvEcoIn .26s ease-out both}
