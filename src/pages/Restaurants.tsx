@@ -60,6 +60,13 @@ const cityGygCatalog: Record<string, { citySlug: string; sid: string }> = {
 const COLLAPSED_CARD_COUNT = 3;
 const FEATURED_SLOT_CITIES = new Set(['Rovaniemi', 'Levi', 'Ylläs', 'Saariselkä', 'Kittilä', 'Inari']);
 
+/** Mainospaikan tunniste ilman kirjaimen putoamista: "Ylläs" -> "yllas" (ennen "ylls"), sama kuin
+ *  kaupunkisivun slug ja mainospaikkaluettelon restaurants_featured_<slug>. Ankkurien id:t (#ylls) pysyvät ennallaan,
+ *  koska etusivun ja kärkilistan linkit osoittavat niihin. */
+function paikkaSlug(city: string) {
+  return city.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z]/g, '');
+}
+
 function hotelsSid(city: string) {
   return `restaurants_stay_${city.toLowerCase().replace(/[^a-z]/g, '_')}`;
 }
@@ -455,7 +462,7 @@ export default function Restaurants() {
                 {(PARTNERS.cityFeatured[city] != null || FEATURED_SLOT_CITIES.has(city)) && (
                   <CityFeaturedSlot
                     city={city}
-                    slug={slug}
+                    slug={paikkaSlug(city)}
                     partner={PARTNERS.cityFeatured[city] ?? null}
                     locale={locale}
                   />

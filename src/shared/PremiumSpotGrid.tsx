@@ -19,7 +19,7 @@
  */
 
 import type { Partner } from './PartnerSlot';
-import { adSlotsCopy, adLocaleEnabled, mediaSiteUrl, fireAdvertiseHereClick } from './adSlotsCopy';
+import { adSlotsCopy, adLocaleEnabled, normalizeAdLocale, mediaSiteUrl, fireAdvertiseHereClick } from './adSlotsCopy';
 
 export type PremiumSpot = {
   /** Vakaa avain + GA4-tunniste, esim. 'levi' */
@@ -48,15 +48,25 @@ export type PremiumSpotGridProps = {
   className?: string;
 };
 
+/** Myydyn solun tagline ja linkki sivun kielellä: Partner.i18n ensin, sitten fi/en/sv-kentät (kuten PartnerSlot). */
+function localized(p: Partner, locale?: string) {
+  const loc = normalizeAdLocale(locale);
+  const i = p.i18n?.[loc];
+  const tagline = i?.tagline ?? (loc === 'fi' ? p.tagline ?? p.taglineEn : loc === 'sv' ? p.taglineSv ?? p.taglineEn ?? p.tagline : p.taglineEn ?? p.tagline);
+  const url = i?.url ?? (loc === 'fi' && p.urlFi ? p.urlFi : p.url);
+  return { tagline, url };
+}
+
 export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'dark', className }: PremiumSpotGridProps) {
-  // Mainospaikat vain fi/en (Vesa 2026-07-13).
-  if (!adLocaleEnabled(locale)) return null;
   // 🔴 Vesa 2026-09-04: six dashed "Mainospaikka vapaana" tiles on twelve
   // listing pages, none sold, is not inventory on display — it is a page that
   // looks unfinished. The grid renders only once at least one spot is sold;
   // a sold spot still shows its unsold neighbours as open, so the upsell is
   // intact where there is a buyer to see it.
   if (!spots.some((s) => s.partner)) return null;
+  // Myyty solu näkyy kaikilla 12 kielellä; vapaat naapurit ("Mainospaikka vapaana") vain fi/en/sv
+  // (Vesa 2026-07-13). Ennen 24.11.2026 koko ruudukko piilotettiin yhdeksältä kieleltä, myös maksettu solu.
+  const shown = adLocaleEnabled(locale) ? spots : spots.filter((s) => s.partner);
 
   const t = adSlotsCopy(locale);
   const light = surface === 'light';
@@ -66,13 +76,14 @@ export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'da
       data-premium-spot-grid
       className={['grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4', className].filter(Boolean).join(' ')}
     >
-      {spots.map((spot) => {
+      {shown.map((spot) => {
         const chip = (
           <span
             className={[
               'text-[10px] font-semibold uppercase tracking-widest truncate',
+              // Rauhallinen värilinja (16.11.2026): ei kirkasta syaania; vaalealla korostus #BE185D, tummalla jäänsininen.
               spot.partner
-                ? (light ? 'text-[#0891B2]' : 'text-[#22D3EE]')
+                ? (light ? 'text-[#BE185D]' : 'text-[#BAE6FD]')
                 : light
                   ? 'text-gray-500'
                   : 'text-[#F9FAFB]/45',
@@ -84,11 +95,12 @@ export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'da
 
         if (spot.partner) {
           const p = spot.partner;
+          const { tagline, url } = localized(p, locale);
           return (
             <a
               key={spot.key}
               data-partner-slot="premium-spot"
-              href={p.url}
+              href={url}
               target="_blank"
               rel="sponsored nofollow noopener"
               className={[
@@ -114,14 +126,14 @@ export default function PremiumSpotGrid({ spots, siteSlug, locale, surface = 'da
               >
                 {p.name}
               </p>
-              {p.tagline && (
+              {tagline && (
                 <p
                   className={[
                     'text-xs leading-snug overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]',
                     light ? 'text-gray-600' : 'text-[#F9FAFB]/60',
                   ].join(' ')}
                 >
-                  {p.tagline}
+                  {tagline}
                 </p>
               )}
             </a>

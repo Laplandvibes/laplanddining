@@ -30,8 +30,9 @@ export type SponsorStripProps = {
 };
 
 export default function SponsorStrip({ partner, siteSlug, locale, surface = 'dark', showHouseAd, className }: SponsorStripProps) {
-  // Mainospaikat vain fi/en (Vesa 2026-07-13) — muilla kielillä ei nauhaa lainkaan.
-  if (!adLocaleEnabled(locale)) return null;
+  // Myyty nauha näkyy kaikilla 12 kielellä; vain vapaan paikan myyntinauha on fi/en/sv (Vesa 2026-07-13).
+  // Ennen 24.11.2026 tämä rivi piilotti myös maksetun pääkumppanin nauhan yhdeksältä kieleltä.
+  if (partner === null && !adLocaleEnabled(locale)) return null;
 
   const t = adSlotsCopy(locale);
   const light = surface === 'light';

@@ -43,14 +43,17 @@ export function normalizeAdLocale(locale?: string): AdLocale {
 }
 
 /**
- * Mainospaikat (LV Media -myyntitila) näytetään VAIN suomeksi, englanniksi ja
- * ruotsiksi.
+ * VAPAAT mainospaikat (LV Median "Haluatko mainoksesi tähän?" -myyntitila) näytetään VAIN suomeksi,
+ * englanniksi ja ruotsiksi. 🔴 MYYTY paikka näkyy kaikilla 12 kielellä (Vesa 2026-07-30 ja 2026-10-23:
+ * kumppani ostaa näkyvyyden koko verkostolle), joten komponentissa ehto on aina
+ * `if (!partner && !adLocaleEnabled(locale)) return null`, ei pelkkä `!adLocaleEnabled(locale)`.
+ * Ennen 24.11.2026 pääbanneri, nauha, listanosto, alasivun banneri ja lomakeskusosion paikat
+ * piilottivat myös myydyn mainoksen yhdeksältä kieleltä.
  *
  * Vesa 2026-07-13: mainostilaa ostavat paikalliset ja kansainväliset yritykset
  * asioivat suomeksi/englanniksi/ruotsiksi (ruotsi = ekosysteemin 12. kieli) —
- * pääkumppaninauha, kortit, premium-paikat ja "Haluatko mainoksesi tähän?"
- * -house-adit muilla kielillä ovat kohdeyleisölle turhia ja roskaavat
- * kansainvälistä sisältöä. Yksi totuuslähde: koskee SponsorStrip / HomeAdSlots /
+ * tyhjät "Haluatko mainoksesi tähän?" -house-adit muilla kielillä ovat kohdeyleisölle
+ * turhia ja roskaavat kansainvälistä sisältöä. Yksi totuuslähde: koskee SponsorStrip / HomeAdSlots /
  * MainPartnerBanner / PremiumSpotGrid / SubpageAd (LV Median oma inventaari).
  * EI koske affiliate-AdUniteja (aidot käännetyt matkailutarjoukset kaikille kielille).
  */

@@ -71,10 +71,12 @@ function homeCards(config: HomeAdSlotsConfig): (Partner | null)[] {
  * Jätetty exportiksi ettei v2-sivustojen buildit rikkoudu ennen rollausta.
  */
 export function MainPartnerBanner({ config, locale, surface = 'dark', houseAdTone = 'loud', className }: SurfaceProps) {
-  // Mainospaikat vain fi/en (Vesa 2026-07-13).
-  if (!adLocaleEnabled(locale)) return null;
-  const t = adSlotsCopy(locale);
   const partner = config.mainPartner ?? config.sponsors?.[0] ?? null;
+  // Myyty pääpaikka näkyy kaikilla 12 kielellä (Partner.i18n kantaa käännökset); vain tyhjä
+  // "Haluatko mainoksesi tähän?" -paikka on fi/en/sv (Vesa 2026-07-13). Ennen 24.11.2026 tämä
+  // rivi piilotti myös myydyn bannerin yhdeksältä kieleltä, vaikka /media lupaa pääkumppanille 12.
+  if (!partner && !adLocaleEnabled(locale)) return null;
+  const t = adSlotsCopy(locale);
   return (
     <section data-lv-main-partner className={['px-6 md:px-12 lg:px-20 py-4', className].filter(Boolean).join(' ')}>
       {/* 🔴 This band was handed `bg-deep-night` — the exact page colour — so
@@ -85,7 +87,10 @@ export function MainPartnerBanner({ config, locale, surface = 'dark', houseAdTon
           light-themed sites in the network get the same separation inverted. */}
       <div
         className={[
-          'max-w-6xl mx-auto rounded-2xl p-3 sm:p-4',
+          // Myydyllä kortilla ei sisennystä: kehystä ei ole, joten padding vain kavensi
+          // maksettua korttia puhelimella 24 px (24.11.2026).
+          'max-w-6xl mx-auto rounded-2xl',
+          partner ? '' : 'p-3 sm:p-4',
           // 🔴 Pinkki kehys on MYYNTIKEHYS: se kertoo että paikka on ostettavissa.
           // Maksaneen kumppanin alla se teki päinvastaista työtä — haalensi kortin
           // taustaan (Vesa 6.9.: "onhan tällainen mainos ihan kamalan näköinen").

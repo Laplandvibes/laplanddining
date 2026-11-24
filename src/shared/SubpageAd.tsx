@@ -25,9 +25,9 @@ export type SubpageAdProps = {
 };
 
 export default function SubpageAd({ partner, siteSlug, slotId, locale, surface = 'dark', showHouseAd, className }: SubpageAdProps) {
-  // Mainospaikat vain fi/en (Vesa 2026-07-13).
-  if (!adLocaleEnabled(locale)) return null;
-  if (partner === null && !showHouseAd) return null;
+  // Myyty alasivun banneri näkyy kaikilla 12 kielellä; vain vapaan paikan myyntibanneri on fi/en/sv (Vesa 2026-07-13).
+  // Ennen 24.11.2026 tämä piilotti myös maksetun bannerin yhdeksältä kieleltä.
+  if (partner === null && (!showHouseAd || !adLocaleEnabled(locale))) return null;
   const t = adSlotsCopy(locale);
   return (
     <section data-lv-subpage-ad className={['px-6 md:px-12 lg:px-20 py-4', className].filter(Boolean).join(' ')}>
