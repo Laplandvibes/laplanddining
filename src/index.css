@@ -310,7 +310,7 @@ h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span {
 
 /* LV-NAV-SANAMERKKI:alku
    Puhelin- ja tablettinavi (hampurilainen näkyy): sanamerkki keskellä vasemman napin ja oikeiden
-   ohjainten välissä, koko --lv-wm-max (24 px; 768 px:stä --lv-wm-max-md) tai pienempi vain sen
+   ohjainten välissä, koko --lv-wm-max (28 px; 768 px:stä --lv-wm-max-md, 30 px) tai pienempi vain sen
    verran, että väli kumpaankin naapuriin on vähintään 11 px.
    Rakenne: rivi .lv-navrivi > vasen ryhmä .lv-navvasen > [verkostonappi, .lv-wm-paikka > linkki > .lv-wm].
    --lv-wm-k = sanamerkin leveys 1 px:n fontilla (Bebas Neue + tracking-wide), asetetaan .lv-wm:lle.
@@ -324,11 +324,11 @@ h1 > span, h2 > span, h3 > span, h4 > span, button > span, summary > span {
   .lv-wm-paikka .lv-wm {
     white-space: nowrap;
     font-size: var(--lv-wm-vara, 16px);
-    font-size: min(var(--lv-wm-max, 24px), calc((100cqi - 22px) / var(--lv-wm-k)));
+    font-size: min(var(--lv-wm-max, 28px), calc((100cqi - 22px) / var(--lv-wm-k)));
   }
 }
 @media (min-width: 768px) and (max-width: 1279.98px) {
-  .lv-wm-paikka .lv-wm { --lv-wm-max: var(--lv-wm-max-md, 24px); }
+  .lv-wm-paikka .lv-wm { --lv-wm-max: var(--lv-wm-max-md, 30px); }
 }
 @media (min-width: 1280px) {
   .lv-navvasen .lv-wm-paikka { display: contents; }
